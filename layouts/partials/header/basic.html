@@ -1,117 +1,116 @@
-<div class="relative bg-white">
-    <div style="padding-left:0;padding-right:0"
-        class="flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start md:space-x-3">
-        {{ if .Site.Params.Logo -}}
-        {{ $logo := resources.Get .Site.Params.Logo }}
-        {{ if $logo }}
-        <div>
-            <a href="{{ "" | relLangURL }}" class="flex">
-                <span class="sr-only">{{ .Site.Title | markdownify | emojify }}</span>
+<div style="padding-left:0;padding-right:0"
+    class="flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start md:space-x-3">
+    {{ if .Site.Params.Logo -}}
+    {{ $logo := resources.Get .Site.Params.Logo }}
+    {{ if $logo }}
+    <div>
+        <a href="{{ "" | relLangURL }}" class="flex">
+            <span class="sr-only">{{ .Site.Title | markdownify | emojify }}</span>
 
-                <img src="{{ $logo.RelPermalink }}" width="{{ div $logo.Width 2 }}" height="{{ div $logo.Height 2 }}"
-                    class="max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom" alt="{{ .Site.Title }}" />
+            <img src="{{ $logo.RelPermalink }}" width="{{ div $logo.Width 2 }}" height="{{ div $logo.Height 2 }}"
+                class="max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom" alt="{{ .Site.Title }}" />
 
-            </a>
-        </div>
-        {{ end }}
-        {{- end }}
-        <div class="flex flex-1 items-center justify-between">
-            <nav class="flex space-x-3">
+        </a>
+    </div>
+    {{ end }}
+    {{- end }}
+    <div class="flex flex-1 items-center justify-between">
+        <nav class="flex space-x-3">
 
-                <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">{{ .Site.Title | markdownify
-                    | emojify }}</a>
+            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">{{ .Site.Title | markdownify
+                | emojify }}</a>
 
-            </nav>
-            <div class="hidden md:flex items-center space-x-5 md:ml-12">
+        </nav>
+        <div class="hidden md:flex items-center space-x-5 md:ml-12">
 
-                {{ if .Site.Menus.main }}
-                {{ range .Site.Menus.main }}
-                <a href="{{ .URL }}" class="text-base font-medium text-gray-500 hover:text-gray-900"
-                    title="{{ .Title }}">{{ .Name | markdownify | emojify }}</a>
-                {{ end }}
-                {{ end }}
+            {{ if .Site.Menus.main }}
+            {{ range .Site.Menus.main }}
+            <a href="{{ .URL }}" class="text-base font-medium text-gray-500 hover:text-gray-900" title="{{ .Title }}">{{
+                .Name | markdownify | emojify }}</a>
+            {{ end }}
+            {{ end }}
 
-                <span></span>
+            <span></span>
 
-                {{ if .Site.Params.enableSearch | default false }}
-                <button id="search-button" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
-                    title="{{ i18n " search.open_button_title" }}">
-                    {{ partial "icon.html" "search" }}
+            {{ if .Site.Params.enableSearch | default false }}
+            <button id="search-button" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="{{ i18n " search.open_button_title" }}">
+                {{ partial "icon.html" "search" }}
+            </button>
+            {{ end }}
+
+            {{/* Appearance switch */}}
+            {{ if .Site.Params.footer.showAppearanceSwitcher | default false }}
+            <div
+                class="{{ if .Site.Params.footer.showScrollToTop | default true -}} ltr:mr-14 rtl:ml-14 {{- end }} cursor-pointer text-sm text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400">
+                <button id="appearance-switcher" type="button">
+                    <div class="flex items-center justify-center h-12 dark:hidden">
+                        {{ partial "icon.html" "moon" }}
+                    </div>
+                    <div class="items-center justify-center hidden h-12 dark:flex">
+                        {{ partial "icon.html" "sun" }}
+                    </div>
                 </button>
-                {{ end }}
-
-                {{/* Appearance switch */}}
-                {{ if .Site.Params.footer.showAppearanceSwitcher | default false }}
-                <div
-                    class="{{ if .Site.Params.footer.showScrollToTop | default true -}} ltr:mr-14 rtl:ml-14 {{- end }} cursor-pointer text-sm text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400">
-                    <button id="appearance-switcher" type="button">
-                        <div class="flex items-center justify-center h-12 dark:hidden">
-                            {{ partial "icon.html" "moon" }}
-                        </div>
-                        <div class="items-center justify-center hidden h-12 dark:flex">
-                            {{ partial "icon.html" "sun" }}
-                        </div>
-                    </button>
-                </div>
-                {{ end }}
-
             </div>
-        </div>
-        <div class="-my-2 -mr-2 md:hidden">
+            {{ end }}
 
-            <label id="menu-button" for="menu-controller" class="block">
-                <input type="checkbox" id="menu-controller" class="hidden" />
-                <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
-                    {{ partial "icon.html" "bars" }}
-                </div>
-                <div id="menu-wrapper" style="padding-top:25px;"
-                    class="fixed inset-0 z-30 invisible w-screen h-screen m-auto overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50">
-                    <ul
-                        class="flex movedown flex-col w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl sm:px-14 md:px-24 lg:px-32 sm:py-10 sm:pt-10">
-                        <li class="mb-1">
-                            <span class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">{{ partial
-                                "icon.html"
-                                "xmark" }}</span>
-                        </li>
-                        {{ if .Site.Menus.main }}
-                        {{ range .Site.Menus.main }}
-                        <li class="mb-1">
-                            <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
-                                href="{{ .URL }}" title="{{ .Title }}">{{ .Name | markdownify | emojify }}</a>
-                        </li>
-                        {{ end }}
-                        {{ end }}
-                        
-                        {{ if .Site.Params.enableSearch | default false }}
-                        <li>
-                            <button id="search-button-hamburger"
-                                class="text-base hover:text-primary-600 dark:hover:text-primary-400">
-                                {{ partial "icon.html" "search" }}
-                            </button>
-                        </li>
-                        {{ end }}
-
-                        {{/* Appearance switch */}}
-                        {{ if .Site.Params.footer.showAppearanceSwitcher | default false }}
-                        <li>
-                            <button id="appearance-switcher" type="button">
-                                <div class="flex items-center justify-center h-12 dark:hidden">
-                                    {{ partial "icon.html" "moon" }}
-                                </div>
-                                <div class="items-center justify-center hidden h-12 dark:flex">
-                                    {{ partial "icon.html" "sun" }}
-                                </div>
-                            </button>
-                        </li>
-                        {{ end }}
-                    </ul>
-                </div>
-            </label>
         </div>
     </div>
+    <div class="-my-2 -mr-2 md:hidden">
+
+        <label id="menu-button" for="menu-controller" class="block">
+            <input type="checkbox" id="menu-controller" class="hidden" />
+            <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+                {{ partial "icon.html" "bars" }}
+            </div>
+            <div id="menu-wrapper" style="padding-top:25px;"
+                class="fixed inset-0 z-30 invisible w-screen h-screen m-auto overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50">
+                <ul
+                    class="flex movedown flex-col w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl sm:px-14 md:px-24 lg:px-32 sm:py-10 sm:pt-10">
+                    <li class="mb-1">
+                        <span class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">{{ partial
+                            "icon.html"
+                            "xmark" }}</span>
+                    </li>
+                    {{ if .Site.Menus.main }}
+                    {{ range .Site.Menus.main }}
+                    <li class="mb-1">
+                        <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
+                            href="{{ .URL }}" title="{{ .Title }}">{{ .Name | markdownify | emojify }}</a>
+                    </li>
+                    {{ end }}
+                    {{ end }}
+
+                    {{ if .Site.Params.enableSearch | default false }}
+                    <li>
+                        <button id="search-button-hamburger"
+                            class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+                            {{ partial "icon.html" "search" }}
+                        </button>
+                    </li>
+                    {{ end }}
+
+                    {{/* Appearance switch */}}
+                    {{ if .Site.Params.footer.showAppearanceSwitcher | default false }}
+                    <li>
+                        <button id="appearance-switcher" type="button">
+                            <div class="flex items-center justify-center h-12 dark:hidden">
+                                {{ partial "icon.html" "moon" }}
+                            </div>
+                            <div class="items-center justify-center hidden h-12 dark:flex">
+                                {{ partial "icon.html" "sun" }}
+                            </div>
+                        </button>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+        </label>
+    </div>
+</div>
 
 
-    <!--
+<!--
       Mobile menu, show/hide based on mobile menu state.
   
       Entering: "duration-200 ease-out"
@@ -121,28 +120,28 @@
         From: "opacity-100 scale-100"
         To: "opacity-0 scale-95"
     -->
-    <div id="mobile-menu"
-        class="fixed inset-0 z-30 invisible w-screen h-screen m-auto overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50">
-        <ul
-            class="flex movedown flex-col w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl sm:px-14 md:px-24 lg:px-32 sm:py-10 sm:pt-10">
-            <li class="mb-1">
-                <span class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">{{ partial "icon.html"
-                    "xmark" }}</span>
-            </li>
-            {{ if .Site.Menus.main }}
-            {{ range .Site.Menus.main }}
-            <li class="mb-1">
-                <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
-                    href="{{ .URL }}" title="{{ .Title }}">{{ .Name | markdownify | emojify }}</a>
-            </li>
-            {{ end }}
-            {{ end }}
-            {{ if .Site.Params.enableSearch | default false }}
-            <li>
-                <button id="search-button-mobile" class="text-base hover:text-primary-600 dark:hover:text-primary-400">
-                    {{ partial "icon.html" "search" }}
-                </button>
-            </li>
-            {{ end }}
-        </ul>
-    </div>
+<div id="mobile-menu"
+    class="fixed inset-0 z-30 invisible w-screen h-screen m-auto overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50">
+    <ul
+        class="flex movedown flex-col w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl sm:px-14 md:px-24 lg:px-32 sm:py-10 sm:pt-10">
+        <li class="mb-1">
+            <span class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">{{ partial "icon.html"
+                "xmark" }}</span>
+        </li>
+        {{ if .Site.Menus.main }}
+        {{ range .Site.Menus.main }}
+        <li class="mb-1">
+            <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
+                href="{{ .URL }}" title="{{ .Title }}">{{ .Name | markdownify | emojify }}</a>
+        </li>
+        {{ end }}
+        {{ end }}
+        {{ if .Site.Params.enableSearch | default false }}
+        <li>
+            <button id="search-button-mobile" class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+                {{ partial "icon.html" "search" }}
+            </button>
+        </li>
+        {{ end }}
+    </ul>
+</div>
