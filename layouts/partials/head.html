@@ -50,6 +50,9 @@
     href="{{ $bundleCSS.RelPermalink }}"
     integrity="{{ $bundleCSS.Data.Integrity }}"
   />
+  {{ $jsMain := resources.Get "js/main.js" }}
+  {{ $jsMain = $jsMain | resources.Minify | resources.Fingerprint "sha512" }}
+  <script type="text/javascript" src="{{ $jsMain.RelPermalink }}" integrity="{{ $jsMain.Data.Integrity }}"></script>
   {{ $jsAppearance := resources.Get "js/appearance.js" }}
   {{ $jsAppearance = $jsAppearance | resources.Minify | resources.Fingerprint "sha512" }}
   <script type="text/javascript" src="{{ $jsAppearance.RelPermalink }}" integrity="{{ $jsAppearance.Data.Integrity }}"></script>
@@ -112,4 +115,5 @@
   {{ if templates.Exists "partials/extend-head.html" }}
     {{ partialCached "extend-head.html" .Site }}
   {{ end }}
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 </head>

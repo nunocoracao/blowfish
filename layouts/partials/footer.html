@@ -43,29 +43,7 @@
         </p>
       {{ end }}
     </div>
-    {{/* Appearance switch */}}
-    {{ if .Site.Params.footer.showAppearanceSwitcher | default false }}
-      <div
-        class="{{ if .Site.Params.footer.showScrollToTop | default true -}}
-          ltr:mr-14 rtl:ml-14
-        {{- end }} cursor-pointer text-sm text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
-      >
-        <button id="appearance-switcher" type="button">
-          <div
-            class="flex items-center justify-center w-12 h-12 dark:hidden"
-            title="{{ i18n "footer.dark_appearance" }}"
-          >
-            {{ partial "icon.html" "moon" }}
-          </div>
-          <div
-            class="items-center justify-center hidden w-12 h-12 dark:flex"
-            title="{{ i18n "footer.light_appearance" }}"
-          >
-            {{ partial "icon.html" "sun" }}
-          </div>
-        </button>
-      </div>
-    {{ end }}
+   
   </div>
   {{/* Extend footer - eg. for extra scripts, etc. */}}
   {{ if templates.Exists "partials/extend-footer.html" }}

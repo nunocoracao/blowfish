@@ -84,7 +84,7 @@ module.exports = {
             "--tw-prose-invert-th-borders": theme("colors.neutral.500 / 1"),
             "--tw-prose-invert-td-borders": theme("colors.neutral.700 / 1"),
             a: {
-              textDecoration: "underline",
+              textDecoration: "none",
               textDecorationColor: theme("colors.primary.300 / 1"),
               fontWeight: "500",
               "&:hover": {
@@ -129,5 +129,8 @@ module.exports = {
       }),
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require('@tailwindcss/forms')
+  ],
 };
