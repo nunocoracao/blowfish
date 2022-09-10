@@ -1,0 +1,19 @@
+{{ $url := .Params.editURL | default (.Site.Params.article.editURL | default "#") }}
+{{ $slash := "" }}
+{{ if .Params.editAppendPath | default ( .Site.Params.article.editAppendPath | default false ) }}
+  {{ if ne (substr $url -1 1) "/" }}
+    {{ $slash = "/" }}
+  {{ end }}
+  {{ $url = printf "%s%s%s" $url $slash (path.Join .File.Path) }}
+{{ end }}
+<span class="mb-[2px]">
+  <a
+    href="{{ $url }}"
+    class="text-lg hover:text-primary-500"
+    rel="noopener noreferrer"
+    target="_blank"
+    title="{{ i18n "article.edit_title" }}"
+    >{{ partial "icon.html" "edit" }}</a
+  >
+</span>
+{{- /* Trim EOF */ -}}

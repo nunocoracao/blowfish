@@ -1,0 +1,55 @@
+article:
+  anchor_label: "Ancre"
+  date: "{{ .Date }}"
+  date_updated: "Mis à jour : {{ .Date }}"
+  draft: "Brouillon"
+  edit_title: "Modifier"
+  reading_time:
+    one: "{{ .Count }} min"
+    other: "{{ .Count }} mins"
+  reading_time_title: "Temps de lecture"
+  table_of_contents: "Sommaire"
+  word_count:
+    one: "{{ .Count }} mot"
+    other: "{{ .Count }} mots"
+
+author:
+  byline_title: "Auteur"
+
+code:
+  copy: "Copier"
+  copied: "Copié"
+
+error:
+  404_title: "Cette page n'existe pas :confused:"
+  404_error: "Erreur 404"
+  404_description: "Il semble que la page que vous cherchiez n'existe pas."
+
+footer:
+  dark_appearance: "Passer au thème sombre"
+  light_appearance: "Passer au thème clair"
+  powered_by: "Propulsé par {{ .Hugo }} &amp; {{ .Congo }}"
+
+list:
+  externalurl_title: "Lien d'article externe."
+  no_articles: "Il n'y a pas encore d'article ici."
+
+nav:
+  scroll_to_top_title: "Faire défiler jusqu'au bas de la page"
+  skip_to_main: "Aller au contenu"
+
+search:
+  open_button_title: "Rechercher (/)"
+  close_button_title: "Fermer (Esc)"
+  input_placeholder: "Rechercher"
+
+sharing:
+  email: "Envoyer par email"
+  facebook: "Poster sur Facebook"
+  linkedin: "Poster sur LinkedIn"
+  pinterest: "Poster sur Pinterest"
+  reddit: "Poster sur Reddit"
+  twitter: "Tweeter"
+
+shortcode:
+  recent_articles: "Articles récents"

@@ -1,0 +1,74 @@
+<footer class="py-10 print:hidden">
+  {{/* Footer menu */}}
+  {{ if .Site.Menus.footer }}
+    <nav class="pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400">
+      <ul class="flex flex-col list-none sm:flex-row">
+        {{ range .Site.Menus.footer }}
+          <li
+            class="mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0"
+          >
+            <a
+              class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
+              href="{{ .URL }}"
+              title="{{ .Title }}"
+              >{{ .Name | markdownify | emojify }}</a
+            >
+          </li>
+        {{ end }}
+      </ul>
+    </nav>
+  {{ end }}
+  <div class="flex items-center justify-between">
+    <div>
+      {{/* Copyright */}}
+      {{ if .Site.Params.footer.showCopyright | default true }}
+        <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          {{- with .Site.Params.copyright }}
+            {{ . | emojify | markdownify }}
+          {{- else }}
+            &copy;
+            {{ now.Format "2006" }}
+            {{ .Site.Author.name | markdownify | emojify }}
+          {{- end }}
+        </p>
+      {{ end }}
+      {{/* Theme attribution */}}
+      {{ if .Site.Params.footer.showThemeAttribution | default true }}
+        <p class="text-xs text-neutral-500 dark:text-neutral-400">
+          {{ $hugo := printf `<a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+            href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a>`
+          }}
+          {{ $congo := printf `<a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href="https://git.io/hugo-congo" target="_blank" rel="noopener noreferrer">Congo</a>` }}
+          {{ i18n "footer.powered_by" (dict "Hugo" $hugo "Congo" $congo) | safeHTML }}
+        </p>
+      {{ end }}
+    </div>
+    {{/* Appearance switch */}}
+    {{ if .Site.Params.footer.showAppearanceSwitcher | default false }}
+      <div
+        class="{{ if .Site.Params.footer.showScrollToTop | default true -}}
+          ltr:mr-14 rtl:ml-14
+        {{- end }} cursor-pointer text-sm text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+      >
+        <button id="appearance-switcher" type="button">
+          <div
+            class="flex items-center justify-center w-12 h-12 dark:hidden"
+            title="{{ i18n "footer.dark_appearance" }}"
+          >
+            {{ partial "icon.html" "moon" }}
+          </div>
+          <div
+            class="items-center justify-center hidden w-12 h-12 dark:flex"
+            title="{{ i18n "footer.light_appearance" }}"
+          >
+            {{ partial "icon.html" "sun" }}
+          </div>
+        </button>
+      </div>
+    {{ end }}
+  </div>
+  {{/* Extend footer - eg. for extra scripts, etc. */}}
+  {{ if templates.Exists "partials/extend-footer.html" }}
+    {{ partialCached "extend-footer.html" . }}
+  {{ end }}
+</footer>

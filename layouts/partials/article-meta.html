@@ -1,0 +1,64 @@
+{{/* Determine the correct context and scope */}}
+{{/* This allows for different logic depending on where the partial is called */}}
+{{ $context := . }}
+{{ $scope := default nil }}
+
+{{ if (reflect.IsMap . ) }}
+  {{ $context = .context }}
+  {{ $scope = cond (not .scope) nil .scope }}
+{{ end }}
+
+{{ with $context }}
+  {{ $meta := newScratch }}
+
+  {{/* Gather partials for this context */}}
+  {{ if .Params.showDate | default (.Site.Params.article.showDate | default true) }}
+    {{ $meta.Add "partials" (slice (partial "meta/date.html" .Date)) }}
+  {{ end }}
+
+  {{ if and (.Params.showDateUpdated | default (.Site.Params.article.showDateUpdated | default false)) (ne (partial "functions/date.html" .Date) (partial "functions/date.html" .Lastmod)) }}
+    {{ $meta.Add "partials" (slice (partial "meta/date-updated.html" .Lastmod)) }}
+  {{ end }}
+
+  {{ if and (.Params.showWordCount | default (.Site.Params.article.showWordCount | default false)) (ne .WordCount 0) }}
+    {{ $meta.Add "partials" (slice (partial "meta/word-count.html" .)) }}
+  {{ end }}
+
+  {{ if and (.Params.showReadingTime | default (.Site.Params.article.showReadingTime | default true)) (ne .ReadingTime 0) }}
+    {{ $meta.Add "partials" (slice (partial "meta/reading-time.html" .)) }}
+  {{ end }}
+
+  {{ if and (eq $scope "single") (.Params.showEdit | default (.Site.Params.article.showEdit | default false)) }}
+    {{ $meta.Add "partials" (slice (partial "meta/edit.html" .)) }}
+  {{ end }}
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    {{/* Output partials */}}
+    {{ with ($meta.Get "partials") }}
+      {{ delimit . "<span class=\"px-2 text-primary-500\">&middot;</span>" }}
+    {{ end }}
+
+    {{/* Output draft label */}}
+    {{ if and (eq $scope "single") (and .Draft .Site.Params.article.showDraftLabel) }}
+      <span class="pl-2">{{ partial "badge.html" (i18n "article.draft" | emojify) }}</span>
+    {{ end }}
+  </div>
+
+  {{/* Output taxonomies */}}
+  {{ if .Params.showTaxonomies | default (.Site.Params.article.showTaxonomies | default false) }}
+    <div class="my-1 text-xs text-neutral-500 dark:text-neutral-400 ">
+      {{ range $taxonomy, $terms := .Site.Taxonomies }}
+        {{ if (gt (len ($context.GetTerms $taxonomy)) 0) }}
+          {{ range $context.GetTerms $taxonomy }}
+            <a
+              href="{{ .RelPermalink }}"
+              class="rounded-md border border-neutral-200 px-1 py-[1px] hover:border-primary-300 hover:text-primary-700 dark:border-neutral-600 dark:hover:border-primary-600 dark:hover:text-primary-400"
+              >{{ .LinkTitle }}</a
+            >
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    </div>
+  {{ end }}
+{{ end }}

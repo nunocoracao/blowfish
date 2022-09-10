@@ -1,0 +1,55 @@
+article:
+  anchor_label: "Anchor"
+  date: "{{ .Date }}"
+  date_updated: "সর্বশেষ সম্পাদনার তারিখ: {{ .Date }}"
+  draft: "খসড়া"
+  edit_title: "সম্পাদনা করুন"
+  reading_time:
+    one: "{{ .Count }} মিনিট"
+    other: "{{ .Count }} মিনিট"
+  reading_time_title: "পড়ার সময়"
+  table_of_contents: "বিষয়সূচী"
+  word_count:
+    one: "{{ .Count }} টি শব্দ"
+    other: "{{ .Count }} টি শব্দ"
+
+author:
+  byline_title: "লেখক"
+
+code:
+  copy: "কপি করুন"
+  copied: "কপি হয়ে গেছে"
+
+error:
+  404_title: "পেজটি খুঁজে পাওয়া যায়নি :confused:"
+  404_error: "Error 404"
+  404_description: "মনে হচ্ছে, আপনার অনুরোধ করা পেজটি খুঁজে পাওয়া যায়নি।"
+
+footer:
+  dark_appearance: "ডার্ক মোডে স্যুইচ করুন"
+  light_appearance: "লাইট মোডে স্যুইচ করুন"
+  powered_by: "{{ .Hugo }} এবং {{ .Congo }} দ্বারা চালিত"
+
+list:
+  externalurl_title: "অন্য ওয়েবসাইটের লিংক"
+  no_articles: "এখানে তালিকাভুক্ত করার মতো আপাতত কিছুই নেই।"
+
+nav:
+  scroll_to_top_title: "পেজের উপরের দিকে যান"
+  skip_to_main: "মূল বিষয়ে যান"
+
+search:
+  open_button_title: "খুঁজুন (/)"
+  close_button_title: "বন্ধ করুন (Esc)"
+  input_placeholder: "খুঁজুন"
+
+sharing:
+  email: "ইমেল করুন"
+  facebook: "ফেসবুকে শেয়ার করুন"
+  linkedin: "লিংকডইনে শেয়ার করুন"
+  pinterest: "পিন্টারেস্টে পিন করুন"
+  reddit: "রেড্ডিটে জমা দিন"
+  twitter: "ট্যুইট করুন"
+
+shortcode:
+  recent_articles: "সাম্প্রতিক"

@@ -1,0 +1,55 @@
+article:
+  anchor_label: "עוגן"
+  date: "{{ .Date }}"
+  date_updated: "עודכן: {{ .Date }}"
+  draft: "טיוטה"
+  edit_title: "ערוך תוכן"
+  reading_time:
+    one: "{{ .Count }} דקה"
+    other: "{{ .Count }} דקות"
+  reading_time_title: "זמן קריאה"
+  table_of_contents: "תוכן עניינים"
+  word_count:
+    one: "{{ .Count }} מילה"
+    other: "{{ .Count }} מילים"
+
+author:
+  byline_title: "מחבר"
+
+code:
+  copy: "העתק"
+  copied: "הועתק"
+
+error:
+  404_title: "הדף לא נמצא :confused:"
+  404_error: "שגיאה 404"
+  404_description: "נראה שהדף שביקשת לא קיים."
+
+footer:
+  dark_appearance: "מעבר למצב לילה"
+  light_appearance: "מעבר למצב יום"
+  powered_by: "בנוי בעזרת {{ .Hugo }} &amp; {{ .Congo }}"
+
+list:
+  externalurl_title: "קישור לאתר חיצוני"
+  no_articles: "אין כרגע מאמרים ברשימה זו."
+
+nav:
+  scroll_to_top_title: "חזרה למעלה"
+  skip_to_main: "דילוג לתוכן"
+
+search:
+  open_button_title: "חיפוש (/)"
+  close_button_title: "סגירה (Esc)"
+  input_placeholder: "חיפוש"
+
+sharing:
+  email: "שליחת אימייל"
+  facebook: "שיתוף בפייסבוק"
+  linkedin: "שיתוף בלינקדאין"
+  pinterest: "שיתוף בפינטרסט"
+  reddit: "שליחה לרדיט"
+  twitter: "ציוץ בטוויטר"
+
+shortcode:
+  recent_articles: "חדשים"

@@ -1,0 +1,55 @@
+article:
+  anchor_label: "Ancora"
+  date: "{{ .Date }}"
+  date_updated: "Aggiornato: {{ .Date }}"
+  draft: "Bozza"
+  edit_title: "Modifica i contenuti"
+  reading_time:
+    one: "{{ .Count }} minuto"
+    other: "{{ .Count }} minuti"
+  reading_time_title: "Tempo di lettura"
+  table_of_contents: "Indice dei contenuti"
+  word_count:
+    one: "{{ .Count }} parola"
+    other: "{{ .Count }} parole"
+
+author:
+  byline_title: "Autore"
+
+code:
+  copy: "Copia"
+  copied: "Copiato"
+
+error:
+  404_title: "Pagina non trovata :confused:"
+  404_error: "Errore 404"
+  404_description: "Sembra che la pagina che hai richiesto non esista."
+
+footer:
+  dark_appearance: "Passa all'aspetto scuro"
+  light_appearance: "Passa all'aspetto chiaro"
+  powered_by: "Creato con {{ .Hugo }} &amp; {{ .Congo }}"
+
+list:
+  externalurl_title: "Link a sito esterno"
+  no_articles: "Non ci sono ancora articoli da elencare"
+
+nav:
+  scroll_to_top_title: "Torna in cima"
+  skip_to_main: "Salta al contenuto principale"
+
+search:
+  open_button_title: "Cerca (/)"
+  close_button_title: "Chiudi (Esc)"
+  input_placeholder: "Cerca"
+
+sharing:
+  email: "Invia tramite email"
+  facebook: "Condividi su Facebook"
+  linkedin: "Condividi su LinkedIn"
+  pinterest: "Pinna su Pinterest"
+  reddit: "Invia a Reddit"
+  twitter: "Tweetta su Twitter"
+
+shortcode:
+  recent_articles: "Recenti"

@@ -1,0 +1,115 @@
+<head>
+  <meta charset="utf-8" />
+  {{ with .Site.Language.Params.htmlCode | default .Site.LanguageCode }}
+    <meta http-equiv="content-language" content="{{ . }}" />
+  {{ end }}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  {{/* Title */}}
+  {{ if .IsHome -}}
+    <title>{{ .Site.Title | emojify }}</title>
+    <meta name="title" content="{{ .Site.Title | emojify }}" />
+  {{- else -}}
+    <title>{{ .Title | emojify }} &middot; {{ .Site.Title | emojify }}</title>
+    <meta name="title" content="{{ .Title | emojify }} &middot; {{ .Site.Title | emojify }}" />
+  {{- end }}
+  {{/* Metadata */}}
+  {{ with .Site.Params.description -}}
+    <meta name="description" content="{{ . }}" />
+  {{- end }}
+  {{ with .Site.Params.keywords -}}
+    <meta name="keywords" content="{{ . }}" />
+  {{- end }}
+  {{ with .Site.Params.robots }}
+    <meta name="robots" content="{{ . }}" />
+  {{ end }}
+  {{ with .Params.robots }}
+    <meta name="robots" content="{{ . }}" />
+  {{ end }}
+  <link rel="canonical" href="{{ .Permalink }}" />
+  {{ range .AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink ($.Site.Title | emojify) | safeHTML }}
+  {{ end -}}
+  {{/* Asset bundles */}}
+  {{ $assets := newScratch }}
+  {{ $cssScheme := resources.Get (printf "css/schemes/%s.css" (.Site.Params.colorScheme | default "congo")) }}
+  {{ if not $cssScheme }}
+    {{ $cssScheme = resources.Get "css/schemes/congo.css" }}
+  {{ end }}
+  {{ $assets.Add "css" (slice $cssScheme) }}
+  {{ $cssMain := resources.Get "css/compiled/main.css" }}
+  {{ $assets.Add "css" (slice $cssMain) }}
+  {{ $cssCustom := resources.Get "css/custom.css" }}
+  {{ if $cssCustom }}
+    {{ $assets.Add "css" (slice $cssCustom) }}
+  {{ end }}
+  {{ $bundleCSS := $assets.Get "css" | resources.Concat "css/main.bundle.css" | resources.Minify | resources.Fingerprint "sha512" }}
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="{{ $bundleCSS.RelPermalink }}"
+    integrity="{{ $bundleCSS.Data.Integrity }}"
+  />
+  {{ $jsAppearance := resources.Get "js/appearance.js" }}
+  {{ $jsAppearance = $jsAppearance | resources.Minify | resources.Fingerprint "sha512" }}
+  <script type="text/javascript" src="{{ $jsAppearance.RelPermalink }}" integrity="{{ $jsAppearance.Data.Integrity }}"></script>
+  {{ if .Site.Params.enableSearch | default false }}
+    {{ $jsFuse := resources.Get "lib/fuse/fuse.min.js" }}
+    {{ $jsSearch := resources.Get "js/search.js" }}
+    {{ $assets.Add "js" (slice $jsFuse $jsSearch) }}
+  {{ end }}
+  {{ if .Site.Params.enableCodeCopy | default false }}
+    {{ $jsCode := resources.Get "js/code.js" }}
+    {{ $assets.Add "js" (slice $jsCode) }}
+  {{ end }}
+  {{ if .Site.Params.rtl | default false }}
+    {{ $jsRTL := resources.Get "js/rtl.js" }}
+    {{ $assets.Add "js" (slice $jsRTL) }}
+  {{ end }}
+  {{ if $assets.Get "js" }}
+    {{ $bundleJS := $assets.Get "js" | resources.Concat "js/main.bundle.js" | resources.Minify | resources.Fingerprint "sha512" }}
+    <script defer type="text/javascript" id="script-bundle" src="{{ $bundleJS.RelPermalink }}" integrity="{{ $bundleJS.Data.Integrity }}" data-copy="{{ i18n "code.copy" }}" data-copied="{{ i18n "code.copied" }}"></script>
+  {{ end }}
+  {{/* Icons */}}
+  {{ if templates.Exists "partials/favicons.html" }}
+    {{ partialCached "favicons.html" .Site }}
+  {{ else }}
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ "apple-touch-icon.png" | relURL }}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | relURL }}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon-16x16.png" | relURL }}" />
+    <link rel="manifest" href="{{ "site.webmanifest" | relURL }}" />
+  {{ end }}
+  {{/* Site Verification */}}
+  {{ with .Site.Params.verification.google }}
+    <meta name="google-site-verification" content="{{ . }}" />
+  {{ end }}
+  {{ with .Site.Params.verification.bing }}
+    <meta name="msvalidate.01" content="{{ . }}" />
+  {{ end }}
+  {{ with .Site.Params.verification.pinterest }}
+    <meta name="p:domain_verify" content="{{ . }}" />
+  {{ end }}
+  {{ with .Site.Params.verification.yandex }}
+    <meta name="yandex-verification" content="{{ . }}" />
+  {{ end }}
+  {{/* Social */}}
+  {{ template "_internal/opengraph.html" . }}
+  {{ template "_internal/twitter_cards.html" . }}
+  {{/* Schema */}}
+  {{ partial "schema.html" . }}
+  {{/* Me */}}
+  {{ with .Site.Author.name }}<meta name="author" content="{{ . }}" />{{ end }}
+  {{ with .Site.Author.links }}
+    {{ range $links := . }}
+      {{ range $name, $url := $links }}<link href="{{ $url }}" rel="me" />{{ end }}
+    {{ end }}
+  {{ end }}
+  {{/* Vendor */}}
+  {{ partial "vendor.html" . }}
+  {{/* Analytics */}}
+  {{ partialCached "analytics.html" .Site }}
+  {{/* Extend head - eg. for custom analytics scripts, etc. */}}
+  {{ if templates.Exists "partials/extend-head.html" }}
+    {{ partialCached "extend-head.html" .Site }}
+  {{ end }}
+</head>

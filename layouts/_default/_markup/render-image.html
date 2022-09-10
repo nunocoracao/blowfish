@@ -1,0 +1,36 @@
+{{ $url := urls.Parse .Destination }}
+{{ $altText := .Text }}
+{{ $caption := .Title }}
+{{ if findRE "^https?" $url.Scheme }}
+  <figure>
+    <img class="my-0 rounded-md" src="{{ $url.String }}" alt="{{ $altText }}" />
+    {{ with $caption }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+  </figure>
+{{ else }}
+  {{ $resource := "" }}
+  {{ if $.Page.Resources.GetMatch ($url.String) }}
+    {{ $resource = $.Page.Resources.GetMatch ($url.String) }}
+  {{ else if resources.GetMatch ($url.String) }}
+    {{ $resource = resources.Get ($url.String) }}
+  {{ end }}
+  {{ with $resource }}
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        srcset="
+          {{ (.Resize "330x").RelPermalink }} 330w,
+          {{ (.Resize "660x").RelPermalink }} 660w,
+          {{ (.Resize "1024x").RelPermalink }} 1024w,
+          {{ (.Resize "1320x").RelPermalink }} 2x"
+        src="{{ (.Resize "660x").RelPermalink }}"
+        alt="{{ $altText }}"
+      />
+      {{ with $caption }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+    </figure>
+  {{ else }}
+    <figure>
+      <img class="my-0 rounded-md" src="{{ $url.String }}" alt="{{ $altText }}" />
+      {{ with $caption }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+    </figure>
+  {{ end }}
+{{ end }}

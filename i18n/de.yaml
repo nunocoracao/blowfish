@@ -1,0 +1,55 @@
+article:
+  anchor_label: "Anker"
+  date: "{{ .Date }}"
+  date_updated: "Aktualisiert: {{ .Date }}"
+  draft: "Entwurf"
+  edit_title: "Inhalt bearbeiten"
+  reading_time:
+    one: "{{ .Count }} min"
+    other: "{{ .Count }} min"
+  reading_time_title: "Lesezeit"
+  table_of_contents: "Inhaltsverzeichnis"
+  word_count:
+   one: "{{ .Count }} Wort"
+   other: "{{ .Count }} Wörter"
+
+author:
+  byline_title: "Autor"
+
+code:
+  copy: "Kopieren"
+  copied: "Kopiert"
+
+error:
+  404_title: "Seite nicht gefunden :confused:"
+  404_error: "Fehler 404"
+  404_description: "Es sieht so aus, als ob es diese Seite nicht gibt."
+
+footer:
+  dark_appearance: "Zum dunklen Erscheinungsbild wechseln"
+  light_appearance: "Zum hellen Erscheinungsbild wechseln"
+  powered_by: "Erstellt mit {{ .Hugo }} &amp; {{ .Congo }}"
+
+list:
+  externalurl_title: "Link zu einer externen Seite"
+  no_articles: "Es gibt hier noch keine Beiträge."
+
+nav:
+   scroll_to_top_title: "Zum Anfang scrollen"
+   skip_to_main: "Zum Hauptinhalt springen"
+
+search:
+   open_button_title: "Suche (/)"
+   close_button_title: "Schließen (Esc)"
+   input_placeholder: "Suchen"
+
+sharing:
+  email: "Per E-Mail teilen"
+  facebook: "Auf Facebook teilen"
+  linkedin: "Auf LinkedIn teilen"
+  pinterest: "Auf Pinterest pinnen"
+  reddit: "An Reddit senden"
+  twitter: "Auf Twitter teilen"
+
+shortcode:
+  recent_articles: "Neue Beiträge"

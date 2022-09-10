@@ -1,0 +1,55 @@
+article:
+  anchor_label: "Anchor"
+  date: "{{ .Date }}"
+  # date_updated: "Updated: {{ .Date }}"
+  draft: "Draft"
+  edit_title: "Editar Conteúdo"
+  reading_time:
+    one: "{{ .Count }} minuto"
+    other: "{{ .Count }} minutos"
+  reading_time_title: "Tempo de leitura"
+  # table_of_contents: "Table of Contents"
+  # word_count:
+  # one: "{{ .Count }} word"
+  # other: "{{ .Count }} words"
+
+author:
+  byline_title: "Autor"
+
+# code:
+#   copy: "Copy"
+#   copied: "Copied"
+
+error:
+  404_title: "Página não econtrada :confused:"
+  404_error: "Erro 404"
+  404_description: "Aparentemente a página requisitada não existe."
+
+footer:
+  dark_appearance: "Mudar para modo escuro"
+  light_appearance: "Mudar para modo claro"
+  powered_by: "Movido por {{ .Hugo }} &amp; {{ .Congo }}"
+
+list:
+  externalurl_title: "Link para site externo"
+  no_articles: "Não tem artigos para lista aqui ainda."
+
+# nav:
+#   scroll_to_top_title: "Scroll to top"
+#   skip_to_main: "Skip to main content"
+
+# search:
+#   open_button_title: "Search (/)"
+#   close_button_title: "Close (Esc)"
+#   input_placeholder: "Search"
+
+sharing:
+  email: "Enviar por email"
+  facebook: "Compartilhar pelo Facebook"
+  linkedin: "Compartilhar pelo LinkedIn"
+  pinterest: "Pin no Pinterest"
+  reddit: "Postar no Reddit"
+  twitter: "Tweet no Twitter"
+
+shortcode:
+  recent_articles: "Recente"

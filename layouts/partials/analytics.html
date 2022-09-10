@@ -1,0 +1,10 @@
+{{ if hugo.IsProduction }}
+  {{ with .Site.Params.fathomAnalytics.site }}
+    {{ if isset $.Site.Params.fathomanalytics "domain" }}
+      <script defer src="https://{{ $.Site.Params.fathomanalytics.domain }}/script.js" data-site="{{ . }}"></script>
+    {{ else }}
+      <script defer src="https://cdn.usefathom.com/script.js" data-site="{{ . }}"></script>
+    {{ end }}
+  {{ end }}
+  {{ template "_internal/google_analytics.html" . }}
+{{ end }}

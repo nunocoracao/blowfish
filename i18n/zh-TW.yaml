@@ -1,0 +1,54 @@
+article:
+  anchor_label: "定位點"
+  date: "{{ .Date }}"
+  date_updated: "上次編輯: {{ .Date }}"
+  draft: "草稿"
+  edit_title: "編輯內容"
+  reading_time:
+    other: "{{ .Count }} 分鐘"
+  reading_time_title: "預計閱讀時間"
+  table_of_contents: "目錄"
+  word_count:
+    one: "{{ .Count }} 字"
+    other: "{{ .Count }} 字"
+
+author:
+  byline_title: "作者"
+
+code:
+  copy: "複製"
+  copied: "已複製"
+
+error:
+  404_title: "找不到網頁 :confused:"
+  404_error: "404 錯誤"
+  404_description: "您在尋找的頁面似乎不存在。"
+
+footer:
+  dark_appearance: "切換為深色模式"
+  light_appearance: "切換為淺色模式"
+  powered_by: "以 {{ .Hugo }} &amp; {{ .Congo }} 製作"
+
+list:
+  externalurl_title: "外部網站連結"
+  no_articles: "這裡還沒有任何文章。"
+
+nav:
+  scroll_to_top_title: "捲動到頁頂"
+  skip_to_main: "快轉到主要內容"
+
+search:
+  open_button_title: "搜尋 (/)"
+  close_button_title: "關閉 (Esc)"
+  input_placeholder: "搜尋"
+
+sharing:
+  email: "以電子郵件發送"
+  facebook: "分享到 Facebook"
+  linkedin: "分享到 LinkedIn"
+  pinterest: "釘到 Pinterest"
+  reddit: "發送到 Reddit"
+  twitter: "推到 Twitter"
+
+shortcode:
+  recent_articles: "最近的文章"
