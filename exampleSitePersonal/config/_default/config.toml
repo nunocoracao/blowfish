@@ -1,0 +1,25 @@
+# -- Site Configuration --
+# Refer to the theme docs for more details about each of these parameters.
+# https://jpanther.github.io/congo/docs/getting-started/
+
+theme = "blowfish"
+baseURL = "https://nunocoracao.com/"
+defaultContentLanguage = "en"
+
+enableRobotsTXT = true
+paginate = 20
+summaryLength = 30
+
+buildDrafts = false
+buildFuture = false
+
+
+googleAnalytics = "G-R94R4YKFEC"
+
+[sitemap]
+  changefreq = 'daily'
+  filename = 'sitemap.xml'
+  priority = 0.5
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
