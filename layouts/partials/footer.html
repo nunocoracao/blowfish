@@ -19,7 +19,7 @@
     </nav>
   {{ end }}
   <div class="flex items-center justify-between">
-    <div>
+
       {{/* Copyright */}}
       {{ if .Site.Params.footer.showCopyright | default true }}
         <p class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -32,6 +32,7 @@
           {{- end }}
         </p>
       {{ end }}
+
       {{/* Theme attribution */}}
       {{ if .Site.Params.footer.showThemeAttribution | default true }}
         <p class="text-xs text-neutral-500 dark:text-neutral-400">
@@ -42,9 +43,15 @@
           {{ i18n "footer.powered_by" (dict "Hugo" $hugo "Theme" $blowfish) | safeHTML }}
         </p>
       {{ end }}
-    </div>
-   
+
   </div>
+  <script>
+    mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+        margin: 24,
+        background: 'rgba(0,0,0,0.5)',
+        scrollOffset: 0,
+    })
+  </script>
   {{/* Extend footer - eg. for extra scripts, etc. */}}
   {{ if templates.Exists "partials/extend-footer.html" }}
     {{ partialCached "extend-footer.html" . }}
