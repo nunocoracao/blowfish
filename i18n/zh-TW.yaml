@@ -27,7 +27,7 @@ error:
 footer:
   dark_appearance: "切換為深色模式"
   light_appearance: "切換為淺色模式"
-  powered_by: "以 {{ .Hugo }} &amp; {{ .Congo }} 製作"
+  powered_by: "以 {{ .Hugo }} &amp; {{ .Theme }} 製作"
 
 list:
   externalurl_title: "外部網站連結"

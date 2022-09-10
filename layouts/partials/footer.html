@@ -38,8 +38,8 @@
           {{ $hugo := printf `<a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
             href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a>`
           }}
-          {{ $congo := printf `<a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href="https://git.io/hugo-congo" target="_blank" rel="noopener noreferrer">Congo</a>` }}
-          {{ i18n "footer.powered_by" (dict "Hugo" $hugo "Congo" $congo) | safeHTML }}
+          {{ $blowfish := printf `<a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href="https://github.com/nunocoracao/blowfish" target="_blank" rel="noopener noreferrer">Blowfish</a>` }}
+          {{ i18n "footer.powered_by" (dict "Hugo" $hugo "Theme" $blowfish) | safeHTML }}
         </p>
       {{ end }}
     </div>

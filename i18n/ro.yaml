@@ -28,7 +28,7 @@ error:
 footer:
   dark_appearance: "Schimbă la tema de noapte"
   light_appearance: "Schimbă la tema normală"
-  powered_by: "Powered by {{ .Hugo }} &amp; {{ .Congo }}"
+  powered_by: "Powered by {{ .Hugo }} &amp; {{ .Theme }}"
 
 list:
   externalurl_title: "Link la site extern"

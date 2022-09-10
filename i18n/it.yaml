@@ -28,7 +28,7 @@ error:
 footer:
   dark_appearance: "Passa all'aspetto scuro"
   light_appearance: "Passa all'aspetto chiaro"
-  powered_by: "Creato con {{ .Hugo }} &amp; {{ .Congo }}"
+  powered_by: "Creato con {{ .Hugo }} &amp; {{ .Theme }}"
 
 list:
   externalurl_title: "Link a sito esterno"

@@ -28,7 +28,7 @@ error:
 footer:
   dark_appearance: "מעבר למצב לילה"
   light_appearance: "מעבר למצב יום"
-  powered_by: "בנוי בעזרת {{ .Hugo }} &amp; {{ .Congo }}"
+  powered_by: "בנוי בעזרת {{ .Hugo }} &amp; {{ .Theme }}"
 
 list:
   externalurl_title: "קישור לאתר חיצוני"

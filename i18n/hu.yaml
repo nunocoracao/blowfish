@@ -28,7 +28,7 @@ error:
 footer:
   dark_appearance: "Váltás sötét megjelenésre"
   light_appearance: "Váltás világos megjelenésre"
-  powered_by: "Működteti {{ .Hugo }} &amp; {{ .Congo }}"
+  powered_by: "Működteti {{ .Hugo }} &amp; {{ .Theme }}"
 
 list:
   externalurl_title: "Link külső oldalra"

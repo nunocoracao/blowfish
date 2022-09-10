@@ -27,7 +27,7 @@ error:
 footer:
   dark_appearance: "Koyu görünüme geç"
   light_appearance: "Açık görünüme geç"
-  powered_by: "{{ .Hugo }} &amp; {{ .Congo }} tarafından desteklenmektedir."
+  powered_by: "{{ .Hugo }} &amp; {{ .Theme }} tarafından desteklenmektedir."
 
 list:
   externalurl_title: "Harici siteye bağlantı"

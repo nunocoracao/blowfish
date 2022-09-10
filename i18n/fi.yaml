@@ -28,7 +28,7 @@ error:
 footer:
   dark_appearance: "Vaihda tummaan teemaan"
   light_appearance: "Vaihda valoisaan teemaan"
-  powered_by: "Voimanlähteenä {{ .Hugo }} &amp; {{ .Congo }}"
+  powered_by: "Voimanlähteenä {{ .Hugo }} &amp; {{ .Theme }}"
 
 list:
   externalurl_title: "Linkki ulkoiselle sivustolle"

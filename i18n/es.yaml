@@ -28,7 +28,7 @@ error:
 footer:
   dark_appearance: "Cambiar a modo oscuro"
   light_appearance: "Cambiar a modo claro"
-  powered_by: "Desarrollada con {{ .Hugo }} &amp; {{ .Congo }}"
+  powered_by: "Desarrollada con {{ .Hugo }} &amp; {{ .Theme }}"
 
 list:
   externalurl_title: "Link a página externa"

@@ -28,7 +28,7 @@ error:
 footer:
   dark_appearance: "Zum dunklen Erscheinungsbild wechseln"
   light_appearance: "Zum hellen Erscheinungsbild wechseln"
-  powered_by: "Erstellt mit {{ .Hugo }} &amp; {{ .Congo }}"
+  powered_by: "Erstellt mit {{ .Hugo }} &amp; {{ .Theme }}"
 
 list:
   externalurl_title: "Link zu einer externen Seite"

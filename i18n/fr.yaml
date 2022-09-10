@@ -28,7 +28,7 @@ error:
 footer:
   dark_appearance: "Passer au thème sombre"
   light_appearance: "Passer au thème clair"
-  powered_by: "Propulsé par {{ .Hugo }} &amp; {{ .Congo }}"
+  powered_by: "Propulsé par {{ .Hugo }} &amp; {{ .Theme }}"
 
 list:
   externalurl_title: "Lien d'article externe."
