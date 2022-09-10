@@ -1,0 +1,74 @@
+{
+  "name": "hugo-blowfish-theme",
+  "version": "0.0.1",
+  "description": "Blowfish theme for Hugo",
+  "scripts": {
+    "preinstall": "rimraf assets/vendor",
+    "postinstall": "vendor-copy",
+    "assets": "rimraf assets/vendor && vendor-copy",
+    "dev": "NODE_ENV=development ./node_modules/tailwindcss/lib/cli.js -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
+    "build": "NODE_ENV=production ./node_modules/tailwindcss/lib/cli.js -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit",
+    "example": "hugo server --source exampleSite --themesDir ../.. --buildDrafts -b http://localhost/blowfish/ -p 8008",
+    "lighthouse": "lhci autorun"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nunocoracao/blowfish.git"
+  },
+  "keywords": [
+    "hugo",
+    "hugo-theme",
+    "tailwind",
+    "dark-mode"
+  ],
+  "author": "Nuno Coracao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nunocoracao/blowfish/issues"
+  },
+  "homepage": "https://github.com/nunocoracao/blowfish#readme",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.4",
+    "chart.js": "^3.9.1",
+    "fuse.js": "^6.6.2",
+    "katex": "^0.16.0",
+    "mermaid": "^9.1.6",
+    "prettier": "^2.7.1",
+    "prettier-plugin-go-template": "^0.0.13",
+    "prettier-plugin-tailwindcss": "^0.1.13",
+    "rimraf": "^3.0.2",
+    "tailwindcss": "^3.1.8",
+    "vendor-copy": "^3.0.1"
+  },
+  "vendorCopy": [],
+  "devVendorCopy": [
+    {
+      "from": "node_modules/mermaid/dist/mermaid.min.js",
+      "to": "assets/lib/mermaid/mermaid.min.js"
+    },
+    {
+      "from": "node_modules/chart.js/dist/chart.min.js",
+      "to": "assets/lib/chart/chart.min.js"
+    },
+    {
+      "from": "node_modules/katex/dist/katex.min.js",
+      "to": "assets/lib/katex/katex.min.js"
+    },
+    {
+      "from": "node_modules/katex/dist/katex.min.css",
+      "to": "assets/lib/katex/katex.min.css"
+    },
+    {
+      "from": "node_modules/katex/dist/contrib/auto-render.min.js",
+      "to": "assets/lib/katex/auto-render.min.js"
+    },
+    {
+      "from": "node_modules/katex/dist/fonts/",
+      "to": "assets/lib/katex/fonts/"
+    },
+    {
+      "from": "node_modules/fuse.js/dist/fuse.min.js",
+      "to": "assets/lib/fuse/fuse.min.js"
+    }
+  ]
+}
