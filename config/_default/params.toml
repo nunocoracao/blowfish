@@ -3,49 +3,49 @@
 # customise the display of your website.
 #
 # Refer to the theme docs for more details about each of these parameters.
-# https://jpanther.github.io/congo/docs/configuration/#theme-parameters
+# https://nunocoracao.github.io/blowfish/docs/configuration/#theme-parameters
 
-colorScheme = "congo"
+colorScheme = "ocean"
 defaultAppearance = "light" # valid options: light or dark
 autoSwitchAppearance = true
 
 enableSearch = true
-enableCodeCopy = false
+enableCodeCopy = true
 
 # mainSections = ["section1", "section2"]
 # robots = ""
 
 [header]
-  layout = "hybrid" # valid options: basic, hamburger, hybrid, custom
+  layout = "basic" # valid options: basic, hamburger, hybrid, custom
 
 [footer]
   showCopyright = true
   showThemeAttribution = true
-  showAppearanceSwitcher = false
+  showAppearanceSwitcher = true
   showScrollToTop = true
 
 [homepage]
-  layout = "page" # valid options: page, profile, custom
-  showRecent = false
+  layout = "profile" # valid options: page, profile, custom
+  showRecent = true
 
 [article]
   showDate = true
   showDateUpdated = false
   showAuthor = true
-  showBreadcrumbs = false
+  showBreadcrumbs = true
   showDraftLabel = true
-  showEdit = false
+  showEdit = true
   # editURL = "https://github.com/username/repo/"
   editAppendPath = true
   showHeadingAnchors = true
   showPagination = true
   invertPagination = false
   showReadingTime = true
-  showTableOfContents = false
-  showTaxonomies = false
-  showWordCount = false
-  showComments = false
-  # sharingLinks = ["facebook", "twitter", "pinterest", "reddit", "linkedin", "email"]
+  showTableOfContents = true
+  showTaxonomies = false 
+  showWordCount = true
+  showSummary = true
+  sharingLinks = [ "linkedin", "twitter", "whatsapp", "pinterest", "reddit", "facebook", "email"]
 
 [list]
   showBreadcrumbs = false
@@ -54,7 +54,7 @@ enableCodeCopy = false
   groupByYear = true
 
 [sitemap]
-  excludedKinds = ["taxonomy", "term"]
+  excludedKinds = []
 
 [taxonomy]
   showTermCount = true

@@ -5,18 +5,18 @@ isoCode = "en"
 weight = 1
 rtl = false
 
-title = "Congo"
-# logo = "img/logo.jpg"
-# description = "My awesome website"
+title = "Blowfish"
+# logo = "img/logo.png"
+description = "My awesome website"
 # copyright = "Copy, _right?_ :thinking_face:"
 
 dateFormat = "2 January 2006"
 
 [author]
-  # name = "Your name here"
-  # image = "img/author.jpg"
-  # headline = "I'm only human"
-  # bio = "A little bit about you"
+  name = "Your name here"
+  image = "img/blowfish_logo.png"
+  headline = "I'm only human"
+  bio = "A little bit about you"
   # links = [
   #   { email = "mailto:hello@your_domain.com" },
   #   { link = "https://link-to-some-website.com/" },

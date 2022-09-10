@@ -1,7 +1,8 @@
-/*! Blowfish v0.0.1 | MIT License | https://github.com/jpanther/congo */
+/*! Blowfish v0.0.1 | MIT License | https://github.com/nunocoracao/blowfish */
 
 @tailwind base;
 @tailwind components;
+@tailwind utilities;
 
 body a,
 body button {
@@ -36,27 +37,27 @@ body:has(#menu-controller:checked) {
 
 /* RTL support */
 .prose blockquote {
-  @apply rtl: pr-4 rtl:border-l-0 rtl:border-r-4;
+  @apply rtl:pr-4 rtl:border-l-0 rtl:border-r-4;
 }
 
 .prose ul>li,
 .prose ol>li {
-  @apply rtl: pl-0 rtl:pr-2 rtl:mr-7;
+  @apply rtl:pl-0 rtl:pr-2 rtl:mr-7;
 }
 
 .prose ol>li:before,
 .prose ul>li:before {
-  @apply rtl: left-auto rtl:right-1;
+  @apply rtl:left-auto rtl:right-1;
 }
 
 .prose thead td:first-child,
 .prose thead th:first-child {
-  @apply rtl: pr-0;
+  @apply rtl:pr-0;
 }
 
 .prose thead td:last-child,
 .prose thead th:last-child {
-  @apply rtl: pl-0;
+  @apply rtl:pl-0;
 }
 
 /* Adjust first child within prose */
@@ -71,15 +72,15 @@ body:has(#menu-controller:checked) {
 }
 
 .toc ul ul {
-  @apply ltr: pl-4 rtl:pr-4;
+  @apply ltr:pl-4 rtl:pr-4;
 }
 
 .toc a {
-  @apply font-normal text-neutral-700 dark: text-neutral-400;
+  @apply font-normal text-neutral-700 dark:text-neutral-400;
 }
 
 .toc ul>li {
-  @apply rtl: mr-0;
+  @apply rtl:mr-0;
 }
 
 /* Code Copy */
@@ -96,14 +97,14 @@ body:has(#menu-controller:checked) {
 }
 
 .copy-button {
-  @apply absolute top-0 right-0 z-10 invisible w-20 py-1 font-mono text-sm cursor-pointer opacity-90 bg-neutral-200 whitespace-nowrap rounded-bl-md rounded-tr-md text-neutral-700 dark: bg-neutral-600 dark:text-neutral-200;
+  @apply absolute top-0 right-0 z-10 invisible w-20 py-1 font-mono text-sm cursor-pointer opacity-90 bg-neutral-200 whitespace-nowrap rounded-bl-md rounded-tr-md text-neutral-700 dark:bg-neutral-600 dark:text-neutral-200;
 }
 
 .copy-button:hover,
 .copy-button:focus,
 .copy-button:active,
 .copy-button:active:hover {
-  @apply bg-primary-100 dark: bg-primary-600;
+  @apply bg-primary-100 dark:bg-primary-600;
 }
 
 .copy-textarea {
@@ -113,7 +114,7 @@ body:has(#menu-controller:checked) {
 /* -- Chroma Highlight -- */
 /* Background */
 .prose .chroma {
-  @apply static rounded-md text-neutral-700 bg-neutral-50 dark: bg-neutral-700 dark:text-neutral-200;
+  @apply static rounded-md text-neutral-700 bg-neutral-50 dark:bg-neutral-700 dark:text-neutral-200;
 }
 
 /* LineTableTD */
@@ -130,7 +131,7 @@ body:has(#menu-controller:checked) {
 
 /* LineHighlight */
 .chroma .hl {
-  @apply block w-auto px-4 -mx-4 bg-primary-100 dark: bg-primary-900;
+  @apply block w-auto px-4 -mx-4 bg-primary-100 dark:bg-primary-900;
 }
 
 .chroma .lntd .hl {
@@ -141,7 +142,7 @@ body:has(#menu-controller:checked) {
 /* LineNumbers */
 .chroma .lnt,
 .chroma .ln {
-  @apply text-neutral-600 dark: text-neutral-300 mr-[0.4em] px-[0.4em] py-0;
+  @apply text-neutral-600 dark:text-neutral-300 mr-[0.4em] px-[0.4em] py-0;
 }
 
 /* Keyword */
@@ -164,12 +165,12 @@ body:has(#menu-controller:checked) {
 .chroma .nn,
 .chroma .vc,
 .chroma .o {
-  @apply text-primary-600 dark: text-primary-300;
+  @apply text-primary-600 dark:text-primary-300;
 }
 
 /* KeywordConstant */
 .chroma .kc {
-  @apply font-semibold text-secondary-400 dark: text-secondary-500;
+  @apply font-semibold text-secondary-400 dark:text-secondary-500;
 }
 
 /* KeywordType */
@@ -194,7 +195,7 @@ body:has(#menu-controller:checked) {
 .chroma .mi,
 .chroma .il,
 .chroma .mo {
-  @apply text-secondary-400 dark: text-secondary-600;
+  @apply text-secondary-400 dark:text-secondary-600;
 }
 
 /* Name */
@@ -205,7 +206,7 @@ body:has(#menu-controller:checked) {
 .chroma .nd,
 .chroma .ni,
 .chroma .nl {
-  @apply text-secondary-900 dark: text-secondary-200;
+  @apply text-secondary-900 dark:text-secondary-200;
 }
 
 /* NameAttribute */
@@ -220,7 +221,7 @@ body:has(#menu-controller:checked) {
 .chroma .nx,
 .chroma .py,
 .chroma .nt {
-  @apply text-secondary-800 dark: text-secondary-300;
+  @apply text-secondary-800 dark:text-secondary-300;
 }
 
 /* NameConstant */
@@ -229,12 +230,12 @@ body:has(#menu-controller:checked) {
 .chroma .no,
 .chroma .ne,
 .chroma .vg {
-  @apply font-semibold text-secondary-400 dark: text-secondary-500;
+  @apply font-semibold text-secondary-400 dark:text-secondary-500;
 }
 
 /* NameFunction */
 .chroma .nf {
-  @apply text-secondary-600 dark: text-secondary-500;
+  @apply text-secondary-600 dark:text-secondary-500;
 }
 
 /* Literal */
@@ -269,24 +270,24 @@ body:has(#menu-controller:checked) {
 .chroma .gi,
 .chroma .go,
 .chroma .gp {
-  @apply text-primary-800 dark: text-primary-400;
+  @apply text-primary-800 dark:text-primary-400;
 }
 
 /* LiteralStringEscape */
 .chroma .se {
-  @apply font-semibold text-secondary-400 dark: text-secondary-500;
+  @apply font-semibold text-secondary-400 dark:text-secondary-500;
 }
 
 /* LiteralStringRegex */
 /* LiteralStringSymbol */
 .chroma .sr,
 .chroma .ss {
-  @apply font-semibold text-primary-800 dark: text-primary-400;
+  @apply font-semibold text-primary-800 dark:text-primary-400;
 }
 
 /* OperatorWord */
 .chroma .ow {
-  @apply font-semibold text-primary-400 dark: text-primary-600;
+  @apply font-semibold text-primary-400 dark:text-primary-600;
 }
 
 /* Comment */
@@ -301,12 +302,12 @@ body:has(#menu-controller:checked) {
 .chroma .cs,
 .chroma .cp,
 .chroma .cpf {
-  @apply italic text-neutral-500 dark: text-neutral-400;
+  @apply italic text-neutral-500 dark:text-neutral-400;
 }
 
 /* CommentHashbang */
 .chroma .ch {
-  @apply italic font-semibold text-neutral-500 dark: text-neutral-400;
+  @apply italic font-semibold text-neutral-500 dark:text-neutral-400;
 }
 
 /* GenericEmph */
@@ -336,25 +337,23 @@ body:has(#menu-controller:checked) {
   @apply underline;
 }
 
-/* Responsive hides for hybrid header */
+/* Responsive hides for hybrid header 
 @screen sm {
   .hidebasic {
-    @apply invisible
+    @apply invisible;
   }
 
   .hidehamburger {
-    @apply visibile
+    @apply visibile;
   }
 }
 
 @screen md {
   .hidebasic {
-    @apply visibile
-  }
+    @apply visibile;
+  };
 
   .hidehamburger {
-    @apply invisible
+    @apply invisible;
   }
-}
-
-@tailwind utilities;
+}*/
