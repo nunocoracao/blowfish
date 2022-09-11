@@ -1,7 +1,7 @@
 {{ with .Params.externalUrl }}
-<a class="sm:flex mb-10" href="{{ . }}" target="_blank" rel="external">
+<a class="sm:flex mb-10 article" href="{{ . }}" target="_blank" rel="external">
   {{ else }}
-  <a class="sm:flex mb-10" href="{{ .RelPermalink }}">
+  <a class="sm:flex mb-10 article" href="{{ .RelPermalink }}">
     {{ end }}
 
     {{- with $.Params.images -}}
@@ -13,8 +13,7 @@
     {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
     {{- with $featured -}}
 
-    <!--img class="nozoom customthumb" src="{{ $featured.Permalink }}"-->
-    <div class="mb-5 flex-shrink-0 sm:mb-0 sm:mr-7 thumbnail nozoom"
+    <div class="mb-5 sm:mr-7 thumbnail nozoom"
       style="background-image:url({{ $featured.Permalink }});">
       <svg class="h-32 w-full bg-white text-gray-300 sm:w-32" preserveAspectRatio="none" stroke="none" fill="none"
         viewBox="0 0 200 200" aria-hidden="true">
@@ -65,48 +64,3 @@
       {{ end }}
     </div>
   </a>
-
-  <!--article>
-  <h3 class="flex items-center mt-6 text-xl font-semibold">
-    {{ with .Params.externalUrl }}
-      <div>
-        <a
-          class="text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="{{ . }}"
-          target="_blank"
-          rel="external"
-          >{{ $.Title | emojify }}</a
-        >
-        <span
-          class="text-xs align-top cursor-default text-neutral-400 dark:text-neutral-500"
-          title="{{ i18n "list.externalurl_title" }}"
-        >
-          <span class="rtl:hidden">&#8599;</span>
-          <span class="ltr:hidden">&#8598;</span>
-        </span>
-      </div>
-    {{ else }}
-      <a
-        class="text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-        href="{{ .RelPermalink }}"
-        >{{ .Title | emojify }}</a
-      >
-    {{ end }}
-    {{ if and .Draft .Site.Params.article.showDraftLabel }}
-      <div class=" ltr:ml-2 rtl:mr-2">
-        {{ partial "badge.html" (i18n "article.draft" | emojify) }}
-      </div>
-    {{ end }}
-    {{ if templates.Exists "partials/extend-article-link.html" }}
-      {{ partial "extend-article-link.html" . }}
-    {{ end }}
-  </h3>
-  <div class="text-sm text-neutral-500 dark:text-neutral-400">
-    {{ partial "article-meta.html" . }}
-  </div>
-  {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
-    <div class="py-1 prose dark:prose-invert">
-      {{ .Summary | emojify }}
-    </div>
-  {{ end }}
-</article-->

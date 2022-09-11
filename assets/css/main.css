@@ -338,6 +338,7 @@ body:has(#menu-controller:checked) {
 }
 
 /* */
+
 .thumbnail {
   min-width: 300px;
   height: 180px;
@@ -345,4 +346,24 @@ body:has(#menu-controller:checked) {
   background-size:cover; 
   background-position:center;
   box-shadow: 10px 10px 30px 2px rgba(0, 0, 0, 0.6);
+}
+
+@screen sm {
+  .thumbnail {
+    min-width: 100%;
+    height: 180px;
+  }
+  .article {
+    flex-wrap: wrap;
+  }
+}
+
+@screen md {
+  .thumbnail {
+    min-width: 300px;
+    height: 180px;
+  }
+  .article {
+    flex-wrap: nowrap;
+  }
 }
