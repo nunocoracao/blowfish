@@ -11,31 +11,46 @@
 # ordered by weight from lowest to highest.
 
 [[main]]
-  name = "Docs"
-  pageRef = "docs"
+  name = "About"
+  pageRef = "about"
   weight = 10
 
 [[main]]
-  name = "Samples"
-  pageRef = "samples"
+  name = "Posts"
+  pageRef = "posts"
   weight = 20
 
 [[main]]
-  name = "Users"
-  pageRef = "users"
+  name = "Resume"
+  pageRef = "resume"
   weight = 30
-  
+
 [[main]]
-  name = "GitHub"
-  url = "https://github.com/jpanther/congo"
+  name = "Music"
+  pageRef = "music"
   weight = 40
+
+[[main]]
+  name = "Docs"
+  pageRef = "docs"
+  weight = 50
+
+#[[main]]
+#  name = "Tags"
+#  pageRef = "tags"
+#  weight = 90
 
 
 # -- Footer Menu --
 # The footer menu is displayed at the bottom of the page, just before
 # the copyright notice. Configure as per the main menu above.
 
-# [[footer]]
-#   name = "Tags"
-#   pageRef = "tags"
-#   weight = 10
+ [[footer]]
+   name = "Tags"
+   pageRef = "tags"
+   weight = 10
+
+ [[footer]]
+   name = "Categories"
+   pageRef = "categories"
+   weight = 20

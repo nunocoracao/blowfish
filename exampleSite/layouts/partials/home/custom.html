@@ -1,8 +1,0 @@
-{{ $jsHome := resources.Get "js/home.js" | resources.Minify | resources.Fingerprint "sha512" }}
-<div id="page">
-  {{ partial "partials/home/page.html" . }}
-</div>
-<div id="profile" class="hidden h-full">
-  {{ partial "partials/home/profile.html" . }}
-</div>
-<script defer type="text/javascript" src="{{ $jsHome.RelPermalink }}" integrity="{{ $jsHome.Data.Integrity }}"></script>

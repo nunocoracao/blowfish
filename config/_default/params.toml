@@ -15,8 +15,8 @@ enableCodeCopy = true
 # mainSections = ["section1", "section2"]
 # robots = ""
 
-[header]
-  layout = "basic" # valid options: basic, hamburger, hybrid, custom
+#[header]
+#  layout = "basic" # valid options: basic, hamburger, hybrid, custom - no more choice
 
 [footer]
   showCopyright = true

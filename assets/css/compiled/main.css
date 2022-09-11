@@ -1427,10 +1427,6 @@ select {
   z-index: 30;
 }
 
-.z-40 {
-  z-index: 40;
-}
-
 .order-first {
   order: -9999;
 }
@@ -1606,10 +1602,6 @@ select {
   height: 9rem;
 }
 
-.max-h-\[10rem\] {
-  max-height: 10rem;
-}
-
 .max-h-\[5rem\] {
   max-height: 5rem;
 }
@@ -1672,10 +1664,6 @@ select {
 
 .max-w-3xl {
   max-width: 48rem;
-}
-
-.max-w-\[10rem\] {
-  max-width: 10rem;
 }
 
 .max-w-\[5rem\] {
@@ -3330,14 +3318,14 @@ body:has(#menu-controller:checked) {
     padding-right: 3.5rem;
   }
 
-  .sm\:py-10 {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-  }
-
   .sm\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .sm\:py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
   }
 
   .sm\:pt-10 {
@@ -3385,12 +3373,6 @@ body:has(#menu-controller:checked) {
 
   .md\:justify-start {
     justify-content: flex-start;
-  }
-
-  .md\:space-x-3 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 0;
-    margin-right: calc(0.75rem * var(--tw-space-x-reverse));
-    margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .md\:p-\[10vh\] {

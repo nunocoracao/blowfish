@@ -24,6 +24,8 @@ if (document.documentElement.getAttribute("data-auto-appearance") === "true") {
 
 window.addEventListener("DOMContentLoaded", (event) => {
   const switcher = document.getElementById("appearance-switcher");
+  const switcherMobile = document.getElementById("appearance-switcher-mobile");
+
   if (switcher) {
     switcher.addEventListener("click", () => {
       document.documentElement.classList.toggle("dark");
@@ -33,6 +35,19 @@ window.addEventListener("DOMContentLoaded", (event) => {
       );
     });
     switcher.addEventListener("contextmenu", (event) => {
+      event.preventDefault();
+      localStorage.removeItem("appearance");
+    });
+  }
+  if (switcherMobile) {
+    switcherMobile.addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+      localStorage.setItem(
+        "appearance",
+        document.documentElement.classList.contains("dark") ? "dark" : "light"
+      );
+    });
+    switcherMobile.addEventListener("contextmenu", (event) => {
       event.preventDefault();
       localStorage.removeItem("appearance");
     });

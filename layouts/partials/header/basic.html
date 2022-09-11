@@ -1,5 +1,5 @@
 <div style="padding-left:0;padding-right:0"
-    class="flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start md:space-x-3">
+    class="flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start space-x-3">
     {{ if .Site.Params.Logo -}}
     {{ $logo := resources.Get .Site.Params.Logo }}
     {{ if $logo }}
@@ -55,6 +55,30 @@
             {{ end }}
 
         </div>
+        <div class="flex md:hidden items-center space-x-5 md:ml-12">
+
+            <span></span>
+
+            {{ if .Site.Params.enableSearch | default false }}
+            <button id="search-button-mobile" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="{{ i18n " search.open_button_title" }}">
+                {{ partial "icon.html" "search" }}
+            </button>
+            {{ end }}
+
+            {{/* Appearance switch */}}
+            {{ if .Site.Params.footer.showAppearanceSwitcher | default false }}
+            <button id="appearance-switcher-mobile" type="button" style="margin-right:5px">
+                <div class="flex items-center justify-center h-12 dark:hidden">
+                    {{ partial "icon.html" "moon" }}
+                </div>
+                <div class="items-center justify-center hidden h-12 dark:flex">
+                    {{ partial "icon.html" "sun" }}
+                </div>
+            </button>
+            {{ end }}
+
+        </div>
     </div>
     <div class="-my-2 -mr-2 md:hidden">
 
@@ -72,6 +96,7 @@
                             "icon.html"
                             "xmark" }}</span>
                     </li>
+
                     {{ if .Site.Menus.main }}
                     {{ range .Site.Menus.main }}
                     <li class="mb-1">
@@ -81,28 +106,6 @@
                     {{ end }}
                     {{ end }}
 
-                    {{ if .Site.Params.enableSearch | default false }}
-                    <li>
-                        <button id="search-button-hamburger"
-                            class="text-base hover:text-primary-600 dark:hover:text-primary-400">
-                            {{ partial "icon.html" "search" }}
-                        </button>
-                    </li>
-                    {{ end }}
-
-                    {{/* Appearance switch */}}
-                    {{ if .Site.Params.footer.showAppearanceSwitcher | default false }}
-                    <li>
-                        <button id="appearance-switcher" type="button">
-                            <div class="flex items-center justify-center h-12 dark:hidden">
-                                {{ partial "icon.html" "moon" }}
-                            </div>
-                            <div class="items-center justify-center hidden h-12 dark:flex">
-                                {{ partial "icon.html" "sun" }}
-                            </div>
-                        </button>
-                    </li>
-                    {{ end }}
                 </ul>
             </div>
         </label>
