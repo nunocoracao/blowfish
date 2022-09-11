@@ -28,7 +28,7 @@ jobs:
       - name: Package
         uses: actions/upload-pages-artifact@v1.0.4
         with:
-          path: example/docs
+          path: exampleSite/docs
       
       - name: Deploy GitHub Pages site
         uses: actions/deploy-pages@v1.0.10
