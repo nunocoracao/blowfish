@@ -15,25 +15,25 @@
   pageRef = "about"
   weight = 10
 
-[[main]]
-  name = "Posts"
-  pageRef = "posts"
-  weight = 20
+#[[main]]
+#  name = "Posts"
+#  pageRef = "posts"
+#  weight = 20
 
-[[main]]
-  name = "Resume"
-  pageRef = "resume"
-  weight = 30
+#[[main]]
+#  name = "Resume"
+#  pageRef = "resume"
+#  weight = 30
 
-[[main]]
-  name = "Music"
-  pageRef = "music"
-  weight = 40
+#[[main]]
+#  name = "Music"
+#  pageRef = "music"
+#  weight = 40
 
-[[main]]
-  name = "Docs"
-  pageRef = "docs"
-  weight = 50
+#[[main]]
+#  name = "Docs"
+#  pageRef = "docs"
+#  weight = 50
 
 #[[main]]
 #  name = "Tags"

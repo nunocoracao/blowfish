@@ -1,9 +1,9 @@
 # -- Site Configuration --
 # Refer to the theme docs for more details about each of these parameters.
-# https://jpanther.github.io/congo/docs/getting-started/
+# https://nunocoracao.github.io/blowfish/docs/getting-started/
 
 theme = "blowfish"
-baseURL = "https://github.com/nunocoracao/blowfish"
+baseURL = "https://nunocoracao.github.io/blowfish/"
 defaultContentLanguage = "en"
 
 enableRobotsTXT = true
