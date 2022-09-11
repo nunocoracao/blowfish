@@ -22,8 +22,8 @@ mainSections = ["posts", "suggest", "external"]
   showScrollToTop = true
 
 [homepage]
-  layout = "profile" # valid options: page, profile, custom
-  showRecent = false
+  layout = "page" # valid options: page, profile, custom
+  showRecent = true
 
 [article]
   showDate = true

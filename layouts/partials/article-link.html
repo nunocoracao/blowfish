@@ -1,4 +1,72 @@
-<article>
+{{ with .Params.externalUrl }}
+<a class="sm:flex mb-10" href="{{ . }}" target="_blank" rel="external">
+  {{ else }}
+  <a class="sm:flex mb-10" href="{{ .RelPermalink }}">
+    {{ end }}
+
+    {{- with $.Params.images -}}
+    {{- range first 6 . }}
+    <meta property="og:image" content="{{ . | absURL }}" />{{ end -}}
+    {{- else -}}
+    {{- $images := $.Resources.ByType "image" -}}
+    {{- $featured := $images.GetMatch "*feature*" -}}
+    {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
+    {{- with $featured -}}
+
+    <!--img class="nozoom customthumb" src="{{ $featured.Permalink }}"-->
+    <div class="mb-5 flex-shrink-0 sm:mb-0 sm:mr-7 thumbnail nozoom"
+      style="background-image:url({{ $featured.Permalink }});">
+      <svg class="h-32 w-full bg-white text-gray-300 sm:w-32" preserveAspectRatio="none" stroke="none" fill="none"
+        viewBox="0 0 200 200" aria-hidden="true">
+      </svg>
+    </div>
+
+    {{- else -}}
+    {{- with $.Site.Params.images }}
+    <meta property="og:image" content="{{ index . 0 | absURL }}" />{{ end -}}
+    {{- end -}}
+    {{- end -}}
+
+
+    <div class="mb-[5rem] md:mb-0">
+      <h3 class="flex items-center text-xl font-semibold">
+        {{ with .Params.externalUrl }}
+        <div>
+          <div
+            class="text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+            {{ $.Title | emojify }}
+            <span class="text-xs align-top cursor-default text-neutral-400 dark:text-neutral-500">
+              <span class="rtl:hidden">&#8599;</span>
+              <span class="ltr:hidden">&#8598;</span>
+            </span>
+          </div>
+
+        </div>
+        {{ else }}
+        <p class="text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="{{ .RelPermalink }}">{{ .Title | emojify }}</p>
+        {{ end }}
+        {{ if and .Draft .Site.Params.article.showDraftLabel }}
+        <div class=" ltr:ml-2 rtl:mr-2">
+          {{ partial "badge.html" (i18n "article.draft" | emojify) }}
+        </div>
+        {{ end }}
+        {{ if templates.Exists "partials/extend-article-link.html" }}
+        {{ partial "extend-article-link.html" . }}
+        {{ end }}
+      </h3>
+      <div class="text-sm text-neutral-500 dark:text-neutral-400">
+        {{ partial "article-meta.html" . }}
+      </div>
+      {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
+      <div class="py-1 prose dark:prose-invert">
+        {{ .Summary | emojify }}
+      </div>
+      {{ end }}
+    </div>
+  </a>
+
+  <!--article>
   <h3 class="flex items-center mt-6 text-xl font-semibold">
     {{ with .Params.externalUrl }}
       <div>
@@ -41,4 +109,4 @@
       {{ .Summary | emojify }}
     </div>
   {{ end }}
-</article>
+</article-->
