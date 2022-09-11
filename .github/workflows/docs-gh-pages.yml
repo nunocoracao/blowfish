@@ -1,54 +1,36 @@
-name: Deploy Docs to GitHub Pages
+name: GitHub Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Allow one concurrent deployment
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
+    branches:
+      - main
 
 jobs:
-  # Build job
-  build:
-    runs-on: ubuntu-latest
+  build-deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-20.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-    
-      - name: Hugo setup
-        uses: peaceiris/actions-hugo@v2.4.12
-        env:
-          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
-          
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          submodules: true
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "latest"
 
       - name: Build
-        run: hugo  --source exampleSite --themesDir ../.. -d docs
-        
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./exampleSite/docs
+        working-directory: ./exampleSite
+        run: hugo --minify --themesDir ../.. --buildDrafts --baseURL https://nunocoracao.github.io/blowfish/
 
-  # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/stable' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./exampleSite/public
