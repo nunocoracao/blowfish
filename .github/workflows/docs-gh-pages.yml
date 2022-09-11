@@ -25,11 +25,11 @@ jobs:
 
       - name: Build
         working-directory: ./exampleSite
-        run: hugo --minify --themesDir ../.. --buildDrafts --baseURL https://nunocoracao.github.io/blowfish/
+        run: hugo --minify --themesDir ../.. --baseURL https://nunocoracao.github.io/blowfish/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/stable' }}
+        if: ${{ github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
