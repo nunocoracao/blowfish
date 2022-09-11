@@ -1,0 +1,22 @@
+{{ if .Get "src" }}
+  {{ $image := .Page.Resources.GetMatch (printf "*%s*" (.Get "src")) }}
+  <figure{{ with .Get "class" }} class="{{ . }}"{{ end }}>
+    {{- if .Get "href" -}}
+      <a href="{{ .Get "href" }}">
+    {{- end -}}
+    <img src="{{ $image.RelPermalink }}"
+      {{- if or (.Get "alt") (.Get "caption") }}
+        alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" | markdownify | plainify }}{{ end }}"
+      {{- end -}}
+      width="100%"
+      height="auto"
+      style="max-width:{{ div $image.Width 2 }}px; max-height:{{ div $image.Height 2 }}px;"
+    />
+    {{- if .Get "href" }}</a>{{ end -}}
+    {{- if .Get "caption" -}}
+      <figcaption>
+        {{- .Get "caption" | markdownify -}}
+      </figcaption>
+    {{- end }}
+  </figure>
+{{ end }}

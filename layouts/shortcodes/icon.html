@@ -1,0 +1,8 @@
+{{ $icon := resources.Get (printf "icons/%s.svg" ($.Get 0)) }}
+{{ if $icon }}
+  <span class="relative inline-block align-text-bottom icon">
+    {{ $icon.Content | safeHTML }}
+  </span>
+{{ else }}
+  {{ errorf `[CONGO] Shortcode "icon" error in "%s": Resource "%s" not found. Check the path is correct or remove the shortcode.` .Page.Path (printf "icons/%s.svg" ($.Get 0)) }}
+{{ end }}

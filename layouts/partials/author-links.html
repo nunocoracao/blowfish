@@ -1,0 +1,16 @@
+{{ with .Site.Author.links }}
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+    {{ range $links := . }}
+      {{ range $name, $url := $links }}
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="{{ $url }}"
+          target="_blank"
+          aria-label="{{ $name | title }}"
+          rel="me noopener noreferrer"
+          >{{ partial "icon.html" $name }}</a
+        >
+      {{ end }}
+    {{ end }}
+  </div>
+{{ end }}

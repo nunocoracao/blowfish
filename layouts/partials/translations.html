@@ -1,0 +1,7 @@
+{{ if .IsTranslated }}
+  <div class="inline">
+    {{ range .AllTranslations }}
+      <a href="{{ .RelPermalink }}">{{ .Language.Params.displayName | emojify }}</a>
+    {{ end }}
+  </div>
+{{ end }}
