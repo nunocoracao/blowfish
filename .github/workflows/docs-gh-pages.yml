@@ -34,10 +34,12 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Build
-        run: hugo  --source exampleSite --themesDir ../.. -d ../_site
+        run: hugo  --source exampleSite --themesDir ../.. -d docs
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./exampleSite/docs
 
   # Deployment job
   deploy:
