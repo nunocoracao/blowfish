@@ -3,7 +3,7 @@
 # customise the display of your website.
 #
 # Refer to the theme docs for more details about each of these parameters.
-# https://jpanther.github.io/congo/docs/configuration/#theme-parameters
+# https://nunocoracao.github.io/blowfish/docs/configuration/#theme-parameters
 
 colorScheme = "ocean"
 defaultAppearance = "light" # valid options: light or dark
@@ -32,7 +32,7 @@ mainSections = ["posts", "suggest", "external"]
   showBreadcrumbs = true
   showDraftLabel = true
   showEdit = true
-  editURL = "https://github.com/nunocoracao/homepage/tree/main/content"
+  # editURL = "https://github.com/nunocoracao/homepage/tree/main/content"
   editAppendPath = true
   showHeadingAnchors = true
   showPagination = true
