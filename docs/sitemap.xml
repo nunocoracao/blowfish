@@ -22,6 +22,15 @@
   
     
       <url>
+            <loc>https://nunocoracao.github.io/blowfish/</loc>
+            <lastmod>2022-09-04T00:00:00+00:00</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
+          </url>
+    
+  
+    
+      <url>
             <loc>https://nunocoracao.github.io/blowfish/categories/</loc>
             <lastmod>2022-09-04T00:00:00+00:00</lastmod>
             <changefreq>daily</changefreq>
@@ -122,15 +131,6 @@
     
       <url>
             <loc>https://nunocoracao.github.io/blowfish/tags/wars/</loc>
-            <lastmod>2022-09-04T00:00:00+00:00</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.5</priority>
-          </url>
-    
-  
-    
-      <url>
-            <loc>https://nunocoracao.github.io/blowfish/</loc>
             <lastmod>2022-09-04T00:00:00+00:00</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
@@ -960,6 +960,14 @@
       <url>
             <loc>https://nunocoracao.github.io/blowfish/samples/emoji/</loc>
             <lastmod>2019-03-05T00:00:00+00:00</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
+          </url>
+    
+  
+    
+      <url>
+            <loc>https://nunocoracao.github.io/blowfish/s_index/</loc>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
           </url>

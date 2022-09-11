@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Welcome to Congo! :tada: on Blowfish</title>
+    <title>Blowfish</title>
     <link>https://nunocoracao.github.io/blowfish/</link>
-    <description>Recent content in Welcome to Congo! :tada: on Blowfish</description>
+    <description>Recent content on Blowfish</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 04 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://nunocoracao.github.io/blowfish/index.xml" rel="self" type="application/rss+xml" />
@@ -264,6 +264,15 @@ Congo is built using relative URLs throughout the theme.</description>
       
       <guid>https://nunocoracao.github.io/blowfish/samples/emoji/</guid>
       <description>📖🏞️🧗🏽🐉🧙🏽‍♂️🧚🏽👸</description>
+    </item>
+    
+    <item>
+      <title>Welcome to Congo! :tada:</title>
+      <link>https://nunocoracao.github.io/blowfish/s_index/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nunocoracao.github.io/blowfish/s_index/</guid>
+      <description>A powerful, lightweight theme for Hugo built with Tailwind CSS. This is a demo site built entirely using Congo. It also contains a complete set of theme documentation. Congo is flexible and is great for both static page-based content (like this demo) or a traditional blog with a feed of recent posts.</description>
     </item>
     
   </channel>
