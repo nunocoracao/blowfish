@@ -23,9 +23,15 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Compile site
-        run: hugo --source exampleSite --themesDir ../..
+        run: hugo --source exampleSite --themesDir ../.. -d docs
+        
+      - name: Package
+        uses: actions/upload-pages-artifact@v1.0.4
+        with:
+          path: example/docs
       
       - name: Deploy GitHub Pages site
         uses: actions/deploy-pages@v1.0.10
         with:
-          artifact_name: docs
+          token: ${{ github.token }}
+          page_url: /docs
