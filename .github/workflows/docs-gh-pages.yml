@@ -24,7 +24,7 @@ jobs:
           hugo-version: "latest"
 
       - name: Build
-        run: cd exampleSite && hugo --minify --themesDir ../.. --buildDrafts --baseURL https://nunocoracao.github.io/blowfish/
+        run: hugo -s exampleSite --themesDir ../.. -d ../docs --baseURL https://nunocoracao.github.io/blowfish/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
