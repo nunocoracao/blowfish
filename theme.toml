@@ -5,8 +5,8 @@ license = "MIT"
 licenselink = "https://github.com/nunocoracao/blowfish/blob/master/LICENSE"
 description = "tbd"
 
-#homepage = "https://github.com/nunocoracao/blowfish/"
-#demosite = "https://nunocoracao.github.io/blowfish/"
+homepage = "https://github.com/nunocoracao/blowfish/"
+demosite = "https://nunocoracao.github.io/blowfish/"
 
 tags = ["blog", "minimal", "responsive", "dark mode", "dark", "light", "tailwind", "personal"]
 features = ["syntax higlighting", "dark mode", "emoji"]
