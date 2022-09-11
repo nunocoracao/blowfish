@@ -3331,12 +3331,12 @@ body:has(#menu-controller:checked) {
 }
 
 @media (min-width: 640px) {
-  .sm\:mb-0 {
-    margin-bottom: 0px;
-  }
-
   .sm\:mr-7 {
     margin-right: 1.75rem;
+  }
+
+  .sm\:mb-0 {
+    margin-bottom: 0px;
   }
 
   .sm\:flex {
