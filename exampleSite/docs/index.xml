@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Welcome to Congo! :tada: on Blowfish</title>
+    <link>https://github.com/nunocoracao/blowfish/</link>
+    <description>Recent content in Welcome to Congo! :tada: on Blowfish</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 04 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://github.com/nunocoracao/blowfish/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Streaming Wars and What Comes After… </title>
+      <link>https://github.com/nunocoracao/blowfish/posts/202209-streaming-wars/</link>
+      <pubDate>Sun, 04 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/posts/202209-streaming-wars/</guid>
+      <description>Last July and for the first time ever, streaming viewership surpassed cable. The streaming wars began around 2010 when Netflix introduced their first streaming-only plan with no DVD rentals, other players laughed at the time… little did they know. A decade after, there’s a multitude of streaming services available for mainstream entertainment and also for specific niches. What will happen next?</description>
+    </item>
+    
+    <item>
+      <title>Bulk User Add for Docker Business and Teams</title>
+      <link>https://github.com/nunocoracao/blowfish/posts/202207-docker-bulk-add/</link>
+      <pubDate>Wed, 27 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/posts/202207-docker-bulk-add/</guid>
+      <description>Forget manually inviting team members to Docker Desktop. With Bulk Add for Docker Business, invite your entire team with a CSV file or their Docker IDs!</description>
+    </item>
+    
+    <item>
+      <title>How I Created My Homepage (for free) Using Docker, Hugo, and Firebase</title>
+      <link>https://github.com/nunocoracao/blowfish/posts/202206-homepage-guide/</link>
+      <pubDate>Mon, 27 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/posts/202206-homepage-guide/</guid>
+      <description>Currently, there are several solutions to build and host your personal website. I wanted to challenge myself to see if I could do it with the same set of features as some of the paid solutions out there and for free. Here are the results.</description>
+    </item>
+    
+    <item>
+      <title>Nuno Coração – Meet the Mentor</title>
+      <link>https://github.com/nunocoracao/blowfish/posts/202206-mentorcruise-interview-copy/</link>
+      <pubDate>Sun, 26 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/posts/202206-mentorcruise-interview-copy/</guid>
+      <description>Nuno Coração is one of our professional mentors on MentorCruise and works as Staff Product Manager at Docker.</description>
+    </item>
+    
+    <item>
+      <title>Nuno Coração – Meet the Mentor</title>
+      <link>https://github.com/nunocoracao/blowfish/posts/202206-mentorcruise-interview/</link>
+      <pubDate>Sun, 26 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/posts/202206-mentorcruise-interview/</guid>
+      <description>Nuno Coração is one of our professional mentors on MentorCruise and works as Staff Product Manager at Docker.</description>
+    </item>
+    
+    <item>
+      <title>Resume</title>
+      <link>https://github.com/nunocoracao/blowfish/resume/</link>
+      <pubDate>Mon, 13 Jun 2022 21:28:51 +0100</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/resume/</guid>
+      <description>Experience Company Link Role Dates Location Docker Staff Product Manager 2022 - Present Full Remote Lisbon, PT AWS Startup Loft Startup Advisor 2022 - Present Full Remote Lisbon, PT Truphone Group Product Manager 2021 - 2022 Hybrid Lisbon, PT Senior Product Manager 2020 - 2021 Vodafone Group Analytics Squad Lead 2019 - 2020 Lisbon, PT London, UK Senior Product Manager 2018 - 2019 Sky Deutschland Senior Product Architect 2016 - 2018 Munich, DE Skimic Founder 2016 - 2017 Munich, DE Vodafone Group Product Manager 2015 - 2016 Lisbon, PTLondon, UK NOS Product Manager 2014 - 2015 Lisbon, PT Solutions Architect 2012 - 2014 Inesc-ID Junior Researcher 2011 - 2012 Lisbon, PT Education School Link Degree Date Harvard Business School Online Entrepreneurship Essentials 2022 Disruptive Strategy 2022 Tecnico Lisboa MSc in Computer Science - Distributed Systems 2012 BSc, Computer Science 2010 </description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://github.com/nunocoracao/blowfish/about/</link>
+      <pubDate>Mon, 13 Jun 2022 20:55:37 +0100</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/about/</guid>
+      <description>I’ve been building and shipping products across multiple roles and industries, from video streaming applications to API platforms. As a product person, my main goal is to understand my users and their specific needs, in order to deliver a product that truly improves their lives.</description>
+    </item>
+    
+    <item>
+      <title>Music</title>
+      <link>https://github.com/nunocoracao/blowfish/music/</link>
+      <pubDate>Mon, 13 Jun 2022 20:55:37 +0100</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/music/</guid>
+      <description>I started learning music by myself at the age of 14. I play several instruments and I love to record, compose and produce my own music. I&amp;rsquo;ve been releasing my songs under the name &amp;ldquo;Doppler Effect&amp;rdquo; in the usual streaming services.</description>
+    </item>
+    
+    <item>
+      <title>Upgrading from Congo 1.x</title>
+      <link>https://github.com/nunocoracao/blowfish/docs/version-2/upgrade/</link>
+      <pubDate>Thu, 20 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/docs/version-2/upgrade/</guid>
+      <description>Although Congo 2.0 contains a large number of changes, the theme has been designed to minimise the effort required to upgrade to the latest release.
+That said, there are some changes that require adjustments to existing sites that are built with Congo version 1.</description>
+    </item>
+    
+    <item>
+      <title>The Future of the Nintendo Switch</title>
+      <link>https://github.com/nunocoracao/blowfish/posts/202109-the-future-of-nintendo/</link>
+      <pubDate>Thu, 09 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/posts/202109-the-future-of-nintendo/</guid>
+      <description>Nintendo achieved something truly amazing with the launch of the Switch. It was able to disrupt itself and the entire gaming industry while saving itself from doom. How exactly was Nintendo able to do it and what comes next in that story?</description>
+    </item>
+    
+    <item>
+      <title>Installation</title>
+      <link>https://github.com/nunocoracao/blowfish/docs/installation/</link>
+      <pubDate>Sun, 16 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/docs/installation/</guid>
+      <description>Simply follow the standard Hugo Quick Start procedure to get up and running quickly.
+Detailed installation instructions can be found below. Instructions for updating the theme are also available.
+Installation # These instructions will get you up and running using Hugo and Congo from a completely blank state.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started</title>
+      <link>https://github.com/nunocoracao/blowfish/docs/getting-started/</link>
+      <pubDate>Sat, 15 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/docs/getting-started/</guid>
+      <description>This section assumes you have already installed the Congo theme. The config files that ship with Congo contain all of the possible settings that the theme recognises. By default, many of these are commented out but you can simply uncomment them to activate or change a specific feature.</description>
+    </item>
+    
+    <item>
+      <title>Configuration</title>
+      <link>https://github.com/nunocoracao/blowfish/docs/configuration/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/docs/configuration/</guid>
+      <description>Congo is a highly customisable theme and uses some of the latest Hugo features to simplify how it is configured.
+The theme ships with a default configuration that gets you up and running with a basic blog or static website.</description>
+    </item>
+    
+    <item>
+      <title>Icons</title>
+      <link>https://github.com/nunocoracao/blowfish/samples/icons/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/samples/icons/</guid>
+      <description>Congo has built-in support for a number of FontAwesome 6 icons. These can be included in your website through either the icon partial or icon shortcode.
+Additionally, custom icons are also fully supported.</description>
+    </item>
+    
+    <item>
+      <title>Users</title>
+      <link>https://github.com/nunocoracao/blowfish/users/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/users/</guid>
+      <description>Real websites that are built with Congo. Website Details jamespanther.com Personal site - Theme author srisco.dev Personal site antoinesoetewey.com Personal site leif.io Personal site and Tech blog dr460nf1r3.org Personal site and Blog OCram85.</description>
+    </item>
+    
+    <item>
+      <title>Homepage Layout</title>
+      <link>https://github.com/nunocoracao/blowfish/docs/homepage-layout/</link>
+      <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/docs/homepage-layout/</guid>
+      <description>Congo provides a fully flexible homepage layout. There are two main templates to choose from with additional settings to adjust the design. Alternatively, you can also provide your own template and have complete control over the homepage content.</description>
+    </item>
+    
+    <item>
+      <title>Front Matter</title>
+      <link>https://github.com/nunocoracao/blowfish/docs/front-matter/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/docs/front-matter/</guid>
+      <description>In addition to the default Hugo front matter parameters, Congo adds a number of additional options to customise the presentation of individual articles. All the available theme front matter parameters are listed below.</description>
+    </item>
+    
+    <item>
+      <title>Shortcodes</title>
+      <link>https://github.com/nunocoracao/blowfish/docs/shortcodes/</link>
+      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/docs/shortcodes/</guid>
+      <description>In addition to all the default Hugo shortcodes, Congo adds a few extras for additional functionality.
+Alert # alert outputs its contents as a stylised message box within your article. It&amp;rsquo;s useful for drawing attention to important information that you don&amp;rsquo;t want the reader to miss.</description>
+    </item>
+    
+    <item>
+      <title>Partials</title>
+      <link>https://github.com/nunocoracao/blowfish/docs/partials/</link>
+      <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/docs/partials/</guid>
+      <description>Analytics # Congo provides built-in support for Fathom Analytics and Google Analytics. Fathom is a paid alternative to Google Analytics that respects user privacy. If you&amp;rsquo;re interested you can use this affiliate link to receive $10 credit and try the service.</description>
+    </item>
+    
+    <item>
+      <title>Content Examples</title>
+      <link>https://github.com/nunocoracao/blowfish/docs/content-examples/</link>
+      <pubDate>Sun, 09 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/docs/content-examples/</guid>
+      <description>If you&amp;rsquo;ve been reading the documentation in order, you should now know about all the features and configurations available in Congo. This page is designed to pull everything together and offer some worked examples that you might like to use in your Hugo project.</description>
+    </item>
+    
+    <item>
+      <title>Advanced Customisation</title>
+      <link>https://github.com/nunocoracao/blowfish/docs/advanced-customisation/</link>
+      <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/docs/advanced-customisation/</guid>
+      <description>There are many ways you can make advanced changes to Congo. Read below to learn more about what can be customised and the best way of achieving your desired result.</description>
+    </item>
+    
+    <item>
+      <title>Hosting &amp; Deployment</title>
+      <link>https://github.com/nunocoracao/blowfish/docs/hosting-deployment/</link>
+      <pubDate>Fri, 07 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/docs/hosting-deployment/</guid>
+      <description>There are many ways to deploy your Hugo website built with Congo. The theme is designed to be flexible in almost any deployment scenario.
+Congo is built using relative URLs throughout the theme.</description>
+    </item>
+    
+    <item>
+      <title>Markdown</title>
+      <link>https://github.com/nunocoracao/blowfish/samples/markdown/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/samples/markdown/</guid>
+      <description>&lt;p&gt;This article offers a sample of basic Markdown formatting that can be used in Congo, also it shows how some basic HTML elements are decorated.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Rich Content</title>
+      <link>https://github.com/nunocoracao/blowfish/samples/rich-content/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/samples/rich-content/</guid>
+      <description>This is an &lt;em&gt;example&lt;/em&gt; of a &lt;strong&gt;rich&lt;/strong&gt; content summary.</description>
+    </item>
+    
+    <item>
+      <title>Mathematical notation</title>
+      <link>https://github.com/nunocoracao/blowfish/samples/mathematical-notation/</link>
+      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/samples/mathematical-notation/</guid>
+      <description>&lt;p&gt;KaTeX can be used to render mathematical notation within articles.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Charts</title>
+      <link>https://github.com/nunocoracao/blowfish/samples/charts/</link>
+      <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/samples/charts/</guid>
+      <description>Congo includes Chart.js for powerful charts and data visualisations.</description>
+    </item>
+    
+    <item>
+      <title>Diagrams and Flowcharts</title>
+      <link>https://github.com/nunocoracao/blowfish/samples/diagrams-flowcharts/</link>
+      <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/samples/diagrams-flowcharts/</guid>
+      <description>It&amp;rsquo;s easy to add diagrams and flowcharts to articles using Mermaid.</description>
+    </item>
+    
+    <item>
+      <title>Emoji :parachute:</title>
+      <link>https://github.com/nunocoracao/blowfish/samples/emoji/</link>
+      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/samples/emoji/</guid>
+      <description>📖🏞️🧗🏽🐉🧙🏽‍♂️🧚🏽👸</description>
+    </item>
+    
+  </channel>
+</rss>

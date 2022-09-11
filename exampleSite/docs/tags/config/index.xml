@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>config on Blowfish</title>
+    <link>https://github.com/nunocoracao/blowfish/tags/config/</link>
+    <description>Recent content in config on Blowfish</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 14 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://github.com/nunocoracao/blowfish/tags/config/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configuration</title>
+      <link>https://github.com/nunocoracao/blowfish/docs/configuration/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/docs/configuration/</guid>
+      <description>Congo is a highly customisable theme and uses some of the latest Hugo features to simplify how it is configured.
+The theme ships with a default configuration that gets you up and running with a basic blog or static website.</description>
+    </item>
+    
+    <item>
+      <title>Front Matter</title>
+      <link>https://github.com/nunocoracao/blowfish/docs/front-matter/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/docs/front-matter/</guid>
+      <description>In addition to the default Hugo front matter parameters, Congo adds a number of additional options to customise the presentation of individual articles. All the available theme front matter parameters are listed below.</description>
+    </item>
+    
+  </channel>
+</rss>

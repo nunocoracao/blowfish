@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sample on Blowfish</title>
+    <link>https://github.com/nunocoracao/blowfish/tags/sample/</link>
+    <description>Recent content in sample on Blowfish</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 14 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://github.com/nunocoracao/blowfish/tags/sample/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Icons</title>
+      <link>https://github.com/nunocoracao/blowfish/samples/icons/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/samples/icons/</guid>
+      <description>Congo has built-in support for a number of FontAwesome 6 icons. These can be included in your website through either the icon partial or icon shortcode.
+Additionally, custom icons are also fully supported.</description>
+    </item>
+    
+    <item>
+      <title>Users</title>
+      <link>https://github.com/nunocoracao/blowfish/users/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/users/</guid>
+      <description>Real websites that are built with Congo. Website Details jamespanther.com Personal site - Theme author srisco.dev Personal site antoinesoetewey.com Personal site leif.io Personal site and Tech blog dr460nf1r3.org Personal site and Blog OCram85.</description>
+    </item>
+    
+    <item>
+      <title>Markdown</title>
+      <link>https://github.com/nunocoracao/blowfish/samples/markdown/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/samples/markdown/</guid>
+      <description>&lt;p&gt;This article offers a sample of basic Markdown formatting that can be used in Congo, also it shows how some basic HTML elements are decorated.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Rich Content</title>
+      <link>https://github.com/nunocoracao/blowfish/samples/rich-content/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/samples/rich-content/</guid>
+      <description>This is an &lt;em&gt;example&lt;/em&gt; of a &lt;strong&gt;rich&lt;/strong&gt; content summary.</description>
+    </item>
+    
+    <item>
+      <title>Mathematical notation</title>
+      <link>https://github.com/nunocoracao/blowfish/samples/mathematical-notation/</link>
+      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/samples/mathematical-notation/</guid>
+      <description>&lt;p&gt;KaTeX can be used to render mathematical notation within articles.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Charts</title>
+      <link>https://github.com/nunocoracao/blowfish/samples/charts/</link>
+      <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/samples/charts/</guid>
+      <description>Congo includes Chart.js for powerful charts and data visualisations.</description>
+    </item>
+    
+    <item>
+      <title>Diagrams and Flowcharts</title>
+      <link>https://github.com/nunocoracao/blowfish/samples/diagrams-flowcharts/</link>
+      <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/samples/diagrams-flowcharts/</guid>
+      <description>It&amp;rsquo;s easy to add diagrams and flowcharts to articles using Mermaid.</description>
+    </item>
+    
+    <item>
+      <title>Emoji :parachute:</title>
+      <link>https://github.com/nunocoracao/blowfish/samples/emoji/</link>
+      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/samples/emoji/</guid>
+      <description>📖🏞️🧗🏽🐉🧙🏽‍♂️🧚🏽👸</description>
+    </item>
+    
+  </channel>
+</rss>

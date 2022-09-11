@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Documentation on Blowfish</title>
+    <link>https://github.com/nunocoracao/blowfish/docs/</link>
+    <description>Recent content in Documentation on Blowfish</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 20 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://github.com/nunocoracao/blowfish/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Installation</title>
+      <link>https://github.com/nunocoracao/blowfish/docs/installation/</link>
+      <pubDate>Sun, 16 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/docs/installation/</guid>
+      <description>Simply follow the standard Hugo Quick Start procedure to get up and running quickly.
+Detailed installation instructions can be found below. Instructions for updating the theme are also available.
+Installation # These instructions will get you up and running using Hugo and Congo from a completely blank state.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started</title>
+      <link>https://github.com/nunocoracao/blowfish/docs/getting-started/</link>
+      <pubDate>Sat, 15 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/docs/getting-started/</guid>
+      <description>This section assumes you have already installed the Congo theme. The config files that ship with Congo contain all of the possible settings that the theme recognises. By default, many of these are commented out but you can simply uncomment them to activate or change a specific feature.</description>
+    </item>
+    
+    <item>
+      <title>Configuration</title>
+      <link>https://github.com/nunocoracao/blowfish/docs/configuration/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/docs/configuration/</guid>
+      <description>Congo is a highly customisable theme and uses some of the latest Hugo features to simplify how it is configured.
+The theme ships with a default configuration that gets you up and running with a basic blog or static website.</description>
+    </item>
+    
+    <item>
+      <title>Homepage Layout</title>
+      <link>https://github.com/nunocoracao/blowfish/docs/homepage-layout/</link>
+      <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/docs/homepage-layout/</guid>
+      <description>Congo provides a fully flexible homepage layout. There are two main templates to choose from with additional settings to adjust the design. Alternatively, you can also provide your own template and have complete control over the homepage content.</description>
+    </item>
+    
+    <item>
+      <title>Front Matter</title>
+      <link>https://github.com/nunocoracao/blowfish/docs/front-matter/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/docs/front-matter/</guid>
+      <description>In addition to the default Hugo front matter parameters, Congo adds a number of additional options to customise the presentation of individual articles. All the available theme front matter parameters are listed below.</description>
+    </item>
+    
+    <item>
+      <title>Shortcodes</title>
+      <link>https://github.com/nunocoracao/blowfish/docs/shortcodes/</link>
+      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/docs/shortcodes/</guid>
+      <description>In addition to all the default Hugo shortcodes, Congo adds a few extras for additional functionality.
+Alert # alert outputs its contents as a stylised message box within your article. It&amp;rsquo;s useful for drawing attention to important information that you don&amp;rsquo;t want the reader to miss.</description>
+    </item>
+    
+    <item>
+      <title>Partials</title>
+      <link>https://github.com/nunocoracao/blowfish/docs/partials/</link>
+      <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/docs/partials/</guid>
+      <description>Analytics # Congo provides built-in support for Fathom Analytics and Google Analytics. Fathom is a paid alternative to Google Analytics that respects user privacy. If you&amp;rsquo;re interested you can use this affiliate link to receive $10 credit and try the service.</description>
+    </item>
+    
+    <item>
+      <title>Content Examples</title>
+      <link>https://github.com/nunocoracao/blowfish/docs/content-examples/</link>
+      <pubDate>Sun, 09 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/docs/content-examples/</guid>
+      <description>If you&amp;rsquo;ve been reading the documentation in order, you should now know about all the features and configurations available in Congo. This page is designed to pull everything together and offer some worked examples that you might like to use in your Hugo project.</description>
+    </item>
+    
+    <item>
+      <title>Advanced Customisation</title>
+      <link>https://github.com/nunocoracao/blowfish/docs/advanced-customisation/</link>
+      <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/docs/advanced-customisation/</guid>
+      <description>There are many ways you can make advanced changes to Congo. Read below to learn more about what can be customised and the best way of achieving your desired result.</description>
+    </item>
+    
+    <item>
+      <title>Hosting &amp; Deployment</title>
+      <link>https://github.com/nunocoracao/blowfish/docs/hosting-deployment/</link>
+      <pubDate>Fri, 07 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/nunocoracao/blowfish/docs/hosting-deployment/</guid>
+      <description>There are many ways to deploy your Hugo website built with Congo. The theme is designed to be flexible in almost any deployment scenario.
+Congo is built using relative URLs throughout the theme.</description>
+    </item>
+    
+  </channel>
+</rss>
