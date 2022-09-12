@@ -9,7 +9,7 @@ colorScheme = "ocean"
 defaultAppearance = "dark" # valid options: light or dark
 autoSwitchAppearance = false
 
-enableSearch = false
+enableSearch = true
 enableCodeCopy = true
 
 mainSections = ["posts", "suggest", "external"]
@@ -18,7 +18,7 @@ mainSections = ["posts", "suggest", "external"]
 [footer]
   showCopyright = true
   showThemeAttribution = true
-  showAppearanceSwitcher = false
+  showAppearanceSwitcher = true
   showScrollToTop = true
 
 [homepage]
@@ -33,7 +33,7 @@ mainSections = ["posts", "suggest", "external"]
   showBreadcrumbs = true
   showDraftLabel = true
   showEdit = true
-  # editURL = "https://github.com/nunocoracao/homepage/tree/main/content"
+  editURL = "https://github.com/nunocoracao/blowfish/tree/dev/content"
   editAppendPath = true
   showHeadingAnchors = true
   showPagination = true
