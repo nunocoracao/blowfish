@@ -13,7 +13,7 @@ summaryLength = 30
 buildDrafts = false
 buildFuture = false
 
-googleAnalytics = "G-XXXXXX"
+googleAnalytics = "G-PEDMYR1V0K"
 
 [sitemap]
   changefreq = 'daily'

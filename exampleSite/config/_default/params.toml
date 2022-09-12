@@ -58,13 +58,13 @@ mainSections = ["posts", "suggest", "external"]
   showTermCount = true
 
 [firebase]
-  apiKey = "AIzaSyAN9vJzbGcqXi3fCiakI8rCVV7-S6T8n4s"
-  authDomain = "homepage-a0c38.firebaseapp.com"
-  projectId = "homepage-a0c38"
-  storageBucket = "homepage-a0c38.appspot.com"
-  messagingSenderId = "722874298820"
-  appId = "1:722874298820:web:b5c0e707586eba68c43491"
-  measurementId = "G-H8CSEYZFG4"
+  apiKey = "AIzaSyB5tqlqDky77Vb4Tc4apiHV4hRZI18KGiY"
+  authDomain = "blowfish-21fff.firebaseapp.com"
+  projectId = "blowfish-21fff"
+  storageBucket = "blowfish-21fff.appspot.com"
+  messagingSenderId = "60108104191"
+  appId = "1:60108104191:web:039842ebe1370698b487ca"
+  measurementId = "G-PEDMYR1V0K"
 
 [fathomAnalytics]
   # site = "ABC12345"

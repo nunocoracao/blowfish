@@ -1,9 +1,3 @@
-mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
-    margin: 24,
-    background: 'rgba(0,0,0,0.5)',
-    scrollOffset: 0,
-})
-
 if (typeof auth !== 'undefined') {
     var viewsCollection = db.collection('views');
 

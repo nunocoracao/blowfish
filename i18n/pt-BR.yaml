@@ -8,10 +8,13 @@ article:
     one: "{{ .Count }} minuto"
     other: "{{ .Count }} minutos"
   reading_time_title: "Tempo de leitura"
-  # table_of_contents: "Table of Contents"
-  # word_count:
-  # one: "{{ .Count }} word"
-  # other: "{{ .Count }} words"
+  table_of_contents: "Tabela de conteúdos"
+  word_count:
+    one: "{{ .Count }} palavra"
+    other: "{{ .Count }} palavras"
+  views:
+    one: "{{ .Count }} visualização"
+    other: "{{ .Count }} visualizaçōes"
 
 author:
   byline_title: "Autor"

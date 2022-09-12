@@ -124,8 +124,6 @@
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   
   {{/* Firebase */}}
-    <script>console.log( {{ .Site.Params.firebase.apiKey }})</script>
-
   {{ with $.Site.Params.firebase }}
   {{ if isset $.Site.Params "firebase" }}
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>

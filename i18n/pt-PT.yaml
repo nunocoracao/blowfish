@@ -12,6 +12,9 @@ article:
   word_count:
     one: "{{ .Count }} palavra"
     other: "{{ .Count }} palavras"
+  views:
+    one: "{{ .Count }} visualização"
+    other: "{{ .Count }} visualizaçōes"
 
 author:
   byline_title: "Autor"
