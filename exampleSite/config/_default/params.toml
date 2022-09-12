@@ -5,14 +5,14 @@
 # Refer to the theme docs for more details about each of these parameters.
 # https://nunocoracao.github.io/blowfish/docs/configuration/#theme-parameters
 
-colorScheme = "ocean"
+colorScheme = "blowfish"
 defaultAppearance = "dark" # valid options: light or dark
 autoSwitchAppearance = false
 
 enableSearch = true
 enableCodeCopy = true
 
-mainSections = ["posts", "suggest", "external"]
+mainSections = ["docs", "samples"]
 # robots = ""
 
 [footer]
@@ -22,7 +22,7 @@ mainSections = ["posts", "suggest", "external"]
   showScrollToTop = true
 
 [homepage]
-  layout = "profile" # valid options: page, profile, custom
+  layout = "custom" # valid options: page, profile, custom
   showRecent = false
 
 [article]
@@ -33,7 +33,7 @@ mainSections = ["posts", "suggest", "external"]
   showBreadcrumbs = true
   showDraftLabel = true
   showEdit = true
-  editURL = "https://github.com/nunocoracao/blowfish/tree/dev/content"
+  editURL = "https://github.com/nunocoracao/blowfish/tree/main/content"
   editAppendPath = true
   showHeadingAnchors = true
   showPagination = true
@@ -47,9 +47,9 @@ mainSections = ["posts", "suggest", "external"]
 
 [list]
   showBreadcrumbs = false
-  showSummary = false
+  showSummary = true
   showTableOfContents = false
-  groupByYear = true
+  groupByYear = false
 
 [sitemap]
   excludedKinds = []

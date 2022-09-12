@@ -26,7 +26,7 @@ Alternatively, the `tweet` shortcode can be used to embed a fully marked up Twit
 
 The `gist` shortcode can be used to embed a GitHub Gist. It requires two unnamed parameters: the username and ID of the Gist.
 
-{{< gist jpanther a873e1219ffeaa80a926bbe8255f348e >}}
+{{< gist nunocoracao 2779792841f7ffa7c7e62dc4d38626d4 >}}
 
 ## Vimeo
 

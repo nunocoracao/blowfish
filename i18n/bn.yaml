@@ -28,7 +28,7 @@ error:
 footer:
   dark_appearance: "ডার্ক মোডে স্যুইচ করুন"
   light_appearance: "লাইট মোডে স্যুইচ করুন"
-  powered_by: "{{ .Hugo }} এবং {{ .Congo }} দ্বারা চালিত"
+  powered_by: "{{ .Hugo }} এবং {{ .Blowfish }} দ্বারা চালিত"
 
 list:
   externalurl_title: "অন্য ওয়েবসাইটের লিংক"

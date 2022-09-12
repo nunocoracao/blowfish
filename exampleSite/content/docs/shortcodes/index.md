@@ -2,12 +2,12 @@
 title: "Shortcodes"
 date: 2020-08-11
 draft: false
-description: "All the shortcodes available in Congo."
+description: "All the shortcodes available in Blowfish."
 slug: "shortcodes"
 tags: ["shortcodes", "mermaid", "icon", "lead", "docs"]
 ---
 
-In addition to all the [default Hugo shortcodes](https://gohugo.io/content-management/shortcodes/), Congo adds a few extras for additional functionality.
+In addition to all the [default Hugo shortcodes](https://gohugo.io/content-management/shortcodes/), Blowfish adds a few extras for additional functionality.
 
 ## Alert
 
@@ -25,7 +25,7 @@ By default, the alert is presented with an exclaimation triangle icon. To change
 {{</* /alert */>}}
 
 {{</* alert "twitter" */>}}
-Don't forget to [follow me](https://twitter.com/jpanther) on Twitter.
+Don't forget to [follow me](https://twitter.com/nunocoracao) on Twitter.
 {{</* /alert */>}}
 ```
 
@@ -34,7 +34,7 @@ Don't forget to [follow me](https://twitter.com/jpanther) on Twitter.
 {{< /alert >}}
 &nbsp;
 {{< alert "twitter" >}}
-Don't forget to [follow me](https://twitter.com/jpanther) on Twitter.
+Don't forget to [follow me](https://twitter.com/nunocoracao) on Twitter.
 {{< /alert >}}
 
 ## Badge
@@ -107,7 +107,7 @@ You can see some additional Chart.js examples on the [charts samples]({{< ref "c
 
 ## Figure
 
-Congo includes a `figure` shortcode for adding images to content. The shortcode replaces the base Hugo functionality in order to provide additional performance benefits.
+Blowfish includes a `figure` shortcode for adding images to content. The shortcode replaces the base Hugo functionality in order to provide additional performance benefits.
 
 When a provided image is a page resource, it will be optimised using Hugo Pipes and scaled in order to provide images appropriate to different device resolutions. If a static asset or URL to an external image is provided, it will be included as-is without any image processing by Hugo.
 
@@ -124,7 +124,7 @@ The `figure` shortcode accepts six parameters:
 |`default`|Special parameter to revert to default Hugo `figure` behaviour. Simply provide `default=true` and then use normal [Hugo shortcode syntax](https://gohugo.io/content-management/shortcodes/#figure).|
 <!-- prettier-ignore-end -->
 
-Congo also supports automatic conversion of images included using standard Markdown syntax. Simply use the following format and the theme will handle the rest:
+Blowfish also supports automatic conversion of images included using standard Markdown syntax. Simply use the following format and the theme will handle the rest:
 
 ```md
 ![Alt text](image.jpg "Image caption")
@@ -158,7 +158,7 @@ Congo also supports automatic conversion of images included using standard Markd
 
 **Output:** {{< icon "github" >}}
 
-Icons are populated using Hugo pipelines which makes them very flexible. Congo includes a number of built-in icons for social, links and other purposes. Check the [icon samples]({{< ref "samples/icons" >}}) page for a full list of supported icons.
+Icons are populated using Hugo pipelines which makes them very flexible. Blowfish includes a number of built-in icons for social, links and other purposes. Check the [icon samples]({{< ref "samples/icons" >}}) page for a full list of supported icons.
 
 Custom icons can be added by providing your own icon assets in the `assets/icons/` directory of your project. The icon can then be referenced in the shortcode by using the SVG filename without the `.svg` extension.
 

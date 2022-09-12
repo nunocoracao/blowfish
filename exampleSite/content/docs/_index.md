@@ -1,6 +1,6 @@
 ---
 title: "Documentation"
-description: "Learn how to use Congo and its features."
+description: "Learn how to use Blowfish and its features."
 
 cascade:
   showDate: false
@@ -9,11 +9,11 @@ cascade:
 ---
 
 {{< lead >}}
-Simple, yet powerful. Learn how to use Congo and its features.
+Simple, yet powerful. Learn how to use Blowfish and its features.
 {{< /lead >}}
 
-![Screenshots of Congo on an iPhone, iPad and MacBook](screenshot.png)
+![Featured Blowfish image](featured.png)
 
-This section contains everything you need to know about Congo. If you're new, check out the [Installation]({{< ref "docs/installation" >}}) guide to begin or visit the [Samples]({{< ref "samples" >}}) section to see what Congo can do.
+This section contains everything you need to know about Blowfish. If you're new, check out the [Installation]({{< ref "docs/installation" >}}) guide to begin or visit the [Samples]({{< ref "samples" >}}) section to see what Blowfish can do.
 
 ---

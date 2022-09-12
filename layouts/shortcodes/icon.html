@@ -4,5 +4,5 @@
     {{ $icon.Content | safeHTML }}
   </span>
 {{ else }}
-  {{ errorf `[CONGO] Shortcode "icon" error in "%s": Resource "%s" not found. Check the path is correct or remove the shortcode.` .Page.Path (printf "icons/%s.svg" ($.Get 0)) }}
+  {{ errorf `[BLOWFISH] Shortcode "icon" error in "%s": Resource "%s" not found. Check the path is correct or remove the shortcode.` .Page.Path (printf "icons/%s.svg" ($.Get 0)) }}
 {{ end }}
