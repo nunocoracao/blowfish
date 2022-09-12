@@ -1,9 +1,8 @@
 {{ with .Params.externalUrl }}
 <a class="sm:flex mb-10 article" href="{{ . }}" target="_blank" rel="external">
-  {{ else }}
-  <a class="sm:flex mb-10 article" href="{{ .RelPermalink }}">
-    {{ end }}
-
+{{ else }}
+<a class="sm:flex mb-10 article" href="{{ .RelPermalink }}">
+{{ end }}
     {{- with $.Params.images -}}
     {{- range first 6 . }}
     <meta property="og:image" content="{{ . | absURL }}" />{{ end -}}

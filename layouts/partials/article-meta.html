@@ -28,6 +28,10 @@
     {{ $meta.Add "partials" (slice (partial "meta/reading-time.html" .)) }}
   {{ end }}
 
+  {{ if (.Params.showViews | default (.Site.Params.article.showViews | default true)) }}
+    {{ $meta.Add "partials" (slice (partial "meta/views.html" .)) }}
+  {{ end }}
+
   {{ if and (eq $scope "single") (.Params.showEdit | default (.Site.Params.article.showEdit | default false)) }}
     {{ $meta.Add "partials" (slice (partial "meta/edit.html" .)) }}
   {{ end }}

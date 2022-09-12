@@ -30,6 +30,7 @@ enableCodeCopy = true
 
 [article]
   showDate = true
+  #showViews = true
   showDateUpdated = false
   showAuthor = true
   showBreadcrumbs = true
@@ -58,6 +59,15 @@ enableCodeCopy = true
 
 [taxonomy]
   showTermCount = true
+
+[firebase]
+  # apiKey = "XXXXXX"
+  # authDomain = "XXXXXX"
+  # projectId = "XXXXXX"
+  # storageBucket = "XXXXXX"
+  # messagingSenderId = "XXXXXX"
+  # appId = "XXXXXX"
+  # measurementId = "XXXXXX"
 
 [fathomAnalytics]
   # site = "ABC12345"

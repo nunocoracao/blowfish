@@ -27,6 +27,7 @@ mainSections = ["posts", "suggest", "external"]
 
 [article]
   showDate = true
+  showViews = true
   showDateUpdated = false
   showAuthor = true
   showBreadcrumbs = true
@@ -55,6 +56,15 @@ mainSections = ["posts", "suggest", "external"]
 
 [taxonomy]
   showTermCount = true
+
+[firebase]
+  apiKey = "AIzaSyAN9vJzbGcqXi3fCiakI8rCVV7-S6T8n4s"
+  authDomain = "homepage-a0c38.firebaseapp.com"
+  projectId = "homepage-a0c38"
+  storageBucket = "homepage-a0c38.appspot.com"
+  messagingSenderId = "722874298820"
+  appId = "1:722874298820:web:b5c0e707586eba68c43491"
+  measurementId = "G-H8CSEYZFG4"
 
 [fathomAnalytics]
   # site = "ABC12345"
