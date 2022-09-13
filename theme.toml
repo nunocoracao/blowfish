@@ -2,14 +2,14 @@
 
 name = "blowfish"
 license = "MIT"
-licenselink = "https://github.com/nunocoracao/blowfish/blob/master/LICENSE"
+licenselink = "https://github.com/nunocoracao/blowfish/blob/main/LICENSE"
 description = "tbd"
 
 homepage = "https://github.com/nunocoracao/blowfish/"
 demosite = "https://nunocoracao.github.io/blowfish/"
 
 tags = ["blog", "minimal", "responsive", "dark mode", "dark", "light", "tailwind", "personal"]
-features = ["syntax higlighting", "dark mode", "emoji"]
+features = ["syntax higlighting", "dark mode", "emoji", "firebase", "views"]
 
 [author]
   name = "Nuno Coracao"
