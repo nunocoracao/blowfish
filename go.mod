@@ -1,3 +1,3 @@
-module github.com/nunocoracao/blowfish/v1
+module github.com/nunocoracao/blowfish
 
-go 1.16
+go 1.18
