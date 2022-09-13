@@ -14,3 +14,8 @@ features = ["syntax higlighting", "dark mode", "emoji"]
 [author]
   name = "Nuno Coracao"
   homepage = "https://nunocoracao.com/"
+
+[original]
+  author = "James Panther"
+  homepage = "https://jamespanther.com/"
+  repo = "https://github.com/jpanther/congo"
