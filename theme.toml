@@ -1,9 +1,9 @@
 # Blowfish theme for Hugo
 
-name = "blowfish"
+name = "Blowfish"
 license = "MIT"
 licenselink = "https://github.com/nunocoracao/blowfish/blob/main/LICENSE"
-description = "tbd"
+description = "A powerful, lightweight theme for Hugo built with Tailwind CSS."
 
 homepage = "https://github.com/nunocoracao/blowfish/"
 demosite = "https://nunocoracao.github.io/blowfish/"
