@@ -80,7 +80,7 @@ Change into the directory for your Hugo website (that you created above), initia
 ```bash
 cd mywebsite
 git init
-git submodule add -b stable https://github.com/nunocoracao/blowfish.git themes/blowfish
+git submodule add -b main https://github.com/nunocoracao/blowfish.git themes/blowfish
 ```
 
 Then continue to [set up the theme configuration files](#set-up-theme-configuration-files).
