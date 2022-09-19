@@ -24,7 +24,8 @@ mainSections = ["docs", "samples"]
 [homepage]
   layout = "custom" # valid options: page, profile, custom
   showRecent = false
-
+  showRecentItems = 5
+ 
 [article]
   showDate = true
   showViews = true
