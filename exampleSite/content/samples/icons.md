@@ -26,6 +26,7 @@ The full list of built-in icons and their corresponding names can referenced bel
 | codepen              | {{< icon codepen >}}              |
 | comment              | {{< icon comment >}}              |
 | dev                  | {{< icon dev >}}                  |
+| discourse            | {{< icon discourse >}}            |
 | dribbble             | {{< icon dribbble >}}             |
 | edit                 | {{< icon edit >}}                 |
 | email                | {{< icon email >}}                |
@@ -34,7 +35,9 @@ The full list of built-in icons and their corresponding names can referenced bel
 | foursquare           | {{< icon foursquare >}}           |
 | github               | {{< icon github >}}               |
 | gitlab               | {{< icon gitlab >}}               |
+| goodreads            | {{< icon goodreads >}}            |
 | google               | {{< icon google >}}               |
+| hackernews           | {{< icon hackernews >}}           |
 | hashnode             | {{< icon hashnode >}}             |
 | instagram            | {{< icon instagram >}}            |
 | keybase              | {{< icon keybase >}}              |
@@ -48,6 +51,7 @@ The full list of built-in icons and their corresponding names can referenced bel
 | medium               | {{< icon medium >}}               |
 | microsoft            | {{< icon microsoft >}}            |
 | moon                 | {{< icon moon >}}                 |
+| music                | {{< icon music >}}                |
 | orcid                | {{< icon orcid >}}                |
 | patreon              | {{< icon patreon >}}              |
 | pencil               | {{< icon pencil >}}               |
