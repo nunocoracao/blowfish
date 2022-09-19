@@ -164,6 +164,18 @@ Custom icons can be added by providing your own icon assets in the `assets/icons
 
 Icons can also be used in partials by calling the [icon partial]({{< ref "partials#icon" >}}).
 
+## Swatches
+`swatches` outputs a set of up to three different colors to showcase color elements like a color palette. This shortcode takes the `HEX` codes of each color and creates the visual elements for each.
+
+**Example**
+```md
+{{</* swatches "#64748b" "#3b82f6" "#06b6d4" */>}}
+```
+
+**Output**
+{{< swatches "#64748b" "#3b82f6" "#06b6d4" >}}
+
+
 ## Katex
 
 The `katex` shortcode can be used to add mathematical expressions to article content using the KaTeX package. Refer to the online reference of [supported TeX functions](https://katex.org/docs/supported.html) for the available syntax.
