@@ -11,12 +11,15 @@ showReadingTime: false
 showEdit: false
 ---
 
+
 {{< lead >}}
 Real websites that are built with Blowfish.
 {{< /lead >}}
 
-| Website                                                                | Details                      |
-| ---------------------------------------------------------------------- | ---------------------------- |
-| [nunocoracao.com](https://nunocoracao.com)                            | Personal site - Theme author |
+
+| Website                                       | Auth                                      | Details                      |
+| --------                                      |------                                     |--------                      |
+| [nunocoracao.com](https://nunocoracao.com)    | [Nuno](https://github.com/nunocoracao)    | Personal site - Theme author |
+
 
 **Blowfish user?** To add your site to this list, [submit a pull request](https://github.com/nunocoracao/blowfish/blob/dev/exampleSite/content/users.md).

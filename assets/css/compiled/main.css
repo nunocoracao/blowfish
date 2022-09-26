@@ -1860,6 +1860,11 @@ select {
   border-color: rgba(var(--color-primary-400), var(--tw-border-opacity));
 }
 
+.border-primary-500 {
+  --tw-border-opacity: 1;
+  border-color: rgba(var(--color-primary-500), var(--tw-border-opacity));
+}
+
 .bg-neutral {
   --tw-bg-opacity: 1;
   background-color: rgba(var(--color-neutral), var(--tw-bg-opacity));
@@ -1874,12 +1879,12 @@ select {
   background-color: rgba(var(--color-neutral), 0.5);
 }
 
-.bg-neutral-500\/50 {
-  background-color: rgba(var(--color-neutral-500), 0.5);
-}
-
 .bg-transparent {
   background-color: transparent;
+}
+
+.bg-neutral-500\/50 {
+  background-color: rgba(var(--color-neutral-500), 0.5);
 }
 
 .bg-neutral-100 {
@@ -2924,6 +2929,10 @@ body:has(#menu-controller:checked) {
 .hover\:border-primary-300:hover {
   --tw-border-opacity: 1;
   border-color: rgba(var(--color-primary-300), var(--tw-border-opacity));
+}
+
+.hover\:border-transparent:hover {
+  border-color: transparent;
 }
 
 .hover\:bg-primary-600:hover {
