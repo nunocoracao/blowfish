@@ -137,6 +137,8 @@ Many of the article defaults here can be overridden on a per article basis by sp
 |`homepage.layout`|`"page"`|The layout of the homepage. Valid values are `page`, `profile` or `custom`. When set to `custom`, you must provide your own layout by creating a `/layouts/partials/home/custom.html` file. Refer to the [Homepage Layout]({{< ref "homepage-layout" >}}) section for more details.|
 |`homepage.showRecent`|`false`|Whether or not to display the recent articles list on the homepage.|
 |`homepage.showRecentItems`|5|How many articles to display if showRecent is true. If variable is set to 0 or if it isn't defined the system will default to 5 articles.|
+|`homepage.showMoreLink`|'false'|Wether or not to display a show more link at the end of your posts that takes the user to a predefined place.|
+|`homepage.showMoreLinkDest`|'/posts'|The destination of the show more button.|
 |`article.showDate`|`true`|Whether or not article dates are displayed.|
 |`article.showViews`|`false`|Whether or not article views are displayed. This requires firebase integrations to be enabled, look below.|
 |`article.showDateUpdated`|`false`|Whether or not the dates articles were updated are displayed.|
