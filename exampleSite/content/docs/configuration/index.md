@@ -41,6 +41,12 @@ Note that the variable names provided in this table use dot notation to simplify
 |`taxonomies`|_Not set_|Refer to the [Organising content]({{< ref "getting-started#organising-content" >}}) section for taxonomy configuration.|
 <!-- prettier-ignore-end -->
 
+## Thumbnails
+
+Blowfish was built so it would be easy to add visual support to your articles. If your familiar with Hugo article strucutre, you just need to place an image file (almost all formats are supported bue we recommend `.png` or `.jpg`) that starts with `feature*` inside your article folder. And that's it, Blowfish will then able to both use the image as a thumbnail within your website as well as for <a target="_blank" href="https://oembed.com/">oEmbed</a> cards across social platforms. 
+
+[Here]({{< ref "thumbnails" >}}) is also a guide with more info and a [sample]({{< ref "thumbnail_sample" >}}) if you want to see how you can do it.
+
 ## Language and i18n
 
 Blowfish is optimised for full multilingual websites and theme assets are translated into several languages out of the box. The language configuration allows you to generate multiple versions of your content to provide a customised experience to your visitors in their native language.
@@ -131,6 +137,8 @@ Many of the article defaults here can be overridden on a per article basis by sp
 |`homepage.layout`|`"page"`|The layout of the homepage. Valid values are `page`, `profile` or `custom`. When set to `custom`, you must provide your own layout by creating a `/layouts/partials/home/custom.html` file. Refer to the [Homepage Layout]({{< ref "homepage-layout" >}}) section for more details.|
 |`homepage.showRecent`|`false`|Whether or not to display the recent articles list on the homepage.|
 |`homepage.showRecentItems`|5|How many articles to display if showRecent is true. If variable is set to 0 or if it isn't defined the system will default to 5 articles.|
+|`homepage.showMoreLink`|'false'|Wether or not to display a show more link at the end of your posts that takes the user to a predefined place.|
+|`homepage.showMoreLinkDest`|'/posts'|The destination of the show more button.|
 |`article.showDate`|`true`|Whether or not article dates are displayed.|
 |`article.showViews`|`false`|Whether or not article views are displayed. This requires firebase integrations to be enabled, look below.|
 |`article.showDateUpdated`|`false`|Whether or not the dates articles were updated are displayed.|

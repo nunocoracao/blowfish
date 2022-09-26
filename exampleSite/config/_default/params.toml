@@ -25,6 +25,8 @@ mainSections = ["docs", "samples"]
   layout = "custom" # valid options: page, profile, custom
   showRecent = false
   showRecentItems = 5
+  showMoreLink = false
+  showMoreLinkDest = "/docs"
  
 [article]
   showDate = true
