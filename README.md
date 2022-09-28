@@ -18,7 +18,8 @@ Blowfish is designed to be a powerful, lightweight theme for [Hugo](https://gohu
 - Multiple colour schemes (or fully customise your own)
 - Dark mode (forced on/off or auto-switching with user toggle)
 - Highly customisable configuration
-- Firebase integration to support dynamic data (i.e. views)
+- Firebase integration to support dynamic data
+- Views count & like mechanism
 - Multiple homepage layouts
 - Flexible with any content types, taxonomies and menus
 - Multilingual content support inlcuding support for RTL languages
