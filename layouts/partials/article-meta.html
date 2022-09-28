@@ -28,8 +28,16 @@
     {{ $meta.Add "partials" (slice (partial "meta/reading-time.html" .)) }}
   {{ end }}
 
-  {{ if (.Params.showViews | default (.Site.Params.article.showViews | default true)) }}
+  {{ if (.Params.showViews | default (.Site.Params.article.showViews | default false)) }}
     {{ $meta.Add "partials" (slice (partial "meta/views.html" .)) }}
+  {{ end }}
+
+  {{ if (.Params.showLikes | default (.Site.Params.article.showLikes | default false)) }}
+    {{ $meta.Add "partials" (slice (partial "meta/likes.html" .)) }}
+  {{ end }}
+
+  {{ if and (eq $scope "single") (.Params.showLikes | default (.Site.Params.article.showLikes | default false)) }}
+    {{ $meta.Add "partials" (slice (partial "meta/likes_button.html" .)) }}
   {{ end }}
 
   {{ if and (eq $scope "single") (.Params.showEdit | default (.Site.Params.article.showEdit | default false)) }}

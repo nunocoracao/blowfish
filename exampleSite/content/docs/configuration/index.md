@@ -141,6 +141,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 |`homepage.showMoreLinkDest`|'/posts'|The destination of the show more button.|
 |`article.showDate`|`true`|Whether or not article dates are displayed.|
 |`article.showViews`|`false`|Whether or not article views are displayed. This requires firebase integrations to be enabled, look below.|
+|`article.showLikes`|`false`|Whether or not article likes are displayed. This requires firebase integrations to be enabled, look below.|
 |`article.showDateUpdated`|`false`|Whether or not the dates articles were updated are displayed.|
 |`article.showAuthor`|`true`|Whether or not the author box is displayed in the article footer.|
 |`article.showBreadcrumbs`|`false`|Whether or not breadcrumbs are displayed in the article header.|
