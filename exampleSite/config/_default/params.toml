@@ -31,6 +31,7 @@ mainSections = ["docs", "samples"]
 [article]
   showDate = true
   showViews = true
+  showLikes = true
   showDateUpdated = false
   showAuthor = true
   showBreadcrumbs = true
@@ -44,7 +45,7 @@ mainSections = ["docs", "samples"]
   showReadingTime = true
   showTableOfContents = true
   showTaxonomies = false 
-  showWordCount = true
+  showWordCount = false
   showSummary = true
   sharingLinks = [ "linkedin", "twitter", "whatsapp", "pinterest", "reddit", "facebook", "email"]
 

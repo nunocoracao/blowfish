@@ -1,5 +1,6 @@
 if (typeof auth !== 'undefined') {
     var viewsCollection = db.collection('views');
+    var likesCollection = db.collection('likes');
 
     function numberWithCommas(x) {
         //return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
@@ -16,6 +17,16 @@ if (typeof auth !== 'undefined') {
         })
     }
 
+    var update_likes = function (oid, id) {
+        likesCollection.doc(id).onSnapshot(doc => {
+            var data = doc.data();
+            if (data) {
+                var label = document.querySelectorAll("span[id='" + oid + "']")[0].innerText.split(' ')[1]
+                document.querySelectorAll("span[id='" + oid + "']")[0].innerText = numberWithCommas(data.likes) + " " + label
+            }
+        })
+    }
+
 
     auth.signInAnonymously()
         .then(() => {
@@ -26,6 +37,16 @@ if (typeof auth !== 'undefined') {
                 var id = oid ? oid.replaceAll("/", "-") : oid
                 if (id) {
                     update_views(oid, id)
+                }
+            }
+
+            var likes_nodes = document.querySelectorAll("span[id^='likes_']")
+
+            for (var i in likes_nodes) {
+                var oid = likes_nodes[i].id
+                var id = oid ? oid.replaceAll("/", "-") : oid
+                if (id) {
+                    update_likes(oid, id)
                 }
             }
         })

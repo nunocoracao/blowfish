@@ -15,6 +15,9 @@ article:
   views:
     one: "{{ .Count }} view"
     other: "{{ .Count }} views"
+  likes:
+    one: "{{ .Count }} like"
+    other: "{{ .Count }} likes"
 
 author:
   byline_title: "Author"

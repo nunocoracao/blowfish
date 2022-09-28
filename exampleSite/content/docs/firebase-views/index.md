@@ -1,10 +1,10 @@
 ---
-title: "Firebase & Views"
+title: "Firebase: Views & Likes"
 date: 2020-08-03
 draft: false
-description: "Learn how to integrate Firebase and get dynamic data like views."
+description: "Learn how to integrate Firebase and get dynamic data for views and likes."
 slug: "firebase-views"
-tags: ["firebase", "views"]
+tags: ["firebase", "views", likes]
 ---
 
 In order to be able to support dynamic data across your website we've added the support to integrate Firebase. This will allow you to use the views feature across lists and posts. 
@@ -50,4 +50,4 @@ service cloud.firestore {
 }
 ```
 6. Enable anonymous authorization - Select Build and open Authentication. Select get started, click Anonymous and turn it on, save.
-7. Enjoy - you can now activate views on Blowfish for all (or specific) articles.
+7. Enjoy - you can now activate views and likes on Blowfish for all (or specific) articles.
