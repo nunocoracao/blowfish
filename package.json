@@ -1,6 +1,6 @@
 {
   "name": "hugo-blowfish-theme",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Blowfish theme for Hugo",
   "scripts": {
     "preinstall": "rimraf assets/vendor",
@@ -21,7 +21,11 @@
     "tailwind",
     "dark-mode"
   ],
-  "author": "Nuno Coracao",
+  "author": {
+    "name": "Nuno Coração",
+    "github": "https://github.com/nunocoracao",
+    "url": "https://nunocoracao.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/nunocoracao/blowfish/issues"
@@ -74,6 +78,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.0",
     "@heroicons/react": "^2.0.10",
-    "@tailwindcss/forms": "^0.5.3"
+    "@tailwindcss/forms": "^0.5.3",
+    "commander": "^9.4.0"
   }
 }
