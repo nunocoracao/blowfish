@@ -87,6 +87,27 @@ Blowfish defines a three-colour palette that is used throughout the theme. Each 
 
 {{< swatches "#8338ec" "#ff006e" "#3a86ff" >}}
 
+
+#### Redemption
+
+{{< swatches "#d90429" "#8d99ae" "#457b9d" >}}
+
+
+#### Terminal
+
+{{< swatches "#004b23" "#38b000" "#1a759f" >}}
+
+
+#### Mario
+
+{{< swatches "#2541b2" "#d81159" "#ffbc42" >}}
+
+#### Noir
+
+{{< swatches "#5c6b73" "#9db4c0" "#00a5cf" >}}
+
+
+
 Although these are the default schemes, you can also create your own. Refer to the [Advanced Customisation]({{< ref "advanced-customisation#colour-schemes" >}}) section for details.
 
 ## Organising content
