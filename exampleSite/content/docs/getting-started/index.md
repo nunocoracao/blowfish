@@ -83,6 +83,10 @@ Blowfish defines a three-colour palette that is used throughout the theme. Each 
 
 {{< swatches "#6B7280" "#64748b" "#6B7280" >}}
 
+#### Neon
+
+{{< swatches "#8338ec" "#ff006e" "#3a86ff" >}}
+
 Although these are the default schemes, you can also create your own. Refer to the [Advanced Customisation]({{< ref "advanced-customisation#colour-schemes" >}}) section for details.
 
 ## Organising content
