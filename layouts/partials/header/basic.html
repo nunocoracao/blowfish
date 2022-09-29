@@ -19,7 +19,9 @@
 
             <a href="{{ "" | relLangURL }}" class="text-base font-medium text-gray-500 hover:text-gray-900">{{ .Site.Title | markdownify
                 | emojify }}</a>
-
+            
+            {{ partial "translations.html" . }}
+            
         </nav>
         <div class="hidden md:flex items-center space-x-5 md:ml-12">
 
