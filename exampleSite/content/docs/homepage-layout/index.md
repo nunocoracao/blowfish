@@ -11,17 +11,9 @@ Blowfish provides a fully flexible homepage layout. There are two main templates
 
 The layout of the homepage is controlled by the `homepage.layout` setting in the `params.toml` configuration file. Additionally, all layouts have the option to include a listing of [recent articles](#recent-articles).
 
-## Page layout
-
-The default layout is the page layout. It's simply a normal content page that displays your Markdown content. It's great for static websites and provides a lot of flexibility.
-
-![Screenshot of homepage layout](home-page.png)
-
-To enable the page layout, set `homepage.layout = "page"` in the `params.toml` configuration file.
-
 ## Profile layout
 
-The profile layout is great for personal websites and blogs. It puts the author's details front and centre by providing an image and links to social profiles.
+The default layout is the profile layout, which is great for personal websites and blogs. It puts the author's details front and centre by providing an image and links to social profiles.
 
 ![Screenshot of profile layout](home-profile.png)
 
@@ -30,6 +22,16 @@ The author information is provided in the languages configuration file. Refer to
 Additionally, any Markdown content that is provided in the homepage content will be placed below the author profile. This allows extra flexibility for displaying a bio or other custom content using shortcodes.
 
 To enable the profile layout, set `homepage.layout = "profile"` in the `params.toml` configuration file.
+
+
+## Page layout
+
+The page layout is simply a normal content page that displays your Markdown content. It's great for static websites and provides a lot of flexibility.
+
+![Screenshot of homepage layout](home-page.png)
+
+To enable the page layout, set `homepage.layout = "page"` in the `params.toml` configuration file.
+
 
 ## Custom layout
 
