@@ -6,8 +6,6 @@ theme = "blowfish"
 baseURL = "https://nunocoracao.github.io/blowfish/"
 defaultContentLanguage = "en"
 
-relativeURLs = true
-
 enableRobotsTXT = true
 paginate = 20
 summaryLength = 30
