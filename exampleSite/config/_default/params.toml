@@ -29,7 +29,7 @@ mainSections = ["docs", "samples"]
   showMoreLinkDest = "/docs"
  
 [article]
-  showDate = true
+  showDate = false
   showViews = true
   showLikes = true
   showDateUpdated = false
@@ -44,7 +44,7 @@ mainSections = ["docs", "samples"]
   invertPagination = false
   showReadingTime = true
   showTableOfContents = true
-  showTaxonomies = false 
+  showTaxonomies = true 
   showWordCount = false
   showSummary = true
   sharingLinks = [ "linkedin", "twitter", "whatsapp", "pinterest", "reddit", "facebook", "email"]
