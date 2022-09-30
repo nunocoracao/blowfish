@@ -64,48 +64,43 @@ colorScheme = "blowfish"
 Blowfish defines a three-colour palette that is used throughout the theme. Each main colour contains ten shades which are based upon the colours that are included in [Tailwind](https://tailwindcss.com/docs/customizing-colors#color-palette-reference).
 
 #### Blowfish (default)
-
 {{< swatches "#64748b" "#3b82f6" "#06b6d4" >}}
 
 #### Avocado
-
 {{< swatches "#78716c" "#84cc16" "#10b981" >}}
 
 #### Fire
-
 {{< swatches "#78716c" "#f97316" "#f43f5e" >}}
 
-#### Congo
+#### Forest
+{{< swatches "#658c86" "#3bf5df" "#06d45c" >}}
 
-{{< swatches "#71717a" "#8b5cf6" "#d946ef" >}}
-
-#### Slate
-
-{{< swatches "#6B7280" "#64748b" "#6B7280" >}}
+#### Princess
+{{< swatches "#8c658c" "#f53bf2" "#7706d4" >}}
 
 #### Neon
-
 {{< swatches "#8338ec" "#ff006e" "#3a86ff" >}}
 
-
-#### Redemption
-
+#### Bloody
 {{< swatches "#d90429" "#8d99ae" "#457b9d" >}}
 
-
 #### Terminal
-
 {{< swatches "#004b23" "#38b000" "#1a759f" >}}
 
-
-#### Mario
-
+#### Marvel
 {{< swatches "#2541b2" "#d81159" "#ffbc42" >}}
 
 #### Noir
-
 {{< swatches "#5c6b73" "#9db4c0" "#00a5cf" >}}
 
+#### Autumn
+{{< swatches "#0a9396" "#ee9b00" "#bb3e03" >}}
+
+#### Congo
+{{< swatches "#71717a" "#8b5cf6" "#d946ef" >}}
+
+#### Slate
+{{< swatches "#6B7280" "#64748b" "#6B7280" >}}
 
 
 Although these are the default schemes, you can also create your own. Refer to the [Advanced Customisation]({{< ref "advanced-customisation#colour-schemes" >}}) section for details.
