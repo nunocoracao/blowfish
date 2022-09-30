@@ -1,6 +1,6 @@
 # Blowfish
 
-[![pages-build-deployment](https://github.com/nunocoracao/blowfish/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/nunocoracao/blowfish/actions/workflows/pages/pages-build-deployment)
+[![Blowfish Docs Deploy](https://github.com/nunocoracao/blowfish/actions/workflows/pages.yml/badge.svg)](https://github.com/nunocoracao/blowfish/actions/workflows/pages.yml)
 
 Blowfish is designed to be a powerful, lightweight theme for [Hugo](https://gohugo.io). It's built using Tailwind CSS with a clean and minimalist design that prioritises to your content. The theme is a fork of [Congo](https://github.com/jpanther/congo).
 
