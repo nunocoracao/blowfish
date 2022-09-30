@@ -55,22 +55,21 @@
     {{ if and (eq $scope "single") (and .Draft .Site.Params.article.showDraftLabel) }}
       <span class="pl-2">{{ partial "badge.html" (i18n "article.draft" | emojify) }}</span>
     {{ end }}
-  </div>
 
-  {{/* Output taxonomies */}}
-  {{ if .Params.showTaxonomies | default (.Site.Params.article.showTaxonomies | default false) }}
-    <div class="my-1 text-xs text-neutral-500 dark:text-neutral-400 ">
-      {{ range $taxonomy, $terms := .Site.Taxonomies }}
-        {{ if (gt (len ($context.GetTerms $taxonomy)) 0) }}
-          {{ range $context.GetTerms $taxonomy }}
-            <a
-              href="{{ .RelPermalink }}"
-              class="rounded-md border border-neutral-200 px-1 py-[1px] hover:border-primary-300 hover:text-primary-700 dark:border-neutral-600 dark:hover:border-primary-600 dark:hover:text-primary-400"
-              >{{ .LinkTitle }}</a
-            >
+    {{/* Output taxonomies */}}
+    {{ if .Params.showTaxonomies | default (.Site.Params.article.showTaxonomies | default false) }}
+        {{ range $taxonomy, $terms := .Site.Taxonomies }}
+          {{ if (gt (len ($context.GetTerms $taxonomy)) 0) }}
+            {{ range $context.GetTerms $taxonomy }}
+            <span class="pl-2" onclick="window.open({{ .RelPermalink }});">
+              {{ partial "badge.html" .LinkTitle }}
+            </span>
+            {{ end }}
           {{ end }}
         {{ end }}
-      {{ end }}
-    </div>
+    {{ end }}
   {{ end }}
-{{ end }}
+
+  </div>
+
+
