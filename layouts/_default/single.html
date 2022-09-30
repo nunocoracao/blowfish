@@ -27,7 +27,7 @@
         var liked_article = false
 
         if (typeof auth !== 'undefined') {
-          var oid = "views_{{ .Path }}"
+          var oid = "views_{{ .File.Path }}"
           var id = oid ? oid.replaceAll("/", "-") : oid
 
           var viewed = localStorage.getItem(id);
@@ -56,7 +56,7 @@
               });
           }
 
-          var oid_likes = "likes_{{ .Path }}"
+          var oid_likes = "likes_{{ .File.Path }}"
           var id_likes = oid_likes ? oid_likes.replaceAll("/", "-") : oid_likes
 
           var liked = localStorage.getItem(id_likes);
@@ -123,7 +123,7 @@
         }
 
         function process_article() {
-          var oid_likes = "likes_{{ .Path }}"
+          var oid_likes = "likes_{{ .File.Path }}"
           var id_likes = oid_likes ? oid_likes.replaceAll("/", "-") : oid_likes
           if (!liked_article) {
             like_article(id_likes)
