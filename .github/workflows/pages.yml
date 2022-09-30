@@ -49,7 +49,7 @@ jobs:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
-          hugo -b "https://nunocoracao.github.io/blowfish/" -s exampleSite --themesDir ../..
+          hugo -s exampleSite --themesDir ../..
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
