@@ -55,6 +55,7 @@ The full list of built-in icons and their corresponding names can referenced bel
 | orcid                | {{< icon orcid >}}                |
 | patreon              | {{< icon patreon >}}              |
 | pencil               | {{< icon pencil >}}               |
+| pgpkey               | {{< icon pgpkey >}}               |
 | pinterest            | {{< icon pinterest >}}            |
 | reddit               | {{< icon reddit >}}               |
 | researchgate         | {{< icon researchgate >}}         |
