@@ -161,6 +161,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 |`list.showBreadcrumbs`|`false`|Whether or not breadcrumbs are displayed in the header on list pages.|
 |`list.showTableOfContents`|`false`|Whether or not the table of contents is displayed on list pages.|
 |`list.showSummary`|`false`|Whether or not article summaries are displayed on list pages. If a summary is not provided in the [front matter]({{< ref "front-matter" >}}), one will be auto generated using the `summaryLength` parameter in the [site configuration](#site-configuration).|
+|`list.showCards`|`false`|Whether or not each article is displayed as a card or as simple inline text.|
 |`list.groupByYear`|`true`|Whether or not articles are grouped by year on list pages.|
 |`sitemap.excludedKinds`|`["taxonomy", "term"]`|Kinds of content that should be excluded from the generated `/sitemap.xml` file. Refer to the [Hugo docs](https://gohugo.io/templates/section-templates/#page-kinds) for acceptable values.|
 |`taxonomy.showTermCount`|`true`|Whether or not the number of articles within a taxonomy term is displayed on the taxonomy listing.|

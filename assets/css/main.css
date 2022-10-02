@@ -345,7 +345,10 @@ body:has(#menu-controller:checked) {
   background-repeat:no-repeat;
   background-size:cover; 
   background-position:center;
-  box-shadow: 10px 10px 30px 2px rgba(0, 0, 0, 0.6);
+}
+
+.thumbnailshadow {
+  box-shadow: 5px 5px 20px 1px rgba(0, 0, 0, 0.3);
 }
 
 @screen sm {
@@ -361,7 +364,8 @@ body:has(#menu-controller:checked) {
 @screen md {
   .thumbnail {
     min-width: 300px;
-    height: 180px;
+    min-height: 180px;
+    height: auto;
   }
   .article {
     flex-wrap: nowrap;
