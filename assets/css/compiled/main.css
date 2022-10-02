@@ -1635,6 +1635,12 @@ select {
   width: 100%;
 }
 
+.w-fit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 .w-24 {
   width: 6rem;
 }
