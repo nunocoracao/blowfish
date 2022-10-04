@@ -26,9 +26,17 @@
   weight = 30
 
 [[main]]
-  name = "GitHub"
+  identifier = "github"
+  pre = "github"
   url = "https://github.com/nunocoracao/blowfish"
   weight = 40
+
+[[main]]
+  identifier = "twitter"
+  pre = "twitter"
+  url = "https://twitter.com/burufugu"
+  weight = 50
+
 
 # -- Footer Menu --
 # The footer menu is displayed at the bottom of the page, just before

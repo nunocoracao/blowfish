@@ -26,12 +26,13 @@
 
             {{ if .Site.Menus.main }}
             {{ range .Site.Menus.main }}
-            <a href="{{ .URL }}" class="text-base font-medium text-gray-500 hover:text-gray-900" title="{{ .Title }}">{{
-                .Name | markdownify | emojify }}</a>
+            <a href="{{ .URL }}" class="text-base font-medium text-gray-500 hover:text-gray-900" title="{{ .Title }}">
+                {{ partial "icon.html" .Pre }}
+                {{ if and .Pre .Name }} &nbsp; {{ end }}
+                {{ .Name | markdownify | emojify }}
+            </a>
             {{ end }}
             {{ end }}
-
-            <span></span>
 
             {{ partial "translations.html" . }}
 
@@ -107,7 +108,11 @@
                     {{ range .Site.Menus.main }}
                     <li class="mb-1">
                         <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
-                            href="{{ .URL }}" title="{{ .Title }}">{{ .Name | markdownify | emojify }}</a>
+                            href="{{ .URL }}" title="{{ .Title }}">
+                            {{ partial "icon.html" .Pre }}
+                            {{ if and .Pre .Name }} &nbsp; {{ end }}
+                            {{ .Name | markdownify | emojify }}
+                        </a>
                     </li>
                     {{ end }}
                     {{ end }}
