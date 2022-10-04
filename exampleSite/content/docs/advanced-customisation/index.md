@@ -55,6 +55,37 @@ Sometimes you need to add a custom style to style your own HTML elements. Blowfi
 
 The `custom.css` file will be minified by Hugo and loaded automatically after all the other theme styles which means anything in your custom file will take precedence over the defaults.
 
+### Using additional fonts
+
+Blowfish allows you to easily change the font for your site. After creating a `custom.css` file in your project's `assets/css/` folder, place you font file inside a `fonts` folder withing the `static` root folder. 
+
+```shell
+.
+├── assets
+│   └── css
+│       └── custom.css
+...
+└─── static
+    └── fonts
+        └─── font.ttf
+
+```
+
+This makes the font available to the website. Now, the font can just import it in your `custom.css` and replaced wherever you see fit. The example below shows what replacing the font for the entire `html` would look like.
+
+```css
+@font-face {
+    font-family: font;
+    src: url('/fonts/font.ttf');
+}
+
+html {
+    font-family: font;
+}
+```
+
+
+
 ### Adjusting the font size
 
 Changing the font size of your website is one example of overriding the default stylesheet. Blowfish makes this simple as it uses scaled font sizes throughout the theme which are derived from the base HTML font size. By default, Tailwind sets the default size to `12pt`, but it can be changed to whatever value you prefer.
