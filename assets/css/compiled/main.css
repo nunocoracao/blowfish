@@ -1621,10 +1621,10 @@ select {
   width: 3rem;
 }
 
-.w-max {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+.w-fit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .w-36 {
@@ -1633,12 +1633,6 @@ select {
 
 .w-full {
   width: 100%;
-}
-
-.w-fit {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 
 .w-24 {
@@ -3413,6 +3407,10 @@ body:has(#menu-controller:checked) {
 
   .lg\:order-last {
     order: 9999;
+  }
+
+  .lg\:block {
+    display: block;
   }
 
   .lg\:hidden {
