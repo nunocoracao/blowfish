@@ -23,7 +23,7 @@ mainSections = ["docs", "samples"]
 
 [homepage]
   layout = "custom" # valid options: page, profile, custom
-  showRecent = false
+  showRecent = true
   showRecentItems = 5
   showMoreLink = true
   showMoreLinkDest = "/docs"
