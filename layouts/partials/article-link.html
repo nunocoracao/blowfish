@@ -41,7 +41,7 @@
 
 
     <div class="{{ $articleInnerClasses }}">
-      <h3 class="items-center text-xl font-semibold">
+      <div class="items-center text-xl font-semibold">
         {{ with .Params.externalUrl }}
         <div>
           <div
@@ -55,8 +55,8 @@
 
         </div>
         {{ else }}
-        <p class="text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="{{ .RelPermalink }}">{{ .Title | emojify }}</p>
+        <div class="text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="{{ .RelPermalink }}">{{ .Title | emojify }}</div>
         {{ end }}
         {{ if and .Draft .Site.Params.article.showDraftLabel }}
         <div class=" ltr:ml-2 rtl:mr-2">
@@ -66,7 +66,7 @@
         {{ if templates.Exists "partials/extend-article-link.html" }}
         {{ partial "extend-article-link.html" . }}
         {{ end }}
-      </h3>
+      </div>
       <div class="text-sm text-neutral-500 dark:text-neutral-400">
         {{ partial "article-meta.html" . }}
       </div>

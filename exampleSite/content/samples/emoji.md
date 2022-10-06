@@ -4,6 +4,7 @@ date: 2019-03-05
 description: "Guide to Emoji usage in Blowfish"
 summary: "📖🏞️🧗🏽🐉🧙🏽‍♂️🧚🏽👸"
 tags: ["emoji", "sample"]
+type: 'sample'
 ---
 
 Emoji is supported throughout Blowfish by default. Emoji can be used in titles, menu items and article content.
