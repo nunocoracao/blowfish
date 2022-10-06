@@ -37,6 +37,25 @@ Don't forget to [follow me](https://twitter.com/nunocoracao) on Twitter.
 Don't forget to [follow me](https://twitter.com/nunocoracao) on Twitter.
 {{< /alert >}}
 
+## Article
+`Article` will embed a single article into a markdown file. The `link` to the file should be the `.RelPermalink` of the file to be embedded. Note that the shortcode will not display anything if it's referencing it's parent.
+
+<!-- prettier-ignore-start -->
+|Parameter|Description|
+|---|---|
+|`link`| **Required.** the `.RelPermalink` to the target article.|
+<!-- prettier-ignore-end -->
+
+**Example:**
+
+```md
+{{</* article link="/docs/welcome/" */>}}
+```
+
+{{< article link="/docs/welcome/" >}}
+
+
+
 ## Badge
 
 `badge` outputs a styled badge component which is useful for displaying metadata.
@@ -163,6 +182,33 @@ Icons are populated using Hugo pipelines which makes them very flexible. Blowfis
 Custom icons can be added by providing your own icon assets in the `assets/icons/` directory of your project. The icon can then be referenced in the shortcode by using the SVG filename without the `.svg` extension.
 
 Icons can also be used in partials by calling the [icon partial]({{< ref "partials#icon" >}}).
+
+## List
+`List` will display a list of recent articles. This shortcode requires a limit value to constraint the list. Additionally, it supports a `where` and a `value` in order to filter articles by their parameters. Note that this shortcode will not display its parent page but it will count for the limit value.
+
+<!-- prettier-ignore-start -->
+|Parameter|Description|
+|---|---|
+|`limit`| **Required.** the number of recent articles to display.|
+|`where`| the number of recent articles to display.|
+|`value`| the number of recent articles to display.|
+
+<!-- prettier-ignore-end -->
+
+**Example #1:**
+```md
+{{</* list limit=2 */>}}
+```
+
+{{< list limit=2 >}}
+
+**Example #2:**
+```md
+{{</* list limit=2 where="Type" value="sample" */>}}
+```
+
+{{< list limit=2 where="Type" value="sample">}}
+
 
 ## Swatches
 `swatches` outputs a set of up to three different colors to showcase color elements like a color palette. This shortcode takes the `HEX` codes of each color and creates the visual elements for each.
