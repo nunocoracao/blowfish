@@ -84,7 +84,7 @@ data: {
   labels: ['Tomato', 'Blueberry', 'Banana', 'Lime', 'Orange'],
   datasets: [{
     label: '# of votes',
-    data: [12, 19, 3, 5, 2, 3],
+    data: [12, 19, 3, 5, 3],
   }]
 }
 {{</* /chart */>}}
