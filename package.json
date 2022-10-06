@@ -1,6 +1,6 @@
 {
   "name": "hugo-blowfish-theme",
-  "version": "1.5.2",
+  "version": "1.5.1",
   "description": "Blowfish theme for Hugo",
   "scripts": {
     "preinstall": "rimraf assets/vendor",
