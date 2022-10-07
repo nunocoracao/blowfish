@@ -38,7 +38,7 @@ Don't forget to [follow me](https://twitter.com/nunocoracao) on Twitter.
 {{< /alert >}}
 
 ## Article
-`Article` will embed a single article into a markdown file. The `link` to the file should be the `.RelPermalink` of the file to be embedded. Note that the shortcode will not display anything if it's referencing it's parent.
+`Article` will embed a single article into a markdown file. The `link` to the file should be the `.RelPermalink` of the file to be embedded. Note that the shortcode will not display anything if it's referencing it's parent. *Note: if you are running your website in a subfolder like Blowfish (i.e. /blowfish/) please include that path in the link.*
 
 <!-- prettier-ignore-start -->
 |Parameter|Description|
@@ -49,10 +49,10 @@ Don't forget to [follow me](https://twitter.com/nunocoracao) on Twitter.
 **Example:**
 
 ```md
-{{</* article link="/docs/welcome/" */>}}
+{{</* article link="/blowfish/docs/welcome/" */>}}
 ```
 
-{{< article link="/docs/welcome/" >}}
+{{< article link="/blowfish/docs/welcome/" >}}
 
 
 
