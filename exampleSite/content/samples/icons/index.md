@@ -27,6 +27,7 @@ The full list of built-in icons and their corresponding names can referenced bel
 | comment              | {{< icon comment >}}              |
 | dev                  | {{< icon dev >}}                  |
 | discourse            | {{< icon discourse >}}            |
+| docker               | {{< icon docker >}}               |
 | dribbble             | {{< icon dribbble >}}             |
 | edit                 | {{< icon edit >}}                 |
 | email                | {{< icon email >}}                |
@@ -39,6 +40,8 @@ The full list of built-in icons and their corresponding names can referenced bel
 | google               | {{< icon google >}}               |
 | hackernews           | {{< icon hackernews >}}           |
 | hashnode             | {{< icon hashnode >}}             |
+| heart-empty          | {{< icon heart-empty >}}          |
+| heart                | {{< icon heart >}}                |
 | instagram            | {{< icon instagram >}}            |
 | keybase              | {{< icon keybase >}}              |
 | kickstarter          | {{< icon kickstarter >}}          |
@@ -57,6 +60,7 @@ The full list of built-in icons and their corresponding names can referenced bel
 | pencil               | {{< icon pencil >}}               |
 | pgpkey               | {{< icon pgpkey >}}               |
 | pinterest            | {{< icon pinterest >}}            |
+| poo                  | {{< icon poo >}}                  |
 | reddit               | {{< icon reddit >}}               |
 | researchgate         | {{< icon researchgate >}}         |
 | search               | {{< icon search >}}               |
