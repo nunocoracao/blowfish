@@ -63,7 +63,7 @@
 
           if (liked) {
             liked_article = true
-            document.querySelectorAll("button[id='likes_button']")[0].innerText = "Remove Like"
+            document.querySelectorAll("button[id='likes_button']")[0].textContent = "Remove Like"
           }
 
         }
@@ -98,7 +98,7 @@
         function remove_like_article(id_likes) {
           console.log("remove")
           liked_article = false
-          localStorage.setItem(id_likes, false);
+          localStorage.removeItem(id_likes);
           document.querySelectorAll("button[id='likes_button']")[0].innerText = "Like"
           auth.signInAnonymously()
             .then(() => {

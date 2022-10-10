@@ -1,6 +1,15 @@
 <span>
-    <button id="likes_button" class="border rounded px-3" onclick="process_article()">
+    <!--button id="likes_button" class="border rounded px-3" onclick="process_article()">
         Like
+    </button-->
+
+
+    <button id="likes_button"
+        style="height: 24px; padding-top: 0;"
+        class="!rounded-md bg-primary-600 px-4 py-2 !text-neutral !no-underline hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700"
+        onclick="process_article()">
+        {{ partial "icon.html" "like" }} 
     </button>
+
 </span>
 {{- /* Trim EOF */ -}}
