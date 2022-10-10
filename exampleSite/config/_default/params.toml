@@ -22,12 +22,12 @@ mainSections = ["docs"]
   showScrollToTop = true
 
 [homepage]
-  layout = "custom" # valid options: page, profile, custom
+  layout = "hero" # valid options: page, profile, custom
   showRecent = true
   showRecentItems = 5
   showMoreLink = true
   showMoreLinkDest = "docs"
- 
+
 [article]
   showDate = false
   showViews = true

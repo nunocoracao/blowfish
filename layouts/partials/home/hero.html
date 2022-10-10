@@ -1,0 +1,92 @@
+<article class="max-w-full prose dark:prose-invert">
+    <div class="relative">
+        <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100"></div>
+        <div class="mx-auto max-w-7xl p-0">
+            <div class="relative shadow-xl sm:overflow-hidden rounded-2xl">
+                <div class="absolute inset-0">
+                    <img class="h-full w-full object-cover p-0 nozoom"
+                        src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2830&q=80&sat=-100"
+                        alt="People working on laptops">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary-800 to-secondary-700 mix-blend-multiply">
+                    </div>
+                </div>
+                <div class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8 flex flex-col items-center">
+                    {{ with .Site.Author.image }}
+                    {{ $authorImage := resources.Get . }}
+                    {{ if $authorImage }}
+                    {{ $authorImage := $authorImage.Fill "288x288" }}
+                    <img class="mb-2 rounded-full h-36 w-36" width="144" height="144"
+                        alt="{{ $.Site.Author.name | default " Author" }}" src="{{ $authorImage.RelPermalink }}" />
+                    {{ end }}
+                    {{ end }}
+                    <h1 class="text-4xl font-extrabold">
+                        {{ .Site.Author.name | default .Site.Title }}
+                    </h1>
+                    {{ with .Site.Author.headline }}
+                    <h2 class="text-xl text-neutral-500 dark:text-neutral-400">
+                        {{ . | markdownify | emojify }}
+                    </h2>
+                    {{ end }}
+                    <div class="mt-1 text-2xl">
+                        {{ partialCached "author-links.html" . }}
+                    </div>
+                    {{ with .Title }}
+                    <header>
+                        <h1>{{ . | emojify }}</h1>
+                    </header>
+                    {{ end }}
+
+                    <section class="prose dark:prose-invert">{{ .Content | emojify }}</section>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+<section>
+    {{ partial "recent-articles.html" . }}
+</section>
+
+<!--article class="max-w-full prose dark:prose-invert rounded-xl hero"
+    style="background-image:url(https://cdn.britannica.com/06/171306-050-C88DD752/Aurora-borealis-peninsula-Snaefellsnes-Iceland-March-2013.jpg)">
+
+    <div class="absolute inset-0 bg-gradient-to-r from-primary-800 to-secondary-700 mix-blend-multiply"></div>
+
+    <div class="absolute inset-0">
+        <img class="h-full w-full object-cover"
+            src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2830&q=80&sat=-100"
+            alt="People working on laptops">
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-800 to-indigo-700 mix-blend-multiply"></div>
+    </div>
+
+    <header class="flex flex-col items-center mb-3 p-32">
+        {{ with .Site.Author.image }}
+        {{ $authorImage := resources.Get . }}
+        {{ if $authorImage }}
+        {{ $authorImage := $authorImage.Fill "288x288" }}
+        <img class="mb-2 rounded-full h-36 w-36" width="144" height="144" alt="{{ $.Site.Author.name | default " Author"
+            }}" src="{{ $authorImage.RelPermalink }}" />
+        {{ end }}
+        {{ end }}
+        <h1 class="text-4xl font-extrabold">
+            {{ .Site.Author.name | default .Site.Title }}
+        </h1>
+        {{ with .Site.Author.headline }}
+        <h2 class="text-xl text-neutral-500 dark:text-neutral-400">
+            {{ . | markdownify | emojify }}
+        </h2>
+        {{ end }}
+        <div class="mt-1 text-2xl">
+            {{ partialCached "author-links.html" . }}
+        </div>
+        {{ with .Title }}
+        <header>
+            <h1>{{ . | emojify }}</h1>
+        </header>
+        {{ end }}
+
+        <section class="prose dark:prose-invert">{{ .Content | emojify }}</section>
+    </header>
+</article>
+<section>
+    {{ partial "recent-articles.html" . }}
+</section-->
