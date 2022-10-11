@@ -1,20 +1,31 @@
+
+
+var layouts = [
+  "hero",
+  "profile",
+  "card",
+  "page"
+]
+
+var currentLayout = 0
+
 function switchHomeLayout() {
-  const pageDiv = document.getElementById("page");
-  const profileDiv = document.getElementById("profile");
+
+  //document.getElementById(
+
+  var old = currentLayout
+  currentLayout = currentLayout == layouts.length - 1 ? 0 : currentLayout + 1
+
+  var oldDiv = document.getElementById(layouts[old])
+  var currentDiv = document.getElementById(layouts[currentLayout])
   const layoutCode = document.querySelectorAll("code[id=layout]");
-  if (profileDiv.style.display === "none") {
-    profileDiv.style.display = "block";
-    pageDiv.style.display = "none";
-    layoutCode.forEach(function (el) {
-      el.innerText = "profile";
-    });
-  } else {
-    profileDiv.style.display = "none";
-    pageDiv.style.display = "block";
-    layoutCode.forEach(function (el) {
-      el.innerText = "page";
-    });
-  }
+
+  currentDiv.style.display = "block";
+  oldDiv.style.display = "none";
+  layoutCode.forEach(function (el) {
+    el.innerText = layouts[currentLayout];
+  });
+
 }
 
 window.addEventListener("DOMContentLoaded", (event) => {

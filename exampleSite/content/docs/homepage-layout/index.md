@@ -15,7 +15,7 @@ The layout of the homepage is controlled by the `homepage.layout` setting in the
 
 The default layout is the profile layout, which is great for personal websites and blogs. It puts the author's details front and centre by providing an image and links to social profiles.
 
-![Screenshot of profile layout](home-profile.png)
+<img class="thumbnailshadow" src="home-profile.png"/>
 
 The author information is provided in the languages configuration file. Refer to the [Getting Started]({{< ref "getting-started" >}}) and [Language Configuration]({{< ref "configuration##language-and-i18n" >}}) sections for parameter details.
 
@@ -28,9 +28,25 @@ To enable the profile layout, set `homepage.layout = "profile"` in the `params.t
 
 The page layout is simply a normal content page that displays your Markdown content. It's great for static websites and provides a lot of flexibility.
 
-![Screenshot of homepage layout](home-page.png)
+<img class="thumbnailshadow" src="home-page.png"/>
 
 To enable the page layout, set `homepage.layout = "page"` in the `params.toml` configuration file.
+
+## Hero layout
+
+The hero layout brings together ideas from the profile and card layouts. This one not only displays information on the author of the site but it also loads your markdown beneath it.
+
+<img class="thumbnailshadow" src="home-hero.png"/>
+
+To enable the profile layout, set `homepage.layout = "profile"` and `homepage.homepageImage` in the `params.toml` configuration file.
+
+## Card layout
+
+The card layout is an extension of the page layout. It provides the same level of flexivbility by also displaying your markdown content and adds a card image to display visual content.
+
+<img class="thumbnailshadow" src="home-card.png"/>
+
+To enable the profile layout, set `homepage.layout = "profile"` and `homepage.homepageImage` in the `params.toml` configuration file. 
 
 
 ## Custom layout
@@ -49,7 +65,7 @@ As an example, the [homepage]({{< ref "/" >}}) on this site uses the custom layo
 
 All homepage layouts have the option of displaying recent articles below the main page content. To enable this, simply set the `homepage.showRecent` setting to `true` in the `params.toml` configuration file.
 
-![Profile layout with recent articles](home-profile-list.png)
+<img class="thumbnailshadow" src="home-list.png"/>
 
 The articles listed in this section are derived from the `mainSections` setting which allows for whatever content types you are using on your website. For instance, if you had content sections for _posts_ and _projects_ you could set this setting to `["posts", "projects"]` and all the articles in these two sections would be used to populate the recent list. The theme expects this setting to be an array so if you only use one section for all your content, you should set this accordingly: `["blog"]`.
 
@@ -57,4 +73,4 @@ The articles listed in this section are derived from the `mainSections` setting 
 
 Blowfish was built so it would be easy to add visual support to your articles. If your familiar with Hugo article strucutre, you just need to place an image file (almost all formats are supported bue we recommend `.png` or `.jpg`) that starts with `feature*` inside your article folder. And that's it, Blowfish will then able to both use the image as a thumbnail within your website as well as for <a target="_blank" href="https://oembed.com/">oEmbed</a> cards across social platforms. 
 
-[Here]({{< ref "thumbnails" >}}) is also a guide with more info and a [sample]({{< ref "thumbnail_sample" >}}) if you want to see how you can do it.
+[Here]({{< ref "thumbnails" >}}) is a guide with more info and a [sample]({{< ref "thumbnail_sample" >}}) if you want to see an example.

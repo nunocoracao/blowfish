@@ -351,12 +351,6 @@ body:has(#menu-controller:checked) {
   box-shadow: 5px 5px 20px 1px rgba(0, 0, 0, 0.3);
 }
 
-.hero {
-  background-repeat:no-repeat;
-  background-size:cover; 
-  background-position:center;
-}
-
 @screen sm {
   .thumbnail {
     min-width: 100%;
