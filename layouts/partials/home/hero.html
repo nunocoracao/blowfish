@@ -1,0 +1,50 @@
+<article class="max-w-full prose dark:prose-invert">
+    <div class="relative">
+        <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100"></div>
+        <div class="mx-auto max-w-7xl p-0">
+            <div class="relative shadow-xl sm:overflow-hidden rounded-2xl">
+                <div class="absolute inset-0">
+                    <img class="h-full w-full object-cover m-0 nozoom" src="{{ .Site.Params.homepage.homepageImage }}">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-700 dark:from-primary-600 dark:to-secondary-800 mix-blend-multiply">
+                    </div>
+                </div>
+                <div class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8 flex flex-col items-center">
+                    {{ with .Site.Author.image }}
+                    {{ $authorImage := resources.Get . }}
+                    {{ if $authorImage }}
+                    {{ $authorImage := $authorImage.Fill "288x288" }}
+                    <img class="mb-2 rounded-full h-36 w-36" width="144" height="144"
+                        alt="{{ $.Site.Author.name | default " Author" }}" src="{{ $authorImage.RelPermalink }}" />
+                    {{ end }}
+                    {{ end }}
+                    <h1 class="mb-2 text-4xl font-extrabold text-neutral-200">
+                        {{ .Site.Author.name | default .Site.Title }}
+                    </h1>
+                    {{ with .Site.Author.headline }}
+                    <h2 class="mt-0 mb-0 text-xl text-neutral-300">
+                        {{ . | markdownify | emojify }}
+                    </h2>
+                    {{ end }}
+                    <div class="mt-1 mb-10 text-2xl">
+                        {{ with .Site.Author.links }}
+                        <div class="flex flex-wrap">
+                            {{ range $links := . }}
+                            {{ range $name, $url := $links }}
+                            <a class="px-1 hover:text-primary-400 text-primary-300" href="{{ $url }}" target="_blank"
+                                aria-label="{{ $name | title }}" rel="me noopener noreferrer">{{ partial
+                                "icon.html" $name }}</a>
+                            {{ end }}
+                            {{ end }}
+                        </div>
+                        {{ end }}
+                    </div>
+                    <section class="prose text-neutral-200">{{ .Content | emojify }}</section>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+<section>
+    {{ partial "recent-articles.html" . }}
+</section>

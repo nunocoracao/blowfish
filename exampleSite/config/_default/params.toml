@@ -22,12 +22,13 @@ mainSections = ["docs"]
   showScrollToTop = true
 
 [homepage]
-  layout = "custom" # valid options: page, profile, custom
+  layout = "custom" # valid options: page, profile, hero, card, custom
+  homepageImage = "iceland.jpg" # used in: hero, and card
   showRecent = true
   showRecentItems = 5
   showMoreLink = true
   showMoreLinkDest = "docs"
- 
+
 [article]
   showDate = false
   showViews = true

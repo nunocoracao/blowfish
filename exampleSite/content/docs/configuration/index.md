@@ -134,7 +134,8 @@ Many of the article defaults here can be overridden on a per article basis by sp
 |`footer.showThemeAttribution`|`true`|Whether or not to show the "powered by" theme attribution in the site footer. If you choose to disable this message, please consider attributing the theme somewhere else on your site (for example, on your about page).|
 |`footer.showAppearanceSwitcher`|`false`|Whether or not to show the appearance switcher in the site footer. The browser's local storage is used to persist the visitor's preference.|
 |`footer.showScrollToTop`|`true`|When set to `true` the scroll to top arrow is displayed.|
-|`homepage.layout`|`"page"`|The layout of the homepage. Valid values are `page`, `profile` or `custom`. When set to `custom`, you must provide your own layout by creating a `/layouts/partials/home/custom.html` file. Refer to the [Homepage Layout]({{< ref "homepage-layout" >}}) section for more details.|
+|`homepage.layout`|`"page"`|The layout of the homepage. Valid values are `page`, `profile`, `hero`, `card`, or `custom`. When set to `custom`, you must provide your own layout by creating a `/layouts/partials/home/custom.html` file. Refer to the [Homepage Layout]({{< ref "homepage-layout" >}}) section for more details.|
+|`homepage.homepageImage`|_Not set_|Image to be used in `hero` and `card` layouts. Refer to the [Homepage Layout]({{< ref "homepage-layout" >}}) section for more details.|
 |`homepage.showRecent`|`false`|Whether or not to display the recent articles list on the homepage.|
 |`homepage.showRecentItems`|5|How many articles to display if showRecent is true. If variable is set to 0 or if it isn't defined the system will default to 5 articles.|
 |`homepage.showMoreLink`|'false'|Wether or not to display a show more link at the end of your posts that takes the user to a predefined place.|
