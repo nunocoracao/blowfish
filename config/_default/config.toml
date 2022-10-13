@@ -14,6 +14,11 @@ buildFuture = false
 
 # googleAnalytics = "G-XXXXXXXXX"
 
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  author = "authors"
+
 [sitemap]
   changefreq = 'daily'
   filename = 'sitemap.xml'

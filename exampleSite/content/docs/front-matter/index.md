@@ -23,7 +23,9 @@ Front matter parameter default values are inherited from the theme's [base confi
 |`menu`|_Not set_|When a value is provided, a link to this article will appear in the named menus. Valid values are `main` or `footer`.|
 |`robots`|_Not set_|String that indicates how robots should handle this article. If set, it will be output in the page head. Refer to [Google's docs](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag#directives) for valid values.|
 |`sharingLinks`|`article.sharingLinks`|Which sharing links to display at the end of this article. When not provided, or set to `false` no links will be displayed.|
-|`showAuthor`|`article.showAuthor`|Whether or not the author box is displayed in the article footer.|
+|`showAuthor`|`article.showAuthor`|Whether or not the author box for the deafult author is displayed in the article footer.|
+|`authors`|_Not set_|Array of values for authors, if set it overrides `showAuthor` settings for page or site. Used on the multiple authors feature, check [this page]({{< ref "multi-author" >}}) for more details on how to configure that feature.|
+|`showAuthorsBadges`|`article.showAuthorsBadges`|Whether the `authors` taxonomies are are displayed in the article or list header. This requires the setup of `multiple authors` and the `authors` taxonomy. Check [this page]({{< ref "multi-author" >}}) for more details on how to configure that feature.|
 |`showBreadcrumbs`|`article.showBreadcrumbs` or `list.showBreadcrumbs`|Whether the breadcrumbs are displayed in the article or list header.|
 |`showDate`|`article.showDate`|Whether or not the article date is displayed. The date is set using the `date` parameter.|
 |`showDateUpdated`|`article.showDateUpdated`|Whether or not the date the article was updated is displayed. The date is set using the `lastmod` parameter.|
