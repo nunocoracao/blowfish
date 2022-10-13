@@ -12,7 +12,3 @@ authors:
 ---
 
 This is an example of how an article with multiple authors will look like. 
-
-Check the article below for details on how to configure the feature.
-
-{{< article link="/blowfish/docs/multi-author/" >}}

@@ -95,6 +95,6 @@ Nuno's awesome dummy bio.
 
 ## Sample
 
-The sample below shows an example where the default site author is turned off and the article has multiple authors.
+This sample sample below shows an example where the default site author is turned off and the article has multiple authors.
 
 {{< article link="/blowfish/samples/multiple-authors/" >}}
