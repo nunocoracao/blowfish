@@ -52,6 +52,7 @@ The full list of built-in icons and their corresponding names can referenced bel
 | instagram            | {{< icon instagram >}}            |
 | keybase              | {{< icon keybase >}}              |
 | kickstarter          | {{< icon kickstarter >}}          |
+| ko-fi                | {{< icon ko-fi >}}                |
 | lastfm               | {{< icon lastfm >}}               |
 | lightbulb            | {{< icon lightbulb >}}            |
 | link                 | {{< icon link >}}                 |
@@ -96,4 +97,3 @@ The full list of built-in icons and their corresponding names can referenced bel
 | whatsapp             | {{< icon whatsapp >}}             |
 | xmark                | {{< icon xmark >}}                |
 | youtube              | {{< icon youtube >}}              |
-| ko-fi                | {{< icon ko-fi >}}                |
