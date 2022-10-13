@@ -138,7 +138,27 @@
       </script>
   </section>
   <footer class="pt-8 max-w-prose print:hidden">
+
     {{ partial "author.html" . }}
+
+    {{ $authorsData := .Site.Data.authors }}
+    {{ $taxonomies := .Site.Taxonomies.authors }}
+    {{ $baseURL := .Site.BaseURL }}
+    {{ range $author := .Page.Params.authors }}
+    {{ $authorData := index $authorsData $author }}
+    {{- if $authorData -}}
+
+    {{ $taxonomyLink := 0 }}
+    {{ range $taxonomyname, $taxonomy := $taxonomies }}
+      {{ if (eq $taxonomyname $author) }}
+      {{ $taxonomyLink = delimit (slice  $baseURL "authors/" $author) "" }}
+      {{ end }}
+    {{ end }}
+
+    {{ partial "author-extra.html" (dict "context" . "data" $authorData "link" $taxonomyLink) }}
+    {{- end -}}
+    {{ end }}
+
     {{ partial "sharing-links.html" . }}
     {{ partial "article-pagination.html" . }}
     {{ if .Params.showComments | default (.Site.Params.article.showComments | default false) }}

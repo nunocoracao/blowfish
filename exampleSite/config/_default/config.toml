@@ -15,6 +15,11 @@ buildFuture = false
 
 googleAnalytics = "G-PEDMYR1V0K"
 
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  author = "authors"
+
 [sitemap]
   changefreq = 'daily'
   filename = 'sitemap.xml'

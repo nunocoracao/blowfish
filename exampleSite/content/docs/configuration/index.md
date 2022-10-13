@@ -156,6 +156,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 |`article.showReadingTime`|`true`|Whether or not article reading times are displayed.|
 |`article.showTableOfContents`|`false`|Whether or not the table of contents is displayed on articles.|
 |`article.showTaxonomies`|`false`|Whether or not the taxonomies related to this article are displayed.|
+|`article.showAuthorsBadges`|`false`|Whether the `authors` taxonomies are are displayed in the article or list header. This requires the setup of `multiple authors` and the `authors` taxonomy. Check [this page]({{< ref "multi-author" >}}) for more details on how to configure that feature.|
 |`article.showWordCount`|`false`|Whether or not article word counts are displayed.|
 |`article.showComments`|`false`|Whether or not the [comments partial]({{< ref "partials#comments" >}}) is included after the article footer.|
 |`article.sharingLinks`|_Not set_|Which sharing links to display at the end of each article. When not provided, or set to `false` no links will be displayed.|

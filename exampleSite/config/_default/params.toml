@@ -46,6 +46,7 @@ mainSections = ["docs"]
   showReadingTime = true
   showTableOfContents = true
   showTaxonomies = true 
+  showAuthorsBadges = true 
   showWordCount = false
   showSummary = true
   sharingLinks = [ "linkedin", "twitter", "whatsapp", "pinterest", "reddit", "facebook", "email"]
