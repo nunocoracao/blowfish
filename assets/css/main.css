@@ -377,3 +377,7 @@ body:has(#menu-controller:checked) {
     flex-wrap: nowrap;
   }
 }
+
+.max-w-prose {
+  max-width: 75ch;
+}

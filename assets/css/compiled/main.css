@@ -1618,16 +1618,16 @@ select {
   height: 3rem;
 }
 
-.h-36 {
-  height: 9rem;
-}
-
 .h-full {
   height: 100%;
 }
 
 .h-24 {
   height: 6rem;
+}
+
+.h-36 {
+  height: 9rem;
 }
 
 .h-8 {
@@ -1652,12 +1652,6 @@ select {
 
 .w-12 {
   width: 3rem;
-}
-
-.w-fit {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 
 .w-36 {
@@ -1694,6 +1688,10 @@ select {
 
 .min-w-\[2\.4rem\] {
   min-width: 2.4rem;
+}
+
+.min-w-\[220px\] {
+  min-width: 220px;
 }
 
 .max-w-7xl {
@@ -3013,6 +3011,10 @@ body:has(#menu-controller:checked) {
   .article {
     flex-wrap: nowrap;
   }
+}
+
+.max-w-prose {
+  max-width: 75ch;
 }
 
 .first\:mt-8:first-child {
