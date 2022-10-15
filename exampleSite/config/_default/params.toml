@@ -35,6 +35,7 @@ mainSections = ["docs"]
   showLikes = true
   showDateUpdated = false
   showAuthor = true
+  showHero = true
   showBreadcrumbs = true
   showDraftLabel = true
   showEdit = true
