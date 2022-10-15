@@ -1,0 +1,10 @@
+{{ if .Params.showHero | default (.Site.Params.article.showHero | default false) }}
+{{- $images := .Resources.ByType "image" -}}
+{{- $featured := $images.GetMatch "*feature*" -}}
+{{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
+{{- with $featured -}}
+{{ with .Resize "600x" }}
+<div class="w-full h-36 md:h-56 lg:h-72 single_hero nozoom" style="background-image:url({{ .RelPermalink }});"></div>
+{{ end }}
+{{- end -}}
+{{- end -}}

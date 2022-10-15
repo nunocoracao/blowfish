@@ -40,4 +40,4 @@ The you just need to add an image like explain earlier. If you want to see a sam
 
 ## Hero Images
 
-Thumbnails will be used by default as hero images withing each article. Use the global `article.showHero` or the front-matter parameter `showHero` to control this feature across the entire site or for each specific post.
+Thumbnails will be used by default as hero images withing each article. Use the global `article.showHero` or the front-matter parameter `showHero` to control this feature across the entire site or for each specific post. If you want to override the style of the hero image you can create a file called `hero.html` in `./layouts/partials/` that will override the original partial from the theme.
