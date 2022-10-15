@@ -21,7 +21,7 @@ googleAnalytics = "G-PEDMYR1V0K"
   author = "authors"
 
 [sitemap]
-  changefreq = 'daily'
+  changefreq = 'always'
   filename = 'sitemap.xml'
   priority = 0.5
 
