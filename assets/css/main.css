@@ -348,9 +348,8 @@ body:has(#menu-controller:checked) {
 }
 
 .single_hero {
-  background-repeat:no-repeat;
-  background-size:cover; 
-  background-position:center;
+  max-height: 50vh;
+  object-fit: cover;
 }
 
 .thumbnailshadow {

@@ -6,8 +6,8 @@
   {{- $featured := $images.GetMatch "*feature*" -}}
   {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
   {{- with $featured -}}
-    {{ with .Resize "600x" }}
-      <div class="w-full h-36 md:h-56 lg:h-72 single_hero nozoom" style="background-image:url({{ .RelPermalink }});"></div>
+    {{ with .Resize "1200x" }}
+      <img class="w-full rounded-lg single_hero nozoom" src="{{ .RelPermalink }}">
     {{ end }}
   {{- end -}}
   {{- end -}}
