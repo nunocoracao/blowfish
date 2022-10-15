@@ -31,6 +31,7 @@ Real websites that are built with Blowfish.
 | [ciicadalab.github.io](https://ciicadalab.github.io)                  | [CIICADA Lab](https://github.com/CIICADALab)            | Organization site            |
 | [georgiancodeclub.github.io](https://georgiancodeclub.github.io)      | [GeorgianCodeClub](https://github.com/GeorgianCodeClub) | College club site            |
 | [albertolvera.com](https://albertolvera.com)                          | [Alberto Olvera](https://github.com/lolverae)           | Personal site                |
+| [spelucin.me](https://spelucin.me)                          | [Alex Spelucín](https://github.com/spelucin)           | Blog about technical SEO                |
 
 
 {{< alert >}}
