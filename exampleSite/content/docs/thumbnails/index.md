@@ -37,3 +37,7 @@ content
     └── featured.png
 ```
 The you just need to add an image like explain earlier. If you want to see a sample of this you can consult [this sample]({{< ref "thumbnail_sample" >}}).
+
+## Hero Images
+
+Thumbnails will be used by default as hero images withing each article. Use the global `article.showHero` or the front-matter parameter `showHero` to control this feature across the entire site or for each specific post.
