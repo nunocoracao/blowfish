@@ -30,9 +30,9 @@
     {{- $featured := $images.GetMatch "*feature*" -}}
     {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
     {{- with $featured -}}
-
-    <div class="{{ $articleImageClasses }}" style="background-image:url({{ $featured.Permalink }});"></div>
-
+      {{ with .Resize "600x" }}
+    <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
+      {{ end }}
     {{- else -}}
     {{- with $.Site.Params.images }}
     <meta property="og:image" content="{{ index . 0 | absURL }}" />{{ end -}}
