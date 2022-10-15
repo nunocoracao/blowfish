@@ -25,7 +25,7 @@
     </div>
   </section>
   {{ if gt .Pages 0 }}
-    <section class="space-y-10 w-fit">
+    <section class="space-y-10 max-w-prose">
       {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
         {{ if $.Params.groupByYear | default ($.Site.Params.list.groupByYear | default true) }}
           <h2 class="mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
