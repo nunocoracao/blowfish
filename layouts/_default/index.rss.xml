@@ -38,8 +38,7 @@
         {{- $featured := $images.GetMatch "*feature*" -}}
         {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
         {{- with $featured -}}
-        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="{{ $featured.Permalink  }}" />
-        
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="{{ $featured.Permalink  }}" />
         {{- end -}}
       {{ end }}
     </item>
