@@ -347,10 +347,29 @@ body:has(#menu-controller:checked) {
   background-position:center;
 }
 
-.single_hero {
+.single_hero_basic {
   background-repeat:no-repeat;
   background-size:cover; 
   background-position:center;
+}
+
+.single_hero_round {
+  max-height: 50vh;
+  object-fit: cover;
+}
+
+.single_hero_background {
+  background-repeat:no-repeat;
+  background-size:cover; 
+  background-position:center;
+  width: calc(100% + 40px);
+  z-index: -10;
+  margin-left: -20px;
+}
+
+.hero_gradient {
+  width: 100%;
+  height: 100%;
 }
 
 .thumbnailshadow {

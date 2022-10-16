@@ -146,6 +146,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 |`article.showDateUpdated`|`false`|Whether or not the dates articles were updated are displayed.|
 |`article.showAuthor`|`true`|Whether or not the author box is displayed in the article footer.|
 |`article.showHero`|`true`|Whether the thumbnail image will be shown as a hero image within each article page.|
+|`heroStyle`|`basic`|Style to display the hero image, valid options are: `basic`, `big`, `background`.|
 |`article.showBreadcrumbs`|`false`|Whether or not breadcrumbs are displayed in the article header.|
 |`article.showDraftLabel`|`true`|Whether or not the draft indicator is shown next to articles when site is built with `--buildDrafts`.|
 |`article.showEdit`|`false`|Whether or not the link to edit the article content should be displayed.|
