@@ -1,0 +1,8 @@
+{{- $images := .Resources.ByType "image" -}}
+{{- $featured := $images.GetMatch "*feature*" -}}
+{{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
+{{- with $featured -}}
+    {{ with .Resize "1200x" }}
+        <img class="w-full rounded-lg single_hero_round nozoom" src="{{ .RelPermalink }}">
+    {{ end }}
+{{- end -}}

@@ -1,7 +1,14 @@
 {{ define "main" }}
 <article>
-  {{ partial "hero.html" . }}
-  <header class="mt-5 max-w-prose">
+  {{ if .Params.showHero | default (.Site.Params.article.showHero | default false) }}
+  {{ $heroStyle := print "partials/hero/" .Site.Params.article.heroStyle ".html" }}
+    {{ if templates.Exists $heroStyle }}
+      {{ partial $heroStyle . }}
+    {{ else }}
+      {{ partial "partials/hero/basic.html" . }}
+    {{ end }}
+  {{- end -}}
+  <header id="single_header" class="mt-5 max-w-prose">
     {{ if .Params.showBreadcrumbs | default (.Site.Params.article.showBreadcrumbs | default false) }}
     {{ partial "breadcrumbs.html" . }}
     {{ end }}
@@ -136,6 +143,15 @@
             remove_like_article(id_likes)
           }
         }
+
+        var header = document.getElementById("single_header")
+        var style = getComputedStyle(header);
+        console.log(style, style.height)
+        var margin = '-'+ (parseInt(style.height) + parseInt(style.marginTop) + parseInt(style.marginBottom) + 20) + 'px'
+        console.log(margin)
+        var hero = document.getElementById('hero')
+        if(hero)
+          hero.style["margin-bottom"] = margin;
       </script>
   </section>
   <footer class="pt-8 max-w-prose print:hidden">

@@ -36,6 +36,7 @@ enableCodeCopy = true
   showDateUpdated = false
   showAuthor = true
   showHero = true
+  heroStyle = "basic" # valid options: basic, big, background
   showBreadcrumbs = true
   showDraftLabel = true
   showEdit = true

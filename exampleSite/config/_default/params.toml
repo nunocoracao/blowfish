@@ -36,6 +36,7 @@ mainSections = ["docs"]
   showDateUpdated = false
   showAuthor = true
   showHero = true
+  heroStyle = "background" # valid options: basic, big, background
   showBreadcrumbs = true
   showDraftLabel = true
   showEdit = true

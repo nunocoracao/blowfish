@@ -1,0 +1,10 @@
+{{- $images := .Resources.ByType "image" -}}
+{{- $featured := $images.GetMatch "*feature*" -}}
+{{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
+{{- with $featured -}}
+    {{ with .Resize "1200x" }}
+        <div id="hero" class="relative h-[45vh] single_hero_background nozoom" style="background-image:url({{ .RelPermalink }});">
+            <div class="hero_gradient bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal"></div>
+        </div>
+    {{ end }}
+{{- end -}}
