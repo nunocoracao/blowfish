@@ -23,7 +23,6 @@ Additionally, any Markdown content that is provided in the homepage content will
 
 To enable the profile layout, set `homepage.layout = "profile"` in the `params.toml` configuration file.
 
-
 ## Page layout
 
 The page layout is simply a normal content page that displays your Markdown content. It's great for static websites and provides a lot of flexibility.
@@ -39,6 +38,14 @@ The hero layout brings together ideas from the profile and card layouts. This on
 <img class="thumbnailshadow" src="home-hero.png"/>
 
 To enable the profile layout, set `homepage.layout = "profile"` and `homepage.homepageImage` in the `params.toml` configuration file.
+
+## Background layout
+
+The background layout is a more smooth version of the hero layout. As in the Hero layout, this one also displays both information on the author of the site and loads your markdown beneath it.
+
+<img class="thumbnailshadow" src="home-background.png"/>
+
+To enable the profile layout, set `homepage.layout = "background"` and `homepage.homepageImage` in the `params.toml` configuration file.
 
 ## Card layout
 

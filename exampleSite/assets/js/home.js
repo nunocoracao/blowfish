@@ -1,6 +1,5 @@
-
-
 var layouts = [
+  "background",
   "hero",
   "profile",
   "card",
@@ -10,8 +9,6 @@ var layouts = [
 var currentLayout = 0
 
 function switchHomeLayout() {
-
-  //document.getElementById(
 
   var old = currentLayout
   currentLayout = currentLayout == layouts.length - 1 ? 0 : currentLayout + 1
