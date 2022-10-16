@@ -1510,8 +1510,16 @@ select {
   margin-top: 1.25rem;
 }
 
-.mt-4 {
-  margin-top: 1rem;
+.mt-2\.5 {
+  margin-top: 0.625rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
 }
 
 .mt-3 {
@@ -1532,6 +1540,10 @@ select {
 
 .mt-\[0\.1rem\] {
   margin-top: 0.1rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
 }
 
 .\!mt-0 {
@@ -3696,7 +3708,7 @@ body:has(#menu-controller:checked) {
 }
 
 @media (min-width: 1280px) {
-  .xl\:w-1\/5 {
-    width: 20%;
+  .xl\:w-1\/4 {
+    width: 25%;
   }
 }
