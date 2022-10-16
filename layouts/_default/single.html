@@ -146,9 +146,7 @@
 
         var header = document.getElementById("single_header")
         var style = getComputedStyle(header);
-        console.log(style, style.height)
         var margin = '-'+ (parseInt(style.height) + parseInt(style.marginTop) + parseInt(style.marginBottom) + 20) + 'px'
-        console.log(margin)
         var hero = document.getElementById('hero')
         if(hero)
           hero.style["margin-bottom"] = margin;
