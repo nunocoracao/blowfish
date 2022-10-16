@@ -1,12 +1,11 @@
 <span>
     <button id="likes_button"
-        style="height: 28px; padding-top: 2px; padding-bottom: 4px; padding-left: 10px; padding-right: 10px"
+        style="height: 26px; padding-top: 0px; padding-bottom: 4px; padding-left: 10px; padding-right: 10px"
         class="!rounded-md bg-primary-600 px-4 py-2 !text-neutral !no-underline hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700"
         onclick="process_article()">
         <span id="likes_button_heart" style="display:none">{{ partial "icon.html" "heart" }} </span>
         <span id="likes_button_emtpty_heart">{{ partial "icon.html" "heart-empty" }}</span>
-        &nbsp;
-        <span id="likes_button_text">Like</span>
+        <span id="likes_button_text">&nbsp;Like</span>
     </button>
 </span>
 {{- /* Trim EOF */ -}}
