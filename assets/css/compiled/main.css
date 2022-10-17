@@ -1570,8 +1570,12 @@ select {
   margin-left: 0.5rem;
 }
 
-.ml-0 {
-  margin-left: 0px;
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mb-5 {
+  margin-bottom: 1.25rem;
 }
 
 .\!mb-9 {
