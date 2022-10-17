@@ -146,10 +146,15 @@
 
         var header = document.getElementById("single_header")
         var style = getComputedStyle(header);
-        var margin = '-'+ (parseInt(style.height) + parseInt(style.marginTop) + parseInt(style.marginBottom) + 20) + 'px'
         var hero = document.getElementById('hero')
-        if(hero)
+        if(hero){
+          var margin = '-'+ (parseInt(style.height) + parseInt(style.marginTop) + parseInt(style.marginBottom) + 20) + 'px'
+          var height = (-parseInt(margin) + parseInt(getComputedStyle(hero).height)) + "px"
+          console.log(height)
           hero.style["margin-bottom"] = margin;
+          hero.style["height"] = height;
+        }
+
       </script>
   </section>
   <footer class="pt-8 max-w-prose print:hidden">
