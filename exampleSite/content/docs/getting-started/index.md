@@ -5,7 +5,7 @@ draft: false
 description: "All the front matter variables available in Blowfish."
 slug: "getting-started"
 tags: ["installation", "docs"]
-series: ["Docs"]
+series: ["Documentation"]
 series_order: 3
 ---
 

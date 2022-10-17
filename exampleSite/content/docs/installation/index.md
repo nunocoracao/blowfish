@@ -5,7 +5,7 @@ draft: false
 description: "How to install the Blowfish theme."
 slug: "installation"
 tags: ["installation", "docs"]
-series: ["Docs"]
+series: ["Documentation"]
 series_order: 2
 ---
 

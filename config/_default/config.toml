@@ -2,6 +2,7 @@
 # Refer to the theme docs for more details about each of these parameters.
 # https://nunocoracao.github.io/blowfish/docs/getting-started/
 
+# theme = "blowfish"
 # baseURL = "https://your_domain.com/"
 defaultContentLanguage = "en"
 

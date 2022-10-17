@@ -5,8 +5,8 @@ draft: false
 description: "Learn how to build Blowfish manually."
 slug: "advanced-customisation"
 tags: ["advanced", "css", "docs"]
-series: ["Docs"]
-series_order: 12
+series: ["Documentation"]
+series_order: 13
 ---
 
 There are many ways you can make advanced changes to Blowfish. Read below to learn more about what can be customised and the best way of achieving your desired result.

@@ -5,7 +5,7 @@ draft: false
 description: "Configuring the homepage layout in the Blowfish theme."
 slug: "homepage-layout"
 tags: ["homepage", "layouts", "docs"]
-series: ["Docs"]
+series: ["Documentation"]
 series_order: 5
 ---
 

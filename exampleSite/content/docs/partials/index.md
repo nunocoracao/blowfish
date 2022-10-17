@@ -5,7 +5,7 @@ draft: false
 description: "All the partials available in Blowfish."
 slug: "partials"
 tags: ["partials", "analytics", "privacy", "comments", "favicons", "icon", "docs"]
-series: ["Docs"]
+series: ["Documentation"]
 series_order: 9
 ---
 

@@ -5,7 +5,7 @@ draft: false
 description: "All the front matter variables available in Blowfish."
 slug: "front-matter"
 tags: ["front matter", "config", "docs"]
-series: ["Docs"]
+series: ["Documentation"]
 series_order: 7
 ---
 
@@ -45,6 +45,9 @@ Front matter parameter default values are inherited from the theme's [base confi
 |`showSummary`|`list.showSummary`|Whether or not the article summary should be displayed on list pages.|
 |`showViews`|`article.showViews`|Whether or not the article views should be displayed in lists and detailed view. This requires a firebase integration. Check [this page]({{< ref "firebase-views" >}}) for a guide on how to integrate Firebase into Blowfish|
 |`showLikes`|`article.showLikes`|Whether or not the article likes should be displayed in lists and detailed view. This requires a firebase integration. Check [this page]({{< ref "firebase-views" >}}) for a guide on how to integrate Firebase into Blowfish|
+|`seriesOpened`|`article.seriesOpened`|Whether or not the series module will be displayed open by default or not.|
+|`series`|_Not set_|Array of series the article belongs to, we recommend using only one series per article.|
+|`series_order`|_Not set_|Number of the article within the series.|
 |`summary`|Auto generated using `summaryLength` (see [site configuration]({{< ref "configuration#site-configuration" >}}))|When `showSummary` is enabled, this is the Markdown string to be used as the summary for this article.|
 |`xml`|`true` unless excluded by `sitemap.excludedKinds`|Whether or not this article is included in the generated `/sitemap.xml` file.|
 <!-- prettier-ignore-end -->

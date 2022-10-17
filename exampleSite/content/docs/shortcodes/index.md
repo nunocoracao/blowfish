@@ -5,7 +5,7 @@ draft: false
 description: "All the shortcodes available in Blowfish."
 slug: "shortcodes"
 tags: ["shortcodes", "mermaid", "icon", "lead", "docs"]
-series: ["Docs"]
+series: ["Documentation"]
 series_order: 8
 ---
 
