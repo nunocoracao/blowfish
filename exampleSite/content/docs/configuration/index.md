@@ -68,6 +68,7 @@ The theme currently supports the following languages by default:
 | :jp: Japanese                          | `ja`    |
 | :brazil: Portuguese (Brazil)           | `pt-br` |
 | :portugal: Portuguese (Portugal)       | `pt-pt` |
+| :poland: Polish                        | `pl`    |
 | :romania: Romanian                     | `ro`    |
 | :es: Spanish (Spain)                   | `es`    |
 | :tr: Turkish                           | `tr`    |
