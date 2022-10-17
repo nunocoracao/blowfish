@@ -68,6 +68,7 @@ The theme currently supports the following languages by default:
 | :jp: Japanese                          | `ja`    |
 | :brazil: Portuguese (Brazil)           | `pt-br` |
 | :portugal: Portuguese (Portugal)       | `pt-pt` |
+| :poland: Polish                        | `pl`    |
 | :romania: Romanian                     | `ro`    |
 | :es: Spanish (Spain)                   | `es`    |
 | :tr: Turkish                           | `tr`    |
@@ -129,12 +130,11 @@ Many of the article defaults here can be overridden on a per article basis by sp
 |`logo`|_Not set_|The relative path to the site logo file within the `assets/` folder. The logo file should be provided at 2x resolution and supports any image dimensions.|
 |`mainSections`|_Not set_|The sections that should be displayed in the recent articles list. If not provided the section with the greatest number of articles is used.|
 |`robots`|_Not set_|String that indicates how robots should handle your site. If set, it will be output in the page head. Refer to [Google's docs](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag#directives) for valid values.|
-|`header.layout`|`"basic"`|The layout of the page header and menu. Valid values are `basic`, `hamburger` or `custom`. When set to `custom`, you must provide your own layout by creating a `/layouts/partials/header/custom.html` file.|
 |`footer.showCopyright`|`true`|Whether or not to show the copyright string in the site footer. Note that the string itself can be customised using the `copyright` parameter in the [languages configuration](#language-and-i18n).|
 |`footer.showThemeAttribution`|`true`|Whether or not to show the "powered by" theme attribution in the site footer. If you choose to disable this message, please consider attributing the theme somewhere else on your site (for example, on your about page).|
 |`footer.showAppearanceSwitcher`|`false`|Whether or not to show the appearance switcher in the site footer. The browser's local storage is used to persist the visitor's preference.|
 |`footer.showScrollToTop`|`true`|When set to `true` the scroll to top arrow is displayed.|
-|`homepage.layout`|`"page"`|The layout of the homepage. Valid values are `page`, `profile`, `hero`, `card`, or `custom`. When set to `custom`, you must provide your own layout by creating a `/layouts/partials/home/custom.html` file. Refer to the [Homepage Layout]({{< ref "homepage-layout" >}}) section for more details.|
+|`homepage.layout`|`"profile"`|The layout of the homepage. Valid values are `page`, `profile`, `hero`, `card`, `background`, or `custom`. When set to `custom`, you must provide your own layout by creating a `/layouts/partials/home/custom.html` file. Refer to the [Homepage Layout]({{< ref "homepage-layout" >}}) section for more details.|
 |`homepage.homepageImage`|_Not set_|Image to be used in `hero` and `card` layouts. Refer to the [Homepage Layout]({{< ref "homepage-layout" >}}) section for more details.|
 |`homepage.showRecent`|`false`|Whether or not to display the recent articles list on the homepage.|
 |`homepage.showRecentItems`|5|How many articles to display if showRecent is true. If variable is set to 0 or if it isn't defined the system will default to 5 articles.|
@@ -145,6 +145,8 @@ Many of the article defaults here can be overridden on a per article basis by sp
 |`article.showLikes`|`false`|Whether or not article likes are displayed. This requires firebase integrations to be enabled, look below.|
 |`article.showDateUpdated`|`false`|Whether or not the dates articles were updated are displayed.|
 |`article.showAuthor`|`true`|Whether or not the author box is displayed in the article footer.|
+|`article.showHero`|`true`|Whether the thumbnail image will be shown as a hero image within each article page.|
+|`heroStyle`|`basic`|Style to display the hero image, valid options are: `basic`, `big`, `background`.|
 |`article.showBreadcrumbs`|`false`|Whether or not breadcrumbs are displayed in the article header.|
 |`article.showDraftLabel`|`true`|Whether or not the draft indicator is shown next to articles when site is built with `--buildDrafts`.|
 |`article.showEdit`|`false`|Whether or not the link to edit the article content should be displayed.|

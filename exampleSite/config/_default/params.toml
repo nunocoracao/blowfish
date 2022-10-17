@@ -22,7 +22,7 @@ mainSections = ["docs"]
   showScrollToTop = true
 
 [homepage]
-  layout = "custom" # valid options: page, profile, hero, card, custom
+  layout = "custom" # valid options: page, profile, hero, card, background, custom
   homepageImage = "iceland.jpg" # used in: hero, and card
   showRecent = true
   showRecentItems = 5
@@ -35,6 +35,8 @@ mainSections = ["docs"]
   showLikes = true
   showDateUpdated = false
   showAuthor = true
+  showHero = true
+  heroStyle = "background" # valid options: basic, big, background
   showBreadcrumbs = true
   showDraftLabel = true
   showEdit = true

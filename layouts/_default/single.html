@@ -1,13 +1,21 @@
 {{ define "main" }}
 <article>
-  <header class="max-w-prose">
+  {{ if .Params.showHero | default (.Site.Params.article.showHero | default false) }}
+  {{ $heroStyle := print "partials/hero/" .Site.Params.article.heroStyle ".html" }}
+    {{ if templates.Exists $heroStyle }}
+      {{ partial $heroStyle . }}
+    {{ else }}
+      {{ partial "partials/hero/basic.html" . }}
+    {{ end }}
+  {{- end -}}
+  <header id="single_header" class="mt-5 max-w-prose">
     {{ if .Params.showBreadcrumbs | default (.Site.Params.article.showBreadcrumbs | default false) }}
     {{ partial "breadcrumbs.html" . }}
     {{ end }}
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
       {{ .Title | emojify }}
     </h1>
-    <div class="mt-8 mb-12 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+    <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       {{ partial "article-meta.html" (dict "context" . "scope" "single") }}
     </div>
   </header>
@@ -65,7 +73,7 @@
             liked_article = true
             document.querySelectorAll("span[id='likes_button_heart']")[0].style.display = ""
             document.querySelectorAll("span[id='likes_button_emtpty_heart']")[0].style.display = "none"
-            document.querySelectorAll("span[id='likes_button_text']")[0].innerText = "Remove Like"
+            document.querySelectorAll("span[id='likes_button_text']")[0].innerText = ""
           }
 
         }
@@ -79,7 +87,7 @@
                 localStorage.setItem(id_likes, true);
                 document.querySelectorAll("span[id='likes_button_heart']")[0].style.display = ""
                 document.querySelectorAll("span[id='likes_button_emtpty_heart']")[0].style.display = "none"
-                document.querySelectorAll("span[id='likes_button_text']")[0].innerText = "Remove Like"
+                document.querySelectorAll("span[id='likes_button_text']")[0].innerText = ""
                 if (doc.exists) {
                   db.collection('likes').doc(id_likes).update({
                     likes: firebase.firestore.FieldValue.increment(1)
@@ -107,7 +115,7 @@
                 localStorage.removeItem(id_likes);
                 document.querySelectorAll("span[id='likes_button_heart']")[0].style.display = "none"
                 document.querySelectorAll("span[id='likes_button_emtpty_heart']")[0].style.display = ""
-                document.querySelectorAll("span[id='likes_button_text']")[0].innerText = "Like"
+                document.querySelectorAll("span[id='likes_button_text']")[0].innerText = "\xa0Like"
                 if (doc.exists) {
                   db.collection('likes').doc(id_likes).update({
                     likes: firebase.firestore.FieldValue.increment(-1)
@@ -135,6 +143,18 @@
             remove_like_article(id_likes)
           }
         }
+
+        var header = document.getElementById("single_header")
+        var style = getComputedStyle(header);
+        var hero = document.getElementById('hero')
+        if(hero){
+          var margin = '-'+ (parseInt(style.height) + parseInt(style.marginTop) + parseInt(style.marginBottom) + 20) + 'px'
+          var height = (-parseInt(margin) + parseInt(getComputedStyle(hero).height)) + "px"
+          console.log(height)
+          hero.style["margin-bottom"] = margin;
+          hero.style["height"] = height;
+        }
+
       </script>
   </section>
   <footer class="pt-8 max-w-prose print:hidden">

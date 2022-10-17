@@ -22,7 +22,7 @@ enableCodeCopy = true
   showScrollToTop = true
 
 [homepage]
-  layout = "profile" # valid options: page, profile, hero, card, custom
+  layout = "profile" # valid options: page, profile, hero, card, background, custom
   #homepageImage = "IMAGE.jpg" # used in: hero, and card
   showRecent = false
   showRecentItems = 5
@@ -35,6 +35,8 @@ enableCodeCopy = true
   #showLikes = true
   showDateUpdated = false
   showAuthor = true
+  showHero = true
+  heroStyle = "basic" # valid options: basic, big, background
   showBreadcrumbs = true
   showDraftLabel = true
   showEdit = true

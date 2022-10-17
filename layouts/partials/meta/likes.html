@@ -1,4 +1,5 @@
 <span>
-    <span id="likes_{{ .File.Path }}" title="likes">{{- i18n "article.likes" 0 | markdownify | emojify -}}</span> 
+    <span id="likes_{{ .File.Path }}" title="likes">0</span> 
+    <span>{{ partial "icon.html" "heart" }}</span>
 </span>
 {{- /* Trim EOF */ -}}

@@ -347,6 +347,31 @@ body:has(#menu-controller:checked) {
   background-position:center;
 }
 
+.single_hero_basic {
+  background-repeat:no-repeat;
+  background-size:cover; 
+  background-position:center;
+}
+
+.single_hero_round {
+  max-height: 50vh;
+  object-fit: cover;
+}
+
+.single_hero_background {
+  background-repeat:no-repeat;
+  background-size:cover; 
+  background-position:center;
+  width: calc(100% + 40px);
+  z-index: -10;
+  margin-left: -20px;
+}
+
+.hero_gradient {
+  width: 100%;
+  height: 100%;
+}
+
 .thumbnailshadow {
   box-shadow: 5px 5px 20px 1px rgba(0, 0, 0, 0.3);
 }
@@ -370,4 +395,8 @@ body:has(#menu-controller:checked) {
   .article {
     flex-wrap: nowrap;
   }
+}
+
+.max-w-prose {
+  max-width: 75ch;
 }

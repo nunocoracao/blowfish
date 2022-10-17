@@ -121,7 +121,6 @@
   {{ if templates.Exists "partials/extend-head.html" }}
   {{ partialCached "extend-head.html" .Site }}
   {{ end }}
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   
   {{/* Firebase */}}
   {{ with $.Site.Params.firebase }}
