@@ -1,0 +1,20 @@
+{{ if .Params.series }}
+<div>
+    <h4>This article is part of a series.</h4>
+    <ul class="list-group">
+        {{ range $post :=  sort (index .Site.Taxonomies.series (index .Params.series 0 | urlize)) "Params.series_order" }}
+        {{ if eq $post.Permalink $.Page.Permalink }}
+        <li class="list-group-item active">
+            Part {{ $post.Params.series_order }}: This Article
+        </li>
+        {{ else }}
+        <li class="list-group-item">
+            <a href="{{$post.Permalink}}">
+                Part {{ $post.Params.series_order }}: {{ $post.Params.title}}
+            </a>
+        </li>
+        {{end}}
+        {{end}}
+    </ul>
+</div>
+{{end}}

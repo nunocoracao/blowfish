@@ -2,11 +2,11 @@
 <article>
   {{ if .Params.showHero | default (.Site.Params.article.showHero | default false) }}
   {{ $heroStyle := print "partials/hero/" .Site.Params.article.heroStyle ".html" }}
-    {{ if templates.Exists $heroStyle }}
-      {{ partial $heroStyle . }}
-    {{ else }}
-      {{ partial "partials/hero/basic.html" . }}
-    {{ end }}
+  {{ if templates.Exists $heroStyle }}
+  {{ partial $heroStyle . }}
+  {{ else }}
+  {{ partial "partials/hero/basic.html" . }}
+  {{ end }}
   {{- end -}}
   <header id="single_header" class="mt-5 max-w-prose">
     {{ if .Params.showBreadcrumbs | default (.Site.Params.article.showBreadcrumbs | default false) }}
@@ -28,6 +28,7 @@
       </div>
       {{ end }}
       <div class="min-w-0 min-h-0 max-w-prose">
+        {{ partial "series.html" . }}
         {{ .Content | emojify }}
       </div>
       <script>
@@ -147,8 +148,8 @@
         var header = document.getElementById("single_header")
         var style = getComputedStyle(header);
         var hero = document.getElementById('hero')
-        if(hero){
-          var margin = '-'+ (parseInt(style.height) + parseInt(style.marginTop) + parseInt(style.marginBottom) + 20) + 'px'
+        if (hero) {
+          var margin = '-' + (parseInt(style.height) + parseInt(style.marginTop) + parseInt(style.marginBottom) + 20) + 'px'
           var height = (-parseInt(margin) + parseInt(getComputedStyle(hero).height)) + "px"
           console.log(height)
           hero.style["margin-bottom"] = margin;
@@ -170,9 +171,9 @@
 
     {{ $taxonomyLink := 0 }}
     {{ range $taxonomyname, $taxonomy := $taxonomies }}
-      {{ if (eq $taxonomyname $author) }}
-      {{ $taxonomyLink = delimit (slice  $baseURL "authors/" $author) "" }}
-      {{ end }}
+    {{ if (eq $taxonomyname $author) }}
+    {{ $taxonomyLink = delimit (slice $baseURL "authors/" $author) "" }}
+    {{ end }}
     {{ end }}
 
     {{ partial "author-extra.html" (dict "context" . "data" $authorData "link" $taxonomyLink) }}

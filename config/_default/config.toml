@@ -18,6 +18,7 @@ buildFuture = false
   tag = "tags"
   category = "categories"
   author = "authors"
+  series = "series"
 
 [sitemap]
   changefreq = 'daily'
