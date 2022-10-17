@@ -19,6 +19,7 @@ googleAnalytics = "G-PEDMYR1V0K"
   tag = "tags"
   category = "categories"
   author = "authors"
+  series = "series"
 
 [sitemap]
   changefreq = 'always'

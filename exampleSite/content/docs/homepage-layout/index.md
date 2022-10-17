@@ -5,6 +5,8 @@ draft: false
 description: "Configuring the homepage layout in the Blowfish theme."
 slug: "homepage-layout"
 tags: ["homepage", "layouts", "docs"]
+series: ["Documentation"]
+series_order: 5
 ---
 
 Blowfish provides a fully flexible homepage layout. There are two main templates to choose from with additional settings to adjust the design. Alternatively, you can also provide your own template and have complete control over the homepage content.

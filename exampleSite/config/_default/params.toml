@@ -42,6 +42,7 @@ mainSections = ["docs"]
   showEdit = true
   editURL = "https://github.com/nunocoracao/blowfish/tree/main/exampleSite/content"
   editAppendPath = true
+  seriesOpened = false
   showHeadingAnchors = true
   showPagination = true
   invertPagination = false

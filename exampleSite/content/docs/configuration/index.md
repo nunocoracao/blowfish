@@ -5,6 +5,8 @@ draft: false
 description: "All the configuration variables available in Blowfish."
 slug: "configuration"
 tags: ["config", "docs"]
+series: ["Documentation"]
+series_order: 4
 ---
 
 Blowfish is a highly customisable theme and uses some of the latest Hugo features to simplify how it is configured.
@@ -153,6 +155,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 |`article.showEdit`|`false`|Whether or not the link to edit the article content should be displayed.|
 |`article.editURL`|_Not set_|When `article.showEdit` is active, the URL for the edit link.|
 |`article.editAppendPath`|`true`|When `article.showEdit` is active, whether or not the path to the current article should be appended to the URL set at `article.editURL`.|
+|`article.seriesOpened`|`false`|Whether or not the series module will be displayed open by default or not.|
 |`article.showHeadingAnchors`|`true`|Whether or not heading anchor links are displayed alongside headings within articles.|
 |`article.showPagination`|`true`|Whether or not the next/previous article links are displayed in the article footer.|
 |`article.invertPagination`|`false`|Whether or not to flip the direction of the next/previous article links.|
