@@ -41,6 +41,7 @@ Real websites that are built with Blowfish.
 | [loisvelasco.is-a.dev](https://loisvelasco.is-a.dev)                  | Personal site                |
 | [tabletopflore.com](https://www.tabletopflore.com)                    | Personal site                |
 | [omarohn.de](https://omarohn.de)                                      | Personal site                |
+| [spelucin.me](https://spelucin.me)                                    | Personal site                |
 
 {{< alert >}}
 
