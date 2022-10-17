@@ -4,11 +4,11 @@
     <ul class="list-group">
         {{ range $post :=  sort (index .Site.Taxonomies.series (index .Params.series 0 | urlize)) "Params.series_order" }}
         {{ if eq $post.Permalink $.Page.Permalink }}
-        <li class="list-group-item active">
+        <li class="list-group-item my-0 active">
             Part {{ $post.Params.series_order }}: This Article
         </li>
         {{ else }}
-        <li class="list-group-item">
+        <li class="list-group-item my-0">
             <a href="{{$post.Permalink}}">
                 Part {{ $post.Params.series_order }}: {{ $post.Params.title}}
             </a>

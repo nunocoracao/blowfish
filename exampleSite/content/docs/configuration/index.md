@@ -6,7 +6,7 @@ description: "All the configuration variables available in Blowfish."
 slug: "configuration"
 tags: ["config", "docs"]
 series: ["Docs"]
-series_order: 2
+series_order: 4
 ---
 
 Blowfish is a highly customisable theme and uses some of the latest Hugo features to simplify how it is configured.

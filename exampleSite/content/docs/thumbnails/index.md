@@ -5,6 +5,8 @@ draft: false
 description: "Turn on thumbnails for your articles."
 slug: "thumbnails"
 tags: ["thumbnail", "config", "docs"]
+series: ["Docs"]
+series_order: 6
 ---
 
 ## Thumbnails
