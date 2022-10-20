@@ -57,7 +57,7 @@ mainSections = ["docs"]
 [list]
   showBreadcrumbs = false
   showSummary = true
-  showTableOfContents = false
+  showTableOfContents = true
   showCards = true
   groupByYear = false
 
