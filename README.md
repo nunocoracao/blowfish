@@ -69,7 +69,7 @@ Detailed instructions for each method can be found in the [Installation](https:/
 
    ```toml
    [[imports]]
-   path = "github.com/nunocoracao/blowfish"
+   path = "github.com/nunocoracao/blowfish/v2"
    ```
 
 3. Start your server using `hugo server` and the theme will be downloaded automatically.
