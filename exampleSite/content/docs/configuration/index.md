@@ -192,4 +192,4 @@ Many of the article defaults here can be overridden on a per article basis by sp
 
 The theme also includes a `markup.toml` configuration file. This file contains some important parameters that ensure that Hugo is correctly configured to generate sites built with Blowfish.
 
-Always ensure this file is present in the config directory and that the required values are set. Failure to do so may cause certain features to fucntion incorrectly and could result in unintended behaviour.
+Always ensure this file is present in the config directory and that the required values are set. Failure to do so may cause certain features to function incorrectly and could result in unintended behaviour.
