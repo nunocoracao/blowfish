@@ -1,6 +1,6 @@
 <footer class="py-10 print:hidden">
   {{/* Footer menu */}}
-  {{ if .Site.Params.footer.showMenu }}
+  {{ if .Site.Params.footer.showMenu | default true }}
     {{ if .Site.Menus.footer }}
     <nav class="pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400">
       <ul class="flex flex-col list-none sm:flex-row">
