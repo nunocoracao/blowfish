@@ -4,6 +4,8 @@ date: 2022-01-19
 draft: false
 description: "Discover what's new in Blowfish version 2.0."
 tags: ["new", "docs"]
+series: ["Documentation"]
+series_order: 1
 ---
 
 {{< lead >}}

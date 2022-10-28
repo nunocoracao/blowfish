@@ -20,6 +20,7 @@ Real websites that are built with Blowfish.
 | Website                                                               | Details                      |
 | --------------------------------------------------------------------- | ---------------------------- |
 | [nunocoracao.com](https://nunocoracao.com)                            | Personal site - Theme author |
+| [madoke.org](https://madoke.org/)                                     | Personal site                |
 | [code-chimp.com](https://code-chimp.com)                              | Personal site                |
 | [mucahitkurtlar.github.io](https://mucahitkurtlar.github.io)          | Personal site                |
 | [brendanwallace.github.io](https://brendanwallace.github.io)          | Personal site                |
@@ -38,7 +39,9 @@ Real websites that are built with Blowfish.
 | [blog.watchstep.me](https://blog.watchstep.me)                        | Personal site                |
 | [overdevelop.io](https://overdevelop.io)                              | Personal site                |
 | [loisvelasco.is-a.dev](https://loisvelasco.is-a.dev)                  | Personal site                |
-
+| [tabletopflore.com](https://www.tabletopflore.com)                    | Personal site                |
+| [omarohn.de](https://omarohn.de)                                      | Personal site                |
+| [spelucin.me](https://spelucin.me)                                    | Personal site                |
 
 {{< alert >}}
 

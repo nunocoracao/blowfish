@@ -1,0 +1,24 @@
+{{ if .Params.series }}
+<details style="margin-left:0px" class="mt-2 mb-5 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5" {{ if .Params.seriesOpened | default (.Site.Params.article.seriesOpened | default false) }} open {{ end }}>
+    <summary
+        class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
+        {{ index .Params.series 0 }} - This article is part of a series.
+    </summary>
+    {{ range $post := sort (index .Site.Taxonomies.series (index .Params.series 0 | urlize)) "Params.series_order" }}
+    {{ if eq $post.Permalink $.Page.Permalink }}
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        Part {{ $post.Params.series_order }}: This Article
+    </div>
+    {{ else }}
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="{{$post.Permalink}}">
+            Part {{ $post.Params.series_order }}: {{ $post.Params.title}}
+        </a>
+    </div>
+    {{end}}
+    {{end}}
+
+</details>
+{{end}}

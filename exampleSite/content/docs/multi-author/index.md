@@ -5,6 +5,8 @@ draft: false
 description: "Configure multiple authors for your articles."
 slug: "multi-author"
 tags: ["authors", "config", "docs"]
+series: ["Documentation"]
+series_order: 10
 showAuthor: true
 authors:
   - "nunocoracao"

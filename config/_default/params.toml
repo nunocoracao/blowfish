@@ -43,6 +43,7 @@ enableCodeCopy = true
   showEdit = true
   # editURL = "https://github.com/username/repo/"
   editAppendPath = true
+  seriesOpened = false
   showHeadingAnchors = true
   showPagination = true
   invertPagination = false

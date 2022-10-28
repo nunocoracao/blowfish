@@ -5,6 +5,8 @@ draft: false
 description: "All the configuration variables available in Blowfish."
 slug: "configuration"
 tags: ["config", "docs"]
+series: ["Documentation"]
+series_order: 4
 ---
 
 Blowfish is a highly customisable theme and uses some of the latest Hugo features to simplify how it is configured.
@@ -68,9 +70,11 @@ The theme currently supports the following languages by default:
 | :jp: Japanese                          | `ja`    |
 | :brazil: Portuguese (Brazil)           | `pt-br` |
 | :portugal: Portuguese (Portugal)       | `pt-pt` |
+| :poland: Polish                        | `pl`    |
 | :romania: Romanian                     | `ro`    |
 | :es: Spanish (Spain)                   | `es`    |
 | :tr: Turkish                           | `tr`    |
+| 🇭🇷 Croatian                          | `hr`    |
 
 The default translations can be overridden by creating a custom file in `i18n/[code].yaml` that contains the translation strings. You can also use this method to add new languages. If you'd like to share a new translation with the community, please [open a pull request](https://github.com/nunocoracao/blowfish/pulls).
 
@@ -129,6 +133,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 |`logo`|_Not set_|The relative path to the site logo file within the `assets/` folder. The logo file should be provided at 2x resolution and supports any image dimensions.|
 |`mainSections`|_Not set_|The sections that should be displayed in the recent articles list. If not provided the section with the greatest number of articles is used.|
 |`robots`|_Not set_|String that indicates how robots should handle your site. If set, it will be output in the page head. Refer to [Google's docs](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag#directives) for valid values.|
+|`disableImageZoom`|`false`|Disables image zoom feature across all the images in the site.|
 |`footer.showMenu`|`true`|Show/hide the footer menu, which can be configured in the `[[footer]]` section of the `config/_default/menus.en.toml` file.|
 |`footer.showCopyright`|`true`|Whether or not to show the copyright string in the site footer. Note that the string itself can be customised using the `copyright` parameter in the [languages configuration](#language-and-i18n).|
 |`footer.showThemeAttribution`|`true`|Whether or not to show the "powered by" theme attribution in the site footer. If you choose to disable this message, please consider attributing the theme somewhere else on your site (for example, on your about page).|
@@ -152,6 +157,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 |`article.showEdit`|`false`|Whether or not the link to edit the article content should be displayed.|
 |`article.editURL`|_Not set_|When `article.showEdit` is active, the URL for the edit link.|
 |`article.editAppendPath`|`true`|When `article.showEdit` is active, whether or not the path to the current article should be appended to the URL set at `article.editURL`.|
+|`article.seriesOpened`|`false`|Whether or not the series module will be displayed open by default or not.|
 |`article.showHeadingAnchors`|`true`|Whether or not heading anchor links are displayed alongside headings within articles.|
 |`article.showPagination`|`true`|Whether or not the next/previous article links are displayed in the article footer.|
 |`article.invertPagination`|`false`|Whether or not to flip the direction of the next/previous article links.|
@@ -188,4 +194,4 @@ Many of the article defaults here can be overridden on a per article basis by sp
 
 The theme also includes a `markup.toml` configuration file. This file contains some important parameters that ensure that Hugo is correctly configured to generate sites built with Blowfish.
 
-Always ensure this file is present in the config directory and that the required values are set. Failure to do so may cause certain features to fucntion incorrectly and could result in unintended behaviour.
+Always ensure this file is present in the config directory and that the required values are set. Failure to do so may cause certain features to function incorrectly and could result in unintended behaviour.

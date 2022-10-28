@@ -12,7 +12,7 @@ if (typeof auth !== 'undefined') {
             var data = doc.data();
             if (data) {
                 var label = document.querySelectorAll("span[id='" + oid + "']")[0].innerText.split(' ')[1]
-                document.querySelectorAll("span[id='" + oid + "']")[0].innerText = numberWithCommas(data.views) + " " + label
+                document.querySelectorAll("span[id='" + oid + "']")[0].innerText = numberWithCommas(data.views)
             }
         })
     }
@@ -22,7 +22,7 @@ if (typeof auth !== 'undefined') {
             var data = doc.data();
             if (data) {
                 var label = document.querySelectorAll("span[id='" + oid + "']")[0].innerText.split(' ')[1]
-                document.querySelectorAll("span[id='" + oid + "']")[0].innerText = numberWithCommas(data.likes) + " " + label
+                document.querySelectorAll("span[id='" + oid + "']")[0].innerText = numberWithCommas(data.likes)
             }
         })
     }

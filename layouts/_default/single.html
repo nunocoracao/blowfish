@@ -2,11 +2,11 @@
 <article>
   {{ if .Params.showHero | default (.Site.Params.article.showHero | default false) }}
   {{ $heroStyle := print "partials/hero/" .Site.Params.article.heroStyle ".html" }}
-    {{ if templates.Exists $heroStyle }}
-      {{ partial $heroStyle . }}
-    {{ else }}
-      {{ partial "partials/hero/basic.html" . }}
-    {{ end }}
+  {{ if templates.Exists $heroStyle }}
+  {{ partial $heroStyle . }}
+  {{ else }}
+  {{ partial "partials/hero/basic.html" . }}
+  {{ end }}
   {{- end -}}
   <header id="single_header" class="mt-5 max-w-prose">
     {{ if .Params.showBreadcrumbs | default (.Site.Params.article.showBreadcrumbs | default false) }}
@@ -21,13 +21,15 @@
   </header>
   <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
     {{ if and (.Params.showTableOfContents | default (.Site.Params.article.showTableOfContents | default false)) (in
-    .TableOfContents "<ul") }} <div class="order-first px-0 lg:order-last lg:max-w-xs ltr:lg:pl-8 rtl:lg:pr-8">
+    .TableOfContents "<ul") }} 
+    <div class="order-first sm:max-w-prose lg:ml-auto px-0 lg:order-last lg:max-w-xs ltr:lg:pl-8 rtl:lg:pr-8">
       <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-10">
         {{ partial "toc.html" . }}
       </div>
       </div>
       {{ end }}
       <div class="min-w-0 min-h-0 max-w-prose">
+        {{ partial "series.html" . }}
         {{ .Content | emojify }}
       </div>
       <script>
@@ -146,10 +148,15 @@
 
         var header = document.getElementById("single_header")
         var style = getComputedStyle(header);
-        var margin = '-'+ (parseInt(style.height) + parseInt(style.marginTop) + parseInt(style.marginBottom) + 20) + 'px'
         var hero = document.getElementById('hero')
-        if(hero)
+        if (hero) {
+          var margin = '-' + (parseInt(style.height) + parseInt(style.marginTop) + parseInt(style.marginBottom) + 20) + 'px'
+          var height = (-parseInt(margin) + parseInt(getComputedStyle(hero).height)) + "px"
+          console.log(height)
           hero.style["margin-bottom"] = margin;
+          hero.style["height"] = height;
+        }
+
       </script>
   </section>
   <footer class="pt-8 max-w-prose print:hidden">
@@ -165,9 +172,9 @@
 
     {{ $taxonomyLink := 0 }}
     {{ range $taxonomyname, $taxonomy := $taxonomies }}
-      {{ if (eq $taxonomyname $author) }}
-      {{ $taxonomyLink = delimit (slice  $baseURL "authors/" $author) "" }}
-      {{ end }}
+    {{ if (eq $taxonomyname $author) }}
+    {{ $taxonomyLink = delimit (slice $baseURL "authors/" $author) "" }}
+    {{ end }}
     {{ end }}
 
     {{ partial "author-extra.html" (dict "context" . "data" $authorData "link" $taxonomyLink) }}

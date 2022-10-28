@@ -5,6 +5,8 @@ draft: false
 description: "Configuring the homepage layout in the Blowfish theme."
 slug: "homepage-layout"
 tags: ["homepage", "layouts", "docs"]
+series: ["Documentation"]
+series_order: 5
 ---
 
 Blowfish provides a fully flexible homepage layout. There are two main templates to choose from with additional settings to adjust the design. Alternatively, you can also provide your own template and have complete control over the homepage content.
@@ -21,7 +23,7 @@ The author information is provided in the languages configuration file. Refer to
 
 Additionally, any Markdown content that is provided in the homepage content will be placed below the author profile. This allows extra flexibility for displaying a bio or other custom content using shortcodes.
 
-To enable the profile layout, set `homepage.layout = "profile"` in the `params.toml` configuration file.
+To enable the Profile layout, set `homepage.layout = "profile"` in the `params.toml` configuration file.
 
 ## Page layout
 
@@ -29,7 +31,7 @@ The page layout is simply a normal content page that displays your Markdown cont
 
 <img class="thumbnailshadow" src="home-page.png"/>
 
-To enable the page layout, set `homepage.layout = "page"` in the `params.toml` configuration file.
+To enable the Page layout, set `homepage.layout = "page"` in the `params.toml` configuration file.
 
 ## Hero layout
 
@@ -37,7 +39,7 @@ The hero layout brings together ideas from the profile and card layouts. This on
 
 <img class="thumbnailshadow" src="home-hero.png"/>
 
-To enable the profile layout, set `homepage.layout = "profile"` and `homepage.homepageImage` in the `params.toml` configuration file.
+To enable the Hero layout, set `homepage.layout = "hero"` and `homepage.homepageImage` in the `params.toml` configuration file.
 
 ## Background layout
 
@@ -45,7 +47,7 @@ The background layout is a more smooth version of the hero layout. As in the Her
 
 <img class="thumbnailshadow" src="home-background.png"/>
 
-To enable the profile layout, set `homepage.layout = "background"` and `homepage.homepageImage` in the `params.toml` configuration file.
+To enable the Background layout, set `homepage.layout = "background"` and `homepage.homepageImage` in the `params.toml` configuration file.
 
 ## Card layout
 
@@ -53,14 +55,14 @@ The card layout is an extension of the page layout. It provides the same level o
 
 <img class="thumbnailshadow" src="home-card.png"/>
 
-To enable the profile layout, set `homepage.layout = "profile"` and `homepage.homepageImage` in the `params.toml` configuration file. 
+To enable the Card layout, set `homepage.layout = "card"` and `homepage.homepageImage` in the `params.toml` configuration file. 
 
 
 ## Custom layout
 
 If the built-in homepage layouts aren't sufficient for your needs, you have the option to provide your own custom layout. This allows you to have total control over the page content and essentially gives you a blank slate to work with.
 
-To enable the custom layout, set `homepage.layout = "custom"` in the `params.toml` configuration file.
+To enable the Custom layout, set `homepage.layout = "custom"` in the `params.toml` configuration file.
 
 With the configuration value set, create a new `custom.html` file and place it in `layouts/partials/home/custom.html`. Now whatever is in the `custom.html` file will be placed in the content area of the site homepage. You may use whatever HTML, Tailwind, or Hugo templating functions you wish to define your layout.
 

@@ -23,7 +23,7 @@ mainSections = ["docs"]
 
 [homepage]
   layout = "custom" # valid options: page, profile, hero, card, background, custom
-  homepageImage = "iceland.jpg" # used in: hero, and card
+  homepageImage = "/img/iceland.jpg" # used in: hero, and card
   showRecent = true
   showRecentItems = 5
   showMoreLink = true
@@ -42,6 +42,7 @@ mainSections = ["docs"]
   showEdit = true
   editURL = "https://github.com/nunocoracao/blowfish/tree/main/exampleSite/content"
   editAppendPath = true
+  seriesOpened = false
   showHeadingAnchors = true
   showPagination = true
   invertPagination = false
@@ -56,7 +57,7 @@ mainSections = ["docs"]
 [list]
   showBreadcrumbs = false
   showSummary = true
-  showTableOfContents = false
+  showTableOfContents = true
   showCards = true
   groupByYear = false
 
