@@ -16,7 +16,7 @@ enableCodeCopy = true
 # robots = ""
 
 [footer]
-  showMenu = true
+ # showMenu = true
   showCopyright = true
   showThemeAttribution = true
   showAppearanceSwitcher = true
