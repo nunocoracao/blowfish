@@ -17,13 +17,6 @@ The layout of the homepage is controlled by the `homepage.layout` setting in the
 
 The default layout is the profile layout, which is great for personal websites and blogs. It puts the author's details front and centre by providing an image and links to social profiles.
 
-{{< figure
-    class="content-center"
-    src="home-profile.png"
-    alt="Abstract purple artwork"
-    caption="Photo by [Jr Korpa](https://unsplash.com/@jrkorpa) on [Unsplash](https://unsplash.com/)"
-    >}}
-
 <img class="thumbnailshadow" src="home-profile.png"/>
 
 The author information is provided in the languages configuration file. Refer to the [Getting Started]({{< ref "getting-started" >}}) and [Language Configuration]({{< ref "configuration##language-and-i18n" >}}) sections for parameter details.
