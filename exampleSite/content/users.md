@@ -42,6 +42,7 @@ Real websites that are built with Blowfish.
 | [tabletopflore.com](https://www.tabletopflore.com)                    | Personal site                |
 | [omarohn.de](https://omarohn.de)                                      | Personal site                |
 | [spelucin.me](https://spelucin.me)                                    | Personal site                |
+| [insidemordecai.com](https://insidemordecai.com)                      | Personal site                |
 
 {{< alert >}}
 
