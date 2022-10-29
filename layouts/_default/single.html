@@ -31,7 +31,7 @@
       <div class="min-w-0 min-h-0 max-w-prose">
         {{ partial "series.html" . }}
         {{ .Content | emojify }}
-        </br></br></br>
+        </br></br>
         {{ partial "series-closed.html" . }}
       </div>
       <script>
@@ -168,6 +168,11 @@
     {{ $authorsData := .Site.Data.authors }}
     {{ $taxonomies := .Site.Taxonomies.authors }}
     {{ $baseURL := .Site.BaseURL }}
+
+    {{ if not (strings.HasSuffix $baseURL "/") }}
+      {{ $baseURL = delimit (slice $baseURL "/") "" }}
+    {{ end }}
+
     {{ range $author := .Page.Params.authors }}
     {{ $authorData := index $authorsData $author }}
     {{- if $authorData -}}
@@ -175,7 +180,7 @@
     {{ $taxonomyLink := 0 }}
     {{ range $taxonomyname, $taxonomy := $taxonomies }}
     {{ if (eq $taxonomyname $author) }}
-    {{ $taxonomyLink = delimit (slice $baseURL "authors/" $author) "" }}
+    {{ $taxonomyLink = delimit (slice $baseURL "/authors/" $author) "" }}
     {{ end }}
     {{ end }}
 
