@@ -32,16 +32,16 @@ _Note: the key in the social object will be used to fetch one of the theme’s i
     "name": "Nuno Coração",
     "image" : "img/nuno_avatar.jpg",
     "bio": "Theme Creator",
-    "social": {
-        "linkedin": "https://linkedin.com/in/nunocoracao",
-        "twitter": "https://twitter.com/nunocoracao",
-        "instagram": "https://instagram.com/nunocoracao",
-        "medium": "https://medium.com/@nunocoracao",
-        "github": "https://github.com/nunocoracao",
-        "goodreads": "http://goodreads.com/nunocoracao",
-        "keybase": "https://keybase.io/nunocoracao",
-        "reddit": "https://reddit.com/user/nunoheart"
-    }
+    "social": [
+        { "linkedin": "https://linkedin.com/in/nunocoracao" },
+        { "twitter": "https://twitter.com/nunocoracao" },
+        { "instagram": "https://instagram.com/nunocoracao" },
+        { "medium": "https://medium.com/@nunocoracao" },
+        { "github": "https://github.com/nunocoracao" },
+        { "goodreads": "http://goodreads.com/nunocoracao" },
+        { "keybase": "https://keybase.io/nunocoracao" },
+        { "reddit": "https://reddit.com/user/nunoheart" }
+    ]
 }
 ```
 
@@ -99,4 +99,4 @@ Nuno's awesome dummy bio.
 
 This sample sample below shows an example where the default site author is turned off and the article has multiple authors.
 
-{{< article link="/blowfish/samples/multiple-authors/" >}}
+{{< article link="/samples/multiple-authors/" >}}
