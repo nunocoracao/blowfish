@@ -22,9 +22,11 @@
     {{ end }}
     <div class="text-2xl sm:text-lg">
       <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
-        {{ range $name, $link := .data.social }}
+        {{ range .data.social }}
+        {{ range $name, $link := . }}
         <a class="px-1 hover:text-primary-700 dark:hover:text-primary-400" href="{{ $link }}" target="_blank"
           aria-label="{{ $name | title }}" rel="me noopener noreferrer">{{ partial "icon.html" $name }}</a>
+        {{ end }}
         {{ end }}
       </div>
     </div>
