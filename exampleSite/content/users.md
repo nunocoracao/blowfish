@@ -42,9 +42,10 @@ Real websites that are built with Blowfish.
 | [tabletopflore.com](https://www.tabletopflore.com)                    | Personal site                |
 | [omarohn.de](https://omarohn.de)                                      | Personal site                |
 | [spelucin.me](https://spelucin.me)                                    | Personal site                |
+| [insidemordecai.com](https://insidemordecai.com)                      | Personal site                |
 
 {{< alert >}}
 
-**Blowfish user?** To add your site to this list, [submit a pull request](https://github.com/nunocoracao/blowfish/blob/dev/exampleSite/content/users.md).
+**Blowfish user?** To add your site to this list, [submit a pull request](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/content/users.md).
 
 {{</ alert >}}
