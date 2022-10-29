@@ -45,6 +45,6 @@ Real websites that are built with Blowfish.
 
 {{< alert >}}
 
-**Blowfish user?** To add your site to this list, [submit a pull request](https://github.com/nunocoracao/blowfish/blob/dev/exampleSite/content/users.md).
+**Blowfish user?** To add your site to this list, [submit a pull request](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/content/users.md).
 
 {{</ alert >}}
