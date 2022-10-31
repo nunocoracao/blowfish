@@ -25,7 +25,7 @@ content
     └── featured.png
 ```
 
-Inside the article you can now add an image file (almost all formats are supported bue we recommend `.png` or `.jpg`) that starts with `feature*`. Example below.
+Inside the article you can now add an image file (almost all formats are supported but we recommend `.png` or `.jpg`) that starts with `feature*`. Example below.
 
 ```shell
 content
