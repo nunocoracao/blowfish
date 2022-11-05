@@ -3506,10 +3506,6 @@ body:has(#menu-controller:checked) {
   opacity: 0.6;
 }
 
-.dark .dark\:mix-blend-multiply {
-  mix-blend-mode: multiply;
-}
-
 .dark .dark\:hover\:bg-primary-900:hover {
   --tw-bg-opacity: 1;
   background-color: rgba(var(--color-primary-900), var(--tw-bg-opacity));
