@@ -53,3 +53,6 @@ sharing:
 shortcode:
   recent_articles: "Güncel"
   icon_none: "Icon bulunamadı."
+
+recent:
+  show_more: "Daha Fazla Göster"

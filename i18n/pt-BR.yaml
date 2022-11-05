@@ -56,3 +56,6 @@ sharing:
 
 shortcode:
   recent_articles: "Recente"
+
+recent:
+  show_more: "Mostrar Mais"

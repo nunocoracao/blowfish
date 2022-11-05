@@ -53,3 +53,6 @@ sharing:
 
 shortcode:
   recent_articles: "Cele mai noi"
+
+recent:
+  show_more: "Afișați mai multe"

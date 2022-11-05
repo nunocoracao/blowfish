@@ -53,3 +53,6 @@ sharing:
 
 shortcode:
   recent_articles: "Viimeaikaiset"
+
+recent:
+  show_more: "Näytä Lisää"
