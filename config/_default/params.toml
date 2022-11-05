@@ -29,6 +29,8 @@ enableCodeCopy = true
   showRecentItems = 5
   showMoreLink = false
   showMoreLinkDest = "/posts"
+  cardView = false
+  cardViewScreenWidth = false
 
 [article]
   showDate = true
@@ -61,6 +63,8 @@ enableCodeCopy = true
   showTableOfContents = false
   showCards = false
   groupByYear = true
+  cardView = false
+  cardViewScreenWidth = false
 
 [sitemap]
   excludedKinds = []

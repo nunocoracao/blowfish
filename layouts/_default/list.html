@@ -1,49 +1,111 @@
 {{ define "main" }}
-  {{ $toc := and (.Params.showTableOfContents | default (.Site.Params.list.showTableOfContents | default false)) (in .TableOfContents "<ul") }}
-  <header>
-    {{ if .Params.showBreadcrumbs | default (.Site.Params.list.showBreadcrumbs | default false) }}
-      {{ partial "breadcrumbs.html" . }}
-    {{ end }}
-    <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
+{{ $toc := and (.Params.showTableOfContents | default (.Site.Params.list.showTableOfContents | default false)) (in
+.TableOfContents "<ul") }} <header>
+  {{ if .Params.showBreadcrumbs | default (.Site.Params.list.showBreadcrumbs | default false) }}
+  {{ partial "breadcrumbs.html" . }}
+  {{ end }}
+  <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
   </header>
-  <section
-    class="{{ if $toc -}}
+  <section class="{{ if $toc -}}
       mt-12
     {{- else -}}
       mt-0
-    {{- end }} prose flex max-w-full flex-col dark:prose-invert lg:flex-row"
-  >
+    {{- end }} prose flex max-w-full flex-col dark:prose-invert lg:flex-row">
     {{ if $toc }}
-      <div class="order-first px-0 lg:order-last lg:max-w-xs ltr:lg:pl-8 rtl:lg:pr-8">
-        <div class="toc ltr:pl-5 rtl:pr-5 lg:sticky lg:top-10">
-          {{ partial "toc.html" . }}
-        </div>
+    <div class="order-first px-0 lg:order-last lg:max-w-xs ltr:lg:pl-8 rtl:lg:pr-8">
+      <div class="toc ltr:pl-5 rtl:pr-5 lg:sticky lg:top-10">
+        {{ partial "toc.html" . }}
       </div>
+    </div>
     {{ end }}
     <div class="min-w-0 min-h-0 max-w-prose">
       {{ .Content | emojify }}
     </div>
   </section>
   {{ if gt .Pages 0 }}
-    <section class="space-y-10 w-full">
-      {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
-        {{ if $.Params.groupByYear | default ($.Site.Params.list.groupByYear | default true) }}
-          <h2 class="mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
+
+  {{ if .Site.Params.list.cardView | default false }}
+
+  {{ $cardViewScreenWidth := .Site.Params.list.cardViewScreenWidth}}
+
+  {{ if not $.Params.groupByYear | default ($.Site.Params.list.groupByYear | default true) }}
+
+  {{ if $cardViewScreenWidth }}
+  <section class="relative w-screen" style="left: calc(-50vw + 50%);">
+    <div class="flex flex-wrap pl-8 pr-8">
+      {{ else }}
+      <section class="w-full">
+        <div class="flex flex-wrap">
+          {{ end }}
+
+          {{ end }}
+
+
+
+          {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
+          {{ if $.Params.groupByYear | default ($.Site.Params.list.groupByYear | default true) }}
+          <h2 class="mt-12 mb-5 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
             {{ .Key }}
           </h2>
-          <hr class="border-dotted w-36 border-neutral-400" />
-        {{ end }}
-        {{ range .Pages }}
-          {{ partial "article-link.html" . }}
-        {{ end }}
-      {{ end }}
-    </section>
-    {{ partial "pagination.html" . }}
-  {{ else }}
-    <section class="mt-10 prose dark:prose-invert">
-      <p class="py-8 border-t">
-        <em>{{ i18n "list.no_articles" | emojify }}</em>
-      </p>
-    </section>
-  {{ end }}
-{{ end }}
+          {{ else }}
+          {{ end }}
+
+          {{ if $.Params.groupByYear | default ($.Site.Params.list.groupByYear | default true) }}
+
+          {{ if $cardViewScreenWidth}}
+          <section class="relative w-screen" style="left: calc(-50vw + 50%);">
+            <div class="flex flex-wrap pl-8 pr-8">
+              {{ else }}
+              <section class="w-full">
+                <div class="flex flex-wrap">
+                  {{ end }}
+                  {{ end }}
+
+                  {{ range .Pages }}
+
+                  {{ if $cardViewScreenWidth }}
+                  <div class="flex flex-wrap w-full p-4 sm:w-1/2 md:w-1/3 xl:w-1/4 2xl:w-1/5">
+                    {{ else }}
+                    <div class="flex flex-wrap w-full p-4 sm:w-1/2 md:w-1/3">
+                      {{ end }}
+
+                      {{ partial "article-link-card.html" . }}
+                    </div>
+                    {{ end }}
+                    {{ if $.Params.groupByYear | default ($.Site.Params.list.groupByYear | default true) }}
+                  </div>
+              </section>
+              {{ end }}
+
+
+              {{ end }}
+
+              {{ if not $.Params.groupByYear | default ($.Site.Params.list.groupByYear | default true) }}
+            </div>
+          </section>
+          {{ end }}
+
+          {{ else }}
+          <section class="space-y-10 w-full">
+            {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
+            {{ if $.Params.groupByYear | default ($.Site.Params.list.groupByYear | default true) }}
+            <h2 class="mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
+              {{ .Key }}
+            </h2>
+            {{ end }}
+            {{ range .Pages }}
+            {{ partial "article-link.html" . }}
+            {{ end }}
+            {{ end }}
+          </section>
+          {{ partial "pagination.html" . }}
+          {{ end }}
+
+          {{ else }}
+          <section class="mt-10 prose dark:prose-invert">
+            <p class="py-8 border-t">
+              <em>{{ i18n "list.no_articles" | emojify }}</em>
+            </p>
+          </section>
+          {{ end }}
+          {{ end }}

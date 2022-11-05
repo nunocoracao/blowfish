@@ -25,10 +25,13 @@ mainSections = ["docs"]
 [homepage]
   layout = "custom" # valid options: page, profile, hero, card, background, custom
   homepageImage = "/img/iceland.jpg" # used in: hero, and card
-  showRecent = true
-  showRecentItems = 5
+  showRecent = false
+  showRecentItems = 10
   showMoreLink = true
   showMoreLinkDest = "docs"
+  cardView = true
+  cardViewScreenWidth = false
+
 
 [article]
   showDate = false
@@ -57,10 +60,12 @@ mainSections = ["docs"]
 
 [list]
   showBreadcrumbs = false
-  showSummary = true
+  showSummary = false
   showTableOfContents = true
   showCards = true
   groupByYear = false
+  cardView = true
+  cardViewScreenWidth = false
 
 [sitemap]
   excludedKinds = ["taxonomy","term"]

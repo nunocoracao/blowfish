@@ -347,6 +347,13 @@ body:has(#menu-controller:checked) {
   background-position:center;
 }
 
+.thumbnail_card {
+  height: 300px;
+  background-repeat:no-repeat;
+  background-size:cover; 
+  background-position:center;
+}
+
 .single_hero_basic {
   background-repeat:no-repeat;
   background-size:cover; 
