@@ -53,3 +53,6 @@ sharing:
 
 shortcode:
   recent_articles: "Reciente"
+
+recent:
+  show_more: "Mostrar Más"

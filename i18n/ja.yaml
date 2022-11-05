@@ -53,3 +53,6 @@ sharing:
 
 shortcode:
   recent_articles: "最近の記事"
+
+recent:
+  show_more: "もっと見せる"
