@@ -45,7 +45,7 @@
         {{ with .Params.externalUrl }}
         <div>
           <div
-            class="text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+            class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
             {{ $.Title | emojify }}
             <span class="text-xs align-top cursor-default text-neutral-400 dark:text-neutral-500">
               <span class="rtl:hidden">&#8599;</span>
@@ -54,7 +54,7 @@
           </div>
         </div>
         {{ else }}
-        <div class="text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
           href="{{ .RelPermalink }}">{{ .Title | emojify }}</div>
         {{ end }}
         {{ if and .Draft .Site.Params.article.showDraftLabel }}

@@ -4,7 +4,7 @@ description: "See what's possible with Blowfish."
 
 cascade:
   showEdit: false
-  showSummary: true
+  showSummary: false
 ---
 
 {{< lead >}}

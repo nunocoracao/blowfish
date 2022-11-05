@@ -1,17 +1,20 @@
 {{ $jsHome := resources.Get "js/home.js" | resources.Minify | resources.Fingerprint "sha512" }}
-<div id="background" class="">
+<div id="background" style="display:none">
   {{ partial "partials/home/background.html" . }}
 </div>
-<div id="hero" class="hidden h-full">
+<div id="hero" style="display:none">
   {{ partial "partials/home/hero.html" . }}
 </div>
-<div id="profile" class="hidden h-full">
+<div id="profile" class="">
   {{ partial "partials/home/profile.html" . }}
 </div>
-<div id="card" class="hidden h-full">
+<div id="card" style="display:none">
   {{ partial "partials/home/card.html" . }}
 </div>
-<div id="page" class="hidden h-full">
+<div id="page" style="display:none">
   {{ partial "partials/home/page.html" . }}
 </div>
+<section>
+  {{ partial "recent-articles-demo.html" . }}
+</section>
 <script defer type="text/javascript" src="{{ $jsHome.RelPermalink }}" integrity="{{ $jsHome.Data.Integrity }}"></script>
