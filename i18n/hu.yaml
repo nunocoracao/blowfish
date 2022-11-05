@@ -53,3 +53,6 @@ sharing:
 
 shortcode:
   recent_articles: "Friss"
+
+recent:
+  show_more: "Mutass Többet"

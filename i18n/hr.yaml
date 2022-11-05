@@ -60,3 +60,5 @@ sharing:
 shortcode:
   recent_articles: "Nedavno"
 
+recent:
+  show_more: "Prikaži Više"
