@@ -1,11 +1,11 @@
 {{ $jsHome := resources.Get "js/home.js" | resources.Minify | resources.Fingerprint "sha512" }}
-<div id="background" style="display:none">
+<div id="background">
   {{ partial "partials/home/background.html" . }}
 </div>
 <div id="hero" style="display:none">
   {{ partial "partials/home/hero.html" . }}
 </div>
-<div id="profile" class="">
+<div id="profile" style="display:none">
   {{ partial "partials/home/profile.html" . }}
 </div>
 <div id="card" style="display:none">

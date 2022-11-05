@@ -8,6 +8,7 @@
   {{ partial "partials/hero/basic.html" . }}
   {{ end }}
   {{- end -}}
+  
   <header id="single_header" class="mt-5 max-w-prose">
     {{ if .Params.showBreadcrumbs | default (.Site.Params.article.showBreadcrumbs | default false) }}
     {{ partial "breadcrumbs.html" . }}
@@ -23,12 +24,12 @@
     {{ if and (.Params.showTableOfContents | default (.Site.Params.article.showTableOfContents | default false)) (in
     .TableOfContents "<ul") }} 
     <div class="order-first sm:max-w-prose lg:ml-auto px-0 lg:order-last lg:max-w-xs ltr:lg:pl-8 rtl:lg:pr-8">
-      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-10">
+      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-10 backdrop-blur">
         {{ partial "toc.html" . }}
       </div>
       </div>
       {{ end }}
-      <div class="min-w-0 min-h-0 max-w-prose">
+      <div class="min-w-0 min-h-0 max-w-prose backdrop-blur">
         {{ partial "series.html" . }}
         {{ .Content | emojify }}
         </br></br>
@@ -146,17 +147,6 @@
           } else {
             remove_like_article(id_likes)
           }
-        }
-
-        var header = document.getElementById("single_header")
-        var style = getComputedStyle(header);
-        var hero = document.getElementById('hero')
-        if (hero) {
-          var margin = '-' + (parseInt(style.height) + parseInt(style.marginTop) + parseInt(style.marginBottom) + 20) + 'px'
-          var height = (-parseInt(margin) + parseInt(getComputedStyle(hero).height)) + "px"
-          console.log(height)
-          hero.style["margin-bottom"] = margin;
-          hero.style["height"] = height;
         }
 
       </script>
