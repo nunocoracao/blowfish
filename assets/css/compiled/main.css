@@ -2307,11 +2307,6 @@ select {
   color: rgba(var(--color-neutral), var(--tw-text-opacity)) !important;
 }
 
-.text-primary-300 {
-  --tw-text-opacity: 1;
-  color: rgba(var(--color-primary-300), var(--tw-text-opacity));
-}
-
 .text-neutral-200 {
   --tw-text-opacity: 1;
   color: rgba(var(--color-neutral-200), var(--tw-text-opacity));
@@ -2320,6 +2315,11 @@ select {
 .text-neutral-300 {
   --tw-text-opacity: 1;
   color: rgba(var(--color-neutral-300), var(--tw-text-opacity));
+}
+
+.text-primary-300 {
+  --tw-text-opacity: 1;
+  color: rgba(var(--color-primary-300), var(--tw-text-opacity));
 }
 
 .\!no-underline {
@@ -3500,6 +3500,11 @@ body:has(#menu-controller:checked) {
 .dark .dark\:text-neutral-200 {
   --tw-text-opacity: 1;
   color: rgba(var(--color-neutral-200), var(--tw-text-opacity));
+}
+
+.dark .dark\:text-primary-300 {
+  --tw-text-opacity: 1;
+  color: rgba(var(--color-primary-300), var(--tw-text-opacity));
 }
 
 .dark .dark\:opacity-60 {
