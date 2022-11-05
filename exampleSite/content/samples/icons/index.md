@@ -35,6 +35,7 @@ The full list of built-in icons and their corresponding names can referenced bel
 | dribbble             | {{< icon dribbble >}}             |
 | edit                 | {{< icon edit >}}                 |
 | email                | {{< icon email >}}                |
+| envelope             | {{< icon envelope >}}             |
 | eye                  | {{< icon eye >}}                  |
 | facebook             | {{< icon facebook >}}             |
 | fire                 | {{< icon fire >}}                 |
