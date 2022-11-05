@@ -1651,8 +1651,12 @@ select {
   height: 2rem;
 }
 
-.h-\[300px\] {
-  height: 300px;
+.h-\[200px\] {
+  height: 200px;
+}
+
+.h-\[700px\] {
+  height: 700px;
 }
 
 .h-36 {
@@ -2006,6 +2010,10 @@ select {
   --tw-gradient-to: transparent;
 }
 
+.to-neutral {
+  --tw-gradient-to: rgba(var(--color-neutral), 1);
+}
+
 .to-secondary-700 {
   --tw-gradient-to: rgba(var(--color-secondary-700), 1);
 }
@@ -2330,6 +2338,14 @@ select {
 
 .opacity-0 {
   opacity: 0;
+}
+
+.opacity-30 {
+  opacity: 0.3;
+}
+
+.opacity-70 {
+  opacity: 0.7;
 }
 
 .mix-blend-normal {
@@ -3408,8 +3424,8 @@ body:has(#menu-controller:checked) {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
-.dark .dark\:to-neutral-300 {
-  --tw-gradient-to: rgba(var(--color-neutral-300), 1);
+.dark .dark\:to-neutral-800 {
+  --tw-gradient-to: rgba(var(--color-neutral-800), 1);
 }
 
 .dark .dark\:to-secondary-800 {
@@ -3488,8 +3504,8 @@ body:has(#menu-controller:checked) {
   color: rgba(var(--color-neutral-200), var(--tw-text-opacity));
 }
 
-.dark .dark\:mix-blend-multiply {
-  mix-blend-mode: multiply;
+.dark .dark\:opacity-60 {
+  opacity: 0.6;
 }
 
 .dark .dark\:hover\:bg-primary-900:hover {

@@ -1,4 +1,4 @@
-{{ $articleClasses := "flex flex-wrap article" }}
+{{ $articleClasses := "flex flex-wrap article backdrop-blur" }}
 {{ if .Site.Params.list.showCards }}
 {{ $articleClasses = delimit (slice $articleClasses "border" "border-neutral-200 dark:border-neutral-700 border-2 rounded-md") " " }}
 {{ end }}
