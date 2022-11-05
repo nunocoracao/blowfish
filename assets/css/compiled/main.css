@@ -1671,6 +1671,38 @@ select {
   height: 12rem;
 }
 
+.h-\[50vw\] {
+  height: 50vw;
+}
+
+.h-\[10vw\] {
+  height: 10vw;
+}
+
+.h-\[30vw\] {
+  height: 30vw;
+}
+
+.h-\[50\%\] {
+  height: 50%;
+}
+
+.h-\[20\%\] {
+  height: 20%;
+}
+
+.h-\[10\%\] {
+  height: 10%;
+}
+
+.h-\[1000px\] {
+  height: 1000px;
+}
+
+.h-\[800px\] {
+  height: 800px;
+}
+
 .max-h-\[5rem\] {
   max-height: 5rem;
 }
@@ -2004,6 +2036,11 @@ select {
   --tw-gradient-from: rgba(var(--color-primary-500), 1);
   --tw-gradient-to: rgba(var(--color-primary-500), 0);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.via-neutral {
+  --tw-gradient-to: rgba(var(--color-neutral), 0);
+  --tw-gradient-stops: var(--tw-gradient-from), rgba(var(--color-neutral), 1), var(--tw-gradient-to);
 }
 
 .to-transparent {
@@ -2346,6 +2383,10 @@ select {
 
 .opacity-70 {
   opacity: 0.7;
+}
+
+.opacity-100 {
+  opacity: 1;
 }
 
 .mix-blend-normal {
@@ -3506,6 +3547,14 @@ body:has(#menu-controller:checked) {
 
 .dark .dark\:opacity-60 {
   opacity: 0.6;
+}
+
+.dark .dark\:mix-blend-normal {
+  mix-blend-mode: normal;
+}
+
+.dark .dark\:mix-blend-multiply {
+  mix-blend-mode: multiply;
 }
 
 .dark .dark\:hover\:bg-primary-900:hover {
