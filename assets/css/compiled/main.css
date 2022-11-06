@@ -1425,14 +1425,6 @@ select {
   top: 5rem;
 }
 
-.z-\[500\] {
-  z-index: 500;
-}
-
-.z-50 {
-  z-index: 50;
-}
-
 .z-10 {
   z-index: 10;
 }
@@ -1503,12 +1495,16 @@ select {
   margin-bottom: 3rem;
 }
 
-.mt-0 {
-  margin-top: 0px;
+.mt-5 {
+  margin-top: 1.25rem;
 }
 
 .mt-12 {
   margin-top: 3rem;
+}
+
+.mt-0 {
+  margin-top: 0px;
 }
 
 .mb-5 {
@@ -1521,10 +1517,6 @@ select {
 
 .mt-6 {
   margin-top: 1.5rem;
-}
-
-.mt-5 {
-  margin-top: 1.25rem;
 }
 
 .mt-1 {
