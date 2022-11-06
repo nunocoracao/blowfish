@@ -8,7 +8,7 @@
 
 {{ if .Site.Params.homepage.cardView | default false }}
 {{ if .Site.Params.homepage.cardViewScreenWidth | default false }}
-<section class="relative w-screen" style="left: calc(-50vw + 50%);">
+<section class="relative w-screen max-w-[1600px]" style="left: calc(max(-50vw,-800px) + 50%);">
   <div class="flex flex-wrap pl-8 pr-8">
     {{ else }}
     <section class="w-full">
