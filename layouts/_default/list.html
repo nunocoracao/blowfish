@@ -1,4 +1,14 @@
 {{ define "main" }}
+
+{{ if .Params.showHero | default (.Site.Params.article.showHero | default false) }}
+{{ $heroStyle := print "partials/hero/" .Site.Params.article.heroStyle ".html" }}
+{{ if templates.Exists $heroStyle }}
+{{ partial $heroStyle . }}
+{{ else }}
+{{ partial "partials/hero/basic.html" . }}
+{{ end }}
+{{- end -}}
+
 {{ $toc := and (.Params.showTableOfContents | default (.Site.Params.list.showTableOfContents | default false)) (in
 .TableOfContents "<ul") }} <header>
   {{ if .Params.showBreadcrumbs | default (.Site.Params.list.showBreadcrumbs | default false) }}

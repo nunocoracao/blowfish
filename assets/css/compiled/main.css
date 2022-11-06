@@ -1425,6 +1425,10 @@ select {
   top: 5rem;
 }
 
+.z-\[500\] {
+  z-index: 500;
+}
+
 .z-50 {
   z-index: 50;
 }

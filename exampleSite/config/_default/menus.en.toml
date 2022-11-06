@@ -21,21 +21,26 @@
   weight = 20
 
 [[main]]
+  name = "Showcase"
+  pageRef = "examples"
+  weight = 30
+
+[[main]]
   name = "Users"
   pageRef = "users"
-  weight = 30
+  weight = 40
 
 [[main]]
   identifier = "github"
   pre = "github"
   url = "https://github.com/nunocoracao/blowfish"
-  weight = 40
+  weight = 50
 
 [[main]]
   identifier = "twitter"
   pre = "twitter"
   url = "https://twitter.com/burufugu"
-  weight = 50
+  weight = 60
 
 
 # -- Footer Menu --
