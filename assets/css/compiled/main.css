@@ -3148,6 +3148,14 @@ body:has(#menu-controller:checked) {
   box-shadow: 5px 5px 20px 1px rgba(0, 0, 0, 0.3);
 }
 
+.anchor {
+  display: block;
+  position: relative;
+  top: -100px;
+  height: 0px;
+  visibility: hidden;
+}
+
 @media (min-width: 640px) {
   .thumbnail {
     min-width: 100%;
