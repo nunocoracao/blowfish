@@ -16,7 +16,7 @@
     </span>
 </div>
 
-<div id="CardViewProse" class="">
+<div id="CardViewProse" class="hidden h-full">
     <section class="w-full">
         <div class="flex flex-wrap">
             {{ range first $recentArticles (.Paginate (where .Site.RegularPages "Type" "in"
@@ -28,8 +28,9 @@
         </div>
     </section>
 </div>
-<div id="CardViewScreenWidth" class="hidden h-full">
-    <section class="relative w-screen" style="left: calc(-50vw + 50%);">
+
+<div id="CardViewScreenWidth" class="">
+    <section class="relative w-screen max-w-[1600px]" style="left: calc(max(-50vw,-800px) + 50%);">
         <div class="flex flex-wrap pl-8 pr-8">
             {{ range first $recentArticles (.Paginate (where .Site.RegularPages "Type" "in"
             .Site.Params.mainSections)).Pages }}
@@ -40,6 +41,7 @@
         </div>
     </section>
 </div>
+
 <div id="NormalView" class="hidden h-full">
     <section class="space-y-10 w-full">
         {{ range first $recentArticles (.Paginate (where .Site.RegularPages "Type" "in"

@@ -35,8 +35,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
 });
 
 var list_config = [
-  "CardViewProse",
   "CardViewScreenWidth",
+  "CardViewProse",
   "NormalView"
 ]
 
