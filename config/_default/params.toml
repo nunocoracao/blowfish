@@ -31,7 +31,7 @@ enableCodeCopy = true
   showMoreLinkDest = "/posts"
   cardView = false
   cardViewScreenWidth = false
-  layout_background_blur = false # only used when layout equals background
+  layoutBackgroundBlur = false # only used when layout equals background
 
 [article]
   showDate = true
