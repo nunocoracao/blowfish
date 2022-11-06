@@ -1667,8 +1667,8 @@ select {
   height: 100px;
 }
 
-.h-\[250px\] {
-  height: 250px;
+.h-\[150px\] {
+  height: 150px;
 }
 
 .h-\[900px\] {
@@ -3708,8 +3708,8 @@ body:has(#menu-controller:checked) {
     display: none;
   }
 
-  .md\:h-\[300px\] {
-    height: 300px;
+  .md\:h-\[200px\] {
+    height: 200px;
   }
 
   .md\:h-56 {
@@ -3801,8 +3801,8 @@ body:has(#menu-controller:checked) {
     display: none;
   }
 
-  .lg\:h-\[350px\] {
-    height: 350px;
+  .lg\:h-\[250px\] {
+    height: 250px;
   }
 
   .lg\:h-72 {

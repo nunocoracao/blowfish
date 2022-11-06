@@ -3,7 +3,7 @@
 {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
 {{- with $featured -}}
 {{ with .Resize "1200x" }}
-<div id="hero" class="h-[250px] md:h-[300px] lg:h-[350px]"></div>
+<div id="hero" class="h-[150px] md:h-[200px] lg:h-[250px]"></div>
 <div class="fixed inset-x-0 top-0 h-[900px] single_hero_background nozoom"
     style="background-image:url({{ .RelPermalink }});">
     <div class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
