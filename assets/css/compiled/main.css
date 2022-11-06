@@ -2311,6 +2311,11 @@ select {
   color: rgba(var(--color-neutral), var(--tw-text-opacity)) !important;
 }
 
+.text-primary-800 {
+  --tw-text-opacity: 1;
+  color: rgba(var(--color-primary-800), var(--tw-text-opacity));
+}
+
 .text-neutral-200 {
   --tw-text-opacity: 1;
   color: rgba(var(--color-neutral-200), var(--tw-text-opacity));
@@ -3512,9 +3517,9 @@ body:has(#menu-controller:checked) {
   color: rgba(var(--color-neutral-200), var(--tw-text-opacity));
 }
 
-.dark .dark\:text-primary-300 {
+.dark .dark\:text-primary-200 {
   --tw-text-opacity: 1;
-  color: rgba(var(--color-primary-300), var(--tw-text-opacity));
+  color: rgba(var(--color-primary-200), var(--tw-text-opacity));
 }
 
 .dark .dark\:opacity-60 {
