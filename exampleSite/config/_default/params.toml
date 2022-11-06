@@ -31,7 +31,7 @@ mainSections = ["docs"]
   showMoreLinkDest = "docs"
   cardView = true
   cardViewScreenWidth = false
-
+  layout_background_blur = true # only used when layout equals background
 
 [article]
   showDate = false
