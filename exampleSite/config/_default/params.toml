@@ -62,6 +62,8 @@ mainSections = ["docs"]
   sharingLinks = [ "linkedin", "twitter", "whatsapp", "pinterest", "reddit", "facebook", "email"]
 
 [list]
+  showHero = true
+  heroStyle = "background" # valid options: basic, big, background
   showBreadcrumbs = false
   showSummary = false
   showTableOfContents = true

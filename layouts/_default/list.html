@@ -1,7 +1,7 @@
 {{ define "main" }}
 
-{{ if .Params.showHero | default (.Site.Params.article.showHero | default false) }}
-{{ $heroStyle := print "partials/hero/" .Site.Params.article.heroStyle ".html" }}
+{{ if .Site.Params.list.showHero | default false }}
+{{ $heroStyle := print "partials/hero/" .Site.Params.list.heroStyle ".html" }}
 {{ if templates.Exists $heroStyle }}
 {{ partial $heroStyle . }}
 {{ else }}
@@ -14,7 +14,7 @@
   {{ if .Params.showBreadcrumbs | default (.Site.Params.list.showBreadcrumbs | default false) }}
   {{ partial "breadcrumbs.html" . }}
   {{ end }}
-  <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
+  <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
   </header>
   <section class="{{ if $toc -}}
       mt-12
