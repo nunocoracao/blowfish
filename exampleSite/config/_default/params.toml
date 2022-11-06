@@ -15,6 +15,9 @@ enableCodeCopy = true
 mainSections = ["docs"]
 # robots = ""
 
+[header]
+  layout = "fixed" # valid options: basic, fixed
+
 [footer]
   showMenu = true
   showCopyright = true
