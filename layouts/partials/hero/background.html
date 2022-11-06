@@ -3,15 +3,29 @@
 {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
 {{- with $featured -}}
 {{ with .Resize "1200x" }}
-<div id="hero" class="h-[200px]"></div>
-<div class="fixed inset-x-0 top-0 h-[700px] single_hero_background nozoom"
-    style="background-image:url({{ .RelPermalink }});">    
-    <div
-        class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
+<div id="hero" class="h-[300px]"></div>
+<div class="fixed inset-x-0 top-0 h-[900px] single_hero_background nozoom"
+    style="background-image:url({{ .RelPermalink }});">
+    <div class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
     </div>
     <div
         class="absolute inset-0 opacity-30 dark:opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral dark:to-neutral-800 mix-blend-normal">
     </div>
 </div>
+<div id="background-blur" class="fixed opacity-0 inset-x-0 top-0 h-[900px] single_hero_background nozoom blur-xl"
+    style="background-image:url({{ .RelPermalink }});">
+    <div class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
+    </div>
+    <div
+        class="absolute inset-0 opacity-30 dark:opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral dark:to-neutral-800 mix-blend-normal">
+    </div>
+</div>
+<script>
+    window.addEventListener('scroll', function (e) {
+        var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        var background_blur = document.getElementById('background-blur');
+        background_blur.style.opacity = (scroll / 150.0)
+    });
+</script>
 {{ end }}
 {{- end -}}
