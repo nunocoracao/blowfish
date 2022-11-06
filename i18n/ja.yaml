@@ -41,7 +41,7 @@ nav:
 search:
   open_button_title: "検索 (/)"
   close_button_title: "閉じる (Esc)"
-  input_placeholder: "Search"
+  input_placeholder: "検索"
 
 sharing:
   email: " Eメールを送る"
@@ -55,4 +55,4 @@ shortcode:
   recent_articles: "最近の記事"
 
 recent:
-  show_more: "もっと見せる"
+  show_more: "もっと見る"
