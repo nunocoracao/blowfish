@@ -57,10 +57,6 @@ function switchList() {
   var currentDiv = document.getElementById(list_config[currentConfig])
   const configCode = document.querySelectorAll("code[id=config]");
 
-  console.log(currentConfig)
-  console.log(oldDiv)
-  console.log(currentDiv)
-
   currentDiv.style.display = "block";
   oldDiv.style.display = "none";
 
