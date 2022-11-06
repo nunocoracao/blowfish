@@ -56,7 +56,7 @@
 <section>
     {{ partial "recent-articles.html" . }}
 </section>
-{{ if .Site.Params.homepage.layout_background_blur | default false }}
+{{ if .Site.Params.homepage.layoutBackgroundBlur | default false }}
 <div id="background-blur" class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"></div>
 <script>
     window.addEventListener('scroll', function (e) {
