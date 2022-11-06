@@ -1667,8 +1667,8 @@ select {
   height: 150px;
 }
 
-.h-\[900px\] {
-  height: 900px;
+.h-\[800px\] {
+  height: 800px;
 }
 
 .h-36 {
@@ -3803,10 +3803,6 @@ body:has(#menu-controller:checked) {
 
   .lg\:hidden {
     display: none;
-  }
-
-  .lg\:h-\[250px\] {
-    height: 250px;
   }
 
   .lg\:h-72 {
