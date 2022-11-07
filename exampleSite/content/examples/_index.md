@@ -5,7 +5,7 @@ description: "See what's possible with Blowfish."
 cascade:
   showEdit: false
   showReadingTime: false
-  showSummary: true
+  showSummary: false
   showLikes: false
   showViews: false
 ---
