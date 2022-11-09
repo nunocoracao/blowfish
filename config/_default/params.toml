@@ -62,8 +62,12 @@ enableCodeCopy = true
   sharingLinks = [ "linkedin", "twitter", "whatsapp", "pinterest", "reddit", "facebook", "email"]
 
 [list]
+  #showHero = true
+  #heroStyle = "background" # valid options: basic, big, background
   showBreadcrumbs = false
   showSummary = false
+  #showViews = true
+  #showLikes = true
   showTableOfContents = false
   showCards = false
   groupByYear = true
