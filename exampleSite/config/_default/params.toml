@@ -44,6 +44,7 @@ mainSections = ["docs"]
   showAuthor = true
   showHero = true
   heroStyle = "background" # valid options: basic, big, background
+  layoutBackgroundBlur = true # only used when heroStyle equals background
   showBreadcrumbs = true
   showDraftLabel = true
   showEdit = true
