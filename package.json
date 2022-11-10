@@ -77,7 +77,7 @@
     }
   ],
   "dependencies": {
-    "@headlessui/react": "^1.7.3",
+    "@headlessui/react": "^1.7.4",
     "@heroicons/react": "^2.0.12",
     "@tailwindcss/forms": "^0.5.3",
     "commander": "^9.4.1"
