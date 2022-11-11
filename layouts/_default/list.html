@@ -152,7 +152,7 @@
   </section>
   {{ if gt .Pages 0 }}
 
-  {{ if .Site.Params.list.cardView | default false }}
+  {{ if .Params.cardView | default (.Site.Params.list.cardView | default false) }}
 
   {{ $cardViewScreenWidth := .Site.Params.list.cardViewScreenWidth}}
 
