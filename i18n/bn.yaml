@@ -12,6 +12,12 @@ article:
   word_count:
     one: "{{ .Count }} টি শব্দ"
     other: "{{ .Count }} টি শব্দ"
+  views:
+    one: "{{ .Count }} বার দেখা হয়েছে"
+    other: "{{ .Count }} বার দেখা হয়েছে"
+  likes:
+    one: "{{ .Count }} বার পছন্দ করা হয়েছে"
+    other: "{{ .Count }} বার পছন্দ করা হয়েছে"
 
 author:
   byline_title: "লেখক"
@@ -53,3 +59,6 @@ sharing:
 
 shortcode:
   recent_articles: "সাম্প্রতিক"
+  
+recent:
+  show_more: "আরো দেখুন"
