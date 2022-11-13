@@ -31,16 +31,21 @@
   weight = 40
 
 [[main]]
+  name = "Merch"
+  url = "http://tee.pub/lic/qwSlWVBL5zc"
+  weight = 50
+
+[[main]]
   identifier = "github"
   pre = "github"
   url = "https://github.com/nunocoracao/blowfish"
-  weight = 50
+  weight = 60
 
 [[main]]
   identifier = "twitter"
   pre = "twitter"
   url = "https://twitter.com/burufugu"
-  weight = 60
+  weight = 70
 
 
 # -- Footer Menu --
