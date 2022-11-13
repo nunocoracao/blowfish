@@ -13,6 +13,7 @@ Blowfish is designed to be a powerful, lightweight theme for [Hugo](https://gohu
 
 🌏 [Demo site](https://nunocoracao.github.io/blowfish/)  
 📑 [Theme documentation](https://nunocoracao.github.io/blowfish/docs/)  
+💎 [Merch Store](http://tee.pub/lic/qwSlWVBL5zc)  
 🐛 [Bug reports & issues](https://github.com/nunocoracao/blowfish/issues)  
 💡 [Questions & feature requests](https://github.com/nunocoracao/blowfish/discussions)
 
