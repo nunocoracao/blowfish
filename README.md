@@ -9,6 +9,8 @@
 
 Blowfish is designed to be a powerful, lightweight theme for [Hugo](https://gohugo.io). It's built using Tailwind CSS with a clean and minimalist design that prioritises to your content. The theme is a fork of [Congo](https://github.com/jpanther/congo).
 
+<a href="https://www.buymeacoffee.com/nunocoracao"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=nunocoracao&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
+
 🌏 [Demo site](https://nunocoracao.github.io/blowfish/)  
 📑 [Theme documentation](https://nunocoracao.github.io/blowfish/docs/)  
 🐛 [Bug reports & issues](https://github.com/nunocoracao/blowfish/issues)  
