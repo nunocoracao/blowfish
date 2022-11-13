@@ -94,6 +94,13 @@ mainSections = ["docs"]
   # site = "ABC12345"
   # domain = "llama.yoursite.com"
 
+[buymeacoffee]
+  identifier = "nunocoracao"
+  globalWidget = true
+  globalWidgetMessage = "Thank you for visiting."
+  globalWidgetColor = "#FFDD00"
+  globalWidgetPosition = "Right"
+
 [verification]
   # google = ""
   # bing = ""

@@ -94,6 +94,13 @@ enableCodeCopy = true
   # site = "ABC12345"
   # domain = "llama.yoursite.com"
 
+[buymeacoffee]
+  # identifier = ""
+  # globalWidget = true
+  # globalWidgetMessage = "Hello"
+  # globalWidgetColor = "#FFDD00"
+  # globalWidgetPosition = "Right"
+
 [verification]
   # google = ""
   # bing = ""
