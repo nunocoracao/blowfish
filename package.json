@@ -1,8 +1,9 @@
 {
   "name": "hugo-blowfish-theme",
-  "version": "2.12.1",
+  "version": "2.13.0",
   "description": "Blowfish theme for Hugo",
   "scripts": {
+    "fullinstall": "npm run preinstall && npm install && npm run postinstall",
     "preinstall": "rimraf assets/vendor",
     "postinstall": "vendor-copy",
     "assets": "rimraf assets/vendor && vendor-copy",
