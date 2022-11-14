@@ -4,9 +4,10 @@
         <div class="mx-auto max-w-7xl p-0">
             <div class="relative sm:overflow-hidden">
                 <div class="fixed inset-x-0 top-0" style="z-index:-10">
-                    {{ with .Site.Params.homepage.homepageImage }}
-                    {{ $homepageImage := resources.Get . }}
-                    {{ if $homepageImage }}
+                    {{ $homepageImage := "" }}
+                    {{ with .Site.Params.defaultBackgroundImage }}{{ $homepageImage = resources.Get . }}{{ end }}
+                    {{ with .Site.Params.homepage.homepageImage }}{{ $homepageImage = resources.Get . }}{{ end }}
+                    {{ if not (eq $homepageImage "") }}
                     <img class="w-full h-[1000px] object-cover m-0 nozoom" src="{{ $homepageImage.RelPermalink }}">
                     <div
                         class="absolute inset-0 h-[1000px] bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
@@ -14,7 +15,6 @@
                     <div
                         class="opacity-70 absolute inset-0 h-[1000px] bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral dark:to-neutral-800 mix-blend-normal">
                     </div>
-                    {{ end }}
                     {{ end }}
                 </div>
                 <div class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8 flex flex-col items-center justify-center text-center">
