@@ -1,6 +1,7 @@
 {{- $images := .Resources.ByType "image" -}}
 {{- $featured := $images.GetMatch "*feature*" -}}
 {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
+{{- if not $featured }}{{ with .Site.Params.defaultBackgroundImage }}{{ $featured = resources.Get . }}{{ end }}{{ end -}}
 {{- with $featured -}}
 {{ with .Resize "1200x" }}
 <div id="hero" class="h-[150px] md:h-[200px]"></div>
