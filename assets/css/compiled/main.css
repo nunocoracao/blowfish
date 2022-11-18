@@ -1550,10 +1550,6 @@ select {
   min-width: 1.8rem;
 }
 
-.min-w-\[2\.4rem\] {
-  min-width: 2.4rem;
-}
-
 .min-w-\[220px\] {
   min-width: 220px;
 }
@@ -1868,6 +1864,10 @@ select {
 
 .p-4 {
   padding: 1rem;
+}
+
+.p-1\.5 {
+  padding: 0.375rem;
 }
 
 .p-1 {
