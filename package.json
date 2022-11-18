@@ -53,7 +53,7 @@
       "to": "assets/lib/mermaid/mermaid.min.js"
     },
     {
-      "from": "node_modules/chart.js/dist/chart.min.js",
+      "from": "node_modules/chart.js/dist/chart.umd.js",
       "to": "assets/lib/chart/chart.min.js"
     },
     {
