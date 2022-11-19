@@ -109,7 +109,7 @@
                     <li class="mb-1">
                         <a {{ if or (strings.HasPrefix .URL "http:") (strings.HasPrefix .URL "https:") }} target="_blank"{{ end }} class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
                             href="{{ .URL }}" title="{{ .Title }}">
-                            {{ partial "icon.html" .Pre }}
+                            <span class="inline-block align-text-bottom">{{ partial "icon.html" .Pre }}</span>
                             {{ if and .Pre .Name }} &nbsp; {{ end }}
                             {{ .Name | markdownify | emojify }}
                         </a>
