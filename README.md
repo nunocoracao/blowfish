@@ -139,3 +139,4 @@ If you're able to fix a bug or implement a new feature, I welcome PRs for this p
 
 [![Stargazers over time](https://starchart.cc/nunocoracao/blowfish.svg)](https://starchart.cc/nunocoracao/blowfish)
 
+<a rel="me" href="https://masto.ai/@blowfish">Mastodon</a>
