@@ -2,9 +2,14 @@
 {{- $featured := $images.GetMatch "*feature*" -}}
 {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
 {{- if not $featured }}{{ with .Site.Params.defaultBackgroundImage }}{{ $featured = resources.Get . }}{{ end }}{{ end -}}
+{{ $isParentList := eq (.Scratch.Get "scope") "list"  }}
+{{ $shouldAddHeaderSpace := $.Params.layoutBackgroundHeaderSpace | default (or 
+        (and ($.Site.Params.article.layoutBackgroundHeaderSpace | default true) (not $isParentList)) 
+        (and ($.Site.Params.list.layoutBackgroundHeaderSpace | default true) ($isParentList))
+    ) }}
 {{- with $featured -}}
 {{ with .Resize "1200x" }}
-{{ if $.Site.Params.article.layoutBackgroundMoreSpaceBetweenHeaderAndBody | default true }}
+{{ if $shouldAddHeaderSpace | default true}}
 <div id="hero" class="h-[150px] md:h-[200px]"></div>
 {{ end }}
 <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
