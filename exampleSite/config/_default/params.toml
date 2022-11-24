@@ -65,6 +65,7 @@ mainSections = ["docs"]
 [list]
   showHero = true
   heroStyle = "background" # valid options: basic, big, background
+  layoutBackgroundHeaderSpace = false
   showBreadcrumbs = false
   showSummary = false
   showViews = true

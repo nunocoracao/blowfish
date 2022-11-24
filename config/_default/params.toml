@@ -45,6 +45,7 @@ enableCodeCopy = true
   showHero = true
   heroStyle = "basic" # valid options: basic, big, background
   layoutBackgroundBlur = false # only used when heroStyle equals background
+  layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
   showBreadcrumbs = true
   showDraftLabel = true
   showEdit = true
@@ -65,6 +66,7 @@ enableCodeCopy = true
 [list]
   #showHero = true
   #heroStyle = "background" # valid options: basic, big, background
+  #layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
   showBreadcrumbs = false
   showSummary = false
   #showViews = true

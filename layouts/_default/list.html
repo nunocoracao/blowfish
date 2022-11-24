@@ -1,5 +1,6 @@
 {{ define "main" }}
 
+{{ .Scratch.Set "scope" "list" }}
 {{ if .Site.Params.list.showHero | default false }}
 {{ $heroStyle := print "partials/hero/" .Site.Params.list.heroStyle ".html" }}
 {{ if templates.Exists $heroStyle }}
@@ -226,7 +227,6 @@
             {{ end }}
             {{ end }}
           </section>
-          {{ partial "pagination.html" . }}
           {{ end }}
 
           {{ else }}
@@ -236,4 +236,8 @@
             </p>
           </section>
           {{ end }}
+
+          {{ partial "pagination.html" . }}
+
           {{ end }}
+          
