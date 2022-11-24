@@ -1,4 +1,6 @@
 {{ define "main" }}
+{{ .Scratch.Set "scope" "single" }}
+
 <article>
   {{ if .Params.showHero | default (.Site.Params.article.showHero | default false) }}
   {{ $heroStyle := print "partials/hero/" .Site.Params.article.heroStyle ".html" }}
