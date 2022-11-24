@@ -35,7 +35,10 @@
   url = "http://tee.pub/lic/qwSlWVBL5zc"
   weight = 50
 
-
+#[[main]]
+#  name = "Test"
+#  pageRef = "pagTest"
+#  weight = 1000
 
 [[main]]
   identifier = "twitter"
