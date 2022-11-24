@@ -7,7 +7,7 @@ baseURL = "https://nunocoracao.github.io/blowfish"
 defaultContentLanguage = "en"
 
 enableRobotsTXT = true
-paginate = 10
+paginate = 20
 summaryLength = 30
 
 buildDrafts = false
