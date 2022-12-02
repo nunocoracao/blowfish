@@ -43,7 +43,7 @@ mainSections = ["docs"]
   showDateUpdated = false
   showAuthor = true
   showHero = true
-  heroStyle = "background" # valid options: basic, big, background
+  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   layoutBackgroundBlur = true # only used when heroStyle equals background
   showBreadcrumbs = true
   showDraftLabel = true
@@ -64,7 +64,8 @@ mainSections = ["docs"]
 
 [list]
   showHero = true
-  heroStyle = "background" # valid options: basic, big, background
+  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  layoutBackgroundBlur = true # only used when heroStyle equals background
   layoutBackgroundHeaderSpace = false
   showBreadcrumbs = false
   showSummary = false
