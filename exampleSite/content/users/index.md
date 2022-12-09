@@ -9,8 +9,9 @@ showDate: false
 showAuthor: true
 showReadingTime: false
 showEdit: false
+layoutBackgroundHeaderSpace: false
 ---
-
+ 
 
 {{< lead >}}
 Real websites that are built with Blowfish.
@@ -45,9 +46,17 @@ Real websites that are built with Blowfish.
 | [insidemordecai.com](https://insidemordecai.com)                      | Personal site                |
 | [sajayprakash.com](https://sajayprakash.com)                          | Personal site                |
 | [jamesdixon.dev](https://jamesdixon.dev)                              | Personal site                |
+| [blastomussa.dev](https://blastomussa.dev)                            | Personal site                |
+| [cdell.io](https://cdell.io)                                          | Personal site                |
+| [jam.dsg.li](https://jam.dsg.li)                                      | Organization site            |
+| [priyakdey.com](https://priyakdey.com)                                | Personal site                |
+| [sdehm.dev](https://sdehm.dev)                                        | Personal site                |
+
+
+
 
 {{< alert >}}
 
-**Blowfish user?** To add your site to this list, [submit a pull request](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/content/users.md).
+**Blowfish user?** To add your site to this list, [submit a pull request](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/content/users/index.md).
 
 {{</ alert >}}
