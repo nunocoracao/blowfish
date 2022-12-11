@@ -51,6 +51,7 @@ Real websites that are built with Blowfish.
 | [jam.dsg.li](https://jam.dsg.li)                                      | Organization site            |
 | [priyakdey.com](https://priyakdey.com)                                | Personal site                |
 | [sdehm.dev](https://sdehm.dev)                                        | Personal site                |
+| [dizzytech.de](https://dizzytech.de)                                  | Personal site                |
 
 
 
