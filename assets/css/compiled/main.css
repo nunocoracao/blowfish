@@ -1306,6 +1306,10 @@ select {
   margin-bottom: 3rem;
 }
 
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
 .mt-5 {
   margin-top: 1.25rem;
 }
