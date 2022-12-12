@@ -60,9 +60,7 @@
           {{ end }}
 
           {{ end }}
-
-
-
+          
           {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
           {{ if $.Params.groupByYear | default ($.Site.Params.list.groupByYear | default true) }}
           <h2 class="mt-12 mb-5 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
@@ -132,4 +130,3 @@
           {{ partial "pagination.html" . }}
 
           {{ end }}
-          

@@ -27,15 +27,15 @@
       <div class="min-w-0 min-h-0 max-w-prose">
         {{ .Content | emojify }}
       </div>
-      <script>
-        var oid = "views_{{ .File.Path }}"
-        var oid_likes = "likes_{{ .File.Path }}"
-      </script>
-      {{ $jsPage := resources.Get "js/page.js" }}
-      {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}
-      <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}"></script>
     </section>
   {{ end }}
+  <script>
+    var oid = "views_{{ .File.Path }}"
+    var oid_likes = "likes_{{ .File.Path }}"
+  </script>
+  {{ $jsPage := resources.Get "js/page.js" }}
+  {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}
+  <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}"></script>
   <section class="flex flex-wrap max-w-prose -mx-2 overflow-hidden">
     {{ range .Data.Terms }}
       <article class="w-full px-2 my-3 overflow-hidden sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/4">
