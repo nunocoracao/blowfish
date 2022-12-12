@@ -86,6 +86,7 @@ mainSections = ["docs"]
   heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   layoutBackgroundBlur = true # only used when heroStyle equals background
   layoutBackgroundHeaderSpace = false
+  showBreadcrumbs = false
   showViews = true
   showLikes = true
   showTableOfContents = true

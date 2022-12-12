@@ -1,15 +1,25 @@
 {{ define "main" }}
   <header>
-    {{ if .Params.showBreadcrumbs | default (.Site.Params.list.showBreadcrumbs | default false) }}
+    {{ if .Params.showBreadcrumbs | default (.Site.Params.taxonomy.showBreadcrumbs | default false) }}
       {{ partial "breadcrumbs.html" . }}
     {{ end }}
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
+    <div class="mt-1 mb-2 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+      {{ partial "article-meta-taxonomy.html" (dict "context" . "scope" "single") }}
+    </div>
   </header>
   {{ if .Content }}
     <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
       <div class="min-w-0 min-h-0 max-w-prose">
         {{ .Content | emojify }}
       </div>
+      <script>
+        var oid = "views_{{ .File.Path }}"
+        var oid_likes = "likes_{{ .File.Path }}"
+      </script>
+      {{ $jsPage := resources.Get "js/page.js" }}
+      {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}
+      <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}"></script>
     </section>
   {{ end }}
   <section class="flex flex-wrap max-w-prose -mx-2 overflow-hidden">
