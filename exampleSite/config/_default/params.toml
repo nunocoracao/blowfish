@@ -15,6 +15,8 @@ enableCodeCopy = true
 mainSections = ["docs"]
 # robots = ""
 
+defaultBackgroundImage = "/img/iceland.jpg"
+
 [header]
   layout = "fixed" # valid options: basic, fixed
 
@@ -84,8 +86,6 @@ mainSections = ["docs"]
   showTermCount = true
   showHero = true
   heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
-  layoutBackgroundBlur = true # only used when heroStyle equals background
-  layoutBackgroundHeaderSpace = false
   showBreadcrumbs = false
   showViews = true
   showLikes = true
@@ -95,8 +95,6 @@ mainSections = ["docs"]
 [term]
   showHero = true
   heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
-  layoutBackgroundBlur = true # only used when heroStyle equals background
-  layoutBackgroundHeaderSpace = false
   showSummary = false
   showViews = true
   showLikes = true

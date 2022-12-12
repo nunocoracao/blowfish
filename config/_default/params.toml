@@ -15,6 +15,8 @@ enableCodeCopy = true
 # mainSections = ["section1", "section2"]
 # robots = ""
 
+#defaultBackgroundImage = "IMAGE.jpg" # used as default for background images 
+
 [header]
   layout = "basic" # valid options: basic, fixed
 
@@ -85,8 +87,6 @@ enableCodeCopy = true
   showTermCount = true
   #showHero = true
   #heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
-  #layoutBackgroundBlur = true # only used when heroStyle equals background
-  #layoutBackgroundHeaderSpace = false
   showBreadcrumbs = false
   #showViews = false
   #showLikes = false
@@ -96,8 +96,6 @@ enableCodeCopy = true
 [term]
   #showHero = true
   #heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
-  #layoutBackgroundBlur = true # only used when heroStyle equals background
-  #layoutBackgroundHeaderSpace = false
   #showViews = false
   #showLikes = false
   #showTableOfContents = true
