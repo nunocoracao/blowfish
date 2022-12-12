@@ -95,6 +95,7 @@ defaultBackgroundImage = "/img/iceland.jpg"
 [term]
   showHero = true
   heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  showBreadcrumbs = false
   showSummary = false
   showViews = true
   showLikes = true
