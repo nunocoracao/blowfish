@@ -87,24 +87,23 @@ enableCodeCopy = true
   #heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   #layoutBackgroundBlur = true # only used when heroStyle equals background
   #layoutBackgroundHeaderSpace = false
-  #showViews = true
-  #showLikes = true
+  #showViews = false
+  #showLikes = false
   #showTableOfContents = true
-  #cardView = true
+  #cardView = false
 
 [term]
   #showHero = true
   #heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   #layoutBackgroundBlur = true # only used when heroStyle equals background
   #layoutBackgroundHeaderSpace = false
-  #showSummary = false
-  #showViews = true
-  #showLikes = true
+  #showViews = false
+  #showLikes = false
   #showTableOfContents = true
-  #showCards = true
+  #showCards = false
   #groupByYear = false
   #cardViewScreenWidth = false
-  #cardView = true
+  #cardView = false
 
 [firebase]
   # apiKey = "XXXXXX"
