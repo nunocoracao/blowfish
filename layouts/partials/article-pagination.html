@@ -11,7 +11,7 @@
       <div class="flex justify-between pt-3">
         <span>
           {{ if $prev }}
-            <a class="flex group" href="{{ $prev.RelPermalink }}">
+            <a class="flex group mr-3" href="{{ $prev.RelPermalink }}">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -36,7 +36,7 @@
         </span>
         <span>
           {{ if $next }}
-            <a class="flex text-right group" href="{{ $next.RelPermalink }}">
+            <a class="flex text-right group ml-3" href="{{ $next.RelPermalink }}">
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
