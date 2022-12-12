@@ -82,7 +82,29 @@ enableCodeCopy = true
   excludedKinds = []
 
 [taxonomy]
-  showTermCount = true
+  #showTermCount = true
+  #showHero = true
+  #heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  #layoutBackgroundBlur = true # only used when heroStyle equals background
+  #layoutBackgroundHeaderSpace = false
+  #showViews = true
+  #showLikes = true
+  #showTableOfContents = true
+  #cardView = true
+
+[term]
+  #showHero = true
+  #heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  #layoutBackgroundBlur = true # only used when heroStyle equals background
+  #layoutBackgroundHeaderSpace = false
+  #showSummary = false
+  #showViews = true
+  #showLikes = true
+  #showTableOfContents = true
+  #showCards = true
+  #groupByYear = false
+  #cardViewScreenWidth = false
+  #cardView = true
 
 [firebase]
   # apiKey = "XXXXXX"
