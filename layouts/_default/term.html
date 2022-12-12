@@ -1,9 +1,23 @@
 {{ define "main" }}
+
+{{ .Scratch.Set "scope" "list" }}
+{{ if .Site.Params.term.showHero | default false }}
+{{ $heroStyle := print "partials/hero/" .Site.Params.term.heroStyle ".html" }}
+{{ if templates.Exists $heroStyle }}
+{{ partial $heroStyle . }}
+{{ else }}
+{{ partial "partials/hero/basic.html" . }}
+{{ end }}
+{{- end -}}
+
+{{ $toc := and (.Params.showTableOfContents | default (.Site.Params.term.showTableOfContents | default false)) (in
+.TableOfContents "<ul") }} 
+
   <header>
-    {{ if .Params.showBreadcrumbs | default (.Site.Params.list.showBreadcrumbs | default false) }}
+    {{ if .Params.showBreadcrumbs | default (.Site.Params.term.showBreadcrumbs | default false) }}
       {{ partial "breadcrumbs.html" . }}
     {{ end }}
-    <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
+    <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
     <div class="mt-1 mb-2 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       {{ partial "article-meta-term.html" (dict "context" . "scope" "single") }}
     </div>
