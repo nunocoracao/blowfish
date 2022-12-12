@@ -100,9 +100,8 @@ defaultBackgroundImage = "/img/iceland.jpg"
   showViews = true
   showLikes = true
   showTableOfContents = true
-  showCards = true
   groupByYear = false
-  cardView = true
+  cardView = false
   cardViewScreenWidth = false
   
 
