@@ -97,7 +97,6 @@ enableCodeCopy = true
   #showHero = true
   #heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   showBreadcrumbs = false
-  #showSummary = false
   #showViews = false
   #showLikes = false
   #showTableOfContents = true
