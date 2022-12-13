@@ -15,6 +15,8 @@ enableCodeCopy = true
 mainSections = ["docs"]
 # robots = ""
 
+defaultBackgroundImage = "/img/iceland.jpg"
+
 [header]
   layout = "fixed" # valid options: basic, fixed
 
@@ -82,6 +84,24 @@ mainSections = ["docs"]
 
 [taxonomy]
   showTermCount = true
+  showHero = true
+  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  showBreadcrumbs = false
+  showViews = true
+  showLikes = true
+  showTableOfContents = true
+
+[term]
+  showHero = true
+  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  showBreadcrumbs = false
+  showViews = true
+  showLikes = true
+  showTableOfContents = true
+  groupByYear = false
+  cardView = false
+  cardViewScreenWidth = false
+  
 
 [firebase]
   apiKey = "AIzaSyB5tqlqDky77Vb4Tc4apiHV4hRZI18KGiY"
