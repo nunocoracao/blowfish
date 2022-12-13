@@ -85,18 +85,16 @@ defaultBackgroundImage = "/img/iceland.jpg"
 [taxonomy]
   showTermCount = true
   showHero = true
-  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  heroStyle = "big" # valid options: basic, big, background, thumbAndBackground
   showBreadcrumbs = false
   showViews = true
   showLikes = true
   showTableOfContents = true
-  cardView = true
 
 [term]
   showHero = true
-  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  heroStyle = "big" # valid options: basic, big, background, thumbAndBackground
   showBreadcrumbs = false
-  showSummary = false
   showViews = true
   showLikes = true
   showTableOfContents = true
