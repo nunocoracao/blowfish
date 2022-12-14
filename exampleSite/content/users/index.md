@@ -52,6 +52,7 @@ Real websites that are built with Blowfish.
 | [priyakdey.com](https://priyakdey.com)                                | Personal site                |
 | [sdehm.dev](https://sdehm.dev)                                        | Personal site                |
 | [dizzytech.de](https://dizzytech.de)                                  | Personal site                |
+| [blog.rotrixx.eu](https://blog.rotrixx.eu)                            | Personal site                |
 
 
 
