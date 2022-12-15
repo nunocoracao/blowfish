@@ -9,7 +9,7 @@ homepage = "https://github.com/nunocoracao/blowfish/"
 demosite = "https://nunocoracao.github.io/blowfish/"
 
 tags = ["blog", "minimal", "responsive", "dark mode", "dark", "light", "tailwind", "personal"]
-features = ["syntax higlighting", "dark mode", "emoji", "firebase", "views"]
+features = ["syntax highlighting", "dark mode", "emoji", "firebase", "views"]
 
 [author]
   name = "Nuno Coracao"
