@@ -12,6 +12,9 @@ article:
   word_count:
     one: "{{ .Count }} parola"
     other: "{{ .Count }} parole"
+  part_of_series: "This article is part of a series."
+  part: "Part"
+  this_article: "This Article"
 
 author:
   byline_title: "Autore"
