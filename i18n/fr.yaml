@@ -12,6 +12,9 @@ article:
   word_count:
     one: "{{ .Count }} mot"
     other: "{{ .Count }} mots"
+  part_of_series: "This article is part of a series."
+  part: "Part"
+  this_article: "This Article"
 
 author:
   byline_title: "Auteur"

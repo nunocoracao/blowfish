@@ -11,6 +11,9 @@ article:
   word_count:
     one: "{{ .Count }} 字"
     other: "{{ .Count }} 字"
+  part_of_series: "This article is part of a series."
+  part: "Part"
+  this_article: "This Article"
 
 author:
   byline_title: "作者"

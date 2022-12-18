@@ -18,6 +18,9 @@ article:
   likes:
     one: "{{ .Count }} বার পছন্দ করা হয়েছে"
     other: "{{ .Count }} বার পছন্দ করা হয়েছে"
+  part_of_series: "This article is part of a series."
+  part: "Part"
+  this_article: "This Article"
 
 author:
   byline_title: "লেখক"

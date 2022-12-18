@@ -18,6 +18,9 @@ article:
   likes:
     one: "{{ .Count }} нравится"
     other: "{{ .Count }} нравится"
+  part_of_series: "This article is part of a series."
+  part: "Part"
+  this_article: "This Article"
 
 author:
   byline_title: "Автор"
