@@ -1,3 +1,4 @@
+{{ $disableImageOptimization := .Site.Params.disableImageOptimization | default false }}
 {{ if .Get "default" }}
   {{ template "_internal/shortcodes/figure.html" . }}
 {{ else }}
@@ -21,6 +22,13 @@
     {{ with $resource }}
       <figure {{ with $class }}class="{{ . }}"{{ end }}>
         {{ with $href }}<a href="{{ . }}">{{ end }}
+          {{ if $disableImageOptimization }}
+          <img
+            class="my-0 rounded-md"
+            src="{{ .RelPermalink }}"
+            alt="{{ $altText }}"
+          />
+          {{ else }}
           <img
             class="my-0 rounded-md"
             srcset="
@@ -31,6 +39,7 @@
             src="{{ (.Resize "660x").RelPermalink }}"
             alt="{{ $altText }}"
           />
+          {{ end }}
         {{ if $href }}</a>{{ end }}
         {{ with $caption }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
       </figure>
