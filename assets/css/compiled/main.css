@@ -2993,6 +2993,10 @@ body:has(#menu-controller:checked) {
   }
 }
 
+.medium-zoom-image--opened {
+  z-index: 100;
+}
+
 .first\:mt-8:first-child {
   margin-top: 2rem;
 }

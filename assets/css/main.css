@@ -411,3 +411,8 @@ body:has(#menu-controller:checked) {
     flex-wrap: nowrap;
   }
 }
+
+
+.medium-zoom-image--opened {
+    z-index: 100;
+}

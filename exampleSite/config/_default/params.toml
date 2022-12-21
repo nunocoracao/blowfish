@@ -15,7 +15,7 @@ enableCodeCopy = true
 mainSections = ["docs"]
 # robots = ""
 
-disableImageOptimization = false
+disableImageOptimization = true
 
 defaultBackgroundImage = "/img/iceland.jpg"
 
