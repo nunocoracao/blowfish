@@ -1526,10 +1526,6 @@ select {
   width: 100%;
 }
 
-.w-36 {
-  width: 9rem;
-}
-
 .w-24 {
   width: 6rem;
 }
@@ -1540,6 +1536,10 @@ select {
 
 .w-6 {
   width: 1.5rem;
+}
+
+.w-36 {
+  width: 9rem;
 }
 
 .min-w-0 {
@@ -1747,11 +1747,6 @@ select {
 .border-neutral-300 {
   --tw-border-opacity: 1;
   border-color: rgba(var(--color-neutral-300), var(--tw-border-opacity));
-}
-
-.border-neutral-400 {
-  --tw-border-opacity: 1;
-  border-color: rgba(var(--color-neutral-400), var(--tw-border-opacity));
 }
 
 .border-neutral-200 {
