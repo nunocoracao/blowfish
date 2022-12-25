@@ -1,0 +1,67 @@
+article:
+  anchor_label: "Kotva"
+  date: "{{ .Date }}"
+  date_updated: "Aktualizováno: {{ .Date }}"
+  draft: "Návrh"
+  edit_title: "Upravit"
+  reading_time:
+    one: "{{ .Count }} min"
+    other: "{{ .Count }} min"
+  reading_time_title: "Doba čtení"
+  table_of_contents: "Obsah"
+  word_count:
+    one: "{{ .Count }} slovo"
+    other: "{{ .Count }} slov"
+  views:
+    one: "{{ .Count }} zhlédnutí"
+    other: "{{ .Count }} zhlédnutí"
+  likes:
+    one: "{{ .Count }} líbí se mi"
+    other: "{{ .Count }} líbí se mi"
+  part_of_series: "Tento článek patří do série."
+  part: "Část"
+  this_article: "Tento článek"
+
+author:
+  byline_title: "Autor"
+
+code:
+  copy: "Kopírovat"
+  copied: "Zkopírováno"
+
+error:
+  404_title: "Stránka nenalezena :confused:"
+  404_error: "Error 404"
+  404_description: "Zdá se, že stránka neexistuje."
+
+footer:
+  dark_appearance: "Přepnout na tmavý režim"
+  light_appearance: "Přepnout na světlý režim"
+  powered_by: "Postaveno na technologiích {{ .Hugo }} &amp; {{ .Theme }}"
+
+list:
+  externalurl_title: "Odkaz na externí stránku"
+  no_articles: "Tato sekce zatím neobsahuje žádné články."
+
+nav:
+  scroll_to_top_title: "Nahoru"
+  skip_to_main: "Přeskočit na hlavní obsah"
+
+search:
+  open_button_title: "Vyhledat (/)"
+  close_button_title: "Zavřít (Esc)"
+  input_placeholder: "Hledat"
+
+sharing:
+  email: "Poslat emailem"
+  facebook: "Sdílet na Facebook"
+  linkedin: "Sdílet na LinkedIn"
+  pinterest: "Připnout na Pinterest"
+  reddit: "Přidat na Reddit"
+  twitter: "Tweet na Twitter"
+
+shortcode:
+  recent_articles: "Nedávné"
+
+recent:
+  show_more: "Zobrazit další"
