@@ -87,24 +87,6 @@ Custom icons can be added by providing your own icon assets in the `assets/icons
 
 Icons can also be used in article content by calling the [icon shortcode]({{< ref "shortcodes#icon" >}}).
 
-## Image Optimization
-
-Hugo has various builtin methods to resize, crop and optimize images.
-
-For example - in `layouts/partials/article-link-card.html`, you have the following code:
-
-```go
-{{ with .Fill "600x600" }}
-<div class="w-full thumbnail_card nozoom" style="background-image:url({{ .RelPermalink }});"></div>
-{{ end }}
-```
-
-The default behaviour of Hugo here is to use Smartcrop to dynamically set the anchor point on the image in reference and resize it to fill 600x600px.
-
-It is worth noting here that image configurations such as [anchor point](https://gohugo.io/content-management/image-processing/#anchor) can also be set in your [site configuration](https://gohugo.io/content-management/image-processing/#processing-options) as well.
-
-See the [Hugo docs on image processing](https://gohugo.io/content-management/image-processing/#image-processing-methods) for more info.
-
 ## Extensions
 
 Blowfish also provides for a number of extension partials that allow for expanding upon base functionality.

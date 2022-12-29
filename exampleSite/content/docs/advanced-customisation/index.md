@@ -31,6 +31,24 @@ For example, if you wanted to override the main article template in Blowfish, yo
 
 As long as you follow this simple practice, you will always be able to update the theme (or test different theme versions) without worrying that you will lose any of your custom changes.
 
+## Change image optimization settings
+
+Hugo has various builtin methods to resize, crop and optimize images.
+
+As an example - in `layouts/partials/article-link-card.html`, you have the following code:
+
+```go
+{{ with .Fill "600x600" }}
+<div class="w-full thumbnail_card nozoom" style="background-image:url({{ .RelPermalink }});"></div>
+{{ end }}
+```
+
+The default behavior of Hugo here is to use Smartcrop to dynamically set the anchor point (crop placement) on the image and resize it to fill 600x600px.
+
+It is worth noting here that default image configurations such as [anchor point](https://gohugo.io/content-management/image-processing/#anchor) can also be set in your [site configuration](https://gohugo.io/content-management/image-processing/#processing-options) as well as in the template itself.
+
+See the [Hugo docs on image processing](https://gohugo.io/content-management/image-processing/#image-processing-methods) for more info.
+
 ## Colour schemes
 
 Blowfish ships with a number of colour schemes out of the box. To change the basic colour scheme, you can set the `colorScheme` theme parameter. Refer to the [Getting Started]({{< ref "getting-started#colour-schemes" >}}) section to learn more about the built-in schemes.
@@ -59,7 +77,7 @@ The `custom.css` file will be minified by Hugo and loaded automatically after al
 
 ### Using additional fonts
 
-Blowfish allows you to easily change the font for your site. After creating a `custom.css` file in your project's `assets/css/` folder, place you font file inside a `fonts` folder withing the `static` root folder. 
+Blowfish allows you to easily change the font for your site. After creating a `custom.css` file in your project's `assets/css/` folder, place you font file inside a `fonts` folder withing the `static` root folder.
 
 ```shell
 .
@@ -85,8 +103,6 @@ html {
     font-family: font;
 }
 ```
-
-
 
 ### Adjusting the font size
 
