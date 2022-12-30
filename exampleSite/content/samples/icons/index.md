@@ -78,6 +78,8 @@ The full list of built-in icons and their corresponding names can referenced bel
 | poo                  | {{< icon poo >}}                  |
 | reddit               | {{< icon reddit >}}               |
 | researchgate         | {{< icon researchgate >}}         |
+| rss                  | {{< icon rss >}}                  |
+| rss-square           | {{< icon rss-square >}}           |
 | search               | {{< icon search >}}               |
 | shield               | {{< icon shield >}}               |
 | skull-crossbones     | {{< icon skull-crossbones >}}     |
