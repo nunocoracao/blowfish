@@ -36,7 +36,7 @@ defaultBackgroundImage = "/img/iceland.jpg"
   showRecentItems = 10
   showMoreLink = true
   showMoreLinkDest = "docs"
-  cardView = true
+  cardView = false
   cardViewScreenWidth = false
   layoutBackgroundBlur = true # only used when layout equals background
 
