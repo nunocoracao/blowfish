@@ -11,116 +11,121 @@
 {{- end -}}
 
 {{ $toc := and (.Params.showTableOfContents | default (.Site.Params.term.showTableOfContents | default false)) (in
-.TableOfContents "<ul") }} 
-
-  <header>
-    {{ if .Params.showBreadcrumbs | default (.Site.Params.term.showBreadcrumbs | default false) }}
-      {{ partial "breadcrumbs.html" . }}
-    {{ end }}
-    <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
-    <div class="mt-1 mb-2 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
-      {{ partial "article-meta-term.html" (dict "context" . "scope" "single") }}
-    </div>
-  </header>
-  {{ if .Content }}
-    <section class="flex flex-col max-w-full mt-0 mb-5 prose dark:prose-invert lg:flex-row">
-      <div class="min-w-0 min-h-0 max-w-prose">
-        {{ .Content | emojify }}
-      </div>
-    </section>
+.TableOfContents "<ul") }} <header>
+  {{ if .Params.showBreadcrumbs | default (.Site.Params.term.showBreadcrumbs | default false) }}
+  {{ partial "breadcrumbs.html" . }}
   {{ end }}
-  <script>
-    var oid = "views_{{ .File.Path }}"
-    var oid_likes = "likes_{{ .File.Path }}"
-  </script>
-  {{ $jsPage := resources.Get "js/page.js" }}
-  {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}
-  <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}"></script>
+  <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
+  <div class="mt-1 mb-2 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+    {{ partial "article-meta-term.html" (dict "context" . "scope" "single") }}
+  </div>
+  </header>
+
+  <section class="flex flex-col max-w-full mt-0 mb-5 prose dark:prose-invert lg:flex-row">
+    {{ if .Content }}
+    <div class="min-w-0 min-h-0 max-w-prose">
+      {{ .Content | emojify }}
+    </div>
+    {{ end }}
+    <script>
+      var oid = "views_{{ .File.Path }}"
+      var oid_likes = "likes_{{ .File.Path }}"
+    </script>
+    {{ $jsPage := resources.Get "js/page.js" }}
+    {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}
+    <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}"></script>
+  </section>
+
 
   {{ if gt .Pages 0 }}
 
-  {{ if .Params.cardView | default (.Site.Params.term.cardView | default false) }}
+  {{ $cardView := .Params.cardView | default (.Site.Params.list.cardView | default false) }}
+  {{ $cardViewScreenWidth := .Site.Params.list.cardViewScreenWidth | default false }}
+  {{ $groupByYear := .Params.groupByYear | default ($.Site.Params.list.groupByYear | default false) }}
 
-  {{ $cardViewScreenWidth := .Site.Params.term.cardViewScreenWidth}}
+  {{ if not $cardView }}
 
-  {{ if not $.Params.groupByYear | default ($.Site.Params.term.groupByYear | default true) }}
+  <section class="space-y-10 w-full">
+    {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
+    {{ if $groupByYear }}
+    <h2 class="mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
+      {{ .Key }}
+    </h2>
+    {{ end }}
+    {{ range .Pages }}
+    {{ partial "article-link.html" . }}
+    {{ end }}
+    {{ end }}
+  </section>
 
-  {{ if $cardViewScreenWidth }}
-  <section class="relative w-screen" style="left: calc(-50vw + 50%);">
-    <div class="flex flex-wrap pl-8 pr-8">
-      {{ else }}
-      <section class="w-full">
-        <div class="flex flex-wrap">
-          {{ end }}
+  {{ else if and $cardView (not $cardViewScreenWidth) }}
 
-          {{ end }}
-          
-          {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
-          {{ if $.Params.groupByYear | default ($.Site.Params.term.groupByYear | default true) }}
-          <h2 class="mt-12 mb-5 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
-            {{ .Key }}
-          </h2>
-          {{ else }}
-          {{ end }}
+  {{ if $groupByYear }}
 
-          {{ if $.Params.groupByYear | default ($.Site.Params.term.groupByYear | default true) }}
+  {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
+  <h2 class="mt-12 mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
+    {{ .Key }}
+  </h2>
+  <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+    {{ range .Pages }}
+    {{ partial "article-link-card.html" . }}
+    {{ end }}
+  </section>
+  {{ end }}
 
-          {{ if $cardViewScreenWidth}}
-          <section class="relative w-screen" style="left: calc(-50vw + 50%);">
-            <div class="flex flex-wrap pl-8 pr-8">
-              {{ else }}
-              <section class="w-full">
-                <div class="flex flex-wrap">
-                  {{ end }}
-                  {{ end }}
+  {{ else }}
 
-                  {{ range .Pages }}
+  <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+    {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
+    {{ range .Pages }}
+    {{ partial "article-link-card.html" . }}
+    {{ end }}
+    {{ end }}
+  </section>
 
-                  {{ if $cardViewScreenWidth }}
-                  <div class="flex flex-wrap w-full p-4 sm:w-1/2 md:w-1/3 xl:w-1/4 2xl:w-1/5">
-                    {{ else }}
-                    <div class="flex flex-wrap w-full p-4 sm:w-1/2 md:w-1/3">
-                      {{ end }}
+  {{ end }}
 
-                      {{ partial "article-link-card.html" . }}
-                    </div>
-                    {{ end }}
-                    {{ if $.Params.groupByYear | default ($.Site.Params.term.groupByYear | default true) }}
-                  </div>
-              </section>
-              {{ end }}
+  {{ else if and $cardView $cardViewScreenWidth }}
 
+  {{ if $groupByYear }}
 
-              {{ end }}
+  {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
+  <div class="relative w-screen max-w-[1600px] px-[30px]" style="left: calc(max(-50vw,-800px) + 50%);">
+    <h2 class="mt-12 mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
+      {{ .Key }}
+    </h2>
+    <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+      {{ range .Pages }}
+      {{ partial "article-link-card.html" . }}
+      {{ end }}
+    </section>
+  </div>
+  {{ end }}
 
-              {{ if not $.Params.groupByYear | default ($.Site.Params.term.groupByYear | default true) }}
-            </div>
-          </section>
-          {{ end }}
+  {{ else }}
 
-          {{ else }}
-          <section class="space-y-10 w-full">
-            {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
-            {{ if $.Params.groupByYear | default ($.Site.Params.term.groupByYear | default true) }}
-            <h2 class="mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
-              {{ .Key }}
-            </h2>
-            {{ end }}
-            {{ range .Pages }}
-            {{ partial "article-link.html" . }}
-            {{ end }}
-            {{ end }}
-          </section>
-          {{ end }}
+  <div class="relative w-screen max-w-[1600px] px-[30px]" style="left: calc(max(-50vw,-800px) + 50%);">
+    <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+      {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
+      {{ range .Pages }}
+      {{ partial "article-link-card.html" . }}
+      {{ end }}
+      {{ end }}
+    </section>
+  </div>
 
-          {{ else }}
-          <section class="mt-10 prose dark:prose-invert">
-            <p class="py-8 border-t">
-              <em>{{ i18n "list.no_articles" | emojify }}</em>
-            </p>
-          </section>
-          {{ end }}
+  {{ end }}
 
-          {{ partial "pagination.html" . }}
+  {{end}}
 
-          {{ end }}
+  {{ else }}
+  <section class="mt-10 prose dark:prose-invert">
+    <p class="py-8 border-t">
+      <em>{{ i18n "list.no_articles" | emojify }}</em>
+    </p>
+  </section>
+  {{ end }}
+
+  {{ partial "pagination.html" . }}
+
+  {{ end }}
