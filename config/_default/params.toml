@@ -3,7 +3,7 @@
 # customise the display of your website.
 #
 # Refer to the theme docs for more details about each of these parameters.
-# https://nunocoracao.github.io/blowfish/docs/configuration/#theme-parameters
+# https://blowfish.page/docs/configuration/#theme-parameters
 
 colorScheme = "blowfish"
 defaultAppearance = "light" # valid options: light or dark

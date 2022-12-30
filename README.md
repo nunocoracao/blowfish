@@ -11,8 +11,8 @@
 
 Blowfish is designed to be a powerful, lightweight theme for [Hugo](https://gohugo.io). It's built using Tailwind CSS with a clean and minimalist design that prioritises to your content. The theme is a fork of [Congo](https://github.com/jpanther/congo).
 
-🌏 [Demo site](https://nunocoracao.github.io/blowfish/)  
-📑 [Theme documentation](https://nunocoracao.github.io/blowfish/docs/)  
+🌏 [Demo site](https://blowfish.page/)  
+📑 [Theme documentation](https://blowfish.page/docs/)  
 💎 [Merch Store](http://tee.pub/lic/qwSlWVBL5zc)  
 🐛 [Bug reports & issues](https://github.com/nunocoracao/blowfish/issues)  
 💡 [Questions & feature requests](https://github.com/nunocoracao/blowfish/discussions)
@@ -54,7 +54,7 @@ Blowfish is designed to be a powerful, lightweight theme for [Hugo](https://gohu
 
 ## Documentation
 
-Blowfish has [extensive documentation](https://nunocoracao.github.io/blowfish/docs/) that covers all aspects of the theme. Be sure to [read the docs](https://nunocoracao.github.io/blowfish/docs/) to learn more about how to use the theme and its features.
+Blowfish has [extensive documentation](https://blowfish.page/docs/) that covers all aspects of the theme. Be sure to [read the docs](https://blowfish.page/docs/) to learn more about how to use the theme and its features.
 
 ---
 
@@ -62,7 +62,7 @@ Blowfish has [extensive documentation](https://nunocoracao.github.io/blowfish/do
 
 Blowfish supports several installation methods - as a git submodule, a Hugo Module, or as a completely manual install.
 
-Detailed instructions for each method can be found in the [Installation](https://nunocoracao.github.io/blowfish/docs/installation) docs. You should consult the documentation for the simplest setup experience. Below is a quick start guide using submodules if you are using git, or Hugo modules if you're already confident installing Hugo themes.
+Detailed instructions for each method can be found in the [Installation](https://blowfish.page/docs/installation) docs. You should consult the documentation for the simplest setup experience. Below is a quick start guide using submodules if you are using git, or Hugo modules if you're already confident installing Hugo themes.
 
 ### Quick start using git submodules
 
@@ -84,7 +84,7 @@ Detailed instructions for each method can be found in the [Installation](https:/
 
    You will find these theme config files in the Hugo cache directory, or [download a copy](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/nunocoracao/blowfish/tree/main/config/_default) from GitHub.
 
-4. Follow the [Getting Started](https://nunocoracao.github.io/blowfish/docs/getting-started/) instructions to configure your website.
+4. Follow the [Getting Started](https://blowfish.page/docs/getting-started/) instructions to configure your website.
 
 ### Quick start using Hugo
 
@@ -111,13 +111,13 @@ Detailed instructions for each method can be found in the [Installation](https:/
 
    You will find these theme config files in the Hugo cache directory, or [download a copy](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/nunocoracao/blowfish/tree/main/config/_default) from GitHub.
 
-5. Follow the [Getting Started](https://nunocoracao.github.io/blowfish/docs/getting-started/) instructions to configure your website.
+5. Follow the [Getting Started](https://blowfish.page/docs/getting-started/) instructions to configure your website.
 
 ### Installing theme updates
 
 As new releases are posted, you can update the theme using Hugo. Simply run `hugo mod get -u` from your project directory and the theme will automatically update to the latest release.
 
-Detailed [update instructions](https://nunocoracao.github.io/blowfish/docs/installation/#installing-updates) are available in the docs.
+Detailed [update instructions](https://blowfish.page/docs/installation/#installing-updates) are available in the docs.
 
 ---
 
