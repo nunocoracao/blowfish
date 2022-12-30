@@ -15,6 +15,9 @@ buildFuture = false
 
 # googleAnalytics = "G-XXXXXXXXX"
 
+[imaging]
+  anchor = 'Center'
+
 [taxonomies]
   tag = "tags"
   category = "categories"

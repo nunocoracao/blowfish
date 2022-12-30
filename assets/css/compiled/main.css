@@ -1330,10 +1330,6 @@ select {
   margin-top: 0px;
 }
 
-.mb-5 {
-  margin-bottom: 1.25rem;
-}
-
 .mt-10 {
   margin-top: 2.5rem;
 }
@@ -1344,6 +1340,10 @@ select {
 
 .mb-6 {
   margin-bottom: 1.5rem;
+}
+
+.mb-5 {
+  margin-bottom: 1.25rem;
 }
 
 .mt-3 {
@@ -1522,12 +1522,12 @@ select {
   width: 3rem;
 }
 
-.w-screen {
-  width: 100vw;
-}
-
 .w-full {
   width: 100%;
+}
+
+.w-screen {
+  width: 100vw;
 }
 
 .w-24 {
@@ -1905,6 +1905,11 @@ select {
   padding-right: 0px;
 }
 
+.px-\[30px\] {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -1958,14 +1963,6 @@ select {
 .py-16 {
   padding-top: 4rem;
   padding-bottom: 4rem;
-}
-
-.pl-8 {
-  padding-left: 2rem;
-}
-
-.pr-8 {
-  padding-right: 2rem;
 }
 
 .pt-8 {
@@ -3728,10 +3725,6 @@ body:has(#menu-controller:checked) {
 }
 
 @media (min-width: 1536px) {
-  .\32xl\:w-1\/5 {
-    width: 20%;
-  }
-
   .\32xl\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
