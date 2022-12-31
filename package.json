@@ -8,7 +8,7 @@
     "postinstall": "vendor-copy",
     "assets": "rimraf assets/vendor && vendor-copy",
     "dev": "NODE_ENV=development ./node_modules/tailwindcss/lib/cli.js -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
-    "build": "NODE_ENV=production ./node_modules/tailwindcss/lib/cli.js -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit", 
+    "build": "NODE_ENV=production ./node_modules/tailwindcss/lib/cli.js -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit",
     "build-hugo": "hugo --minify -s exampleSite --themesDir ../.. -d ../docs --baseURL https://nunocoracao.github.io/blowfish/",
     "example": "hugo server -E -F --minify --source exampleSite --themesDir ../.. --buildDrafts -b http://localhost/ -p 1313",
     "lighthouse": "lhci autorun"
@@ -44,6 +44,7 @@
     "prettier-plugin-tailwindcss": "^0.2.1",
     "rimraf": "^3.0.2",
     "tailwindcss": "^3.2.4",
+    "typeit": "^8.7.1",
     "vendor-copy": "^3.0.1"
   },
   "vendorCopy": [],
@@ -75,6 +76,10 @@
     {
       "from": "node_modules/fuse.js/dist/fuse.min.js",
       "to": "assets/lib/fuse/fuse.min.js"
+    },
+    {
+      "from": "node_modules/typeit/dist/index.umd.js",
+      "to": "assets/lib/typeit/typeit.umd.js"
     }
   ],
   "dependencies": {
