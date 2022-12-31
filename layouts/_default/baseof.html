@@ -25,7 +25,7 @@
   <div class="relative flex flex-col grow">
     <main id="main-content" class="grow">
       {{ block "main" . }}{{ end }}
-      {{ if and (.Site.Params.footer.showScrollToTop | default true) }}
+      {{ if and (.Site.Params.footer.showScrollToTop | default true) (gt .WordCount 1) }}
       <div class="pointer-events-none absolute top-[100vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
         <a href="#the-top"
           class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 backdrop-blur hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
