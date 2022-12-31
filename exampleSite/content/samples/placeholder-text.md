@@ -2,7 +2,7 @@
 title: "Placeholder Text"
 date: "2019-03-09"
 lastmod: "2022-01-24"
-draft: true
+draft: false
 description: "Lorem Ipsum Dolor Si Amet"
 tags: ["markdown", "text", "sample", "latin"]
 showDateUpdated: true
