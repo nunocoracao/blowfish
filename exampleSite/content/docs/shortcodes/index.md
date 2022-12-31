@@ -43,9 +43,9 @@ Don't forget to [follow me](https://twitter.com/nunocoracao) on Twitter.
 `Article` will embed a single article into a markdown file. The `link` to the file should be the `.RelPermalink` of the file to be embedded. Note that the shortcode will not display anything if it's referencing it's parent. *Note: if you are running your website in a subfolder like Blowfish (i.e. /blowfish/) please include that path in the link.*
 
 <!-- prettier-ignore-start -->
-|Parameter|Description|
-|---|---|
-|`link`| **Required.** the `.RelPermalink` to the target article.|
+| Parameter | Description                                              |
+| --------- | -------------------------------------------------------- |
+| `link`    | **Required.** the `.RelPermalink` to the target article. |
 <!-- prettier-ignore-end -->
 
 **Example:**
@@ -135,14 +135,14 @@ When a provided image is a page resource, it will be optimised using Hugo Pipes 
 The `figure` shortcode accepts six parameters:
 
 <!-- prettier-ignore-start -->
-|Parameter|Description|
-|---|---|
-|`src`| **Required.** The local path/filename or URL of the image. When providing a path and filename, the theme will attempt to locate the image using the following lookup order: Firstly, as a [page resource](https://gohugo.io/content-management/page-resources/) bundled with the page; then an asset in the `assets/` directory; then finally, a static image in the `static/` directory.|
-|`alt`|[Alternative text description](https://moz.com/learn/seo/alt-text) for the image.|
-|`caption`|Markdown for the image caption, which will be displayed below the image.|
-|`class`|Additional CSS classes to apply to the image.|
-|`href`|URL that the image should be linked to.|
-|`default`|Special parameter to revert to default Hugo `figure` behaviour. Simply provide `default=true` and then use normal [Hugo shortcode syntax](https://gohugo.io/content-management/shortcodes/#figure).|
+| Parameter | Description                                                                                                                                                                                                                                                                                                                                                                               |
+| --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `src`     | **Required.** The local path/filename or URL of the image. When providing a path and filename, the theme will attempt to locate the image using the following lookup order: Firstly, as a [page resource](https://gohugo.io/content-management/page-resources/) bundled with the page; then an asset in the `assets/` directory; then finally, a static image in the `static/` directory. |
+| `alt`     | [Alternative text description](https://moz.com/learn/seo/alt-text) for the image.                                                                                                                                                                                                                                                                                                         |
+| `caption` | Markdown for the image caption, which will be displayed below the image.                                                                                                                                                                                                                                                                                                                  |
+| `class`   | Additional CSS classes to apply to the image.                                                                                                                                                                                                                                                                                                                                             |
+| `href`    | URL that the image should be linked to.                                                                                                                                                                                                                                                                                                                                                   |
+| `default` | Special parameter to revert to default Hugo `figure` behaviour. Simply provide `default=true` and then use normal [Hugo shortcode syntax](https://gohugo.io/content-management/shortcodes/#figure).                                                                                                                                                                                       |
 <!-- prettier-ignore-end -->
 
 Blowfish also supports automatic conversion of images included using standard Markdown syntax. Simply use the following format and the theme will handle the rest:
@@ -189,11 +189,11 @@ Icons can also be used in partials by calling the [icon partial]({{< ref "partia
 `List` will display a list of recent articles. This shortcode requires a limit value to constraint the list. Additionally, it supports a `where` and a `value` in order to filter articles by their parameters. Note that this shortcode will not display its parent page but it will count for the limit value.
 
 <!-- prettier-ignore-start -->
-|Parameter|Description|
-|---|---|
-|`limit`| **Required.** the number of recent articles to display.|
-|`where`| the number of recent articles to display.|
-|`value`| the number of recent articles to display.|
+| Parameter | Description                                             |
+| --------- | ------------------------------------------------------- |
+| `limit`   | **Required.** the number of recent articles to display. |
+| `where`   | the number of recent articles to display.               |
+| `value`   | the number of recent articles to display.               |
 
 <!-- prettier-ignore-end -->
 
@@ -285,3 +285,83 @@ B-->C[Profit]
 {{< /mermaid >}}
 
 You can see some additional Mermaid examples on the [diagrams and flowcharts samples]({{< ref "diagrams-flowcharts" >}}) page.
+
+## TypeIt
+
+[TypeIt](https://www.typeitjs.com) is the most versatile JavaScript tool for creating typewriter effects on the planet. With a straightforward configuration, it allows you to type single or multiple strings that break lines, delete & replace each other, and it even handles strings that contain complex HTML. 
+
+Blowfish implements a sub-set of TypeIt features using a `shortcode`. Write your text within the `typeit` shortcode and use the following parameters to configure the behavior you want.
+
+<!-- prettier-ignore-start -->
+| Parameter          | Description                                                                                                                                        |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `tag`              | [String] `html` tag that will be used to render the strings.                                                                                       |
+| `classList`        | [String] List of `css` classes to apply to the `html` element.                                                                                     |
+| `initialString`    | [String] Initial string that will appear written and will be replaced.                                                                             |
+| `speed`            | [number] Typing speed, measured in milliseconds between each step.                                                                                 |
+| `lifeLike`         | [boolean] Makes the typing pace irregular, as if a real person is doing it.                                                                        |
+| `startDelay`       | [number] The amount of time before the plugin begins typing after being initialized.                                                               |
+| `breakLines`       | [boolean] Whether multiple strings are printed on top of each other (true), or if they're deleted and replaced by each other (false).              |
+| `waitUntilVisible` | [boolean] Determines if the instance will begin when loaded or only when the target element becomes visible in the viewport. The default is `true` |
+| `loop`             | [boolean] Whether your strings will continuously loop after completing                                                                             |
+
+<!-- prettier-ignore-end -->
+
+
+
+**Example 1:**
+
+```md
+{{</* typeit */>}}
+Lorem ipsum dolor sit amet 
+{{</* /typeit */>}}
+```
+
+{{< typeit >}}
+Lorem ipsum dolor sit amet 
+{{< /typeit >}}
+
+**Example 2:**
+
+```md
+{{</* typeit 
+  tag=h1
+  lifeLike=true
+*/>}}
+Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit. 
+{{</* /typeit */>}}
+```
+
+{{< typeit 
+  tag=h1
+  lifeLike=true
+>}}
+Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit. 
+{{< /typeit >}}
+
+
+**Example 3:**
+
+```md
+{{</* typeit 
+  tag=h3
+  speed=50
+  breakLines=false
+  loop=true
+*/>}}
+Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit. 
+{{</* /typeit */>}}
+```
+{{< typeit 
+  tag=h3
+  speed=50
+  breakLines=false
+  loop=true
+>}}
+"Frankly, my dear, I don't give a damn." Gone with the Wind (1939)
+"I'm gonna make him an offer he can't refuse." The Godfather (1972)
+"Toto, I've a feeling we're not in Kansas anymore." The Wizard of Oz (1939)
+{{< /typeit >}}

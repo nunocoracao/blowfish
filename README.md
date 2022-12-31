@@ -38,6 +38,7 @@ Blowfish is designed to be a powerful, lightweight theme for [Hugo](https://gohu
 - Client-side site search powered by Fuse.js
 - Diagrams and visualisations using Mermaid
 - Charts using Chart.js
+- TypeIt integration
 - Mathematical notation using KaTeX
 - SVG icons from FontAwesome 6
 - Automatic image resizing using Hugo Pipes

@@ -33,4 +33,9 @@
   {{ range $katexFonts }}
     <!-- {{ .RelPermalink }} -->
   {{ end }}
+  {{/* TypeIt */}}
+  {{ if .Page.HasShortcode "typeit" }}
+    {{ $typeitLib := resources.Get "lib/typeit/typeit.umd.js" }}
+    <script defer type="text/javascript" src="{{ $typeitLib.RelPermalink }}" integrity="{{ $typeitLib.Data.Integrity }}"></script>
+  {{ end }}
 {{ end }}
