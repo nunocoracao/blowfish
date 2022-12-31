@@ -4,6 +4,6 @@
 <section class="space-y-10 w-full">
   {{ range first $recentArticles (.Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections)).Pages
   }}
-  {{ partial "article-link.html" . }}
+  {{ partial "article-link/simple.html" . }}
   {{ end }}
 </section>

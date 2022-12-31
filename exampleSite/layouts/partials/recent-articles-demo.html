@@ -18,15 +18,15 @@
 </div>
 
 <div id="CardViewScreenWidth" class="">
-    {{ partial "recent-articles-cardview-fullwidth.html" . }}
+    {{ partial "recent-articles/cardview-fullwidth.html" . }}
 </div>
 
 <div id="CardViewProse" class="hidden h-full">
-    {{ partial "recent-articles-cardview.html" . }}
+    {{ partial "recent-articles/cardview.html" . }}
 </div>
 
 <div id="NormalView" class="hidden h-full">
-    {{ partial "recent-articles-list.html" . }}
+    {{ partial "recent-articles/list.html" . }}
 </div>
 
 {{ if .Site.Params.homepage.showMoreLink | default false }}
