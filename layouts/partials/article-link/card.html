@@ -48,7 +48,7 @@
         {{ end }}
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          {{ partial "article-meta.html" . }}
+          {{ partial "article-meta/basic.html" . }}
         </div>
 
         {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}

@@ -7,11 +7,11 @@
 <h2 class="mt-8 text-2xl font-extrabold mb-10">{{ i18n "shortcode.recent_articles" | emojify }}</h2>
 
 {{ if and .Site.Params.homepage.cardView (not .Site.Params.homepage.cardViewScreenWidth) | default false }}
-  {{ partial "recent-articles-cardview.html" . }}
+  {{ partial "recent-articles/cardview.html" . }}
 {{ else if and .Site.Params.homepage.cardView .Site.Params.homepage.cardViewScreenWidth | default false }}
-  {{ partial "recent-articles-cardview-fullwidth.html" . }}
+  {{ partial "recent-articles/cardview-fullwidth.html" . }}
 {{ else }}
-  {{ partial "recent-articles-list.html" . }}
+  {{ partial "recent-articles/list.html" . }}
 {{ end }}
 
 {{ if .Site.Params.homepage.showMoreLink | default false }}

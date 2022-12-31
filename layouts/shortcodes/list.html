@@ -8,13 +8,13 @@
     {{ if $where }}
         {{ range ( where .Site.RegularPages $where $value | first 1 ) }}
             {{ if not (eq .RelPermalink $parent) }}
-                {{ partial "article-link.html" . }}
+                {{ partial "article-link/simple.html" . }}
             {{ end }}
         {{end}}
     {{ else }}
         {{ range .Site.RegularPages | first $limit }}
             {{ if not (eq .RelPermalink $parent) }}
-                {{ partial "article-link.html" . }}
+                {{ partial "article-link/simple.html" . }}
             {{ end }}
         {{end}}
     {{ end }}

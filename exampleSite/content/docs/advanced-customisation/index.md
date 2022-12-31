@@ -35,7 +35,7 @@ As long as you follow this simple practice, you will always be able to update th
 
 Hugo has various builtin methods to resize, crop and optimize images.
 
-As an example - in `layouts/partials/article-link-card.html`, you have the following code:
+As an example - in `layouts/partials/article-link/card.html`, you have the following code:
 
 ```go
 {{ with .Fill "600x600" }}
@@ -170,7 +170,7 @@ In order to take advantage of the default configuration, your project should loo
 │       └── _index.md
 ├── layouts  # custom layouts for your site
 │   ├── partials
-│   │   └── extend-article-link.html
+│   │   └── extend-article-link/simple.html
 │   ├── projects
 │   │   └── list.html
 │   └── shortcodes
