@@ -1,0 +1,38 @@
+{{- $content := split .Inner "\n" -}}
+{{- $initialString := .Get "initialString" | default "" -}}
+{{- $speed := .Get "speed" | default 100 -}}
+{{- $lifeLike := .Get "lifeLike" | default false -}}
+{{- $startDelay := .Get "startDelay" | default 0 -}}
+{{- $breakLines := .Get "breakLines" | default true -}}
+{{- $waitUntilVisible := .Get "waitUntilVisible" | default true -}}
+{{- $loop := .Get "loop" | default false -}}                                                                    
+
+{{- $classList := slice -}}
+{{- with .Get "class" -}}
+    {{- $classList = $classList | append . -}}
+{{- end -}}
+{{- $tag := .Get "tag" | default "div" -}}
+
+{{ $time := now.UnixNano }}
+{{ $id := delimit (slice "typeit" $time) "-" }}
+
+{{- $attrs := printf `id="%v"` $id -}}
+{{- with $classList -}}
+    {{- $attrs = delimit $classList " " | printf `%v class="%v"` $attrs -}}
+{{- end -}}
+
+{{ printf `<%v %v>%s</%v>` $tag $attrs $initialString $tag | safeHTML }}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      new TypeIt("#{{ $id }}", {
+        strings: {{ $content }},
+        speed: {{ $speed }},
+        lifeLike: {{ $lifeLike }},
+        startDelay: {{ $startDelay }},
+        breakLines: {{ $breakLines }},
+        waitUntilVisible: {{ $waitUntilVisible }},
+        loop: {{ $loop }}
+      }).go();
+    });
+</script>

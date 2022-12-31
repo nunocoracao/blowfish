@@ -66,7 +66,7 @@ To enable the Custom layout, set `homepage.layout = "custom"` in the `params.tom
 
 With the configuration value set, create a new `custom.html` file and place it in `layouts/partials/home/custom.html`. Now whatever is in the `custom.html` file will be placed in the content area of the site homepage. You may use whatever HTML, Tailwind, or Hugo templating functions you wish to define your layout.
 
-To include [recent articles](#recent-articles) on the custom layout, use the `recent-articles.html` partial.
+To include [recent articles](#recent-articles) on the custom layout, use the `recent-articles/main.html` partial.
 
 As an example, the [homepage]({{< ref "/" >}}) on this site uses the custom layout to allow toggling between the profile and page layouts. Visit the [GitHub repo](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/layouts/partials/home/custom.html) to see how it works.
 

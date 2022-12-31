@@ -3,7 +3,7 @@
     {{ $RelPermalink := .Get "link" }}
     {{ range ( where .Site.RegularPages "RelPermalink" $RelPermalink | first 1 ) }}
         {{ if not (eq .RelPermalink $parent) }}
-            {{ partial "article-link.html" . }}
+            {{ partial "article-link/simple.html" . }}
         {{ end }}
     {{end}}
 </section>

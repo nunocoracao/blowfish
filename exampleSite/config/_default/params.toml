@@ -92,6 +92,8 @@ defaultBackgroundImage = "/img/iceland.jpg"
   showViews = true
   showLikes = true
   showTableOfContents = true
+  cardView = false
+
 
 [term]
   showHero = true
