@@ -6,6 +6,8 @@
 # baseURL = "https://your_domain.com/"
 defaultContentLanguage = "en"
 
+# pluralizeListTitles = "true"
+
 enableRobotsTXT = true
 paginate = 20
 summaryLength = 30
