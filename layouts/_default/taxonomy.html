@@ -30,8 +30,8 @@
     </section>
   {{ end }}
   <script>
-    var oid = "views_{{ .File.Path }}"
-    var oid_likes = "likes_{{ .File.Path }}"
+    var oid = "views_taxonomy_{{ .Data.Plural }}"
+    var oid_likes = "likes_taxonomy_{{ .Data.Plural }}"
   </script>
   {{ $jsPage := resources.Get "js/page.js" }}
   {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}
