@@ -18,7 +18,7 @@ article:
   likes:
     one: "{{ .Count }} líbí se mi"
     other: "{{ .Count }} líbí se mi"
-  part_of_series: "Tento článek patří do seriálu."
+  part_of_series: "Tento článek patří do série."
   part: "Část"
   this_article: "Tento článek"
 
