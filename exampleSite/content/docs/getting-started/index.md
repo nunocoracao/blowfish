@@ -151,9 +151,9 @@ When you create a new taxonomy, you will need to adjust the navigation links on 
 
 ## Menus
 
-Blowfish has two menus that can be customised to suit the content and layout of your site. The `main` menu appears in the site header and the `footer` menu appears at the bottom of the page just above the copyright notice.
+Blowfish has 3 menus that can be customised to suit the content and layout of your site. The `main` menu appears in the site header, the `subnavigation` menu just below `main` and the `footer` menu appears at the bottom of the page just above the copyright notice.
 
-Both menus are configured in the `menus.en.toml` file. Similarly to the languages config file, if you wish to use another language, rename this file and replace `en` with the language code you wish to use.
+All of them can be configured in the `menus.en.toml` file. Similarly to the languages config file, if you wish to use another language, rename this file and replace `en` with the language code you wish to use.
 
 ```toml
 # config/_default/menus.toml
@@ -179,6 +179,16 @@ Both menus are configured in the `menus.en.toml` file. Similarly to the language
   pre = "github"
   url = "https://github.com/nunocoracao/blowfish"
   weight = 40
+
+[[subnavigation]]
+  name = "An interesting topic"
+  pageRef = "tags/interesting-topic"
+  weight = 10
+
+[[subnavigation]]
+  name = "My Awesome Category"
+  pageRef = "categories/awesome"
+  weight = 20
 
 [[footer]]
   name = "Privacy"
