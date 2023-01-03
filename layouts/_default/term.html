@@ -28,8 +28,8 @@
     </div>
     {{ end }}
     <script>
-      var oid = "views_{{ .File.Path }}"
-      var oid_likes = "likes_{{ .File.Path }}"
+      var oid = "views_term_{{ .Data.Term }}"
+      var oid_likes = "likes_term_{{ .Data.Term }}"
     </script>
     {{ $jsPage := resources.Get "js/page.js" }}
     {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}
