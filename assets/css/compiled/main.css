@@ -885,21 +885,14 @@ select {
   color: var(--tw-prose-code);
   font-weight: 600;
   font-size: 0.875em;
-  background-color: rgba(var(--color-secondary-200), 1);
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 5px;
-  padding-right: 5px;
 }
 
 .prose :where(code):not(:where([class~="not-prose"] *))::before {
   content: "`";
-  display: none;
 }
 
 .prose :where(code):not(:where([class~="not-prose"] *))::after {
   content: "`";
-  display: none;
 }
 
 .prose :where(a code):not(:where([class~="not-prose"] *)) {
@@ -1165,14 +1158,6 @@ select {
   background-color: rgba(var(--color-secondary-200), 1);
   padding: 0.1rem 0.2rem;
   border-radius: 0.12rem;
-}
-
-.prose :where(p):not(:where([class~="not-prose"] *))::before {
-  display: none;
-}
-
-.prose :where(p):not(:where([class~="not-prose"] *))::after {
-  display: none;
 }
 
 .sr-only {
@@ -1489,6 +1474,14 @@ select {
   height: 100%;
 }
 
+.h-\[120px\] {
+  height: 120px;
+}
+
+.h-\[100px\] {
+  height: 100px;
+}
+
 .h-\[150px\] {
   height: 150px;
 }
@@ -1587,11 +1580,6 @@ select {
 
 .max-w-3xl {
   max-width: 48rem;
-}
-
-.max-w-fit {
-  max-width: -moz-fit-content;
-  max-width: fit-content;
 }
 
 .max-w-\[5rem\] {
@@ -2202,12 +2190,12 @@ select {
   opacity: 0;
 }
 
-.opacity-70 {
-  opacity: 0.7;
-}
-
 .opacity-30 {
   opacity: 0.3;
+}
+
+.opacity-70 {
+  opacity: 0.7;
 }
 
 .mix-blend-normal {
@@ -3349,10 +3337,6 @@ body:has(#menu-controller:checked) {
 
 .dark .dark\:prose-invert :where(mark):not(:where([class~="not-prose"] *)) {
   background-color: rgba(var(--color-secondary-400), 1);
-}
-
-.dark .dark\:prose-invert :where(code):not(:where([class~="not-prose"] *)) {
-  background-color: rgba(var(--color-secondary-800), 1);
 }
 
 .dark .dark\:text-neutral-500 {
