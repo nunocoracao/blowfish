@@ -1589,6 +1589,11 @@ select {
   max-width: 48rem;
 }
 
+.max-w-fit {
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+
 .max-w-\[5rem\] {
   max-width: 5rem;
 }
