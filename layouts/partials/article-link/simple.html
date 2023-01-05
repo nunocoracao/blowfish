@@ -1,3 +1,5 @@
+{{ $constrainItemsWidth := .Page.Site.Params.list.constrainItemsWidth | default false }}
+
 {{ $articleClasses := "flex flex-wrap article" }}
 {{ if .Site.Params.list.showCards }}
 {{ $articleClasses = delimit (slice $articleClasses "border border-neutral-200 dark:border-neutral-700 border-2 rounded-md backdrop-blur") " " }}
@@ -20,6 +22,11 @@
 {{ else }}
 {{ $articleInnerClasses = delimit (slice $articleInnerClasses "mt-3 md:mt-0") " " }}
 {{ end }}
+
+{{ if $constrainItemsWidth }}
+{{ $articleClasses = delimit (slice $articleClasses "max-w-prose") " " }}
+{{ end }}
+
 
 {{ with .Params.externalUrl }}
 <a class="{{ $articleClasses }}" href="{{ . }}" target="_blank" rel="external">
@@ -80,7 +87,7 @@
         {{ partial "article-meta/basic.html" . }}
       </div>
       {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
-      <div class="py-1 prose dark:prose-invert">
+      <div class="py-1 max-w-fit prose dark:prose-invert">
         {{ .Summary | emojify }}
       </div>
       {{ end }}
