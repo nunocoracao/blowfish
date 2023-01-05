@@ -885,11 +885,11 @@ select {
   color: var(--tw-prose-code);
   font-weight: 600;
   font-size: 0.875em;
-  background-color: rgba(var(--color-neutral-200), 1);
-  padding-top: 2px;
-  padding-bottom: 2px;
-  padding-left: 3px;
-  padding-right: 3px;
+  background-color: rgba(var(--color-secondary-200), 1);
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .prose :where(code):not(:where([class~="not-prose"] *))::before {
@@ -2202,12 +2202,12 @@ select {
   opacity: 0;
 }
 
-.opacity-30 {
-  opacity: 0.3;
-}
-
 .opacity-70 {
   opacity: 0.7;
+}
+
+.opacity-30 {
+  opacity: 0.3;
 }
 
 .mix-blend-normal {
@@ -3352,7 +3352,7 @@ body:has(#menu-controller:checked) {
 }
 
 .dark .dark\:prose-invert :where(code):not(:where([class~="not-prose"] *)) {
-  background-color: rgba(var(--color-neutral-600), 1);
+  background-color: rgba(var(--color-secondary-800), 1);
 }
 
 .dark .dark\:text-neutral-500 {
