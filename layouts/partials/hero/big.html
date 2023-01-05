@@ -1,8 +1,16 @@
+{{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
+
 {{- $images := .Resources.ByType "image" -}}
 {{- $featured := $images.GetMatch "*feature*" -}}
 {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
 {{- with $featured -}}
-    {{ with .Resize "1200x" }}
+    {{ if $disableImageOptimization }}
+        {{ with . }}
         <img class="w-full rounded-lg single_hero_round nozoom" src="{{ .RelPermalink }}">
+        {{ end }}
+    {{ else }}
+        {{ with .Resize "1200x" }}
+        <img class="w-full rounded-lg single_hero_round nozoom" src="{{ .RelPermalink }}">
+        {{ end }}
     {{ end }}
 {{- end -}}
