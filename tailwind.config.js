@@ -117,6 +117,25 @@ module.exports = {
               padding: "0.1rem 0.2rem",
               borderRadius: "0.12rem",
             },
+            code:{
+              backgroundColor: theme("colors.neutral.200 / 1"),
+              paddingTop: "2px",
+              paddingBottom: "2px",
+              paddingLeft: "3px",
+              paddingRight: "3px",
+            },
+            'code::before': {
+              display: 'none'
+            },
+            'code::after': {
+              display: 'none'
+            },
+            'p::before': {
+              display: 'none'
+            },
+            'p::after': {
+              display: 'none'
+            },
           },
         },
         invert: {
@@ -130,6 +149,9 @@ module.exports = {
             },
             mark: {
               backgroundColor: theme("colors.secondary.400 / 1"),
+            },
+            code:{
+              backgroundColor: theme("colors.neutral.600 / 1"),
             },
           },
         },
