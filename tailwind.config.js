@@ -118,7 +118,7 @@ module.exports = {
               borderRadius: "0.12rem",
             },
             code:{
-              backgroundColor: theme("colors.secondary.200 / 1"),
+              backgroundColor: theme("colors.neutral.50 / 1"),
               paddingTop: "3px",
               paddingBottom: "3px",
               paddingLeft: "5px",
@@ -151,7 +151,7 @@ module.exports = {
               backgroundColor: theme("colors.secondary.400 / 1"),
             },
             code:{
-              backgroundColor: theme("colors.secondary.800 / 1"),
+              backgroundColor: theme("colors.neutral.700 / 1"),
             },
           },
         },
