@@ -1,4 +1,4 @@
-<div style="padding-left:0;padding-right:0"
+<div style="padding-left:0;padding-right:0;padding-top:2px;padding-bottom:3px"
     class="flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start space-x-3">
     {{ if .Site.Params.Logo -}}
     {{ $logo := resources.Get .Site.Params.Logo }}
@@ -38,7 +38,7 @@
 
             {{ if .Site.Params.enableSearch | default false }}
             <button id="search-button" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
-                title="{{ i18n " search.open_button_title" }}">
+                title="{{ i18n "search.open_button_title" }}">
                 {{ partial "icon.html" "search" }}
             </button>
             {{ end }}
@@ -68,7 +68,7 @@
 
             {{ if .Site.Params.enableSearch | default false }}
             <button id="search-button-mobile" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
-                title="{{ i18n " search.open_button_title" }}">
+                title="{{ i18n "search.open_button_title" }}">
                 {{ partial "icon.html" "search" }}
             </button>
             {{ end }}
@@ -94,12 +94,12 @@
             <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
                 {{ partial "icon.html" "bars" }}
             </div>
-            <div id="menu-wrapper" style="padding-top:25px;"
+            <div id="menu-wrapper" style="padding-top:5px;"
                 class="fixed inset-0 z-30 invisible w-screen h-screen m-auto overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50">
                 <ul
                     class="flex movedown flex-col w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl sm:px-14 md:px-24 lg:px-32 sm:py-10 sm:pt-10">
                     <li class="mb-1">
-                        <span class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">{{ partial
+                        <span class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">{{ partial
                             "icon.html"
                             "xmark" }}</span>
                     </li>

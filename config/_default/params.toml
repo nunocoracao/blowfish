@@ -81,6 +81,7 @@ enableCodeCopy = true
   groupByYear = true
   cardView = false
   cardViewScreenWidth = false
+  constrainItemsWidth = false
 
 [sitemap]
   excludedKinds = []
