@@ -1,4 +1,3 @@
-{{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
 {{ with .Params.externalUrl }}
 <a href="{{ . }}" target="_blank" rel="external" class="min-w-full">
   {{ else }}
@@ -14,14 +13,8 @@
       {{- $featured := $images.GetMatch "*feature*" -}}
       {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
       {{- with $featured -}}
-      {{ if $disableImageOptimization }}
-        {{ with . }}
-        <div class="w-full thumbnail_card nozoom" style="background-image:url({{ .RelPermalink }});"></div>
-        {{ end }}
-      {{ else }}
-        {{ with .Fill "600x600"  }}
-        <div class="w-full thumbnail_card nozoom" style="background-image:url({{ .RelPermalink }});"></div>
-        {{ end }}
+      {{ with .Fill "600x600" }}
+      <div class="w-full thumbnail_card nozoom" style="background-image:url({{ .RelPermalink }});"></div>
       {{ end }}
       {{- else -}}
       {{- with $.Site.Params.images }}

@@ -94,6 +94,7 @@ defaultBackgroundImage = "/img/iceland.jpg"
   showTableOfContents = true
   cardView = false
 
+
 [term]
   showHero = true
   heroStyle = "background" # valid options: basic, big, background, thumbAndBackground

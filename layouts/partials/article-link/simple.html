@@ -12,8 +12,6 @@
 {{ $articleImageClasses = delimit (slice $articleImageClasses "thumbnailshadow md:mr-7") " " }}
 {{ end }}
 
-{{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
-
 {{ $articleInnerClasses := "" }}
 {{ if .Site.Params.list.showCards }}
 {{ $articleInnerClasses = delimit (slice $articleInnerClasses "p-4") " " }}
@@ -34,15 +32,9 @@
     {{- $featured := $images.GetMatch "*feature*" -}}
     {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
     {{- with $featured -}}
-    {{ if $disableImageOptimization }}
-        {{ with . }}
-        <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
-        {{ end }}
-      {{ else }}
-        {{ with .Fill "600x400"  }}
-        <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
-        {{ end }}
-      {{ end }}
+    {{ with .Fill "600x400" }}
+    <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
+    {{ end }}
     {{- else -}}
     {{- with $.Site.Params.images }}
     <meta property="og:image" content="{{ index . 0 | absURL }}" />{{ end -}}
