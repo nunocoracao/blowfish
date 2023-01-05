@@ -76,11 +76,10 @@ defaultBackgroundImage = "/img/iceland.jpg"
   showViews = true
   showLikes = true
   showTableOfContents = true
-  showCards = false
+  showCards = true
   groupByYear = false
   cardView = true
   cardViewScreenWidth = false
-  constrainItemsWidth = false
 
 [sitemap]
   excludedKinds = ["taxonomy","term"]
