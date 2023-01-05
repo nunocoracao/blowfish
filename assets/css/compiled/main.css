@@ -885,21 +885,14 @@ select {
   color: var(--tw-prose-code);
   font-weight: 600;
   font-size: 0.875em;
-  background-color: rgba(var(--color-neutral-200), 1);
-  padding-top: 2px;
-  padding-bottom: 2px;
-  padding-left: 3px;
-  padding-right: 3px;
 }
 
 .prose :where(code):not(:where([class~="not-prose"] *))::before {
   content: "`";
-  display: none;
 }
 
 .prose :where(code):not(:where([class~="not-prose"] *))::after {
   content: "`";
-  display: none;
 }
 
 .prose :where(a code):not(:where([class~="not-prose"] *)) {
@@ -1165,14 +1158,6 @@ select {
   background-color: rgba(var(--color-secondary-200), 1);
   padding: 0.1rem 0.2rem;
   border-radius: 0.12rem;
-}
-
-.prose :where(p):not(:where([class~="not-prose"] *))::before {
-  display: none;
-}
-
-.prose :where(p):not(:where([class~="not-prose"] *))::after {
-  display: none;
 }
 
 .sr-only {
@@ -1487,6 +1472,14 @@ select {
 
 .h-full {
   height: 100%;
+}
+
+.h-\[120px\] {
+  height: 120px;
+}
+
+.h-\[100px\] {
+  height: 100px;
 }
 
 .h-\[150px\] {
@@ -3344,10 +3337,6 @@ body:has(#menu-controller:checked) {
 
 .dark .dark\:prose-invert :where(mark):not(:where([class~="not-prose"] *)) {
   background-color: rgba(var(--color-secondary-400), 1);
-}
-
-.dark .dark\:prose-invert :where(code):not(:where([class~="not-prose"] *)) {
-  background-color: rgba(var(--color-neutral-600), 1);
 }
 
 .dark .dark\:text-neutral-500 {
