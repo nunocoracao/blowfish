@@ -118,11 +118,11 @@ module.exports = {
               borderRadius: "0.12rem",
             },
             code:{
-              backgroundColor: theme("colors.secondary.200 / 1"),
-              paddingTop: "3px",
-              paddingBottom: "3px",
-              paddingLeft: "5px",
-              paddingRight: "5px",
+              backgroundColor: theme("colors.neutral.200 / 1"),
+              paddingTop: "2px",
+              paddingBottom: "2px",
+              paddingLeft: "3px",
+              paddingRight: "3px",
             },
             'code::before': {
               display: 'none'
@@ -151,7 +151,7 @@ module.exports = {
               backgroundColor: theme("colors.secondary.400 / 1"),
             },
             code:{
-              backgroundColor: theme("colors.secondary.800 / 1"),
+              backgroundColor: theme("colors.neutral.600 / 1"),
             },
           },
         },
