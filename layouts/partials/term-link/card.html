@@ -2,6 +2,8 @@
   <div
     class="border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative backdrop-blur">
 
+    {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
+
     {{- with site.Params.images -}}
     {{- range first 6 . }}
     <meta property="og:image" content="{{ . | absURL }}" />{{ end -}}
@@ -10,9 +12,15 @@
     {{- $featured := $images.GetMatch "*feature*" -}}
     {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
     {{- with $featured -}}
-    {{ with .Fill "600x600" }}
-    <div class="w-full thumbnail_card_term nozoom" style="background-image:url({{ .RelPermalink }});"></div>
-    {{ end }}
+    {{ if $disableImageOptimization }}
+        {{ with . }}
+        <div class="w-full thumbnail_card nozoom" style="background-image:url({{ .RelPermalink }});"></div>
+        {{ end }}
+      {{ else }}
+        {{ with .Fill "600x600"  }}
+        <div class="w-full thumbnail_card nozoom" style="background-image:url({{ .RelPermalink }});"></div>
+        {{ end }}
+      {{ end }}
     {{- else -}}
     {{- with site.Params.images }}
     <meta property="og:image" content="{{ index . 0 | absURL }}" />{{ end -}}
