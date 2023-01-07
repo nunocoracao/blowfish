@@ -1,8 +1,8 @@
 article:
-  anchor_label: "Anchor"
+  anchor_label: "Âncora"
   date: "{{ .Date }}"
-  # date_updated: "Updated: {{ .Date }}"
-  draft: "Draft"
+  date_updated: "Atualizado em: {{ .Date }}"
+  draft: "Rascunho"
   edit_title: "Editar Conteúdo"
   reading_time:
     one: "{{ .Count }} minuto"
@@ -15,16 +15,16 @@ article:
   views:
     one: "{{ .Count }} visualização"
     other: "{{ .Count }} visualizaçōes"
-  part_of_series: "This article is part of a series."
-  part: "Part"
-  this_article: "This Article"
+  part_of_series: "Este artigo faz parte de uma série de artigos."
+  part: "Parte"
+  this_article: "Esse Artigo"
 
 author:
   byline_title: "Autor"
 
-# code:
-#   copy: "Copy"
-#   copied: "Copied"
+code:
+  copy: "Copiar"
+  copied: "Copiado"
 
 error:
   404_title: "Página não econtrada :confused:"
@@ -38,16 +38,16 @@ footer:
 
 list:
   externalurl_title: "Link para site externo"
-  no_articles: "Não tem artigos para lista aqui ainda."
+  no_articles: "Não tem artigos para listar aqui ainda."
 
-# nav:
-#   scroll_to_top_title: "Scroll to top"
-#   skip_to_main: "Skip to main content"
+nav:
+  scroll_to_top_title: "Ir para o topo"
+  skip_to_main: "Ir para o conteúdo principal"
 
-# search:
-#   open_button_title: "Search (/)"
-#   close_button_title: "Close (Esc)"
-#   input_placeholder: "Search"
+search:
+  open_button_title: "Pesquisar (/)"
+  close_button_title: "Fechar (Esc)"
+  input_placeholder: "Pesquisar"
 
 sharing:
   email: "Enviar por email"
