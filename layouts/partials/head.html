@@ -147,4 +147,10 @@
   </script>
   {{ end }}
   {{ end }}
+
+  {{/* Header */}}
+  {{ $headerLib := resources.Get "js/header.js" }}
+  {{ $headerLib := $headerLib | resources.Minify }}
+  {{ $headerJS := $headerLib | resources.Fingerprint "sha512" }}
+  <script defer type="text/javascript" src="{{ $headerJS.RelPermalink }}" integrity="{{ $headerJS.Data.Integrity }}"></script>
 </head>

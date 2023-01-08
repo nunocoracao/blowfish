@@ -22,18 +22,15 @@
             
             
         </nav>
-        <div class="site-header-menu-main hidden md:flex items-center space-x-5 md:ml-12">
+        <nav class="site-header-menu-main hidden md:flex items-center space-x-5 md:ml-12">
 
             {{ if .Site.Menus.main }}
             {{ range .Site.Menus.main }}
-            <a href="{{ .URL }}" {{ if or (strings.HasPrefix .URL "http:") (strings.HasPrefix .URL "https:") }} target="_blank"{{ end }} class="text-base font-medium text-gray-500 hover:text-gray-900" title="{{ .Title }}">
-                {{ partial "icon.html" .Pre }}
-                {{ if and .Pre .Name }} &nbsp; {{ end }}
-                {{ .Name | markdownify | emojify }}
-            </a>
-            {{ end }}
-            {{ end }}
 
+            {{ partial "header/header-option.html" . }}
+
+            {{ end }}
+            {{ end }}
             {{ partial "translations.html" . }}
 
             {{ if .Site.Params.enableSearch | default false }}
@@ -59,7 +56,7 @@
             </div>
             {{ end }}
 
-        </div>
+          </nav>
         <div class="flex md:hidden items-center space-x-5 md:ml-12">
 
             <span></span>
@@ -143,13 +140,7 @@
   <div class="flex flex-1 items-center justify-between">
     <div class="hidden md:flex items-center space-x-5">
       {{ range .Site.Menus.subnavigation }}
-      <a href="{{ .URL }}" class="prose dark:prose-invert"
-          {{ if or (strings.HasPrefix .URL "http:" ) (strings.HasPrefix .URL "https:" ) }} target="_blank" {{ end }}
-          class="text-base font-medium text-gray-500 hover:text-gray-900" title="{{ .Title }}">
-        {{ partial "icon.html" .Pre }}
-        {{ if and .Pre .Name }} &nbsp; {{ end }}
-        {{ .Name | markdownify | emojify }}
-      </a>
+        {{ partial "header/header-option.html" . }}
       {{ end }}
     </div>
   </div>
