@@ -86,6 +86,11 @@
   <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon-16x16.png" | relURL }}" />
   <link rel="manifest" href="{{ "site.webmanifest" | relURL }}" />
   {{ end }}
+  {{/* Header */}}
+  {{ $headerLib := resources.Get "js/header.js" }}
+  {{ $headerLib := $headerLib | resources.Minify }}
+  {{ $headerJS := $headerLib | resources.Fingerprint "sha512" }}
+  <script defer type="text/javascript" src="{{ $headerJS.RelPermalink }}" integrity="{{ $headerJS.Data.Integrity }}"></script>
   {{/* Site Verification */}}
   {{ with .Site.Params.verification.google }}
   <meta name="google-site-verification" content="{{ . }}" />
@@ -147,10 +152,4 @@
   </script>
   {{ end }}
   {{ end }}
-
-  {{/* Header */}}
-  {{ $headerLib := resources.Get "js/header.js" }}
-  {{ $headerLib := $headerLib | resources.Minify }}
-  {{ $headerJS := $headerLib | resources.Fingerprint "sha512" }}
-  <script defer type="text/javascript" src="{{ $headerJS.RelPermalink }}" integrity="{{ $headerJS.Data.Integrity }}"></script>
 </head>

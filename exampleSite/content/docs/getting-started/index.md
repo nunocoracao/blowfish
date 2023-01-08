@@ -151,9 +151,9 @@ When you create a new taxonomy, you will need to adjust the navigation links on 
 
 ## Menus
 
-Blowfish has 3 menus that can be customised to suit the content and layout of your site. The `main` menu appears in the site header, the `subnavigation` menu just below `main` and the `footer` menu appears at the bottom of the page just above the copyright notice.
+Blowfish has two menus that can be customised to suit the content and layout of your site. The `main` menu appears in the site header and the `footer` menu appears at the bottom of the page just above the copyright notice.
 
-All of them can be configured in the `menus.en.toml` file. Similarly to the languages config file, if you wish to use another language, rename this file and replace `en` with the language code you wish to use.
+Both menus are configured in the `menus.en.toml` file. Similarly to the languages config file, if you wish to use another language, rename this file and replace `en` with the language code you wish to use.
 
 ```toml
 # config/_default/menus.toml
@@ -180,16 +180,6 @@ All of them can be configured in the `menus.en.toml` file. Similarly to the lang
   url = "https://github.com/nunocoracao/blowfish"
   weight = 40
 
-[[subnavigation]]
-  name = "An interesting topic"
-  pageRef = "tags/interesting-topic"
-  weight = 10
-
-[[subnavigation]]
-  name = "My Awesome Category"
-  pageRef = "categories/awesome"
-  weight = 20
-
 [[footer]]
   name = "Privacy"
   url = "https://external-link"
@@ -204,6 +194,40 @@ The `pre` parameter allows you to place an icon from [Blowfish's icon set](http:
 Menu links will be sorted from lowest to highest `weight`, and then alphabetically by `name`.
 
 Both menus are completely optional and can be commented out if not required. Use the template provided in the file as a guide.
+
+### Nested Menus
+
+bla bla bla
+
+```toml
+# config/_default/menus.toml
+
+[[main]]
+  name = "Blog"
+  pageRef = "posts"
+  weight = 10
+
+[[main]]
+  name = "Topics"
+  pageRef = "topics"
+  weight = 20
+
+[[main]]
+  pre = "github"
+  name = "GitHub"
+  url = "https://github.com/nunocoracao/blowfish"
+  weight = 30
+
+[[main]]
+  identifier = "github2"
+  pre = "github"
+  url = "https://github.com/nunocoracao/blowfish"
+  weight = 40
+
+[[footer]]
+  name = "Privacy"
+  url = "https://external-link"
+```
 
 ## Thumbnails & Backgrounds
 
