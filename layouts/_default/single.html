@@ -3,7 +3,11 @@
 
 <article>
   {{ if .Params.showHero | default (.Site.Params.article.showHero | default false) }}
-  {{ $heroStyle := print "partials/hero/" .Site.Params.article.heroStyle ".html" }}
+  {{ $heroStyle := .Site.Params.article.heroStyle }}
+  {{ if .Params.heroStyle }}
+  {{ $heroStyle = .Params.heroStyle }}
+  {{ end }}
+  {{ $heroStyle := print "partials/hero/" $heroStyle ".html" }}
   {{ if templates.Exists $heroStyle }}
   {{ partial $heroStyle . }}
   {{ else }}
