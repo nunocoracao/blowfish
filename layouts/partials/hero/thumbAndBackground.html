@@ -1,3 +1,5 @@
+{{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
+
 {{- $images := .Resources.ByType "image" -}}
 {{- $background := $images.GetMatch "*background*" -}}
 {{- if not $background }}{{ with .Site.Params.defaultBackgroundImage }}{{ $background = resources.Get . }}{{ end }}{{ end -}}
@@ -14,12 +16,30 @@
     ) }}
 
 {{- with $featured -}}
+{{ if $disableImageOptimization }}
+{{ with . }}
+<div class="w-full rounded-md h-36 md:h-56 lg:h-72 single_hero_basic nozoom" style="background-image:url({{ .RelPermalink }});"></div>
+{{ end }}
+{{ else }}
 {{ with .Resize "1200x" }}
 <div class="w-full rounded-md h-36 md:h-56 lg:h-72 single_hero_basic nozoom" style="background-image:url({{ .RelPermalink }});"></div>
+{{ end }}
 {{ end }}
 {{- end -}}
 
 {{- with $background -}}
+
+{{ if $disableImageOptimization }}
+{{ with . }}
+<div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
+    style="background-image:url({{ .RelPermalink }});">
+    <div class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
+    </div>
+    <div
+        class="absolute inset-0 opacity-30 dark:opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral dark:to-neutral-800 mix-blend-normal">
+    </div>
+</div>{{ end }}
+{{ else }}
 {{ with .Resize "1200x" }}
 <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
     style="background-image:url({{ .RelPermalink }});">
@@ -28,8 +48,9 @@
     <div
         class="absolute inset-0 opacity-30 dark:opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral dark:to-neutral-800 mix-blend-normal">
     </div>
-</div>
+</div>{{ end }}
 {{ end }}
+
 {{- end -}}
 
 {{ if $shouldBlur | default false }}
