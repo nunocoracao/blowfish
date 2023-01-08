@@ -1321,10 +1321,6 @@ select {
   margin-bottom: 3rem;
 }
 
-.mb-16 {
-  margin-bottom: 4rem;
-}
-
 .mt-5 {
   margin-top: 1.25rem;
 }
@@ -1387,6 +1383,10 @@ select {
 
 .mb-1 {
   margin-bottom: 0.25rem;
+}
+
+.mb-16 {
+  margin-bottom: 4rem;
 }
 
 .-mb-1 {
@@ -1473,12 +1473,12 @@ select {
   height: 100vh;
 }
 
-.h-12 {
-  height: 3rem;
-}
-
 .h-24 {
   height: 6rem;
+}
+
+.h-12 {
+  height: 3rem;
 }
 
 .h-8 {
@@ -1525,10 +1525,6 @@ select {
   min-height: 148px;
 }
 
-.w-12 {
-  width: 3rem;
-}
-
 .w-full {
   width: 100%;
 }
@@ -1539,6 +1535,10 @@ select {
 
 .w-24 {
   width: 6rem;
+}
+
+.w-12 {
+  width: 3rem;
 }
 
 .w-8 {
@@ -2052,11 +2052,6 @@ select {
   line-height: 1.25rem;
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -2074,6 +2069,11 @@ select {
 
 .text-\[0\.6rem\] {
   font-size: 0.6rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .font-extrabold {
@@ -2131,14 +2131,14 @@ select {
   color: rgba(var(--color-primary-600), var(--tw-text-opacity));
 }
 
-.text-neutral-700 {
-  --tw-text-opacity: 1;
-  color: rgba(var(--color-neutral-700), var(--tw-text-opacity));
-}
-
 .text-neutral-500 {
   --tw-text-opacity: 1;
   color: rgba(var(--color-neutral-500), var(--tw-text-opacity));
+}
+
+.text-neutral-700 {
+  --tw-text-opacity: 1;
+  color: rgba(var(--color-neutral-700), var(--tw-text-opacity));
 }
 
 .text-neutral-800 {
@@ -3041,11 +3041,6 @@ body:has(#menu-controller:checked) {
   background-color: rgba(var(--color-primary-500), var(--tw-bg-opacity)) !important;
 }
 
-.hover\:text-primary-600:hover {
-  --tw-text-opacity: 1;
-  color: rgba(var(--color-primary-600), var(--tw-text-opacity));
-}
-
 .hover\:text-primary-700:hover {
   --tw-text-opacity: 1;
   color: rgba(var(--color-primary-700), var(--tw-text-opacity));
@@ -3059,6 +3054,11 @@ body:has(#menu-controller:checked) {
 .hover\:text-neutral:hover {
   --tw-text-opacity: 1;
   color: rgba(var(--color-neutral), var(--tw-text-opacity));
+}
+
+.hover\:text-primary-600:hover {
+  --tw-text-opacity: 1;
+  color: rgba(var(--color-primary-600), var(--tw-text-opacity));
 }
 
 .hover\:text-primary-400:hover {
@@ -3271,13 +3271,13 @@ body:has(#menu-controller:checked) {
   background-color: rgba(var(--color-neutral-600), var(--tw-bg-opacity));
 }
 
-.dark .dark\:bg-neutral-800\/50 {
-  background-color: rgba(var(--color-neutral-800), 0.5);
-}
-
 .dark .dark\:bg-primary-400 {
   --tw-bg-opacity: 1;
   background-color: rgba(var(--color-primary-400), var(--tw-bg-opacity));
+}
+
+.dark .dark\:bg-neutral-800\/50 {
+  background-color: rgba(var(--color-neutral-800), 0.5);
 }
 
 .dark .dark\:bg-neutral-900\/50 {

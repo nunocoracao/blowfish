@@ -18,6 +18,12 @@ Real websites that are built with Blowfish.
 {{< /lead >}}
 
 
+{{< alert >}}
+
+**Blowfish user?** To add your site to this list, [submit a pull request](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/content/users/index.md).
+
+{{</ alert >}}
+
 | Website                                                               | Details                      |
 | --------------------------------------------------------------------- | ---------------------------- |
 | [nunocoracao.com](https://nunocoracao.com)                            | Personal site - Theme author |
