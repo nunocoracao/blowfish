@@ -86,6 +86,6 @@
     "@headlessui/react": "^1.7.7",
     "@heroicons/react": "^2.0.13",
     "@tailwindcss/forms": "^0.5.3",
-    "commander": "^9.4.1"
+    "commander": "^9.5.0"
   }
 }
