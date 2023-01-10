@@ -195,6 +195,40 @@ Menu links will be sorted from lowest to highest `weight`, and then alphabetical
 
 Both menus are completely optional and can be commented out if not required. Use the template provided in the file as a guide.
 
+### Nested Menus
+
+bla bla bla
+
+```toml
+# config/_default/menus.toml
+
+[[main]]
+  name = "Blog"
+  pageRef = "posts"
+  weight = 10
+
+[[main]]
+  name = "Topics"
+  pageRef = "topics"
+  weight = 20
+
+[[main]]
+  pre = "github"
+  name = "GitHub"
+  url = "https://github.com/nunocoracao/blowfish"
+  weight = 30
+
+[[main]]
+  identifier = "github2"
+  pre = "github"
+  url = "https://github.com/nunocoracao/blowfish"
+  weight = 40
+
+[[footer]]
+  name = "Privacy"
+  url = "https://external-link"
+```
+
 ## Thumbnails & Backgrounds
 
 Blowfish was built so it would be easy to add visual support to your articles. If your familiar with Hugo article strucutre, you just need to place an image file (almost all formats are supported bue we recommend `.png` or `.jpg`) that starts with `feature*` inside your article folder. And that's it, Blowfish will then able to both use the image as a thumbnail within your website as well as for <a target="_blank" href="https://oembed.com/">oEmbed</a> cards across social platforms. 

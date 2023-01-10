@@ -16,6 +16,29 @@
   weight = 10
 
 [[main]]
+  name = "Parent"
+  pageRef = "samples"
+  weight = 20
+
+[[main]]
+  name = "test1"
+  parent = "Parent"
+  pageRef = "samples"
+  weight = 20
+
+[[main]]
+  name = "test2"
+  parent = "Parent"
+  pageRef = "samples"
+  weight = 20
+
+[[main]]
+  name = "test3"
+  parent = "Parent"
+  pageRef = "samples"
+  weight = 20
+
+[[main]]
   name = "Samples"
   pageRef = "samples"
   weight = 20
