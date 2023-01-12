@@ -189,7 +189,7 @@ The `name` parameter specifies the text that is used in the menu link. You can a
 
 The `pageRef` parameter allows you to easily reference Hugo content pages and taxonomies. It is the quickest way to configure the menu as you can simply refer to any Hugo content item and it will automatically build the correct link. To link to external URLs, the `url` parameter can be used.
 
-The `pre` parameter allows you to place an icon from [Blowfish's icon set](http://localhost:1313/samples/icons/) on the menu entry. This parameter can be used with `name` parameter or by itself. If you want to use multiple menu entries with just icons please set the `identifier`parameter otherwise Hugo will default to the naming tag as the id and probably not display all the menu entries.
+The `pre` parameter allows you to place an icon from [Blowfish's icon set]({{< ref "samples/icons" >}}) on the menu entry. This parameter can be used with `name` parameter or by itself. If you want to use multiple menu entries with just icons please set the `identifier`parameter otherwise Hugo will default to the naming tag as the id and probably not display all the menu entries.
 
 Menu links will be sorted from lowest to highest `weight`, and then alphabetically by `name`.
 
