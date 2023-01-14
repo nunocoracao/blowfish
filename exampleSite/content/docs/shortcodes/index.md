@@ -365,3 +365,27 @@ consectetur adipiscing elit.
 "I'm gonna make him an offer he can't refuse." The Godfather (1972)
 "Toto, I've a feeling we're not in Kansas anymore." The Wizard of Oz (1939)
 {{< /typeit >}}
+
+
+## GitHub Card
+
+[TypeIt](https://www.typeitjs.com) is the most versatile JavaScript tool for creating typewriter effects on the planet. With a straightforward configuration, it allows you to type single or multiple strings that break lines, delete & replace each other, and it even handles strings that contain complex HTML. 
+
+Blowfish implements a sub-set of TypeIt features using a `shortcode`. Write your text within the `typeit` shortcode and use the following parameters to configure the behavior you want.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description              |
+| --------- | ------------------------ |
+| `repor`     | [String] github repo in the format of `username/repo` |
+                                                                       
+<!-- prettier-ignore-end -->
+
+
+
+**Example 1:**
+
+```md
+{{</* github repo="nunocoracao/blowfish" */>}}
+```
+
+{{< github repo="nunocoracao/blowfish" >}}
