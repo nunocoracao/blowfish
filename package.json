@@ -37,6 +37,7 @@
     "@tailwindcss/typography": "^0.5.9",
     "chart.js": "^4.1.2",
     "fuse.js": "^6.6.2",
+    "jquery": "^3.6.3",
     "katex": "^0.16.4",
     "mermaid": "^9.3.0",
     "prettier": "^2.8.2",
@@ -80,6 +81,10 @@
     {
       "from": "node_modules/typeit/dist/index.umd.js",
       "to": "assets/lib/typeit/typeit.umd.js"
+    },
+    {
+      "from": "node_modules/jquery/dist/jquery.slim.min.js",
+      "to": "assets/lib/jquery/jquery.slim.min.js"
     }
   ],
   "dependencies": {
