@@ -16,52 +16,6 @@
   weight = 10
 
 [[main]]
-  name = "Nested Menu"
-  pageRef = "samples"
-  weight = 20
-
-[[main]]
-  name = "sub-menu 1"
-  parent = "Nested Menu"
-  pageRef = "samples"
-  weight = 20
-
-[[main]]
-  name = "sub-menu 2"
-  parent = "Nested Menu"
-  pageRef = "samples"
-  weight = 20
-
-[[main]]
-  name = "sub-menu 3"
-  parent = "Nested Menu"
-  pre = "github"
-  pageRef = "samples"
-  weight = 20
-
-[[subnavigation]]
-  name = "An interesting topic"
-  pageRef = "tags/interesting-topic"
-  weight = 10
-
-[[subnavigation]]
-  name = "My Awesome Category"
-  pre = "github"
-  pageRef = "categories/awesome"
-  weight = 20
-
-[[subnavigation]]
-  name = "YOLO"
-  pageRef = "categories/awesome"
-  weight = 20
-
-[[subnavigation]]
-  name = "My Awesome Category asd"
-  pre = "twitter"
-  pageRef = "categories/awesome"
-  weight = 20
-
-[[main]]
   name = "Samples"
   pageRef = "samples"
   weight = 20
