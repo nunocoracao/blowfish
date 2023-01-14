@@ -40,6 +40,7 @@ The full list of built-in icons and their corresponding names can referenced bel
 | facebook             | {{< icon facebook >}}             |
 | fire                 | {{< icon fire >}}                 |
 | flickr               | {{< icon flickr >}}               |
+| fork                 | {{< icon fork >}}                 |
 | foursquare           | {{< icon foursquare >}}           |
 | ghost                | {{< icon ghost >}}                |
 | github               | {{< icon github >}}               |
@@ -87,6 +88,7 @@ The full list of built-in icons and their corresponding names can referenced bel
 | snapchat             | {{< icon snapchat >}}             |
 | soundcloud           | {{< icon soundcloud >}}           |
 | stack-overflow       | {{< icon stack-overflow >}}       |
+| star                 | {{< icon star >}}                 |
 | steam                | {{< icon steam >}}                |
 | stripe               | {{< icon stripe >}}               |
 | sun                  | {{< icon sun >}}                  |

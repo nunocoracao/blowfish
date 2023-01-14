@@ -684,11 +684,6 @@ select {
   max-width: 65ch;
 }
 
-.prose :where(p):not(:where([class~="not-prose"] *)) {
-  margin-top: 1.25em;
-  margin-bottom: 1.25em;
-}
-
 .prose :where([class~="lead"]):not(:where([class~="not-prose"] *)) {
   color: var(--tw-prose-lead);
   font-size: 1.25em;
@@ -1056,6 +1051,11 @@ select {
   line-height: 1.75;
 }
 
+.prose :where(p):not(:where([class~="not-prose"] *)) {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
 .prose :where(video):not(:where([class~="not-prose"] *)) {
   margin-top: 2em;
   margin-bottom: 2em;
@@ -1271,12 +1271,12 @@ select {
   margin: 0.25rem;
 }
 
-.m-2 {
-  margin: 0.5rem;
-}
-
 .m-0 {
   margin: 0px;
+}
+
+.m-2 {
+  margin: 0.5rem;
 }
 
 .-mx-2 {
@@ -1409,6 +1409,14 @@ select {
   margin-bottom: 2.5rem;
 }
 
+.mr-1 {
+  margin-right: 0.25rem;
+}
+
+.mr-5 {
+  margin-right: 1.25rem;
+}
+
 .\!mb-9 {
   margin-bottom: 2.25rem !important;
 }
@@ -1485,6 +1493,10 @@ select {
   height: 2rem;
 }
 
+.h-3 {
+  height: 0.75rem;
+}
+
 .h-full {
   height: 100%;
 }
@@ -1543,6 +1555,10 @@ select {
 
 .w-8 {
   width: 2rem;
+}
+
+.w-3 {
+  width: 0.75rem;
 }
 
 .w-6 {
@@ -1891,6 +1907,10 @@ select {
 
 .p-1 {
   padding: 0.25rem;
+}
+
+.p-5 {
+  padding: 1.25rem;
 }
 
 .p-0 {
