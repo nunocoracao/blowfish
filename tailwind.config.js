@@ -138,9 +138,9 @@ module.exports = {
             },
             'a.active': {
               "text-decoration-color": theme("colors.primary.600 / 1"),
-              "text-decoration-line": "underline",
-              "text-decoration-thickness": "3px",
-              "text-underline-offset": "4px"
+            },
+            'p.active': {
+              "text-decoration-color": theme("colors.primary.600 / 1"),
             }
           },
         },
@@ -160,6 +160,9 @@ module.exports = {
               backgroundColor: theme("colors.neutral.700 / 1"),
             },
             'a.active': {
+              "text-decoration-color": theme("colors.primary.400 / 1")
+            },
+            'p.active': {
               "text-decoration-color": theme("colors.primary.400 / 1")
             }
           },
