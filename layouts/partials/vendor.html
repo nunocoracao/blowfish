@@ -40,6 +40,5 @@
 {{/* TypeIt */}}
 {{ if .Page.HasShortcode "typeit" }}
 {{ $typeitLib := resources.Get "lib/typeit/typeit.umd.js" }}
-<script defer src="{{ $typeitLib.RelPermalink }}" integrity="{{ $typeitLib.Data.Integrity }}"
-  onload="renderTypeItElements();"></script>
+<script defer src="{{ $typeitLib.RelPermalink }}" integrity="{{ $typeitLib.Data.Integrity }}"></script>
 {{ end }}
