@@ -23,7 +23,7 @@
 
 
         </nav>
-        <nav class="site-header-menu-main hidden md:flex items-center space-x-5 md:ml-12">
+        <nav class="hidden md:flex items-center space-x-5 md:ml-12">
 
             {{ if .Site.Menus.main }}
             {{ range .Site.Menus.main }}
@@ -35,7 +35,7 @@
 
             {{ if .Site.Params.enableSearch | default false }}
             <button id="search-button" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
-                title="{{ i18n "search.open_button_title" }}">
+                title="{{ i18n " search.open_button_title" }}">
                 {{ partial "icon.html" "search" }}
             </button>
             {{ end }}
@@ -65,7 +65,7 @@
 
             {{ if .Site.Params.enableSearch | default false }}
             <button id="search-button-mobile" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
-                title="{{ i18n "search.open_button_title" }}">
+                title="{{ i18n " search.open_button_title" }}">
                 {{ partial "icon.html" "search" }}
             </button>
             {{ end }}
@@ -94,8 +94,8 @@
             <div id="menu-wrapper" style="padding-top:5px;"
                 class="fixed inset-0 z-30 invisible w-screen h-screen m-auto overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50">
                 <ul
-                    class="flex movedown flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
-                    
+                    class="flex mt-4 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
+
                     <li>
                         <span
                             class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">{{
@@ -106,14 +106,60 @@
 
                     {{ if .Site.Menus.main }}
                     {{ range .Site.Menus.main }}
-                    
+
                     {{ partial "header/header-mobile-option.html" . }}
 
                     {{ end }}
                     {{ end }}
 
                 </ul>
+                {{ if .Site.Menus.subnavigation }}
+
+                <hr>
+                <ul
+                    class="flex mt-4 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
+
+
+                    {{ range .Site.Menus.subnavigation }}
+                    <li class="mb-1">
+                        <a href="{{ .URL }}" {{ if or (strings.HasPrefix .URL "http:" ) (strings.HasPrefix .URL "https:"
+                            ) }} target="_blank" {{ end }} class="flex items-center">
+                            {{ if .Pre }}
+                            <span {{ if and .Pre .Name}} class="mr-3" {{ end }}>
+                                {{ partial "icon.html" .Pre }}
+                            </span>
+                            {{ end }}
+                            <p class="text-sm font-sm text-gray-500 hover:text-gray-900" title="{{ .Title }}">
+                                {{ .Name | markdownify | emojify }}
+                            </p>
+                        </a>
+                    </li>
+                    {{ end }}
+
+                </ul>
+                {{ end }}
+
             </div>
         </label>
     </div>
 </div>
+
+{{ if .Site.Menus.subnavigation }}
+<div class="flex pb-3 flex-col items-end justify-between md:justify-start space-x-3" style="margin-top:-15px">
+    <div class="hidden md:flex items-center space-x-5">
+        {{ range .Site.Menus.subnavigation }}
+        <a href="{{ .URL }}" {{ if or (strings.HasPrefix .URL "http:" ) (strings.HasPrefix .URL "https:" ) }}
+            target="_blank" {{ end }} class="flex items-center">
+            {{ if .Pre }}
+            <span {{ if and .Pre .Name}} class="mr-1" {{ end }}>
+                {{ partial "icon.html" .Pre }}
+            </span>
+            {{ end }}
+            <p class="text-xs font-light text-gray-500 hover:text-gray-900" title="{{ .Title }}">
+                {{ .Name | markdownify | emojify }}
+            </p>
+        </a>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
