@@ -136,6 +136,12 @@ module.exports = {
             'p::after': {
               display: 'none'
             },
+            'a.active': {
+              "text-decoration-color": theme("colors.primary.600 / 1"),
+              "text-decoration-line": "underline",
+              "text-decoration-thickness": "3px",
+              "text-underline-offset": "4px"
+            }
           },
         },
         invert: {
@@ -153,6 +159,9 @@ module.exports = {
             code:{
               backgroundColor: theme("colors.neutral.700 / 1"),
             },
+            'a.active': {
+              "text-decoration-color": theme("colors.primary.400 / 1")
+            }
           },
         },
       }),
