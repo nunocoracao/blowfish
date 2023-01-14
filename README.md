@@ -33,6 +33,9 @@ Blowfish is designed to be a powerful, lightweight theme for [Hugo](https://gohu
 - Support for multiple authors
 - Support for series of articles
 - Flexible with any content types, taxonomies and menus
+- Support for header and footer menus
+- Support for nested menus
+- Support for sub-navigation menu
 - Multilingual content support inlcuding support for RTL languages
 - Ability to link to posts on third-party websites
 - Buymeacoffee integration

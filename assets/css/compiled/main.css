@@ -1433,6 +1433,10 @@ select {
   margin-right: -0.5rem;
 }
 
+.mr-1 {
+  margin-right: 0.25rem;
+}
+
 .ml-auto {
   margin-left: auto;
 }
@@ -1673,6 +1677,10 @@ select {
   flex-wrap: wrap;
 }
 
+.items-end {
+  align-items: flex-end;
+}
+
 .items-center {
   align-items: center;
 }
@@ -1705,6 +1713,18 @@ select {
   --tw-space-x-reverse: 0;
   margin-right: calc(1.25rem * var(--tw-space-x-reverse));
   margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
+.space-y-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
 }
 
 .place-self-center {
@@ -2021,12 +2041,20 @@ select {
   padding-left: 0.5rem;
 }
 
+.pb-3 {
+  padding-bottom: 0.75rem;
+}
+
 .pl-\[24px\] {
   padding-left: 24px;
 }
 
 .pr-\[24px\] {
   padding-right: 24px;
+}
+
+.pt-2 {
+  padding-top: 0.5rem;
 }
 
 .pt-16 {
@@ -2114,6 +2142,10 @@ select {
 
 .font-medium {
   font-weight: 500;
+}
+
+.font-light {
+  font-weight: 300;
 }
 
 .uppercase {
@@ -3033,6 +3065,25 @@ body:has(#menu-controller:checked) {
   z-index: 100;
 }
 
+.nested-menu:hover + .menuhide {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.3s, opacity 0.3s ease-in-out ;
+}
+
+.menuhide:hover {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.3s, opacity 0.3s ease-in-out ;
+}
+
+.menuhide {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s ease-in-out ;
+  z-index: 1000;
+}
+
 .first\:mt-8:first-child {
   margin-top: 2rem;
 }
@@ -3513,18 +3564,9 @@ body:has(#menu-controller:checked) {
     padding-right: 1.5rem;
   }
 
-  .sm\:py-10 {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-  }
-
   .sm\:py-24 {
     padding-top: 6rem;
     padding-bottom: 6rem;
-  }
-
-  .sm\:pt-10 {
-    padding-top: 2.5rem;
   }
 
   .sm\:pl-6 {

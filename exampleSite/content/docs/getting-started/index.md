@@ -195,6 +195,57 @@ Menu links will be sorted from lowest to highest `weight`, and then alphabetical
 
 Both menus are completely optional and can be commented out if not required. Use the template provided in the file as a guide.
 
+### Nested menus
+
+The theme also supports nested menus. In order to use them you just need to define a parent entry in `menu.toml` and its sub-menus using the `parent` parameter to reference the parent. All properties can be used for sub-menus. Note that `pageRef` and `url` will be ignored for the parent entry. Nested menus is only available in the main menu not for the footer.
+
+```toml
+# config/_default/menus.toml
+
+[[main]]
+  name = "Parent"
+  weight = 20
+
+[[main]]
+  name = "sub-menu 1"
+  parent = "Parent"
+  pageRef = "samples"
+  weight = 20
+
+[[main]]
+  name = "sub-menu 2"
+  parent = "Parent"
+  pageRef = "samples"
+  weight = 20
+
+[[main]]
+  name = "sub-menu 3"
+  parent = "Parent"
+  pre = "github"
+  pageRef = "samples"
+  weight = 20
+```
+
+### Sub-Navigation menu
+
+Additionally, you can also configure a sub-navigation menu. Just define new menu entries as `subnavigation` in `menu.toml`. This will render a second line with caregories below the main header menu.
+
+```toml
+# config/_default/menus.toml
+
+[[subnavigation]]
+  name = "An interesting topic"
+  pageRef = "tags/interesting-topic"
+  weight = 10
+
+[[subnavigation]]
+  name = "My Awesome Category"
+  pageRef = "categories/awesome"
+  weight = 20
+```
+
+
+
 ## Thumbnails & Backgrounds
 
 Blowfish was built so it would be easy to add visual support to your articles. If your familiar with Hugo article strucutre, you just need to place an image file (almost all formats are supported bue we recommend `.png` or `.jpg`) that starts with `feature*` inside your article folder. And that's it, Blowfish will then able to both use the image as a thumbnail within your website as well as for <a target="_blank" href="https://oembed.com/">oEmbed</a> cards across social platforms. 
