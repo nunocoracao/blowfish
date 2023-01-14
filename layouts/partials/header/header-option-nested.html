@@ -32,38 +32,3 @@
     </div>
   </div>
 </div>
-
-
-
-<!--div class="relative">
-  <button
-    type="button"
-    class="header-toggle-nested-menu-button text-base hover:text-primary-600 dark:hover:text-primary-400"
-    aria-expanded="true"
-    onclick="header_toggle_nested_menu(this)"
-  >
-    <div class="hidden md:flex items-center">
-      <span>
-          {{ partial "icon.html" .Pre }}
-          {{ if and .Pre .Name }} &nbsp; {{ end }}
-          {{ .Name | markdownify | emojify }}
-        </span>
-      {{ partial "icon.html" "chevron-down" }}
-    </div>
-  </button>
-  <div
-    class="hidden header-nested-menu absolute z-10 px-2 "
-  >
-    <div
-      class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5"
-    >
-      <div
-        class="md:flex flex-col"
-      >
-        {{ range .Children }}
-          {{ partial "header/header-option.html" . }}
-        {{ end }}
-      </div>
-    </div>
-  </div>
-</div-->
