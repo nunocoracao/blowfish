@@ -1,0 +1,38 @@
+
+{{- $githubData := getJSON (print "https://api.github.com/repos/" (.Get "repo")) -}}
+{{- $githubColors := .Site.Data.githubColors -}}
+{{- with $githubData -}}
+
+<a>
+<div class="w-full md:w-auto border border-neutral-200 dark:border-neutral-700 border-2 rounded-md backdrop-blur">
+  <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+    <span>{{  partial "icon.html" "github" }} </span>
+    {{ .full_name | emojify }}
+  </div>
+</div>
+</a>
+
+
+
+<!--div class="github my-4 rounded border p-4 dark:border-darkBorder">
+  <div class="flex items-center text-xl">
+      <i class="eva eva-github mr-2"></i>
+      <a class="after:hidden" href="{{- .html_url -}}" target="_blank">{{- .full_name -}}</a>
+  </div>
+  <div class="my-2 leading-6">{{- .description -}}</div>
+  <div class="flex items-center">
+      <div class="mr-4 inline-flex items-center">
+          <span class="mr-1 inline-block h-3 w-3 rounded-full" style="background-color: {{- index $githubColors .language -}}"></span>
+          <span>{{- .language -}}</span>
+      </div>
+      <div class="mr-4 inline-flex items-center">
+          <i class="eva eva-star mr-1 text-amber-400"></i>
+          <span>{{- .stargazers_count -}}</span>
+      </div>
+      <div class="inline-flex items-center">
+          <i class="eva eva-shuffle-2 mr-1 text-blue-500"></i>
+          <span>{{- .forks -}}</span>
+      </div>
+  </div>
+</div-->
+{{- end -}}
