@@ -46,7 +46,7 @@
         <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
         {{ end }}
       {{ else }}
-        {{ with .Fill "600x400"  }}
+        {{ with .Resize "600x"  }}
         <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
         {{ end }}
       {{ end }}

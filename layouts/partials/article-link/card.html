@@ -19,7 +19,7 @@
         <div class="w-full thumbnail_card nozoom" style="background-image:url({{ .RelPermalink }});"></div>
         {{ end }}
       {{ else }}
-        {{ with .Fill "600x600"  }}
+        {{ with .Resize "600x" }}
         <div class="w-full thumbnail_card nozoom" style="background-image:url({{ .RelPermalink }});"></div>
         {{ end }}
       {{ end }}
