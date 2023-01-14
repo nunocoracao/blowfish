@@ -197,36 +197,33 @@ Both menus are completely optional and can be commented out if not required. Use
 
 ### Nested Menus
 
-bla bla bla
+The theme also supports nested menus. In order to use them you just need to define a parent entry in `menu.toml` and its sub-menus using the `parent` parameter to reference the parent. All properties can be used for sub-menus. Note that `pageRef` and `url` will be ignored for the parent entry. Nested menus is only available in the main menu not for the footer.
 
 ```toml
 # config/_default/menus.toml
 
 [[main]]
-  name = "Blog"
-  pageRef = "posts"
-  weight = 10
-
-[[main]]
-  name = "Topics"
-  pageRef = "topics"
+  name = "Parent"
   weight = 20
 
 [[main]]
-  pre = "github"
-  name = "GitHub"
-  url = "https://github.com/nunocoracao/blowfish"
-  weight = 30
+  name = "sub-menu 1"
+  parent = "Parent"
+  pageRef = "samples"
+  weight = 20
 
 [[main]]
-  identifier = "github2"
-  pre = "github"
-  url = "https://github.com/nunocoracao/blowfish"
-  weight = 40
+  name = "sub-menu 2"
+  parent = "Parent"
+  pageRef = "samples"
+  weight = 20
 
-[[footer]]
-  name = "Privacy"
-  url = "https://external-link"
+[[main]]
+  name = "sub-menu 3"
+  parent = "Parent"
+  pre = "github"
+  pageRef = "samples"
+  weight = 20
 ```
 
 ## Thumbnails & Backgrounds

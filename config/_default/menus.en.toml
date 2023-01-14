@@ -16,6 +16,22 @@
 #  weight = 10
 
 #[[main]]
+#  name = "Parent"
+#  weight = 20
+
+#[[main]]
+#  name = "example sub-menu 1"
+#  parent = "Parent"
+#  pageRef = "posts"
+#  weight = 20
+
+#[[main]]
+#  name = "example sub-menu 2"
+#  parent = "Parent"
+#  pageRef = "posts"
+#  weight = 20
+
+#[[main]]
 #  name = "Categories"
 #  pageRef = "categories"
 #  weight = 20

@@ -16,25 +16,26 @@
   weight = 10
 
 [[main]]
-  name = "Parent"
+  name = "Nested Menu"
   pageRef = "samples"
   weight = 20
 
 [[main]]
-  name = "test1"
-  parent = "Parent"
+  name = "sub-menu 1"
+  parent = "Nested Menu"
   pageRef = "samples"
   weight = 20
 
 [[main]]
-  name = "test2"
-  parent = "Parent"
+  name = "sub-menu 2"
+  parent = "Nested Menu"
   pageRef = "samples"
   weight = 20
 
 [[main]]
-  name = "test3"
-  parent = "Parent"
+  name = "sub-menu 3"
+  parent = "Nested Menu"
+  pre = "github"
   pageRef = "samples"
   weight = 20
 
