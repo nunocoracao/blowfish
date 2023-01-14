@@ -38,12 +38,12 @@ Hugo has various builtin methods to resize, crop and optimize images.
 As an example - in `layouts/partials/article-link/card.html`, you have the following code:
 
 ```go
-{{ with .Fill "600x600" }}
+{{ with .Resize "600x" }}
 <div class="w-full thumbnail_card nozoom" style="background-image:url({{ .RelPermalink }});"></div>
 {{ end }}
 ```
 
-The default behavior of Hugo here is to use Smartcrop to dynamically set the anchor point (crop placement) on the image and resize it to fill 600x600px.
+The default behavior of Hugo here is to resize the image to 600px keeping the ratio.
 
 It is worth noting here that default image configurations such as [anchor point](https://gohugo.io/content-management/image-processing/#anchor) can also be set in your [site configuration](https://gohugo.io/content-management/image-processing/#processing-options) as well as in the template itself.
 
