@@ -1,6 +1,6 @@
 <div style="padding-left:0;padding-right:0;padding-top:2px;padding-bottom:3px"
     class="flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start space-x-3">
-    {{ if .Site.Params.Logo -}}
+    {{ if .Site.Params.Logo }}
     {{ $logo := resources.Get .Site.Params.Logo }}
     {{ if $logo }}
     <div>
@@ -145,7 +145,7 @@
 </div>
 
 {{ if .Site.Menus.subnavigation }}
-<div class="flex pb-3 flex-col items-end justify-between md:justify-start space-x-3" style="margin-top:-15px">
+<div class="flex pb-3 flex-col items-end justify-between md:justify-start space-x-3" {{ if .Site.Params.Logo }} style="margin-top:-15px" {{ end }}>
     <div class="hidden md:flex items-center space-x-5">
         {{ range .Site.Menus.subnavigation }}
         <a href="{{ .URL }}" {{ if or (strings.HasPrefix .URL "http:" ) (strings.HasPrefix .URL "https:" ) }}
