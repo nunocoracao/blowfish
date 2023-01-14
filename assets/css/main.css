@@ -441,3 +441,9 @@ body:has(#menu-controller:checked) {
   transition: visibility 0.3s, opacity 0.3s ease-in-out ;
   z-index: 1000;
 }
+
+.active {
+  text-decoration-line: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+}

@@ -1177,12 +1177,17 @@ select {
 
 .prose :where(a.active):not(:where([class~="not-prose"] *)) {
   text-decoration-color: rgba(var(--color-primary-600), 1);
-  text-decoration-line: underline;
-  text-decoration-thickness: 3px;
-  text-underline-offset: 4px;
+}
+
+.prose :where(p.active):not(:where([class~="not-prose"] *)) {
+  text-decoration-color: rgba(var(--color-primary-600), 1);
 }
 
 .prose-invert :where(a.active):not(:where([class~="not-prose"] *)) {
+  text-decoration-color: rgba(var(--color-primary-400), 1);
+}
+
+.prose-invert :where(p.active):not(:where([class~="not-prose"] *)) {
   text-decoration-color: rgba(var(--color-primary-400), 1);
 }
 
@@ -3091,6 +3096,12 @@ body:has(#menu-controller:checked) {
   z-index: 1000;
 }
 
+.active {
+  text-decoration-line: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+}
+
 .first\:mt-8:first-child {
   margin-top: 2rem;
 }
@@ -3434,6 +3445,10 @@ body:has(#menu-controller:checked) {
 }
 
 .dark .dark\:prose-invert :where(a.active):not(:where([class~="not-prose"] *)) {
+  text-decoration-color: rgba(var(--color-primary-400), 1);
+}
+
+.dark .dark\:prose-invert :where(p.active):not(:where([class~="not-prose"] *)) {
   text-decoration-color: rgba(var(--color-primary-400), 1);
 }
 
