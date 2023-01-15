@@ -1,5 +1,5 @@
 ---
-title: "Guides"
+title: "Recipes"
 description: "Recipes, guides, and tutorials for Blowfish"
 
 cascade:

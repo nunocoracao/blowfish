@@ -20,7 +20,7 @@
   weight = 20
 
 [[main]]
-  name = "Guides"
+  name = "Recipes"
   parent = "Examples"
   pageRef = "guides"
   weight = 10

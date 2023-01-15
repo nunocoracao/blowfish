@@ -1,8 +1,8 @@
 ---
-title: "Guide Template"
+title: "Recipe Template"
 date: 1987-12-22
 draft: false
-description: "Template for creating a guide"
+description: "Template for creating a recipe for Blowfish theme"
 tags: ["template"]
 ---
 
