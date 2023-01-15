@@ -419,7 +419,31 @@ body:has(#menu-controller:checked) {
   }
 }
 
-
 .medium-zoom-image--opened {
-    z-index: 100;
+  z-index: 100;
+}
+
+.nested-menu:hover + .menuhide {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.3s, opacity 0.3s ease-in-out ;
+}
+
+.menuhide:hover {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.3s, opacity 0.3s ease-in-out ;
+}
+
+.menuhide {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s ease-in-out ;
+  z-index: 1000;
+}
+
+.active {
+  text-decoration-line: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
 }

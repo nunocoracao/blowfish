@@ -17,7 +17,11 @@ mainSections = ["docs"]
 
 disableImageOptimization = true
 
-defaultBackgroundImage = "/img/iceland.jpg"
+defaultBackgroundImage = "/img/bg.jpg"
+
+highlightCurrentMenuArea = true
+smartTOC = true
+smartTOCHideUnfocusedChildren = false
 
 [header]
   layout = "fixed" # valid options: basic, fixed
@@ -31,7 +35,7 @@ defaultBackgroundImage = "/img/iceland.jpg"
 
 [homepage]
   layout = "custom" # valid options: page, profile, hero, card, background, custom
-  homepageImage = "/img/iceland.jpg" # used in: hero, and card
+  # homepageImage = "/img/iceland.jpg" # used in: hero, and card
   showRecent = false
   showRecentItems = 10
   showMoreLink = true
@@ -76,7 +80,7 @@ defaultBackgroundImage = "/img/iceland.jpg"
   showViews = true
   showLikes = true
   showTableOfContents = true
-  showCards = false
+  showCards = true
   groupByYear = false
   cardView = true
   cardViewScreenWidth = false

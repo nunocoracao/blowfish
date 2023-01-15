@@ -1,0 +1,5 @@
+{{ if .HasChildren }} 
+  {{ partial "header/header-mobile-option-nested.html" . }}
+{{ else }}
+  {{ partial "header/header-mobile-option-simple.html" . }}
+{{ end }}

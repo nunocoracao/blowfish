@@ -19,6 +19,10 @@ enableCodeCopy = true
 
 # defaultBackgroundImage = "IMAGE.jpg" # used as default for background images 
 
+# highlightCurrentMenuArea = true
+# smartTOC = true
+# smartTOCHideUnfocusedChildren = true
+
 [header]
   layout = "basic" # valid options: basic, fixed
 

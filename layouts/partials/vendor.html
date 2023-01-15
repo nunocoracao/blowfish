@@ -1,3 +1,7 @@
+{{/* jQuery */}}
+{{ $jqueryLib := resources.Get "lib/jquery/jquery.slim.min.js" }}
+<script src="{{ $jqueryLib.RelPermalink }}" integrity="{{ $jqueryLib.Data.Integrity }}"></script>
+
 {{/* Mermaid */}}
 {{ if .Page.HasShortcode "mermaid" }}
 {{ $mermaidLib := resources.Get "lib/mermaid/mermaid.min.js" }}
@@ -40,6 +44,5 @@
 {{/* TypeIt */}}
 {{ if .Page.HasShortcode "typeit" }}
 {{ $typeitLib := resources.Get "lib/typeit/typeit.umd.js" }}
-<script defer src="{{ $typeitLib.RelPermalink }}" integrity="{{ $typeitLib.Data.Integrity }}"
-  onload="renderTypeItElements();"></script>
+<script defer src="{{ $typeitLib.RelPermalink }}" integrity="{{ $typeitLib.Data.Integrity }}"></script>
 {{ end }}

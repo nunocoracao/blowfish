@@ -1,6 +1,6 @@
 {
   "name": "hugo-blowfish-theme",
-  "version": "2.24.0",
+  "version": "2.25.0",
   "description": "Blowfish theme for Hugo",
   "scripts": {
     "fullinstall": "npm run preinstall && npm install && npm run postinstall",
@@ -34,15 +34,16 @@
   },
   "homepage": "https://github.com/nunocoracao/blowfish#readme",
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.8",
+    "@tailwindcss/typography": "^0.5.9",
     "chart.js": "^4.1.2",
     "fuse.js": "^6.6.2",
+    "jquery": "^3.6.3",
     "katex": "^0.16.4",
     "mermaid": "^9.3.0",
-    "prettier": "^2.8.1",
+    "prettier": "^2.8.2",
     "prettier-plugin-go-template": "^0.0.13",
     "prettier-plugin-tailwindcss": "^0.2.1",
-    "rimraf": "^3.0.2",
+    "rimraf": "^4.0.4",
     "tailwindcss": "^3.2.4",
     "typeit": "^8.7.1",
     "vendor-copy": "^3.0.1"
@@ -80,12 +81,16 @@
     {
       "from": "node_modules/typeit/dist/index.umd.js",
       "to": "assets/lib/typeit/typeit.umd.js"
+    },
+    {
+      "from": "node_modules/jquery/dist/jquery.slim.min.js",
+      "to": "assets/lib/jquery/jquery.slim.min.js"
     }
   ],
   "dependencies": {
     "@headlessui/react": "^1.7.7",
     "@heroicons/react": "^2.0.13",
     "@tailwindcss/forms": "^0.5.3",
-    "commander": "^9.4.1"
+    "commander": "^9.5.0"
   }
 }

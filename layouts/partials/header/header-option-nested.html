@@ -1,0 +1,34 @@
+<div>
+  <div class="cursor-pointer flex items-center nested-menu">
+    {{ if .Pre }}
+    <span {{ if and .Pre .Name}} class="mr-1" {{ end }}>
+      {{ partial "icon.html" .Pre }}
+    </span>
+    {{ end }}
+    <a class="text-base font-medium text-gray-500 hover:text-gray-900" title="{{ .Title }}">
+      {{ .Name | markdownify | emojify }}
+    </a>
+    <span>
+      {{ partial "icon.html" "chevron-down" }}
+    </span>
+  </div>
+  <div class="absolute menuhide">
+    <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
+      <div class="flex flex-col space-y-3">
+        {{ range .Children }}
+        <a href="{{ .URL }}" {{ if or (strings.HasPrefix .URL "http:" ) (strings.HasPrefix .URL "https:" ) }}
+          target="_blank" {{ end }} class="flex items-center">
+          {{ if .Pre }}
+          <span {{ if and .Pre .Name}} class="mr-1" {{ end }}>
+            {{ partial "icon.html" .Pre }}
+          </span>
+          {{ end }}
+          <p class="text-sm font-sm text-gray-500 hover:text-gray-900" title="{{ .Title }}">
+            {{ .Name | markdownify | emojify }}
+          </p>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<li class="mt-1">
+    <a class="flex items-center">
+        {{ if .Pre }}
+        <span {{ if and .Pre .Name}} class="mr-1" {{ end }}>
+            {{ partial "icon.html" .Pre }}
+        </span>
+        {{ end }}
+        <p class="text-bg font-bg text-gray-500 hover:text-gray-900" title="{{ .Title }}">
+            {{ .Name | markdownify | emojify }}
+        </p>
+        <span>
+            {{ partial "icon.html" "chevron-down" }}
+        </span>
+    </a>
+</li>
+{{ range .Children }}
+<li class="mt-1">
+    <a href="{{ .URL }}" {{ if or (strings.HasPrefix .URL "http:" ) (strings.HasPrefix .URL "https:"
+        ) }} target="_blank" {{ end }} class="flex items-center">
+        {{ if .Pre }}
+        <span {{ if and .Pre .Name}} class="mr-1" {{ end }}>
+            {{ partial "icon.html" .Pre }}
+        </span>
+        {{ end }}
+        <p class="text-sm font-small text-gray-500 hover:text-gray-900" title="{{ .Title }}">
+            {{ .Name | markdownify | emojify }}
+        </p>
+    </a>
+</li>
+{{ end }}
+<li class="mb-2"></li>
