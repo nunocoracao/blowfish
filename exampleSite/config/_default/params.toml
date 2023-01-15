@@ -17,7 +17,7 @@ mainSections = ["docs"]
 
 disableImageOptimization = true
 
-defaultBackgroundImage = "/img/paint.png"
+defaultBackgroundImage = "/img/bg.jpg"
 
 highlightCurrentMenuArea = true
 smartTOC = true

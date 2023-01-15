@@ -1906,6 +1906,10 @@ select {
   --tw-gradient-to: transparent;
 }
 
+.to-neutral-100 {
+  --tw-gradient-to: rgba(var(--color-neutral-100), 1);
+}
+
 .to-neutral {
   --tw-gradient-to: rgba(var(--color-neutral), 1);
 }
@@ -2266,8 +2270,8 @@ select {
   opacity: 0;
 }
 
-.opacity-70 {
-  opacity: 0.7;
+.opacity-60 {
+  opacity: 0.6;
 }
 
 .opacity-30 {
