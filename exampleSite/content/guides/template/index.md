@@ -1,6 +1,6 @@
 ---
 title: "Guide Template"
-date: 2222-12-22
+date: 1987-12-22
 draft: false
 description: "Template for creating a guide"
 tags: ["template"]
