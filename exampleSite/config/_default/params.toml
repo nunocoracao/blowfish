@@ -17,7 +17,7 @@ mainSections = ["docs"]
 
 disableImageOptimization = true
 
-defaultBackgroundImage = "/img/iceland.jpg"
+defaultBackgroundImage = "/img/paint.png"
 
 highlightCurrentMenuArea = true
 smartTOC = true
@@ -35,7 +35,7 @@ smartTOCHideUnfocusedChildren = false
 
 [homepage]
   layout = "custom" # valid options: page, profile, hero, card, background, custom
-  homepageImage = "/img/iceland.jpg" # used in: hero, and card
+  # homepageImage = "/img/iceland.jpg" # used in: hero, and card
   showRecent = false
   showRecentItems = 10
   showMoreLink = true

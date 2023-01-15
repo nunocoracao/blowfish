@@ -16,12 +16,24 @@
   weight = 10
 
 [[main]]
+  name = "Examples"
+  weight = 20
+
+[[main]]
+  name = "Guides"
+  parent = "Examples"
+  pageRef = "guides"
+  weight = 10
+
+[[main]]
   name = "Samples"
+  parent = "Examples"
   pageRef = "samples"
   weight = 20
 
 [[main]]
   name = "Showcase"
+  parent = "Examples"
   pageRef = "examples"
   weight = 30
 

@@ -170,7 +170,6 @@
         var $mainmenu = $('.main-menu');
         var path = window.location.pathname;
         $mainmenu.find('a[href="' + path + '"]').each(function (i, e) {
-            console.log($(e).children('a'))
             $(e).children('p').addClass('active');
         });
     })();
