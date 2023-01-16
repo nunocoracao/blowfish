@@ -1,0 +1,36 @@
+<script src="https://unpkg.com/packery@2/dist/packery.pkgd.min.js"></script>
+
+<div class="grid">
+  {{ .Inner }}
+</div>
+
+<style>
+.grid-w10 { width: 10%;}
+.grid-w15 { width: 15%;}
+.grid-w20 { width: 20%;}
+.grid-w25 { width: 25%;}
+.grid-w30 { width: 30%;}
+.grid-w35 { width: 35%;}
+.grid-w40 { width: 40%;}
+.grid-w45 { width: 45%;}
+.grid-w50 { width: 50%;}
+.grid-w55 { width: 55%;}
+.grid-w60 { width: 60%;}
+.grid-w65 { width: 65%;}
+.grid-w70 { width: 70%;}
+.grid-w75 { width: 75%;}
+.grid-w80 { width: 80%;}
+.grid-w85 { width: 85%;}
+.grid-w90 { width: 90%;}
+.grid-w95 { width: 95%;}
+.grid-w100 { width: 100%;}
+</style>
+
+<script>
+var elem = document.querySelector('.grid');
+var pckry = new Packery( elem, {
+  // options
+  itemSelector: '.grid-item',
+  gutter: 10
+});
+</script>
