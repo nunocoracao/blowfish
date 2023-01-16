@@ -389,3 +389,30 @@ Blowfish implements a sub-set of TypeIt features using a `shortcode`. Write your
 ```
 
 {{< github repo="nunocoracao/blowfish" >}}
+
+## Swiper
+
+`swiper` is used to showcase multiple images in a limited space, in an interactive and visually appealing way. It provides a standar swiper/slider/carousel feature, allowing the user to slide through multiple images while only taking up the vertical space of a single one.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description              |
+| --------- | ------------------------ |
+| `id`      | [String] A unique identifier so that multiple sliders can work in the same page |
+| `pattern` | [String] Go glob to match image names |
+<!-- prettier-ignore-end -->
+
+{{< alert "circle-info" >}}
+It doesn't really matter the value set for the slider `id` as long as each slider in a given page has a unique identifier.
+{{< /alert >}}
+<br>
+{{< alert "circle-info" >}}
+A good resource for testing your go glob string is [this url](https://www.digitalocean.com/community/tools/glob?comments=true&glob=img%2F%7Biac%2Ck8s_all%7D.png&matches=false&tests=img%2Fiac.png&tests=img%2Fk8s_all.png)
+{{< /alert >}}
+
+**Example:**
+
+```md
+{{</* slider id="1" pattern="{abstract.jpg,featured.png} */>}}
+```
+
+{{< slider id="1" pattern="{abstract.jpg,featured.png}" >}}
