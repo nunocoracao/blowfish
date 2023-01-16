@@ -43,7 +43,7 @@
     "prettier": "^2.8.2",
     "prettier-plugin-go-template": "^0.0.13",
     "prettier-plugin-tailwindcss": "^0.2.1",
-    "rimraf": "^4.0.4",
+    "rimraf": "^4.0.7",
     "tailwindcss": "^3.2.4",
     "typeit": "^8.7.1",
     "vendor-copy": "^3.0.1"
