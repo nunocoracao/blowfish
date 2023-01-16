@@ -7,7 +7,7 @@
 <!-- Slider main container -->
 <div class="swiper swiper{{ $id }}">
   <!-- Additional required wrapper -->
-  <div class="swiper-wrapper">
+  <div class="swiper-wrapper items-center">
     <!-- Slides -->
     {{ range $images }}
     <div class="swiper-slide swiper-slide{{ $id }}">
@@ -22,27 +22,9 @@
   <div class="swiper-pagination swiper-pagination{{ $id }}"></div>
 
   <!-- navigation buttons -->
-  <div class="swiper-button-prev swiper-button-prev{{ $id }}"></div>
-  <div class="swiper-button-next swiper-button-next{{ $id }}"></div>
+  <div class="swiper-button-prev swiper-button-prev{{ $id }} hover:text-neutral"></div>
+  <div class="swiper-button-next swiper-button-next{{ $id }} hover:text-neutral"></div>
 </div>
-
-<style>
-.swiper-wrapper {
-  align-items: center;
-}
-
-.swiper-button-next:hover {
-  color:#fff;
-}
-
-.swiper-button-prev:hover {
-  color:#fff;
-}
-
-.swiper-pagination span{
-  background: #fff;
-}
-</style>
 
 <script>
   new Swiper('.swiper{{ $id }}', {
