@@ -167,6 +167,24 @@ Blowfish also supports automatic conversion of images included using standard Ma
 
 {{< figure src="abstract.jpg" alt="Abstract purple artwork" caption="Photo by [Jr Korpa](https://unsplash.com/@jrkorpa) on [Unsplash](https://unsplash.com/)" >}}
 
+## GitHub Card
+
+`github` allows you to quickly link a github repository, all while showing and updating in realtime stats about it, such as the number of stars and forks it has.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description              |
+| --------- | ------------------------ |
+| `repo`     | [String] github repo in the format of `username/repo` |
+<!-- prettier-ignore-end -->
+
+**Example 1:**
+
+```md
+{{</* github repo="nunocoracao/blowfish" */>}}
+```
+
+{{< github repo="nunocoracao/blowfish" >}}
+
 ## Icon
 
 `icon` outputs an SVG icon and takes the icon name as its only parameter. The icon is scaled to match the current text size.
@@ -184,45 +202,6 @@ Icons are populated using Hugo pipelines which makes them very flexible. Blowfis
 Custom icons can be added by providing your own icon assets in the `assets/icons/` directory of your project. The icon can then be referenced in the shortcode by using the SVG filename without the `.svg` extension.
 
 Icons can also be used in partials by calling the [icon partial]({{< ref "partials#icon" >}}).
-
-## List
-`List` will display a list of recent articles. This shortcode requires a limit value to constraint the list. Additionally, it supports a `where` and a `value` in order to filter articles by their parameters. Note that this shortcode will not display its parent page but it will count for the limit value.
-
-<!-- prettier-ignore-start -->
-| Parameter | Description                                             |
-| --------- | ------------------------------------------------------- |
-| `limit`   | **Required.** the number of recent articles to display. |
-| `where`   | the number of recent articles to display.               |
-| `value`   | the number of recent articles to display.               |
-
-<!-- prettier-ignore-end -->
-
-**Example #1:**
-```md
-{{</* list limit=2 */>}}
-```
-
-{{< list limit=2 >}}
-
-**Example #2:**
-```md
-{{</* list limit=2 where="Type" value="sample" */>}}
-```
-
-{{< list limit=2 where="Type" value="sample">}}
-
-
-## Swatches
-`swatches` outputs a set of up to three different colors to showcase color elements like a color palette. This shortcode takes the `HEX` codes of each color and creates the visual elements for each.
-
-**Example**
-```md
-{{</* swatches "#64748b" "#3b82f6" "#06b6d4" */>}}
-```
-
-**Output**
-{{< swatches "#64748b" "#3b82f6" "#06b6d4" >}}
-
 
 ## Katex
 
@@ -260,6 +239,33 @@ When life gives you lemons, make lemonade.
 When life gives you lemons, make lemonade.
 {{< /lead >}}
 
+## List
+`List` will display a list of recent articles. This shortcode requires a limit value to constraint the list. Additionally, it supports a `where` and a `value` in order to filter articles by their parameters. Note that this shortcode will not display its parent page but it will count for the limit value.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description                                             |
+| --------- | ------------------------------------------------------- |
+| `limit`   | **Required.** the number of recent articles to display. |
+| `where`   | the number of recent articles to display.               |
+| `value`   | the number of recent articles to display.               |
+
+<!-- prettier-ignore-end -->
+
+**Example #1:**
+```md
+{{</* list limit=2 */>}}
+```
+
+{{< list limit=2 >}}
+
+**Example #2:**
+```md
+{{</* list limit=2 where="Type" value="sample" */>}}
+```
+
+{{< list limit=2 where="Type" value="sample">}}
+
+
 ## Mermaid
 
 `mermaid` allows you to draw detailed diagrams and visualisations using text. It uses Mermaid under the hood and supports a wide variety of diagrams, charts and other output formats.
@@ -285,6 +291,18 @@ B-->C[Profit]
 {{< /mermaid >}}
 
 You can see some additional Mermaid examples on the [diagrams and flowcharts samples]({{< ref "diagrams-flowcharts" >}}) page.
+
+## Swatches
+`swatches` outputs a set of up to three different colors to showcase color elements like a color palette. This shortcode takes the `HEX` codes of each color and creates the visual elements for each.
+
+**Example**
+```md
+{{</* swatches "#64748b" "#3b82f6" "#06b6d4" */>}}
+```
+
+**Output**
+{{< swatches "#64748b" "#3b82f6" "#06b6d4" >}}
+
 
 ## TypeIt
 
@@ -366,29 +384,6 @@ consectetur adipiscing elit.
 "Toto, I've a feeling we're not in Kansas anymore." The Wizard of Oz (1939)
 {{< /typeit >}}
 
-
-## GitHub Card
-
-[TypeIt](https://www.typeitjs.com) is the most versatile JavaScript tool for creating typewriter effects on the planet. With a straightforward configuration, it allows you to type single or multiple strings that break lines, delete & replace each other, and it even handles strings that contain complex HTML. 
-
-Blowfish implements a sub-set of TypeIt features using a `shortcode`. Write your text within the `typeit` shortcode and use the following parameters to configure the behavior you want.
-
-<!-- prettier-ignore-start -->
-| Parameter | Description              |
-| --------- | ------------------------ |
-| `repor`     | [String] github repo in the format of `username/repo` |
-                                                                       
-<!-- prettier-ignore-end -->
-
-
-
-**Example 1:**
-
-```md
-{{</* github repo="nunocoracao/blowfish" */>}}
-```
-
-{{< github repo="nunocoracao/blowfish" >}}
 
 ## Swiper
 
