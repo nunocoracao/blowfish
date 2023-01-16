@@ -292,10 +292,6 @@ B-->C[Profit]
 
 You can see some additional Mermaid examples on the [diagrams and flowcharts samples]({{< ref "diagrams-flowcharts" >}}) page.
 
-## Screenshot
-
-TODO
-
 ## Swatches
 `swatches` outputs a set of up to three different colors to showcase color elements like a color palette. This shortcode takes the `HEX` codes of each color and creates the visual elements for each.
 
