@@ -167,6 +167,26 @@ Blowfish also supports automatic conversion of images included using standard Ma
 
 {{< figure src="abstract.jpg" alt="Abstract purple artwork" caption="Photo by [Jr Korpa](https://unsplash.com/@jrkorpa) on [Unsplash](https://unsplash.com/)" >}}
 
+## Gallery
+
+`gallery` allows you to showcase multiple images at once, in a responsive manner with more varied and interesting layouts.
+
+In order to add images to the gallery, proceed as you normally would with `{{< figure >}}` shortcodes, but made sure to add the extra `class="grid-item grid-wXY"` in order for the gallery to properly pick the images up. The widths available by default start at 10% and go all the way to 100% in 5% increments. For example, to set the width to 65%, set the class to `grid-w65`.
+
+**Example:**
+
+```md
+{{</* gallery */>}}
+  {{</* figure src="abstract.jpg" alt="Abstract purple artwork" caption="Photo by [Jr Korpa](https://unsplash.com/@jrkorpa) on [Unsplash](https://unsplash.com/)" class="grid-item grid-w15"*/>}}
+  {{</* figure src="featured.png" class="grid-item grid-w15"*/>}}
+{{</* /gallery */>}}
+```
+
+{{< gallery >}}
+  {{< figure src="abstract.jpg" alt="Abstract purple artwork" caption="Photo by [Jr Korpa](https://unsplash.com/@jrkorpa) on [Unsplash](https://unsplash.com/)" class="grid-item grid-w75">}}
+  {{< figure src="featured.png" class="grid-item grid-w15" >}}
+{{< /gallery >}}
+
 ## Icon
 
 `icon` outputs an SVG icon and takes the icon name as its only parameter. The icon is scaled to match the current text size.
