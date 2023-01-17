@@ -1,0 +1,18 @@
+{{ $time := now.UnixNano }}
+{{ $id := delimit (slice "gallery" $time) "-" }}
+
+<div id="{{ $id }}">
+  {{ .Inner }}
+</div>
+
+<script>
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var elem = document.querySelector('#{{ $id }}');
+    var pckry = new Packery(elem, {
+      percentPosition: true,
+      gutter: 5,
+      resize: true
+    });
+  });
+</script>
