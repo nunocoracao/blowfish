@@ -172,20 +172,30 @@ Blowfish also supports automatic conversion of images included using standard Ma
 
 `gallery` allows you to showcase multiple images at once, in a responsive manner with more varied and interesting layouts.
 
-In order to add images to the gallery, proceed as you normally would with `{{< figure >}}` shortcodes, but made sure to add the extra `class="grid-item grid-wXY"` in order for the gallery to properly pick the images up. The widths available by default start at 10% and go all the way to 100% in 5% increments. For example, to set the width to 65%, set the class to `grid-w65`.
+In order to add images to the gallery, use `img` tags for each image and add `class="grid-wXX"` in order for the gallery to be able to identify the column width for each image. The widths available by default start at 10% and go all the way to 100% in 5% increments. For example, to set the width to 65%, set the class to `grid-w65`. Additionally, widths for 33% and 66% are also available in order to build galleries with 3 cols.
 
 **Example:**
 
 ```md
 {{</* gallery */>}}
-  {{</* figure src="abstract.jpg" alt="Abstract purple artwork" caption="Photo by [Jr Korpa](https://unsplash.com/@jrkorpa) on [Unsplash](https://unsplash.com/)" class="grid-item grid-w15"*/>}}
-  {{</* figure src="featured.png" class="grid-item grid-w15"*/>}}
+  <img src="gallery/01.jpg" class="grid-w33" />
+  <img src="gallery/02.jpg" class="grid-w33" />
+  <img src="gallery/03.jpg" class="grid-w33" />
+  <img src="gallery/04.jpg" class="grid-w33" />
+  <img src="gallery/05.jpg" class="grid-w33" />
+  <img src="gallery/06.jpg" class="grid-w33" />
+  <img src="gallery/07.jpg" class="grid-w33" />
 {{</* /gallery */>}}
 ```
 
 {{< gallery >}}
-  {{< figure src="abstract.jpg" alt="Abstract purple artwork" caption="Photo by [Jr Korpa](https://unsplash.com/@jrkorpa) on [Unsplash](https://unsplash.com/)" class="grid-item grid-w75">}}
-  {{< figure src="featured.png" class="grid-item grid-w15" >}}
+  <img src="gallery/01.jpg" class="grid-w33" />
+  <img src="gallery/02.jpg" class="grid-w33" />
+  <img src="gallery/03.jpg" class="grid-w33" />
+  <img src="gallery/04.jpg" class="grid-w33" />
+  <img src="gallery/05.jpg" class="grid-w33" />
+  <img src="gallery/06.jpg" class="grid-w33" />
+  <img src="gallery/07.jpg" class="grid-w33" />
 {{< /gallery >}}
 
 
