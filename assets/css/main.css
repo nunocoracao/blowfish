@@ -460,8 +460,8 @@ body:has(#menu-controller:checked) {
 .grid-w50 { width: calc(50% - 5px); margin: 0px !important; }
 .grid-w55 { width: calc(55% - 5px); margin: 0px !important; }
 .grid-w60 { width: calc(60% - 5px); margin: 0px !important; }
-.grid-w66 { width: calc(66% - 5px); margin: 0px !important; }
 .grid-w65 { width: calc(65% - 5px); margin: 0px !important; }
+.grid-w66 { width: calc(66% - 5px); margin: 0px !important; }
 .grid-w70 { width: calc(70% - 5px); margin: 0px !important; }
 .grid-w75 { width: calc(75% - 5px); margin: 0px !important; }
 .grid-w80 { width: calc(80% - 5px); margin: 0px !important; }
