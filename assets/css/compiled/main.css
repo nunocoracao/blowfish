@@ -3170,13 +3170,13 @@ body:has(#menu-controller:checked) {
   margin: 0px !important;
 }
 
-.grid-w66 {
-  width: calc(66% - 5px);
+.grid-w65 {
+  width: calc(65% - 5px);
   margin: 0px !important;
 }
 
-.grid-w65 {
-  width: calc(65% - 5px);
+.grid-w66 {
+  width: calc(66% - 5px);
   margin: 0px !important;
 }
 
