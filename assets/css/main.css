@@ -471,3 +471,5 @@ body:has(#menu-controller:checked) {
 .grid-w100 { width: calc(100% - 5px); margin: 0px !important; }
 
 .ratio-16-9 { padding-top: 56.25%; } /* 16:9 Aspect Ratio */
+.ratio-21-9 { padding-top: 42.85%; } /* 21:9 Aspect Ratio */
+.ratio-32-9 { padding-top: 28.125%; } /* 32:9 Aspect Ratio */

@@ -40,6 +40,7 @@ Don't forget to [follow me](https://twitter.com/nunocoracao) on Twitter.
 {{< /alert >}}
 
 ## Article
+
 `Article` will embed a single article into a markdown file. The `link` to the file should be the `.RelPermalink` of the file to be embedded. Note that the shortcode will not display anything if it's referencing it's parent. *Note: if you are running your website in a subfolder like Blowfish (i.e. /blowfish/) please include that path in the link.*
 
 <!-- prettier-ignore-start -->
@@ -55,8 +56,6 @@ Don't forget to [follow me](https://twitter.com/nunocoracao) on Twitter.
 ```
 
 {{< article link="/docs/welcome/" >}}
-
-
 
 ## Badge
 
@@ -92,23 +91,31 @@ Call to action
 
 ## Carousel
 
-`carousel` is used to showcase multiple images in an interactive and visually appealing way. This allows a user to slide through multiple images while only taking up the vertical space of a single one. All images are displayed using the full width of the parent component and using a ratio of `16:9`.
+`carousel` is used to showcase multiple images in an interactive and visually appealing way. This allows a user to slide through multiple images while only taking up the vertical space of a single one. All images are displayed using the full width of the parent component and using one of the predefined aspect ratios of `16:9`, `21:9` or `32:9`.
+
 
 <!-- prettier-ignore-start -->
-| Parameter | Description                                               |
-| --------- | --------------------------------------------------------- |
-| `images`  | This shortcode receives how many image paths as you want. |
+| Parameter        | Description                                                                                                       |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `images`         | **Required.** A regex string to match image names.                                                                |
+| `aspectRatio`    | **Optional.** The aspect ratio for the carousel. Either `16-9`, `21-9` or `32-9`. It is set to `16-9` by default. |
 <!-- prettier-ignore-end -->
 
-**Example:**
+**Example 1:** 16:9 aspect ratio and verbose list of images
 
 ```md
-{{</* carousel "gallery/03.jpg" "gallery/01.jpg" "gallery/02.jpg" */>}}
+{{</* carousel images="{gallery/03.jpg, gallery/01.jpg, gallery/02.jpg, gallery/04.jpg}" */>}}
 ```
 
-{{< carousel "gallery/03.jpg" "gallery/01.jpg" "gallery/02.jpg" "gallery/04.jpg" >}}
+{{< carousel images="{gallery/03.jpg,gallery/01.jpg,gallery/02.jpg,gallery/04.jpg}" >}}
 
+**Example 2:** 21:9 aspect ratio and regex-ed list of images
 
+```md
+{{</* carousel images="gallery/*" aspectRatio="21-9" */>}}
+```
+
+{{< carousel images="gallery/*" aspectRatio="21-9" >}}
 
 ## Chart
 
@@ -187,7 +194,6 @@ Blowfish also supports automatic conversion of images included using standard Ma
 
 {{< figure src="abstract.jpg" alt="Abstract purple artwork" caption="Photo by [Jr Korpa](https://unsplash.com/@jrkorpa) on [Unsplash](https://unsplash.com/)" >}}
 
-
 ## Gallery
 
 `gallery` allows you to showcase multiple images at once, in a responsive manner with more varied and interesting layouts.
@@ -218,7 +224,6 @@ In order to add images to the gallery, use `img` tags for each image and add `cl
   <img src="gallery/07.jpg" class="grid-w33" />
 {{< /gallery >}}
 
-
 ## GitHub Card
 
 `github` allows you to quickly link a github repository, all while showing and updating in realtime stats about it, such as the number of stars and forks it has.
@@ -236,7 +241,6 @@ In order to add images to the gallery, use `img` tags for each image and add `cl
 ```
 
 {{< github repo="nunocoracao/blowfish" >}}
-
 
 ## Icon
 
@@ -293,6 +297,7 @@ When life gives you lemons, make lemonade.
 {{< /lead >}}
 
 ## List
+
 `List` will display a list of recent articles. This shortcode requires a limit value to constraint the list. Additionally, it supports a `where` and a `value` in order to filter articles by their parameters. Note that this shortcode will not display its parent page but it will count for the limit value.
 
 <!-- prettier-ignore-start -->
@@ -305,6 +310,7 @@ When life gives you lemons, make lemonade.
 <!-- prettier-ignore-end -->
 
 **Example #1:**
+
 ```md
 {{</* list limit=2 */>}}
 ```
@@ -312,12 +318,12 @@ When life gives you lemons, make lemonade.
 {{< list limit=2 >}}
 
 **Example #2:**
+
 ```md
 {{</* list limit=2 where="Type" value="sample" */>}}
 ```
 
 {{< list limit=2 where="Type" value="sample">}}
-
 
 ## Mermaid
 
@@ -346,16 +352,17 @@ B-->C[Profit]
 You can see some additional Mermaid examples on the [diagrams and flowcharts samples]({{< ref "diagrams-flowcharts" >}}) page.
 
 ## Swatches
+
 `swatches` outputs a set of up to three different colors to showcase color elements like a color palette. This shortcode takes the `HEX` codes of each color and creates the visual elements for each.
 
 **Example**
+
 ```md
 {{</* swatches "#64748b" "#3b82f6" "#06b6d4" */>}}
 ```
 
 **Output**
 {{< swatches "#64748b" "#3b82f6" "#06b6d4" >}}
-
 
 ## TypeIt
 
@@ -378,8 +385,6 @@ Blowfish implements a sub-set of TypeIt features using a `shortcode`. Write your
 
 <!-- prettier-ignore-end -->
 
-
-
 **Example 1:**
 
 ```md
@@ -389,7 +394,7 @@ Lorem ipsum dolor sit amet
 ```
 
 {{< typeit >}}
-Lorem ipsum dolor sit amet 
+Lorem ipsum dolor sit amet
 {{< /typeit >}}
 
 **Example 2:**
@@ -404,14 +409,13 @@ consectetur adipiscing elit.
 {{</* /typeit */>}}
 ```
 
-{{< typeit 
+{{< typeit
   tag=h1
   lifeLike=true
 >}}
-Lorem ipsum dolor sit amet, 
-consectetur adipiscing elit. 
+Lorem ipsum dolor sit amet,
+consectetur adipiscing elit.
 {{< /typeit >}}
-
 
 **Example 3:**
 
@@ -426,7 +430,8 @@ Lorem ipsum dolor sit amet,
 consectetur adipiscing elit. 
 {{</* /typeit */>}}
 ```
-{{< typeit 
+
+{{< typeit
   tag=h3
   speed=50
   breakLines=false
