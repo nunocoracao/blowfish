@@ -1,6 +1,6 @@
 {
   "name": "hugo-blowfish-theme",
-  "version": "2.25.0",
+  "version": "2.26.0",
   "description": "Blowfish theme for Hugo",
   "scripts": {
     "fullinstall": "npm run preinstall && npm install && npm run postinstall",
@@ -40,11 +40,13 @@
     "jquery": "^3.6.3",
     "katex": "^0.16.4",
     "mermaid": "^9.3.0",
-    "prettier": "^2.8.2",
+    "packery": "^2.1.2",
+    "prettier": "^2.8.3",
     "prettier-plugin-go-template": "^0.0.13",
     "prettier-plugin-tailwindcss": "^0.2.1",
-    "rimraf": "^4.0.4",
+    "rimraf": "^4.1.1",
     "tailwindcss": "^3.2.4",
+    "tw-elements": "^1.0.0-alpha13",
     "typeit": "^8.7.1",
     "vendor-copy": "^3.0.1"
   },
@@ -85,12 +87,20 @@
     {
       "from": "node_modules/jquery/dist/jquery.slim.min.js",
       "to": "assets/lib/jquery/jquery.slim.min.js"
+    },
+    {
+      "from": "node_modules/packery/dist/packery.pkgd.min.js",
+      "to": "assets/lib/packery/packery.pkgd.min.js"
+    },
+    {
+      "from": "node_modules/tw-elements/dist/js/index.min.js",
+      "to": "assets/lib/tw-elements/index.min.js"
     }
   ],
   "dependencies": {
     "@headlessui/react": "^1.7.7",
     "@heroicons/react": "^2.0.13",
     "@tailwindcss/forms": "^0.5.3",
-    "commander": "^9.5.0"
+    "commander": "^10.0.0"
   }
 }

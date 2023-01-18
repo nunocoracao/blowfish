@@ -46,3 +46,15 @@
 {{ $typeitLib := resources.Get "lib/typeit/typeit.umd.js" }}
 <script defer src="{{ $typeitLib.RelPermalink }}" integrity="{{ $typeitLib.Data.Integrity }}"></script>
 {{ end }}
+
+{{/* Packery */}}
+{{ if .Page.HasShortcode "gallery" }}
+{{ $packeryLib := resources.Get "lib/packery/packery.pkgd.min.js" }}
+<script defer src="{{ $packeryLib.RelPermalink }}" integrity="{{ $packeryLib.Data.Integrity }}"></script>
+{{ end }}
+
+{{/* tw-elements */}}
+{{ if .Page.HasShortcode "carousel" }}
+{{ $twelementsLib := resources.Get "lib/tw-elements/index.min.js" }}
+<script defer src="{{ $twelementsLib.RelPermalink }}" integrity="{{ $twelementsLib.Data.Integrity }}"></script>
+{{ end }}
