@@ -1,5 +1,6 @@
 {{ $time := now.UnixNano }}
 {{ $id := delimit (slice "gallery" $time) "-" }}
+{{ $aspect := default "ratio-16-9" (.Get "aspectRatio") }}
 
 <div id="{{ $id }}" class="carousel slide relative" data-bs-ride="carousel">
     <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-2">
@@ -19,7 +20,7 @@
         {{ $num := 0 }}
         {{ range .Params }}
 
-        <div class="carousel-item {{ if eq $num 0 }} active {{ end }} relative float-left w-full ratio-16-9 single_hero_background"
+        <div class="carousel-item {{ if eq $num 0 }} active {{ end }} relative float-left w-full {{ $aspect }}single_hero_background"
             style="background-image:url({{ . }})"
         ></div>
         {{ $num = add $num 1 }}
