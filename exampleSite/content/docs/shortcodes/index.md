@@ -94,12 +94,6 @@ Call to action
 
 `carousel` is used to showcase multiple images in an interactive and visually appealing way. This allows a user to slide through multiple images while only taking up the vertical space of a single one. All images are displayed using the full width of the parent component and using a ratio of `16:9`.
 
-<!-- prettier-ignore-start -->
-| Parameter | Description                                               |
-| --------- | --------------------------------------------------------- |
-| `images`  | This shortcode receives how many image paths as you want. |
-<!-- prettier-ignore-end -->
-
 **Example:**
 
 ```md
