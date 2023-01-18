@@ -6267,6 +6267,18 @@ body:has(#menu-controller:checked) {
 
 /* 16:9 Aspect Ratio */
 
+.ratio-21-9 {
+  padding-top: 42.85%;
+}
+
+/* 21:9 Aspect Ratio */
+
+.ratio-32-9 {
+  padding-top: 28.125%;
+}
+
+/* 32:9 Aspect Ratio */
+
 .first\:mt-8:first-child {
   margin-top: 2rem;
 }
