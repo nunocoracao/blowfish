@@ -402,7 +402,7 @@ You can see some additional Mermaid examples on the [diagrams and flowcharts sam
 
 ## Timeline
 
-`timeline` is used to create a visual timeline that can be used in different use-cases. The `timeline` shortcodes uses the `timelineItem` shortcode to define each item within the main timeline. Each item can have the following properties.
+The `timeline` creates a visual timeline that can be used in different use-cases, e.g. professional experience, a project's achievements, etc. The `timeline` shortcode relies on the `timelineItem` sub-shortcode to define each item within the main timeline. Each item can have the following properties.
 
 
 <!-- prettier-ignore-start -->
