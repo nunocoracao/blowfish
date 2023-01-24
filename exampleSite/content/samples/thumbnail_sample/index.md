@@ -6,6 +6,7 @@ description: "Turn on thumbnails for your articles."
 slug: "thumbnail_sample"
 tags: ["thumbnail", "sample"]
 summary: "A quick example of how to start using Thumbnails in your artciles."
+type: 'sample'
 ---
 
 A quick example of how to start using Thumbnails in your articles.

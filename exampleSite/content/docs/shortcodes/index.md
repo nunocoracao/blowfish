@@ -329,7 +329,7 @@ When life gives you lemons, make lemonade.
 | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `limit`   | **Required.** the number of recent articles to display.                                                                                                |
 | `where`   | The variable to be used for the query of articles e.g. `Type`                                                                                          |
-| `value`   | The value that will need to match the parameter defined in `where` for the query of articles e.g. for `where` == `Type` a valid vaue could be `sample` |
+| `value`   | The value that will need to match the parameter defined in `where` for the query of articles e.g. for `where` == `Type` a valid value could be `sample` |
 
 {{< alert >}}
 The `where` and `value` values are used in the following query `where .Site.RegularPages $where $value` in the code of the shortcode. Check [Hugo docs](https://gohugo.io/variables/page/) to learn more about which parameters are available to use.
@@ -348,10 +348,10 @@ The `where` and `value` values are used in the following query `where .Site.Regu
 **Example #2:**
 
 ```md
-{{</* list limit=2 where="Type" value="sample" */>}}
+{{</* list limit=5 where="Type" value="sample" */>}}
 ```
 
-{{< list limit=2 where="Type" value="sample">}}
+{{< list limit=5 where="Type" value="sample">}}
 
 
 <br/><br/><br/>

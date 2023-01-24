@@ -6,6 +6,7 @@ draft: false
 description: "Icon support in Blowfish."
 slug: "icons"
 tags: ["icons", "sample", "shortcodes"]
+type: 'sample'
 ---
 
 Blowfish has built-in support for a number of [FontAwesome 6](https://fontawesome.com/icons) icons. These can be included in your website through either the [icon partial]({{< ref "docs/partials#icon" >}}) or [icon shortcode]({{< ref "docs/shortcodes#icon" >}}).
