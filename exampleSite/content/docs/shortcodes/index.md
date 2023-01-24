@@ -325,10 +325,11 @@ When life gives you lemons, make lemonade.
 `List` will display a list of recent articles. This shortcode requires a limit value to constraint the list. Additionally, it supports a `where` and a `value` in order to filter articles by their parameters. Note that this shortcode will not display its parent page but it will count for the limit value.
 
 <!-- prettier-ignore-start -->
-| Parameter | Description                                                                                                                                            |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `limit`   | **Required.** the number of recent articles to display.                                                                                                |
-| `where`   | The variable to be used for the query of articles e.g. `Type`                                                                                          |
+| Parameter | Description                                                                                                                                             |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `limit`   | **Required.** the number of recent articles to display.                                                                                                 |
+| `title`   | Optional title for the list, default is `Recent`                                                                                                        |
+| `where`   | The variable to be used for the query of articles e.g. `Type`                                                                                           |
 | `value`   | The value that will need to match the parameter defined in `where` for the query of articles e.g. for `where` == `Type` a valid value could be `sample` |
 
 {{< alert >}}
@@ -348,10 +349,10 @@ The `where` and `value` values are used in the following query `where .Site.Regu
 **Example #2:**
 
 ```md
-{{</* list limit=5 where="Type" value="sample" */>}}
+{{</* list title="Samples" limit=5 where="Type" value="sample" */>}}
 ```
 
-{{< list limit=5 where="Type" value="sample">}}
+{{< list title="Samples" limit=5 where="Type" value="sample">}}
 
 
 <br/><br/><br/>
