@@ -354,12 +354,6 @@ The `where` and `value` values are used in the following query `where .Site.Regu
 {{< list limit=2 where="Type" value="sample">}}
 
 
-
-asdasd
-
-{{< list limit=2 where="Tag" value="emoji">}}
-
-
 <br/><br/><br/>
 
 ## Mermaid
