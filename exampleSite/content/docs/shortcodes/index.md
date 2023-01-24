@@ -400,6 +400,91 @@ You can see some additional Mermaid examples on the [diagrams and flowcharts sam
 
 <br/><br/><br/>
 
+## Timeline
+
+`timeline` is used to create a visual timeline that can be used in different use-cases. The `timeline` shortcodes uses the `timelineItem` shortcode to define each item within the main timeline. Each item can have the following properties.
+
+
+<!-- prettier-ignore-start -->
+| Parameter   | Description                                  |
+| ----------- | -------------------------------------------- |
+| `icon`      | the icon to be used in the timeline visuals. |
+| `header`    | header for each entry                        |
+| `badge`     | text to place within the top righ badge      |
+| `subheader` | entry's subheader                            |
+
+<!-- prettier-ignore-end -->
+
+**Example:**
+
+```md
+{{</* timeline */>}}
+
+{{</* timelineItem icon="github" header="header" badge="badge test" subheader="subheader" */>}}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non magna ex. Donec sollicitudin ut lorem quis lobortis. Nam ac ipsum libero. Sed a ex eget ipsum tincidunt venenatis quis sed nisl. Pellentesque sed urna vel odio consequat tincidunt id ut purus. Nam sollicitudin est sed dui interdum rhoncus. 
+{{</* /timelineItem */>}}
+
+
+{{</* timelineItem icon="code" header="Another Awesome Header" badge="date - present" subheader="Awesome Subheader" */>}}
+With html code
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
+{{</* /timelineItem */>}}
+
+{{</* timelineItem icon="star" header="Shortcodes" badge="AWESOME" */>}}
+With other shortcodes
+{{</* gallery */>}}
+  <img src="gallery/01.jpg" class="grid-w33" />
+  <img src="gallery/02.jpg" class="grid-w33" />
+  <img src="gallery/03.jpg" class="grid-w33" />
+  <img src="gallery/04.jpg" class="grid-w33" />
+  <img src="gallery/05.jpg" class="grid-w33" />
+  <img src="gallery/06.jpg" class="grid-w33" />
+  <img src="gallery/07.jpg" class="grid-w33" />
+{{</* /gallery */>}}
+{{</* /timelineItem */>}}
+
+{{</* /timeline */>}}
+```
+
+
+{{< timeline >}}
+
+{{< timelineItem icon="github" header="header" badge="badge test" subheader="subheader" >}}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non magna ex. Donec sollicitudin ut lorem quis lobortis. Nam ac ipsum libero. Sed a ex eget ipsum tincidunt venenatis quis sed nisl. Pellentesque sed urna vel odio consequat tincidunt id ut purus. Nam sollicitudin est sed dui interdum rhoncus. 
+{{</ timelineItem >}}
+
+
+{{< timelineItem icon="code" header="Another Awesome Header" badge="date - present" subheader="Awesome Subheader">}}
+With html code
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
+{{</ timelineItem >}}
+
+{{< timelineItem icon="star" header="Shortcodes" badge="AWESOME" >}}
+With other shortcodes
+{{< gallery >}}
+  <img src="gallery/01.jpg" class="grid-w33" />
+  <img src="gallery/02.jpg" class="grid-w33" />
+  <img src="gallery/03.jpg" class="grid-w33" />
+  <img src="gallery/04.jpg" class="grid-w33" />
+  <img src="gallery/05.jpg" class="grid-w33" />
+  <img src="gallery/06.jpg" class="grid-w33" />
+  <img src="gallery/07.jpg" class="grid-w33" />
+{{< /gallery >}}
+{{</ timelineItem >}}
+
+{{</ timeline >}}
+
+
+<br/><br/><br/>
+
 ## TypeIt
 
 [TypeIt](https://www.typeitjs.com) is the most versatile JavaScript tool for creating typewriter effects on the planet. With a straightforward configuration, it allows you to type single or multiple strings that break lines, delete & replace each other, and it even handles strings that contain complex HTML. 
