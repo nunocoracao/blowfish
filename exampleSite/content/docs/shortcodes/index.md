@@ -332,7 +332,7 @@ When life gives you lemons, make lemonade.
 | `value`   | The value that will need to match the parameter defined in `where` for the query of articles e.g. for `where` == `Type` a valid vaue could be `sample` |
 
 {{< alert >}}
-The `where` and `value` values are used in the following query `where .Site.RegularPages $where $value` in the code of the shortcode
+The `where` and `value` values are used in the following query `where .Site.RegularPages $where $value` in the code of the shortcode. Check [Hugo docs](https://gohugo.io/variables/page/) to learn more about which parameters are available to use.
 {{</ alert >}}
 
 <!-- prettier-ignore-end -->
@@ -352,6 +352,13 @@ The `where` and `value` values are used in the following query `where .Site.Regu
 ```
 
 {{< list limit=2 where="Type" value="sample">}}
+
+
+
+asdasd
+
+{{< list limit=2 where="Tag" value="emoji">}}
+
 
 <br/><br/><br/>
 
