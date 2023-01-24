@@ -103,10 +103,10 @@ Call to action
 
 
 <!-- prettier-ignore-start -->
-| Parameter        | Description                                                                                                       |
-| ---------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `images`         | **Required.** A regex string to match image names.                                                                |
-| `aspectRatio`    | **Optional.** The aspect ratio for the carousel. Either `16-9`, `21-9` or `32-9`. It is set to `16-9` by default. |
+| Parameter     | Description                                                                                                       |
+| ------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `images`      | **Required.** A regex string to match image names.                                                                |
+| `aspectRatio` | **Optional.** The aspect ratio for the carousel. Either `16-9`, `21-9` or `32-9`. It is set to `16-9` by default. |
 <!-- prettier-ignore-end -->
 
 **Example 1:** 16:9 aspect ratio and verbose list of images
@@ -325,11 +325,15 @@ When life gives you lemons, make lemonade.
 `List` will display a list of recent articles. This shortcode requires a limit value to constraint the list. Additionally, it supports a `where` and a `value` in order to filter articles by their parameters. Note that this shortcode will not display its parent page but it will count for the limit value.
 
 <!-- prettier-ignore-start -->
-| Parameter | Description                                             |
-| --------- | ------------------------------------------------------- |
-| `limit`   | **Required.** the number of recent articles to display. |
-| `where`   | the number of recent articles to display.               |
-| `value`   | the number of recent articles to display.               |
+| Parameter | Description                                                                                                                                            |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `limit`   | **Required.** the number of recent articles to display.                                                                                                |
+| `where`   | The variable to be used for the query of articles e.g. `Type`                                                                                          |
+| `value`   | The value that will need to match the parameter defined in `where` for the query of articles e.g. for `where` == `Type` a valid vaue could be `sample` |
+
+{{< alert >}}
+The `where` and `value` values are used in the following query `where .Site.RegularPages $where $value` in the code of the shortcode
+{{</ alert >}}
 
 <!-- prettier-ignore-end -->
 
