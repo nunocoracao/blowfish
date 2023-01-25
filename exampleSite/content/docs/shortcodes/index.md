@@ -19,24 +19,40 @@ The input is written in Markdown so you can format it however you please.
 
 By default, the alert is presented with an exclaimation triangle icon. To change the icon, include the icon name in the shortcode. Check out the [icon shortcode](#icon) for more details on using icons.
 
-**Example:**
+**Example 1:**
 
 ```md
 {{</* alert */>}}
 **Warning!** This action is destructive!
-{{</* /alert */>}}
-
-{{</* alert "twitter" */>}}
-Don't forget to [follow me](https://twitter.com/nunocoracao) on Twitter.
 {{</* /alert */>}}
 ```
 
 {{< alert >}}
 **Warning!** This action is destructive!
 {{< /alert >}}
-&nbsp;
-{{< alert "twitter" >}}
+
+**Example 2:**
+
+```md
+{{</* alert icon="twitter" */>}}
 Don't forget to [follow me](https://twitter.com/nunocoracao) on Twitter.
+{{</* /alert */>}}
+```
+
+{{< alert icon="twitter" >}}
+Don't forget to [follow me](https://twitter.com/nunocoracao) on Twitter.
+{{< /alert >}}
+
+**Example 3:**
+
+```md
+{{</* alert icon="fire" cardColor="red" iconColor="black" textColor="white" */>}}
+This is an error!
+{{</* /alert */>}}
+```
+
+{{< alert icon="fire" cardColor="red" iconColor="black" textColor="white" >}}
+This is an error!
 {{< /alert >}}
 
 <br/><br/><br/>
