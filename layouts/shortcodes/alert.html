@@ -1,8 +1,27 @@
+{{ $icon := default "triangle-exclamation" (.Get "icon") }}
+{{ $cardColor := default "NULL" (.Get "cardColor") }}
+{{ $iconColor := default "NULL" (.Get "iconColor") }}
+{{ $textColor := default "NULL" (.Get "textColor") }}
+
+{{ if eq $cardColor "NULL" }}
 <div class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900">
+{{ else }}
+<div class="flex px-4 py-3 rounded-md" style="background-color: {{ $cardColor }}">
+{{ end }}
+
+  {{ if eq $iconColor "NULL" }}
   <span class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center">
-    {{ partial "icon.html" (.Get 0 | default "triangle-exclamation") }}
+  {{ else }}
+  <span class="ltr:pr-3 rtl:pl-3 flex items-center" style="color: {{ $iconColor }}">
+  {{ end }}
+    {{ partial "icon.html" $icon }}
   </span>
+
+  {{ if eq $textColor "NULL" }}
   <span class="dark:text-neutral-300">
+  {{ else }}
+  <span style="color: {{ $textColor }}">
+  {{ end }}
     {{- .Inner | markdownify -}}
   </span>
 </div>
