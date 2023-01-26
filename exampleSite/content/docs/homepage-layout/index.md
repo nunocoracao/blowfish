@@ -51,7 +51,7 @@ To enable the Background layout, set `homepage.layout = "background"` and `homep
 
 ## Card layout
 
-The card layout is an extension of the page layout. It provides the same level of flexivbility by also displaying your markdown content and adds a card image to display visual content.
+The card layout is an extension of the page layout. It provides the same level of flexibility by also displaying your markdown content and adds a card image to display visual content.
 
 <img class="thumbnailshadow" src="img/home-card.png"/>
 
