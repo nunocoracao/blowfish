@@ -7,7 +7,7 @@ rtl = false
 
 title = "Blowfish"
 # logo = "img/logo.png"
-description = "My awesome website"
+# description = "My awesome website"
 # copyright = "Copy, _right?_ :thinking_face:"
 
 dateFormat = "2 January 2006"
