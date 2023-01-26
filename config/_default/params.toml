@@ -92,13 +92,13 @@ disableImageOptimization = false
 
 [taxonomy]
   showTermCount = true
-  #showHero = true
-  #heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  showHero = false
+  # heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   showBreadcrumbs = false
-  #showViews = false
-  #showLikes = false
-  #showTableOfContents = true
-  #cardView = false
+  showViews = false
+  showLikes = false
+  showTableOfContents = false
+  cardView = false
 
 [term]
   #showHero = true
