@@ -72,14 +72,14 @@ disableImageOptimization = false
   # sharingLinks = [ "linkedin", "twitter", "reddit", "pinterest", "facebook", "email"]
 
 [list]
-  #showHero = true
-  #heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
-  #layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
-  #layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
+  showHero = false
+  # heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
+  layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
   showBreadcrumbs = false
   showSummary = false
-  #showViews = true
-  #showLikes = true
+  showViews = false
+  showLikes = false
   showTableOfContents = false
   showCards = false
   groupByYear = true
