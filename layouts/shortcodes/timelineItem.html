@@ -1,0 +1,32 @@
+{{ $icon := .Get "icon" | default "check" }}
+{{ $header := .Get "header" }}
+{{ $badge := .Get "badge" }}
+{{ $subheader := .Get "subheader" }}
+{{ $text := .Get "text" }}
+<li class="list-none">
+  <div class="flex flex-start">
+    <div class="bg-primary-500 dark:bg-primary-300 text-neutral-50 dark:text-neutral-700 min-w-[30px] h-8 text-2xl flex items-center justify-center rounded-full -ml-12 mt-5">
+      {{ partial "icon" $icon }}
+    </div>
+    <div class="block p-6 rounded-lg shadow-2xl min-w-full ml-6 mb-10 backdrop-blur">
+      <div class="flex justify-between">
+        {{ if $header }}
+        <h2 class="mt-0">
+          {{ $header }} 
+        </h2>
+        {{ end }}
+        {{ if $badge }}
+        <h3 class="">
+          {{ partial "badge"  $badge}}
+        </h3>
+        {{ end }}
+      </div>
+      {{ if $subheader }}
+      <h4 class="mt-0">
+        {{ $subheader }}
+      </h4>
+      {{ end }}
+      <p class="text-gray-700 mb-6">{{- .Inner -}}</p>
+    </div>
+  </div>
+</li>

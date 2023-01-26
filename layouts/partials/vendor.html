@@ -54,7 +54,7 @@
 {{ end }}
 
 {{/* tw-elements */}}
-{{ if .Page.HasShortcode "carousel" }}
+{{ if or (.Page.HasShortcode "carousel") (.Page.HasShortcode "timeline")}}
 {{ $twelementsLib := resources.Get "lib/tw-elements/index.min.js" }}
 <script defer src="{{ $twelementsLib.RelPermalink }}" integrity="{{ $twelementsLib.Data.Integrity }}"></script>
 {{ end }}
