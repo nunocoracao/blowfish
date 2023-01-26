@@ -46,17 +46,17 @@ disableImageOptimization = false
 
 [article]
   showDate = true
-  #showViews = true
-  #showLikes = true
+  showViews = false
+  showLikes = false
   showDateUpdated = false
   showAuthor = true
-  showHero = true
-  heroStyle = "basic" # valid options: basic, big, background, thumbAndBackground
-  layoutBackgroundBlur = false # only used when heroStyle equals background or thumbAndBackground
+  showHero = false
+  # heroStyle = "basic" # valid options: basic, big, background, thumbAndBackground
+  layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
   layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
-  showBreadcrumbs = true
+  showBreadcrumbs = false
   showDraftLabel = true
-  showEdit = true
+  showEdit = fa;se
   # editURL = "https://github.com/username/repo/"
   editAppendPath = true
   seriesOpened = false
@@ -64,12 +64,12 @@ disableImageOptimization = false
   showPagination = true
   invertPagination = false
   showReadingTime = true
-  showTableOfContents = true
-  showTaxonomies = false 
-  showAuthorsBadges = false 
+  showTableOfContents = false
+  showTaxonomies = false
+  showAuthorsBadges = false
   showWordCount = true
   showSummary = true
-  sharingLinks = [ "linkedin", "twitter", "reddit", "pinterest", "facebook", "email"]
+  # sharingLinks = [ "linkedin", "twitter", "reddit", "pinterest", "facebook", "email"]
 
 [list]
   #showHero = true
