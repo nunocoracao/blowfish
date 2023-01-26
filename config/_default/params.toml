@@ -101,15 +101,15 @@ disableImageOptimization = false
   cardView = false
 
 [term]
-  #showHero = true
-  #heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  showHero = false
+  # heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   showBreadcrumbs = false
-  #showViews = false
-  #showLikes = false
-  #showTableOfContents = true
-  #groupByYear = false
-  #cardViewScreenWidth = false
-  #cardView = false
+  showViews = false
+  showLikes = false
+  showTableOfContents = true
+  groupByYear = false
+  cardView = false
+  cardViewScreenWidth = false
 
 [firebase]
   # apiKey = "XXXXXX"
