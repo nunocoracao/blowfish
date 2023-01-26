@@ -15,7 +15,7 @@ enableCodeCopy = false
 # mainSections = ["section1", "section2"]
 # robots = ""
 
-# disableImageOptimization = false
+disableImageOptimization = false
 
 # defaultBackgroundImage = "IMAGE.jpg" # used as default for background images 
 
