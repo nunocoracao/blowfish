@@ -26,7 +26,7 @@ In addition to all the [default Hugo shortcodes](https://gohugo.io/content-manag
 
 The input is written in Markdown so you can format it however you please.
 
-**Example 1:**
+**Example 1:** No params
 
 ```md
 {{</* alert */>}}
@@ -38,19 +38,19 @@ The input is written in Markdown so you can format it however you please.
 **Warning!** This action is destructive!
 {{< /alert >}}
 
-**Example 2:**
+**Example 2:** Unnamed param
 
 ```md
-{{</* alert icon="twitter" */>}}
+{{</* alert "twitter" */>}}
 Don't forget to [follow me](https://twitter.com/nunocoracao) on Twitter.
 {{</* /alert */>}}
 ```
 
-{{< alert icon="twitter" >}}
+{{< alert "twitter" >}}
 Don't forget to [follow me](https://twitter.com/nunocoracao) on Twitter.
 {{< /alert >}}
 
-**Example 3:**
+**Example 3:** Named params
 
 ```md
 {{</* alert icon="fire" cardColor="red" iconColor="black" textColor="white" */>}}
@@ -123,7 +123,6 @@ Call to action
 ## Carousel
 
 `carousel` is used to showcase multiple images in an interactive and visually appealing way. This allows a user to slide through multiple images while only taking up the vertical space of a single one. All images are displayed using the full width of the parent component and using one of the predefined aspect ratios of `16:9`, `21:9` or `32:9`.
-
 
 <!-- prettier-ignore-start -->
 | Parameter     | Description                                                                                                       |
@@ -377,7 +376,6 @@ The `where` and `value` values are used in the following query `where .Site.Regu
 
 {{< list title="Samples" limit=5 where="Type" value="sample">}}
 
-
 <br/><br/><br/>
 
 ## Mermaid
@@ -425,7 +423,7 @@ You can see some additional Mermaid examples on the [diagrams and flowcharts sam
 
 ## TypeIt
 
-[TypeIt](https://www.typeitjs.com) is the most versatile JavaScript tool for creating typewriter effects on the planet. With a straightforward configuration, it allows you to type single or multiple strings that break lines, delete & replace each other, and it even handles strings that contain complex HTML. 
+[TypeIt](https://www.typeitjs.com) is the most versatile JavaScript tool for creating typewriter effects on the planet. With a straightforward configuration, it allows you to type single or multiple strings that break lines, delete & replace each other, and it even handles strings that contain complex HTML.
 
 Blowfish implements a sub-set of TypeIt features using a `shortcode`. Write your text within the `typeit` shortcode and use the following parameters to configure the behavior you want.
 
