@@ -15,9 +15,21 @@ In addition to all the [default Hugo shortcodes](https://gohugo.io/content-manag
 
 `alert` outputs its contents as a stylised message box within your article. It's useful for drawing attention to important information that you don't want the reader to miss.
 
-The input is written in Markdown so you can format it however you please.
+<!-- prettier-ignore-start -->
+| Parameter      | Description                                              |
+| -------------- | -------------------------------------------------------- |
+| `icon`         | **Optional.** the icon to display on the left side.  |
+| `iconColor`    | **Optional.** the color for the icon in basic CSS style. |
+| `cardColor`    | **Optional.** the color for the card background in basic CSS style. |
+| `textColor`    | **Optional.** the color for the text in basic CSS style. |
+<!-- prettier-ignore-end -->
 
-By default, the alert is presented with an exclaimation triangle icon. To change the icon, include the icon name in the shortcode. Check out the [icon shortcode](#icon) for more details on using icons.
+Notes:
+
+1. The colors can be either hex values (`#FFFFFF`) or color names (`white`).
+2. By default, the colors for the card, icon and text are decided based on the current color theme.
+3. By default, the alert is presented with an exclaimation triangle icon. To change the icon, include the icon name in the shortcode. Check out the [icon shortcode](#icon) for more details on using icons.
+4. The content of the alert is written in Markdown so you can format it however you please.
 
 **Example 1:**
 
