@@ -1,27 +1,42 @@
-{{ $icon := default "triangle-exclamation" (.Get "icon") }}
-{{ $cardColor := default "NULL" (.Get "cardColor") }}
-{{ $iconColor := default "NULL" (.Get "iconColor") }}
-{{ $textColor := default "NULL" (.Get "textColor") }}
-
-{{ if eq $cardColor "NULL" }}
-<div class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900">
+{{ if .IsNamedParams }}
+  {{ $.Scratch.Set "icon" (default "triangle-exclamation" (.Get "icon") ) }}
+  {{ $.Scratch.Set "cardColor" (default "NULL" (.Get "cardColor") ) }}
+  {{ $.Scratch.Set "iconColor" (default "NULL" (.Get "iconColor") ) }}
+  {{ $.Scratch.Set "textColor" (default "NULL" (.Get "textColor") ) }}
 {{ else }}
-<div class="flex px-4 py-3 rounded-md" style="background-color: {{ $cardColor }}">
+  {{ $.Scratch.Set "icon" (default "triangle-exclamation" (.Get 0) ) }}
+  {{ $.Scratch.Set "cardColor" "NULL" }}
+  {{ $.Scratch.Set "iconColor" "NULL" }}
+  {{ $.Scratch.Set "textColor" "NULL" }}
 {{ end }}
 
-  {{ if eq $iconColor "NULL" }}
-  <span class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center">
+
+<div
+  {{ if eq ($.Scratch.Get "cardColor") "NULL" }}
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
   {{ else }}
-  <span class="ltr:pr-3 rtl:pl-3 flex items-center" style="color: {{ $iconColor }}">
-  {{ end }}
-    {{ partial "icon.html" $icon }}
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: {{ $.Scratch.Get "cardColor" }}"
+  {{ end }}>
+
+  <span
+    {{ if eq ($.Scratch.Get "iconColor") "NULL" }}
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    {{ else }}
+      class="ltr:pr-3 rtl:pl-3 flex items-center"
+      style="color: {{ $.Scratch.Get "iconColor" }}"
+    {{ end }}>
+
+    {{ partial "icon.html" ($.Scratch.Get "icon") }}
   </span>
 
-  {{ if eq $textColor "NULL" }}
-  <span class="dark:text-neutral-300">
-  {{ else }}
-  <span style="color: {{ $textColor }}">
-  {{ end }}
+  <span
+    {{ if eq ($.Scratch.Get "textColor") "NULL" }}
+      class="dark:text-neutral-300"
+    {{ else }}
+      style="color: {{ $.Scratch.Get "textColor" }}"
+    {{ end }}>
+    
     {{- .Inner | markdownify -}}
   </span>
 </div>
