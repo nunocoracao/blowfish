@@ -1,0 +1,27 @@
+{
+  "name": "ev-emitter",
+  "version": "1.1.1",
+  "description": "lil' event emitter",
+  "main": "ev-emitter.js",
+  "scripts": {
+    "test": "mocha test/test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/metafizzy/ev-emitter.git"
+  },
+  "keywords": [
+    "event",
+    "emitter",
+    "pubsub"
+  ],
+  "author": "David DeSandro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/metafizzy/ev-emitter/issues"
+  },
+  "homepage": "https://github.com/metafizzy/ev-emitter#readme",
+  "directories": {
+    "test": "test"
+  }
+}

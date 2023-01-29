@@ -1,0 +1,52 @@
+{
+  "name": "custom-event-polyfill",
+  "version": "1.0.7",
+  "author": "Evan Krambuhl <thekrambuhl@gmail.com>",
+  "contributors": [
+    "Mozilla Developer Network",
+    "Kumar Harsh <khs@playlyfe.com>",
+    "Frank Panetta (http://www.savvi.io)",
+    "Mikhail Reenko <reenko@yandex.ru>",
+    "Joscha Feth <joscha@feth.com> (http://www.feth.com)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "polyfill",
+    "custom-event",
+    "CustomEvent",
+    "Web API Interface"
+  ],
+  "main": "polyfill.js",
+  "files": [
+    "polyfill.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kumarharsh/custom-event-polyfill.git"
+  },
+  "scripts": {
+    "test": "karma start",
+    "test-ci": "karma start ./karma.conf-ci.js",
+    "commitmsg": "commitlint -e $GIT_PARAMS"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^6.2.0",
+    "@commitlint/config-conventional": "^6.1.3",
+    "@semantic-release/changelog": "^2.0.2",
+    "@semantic-release/git": "^5.0.0",
+    "eslint": "4.19.1",
+    "eslint-plugin-prettier": "2.6.0",
+    "husky": "^0.14.3",
+    "jasmine-core": "^3.1.0",
+    "karma": "^4.0.1",
+    "karma-jasmine": "^1.1.2",
+    "karma-sauce-launcher": "^2.0.2",
+    "prettier": "1.12.1",
+    "semantic-release": "^15.4.1"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  }
+}

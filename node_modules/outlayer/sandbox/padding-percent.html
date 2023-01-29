@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+
+  <title>padding percent</title>
+
+<style>
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body { font-family: sans-serif; }
+
+/* ---- grid ---- */
+
+.container {
+  width: 400px;
+  background: #DDD;
+}
+
+.grid {
+  background: #EEE;
+/*  max-width: 1200px;*/
+  padding: 20px 10%;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.grid-item {
+  width: 20%;
+  height: 120px;
+  float: left;
+  background: #D26;
+  border: 2px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.5);
+  border-radius: 5px;
+}
+
+/*.grid-item--width2 { width:  30%; }
+.grid-item--width3 { width:  45%; }*/
+
+.grid-item--height2 { height: 200px; }
+.grid-item--height3 { height: 260px; }
+.grid-item--height4 { height: 360px; }
+
+</style>
+
+</head>
+<body>
+
+<h1>padding + percent width bug</h1>
+
+<p><button class="toggle-button">Toggle</button></p>
+
+<div class="container">
+<div class="grid">
+  <div class="grid-item"></div>
+  <!-- <div class="grid-item grid-item--width2 grid-item--height2"></div>
+  <div class="grid-item grid-item--height3"></div>
+  <div class="grid-item grid-item--height2"></div> -->
+  <!--   <div class="grid-item grid-item--width3"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item grid-item--height2"></div>
+  <div class="grid-item grid-item--width2 grid-item--height3"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item grid-item--height2"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item grid-item--width2 grid-item--height2"></div>
+  <div class="grid-item grid-item--width2"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item grid-item--height2"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item grid-item--height3"></div>
+  <div class="grid-item grid-item--height2"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item grid-item--height2"></div> -->
+</div>
+</div>
+
+<script src="../bower_components/get-size/get-size.js"></script>
+<script src="../bower_components/matches-selector/matches-selector.js"></script>
+<script src="../bower_components/ev-emitter/ev-emitter.js"></script>
+<script src="../bower_components/fizzy-ui-utils/utils.js"></script>
+<script src="../item.js"></script>
+<script src="../outlayer.js"></script>
+
+<script src="fit-rows.js"></script>
+<script>
+var layout = new FitRows( '.grid', {
+  transitionDuration: '0.8s',
+  percentPosition: true
+});
+
+var container = document.querySelector('.container');
+var isToggled = false;
+
+document.querySelector('.toggle-button').onclick = function() {
+  isToggled = !isToggled;
+  container.style.width = isToggled ? '500px' : '400px';
+  layout.layout();
+}
+
+</script>
+
+
+</body>
+</html>

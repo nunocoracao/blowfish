@@ -1,0 +1,58 @@
+{
+  "name": "chartjs-plugin-datalabels",
+  "homepage": "https://chartjs-plugin-datalabels.netlify.com",
+  "description": "Chart.js plugin to display labels on data elements",
+  "version": "0.7.0",
+  "license": "MIT",
+  "main": "dist/chartjs-plugin-datalabels.js",
+  "types": "types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chartjs/chartjs-plugin-datalabels.git"
+  },
+  "keywords": [
+    "chart.js",
+    "plugin",
+    "label"
+  ],
+  "files": [
+    "bower.json",
+    "dist/*.js",
+    "types/*.d.ts"
+  ],
+  "devDependencies": {
+    "@types/chart.js": "^2.8.4",
+    "@vuepress/plugin-google-analytics": "^1.0.4",
+    "chart.js": "~2.8.0",
+    "eslint-config-chartjs": "^0.1.0",
+    "eslint-plugin-es": "^2.0.0",
+    "eslint-plugin-html": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-eslint": "^6.0.0",
+    "gulp-file": "^0.4.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-streamify": "^1.0.2",
+    "gulp-zip": "^5.0.0",
+    "jasmine-core": "^3.4.0",
+    "karma": "^4.3.0",
+    "karma-coverage": "^2.0.1",
+    "karma-firefox-launcher": "^1.1.0",
+    "karma-jasmine": "^2.0.1",
+    "karma-jasmine-html-reporter": "^1.4.2",
+    "karma-rollup-preprocessor": "^7.0.2",
+    "karma-spec-reporter": "^0.0.32",
+    "merge2": "^1.2.3",
+    "pixelmatch": "^5.0.2",
+    "rollup": "^1.20.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-istanbul": "^2.0.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.1",
+    "typescript": "^3.6.2",
+    "vuepress": "^1.0.4",
+    "yargs": "^14.0.0"
+  },
+  "peerDependencies": {
+    "chart.js": ">= 2.7.0 < 3"
+  }
+}

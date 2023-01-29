@@ -1,0 +1,27 @@
+{
+  "name": "get-size",
+  "version": "2.0.3",
+  "description": "measures element size",
+  "main": "get-size.js",
+  "dependencies": {},
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/desandro/get-size.git"
+  },
+  "keywords": [
+    "size",
+    "DOM"
+  ],
+  "author": "David DeSandro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/desandro/get-size/issues"
+  },
+  "homepage": "https://github.com/desandro/get-size"
+}

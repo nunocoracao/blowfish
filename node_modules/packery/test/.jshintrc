@@ -1,0 +1,11 @@
+{
+  "browser": true,
+  "undef": true,
+  "unused": true,
+  "globals": {
+    "appendRandomSizedItems": true,
+    "gimmeAnItemElement": true,
+    "Packery": false,
+    "QUnit": false
+  }
+}

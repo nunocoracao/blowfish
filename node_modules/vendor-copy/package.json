@@ -1,0 +1,39 @@
+{
+  "name": "vendor-copy",
+  "version": "3.0.1",
+  "description": "A utility to copy client-side dependencies into a folder.",
+  "main": "index.js",
+  "bin": {
+    "vendor-copy": "./cli.js"
+  },
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "engines": {
+    "node": ">=12"
+  },
+  "dependencies": {
+    "ncp": "^2.0.0"
+  },
+  "devDependencies": {
+    "es2015-deferred": "^3.0.0",
+    "eslint": "^7.24.0",
+    "eslint-config-qubyte": "^4.1.0",
+    "mocha": "^8.3.2",
+    "sandboxed-module": "^2.0.4",
+    "sinon": "^10.0.0"
+  },
+  "scripts": {
+    "test": "mocha tests",
+    "posttest": "rm -rf test-copy-space",
+    "lint": "eslint ."
+  },
+  "repository": "github:qubyte/vendor-copy",
+  "author": "Mark S. Everitt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qubyte/vendor-copy/issues"
+  },
+  "homepage": "https://github.com/qubyte/vendor-copy#readme"
+}

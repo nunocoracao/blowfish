@@ -1,0 +1,12 @@
+{
+  "browser": true,
+  "devel": true,
+  "undef": true,
+  "unused": true,
+  "globals": {
+    "CellsByRow": false,
+    "gimmeAnItemElement": true,
+    "QUnit": false,
+    "Outlayer": false
+  }
+}

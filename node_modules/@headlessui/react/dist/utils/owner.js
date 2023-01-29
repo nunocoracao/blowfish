@@ -1,0 +1,1 @@
+import{isServer as n}from'./ssr.js';function e(r){return n?null:r instanceof Node?r.ownerDocument:r!=null&&r.hasOwnProperty("current")&&r.current instanceof Node?r.current.ownerDocument:document}export{e as getOwnerDocument};

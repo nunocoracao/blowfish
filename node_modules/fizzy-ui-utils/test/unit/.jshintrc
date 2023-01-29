@@ -1,0 +1,9 @@
+{
+  "browser": true,
+  "unused": true,
+  "undef": true,
+  "globals": {
+    "fizzyUIUtils": false,
+    "QUnit": false
+  }
+}

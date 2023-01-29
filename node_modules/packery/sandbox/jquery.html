@@ -1,0 +1,228 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Packery with jQuery</title>
+
+  <link rel="stylesheet" href="css/examples.css" />
+  <link rel="stylesheet" href="css/basics.css" />
+
+</head>
+<body>
+
+  <h1>Packery with jQuery</h1>
+
+  <div id="ex1" class="container">
+    <div class="item w4"></div>
+    <div class="item h4"></div>
+    <div class="item w2"></div>
+    <div class="item h4"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item h2"></div>
+    <div class="item w4"></div>
+    <div class="item w2"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item w2 h2"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item h4"></div>
+    <div class="item"></div>
+    <div class="item w4"></div>
+    <div class="item"></div>
+    <div class="item w2"></div>
+    <div class="item"></div>
+    <div class="item h2"></div>
+    <div class="item"></div>
+    <div class="item h2"></div>
+  </div>
+
+  <div id="ex2" class="container">
+  </div>
+
+  <div id="ex3" class="container">
+  </div>
+
+  <div id="ex4" class="container fluid has-padding">
+    <div class="item w4"></div>
+    <div class="item h4"></div>
+    <div class="item w2"></div>
+    <div class="item h4"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item h2"></div>
+    <div class="item w4"></div>
+    <div class="item w2"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item w2 h2"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item h4"></div>
+    <div class="item"></div>
+    <div class="item w4"></div>
+    <div class="item"></div>
+    <div class="item w2"></div>
+    <div class="item"></div>
+    <div class="item h2"></div>
+    <div class="item"></div>
+    <div class="item h2"></div>
+  </div>
+
+  <div id="ex5" class="container fluid">
+    <div class="item w4"></div>
+    <div class="item h4"></div>
+    <div class="item w2"></div>
+    <div class="item h4"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item h2"></div>
+    <div class="item w4"></div>
+    <div class="item w2"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item w2 h2"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item h4"></div>
+    <div class="item"></div>
+    <div class="item w4"></div>
+    <div class="item"></div>
+    <div class="item w2"></div>
+    <div class="item"></div>
+    <div class="item h2"></div>
+    <div class="item"></div>
+    <div class="item h2"></div>
+  </div>
+
+  <div id="ex6" class="container fluid has-padding">
+    <div class="bogey bogey1"></div>
+    <div class="bogey bogey2"></div>
+  </div>
+
+
+  <p><button id="add-to-7">Add items</button></p>
+
+  <div id="ex7" class="container">
+    <div class="item w2"></div>
+    <div class="item h4"></div>
+    <div class="item w2"></div>
+    <div class="item h4"></div>
+    <div class="item"></div>
+    <div class="item h2"></div>
+    <div class="item w4"></div>
+    <div class="item w4"></div>
+    <div class="item w4"></div>
+  </div>
+
+  <div id="fit-demo" class="container">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item w2"></div>
+    <div class="item h2"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/get-size/get-size.js"></script>
+<script src="../bower_components/desandro-matches-selector/matches-selector.js"></script>
+<script src="../bower_components/ev-emitter/ev-emitter.js"></script>
+<script src="../bower_components/jquery-bridget/jquery-bridget.js"></script>
+<script src="../bower_components/fizzy-ui-utils/utils.js"></script>
+<script src="../bower_components/outlayer/item.js"></script>
+<script src="../bower_components/outlayer/outlayer.js"></script>
+<script src="../js/rect.js"></script>
+<script src="../js/packer.js"></script>
+<script src="../js/item.js"></script>
+<script src="../js/packery.js"></script>
+
+<script src="examples.js"></script>
+<script>
+$( function() {
+
+  $('#ex1').packery();
+
+  var $ex2 = $('#ex2');
+  appendRandomSizedItems( $ex2[0] );
+  $ex2.packery();
+
+  var $ex3 = $('#ex3');
+  appendRandomSizedItems( $ex3[0] );
+  $ex3.packery({
+    columnWidth: 50,
+    rowHeight: 50
+  });
+
+  $('#ex4').packery();
+
+  $('#ex5').packery()
+
+  var $ex6 = $('#ex6');
+  appendRandomSizedItems( $ex6[0] );
+  $ex6.packery({
+    itemSelector: '.item',
+    stamp: '.bogey'
+  });
+
+  // ----- append and remove ----- //
+
+  var $ex7 = $('#ex7');
+  $ex7.packery();
+
+  $('#add-to-7').click( function() {
+    var items = '';
+    for ( var i=0; i < 3; i++ ) {
+    
+      var wRand = Math.random();
+      var widthClass = wRand > 0.85 ? 'w4' :
+        wRand > 0.7 ? 'w2' : '';
+      var hRand = Math.random();
+      var heightClass = hRand > 0.85 ? 'h4' :
+        hRand > 0.7 ? 'h2' : '';
+      var className = 'item ' + widthClass + ' ' + heightClass;
+      var item = '<div class="' + className + '"></div>';
+      items += item;
+    }
+    var $items = $( items );
+    $ex7.append( $items ).packery( 'appended', $items );
+  });
+
+  $ex7.on( 'click', '.item', function() {
+    $ex7.packery( 'remove', this ).packery();
+  });
+
+  // ----- fit demo ----- //
+
+ ( function() {
+   var $elem = $('#fit-demo');
+   $elem.packery();
+
+   $elem.packery( 'on', 'fitComplete', function( pckryInstance, item ) {
+     console.log('fit was completed ');
+   });
+
+   $elem.on( 'click', '.item', function() {
+     var $this = $(this)
+     if ( !$this.hasClass('gigante') ) {
+       $this.addClass('gigante');
+       $elem.packery( 'fit', this );
+     } else {
+       $this.removeClass('gigante');
+       $elem.packery();
+     }
+   });
+
+ })();
+
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+{
+  "name": "dagre-d3-es",
+  "version": "7.0.6",
+  "description": "",
+  "author": "Thibaut Lassalle",
+  "license": "MIT",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "generate_types": "tsc src/*.js --declaration --allowJs --emitDeclarationOnly; prettier --write .",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "format": "prettier --write .",
+    "compile_js_as_ts": "tsc src/index.js --AllowJs --checkJs --outDir dist/"
+  },
+  "keywords": [
+    "dagre-d3"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tbo47/dagre-es"
+  },
+  "dependencies": {
+    "d3": "^7.7.0",
+    "lodash-es": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/d3": "^7.4.0",
+    "@types/lodash-es": "^4.17.6",
+    "eslint": "^8.29.0",
+    "eslint-plugin-import": "^2.26.0",
+    "prettier": "^2.8.1",
+    "typescript": "^4.9.4"
+  },
+  "files": [
+    "src/**/*"
+  ],
+  "types": "./src/index.d.ts"
+}

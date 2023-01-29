@@ -1,0 +1,68 @@
+{
+  "name": "detect-autofill",
+  "version": "1.1.4",
+  "description": "Small javascript library to detect and even prevent browsers autofill of form elements. Usefull for implementing floating labels or applying custom logics/styles.",
+  "main": "dist/detect-autofill.js",
+  "scripts": {
+    "commit": "git-cz",
+    "clean": "rimraf dist",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint src/**/*.js --fix",
+    "build": "webpack --mode=production",
+    "watch": "webpack --mode=development -w",
+    "test": "npm run lint",
+    "prepublishOnly": "npm run clean && npm run lint && npm run build && npm run test",
+    "semantic-release": "semantic-release",
+    "travis-deploy-once": "travis-deploy-once"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matteobad/detect-autofill.git"
+  },
+  "keywords": [
+    "autocomplete",
+    "autofill",
+    "-webkit-autofill",
+    "floating-label",
+    "vanilla"
+  ],
+  "author": "Matteo Badini <matteo.badini95@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matteobad/detect-autofill/issues"
+  },
+  "homepage": "https://github.com/matteobad/detect-autofill#readme",
+  "dependencies": {
+    "custom-event-polyfill": "^1.0.7"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/github": "^7.2.1",
+    "@semantic-release/npm": "^7.1.0",
+    "@semantic-release/release-notes-generator": "^9.0.2",
+    "commitizen": "^4.2.3",
+    "css-loader": "^5.2.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.23.0",
+    "eslint-config-google": "^0.14.0",
+    "husky": "^4.2.5",
+    "sass": "^1.32.8",
+    "sass-loader": "^11.0.1",
+    "semantic-release": "^17.4.2",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.30.0",
+    "webpack-cli": "^4.6.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run test"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Item Methods</title>
+
+  <link rel="stylesheet" href="examples.css" />
+
+</head>
+<body>
+
+  <h1>Item Methods</h1>
+
+<p>
+  <button id="reveal">reveal</button>
+  <button id="hide">hide</button>
+  <button id="move">move</button>
+</p>
+
+<div class="container">
+  <div class="item"></div>
+</div>
+
+<script src="../bower_components/get-size/get-size.js"></script>
+<script src="../bower_components/matches-selector/matches-selector.js"></script>
+<script src="../bower_components/ev-emitter/ev-emitter.js"></script>
+<script src="../bower_components/fizzy-ui-utils/utils.js"></script>
+<script src="../item.js"></script>
+<script src="../outlayer.js"></script>
+
+<script>
+  var basic = document.querySelector('.container');
+  var layout = new Outlayer( basic );
+  var item = layout.items[0];
+
+  document.querySelector('#reveal').onclick = function() {
+    item.reveal();
+  };
+
+  document.querySelector('#hide').onclick = function() {
+    item.hide();
+  };
+
+  document.querySelector('#move').onclick = function() {
+    var x = Math.random() * 400;
+    var y = Math.random() * 200;
+    item.moveTo( x, y )
+  };
+</script>
+
+</body>
+</html>

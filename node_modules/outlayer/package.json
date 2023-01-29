@@ -1,0 +1,38 @@
+{
+  "name": "outlayer",
+  "version": "2.1.1",
+  "description": "the brains and guts of a layout library",
+  "main": "outlayer.js",
+  "dependencies": {
+    "ev-emitter": "^1.0.0",
+    "get-size": "^2.0.2",
+    "fizzy-ui-utils": "^2.0.0"
+  },
+  "devDependencies": {
+    "jquery": ">=1.4.3 <4",
+    "jquery-bridget": "2.x",
+    "qunitjs": "^1.17.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/metafizzy/outlayer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/metafizzy/outlayer/issues"
+  },
+  "homepage": "https://github.com/metafizzy/outlayer",
+  "directories": {
+    "doc": "docs",
+    "example": "examples",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "DOM",
+    "layout"
+  ],
+  "author": "David DeSandro",
+  "license": "MIT"
+}

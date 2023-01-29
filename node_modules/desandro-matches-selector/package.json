@@ -1,0 +1,24 @@
+{
+  "name": "desandro-matches-selector",
+  "version": "2.0.2",
+  "description": "matches/matchesSelector helper",
+  "main": "matches-selector.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/desandro/matches-selector.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/desandro/matches-selector/issues"
+  },
+  "homepage": "https://github.com/desandro/matches-selector",
+  "keywords": [
+    "DOM",
+    "matchesSelector",
+    "matches"
+  ],
+  "author": "David DeSandro"
+}

@@ -1,0 +1,83 @@
+{
+  "name": "prettier-plugin-go-template",
+  "version": "0.0.13",
+  "description": "Prettier plugin for formatting Go & GoHugo templates.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NiklasPor/prettier-plugin-go-template"
+  },
+  "author": {
+    "name": "Niklas Portmann",
+    "email": "niklaspor@gmail.com"
+  },
+  "keywords": [
+    "prettier",
+    "plugin",
+    "go",
+    "hugo",
+    "gohugo",
+    "template",
+    "html"
+  ],
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index",
+  "types": "lib/index",
+  "scripts": {
+    "lint": "tslint --project .",
+    "test": "jest",
+    "coverage": "jest --coverage --no-cache",
+    "publish:coverage": "codecov -t $npm_config_prettier_plugin_go_html_codecov",
+    "release:coverage": "npm run coverage && npm run publish:coverage",
+    "build": "tsc --pretty",
+    "watch": "npm run build -- --watch",
+    "watch:test": "jest --watch",
+    "release:plugin": "npm run build && npm run release:coverage && npm publish",
+    "release:plugin:beta": "npm run build && npm run release:coverage && npm publish --tag beta",
+    "website:build": "rollup -c",
+    "website:serve": "rollup -c -w",
+    "website:start": "sirv website/public --no-clear",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
+  },
+  "peerDependencies": {
+    "prettier": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "@types/node": "^14.14.2",
+    "@types/prettier": "^2.2.3",
+    "codecov": "^3.8.0",
+    "jest": "^26.6.1",
+    "prettier": "^2.3.0",
+    "ts-jest": "^26.4.2",
+    "ts-node": "^9.0.0",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.0.0",
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "rollup": "^2.3.4",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "svelte": "^3.0.0",
+    "sirv-cli": "^2.0.0",
+    "svelte-check": "^2.0.0",
+    "svelte-preprocess": "^4.0.0",
+    "@rollup/plugin-typescript": "^8.0.0",
+    "tslib": "^2.0.0",
+    "@tsconfig/svelte": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "jest": {
+    "preset": "ts-jest"
+  },
+  "dependencies": {
+    "ulid": "^2.3.0"
+  }
+}

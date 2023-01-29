@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>jQuery UI Draggable</title>
+
+  <link rel="stylesheet" href="css/examples.css" />
+
+</head>
+<body>
+
+  <h1>jQuery UI Draggable</h1>
+
+  <div id="ex4" class="container fluid has-padding">
+    <div class="item w4"></div>
+    <div class="item h4"></div>
+    <div class="item w2"></div>
+    <div class="item h4"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item h2"></div>
+    <div class="item w4"></div>
+    <div class="item w2"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item w2 h2"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item h4"></div>
+    <div class="item"></div>
+    <div class="item w4"></div>
+    <div class="item"></div>
+    <div class="item w2"></div>
+    <div class="item"></div>
+    <div class="item h2"></div>
+    <div class="item"></div>
+    <div class="item h2"></div>
+  </div>
+
+
+  <div id="ex6" class="container fluid has-padding"></div>
+
+<script src="../bower_components/get-size/get-size.js"></script>
+<script src="../bower_components/desandro-matches-selector/matches-selector.js"></script>
+<script src="../bower_components/ev-emitter/ev-emitter.js"></script>
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/jquery-ui-draggable/jquery-ui-draggable.js"></script>
+<script src="../bower_components/jquery-bridget/jquery-bridget.js"></script>
+<script src="../bower_components/fizzy-ui-utils/utils.js"></script>
+<script src="../bower_components/outlayer/item.js"></script>
+<script src="../bower_components/outlayer/outlayer.js"></script>
+<script src="../js/rect.js"></script>
+<script src="../js/packer.js"></script>
+<script src="../js/item.js"></script>
+<script src="../js/packery.js"></script>
+<script src="examples.js"></script>
+<script>
+$( function() {
+
+  // ----- grid ----- //
+
+  var $ex4 = $('#ex4');
+  $ex4.packery({
+    columnWidth: 50,
+    rowHeight: 50,
+    transitionDuration: '0.6s'
+  });
+
+  // get item elements and make them draggaable
+  var itemElems = $ex4.packery('getItemElements');
+  var $itemElems = $( itemElems ).draggable();
+
+  function orderItems( event ) {
+    // console.log( event.type, arguments );
+    var itemElems = $ex4.packery('getItemElements');
+    $( itemElems ).each( function( i, elem ) {
+      $(elem).text( i+1 );
+    });
+  }
+
+  $ex4.packery( 'bindUIDraggableEvents', $itemElems );
+  $ex4.on( 'dragItemPositioned', orderItems );
+  $ex4.on( 'layoutComplete', orderItems );
+
+  // ----- random sized ----- //
+
+  var $ex6 = $('#ex6');
+  appendRandomSizedItems( $ex6[0] );
+  $ex6.packery({
+    itemSelector: '.item',
+    transitionDuration: '1.6s'
+  });
+
+  // get item elements and make them draggaable
+  itemElems = $ex6.packery('getItemElements');
+  $itemElems = $( itemElems ).draggable();
+  $ex6.packery( 'bindUIDraggableEvents', $itemElems );
+
+});
+</script>
+
+</body>
+</html>

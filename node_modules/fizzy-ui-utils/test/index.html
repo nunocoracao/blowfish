@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+
+  <title>fizzy-ui-utils test</title>
+
+  <link rel="stylesheet" href="../bower_components/qunit/qunit/qunit.css" />
+
+</head>
+<body>
+
+<div id="qunit"></div>
+
+<div class="grid grid-a">
+  <div class="item item-a0"></div>
+  <div class="item item-a1"></div>
+  <div class="item item-a2"></div>
+  <div class="item item-a3">
+    <ul>
+      <li>
+        <p>
+          <span class="span-a3"></span>
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="grid grid-b">
+  <div class="item"></div>
+  <div class="item"></div>
+  <div>
+    <div class="item"></div>
+  </div>
+  <div>
+    <ul>
+      <li>
+        <div class="item"></div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<p data-nice-greeter data-greeter-expected="hello world"></p>
+<p data-nice-greeter='{ "greeting": "bonjour", "recipient": "mon ami" }'
+  data-greeter-expected="bonjour mon ami"></p>
+
+<p class="js-nice-greeter" data-greeter-expected="hello world"></p>
+<p class="js-nice-greeter"
+  data-nice-greeter='{ "greeting": "bonjour", "recipient": "mon ami" }'
+  data-greeter-expected="bonjour mon ami"></p>
+
+<script src="../bower_components/qunit/qunit/qunit.js"></script>
+<script src="../bower_components/desandro-matches-selector/matches-selector.js"></script>
+<script src="../utils.js"></script>
+
+<script src="unit/make-array.js"></script>
+<script src="unit/remove-from.js"></script>
+<script src="unit/get-parent.js"></script>
+<script src="unit/filter-find-elements.js"></script>
+<script src="unit/html-init.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Outlayer tests</title>
+
+  <link rel="stylesheet" href="../bower_components/qunit/qunit/qunit.css" />
+  <link rel="stylesheet" href="tests.css" />
+
+  <script src="../bower_components/ev-emitter/ev-emitter.js"></script>
+  <script src="../bower_components/get-size/get-size.js"></script>
+  <script src="../bower_components/matches-selector/matches-selector.js"></script>
+  <script src="../bower_components/fizzy-ui-utils/utils.js"></script>
+  <script src="../bower_components/qunit/qunit/qunit.js"></script>
+  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="../bower_components/jquery-bridget/jquery-bridget.js"></script>
+
+  <script src="../item.js"></script>
+  <script src="../outlayer.js"></script>
+
+  <script src="helpers.js"></script>
+  <script src="../sandbox/cells-by-row.js"></script>
+
+  <script src="unit/basics.js"></script>
+  <script src="unit/defaults.js"></script>
+  <script src="unit/options.js"></script>
+  <script src="unit/filter-find.js"></script>
+  <script src="unit/remove.js"></script>
+  <script src="unit/add-items.js"></script>
+  <script src="unit/prepend.js"></script>
+  <script src="unit/stamp.js"></script>
+  <script src="unit/offset.js"></script>
+<!-- <script src="item-on-transition-end.js"></script> -->
+  <!-- with CellsByRow -->
+  <script src="unit/create.js"></script>
+  <script src="unit/layout.js"></script>
+  <script src="unit/percent-position.js"></script>
+  <script src="unit/hide-reveal.js"></script>
+  <script src="unit/get-measurements.js"></script>
+  <script src="unit/origin.js"></script>
+  <script src="unit/transition-duration.js"></script>
+  <script src="unit/container-size.js"></script>
+  <script src="unit/destroy.js"></script>
+  <script src="unit/declarative.js"></script>
+  <script src="unit/jquery-plugin.js"></script>
+
+</head>
+<body>
+
+  <h1>Outlayer tests</h1>
+
+  <div id="qunit"></div>
+
+  <div id="empty"></div>
+
+  <h2>Defaults</h2>
+
+  <div id="defaults" class="container">
+    <div class="item"></div>
+  </div>
+
+  <h2>Options</h2>
+
+  <div id="options" class="container">
+    <div class="item"></div>
+  </div>
+
+  <h2>filter find</h2>
+
+  <div id="children">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <div id="filtered" class="container">
+    <div class="item w2"></div>
+    <div class="item h2"></div>
+    <div></div>
+    <div class="item w2"></div>
+    <div class="item h2"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="foobar"></div>
+  </div>
+
+  <div id="found" class="container">
+    <div><div class="item w2"></div></div>
+    <div><div class="item h2"></div></div>
+    <div><div class="item w2"></div></div>
+    <div><div class="item"></div></div>
+  </div>
+
+  <div id="filter-found" class="container">
+    <div class="item h2"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="foobar"></div>
+    <div><div class="item w2"></div></div>
+    <div><div class="item"></div></div>
+  </div>
+
+  <h2>remove</h2>
+
+  <div id="remove" class="container">
+    <div class="item"></div>
+    <div class="item w2"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item w2"></div>
+    <div class="item w2"></div>
+    <div class="item"></div>
+    <div class="item h2"></div>
+    <div class="item h2"></div>
+    <div class="item"></div>
+  </div>
+
+  <h2>Adding</h2>
+
+  <div id="add-items" class="container">
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <h2>Prepend</h2>
+
+  <div id="prepend" class="container">
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <h2>stamp</h2>
+
+  <div id="stamps1" class="container">
+    <div class="stamp stamp1"></div>
+    <div class="stamp stamp2"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <h2>layout</h2>
+
+  <div id="layout" class="container">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <h2>percentPosition</h2>
+
+  <div id="percent-position" class="container">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <h2>hide/reveal</h2>
+
+  <div id="hide-reveal" class="container">
+    <div class="item"></div>
+    <div class="item hideable"></div>
+    <div class="item"></div>
+    <div class="item hideable"></div>
+    <div class="item hideable"></div>
+    <div class="item hideable"></div>
+  </div>
+
+  <h2>getMeasurements</h2>
+
+  <div id="get-measurements" class="container">
+    <div class="grid-sizer"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <h2>_getElementOffset</h2>
+
+  <div id="offset" class="container">
+    <div class="stamp stamp1"></div>
+    <div class="stamp stamp2"></div>
+  </div>
+
+  <!-- <h2>item onTransitionEnd</h2>
+
+  <div id="item-on-transition-end" class="container">
+    <div class="item"></div>
+  </div> -->
+
+  <h2>origin</h2>
+
+  <div id="origin" class="container">
+    <div class="item item1"></div>
+    <div class="item item2"></div>
+    <div class="item item3"></div>
+  </div>
+
+  <h2>transitionDuration</h2>
+
+  <div id="transition-duration" class="container">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <h2>destroy</h2>
+
+  <div id="destroy" class="container">
+    <div class="item item1"></div>
+    <div class="item item2"></div>
+    <div class="item item3"></div>
+  </div>
+
+  <h2>Declarative</h2>
+
+  <div id="declarative-attr" class="container" data-cells-by-row>
+    <div class="item w2"></div>
+    <div class="item h2"></div>
+    <div class="item w2"></div>
+    <div class="item h2"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <!-- wrong quote marks for JSON -->
+  <div id="declarative-attr-bad-json" class="container" data-cells-by-row="{ 'columnWidth': 30 }">
+    <div class="item w2"></div>
+    <div class="item h2"></div>
+    <div class="item w2"></div>
+    <div class="item h2"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <div id="declarative-attr-good-json" class="container" data-cells-by-row='{ "columnWidth": 25, "rowHeight": 30, "isResizable": false, "foo": "bar" }'>
+    <div class="item w2"></div>
+    <div class="item h2"></div>
+    <div class="item w2"></div>
+    <div class="item h2"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <div id="declarative-js-class" class="container js-cells-by-row">
+    <div class="item w2"></div>
+    <div class="item h2"></div>
+    <div class="item w2"></div>
+    <div class="item h2"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <!-- wrong quote marks for JSON -->
+  <div id="declarative-js-class-bad-json" class="container js-cells-by-row" data-cells-by-row-options="{ 'columnWidth': 30 }">
+    <div class="item w2"></div>
+    <div class="item h2"></div>
+    <div class="item w2"></div>
+    <div class="item h2"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <div id="declarative-js-class-good-json" class="container js-cells-by-row" data-cells-by-row-options='{ "columnWidth": 25, "rowHeight": 30, "isResizable": false, "foo": "bar" }'>
+    <div class="item w2"></div>
+    <div class="item h2"></div>
+    <div class="item w2"></div>
+    <div class="item h2"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <h2>container size</h2>
+
+  <div id="container-size" class="container"></div>
+
+  <h2>jQuery plugin</h2>
+
+  <div id="jquery">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "name": "fizzy-ui-utils",
+  "version": "2.0.7",
+  "description": "UI utilities",
+  "main": "utils.js",
+  "dependencies": {
+    "desandro-matches-selector": "^2.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ui",
+    "utility",
+    "browser",
+    "DOM"
+  ],
+  "author": "David DeSandro",
+  "license": "MIT",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/metafizzy/fizzy-ui-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/metafizzy/fizzy-ui-utils/issues"
+  },
+  "homepage": "https://github.com/metafizzy/fizzy-ui-utils"
+}

@@ -1,0 +1,47 @@
+{
+  "name": "@braintree/sanitize-url",
+  "version": "6.0.0",
+  "description": "A url sanitizer",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "",
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "prebuild": "prettier --write .",
+    "build": "tsc --declaration",
+    "lint": "eslint --ext js,ts .",
+    "posttest": "npm run lint",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/braintree/sanitize-url.git"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/braintree/sanitize-url/issues"
+  },
+  "homepage": "https://github.com/braintree/sanitize-url#readme",
+  "devDependencies": {
+    "@types/jest": "^27.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "chai": "^4.3.4",
+    "eslint": "^8.6.0",
+    "eslint-config-braintree": "^6.0.0-typescript-prep-rc.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.4.5",
+    "prettier": "^2.5.1",
+    "ts-jest": "^27.1.2",
+    "typescript": "^4.5.4"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "preset": "ts-jest",
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "src/__tests__/tsconfig.json"
+      }
+    }
+  }
+}

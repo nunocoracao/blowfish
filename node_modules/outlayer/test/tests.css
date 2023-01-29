@@ -1,0 +1,56 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.container {
+  background: #EEE;
+  width: 200px;
+  margin-bottom: 1.0em;
+}
+
+.item {
+  border: 1px solid;
+  background: #09F;
+  width: 50px;
+  height: 50px;
+}
+
+.stamp {
+  background: red;
+  border: 1px solid;
+}
+
+#get-measurements .grid-sizer {
+  width: 75px;
+  height: 90px;
+}
+
+#offset {
+  width: 300px;
+  border-style: solid;
+  border-color: #654;
+  border-width: 0;
+/*  border-width: 40px 30px 20px 10px;*/
+/*  padding: 10px 20px 30px 40px;*/
+}
+
+#offset .stamp {
+  position: absolute;
+  border: 1px solid;
+}
+
+#offset .stamp1 {
+  width: 100px;
+  height: 50px;
+  left: 0px;
+  top: 0px;
+}
+
+#offset .stamp2 {
+  width: 80px;
+  height: 60px;
+  right: 0px;
+  bottom: 0px;
+}

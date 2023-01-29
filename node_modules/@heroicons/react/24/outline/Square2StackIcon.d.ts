@@ -1,0 +1,3 @@
+import * as React from 'react';
+declare function Square2StackIcon(props: React.ComponentProps<'svg'> & { title?: string, titleId?: string }): JSX.Element;
+export default Square2StackIcon;

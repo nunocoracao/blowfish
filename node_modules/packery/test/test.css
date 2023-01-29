@@ -1,0 +1,113 @@
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  width: 80px;
+  margin-bottom: 20px;
+  background: #EEE;
+}
+
+.container:after {
+  content: '';
+  display: table;
+}
+
+.item {
+  float: left;
+  width:  18px;
+  height: 18px;
+  margin: 1px;
+  background: #444;
+}
+
+.item.w2 { width:  38px; }
+.item.h2 { height: 38px; }
+.item.w4 { width:  78px; }
+.item.h4 { height: 78px; }
+.item.w5 { width:  98px; }
+
+.gridded .grid-sizer {
+  width: 30px;
+  height: 25px;
+}
+
+.gridded .gutter-sizer {
+  width: 10px;
+}
+
+.stamp {
+  background: red;
+}
+
+.has-stamps {
+  position: relative;
+}
+
+.place-stamps .stamp {
+  position: absolute;
+}
+
+.place-stamps .stamp1 {
+  width: 30px;
+  height: 25px;
+  left: 22px;
+  top: 10px;
+}
+
+.place-stamps .stamp2 {
+  width: 10px;
+  height: 45px;
+  left: 3px;
+  top: 30px;
+}
+
+#stamped2 .stamp1 {
+  position: relative;
+  left: 8px;
+  top: 8px;
+}
+
+#stamped2 .stamp2 {
+  position: absolute;
+  right: 8px;
+  top: 23px;
+}
+
+#stamped-borders {
+  border-left: 10px solid;
+  border-top: 15px solid;
+}
+
+#stamped-borders .stamp1 {
+  width: 50px;
+  height: 30px;
+}
+
+.dragger {
+  background: green;
+}
+
+/*#fitting {
+  position: absolute;
+  top: 0;
+}*/
+
+#hidden-items .hidden {
+  display: none;
+}
+
+#sub-pixel-fit {
+  width: 290px;
+}
+
+#sub-pixel-fit .item,
+#sub-pixel-fit .grid-sizer {
+  width: 20%;
+}
+
+#sub-pixel-fit .item {
+  margin: 0;
+}
+
+#sub-pixel-fit .item.w2 { width: 40%; }
