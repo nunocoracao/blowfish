@@ -106,7 +106,7 @@ Call to action
 | ------------- | ----------------------------------------------------------------------------------------------------------------- |
 | `images`      | **Required.** A regex string to match image names.                                                                |
 | `aspectRatio` | **Optional.** The aspect ratio for the carousel. Either `16-9`, `21-9` or `32-9`. It is set to `16-9` by default. |
-| `duration`    | **Optional.** The duration for the auto-scrooling, specified in milliseconds. Defaults to `2000` (2s)             |
+| `interval`    | **Optional.** The interval for the auto-scrooling, specified in milliseconds. Defaults to `2000` (2s)             |
 <!-- prettier-ignore-end -->
 
 **Example 1:** 16:9 aspect ratio and verbose list of images
@@ -120,10 +120,10 @@ Call to action
 **Example 2:** 21:9 aspect ratio and regex-ed list of images
 
 ```md
-{{</* carousel images="gallery/*" aspectRatio="21-9" duration="2500" */>}}
+{{</* carousel images="gallery/*" aspectRatio="21-9" interval="2500" */>}}
 ```
 
-{{< carousel images="gallery/*" aspectRatio="21-9" duration="2500" >}}
+{{< carousel images="gallery/*" aspectRatio="21-9" interval="2500" >}}
 
 <br/><br/><br/>
 
