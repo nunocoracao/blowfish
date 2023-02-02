@@ -2,7 +2,7 @@
 {{ $id := delimit (slice "gallery" $time) "-" }}
 {{ $aspect := default "16-9" (.Get "aspectRatio") }}
 {{ $images := .Page.Resources.Match (.Get "images") }}
-{{ $randomDuration := add (mod (add (mul 13 $time) 97) 1000) 2000 }}
+{{ $durationMillis := default "2000" (.Get "durationMillis") }}
 
 <div id="{{ $id }}" class="carousel slide relative" data-bs-ride="carousel">
     <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-2">
@@ -24,7 +24,7 @@
 
         <div class="carousel-item {{ if eq $num 0 }} active {{ end }} relative float-left w-full ratio-{{ $aspect }} single_hero_background"
             style="background-image:url({{ . }})"
-            data-bs-interval="{{ $randomDuration }}"
+            data-bs-interval="{{ $durationMillis }}"
         ></div>
         {{ $num = add $num 1 }}
         {{ end }}
