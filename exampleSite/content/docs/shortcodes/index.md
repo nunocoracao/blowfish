@@ -101,12 +101,12 @@ Call to action
 
 `carousel` is used to showcase multiple images in an interactive and visually appealing way. This allows a user to slide through multiple images while only taking up the vertical space of a single one. All images are displayed using the full width of the parent component and using one of the predefined aspect ratios of `16:9`, `21:9` or `32:9`.
 
-
 <!-- prettier-ignore-start -->
 | Parameter     | Description                                                                                                       |
 | ------------- | ----------------------------------------------------------------------------------------------------------------- |
 | `images`      | **Required.** A regex string to match image names.                                                                |
 | `aspectRatio` | **Optional.** The aspect ratio for the carousel. Either `16-9`, `21-9` or `32-9`. It is set to `16-9` by default. |
+| `duration`    | **Optional.** The duration for the auto-scrooling, specified in milliseconds. Defaults to `2000` (2s)             |
 <!-- prettier-ignore-end -->
 
 **Example 1:** 16:9 aspect ratio and verbose list of images
@@ -120,10 +120,10 @@ Call to action
 **Example 2:** 21:9 aspect ratio and regex-ed list of images
 
 ```md
-{{</* carousel images="gallery/*" aspectRatio="21-9" */>}}
+{{</* carousel images="gallery/*" aspectRatio="21-9" duration="2500" */>}}
 ```
 
-{{< carousel images="gallery/*" aspectRatio="21-9" >}}
+{{< carousel images="gallery/*" aspectRatio="21-9" duration="2500" >}}
 
 <br/><br/><br/>
 
