@@ -9,6 +9,7 @@ showAuthor: false
 authors:
   - "nunocoracao"
   - "secondauthor"
+type: 'sample'
 ---
 
 This is an example of how an article with multiple authors will look like. 

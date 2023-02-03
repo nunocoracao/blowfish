@@ -1,12 +1,13 @@
 
-{{ $limit := .Get "limit" }}
+{{ $limit := .Get "limit" | default 1 }}
+{{ $title := .Get "title" | default (i18n "shortcode.recent_articles" | emojify) }}
 {{ $parent := .Page.RelPermalink }}
 {{ $where := .Get "where" }}
 {{ $value := .Get "value" }}
-<h2 class="mt-20 text-2xl font-extrabold mb-10">{{ i18n "shortcode.recent_articles" | emojify }}</h2>
+<h2 class="mt-20 text-2xl font-extrabold mb-10">{{ $title }}</h2>
 <section class="space-y-10 w-full mt-10 mb-10">
     {{ if $where }}
-        {{ range ( where .Site.RegularPages $where $value | first 1 ) }}
+        {{ range ( where .Site.RegularPages $where $value | first $limit ) }}
             {{ if not (eq .RelPermalink $parent) }}
                 {{ partial "article-link/simple.html" . }}
             {{ end }}

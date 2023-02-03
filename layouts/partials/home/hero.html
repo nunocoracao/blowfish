@@ -4,14 +4,14 @@
         <div class="mx-auto max-w-7xl p-0">
             <div class="relative shadow-xl sm:overflow-hidden rounded-2xl">
                 <div class="absolute inset-0">
-                    {{ with .Site.Params.homepage.homepageImage }}
-                    {{ $homepageImage := resources.Get . }}
+                    {{ $homepageImage := "" }}
+                    {{ with .Site.Params.defaultBackgroundImage }}{{ $homepageImage = resources.Get . }}{{ end }}
+                    {{ with .Site.Params.homepage.homepageImage }}{{ $homepageImage = resources.Get . }}{{ end }}
                     {{ if $homepageImage }}
                     <img class="h-full w-full object-cover m-0 nozoom" src="{{ $homepageImage.RelPermalink }}">
                     <div
                         class="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-700 dark:from-primary-600 dark:to-secondary-800 mix-blend-multiply">
                     </div>
-                    {{ end }}
                     {{ end }}
                 </div>
                 <div class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8 flex flex-col items-center justify-center text-center">

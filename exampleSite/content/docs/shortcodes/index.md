@@ -15,28 +15,51 @@ In addition to all the [default Hugo shortcodes](https://gohugo.io/content-manag
 
 `alert` outputs its contents as a stylised message box within your article. It's useful for drawing attention to important information that you don't want the reader to miss.
 
+<!-- prettier-ignore-start -->
+| Parameter      | Description                                                                                                                                                                                |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `icon`         | **Optional.** the icon to display on the left side.<br>**Default:** `exclaimation triangle icon` (Check out the [icon shortcode](#icon) for more details on using icons.)                    |
+| `iconColor`    | **Optional.** the color for the icon in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme .              |
+| `cardColor`    | **Optional.** the color for the card background in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme .   |
+| `textColor`    | **Optional.** the color for the text in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme .              |
+<!-- prettier-ignore-end -->
+
 The input is written in Markdown so you can format it however you please.
 
-By default, the alert is presented with an exclaimation triangle icon. To change the icon, include the icon name in the shortcode. Check out the [icon shortcode](#icon) for more details on using icons.
-
-**Example:**
+**Example 1:** No params
 
 ```md
 {{</* alert */>}}
 **Warning!** This action is destructive!
-{{</* /alert */>}}
-
-{{</* alert "twitter" */>}}
-Don't forget to [follow me](https://twitter.com/nunocoracao) on Twitter.
 {{</* /alert */>}}
 ```
 
 {{< alert >}}
 **Warning!** This action is destructive!
 {{< /alert >}}
-&nbsp;
+
+**Example 2:** Unnamed param
+
+```md
+{{</* alert "twitter" */>}}
+Don't forget to [follow me](https://twitter.com/nunocoracao) on Twitter.
+{{</* /alert */>}}
+```
+
 {{< alert "twitter" >}}
 Don't forget to [follow me](https://twitter.com/nunocoracao) on Twitter.
+{{< /alert >}}
+
+**Example 3:** Named params
+
+```md
+{{</* alert icon="fire" cardColor="#e63946" iconColor="#1d3557" textColor="#f1faee" */>}}
+This is an error!
+{{</* /alert */>}}
+```
+
+{{< alert icon="fire" cardColor="#e63946" iconColor="#1d3557" textColor="#f1faee" >}}
+This is an error!
 {{< /alert >}}
 
 <br/><br/><br/>
@@ -101,12 +124,12 @@ Call to action
 
 `carousel` is used to showcase multiple images in an interactive and visually appealing way. This allows a user to slide through multiple images while only taking up the vertical space of a single one. All images are displayed using the full width of the parent component and using one of the predefined aspect ratios of `16:9`, `21:9` or `32:9`.
 
-
 <!-- prettier-ignore-start -->
-| Parameter        | Description                                                                                                       |
-| ---------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `images`         | **Required.** A regex string to match image names.                                                                |
-| `aspectRatio`    | **Optional.** The aspect ratio for the carousel. Either `16-9`, `21-9` or `32-9`. It is set to `16-9` by default. |
+| Parameter     | Description                                                                                                       |
+| ------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `images`      | **Required.** A regex string to match image names.                                                                |
+| `aspectRatio` | **Optional.** The aspect ratio for the carousel. Either `16-9`, `21-9` or `32-9`. It is set to `16-9` by default. |
+| `interval`    | **Optional.** The interval for the auto-scrooling, specified in milliseconds. Defaults to `2000` (2s)             |
 <!-- prettier-ignore-end -->
 
 **Example 1:** 16:9 aspect ratio and verbose list of images
@@ -120,10 +143,10 @@ Call to action
 **Example 2:** 21:9 aspect ratio and regex-ed list of images
 
 ```md
-{{</* carousel images="gallery/*" aspectRatio="21-9" */>}}
+{{</* carousel images="gallery/*" aspectRatio="21-9" interval="2500" */>}}
 ```
 
-{{< carousel images="gallery/*" aspectRatio="21-9" >}}
+{{< carousel images="gallery/*" aspectRatio="21-9" interval="2500" >}}
 
 <br/><br/><br/>
 
@@ -212,9 +235,9 @@ Blowfish also supports automatic conversion of images included using standard Ma
 
 `gallery` allows you to showcase multiple images at once, in a responsive manner with more varied and interesting layouts.
 
-In order to add images to the gallery, use `img` tags for each image and add `class="grid-wXX"` in order for the gallery to be able to identify the column width for each image. The widths available by default start at 10% and go all the way to 100% in 5% increments. For example, to set the width to 65%, set the class to `grid-w65`. Additionally, widths for 33% and 66% are also available in order to build galleries with 3 cols.
+In order to add images to the gallery, use `img` tags for each image and add `class="grid-wXX"` in order for the gallery to be able to identify the column width for each image. The widths available by default start at 10% and go all the way to 100% in 5% increments. For example, to set the width to 65%, set the class to `grid-w65`. Additionally, widths for 33% and 66% are also available in order to build galleries with 3 cols. You can also leverage tailwind's responsive indicators to have a reponsive grid.
 
-**Example:**
+**Example 1: normal gallery**
 
 ```md
 {{</* gallery */>}}
@@ -236,6 +259,33 @@ In order to add images to the gallery, use `img` tags for each image and add `cl
   <img src="gallery/05.jpg" class="grid-w33" />
   <img src="gallery/06.jpg" class="grid-w33" />
   <img src="gallery/07.jpg" class="grid-w33" />
+{{< /gallery >}}
+
+<br/><br/><br/>
+
+
+**Example 2: responsive gallery**
+
+```md
+{{</* gallery */>}}
+  <img src="gallery/01.jpg" class="grid-w33" />
+  <img src="gallery/02.jpg" class="grid-w33" />
+  <img src="gallery/03.jpg" class="grid-w33" />
+  <img src="gallery/04.jpg" class="grid-w33" />
+  <img src="gallery/05.jpg" class="grid-w33" />
+  <img src="gallery/06.jpg" class="grid-w33" />
+  <img src="gallery/07.jpg" class="grid-w33" />
+{{</* /gallery */>}}
+```
+
+{{< gallery >}}
+  <img src="gallery/01.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img src="gallery/02.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img src="gallery/03.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img src="gallery/04.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img src="gallery/05.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img src="gallery/06.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img src="gallery/07.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
 {{< /gallery >}}
 
 <br/><br/><br/>
@@ -325,11 +375,16 @@ When life gives you lemons, make lemonade.
 `List` will display a list of recent articles. This shortcode requires a limit value to constraint the list. Additionally, it supports a `where` and a `value` in order to filter articles by their parameters. Note that this shortcode will not display its parent page but it will count for the limit value.
 
 <!-- prettier-ignore-start -->
-| Parameter | Description                                             |
-| --------- | ------------------------------------------------------- |
-| `limit`   | **Required.** the number of recent articles to display. |
-| `where`   | the number of recent articles to display.               |
-| `value`   | the number of recent articles to display.               |
+| Parameter | Description                                                                                                                                             |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `limit`   | **Required.** the number of recent articles to display.                                                                                                 |
+| `title`   | Optional title for the list, default is `Recent`                                                                                                        |
+| `where`   | The variable to be used for the query of articles e.g. `Type`                                                                                           |
+| `value`   | The value that will need to match the parameter defined in `where` for the query of articles e.g. for `where` == `Type` a valid value could be `sample` |
+
+{{< alert >}}
+The `where` and `value` values are used in the following query `where .Site.RegularPages $where $value` in the code of the shortcode. Check [Hugo docs](https://gohugo.io/variables/page/) to learn more about which parameters are available to use.
+{{</ alert >}}
 
 <!-- prettier-ignore-end -->
 
@@ -344,10 +399,10 @@ When life gives you lemons, make lemonade.
 **Example #2:**
 
 ```md
-{{</* list limit=2 where="Type" value="sample" */>}}
+{{</* list title="Samples" limit=5 where="Type" value="sample" */>}}
 ```
 
-{{< list limit=2 where="Type" value="sample">}}
+{{< list title="Samples" limit=5 where="Type" value="sample">}}
 
 <br/><br/><br/>
 
@@ -394,9 +449,94 @@ You can see some additional Mermaid examples on the [diagrams and flowcharts sam
 
 <br/><br/><br/>
 
+## Timeline
+
+The `timeline` creates a visual timeline that can be used in different use-cases, e.g. professional experience, a project's achievements, etc. The `timeline` shortcode relies on the `timelineItem` sub-shortcode to define each item within the main timeline. Each item can have the following properties.
+
+
+<!-- prettier-ignore-start -->
+| Parameter   | Description                                  |
+| ----------- | -------------------------------------------- |
+| `icon`      | the icon to be used in the timeline visuals. |
+| `header`    | header for each entry                        |
+| `badge`     | text to place within the top righ badge      |
+| `subheader` | entry's subheader                            |
+
+<!-- prettier-ignore-end -->
+
+**Example:**
+
+```md
+{{</* timeline */>}}
+
+{{</* timelineItem icon="github" header="header" badge="badge test" subheader="subheader" */>}}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non magna ex. Donec sollicitudin ut lorem quis lobortis. Nam ac ipsum libero. Sed a ex eget ipsum tincidunt venenatis quis sed nisl. Pellentesque sed urna vel odio consequat tincidunt id ut purus. Nam sollicitudin est sed dui interdum rhoncus. 
+{{</* /timelineItem */>}}
+
+
+{{</* timelineItem icon="code" header="Another Awesome Header" badge="date - present" subheader="Awesome Subheader" */>}}
+With html code
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
+{{</* /timelineItem */>}}
+
+{{</* timelineItem icon="star" header="Shortcodes" badge="AWESOME" */>}}
+With other shortcodes
+{{</* gallery */>}}
+  <img src="gallery/01.jpg" class="grid-w33" />
+  <img src="gallery/02.jpg" class="grid-w33" />
+  <img src="gallery/03.jpg" class="grid-w33" />
+  <img src="gallery/04.jpg" class="grid-w33" />
+  <img src="gallery/05.jpg" class="grid-w33" />
+  <img src="gallery/06.jpg" class="grid-w33" />
+  <img src="gallery/07.jpg" class="grid-w33" />
+{{</* /gallery */>}}
+{{</* /timelineItem */>}}
+
+{{</* /timeline */>}}
+```
+
+
+{{< timeline >}}
+
+{{< timelineItem icon="github" header="header" badge="badge test" subheader="subheader" >}}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non magna ex. Donec sollicitudin ut lorem quis lobortis. Nam ac ipsum libero. Sed a ex eget ipsum tincidunt venenatis quis sed nisl. Pellentesque sed urna vel odio consequat tincidunt id ut purus. Nam sollicitudin est sed dui interdum rhoncus. 
+{{</ timelineItem >}}
+
+
+{{< timelineItem icon="code" header="Another Awesome Header" badge="date - present" subheader="Awesome Subheader">}}
+With html code
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
+{{</ timelineItem >}}
+
+{{< timelineItem icon="star" header="Shortcodes" badge="AWESOME" >}}
+With other shortcodes
+{{< gallery >}}
+  <img src="gallery/01.jpg" class="grid-w33" />
+  <img src="gallery/02.jpg" class="grid-w33" />
+  <img src="gallery/03.jpg" class="grid-w33" />
+  <img src="gallery/04.jpg" class="grid-w33" />
+  <img src="gallery/05.jpg" class="grid-w33" />
+  <img src="gallery/06.jpg" class="grid-w33" />
+  <img src="gallery/07.jpg" class="grid-w33" />
+{{< /gallery >}}
+{{</ timelineItem >}}
+
+{{</ timeline >}}
+
+
+<br/><br/><br/>
+
 ## TypeIt
 
-[TypeIt](https://www.typeitjs.com) is the most versatile JavaScript tool for creating typewriter effects on the planet. With a straightforward configuration, it allows you to type single or multiple strings that break lines, delete & replace each other, and it even handles strings that contain complex HTML. 
+[TypeIt](https://www.typeitjs.com) is the most versatile JavaScript tool for creating typewriter effects on the planet. With a straightforward configuration, it allows you to type single or multiple strings that break lines, delete & replace each other, and it even handles strings that contain complex HTML.
 
 Blowfish implements a sub-set of TypeIt features using a `shortcode`. Write your text within the `typeit` shortcode and use the following parameters to configure the behavior you want.
 

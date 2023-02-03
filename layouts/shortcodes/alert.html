@@ -1,8 +1,39 @@
-<div class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900">
-  <span class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center">
-    {{ partial "icon.html" (.Get 0 | default "triangle-exclamation") }}
+{{ if .IsNamedParams }}
+  {{ $.Scratch.Set "icon" (default "triangle-exclamation" (.Get "icon") ) }}
+  {{ $.Scratch.Set "cardColor" (.Get "cardColor") }}
+  {{ $.Scratch.Set "iconColor" (.Get "iconColor") }}
+  {{ $.Scratch.Set "textColor" (.Get "textColor") }}
+{{ else }}
+  {{ $.Scratch.Set "icon" (default "triangle-exclamation" (.Get 0) ) }}
+{{ end }}
+
+
+<div
+  {{ if not ($.Scratch.Get "cardColor") }}
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  {{ else }}
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: {{ $.Scratch.Get "cardColor" }}"
+  {{ end }}>
+
+  <span
+    {{ if not ($.Scratch.Get "iconColor") }}
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    {{ else }}
+      class="ltr:pr-3 rtl:pl-3 flex items-center"
+      style="color: {{ $.Scratch.Get "iconColor" }}"
+    {{ end }}>
+
+    {{ partial "icon.html" ($.Scratch.Get "icon") }}
   </span>
-  <span class="dark:text-neutral-300">
+
+  <span
+    {{ if not ($.Scratch.Get "textColor") }}
+      class="dark:text-neutral-300"
+    {{ else }}
+      style="color: {{ $.Scratch.Get "textColor" }}"
+    {{ end }}>
+    
     {{- .Inner | markdownify -}}
   </span>
 </div>

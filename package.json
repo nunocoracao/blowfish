@@ -1,6 +1,6 @@
 {
   "name": "hugo-blowfish-theme",
-  "version": "2.26.0",
+  "version": "2.27.0",
   "description": "Blowfish theme for Hugo",
   "scripts": {
     "fullinstall": "npm run preinstall && npm install && npm run postinstall",
@@ -35,7 +35,7 @@
   "homepage": "https://github.com/nunocoracao/blowfish#readme",
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
-    "chart.js": "^4.1.2",
+    "chart.js": "^4.2.0",
     "fuse.js": "^6.6.2",
     "jquery": "^3.6.3",
     "katex": "^0.16.4",
@@ -43,8 +43,8 @@
     "packery": "^2.1.2",
     "prettier": "^2.8.3",
     "prettier-plugin-go-template": "^0.0.13",
-    "prettier-plugin-tailwindcss": "^0.2.1",
-    "rimraf": "^4.1.1",
+    "prettier-plugin-tailwindcss": "^0.2.2",
+    "rimraf": "^4.1.2",
     "tailwindcss": "^3.2.4",
     "tw-elements": "^1.0.0-alpha13",
     "typeit": "^8.7.1",
@@ -98,8 +98,8 @@
     }
   ],
   "dependencies": {
-    "@headlessui/react": "^1.7.7",
-    "@heroicons/react": "^2.0.13",
+    "@headlessui/react": "^1.7.8",
+    "@heroicons/react": "^2.0.14",
     "@tailwindcss/forms": "^0.5.3",
     "commander": "^10.0.0"
   }
