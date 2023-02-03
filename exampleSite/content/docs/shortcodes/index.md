@@ -53,12 +53,12 @@ Don't forget to [follow me](https://twitter.com/nunocoracao) on Twitter.
 **Example 3:** Named params
 
 ```md
-{{</* alert icon="fire" cardColor="red" iconColor="black" textColor="white" */>}}
+{{</* alert icon="fire" cardColor="#e63946" iconColor="#1d3557" textColor="#f1faee" */>}}
 This is an error!
 {{</* /alert */>}}
 ```
 
-{{< alert icon="fire" cardColor="red" iconColor="black" textColor="white" >}}
+{{< alert icon="fire" cardColor="#e63946" iconColor="#1d3557" textColor="#f1faee" >}}
 This is an error!
 {{< /alert >}}
 
