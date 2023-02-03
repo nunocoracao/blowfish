@@ -15,28 +15,51 @@ In addition to all the [default Hugo shortcodes](https://gohugo.io/content-manag
 
 `alert` outputs its contents as a stylised message box within your article. It's useful for drawing attention to important information that you don't want the reader to miss.
 
+<!-- prettier-ignore-start -->
+| Parameter      | Description                                                                                                                                                                                |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `icon`         | **Optional.** the icon to display on the left side.<br>**Default:** `exclaimation triangle icon` (Check out the [icon shortcode](#icon) for more details on using icons.)                    |
+| `iconColor`    | **Optional.** the color for the icon in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme .              |
+| `cardColor`    | **Optional.** the color for the card background in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme .   |
+| `textColor`    | **Optional.** the color for the text in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme .              |
+<!-- prettier-ignore-end -->
+
 The input is written in Markdown so you can format it however you please.
 
-By default, the alert is presented with an exclaimation triangle icon. To change the icon, include the icon name in the shortcode. Check out the [icon shortcode](#icon) for more details on using icons.
-
-**Example:**
+**Example 1:** No params
 
 ```md
 {{</* alert */>}}
 **Warning!** This action is destructive!
-{{</* /alert */>}}
-
-{{</* alert "twitter" */>}}
-Don't forget to [follow me](https://twitter.com/nunocoracao) on Twitter.
 {{</* /alert */>}}
 ```
 
 {{< alert >}}
 **Warning!** This action is destructive!
 {{< /alert >}}
-&nbsp;
+
+**Example 2:** Unnamed param
+
+```md
+{{</* alert "twitter" */>}}
+Don't forget to [follow me](https://twitter.com/nunocoracao) on Twitter.
+{{</* /alert */>}}
+```
+
 {{< alert "twitter" >}}
 Don't forget to [follow me](https://twitter.com/nunocoracao) on Twitter.
+{{< /alert >}}
+
+**Example 3:** Named params
+
+```md
+{{</* alert icon="fire" cardColor="red" iconColor="black" textColor="white" */>}}
+This is an error!
+{{</* /alert */>}}
+```
+
+{{< alert icon="fire" cardColor="red" iconColor="black" textColor="white" >}}
+This is an error!
 {{< /alert >}}
 
 <br/><br/><br/>
@@ -100,7 +123,6 @@ Call to action
 ## Carousel
 
 `carousel` is used to showcase multiple images in an interactive and visually appealing way. This allows a user to slide through multiple images while only taking up the vertical space of a single one. All images are displayed using the full width of the parent component and using one of the predefined aspect ratios of `16:9`, `21:9` or `32:9`.
-
 
 <!-- prettier-ignore-start -->
 | Parameter     | Description                                                                                                       |
@@ -354,7 +376,6 @@ The `where` and `value` values are used in the following query `where .Site.Regu
 
 {{< list title="Samples" limit=5 where="Type" value="sample">}}
 
-
 <br/><br/><br/>
 
 ## Mermaid
@@ -487,7 +508,7 @@ With other shortcodes
 
 ## TypeIt
 
-[TypeIt](https://www.typeitjs.com) is the most versatile JavaScript tool for creating typewriter effects on the planet. With a straightforward configuration, it allows you to type single or multiple strings that break lines, delete & replace each other, and it even handles strings that contain complex HTML. 
+[TypeIt](https://www.typeitjs.com) is the most versatile JavaScript tool for creating typewriter effects on the planet. With a straightforward configuration, it allows you to type single or multiple strings that break lines, delete & replace each other, and it even handles strings that contain complex HTML.
 
 Blowfish implements a sub-set of TypeIt features using a `shortcode`. Write your text within the `typeit` shortcode and use the following parameters to configure the behavior you want.
 
