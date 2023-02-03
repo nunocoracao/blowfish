@@ -1,18 +1,15 @@
 {{ if .IsNamedParams }}
   {{ $.Scratch.Set "icon" (default "triangle-exclamation" (.Get "icon") ) }}
-  {{ $.Scratch.Set "cardColor" (default "NULL" (.Get "cardColor") ) }}
-  {{ $.Scratch.Set "iconColor" (default "NULL" (.Get "iconColor") ) }}
-  {{ $.Scratch.Set "textColor" (default "NULL" (.Get "textColor") ) }}
+  {{ $.Scratch.Set "cardColor" (.Get "cardColor") }}
+  {{ $.Scratch.Set "iconColor" (.Get "iconColor") }}
+  {{ $.Scratch.Set "textColor" (.Get "textColor") }}
 {{ else }}
   {{ $.Scratch.Set "icon" (default "triangle-exclamation" (.Get 0) ) }}
-  {{ $.Scratch.Set "cardColor" "NULL" }}
-  {{ $.Scratch.Set "iconColor" "NULL" }}
-  {{ $.Scratch.Set "textColor" "NULL" }}
 {{ end }}
 
 
 <div
-  {{ if eq ($.Scratch.Get "cardColor") "NULL" }}
+  {{ if not ($.Scratch.Get "cardColor") }}
     class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
   {{ else }}
     class="flex px-4 py-3 rounded-md"
@@ -20,7 +17,7 @@
   {{ end }}>
 
   <span
-    {{ if eq ($.Scratch.Get "iconColor") "NULL" }}
+    {{ if not ($.Scratch.Get "iconColor") }}
       class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
     {{ else }}
       class="ltr:pr-3 rtl:pl-3 flex items-center"
@@ -31,7 +28,7 @@
   </span>
 
   <span
-    {{ if eq ($.Scratch.Get "textColor") "NULL" }}
+    {{ if not ($.Scratch.Get "textColor") }}
       class="dark:text-neutral-300"
     {{ else }}
       style="color: {{ $.Scratch.Get "textColor" }}"
