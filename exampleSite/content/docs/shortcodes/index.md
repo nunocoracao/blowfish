@@ -235,9 +235,9 @@ Blowfish also supports automatic conversion of images included using standard Ma
 
 `gallery` allows you to showcase multiple images at once, in a responsive manner with more varied and interesting layouts.
 
-In order to add images to the gallery, use `img` tags for each image and add `class="grid-wXX"` in order for the gallery to be able to identify the column width for each image. The widths available by default start at 10% and go all the way to 100% in 5% increments. For example, to set the width to 65%, set the class to `grid-w65`. Additionally, widths for 33% and 66% are also available in order to build galleries with 3 cols.
+In order to add images to the gallery, use `img` tags for each image and add `class="grid-wXX"` in order for the gallery to be able to identify the column width for each image. The widths available by default start at 10% and go all the way to 100% in 5% increments. For example, to set the width to 65%, set the class to `grid-w65`. Additionally, widths for 33% and 66% are also available in order to build galleries with 3 cols. You can also leverage tailwind's responsive indicators to have a reponsive grid.
 
-**Example:**
+**Example 1: normal gallery**
 
 ```md
 {{</* gallery */>}}
@@ -259,6 +259,33 @@ In order to add images to the gallery, use `img` tags for each image and add `cl
   <img src="gallery/05.jpg" class="grid-w33" />
   <img src="gallery/06.jpg" class="grid-w33" />
   <img src="gallery/07.jpg" class="grid-w33" />
+{{< /gallery >}}
+
+<br/><br/><br/>
+
+
+**Example 2: responsive gallery**
+
+```md
+{{</* gallery */>}}
+  <img src="gallery/01.jpg" class="grid-w33" />
+  <img src="gallery/02.jpg" class="grid-w33" />
+  <img src="gallery/03.jpg" class="grid-w33" />
+  <img src="gallery/04.jpg" class="grid-w33" />
+  <img src="gallery/05.jpg" class="grid-w33" />
+  <img src="gallery/06.jpg" class="grid-w33" />
+  <img src="gallery/07.jpg" class="grid-w33" />
+{{</* /gallery */>}}
+```
+
+{{< gallery >}}
+  <img src="gallery/01.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img src="gallery/02.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img src="gallery/03.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img src="gallery/04.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img src="gallery/05.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img src="gallery/06.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img src="gallery/07.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
 {{< /gallery >}}
 
 <br/><br/><br/>
