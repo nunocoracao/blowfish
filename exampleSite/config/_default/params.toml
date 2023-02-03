@@ -15,13 +15,13 @@ enableCodeCopy = true
 mainSections = ["docs"]
 # robots = ""
 
-disableImageOptimization = true
+disableImageOptimization = false
 
 defaultBackgroundImage = "/img/bg.jpg"
 
 highlightCurrentMenuArea = true
 smartTOC = true
-smartTOCHideUnfocusedChildren = false
+smartTOCHideUnfocusedChildren = true
 
 [header]
   layout = "fixed" # valid options: basic, fixed
