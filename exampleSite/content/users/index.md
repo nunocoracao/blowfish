@@ -63,6 +63,7 @@ Real websites that are built with Blowfish.
 | [alejandro-ao.com](https://alejandro-ao.com/)                         | Personal site                |
 | [adir1.com](https://adir1.com/)                                       | Personal site                |
 | [niklas-hartmann-dev.de](https://niklas-hartmann-dev.de/)             | Personal site                |
+| [blog.muffn.io](https://blog.muffn.io/)                               | Personal site                |
 
 {{< alert >}}
 
