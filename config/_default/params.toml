@@ -8,6 +8,9 @@
 colorScheme = "blowfish"
 defaultAppearance = "light" # valid options: light or dark
 autoSwitchAppearance = true
+# expose theme colors for iOS notch coloring (barring better options)
+iosLightOverride = "ffffff"
+iosDarkOverride = "1e313b"
 
 enableSearch = false
 enableCodeCopy = false
