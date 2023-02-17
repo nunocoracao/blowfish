@@ -1,6 +1,6 @@
 /*! Blowfish | MIT License | https://github.com/nunocoracao/blowfish */
 
-/*! tailwindcss v3.2.6 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v3.2.7 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -5410,7 +5410,7 @@ textarea.form-control.is-invalid {
 
 body a,
 body button {
-  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
