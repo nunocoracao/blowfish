@@ -67,7 +67,9 @@ Real websites that are built with Blowfish.
 | [voicedrew11.github.io](https://voicedrew11.github.io/)               | Personal site                |
 | [nick.bouwhuis.net](https://nick.bouwhuis.net)                        | Personal site                |
 | [vividscc.com](https://vividscc.com/)                                 | Business site                |
+| [muhalvin.github.io](https://muhalvin.github.io/)                     | Personal site                |
 | [mariuskimmina.com](https://mariuskimmina.com/)                       | Personal Site                |
+
 
 {{< alert >}}
 
