@@ -64,6 +64,7 @@ Real websites that are built with Blowfish.
 | [vividscc.com](https://vividscc.com/)                                 | Business site                |
 | [muhalvin.github.io](https://muhalvin.github.io/)                     | Personal site                |
 | [mariuskimmina.com](https://mariuskimmina.com/)                       | Personal Site                |
+| [ashwinbalaji.xyz](https://ashwinbalaji.xyz/)                         | Personal Site                |
 
 
 {{< alert >}}
