@@ -1,3 +1,6 @@
+global:
+  language: "🇭🇺"
+
 article:
   anchor_label: "Horgony"
   date: "{{ .Date }}"

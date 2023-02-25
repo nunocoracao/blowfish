@@ -46,6 +46,7 @@ The full list of built-in icons and their corresponding names can referenced bel
 | ghost                | {{< icon ghost >}}                |
 | github               | {{< icon github >}}               |
 | gitlab               | {{< icon gitlab >}}               |
+| globe                | {{< icon globe >}}                |
 | goodreads            | {{< icon goodreads >}}            |
 | google               | {{< icon google >}}               |
 | hackernews           | {{< icon hackernews >}}           |
