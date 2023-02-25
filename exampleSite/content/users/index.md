@@ -65,6 +65,10 @@ Real websites that are built with Blowfish.
 | [muhalvin.github.io](https://muhalvin.github.io/)                     | Personal site                |
 | [mariuskimmina.com](https://mariuskimmina.com/)                       | Personal Site                |
 | [ashwinbalaji.xyz](https://ashwinbalaji.xyz/)                         | Personal Site                |
+| [technicat.com](https://technicat.com/)                               | Company Site                 |
+| [fugugames.com](https://fugugames.com/)                               | Games Site                   |
+| [hyperbowl3d.com](https://hyperbowl3d.com/)                           | Game Site                    |
+| [talkdimsum.com](https://talkdimsum.com/)                             | App Site                     |
 
 
 {{< alert >}}
