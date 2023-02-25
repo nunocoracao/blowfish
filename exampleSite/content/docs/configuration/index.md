@@ -154,7 +154,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 
 | Name            | Default   | Description                                                                       |
 | --------------- | --------- | --------------------------------------------------------------------------------- |
-| `header.layout` | `"basic"` | Defines the header for the entire site, supported values are `basic`, `fixed`, and `fixed-fill`. |
+| `header.layout` | `"basic"` | Defines the header for the entire site, supported values are `basic`, `fixed`, `fixed-fill`, and `fixed-fill-blur`. |
 ### Footer
 
 | Name                            | Default | Description                                                                                                                                                                                                               |

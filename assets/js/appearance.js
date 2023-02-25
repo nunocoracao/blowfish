@@ -62,9 +62,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
 var updateMeta = () => {
   var elem, style;
   elem = document.querySelector('body');
-  console.log(elem)
   style = getComputedStyle(elem);
-  console.log(style.backgroundColor)
-
   document.querySelector('meta[name="theme-color"]').setAttribute('content', style.backgroundColor);
 }
