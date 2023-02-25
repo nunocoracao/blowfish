@@ -1,3 +1,6 @@
+global:
+  language: "🇯🇵"
+
 article:
   anchor_label: "アンカー"
   date: "{{ .Date }}"

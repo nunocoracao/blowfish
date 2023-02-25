@@ -55,28 +55,31 @@ Blowfish is optimised for full multilingual websites and theme assets are transl
 
 The theme currently supports the following languages by default:
 
-| Language                              | Code    |
-| ------------------------------------- | ------- |
-| :gb: English                          | `en`    |
-| :bangladesh: Bengali                  | `bn`    |
-| :cn: Simplified Chinese (China)       | `zh-cn` |
-| :taiwan: Traditional Chinese (Taiwan) | `zh-tw` |
-| :finland: Finnish                     | `fi`    |
-| :fr: French                           | `fr`    |
-| :de: German                           | `de`    |
-| :israel: Hebrew                       | `he`    |
-| :hungary: Hungarian                   | `hu`    |
-| :it: Italian                          | `it`    |
-| :jp: Japanese                         | `ja`    |
-| :brazil: Portuguese (Brazil)          | `pt-br` |
-| :portugal: Portuguese (Portugal)      | `pt-pt` |
-| :poland: Polish                       | `pl`    |
-| :romania: Romanian                    | `ro`    |
-| :es: Spanish (Spain)                  | `es`    |
-| :tr: Turkish                          | `tr`    |
-| 🇭🇷 Croatian                            | `hr`    |
-| 🇮🇩 Indonesian                          | `id`    |
-| 🇨🇿 Czech                               | `cs`    |
+| Language                       | Code    |
+| ------------------------------ | ------- |
+| 🇧🇩 Bengali                      | `bn`    |
+| 🇨🇿 Czech                        | `cs`    |
+| 🇩🇪 German                       | `de`    |
+| 🇬🇧 English                      | `en`    |
+| 🇪🇸 Spanish (Spain)              | `es`    |
+| 🇫🇮 Finnish                      | `fi`    |
+| 🇫🇷 French                       | `fr`    |
+| 🇮🇱 Hebrew                       | `he`    |
+| 🇭🇷 Croatian                     | `hr`    |
+| 🇭🇺 Hungarian                    | `hu`    |
+| 🇮🇩 Indonesian                   | `id`    |
+| 🇮🇹 Italian                      | `it`    |
+| 🇯🇵 Japanese                     | `ja`    |
+| 🇵🇱 Polish                       | `pl`    |
+| 🇧🇷 Portuguese (Brazil)          | `pt-br` |
+| 🇵🇹 Portuguese (Portugal)        | `pt-pt` |
+| 🇷🇴 Romanian                     | `ro`    |
+| 🇷🇺 Russian                      | `ru`    |
+| 🇹🇷 Turkish                      | `tr`    |
+| 🇨🇳 Simplified Chinese (China)   | `zh-cn` |
+| 🇹🇼 Traditional Chinese (Taiwan) | `zh-tw` |
+
+
 
 The default translations can be overridden by creating a custom file in `i18n/[code].yaml` that contains the translation strings. You can also use this method to add new languages. If you'd like to share a new translation with the community, please [open a pull request](https://github.com/nunocoracao/blowfish/pulls).
 
@@ -143,7 +146,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `disableImageZoom`              | `false`      | Disables image zoom feature across all the images in the site.                                                                                                                                                                                    |
 | `disableImageOptimization`      | `false`      | Disables image resize and optimization features across all the images in the site.                                                                                                                                                                |
 | `defaultBackgroundImage`        | _Not set_    | Default background image for both `background` homepage layout and `background` hero style                                                                                                                                                        |
-| `defaultBackgrouclearndImage`        | _Not set_    | Marks menu entries in the main manu when selected                                                                                                                                                                                                 |
+| `defaultBackgrouclearndImage`   | _Not set_    | Marks menu entries in the main manu when selected                                                                                                                                                                                                 |
 | `smartTOC`                      | _Not set_    | Activate smart Table of Contents, items in view will be highlighted.                                                                                                                                                                              |
 | `smartTOCHideUnfocusedChildren` | _Not set_    | When smart Table of Contents is turned on, this will hide deeper levels of the table when they are not in focus.                                                                                                                                  |
 
@@ -176,34 +179,34 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `homepage.layoutBackgroundBlur` | `false`     | Makes the background image in the homepage layout blur with the scroll                                                                                                                                                                                                                                             |
 ### Article
 
-| Name                                  | Default   | Description                                                                                                                                                                                                                                                  |
-| ------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `article.showDate`                    | `true`    | Whether or not article dates are displayed.                                                                                                                                                                                                                  |
-| `article.showViews`                   | `false`   | Whether or not article views are displayed. This requires firebase integrations to be enabled, look below.                                                                                                                                                   |
-| `article.showLikes`                   | `false`   | Whether or not article likes are displayed. This requires firebase integrations to be enabled, look below.                                                                                                                                                   |
-| `article.showDateUpdated`             | `false`   | Whether or not the dates articles were updated are displayed.                                                                                                                                                                                                |
-| `article.showAuthor`                  | `true`    | Whether or not the author box is displayed in the article footer.                                                                                                                                                                                            |
-| `article.showHero`                    | `false`   | Whether the thumbnail image will be shown as a hero image within each article page.                                                                                                                                                                          |
-| `article.heroStyle`                   | _Not set_ | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`.                                                                                                                                                      |
-| `article.layoutBackgroundBlur`        | `true`    | Makes the background image in the background article heroStyle blur with the scroll                                                                                                                                                                          |
-| `article.layoutBackgroundHeaderSpace` | `true`    | Add space between the header and the body.                                                                                                                                                                                                                   |
-| `article.showBreadcrumbs`             | `false`   | Whether or not breadcrumbs are displayed in the article header.                                                                                                                                                                                              |
-| `article.showDraftLabel`              | `true`    | Whether or not the draft indicator is shown next to articles when site is built with `--buildDrafts`.                                                                                                                                                        |
-| `article.showEdit`                    | `false`   | Whether or not the link to edit the article content should be displayed.                                                                                                                                                                                     |
-| `article.editURL`                     | _Not set_ | When `article.showEdit` is active, the URL for the edit link.                                                                                                                                                                                                |
-| `article.editAppendPath`              | `true`    | When `article.showEdit` is active, whether or not the path to the current article should be appended to the URL set at `article.editURL`.                                                                                                                    |
-| `article.seriesOpened`                | `false`   | Whether or not the series module will be displayed open by default or not.                                                                                                                                                                                   |
-| `article.showHeadingAnchors`          | `true`    | Whether or not heading anchor links are displayed alongside headings within articles.                                                                                                                                                                        |
-| `article.showPagination`              | `true`    | Whether or not the next/previous article links are displayed in the article footer.                                                                                                                                                                          |
-| `article.invertPagination`            | `false`   | Whether or not to flip the direction of the next/previous article links.                                                                                                                                                                                     |
-| `article.showReadingTime`             | `true`    | Whether or not article reading times are displayed.                                                                                                                                                                                                          |
-| `article.showTableOfContents`         | `false`   | Whether or not the table of contents is displayed on articles.                                                                                                                                                                                               |
-| `article.showTaxonomies`              | `false`   | Whether or not the taxonomies related to this article are displayed.                                                                                                                                                                                         |
-| `article.showAuthorsBadges`           | `false`   | Whether the `authors` taxonomies are are displayed in the article or list header. This requires the setup of `multiple authors` and the `authors` taxonomy. Check [this page]({{< ref "multi-author" >}}) for more details on how to configure that feature. |
-| `article.showWordCount`               | `false`   | Whether or not article word counts are displayed.                                                                                                                                                                                                            |
-| `article.showComments`                | `false`   | Whether or not the [comments partial]({{< ref "partials#comments" >}}) is included after the article footer.                                                                                                                                                 |
+| Name                                  | Default   | Description                                                                                                                                                                                                                                                    |
+| ------------------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `article.showDate`                    | `true`    | Whether or not article dates are displayed.                                                                                                                                                                                                                    |
+| `article.showViews`                   | `false`   | Whether or not article views are displayed. This requires firebase integrations to be enabled, look below.                                                                                                                                                     |
+| `article.showLikes`                   | `false`   | Whether or not article likes are displayed. This requires firebase integrations to be enabled, look below.                                                                                                                                                     |
+| `article.showDateUpdated`             | `false`   | Whether or not the dates articles were updated are displayed.                                                                                                                                                                                                  |
+| `article.showAuthor`                  | `true`    | Whether or not the author box is displayed in the article footer.                                                                                                                                                                                              |
+| `article.showHero`                    | `false`   | Whether the thumbnail image will be shown as a hero image within each article page.                                                                                                                                                                            |
+| `article.heroStyle`                   | _Not set_ | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`.                                                                                                                                                        |
+| `article.layoutBackgroundBlur`        | `true`    | Makes the background image in the background article heroStyle blur with the scroll                                                                                                                                                                            |
+| `article.layoutBackgroundHeaderSpace` | `true`    | Add space between the header and the body.                                                                                                                                                                                                                     |
+| `article.showBreadcrumbs`             | `false`   | Whether or not breadcrumbs are displayed in the article header.                                                                                                                                                                                                |
+| `article.showDraftLabel`              | `true`    | Whether or not the draft indicator is shown next to articles when site is built with `--buildDrafts`.                                                                                                                                                          |
+| `article.showEdit`                    | `false`   | Whether or not the link to edit the article content should be displayed.                                                                                                                                                                                       |
+| `article.editURL`                     | _Not set_ | When `article.showEdit` is active, the URL for the edit link.                                                                                                                                                                                                  |
+| `article.editAppendPath`              | `true`    | When `article.showEdit` is active, whether or not the path to the current article should be appended to the URL set at `article.editURL`.                                                                                                                      |
+| `article.seriesOpened`                | `false`   | Whether or not the series module will be displayed open by default or not.                                                                                                                                                                                     |
+| `article.showHeadingAnchors`          | `true`    | Whether or not heading anchor links are displayed alongside headings within articles.                                                                                                                                                                          |
+| `article.showPagination`              | `true`    | Whether or not the next/previous article links are displayed in the article footer.                                                                                                                                                                            |
+| `article.invertPagination`            | `false`   | Whether or not to flip the direction of the next/previous article links.                                                                                                                                                                                       |
+| `article.showReadingTime`             | `true`    | Whether or not article reading times are displayed.                                                                                                                                                                                                            |
+| `article.showTableOfContents`         | `false`   | Whether or not the table of contents is displayed on articles.                                                                                                                                                                                                 |
+| `article.showTaxonomies`              | `false`   | Whether or not the taxonomies related to this article are displayed.                                                                                                                                                                                           |
+| `article.showAuthorsBadges`           | `false`   | Whether the `authors` taxonomies are are displayed in the article or list header. This requires the setup of `multiple authors` and the `authors` taxonomy. Check [this page]({{< ref "multi-author" >}}) for more details on how to configure that feature.   |
+| `article.showWordCount`               | `false`   | Whether or not article word counts are displayed.                                                                                                                                                                                                              |
+| `article.showComments`                | `false`   | Whether or not the [comments partial]({{< ref "partials#comments" >}}) is included after the article footer.                                                                                                                                                   |
 | `article.showSummary`                 | `false`   | Whether or not article summaries are displayed on list pages. If a summary is not provided in the [front matter]({{< ref "front-matter" >}}), one will be auto generated using the `summaryLength` parameter in the [site configuration](#site-configuration). |
-| `article.sharingLinks`                | _Not set_ | Which sharing links to display at the end of each article. When not provided, or set to `false` no links will be displayed.                                                                                                                                  |
+| `article.sharingLinks`                | _Not set_ | Which sharing links to display at the end of each article. When not provided, or set to `false` no links will be displayed.                                                                                                                                    |
 
 ### List
 
@@ -223,7 +226,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `list.cardView`                    | `false`   | Display lists as a gallery of cards.                                                                                                                                                                                                                           |
 | `list.cardViewScreenWidth`         | `false`   | Enhance the width of card galleries in lists to take the full width available.                                                                                                                                                                                 |
 | `list.constrainItemsWidth`         | `false`   | Limit item width to `prose` to increase readability. Useful when no feature images are available.                                                                                                                                                              |
-| `list.showTableOfContents`         | `false`   | Whether or not the table of contents is displayed on articles.                                                                                                                                                                                               |
+| `list.showTableOfContents`         | `false`   | Whether or not the table of contents is displayed on articles.                                                                                                                                                                                                 |
 
 ### Sitemap
 

@@ -1,3 +1,6 @@
+global:
+  language: "🇨🇳"
+
 article:
   anchor_label: "锚点"
   date: "{{ .Date }}"
