@@ -24,7 +24,7 @@ disableImageOptimization = false
 # smartTOCHideUnfocusedChildren = true
 
 [header]
-  layout = "basic" # valid options: basic, fixed
+  layout = "basic" # valid options: basic, fixed, fixed-fill
 
 [footer]
   showMenu = true
