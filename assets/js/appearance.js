@@ -26,6 +26,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
   const switcher = document.getElementById("appearance-switcher");
   const switcherMobile = document.getElementById("appearance-switcher-mobile");
 
+  updateMeta()
+
   if (switcher) {
     switcher.addEventListener("click", () => {
       document.documentElement.classList.toggle("dark");
@@ -33,6 +35,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         "appearance",
         document.documentElement.classList.contains("dark") ? "dark" : "light"
       );
+      updateMeta()
     });
     switcher.addEventListener("contextmenu", (event) => {
       event.preventDefault();
@@ -46,6 +49,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         "appearance",
         document.documentElement.classList.contains("dark") ? "dark" : "light"
       );
+      updateMeta()
     });
     switcherMobile.addEventListener("contextmenu", (event) => {
       event.preventDefault();
@@ -53,3 +57,14 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
   }
 });
+
+
+var updateMeta = () => {
+  var elem, style;
+  elem = document.querySelector('body');
+  console.log(elem)
+  style = getComputedStyle(elem);
+  console.log(style.backgroundColor)
+
+  document.querySelector('meta[name="theme-color"]').setAttribute('content', style.backgroundColor);
+}
