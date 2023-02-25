@@ -1,3 +1,6 @@
+global:
+  language: "Lingua"
+
 article:
   anchor_label: "Anchor"
   date: "{{ .Date }}"
