@@ -69,6 +69,7 @@ Real websites that are built with Blowfish.
 | [fugugames.com](https://fugugames.com/)                               | Games Site                   |
 | [hyperbowl3d.com](https://hyperbowl3d.com/)                           | Game Site                    |
 | [talkdimsum.com](https://talkdimsum.com/)                             | App Site                     |
+| [alanctanner.com](https://alanctanner.com/)                           | Personal Site                |
 
 
 {{< alert >}}
