@@ -2,7 +2,7 @@ function css(name) {
   return "rgb(" + getComputedStyle(document.documentElement).getPropertyValue(name) + ")";
 }
 
-mermaid.initialize({
+/*mermaid.initialize({
   theme: "base",
   themeVariables: {
     background: css("--color-neutral"),
@@ -17,4 +17,6 @@ mermaid.initialize({
       "ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,noto sans,sans-serif",
     fontSize: "16px",
   },
-});
+});*/
+
+mermaid.initialize({ startOnLoad: true });

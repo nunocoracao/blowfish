@@ -39,7 +39,7 @@
     "fuse.js": "^6.6.2",
     "jquery": "^3.6.3",
     "katex": "^0.16.4",
-    "mermaid": "^10.0.1",
+    "mermaid": "^10.0.2",
     "packery": "^2.1.2",
     "prettier": "^2.8.4",
     "prettier-plugin-go-template": "^0.0.13",
@@ -53,8 +53,8 @@
   "vendorCopy": [],
   "devVendorCopy": [
     {
-      "from": "node_modules/mermaid/dist/mermaid.min.js",
-      "to": "assets/lib/mermaid/mermaid.min.js"
+      "from": "node_modules/mermaid/dist",
+      "to": "assets/lib/mermaid"
     },
     {
       "from": "node_modules/chart.js/dist/chart.umd.js",
