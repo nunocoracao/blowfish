@@ -1,7 +1,7 @@
 {{ if .IsTranslated }}
 <div>
   <div class="cursor-pointer flex items-center nested-menu">
-    <a class="text-base font-medium text-gray-500 hover:text-gray-900" title="{{ .Title }}">
+    <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900" title="{{ .Title }}">
       {{- i18n "global.language" | markdownify | emojify -}}
     </a>
   </div>
