@@ -10,8 +10,8 @@
         {{ $num := 0 }}
         {{ range $images }}
 
-        <button type="button" data-bs-target="#{{ $id }}" data-bs-slide-to="{{ $num }}" 
-        {{ if eq $num 0 }} class="active" aria-current="true" {{ end }} aria-label="Slide {{ $num }}"></button>
+        <button type="button" data-bs-target="#{{ $id }}" data-bs-slide-to="{{ $num }}" {{ if eq $num 0 }}
+            class="active" aria-current="true" {{ end }} aria-label="Slide {{ $num }}"></button>
 
         {{ $num = add $num 1 }}
         {{ end }}
@@ -23,23 +23,29 @@
         {{ range $images }}
 
         <div class="carousel-item {{ if eq $num 0 }} active {{ end }} relative float-left w-full ratio-{{ $aspect }} single_hero_background"
-            style="background-image:url({{ . }})"
-            data-bs-interval="{{ $interval }}"
-        ></div>
+            style="background-image:url({{ . }})" data-bs-interval="{{ $interval }}"></div>
         {{ $num = add $num 1 }}
         {{ end }}
 
     </div>
     <button
-        class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
-        type="button" data-bs-target="#{{ $id }}" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+        class="absolute top-0 bottom-0 left-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+        type="button" data-te-target="#{{ $id }}" data-te-slide="prev">
+        <span class="inline-block h-8 w-8">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="h-6 w-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+            </svg>
+        </span>
     </button>
     <button
-        class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
-        type="button" data-bs-target="#{{ $id }}" data-bs-slide="next">
-        <span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+        class="absolute top-0 bottom-0 right-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+        type="button" data-te-target="#{{ $id }}" data-te-slide="next">
+        <span class="inline-block h-8 w-8">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="h-6 w-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+        </span>
     </button>
 </div>
