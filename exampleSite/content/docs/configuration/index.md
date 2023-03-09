@@ -76,6 +76,7 @@ The theme currently supports the following languages by default:
 | 🇷🇴 Romanian                     | `ro`    |
 | 🇷🇺 Russian                      | `ru`    |
 | 🇹🇷 Turkish                      | `tr`    |
+| 🇻🇳 Vietnamese                   | `vi`    |
 | 🇨🇳 Simplified Chinese (China)   | `zh-cn` |
 | 🇹🇼 Traditional Chinese (Taiwan) | `zh-tw` |
 
