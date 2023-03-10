@@ -114,9 +114,9 @@ module.exports = {
             },
             mark: {
               color: theme("colors.neutral.800 / 1"),
-              backgroundColor: theme("colors.secondary.200 / 1"),
+              backgroundColor: theme("colors.primary.600 / 1"),
               padding: "0.1rem 0.2rem",
-              borderRadius: "0.12rem",
+              borderRadius: "0.25rem",
             },
             code:{
               backgroundColor: theme("colors.neutral.50 / 1"),
@@ -124,6 +124,7 @@ module.exports = {
               paddingBottom: "3px",
               paddingLeft: "5px",
               paddingRight: "5px",
+              borderRadius: "0.25rem",
             },
             'code::before': {
               display: 'none'
@@ -155,7 +156,7 @@ module.exports = {
               backgroundColor: theme("colors.neutral.700 / 1"),
             },
             mark: {
-              backgroundColor: theme("colors.secondary.400 / 1"),
+              backgroundColor: theme("colors.primary.400 / 1"),
             },
             code:{
               backgroundColor: theme("colors.neutral.700 / 1"),
