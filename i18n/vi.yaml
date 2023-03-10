@@ -1,0 +1,70 @@
+global:
+  language: "🇻🇳"
+
+article:
+  anchor_label: "Neo"
+  date: "{{ .Date }}"
+  date_updated: "Cập nhật: {{ .Date }}"
+  draft: "Bản nháp"
+  edit_title: "Sửa nội dung"
+  reading_time:
+    one: "{{ .Count }} phút"
+    other: "{{ .Count }} phút"
+  reading_time_title: "Thời gian đọc"
+  table_of_contents: "Mục lục"
+  word_count:
+    one: "{{ .Count }} từ"
+    other: "{{ .Count }} từ"
+  views:
+    one: "{{ .Count }} lượt xem"
+    other: "{{ .Count }} lượt xem"
+  likes:
+    one: "{{ .Count }} lượt thích"
+    other: "{{ .Count }} lượt thích"
+  part_of_series: "Bài viết này là một phần của loạt bài."
+  part: "Phần"
+  this_article: "Bài viết này"
+
+author:
+  byline_title: "Tác giả"
+
+code:
+  copy: "Sao chép"
+  copied: "Đã sao chép"
+
+error:
+  404_title: "Không tìm thấy trang :confused:"
+  404_error: "Lỗi 404"
+  404_description: "Có vẻ như trang bạn yêu cầu không tồn tại."
+
+footer:
+  dark_appearance: "Chuyển sang giao diện tối"
+  light_appearance: "Chuyển sang giao diện sáng"
+  powered_by: "Dựa trên {{ .Hugo }} &amp; {{ .Theme }}"
+
+list:
+  externalurl_title: "Liên kết đến trang web bên ngoài"
+  no_articles: "Không có bài viết nào để liệt kê ở đây."
+
+nav:
+  scroll_to_top_title: "Cuộn lên trên cùng"
+  skip_to_main: "Chuyển đến nội dung chính"
+
+search:
+  open_button_title: "Tìm kiếm (/)"
+  close_button_title: "Đóng (Esc)"
+  input_placeholder: "Tìm kiếm"
+
+sharing:
+  email: "Gửi qua email"
+  facebook: "Chia sẻ trên facebook"
+  linkedin: "Chia sẻ trên LinkedIn"
+  pinterest: "Ghim trên Pinterest"
+  reddit: "Gửi lên Reddit"
+  twitter: "Tweet trên Twitter"
+
+shortcode:
+  recent_articles: "Gần đây"
+
+recent:
+  show_more: "Xem nhiều hơn"

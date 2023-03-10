@@ -34,7 +34,7 @@
             {{ partial "translations.html" . }}
 
             {{ if .Site.Params.enableSearch | default false }}
-            <button id="search-button" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+            <button id="search-button" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
                 title="{{ i18n " search.open_button_title" }}">
                 {{ partial "icon.html" "search" }}
             </button>
@@ -45,7 +45,7 @@
             {{ if .Site.Params.footer.showAppearanceSwitcher | default false }}
             <div
                 class="{{ if .Site.Params.footer.showScrollToTop | default true -}} ltr:mr-14 rtl:ml-14 {{- end }} cursor-pointer text-sm text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400">
-                <button id="appearance-switcher" type="button">
+                <button id="appearance-switcher" aria-label="Dark mode switcher" type="button">
                     <div class="flex items-center justify-center h-12 dark:hidden">
                         {{ partial "icon.html" "moon" }}
                     </div>
