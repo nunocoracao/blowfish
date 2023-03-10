@@ -6,15 +6,11 @@
 </div>
 
 <script>
-
-  document.addEventListener("DOMContentLoaded", function () {
-    setTimeout(() => {
-      var elem = document.querySelector('#{{ $id }}');
-      var pckry = new Packery(elem, {
-        percentPosition: true,
-        gutter: 5,
-        resize: true
-      });
-    }, 50)
-  });
+  $(document).ready(function () {
+    $('#{{ $id }}').packery({
+      percentPosition: true,
+      gutter: 5,
+      resize: true
+    });
+  })
 </script>
