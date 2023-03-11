@@ -6,11 +6,11 @@
 {{- with $featured -}}
     {{ if $disableImageOptimization }}
         {{ with . }}
-        <img class="w-full rounded-lg single_hero_round nozoom" src="{{ .RelPermalink }}">
+        <img class="w-full rounded-lg single_hero_round nozoom" width="{{ .Width }}" height="{{ .Height }}" src="{{ .RelPermalink }}">
         {{ end }}
     {{ else }}
         {{ with .Resize "1200x" }}
-        <img class="w-full rounded-lg single_hero_round nozoom" src="{{ .RelPermalink }}">
+        <img class="w-full rounded-lg single_hero_round nozoom" width="{{ .Width }}" height="{{ .Height }}" src="{{ .RelPermalink }}">
         {{ end }}
     {{ end }}
 {{- end -}}
