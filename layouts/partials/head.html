@@ -14,11 +14,11 @@
   <meta name="title" content="{{ .Title | emojify }} &middot; {{ .Site.Title | emojify }}" />
   {{- end }}
   {{/* Metadata */}}
-  {{ with .Site.Params.description -}}
+  {{ with .Params.Summary | default .Site.Params.description -}}
   <meta name="description" content="{{ . }}" />
   {{- end }}
-  {{ with .Site.Params.keywords -}}
-  <meta name="keywords" content="{{ . }}" />
+  {{ with  .Params.Tags | default .Site.Params.keywords -}}
+  <meta name="keywords" content="{{ range . }}{{ . }}, {{ end -}}" />
   {{- end }}
   {{ with .Site.Params.robots }}
   <meta name="robots" content="{{ . }}" />
