@@ -3,14 +3,16 @@
 {{- $images := .Resources.ByType "image" -}}
 {{- $featured := $images.GetMatch "*feature*" -}}
 {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
+{{- $alt := .Page.Title -}}
+{{- with .Page.Params.alt }}{{ $alt = . }}{{ end -}}
 {{- with $featured -}}
     {{ if $disableImageOptimization }}
         {{ with . }}
-        <img class="w-full rounded-lg single_hero_round nozoom" src="{{ .RelPermalink }}">
+        <img class="w-full rounded-lg single_hero_round nozoom" alt="{{ $alt }}" width="{{ .Width }}" height="{{ .Height }}" src="{{ .RelPermalink }}">
         {{ end }}
     {{ else }}
         {{ with .Resize "1200x" }}
-        <img class="w-full rounded-lg single_hero_round nozoom" src="{{ .RelPermalink }}">
+        <img class="w-full rounded-lg single_hero_round nozoom" alt="{{ $alt }}" width="{{ .Width }}" height="{{ .Height }}" src="{{ .RelPermalink }}">
         {{ end }}
     {{ end }}
 {{- end -}}
