@@ -2,7 +2,7 @@ global:
   language: "🇵🇹"
 
 article:
-  anchor_label: "Anchor"
+  anchor_label: "Etiqueta"
   date: "{{ .Date }}"
   date_updated: "Atualizado a: {{ .Date }}"
   draft: "Rascunho"
@@ -11,16 +11,16 @@ article:
     one: "{{ .Count }} minuto"
     other: "{{ .Count }} minutos"
   reading_time_title: "Tempo de leitura"
-  table_of_contents: "Tabela de conteúdos"
+  table_of_contents: "Índice"
   word_count:
     one: "{{ .Count }} palavra"
     other: "{{ .Count }} palavras"
   views:
     one: "{{ .Count }} visualização"
     other: "{{ .Count }} visualizaçōes"
-  part_of_series: "This article is part of a series."
-  part: "Part"
-  this_article: "This Article"
+  part_of_series: "Este artigo faz parte de uma série."
+  part: "Parte"
+  this_article: "Este artigo"
 
 author:
   byline_title: "Autor"
@@ -64,4 +64,4 @@ shortcode:
   recent_articles: "Recente"
 
 recent:
-  show_more: "Mostrar Mais"
+  show_more: "Mostrar mais"
