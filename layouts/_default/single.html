@@ -47,6 +47,9 @@
       {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}
       <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}"></script>
   </section>
+</header>
+{{ partial "comments.html" . }}
+</article>
   <footer class="pt-8 max-w-prose print:hidden">
 
     {{ partial "author.html" . }}
@@ -90,4 +93,6 @@
     {{ end }}
   </footer>
 </article>
+
+
 {{ end }}

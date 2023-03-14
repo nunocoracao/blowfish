@@ -1,0 +1,8 @@
+[Comments]
+  other = "Comments"
+[Use_fediverse_account]
+  other = 'You can use your Mastodon or Fediverse account to <strong><a class="button" href="https://{{ .host }}/interact/{{ .id }}?type=reply">reply</a></strong> to this <strong><a class="link" href="https://{{ .host }}/@{{ .username }}/{{ .id }}">toot</strong></a> to write a comment on this article!</a>'
+[Load_comments]
+  other = "Load comments"
+[No_comment]
+  other = "No comment, yet, be the first to react!"

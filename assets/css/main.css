@@ -625,3 +625,40 @@ body:has(#menu-controller:checked) {
   .2xl\:ratio-21-9 { padding-top: 42.85%; } /* 21:9 Aspect Ratio */
   .2xl\:ratio-32-9 { padding-top: 28.125%; } /* 32:9 Aspect Ratio */
 }
+
+@screen .mastodon-container {
+  margin-left: 1rem;
+}
+
+@screen .mastodon-comment {
+  border: 1px solid #999;
+  border-radius: 6px;
+  margin: 0.5rem 0;
+  display: flex;
+  padding: 0.5rem 1rem;
+}
+
+@screen .mastodon-comment .avatar img {
+  margin-right: 1rem;
+  min-width: e0px;
+}
+
+@screen .mastodon-comment .content {
+  width: 100%;
+}
+
+@screen .mastodon-comment .date {
+  float: right;
+}
+
+@screen .mastodon-comment .ellipsis::after {
+  content: "\2026";
+}
+
+@screen .mastodon-comment .invisible {
+  font-size: 0;
+  line-height: 0;
+  display: inline-block;
+  width: 0;
+  height: 0;
+}
