@@ -71,6 +71,7 @@ Real websites that are built with Blowfish.
 | [talkdimsum.com](https://talkdimsum.com/)                             | App site                     |
 | [alanctanner.com](https://alanctanner.com/)                           | Personal site                |
 | [rdgo.dev](https://rdgo.dev/)                                         | Personal site                |
+| [shenshu.fun](https://shenshu.fun/)                                   | Personal site                |
 
 
 {{< alert >}}
