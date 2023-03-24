@@ -47,7 +47,6 @@ Real websites that are built with Blowfish.
 | [omarohn.de](https://omarohn.de)                                      | Personal site                |
 | [spelucin.me](https://spelucin.me)                                    | Personal site                |
 | [insidemordecai.com](https://insidemordecai.com)                      | Personal site                |
-| [sajayprakash.com](https://sajayprakash.com)                          | Personal site                |
 | [jamesdixon.dev](https://jamesdixon.dev)                              | Personal site                |
 | [blastomussa.dev](https://blastomussa.dev)                            | Personal site                |
 | [cdell.io](https://cdell.io)                                          | Personal site                |
@@ -59,7 +58,6 @@ Real websites that are built with Blowfish.
 | [adir1.com](https://adir1.com/)                                       | Personal site                |
 | [niklas-hartmann-dev.de](https://niklas-hartmann-dev.de/)             | Personal site                |
 | [blog.muffn.io](https://blog.muffn.io/)                               | Personal site                |
-| [voicedrew11.github.io](https://voicedrew11.github.io/)               | Personal site                |
 | [nick.bouwhuis.net](https://nick.bouwhuis.net)                        | Personal site                |
 | [vividscc.com](https://vividscc.com/)                                 | Business site                |
 | [muhalvin.github.io](https://muhalvin.github.io/)                     | Personal site                |
@@ -71,6 +69,9 @@ Real websites that are built with Blowfish.
 | [talkdimsum.com](https://talkdimsum.com/)                             | App site                     |
 | [alanctanner.com](https://alanctanner.com/)                           | Personal site                |
 | [rdgo.dev](https://rdgo.dev/)                                         | Personal site                |
+| [ripplesding.github.io](https://ripplesding.github.io/)               | Personal site                |
+| [terraformbuch.de](https://terraformbuch.de/)                         | Book site                    |
+| [shenshu.fun](https://shenshu.fun/)                                   | Personal site                |
 
 
 {{< alert >}}

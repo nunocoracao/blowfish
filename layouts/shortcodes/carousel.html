@@ -27,7 +27,7 @@
         <div class="relative float-left -mr-[100%] {{ if not (eq $num 0) }} hidden {{ end }} w-full transition-transform duration-[{{ $interval }}ms] ease-in-out motion-reduce:transition-none"
             data-te-carousel-item {{ if eq $num 0 }} data-te-carousel-active {{ end }}>
             <div class="ratio-{{ $aspect }} single_hero_background">
-                <img src="{{ . }}" class="block absolute top-0 object-cover w-full h-full nozoom" />
+                <img src="{{ . }}" class="block absolute top-0 object-cover w-full h-full nozoom" alt="carousel image {{$num}}"/>
             </div>
         </div>
 
