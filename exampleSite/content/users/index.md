@@ -73,6 +73,7 @@ Real websites that are built with Blowfish.
 | [rdgo.dev](https://rdgo.dev/)                                         | Personal site                |
 | [ripplesding.github.io](https://ripplesding.github.io/)               | Personal site                |
 | [terraformbuch.de](https://terraformbuch.de/)                         | Book site                    |
+| [shenshu.fun](https://shenshu.fun/)                                   | Personal site                |
 
 
 {{< alert >}}
