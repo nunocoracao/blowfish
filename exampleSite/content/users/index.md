@@ -72,6 +72,8 @@ Real websites that are built with Blowfish.
 | [alanctanner.com](https://alanctanner.com/)                           | Personal site                |
 | [rdgo.dev](https://rdgo.dev/)                                         | Personal site                |
 | [ripplesding.github.io](https://ripplesding.github.io/)               | Personal site                |
+| [terraformbuch.de](https://terraformbuch.de/)                         | Book site                    |
+
 
 {{< alert >}}
 
