@@ -1,6 +1,6 @@
 /*! Blowfish | MIT License | https://github.com/nunocoracao/blowfish */
 
-/*! tailwindcss v3.3.0 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v3.3.1 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -3819,8 +3819,8 @@ body:has(#menu-controller:checked) {
   padding-right: 0.5rem;
 }
 
-:is([dir="rtl"] .prose ol>li:before),:is([dir="rtl"] 
-.prose ul>li:before) {
+:is([dir="rtl"] .prose ol>li):before,:is([dir="rtl"] 
+.prose ul>li):before {
   left: auto;
   right: 0.25rem;
 }
