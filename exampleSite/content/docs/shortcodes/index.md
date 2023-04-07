@@ -611,3 +611,31 @@ consectetur adipiscing elit.
 "I'm gonna make him an offer he can't refuse." The Godfather (1972)
 "Toto, I've a feeling we're not in Kansas anymore." The Wizard of Oz (1939)
 {{< /typeit >}}
+
+## Embed Pdf
+
+`embed-pdf` shortcode allows you to embed a PDF file in a page, it is developed using the [PDF.js](https://github.com/mozilla/pdf.js) library.
+
+| Parameter          | Description                                                                                                                                        |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `url`              | [String] The pdf file path.                                                                                       |
+| `renderPageNum`    | [number] The pdf initialize page no when render `embed-pdf`.                                                                                       |
+
+{{< alert >}}
+The multiple `embed-pdf` with  same pdf url can not render in one page.
+{{</ alert >}}
+
+**Example 1:**
+
+```md
+{{</* embed-pdf url="./path/to/your/file.pdf" */>}}
+```
+
+**Example 2:**
+
+```md
+{{</* embed-pdf url="./path/to/your/file.pdf" renderPageNum="2" */>}}
+```
+
+{{< embed-pdf url="./pdf/pdf-sample.pdf" renderPageNum="2" >}}
+
