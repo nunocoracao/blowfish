@@ -47,7 +47,8 @@
     "tailwindcss": "^3.3.1",
     "tw-elements": "1.0.0-beta1",
     "typeit": "^8.7.1",
-    "vendor-copy": "^3.0.1"
+    "vendor-copy": "^3.0.1",
+    "pdfjs-dist": "^3.4.120"
   },
   "vendorCopy": [],
   "devVendorCopy": [
@@ -90,6 +91,14 @@
     {
       "from": "node_modules/tw-elements/dist/js/index.min.js",
       "to": "assets/lib/tw-elements/index.min.js"
+    },
+    {
+      "from": "node_modules/pdfjs-dist/build/pdf.min.js",
+      "to": "assets/lib/embed-pdf/pdf.min.js"
+    },
+    {
+      "from": "node_modules/pdfjs-dist/build/pdf.worker.min.js",
+      "to": "assets/lib/embed-pdf/pdf.worker.min.js"
     }
   ],
   "dependencies": {

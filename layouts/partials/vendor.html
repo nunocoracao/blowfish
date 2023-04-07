@@ -57,3 +57,11 @@
 {{ $twelementsLib := resources.Get "lib/tw-elements/index.min.js" }}
 <script defer src="{{ $twelementsLib.RelPermalink }}" integrity="{{ $twelementsLib.Data.Integrity }}"></script>
 {{ end }}
+
+{{/* pdf */}}
+{{ if .Page.HasShortcode "embed-pdf" }}
+{{ $pdfLib := resources.Get "lib/embed-pdf/pdf.min.js" }}
+{{ $pdfWorkerLib := resources.Get "lib/embed-pdf/pdf.worker.min.js" }}
+{{ $pdfJS := slice $pdfLib $pdfWorkerLib | resources.Concat "js/pdf.bundle.js" | resources.Fingerprint "sha512" }}
+<script  type="text/javascript" src="{{ $pdfJS.RelPermalink }}" integrity="{{ $pdfJS.Data.Integrity }}"></script>
+{{ end }}
