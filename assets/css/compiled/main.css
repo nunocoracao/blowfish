@@ -1960,11 +1960,6 @@ select {
   min-height: auto;
 }
 
-.min-h-fit {
-  min-height: -moz-fit-content;
-  min-height: fit-content;
-}
-
 .min-h-full {
   min-height: 100%;
 }
