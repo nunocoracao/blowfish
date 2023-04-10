@@ -1928,6 +1928,11 @@ select {
   height: 100%;
 }
 
+.h-max {
+  height: -moz-max-content;
+  height: max-content;
+}
+
 .h-screen {
   height: 100vh;
 }
@@ -1958,6 +1963,15 @@ select {
 
 .min-h-\[auto\] {
   min-height: auto;
+}
+
+.min-h-full {
+  min-height: 100%;
+}
+
+.min-h-fit {
+  min-height: -moz-fit-content;
+  min-height: fit-content;
 }
 
 .\!w-px {
