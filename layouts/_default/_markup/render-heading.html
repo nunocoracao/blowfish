@@ -1,4 +1,4 @@
-<div id="{{ .Anchor | safeURL }}" class="anchor">{{ .Text | safeHTML }}></div>
+<div id="{{ .Anchor | safeURL }}" class="anchor"></div>
 <h{{ .Level }} class="relative group">{{ .Text | safeHTML }} 
     {{ if.Page.Params.showHeadingAnchors | default (.Page.Site.Params.article.showHeadingAnchors | default true) }}<span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
