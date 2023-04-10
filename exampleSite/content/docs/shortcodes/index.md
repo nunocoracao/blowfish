@@ -296,7 +296,7 @@ In order to add images to the gallery, use `img` tags for each image and add `cl
 
 <!-- prettier-ignore-start -->
 | Parameter | Description                                           |
-| --------- | ----------------------------------------------------- |
+|-----------|-------------------------------------------------------|
 | `repo`    | [String] github repo in the format of `username/repo` |
 <!-- prettier-ignore-end -->
 
@@ -307,6 +307,30 @@ In order to add images to the gallery, use `img` tags for each image and add `cl
 ```
 
 {{< github repo="nunocoracao/blowfish" >}}
+
+<br/><br/><br/>
+
+## GitLab Card
+
+`gitlab` allows you to quickly link a GitLab Project (GitLab's jargon for repo). 
+It displays realtime stats about it, such as the number of stars and forks it has.
+Unlike `github` it can't display the main programming language of a project.
+Finaly custom GitLab instace URL can be provided, as long as the `api/v4/projects/` endpoint is available, making this shortcode compatible with most self-hosted / entreprise deployments.
+
+<!-- prettier-ignore-start -->
+| Parameter   | Description                                                            |
+|-------------|------------------------------------------------------------------------|
+| `projectID` | [String] gitlab numeric ProjectID                                      |
+| `baseURL`   | [String] optional gitlab instace URL, default is `https://gitlab.com/` |
+<!-- prettier-ignore-end -->
+
+**Example 1:**
+
+```md
+{{</* gitlab projectID="278964" */>}}
+```
+
+{{< gitlab projectID="278964" >}}
 
 <br/><br/><br/>
 
