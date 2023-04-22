@@ -98,7 +98,6 @@ module.exports = {
               "&:hover": {
                 color: theme("colors.neutral.DEFAULT / 1"),
                 textDecoration: "none",
-                backgroundColor: theme("colors.primary.600 / 1"),
                 borderRadius: "0.09rem",
               },
             },
