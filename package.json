@@ -88,7 +88,7 @@
       "to": "assets/lib/packery/packery.pkgd.min.js"
     },
     {
-      "from": "node_modules/tw-elements/dist/js/index.min.js",
+      "from": "node_modules/tw-elements/dist/js/tw-elements.umd.min.js",
       "to": "assets/lib/tw-elements/index.min.js"
     }
   ],
