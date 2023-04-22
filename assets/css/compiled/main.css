@@ -744,7 +744,6 @@ select {
 .prose :where(a):not(:where([class~="not-prose"] *)):hover {
   color: rgba(var(--color-neutral), 1);
   text-decoration: none;
-  background-color: rgba(var(--color-primary-600), 1);
   border-radius: 0.09rem;
 }
 
