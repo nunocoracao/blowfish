@@ -26,16 +26,20 @@ window.addEventListener("DOMContentLoaded", (event) => {
   const switcher = document.getElementById("appearance-switcher");
   const switcherMobile = document.getElementById("appearance-switcher-mobile");
 
+  var targetAppearance = document.documentElement.classList.contains("dark") ? "dark" : "light"
   updateMeta()
+  updateLogo(targetAppearance)
 
   if (switcher) {
     switcher.addEventListener("click", () => {
       document.documentElement.classList.toggle("dark");
+      var targetAppearance = document.documentElement.classList.contains("dark") ? "dark" : "light"
       localStorage.setItem(
         "appearance",
-        document.documentElement.classList.contains("dark") ? "dark" : "light"
+        targetAppearance
       );
       updateMeta()
+      updateLogo(targetAppearance)
     });
     switcher.addEventListener("contextmenu", (event) => {
       event.preventDefault();
@@ -45,11 +49,13 @@ window.addEventListener("DOMContentLoaded", (event) => {
   if (switcherMobile) {
     switcherMobile.addEventListener("click", () => {
       document.documentElement.classList.toggle("dark");
+      var targetAppearance = document.documentElement.classList.contains("dark") ? "dark" : "light"
       localStorage.setItem(
         "appearance",
-        document.documentElement.classList.contains("dark") ? "dark" : "light"
+        targetAppearance
       );
       updateMeta()
+      updateLogo(targetAppearance)
     });
     switcherMobile.addEventListener("contextmenu", (event) => {
       event.preventDefault();
@@ -64,4 +70,21 @@ var updateMeta = () => {
   elem = document.querySelector('body');
   style = getComputedStyle(elem);
   document.querySelector('meta[name="theme-color"]').setAttribute('content', style.backgroundColor);
+}
+
+var updateLogo = (targetAppearance) => {
+  {{ if and (.Site.Params.Logo) (.Site.Params.SecondaryLogo) }}
+  {{ $primaryLogo := resources.Get .Site.Params.Logo }}
+  {{ $secondaryLogo := resources.Get .Site.Params.SecondaryLogo }}
+  {{ if and ($primaryLogo) ($secondaryLogo) }}
+  var elems;
+  elems = document.querySelectorAll("img.logo")
+  targetLogoPath = 
+    targetAppearance == "{{ .Site.Params.DefaultAppearance }}" ?
+    "{{ $primaryLogo.RelPermalink }}" : "{{ $secondaryLogo.RelPermalink }}"
+  for (const elem of elems) {
+    elem.setAttribute("src", targetLogoPath)
+  }
+  {{ end }}
+  {{- end }}
 }
