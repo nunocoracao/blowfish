@@ -1,6 +1,6 @@
 /*! Blowfish | MIT License | https://github.com/nunocoracao/blowfish */
 
-/*! tailwindcss v3.3.1 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -602,6 +602,9 @@ select {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -649,6 +652,9 @@ select {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -2844,33 +2850,26 @@ select {
 
 .from-neutral {
   --tw-gradient-from: rgba(var(--color-neutral), 1) var(--tw-gradient-from-position);
-  --tw-gradient-from-position:  ;
-  --tw-gradient-to: rgba(var(--color-neutral), 0)  var(--tw-gradient-from-position);
-  --tw-gradient-to-position:  ;
+  --tw-gradient-to: rgba(var(--color-neutral), 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
 .from-primary-500 {
   --tw-gradient-from: rgba(var(--color-primary-500), 1) var(--tw-gradient-from-position);
-  --tw-gradient-from-position:  ;
-  --tw-gradient-to: rgba(var(--color-primary-500), 0)  var(--tw-gradient-from-position);
-  --tw-gradient-to-position:  ;
+  --tw-gradient-to: rgba(var(--color-primary-500), 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
 .to-neutral {
   --tw-gradient-to: rgba(var(--color-neutral), 1) var(--tw-gradient-to-position);
-  --tw-gradient-to-position:  ;
 }
 
 .to-neutral-100 {
   --tw-gradient-to: rgba(var(--color-neutral-100), 1) var(--tw-gradient-to-position);
-  --tw-gradient-to-position:  ;
 }
 
 .to-secondary-700 {
   --tw-gradient-to: rgba(var(--color-secondary-700), 1) var(--tw-gradient-to-position);
-  --tw-gradient-to-position:  ;
 }
 
 .to-transparent {
@@ -6553,28 +6552,22 @@ body:has(#menu-controller:checked) {
 
 :is(.dark .dark\:from-neutral-800) {
   --tw-gradient-from: rgba(var(--color-neutral-800), 1) var(--tw-gradient-from-position);
-  --tw-gradient-from-position:  ;
-  --tw-gradient-to: rgba(var(--color-neutral-800), 0)  var(--tw-gradient-from-position);
-  --tw-gradient-to-position:  ;
+  --tw-gradient-to: rgba(var(--color-neutral-800), 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
 :is(.dark .dark\:from-primary-600) {
   --tw-gradient-from: rgba(var(--color-primary-600), 1) var(--tw-gradient-from-position);
-  --tw-gradient-from-position:  ;
-  --tw-gradient-to: rgba(var(--color-primary-600), 0)  var(--tw-gradient-from-position);
-  --tw-gradient-to-position:  ;
+  --tw-gradient-to: rgba(var(--color-primary-600), 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
 :is(.dark .dark\:to-neutral-800) {
   --tw-gradient-to: rgba(var(--color-neutral-800), 1) var(--tw-gradient-to-position);
-  --tw-gradient-to-position:  ;
 }
 
 :is(.dark .dark\:to-secondary-800) {
   --tw-gradient-to: rgba(var(--color-secondary-800), 1) var(--tw-gradient-to-position);
-  --tw-gradient-to-position:  ;
 }
 
 :is(.dark .dark\:\!text-primary-400) {
