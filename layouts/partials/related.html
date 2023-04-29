@@ -1,0 +1,11 @@
+{{ if .Params.showRelatedContent | default (.Site.Params.article.showRelatedContent | default false)}}
+{{ $related := .Site.RegularPages.Related . | first .Site.Params.article.relatedContentLimit }}
+{{ with $related }}
+<h2 class="mt-8 text-2xl font-extrabold mb-10">{{ i18n "article.related_articles" | emojify }}</h2>
+<section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+  {{ range . }}
+  {{ partial "article-link/card-related.html" . }}
+  {{ end }}
+</section>
+{{ end }}
+{{ end }}
