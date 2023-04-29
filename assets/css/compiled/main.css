@@ -2874,7 +2874,6 @@ select {
 
 .to-transparent {
   --tw-gradient-to: transparent var(--tw-gradient-to-position);
-  --tw-gradient-to-position:  ;
 }
 
 .bg-clip-padding {
@@ -4485,7 +4484,14 @@ body:has(#menu-controller:checked) {
 }
 
 .thumbnail_card {
-  height: 250px;
+  height: 200px;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+}
+
+.thumbnail_card_related {
+  height: 150px;
   background-repeat:no-repeat;
   background-size:cover;
   background-position:center;

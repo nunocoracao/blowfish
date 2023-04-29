@@ -24,6 +24,7 @@ article:
   part_of_series: "Bài viết này là một phần của loạt bài."
   part: "Phần"
   this_article: "Bài viết này"
+  related_articles: "Related"
 
 author:
   byline_title: "Tác giả"

@@ -18,6 +18,7 @@ article:
   part_of_series: "Cet article fait partie d'une série."
   part: "Partie"
   this_article: "Cet article"
+  related_articles: "Related"
 
 author:
   byline_title: "Auteur"

@@ -33,3 +33,33 @@ buildFuture = false
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
+
+[related]
+  threshold = 0
+  toLower = false
+
+    [[related.indices]]
+        name = "tags"
+        weight = 100
+
+    [[related.indices]]
+        name = "categories"
+        weight = 100
+
+    [[related.indices]]
+        name = "series"
+        weight = 50
+
+    [[related.indices]]
+        name = "authors"
+        weight = 20
+
+    [[related.indices]]
+        name = "date"
+        weight = 10
+
+    [[related.indices]]
+      applyFilter = false
+      name = 'fragmentrefs'
+      type = 'fragments'
+      weight = 10

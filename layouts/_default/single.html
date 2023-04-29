@@ -3,16 +3,16 @@
 
 <article>
   {{ if .Params.showHero | default (.Site.Params.article.showHero | default false) }}
-    {{ $heroStyle := .Params.heroStyle }}
-    {{ if not $heroStyle }}{{ $heroStyle = .Site.Params.article.heroStyle }}{{ end }} 
-    {{ $heroStyle := print "partials/hero/" $heroStyle ".html" }}
-    {{ if templates.Exists $heroStyle }}
-      {{ partial $heroStyle . }}
-    {{ else }}
-      {{ partial "partials/hero/basic.html" . }}
-    {{ end }}
+  {{ $heroStyle := .Params.heroStyle }}
+  {{ if not $heroStyle }}{{ $heroStyle = .Site.Params.article.heroStyle }}{{ end }}
+  {{ $heroStyle := print "partials/hero/" $heroStyle ".html" }}
+  {{ if templates.Exists $heroStyle }}
+  {{ partial $heroStyle . }}
+  {{ else }}
+  {{ partial "partials/hero/basic.html" . }}
   {{ end }}
-  
+  {{ end }}
+
   <header id="single_header" class="mt-5 max-w-prose">
     {{ if .Params.showBreadcrumbs | default (.Site.Params.article.showBreadcrumbs | default false) }}
     {{ partial "breadcrumbs.html" . }}
@@ -25,12 +25,15 @@
     </div>
   </header>
   <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
-    {{ if and (.Params.showTableOfContents | default (.Site.Params.article.showTableOfContents | default false)) (in
-    .TableOfContents "<ul") }} 
-    <div class="order-first sm:max-w-prose lg:ml-auto px-0 lg:order-last lg:max-w-xs ltr:lg:pl-8 rtl:lg:pr-8">
-      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky {{ if eq .Site.Params.header.layout "fixed" }} lg:top-[140px] {{ else }} lg:top-10 {{ end }}">
-        {{ partial "toc.html" . }}
-      </div>
+    {{ if or (and (.Params.showTableOfContents | default (.Site.Params.article.showTableOfContents | default false)) (in
+    .TableOfContents "<ul")) (.Site.Params.article.showRelatedPosts | default false) }} <div
+      class="order-first sm:max-w-prose lg:ml-auto px-0 lg:order-last lg:max-w-xs ltr:lg:pl-8 rtl:lg:pr-8">
+      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky {{ if eq .Site.Params.header.layout " fixed" }}
+        lg:top-[140px] {{ else }} lg:top-10 {{ end }}">
+
+        {{ if and (.Params.showTableOfContents | default (.Site.Params.article.showTableOfContents | default false)) (in
+        .TableOfContents "<ul") }} {{ partial "toc.html" . }} {{ end }} {{ if .Site.Params.article.showRelatedPosts |
+          default false }} sd {{ end }} </div>
       </div>
       {{ end }}
       <div class="min-w-0 min-h-0 max-w-prose">
@@ -56,7 +59,7 @@
     {{ $baseURL := .Site.BaseURL }}
 
     {{ if not (strings.HasSuffix $baseURL "/") }}
-      {{ $baseURL = delimit (slice $baseURL "/") "" }}
+    {{ $baseURL = delimit (slice $baseURL "/") "" }}
     {{ end }}
 
     {{ range $author := .Page.Params.authors }}
@@ -75,6 +78,9 @@
     {{ end }}
 
     {{ partial "sharing-links.html" . }}
+
+    {{ partial "related.html" . }}
+
     {{ partial "article-pagination.html" . }}
     {{ if .Params.showComments | default (.Site.Params.article.showComments | default false) }}
     {{ if templates.Exists "partials/comments.html" }}

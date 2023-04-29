@@ -4,7 +4,7 @@ date: 2020-08-07
 draft: false
 description: "Learn how to deploy a Blowfish site."
 slug: "hosting-deployment"
-tags: ["hosting", "deployment", "docs", "github", "netlify", "render"]
+tags: ["docs", "hosting", "deployment", "github", "netlify", "render"]
 series: ["Documentation"]
 series_order: 14
 ---

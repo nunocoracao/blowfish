@@ -15,37 +15,36 @@
   pageRef = "docs"
   weight = 10
 
-[[main]]
-  name = "Examples"
-  weight = 20
+#[[main]]
+#  name = "Examples"
+#  weight = 20
 
-[[main]]
-  name = "Recipes"
-  parent = "Examples"
-  pageRef = "guides"
-  weight = 10
+
 
 [[main]]
   name = "Samples"
-  parent = "Examples"
   pageRef = "samples"
   weight = 20
 
 [[main]]
   name = "Showcase"
-  parent = "Examples"
   pageRef = "examples"
   weight = 30
 
 [[main]]
-  name = "Users"
-  pageRef = "users"
+  name = "Recipes"
+  pageRef = "guides"
   weight = 40
 
 [[main]]
-  name = "Merch"
-  url = "http://tee.pub/lic/qwSlWVBL5zc"
-  weight = 50
+  name = "Users"
+  pageRef = "users"
+  weight = 90
+
+#[[main]]
+#  name = "Merch"
+#  url = "http://tee.pub/lic/qwSlWVBL5zc"
+#  weight = 100
 
 #[[main]]
 #  name = "Test"
@@ -56,19 +55,19 @@
   identifier = "twitter"
   pre = "twitter"
   url = "https://twitter.com/burufugu"
-  weight = 60
+  weight = 200
 
 [[main]]
   identifier = "mastodon"
   pre = "mastodon"
   url = "https://masto.ai/@blowfish"
-  weight = 70
+  weight = 300
 
 [[main]]
   identifier = "github"
   pre = "github"
   url = "https://github.com/nunocoracao/blowfish"
-  weight = 80
+  weight = 400
 
 
 # -- Footer Menu --

@@ -10,6 +10,14 @@
 {{ end }}
 {{- end -}}
 
+ <script>
+      var oid = "views_{{ .File.Path }}"
+      var oid_likes = "likes_{{ .File.Path }}"
+    </script>
+    {{ $jsPage := resources.Get "js/page.js" }}
+    {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}
+    <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}"></script>
+
 {{ $toc := and (.Params.showTableOfContents | default (.Site.Params.list.showTableOfContents | default false)) (in
 .TableOfContents "<ul") }} <header>
   {{ if .Params.showBreadcrumbs | default (.Site.Params.list.showBreadcrumbs | default false) }}
@@ -35,13 +43,7 @@
     <div class="min-w-0 min-h-0 max-w-prose">
       {{ .Content | emojify }}
     </div>
-    <script>
-      var oid = "views_{{ .File.Path }}"
-      var oid_likes = "likes_{{ .File.Path }}"
-    </script>
-    {{ $jsPage := resources.Get "js/page.js" }}
-    {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}
-    <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}"></script>
+   
   </section>
   {{ if gt .Pages 0 }}
 
