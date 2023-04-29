@@ -18,6 +18,7 @@ mainSections = ["docs"]
 disableImageOptimization = false
 
 defaultBackgroundImage = "/img/bg.jpg"
+#defaultFeaturedImage = "/img/blowfish_logo.png"
 
 highlightCurrentMenuArea = true
 smartTOC = true
