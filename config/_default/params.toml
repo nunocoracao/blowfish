@@ -18,6 +18,7 @@ enableCodeCopy = false
 disableImageOptimization = false
 
 # defaultBackgroundImage = "IMAGE.jpg" # used as default for background images 
+# defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all articles
 
 # highlightCurrentMenuArea = true
 # smartTOC = true
@@ -65,6 +66,8 @@ disableImageOptimization = false
   invertPagination = false
   showReadingTime = true
   showTableOfContents = false
+  # showRelatedContent = false
+  # relatedContentLimit = 3
   showTaxonomies = false
   showAuthorsBadges = false
   showWordCount = true

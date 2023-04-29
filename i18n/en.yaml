@@ -24,6 +24,7 @@ article:
   part_of_series: "This article is part of a series."
   part: "Part"
   this_article: "This Article"
+  related_articles: "Related"
 
 author:
   byline_title: "Author"
@@ -44,7 +45,7 @@ footer:
 
 list:
   externalurl_title: "Link to external site"
-  no_articles: "There's no articles to list here yet."
+  no_articles: "There are no articles to list here yet."
 
 nav:
   scroll_to_top_title: "Scroll to top"

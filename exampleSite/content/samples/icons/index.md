@@ -93,6 +93,7 @@ The full list of built-in icons and their corresponding names can referenced bel
 | star                 | {{< icon star >}}                 |
 | steam                | {{< icon steam >}}                |
 | stripe               | {{< icon stripe >}}               |
+| substack             | {{< icon substack >}}             |
 | sun                  | {{< icon sun >}}                  |
 | tag                  | {{< icon tag >}}                  |
 | telegram             | {{< icon telegram >}}             |

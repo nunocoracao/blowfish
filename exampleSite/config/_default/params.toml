@@ -17,7 +17,8 @@ mainSections = ["docs"]
 
 disableImageOptimization = false
 
-defaultBackgroundImage = "/img/bg.jpg"
+defaultBackgroundImage = "/img/ocean.jpg"
+defaultFeaturedImage = "/img/ocean.jpg"
 
 highlightCurrentMenuArea = true
 smartTOC = true
@@ -37,7 +38,7 @@ smartTOCHideUnfocusedChildren = true
   layout = "custom" # valid options: page, profile, hero, card, background, custom
   # homepageImage = "/img/iceland.jpg" # used in: hero, and card
   showRecent = false
-  showRecentItems = 10
+  showRecentItems = 6
   showMoreLink = true
   showMoreLinkDest = "docs"
   cardView = false
@@ -64,6 +65,8 @@ smartTOCHideUnfocusedChildren = true
   invertPagination = false
   showReadingTime = true
   showTableOfContents = true
+  showRelatedContent = true
+  relatedContentLimit = 6
   showTaxonomies = true 
   showAuthorsBadges = true 
   showWordCount = false
