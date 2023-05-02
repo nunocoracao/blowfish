@@ -26,20 +26,19 @@ window.addEventListener("DOMContentLoaded", (event) => {
   const switcher = document.getElementById("appearance-switcher");
   const switcherMobile = document.getElementById("appearance-switcher-mobile");
 
-  var targetAppearance = document.documentElement.classList.contains("dark") ? "dark" : "light"
-  updateMeta()
-  this.updateLogo?.(targetAppearance)
+  updateMeta();
+  this.updateLogo?.(getTargetAppearance());
 
   if (switcher) {
     switcher.addEventListener("click", () => {
       document.documentElement.classList.toggle("dark");
-      var targetAppearance = document.documentElement.classList.contains("dark") ? "dark" : "light"
+      var targetAppearance = getTargetAppearance();
       localStorage.setItem(
         "appearance",
         targetAppearance
       );
-      updateMeta()
-      this.updateLogo?.(targetAppearance)
+      updateMeta();
+      this.updateLogo?.(targetAppearance);
     });
     switcher.addEventListener("contextmenu", (event) => {
       event.preventDefault();
@@ -49,13 +48,13 @@ window.addEventListener("DOMContentLoaded", (event) => {
   if (switcherMobile) {
     switcherMobile.addEventListener("click", () => {
       document.documentElement.classList.toggle("dark");
-      var targetAppearance = document.documentElement.classList.contains("dark") ? "dark" : "light"
+      var targetAppearance = getTargetAppearance();
       localStorage.setItem(
         "appearance",
         targetAppearance
       );
-      updateMeta()
-      this.updateLogo?.(targetAppearance)
+      updateMeta();
+      this.updateLogo?.(targetAppearance);
     });
     switcherMobile.addEventListener("contextmenu", (event) => {
       event.preventDefault();
@@ -88,3 +87,7 @@ var updateLogo = (targetAppearance) => {
 }
 {{ end }}
 {{- end }}
+
+var getTargetAppearance = () => {
+  return document.documentElement.classList.contains("dark") ? "dark" : "light"
+}
