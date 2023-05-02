@@ -28,7 +28,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   var targetAppearance = document.documentElement.classList.contains("dark") ? "dark" : "light"
   updateMeta()
-  updateLogo(targetAppearance)
+  this.updateLogo?.(targetAppearance)
 
   if (switcher) {
     switcher.addEventListener("click", () => {
@@ -39,7 +39,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         targetAppearance
       );
       updateMeta()
-      updateLogo(targetAppearance)
+      this.updateLogo?.(targetAppearance)
     });
     switcher.addEventListener("contextmenu", (event) => {
       event.preventDefault();
@@ -55,7 +55,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         targetAppearance
       );
       updateMeta()
-      updateLogo(targetAppearance)
+      this.updateLogo?.(targetAppearance)
     });
     switcherMobile.addEventListener("contextmenu", (event) => {
       event.preventDefault();
@@ -72,11 +72,11 @@ var updateMeta = () => {
   document.querySelector('meta[name="theme-color"]').setAttribute('content', style.backgroundColor);
 }
 
+{{ if and (.Site.Params.Logo) (.Site.Params.SecondaryLogo) }}
+{{ $primaryLogo := resources.Get .Site.Params.Logo }}
+{{ $secondaryLogo := resources.Get .Site.Params.SecondaryLogo }}
+{{ if and ($primaryLogo) ($secondaryLogo) }}
 var updateLogo = (targetAppearance) => {
-  {{ if and (.Site.Params.Logo) (.Site.Params.SecondaryLogo) }}
-  {{ $primaryLogo := resources.Get .Site.Params.Logo }}
-  {{ $secondaryLogo := resources.Get .Site.Params.SecondaryLogo }}
-  {{ if and ($primaryLogo) ($secondaryLogo) }}
   var elems;
   elems = document.querySelectorAll("img.logo")
   targetLogoPath = 
@@ -85,6 +85,6 @@ var updateLogo = (targetAppearance) => {
   for (const elem of elems) {
     elem.setAttribute("src", targetLogoPath)
   }
-  {{ end }}
-  {{- end }}
 }
+{{ end }}
+{{- end }}
