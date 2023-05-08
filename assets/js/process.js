@@ -3,7 +3,6 @@ if (typeof auth !== 'undefined') {
     var likesCollection = db.collection('likes');
 
     function numberWithCommas(x) {
-        //return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     }
 
@@ -11,7 +10,6 @@ if (typeof auth !== 'undefined') {
         viewsCollection.doc(id).onSnapshot(doc => {
             var data = doc.data();
             if (data) {
-                //var label = node.innerText.split(' ')[1]
                 node.innerText = numberWithCommas(data.views)
             }
         })
@@ -21,7 +19,6 @@ if (typeof auth !== 'undefined') {
         likesCollection.doc(id).onSnapshot(doc => {
             var data = doc.data();
             if (data) {
-                //var label = node.innerText.split(' ')[1]
                 node.innerText = numberWithCommas(data.likes)
             }
         })
