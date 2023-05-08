@@ -65,3 +65,11 @@ var updateMeta = () => {
   style = getComputedStyle(elem);
   document.querySelector('meta[name="theme-color"]').setAttribute('content', style.backgroundColor);
 }
+
+window.addEventListener("DOMContentLoaded", (event) => {
+  const scroller = document.getElementById("top-scroller");
+  const footer = document.getElementById("site-footer");
+  if(scroller.getBoundingClientRect().top > footer.getBoundingClientRect().top) {
+    scroller.hidden = true;
+  }
+});
