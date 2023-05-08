@@ -62,7 +62,7 @@ module.exports = {
             "--tw-prose-body": theme("colors.neutral.700 / 1"),
             "--tw-prose-headings": theme("colors.neutral.800 / 1"),
             "--tw-prose-lead": theme("colors.neutral.500 / 1"),
-            "--tw-prose-links": theme("colors.primary.700 / 1"),
+            "--tw-prose-links": theme("colors.primary.600 / 1"),
             "--tw-prose-bold": theme("colors.neutral.900 / 1"),
             "--tw-prose-counters": theme("colors.neutral.800 / 1"),
             "--tw-prose-bullets": theme("colors.neutral.500 / 1"),
@@ -96,7 +96,7 @@ module.exports = {
               textDecorationColor: theme("colors.primary.300 / 1"),
               fontWeight: "500",
               "&:hover": {
-                color: theme("colors.neutral.DEFAULT / 1"),
+                color: theme("colors.primary.600 / 1"),
                 textDecoration: "none",
                 borderRadius: "0.09rem",
               },
@@ -149,6 +149,9 @@ module.exports = {
           css: {
             a: {
               textDecorationColor: theme("colors.neutral.600 / 1"),
+              "&:hover": {
+                color: theme("colors.primary.400 / 1"),
+              },
             },
             kbd: {
               color: theme("colors.neutral.200 / 1"),
