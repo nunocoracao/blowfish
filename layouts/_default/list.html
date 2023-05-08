@@ -10,14 +10,6 @@
 {{ end }}
 {{- end -}}
 
- <script>
-      var oid = "views_{{ .File.Path }}"
-      var oid_likes = "likes_{{ .File.Path }}"
-    </script>
-    {{ $jsPage := resources.Get "js/page.js" }}
-    {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}
-    <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}"></script>
-
 {{ $toc := and (.Params.showTableOfContents | default (.Site.Params.list.showTableOfContents | default false)) (in
 .TableOfContents "<ul") }} <header>
   {{ if .Params.showBreadcrumbs | default (.Site.Params.list.showBreadcrumbs | default false) }}
@@ -27,6 +19,13 @@
   <div class="mt-1 mb-2 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
     {{ partial "article-meta/list.html" (dict "context" . "scope" "single") }}
   </div>
+  <script>
+    var oid = "views_{{ .File.Path }}"
+    var oid_likes = "likes_{{ .File.Path }}"
+  </script>
+  {{ $jsPage := resources.Get "js/page.js" }}
+  {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}
+  <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}"></script>
   </header>
   <section class="{{ if $toc -}}
       mt-12
@@ -44,6 +43,9 @@
       {{ .Content | emojify }}
     </div>
    
+
+
+
   </section>
   {{ if gt .Pages 0 }}
 
