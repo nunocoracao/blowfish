@@ -1,5 +1,5 @@
 global:
-  language: "БГ"
+  language: "🇧🇬"
 
 article:
   anchor_label: "Котва"
@@ -24,7 +24,7 @@ article:
   part_of_series: "Тази статия е част от поредица."
   part: "Част"
   this_article: "Тази Статия"
-  related_articles: "Related"
+  related_articles: "Подобни"
 
 
 author:
