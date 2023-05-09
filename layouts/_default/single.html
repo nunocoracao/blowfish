@@ -42,14 +42,16 @@
         </br></br>
         {{ partial "series-closed.html" . }}
       </div>
-      <script>
+     
+     <script>
         var oid = "views_{{ .File.Path }}"
         var oid_likes = "likes_{{ .File.Path }}"
       </script>
       {{ $jsPage := resources.Get "js/page.js" }}
       {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}
       <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}"></script>
-  </section>
+  
+    </section>
   <footer class="pt-8 max-w-prose print:hidden">
 
     {{ partial "author.html" . }}

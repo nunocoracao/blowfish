@@ -57,6 +57,7 @@ The theme currently supports the following languages by default:
 
 | Language                       | Code    |
 | ------------------------------ | ------- |
+| 🇧🇬 Bulgarian                   | `bg`    |
 | 🇧🇩 Bengali                      | `bn`    |
 | 🇨🇿 Czech                        | `cs`    |
 | 🇩🇪 German                       | `de`    |
