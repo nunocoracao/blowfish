@@ -197,7 +197,7 @@ Both menus are completely optional and can be commented out if not required. Use
 
 ### Nested menus
 
-The theme also supports nested menus. In order to use them you just need to define a parent entry in `menu.toml` and its sub-menus using the `parent` parameter to reference the parent. All properties can be used for sub-menus. Note that `pageRef` and `url` will be ignored for the parent entry. Nested menus is only available in the main menu not for the footer.
+The theme also supports nested menus. In order to use them you just need to define a parent entry in `menu.toml` and its sub-menus using the `parent` parameter to reference the parent. All properties can be used for sub-menus. `pageRef` and `url` can also be used in the parent entry. Nested menus are only available in the main menu not for the footer.
 
 ```toml
 # config/_default/menus.toml
