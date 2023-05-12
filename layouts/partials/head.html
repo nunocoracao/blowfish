@@ -14,7 +14,7 @@
   <meta name="title" content="{{ .Title | emojify }} &middot; {{ .Site.Title | emojify }}" />
   {{- end }}
   {{/* Metadata */}}
-  {{ with .Params.Summary | default .Site.Params.description -}}
+  {{ with (.Params.Summary | default .Params.Description) | default .Site.Params.description -}}
   <meta name="description" content="{{ . }}" />
   {{- end }}
   {{ with  .Params.Tags | default .Site.Params.keywords -}}
