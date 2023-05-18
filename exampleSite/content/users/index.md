@@ -27,6 +27,7 @@ Real websites that are built with Blowfish.
 | Website                                                               | Details                      |
 | --------------------------------------------------------------------- | ---------------------------- |
 | [nunocoracao.com](https://nunocoracao.com)                            | Personal site - Theme author |
+| [nikarashihatsu.github.io](https://nikarashihatsu.github.io/)         | Personal site                |
 | [madoke.org](https://madoke.org/)                                     | Personal site                |
 | [code-chimp.com](https://code-chimp.com)                              | Personal site                |
 | [mucahitkurtlar.github.io](https://mucahitkurtlar.github.io)          | Personal site                |
