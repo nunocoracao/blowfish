@@ -19,8 +19,6 @@
 #  name = "Examples"
 #  weight = 20
 
-
-
 [[main]]
   name = "Samples"
   pageRef = "samples"
