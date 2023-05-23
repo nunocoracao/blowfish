@@ -95,7 +95,7 @@ var getTargetAppearance = () => {
 window.addEventListener("DOMContentLoaded", (event) => {
   const scroller = document.getElementById("top-scroller");
   const footer = document.getElementById("site-footer");
-  if(scroller.getBoundingClientRect().top > footer.getBoundingClientRect().top) {
+  if(scroller && footer && scroller.getBoundingClientRect().top > footer.getBoundingClientRect().top) {
     scroller.hidden = true;
   }
 });

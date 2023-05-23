@@ -1,5 +1,5 @@
 {{ $time := now.UnixNano }}
-{{ $id := delimit (slice "gallery" $time) "-" }}
+{{ $id := delimit (slice "gallery" .Ordinal $time) "-" }}
 
 <div id="{{ $id }}">
   {{ .Inner }}

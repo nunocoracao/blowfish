@@ -75,6 +75,7 @@ Real websites that are built with Blowfish.
 | [hellstabber.github.io](https://hellstabber.github.io/)               | Personal site                |
 | [clemsau.com](https://clemsau.com/)                                   | Personal site                |
 | [lelouvincx.github.io](https://lelouvincx.github.io/)                 | Personal site                |
+| [weaxsey.org](https://weaxsey.org/)                                   | Personal site                |
 
 {{< alert >}}
 
