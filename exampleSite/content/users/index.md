@@ -76,6 +76,7 @@ Real websites that are built with Blowfish.
 | [clemsau.com](https://clemsau.com/)                                   | Personal site                |
 | [lelouvincx.github.io](https://lelouvincx.github.io/)                 | Personal site                |
 | [weaxsey.org](https://weaxsey.org/)                                   | Personal site                |
+| [blog.enmanuelmoreira.com](https://blog.enmanuelmoreira.com)          | Personal site                |
 
 {{< alert >}}
 
