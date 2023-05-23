@@ -1,12 +1,11 @@
-{{ $time := now.UnixNano }}
-{{ $id := delimit (slice "gallery" .Ordinal $time) "-" }}
+{{ $id := delimit (slice "gallery" .Ordinal) "-" }}
 
 <div id="{{ $id }}">
   {{ .Inner }}
 </div>
 
 <script>
-  $(document).ready(function () {
+  $(window).on("load", function () {
     $('#{{ $id }}').packery({
       percentPosition: true,
       gutter: 5,
