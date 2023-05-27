@@ -44,8 +44,8 @@
       </div>
      
      <script>
-        var oid = "views_{{ .File.Path }}"
-        var oid_likes = "likes_{{ .File.Path }}"
+        var oid = "views_{{ replace .File.Path "\\" "/" }}"
+        var oid_likes = "likes_{{ replace .File.Path "\\" "/" }}"
       </script>
       {{ $jsPage := resources.Get "js/page.js" }}
       {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}

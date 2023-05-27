@@ -4,7 +4,7 @@
     {{ else if eq .Kind "term"}}
     <span id="views_term_{{ .Page.Data.Term }}" title="views">0</span> 
     {{ else }}
-    <span id="views_{{ .File.Path }}" title="views">0</span> 
+    <span id="views_{{ replace .File.Path "\\" "/" }}" title="views">0</span> 
     {{ end }}
     <span class="inline-block align-text-bottom">{{ partial "icon.html" "eye" }}</span>
 </span>
