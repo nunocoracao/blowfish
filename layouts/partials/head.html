@@ -1,6 +1,6 @@
 <head>
   <meta charset="utf-8" />
-  {{ with .Site.Language.Params.htmlCode | default .Site.LanguageCode }}
+  {{ with .Site.Params.htmlCode | default .Site.LanguageCode }}
   <meta http-equiv="content-language" content="{{ . }}" />
   {{ end }}
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
