@@ -96,7 +96,7 @@ The default file can be used as a template to create additional languages, or re
 {{< /alert >}}
 
 
-### Global
+#### Global
 
 <!-- prettier-ignore-start -->
 | Name           | Default      | Description                                                                                                                                                                                                                                                                                            |
@@ -107,7 +107,7 @@ The default file can be used as a template to create additional languages, or re
 | `title`        | `"Blowfish"` | The title of the website. This will be displayed in the site header and footer.                                                                                                                                                                                                                        |
 <!-- prettier-ignore-end -->
 
-### Params
+#### Params
 
 <!-- prettier-ignore-start -->
 | Name            | Default            | Description                                                                                                                                                                                                                                                                                                                |
@@ -124,7 +124,7 @@ The default file can be used as a template to create additional languages, or re
 
 <!-- prettier-ignore-end -->
 
-### Author
+#### Author
 | Name              | Default   | Description                                                                                                                                                                                                                                                                                                                 |
 | ----------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `author.name`     | _Not set_ | The author's name. This will be displayed in article footers, and on the homepage when the profile layout is used.                                                                                                                                                                                                          |
