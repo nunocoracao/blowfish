@@ -4,7 +4,7 @@
     {{ $logo := resources.Get .Site.Params.Logo }}
     {{ if $logo }}
     <div>
-        <a href="{{ "" | relLangURL }}" class="flex h-12">
+        <a href="{{ "" | relLangURL }}" class="flex">
             <span class="sr-only">{{ .Site.Title | markdownify | emojify }}</span>
 
             <img src="{{ $logo.RelPermalink }}" width="{{ div $logo.Width 2 }}" height="{{ div $logo.Height 2 }}"
