@@ -1,0 +1,6 @@
+{{ with site.Params.fathomAnalytics.site }}
+{{ partial "analytics/fathom.html" }}
+{{ end }}
+{{ with site.Config.Services.GoogleAnalytics.ID }}
+{{ partial "analytics/ga.html" }}
+{{ end }}
