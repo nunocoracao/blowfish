@@ -113,7 +113,6 @@ smartTOCHideUnfocusedChildren = true
   cardView = true
   cardViewScreenWidth = false
   
-
 [firebase]
   apiKey = "AIzaSyB5tqlqDky77Vb4Tc4apiHV4hRZI18KGiY"
   authDomain = "blowfish-21fff.firebaseapp.com"
