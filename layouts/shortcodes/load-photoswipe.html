@@ -1,0 +1,174 @@
+<!--
+Put this file in /layouts/shortcodes/load-photoswipe.html
+Documentation and licence at https://github.com/liwenyip/hugo-easy-gallery/
+-->
+
+<!-- prevent this shortcode from being loaded more than once per page -->
+{{ if not ($.Page.Scratch.Get "photoswipeloaded") }}
+  {{ $.Page.Scratch.Set "photoswipeloaded" 1 }}
+
+<!--<script src="/js/load-photoswipe.js"></script>-->
+
+<script>
+		/*
+		Put this file in /static/js/load-photoswipe.js
+		Documentation and licence at https://github.com/liwenyip/hugo-easy-gallery/
+		*/
+		/* Show an alert if this js file has been loaded twice */
+		if (window.loadphotoswipejs) {
+			window.alert("You've loaded load-photoswipe.js twice. See https://github.com/liwenyip/hugo-easy-gallery/issues/6")
+		}
+		var loadphotoswipejs = 1
+
+		/* TODO: Make the share function work */
+
+		document.addEventListener('DOMContentLoaded', function() {
+			var items = []; // array of slide objects that will be passed to PhotoSwipe()
+			// for every figure element on the page:
+			document.querySelectorAll('figure').forEach(function($figure, index) {
+				if ($figure.className == 'no-photoswipe') return true;  // ignore any figures where class="no-photoswipe"
+				var $a     = $figure.querySelector('a'),
+					$img   = $figure.querySelector('img'),
+					$src   = $a.href,
+					$title = $img.alt,
+					$msrc  = $img.src;
+				// if data-size on <a> tag is set, read it and create an item
+				if ($a.dataset.size) {
+					var $size = $a.dataset.size.split('x');
+					var item = {
+						src   : $src,
+						w     : $size[0],
+						h     : $size[1],
+						title : $title,
+						msrc  : $msrc
+					};
+					{{ if .Site.Params.debug }}
+					console.log("Using pre-defined dimensions for " + $src);
+					{{ end }}
+					// if not, set temp default size then load the image to check actual size
+				} else {
+					var item = {
+						src   : $src,
+						w     : 400, // temp default size
+						h     : 300, // temp default size
+						title : $title,
+						msrc  : $msrc
+					};
+					{{ if .Site.Params.debug }}
+					console.log("Using default dimensions for " + $src);
+					{{ end }}
+					// load the image to check its dimensions
+					// update the item as soon as w and h are known (check every 30ms)
+					var img = new Image();
+					img.src = $src;
+					var wait = setInterval(function() {
+						var w = img.naturalWidth,
+							h = img.naturalHeight;
+						if (w && h) {
+							clearInterval(wait);
+							item.w = w;
+							item.h = h;
+							{{ if .Site.Params.debug }}
+							console.log("Got actual dimensions for " + img.src);
+							{{ end }}
+							// Update the figure parent div's max width.
+							var $parentDiv = $figure.parentElement;
+							if (!$parentDiv.hasOwnProperty("style")) {
+								$figure.parentElement.style = "max-width: " + w + "px"
+							}
+						}
+					}, 30);
+				}
+				// Save the index of this image then add it to the array
+				items.push(item);
+				// Event handler for click on a figure
+				$figure.addEventListener('click', function(event) {
+					event.preventDefault();  // prevent the normal behaviour i.e. load the <a> hyperlink
+					// Get the PSWP element and initialize it with the desired options
+					var $pswp = document.querySelector('.pswp');
+					var options = {
+						index: index,
+						bgOpacity: 0.8,
+						showHideOpacity: true,
+						showHideAnimationType: 'zoom',
+						focus: 'false',
+						history: 'false'
+					}
+					new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options).init();
+				}, false);
+			});
+		}, false);
+
+</script>
+
+
+<!-- Photoswipe css/js libraries -->
+{{ with .Site.Params.CDNJS }}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.css" integrity="sha256-LWdHSKWG7zv3DTpee8YAgoTfkj3gNkfauF624h4P2Nw=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/default-skin/default-skin.min.css" integrity="sha256-Q9bBMw/rHRRag46GDWY84J3elDNc8JJjKXL9tIC4oe8=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.js" integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe-ui-default.min.js" integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin="anonymous"></script>
+{{- else -}}
+  <link rel="stylesheet" href="{{ "/css/3p/photoswipe.min@4.1.3.css" | relURL }}"></script>
+  <link rel="stylesheet" href="{{ "/css/3p/default-skin/default-skin.min@4.1.3.css" | relURL }}"></script>
+  <script src="{{ "/js/3p/photoswipe.min@4.1.3.js" | relURL }}"></script>
+  <script src="{{ "/js/3p/photoswipe-ui-default.min@4.1.3.js" | relURL }}"></script>
+{{ end }}
+
+<style>
+    .pswp__caption a
+  , .pswp__caption small a
+  , .pswp__caption__center a {
+      color: #CCC;
+      /* text-decoration: none; */
+  }
+</style>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+<!-- Background of PhotoSwipe.
+     It's a separate element, as animating opacity is faster than rgba(). -->
+<div class="pswp__bg"></div>
+<!-- Slides wrapper with overflow:hidden. -->
+<div class="pswp__scroll-wrap">
+    <!-- Container that holds slides.
+      PhotoSwipe keeps only 3 of them in DOM to save memory.
+      Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      <!--  Controls are self-explanatory. Order can be changed. -->
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+      <!-- element will get class pswp__preloader--active when preloader is running -->
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+{{ end }}
