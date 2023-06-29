@@ -80,7 +80,7 @@ Real websites that are built with Blowfish.
 | [blog.enmanuelmoreira.com](https://blog.enmanuelmoreira.com)          | Personal site                |
 | [halcyonstraits.com](https://www.halcyonstraits.com/)                 | Doll photography             |
 | [50-nuances-octets.fr](https://www.50-nuances-octets.fr/)             | Organization site            |
-
+| [marupanda.art/marucomics][https://marupanda.art/marucomics/]         | Comics site                  |
 {{< alert >}}
 
 **Blowfish user?** To add your site to this list, [submit a pull request](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/content/users/index.md).
