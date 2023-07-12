@@ -1,0 +1,5 @@
+{{ if isset site.Params.fathomAnalytics "domain" }}
+<script defer src="https://{{ site.Params.fathomAnalytics.domain }}/script.js" data-site="{{ site.Params.fathomAnalytics.site }}"></script>
+{{ else }}
+<script defer src="https://cdn.usefathom.com/script.js" data-site="{{ site.Params.fathomAnalytics.site }}"></script>
+{{ end }}

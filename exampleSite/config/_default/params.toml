@@ -38,7 +38,7 @@ smartTOCHideUnfocusedChildren = true
   layout = "custom" # valid options: page, profile, hero, card, background, custom
   # homepageImage = "/img/iceland.jpg" # used in: hero, and card
   showRecent = false
-  showRecentItems = 6
+  showRecentItems = 12
   showMoreLink = true
   showMoreLinkDest = "docs"
   cardView = false
@@ -113,7 +113,6 @@ smartTOCHideUnfocusedChildren = true
   cardView = true
   cardViewScreenWidth = false
   
-
 [firebase]
   apiKey = "AIzaSyB5tqlqDky77Vb4Tc4apiHV4hRZI18KGiY"
   authDomain = "blowfish-21fff.firebaseapp.com"
