@@ -5,18 +5,28 @@ const usersFolderPath = "./exampleSite/content/users/"
 
 let rawdata = fs.readFileSync(usersFolderPath + 'users.json');
 let users = JSON.parse(rawdata);
+let userDict = {}
+for(var i in users){
+    userDict[users[i].title.replaceAll("/", "-")] = true;
+}
 
 const files = fs.readdirSync(usersFolderPath);
-console.log(files);
+
 
 for (file in files) {
 
     let stats = fs.statSync(usersFolderPath + files[file]);
-    if (files[file] != 'users.json' && files[file] != '_index.md' && files[file] != 'tempusers.txt' && files[file] != 'oldindex.md') {
-        console.log('deleting: ', files[file]);
+    if (files[file] != 'users.json' && files[file] != '_index.md') {
+
+
         if (stats.isDirectory()) {
-            fs.rmdirSync(usersFolderPath + files[file], { recursive: true, force: true });
+
+            if(!userDict[files[file].replaceAll("/", "-")]){
+                console.log('deleting: ', files[file]);
+                fs.rmdirSync(usersFolderPath + files[file], { recursive: true, force: true });
+            }
         } else {
+            console.log('deleting: ', files[file]);
             fs.unlinkSync(usersFolderPath + files[file]);
         }
     }
@@ -40,8 +50,9 @@ puppeteer
             var userMDFile = "---\n\
                 title: \""+ users[i].title + "\"\n\
                 slug: \"users\"\n\
-                tags: []\n\
+                tags: ["+users[i].tags+"]\n\
                 externalUrl: \""+ users[i].url + "\"\n\
+                date: "+(9999-i)+"-08-08\n\
                 showDate: false\n\
                 showAuthor: false\n\
                 showReadingTime: false\n\
@@ -51,34 +62,17 @@ puppeteer
                 layoutBackgroundHeaderSpace: false\n\
                 \r---\n";
 
-            var dir = usersFolderPath + i + users[i].title;
+            var dir = usersFolderPath + users[i].title.replaceAll("/", "-");
 
             if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir);
             }
 
             fs.writeFileSync(dir + '/index.md', userMDFile);
-
             await page.goto(users[i].url);
-            await page.screenshot({ path: dir + "/feature.png" });
+            await page.screenshot({ path: dir + "/feature.jpg" });
         }
 
         await browser.close();
 
     });
-
-
-/*
-puppeteer
-  .launch({
-    defaultViewport: {
-      width: 1280,
-      height: 800,
-    },
-  })
-  .then(async (browser) => {
-    const page = await browser.newPage();
-    await page.goto("https://nytimes.com");
-    await page.screenshot({ path: "nyt-puppeteer.png" });
-    await browser.close();
-  });*/
