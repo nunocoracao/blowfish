@@ -1,8 +1,9 @@
 ---
-                title: "nunocoracao.com"
+                title: "brendanwallace.github.io"
                 slug: "users"
-                tags: []
-                externalUrl: "https://nunocoracao.com"
+                tags: [Personal site]
+                externalUrl: "https://brendanwallace.github.io"
+                date: 9995-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
