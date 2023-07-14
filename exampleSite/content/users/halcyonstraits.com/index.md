@@ -2,7 +2,7 @@
                 title: "halcyonstraits.com"
                 tags: [Doll photography]
                 externalUrl: "https://www.halcyonstraits.com/"
-                date: 1972-08-08
+                date: 9949-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

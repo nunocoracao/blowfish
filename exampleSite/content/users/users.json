@@ -1,282 +1,388 @@
 [
-    {
-        "title": "nunocoracao.com",
-        "url": "https://nunocoracao.com",
-        "tags": [
-            "Personal site", 
-            "Theme author"
-        ]
-    },
-    {
-        "title": "madoke.org",
-        "url": "https://madoke.org/",
-        "tags": [
-            "Personal site" 
-        ]
-    },
-    {
-        "title": "code-chimp.com",
-        "url": "https://code-chimp.com",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "mucahitkurtlar.github.io",
-        "url": "https://mucahitkurtlar.github.io",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "brendanwallace.github.io",
-        "url": "https://brendanwallace.github.io",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "fedeizzo.dev",
-        "url": "https://fedeizzo.dev",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "cuttontail.blog",
-        "url": "https://cuttontail.blog",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "pmnxis.github.io",
-        "url": "https://pmnxis.github.io",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "ciicadalab.github.io",
-        "url": "https://ciicadalab.github.io",
-        "tags": ["Organization site"]
-      },
-      {
-        "title": "georgiancodeclub.github.io",
-        "url": "https://georgiancodeclub.github.io",
-        "tags": ["College club site"]
-      },
-      {
-        "title": "albertolvera.com",
-        "url": "https://albertolvera.com",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "chris.banes.dev",
-        "url": "https://chris.banes.dev",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "fahru.my.id",
-        "url": "https://www.fahru.my.id",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "jeknom.github.io",
-        "url": "https://jeknom.github.io",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "blog.watchstep.me",
-        "url": "https://blog.watchstep.me",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "overdevelop.io",
-        "url": "https://overdevelop.io",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "loisvelasco.is-a.dev",
-        "url": "https://loisvelasco.is-a.dev",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "tabletopflore.com",
-        "url": "https://www.tabletopflore.com",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "omarohn.de",
-        "url": "https://omarohn.de",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "spelucin.me",
-        "url": "https://spelucin.me",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "insidemordecai.com",
-        "url": "https://insidemordecai.com",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "jamesdixon.dev",
-        "url": "https://jamesdixon.dev",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "blastomussa.dev",
-        "url": "https://blastomussa.dev",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "cdell.io",
-        "url": "https://cdell.io",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "jam.dsg.li",
-        "url": "https://jam.dsg.li",
-        "tags": ["Organization site"]
-      },
-      {
-        "title": "priyakdey.com",
-        "url": "https://priyakdey.com",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "sdehm.dev",
-        "url": "https://sdehm.dev",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "dizzytech.de",
-        "url": "https://dizzytech.de",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "alejandro-ao.com",
-        "url": "https://alejandro-ao.com/",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "adir1.com",
-        "url": "https://adir1.com/",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "niklas-hartmann-dev.de",
-        "url": "https://niklas-hartmann-dev.de/",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "blog.muffn.io",
-        "url": "https://blog.muffn.io/",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "nick.bouwhuis.net",
-        "url": "https://nick.bouwhuis.net",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "vividscc.com",
-        "url": "https://vividscc.com/",
-        "tags": ["Business site"]
-      },
-      {
-        "title": "muhalvin.github.io",
-        "url": "https://muhalvin.github.io/",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "mariuskimmina.com",
-        "url": "https://mariuskimmina.com/",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "technicat.com",
-        "url": "https://technicat.com/",
-        "tags": ["Company site"]
-      },
-      {
-        "title": "fugugames.com",
-        "url": "https://fugugames.com/",
-        "tags": ["Games site"]
-      },
-      {
-        "title": "hyperbowl3d.com",
-        "url": "https://hyperbowl3d.com/",
-        "tags": ["Game site"]
-      },
-      {
-        "title": "talkdimsum.com",
-        "url": "https://talkdimsum.com/",
-        "tags": ["App site"]
-      },
-      {
-        "title": "alanctanner.com",
-        "url": "https://alanctanner.com/",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "rdgo.dev",
-        "url": "https://rdgo.dev/",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "terraformbuch.de",
-        "url": "https://terraformbuch.de/",
-        "tags": ["Book site"]
-      },
-      {
-        "title": "shenshu.fun",
-        "url": "https://shenshu.fun/",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "hellstabber.github.io",
-        "url": "https://hellstabber.github.io/",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "clemsau.com",
-        "url": "https://clemsau.com/",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "lelouvincx.github.io",
-        "url": "https://lelouvincx.github.io/",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "weaxsey.org",
-        "url": "https://weaxsey.org/",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "nikarashihatsu.github.io",
-        "url": "https://nikarashihatsu.github.io/",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "blog.enmanuelmoreira.com",
-        "url": "https://blog.enmanuelmoreira.com",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "halcyonstraits.com",
-        "url": "https://www.halcyonstraits.com/",
-        "tags": ["Doll photography"]
-      },
-      {
-        "title": "50-nuances-octets.fr",
-        "url": "https://www.50-nuances-octets.fr/",
-        "tags": ["Organization site"]
-      },
-      {
-        "title": "marupanda.art/marucomics",
-        "url": "https://marupanda.art/marucomics/",
-        "tags": ["Comics site"]
-      },
-      {
-        "title": "seanomahoney.com",
-        "url": "https://seanomahoney.com/",
-        "tags": ["Personal site"]
-      },
-      {
-        "title": "pacochan.net",
-        "url": "https://pacochan.net",
-        "tags": ["Personal site"]
-      }
+  {
+    "title": "nunocoracao.com",
+    "url": "https://nunocoracao.com",
+    "tags": [
+      "Personal site",
+      "Theme author"
+    ]
+  },
+  {
+    "title": "madoke.org",
+    "url": "https://madoke.org/",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "code-chimp.com",
+    "url": "https://code-chimp.com",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "mucahitkurtlar.github.io",
+    "url": "https://mucahitkurtlar.github.io",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "brendanwallace.github.io",
+    "url": "https://brendanwallace.github.io",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "fedeizzo.dev",
+    "url": "https://fedeizzo.dev",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "cuttontail.blog",
+    "url": "https://cuttontail.blog",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "pmnxis.github.io",
+    "url": "https://pmnxis.github.io",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "ciicadalab.github.io",
+    "url": "https://ciicadalab.github.io",
+    "tags": [
+      "Organization site"
+    ]
+  },
+  {
+    "title": "georgiancodeclub.github.io",
+    "url": "https://georgiancodeclub.github.io",
+    "tags": [
+      "College club site"
+    ]
+  },
+  {
+    "title": "albertolvera.com",
+    "url": "https://albertolvera.com",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "chris.banes.dev",
+    "url": "https://chris.banes.dev",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "fahru.my.id",
+    "url": "https://www.fahru.my.id",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "jeknom.github.io",
+    "url": "https://jeknom.github.io",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "blog.watchstep.me",
+    "url": "https://blog.watchstep.me",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "overdevelop.io",
+    "url": "https://overdevelop.io",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "loisvelasco.is-a.dev",
+    "url": "https://loisvelasco.is-a.dev",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "tabletopflore.com",
+    "url": "https://www.tabletopflore.com",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "omarohn.de",
+    "url": "https://omarohn.de",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "spelucin.me",
+    "url": "https://spelucin.me",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "insidemordecai.com",
+    "url": "https://insidemordecai.com",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "jamesdixon.dev",
+    "url": "https://jamesdixon.dev",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "blastomussa.dev",
+    "url": "https://blastomussa.dev",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "cdell.io",
+    "url": "https://cdell.io",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "jam.dsg.li",
+    "url": "https://jam.dsg.li",
+    "tags": [
+      "Organization site"
+    ]
+  },
+  {
+    "title": "priyakdey.com",
+    "url": "https://priyakdey.com",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "sdehm.dev",
+    "url": "https://sdehm.dev",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "dizzytech.de",
+    "url": "https://dizzytech.de",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "alejandro-ao.com",
+    "url": "https://alejandro-ao.com/",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "adir1.com",
+    "url": "https://adir1.com/",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "niklas-hartmann-dev.de",
+    "url": "https://niklas-hartmann-dev.de/",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "blog.muffn.io",
+    "url": "https://blog.muffn.io/",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "nick.bouwhuis.net",
+    "url": "https://nick.bouwhuis.net",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "vividscc.com",
+    "url": "https://vividscc.com/",
+    "tags": [
+      "Business site"
+    ]
+  },
+  {
+    "title": "muhalvin.github.io",
+    "url": "https://muhalvin.github.io/",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "mariuskimmina.com",
+    "url": "https://mariuskimmina.com/",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "technicat.com",
+    "url": "https://technicat.com/",
+    "tags": [
+      "Company site"
+    ]
+  },
+  {
+    "title": "fugugames.com",
+    "url": "https://fugugames.com/",
+    "tags": [
+      "Games site"
+    ]
+  },
+  {
+    "title": "hyperbowl3d.com",
+    "url": "https://hyperbowl3d.com/",
+    "tags": [
+      "Game site"
+    ]
+  },
+  {
+    "title": "talkdimsum.com",
+    "url": "https://talkdimsum.com/",
+    "tags": [
+      "App site"
+    ]
+  },
+  {
+    "title": "alanctanner.com",
+    "url": "https://alanctanner.com/",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "rdgo.dev",
+    "url": "https://rdgo.dev/",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "terraformbuch.de",
+    "url": "https://terraformbuch.de/",
+    "tags": [
+      "Book site"
+    ]
+  },
+  {
+    "title": "shenshu.fun",
+    "url": "https://shenshu.fun/",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "hellstabber.github.io",
+    "url": "https://hellstabber.github.io/",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "clemsau.com",
+    "url": "https://clemsau.com/",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "lelouvincx.github.io",
+    "url": "https://lelouvincx.github.io/",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "weaxsey.org",
+    "url": "https://weaxsey.org/",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "nikarashihatsu.github.io",
+    "url": "https://nikarashihatsu.github.io/",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "blog.enmanuelmoreira.com",
+    "url": "https://blog.enmanuelmoreira.com",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "halcyonstraits.com",
+    "url": "https://www.halcyonstraits.com/",
+    "tags": [
+      "Doll photography"
+    ]
+  },
+  {
+    "title": "50-nuances-octets.fr",
+    "url": "https://www.50-nuances-octets.fr/",
+    "tags": [
+      "Organization site"
+    ]
+  },
+  {
+    "title": "marupanda.art/marucomics",
+    "url": "https://marupanda.art/marucomics/",
+    "tags": [
+      "Comics site"
+    ]
+  },
+  {
+    "title": "seanomahoney.com",
+    "url": "https://seanomahoney.com/",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "pacochan.net",
+    "url": "https://pacochan.net",
+    "tags": [
+      "Personal site"
+    ]
+  }
 ]

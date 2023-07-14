@@ -2,7 +2,7 @@
                 title: "blog.muffn.io"
                 tags: [Personal site]
                 externalUrl: "https://blog.muffn.io/"
-                date: 1991-08-08
+                date: 9968-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

@@ -2,7 +2,7 @@
                 title: "hyperbowl3d.com"
                 tags: [Game site]
                 externalUrl: "https://hyperbowl3d.com/"
-                date: 1984-08-08
+                date: 9961-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
