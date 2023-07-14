@@ -6871,7 +6871,7 @@ body:has(#menu-controller:checked) {
   }
 
   .lg\:top-10 {
-    top: 6rem;
+    top: 2.5rem;
   }
 
   .lg\:top-\[140px\] {
