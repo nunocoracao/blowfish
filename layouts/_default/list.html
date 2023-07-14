@@ -34,7 +34,8 @@
     {{- end }} prose flex max-w-full flex-col dark:prose-invert lg:flex-row">
     {{ if $toc }}
     <div class="order-first px-0 lg:order-last lg:max-w-xs ltr:lg:pl-8 rtl:lg:pr-8">
-      <div class="toc ltr:pl-5 rtl:pr-5 lg:sticky lg:top-10">
+      <div class="toc ltr:pl-5 rtl:pr-5 lg:sticky {{ if hasPrefix .Site.Params.header.layout "fixed" }}
+      lg:top-[140px] {{ else }} lg:top-10 {{ end }}">
         {{ partial "toc.html" . }}
       </div>
     </div>
