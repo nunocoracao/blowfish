@@ -1,9 +1,8 @@
 ---
                 title: "pmnxis.github.io"
-                slug: "users"
                 tags: [Personal site]
                 externalUrl: "https://pmnxis.github.io"
-                date: 9992-08-08
+                date: 2015-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

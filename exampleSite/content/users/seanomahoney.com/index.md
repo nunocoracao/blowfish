@@ -1,9 +1,8 @@
 ---
                 title: "seanomahoney.com"
-                slug: "users"
                 tags: [Personal site]
                 externalUrl: "https://seanomahoney.com/"
-                date: 9946-08-08
+                date: 1969-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

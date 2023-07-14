@@ -1,9 +1,8 @@
 ---
                 title: "mucahitkurtlar.github.io"
-                slug: "users"
                 tags: [Personal site]
                 externalUrl: "https://mucahitkurtlar.github.io"
-                date: 9996-08-08
+                date: 2019-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

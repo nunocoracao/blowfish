@@ -1,9 +1,8 @@
 ---
                 title: "mariuskimmina.com"
-                slug: "users"
                 tags: [Personal site]
                 externalUrl: "https://mariuskimmina.com/"
-                date: 9964-08-08
+                date: 1987-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

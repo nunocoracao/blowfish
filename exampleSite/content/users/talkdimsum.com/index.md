@@ -1,9 +1,8 @@
 ---
                 title: "talkdimsum.com"
-                slug: "users"
                 tags: [App site]
                 externalUrl: "https://talkdimsum.com/"
-                date: 9960-08-08
+                date: 1983-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

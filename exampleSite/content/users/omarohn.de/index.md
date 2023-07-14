@@ -1,9 +1,8 @@
 ---
                 title: "omarohn.de"
-                slug: "users"
                 tags: [Personal site]
                 externalUrl: "https://omarohn.de"
-                date: 9981-08-08
+                date: 2004-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

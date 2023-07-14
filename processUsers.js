@@ -49,10 +49,9 @@ puppeteer
 
             var userMDFile = "---\n\
                 title: \""+ users[i].title + "\"\n\
-                slug: \"users\"\n\
                 tags: ["+users[i].tags+"]\n\
                 externalUrl: \""+ users[i].url + "\"\n\
-                date: "+(9999-i)+"-08-08\n\
+                date: "+(2022-i)+"-08-08\n\
                 showDate: false\n\
                 showAuthor: false\n\
                 showReadingTime: false\n\

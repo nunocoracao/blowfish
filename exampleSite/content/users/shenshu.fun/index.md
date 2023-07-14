@@ -1,9 +1,8 @@
 ---
                 title: "shenshu.fun"
-                slug: "users"
                 tags: [Personal site]
                 externalUrl: "https://shenshu.fun/"
-                date: 9956-08-08
+                date: 1979-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

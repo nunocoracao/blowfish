@@ -1,9 +1,8 @@
 ---
                 title: "code-chimp.com"
-                slug: "users"
                 tags: [Personal site]
                 externalUrl: "https://code-chimp.com"
-                date: 9997-08-08
+                date: 2020-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

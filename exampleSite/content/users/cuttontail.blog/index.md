@@ -1,9 +1,8 @@
 ---
                 title: "cuttontail.blog"
-                slug: "users"
                 tags: [Personal site]
                 externalUrl: "https://cuttontail.blog"
-                date: 9993-08-08
+                date: 2016-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

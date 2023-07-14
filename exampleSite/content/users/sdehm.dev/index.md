@@ -1,9 +1,8 @@
 ---
                 title: "sdehm.dev"
-                slug: "users"
                 tags: [Personal site]
                 externalUrl: "https://sdehm.dev"
-                date: 9973-08-08
+                date: 1996-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

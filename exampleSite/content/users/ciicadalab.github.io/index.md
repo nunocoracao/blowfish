@@ -1,9 +1,8 @@
 ---
                 title: "ciicadalab.github.io"
-                slug: "users"
                 tags: [Organization site]
                 externalUrl: "https://ciicadalab.github.io"
-                date: 9991-08-08
+                date: 2014-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

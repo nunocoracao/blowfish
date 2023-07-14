@@ -1,9 +1,8 @@
 ---
                 title: "brendanwallace.github.io"
-                slug: "users"
                 tags: [Personal site]
                 externalUrl: "https://brendanwallace.github.io"
-                date: 9995-08-08
+                date: 2018-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

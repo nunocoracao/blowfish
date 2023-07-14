@@ -1,9 +1,8 @@
 ---
                 title: "technicat.com"
-                slug: "users"
                 tags: [Company site]
                 externalUrl: "https://technicat.com/"
-                date: 9963-08-08
+                date: 1986-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
