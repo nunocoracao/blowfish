@@ -62,8 +62,8 @@
     {{ if or (and (.Params.showTableOfContents | default (.Site.Params.article.showTableOfContents | default false)) (in
     .TableOfContents "<ul")) (.Site.Params.article.showRelatedPosts | default false) }} <div
       class="order-first sm:max-w-prose lg:ml-auto px-0 lg:order-last lg:max-w-xs ltr:lg:pl-8 rtl:lg:pr-8">
-      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky {{ if hasPrefix .Site.Params.header.layout "fixed" }}
-        lg:top-[140px] {{ else }} lg:top-10 {{ end }}">
+      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky {{ if hasPrefix .Site.Params.header.layout "fixed" -}}
+        lg:top-[140px]{{ else }}lg:top-10{{ end }}">
 
         {{ if and (.Params.showTableOfContents | default (.Site.Params.article.showTableOfContents | default false)) (in
         .TableOfContents "<ul") }} {{ partial "toc.html" . }} {{ end }} {{ if .Site.Params.article.showRelatedPosts |
