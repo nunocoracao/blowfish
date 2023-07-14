@@ -13,9 +13,8 @@ layoutBackgroundHeaderSpace: false
 ---
  
 
-{{< lead >}}
-Real websites that are built with Blowfish.
-{{< /lead >}}
+
+Real websites that are built with Blowfish. Check the full list in [JSON format](/users/users.json).
 
 
 {{< alert >}}
