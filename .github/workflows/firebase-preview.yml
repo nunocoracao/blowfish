@@ -23,7 +23,7 @@ jobs:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
-          hugo --minify -s exampleSite --themesDir ../.. -d ../public --baseURL https://blowfish.page
+          hugo -E -F --minify -s exampleSite --themesDir ../.. -d ../public --baseURL https://blowfish.page
 
       - name: Deploy preview
         uses: FirebaseExtended/action-hosting-deploy@v0

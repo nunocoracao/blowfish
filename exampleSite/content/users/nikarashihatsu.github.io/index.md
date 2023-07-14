@@ -1,0 +1,13 @@
+---
+                title: "nikarashihatsu.github.io"
+                tags: [Personal site]
+                externalUrl: "https://nikarashihatsu.github.io/"
+                date: 1974-08-08
+                showDate: false
+                showAuthor: false
+                showReadingTime: false
+                showEdit: false
+                showLikes: false
+                showViews: false
+                layoutBackgroundHeaderSpace: false
+                ---
