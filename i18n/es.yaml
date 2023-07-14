@@ -15,10 +15,16 @@ article:
   word_count:
     one: "{{ .Count }} palabra"
     other: "{{ .Count }} palabras"
+  views:
+    one: "{{ .Count }} visualización"
+    other: "{{ .Count }} visualizaciones"
+  likes:
+    one: "{{ .Count }} me gusta"
+    other: "{{ .Count }} me gusta"
   part_of_series: "Este artículo es parte de una serie."
   part: "Parte"
   this_article: "Este artículo"
-  related_articles: "Related"
+  related_articles: "Relacionados"
 
 author:
   byline_title: "Autor"
@@ -38,7 +44,7 @@ footer:
   powered_by: "Desarrollada con {{ .Hugo }} &amp; {{ .Theme }}"
 
 list:
-  externalurl_title: "Link a página externa"
+  externalurl_title: "Enlace a página externa"
   no_articles: "Aún no hay artículos para listar aquí."
 
 nav:
@@ -62,4 +68,4 @@ shortcode:
   recent_articles: "Reciente"
 
 recent:
-  show_more: "Mostrar Más"
+  show_more: "Mostrar más"
