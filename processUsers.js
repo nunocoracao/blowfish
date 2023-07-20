@@ -6,7 +6,7 @@ const usersFolderPath = "./exampleSite/content/users/"
 let rawdata = fs.readFileSync(usersFolderPath + 'users.json');
 let users = JSON.parse(rawdata);
 let userDict = {}
-for(var i in users){
+for (var i in users) {
     userDict[users[i].title.replaceAll("/", "-")] = true;
 }
 
@@ -17,11 +17,8 @@ for (file in files) {
 
     let stats = fs.statSync(usersFolderPath + files[file]);
     if (files[file] != 'users.json' && files[file] != '_index.md') {
-
-
         if (stats.isDirectory()) {
-
-            if(!userDict[files[file].replaceAll("/", "-")]){
+            if (!userDict[files[file].replaceAll("/", "-")]) {
                 console.log('deleting: ', files[file]);
                 fs.rmdirSync(usersFolderPath + files[file], { recursive: true, force: true });
             }
@@ -45,13 +42,12 @@ puppeteer
         const page = await browser.newPage();
 
         for (var i in users) {
-            console.log(i, users[i].title);
 
             var userMDFile = "---\n\
                 title: \""+ users[i].title + "\"\n\
-                tags: ["+users[i].tags+"]\n\
+                tags: ["+ users[i].tags + "]\n\
                 externalUrl: \""+ users[i].url + "\"\n\
-                date: "+(9999-i)+"-08-08\n\
+                date: "+ (9999 - i) + "-08-08\n\
                 showDate: false\n\
                 showAuthor: false\n\
                 showReadingTime: false\n\
@@ -67,6 +63,7 @@ puppeteer
                 fs.mkdirSync(dir);
             }
 
+            console.log(i, users[i].title);
             fs.writeFileSync(dir + '/index.md', userMDFile);
             await page.goto(users[i].url);
             await page.screenshot({ path: dir + "/feature.jpg" });
