@@ -1,8 +1,8 @@
 ---
-                title: "blog.watchstep.me"
-                tags: [Personal site]
-                externalUrl: "https://blog.watchstep.me"
-                date: 9985-08-08
+                title: "jahsehj.github.io"
+                tags: [Personal site mainly in Chinese]
+                externalUrl: "https://jahsehj.github.io/"
+                date: 9944-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

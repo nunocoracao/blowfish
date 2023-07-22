@@ -2,7 +2,7 @@
                 title: "cdell.io"
                 tags: [Personal site]
                 externalUrl: "https://cdell.io"
-                date: 9976-08-08
+                date: 9977-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
