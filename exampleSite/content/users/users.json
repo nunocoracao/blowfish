@@ -99,13 +99,6 @@
     ]
   },
   {
-    "title": "blog.watchstep.me",
-    "url": "https://blog.watchstep.me",
-    "tags": [
-      "Personal site"
-    ]
-  },
-  {
     "title": "overdevelop.io",
     "url": "https://overdevelop.io",
     "tags": [
@@ -390,6 +383,13 @@
     "url": "https://pacochan.net",
     "tags": [
       "Personal site"
+    ]
+  },
+  {
+    "title": "jahsehj.github.io",
+    "url": "https://jahsehj.github.io/",
+    "tags": [
+      "Personal site mainly in Chinese"
     ]
   }
 ]
