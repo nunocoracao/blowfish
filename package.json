@@ -43,7 +43,7 @@
     "prettier": "^3.0.0",
     "prettier-plugin-go-template": "^0.0.15",
     "prettier-plugin-tailwindcss": "^0.4.1",
-    "puppeteer": "^20.8.3",
+    "puppeteer": "^20.9.0",
     "rimraf": "^5.0.1",
     "tailwindcss": "^3.3.3",
     "tw-elements": "1.0.0-beta2",
