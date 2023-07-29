@@ -15,22 +15,29 @@
   pageRef = "docs"
   weight = 10
 
-#[[main]]
-#  name = "Examples"
-#  weight = 20
+[[main]]
+  name = "Shortcodes"
+  pageRef = "docs/shortcodes"
+  weight = 15
 
 [[main]]
   name = "Samples"
   pageRef = "samples"
+  weight = 16
+
+[[main]]
+  name = "Examples"
   weight = 20
 
 [[main]]
   name = "Showcase"
+  parent = "Examples"
   pageRef = "examples"
   weight = 30
 
 [[main]]
   name = "Recipes"
+  parent = "Examples"
   pageRef = "guides"
   weight = 40
 
