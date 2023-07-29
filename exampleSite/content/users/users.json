@@ -288,13 +288,6 @@
     ]
   },
   {
-    "title": "terraformbuch.de",
-    "url": "https://terraformbuch.de/",
-    "tags": [
-      "Book site"
-    ]
-  },
-  {
     "title": "shenshu.fun",
     "url": "https://shenshu.fun/",
     "tags": [
@@ -390,6 +383,13 @@
     "url": "https://jahsehj.github.io/",
     "tags": [
       "Personal site mainly in Chinese"
+    ]
+  },
+  {
+    "title": "jundimubarok.com",
+    "url": "https://jundimubarok.com/",
+    "tags": [
+      "Personal site"
     ]
   }
 ]

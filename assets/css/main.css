@@ -339,6 +339,10 @@ body:has(#menu-controller:checked) {
 
 /* Custom */
 
+.min-w-prose {
+  @apply min-w-[65ch];
+}
+
 .thumbnail {
   min-width: 300px;
   height: 180px;

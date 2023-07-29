@@ -1,8 +1,8 @@
 ---
-                title: "terraformbuch.de"
-                tags: [Book site]
-                externalUrl: "https://terraformbuch.de/"
-                date: 9958-08-08
+                title: "jundimubarok.com"
+                tags: [Personal site]
+                externalUrl: "https://jundimubarok.com/"
+                date: 9944-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
