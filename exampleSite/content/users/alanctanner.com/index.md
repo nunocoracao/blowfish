@@ -2,7 +2,7 @@
                 title: "alanctanner.com"
                 tags: [Personal site]
                 externalUrl: "https://alanctanner.com/"
-                date: 1982-08-08
+                date: 9960-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

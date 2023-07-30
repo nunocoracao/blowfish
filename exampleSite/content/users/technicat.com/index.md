@@ -2,7 +2,7 @@
                 title: "technicat.com"
                 tags: [Company site]
                 externalUrl: "https://technicat.com/"
-                date: 1986-08-08
+                date: 9964-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

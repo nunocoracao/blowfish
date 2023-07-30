@@ -2,7 +2,7 @@
                 title: "lelouvincx.github.io"
                 tags: [Personal site]
                 externalUrl: "https://lelouvincx.github.io/"
-                date: 1976-08-08
+                date: 9955-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

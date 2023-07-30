@@ -2,7 +2,7 @@
                 title: "pacochan.net"
                 tags: [Personal site]
                 externalUrl: "https://pacochan.net"
-                date: 1968-08-08
+                date: 9946-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
