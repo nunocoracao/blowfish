@@ -1,3 +1,4 @@
+{{ $disableImageOptimization := .Site.Params.disableImageOptimization | default false }}
 <article
   class="{{ if not .Site.Params.homepage.showRecent }}
     h-full
@@ -7,7 +8,9 @@
     {{ with .Site.Author.image }}
       {{ $authorImage := resources.Get . }}
       {{ if $authorImage }}
-        {{ $authorImage := $authorImage.Fill "288x288" }}
+        {{ if not $disableImageOptimization }}
+        {{ $authorImage = $authorImage.Fill "288x288" }}
+        {{ end }}
         <img
           class="mb-2 rounded-full h-36 w-36"
           width="144"

@@ -1,3 +1,4 @@
+{{ $disableImageOptimization := .Site.Params.disableImageOptimization | default false }}
 <article class="max-w-full prose dark:prose-invert">
     <div class="relative">
         <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100"></div>
@@ -21,7 +22,9 @@
                     {{ with .Site.Author.image }}
                     {{ $authorImage := resources.Get . }}
                     {{ if $authorImage }}
-                    {{ $authorImage := $authorImage.Fill "288x288" }}
+                    {{ if not $disableImageOptimization }}
+                    {{ $authorImage = $authorImage.Fill "288x288" }}
+                    {{ end }}
                     <img class="mb-2 rounded-full h-36 w-36" width="144" height="144"
                         alt="{{ $.Site.Author.name | default " Author" }}" src="{{ $authorImage.RelPermalink }}" />
                     {{ end }}
