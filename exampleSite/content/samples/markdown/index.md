@@ -63,6 +63,36 @@ Tables aren't part of the core Markdown spec, but Hugo supports them out-of-the-
 | --------- | -------- | ------ |
 | _italics_ | **bold** | `code` |
 
+### HTML Tables
+
+Blowfish supports HTML tables, that can be personalized with custom CSS.
+
+{{< alert >}}
+Make sure your `markup.toml` has the required contents,
+which you can get from the file copy from
+[theme config set up]({{< ref "docs/installation#set-up-theme-configuration-files" >}})
+docs.
+{{< /alert >}}
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Bob</td>
+            <td>27</td>
+        </tr>
+        <tr>
+            <td>Alice</td>
+            <td>23</td>
+        </tr>
+    </tbody>
+</table>
+
 ## Code Blocks
 
 ### Code block with backticks
