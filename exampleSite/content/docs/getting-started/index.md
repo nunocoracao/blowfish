@@ -228,7 +228,8 @@ The theme also supports nested menus. In order to use them you just need to defi
 
 ### Sub-Navigation menu
 
-Additionally, you can also configure a sub-navigation menu. Just define new menu entries as `subnavigation` in `menu.toml`. This will render a second line with caregories below the main header menu.
+Additionally, you can also configure a sub-navigation menu. Just define new menu entries as `subnavigation` in `menus.toml`.
+This will render a second line with sub-categories below the main header menu.
 
 ```toml
 # config/_default/menus.toml
@@ -244,7 +245,7 @@ Additionally, you can also configure a sub-navigation menu. Just define new menu
   weight = 20
 ```
 
-
+The default `name` is the `pageRef` title cased.
 
 ## Thumbnails & Backgrounds
 
