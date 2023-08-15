@@ -1,0 +1,71 @@
+global:
+  language: "KO"
+
+article:
+  anchor_label: "앵커"
+  date: "{{ .Date }}"
+  date_updated: "업데이트 날짜: {{ .Date }}"
+  draft: "초안"
+  edit_title: "내용 편집"
+  reading_time:
+    one: "{{ .Count }} 분"
+    other: "{{ .Count }} 분"
+  reading_time_title: "읽는 시간"
+  table_of_contents: "목차"
+  word_count:
+    one: "{{ .Count }} 단어수"
+    other: "{{ .Count }} 단어수"
+  views:
+    one: "{{ .Count }} 조회수"
+    other: "{{ .Count }} 조회수"
+  likes:
+    one: "{{ .Count }} 좋아요"
+    other: "{{ .Count }} 좋아요"
+  part_of_series: "이 글은 시리즈의 일부입니다."
+  part: "부분"
+  this_article: "이 글"
+  related_articles: "관련 글"
+
+author:
+  byline_title: "작성자"
+
+code:
+  copy: "복사"
+  copied: "복사되었습니다"
+
+error:
+  404_title: "페이지를 찾을 수 없습니다 :confused:"
+  404_error: "오류 404"
+  404_description: "요청하신 페이지를 찾을 수 없습니다."
+
+footer:
+  dark_appearance: "다크 모드로 전환"
+  light_appearance: "라이트 모드로 전환"
+  powered_by: "{{ .Hugo }} &amp; {{ .Theme }} 로 제공됨"
+
+list:
+  externalurl_title: "외부 사이트로 링크"
+  no_articles: "아직 게시된 글이 없습니다."
+
+nav:
+  scroll_to_top_title: "맨 위로 스크롤"
+  skip_to_main: "본문으로 건너뛰기"
+
+search:
+  open_button_title: "검색하기 (/)"
+  close_button_title: "닫기 (Esc)"
+  input_placeholder: "검색"
+
+sharing:
+  email: "이메일로 전송"
+  facebook: "Facebook에서 공유"
+  linkedin: "LinkedIn에서 공유"
+  pinterest: "Pinterest에 고정"
+  reddit: "Reddit에 게시"
+  twitter: "Twitter에 트윗"
+
+shortcode:
+  recent_articles: "최근 글"
+
+recent:
+  show_more: "더 보기"
