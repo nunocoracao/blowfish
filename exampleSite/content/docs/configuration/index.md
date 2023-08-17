@@ -71,6 +71,7 @@ The theme currently supports the following languages by default:
 | 🇮🇩 Indonesian                   | `id`    |
 | 🇮🇹 Italian                      | `it`    |
 | 🇯🇵 Japanese                     | `ja`    |
+| 🇰🇷 Korean                       | `ko`    |
 | 🇵🇱 Polish                       | `pl`    |
 | 🇧🇷 Portuguese (Brazil)          | `pt-br` |
 | 🇵🇹 Portuguese (Portugal)        | `pt-pt` |
@@ -110,8 +111,8 @@ The default file can be used as a template to create additional languages, or re
 #### Params
 
 <!-- prettier-ignore-start -->
-| Name            | Default            | Description                                                                                                                                                                                                                                                                                                                |
-| --------------- | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Name                   | Default            | Description                                                                                                                                                                                                                                                                                                                |
+| ---------------------- | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `params.displayName`   | `"EN"`             | The name used when the language appears on the website.                                                                                                                                                                                                                                                                    |
 | `params.isoCode`       | `"en"`             | The ISO language code for HTML metadata purposes. It can be a top-level language (ie. `en`) or a sub-variant (ie. `en-AU`).                                                                                                                                                                                                |
 | `params.rtl`           | `false`            | Whether or not this is a RTL language. Set to `true` to reflow content from right-to-left. Blowfish fully supports using RTL and LTR languages at the same time and will dynamically adjust to both.                                                                                                                       |
