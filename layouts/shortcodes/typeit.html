@@ -13,8 +13,7 @@
 {{- end -}}
 {{- $tag := .Get "tag" | default "div" -}}
 
-{{ $time := now.UnixNano }}
-{{ $id := delimit (slice "typeit" $time) "-" }}
+{{ $id := delimit (slice "typeit" .Ordinal now.UnixNano) "-" }}
 
 {{- $attrs := printf `id="%v"` $id -}}
 {{- with $classList -}}

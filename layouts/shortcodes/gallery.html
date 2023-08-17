@@ -1,4 +1,4 @@
-{{ $id := delimit (slice "gallery" .Ordinal) "-" }}
+{{ $id := delimit (slice "gallery" .Ordinal now.UnixNano) "-" }}
 
 <div id="{{ $id }}">
   {{ .Inner }}
