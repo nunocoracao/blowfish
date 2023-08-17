@@ -1,5 +1,5 @@
+{{ $id := delimit (slice "chart" .Ordinal now.UnixNano) "-" }}
 <div class="chart">
-  {{ $id := delimit (shuffle (seq 1 9)) "" }}
   <canvas id="{{ $id }}"></canvas>
   <script type="text/javascript">
     window.addEventListener("DOMContentLoaded", (event) => {
