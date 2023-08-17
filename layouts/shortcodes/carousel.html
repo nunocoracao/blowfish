@@ -1,5 +1,4 @@
-{{ $time := now.UnixNano }}
-{{ $id := delimit (slice "gallery" $time) "-" }}
+{{ $id := delimit (slice "carousel" .Ordinal now.UnixNano) "-" }}
 {{ $aspect := default "16-9" (.Get "aspectRatio") }}
 {{ $images := .Page.Resources.Match (.Get "images") }}
 {{ $interval := default "2000" (.Get "interval") }}
