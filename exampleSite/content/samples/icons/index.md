@@ -94,6 +94,7 @@ The full list of built-in icons and their corresponding names can referenced bel
 | stack-overflow       | {{< icon stack-overflow >}}       |
 | star                 | {{< icon star >}}                 |
 | steam                | {{< icon steam >}}                |
+| strava               | {{< icon strava >}}               |
 | stripe               | {{< icon stripe >}}               |
 | substack             | {{< icon substack >}}             |
 | sun                  | {{< icon sun >}}                  |
