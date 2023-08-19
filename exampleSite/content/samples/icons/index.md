@@ -27,6 +27,7 @@ The full list of built-in icons and their corresponding names can referenced bel
 | check                | {{< icon check >}}                |
 | circle-info          | {{< icon circle-info >}}          |
 | code                 | {{< icon code>}}                  |
+| codeberg             | {{< icon codeberg>}}              |
 | codepen              | {{< icon codepen >}}              |
 | comment              | {{< icon comment >}}              |
 | dev                  | {{< icon dev >}}                  |

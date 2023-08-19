@@ -25,6 +25,7 @@ title = "Blowfish"
 #     { apple = "https://www.apple.com" },
 #     { blogger = "https://username.blogspot.com/" },
 #     { codepen = "https://codepen.io/username" },
+#     { codeberg = "https://codeberg.org/username" },
 #     { dev = "https://dev.to/username" },
 #     { discord = "https://discord.gg/invitecode" },
 #     { dribbble = "https://dribbble.com/username" },
