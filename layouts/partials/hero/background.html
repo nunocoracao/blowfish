@@ -18,7 +18,7 @@
 {{ if $shouldAddHeaderSpace | default true}}
 <div id="hero" class="h-[150px] md:h-[200px]"></div>
 {{ end }}
-{{ if $disableImageOptimization }}
+{{ if or (eq .MediaType.SubType "svg" ) ($disableImageOptimization) }}
     {{ with . }}
     <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
     style="background-image:url({{ .RelPermalink }});">
