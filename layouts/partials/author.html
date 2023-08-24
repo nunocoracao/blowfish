@@ -4,7 +4,9 @@
   {{ $authorImage := resources.Get . }}
   {{ if $authorImage }}
   {{ if not $disableImageOptimization }}
+  {{-   if not (eq $authorImage.MediaType.SubType "svg") -}}
   {{ $authorImage = $authorImage.Fill "192x192" }}
+  {{-   end -}}
   {{ end }}
   <img class="!mt-0 !mb-0 h-24 w-24 rounded-full ltr:mr-4 rtl:ml-4" width="96" height="96"
     alt="{{ $.Site.Author.name | default " Author" }}" src="{{ $authorImage.RelPermalink }}" />
