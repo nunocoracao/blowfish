@@ -6,7 +6,11 @@
 {{- $alt := .Page.Title -}}
 {{- with .Page.Params.alt }}{{ $alt = . }}{{ end -}}
 {{- with $featured -}}
-    {{ if or (eq .MediaType.SubType "svg" ) ($disableImageOptimization) }}
+    {{ if eq .MediaType.SubType "svg" }}
+        {{ with . }}
+        <img class="w-full rounded-lg single_hero_round nozoom" alt="{{ $alt }}" src="{{ .RelPermalink }}">
+        {{ end }}
+    {{ else if $disableImageOptimization }}
         {{ with . }}
         <img class="w-full rounded-lg single_hero_round nozoom" alt="{{ $alt }}" width="{{ .Width }}" height="{{ .Height }}" src="{{ .RelPermalink }}">
         {{ end }}
