@@ -23,9 +23,11 @@
                     {{ $authorImage := resources.Get . }}
                     {{ if $authorImage }}
                     {{ if not $disableImageOptimization }}
-                    {{ $authorImage = $authorImage.Fill "288x288" }}
+                    {{-  if not (eq $authorImage.MediaType.SubType "svg") -}}
+                    {{     $authorImage = $authorImage.Fill "288x288" }}
+                    {{   end }}
                     {{ end }}
-                    <img class="mb-2 rounded-full h-36 w-36" width="144" height="144"
+                    <img class="mb-2 rounded-full h-36 w-36" {{-  if not (eq $authorImage.MediaType.SubType "svg") -}} width="144" height="144" {{- end -}}
                         alt="{{ $.Site.Author.name | default " Author" }}" src="{{ $authorImage.RelPermalink }}" />
                     {{ end }}
                     {{ end }}
