@@ -414,10 +414,31 @@
     ]
   },
   {
-    "title": "scottmckendry.tech",
-    "url": "https://scottmckendry.tech",
+    "title": "theindiecoder.cloud",
+    "url": "https://theindiecoder.cloud",
     "tags": [
       "Personal site"
     ]
   },
+  {
+    "title": "gma.name",
+    "url": "https://gma.name",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "mayer.life",
+    "url": "https://mayer.life",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+     "title": "scottmckendry.tech",
+    "url": "https://scottmckendry.tech",
+    "tags": [
+      "Personal site"
+    ]
+  }
 ]
