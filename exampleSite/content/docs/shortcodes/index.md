@@ -440,10 +440,10 @@ The `where` and `value` values are used in the following query `where .Site.Regu
 ```md
 - This is an markdown list.
 - Its per default a LTR direction
-{{% rtl %}}
+{{%/* rtl */%}}
 - هذه القائمة باللغة العربية
 - من اليمين الى اليسار
-{{% /rtl %}}
+{{%/* /rtl */%}}
 ```
 
 - This is an markdown list.
