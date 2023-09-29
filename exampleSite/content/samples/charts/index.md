@@ -12,7 +12,7 @@ Blowfish includes support for Chart.js using the `chart` shortcode. Simply wrap 
 
 Refer to the [chart shortcode]({{< ref "docs/shortcodes#chart" >}}) docs for more details.
 
-The examples below are a small selection taken from the [official Chart.js docs](https://www.chartjs.org/docs/latest/samples). You can also [view the page source](https://raw.githubusercontent.com/nunocoracao/blowfish/main/exampleSite/content/samples/charts.md) on GitHub to see the markup.
+The examples below are a small selection taken from the [official Chart.js docs](https://www.chartjs.org/docs/latest/samples). You can also [view the page source](https://raw.githubusercontent.com/nunocoracao/blowfish/main/exampleSite/content/samples/charts/index.md) on GitHub to see the markup.
 
 ## Bar chart
 
