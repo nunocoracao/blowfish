@@ -11,7 +11,7 @@ Mermaid diagrams are supported in Blowfish using the `mermaid` shortcode. Simply
 
 Refer to the [mermaid shortcode]({{< ref "docs/shortcodes#mermaid" >}}) docs for more details.
 
-The examples below are a small selection taken from the [official Mermaid docs](https://mermaid-js.github.io/mermaid/). You can also [view the page source](https://raw.githubusercontent.com/nunocoracao/blowfish/main/exampleSite/content/samples/diagrams-flowcharts.md) on GitHub to see the markup.
+The examples below are a small selection taken from the [official Mermaid docs](https://mermaid-js.github.io/mermaid/). You can also [view the page source](https://raw.githubusercontent.com/nunocoracao/blowfish/main/exampleSite/content/samples/diagrams-flowcharts/index.md) on GitHub to see the markup.
 
 ## Flowchart
 
