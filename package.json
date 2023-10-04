@@ -37,7 +37,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "chart.js": "^4.3.3",
     "fuse.js": "^6.6.2",
-    "jquery": "^3.7.0",
+    "jquery": "^3.7.1",
     "katex": "^0.16.8",
     "packery": "^2.1.2",
     "prettier": "^3.0.1",
