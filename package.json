@@ -46,7 +46,7 @@
     "puppeteer": "^21.0.3",
     "rimraf": "^5.0.1",
     "tailwindcss": "^3.3.3",
-    "tw-elements": "1.0.0-beta3",
+    "tw-elements": "1.0.0",
     "typeit": "^8.7.1",
     "vendor-copy": "^3.0.1"
   },
