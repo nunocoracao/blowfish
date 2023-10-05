@@ -431,6 +431,30 @@ The `where` and `value` values are used in the following query `where .Site.Regu
 
 <br/><br/><br/>
 
+## LTR/RTL 
+
+`ltr` and `rtl` allows you to mix your contents. Many RTL language users want to include parts of the content in LTR. Using this shortcode will let you do so, and by leveraging `%` as the outer-most dilemeter in the shortcode [Hugo shortcodes](https://gohugo.io/content-management/shortcodes/#shortcodes-with-markdown), any markdown inside will be rendered normally.
+
+**Example:**
+
+```md
+- This is an markdown list.
+- Its per default a LTR direction
+{{%/* rtl */%}}
+- هذه القائمة باللغة العربية
+- من اليمين الى اليسار
+{{%/* /rtl */%}}
+```
+
+- This is an markdown list.
+- Its per default a LTR direction
+{{% rtl %}}
+- هذه القائمة باللغة العربية
+- من اليمين الى اليسار
+{{% /rtl %}}
+
+<br/><br/><br/>
+
 ## Mermaid
 
 `mermaid` allows you to draw detailed diagrams and visualisations using text. It uses Mermaid under the hood and supports a wide variety of diagrams, charts and other output formats.
