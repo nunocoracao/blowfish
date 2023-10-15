@@ -61,12 +61,13 @@ puppeteer
 
             if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir);
+                console.log(i, users[i].title);
+                fs.writeFileSync(dir + '/index.md', userMDFile);
+                await page.goto(users[i].url);
+                await page.screenshot({ path: dir + "/feature.jpg" });
             }
 
-            console.log(i, users[i].title);
-            fs.writeFileSync(dir + '/index.md', userMDFile);
-            await page.goto(users[i].url);
-            await page.screenshot({ path: dir + "/feature.jpg" });
+
         }
 
         await browser.close();

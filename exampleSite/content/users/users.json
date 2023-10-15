@@ -36,13 +36,6 @@
     ]
   },
   {
-    "title": "fedeizzo.dev",
-    "url": "https://fedeizzo.dev",
-    "tags": [
-      "Personal site"
-    ]
-  },
-  {
     "title": "cuttontail.blog",
     "url": "https://cuttontail.blog",
     "tags": [
@@ -94,13 +87,6 @@
   {
     "title": "jeknom.github.io",
     "url": "https://jeknom.github.io",
-    "tags": [
-      "Personal site"
-    ]
-  },
-  {
-    "title": "overdevelop.io",
-    "url": "https://overdevelop.io",
     "tags": [
       "Personal site"
     ]
@@ -460,6 +446,13 @@
     "url": "https://ricklan.photography",
     "tags": [
       "Personal site"
+    ]
+  },
+  {
+    "title": "deepumohan.com/tech",
+    "url": "https://deepumohan.com/tech/",
+    "tags": [
+      "Technology Blog"
     ]
   }
 ]

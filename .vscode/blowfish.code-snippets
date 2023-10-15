@@ -1,0 +1,211 @@
+{
+  "alert": {
+    "prefix": ["BFS-alert", "HSC-alert", "alert"],
+    "body": [
+      "{{< alert ${1| ,icon=\"iconName\"|}${2| , iconColor=\"iconColor\"|}${3| , cardColor=\"cardColor\"|}${4| , textColor=\"textColor\"|} >}}",
+      "${TM_SELECTED_TEXT:${CLIPBOARD}}$0",
+      "{{< /alert >}}"
+    ],
+    "description": "Outputs its contents as a stylised message box within your article. Blowfish alert Shortcode.  Documentation: https://blowfish.page/docs/shortcodes/#alert ",
+  },
+  "article": {
+    "prefix": ["BFS-article", "HSC-article", "article"],
+    "body": [
+      "{{< article link=\"${1:RelPermalink_Of_Target_Article}\">}}",
+      "$0"
+    ],
+    "description": " Embed a single article into a markdown file. The link to the file should be the .RelPermalink of the file to be embedded.  Blowfish article Shortcode. Documentation: https://blowfish.page/docs/shortcodes/#article ",
+  },
+  "badge": {
+    "prefix": ["BFS-badge", "HSC-badge", "badge"],
+    "body": [
+      "{{< badge >}}",
+      "${TM_SELECTED_TEXT:${CLIPBOARD}}$0",
+      "{{< /badge >}}"
+    ],
+    "description": "Outputs a styled badge component which is useful for displaying metadata. Blowfish badge Shortcode.  Documentation: https://blowfish.page/docs/shortcodes/#badge ",
+  },
+  "button": {
+    "prefix": ["BFS-button", "HSC-button", "button"],
+    "body": [
+      "{{< button href=\"${1:url}\" target=\"${2:target}\" >}}",
+      "${TM_SELECTED_TEXT:${CLIPBOARD}}$0",
+      "{{< /button >}}"
+    ],
+    "description": "Output a styled button component which can be used to highlight a primary action. Blowfish button Shortcode.  Documentation: https://blowfish.page/docs/shortcodes/#button ",
+  },
+  "carousel": {
+    "prefix": ["BFS-carousel", "HSC-carousel", "carousel"],
+    "body": [
+      "{{< carousel images=\"{${1:regex matching images }}\" aspectRatio=\"${2|16-9,21-9,32-9|}\" interval=\"${3:2000}\"   >}}",
+      "$0"
+    ],
+    "description": "Showcase multiple images in an interactive and visually appealing way. Blowfish carousel Shortcode.  Documentation: https://blowfish.page/docs/shortcodes/#carousel ",
+  },
+  "chart-bar": {
+    "prefix": ["BFS-chart-bar", "HSC-chart-bar", "chart-bar"],
+    "body": [
+      "{{< chart >}} $0<!-- https://www.chartjs.org/docs/latest/samples/information.html -->",
+      "type: 'bar',\r\ndata: {\r\n  labels: ['January', 'February', 'March'],\r\n  datasets: [{\r\n    label: 'My First Dataset',\r\n    data: [65, 59, 80],\r\n    backgroundColor: [\r\n      'rgba(255, 99, 132, 0.2)',\r\n      'rgba(255, 159, 64, 0.2)',\r\n      'rgba(255, 205, 86, 0.2)'\r\n    ],\r\n    borderColor: [ \r\n      'rgb(255, 99, 132)',\r\n      'rgb(255, 159, 64)',\r\n      'rgb(255, 205, 86)'\r\n    ],\r\n    borderWidth: 1\r\n  }]\r\n}"
+      "{{< /chart >}}"
+      ],
+      "description": "Use the Chart.js library to embed charts into articles using simple structured data. Blowfish chart Shortcode. Documentation: https://blowfish.page/docs/shortcodes/#chart ",
+  },
+  "chart-doughnut": {
+    "prefix": ["BFS-chart-doughnut", "HSC-chart-doughnut", "chart-doughnut"],
+    "body": [
+      "{{< chart >}} $0<!--  https://www.chartjs.org/docs/latest/samples/information.html -->",
+      "type: 'doughnut',\r\ndata: {\r\n  labels: ['Red', 'Blue', 'Yellow'],\r\n  datasets: [{\r\n    label: 'My First Dataset',\r\n    data: [300, 50, 100],\r\n    backgroundColor: [\r\n      'rgba(255, 99, 132, 0.7)',\r\n      'rgba(54, 162, 235, 0.7)',\r\n      'rgba(255, 205, 86, 0.7)'\r\n    ],\r\n    borderWidth: 0,\r\n    hoverOffset: 4\r\n  }]\r\n}",
+      "{{< /chart >}}"
+    ],
+    "description": "Use the Chart.js library to embed charts into articles using simple structured data. Blowfish chart Shortcode. Documentation: https://blowfish.page/docs/shortcodes/#chart ",
+  },
+  "chart-line": {
+    "prefix": ["BFS-chart-line", "HSC-chart-line", "chart-line"],
+    "body": [
+      "{{< chart >}} $0<!-- https://www.chartjs.org/docs/latest/samples/information.html -->",
+      "type: 'line',\r\ndata: {\r\n  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],\r\n  datasets: [{\r\n    label: 'My First Dataset',\r\n    data: [65, 59, 80, 81, 56, 55, 40],\r\n    tension: 0.2\r\n  }]\r\n}",
+      "{{< /chart >}}"
+      ],
+      "description": "Use the Chart.js library to embed charts into articles using simple structured data. Blowfish chart Shortcode. Documentation: https://blowfish.page/docs/shortcodes/#chart ",
+  },
+  "chart": {
+    "prefix": ["BFS-chart", "HSC-chart", "chart"],
+    "body": [
+      "{{< chart >}} $0<!-- https://www.chartjs.org/docs/latest/samples/information.html -->",
+      "type: 'bar',\r\ndata: {\r\n  labels: ['January', 'February', 'March'],\r\n  datasets: [{\r\n    label: 'My First Dataset',\r\n    data: [65, 59, 80],\r\n    backgroundColor: [\r\n      'rgba(255, 99, 132, 0.2)',\r\n      'rgba(255, 159, 64, 0.2)',\r\n      'rgba(255, 205, 86, 0.2)'\r\n    ],\r\n    borderColor: [ \r\n      'rgb(255, 99, 132)',\r\n      'rgb(255, 159, 64)',\r\n      'rgb(255, 205, 86)'\r\n    ],\r\n    borderWidth: 1\r\n  }]\r\n}",
+      "type: 'doughnut',\r\ndata: {\r\n  labels: ['Red', 'Blue', 'Yellow'],\r\n  datasets: [{\r\n    label: 'My First Dataset',\r\n    data: [300, 50, 100],\r\n    backgroundColor: [\r\n      'rgba(255, 99, 132, 0.7)',\r\n      'rgba(54, 162, 235, 0.7)',\r\n      'rgba(255, 205, 86, 0.7)'\r\n    ],\r\n    borderWidth: 0,\r\n    hoverOffset: 4\r\n  }]\r\n}",
+      "type: 'line',\r\ndata: {\r\n  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],\r\n  datasets: [{\r\n    label: 'My First Dataset',\r\n    data: [65, 59, 80, 81, 56, 55, 40],\r\n    tension: 0.2\r\n  }]\r\n}",
+      "{{< /chart >}}"
+    ],
+    "description": "Use the Chart.js library to embed charts into articles using simple structured data. Blowfish chart Shortcode. Documentation: https://blowfish.page/docs/shortcodes/#chart ",
+  },  
+  "figure": {
+    "prefix": ["BFS-figure", "HSC-figure", "figure"],
+    "body": [
+      "{{< figure src=\"${1:asset-src}\"${2| , alt=\"2:alt text\"|}${3| , caption=\"MD String to display beneath asset\"|}${4| , class=\"CSS Class to add to asset\"|}${5| , href=\"url to link asset to\"|}${6| , nozoom=true, nozoom=false|}${7| , default=true|} >}}",
+    ],
+    "description": "Add images to content. Blowfish figure Shortcode. Documentation: https://blowfish.page/docs/shortcodes/#figure ",
+  },
+  "gallery": {
+    "prefix": ["BFS-gallery", "HSC-gallery", "gallery"],
+    "body": [
+      "{{< gallery >}}",
+        "<img src=\"image-uri-here\" class=\"${1|grid-w5,grid-w10,grid-w15,grid-w20,grid-w25,grid-w30,grid-w33,grid-w35,grid-w40,grid-w45,grid-w50,grid-w55,grid-w60,grid-w65,grid-w66,grid-w70,grid-w75,grid-w80,grid-w85,grid-w90,grid-w95,grid-w100|}\" />",
+        "<img src=\"image-uri-here\" class=\"grid-w50 md:grid-w33 xl:grid-w25\" />",
+        "$0",
+      "{{< /gallery >}}"
+    ],
+    "description": "Showcase multiple images at once, in a responsive manner with more varied and interesting layouts. Blowfish gallery Shortcode. Documentation: https://blowfish.page/docs/shortcodes/#gallery ",
+  },
+  "github": {
+    "prefix": ["BFS-github", "HSC-github", "github"],
+    "body": [
+      "{{< github repo=\"${1:nunocoracao/blowfish}\" >}}$0",
+    ],
+    "description": "Quickly link a github repository. Blowfish github Shortcode. Documentation: https://blowfish.page/docs/shortcodes/#github ",
+  },
+  "gitlab": {
+    "prefix": ["BFS-gitlab", "HSC-gitlab", "gitlab"],
+    "body": [
+      "{{< gitlab projectID=\"${1:278964}\"${2| , baseURL=\"https://gitlab.com\"|}$0 >}}",
+    ],
+    "description": "Quickly link a GitLab Project. Blowfish gitlab Shortcode.  Documentation: https://blowfish.page/docs/shortcodes/#gitlab ",
+  },
+  "icon": {
+    "prefix": ["BFS-icon", "HSC-icon", "icon"],
+    "body": [
+      "{{< icon \"${1:star}$0\" >}}",
+    ],
+    "description": "Output an SVG icon. Blowfish icon Shortcode. Documentation: https://blowfish.page/docs/shortcodes/#icon ",
+  },
+  "katex": {
+    "prefix": ["BFS-katex", "HSC-katex", "katex"],
+    "body": [
+      "{{< katex >}}",
+      "$0"
+    ],
+    "description": "Add mathematical expressions to article content using the KaTeX package. Blowfish katex Shortcode. Documentation: https://blowfish.page/docs/shortcodes/#katex ",
+  },
+  "lead": {
+    "prefix": ["BFS-lead", "HSC-lead", "lead"],
+    "body": [
+      "{{< lead >}}",
+      "${TM_SELECTED_TEXT:${CLIPBOARD}}$0",
+      "{{< /lead >}}"
+    ],
+    "description": "Bring emphasis to the start of an article. Blowfish lead Shortcode. Documentation: https://blowfish.page/docs/shortcodes/#lead ",
+  },
+  "list": {
+    "prefix": ["BFS-list", "HSC-list", "list"],
+    "body": [
+      "{{< list limit=\"${1:5}\"${2| , title=\"Recent\"|}${3| , where=\"Type\"|}${4| ,value=\"article\"|} >}}",
+      "{{/* The where and value values are used in the following query where .Site.RegularPages $where $value in the code of the shortcode. See Hugo Docs: https://gohugo.io/variables/page/ */}} $0",
+    ],
+    "description": "Display a list of recent articles. Blowfish list Shortcode. Documentation: https://blowfish.page/docs/shortcodes/#list ",
+  },
+  "ltr": {
+    "prefix": ["BFS-ltr", "HSC-ltr", "ltr"],
+    "body": [
+      "{{% ltr %}}",
+      "${TM_SELECTED_TEXT:${CLIPBOARD}}$0",
+      "{{% /ltr %}}"
+    ],
+    "description": "Allows you to mix your contents' reading direction. Blowfish ltr Shortcode. Documentation: https://blowfish.page/docs/shortcodes/#ltr ",
+  },
+  "mermaid": {
+    "prefix": ["BFS-mermaid", "HSC-mermaid", "mermaid"],
+    "body": [
+      "{{< mermaid >}}",
+      "${TM_SELECTED_TEXT:${CLIPBOARD}}$0",
+      "{{< /mermaid >}}"
+    ],
+    "description": "Draw detailed diagrams and visualisations using text. Blowfish mermaid Shortcode. Documentation: https://blowfish.page/docs/shortcodes/#mermaid ",
+  },
+  "rtl": {
+    "prefix": ["BFS-rtl", "HSC-rtl", "rtl"],
+    "body": [
+      "{{% rtl %}}",
+      "${TM_SELECTED_TEXT:${CLIPBOARD}}$0",
+      "{{% /rtl %}}"
+    ],
+    "description": "allows you to mix your contents. Blowfish rtl Shortcode. Documentation: https://blowfish.page/docs/shortcodes/#rtl ",
+  },
+  "swatches": {
+    "prefix": ["BFS-swatches", "HSC-swatches", "swatches"],
+    "body": [
+      "{{< swatches \"#${1:00ff00}\"${2| , \"#0000FF\"|}${3| , \"#FF00FF\"|} >}}$0",
+    ],
+    "description": "Output a set of up to three different colors. Blowfish swatches Shortcode. Documentation: https://blowfish.page/docs/shortcodes/#swatches ",
+  },
+  "timeline": {
+    "prefix": ["BFS-timeline", "HSC-timeline", "timeline"],
+    "body": [
+      "{{< timeline >}}",
+      "{{< timelineItem ${1| , icon=\"star\"|}${2| , header=\"Header\"|}${3| , badge=\"Badge Text\"|}${4| , subheader=\"SubHeader\"|} >}}",
+      "${TM_SELECTED_TEXT:${CLIPBOARD}}$0",
+      "{{< /timelineItem >}}",
+      "{{< /timeline >}}"
+    ],
+    "description": "Create a linear visual timeline that can be used in different use-cases. Blowfish timeline Shortcode. Documentation: https://blowfish.page/docs/shortcodes/#timeline ",
+  },
+  "timelineItem": {
+    "prefix": ["BFS-timelineItem", "HSC-timelineItem", "timelineItem"],
+    "body": [
+      "{{< timelineItem ${1| , icon=\"star\"|}${2| , header=\"Header\"|}${3| , badge=\"Badge Text\"|}${4| , subheader=\"SubHeader\"|} >}}",
+      "${TM_SELECTED_TEXT:${CLIPBOARD}}$0",
+      "{{< /timelineItem >}}",
+    ],
+    "description": "Create an element within a timeline.  Blowfish timelineItem Shortcode. Documentation: https://blowfish.page/docs/shortcodes/#timeline ",
+  },
+  "typeit": {
+    "prefix": ["BFS-typeit", "HSC-typeit", "typeit"],
+    "body": [
+      "${1:Type-Initial-String-then-press-tab}\r{{< typeit tag=\"${2|div,span,aside,p,header,footer,main,section,h1,h2,h3,h4,h5,h6,hgroup,code,kbd,q,samp,portal|}\"${3| , classList=\"rounded\"|} initialString=\"${1:Type-Initial-Text-and-hit-tab}\"${4| , speed=\"19\"|}${5| , lifeLike=true, lifeLike=false|}${6| , startDelay=\"250\"|}${7| , breakLines=true, breakLines=false|}${8| , waitUntilVisible=true, waitUntilVisible=false|}${9| , loop=true, loop=false|} >}}",
+      "${TM_SELECTED_TEXT:$CLIPBOARD} $0",
+      "{{< /typeit >}}"
+    ],
+    "description": "Typewriter-Like text. Blowfish typeit Shortcode. Documentation: https://blowfish.page/docs/shortcodes/#typeit https://www.typeitjs.com/docs/vanilla/usage/ ",
+  },
+
+}

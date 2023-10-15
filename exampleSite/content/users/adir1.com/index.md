@@ -2,7 +2,7 @@
                 title: "adir1.com"
                 tags: [Personal site]
                 externalUrl: "https://adir1.com/"
-                date: 9971-08-08
+                date: 9973-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
