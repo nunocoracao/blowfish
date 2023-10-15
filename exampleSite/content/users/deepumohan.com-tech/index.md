@@ -1,8 +1,8 @@
 ---
-                title: "overdevelop.io"
-                tags: [Personal site]
-                externalUrl: "https://overdevelop.io"
-                date: 9985-08-08
+                title: "deepumohan.com/tech"
+                tags: [Technology Blog]
+                externalUrl: "https://deepumohan.com/tech/"
+                date: 9935-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

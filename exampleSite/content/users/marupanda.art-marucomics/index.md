@@ -2,7 +2,7 @@
                 title: "marupanda.art/marucomics"
                 tags: [Comics site]
                 externalUrl: "https://marupanda.art/marucomics/"
-                date: 9949-08-08
+                date: 9951-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

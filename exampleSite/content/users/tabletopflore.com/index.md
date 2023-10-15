@@ -2,7 +2,7 @@
                 title: "tabletopflore.com"
                 tags: [Personal site]
                 externalUrl: "https://www.tabletopflore.com"
-                date: 9983-08-08
+                date: 9985-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
