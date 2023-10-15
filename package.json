@@ -38,7 +38,7 @@
     "chart.js": "^4.3.3",
     "fuse.js": "^6.6.2",
     "jquery": "^3.7.1",
-    "katex": "^0.16.8",
+    "katex": "^0.16.9",
     "packery": "^2.1.2",
     "prettier": "^3.0.3",
     "prettier-plugin-go-template": "^0.0.15",
