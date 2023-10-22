@@ -1,3 +1,3 @@
-module github.com/nunocoracao/blowfish/v2
+module github.com/SaviorsSocialRugby/blowfish-saviors
 
 go 1.16
