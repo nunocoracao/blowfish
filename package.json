@@ -45,7 +45,7 @@
     "prettier-plugin-tailwindcss": "^0.5.6",
     "puppeteer": "^21.3.8",
     "rimraf": "^5.0.5",
-    "tailwindcss": "^3.3.3",
+    "tailwindcss": "^3.3.4",
     "tw-elements": "1.0.0",
     "typeit": "^8.7.1",
     "vendor-copy": "^3.0.1"
@@ -97,6 +97,6 @@
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
     "@tailwindcss/forms": "^0.5.6",
-    "commander": "^11.0.0"
+    "commander": "^11.1.0"
   }
 }
