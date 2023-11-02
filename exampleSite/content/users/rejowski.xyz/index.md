@@ -1,8 +1,8 @@
 ---
                 title: "rejowski.xyz"
-                tags: [Personal site]
+                tags: [Personal Site]
                 externalUrl: "https://rejowski.xyz/"
-                date: 9980-08-08
+                date: 9933-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
@@ -10,5 +10,4 @@
                 showLikes: false
                 showViews: false
                 layoutBackgroundHeaderSpace: false
-                
----
+                ---

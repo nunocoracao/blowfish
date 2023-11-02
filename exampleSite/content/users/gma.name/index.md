@@ -2,7 +2,7 @@
                 title: "gma.name"
                 tags: [Personal site]
                 externalUrl: "https://gma.name"
-                date: 9941-08-08
+                date: 9942-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
