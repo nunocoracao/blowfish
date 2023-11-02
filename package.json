@@ -36,7 +36,7 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
     "chart.js": "^4.4.0",
-    "fuse.js": "^6.6.2",
+    "fuse.js": "^7.0.0",
     "jquery": "^3.7.1",
     "katex": "^0.16.9",
     "packery": "^2.1.2",
