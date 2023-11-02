@@ -3,7 +3,7 @@
 {{ $images := .Page.Resources.Match (.Get "images") }}
 {{ $interval := default "2000" (.Get "interval") }}
 
-<div id="{{ $id }}" class="relative" data-te-carousel-init data-te-carousel-slide>
+<div id="{{ $id }}" class="relative" data-te-carousel-init data-te-ride="carousel">
     <div class="absolute right-0 bottom-0 left-0 z-[2] mx-[15%] mb-10 flex list-none justify-center p-0"
         data-te-carousel-indicators>
 
