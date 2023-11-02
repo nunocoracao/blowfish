@@ -25,7 +25,7 @@
     "url": "https://reddit.com/submit/?url=%s&resubmit=true&title=%s"
   },
   "twitter": {
-    "icon": "twitter",
+    "icon": "x-twitter",
     "title": "sharing.twitter",
     "url": "https://twitter.com/intent/tweet/?url=%s&text=%s"
   },

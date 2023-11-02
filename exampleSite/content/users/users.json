@@ -365,13 +365,6 @@
     ]
   },
   {
-    "title": "jahsehj.github.io",
-    "url": "https://jahsehj.github.io/",
-    "tags": [
-      "Personal site mainly in Chinese"
-    ]
-  },
-  {
     "title": "jundimubarok.com",
     "url": "https://jundimubarok.com/",
     "tags": [
@@ -465,6 +458,13 @@
   {
     "title": "joush007.github.io",
     "url": "https://joush007.github.io",
+    "tags": [
+      "Personal Site"
+    ]
+  },
+  {
+    "title": "rejowski.xyz",
+    "url": "https://rejowski.xyz/",
     "tags": [
       "Personal Site"
     ]

@@ -1,8 +1,8 @@
 ---
-                title: "jahsehj.github.io"
-                tags: [Personal site mainly in Chinese]
-                externalUrl: "https://jahsehj.github.io/"
-                date: 9947-08-08
+                title: "rejowski.xyz"
+                tags: [Personal Site]
+                externalUrl: "https://rejowski.xyz/"
+                date: 9933-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
