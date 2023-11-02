@@ -58,7 +58,7 @@
 
 [[main]]
   identifier = "twitter"
-  pre = "twitter"
+  pre = "x-twitter"
   url = "https://twitter.com/burufugu"
   weight = 200
 
