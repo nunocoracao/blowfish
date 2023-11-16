@@ -1,8 +1,8 @@
 ---
-                title: "jahsehj.github.io"
-                tags: [Personal site mainly in Chinese]
-                externalUrl: "https://jahsehj.github.io/"
-                date: 9947-08-08
+                title: "kylemalloy.com"
+                tags: [Personal site]
+                externalUrl: "https://kylemalloy.com"
+                date: 9935-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

@@ -1,7 +1,7 @@
 [
   {
-    "title": "nunocoracao.com",
-    "url": "https://nunocoracao.com",
+    "title": "n9o.xyz",
+    "url": "https://n9o.xyz",
     "tags": [
       "Personal site",
       "Theme author"
@@ -365,13 +365,6 @@
     ]
   },
   {
-    "title": "jahsehj.github.io",
-    "url": "https://jahsehj.github.io/",
-    "tags": [
-      "Personal site mainly in Chinese"
-    ]
-  },
-  {
     "title": "jundimubarok.com",
     "url": "https://jundimubarok.com/",
     "tags": [
@@ -453,6 +446,27 @@
     "url": "https://deepumohan.com/tech/",
     "tags": [
       "Technology Blog"
+    ]
+  },
+  {
+    "title": "kylemalloy.com",
+    "url": "https://kylemalloy.com",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "joush007.github.io",
+    "url": "https://joush007.github.io",
+    "tags": [
+      "Personal Site"
+    ]
+  },
+  {
+    "title": "rejowski.xyz",
+    "url": "https://rejowski.xyz/",
+    "tags": [
+      "Personal Site"
     ]
   }
 ]

@@ -1,8 +1,8 @@
 ---
-                title: "ricklan.photography"
-                tags: [Personal site]
-                externalUrl: "https://ricklan.photography"
-                date: 9937-08-08
+                title: "rejowski.xyz"
+                tags: [Personal Site]
+                externalUrl: "https://rejowski.xyz/"
+                date: 9933-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
