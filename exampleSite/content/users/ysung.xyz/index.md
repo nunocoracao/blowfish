@@ -1,5 +1,5 @@
 ---
-                title: "ysung.xyz"
+                title: "v-y-s.com"
                 tags: [Personal site]
                 externalUrl: "https://v-y-s.com/"
                 date: 9932-08-08
