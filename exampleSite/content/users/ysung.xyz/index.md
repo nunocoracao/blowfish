@@ -1,7 +1,7 @@
 ---
                 title: "ysung.xyz"
                 tags: [Personal site]
-                externalUrl: "https://ysung.xyz/"
+                externalUrl: "https://v-y-s.com/"
                 date: 9932-08-08
                 showDate: false
                 showAuthor: false
