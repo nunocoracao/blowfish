@@ -26,11 +26,11 @@
                         alt="{{ $.Site.Author.name | default " Author" }}" src="{{ $authorImage.RelPermalink }}" />
                     {{ end }}
                     {{ end }}
-                    <h1 class="mb-2 text-4xl font-extrabold text-neutral-200">
+                    <h1 class="mb-2 text-4xl font-extrabold text-neutral-200 drop-shadow-md">
                         {{ .Site.Author.name | default .Site.Title }}
                     </h1>
                     {{ with .Site.Author.headline }}
-                    <h2 class="mt-0 mb-0 text-xl text-neutral-300">
+                    <h2 class="mt-0 mb-0 text-xl text-neutral-300 drop-shadow-md">
                         {{ . | markdownify | emojify }}
                     </h2>
                     {{ end }}
