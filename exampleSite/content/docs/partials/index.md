@@ -42,7 +42,7 @@ googleAnalytics = "G-MEASUREMENT_ID"
 
 ### Custom analytics providers
 
-If you wish to use a different analytics provider on your website you can also override the analytics partial and provide your own script. Simply create the file `layouts/partials/analytics.html` in your project and it will automatically include it in the `<head>` of the website.
+If you wish to use a different analytics provider on your website you can also override the analytics partial and provide your own script. Simply create the file `layouts/partials/extend-head.html` in your project and it will automatically include it in the `<head>` of the website.
 
 ## Comments
 
