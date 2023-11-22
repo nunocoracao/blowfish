@@ -1,6 +1,6 @@
 {
   "name": "hugo-blowfish-theme",
-  "version": "2.44.0",
+  "version": "2.45.0",
   "description": "Blowfish theme for Hugo",
   "scripts": {
     "fullinstall": "npm run preinstall && npm install && npm run postinstall",
