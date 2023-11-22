@@ -49,13 +49,6 @@
       "Personal site"
     ]
   },
-    {
-    "title": "ctulhu.me",
-    "url": "https://ctulhu.me",
-    "tags": [
-      "Personal site"
-    ]
-  },
   {
     "title": "ciicadalab.github.io",
     "url": "https://ciicadalab.github.io",
@@ -472,6 +465,20 @@
   {
     "title": "rejowski.xyz",
     "url": "https://rejowski.xyz/",
+    "tags": [
+      "Personal Site"
+    ]
+  },
+  {
+    "title": "ctulhu.me",
+    "url": "https://ctulhu.me",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "v-y-s.com",
+    "url": "https://v-y-s.com/",
     "tags": [
       "Personal Site"
     ]
