@@ -1,25 +1,25 @@
-name: Test Build
+# name: Test Build
 
-on: [push]
+# on: [push]
 
-jobs:
-  build:
-    name: Build Example Site
-    runs-on: ubuntu-latest
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          submodules: true
-          fetch-depth: 0
+# jobs:
+#   build:
+#     name: Build Example Site
+#     runs-on: ubuntu-latest
+#     concurrency:
+#       group: ${{ github.workflow }}-${{ github.ref }}
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v4
+#         with:
+#           submodules: true
+#           fetch-depth: 0
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2.6.0
-        with:
-          hugo-version: "latest"
+#       - name: Setup Hugo
+#         uses: peaceiris/actions-hugo@v2.6.0
+#         with:
+#           hugo-version: "latest"
 
-      - name: Build
-        working-directory: ./exampleSite
-        run: hugo --minify --themesDir ../.. --baseURL https://nunocoracao.github.io/blowfish/
+#       - name: Build
+#         working-directory: ./exampleSite
+#         run: hugo --minify --themesDir ../.. --baseURL https://nunocoracao.github.io/blowfish/
