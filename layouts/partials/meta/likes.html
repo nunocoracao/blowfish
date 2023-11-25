@@ -4,7 +4,7 @@
     {{ else if eq .Kind "term"}}
     <span id="likes_term_{{ .Page.Data.Term }}" 
     {{ else }}
-    <span id="likes_{{ .File.Path }}" 
+    <span id="likes_{{ with .File }}{{ .Path }}{{ end }}" title="likes">0</span> 
     {{ end }}
         class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="likes">loading</span> 
     <span class="inline-block align-text-bottom">{{ partial "icon.html" "heart" }}</span>

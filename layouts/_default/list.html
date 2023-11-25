@@ -21,8 +21,8 @@
   </div>
   {{ with .File }}
   <script>
-    var oid = "views_{{ .Path }}"
-    var oid_likes = "likes_{{ .Path }}"
+    var oid = "views_{{ with .File }}{{ .Path }}{{ end }}"
+    var oid_likes = "likes_{{ with .File }}{{ .Path }}{{ end }}"
   </script>
   {{ end }}
   {{ $jsPage := resources.Get "js/page.js" }}
