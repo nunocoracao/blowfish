@@ -20,8 +20,8 @@
     {{ partial "article-meta/list.html" (dict "context" . "scope" "single") }}
   </div>
   <script>
-    var oid = "views_{{ .File.Path }}"
-    var oid_likes = "likes_{{ .File.Path }}"
+    var oid = "views_{{ with .File }}{{ .Path }}{{ end }}"
+    var oid_likes = "likes_{{ with .File }}{{ .Path }}{{ end }}"
   </script>
   {{ $jsPage := resources.Get "js/page.js" }}
   {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}
