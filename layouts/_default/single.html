@@ -77,7 +77,7 @@
         
         {{ partial "series.html" . }}
 
-        <div class="max-w-prose mb-20">
+        <div class="w-96xl mb-20">
           {{ .Content | emojify }}
         </div>
                 
@@ -95,7 +95,7 @@
       <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}"></script>
   
     </section>
-  <footer class="pt-8 max-w-prose print:hidden">
+  <footer class="pt-8 print:hidden">
 
     {{ partial "article-pagination.html" . }}
     {{ if .Params.showComments | default (.Site.Params.article.showComments | default false) }}
