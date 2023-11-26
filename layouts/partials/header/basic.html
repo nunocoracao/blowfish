@@ -17,9 +17,11 @@
     <div class="flex flex-1 items-center justify-between">
         <nav class="flex space-x-3">
 
-            <a href="{{ "" | relLangURL }}" class="text-base font-medium text-gray-500 hover:text-gray-900">{{
-                .Site.Title | markdownify
-                | emojify }}</a>
+            {{ if not .Site.Params.Logo }}
+                <a href="{{ "" | relLangURL }}" class="text-base font-medium text-gray-500 hover:text-gray-900">{{
+                    .Site.Title | markdownify
+                    | emojify }}</a>
+            {{ end }}
 
 
         </nav>
