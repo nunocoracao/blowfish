@@ -73,7 +73,9 @@
     integrity="{{ $bundleJS.Data.Integrity }}" data-copy="{{ i18n " code.copy" }}" data-copied="{{ i18n " code.copied"
     }}"></script>
   {{ end }}
+  {{ if not .Site.Params.disableImageZoom | default true }}
   <script src="{{ "js/zoom.min.js" | relURL }}"></script>
+  {{ end }}
   {{/* Icons */}}
   {{ if templates.Exists "partials/favicons.html" }}
   {{ partialCached "favicons.html" .Site }}
