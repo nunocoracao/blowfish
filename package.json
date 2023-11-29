@@ -47,7 +47,7 @@
     "rimraf": "^5.0.5",
     "tailwindcss": "^3.3.5",
     "tw-elements": "1.0.0",
-    "typeit": "^8.7.1",
+    "typeit": "^8.8.0",
     "vendor-copy": "^3.0.1"
   },
   "vendorCopy": [],
