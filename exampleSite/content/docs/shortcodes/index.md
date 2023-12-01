@@ -16,12 +16,12 @@ In addition to all the [default Hugo shortcodes](https://gohugo.io/content-manag
 `alert` outputs its contents as a stylised message box within your article. It's useful for drawing attention to important information that you don't want the reader to miss.
 
 <!-- prettier-ignore-start -->
-| Parameter      | Description                                                                                                                                                                                |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `icon`         | **Optional.** the icon to display on the left side.<br>**Default:** `exclaimation triangle icon` (Check out the [icon shortcode](#icon) for more details on using icons.)                    |
-| `iconColor`    | **Optional.** the color for the icon in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme .              |
-| `cardColor`    | **Optional.** the color for the card background in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme .   |
-| `textColor`    | **Optional.** the color for the text in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme .              |
+| Parameter   | Description                                                                                                                                                                                  |
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `icon`      | **Optional.** the icon to display on the left side.<br>**Default:** `exclaimation triangle icon` (Check out the [icon shortcode](#icon) for more details on using icons.)                    |
+| `iconColor` | **Optional.** the color for the icon in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme .            |
+| `cardColor` | **Optional.** the color for the card background in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme . |
+| `textColor` | **Optional.** the color for the text in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme .            |
 <!-- prettier-ignore-end -->
 
 The input is written in Markdown so you can format it however you please.
@@ -297,7 +297,7 @@ In order to add images to the gallery, use `img` tags for each image and add `cl
 
 <!-- prettier-ignore-start -->
 | Parameter | Description                                           |
-|-----------|-------------------------------------------------------|
+| --------- | ----------------------------------------------------- |
 | `repo`    | [String] github repo in the format of `username/repo` |
 <!-- prettier-ignore-end -->
 
@@ -320,7 +320,7 @@ Finaly custom GitLab instace URL can be provided, as long as the `api/v4/project
 
 <!-- prettier-ignore-start -->
 | Parameter   | Description                                                            |
-|-------------|------------------------------------------------------------------------|
+| ----------- | ---------------------------------------------------------------------- |
 | `projectID` | [String] gitlab numeric ProjectID                                      |
 | `baseURL`   | [String] optional gitlab instace URL, default is `https://gitlab.com/` |
 <!-- prettier-ignore-end -->
@@ -400,12 +400,13 @@ When life gives you lemons, make lemonade.
 `List` will display a list of recent articles. This shortcode requires a limit value to constraint the list. Additionally, it supports a `where` and a `value` in order to filter articles by their parameters. Note that this shortcode will not display its parent page but it will count for the limit value.
 
 <!-- prettier-ignore-start -->
-| Parameter | Description                                                                                                                                             |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `limit`   | **Required.** the number of recent articles to display.                                                                                                 |
-| `title`   | Optional title for the list, default is `Recent`                                                                                                        |
-| `where`   | The variable to be used for the query of articles e.g. `Type`                                                                                           |
-| `value`   | The value that will need to match the parameter defined in `where` for the query of articles e.g. for `where` == `Type` a valid value could be `sample` |
+| Parameter  | Description                                                                                                                                             |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `limit`    | **Required.** the number of recent articles to display.                                                                                                 |
+| `title`    | Optional title for the list, default is `Recent`                                                                                                        |
+| `cardView` | Optional card view enabled for the list, default is `false`                                                                                             |
+| `where`    | The variable to be used for the query of articles e.g. `Type`                                                                                           |
+| `value`    | The value that will need to match the parameter defined in `where` for the query of articles e.g. for `where` == `Type` a valid value could be `sample` |
 
 {{< alert >}}
 The `where` and `value` values are used in the following query `where .Site.RegularPages $where $value` in the code of the shortcode. Check [Hugo docs](https://gohugo.io/variables/page/) to learn more about which parameters are available to use.
@@ -424,10 +425,10 @@ The `where` and `value` values are used in the following query `where .Site.Regu
 **Example #2:**
 
 ```md
-{{</* list title="Samples" limit=5 where="Type" value="sample" */>}}
+{{</* list title="Samples" cardView=true limit=5 where="Type" value="sample" */>}}
 ```
 
-{{< list title="Samples" limit=5 where="Type" value="sample">}}
+{{< list title="Samples" cardView=true limit=6 where="Type" value="sample">}}
 
 <br/><br/><br/>
 
