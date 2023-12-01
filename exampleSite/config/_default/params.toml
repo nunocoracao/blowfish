@@ -16,6 +16,7 @@ mainSections = ["docs"]
 # robots = ""
 
 disableImageOptimization = false
+disableTextInHeader = false
 
 defaultBackgroundImage = "/img/ocean.jpg"
 defaultFeaturedImage = "/img/ocean.jpg"
