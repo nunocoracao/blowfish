@@ -88,6 +88,7 @@
 
         <label id="menu-button" for="menu-controller" class="block">
             <input type="checkbox" id="menu-controller" class="hidden" />
+            {{ if .Site.Menus.main }}
             <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
                 {{ partial "icon.html" "bars" }}
             </div>
@@ -104,12 +105,10 @@
                             "xmark" }}</span>
                     </li>
 
-                    {{ if .Site.Menus.main }}
                     {{ range .Site.Menus.main }}
 
                     {{ partial "header/header-mobile-option.html" . }}
 
-                    {{ end }}
                     {{ end }}
 
                 </ul>
@@ -136,6 +135,7 @@
                     {{ end }}
 
                 </ul>
+                {{ end }}
                 {{ end }}
 
             </div>
