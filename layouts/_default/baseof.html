@@ -8,7 +8,7 @@
 {{- partial "head.html" . -}}
 
 <body
-  class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32">
+  class="flex flex-col h-screen px-6 m-auto text-lg leading-7 lg:max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32">
   {{ $header := print "partials/header/" .Site.Params.header.layout ".html" }}
   {{ if templates.Exists $header }}
   {{ partial $header . }}
@@ -18,22 +18,24 @@
   {{ if .IsHome }}
     {{ if .Site.Params.homePageVideo }}
     <style>
-      .video-margin {
-        margin-top: 97vh;
+      @media screen and (min-width: 1023px) {
+        .video-margin {
+          margin-top: 97vh;
+        }
       }
     </style>
-    <div class="absolute top-0 left-0 h-screen w-full">
-      <video class="h-screen w-full object-cover" autoplay loop muted>
-        <source src="{{ .Site.Params.homePageVideo }}" data-src="{{ .Site.Params.homePageVideo }}" type="video/mp4">
-      </video>
-    </div>
+  <div class="lg:absolute inset-0 w-full lg:w-screen h-screen">
+    <video class="h-full mx-auto object-cover" autoplay loop muted>
+      <source src="{{ .Site.Params.homePageVideo }}" data-src="{{ .Site.Params.homePageVideo }}" type="video/mp4">
+    </video>
+  </div>
     {{ end }}
   {{ end }}
-  <div id="the-top" class="absolute flex self-center">
+  <!-- <div id="the-top" class="absolute flex self-center">
     <a class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
       href="#main-content"><span
         class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>{{ i18n
-      "nav.skip_to_main" }}</a>
+      "nav.skip_to_main" }}</a> -->
   </div>
   <div class="relative flex flex-col grow">
     <main id="main-content" class="grow video-margin">
