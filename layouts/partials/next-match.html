@@ -1,0 +1,35 @@
+<h2 class="mt-8 text-2xl font-extrabold mb-10">Prossima Partita</h2>
+{{ $match := .Site.Params.next_match }}
+<section class="flex flex-col flex-nowrap items-center gap-5 sm:flex-row">
+    <div class="h-full text-center flex flex-1 flex-grow justify-center">
+        <img src="./teams/{{ $match.home_logo }}" alt="" class="h-16 w-16" width="80rem"/>
+    </div>
+
+    <div class="h-full text-center flex-1 flex-grow p-6">
+        {{ if strings.Contains $match.home "Saviors" }}
+            <h1 class="text-2xl font-extrabold" style="color: #1c8a37">{{ $match.home }}</h2>
+        {{ else }}
+            <h1 class="text-2xl font-extrabold">{{ $match.home }}</h2>
+        {{ end }}
+    </div>
+
+    <div class="h-full text-center flex-1 flex-grow">
+        <h1 class="text-2xl not-italic font-extrabold" style="color: #95c11f">{{ $match.result }}</h1>
+    </div>
+
+    <div class="h-full text-center flex-1 flex-grow p-6">
+        {{ if strings.Contains $match.visitors "Saviors" }}
+            <h1 class="text-2xl font-extrabold" style="color: #1c8a37">{{ $match.visitors }}</h2>
+        {{ else }}
+            <h1 class="text-2xl font-extrabold">{{ $match.visitors }}</h2>
+        {{ end }}
+    </div>
+
+    <div class="h-full text-center flex flex-1 flex-grow justify-center">
+        <img src="./teams/{{ $match.visitors_logo }}" alt="" width="80rem"/>
+    </div>
+</section>
+<div style="background-color: #1c8a37" class="h-[2px] mt-2 mb-2"></div>
+<div class="flex items-center justify-center">
+    <p class="text-sm h-full text-center">{{ $match.when_where }}</p>
+</div>

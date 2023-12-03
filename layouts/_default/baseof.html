@@ -16,76 +16,15 @@
   {{ partial "partials/header/basic.html" . }}
   {{ end }}
   {{ if .IsHome }}
-    {{ if .Site.Params.homePageVideo }}
-    <style>
-      @media screen and (min-width: 1023px) {
-        .video-margin {
-          margin-top: 97vh;
-        }
-      }
-    </style>
-  <div class="lg:absolute inset-0 w-full lg:w-screen h-screen">
-    <video class="h-full mx-auto object-cover" autoplay loop muted>
-      <source src="{{ .Site.Params.homePageVideo }}" data-src="{{ .Site.Params.homePageVideo }}" type="video/mp4">
-    </video>
-  </div>
-    {{ end }}
+    {{- partial "video.html" . -}}
   {{ end }}
-  <!-- <div id="the-top" class="absolute flex self-center">
-    <a class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
-      href="#main-content"><span
-        class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>{{ i18n
-      "nav.skip_to_main" }}</a> -->
   </div>
   <div class="relative flex flex-col grow">
-    <main id="main-content" class="grow video-margin">
+    <main id="main-content" class="grow">
     {{ if .IsHome }}
-      <h2 class="mt-8 text-2xl font-extrabold mb-10">Sponsors</h2>
-      {{ $images := .Site.Params.sponsors }}
-      <link rel="stylesheet" href="css/infinite.css">
-      <script src="js/main.js"></script>
-      <div class="marquee-wrapper" style="user-select: none;">
-        <div class="marquee-content scrollingX">
-          {{ $num := 0 }}
-          {{ range $images }}
-          <div class="card-testimonial flex items-center">
-            <article>
-              <picture>
-                {{ if .site }}
-                  <a href="{{ .site }}" target="_blank"><img src="{{ .img }}" alt="{{ .img }}"></a>
-                {{ else }}
-                  <img src="{{ .img }}" alt="{{ .img }}">
-                {{ end }}
-              </picture>
-              {{ if .name }}
-                <article class="short-description"><p class="text-center mt-1">{{ .name }}</p></article>
-              {{ end }}
-            </article>
-          </div>
-          {{ $num = add $num 1 }}
-          {{ end }}
-          {{ $num := 0 }}
-          {{ range $images }}
-          <div class="card-testimonial flex items-center">
-            <article>
-              <picture>
-                {{ if .site }}
-                <a href="{{ .site }}" target="_blank"><img src="{{ .img }}" alt="{{ .img }}"></a>
-                {{ else }}
-                <img src="{{ .img }}" alt="{{ .img }}">
-                {{ end }}
-              </picture>
-              {{ if .name }}
-              <article class="short-description">
-                <p class="text-center mt-1">{{ .name }}</p>
-              </article>
-              {{ end }}
-            </article>
-          </div>
-          {{ $num = add $num 1 }}
-          {{ end }}
-        </div>
-      </div>
+      {{- partial "sponsors.html" . -}}
+      {{- partial "next-match.html" . -}}
+      {{- partial "last-match.html" . -}}
     {{ end }}
     {{ block "main" . }}{{ end }}
     {{ if and (.Site.Params.footer.showScrollToTop | default true) (gt .WordCount 1) }}
