@@ -1,0 +1,19 @@
+{{ if .Site.Params.homePageVideo }}
+<style>
+  @media screen and (min-width: 1023px) {
+    .video-margin {
+      margin-top: 97vh;
+    }
+  }
+</style>
+<div class="lg:absolute inset-0 w-full lg:w-screen h-screen">
+  <video class="h-full mx-auto object-cover" autoplay loop muted>
+    <source
+      src="{{ .Site.Params.homePageVideo }}"
+      data-src="{{ .Site.Params.homePageVideo }}"
+      type="video/mp4"
+    />
+  </video>
+</div>
+<div class="relative video-margin"></div>
+{{ end }}
