@@ -4914,6 +4914,10 @@ body:has(#menu-controller:checked) {
 
 /* Custom */
 
+pre {
+  text-align: left;
+}
+
 .thumbnail {
   min-width: 300px;
   height: 180px;
