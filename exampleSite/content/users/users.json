@@ -482,5 +482,27 @@
     "tags": [
       "Personal Site"
     ]
+  },
+  {
+    "title": "blog.stonegarden.dev",
+    "url": "https://blog.stonegarden.dev/",
+    "tags": [
+      "Personal Site"
+    ]
+  },
+  {
+    "title": "renaud.warnotte.be",
+    "url": "https://renaud.warnotte.be",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "BoringTech.net",
+    "url": "https://boringtech.net/",
+    "tags": [
+      "Personal Site",
+      "Blog"
+    ]
   }
 ]
