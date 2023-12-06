@@ -6,10 +6,19 @@ if (typeof auth !== 'undefined') {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     }
 
+    function toggleLoaders(node){
+        var classesString = "animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-400 dark:bg-neutral-400"
+        var classes = classesString.split(" ");
+        for(var i in classes){  
+            node.classList.toggle(classes[i])
+        }
+    }
+
     var update_views = function (node, id) {
         viewsCollection.doc(id).onSnapshot(doc => {
             var data = doc.data();
             if (data) {
+                toggleLoaders(node)
                 node.innerText = numberWithCommas(data.views)
             }
         })
@@ -19,6 +28,7 @@ if (typeof auth !== 'undefined') {
         likesCollection.doc(id).onSnapshot(doc => {
             var data = doc.data();
             if (data) {
+                toggleLoaders(node)
                 node.innerText = numberWithCommas(data.likes)
             }
         })
