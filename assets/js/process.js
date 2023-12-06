@@ -8,6 +8,7 @@ if (typeof auth !== 'undefined') {
 
     function toggleLoaders(node){
         var classesString = node.className;
+        if(classesString == "") return
         var classes = classesString.split(" ");
         for(var i in classes){  
             node.classList.toggle(classes[i])
