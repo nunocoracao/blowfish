@@ -1,11 +1,12 @@
 <span>
     {{ if eq .Kind "taxonomy"}}
-    <span id="views_taxonomy_{{ .Page.Data.Plural }}" title="views">0</span> 
+    <span id="views_taxonomy_{{ .Page.Data.Plural }}"
     {{ else if eq .Kind "term"}}
-    <span id="views_term_{{ .Page.Data.Term }}" title="views">0</span> 
+    <span id="views_term_{{ .Page.Data.Term }}"
     {{ else }}
-    <span id="views_{{ .File.Path }}" title="views">0</span> 
+    <span id="views_{{ .File.Path }}" 
     {{ end }}
+        class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span> 
     <span class="inline-block align-text-bottom">{{ partial "icon.html" "eye" }}</span>
 </span>
 {{- /* Trim EOF */ -}}

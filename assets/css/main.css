@@ -404,7 +404,7 @@ pre {
 .anchor {
   display: block;
   position: relative;
-  top: -100px;
+  top: -150px;
   height: 0px;
   visibility: hidden;
 }
