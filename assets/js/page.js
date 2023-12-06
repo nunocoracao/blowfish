@@ -33,9 +33,9 @@ if (typeof auth !== 'undefined') {
 
     if (liked) {
         liked_page = true
-        document.querySelectorAll("span[id='likes_button_heart']")[0].style.display = ""
-        document.querySelectorAll("span[id='likes_button_emtpty_heart']")[0].style.display = "none"
-        document.querySelectorAll("span[id='likes_button_text']")[0].innerText = ""
+        document.querySelectorAll("span[id='button_likes_heart']")[0].style.display = ""
+        document.querySelectorAll("span[id='button_likes_emtpty_heart']")[0].style.display = "none"
+        document.querySelectorAll("span[id='button_likes_text']")[0].innerText = ""
     }
 
 }
@@ -47,9 +47,9 @@ function like_article(id_likes) {
             docRef.get().then((doc) => {
                 liked_page = true
                 localStorage.setItem(id_likes, true);
-                document.querySelectorAll("span[id='likes_button_heart']")[0].style.display = ""
-                document.querySelectorAll("span[id='likes_button_emtpty_heart']")[0].style.display = "none"
-                document.querySelectorAll("span[id='likes_button_text']")[0].innerText = ""
+                document.querySelectorAll("span[id='button_likes_heart']")[0].style.display = ""
+                document.querySelectorAll("span[id='button_likes_emtpty_heart']")[0].style.display = "none"
+                document.querySelectorAll("span[id='button_likes_text']")[0].innerText = ""
                 if (doc.exists) {
                     db.collection('likes').doc(id_likes).update({
                         likes: firebase.firestore.FieldValue.increment(1)
@@ -75,9 +75,9 @@ function remove_like_article(id_likes) {
             docRef.get().then((doc) => {
                 liked_page = false
                 localStorage.removeItem(id_likes);
-                document.querySelectorAll("span[id='likes_button_heart']")[0].style.display = "none"
-                document.querySelectorAll("span[id='likes_button_emtpty_heart']")[0].style.display = ""
-                document.querySelectorAll("span[id='likes_button_text']")[0].innerText = "\xa0Like"
+                document.querySelectorAll("span[id='button_likes_heart']")[0].style.display = "none"
+                document.querySelectorAll("span[id='button_likes_emtpty_heart']")[0].style.display = ""
+                document.querySelectorAll("span[id='button_likes_text']")[0].innerText = "\xa0Like"
                 if (doc.exists) {
                     db.collection('likes').doc(id_likes).update({
                         likes: firebase.firestore.FieldValue.increment(-1)
