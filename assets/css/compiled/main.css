@@ -1912,6 +1912,10 @@ select {
   margin-top: 2rem;
 }
 
+.mt-\[-2px\] {
+  margin-top: -2px;
+}
+
 .mt-\[0\.15rem\] {
   margin-top: 0.15rem;
 }
@@ -2158,6 +2162,10 @@ select {
 
 .h-screen {
   height: 100vh;
+}
+
+.max-h-3 {
+  max-height: 0.75rem;
 }
 
 .max-h-\[5rem\] {
@@ -2669,6 +2677,16 @@ select {
 
 .animate-\[spinner-grow_0\.75s_linear_infinite\] {
   animation: spinner-grow 0.75s linear infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 @keyframes spin {
@@ -3236,6 +3254,11 @@ select {
 .bg-neutral-300 {
   --tw-bg-opacity: 1;
   background-color: rgba(var(--color-neutral-300), var(--tw-bg-opacity));
+}
+
+.bg-neutral-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(var(--color-neutral-400), var(--tw-bg-opacity));
 }
 
 .bg-neutral-500\/50 {
@@ -4035,6 +4058,10 @@ select {
 .text-primary-800 {
   --tw-text-opacity: 1;
   color: rgba(var(--color-primary-800), var(--tw-text-opacity));
+}
+
+.text-transparent {
+  color: transparent;
 }
 
 .underline {
@@ -7326,6 +7353,11 @@ pre {
 :is(.dark .dark\:bg-\[\#4f4f4f\]) {
   --tw-bg-opacity: 1;
   background-color: rgb(79 79 79 / var(--tw-bg-opacity));
+}
+
+:is(.dark .dark\:bg-neutral-400) {
+  --tw-bg-opacity: 1;
+  background-color: rgba(var(--color-neutral-400), var(--tw-bg-opacity));
 }
 
 :is(.dark .dark\:bg-neutral-600) {
