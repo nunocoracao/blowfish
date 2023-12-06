@@ -18,9 +18,11 @@ if (typeof auth !== 'undefined') {
         viewsCollection.doc(id).onSnapshot(doc => {
             var data = doc.data();
             if (data) {
-                toggleLoaders(node)
                 node.innerText = numberWithCommas(data.views)
+            } else {
+                node.innerText = 0
             }
+            toggleLoaders(node)
         })
     }
 
@@ -28,9 +30,12 @@ if (typeof auth !== 'undefined') {
         likesCollection.doc(id).onSnapshot(doc => {
             var data = doc.data();
             if (data) {
-                toggleLoaders(node)
                 node.innerText = numberWithCommas(data.likes)
+            } else {
+                node.innerText = 0
             }
+            toggleLoaders(node)
+
         })
     }
 
