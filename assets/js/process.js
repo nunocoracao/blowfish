@@ -7,7 +7,7 @@ if (typeof auth !== 'undefined') {
     }
 
     function toggleLoaders(node){
-        var classesString = "animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-400 dark:bg-neutral-400"
+        var classesString = node.className;
         var classes = classesString.split(" ");
         for(var i in classes){  
             node.classList.toggle(classes[i])

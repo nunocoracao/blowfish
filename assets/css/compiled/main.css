@@ -3256,11 +3256,6 @@ select {
   background-color: rgba(var(--color-neutral-300), var(--tw-bg-opacity));
 }
 
-.bg-neutral-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgba(var(--color-neutral-400), var(--tw-bg-opacity));
-}
-
 .bg-neutral-500\/50 {
   background-color: rgba(var(--color-neutral-500), 0.5);
 }
