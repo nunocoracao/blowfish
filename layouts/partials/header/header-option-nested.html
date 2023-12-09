@@ -14,11 +14,11 @@
     </span>
   </div>
   <div class="absolute menuhide">
-    <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
+    <div class="pt-2 p-5 mt-2 rounded-xl shadow-2xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral">
       <div class="flex flex-col space-y-3">
         {{ range .Children }}
         <a href="{{ .URL }}" {{ if or (strings.HasPrefix .URL "http:" ) (strings.HasPrefix .URL "https:" ) }}
-          target="_blank" {{ end }} class="flex items-center">
+          target="_blank" {{ end }} class="flex items-center hover:underline">
           {{ if .Pre }}
           <span {{ if and .Pre .Name}} class="mr-1" {{ end }}>
             {{ partial "icon.html" .Pre }}
