@@ -456,6 +456,31 @@ The `where` and `value` values are used in the following query `where .Site.Regu
 
 <br/><br/><br/>
 
+## Markdown Importer
+
+This shortcode allows you to import markdown files from external sources. This is useful for including content from other repositories or websites without having to copy and paste the content.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description                                             |
+| --------- | ------------------------------------------------------- |
+| `url`     | **Required** URL to an externally hosted markdown file. |
+
+
+<!-- prettier-ignore-end -->
+
+
+**Example:**
+
+```md
+{{</* mdimporter url="https://raw.githubusercontent.com/nunocoracao/nunocoracao/master/README.md" */>}}
+
+```
+
+{{< mdimporter url="https://raw.githubusercontent.com/nunocoracao/nunocoracao/master/README.md" >}}
+
+
+<br/><br/>
+
 ## Mermaid
 
 `mermaid` allows you to draw detailed diagrams and visualisations using text. It uses Mermaid under the hood and supports a wide variety of diagrams, charts and other output formats.
