@@ -504,5 +504,20 @@
       "Personal Site",
       "Blog"
     ]
+  },
+  {
+    "title": "technicaldc.github.io",
+    "url": "https://technicaldc.github.io/",
+    "tags": [
+      "Personal Site",
+      "Blog"
+    ]
+  },
+  {
+    "title": "binarydigit.cafe",
+    "url": "https://binarydigit.cafe/",
+    "tags": [
+      "Personal site"
+    ]
   }
 ]
