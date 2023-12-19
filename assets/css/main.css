@@ -1,5 +1,7 @@
 /*! Blowfish | MIT License | https://github.com/nunocoracao/blowfish */
 
+@import 'components/zen-mode.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

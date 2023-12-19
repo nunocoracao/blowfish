@@ -1,5 +1,5 @@
 {{ $disableImageOptimization := .Site.Params.disableImageOptimization | default false }}
-<div class="flex">
+<div class="flex author">
   {{ with .Site.Author.image }}
   {{ $authorImage := resources.Get . }}
   {{ if $authorImage }}

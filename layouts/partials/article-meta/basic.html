@@ -4,8 +4,8 @@
 {{ $scope := default nil }}
 
 {{ if (reflect.IsMap . ) }}
-{{ $context = .context }}
-{{ $scope = cond (not .scope) nil .scope }}
+  {{ $context = .context }}
+  {{ $scope = cond (not .scope) nil .scope }}
 {{ end }}
 
 {{ with $context }}
@@ -13,37 +13,41 @@
 
 {{/* Gather partials for this context */}}
 {{ if .Params.showDate | default (.Site.Params.article.showDate | default true) }}
-{{ $meta.Add "partials" (slice (partial "meta/date.html" .Date)) }}
+  {{ $meta.Add "partials" (slice (partial "meta/date.html" .Date)) }}
 {{ end }}
 
 {{ if and (.Params.showDateUpdated | default (.Site.Params.article.showDateUpdated | default false)) (ne (partial
 "functions/date.html" .Date) (partial "functions/date.html" .Lastmod)) }}
-{{ $meta.Add "partials" (slice (partial "meta/date-updated.html" .Lastmod)) }}
+  {{ $meta.Add "partials" (slice (partial "meta/date-updated.html" .Lastmod)) }}
 {{ end }}
 
 {{ if and (.Params.showWordCount | default (.Site.Params.article.showWordCount | default false)) (ne .WordCount 0) }}
-{{ $meta.Add "partials" (slice (partial "meta/word-count.html" .)) }}
+  {{ $meta.Add "partials" (slice (partial "meta/word-count.html" .)) }}
 {{ end }}
 
 {{ if and (.Params.showReadingTime | default (.Site.Params.article.showReadingTime | default true)) (ne .ReadingTime 0)
 }}
-{{ $meta.Add "partials" (slice (partial "meta/reading-time.html" .)) }}
+  {{ $meta.Add "partials" (slice (partial "meta/reading-time.html" .)) }}
 {{ end }}
 
 {{ if and (not .Params.externalURL) (.Params.showViews | default (.Site.Params.article.showViews | default false)) }}
-{{ $meta.Add "partials" (slice (partial "meta/views.html" .)) }}
+  {{ $meta.Add "partials" (slice (partial "meta/views.html" .)) }}
 {{ end }}
 
 {{ if and (not .Params.externalURL) (.Params.showLikes | default (.Site.Params.article.showLikes | default false)) }}
-{{ $meta.Add "partials" (slice (partial "meta/likes.html" .)) }}
+  {{ $meta.Add "partials" (slice (partial "meta/likes.html" .)) }}
 {{ end }}
 
 {{ if and (eq $scope "single") (not .Params.externalURL) (.Params.showLikes | default (.Site.Params.article.showLikes | default false)) }}
-{{ $meta.Add "partials" (slice (partial "meta/likes_button.html" .)) }}
+  {{ $meta.Add "partials" (slice (partial "meta/likes_button.html" .)) }}
 {{ end }}
 
 {{ if and (eq $scope "single") (.Params.showEdit | default (.Site.Params.article.showEdit | default false)) }}
-{{ $meta.Add "partials" (slice (partial "meta/edit.html" .)) }}
+  {{ $meta.Add "partials" (slice (partial "meta/edit.html" .)) }}
+{{ end }}
+
+{{ if and (eq $scope "single") (.Params.showZenMode | default (.Site.Params.article.showZenMode | default false)) }}
+  {{ $meta.Add "partials" (slice (partial "meta/zen-mode.html" .)) }}
 {{ end }}
 
 
