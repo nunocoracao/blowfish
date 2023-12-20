@@ -381,13 +381,13 @@ Check out the [mathematical notation samples]({{< ref "mathematical-notation" >}
 ## Keyword
 
 
-The `keyword` creates a visually distinguished keyword that can be used in different use-cases, e.g. professional skills etc. The `keyword` shortcode relies on the `keywordList` shortcode to group together keywords. Each item can have the following properties.
+The `keyword` component can be used to visually highlight certain important words or phrases, e.g. professional skills etc. The `keywordList` shortcode can be used to group together multiple `keyword` items. Each item can have the following properties.
 
 
 <!-- prettier-ignore-start -->
 | Parameter   | Description                                  |
 | ----------- | -------------------------------------------- |
-| `icon`      | the icon to be used in the keyword           |
+| `icon`      | Optional icon to be used in the keyword      |
 <!-- prettier-ignore-end -->
 
 The input is written in Markdown so you can format it however you please.
