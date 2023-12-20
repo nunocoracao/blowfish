@@ -399,13 +399,14 @@ The input is written in Markdown so you can format it however you please.
 {{</* keyword icon="github" */>}} Lorem ipsum dolor. {{</* /keyword */>}}
 {{</* keyword icon="code" */>}} **Important** skill {{</* /keyword */>}}
 {{</* /keywordList */>}}
+{{</* keyword */>}} *Standalone* skill {{</* /keyword */>}}
 ```
 
 {{< keywordList >}}
 {{< keyword icon="github" >}} Lorem ipsum dolor {{< /keyword >}}
 {{< keyword icon="code" >}} **Important** skill {{< /keyword >}}
 {{< /keywordList >}}
-
+{{< keyword >}} *Standalone* skill {{< /keyword >}}
 
 <br/><br/><br/>
 
