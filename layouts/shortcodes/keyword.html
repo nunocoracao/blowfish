@@ -1,12 +1,10 @@
 {{ $icon := .Get "icon"}}
-<span style="margin-top: 0.5rem" class="flex mr-2">
-  <span
-    class="rounded-full bg-primary-500 dark:bg-primary-300 text-neutral-50 dark:text-neutral-700 px-1.5 py-[1px] text-xs font-normal"
-  >
-    <span class="flex items-center">
-      {{if $icon}}
-      <span class="mr-1">{{ partial "icon" $icon }}</span>
-      {{ end }} {{- .Inner | markdownify -}}
-    </span>
+<span
+  class="rounded-full bg-primary-500 dark:bg-primary-300 text-neutral-50 dark:text-neutral-700 px-1.5 py-[1px] text-xs font-normal"
+>
+  <span class="flex items-center">
+    {{if $icon}}
+    <span class="mr-1">{{ partial "icon" $icon }}</span>
+    {{ end }} {{- .Inner | markdownify -}}
   </span>
 </span>
