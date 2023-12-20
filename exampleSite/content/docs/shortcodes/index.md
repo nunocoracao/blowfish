@@ -377,6 +377,38 @@ Check out the [mathematical notation samples]({{< ref "mathematical-notation" >}
 
 <br/><br/><br/>
 
+
+## Keyword
+
+
+The `keyword` creates a visually distinguished keyword that can be used in different use-cases, e.g. professional skills etc. The `keyword` shortcode relies on the `keywordList` shortcode to group together keywords. Each item can have the following properties.
+
+
+<!-- prettier-ignore-start -->
+| Parameter   | Description                                  |
+| ----------- | -------------------------------------------- |
+| `icon`      | the icon to be used in the keyword           |
+<!-- prettier-ignore-end -->
+
+The input is written in Markdown so you can format it however you please.
+
+**Example:**
+
+```md
+{{</* keywordList */>}}
+{{</* keyword icon="github" */>}} Lorem ipsum dolor. {{</* /keyword */>}}
+{{</* keyword icon="code" */>}} **Important** skill {{</* /keyword */>}}
+{{</* /keywordList */>}}
+```
+
+{{< keywordList >}}
+{{< keyword icon="github" >}} Lorem ipsum dolor {{< /keyword >}}
+{{< keyword icon="code" >}} **Important** skill {{< /keyword >}}
+{{< /keywordList >}}
+
+
+<br/><br/><br/>
+
 ## Lead
 
 `lead` is used to bring emphasis to the start of an article. It can be used to style an introduction, or to call out an important piece of information. Simply wrap any Markdown content in the `lead` shortcode.
@@ -393,7 +425,7 @@ When life gives you lemons, make lemonade.
 When life gives you lemons, make lemonade.
 {{< /lead >}}
 
-<br/><br/><br/>
+<br/><br/><br/> 
 
 ## List
 
