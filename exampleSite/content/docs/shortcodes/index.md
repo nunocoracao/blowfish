@@ -392,13 +392,22 @@ The `keyword` component can be used to visually highlight certain important word
 
 The input is written in Markdown so you can format it however you please.
 
-**Example:**
+**Example1 :**
+
+```md
+{{</* keyword */>}} Super skill {{</* /keyword */>}}
+```
+
+{{< keyword >}} *Standalone* skill {{< /keyword >}}
+
+**Example2 :**
 
 ```md
 {{</* keywordList */>}}
 {{</* keyword icon="github" */>}} Lorem ipsum dolor. {{</* /keyword */>}}
 {{</* keyword icon="code" */>}} **Important** skill {{</* /keyword */>}}
 {{</* /keywordList */>}}
+
 {{</* keyword */>}} *Standalone* skill {{</* /keyword */>}}
 ```
 
