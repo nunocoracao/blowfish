@@ -24,13 +24,14 @@ function _toogleZenMode(zendModeButton) {
 
     if (body.classList.contains('zen-mode-enable')) {
         // Persist configuration
-        localStorage.setItem('blowfish-zen-mode-enabled', 'true');
+        //localStorage.setItem('blowfish-zen-mode-enabled', 'true');
+        
         // Change title to enable
         zendModeButton.setAttribute('title', titleI18nEnable)
         // Auto-scroll to title article
         window.scrollTo(window.scrollX, header.getBoundingClientRect().top - 90);
     } else {
-        localStorage.setItem('blowfish-zen-mode-enabled', 'false');
+        //localStorage.setItem('blowfish-zen-mode-enabled', 'false');
         zendModeButton.setAttribute('title', titleI18nDisable);
         document.querySelector('body').scrollIntoView();
     }
@@ -56,10 +57,10 @@ function _registerZendModeButtonClick(zendModeButton) {
         }
 
         // Initialize localstorage option 'blowfish-zen-mode-enabled' to false, if it does not exist, otherwise enable it.
-        if (localStorage.getItem('blowfish-zen-mode-enabled') === null) {
-            localStorage.setItem('blowfish-zen-mode-enabled', 'false');
-        } else if (localStorage.getItem('blowfish-zen-mode-enabled') === 'true') {
-            _toogleZenMode(zendModeButton)
-        }
+        //if (localStorage.getItem('blowfish-zen-mode-enabled') === null) {
+        //    localStorage.setItem('blowfish-zen-mode-enabled', 'false');
+        //} else if (localStorage.getItem('blowfish-zen-mode-enabled') === 'true') {
+        //    _toogleZenMode(zendModeButton)
+        //}
     });
 })();

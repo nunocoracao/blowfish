@@ -232,6 +232,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `article.showWordCount`               | `false`   | Whether or not article word counts are displayed.                                                                                                                                                                                                                                                                      |
 | `article.showComments`                | `false`   | Whether or not the [comments partial]({{< ref "partials#comments" >}}) is included after the article footer.                                                                                                                                                                                                           |
 | `article.sharingLinks`                | _Not set_ | Which sharing links to display at the end of each article. When not provided, or set to `false` no links will be displayed.  Available values are: "linkedin", "twitter", "reddit", "pinterest", "facebook", "email", "whatsapp", and "telegram"                                                                       |
+| `article.showZenMode`                 | `true`    | Flag to activate Zen Mode reading feature for articles.                                                                                                                                                                                                                                                                |
 
 ### List
 

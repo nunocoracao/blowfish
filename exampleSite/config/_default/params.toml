@@ -44,7 +44,7 @@ smartTOCHideUnfocusedChildren = false
   showMoreLinkDest = "docs"
   cardView = false
   cardViewScreenWidth = false
-  layoutBackgroundBlur = true # only used when layout equals background
+  layoutBackgroundBlur = false # only used when layout equals background
 
 [article]
   showDate = false
