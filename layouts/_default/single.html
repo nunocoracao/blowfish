@@ -31,8 +31,8 @@
     {{ $showAuthor := 0 }}
 
     {{ if .Params.showAuthor | default (.Site.Params.article.showAuthor | default true) }}
-    {{ $showAuthor = 1 }}
-    {{ partial "author.html" . }}
+      {{ $showAuthor = 1 }}
+      {{ partial "author.html" . }}
     {{ end }}
 
     {{ if not (strings.HasSuffix $baseURL "/") }}
@@ -63,7 +63,7 @@
     
     {{ if or (and (.Params.showTableOfContents | default (.Site.Params.article.showTableOfContents | default false)) (in
     .TableOfContents "<ul")) (.Site.Params.article.showRelatedPosts | default false) }} <div
-      class="order-first sm:max-w-prose lg:ml-auto px-0 lg:order-last lg:max-w-xs ltr:lg:pl-8 rtl:lg:pr-8">
+      class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
       <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky {{ if hasPrefix .Site.Params.header.layout "fixed" -}}
         lg:top-[140px]{{ else }}lg:top-10{{ end }}">
 
@@ -77,7 +77,7 @@
         
         {{ partial "series.html" . }}
 
-        <div class="max-w-prose mb-20">
+        <div class="article-content max-w-prose mb-20">
           {{ .Content | emojify }}
         </div>
                 
@@ -86,10 +86,12 @@
         {{ partial "related.html" . }}  
       </div>
      
+    {{ with .File }}
      <script>
-        var oid = "views_{{ .File.Path }}"
-        var oid_likes = "likes_{{ .File.Path }}"
+        var oid = "views_{{ .Path }}"
+        var oid_likes = "likes_{{ .Path }}"
       </script>
+      {{ end }}
       {{ $jsPage := resources.Get "js/page.js" }}
       {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}
       <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}"></script>

@@ -37,6 +37,7 @@ The full list of built-in icons and their corresponding names can referenced bel
 | edit                 | {{< icon edit >}}                 |
 | email                | {{< icon email >}}                |
 | envelope             | {{< icon envelope >}}             |
+| expand               | {{< icon expand >}}               |
 | eye                  | {{< icon eye >}}                  |
 | facebook             | {{< icon facebook >}}             |
 | fire                 | {{< icon fire >}}                 |

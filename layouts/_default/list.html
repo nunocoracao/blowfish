@@ -19,10 +19,12 @@
   <div class="mt-1 mb-2 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
     {{ partial "article-meta/list.html" (dict "context" . "scope" "single") }}
   </div>
+  {{ with .File }}
   <script>
-    var oid = "views_{{ .File.Path }}"
-    var oid_likes = "likes_{{ .File.Path }}"
+    var oid = "views_{{ .Path }}"
+    var oid_likes = "likes_{{ .Path }}"
   </script>
+  {{ end }}
   {{ $jsPage := resources.Get "js/page.js" }}
   {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}
   <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}"></script>

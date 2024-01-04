@@ -1,5 +1,7 @@
 /*! Blowfish | MIT License | https://github.com/nunocoracao/blowfish */
 
+@import 'components/zen-mode.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -109,6 +111,21 @@ body:has(#menu-controller:checked) {
 
 .copy-textarea {
   @apply absolute opacity-5 -z-10;
+}
+
+/* Fix long KaTeX equations on mobile (see https://katex.org/docs/issues.html#css-customization) */
+.katex-display { overflow: auto hidden }
+
+/* Fix long tables breaking out of article on mobile */
+table {
+    display: block;
+    overflow: auto;
+}
+
+/* Fix long inline code sections breaking out of article on mobile */
+code {
+    word-wrap: break-word;         /* All browsers since IE 5.5+ */
+    overflow-wrap: break-word;     /* Renamed property in CSS3 draft spec */
 }
 
 /* -- Chroma Highlight -- */
