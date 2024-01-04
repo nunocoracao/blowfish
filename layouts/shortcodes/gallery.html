@@ -1,15 +1,6 @@
-{{ $id := delimit (slice "gallery" .Ordinal now.UnixNano) "-" }}
+{{ $random := delimit (shuffle (seq 1 9)) "" }}
+{{ $id := delimit (slice "gallery" $random now.UnixNano) "-" }}
 
-<div id="{{ $id }}">
+<div id="{{ $id }}" class="gallery">
   {{ .Inner }}
 </div>
-
-<script>
-  $(window).on("load", function () {
-    $('#{{ $id }}').packery({
-      percentPosition: true,
-      gutter: 5,
-      resize: true
-    });
-  })
-</script>
