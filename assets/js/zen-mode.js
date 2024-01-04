@@ -54,6 +54,10 @@ function _registerZendModeButtonClick(zendModeButton) {
         const zendModeButton = document.getElementById('zen-mode-button');
         if(zendModeButton !== null && zendModeButton !== undefined) {
             _registerZendModeButtonClick(zendModeButton);
+                        console.log('[DEBUG] Zen-mode button found');
+
+        }else{
+            console.log('[DEBUG] Zen-mode button not found');
         }
 
         // Initialize localstorage option 'blowfish-zen-mode-enabled' to false, if it does not exist, otherwise enable it.
