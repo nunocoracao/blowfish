@@ -25,6 +25,9 @@ article:
   part: "Part"
   this_article: "This Article"
   related_articles: "Related"
+  zen_mode_title:
+    enable: "Enable zen mode"
+    disable: "Disable zen mode"
 
 author:
   byline_title: "Author"

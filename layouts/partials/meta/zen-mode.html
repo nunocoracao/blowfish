@@ -1,0 +1,14 @@
+{{ $jsZenMode := resources.Get "js/zen-mode.js" }}
+{{ $jsZenMode = $jsZenMode | resources.Minify | resources.Fingerprint "sha512" }}
+
+<script type="text/javascript" src="{{ $jsZenMode.RelPermalink }}" integrity="{{ $jsZenMode.Data.Integrity }}"></script>
+
+<span class="mb-[2px]">
+    <span id="zen-mode-button"
+          class="text-lg hover:text-primary-500"
+          title="{{ i18n "article.zen_mode_title.enable" }}"
+          data-title-i18n-disable="{{ i18n "article.zen_mode_title.enable" }}"
+          data-title-i18n-enable="{{ i18n "article.zen_mode_title.disable" }}">
+        <span class="inline-block align-text-bottom">{{ partial "icon.html" "expand" }}</span>
+    </span>
+</span>
