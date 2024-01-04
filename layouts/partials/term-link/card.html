@@ -1,6 +1,6 @@
 <a href="{{ .Page.RelPermalink }}" class="min-w-full">
   <div
-    class="border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative backdrop-blur">
+    class="border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
 
     {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
 
@@ -32,7 +32,7 @@
     <span class="absolute bottom-0 right-0 m-2">
       <span class="flex">
         <span
-          class="rounded-md border backdrop-blur border-primary-400 px-1 py-[1px] text-xl font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
+          class="rounded-md border border-primary-400 px-1 py-[1px] text-xl font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
         >
         {{ .Count }}
         </span>
