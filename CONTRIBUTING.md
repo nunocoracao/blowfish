@@ -35,9 +35,9 @@
 - Indent using 2 spaces (soft tabs).
 - Put spaces between list items (ie. `[1, 2, 3]`, not `[1,2,3]`), around operators (ie. `1 + 1`, not `1+1`) and inside go templating tags (ie. `{{< alert >}}`, not `{{<alert>}}`).
 - Avoid code reuse in templates by extracting components into partials.
-- Layout code in a logical manner that prioritises readibility.
+- Layout code in a logical manner that prioritises readability.
 - Add comments when the intent of the code isn't immediately apparent or to break up large blocks of logic.
-- Use relative paths to assets without including the preceeding slash but, when referring to a folder, including a trailing slash (ie. `static/img/`, not `/static/img/` or `/static/img`).
+- Use relative paths to assets without including the preceding slash but, when referring to a folder, including a trailing slash (ie. `static/img/`, not `/static/img/` or `/static/img`).
 - Any static text must be referenced using the `i18n` methods and included in the localisation assets.
 - Commit often, preferring incremental changes rather than bundling everything into a single, large commit.
 
