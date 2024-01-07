@@ -175,7 +175,7 @@
 
 @media not print {
   .lh-vars.dark {
-    /* Pallete */
+    /* Palette */
     --color-gray-200: var(--color-gray-800);
     --color-gray-300: #616161;
     --color-gray-400: var(--color-gray-600);
@@ -7103,7 +7103,7 @@ Util.UIStrings = {
 
   /** This label is for a checkbox above a table of items loaded by a web page. The checkbox is used to show or hide third-party (or "3rd-party") resources in the table, where "third-party resources" refers to items loaded by a web page from URLs that aren't controlled by the owner of the web page. */
   thirdPartyResourcesLabel: 'Show 3rd-party resources',
-  /** This label is for a button that opens a new tab to a webapp called "Treemap", which is a nested visual representation of a heierarchy of data releated to the reports (script bytes and coverage, resource breakdown, etc.) */
+  /** This label is for a button that opens a new tab to a webapp called "Treemap", which is a nested visual representation of a heierarchy of data related to the reports (script bytes and coverage, resource breakdown, etc.) */
   viewTreemapLabel: 'View Treemap',
 
   /** Option in a dropdown menu that opens a small, summary report in a print dialog.  */
@@ -7776,7 +7776,7 @@ class DetailsRenderer {
    * @return {LH.Audit.Details.OpportunityColumnHeading['subItemsHeading']}
    */
   _getCanonicalizedsubItemsHeading(subItemsHeading, parentHeading) {
-    // Low-friction way to prevent commiting a falsy key (which is never allowed for
+    // Low-friction way to prevent committing a falsy key (which is never allowed for
     // a subItemsHeading) from passing in CI.
     if (!subItemsHeading.key) {
       // eslint-disable-next-line no-console

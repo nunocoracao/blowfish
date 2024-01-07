@@ -355,7 +355,7 @@ Icons can also be used in partials by calling the [icon partial]({{< ref "partia
 
 <br/><br/><br/>
 
-## Katex
+## KaTeX
 
 The `katex` shortcode can be used to add mathematical expressions to article content using the KaTeX package. Refer to the online reference of [supported TeX functions](https://katex.org/docs/supported.html) for the available syntax.
 
