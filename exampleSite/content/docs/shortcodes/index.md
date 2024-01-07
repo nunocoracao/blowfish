@@ -316,12 +316,12 @@ In order to add images to the gallery, use `img` tags for each image and add `cl
 `gitlab` allows you to quickly link a GitLab Project (GitLab's jargon for repo). 
 It displays realtime stats about it, such as the number of stars and forks it has.
 Unlike `github` it can't display the main programming language of a project.
-Finally custom GitLab instance URL can be provided, as long as the `api/v4/projects/` endpoint is available, making this shortcode compatible with most self-hosted / enterprise deployments.
+Finally, custom GitLab instance URL can be provided, as long as the `api/v4/projects/` endpoint is available, making this shortcode compatible with most self-hosted / enterprise deployments.
 
 <!-- prettier-ignore-start -->
-| Parameter   | Description                                                             |
-| ----------- | ----------------------------------------------------------------------- |
-| `projectID` | [String] gitlab numeric ProjectID                                       |
+| Parameter   | Description                                                            |
+| ----------- | ---------------------------------------------------------------------- |
+| `projectID` | [String] gitlab numeric ProjectID                                      |
 | `baseURL`   | [String] optional gitlab instance URL, default is `https://gitlab.com/` |
 <!-- prettier-ignore-end -->
 
@@ -576,7 +576,7 @@ The `timeline` creates a visual timeline that can be used in different use-cases
 | ----------- | -------------------------------------------- |
 | `icon`      | the icon to be used in the timeline visuals. |
 | `header`    | header for each entry                        |
-| `badge`     | text to place within the top right badge     |
+| `badge`     | text to place within the top right badge      |
 | `subheader` | entry's subheader                            |
 
 <!-- prettier-ignore-end -->

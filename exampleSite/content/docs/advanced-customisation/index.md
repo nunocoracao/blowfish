@@ -56,7 +56,7 @@ Blowfish ships with a number of colour schemes out of the box. To change the bas
 In addition to the default schemes, you can also create your own and re-style the entire website to your liking. Schemes are created by by placing a `<scheme-name>.css` file in the `assets/css/schemes/` folder. Once the file is created, simply refer to it by name in the theme configuration.
 
 {{< alert "github">}}
-**Note:** generating these files manually can be hard, I've built a `nodejs` terminal tool to help with that, [Fugu](https://github.com/nunocoracao/fugu). In a nutshell, you pass the main three `hex` values of your colour palette and the program will output a css file that can be imported directly into Blowfish.
+**Note:** generating these files manually can be hard, I've built a `nodejs` terminal tool to help with that, [Fugu](https://github.com/nunocoracao/fugu). In a nutshell, you pass the main three `hex` values of your color palette and the program will output a css file that can be imported directly into Blowfish.
 {{< /alert >}}
 
 
