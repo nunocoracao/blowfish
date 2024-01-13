@@ -1,4 +1,4 @@
-{{ $id := delimit (slice "gitlab" .Ordinal now.UnixNano) "-" }}
+{{ $id := delimit (slice "gitlab" (partial "functions/uid.html" .)) "-" }}
 {{- $gitlabURL := print (default "https://gitlab.com/" (.Get "baseURL")) "api/v4/projects/" (.Get "projectID") -}}
 
 {{- $gitLabData := getJSON ($gitlabURL) -}}
