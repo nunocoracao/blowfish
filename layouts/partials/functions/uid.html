@@ -1,0 +1,13 @@
+{{ $uid := .Page.RelPermalink }}
+{{ $ctx := . }}
+
+{{ range seq 16 }}
+  {{ with $ctx }}
+    {{ $uid = printf "%s-%d" $uid .Ordinal }}
+    {{ $ctx = .Parent }}
+  {{ else }}
+    {{ break }}
+  {{ end }}
+{{ end }}
+
+{{ return md5 $uid }}
