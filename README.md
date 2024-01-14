@@ -71,6 +71,27 @@ Blowfish supports several installation methods - as a git submodule, a Hugo Modu
 
 Detailed instructions for each method can be found in the [Installation](https://blowfish.page/docs/installation) docs. You should consult the documentation for the simplest setup experience. Below is a quick start guide using submodules if you are using git, or Hugo modules if you're already confident installing Hugo themes.
 
+### Quick start using Blowfish Tools
+
+> **Note:** Ensure you have **Node.js**, **Git**, **Go** and **Hugo** installed, and that you have created a new Hugo project before proceeding.
+
+We just launched a new CLI tool to help you get started with Blowfish. It will create a new Hugo project, install the theme and set up the theme configuration files for you. It's still in beta so please [report any issues you find](https://github.com/nunocoracao/blowfish-tools).
+
+Install the CLI tool globally using npm (or other package manager):
+```shell
+npm i -g blowfish-tools
+```
+
+Then run the command `blowfish-tools` to start an interactive run which will guide you through creation and configuration use-cases.
+```shell
+blowfish-tools
+```
+
+You can also run the command `blowfish-tools new` to create a new Hugo project and install the theme in one go. Check the CLI help for more information.
+```shell
+blowfish-tools new mynewsite
+```
+
 ### Quick start using git submodules
 
 > **Note:** Ensure you have **Git**, **Go**, and **Hugo** installed, and that you have created a new Hugo project before proceeding.

@@ -2,7 +2,7 @@
                 title: "jam.dsg.li"
                 tags: [Organization site]
                 externalUrl: "https://jam.dsg.li"
-                date: 9978-08-08
+                date: 9980-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

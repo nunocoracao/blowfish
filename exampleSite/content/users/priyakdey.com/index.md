@@ -2,7 +2,7 @@
                 title: "priyakdey.com"
                 tags: [Personal site]
                 externalUrl: "https://priyakdey.com"
-                date: 9977-08-08
+                date: 9979-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

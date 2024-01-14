@@ -2,7 +2,7 @@
                 title: "insidemordecai.com"
                 tags: [Personal site]
                 externalUrl: "https://insidemordecai.com"
-                date: 9982-08-08
+                date: 9984-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
