@@ -22,6 +22,7 @@ The full list of built-in icons and their corresponding names can referenced bel
 | bars                 | {{< icon bars >}}                 |
 | bell                 | {{< icon bell >}}                 |
 | blogger              | {{< icon blogger >}}              |
+| bluesky              | {{< icon bluesky >}}              |
 | bomb                 | {{< icon bomb >}}                 |
 | bug                  | {{< icon bug >}}                  |
 | check                | {{< icon check >}}                |
