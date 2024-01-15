@@ -1,8 +1,8 @@
 ---
-                title: "weaxsey.org"
-                tags: [Personal site]
-                externalUrl: "https://weaxsey.org/"
-                date: 9958-08-08
+                title: "the-maze.net"
+                tags: [Personal site,Blog]
+                externalUrl: "https://www.the-maze.net/"
+                date: 9925-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

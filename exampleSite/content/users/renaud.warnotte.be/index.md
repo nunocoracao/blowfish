@@ -2,7 +2,7 @@
                 title: "renaud.warnotte.be"
                 tags: [Personal site]
                 externalUrl: "https://renaud.warnotte.be"
-                date: 9929-08-08
+                date: 9931-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

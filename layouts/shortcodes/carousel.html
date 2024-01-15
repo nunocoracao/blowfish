@@ -1,4 +1,4 @@
-{{ $id := delimit (slice "carousel" .Ordinal now.UnixNano) "-" }}
+{{ $id := delimit (slice "carousel" (partial "functions/uid.html" .)) "-" }}
 {{ $aspect := default "16-9" (.Get "aspectRatio") }}
 {{ $images := .Page.Resources.Match (.Get "images") }}
 {{ $interval := default "2000" (.Get "interval") }}
