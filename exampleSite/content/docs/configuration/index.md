@@ -13,6 +13,13 @@ Blowfish is a highly customisable theme and uses some of the latest Hugo feature
 
 The theme ships with a default configuration that gets you up and running with a basic blog or static website.
 
+{{< alert "fire" >}}
+We just launched a CLI tool to help you get started with Blowfish. It will help you with installation and configuration. Install the CLI tool globally using:
+```bash
+npx blowfish-tools
+```
+{{< /alert >}}
+
 > Configuration files bundled with the theme are provided in TOML format as this is the default Hugo syntax. Feel free to convert your config to YAML or JSON if you wish.
 
 The default theme configuration is documented in each file so you can freely adjust the settings to meet your needs.

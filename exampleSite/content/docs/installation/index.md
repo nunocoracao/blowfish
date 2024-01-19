@@ -27,11 +27,16 @@ Make sure you are using **Hugo version 0.87.0** or later as the theme takes adva
 
 You can find detailed installation instructions for your platform in the [Hugo docs](https://gohugo.io/getting-started/installing).
 
-### Install with Blowfish Tools (Beta)
+### Blowfish Tools (recommended)
 
 We just launched a new CLI tool to help you get started with Blowfish. It will create a new Hugo project, install the theme and set up the theme configuration files for you. It's still in beta so please [report any issues you find](https://github.com/nunocoracao/blowfish-tools).
 
 Install the CLI tool globally using npm (or other package manager):
+```shell
+npx blowfish-tools
+```
+or
+
 ```shell
 npm i -g blowfish-tools
 ```
@@ -45,6 +50,10 @@ You can also run the command `blowfish-tools new` to create a new Hugo project a
 ```shell
 blowfish-tools new mynewsite
 ```
+
+Here's a quick video of how fast it is to get started with Blowfish using the CLI tool:
+
+<iframe width="100%" height="350" src="https://www.youtube.com/embed/SgXhGb-7QbU?si=ce44baicuQ6zMeXz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### Install Manually
 
