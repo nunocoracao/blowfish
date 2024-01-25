@@ -21,13 +21,14 @@
   weight = 15
 
 [[main]]
-  name = "Samples"
-  pageRef = "samples"
-  weight = 16
-
-[[main]]
   name = "Examples"
   weight = 20
+
+[[main]]
+  name = "Samples"
+  parent = "Examples"
+  pageRef = "samples"
+  weight = 16
 
 [[main]]
   name = "Showcase"
@@ -46,10 +47,10 @@
   pageRef = "users"
   weight = 90
 
-#[[main]]
-#  name = "Merch"
-#  url = "http://tee.pub/lic/qwSlWVBL5zc"
-#  weight = 100
+[[main]]
+  name = "Merch"
+  url = "https://www.teepublic.com/user/blowfish-store/t-shirts"
+  weight = 100
 
 #[[main]]
 #  name = "Test"
@@ -62,11 +63,11 @@
   url = "https://twitter.com/burufugu"
   weight = 200
 
-[[main]]
-  identifier = "mastodon"
-  pre = "mastodon"
-  url = "https://masto.ai/@blowfish"
-  weight = 300
+#[[main]]
+#  identifier = "mastodon"
+#  pre = "mastodon"
+#  weight = 300
+#  url = "https://masto.ai/@blowfish"
 
 [[main]]
   identifier = "github"
