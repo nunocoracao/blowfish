@@ -1,0 +1,13 @@
+---
+                title: "notes.bluesdriveamelia.space"
+                tags: [Blog,Personal site]
+                externalUrl: "https://notes.bluesdriveamelia.space/"
+                date: 9921-08-08
+                showDate: false
+                showAuthor: false
+                showReadingTime: false
+                showEdit: false
+                showLikes: false
+                showViews: false
+                layoutBackgroundHeaderSpace: false
+                ---

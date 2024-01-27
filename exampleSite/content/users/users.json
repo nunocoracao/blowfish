@@ -559,5 +559,12 @@
       "Blog",
       "Personal site"
     ]
+  },
+  {
+    "title": "ekwska.com",
+    "url": "https://ekwska.com",
+    "tags": [
+      "Personal blog"
+    ]
   }
 ]
