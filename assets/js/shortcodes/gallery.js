@@ -7,7 +7,8 @@ function _getDefaultPackeryOptions() {
 }
 
 (function init() {
-    window.addEventListener("DOMContentLoaded", (event) => {
+
+    $(window).on("load", function () {
         console.groupCollapsed('[DEBUG] Gallery feature enable');
         let packeries = [];
         let nodeGalleries = document.querySelectorAll('.gallery');
