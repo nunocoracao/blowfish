@@ -50,6 +50,7 @@ disableTextInHeader = false
   showDate = true
   showViews = false
   showLikes = false
+  showDateOnlyInArticle = false
   showDateUpdated = false
   showAuthor = true
   showHero = false
