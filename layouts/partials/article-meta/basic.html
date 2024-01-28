@@ -12,7 +12,9 @@
 {{ $meta := newScratch }}
 
 {{/* Gather partials for this context */}}
-{{ if .Params.showDate | default (.Site.Params.article.showDate | default true) }}
+{{ if .Params.showDate | default (.Site.Params.article.showDate | default false) }}
+  {{ $meta.Add "partials" (slice (partial "meta/date.html" .Date)) }}
+{{else if and (eq $scope "single") (.Params.showDateOnlyInArticle | default (.Site.Params.article.showDateOnlyInArticle | default false)) }}
   {{ $meta.Add "partials" (slice (partial "meta/date.html" .Date)) }}
 {{ end }}
 
