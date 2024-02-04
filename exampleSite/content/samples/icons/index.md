@@ -109,5 +109,6 @@ The full list of built-in icons and their corresponding names can referenced bel
 | wand-magic-sparkles  | {{< icon wand-magic-sparkles >}}  |
 | whatsapp             | {{< icon whatsapp >}}             |
 | x-twitter            | {{< icon x-twitter >}}            |
+| xing                 | {{< icon xing >}}                 |
 | xmark                | {{< icon xmark >}}                |
 | youtube              | {{< icon youtube >}}              |
