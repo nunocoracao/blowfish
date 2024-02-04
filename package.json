@@ -1,6 +1,6 @@
 {
   "name": "hugo-blowfish-theme",
-  "version": "2.53.0",
+  "version": "2.54.0",
   "description": "Blowfish theme for Hugo",
   "scripts": {
     "postinstall": "vendor-copy",
@@ -43,7 +43,7 @@
     "prettier": "^3.2.4",
     "prettier-plugin-go-template": "^0.0.15",
     "prettier-plugin-tailwindcss": "^0.5.11",
-    "puppeteer": "^21.7.0",
+    "puppeteer": "^21.10.0",
     "rimraf": "^5.0.5",
     "tailwindcss": "^3.4.1",
     "tw-elements": "1.1.0",
