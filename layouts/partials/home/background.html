@@ -6,8 +6,8 @@
             <div class="relative sm:overflow-hidden">
                 <div class="fixed inset-x-0 top-0" style="z-index:-10">
                     {{ $homepageImage := "" }}
-                    {{ with .Site.Params.defaultBackgroundImage }}{{ $homepageImage = resources.Get . }}{{ end }}
-                    {{ with .Site.Params.homepage.homepageImage }}{{ $homepageImage = resources.Get . }}{{ end }}
+                    {{ with .Site.Params.defaultBackgroundImage }} {{ $homepageImage = resources.Get . }}  {{if not $homepageImage}} {{ $homepageImage = resources.GetRemote . }} {{ end }} {{ end }}
+                    {{ with .Site.Params.homepage.homepageImage }} {{ $homepageImage = resources.Get . }}  {{if not $homepageImage}} {{ $homepageImage = resources.GetRemote . }} {{ end }} {{ end }}
                     {{ if not (eq $homepageImage "") }}
                     <img class="w-full h-[1000px] object-cover m-0 nozoom" src="{{ $homepageImage.RelPermalink }}" role="presentation">
                     <div

@@ -1,5 +1,10 @@
 {{ define "main" }}
 {{ .Scratch.Set "scope" "single" }}
+<style>
+  .max-w-fit, .max-w-prose {
+    max-width: {{.Params.maxWidth}}ch
+}
+</style>
 
 <article>
   {{ if .Params.showHero | default (.Site.Params.article.showHero | default false) }}

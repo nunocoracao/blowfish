@@ -3,16 +3,25 @@
 {{- $images := .Resources.ByType "image" -}}
 {{- $featured := $images.GetMatch "*feature*" -}}
 {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
+{{- $url:= .Params.featureimage -}}
+{{- $caption:= .Params.featureimagecaption -}}
+{{- if not $featured }}{{ $featured = resources.GetRemote $url }}{{ end -}}
 {{- $alt := .Page.Title -}}
 {{- with .Page.Params.alt }}{{ $alt = . }}{{ end -}}
 {{- with $featured -}}
     {{ if $disableImageOptimization }}
         {{ with . }}
-        <img class="w-full rounded-lg single_hero_round nozoom" alt="{{ $alt }}" width="{{ .Width }}" height="{{ .Height }}" src="{{ .RelPermalink }}">
+        <figure>
+            <img class="w-full rounded-lg single_hero_round nozoom" alt="{{ $alt }}" width="{{ .Width }}" height="{{ .Height }}" src="{{ .RelPermalink }}">
+            <figcaption class="text-sm text-neutral-700 dark:text-neutral-400 hover:underline" style="text-align: center;"> {{ $caption | markdownify   }} </figcaption>
+        </figure>
         {{ end }}
     {{ else }}
         {{ with .Resize "1200x" }}
-        <img class="w-full rounded-lg single_hero_round nozoom" alt="{{ $alt }}" width="{{ .Width }}" height="{{ .Height }}" src="{{ .RelPermalink }}">
+        <figure>
+            <img class="w-full rounded-lg single_hero_round nozoom" alt="{{ $alt }}" width="{{ .Width }}" height="{{ .Height }}" src="{{ .RelPermalink }}">
+            <figcaption class="text-sm text-neutral-700 dark:text-neutral-400 hover:underline" style="text-align: center;"> {{ $caption | markdownify  }} </figcaption>
+        </figure>
         {{ end }}
     {{ end }}
 {{- end -}}

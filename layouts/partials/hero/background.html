@@ -4,6 +4,9 @@
 {{- $featured := $images.GetMatch "*background*" -}}
 {{- if not $featured }}{{ $featured = $images.GetMatch "*feature*" }}{{ end -}}
 {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
+{{- $url:= .Params.featureimage -}}
+{{if or $.Site.Params.list.showHero $.Site.Params.term.showHero $.Site.Params.taxonomy.showHero}} {{ $url = default $.Site.Params.homepage.homepageImage $.Site.Params.defaultBackgroundImage }} {{end}}
+{{- if not $featured }}{{ $featured = resources.GetRemote $url }}{{ end -}}
 {{- if not $featured }}{{ with .Site.Params.defaultBackgroundImage }}{{ $featured = resources.Get . }}{{ end }}{{ end -}}
 {{ $isParentList := eq (.Scratch.Get "scope") "list"  }}
 {{ $shouldBlur := $.Params.layoutBackgroundBlur | default (or 

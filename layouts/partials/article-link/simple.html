@@ -40,6 +40,8 @@
     {{- $images := $.Resources.ByType "image" -}}
     {{- $featured := $images.GetMatch "*feature*" -}}
     {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
+    {{- $url:= .Params.featureimage -}}
+    {{- if not $featured }}{{ $featured = resources.GetRemote $url }}{{ end -}}
     {{- if not $featured }}{{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}{{ end -}}
     {{ if .Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
     {{- with $featured -}}
