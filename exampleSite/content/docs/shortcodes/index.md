@@ -127,7 +127,7 @@ Call to action
 <!-- prettier-ignore-start -->
 | Parameter     | Description                                                                                                       |
 | ------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `images`      | **Required.** A regex string to match image names.                                                                |
+| `images`      | **Required.** A regex string to match image names or URLs.                                                        |
 | `aspectRatio` | **Optional.** The aspect ratio for the carousel. Either `16-9`, `21-9` or `32-9`. It is set to `16-9` by default. |
 | `interval`    | **Optional.** The interval for the auto-scrooling, specified in milliseconds. Defaults to `2000` (2s)             |
 <!-- prettier-ignore-end -->
@@ -135,10 +135,10 @@ Call to action
 **Example 1:** 16:9 aspect ratio and verbose list of images
 
 ```md
-{{</* carousel images="{gallery/03.jpg, gallery/01.jpg, gallery/02.jpg, gallery/04.jpg}" */>}}
+{{</* carousel images="{https://cdn.pixabay.com/photo/2016/12/11/12/02/mountains-1899264_960_720.jpg, gallery/03.jpg, gallery/01.jpg, gallery/02.jpg, gallery/04.jpg}" */>}}
 ```
 
-{{< carousel images="{gallery/03.jpg,gallery/01.jpg,gallery/02.jpg,gallery/04.jpg}" >}}
+{{< carousel images="{https://cdn.pixabay.com/photo/2016/12/11/12/02/mountains-1899264_960_720.jpg,gallery/03.jpg,gallery/01.jpg,gallery/02.jpg,gallery/04.jpg}" >}}
 
 **Example 2:** 21:9 aspect ratio and regex-ed list of images
 
@@ -319,9 +319,9 @@ Unlike `github` it can't display the main programming language of a project.
 Finally, custom GitLab instance URL can be provided, as long as the `api/v4/projects/` endpoint is available, making this shortcode compatible with most self-hosted / enterprise deployments.
 
 <!-- prettier-ignore-start -->
-| Parameter   | Description                                                            |
-| ----------- | ---------------------------------------------------------------------- |
-| `projectID` | [String] gitlab numeric ProjectID                                      |
+| Parameter   | Description                                                             |
+| ----------- | ----------------------------------------------------------------------- |
+| `projectID` | [String] gitlab numeric ProjectID                                       |
 | `baseURL`   | [String] optional gitlab instance URL, default is `https://gitlab.com/` |
 <!-- prettier-ignore-end -->
 
@@ -385,9 +385,9 @@ The `keyword` component can be used to visually highlight certain important word
 
 
 <!-- prettier-ignore-start -->
-| Parameter   | Description                                  |
-| ----------- | -------------------------------------------- |
-| `icon`      | Optional icon to be used in the keyword      |
+| Parameter | Description                             |
+| --------- | --------------------------------------- |
+| `icon`    | Optional icon to be used in the keyword |
 <!-- prettier-ignore-end -->
 
 The input is written in Markdown so you can format it however you please.
@@ -576,7 +576,7 @@ The `timeline` creates a visual timeline that can be used in different use-cases
 | ----------- | -------------------------------------------- |
 | `icon`      | the icon to be used in the timeline visuals. |
 | `header`    | header for each entry                        |
-| `badge`     | text to place within the top right badge      |
+| `badge`     | text to place within the top right badge     |
 | `subheader` | entry's subheader                            |
 
 <!-- prettier-ignore-end -->

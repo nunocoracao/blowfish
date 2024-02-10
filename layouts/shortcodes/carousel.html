@@ -1,7 +1,20 @@
 {{ $id := delimit (slice "carousel" (partial "functions/uid.html" .)) "-" }}
 {{ $aspect := default "16-9" (.Get "aspectRatio") }}
-{{ $images := .Page.Resources.Match (.Get "images") }}
 {{ $interval := default "2000" (.Get "interval") }}
+
+{{ $page := .Page.Resources }}
+{{ $imagesTemp := .Get "images" }}
+{{ $imagesTemp = strings.TrimPrefix "{" $imagesTemp  }}
+{{ $imagesTemp = strings.TrimSuffix "}" $imagesTemp  }}
+{{ $imagesTemp := strings.Split $imagesTemp "," }}
+{{ $images := slice}}
+{{ range $imagesTemp }}
+    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+        {{ $images = $images | append (resources.GetRemote .) }}
+    {{ else }}
+        {{ $images = $images | append ($page.GetMatch .) }}
+    {{ end }}
+{{ end }}
 
 <div id="{{ $id }}" class="relative" data-te-carousel-init data-te-ride="carousel">
     <div class="absolute right-0 bottom-0 left-0 z-[2] mx-[15%] mb-10 flex list-none justify-center p-0"
@@ -26,7 +39,7 @@
         <div class="relative float-left -mr-[100%] {{ if not (eq $num 0) }} hidden {{ end }} w-full transition-transform duration-[{{ $interval }}ms] ease-in-out motion-reduce:transition-none"
             data-te-carousel-item {{ if eq $num 0 }} data-te-carousel-active {{ end }}>
             <div class="ratio-{{ $aspect }} single_hero_background">
-                <img src="{{ . }}" class="block absolute top-0 object-cover w-full h-full nozoom" alt="carousel image {{$num}}"/>
+                <img src="{{ .RelPermalink }}" class="block absolute top-0 object-cover w-full h-full nozoom" alt="carousel image {{$num}}"/>
             </div>
         </div>
 
