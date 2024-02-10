@@ -1,14 +1,21 @@
 {{ $disableImageOptimization := .Site.Params.disableImageOptimization | default false }}
 <div class="flex author">
   {{ with .Site.Author.image }}
-  {{ $authorImage := resources.Get . }}
-  {{ if $authorImage }}
-  {{ if not $disableImageOptimization }}
-  {{ $authorImage = $authorImage.Fill "192x192" }}
-  {{ end }}
-  <img class="!mt-0 !mb-0 h-24 w-24 rounded-full ltr:mr-4 rtl:ml-4" width="96" height="96"
-    alt="{{ $.Site.Author.name | default " Author" }}" src="{{ $authorImage.RelPermalink }}" />
-  {{ end }}
+    {{ $authorImage := resources.Get . }}
+    {{ if $authorImage }}
+      {{ if not $disableImageOptimization }}
+        {{ $authorImage = $authorImage.Fill "192x192" }}
+      {{ end }}
+      <img class="!mt-0 !mb-0 h-24 w-24 rounded-full ltr:mr-4 rtl:ml-4" width="96" height="96"
+      alt="{{ $.Site.Author.name | default " Author" }}" src="{{ $authorImage.RelPermalink }}" />
+    {{ else }}
+      {{ $authorImage := resources.GetRemote . }}
+      {{ if not $disableImageOptimization }}
+        {{ $authorImage = $authorImage.Fill "192x192" }}
+      {{ end }}
+      <img class="!mt-0 !mb-0 h-24 w-24 rounded-full ltr:mr-4 rtl:ml-4" width="96" height="96"
+      alt="{{ $.Site.Author.name | default " Author" }}" src="{{ $authorImage.RelPermalink }}" />
+    {{ end }}
   {{ end }}
   <div class="place-self-center">
     {{ with .Site.Author.name | markdownify | emojify }}
