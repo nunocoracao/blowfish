@@ -6,8 +6,20 @@
             <div class="relative shadow-xl sm:overflow-hidden rounded-2xl">
                 <div class="absolute inset-0">
                     {{ $homepageImage := "" }}
-                    {{ with .Site.Params.defaultBackgroundImage }}{{ $homepageImage = resources.Get . }}{{ end }}
-                    {{ with .Site.Params.homepage.homepageImage }}{{ $homepageImage = resources.Get . }}{{ end }}
+                    {{ with .Site.Params.defaultBackgroundImage }}
+                        {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+                            {{ $homepageImage = resources.GetRemote . }}
+                        {{ else }}
+                            {{ $homepageImage = resources.Get . }}
+                        {{ end }}
+                    {{ end }}
+                    {{ with .Site.Params.homepage.homepageImage }}
+                        {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+                            {{ $homepageImage = resources.GetRemote . }}
+                        {{ else }}
+                            {{ $homepageImage = resources.Get . }}
+                        {{ end }}
+                    {{ end }}
                     {{ if $homepageImage }}
                     <img class="h-full w-full object-cover m-0 nozoom" src="{{ $homepageImage.RelPermalink }}">
                     <div
@@ -17,15 +29,13 @@
                 </div>
                 <div class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8 flex flex-col items-center justify-center text-center">
                     {{ with .Site.Author.image }}
-                        {{ $authorImage := resources.Get . }}
-                        {{ if $authorImage }}
-                            {{ if not $disableImageOptimization }}
-                                {{ $authorImage = $authorImage.Fill "288x288" }}
-                            {{ end }}
-                            <img class="mb-2 rounded-full h-36 w-36" width="144" height="144"
-                                alt="{{ $.Site.Author.name | default " Author" }}" src="{{ $authorImage.RelPermalink }}" />
+                        {{ $authorImage := "" }}
+                        {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+                            {{ $authorImage = resources.GetRemote . }}
                         {{ else }}
-                            {{ $authorImage := resources.GetRemote . }}
+                            {{ $authorImage = resources.Get . }}
+                        {{ end }}
+                        {{ if $authorImage }}
                             {{ if not $disableImageOptimization }}
                                 {{ $authorImage = $authorImage.Fill "288x288" }}
                             {{ end }}
