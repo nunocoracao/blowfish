@@ -2,7 +2,7 @@
                 title: "vkmki001.github.io"
                 tags: [Personal site]
                 externalUrl: "https://vkmki001.github.io/"
-                date: 9948-08-08
+                date: 9950-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

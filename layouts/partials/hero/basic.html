@@ -3,6 +3,10 @@
 {{- $images := .Resources.ByType "image" -}}
 {{- $featured := $images.GetMatch "*feature*" -}}
 {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
+{{ if .Params.featureimage }}
+{{- $url:= .Params.featureimage -}}
+{{- if not $featured }}{{ $featured = resources.GetRemote $url }}{{ end -}}
+{{ end }}
 {{- with $featured -}}
     {{ if $disableImageOptimization }}
         {{ with . }}
