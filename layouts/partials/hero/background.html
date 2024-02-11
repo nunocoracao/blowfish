@@ -4,12 +4,17 @@
 {{- $featured := $images.GetMatch "*background*" -}}
 {{- if not $featured }}{{ $featured = $images.GetMatch "*feature*" }}{{ end -}}
 {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
-{{ if and .Params.featureimage (not $featured) }}
-{{- $url:= .Params.featureimage -}}
-{{ $featured = resources.GetRemote $url }}
-{{ end }}
-{{- if not $featured }}{{ with .Site.Params.defaultBackgroundImage }}{{ $featured = resources.Get . }}{{ end }}{{ end -}}
 {{ $isParentList := eq (.Scratch.Get "scope") "list"  }}
+{{- if not $featured }}
+{{ with .Site.Params.defaultBackgroundImage }}
+ {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+  {{ $featured = resources.GetRemote . }}
+ {{ else }}
+  {{ $featured = resources.Get . }}
+ {{ end }}
+{{ end }}
+{{ end -}}
+
 {{ $shouldBlur := $.Params.layoutBackgroundBlur | default (or 
         (and ($.Site.Params.article.layoutBackgroundBlur | default true) (not $isParentList)) 
         (and ($.Site.Params.list.layoutBackgroundBlur | default true) ($isParentList))
