@@ -2,7 +2,7 @@
                 title: "jundimubarok.com"
                 tags: [Personal site]
                 externalUrl: "https://jundimubarok.com/"
-                date: 9951-08-08
+                date: 9953-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

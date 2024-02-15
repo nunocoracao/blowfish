@@ -1,8 +1,8 @@
 ---
-                title: "lelouvincx.github.io"
-                tags: [Personal site]
-                externalUrl: "https://lelouvincx.github.io/"
-                date: 9962-08-08
+                title: "innerknowing"
+                tags: [Personal site,Modeller]
+                externalUrl: "https://innerknowing.xyz"
+                date: 9921-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
