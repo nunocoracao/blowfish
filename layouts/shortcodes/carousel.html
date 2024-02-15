@@ -12,7 +12,7 @@
     {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
         {{ $images = $images | append (resources.GetRemote .) }}
     {{ else }}
-        {{ $images = $images | append ($page.GetMatch .) }}
+        {{ $images = $images | append ($page.Match .) }}
     {{ end }}
 {{ end }}
 
