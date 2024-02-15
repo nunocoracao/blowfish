@@ -2,7 +2,7 @@
                 title: "ctulhu.me"
                 tags: [Personal site]
                 externalUrl: "https://ctulhu.me"
-                date: 9936-08-08
+                date: 9938-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

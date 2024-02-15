@@ -2,7 +2,7 @@
                 title: "notes.bluesdriveamelia.space"
                 tags: [Blog,Personal site]
                 externalUrl: "https://notes.bluesdriveamelia.space/"
-                date: 9923-08-08
+                date: 9925-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
