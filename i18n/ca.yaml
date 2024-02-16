@@ -1,0 +1,74 @@
+global:
+  language: "CA"
+
+article:
+  anchor_label: "Àncora"
+  date: "{{ .Date }}"
+  date_updated: "Actualitzat: {{ .Date }}"
+  draft: "Esborrany"
+  edit_title: "Editar contingut"
+  reading_time:
+    one: "{{ .Count }} min"
+    other: "{{ .Count }} mins"
+  reading_time_title: "Temps de lectura"
+  table_of_contents: "Taula de contingut"
+  word_count:
+    one: "{{ .Count }} paraula"
+    other: "{{ .Count }} paraules"
+  views:
+    one: "{{ .Count }} visualització"
+    other: "{{ .Count }} visualitzacions"
+  likes:
+    one: "{{ .Count }} m'agrada"
+    other: "{{ .Count }} m'agrades"
+  part_of_series: "Aquest article pertany a una sèrie."
+  part: "Part"
+  this_article: "Aquest article"
+  related_articles: "Relacionats"
+  zen_mode_title:
+    enable: "Activar mode zen"
+    disable: "Desactivar mode zen"
+
+author:
+  byline_title: "Autor"
+
+code:
+  copy: "Copiar"
+  copied: "Copiat"
+
+error:
+  404_title: "Pàgina no trobada :confused:"
+  404_error: "Error 404"
+  404_description: "Sembla que la pàgina sol·licitada no existeix."
+
+footer:
+  dark_appearance: "Canviar a mode fosc"
+  light_appearance: "Canviar a mode clar"
+  powered_by: "Desenvolupat amb {{ .Hugo }} &amp; {{ .Theme }}"
+
+list:
+  externalurl_title: "Enllaç a pàgina externa"
+  no_articles: "Encara no hi ha cap article per a mostrar."
+
+nav:
+  scroll_to_top_title: "Tornar a l'inici"
+  skip_to_main: "Anar al contingut"
+
+search:
+  open_button_title: "Cercar (/)"
+  close_button_title: "Tancar (Esc)"
+  input_placeholder: "Cercar"
+
+sharing:
+  email: "Enviar per correu electrònic"
+  facebook: "Compartir amb Facebook"
+  linkedin: "Compartir amb LinkedIn"
+  pinterest: "Compartir amb Pinterest"
+  reddit: "Publicar a Reddit"
+  twitter: "Tuitejar a Twitter"
+
+shortcode:
+  recent_articles: "Recent"
+
+recent:
+  show_more: "Mostrar més"
