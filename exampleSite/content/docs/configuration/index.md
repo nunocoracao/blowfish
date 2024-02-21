@@ -67,6 +67,7 @@ The theme currently supports the following languages by default:
 | 🇦🇪 Arabic                       | `ar`    |
 | 🇧🇬 Bulgarian                    | `bg`    |
 | 🇧🇩 Bengali                      | `bn`    |
+| 🇪🇸 Catalan                      | `ca`    |
 | 🇨🇿 Czech                        | `cs`    |
 | 🇩🇪 German                       | `de`    |
 | 🇬🇧 English                      | `en`    |
