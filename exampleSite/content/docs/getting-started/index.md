@@ -37,7 +37,7 @@ languageCode = "en"
 
 The next step is to configure the language settings. Although Blowfish supports multilingual setups, for now, just configure the main language.
 
-Locate the `languages.en.toml` file in the config folder. If you're main language is English you can use this file as is. Otherwise, rename it so that it includes the correct language code in the filename. For example, for French, rename the file to `languages.fr.toml`.
+Locate the `languages.en.toml` file in the config folder. If your main language is English you can use this file as is. Otherwise, rename it so that it includes the correct language code in the filename. For example, for French, rename the file to `languages.fr.toml`.
 
 {{< alert >}}
 Note that the language code in the language config filename should match the `languageCode` setting in `config.toml`.
