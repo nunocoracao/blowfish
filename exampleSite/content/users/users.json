@@ -428,13 +428,6 @@
     ]
   },
   {
-    "title": "ctulhu.me",
-    "url": "https://ctulhu.me",
-    "tags": [
-      "Personal site"
-    ]
-  },
-  {
     "title": "v-y-s.com",
     "url": "https://v-y-s.com/",
     "tags": [
@@ -486,14 +479,6 @@
     ]
   },
   {
-    "title": "fm126.top",
-    "url": "https://fm126.top/",
-    "tags": [
-      "Personal site",
-      "Blog"
-    ]
-  },
-  {
     "title": "the-maze.net",
     "url": "https://www.the-maze.net/",
     "tags": [
@@ -521,6 +506,7 @@
     "title": "asterisk.lol",
     "url": "https://asterisk.lol",
     "tags": [
+      "Blog",
       "Personal Site"
     ]
   },
@@ -566,6 +552,14 @@
     "url": "https://lab.imgb.space",
     "tags": [
       "Personal Site",
+      "Blog"
+    ]
+  },
+    {
+    "title": "fwzyrln_",
+    "url": "https://fauziralpiandi.github.io",
+    "tags": [
+      "Personal Homepage",
       "Blog"
     ]
   }
