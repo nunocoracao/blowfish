@@ -36,6 +36,14 @@
     </p>
     {{ end }}
 
+    {{ if .Site.Params.footer.showRss | default false }}
+    <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        <i class="bi bi-rss-fill"></i>
+        <a href="{{ .Site.Params.footer.rssName }}">RSS</a>
+    </p>
+    {{ end }}
+
+
     {{/* Theme attribution */}}
     {{ if .Site.Params.footer.showThemeAttribution | default true }}
     <p class="text-xs text-neutral-500 dark:text-neutral-400">
