@@ -562,5 +562,12 @@
       "Personal Homepage",
       "Blog"
     ]
+  },
+  {
+    "title": "karlukle.site",
+    "url": "https://karlukle.site",
+    "tags": [
+      "Personal blog"
+    ]
   }
 ]

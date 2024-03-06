@@ -23,7 +23,7 @@
                     {{ if $homepageImage }}
                     <img class="h-full w-full object-cover m-0 nozoom" src="{{ $homepageImage.RelPermalink }}">
                     <div
-                        class="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-700 dark:from-primary-600 dark:to-secondary-800 mix-blend-multiply">
+                        class="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-600 dark:from-primary-600 dark:to-secondary-800 mix-blend-multiply">
                     </div>
                     {{ end }}
                 </div>
@@ -64,7 +64,7 @@
                         </div>
                         {{ end }}
                     </div>
-                    <section class="prose dark:prose-invert">{{ .Content | emojify }}</section>
+                    <section class="prose prose-invert">{{ .Content | emojify }}</section>
                 </div>
             </div>
         </div>

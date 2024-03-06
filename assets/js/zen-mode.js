@@ -48,23 +48,10 @@ function _registerZendModeButtonClick(zendModeButton) {
 
 (function init() {
     window.addEventListener("DOMContentLoaded", (event) => {
-        console.debug('[DEBUG] Zen-mode feature enable');
-
         // Register click on 'zen-mode-button' node element
         const zendModeButton = document.getElementById('zen-mode-button');
         if(zendModeButton !== null && zendModeButton !== undefined) {
             _registerZendModeButtonClick(zendModeButton);
-                        console.log('[DEBUG] Zen-mode button found');
-
-        }else{
-            console.log('[DEBUG] Zen-mode button not found');
         }
-
-        // Initialize localstorage option 'blowfish-zen-mode-enabled' to false, if it does not exist, otherwise enable it.
-        //if (localStorage.getItem('blowfish-zen-mode-enabled') === null) {
-        //    localStorage.setItem('blowfish-zen-mode-enabled', 'false');
-        //} else if (localStorage.getItem('blowfish-zen-mode-enabled') === 'true') {
-        //    _toogleZenMode(zendModeButton)
-        //}
     });
 })();

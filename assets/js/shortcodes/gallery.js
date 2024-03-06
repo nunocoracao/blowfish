@@ -9,7 +9,6 @@ function _getDefaultPackeryOptions() {
 (function init() {
 
     $(window).on("load", function () {
-        console.groupCollapsed('[DEBUG] Gallery feature enable');
         let packeries = [];
         let nodeGalleries = document.querySelectorAll('.gallery');
 
@@ -18,8 +17,6 @@ function _getDefaultPackeryOptions() {
             let packery = new Packery(nodeGallery, _getDefaultPackeryOptions());
             packeries.push(packery);
         });
-
-        console.log("Galleries founded and initialized with packery", packeries);
         console.groupEnd();
     });
 })();
