@@ -7,6 +7,7 @@
   {{ $caption := .Get "caption" }}
   {{ $href := .Get "href" }}
   {{ $class := .Get "class" }}
+  {{ $target := .Get "target" }}
   {{ $nozoom := .Get "nozoom" | default false }}
   {{ if findRE "^https?" $url.Scheme }}
     <figure>
@@ -22,7 +23,7 @@
     {{ end }}
     {{ with $resource }}
       <figure {{ with $class }}class="{{ . }}"{{ end }}>
-        {{ with $href }}<a href="{{ . }}">{{ end }}
+        {{ with $href }}<a href="{{ . }}" {{ with $target }}target="{{ . }}"{{ end }}>{{ end }}
           {{ if $disableImageOptimization }}
           <img
             class="my-0 rounded-md{{ if $nozoom }} nozoom{{ end }}"
