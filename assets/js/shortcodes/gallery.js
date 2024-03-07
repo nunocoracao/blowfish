@@ -1,11 +1,3 @@
-function _getDefaultPackeryOptions() {
-    return {
-        percentPosition: true,
-        gutter: 5,
-        resize: true
-    };
-}
-
 (function init() {
 
     $(window).on("load", function () {
@@ -13,10 +5,16 @@ function _getDefaultPackeryOptions() {
         let nodeGalleries = document.querySelectorAll('.gallery');
 
         nodeGalleries.forEach(nodeGallery => {
-            // TODO : implement a reader of Packery configuration _getPackeryOptions; for example by reading data-attribute
-            let packery = new Packery(nodeGallery, _getDefaultPackeryOptions());
-            packeries.push(packery);
+            let magicGrid = new MagicGrid({
+                container: nodeGallery,  
+                static: true,
+                gutter: 5,
+                animate: false,
+            });
+            magicGrid.listen();
+            magicGrids.push(magicGrid);
         });
+        console.log("Galleries founded and initialized with MagicGrid", packeries);
         console.groupEnd();
     });
 })();
