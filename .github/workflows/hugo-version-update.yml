@@ -50,4 +50,5 @@ jobs:
             [1]: https://github.com/gohugoio/hugo
             [2]: https://github.com/peter-evans/create-pull-request
           labels: dependencies, automated pr
-          branch: dev
+          branch: hugo-new-version
+          base: dev
