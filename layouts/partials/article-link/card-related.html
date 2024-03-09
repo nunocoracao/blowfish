@@ -19,7 +19,7 @@
       {{ end }}
       {{- if not $featured }}{{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}{{ end -}}
       {{- with $featured -}}
-      {{ if $disableImageOptimization }}
+      {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg")}}
         {{ with . }}
         <div class="w-full thumbnail_card_related nozoom" style="background-image:url({{ .RelPermalink }});"></div>
         {{ end }}

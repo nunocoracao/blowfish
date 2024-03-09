@@ -20,7 +20,7 @@
     ) }}
 
 {{- with $featured -}}
-{{ if $disableImageOptimization }}
+{{ if or $disableImageOptimization (strings.HasSuffix . ".svg")}}
 {{ with . }}
 <div class="w-full rounded-md h-36 md:h-56 lg:h-72 single_hero_basic nozoom" style="background-image:url({{ .RelPermalink }});"></div>
 {{ end }}
@@ -33,7 +33,7 @@
 
 {{- with $background -}}
 
-{{ if $disableImageOptimization }}
+{{ if or $disableImageOptimization (strings.HasSuffix . ".svg")}}
 {{ with . }}
 <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
     style="background-image:url({{ .RelPermalink }});">
