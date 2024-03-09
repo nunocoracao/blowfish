@@ -52,8 +52,8 @@
 
 {{/* Packery */}}
 {{ if .Page.HasShortcode "gallery" }}
-    {{ $magicGridLib := resources.Get "lib/magic-grid/magic-grid.min.js" }}
-    <script defer src="{{ $magicGridLib.RelPermalink }}" integrity="{{ $magicGridLib.Data.Integrity }}"></script>
+    {{ $packeryLib := resources.Get "lib/packery/packery.pkgd.min.js" }}
+    <script defer src="{{ $packeryLib.RelPermalink }}" integrity="{{ $packeryLib.Data.Integrity }}"></script>
 
     {{ $jsShortcodeGallery := resources.Get "js/shortcodes/gallery.js" }}
     {{ $jsShortcodeGallery = $jsShortcodeGallery | resources.Minify | resources.Fingerprint "sha512" }}
