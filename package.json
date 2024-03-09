@@ -39,8 +39,8 @@
     "fuse.js": "^7.0.0",
     "jquery": "^3.7.1",
     "katex": "^0.16.9",
-    "magic-grid": "^3.2.4",
     "mermaid": "^10.9.0",
+    "packery": "^2.1.2",
     "prettier": "^3.2.5",
     "prettier-plugin-go-template": "^0.0.15",
     "prettier-plugin-tailwindcss": "^0.5.11",
@@ -90,8 +90,8 @@
       "to": "assets/lib/jquery/jquery.slim.min.js"
     },
     {
-      "from": "node_modules/magic-grid/dist/magic-grid.min.js",
-      "to": "assets/lib/magic-grid/magic-grid.min.js"
+      "from": "node_modules/packery/dist/packery.pkgd.min.js",
+      "to": "assets/lib/packery/packery.pkgd.min.js"
     },
     {
       "from": "node_modules/tw-elements/js/tw-elements.umd.min.js",
