@@ -47,7 +47,7 @@
     {{- if not $featured }}{{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}{{ end -}}
     {{ if .Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
     {{- with $featured -}}
-    {{ if $disableImageOptimization }}
+    {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg")}}
         {{ with . }}
         <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
         {{ end }}
