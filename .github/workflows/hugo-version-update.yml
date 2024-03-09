@@ -32,7 +32,7 @@ jobs:
         if: steps.git-check.outputs.modified == 'true'
         run: |
           cat release-versions/hugo-latest.txt | \
-          while read version; do sed -i '' -E "s/(max = \")[0-9]+\.[0-9]+\.[0-9]+(\")/\1${version#v}\2/g" config.toml |
+          while read version; do sed -i '' -E "s/(max = \")[0-9]+\.[0-9]+\.[0-9]+(\")/\1${version#v}\2/g" config.toml | \
           release_tag=$(cat release-versions/hugo-latest.txt) | \
           echo "release_tag=$release_tag" >> $GITHUB_OUTPUT
 
