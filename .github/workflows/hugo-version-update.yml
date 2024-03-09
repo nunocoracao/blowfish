@@ -33,7 +33,7 @@ jobs:
         if: steps.git-check.outputs.modified == 'true'
         run: |
           cat release-versions/hugo-latest.txt | \
-          while read version; do sed -i '' -E "s/(max = \")[0-9]+\.[0-9]+\.[0-9]+(\")/\1${version#v}\2/g" config.toml; done 
+          while read version; do sed -i'' -E "s/(max = \")[0-9]+\.[0-9]+\.[0-9]+(\")/\1${version#v}\2/g" config.toml; done 
 
       - name: Create Pull Request
         if: steps.git-check.outputs.modified == 'true'
