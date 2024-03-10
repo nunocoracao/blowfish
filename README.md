@@ -12,7 +12,7 @@
 
 Blowfish is designed to be a powerful, lightweight theme for [Hugo](https://gohugo.io). It's built using Tailwind CSS with a clean and minimalist design that prioritises to your content.
 
-![blowfish logo](https://github.com/nunocoracao/blowfish/blob/main/images/screenshot.png?raw=true)
+![blowfish screenshot](https://github.com/nunocoracao/blowfish/blob/main/images/screenshot.png?raw=true)
 
 
 🌏 [Demo site](https://blowfish.page/)  
@@ -20,10 +20,6 @@ Blowfish is designed to be a powerful, lightweight theme for [Hugo](https://gohu
 💎 [Merch Store](http://tee.pub/lic/qwSlWVBL5zc)  
 🐛 [Bug reports & issues](https://github.com/nunocoracao/blowfish/issues)  
 💡 [Questions & feature requests](https://github.com/nunocoracao/blowfish/discussions)
-
-
-
-![blowfish logo](https://github.com/nunocoracao/blowfish/blob/main/logo.png?raw=true)
 
 
 ## Features
@@ -64,6 +60,8 @@ Blowfish is designed to be a powerful, lightweight theme for [Hugo](https://gohu
 - Fully documented with regular updates
 
 ---
+
+![blowfish logo](https://github.com/nunocoracao/blowfish/blob/main/logo.png?raw=true)
 
 ## Documentation
 
