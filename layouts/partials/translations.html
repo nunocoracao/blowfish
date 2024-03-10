@@ -4,7 +4,7 @@
     <span class="mr-1">
       {{ partial "icon.html" "language" }}
     </span>
-    <div href="#" class="text-base font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="{{ .Title }}">
+    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="{{ .Title }}">
       {{- i18n "global.language" | markdownify | emojify -}}
     </div>
   </div>
