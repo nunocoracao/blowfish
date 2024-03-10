@@ -1,0 +1,12 @@
+{{- $content := split .Inner "\n" -}}
+{{- $initialString := .Get "initialString" | default "" -}}
+{{- $speed := .Get "speed" | default 100 -}}
+{{- $lifeLike := .Get "lifeLike" | default false -}}
+{{- $startDelay := .Get "startDelay" | default 0 -}}
+{{- $breakLines := .Get "breakLines" | default true -}}
+{{- $waitUntilVisible := .Get "waitUntilVisible" | default true -}}
+{{- $loop := .Get "loop" | default false -}}                                                                    
+
+
+
+<lite-youtube videoid="ogfYd705cRs" playlabel="Play: Keynote (Google I/O '18)"></lite-youtube>

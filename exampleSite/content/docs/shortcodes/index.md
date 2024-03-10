@@ -729,3 +729,41 @@ consectetur adipiscing elit.
 "I'm gonna make him an offer he can't refuse." The Godfather (1972)
 "Toto, I've a feeling we're not in Kansas anymore." The Wizard of Oz (1939)
 {{< /typeit >}}
+
+
+<br/><br/><br/>
+
+## Youtube Lite
+
+tbd
+
+https://github.com/paulirish/lite-youtube-embed
+
+
+
+<!-- prettier-ignore-start -->
+| Parameter          | Description                                                                                                                                        |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `tag`              | [String] `html` tag that will be used to render the strings.                                                                                       |
+| `classList`        | [String] List of `css` classes to apply to the `html` element.                                                                                     |
+| `initialString`    | [String] Initial string that will appear written and will be replaced.                                                                             |
+| `speed`            | [number] Typing speed, measured in milliseconds between each step.                                                                                 |
+| `lifeLike`         | [boolean] Makes the typing pace irregular, as if a real person is doing it.                                                                        |
+| `startDelay`       | [number] The amount of time before the plugin begins typing after being initialized.                                                               |
+| `breakLines`       | [boolean] Whether multiple strings are printed on top of each other (true), or if they're deleted and replaced by each other (false).              |
+| `waitUntilVisible` | [boolean] Determines if the instance will begin when loaded or only when the target element becomes visible in the viewport. The default is `true` |
+| `loop`             | [boolean] Whether your strings will continuously loop after completing                                                                             |
+
+<!-- prettier-ignore-end -->
+
+**Example 1:**
+
+```md
+{{</* typeit */>}}
+Lorem ipsum dolor sit amet 
+{{</* /typeit */>}}
+
+SgXhGb-7QbU
+```
+
+{{< youtubeLite />}}

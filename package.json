@@ -39,6 +39,7 @@
     "fuse.js": "^7.0.0",
     "jquery": "^3.7.1",
     "katex": "^0.16.9",
+    "lite-youtube-embed": "^0.3.2",
     "mermaid": "^10.9.0",
     "packery": "^2.1.2",
     "prettier": "^3.2.5",
@@ -96,6 +97,14 @@
     {
       "from": "node_modules/tw-elements/js/tw-elements.umd.min.js",
       "to": "assets/lib/tw-elements/index.min.js"
+    },
+    {
+      "from": "node_modules/lite-youtube-embed/src/lite-yt-embed.js",
+      "to": "assets/lib/lite-youtube-embed/lite-yt-embed.js"
+    },
+    {
+      "from": "node_modules/lite-youtube-embed/src/lite-yt-embed.css",
+      "to": "assets/lib/lite-youtube-embed/lite-yt-embed.css"
     }
   ],
   "dependencies": {

@@ -65,3 +65,11 @@
 {{ $twelementsLib := resources.Get "lib/tw-elements/index.min.js" }}
 <script defer src="{{ $twelementsLib.RelPermalink }}" integrity="{{ $twelementsLib.Data.Integrity }}"></script>
 {{ end }}
+
+{{/* youtubeLite */}}
+{{ if .Page.HasShortcode "youtubeLite" }}
+{{ $youtubeLiteJS := resources.Get "lib/lite-youtube-embed/lite-yt-embed.js" }}
+{{ $youtubeLiteCSS := resources.Get "lib/lite-youtube-embed/lite-yt-embed.css" }}
+<link rel="stylesheet" href="{{ $youtubeLiteCSS.RelPermalink }}" integrity="{{ $youtubeLiteCSS.Data.Integrity }}"/>
+<script src="{{ $youtubeLiteJS.RelPermalink }}" integrity="{{ $youtubeLiteJS.Data.Integrity }}"></script>
+{{ end }}
