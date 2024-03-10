@@ -9,8 +9,7 @@ Welcome to Blowfish, one of the most flexible and robust Hugo themes. It is desi
 npx blowfish-tools
 ```  
 
-<iframe width="100%" height="350" src="https://www.youtube.com/embed/SgXhGb-7QbU?si=ce44baicuQ6zMeXz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+{{< youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" >}}
 
 <!--You can also find the complete theme documentation in [docs]({{< ref "docs" >}}). Blowfish is highly customizable and can be configured to fit your needs: from a static website to a blog. Checkout some [examples](/examples) and what some of our [users](/users) have been building.
 

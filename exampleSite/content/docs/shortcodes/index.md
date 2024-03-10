@@ -204,7 +204,7 @@ The `figure` shortcode accepts six parameters:
 | `caption` | Markdown for the image caption, which will be displayed below the image.                                                                                                                                                                                                                                                                                                                  |
 | `class`   | Additional CSS classes to apply to the image.                                                                                                                                                                                                                                                                                                                                             |
 | `href`    | URL that the image should be linked to.                                                                                                                                                                                                                                                                                                                                                   |
-| `target`  | The target attribute for the `href` URL.                                                                                                                                                                                                                                                                                                                                        |
+| `target`  | The target attribute for the `href` URL.                                                                                                                                                                                                                                                                                                                                                  |
 | `nozoom`  | `nozoom=true` disables the image "zoom" functionality. This is most useful in combination with a `href` link.                                                                                                                                                                                                                                                                             |
 | `default` | Special parameter to revert to default Hugo `figure` behaviour. Simply provide `default=true` and then use normal [Hugo shortcode syntax](https://gohugo.io/content-management/shortcodes/#figure).                                                                                                                                                                                       |
 <!-- prettier-ignore-end -->
@@ -735,35 +735,20 @@ consectetur adipiscing elit.
 
 ## Youtube Lite
 
-tbd
-
-https://github.com/paulirish/lite-youtube-embed
-
-
+A shortcut to embed youtube videos using the [lite-youtube-embed](https://github.com/paulirish/lite-youtube-embed) library. This library is a lightweight alternative to the standard youtube embeds, and it's designed to be faster and more efficient.
 
 <!-- prettier-ignore-start -->
-| Parameter          | Description                                                                                                                                        |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `tag`              | [String] `html` tag that will be used to render the strings.                                                                                       |
-| `classList`        | [String] List of `css` classes to apply to the `html` element.                                                                                     |
-| `initialString`    | [String] Initial string that will appear written and will be replaced.                                                                             |
-| `speed`            | [number] Typing speed, measured in milliseconds between each step.                                                                                 |
-| `lifeLike`         | [boolean] Makes the typing pace irregular, as if a real person is doing it.                                                                        |
-| `startDelay`       | [number] The amount of time before the plugin begins typing after being initialized.                                                               |
-| `breakLines`       | [boolean] Whether multiple strings are printed on top of each other (true), or if they're deleted and replaced by each other (false).              |
-| `waitUntilVisible` | [boolean] Determines if the instance will begin when loaded or only when the target element becomes visible in the viewport. The default is `true` |
-| `loop`             | [boolean] Whether your strings will continuously loop after completing                                                                             |
-
+| Parameter | Description                         |
+| --------- | ----------------------------------- |
+| `id`      | [String] Youtube video id to embed. |
+| `label`   | [String] Label for the video        |
 <!-- prettier-ignore-end -->
 
 **Example 1:**
 
 ```md
-{{</* typeit */>}}
-Lorem ipsum dolor sit amet 
-{{</* /typeit */>}}
+{{</* youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" */>}}
 
-SgXhGb-7QbU
 ```
 
-{{< youtubeLite />}}
+{{< youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" >}}
