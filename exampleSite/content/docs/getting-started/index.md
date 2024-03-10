@@ -64,7 +64,7 @@ If you need extra detail, further information about each of these configuration 
 
 ## Colour schemes
 
-Blowfish ships with a number of colour schemes out of the box. To change the scheme, simply set the `colorScheme` theme parameter. Valid options are `blowfish` (default), `avocado`, `fire`, `ocean` and `slate`.
+Blowfish ships with a number of colour schemes out of the box. To change the scheme, simply set the `colorScheme` theme parameter. Valid options are `blowfish` (default), `avocado`, `fire`, `ocean`, `forest`, `princess`, `neon`, `bloody`, `terminal`, `marvel`, `noir`, `autumn`, `congo`, and`slate`.
 
 ```toml
 # config/_default/params.toml
@@ -72,7 +72,7 @@ Blowfish ships with a number of colour schemes out of the box. To change the sch
 colorScheme = "blowfish"
 ```
 
-Blowfish defines a three-colour palette that is used throughout the theme. Each main colour contains ten shades which are based upon the colours that are included in [Tailwind](https://tailwindcss.com/docs/customizing-colors#color-palette-reference).
+Blowfish defines a three-colour palette that is used throughout the theme. Each main colour contains ten shades which are based upon the colours that are included in [Tailwind](https://tailwindcss.com/docs/customizing-colors#color-palette-reference). The three main colours are used for the header, footer, and accent colours. Here are the colors for each scheme:
 
 #### Blowfish (default)
 {{< swatches "#64748b" "#3b82f6" "#06b6d4" >}}
@@ -82,6 +82,9 @@ Blowfish defines a three-colour palette that is used throughout the theme. Each 
 
 #### Fire
 {{< swatches "#78716c" "#f97316" "#f43f5e" >}}
+
+#### Ocean
+{{< swatches "#64748b" "#3b82f6" "#06b6d4" >}}
 
 #### Forest
 {{< swatches "#658c86" "#3bf5df" "#06d45c" >}}

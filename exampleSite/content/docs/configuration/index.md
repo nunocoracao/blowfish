@@ -64,32 +64,32 @@ The theme currently supports the following languages by default:
 
 | Language                       | Code    |
 | ------------------------------ | ------- |
-| 🇦🇪 Arabic                       | `ar`    |
-| 🇧🇬 Bulgarian                    | `bg`    |
-| 🇧🇩 Bengali                      | `bn`    |
-| 🇪🇸 Catalan                      | `ca`    |
-| 🇨🇿 Czech                        | `cs`    |
-| 🇩🇪 German                       | `de`    |
-| 🇬🇧 English                      | `en`    |
-| 🇪🇸 Spanish (Spain)              | `es`    |
-| 🇫🇮 Finnish                      | `fi`    |
-| 🇫🇷 French                       | `fr`    |
-| 🇮🇱 Hebrew                       | `he`    |
-| 🇭🇷 Croatian                     | `hr`    |
-| 🇭🇺 Hungarian                    | `hu`    |
-| 🇮🇩 Indonesian                   | `id`    |
-| 🇮🇹 Italian                      | `it`    |
-| 🇯🇵 Japanese                     | `ja`    |
-| 🇰🇷 Korean                       | `ko`    |
-| 🇵🇱 Polish                       | `pl`    |
-| 🇧🇷 Portuguese (Brazil)          | `pt-br` |
-| 🇵🇹 Portuguese (Portugal)        | `pt-pt` |
-| 🇷🇴 Romanian                     | `ro`    |
-| 🇷🇺 Russian                      | `ru`    |
-| 🇹🇷 Turkish                      | `tr`    |
-| 🇻🇳 Vietnamese                   | `vi`    |
-| 🇨🇳 Simplified Chinese (China)   | `zh-cn` |
-| 🇹🇼 Traditional Chinese (Taiwan) | `zh-tw` |
+| Arabic                       | `ar`    |
+| Bulgarian                    | `bg`    |
+| Bengali                      | `bn`    |
+| Catalan                      | `ca`    |
+| Czech                        | `cs`    |
+| German                       | `de`    |
+| English                      | `en`    |
+| Spanish (Spain)              | `es`    |
+| Finnish                      | `fi`    |
+| French                       | `fr`    |
+| Hebrew                       | `he`    |
+| Croatian                     | `hr`    |
+| Hungarian                    | `hu`    |
+| Indonesian                   | `id`    |
+| Italian                      | `it`    |
+| Japanese                     | `ja`    |
+| Korean                       | `ko`    |
+| Polish                       | `pl`    |
+| Portuguese (Brazil)          | `pt-br` |
+| Portuguese (Portugal)        | `pt-pt` |
+| Romanian                     | `ro`    |
+| Russian                      | `ru`    |
+| Turkish                      | `tr`    |
+| Vietnamese                   | `vi`    |
+| Simplified Chinese (China)   | `zh-cn` |
+| Traditional Chinese (Taiwan) | `zh-tw` |
 
 
 
@@ -164,7 +164,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 
 | Name                            | Default      | Description                                                                                                                                                                                                                                       |
 | ------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `colorScheme`                   | `"blowfish"` | The theme colour scheme to use. Valid values are `blowfish` (default), `avocado`, `ocean`, `fire` and `slate`. Refer to the [Colour Schemes]({{< ref "getting-started#colour-schemes" >}}) section for more details.                              |
+| `colorScheme`                   | `"blowfish"` | The theme colour scheme to use. Valid values are `blowfish` (default), `avocado`, `fire`, `ocean`, `forest`, `princess`, `neon`, `bloody`, `terminal`, `marvel`, `noir`, `autumn`, `congo`, and`slate`. Refer to the [Colour Schemes]({{< ref "getting-started#colour-schemes" >}}) section for more details.                              |
 | `defaultAppearance`             | `"light"`    | The default theme appearance, either `light` or `dark`.                                                                                                                                                                                           |
 | `autoSwitchAppearance`          | `true`       | Whether the theme appearance automatically switches based upon the visitor's operating system preference. Set to `false` to force the site to always use the `defaultAppearance`.                                                                 |
 | `enableSearch`                  | `false`      | Whether site search is enabled. Set to `true` to enable search functionality. Note that the search feature depends on the `outputs.home` setting in the [site configuration](#site-configuration) being set correctly.                            |

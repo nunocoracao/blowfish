@@ -1,6 +1,6 @@
 {
   "name": "hugo-blowfish-theme",
-  "version": "2.60.0",
+  "version": "2.61.0",
   "description": "Blowfish theme for Hugo",
   "scripts": {
     "postinstall": "vendor-copy",
@@ -39,6 +39,8 @@
     "fuse.js": "^7.0.0",
     "jquery": "^3.7.1",
     "katex": "^0.16.9",
+    "lite-youtube-embed": "^0.3.2",
+    "mermaid": "^10.9.0",
     "packery": "^2.1.2",
     "prettier": "^3.2.5",
     "prettier-plugin-go-template": "^0.0.15",
@@ -52,6 +54,10 @@
   },
   "vendorCopy": [],
   "devVendorCopy": [
+    {
+      "from": "node_modules/mermaid/dist",
+      "to": "assets/lib/mermaid"
+    },
     {
       "from": "node_modules/chart.js/dist/chart.umd.js",
       "to": "assets/lib/chart/chart.min.js"
@@ -91,6 +97,14 @@
     {
       "from": "node_modules/tw-elements/js/tw-elements.umd.min.js",
       "to": "assets/lib/tw-elements/index.min.js"
+    },
+    {
+      "from": "node_modules/lite-youtube-embed/src/lite-yt-embed.js",
+      "to": "assets/lib/lite-youtube-embed/lite-yt-embed.js"
+    },
+    {
+      "from": "node_modules/lite-youtube-embed/src/lite-yt-embed.css",
+      "to": "assets/lib/lite-youtube-embed/lite-yt-embed.css"
     }
   ],
   "dependencies": {
