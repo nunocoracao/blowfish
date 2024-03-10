@@ -101,6 +101,7 @@ The full list of built-in icons and their corresponding names can referenced bel
 | sun                  | {{< icon sun >}}                  |
 | tag                  | {{< icon tag >}}                  |
 | telegram             | {{< icon telegram >}}             |
+| threads             | {{< icon threads >}}             |
 | tiktok               | {{< icon tiktok >}}               |
 | triangle-exclamation | {{< icon triangle-exclamation >}} |
 | tumblr               | {{< icon tumblr >}}               |
