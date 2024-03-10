@@ -8,6 +8,7 @@
     "summary" (.Summary | emojify | safeJS)
     "content" (.Plain | emojify | safeJS)
     "permalink" .RelPermalink
+    "externalUrl" .Params.externalUrl
   ) -}}
 {{- end -}}
 {{- $index | jsonify -}}

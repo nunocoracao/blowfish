@@ -149,12 +149,17 @@ function executeQuery(term) {
 
   if (results.length > 0) {
     results.forEach(function (value, key) {
+      var title = value.item.externalUrl?  value.item.title + '<span class="text-xs ml-2 align-center cursor-default text-neutral-400 dark:text-neutral-500">'+value.item.externalUrl+'</span>' : value.item.title;
+      var linkconfig = value.item.externalUrl? 'target="_blank" rel="noopener" href="'+value.item.externalUrl+'"' : 'href="'+value.item.permalink+'"';
       resultsHTML =
         resultsHTML +
         `<li class="mb-2">
-          <a class="flex items-center px-3 py-2 rounded-md appearance-none bg-neutral-100 dark:bg-neutral-700 focus:bg-primary-100 hover:bg-primary-100 dark:hover:bg-primary-900 dark:focus:bg-primary-900 focus:outline-dotted focus:outline-transparent focus:outline-2" href="${value.item.permalink}" tabindex="0">
+          <a class="flex items-center px-3 py-2 rounded-md appearance-none bg-neutral-100 dark:bg-neutral-700 focus:bg-primary-100 hover:bg-primary-100 dark:hover:bg-primary-900 dark:focus:bg-primary-900 focus:outline-dotted focus:outline-transparent focus:outline-2" 
+          ${linkconfig} tabindex="0">
             <div class="grow">
-              <div class="-mb-1 text-lg font-bold">${value.item.title}</div>
+              <div class="-mb-1 text-lg font-bold">
+                ${title}
+              </div>
               <div class="text-sm text-neutral-500 dark:text-neutral-400">${value.item.section}<span class="px-2 text-primary-500">&middot;</span>${value.item.date}</span></div>
               <div class="text-sm italic">${value.item.summary}</div>
             </div>
