@@ -10,13 +10,18 @@
 [![Blowfish](https://img.shields.io/badge/Hugo--Themes-@Blowfish-blue)](https://themes.gohugo.io/themes/blowfish/)
 ![code-size](https://img.shields.io/github/languages/code-size/nunocoracao/blowfish)
 
-Blowfish is designed to be a powerful, lightweight theme for [Hugo](https://gohugo.io). It's built using Tailwind CSS with a clean and minimalist design that prioritises to your content. The theme is a fork of [Congo](https://github.com/jpanther/congo).
+Blowfish is designed to be a powerful, lightweight theme for [Hugo](https://gohugo.io). It's built using Tailwind CSS with a clean and minimalist design that prioritises to your content.
+
+![blowfish logo](https://github.com/nunocoracao/blowfish/blob/main/images/screenshot.png?raw=true)
+
 
 🌏 [Demo site](https://blowfish.page/)  
 📑 [Theme documentation](https://blowfish.page/docs/)  
 💎 [Merch Store](http://tee.pub/lic/qwSlWVBL5zc)  
 🐛 [Bug reports & issues](https://github.com/nunocoracao/blowfish/issues)  
 💡 [Questions & feature requests](https://github.com/nunocoracao/blowfish/discussions)
+
+
 
 ![blowfish logo](https://github.com/nunocoracao/blowfish/blob/main/logo.png?raw=true)
 

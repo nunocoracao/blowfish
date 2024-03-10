@@ -1,6 +1,6 @@
 ---
 title: "Front Matter"
-date: 2020-08-12
+date: 2020-08-10
 draft: false
 description: "All the front matter variables available in Blowfish."
 slug: "front-matter"

@@ -26,7 +26,7 @@ smartTOC = true
 smartTOCHideUnfocusedChildren = false
 
 [header]
-  layout = "fixed-gradient" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
+  layout = "fixed" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
 
 [footer]
   showMenu = true
@@ -39,10 +39,10 @@ smartTOCHideUnfocusedChildren = false
   layout = "custom" # valid options: page, profile, hero, card, background, custom
   # homepageImage = "/img/iceland.jpg" # used in: hero, and card
   showRecent = false
-  showRecentItems = 12
+  showRecentItems = 6
   showMoreLink = true
   showMoreLinkDest = "docs"
-  cardView = false
+  cardView = true
   cardViewScreenWidth = false
   layoutBackgroundBlur = true # only used when layout equals background
 
@@ -130,7 +130,7 @@ smartTOCHideUnfocusedChildren = false
 
 [buymeacoffee]
   identifier = "nunocoracao"
-  globalWidget = true
+  globalWidget = false
   globalWidgetMessage = ""
   globalWidgetColor = "#FFDD00"
   globalWidgetPosition = "Right"
