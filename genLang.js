@@ -1,8 +1,8 @@
 const fs = require('fs');
 const translate = require('@iamtraction/google-translate');
 
-const configDir = "./config/_default";
-const contentDir = "./content";
+const configDir = "./exampleSite/config/_default";
+const contentDir = "./exampleSite/content";
 const defaultLang = "en";
 const targetLang = process.argv[2] || "en";
 const targetLangIso = targetLang == "pt" ? "pt-pt" : targetLang;
@@ -25,8 +25,11 @@ async function convert(text, from, to) {
         from: from,
         to: to
     };
-    var translated_text = await translate(text, options);
-    return translated_text.text;
+    var translated_text = await translate(text, options)
+        .catch(err => {
+            console.error(err);
+        });;
+    return translated_text && translated_text.text? translated_text.text : '';
 }
 
 async function processFrontMatter(block) {
@@ -66,10 +69,10 @@ async function processFile(filePath) {
         var array = fileContent.split("---\n")
         var frontMatter = array[1];
         var content = array[2];
-    
+
         var translatedFrontMatter = await processFrontMatter(frontMatter);
         var translatedContent = await convert(content, defaultLang, targetLang);
-    
+
         var newFileContent = "---\n" + translatedFrontMatter + "---\n" + translatedContent;
         fs.writeFileSync(targetFilePath, newFileContent, 'utf8');
 
@@ -79,12 +82,12 @@ async function processFile(filePath) {
 
 async function processFolder(folderPath) {
     const files = fs.readdirSync(folderPath);
+
     for (var i in files) {
         const file = files[i];
         const filePath = `${folderPath}/${file}`;
         const isDir = fs.lstatSync(filePath).isDirectory();
         console.log(filePath, isDir);
-        console.log();
         if (isDir) {
             await processFolder(filePath);
         } else {
