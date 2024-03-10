@@ -2,7 +2,7 @@
 <article class="{{ if not .Site.Params.homepage.showRecent }}
     h-full
   {{ end }} flex flex-col items-center justify-center text-center">
-  <header class="flex flex-col items-center mb-3">
+  <header class="relative px-1 py-1 flex flex-col items-center mb-3">
     {{ with .Site.Author.image }}
       {{ $authorImage := "" }}
       {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
