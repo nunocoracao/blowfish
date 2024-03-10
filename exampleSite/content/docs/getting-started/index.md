@@ -74,8 +74,6 @@ colorScheme = "blowfish"
 
 Blowfish defines a three-colour palette that is used throughout the theme. Each main colour contains ten shades which are based upon the colours that are included in [Tailwind](https://tailwindcss.com/docs/customizing-colors#color-palette-reference). The three main colours are used for the header, footer, and accent colours. Here are the colors for each scheme:
 
-{{< swatches "#64748b" "#3b82f6" "#06b6d4" >}}
-
 #### Blowfish (default)
 {{< swatches "#64748b" "#3b82f6" "#06b6d4" >}}
 
