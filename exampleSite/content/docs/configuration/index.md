@@ -64,32 +64,32 @@ The theme currently supports the following languages by default:
 
 | Language                       | Code    |
 | ------------------------------ | ------- |
-| 🇦🇪 Arabic                       | `ar`    |
-| 🇧🇬 Bulgarian                    | `bg`    |
-| 🇧🇩 Bengali                      | `bn`    |
-| 🇪🇸 Catalan                      | `ca`    |
-| 🇨🇿 Czech                        | `cs`    |
-| 🇩🇪 German                       | `de`    |
-| 🇬🇧 English                      | `en`    |
-| 🇪🇸 Spanish (Spain)              | `es`    |
-| 🇫🇮 Finnish                      | `fi`    |
-| 🇫🇷 French                       | `fr`    |
-| 🇮🇱 Hebrew                       | `he`    |
-| 🇭🇷 Croatian                     | `hr`    |
-| 🇭🇺 Hungarian                    | `hu`    |
-| 🇮🇩 Indonesian                   | `id`    |
-| 🇮🇹 Italian                      | `it`    |
-| 🇯🇵 Japanese                     | `ja`    |
-| 🇰🇷 Korean                       | `ko`    |
-| 🇵🇱 Polish                       | `pl`    |
-| 🇧🇷 Portuguese (Brazil)          | `pt-br` |
-| 🇵🇹 Portuguese (Portugal)        | `pt-pt` |
-| 🇷🇴 Romanian                     | `ro`    |
-| 🇷🇺 Russian                      | `ru`    |
-| 🇹🇷 Turkish                      | `tr`    |
-| 🇻🇳 Vietnamese                   | `vi`    |
-| 🇨🇳 Simplified Chinese (China)   | `zh-cn` |
-| 🇹🇼 Traditional Chinese (Taiwan) | `zh-tw` |
+| Arabic                       | `ar`    |
+| Bulgarian                    | `bg`    |
+| Bengali                      | `bn`    |
+| Catalan                      | `ca`    |
+| Czech                        | `cs`    |
+| German                       | `de`    |
+| English                      | `en`    |
+| Spanish (Spain)              | `es`    |
+| Finnish                      | `fi`    |
+| French                       | `fr`    |
+| Hebrew                       | `he`    |
+| Croatian                     | `hr`    |
+| Hungarian                    | `hu`    |
+| Indonesian                   | `id`    |
+| Italian                      | `it`    |
+| Japanese                     | `ja`    |
+| Korean                       | `ko`    |
+| Polish                       | `pl`    |
+| Portuguese (Brazil)          | `pt-br` |
+| Portuguese (Portugal)        | `pt-pt` |
+| Romanian                     | `ro`    |
+| Russian                      | `ru`    |
+| Turkish                      | `tr`    |
+| Vietnamese                   | `vi`    |
+| Simplified Chinese (China)   | `zh-cn` |
+| Traditional Chinese (Taiwan) | `zh-tw` |
 
 
 
