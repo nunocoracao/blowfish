@@ -1,8 +1,4 @@
 # Blowfish
-
-<a href="https://www.buymeacoffee.com/nunocoracao" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
-<a target="_blank" href="http://tee.pub/lic/qwSlWVBL5zc"><img class="nozoom" src="https://img.buymeacoffee.com/button-api/?text=Merch Store &emoji=💎&slug=nunocoracao&button_colour=5F7FFF&font_colour=ffffff&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00" /></a>
-
 [![Deploy Production to Firebase](https://github.com/nunocoracao/blowfish/actions/workflows/firebase-production.yml/badge.svg)](https://github.com/nunocoracao/blowfish/actions/workflows/firebase-production.yml)
 [![Deploy Production to GitHub pages](https://github.com/nunocoracao/blowfish/actions/workflows/pages.yml/badge.svg)](https://github.com/nunocoracao/blowfish/actions/workflows/pages.yml)
 [![Minimum Hugo Version](https://img.shields.io/static/v1?label=min-HUGO-version&message=0.87.0&color=blue&logo=hugo)](https://github.com/gohugoio/hugo/releases/tag/v0.87.0)
@@ -10,7 +6,10 @@
 [![Blowfish](https://img.shields.io/badge/Hugo--Themes-@Blowfish-blue)](https://themes.gohugo.io/themes/blowfish/)
 ![code-size](https://img.shields.io/github/languages/code-size/nunocoracao/blowfish)
 
-Blowfish is designed to be a powerful, lightweight theme for [Hugo](https://gohugo.io). It's built using Tailwind CSS with a clean and minimalist design that prioritises to your content. The theme is a fork of [Congo](https://github.com/jpanther/congo).
+Blowfish is designed to be a powerful, lightweight theme for [Hugo](https://gohugo.io). It's built using Tailwind CSS with a clean and minimalist design that prioritises to your content.
+
+![blowfish screenshot](https://github.com/nunocoracao/blowfish/blob/main/images/screenshot.png?raw=true)
+
 
 🌏 [Demo site](https://blowfish.page/)  
 📑 [Theme documentation](https://blowfish.page/docs/)  
@@ -18,7 +17,11 @@ Blowfish is designed to be a powerful, lightweight theme for [Hugo](https://gohu
 🐛 [Bug reports & issues](https://github.com/nunocoracao/blowfish/issues)  
 💡 [Questions & feature requests](https://github.com/nunocoracao/blowfish/discussions)
 
-![blowfish logo](https://github.com/nunocoracao/blowfish/blob/main/logo.png?raw=true)
+
+
+<a href="https://www.buymeacoffee.com/nunocoracao" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+<a target="_blank" href="http://tee.pub/lic/qwSlWVBL5zc"><img class="nozoom" src="https://img.buymeacoffee.com/button-api/?text=Merch Store &emoji=💎&slug=nunocoracao&button_colour=5F7FFF&font_colour=ffffff&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00" /></a>
+
 
 
 ## Features
@@ -45,6 +48,7 @@ Blowfish is designed to be a powerful, lightweight theme for [Hugo](https://gohu
 - Diagrams and visualisations using Mermaid
 - Charts using Chart.js
 - TypeIt integration
+- Youtube embeds with performance improvements
 - Mathematical notation using KaTeX
 - SVG icons from FontAwesome 6
 - Automatic image resizing using Hugo Pipes
@@ -58,6 +62,8 @@ Blowfish is designed to be a powerful, lightweight theme for [Hugo](https://gohu
 - Fully documented with regular updates
 
 ---
+
+![blowfish logo](https://github.com/nunocoracao/blowfish/blob/main/logo.png?raw=true)
 
 ## Documentation
 
