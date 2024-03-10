@@ -18,15 +18,15 @@ mainSections = ["docs"]
 disableImageOptimization = false
 disableTextInHeader = false
 
-defaultBackgroundImage = "/img/gradient.svg"
-defaultFeaturedImage = "/img/ocean.jpg"
+defaultBackgroundImage = "/img/background.svg"
+defaultFeaturedImage = "/img/featured.svg"
 
 highlightCurrentMenuArea = true
 smartTOC = true
 smartTOCHideUnfocusedChildren = false
 
 [header]
-  layout = "fixed" # valid options: basic, fixed, fixed-fill, fixed-fill-blur
+  layout = "fixed-gradient" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
 
 [footer]
   showMenu = true

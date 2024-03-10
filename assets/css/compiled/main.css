@@ -1960,6 +1960,10 @@ input[type="range"]:active::-webkit-slider-thumb {
   min-height:0px
 }
 
+.min-h-\[130px\] {
+  min-height:130px
+}
+
 .min-h-\[148px\] {
   min-height:148px
 }
@@ -2552,6 +2556,10 @@ input[type="range"]:active::-webkit-slider-thumb {
   --tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)
 }
 
+.from-60\% {
+  --tw-gradient-from-position:60%
+}
+
 .to-neutral {
   --tw-gradient-to:rgba(var(--color-neutral), 1) var(--tw-gradient-to-position)
 }
@@ -3064,6 +3072,10 @@ input[type="range"]:active::-webkit-slider-thumb {
 
 .opacity-60 {
   opacity:0.6
+}
+
+.opacity-65 {
+  opacity:0.65
 }
 
 .mix-blend-normal {
