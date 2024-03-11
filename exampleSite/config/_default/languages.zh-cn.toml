@@ -1,21 +1,21 @@
 languageCode = "zh-cn"
-languageName = "中国人"
+languageName = "中文（简体）"
 weight = 2
 title = "Blowfish"
 
 [params]
-  displayName = "中国人"
+  displayName = "中文（简体）"
   isoCode = "zh-cn"
   rtl = false
-  dateFormat = "2 January 2006"
+  dateFormat = "2006-01-02"
   logo = "img/blowfish_logo_transparent.png"
-  description = "A powerful, lightweight theme for Hugo."
+  description = "一个强大、轻量级的 Hugo 主题。"
 
 [author]
   name = "Blowfish"
   image = "img/blowfish_logo.png"
-  headline = "A powerful, lightweight theme for Hugo."
-  bio = "A powerful, lightweight theme for Hugo."
+  headline = "一个强大、轻量级的 Hugo 主题。"
+  bio = "一个强大、轻量级的 Hugo 主题。"
   links = [
     { x-twitter = "https://twitter.com/burufugu" },
     { github = "https://github.com/nunocoracao/blowfish" },
