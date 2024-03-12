@@ -649,5 +649,15 @@
     "tags": [
       "Personal blog"
     ]
+  },
+   {
+    "title": "Adam Madej - Gameplay Animator",
+    "url": "http://www.adammadej.com/",
+    "source": "https://github.com/arahmitz/adamblogstuff",
+    "tags": [
+      "Portfolio Site",
+      "Blog",
+      "Personal Site"
+    ]
   }
 ]
