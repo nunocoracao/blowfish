@@ -43,7 +43,7 @@
   weight = 40
 
 [[main]]
-  name = "使用者"
+  name = "客户样例"
   pageRef = "users"
   weight = 90
 
