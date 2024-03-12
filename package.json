@@ -1,6 +1,6 @@
 {
   "name": "hugo-blowfish-theme",
-  "version": "2.61.0",
+  "version": "2.61.1",
   "description": "Blowfish theme for Hugo",
   "scripts": {
     "postinstall": "vendor-copy",
@@ -110,6 +110,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^2.1.1",
+    "@iamtraction/google-translate": "^2.0.1",
     "@tailwindcss/forms": "^0.5.7",
     "commander": "^12.0.0"
   }
