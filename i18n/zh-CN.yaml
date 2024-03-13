@@ -1,5 +1,5 @@
 global:
-  language: "ZN-CN"
+  language: "中文（简体）"
 
 article:
   anchor_label: "锚点"

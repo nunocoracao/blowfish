@@ -16,7 +16,7 @@
   weight = 10
 
 [[main]]
-  name = "Shortcodes"
+  name = "短代码"
   pageRef = "docs/shortcodes"
   weight = 15
 
@@ -48,7 +48,7 @@
   weight = 90
 
 [[main]]
-  name = "Merch"
+  name = "周边"
   url = "https://www.teepublic.com/user/blowfish-store/t-shirts"
   weight = 100
 
