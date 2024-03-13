@@ -1,7 +1,29 @@
 const fs = require('fs');
 const puppeteer = require("puppeteer");
 
+const configDir = "./exampleSite/config/_default";
+const defaultLang = "en";
 const usersFolderPath = "./exampleSite/content/users/"
+
+var targetLangs = []
+
+const configFiles = fs.readdirSync(configDir);
+configFiles.forEach(file => {
+    if (file.indexOf("languages.") > -1) {
+        var lang = file.split(".")[1];
+        if (lang != defaultLang) {
+            targetLangs.push(lang);
+        }
+    }
+});
+
+const indexFiles = fs.readdirSync(usersFolderPath);
+for(var i in targetLangs){
+    var targetFile = '_index.' + targetLangs[i] + '.md';
+    if(indexFiles.indexOf(targetFile) == -1){
+        fs.copyFileSync(usersFolderPath + '_index.md', usersFolderPath + targetFile);
+    }
+}
 
 let rawdata = fs.readFileSync(usersFolderPath + 'users.json');
 let users = JSON.parse(rawdata);
@@ -16,7 +38,7 @@ const files = fs.readdirSync(usersFolderPath);
 for (file in files) {
 
     let stats = fs.statSync(usersFolderPath + files[file]);
-    if (files[file] != 'users.json' && files[file] != '_index.md') {
+    if (files[file] != 'users.json' && files[file].indexOf("_index.") == -1){
         if (stats.isDirectory()) {
             if (!userDict[files[file].replaceAll("/", "-")]) {
                 console.log('deleting: ', files[file]);
@@ -61,13 +83,15 @@ puppeteer
 
             if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir);
-                console.log(i, users[i].title);
-                fs.writeFileSync(dir + '/index.md', userMDFile);
-                await page.goto(users[i].url);
-                await page.screenshot({ path: dir + "/feature.jpg" });
+
             }
-
-
+            console.log(i, users[i].title);
+            fs.writeFileSync(dir + '/index.md', userMDFile);
+            for (var j in targetLangs) {
+                fs.writeFileSync(dir + '/index.' + targetLangs[j] + '.md', userMDFile);
+            }
+            await page.goto(users[i].url);
+            await page.screenshot({ path: dir + "/feature.jpg" });
         }
 
         await browser.close();
