@@ -1,6 +1,6 @@
 ---
                 title: "cdell.io"
-                tags: [Personal site]
+                tags: [Sito personale]
                 externalUrl: "https://cdell.io"
                 date: 9982-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

@@ -1,6 +1,6 @@
 ---
                 title: "halcyonstraits.com"
-                tags: [Doll photography]
+                tags: [人形撮影]
                 externalUrl: "https://www.halcyonstraits.com/"
                 date: 9958-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

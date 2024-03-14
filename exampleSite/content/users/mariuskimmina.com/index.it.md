@@ -1,6 +1,6 @@
 ---
                 title: "mariuskimmina.com"
-                tags: [Personal site]
+                tags: [Sito personale]
                 externalUrl: "https://mariuskimmina.com/"
                 date: 9970-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

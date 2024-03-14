@@ -1,6 +1,6 @@
 ---
                 title: "jam.dsg.li"
-                tags: [Organization site]
+                tags: [组织站点]
                 externalUrl: "https://jam.dsg.li"
                 date: 9981-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

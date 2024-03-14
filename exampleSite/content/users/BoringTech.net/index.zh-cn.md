@@ -1,6 +1,6 @@
 ---
                 title: "BoringTech.net"
-                tags: [Personal Site,Blog]
+                tags: [个人网站, 博客]
                 externalUrl: "https://boringtech.net/"
                 date: 9935-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

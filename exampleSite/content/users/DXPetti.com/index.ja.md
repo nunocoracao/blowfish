@@ -1,6 +1,6 @@
 ---
                 title: "DXPetti.com"
-                tags: [Personal site,Blog]
+                tags: [個人サイト, ブログ]
                 externalUrl: "https://www.dxpetti.com/"
                 date: 9929-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

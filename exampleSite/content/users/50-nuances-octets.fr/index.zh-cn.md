@@ -1,6 +1,6 @@
 ---
                 title: "50-nuances-octets.fr"
-                tags: [Organization site]
+                tags: [组织站点]
                 externalUrl: "https://www.50-nuances-octets.fr/"
                 date: 9957-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

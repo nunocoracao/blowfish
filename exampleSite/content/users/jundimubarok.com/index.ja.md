@@ -1,6 +1,6 @@
 ---
                 title: "jundimubarok.com"
-                tags: [Personal site]
+                tags: [個人サイト]
                 externalUrl: "https://jundimubarok.com/"
                 date: 9953-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

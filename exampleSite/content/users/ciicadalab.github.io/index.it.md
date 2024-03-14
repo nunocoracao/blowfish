@@ -1,6 +1,6 @@
 ---
                 title: "ciicadalab.github.io"
-                tags: [Organization site]
+                tags: [Sito dell'organizzazione]
                 externalUrl: "https://ciicadalab.github.io"
                 date: 9992-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

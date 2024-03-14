@@ -1,6 +1,6 @@
 ---
                 title: "v-y-s.com"
-                tags: [Personal Site]
+                tags: [個人サイト]
                 externalUrl: "https://v-y-s.com/"
                 date: 9938-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

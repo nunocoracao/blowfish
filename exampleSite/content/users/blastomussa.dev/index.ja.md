@@ -1,6 +1,6 @@
 ---
                 title: "blastomussa.dev"
-                tags: [Personal site]
+                tags: [個人サイト]
                 externalUrl: "https://blastomussa.dev"
                 date: 9983-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

@@ -1,6 +1,6 @@
 ---
                 title: "renaud.warnotte.be"
-                tags: [Personal site]
+                tags: [個人サイト]
                 externalUrl: "https://renaud.warnotte.be"
                 date: 9936-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

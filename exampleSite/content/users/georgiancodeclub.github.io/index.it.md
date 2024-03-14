@@ -1,6 +1,6 @@
 ---
                 title: "georgiancodeclub.github.io"
-                tags: [College club site]
+                tags: [Sito del club universitario]
                 externalUrl: "https://georgiancodeclub.github.io"
                 date: 9991-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

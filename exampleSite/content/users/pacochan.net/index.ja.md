@@ -1,6 +1,6 @@
 ---
                 title: "pacochan.net"
-                tags: [Personal site]
+                tags: [個人サイト]
                 externalUrl: "https://pacochan.net"
                 date: 9954-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

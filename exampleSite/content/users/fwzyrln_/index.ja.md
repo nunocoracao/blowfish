@@ -1,6 +1,6 @@
 ---
                 title: "fwzyrln_"
-                tags: [Personal Homepage,Blog]
+                tags: [個人ホームページ, ブログ]
                 externalUrl: "https://fauziralpiandi.github.io"
                 date: 9921-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

@@ -1,6 +1,6 @@
 ---
                 title: "theindiecoder.cloud"
-                tags: [Personal site]
+                tags: [Sito personale]
                 externalUrl: "https://theindiecoder.cloud"
                 date: 9949-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

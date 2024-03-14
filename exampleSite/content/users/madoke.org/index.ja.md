@@ -1,6 +1,6 @@
 ---
                 title: "madoke.org"
-                tags: [Personal site]
+                tags: [個人サイト]
                 externalUrl: "https://madoke.org/"
                 date: 9998-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

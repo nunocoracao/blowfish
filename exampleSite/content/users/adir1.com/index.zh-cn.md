@@ -1,6 +1,6 @@
 ---
                 title: "adir1.com"
-                tags: [Personal site]
+                tags: [个人网站]
                 externalUrl: "https://adir1.com/"
                 date: 9976-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

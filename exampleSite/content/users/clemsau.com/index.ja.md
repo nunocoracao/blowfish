@@ -1,6 +1,6 @@
 ---
                 title: "clemsau.com"
-                tags: [Personal site]
+                tags: [個人サイト]
                 externalUrl: "https://clemsau.com/"
                 date: 9963-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

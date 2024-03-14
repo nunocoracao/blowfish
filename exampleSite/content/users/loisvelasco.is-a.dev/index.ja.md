@@ -1,6 +1,6 @@
 ---
                 title: "loisvelasco.is-a.dev"
-                tags: [Personal site]
+                tags: [個人サイト]
                 externalUrl: "https://loisvelasco.is-a.dev"
                 date: 9986-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

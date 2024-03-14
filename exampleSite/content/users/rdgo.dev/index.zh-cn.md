@@ -1,6 +1,6 @@
 ---
                 title: "rdgo.dev"
-                tags: [Personal site]
+                tags: [个人网站]
                 externalUrl: "https://rdgo.dev/"
                 date: 9964-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

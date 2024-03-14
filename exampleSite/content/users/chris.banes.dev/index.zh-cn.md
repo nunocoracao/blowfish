@@ -1,6 +1,6 @@
 ---
                 title: "chris.banes.dev"
-                tags: [Personal site]
+                tags: [个人网站]
                 externalUrl: "https://chris.banes.dev"
                 date: 9989-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

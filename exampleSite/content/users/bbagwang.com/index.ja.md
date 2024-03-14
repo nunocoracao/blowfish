@@ -1,6 +1,6 @@
 ---
                 title: "bbagwang.com"
-                tags: [Personal site]
+                tags: [個人サイト]
                 externalUrl: "https://bbagwang.com"
                 date: 9951-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

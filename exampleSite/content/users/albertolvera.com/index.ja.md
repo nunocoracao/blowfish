@@ -1,6 +1,6 @@
 ---
                 title: "albertolvera.com"
-                tags: [Personal site]
+                tags: [個人サイト]
                 externalUrl: "https://albertolvera.com"
                 date: 9990-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

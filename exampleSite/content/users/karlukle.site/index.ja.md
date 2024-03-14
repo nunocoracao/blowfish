@@ -1,6 +1,6 @@
 ---
                 title: "karlukle.site"
-                tags: [Personal blog]
+                tags: [個人ブログ]
                 externalUrl: "https://karlukle.site"
                 date: 9920-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

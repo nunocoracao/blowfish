@@ -1,6 +1,6 @@
 ---
                 title: "jamiemoxon.tech"
-                tags: [Personal site]
+                tags: [個人サイト]
                 externalUrl: "https://jamiemoxon.tech"
                 date: 9950-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

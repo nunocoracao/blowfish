@@ -1,6 +1,6 @@
 ---
                 title: "m3upt.com"
-                tags: [Project site]
+                tags: [プロジェクトサイト]
                 externalUrl: "https://m3upt.com"
                 date: 9955-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

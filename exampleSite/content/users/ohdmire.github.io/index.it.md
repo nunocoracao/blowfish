@@ -1,6 +1,6 @@
 ---
                 title: "ohdmire.github.io"
-                tags: [Personal site]
+                tags: [Sito personale]
                 externalUrl: "https://ohdmire.github.io"
                 date: 9944-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

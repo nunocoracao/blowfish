@@ -1,6 +1,6 @@
 ---
                 title: "scottmckendry.tech"
-                tags: [Personal site]
+                tags: [个人网站]
                 externalUrl: "https://scottmckendry.tech"
                 date: 9946-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

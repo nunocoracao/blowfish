@@ -1,5 +1,9 @@
 {{- $index := slice -}}
-{{- range .Site.Pages -}}
+{{ $pages := .Site.Pages }}
+{{ range .Site.Home.Translations }}
+{{ $pages = $pages | lang.Merge .Site.Pages }}
+{{ end }}
+{{- range $pages -}}
   {{- $section := .Site.GetPage "section" .Section -}}
   {{- $index = $index | append (dict
     "date" (.Date | time.Format (.Site.Language.Params.dateFormat | default ":date_long")) 
@@ -9,6 +13,7 @@
     "content" (.Plain | emojify | safeJS)
     "permalink" .RelPermalink
     "externalUrl" .Params.externalUrl
+    "type" .Type
   ) -}}
 {{- end -}}
 {{- $index | jsonify -}}

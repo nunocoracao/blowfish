@@ -1,6 +1,6 @@
 ---
                 title: "fahru.my.id"
-                tags: [Personal site]
+                tags: [Sito personale]
                 externalUrl: "https://www.fahru.my.id"
                 date: 9988-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

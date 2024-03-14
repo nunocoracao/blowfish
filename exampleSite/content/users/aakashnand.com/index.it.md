@@ -1,6 +1,6 @@
 ---
                 title: "aakashnand.com"
-                tags: [Personal site]
+                tags: [Sito personale]
                 externalUrl: "https://aakashnand.com/"
                 date: 9924-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

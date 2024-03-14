@@ -1,6 +1,6 @@
 ---
                 title: "the-maze.net"
-                tags: [Personal site,Blog]
+                tags: [Sito personale, Blog]
                 externalUrl: "https://www.the-maze.net/"
                 date: 9931-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

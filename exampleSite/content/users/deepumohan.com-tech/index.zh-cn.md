@@ -1,6 +1,6 @@
 ---
                 title: "deepumohan.com/tech"
-                tags: [Technology Blog]
+                tags: [技术博客]
                 externalUrl: "https://deepumohan.com/tech/"
                 date: 9942-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

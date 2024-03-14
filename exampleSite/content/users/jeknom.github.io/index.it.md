@@ -1,6 +1,6 @@
 ---
                 title: "jeknom.github.io"
-                tags: [Personal site]
+                tags: [Sito personale]
                 externalUrl: "https://jeknom.github.io"
                 date: 9987-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

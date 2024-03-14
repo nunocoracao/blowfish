@@ -1,6 +1,6 @@
 ---
                 title: "nikarashihatsu.github.io"
-                tags: [Personal site]
+                tags: [個人サイト]
                 externalUrl: "https://nikarashihatsu.github.io/"
                 date: 9960-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

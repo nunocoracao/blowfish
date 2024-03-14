@@ -1,6 +1,6 @@
 ---
                 title: "rejowski.xyz"
-                tags: [Personal Site]
+                tags: [个人网站]
                 externalUrl: "https://rejowski.xyz/"
                 date: 9939-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

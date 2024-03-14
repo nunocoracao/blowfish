@@ -3,7 +3,7 @@
 # https://blowfish.page/docs/getting-started/
 
 theme = "blowfish"
-baseURL = "https://nunocoracao.github.io/blowfish"
+baseURL = "https://localhost:1313"
 defaultContentLanguage = "en"
 #disableLanguages = ['it', 'fr'] #to allow translation work requiring shipping to production
 

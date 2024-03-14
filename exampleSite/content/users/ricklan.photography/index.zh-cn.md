@@ -1,6 +1,6 @@
 ---
                 title: "ricklan.photography"
-                tags: [Personal site]
+                tags: [个人网站]
                 externalUrl: "https://ricklan.photography"
                 date: 9943-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

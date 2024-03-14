@@ -1,6 +1,6 @@
 ---
                 title: "binarydigit.cafe"
-                tags: [Personal site]
+                tags: [個人サイト]
                 externalUrl: "https://binarydigit.cafe/"
                 date: 9933-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

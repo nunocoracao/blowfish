@@ -1,6 +1,6 @@
 ---
                 title: "ekwska.com"
-                tags: [Personal blog]
+                tags: [個人ブログ]
                 externalUrl: "https://ekwska.com"
                 date: 9926-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

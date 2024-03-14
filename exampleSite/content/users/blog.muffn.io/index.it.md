@@ -1,6 +1,6 @@
 ---
                 title: "blog.muffn.io"
-                tags: [Personal site]
+                tags: [Sito personale]
                 externalUrl: "https://blog.muffn.io/"
                 date: 9974-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

@@ -1,6 +1,6 @@
 ---
                 title: "asterisk.lol"
-                tags: [Blog,Personal Site]
+                tags: [ブログ, 個人サイト]
                 externalUrl: "https://asterisk.lol"
                 date: 9928-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

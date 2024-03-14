@@ -1,6 +1,6 @@
 ---
                 title: "talkdimsum.com"
-                tags: [App site]
+                tags: [Sito dell'app]
                 externalUrl: "https://talkdimsum.com/"
                 date: 9966-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

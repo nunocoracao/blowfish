@@ -1,6 +1,6 @@
 ---
                 title: "gma.name"
-                tags: [Personal site]
+                tags: [个人网站]
                 externalUrl: "https://gma.name"
                 date: 9948-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

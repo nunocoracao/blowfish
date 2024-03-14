@@ -1,6 +1,6 @@
 ---
                 title: "Mare_Infinitus"
-                tags: [Personal Site,Blog]
+                tags: [個人サイト, ブログ]
                 externalUrl: "https://lab.imgb.space"
                 date: 9922-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

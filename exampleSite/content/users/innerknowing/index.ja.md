@@ -1,6 +1,6 @@
 ---
                 title: "innerknowing"
-                tags: [Personal site,Modeller]
+                tags: [個人サイト, モデラー]
                 externalUrl: "https://innerknowing.xyz"
                 date: 9923-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

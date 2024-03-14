@@ -1,6 +1,6 @@
 ---
                 title: "adilhyz.github.io"
-                tags: [Personal site]
+                tags: [个人网站]
                 externalUrl: "https://adilhyz.github.io"
                 date: 9945-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

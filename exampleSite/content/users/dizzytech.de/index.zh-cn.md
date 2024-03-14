@@ -1,6 +1,6 @@
 ---
                 title: "dizzytech.de"
-                tags: [Personal site]
+                tags: [个人网站]
                 externalUrl: "https://dizzytech.de"
                 date: 9978-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

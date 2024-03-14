@@ -1,6 +1,6 @@
 ---
                 title: "datatodroids.tech"
-                tags: [Personal site,Blog]
+                tags: [個人サイト, ブログ]
                 externalUrl: "https://datatodroids.tech/"
                 date: 9930-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

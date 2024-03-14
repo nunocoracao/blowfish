@@ -1,6 +1,6 @@
 ---
                 title: "n9o.xyz"
-                tags: [Personal site,Theme author]
+                tags: [个人网站, 主题作者]
                 externalUrl: "https://n9o.xyz"
                 date: 9999-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

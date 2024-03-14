@@ -1,6 +1,6 @@
 ---
                 title: "vividscc.com"
-                tags: [Business site]
+                tags: [事業所]
                 externalUrl: "https://vividscc.com/"
                 date: 9972-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

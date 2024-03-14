@@ -1,6 +1,6 @@
 ---
                 title: "weaxsey.org"
-                tags: [Personal site]
+                tags: [个人网站]
                 externalUrl: "https://weaxsey.org/"
                 date: 9961-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

@@ -1,6 +1,6 @@
 ---
                 title: "marupanda.art/marucomics"
-                tags: [Comics site]
+                tags: [Sito di fumetti]
                 externalUrl: "https://marupanda.art/marucomics/"
                 date: 9956-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

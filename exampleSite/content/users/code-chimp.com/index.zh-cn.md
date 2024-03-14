@@ -1,6 +1,6 @@
 ---
                 title: "code-chimp.com"
-                tags: [Personal site]
+                tags: [个人网站]
                 externalUrl: "https://code-chimp.com"
                 date: 9997-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

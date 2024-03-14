@@ -26,7 +26,7 @@
 
 [[main]]
   name = "Campioni"
-  parent = "esempi"
+  parent = "Esempi"
   pageRef = "samples"
   weight = 16
 

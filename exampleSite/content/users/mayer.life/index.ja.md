@@ -1,6 +1,6 @@
 ---
                 title: "mayer.life"
-                tags: [Personal site]
+                tags: [個人サイト]
                 externalUrl: "https://mayer.life"
                 date: 9947-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

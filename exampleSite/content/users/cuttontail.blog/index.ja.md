@@ -1,6 +1,6 @@
 ---
                 title: "cuttontail.blog"
-                tags: [Personal site]
+                tags: [個人サイト]
                 externalUrl: "https://cuttontail.blog"
                 date: 9994-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

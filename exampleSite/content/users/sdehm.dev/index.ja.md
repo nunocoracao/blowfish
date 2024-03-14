@@ -1,6 +1,6 @@
 ---
                 title: "sdehm.dev"
-                tags: [Personal site]
+                tags: [個人サイト]
                 externalUrl: "https://sdehm.dev"
                 date: 9979-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

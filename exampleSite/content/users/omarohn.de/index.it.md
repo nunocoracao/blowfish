@@ -1,6 +1,6 @@
 ---
                 title: "omarohn.de"
-                tags: [Personal site]
+                tags: [Sito personale]
                 externalUrl: "https://omarohn.de"
                 date: 9985-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

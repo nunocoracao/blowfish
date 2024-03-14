@@ -1,6 +1,6 @@
 ---
                 title: "notes.bluesdriveamelia.space"
-                tags: [Blog,Personal site]
+                tags: [Blog, Sito personale]
                 externalUrl: "https://notes.bluesdriveamelia.space/"
                 date: 9927-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

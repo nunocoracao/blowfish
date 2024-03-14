@@ -1,6 +1,6 @@
 ---
                 title: "insidemordecai.com"
-                tags: [Personal site]
+                tags: [個人サイト]
                 externalUrl: "https://insidemordecai.com"
                 date: 9984-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

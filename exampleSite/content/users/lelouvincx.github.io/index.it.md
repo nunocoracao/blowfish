@@ -1,6 +1,6 @@
 ---
                 title: "lelouvincx.github.io"
-                tags: [Personal site]
+                tags: [Sito personale]
                 externalUrl: "https://lelouvincx.github.io/"
                 date: 9962-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

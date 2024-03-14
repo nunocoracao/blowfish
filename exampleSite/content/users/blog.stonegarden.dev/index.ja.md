@@ -1,6 +1,6 @@
 ---
                 title: "blog.stonegarden.dev"
-                tags: [Personal Site]
+                tags: [個人サイト]
                 externalUrl: "https://blog.stonegarden.dev/"
                 date: 9937-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

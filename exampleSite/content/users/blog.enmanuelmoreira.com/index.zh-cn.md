@@ -1,6 +1,6 @@
 ---
                 title: "blog.enmanuelmoreira.com"
-                tags: [Personal site]
+                tags: [个人网站]
                 externalUrl: "https://blog.enmanuelmoreira.com"
                 date: 9959-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

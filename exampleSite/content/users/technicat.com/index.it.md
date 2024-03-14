@@ -1,6 +1,6 @@
 ---
                 title: "technicat.com"
-                tags: [Company site]
+                tags: [Sito aziendale]
                 externalUrl: "https://technicat.com/"
                 date: 9969-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

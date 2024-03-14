@@ -1,6 +1,6 @@
 ---
                 title: "kylemalloy.com"
-                tags: [Personal site]
+                tags: [個人サイト]
                 externalUrl: "https://kylemalloy.com"
                 date: 9941-08-08
                 showDate: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+
