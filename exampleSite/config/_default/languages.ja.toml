@@ -7,7 +7,7 @@ title = "Blowfish"
   displayName = "日本語"
   isoCode = "ja"
   rtl = false
-  dateFormat = "2 January 2006"
+  dateFormat = "2006-01-02"
   logo = "img/blowfish_logo_transparent.png"
   description = "強力で、軽量な Hugo のテーマです。"
 
