@@ -1,59 +1,59 @@
-# -- Main Menu --
-# The main menu is displayed in the header at the top of the page.
-# Acceptable parameters are name, pageRef, page, url, title, weight.
+# -- メインメニュー --
+# メインメニューはページトップのヘッダーに表示されます。
+# 利用可能なパラメーターは name, pageRef, page, url, title, weight です。
 # 
-# The simplest menu configuration is to provide:
-#   name = The name to be displayed for this menu link
-#   pageRef = The identifier of the page or section to link to
+# 最もシンプルなメニュー設定はこちらです:
+#   name = このメニューリンクに表示される名前
+#   pageRef = ページやセクションのリンクに利用される識別子
 #
-# By default the menu is ordered alphabetically. This can be
-# overridden by providing a weight value. The menu will then be
-# ordered by weight from lowest to highest.
+# デフォルトでは、メニューはアルファベット順に並べられます。
+# これは、 weight value で上書き可能です。
+# このメニューは weight が低い値から高い値に順に表示されます。
 
 [[main]]
-  name = "Docs"
+  name = "資料"
   pageRef = "docs"
   weight = 10
 
 [[main]]
-  name = "Shortcodes"
+  name = "ショートコード"
   pageRef = "docs/shortcodes"
   weight = 15
 
 [[main]]
-  name = "Examples"
+  name = "例"
   weight = 20
 
 [[main]]
-  name = "Samples"
-  parent = "Examples"
+  name = "サンプル"
+  parent = "例"
   pageRef = "samples"
   weight = 16
 
 [[main]]
-  name = "Showcase"
-  parent = "Examples"
+  name = "ショーケース"
+  parent = "例"
   pageRef = "examples"
   weight = 30
 
 [[main]]
-  name = "Recipes"
-  parent = "Examples"
+  name = "レシピ"
+  parent = "例"
   pageRef = "guides"
   weight = 40
 
 [[main]]
-  name = "Users"
+  name = "ユーザー"
   pageRef = "users"
   weight = 90
 
 [[main]]
-  name = "Merch"
+  name = "グッズ"
   url = "https://www.teepublic.com/user/blowfish-store/t-shirts"
   weight = 100
 
 #[[main]]
-#  name = "Test"
+#  name = "テスト"
 #  pageRef = "pagTest"
 #  weight = 1000
 
@@ -76,16 +76,16 @@
   weight = 400
 
 
-# -- Footer Menu --
-# The footer menu is displayed at the bottom of the page, just before
-# the copyright notice. Configure as per the main menu above.
+# -- フッターメニュー --
+# このフッターメニューはページ下部のコピーライト表示の前に表示されます。
+# 上記のメインメニューと同様に設定できます。
 
  [[footer]]
-   name = "Tags"
+   name = "タグ"
    pageRef = "tags"
    weight = 10
 
  [[footer]]
-   name = "Authors"
+   name = "著者"
    pageRef = "authors"
    weight = 20

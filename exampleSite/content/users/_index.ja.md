@@ -1,8 +1,8 @@
 ---
-title: "Users"
+title: "ユーザー"
 date: 2020-08-14
 draft: false
-description: "Some real-life Blowfish examples."
+description: "実際に利用される Blowfish の例。"
 slug: "users"
 tags: ["users", "sample"]
 showDate: false
@@ -15,12 +15,12 @@ cardViewScreenWidth: true
  
 
 
-Real websites that are built with Blowfish. Check the full list in [JSON format](/users/users.json).
+Blowfish で構築された実際のウェブサイトです。すべてのウェブサイト一覧は [JSON 形式](/users/users.json) で閲覧可能です。
 
 
 {{< alert >}}
 
-**Blowfish user?** To add your site to this list, [submit a pull request](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/content/users/users.json).
+**Blowfish ユーザーですか?** この一覧にあなたのサイトを加える際は、 [pull request を送信](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/content/users/users.json) してください。
 
 {{</ alert >}}
 
