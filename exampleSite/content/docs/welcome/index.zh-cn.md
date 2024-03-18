@@ -30,7 +30,7 @@ A highly requested feature, Blowfish is now multilingual! If you publish your co
 
 <div class="text-2xl text-center" style="font-size: 2.8rem">:gb: :de: :fr: :es: :cn: :brazil: :tr: :bangladesh:</div>
 
-感谢社区的贡献，目前 Blowfish 已经翻译成二十六种语言，并且随着时间的推移还会支持更多。 顺便一提，欢迎您为支持新语言提交 [PR](https://github.com/nunocoracao/blowfish/pulls)。
+感谢社区的贡献，目前 Blowfish 已经翻译成二十六种语言，并且随着时间的推移还会支持更多。 顺便一提，欢迎你为支持新语言提交 [PR](https://github.com/nunocoracao/blowfish/pulls)。
 
 ## 支持 RTL 语言
 
@@ -89,4 +89,4 @@ Blowfish 2.0版本的重大变化是增加了自动调整图片大小的功能�
 
 欢迎来尝试和探索强大而轻量的 Blowfish 2.0，打造优雅、个性化的创作之旅！
 
-如果您对 Blowfish 有更加创意的想法，欢迎随时[提交](https://github.com/nunocoracao/blowfish/discussions)，期待与您共同营造 Blowfish 的开源文化！
+如果你对 Blowfish 有更加创意的想法，欢迎随时[提交](https://github.com/nunocoracao/blowfish/discussions)，期待与你共同营造 Blowfish 的开源文化！

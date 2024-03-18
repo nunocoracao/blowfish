@@ -18,7 +18,7 @@ cardViewScreenWidth: true
 
 {{< alert >}}
 
-**您是 Blowfish 用户 ？** 请在这个列表中添加您的站点, [提交 PR](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/content/users/users.json).
+**你是 Blowfish 用户 ？** 请在这个列表中添加你的站点, [提交 PR](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/content/users/users.json).
 
 {{</ alert >}}
 

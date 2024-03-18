@@ -260,7 +260,7 @@ Blowfish 还支持嵌套菜单。你需要在`menu.toml` 中定义一个父级�
 
 ## 缩略图 & 背景
 
-Blowfish 的创立开端旨在便于为文章添加视觉效果。如果你熟悉 Hugo 的文章结构，只需要在您文章所在的文件夹中，放置一个以`feature*`开头的图像文件（Blowfish支持所有格式的文件，但更推荐使用 `.png` 或 `.jpg`）。就这样，Blowfish 就能够将图像文件作为文章的缩略图，而且能够在社交平台的 `<a target="_blank" href="https://oembed.com/">oEmbed</a>` 卡片中使用。
+Blowfish 的创立开端旨在便于为文章添加视觉效果。如果你熟悉 Hugo 的文章结构，只需要在你文章所在的文件夹中，放置一个以`feature*`开头的图像文件（Blowfish支持所有格式的文件，但更推荐使用 `.png` 或 `.jpg`）。就这样，Blowfish 就能够将图像文件作为文章的缩略图，而且能够在社交平台的 `<a target="_blank" href="https://oembed.com/">oEmbed</a>` 卡片中使用。
 
 [这里]({{< ref "thumbnails" >}}) 有一个指南，提供了个人更多的内容和[示例]({{< ref "thumbnail_sample" >}})。如果你想看看具体如何操作可以看这里。
 
