@@ -1,5 +1,5 @@
 ---
-title: "快速开始"
+title: "入门指南"
 date: 2020-08-15
 draft: false
 description: "All the front matter variables available in Blowfish."

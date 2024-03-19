@@ -150,7 +150,7 @@ Blowfish 还支持针对特定语言的菜单配置。菜单配置文件的命�
 
 菜单配置文件的命名格式是 `menus.[language-code].toml`。请始终确保菜单配置项中使用的语言代码和语言配置相匹配。
 
-[快速开始]({{< ref "getting-started#menus" >}})部分更详细地介绍了这个文件的结构。你还可以参考 [Hugo 菜单文档](https://gohugo.io/content-management/menus/)，以获取更多配置示例。
+[入门指南]({{< ref "getting-started#menus" >}})部分更详细地介绍了这个文件的结构。你还可以参考 [Hugo 菜单文档](https://gohugo.io/content-management/menus/)，以获取更多配置示例。
 
 ## 主题参数
 
@@ -171,7 +171,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `enableCodeCopy`                | `false`      | 是否可以将`<code>`代码块复制到剪贴板。想要使用代码复制功能，需要将 `highlight.noClasses` 参数设置为 `false`。 阅读 [其他配置文件](#other-configuration-files) 以获取更多信息。                                                                                           |
 | `mainSections`                  | 无    | 指定最近文章中应该展示的模块。 如果没有指定，则使用文章数量最多的板块。                                                                                                                                                                                  |
 | `showViews`                     | 无    | 是否显示文章和列表页面的阅读量。这需要集成 firebase ，具体可以看下面。                                                                                                                                                                              |
-| `showLikes`                     | 无    | 是否显示文章和列表页面的喜爱数。这需要集成 firebase ，具体可以看下面。                                                                                                                                                                              |
+| `showLikes`                     | 无    | 是否显示文章和列表页面的点赞量。这需要集成 firebase ，具体可以看下面。                                                                                                                                                                              |
 | `robots`                        | 无    | 用于支持搜索引擎爬虫如何处理你的网站。如果设置了该值，它将被输出在页面头部。具体的参数值请参考 [Google 文档](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag#directives)。                                                                    |
 | `disableImageZoom`              | `false`      | 禁用网站上所有图片缩放功能。                                                                                                                                                                                                        |
 | `disableImageOptimization`      | `false`      | 禁用图片上所有图片的调整大小和优化功能。                                                                                                                                                                                                  |
@@ -218,7 +218,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | ------------------------------------- | --------- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `article.showDate`                    | `true`    | 是否显示日期。                                                                                                                                                                              |
 | `article.showViews`                   | `false`   | 是否显示文章阅读量。这需要集成 firebase ，具体可以看下面。                                                                                                                                                   |
-| `article.showLikes`                   | `false`   | 是否显示文章喜爱数。这需要集成 firebase ，具体可以看下面。                                                                                                                                                   |
+| `article.showLikes`                   | `false`   | 是否显示文章点赞量。这需要集成 firebase ，具体可以看下面。                                                                                                                                                   |
 | `article.showDateOnlyInArticle`       | `false`   | 是否在文章内显示日期，不影响文章列表或卡片页面的日期显示。                                                                                                                                                        |
 | `article.showDateUpdated`             | `false`   | 是否展示文章的更新日期。                                                                                                                                                                         |
 | `article.showAuthor`                  | `true`    | 是否在文章底部显示作者框。                                                                                                                                                                        |
@@ -241,7 +241,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `article.relatedContentLimit`         | `3`       | 如果启用`showRelatedContent`，则限制显示相关文章的数量。                                                                                                                                               |
 | `article.showTaxonomies`              | `false`   | 是否显示文章的分类或标签信息。                                                                                                                                                                      |
 | `article.showAuthorsBadges`           | `false`   | 是否在文章或列表中显示 `authors` 分类。这需要开启多个作者 `multiple authors` 和 `authors` 分类法。 请阅读 [这个网页]({{< ref "multi-author" >}}) 来获取更多内容。                                                               |
-| `article.showWordCount`               | `false`   | 是否显示文章的字数。 如果你的语言包含 CJK 语言，需要在 `config.toml` 中开启 `hasCJKLanguage` 参数。                                                                                                                |
+| `article.showWordCount`               | `false`   | 是否显示文章的字数。 如果你的语言属于 CJK 语言，需要在 `config.toml` 中开启 `hasCJKLanguage` 参数。                                                                                                                |
 | `article.showComments`                | `false`   | 是否在文章末尾添加 [评论部分]({{< ref "partials#comments" >}})。                                                                                                                                   |
 | `article.sharingLinks`                | 无 | 在文章末尾显示的分享链接。如果没有提供或设置为 `false`，则不会显示任何分享链接。可用的值包括："linkedin"、"twitter"、"reddit"、"pinterest"、"facebook"、"email"、"whatsapp" 和 "telegram"                                              |
 | `article.showZenMode`                 | `false`   | 指定是否激活文章阅读的禅模式，即隐藏常规的界面元素。                                                                                                                                                           |
@@ -258,7 +258,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `list.showTableOfContents`         | `false`   | 是否展示目录。                                                                                                                  |
 | `list.showSummary`                 | `false`   | 是否在列表页显示文章摘要。如果在[扉页参数]({{< ref "front-matter" >}})中没有提供摘要，那么将会使用[站点配置](#site-configuration) 中的 `summaryLength` 参数自动生成一个。 |
 | `list.showViews`                   | `false`   | 是否显示文章阅读量。这需要集成 firebase ，具体可以看下面。                                                                                       |
-| `list.showLikes`                   | `false`   | 是否显示文章喜爱数。这需要集成 firebase ，具体可以看下面。                                                                                       |
+| `list.showLikes`                   | `false`   | 是否显示文章点赞量。这需要集成 firebase ，具体可以看下面。                                                                                       |
 | `list.showCards`                   | `false`   | 是否将每个文章显示未卡片或简单的内联文本。                                                                                                    |
 | `list.groupByYear`                 | `true`    | 是否根据年做聚合。                                                                                                                |
 | `list.cardView`                    | `false`   | 将列表展示为卡片容器。                                                                                                              |
@@ -281,23 +281,23 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `taxonomy.heroStyle`           | 无 | hero 图像的展示样式，可选的参数值有：`basic`、`big`、`background`、`thumbAndBackground`。 |
 | `taxonomy.showBreadcrumbs`     | `false`   | 是否在标题栏显示面包屑导航。                                                        |
 | `taxonomy.showViews`           | `false`   | 是否显示文章阅读量。这需要集成 firebase ，具体可以看下面。                                    |
-| `taxonomy.showLikes`           | `false`   | 是否显示文章喜爱数。这需要集成 firebase ，具体可以看下面。                                    |
+| `taxonomy.showLikes`           | `false`   | 是否显示文章点赞量。这需要集成 firebase ，具体可以看下面。                                    |
 | `taxonomy.showTableOfContents` | `false`   | 是否显示目录。                                                               |
 | `taxonomy.cardView`            | `false`   | 将列表展示为卡片容器。                                                           |
 
 ### 术语
 
-| 名称                       | 默认值   | 描述                                                                   |
-| -------------------------- | --------- |----------------------------------------------------------------------|
-| `term.showHero`            | `false`   | 缩略图是否会在每个页面中作为 hero 图像显示。                                            |
+| 名称                       | 默认值   | 描述                                                                     |
+| -------------------------- | --------- |------------------------------------------------------------------------|
+| `term.showHero`            | `false`   | 缩略图是否会在每个页面中作为 hero 图像显示。                                              |
 | `term.heroStyle`           | 无 | hero 图像的展示样式，可选的参数值有： `basic`、`big`、`background`、`thumbAndBackground`。 |
-| `term.showBreadcrumbs`     | `false`   | 是否在标题栏显示面包屑导航。                                                        |
-| `term.showViews`           | `false`   | 是否显示文章阅读量。这需要集成 firebase ，具体可以看下面。                                   |
-| `term.showLikes`           | `false`   | 是否显示文章喜爱数。这需要集成 firebase ，具体可以看下面。                                   |
-| `term.showTableOfContents` | `false`   | 是否显示目录。                                                              |
-| `term.groupByYear`         | `false`   | 是否根据年做聚合。                                                            |
-| `term.cardView`            | `false`   | 将列表展示为卡片容器。                                                          |
-| `term.cardViewScreenWidth` | `false`   | 增强列表中卡片的宽度，使其可以占据可用的全部宽度。                                            |
+| `term.showBreadcrumbs`     | `false`   | 是否在标题栏显示面包屑导航。                                                         |
+| `term.showViews`           | `false`   | 是否显示文章阅读量。这需要集成 firebase ，具体可以看下面。                                     |
+| `term.showLikes`           | `false`   | 是否显示文章点赞量。这需要集成 firebase ，具体可以看下面。                                     |
+| `term.showTableOfContents` | `false`   | 是否显示目录。                                                                |
+| `term.groupByYear`         | `false`   | 是否根据年做聚合。                                                              |
+| `term.cardView`            | `false`   | 将列表展示为卡片容器。                                                            |
+| `term.cardViewScreenWidth` | `false`   | 增强列表中卡片的宽度，使其可以占据可用的全部宽度。                                              |
 
 ### Firebase
 

@@ -156,7 +156,7 @@ config/_default/
 
 ### 下一步
 
-基本的 Blowfish 安装已经完成。继续阅读 [快速开始]({{< ref "getting-started" >}})，了解更多关于主题配置的内容。
+基本的 Blowfish 安装已经完成。继续阅读 [入门指南]({{< ref "getting-started" >}})，了解更多关于主题配置的内容。
 
 ---
 
