@@ -1,7 +1,7 @@
 ---
                 title: "innerknowing"
                 tags: [Personal site,Modeller]
-                externalUrl: "https://innerknowing.xyz"
+                externalUrl: "https://innerknowing.xyz/en/"
                 date: 9923-08-08
                 showDate: false
                 showAuthor: false
