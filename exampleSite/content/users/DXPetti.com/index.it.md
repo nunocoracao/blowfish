@@ -2,7 +2,7 @@
                 title: "DXPetti.com"
                 tags: [Sito personale, Blog]
                 externalUrl: "https://www.dxpetti.com/"
-                date: 9929-08-08
+                date: 9930-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

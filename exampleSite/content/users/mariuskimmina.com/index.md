@@ -2,7 +2,7 @@
                 title: "mariuskimmina.com"
                 tags: [Personal site]
                 externalUrl: "https://mariuskimmina.com/"
-                date: 9970-08-08
+                date: 9971-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

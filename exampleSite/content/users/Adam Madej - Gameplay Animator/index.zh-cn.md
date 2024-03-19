@@ -1,8 +1,8 @@
 ---
-                title: "chris.banes.dev"
-                tags: [個人サイト]
-                externalUrl: "https://chris.banes.dev"
-                date: 9989-08-08
+                title: "Adam Madej - Gameplay Animator"
+                tags: [作品集网站, 博客, 个人网站]
+                externalUrl: "http://www.adammadej.com/"
+                date: 9920-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

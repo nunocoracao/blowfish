@@ -2,7 +2,7 @@
                 title: "technicat.com"
                 tags: [Sito aziendale]
                 externalUrl: "https://technicat.com/"
-                date: 9969-08-08
+                date: 9970-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

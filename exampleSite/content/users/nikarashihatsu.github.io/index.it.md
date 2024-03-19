@@ -2,7 +2,7 @@
                 title: "nikarashihatsu.github.io"
                 tags: [Sito personale]
                 externalUrl: "https://nikarashihatsu.github.io/"
-                date: 9960-08-08
+                date: 9961-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

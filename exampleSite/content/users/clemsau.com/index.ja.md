@@ -2,7 +2,7 @@
                 title: "clemsau.com"
                 tags: [個人サイト]
                 externalUrl: "https://clemsau.com/"
-                date: 9963-08-08
+                date: 9964-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

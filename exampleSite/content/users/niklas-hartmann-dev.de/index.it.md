@@ -2,7 +2,7 @@
                 title: "niklas-hartmann-dev.de"
                 tags: [Sito personale]
                 externalUrl: "https://niklas-hartmann-dev.de/"
-                date: 9975-08-08
+                date: 9976-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
