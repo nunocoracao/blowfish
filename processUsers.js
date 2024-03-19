@@ -134,9 +134,6 @@ puppeteer
                 await page.goto(users[i].url);
                 await page.screenshot({ path: dir + "/feature.jpg" });
             }
-
-
-
         }
 
         await browser.close();
