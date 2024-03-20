@@ -59,9 +59,9 @@ async function convert(text, from, to) {
         from: from,
         to: to
     };
-    if(!cache[to])
+    if (!cache[to])
         cache[to] = {};
-    if(cache[to][text])
+    if (cache[to][text])
         return cache[to][text];
     var translated_text = await translate(text, options);
     cache[to][text] = translated_text.text;
@@ -125,15 +125,15 @@ puppeteer
 
             if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir);
+                console.log(i, users[i].title);
+                fs.writeFileSync(dir + '/index.md', userMDFile);
+                for (var j in targetLangs) {
+                    var content = await translateFrontMatterTags(userMDFile, targetLangs[j], users[i].tags);
+                    fs.writeFileSync(dir + '/index.' + targetLangs[j] + '.md', content);
+                }
+                await page.goto(users[i].url);
+                await page.screenshot({ path: dir + "/feature.jpg" });
             }
-            console.log(i, users[i].title);
-            fs.writeFileSync(dir + '/index.md', userMDFile);
-            for (var j in targetLangs) {
-                var content = await translateFrontMatterTags(userMDFile, targetLangs[j], users[i].tags);
-                fs.writeFileSync(dir + '/index.' + targetLangs[j] + '.md', content);
-            }
-            await page.goto(users[i].url);
-            await page.screenshot({ path: dir + "/feature.jpg" });
         }
 
         await browser.close();
