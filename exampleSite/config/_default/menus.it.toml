@@ -11,7 +11,7 @@
 # ordered by weight from lowest to highest.
 
 [[main]]
-  name = "Docs"
+  name = "Documenti"
   pageRef = "docs"
   weight = 10
 
@@ -21,29 +21,29 @@
   weight = 15
 
 [[main]]
-  name = "Examples"
+  name = "Esempi"
   weight = 20
 
 [[main]]
-  name = "Samples"
-  parent = "Examples"
+  name = "Campioni"
+  parent = "Esempi"
   pageRef = "samples"
   weight = 16
 
 [[main]]
-  name = "Showcase"
-  parent = "Examples"
+  name = "Vetrina"
+  parent = "Esempi"
   pageRef = "examples"
   weight = 30
 
 [[main]]
-  name = "Recipes"
-  parent = "Examples"
+  name = "Ricette"
+  parent = "Esempi"
   pageRef = "guides"
   weight = 40
 
 [[main]]
-  name = "Users"
+  name = "Utenti"
   pageRef = "users"
   weight = 90
 
@@ -86,6 +86,6 @@
    weight = 10
 
  [[footer]]
-   name = "Authors"
+   name = "Autori"
    pageRef = "authors"
    weight = 20

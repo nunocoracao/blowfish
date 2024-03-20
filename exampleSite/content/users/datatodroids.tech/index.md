@@ -2,7 +2,7 @@
                 title: "datatodroids.tech"
                 tags: [Personal site,Blog]
                 externalUrl: "https://datatodroids.tech/"
-                date: 9930-08-08
+                date: 9931-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

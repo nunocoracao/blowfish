@@ -26,19 +26,19 @@
 
 [[main]]
   name = "功能示例"
-  parent = "Examples"
+  parent = "示例"
   pageRef = "samples"
   weight = 16
 
 [[main]]
   name = "模板示例"
-  parent = "Examples"
+  parent = "示例"
   pageRef = "examples"
   weight = 30
 
 [[main]]
   name = "部署指南"
-  parent = "Examples"
+  parent = "示例"
   pageRef = "guides"
   weight = 40
 

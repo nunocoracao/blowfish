@@ -10,7 +10,7 @@ showAuthor: false
 showReadingTime: false
 showEdit: false
 layoutBackgroundHeaderSpace: false
-cardViewScreenWidth: true
+cardViewScreenWidth: false
 ---
  
 
