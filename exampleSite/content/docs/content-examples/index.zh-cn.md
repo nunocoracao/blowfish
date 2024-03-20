@@ -5,7 +5,7 @@ draft: false
 description: "包含 Blowfish 中所有可用部分的示例、"
 slug: "content-examples"
 tags: ["内容", "示例"]
-series: ["文档集"]
+series: ["部署教程"]
 series_order: 12
 ---
 

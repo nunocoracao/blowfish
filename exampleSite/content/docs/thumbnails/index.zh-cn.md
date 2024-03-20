@@ -5,7 +5,7 @@ draft: false
 description: "为你的文章配置缩略图。"
 slug: "thumbnails"
 tags: ["缩略图", "配置", "文档"]
-series: ["文档集"]
+series: ["部署教程"]
 series_order: 6
 ---
 

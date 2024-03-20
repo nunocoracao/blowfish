@@ -1,19 +1,19 @@
 ---
-title: "Series"
+title: "系列"
 date: 2020-08-09
 draft: false
-description: "Learn how to group articles under a series."
+description: "了解如何将文章分组到系列中。"
 slug: "series"
-tags: ["series", "docs"]
-series: ["Documentation"]
+tags: ["系列", "文档"]
+series: ["部署教程"]
 series_order: 11
 seriesOpened: true
 ---
 
-Blowfish provides a feature to group a set of articles together under a "series". Placing an article under a series will display the rest of the series articles in each single page and provide a quick way to navigate amongst them. You can see an example of this above.
+Blowfish 提供了将一组文章分组到“系列”下的功能。将文章放在系列下将在每个页面中显示该系列文章的其余部分，并在它们之间提供快速导航。您可以在上面看到一个例子。
 
-## Create Taxonomy
-The first step to enable series is to create the `series` taxonomy. For doing this just add the `series` taxonomy to your taxonomy list in the `config.toml`.
+## 创建分类
+启用系列的第一步是创建 `series` 分类法。为此，只需将 `series` 分类法添加到 `config.toml` 中的分类法列表中即可。
 
 ```toml
 [taxonomies]
@@ -23,14 +23,15 @@ The first step to enable series is to create the `series` taxonomy. For doing th
   series = "series"
 ```
 
-## Mark Articles
+## 标记文章
 
-Then you just need to mark each article using the `series` parameter and the `series_order`. The `series` parameter will be the id and name of the series you are placing the article into (even though the variable is an array we recommend keeping each article to a single series.). And the `series_order` defines the order of that article within the series. In the example below the article is number `11` in the `Documentation` series.
+然后你只需要添加 `series` 和 `series_order` 参数。 `series` 参数将是您要将文章放入的系列名称。 `series_order` 定义了文章在该系列中的顺序。在下面的示例中，文章是 `Documentation` 系列中的第 `11` 篇文章。
 
 ```md
 series: ["Documentation"]
 series_order: 11
 ```
 
-## Series Behavior
-Marking an article as part of a series will automatically display the series module as you see in this page for example. You can choose whether that module starts opened or not using the `article.seriesOpened` global variable in `params.toml` or the front-matter parameter `seriesOpened` to specify an override at the article level.
+## 系列的表现形式
+
+将文章标记为系列的一部分将自动显示系列模块，例如您在下方看到的这样。您可以使用 `params.toml` 中的 `article.seriesOpened` 全局变量或参数 `seriesOpened` 来选择该模块是否开始打开，以指定文章级别的覆盖。

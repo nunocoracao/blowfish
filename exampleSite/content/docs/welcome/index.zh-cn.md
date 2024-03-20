@@ -4,7 +4,7 @@ date: 2022-01-19
 draft: false
 description: "探索 Blowfish 2.0版本的新功能。"
 tags: ["新手", "文档"]
-series: ["文档集合"]
+series: ["部署教程"]
 series_order: 1
 ---
 

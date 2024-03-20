@@ -5,7 +5,7 @@ draft: false
 description: "介绍 Blowfish 中所有可用的的配置变量。"
 slug: "configuration"
 tags: ["配置", "文档"]
-series: ["文档集"]
+series: ["部署教程"]
 series_order: 4
 ---
 

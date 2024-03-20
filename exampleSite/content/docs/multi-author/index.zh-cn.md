@@ -5,7 +5,7 @@ draft: false
 description: "为你的文章设置多个作者。"
 slug: "multi-author"
 tags: ["作者", "配置", "文档"]
-series: ["文档集"]
+series: ["部署教程"]
 series_order: 10
 showAuthor: true
 authors:

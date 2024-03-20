@@ -5,7 +5,7 @@ draft: false
 description: "在 Blowfish 主题中设置主页布局。"
 slug: "homepage-layout"
 tags: ["主页", "布局", "文档"]
-series: ["文档集"]
+series: ["部署教程"]
 series_order: 5
 ---
 

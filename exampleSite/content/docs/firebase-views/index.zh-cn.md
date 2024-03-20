@@ -5,7 +5,7 @@ draft: false
 description: "了解 Blowfish 如何继承 Firebase，并动态显示阅读量和点赞量。"
 slug: "firebase-views"
 tags: ["firebase", "阅读量", "点赞量"]
-series: ["文档集"]
+series: ["部署教程"]
 series_order: 15
 ---
 

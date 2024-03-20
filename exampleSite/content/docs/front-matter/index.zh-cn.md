@@ -1,11 +1,11 @@
 ---
-title: "扉页参数"
+title: "Front Matter"
 date: 2020-08-10
 draft: false
-description: "文本主要介绍 Blowfish 中页面中可以添加的所有的前页/扉页参数。"
+description: "文本主要介绍 Blowfish 中页面中可以添加的所有的 Front Matter 参数。"
 slug: "front-matter"
 tags: ["front matter", "配置", "文档"]
-series: ["文档集"]
+series: ["部署教程"]
 series_order: 7
 ---
 

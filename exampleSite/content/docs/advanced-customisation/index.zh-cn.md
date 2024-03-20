@@ -5,7 +5,7 @@ draft: false
 description: "了解如何手动构建 Blowfish。"
 slug: "advanced-customisation"
 tags: ["高级", "CSS", "文档"]
-series: ["文档集"]
+series: ["部署教程"]
 series_order: 13
 ---
 

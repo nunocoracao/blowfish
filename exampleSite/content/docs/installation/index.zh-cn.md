@@ -5,7 +5,7 @@ draft: false
 description: "如何安装 Blowfish 主题。"
 slug: "installation"
 tags: ["安装", "文档"]
-series: ["文档集合"]
+series: ["部署教程"]
 series_order: 2
 ---
 
