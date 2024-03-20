@@ -1,10 +1,1100 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin:auto;background:rgba(NaN, NaN, NaN, 0);display:block;z-index:1;position:relative" width="1084" height="322" preserveAspectRatio="xMidYMid" viewBox="0 0 1084 322">
-  <defs>
-    <pattern id="pid-0.932876709489723" x="0" y="0" width="307.20000000000005" height="307.20000000000005" patternUnits="userSpaceOnUse">
-      <g transform="scale(1.2000000000000002)"><defs><g id="pat-0.13086180692764704"><polyline fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#93dbe9" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points=" -3,-2 16.5,15.5 31.5,0.5 63.5,32.5 48.5,47.5 31.5,32.5 -0.5,64.5 16.5,79.5 31.5,64.5 47.5,79.5 95.5,32.5 80.5,15.5 95.5,0.5 127.5,32.5 48.5,111.5 31.5,96.5 -0.5,128.5 16.5,143.5 31.5,127.5 63.5,160.5 80.5,143.5 63.5,128.5 159.5,32.5 144.5,15.5 159.5,0.5 175.5,16.5 192,0 208,16 224,0 256,32 240,48 224,32 207.501,48.501 223.5,64.5 207.5,80.5 176.5,47.5 144.5,80.5 159.5,96.5 175.5,80.5 191.5,96.5 159.5,128.5 127.5,96.5 95.5,127.5 111.5,143.5 127.5,127.5 175.5,176.5 159.5,192.5 127.5,160.5 111.5,176.5 95.5,160.5 63.5,192.5 31.5,160.5 16.5,175.5 31.999,191.483 0,224 16,240 32,225 64,256 80,240 64,224 79.667,208.333 95.5,192.5 111.5,207.5 95.5,224.5 111.5,239.5 127.5,256.5 143.5,240.5 127.5,224.5 143.5,208.5 175.5,240.5 191.5,224.5 175.5,208.5 207.5,176.5 224,160 208,144 191.998,160.998 175.5,144.5 207.5,112.5 240,80 256,96 223.5,128.5 256,160 239.5,176.5 256,192 240,208 224,192 207.5,208.5 223.5,224.5 207.5,240.5 223.5,256.5 240,240 259,259" stroke-dasharray="169.36095947265625 20.93225341796875 169.36095947265625 20.93225341796875 169.36095947265625 20.93225341796875 169.36095947265625 20.93225341796875 169.36095947265625 20.93225341796875 169.36095947265625 20.93225341796875 169.36095947265625 20.93225341796875 169.36095947265625 20.93225341796875 169.36095947265625 20.93225341796875 169.36095947265625 20.93225341796875 169.36095947265625 20.93225341796875 169.36095947265625 20.93225341796875 169.36095947265625 20.93225341796875 169.36095947265625 20.93225341796875 169.36095947265625 20.93225341796875">
-    <animate attributeName="stroke-dashoffset" keyTimes="0;1" values="0;190.293212890625" repeatCount="indefinite" dur="7.142857142857142s"></animate>
-  </polyline></g></defs><use xlink:href="#pat-0.13086180692764704" x="0" y="0"></use><use xlink:href="#pat-0.13086180692764704" x="-256" y="0"></use><use xlink:href="#pat-0.13086180692764704" x="256" y="0"></use><use xlink:href="#pat-0.13086180692764704" x="0" y="-256"></use><use xlink:href="#pat-0.13086180692764704" x="0" y="256"></use></g>
-    </pattern>
-  </defs>
-  <rect x="0" y="0" width="1084" height="322" fill="url(#pid-0.932876709489723)"></rect>
-  </svg>
+<svg id="canvas" height="100%" xmlns="http://www.w3.org/2000/svg" version="1.1"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs"
+    viewBox="0 0 600 600">
+    <rect width="600" height="600" fill="transparent"></rect>
+    <mask id="mask" mask-type="alpha" maskUnits="userSpaceOnUse">
+        <rect transform="translate(0, 0)" width="600" height="600" fill="white"></rect>
+    </mask>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(0, 0) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(0, 0) rotate(0)" fill="#90e0ef"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(0, 0) rotate(0)" fill="#90e0ef"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(0, 0) rotate(0)" fill="#90e0ef"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(0, 0) rotate(0)" fill="#90e0ef"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(0, 0) rotate(0)" fill="#90e0ef"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(0, 60) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(0, 60) rotate(90)" fill="#ade8f4"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(0, 60) rotate(90)" fill="#ade8f4"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(0, 60) rotate(90)" fill="#ade8f4"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(0, 60) rotate(90)" fill="#ade8f4"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(0, 60) rotate(90)" fill="#ade8f4"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(0, 180) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(0, 180) rotate(0)" fill="#ade8f4"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(0, 180) rotate(0)" fill="#ade8f4"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(0, 180) rotate(0)" fill="#ade8f4"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(0, 180) rotate(0)" fill="#ade8f4"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(0, 180) rotate(0)" fill="#ade8f4"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(0, 240) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(0, 240) rotate(0)" fill="#0077b6"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(0, 240) rotate(0)" fill="#0077b6"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(0, 240) rotate(0)" fill="#0077b6"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(0, 240) rotate(0)" fill="#0077b6"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(0, 240) rotate(0)" fill="#0077b6"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(0, 300) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(0, 300) rotate(0)" fill="#0077b6"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(0, 300) rotate(0)" fill="#0077b6"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(0, 300) rotate(0)" fill="#0077b6"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(0, 300) rotate(0)" fill="#0077b6"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(0, 300) rotate(0)" fill="#0077b6"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(0, 360) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(0, 360) rotate(0)" fill="#023e8a"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(0, 360) rotate(0)" fill="#023e8a"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(0, 360) rotate(0)" fill="#023e8a"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(0, 360) rotate(0)" fill="#023e8a"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(0, 360) rotate(0)" fill="#023e8a"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(0, 420) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(0, 420) rotate(90)" fill="#023e8a"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(0, 420) rotate(90)" fill="#023e8a"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(0, 420) rotate(90)" fill="#023e8a"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(0, 420) rotate(90)" fill="#023e8a"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(0, 420) rotate(90)" fill="#023e8a"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(0, 480) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(0, 480) rotate(0)" fill="#90e0ef"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(0, 480) rotate(0)" fill="#90e0ef"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(0, 480) rotate(0)" fill="#90e0ef"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(0, 480) rotate(0)" fill="#90e0ef"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(0, 480) rotate(0)" fill="#90e0ef"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(0, 540) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(0, 540) rotate(90)" fill="#90e0ef"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(0, 540) rotate(90)" fill="#90e0ef"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(0, 540) rotate(90)" fill="#90e0ef"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(0, 540) rotate(90)" fill="#90e0ef"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(0, 540) rotate(90)" fill="#90e0ef"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(60, 0) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(60, 0) rotate(90)" fill="#03045e"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(60, 0) rotate(90)" fill="#03045e"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(60, 0) rotate(90)" fill="#03045e"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(60, 0) rotate(90)" fill="#03045e"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(60, 0) rotate(90)" fill="#03045e"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(60, 120) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(60, 120) rotate(0)" fill="#03045e"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(60, 120) rotate(0)" fill="#03045e"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(60, 120) rotate(0)" fill="#03045e"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(60, 120) rotate(0)" fill="#03045e"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(60, 120) rotate(0)" fill="#03045e"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(60, 180) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(60, 180) rotate(90)" fill="#03045e"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(60, 180) rotate(90)" fill="#03045e"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(60, 180) rotate(90)" fill="#03045e"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(60, 180) rotate(90)" fill="#03045e"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(60, 180) rotate(90)" fill="#03045e"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(60, 240) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(60, 240) rotate(0)" fill="#ade8f4"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(60, 240) rotate(0)" fill="#ade8f4"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(60, 240) rotate(0)" fill="#ade8f4"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(60, 240) rotate(0)" fill="#ade8f4"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(60, 240) rotate(0)" fill="#ade8f4"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(60, 300) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(60, 300) rotate(90)" fill="#caf0f8"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(60, 300) rotate(90)" fill="#caf0f8"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(60, 300) rotate(90)" fill="#caf0f8"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(60, 300) rotate(90)" fill="#caf0f8"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(60, 300) rotate(90)" fill="#caf0f8"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(60, 360) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(60, 360) rotate(90)" fill="#023e8a"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(60, 360) rotate(90)" fill="#023e8a"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(60, 360) rotate(90)" fill="#023e8a"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(60, 360) rotate(90)" fill="#023e8a"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(60, 360) rotate(90)" fill="#023e8a"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(60, 480) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(60, 480) rotate(90)" fill="#0077b6"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(60, 480) rotate(90)" fill="#0077b6"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(60, 480) rotate(90)" fill="#0077b6"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(60, 480) rotate(90)" fill="#0077b6"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(60, 480) rotate(90)" fill="#0077b6"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(60, 540) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(60, 540) rotate(0)" fill="#90e0ef"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(60, 540) rotate(0)" fill="#90e0ef"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(60, 540) rotate(0)" fill="#90e0ef"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(60, 540) rotate(0)" fill="#90e0ef"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(60, 540) rotate(0)" fill="#90e0ef"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(120, 0) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(120, 0) rotate(0)" fill="#ade8f4"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(120, 0) rotate(0)" fill="#ade8f4"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(120, 0) rotate(0)" fill="#ade8f4"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(120, 0) rotate(0)" fill="#ade8f4"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(120, 0) rotate(0)" fill="#ade8f4"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(120, 120) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(120, 120) rotate(0)" fill="#ade8f4"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(120, 120) rotate(0)" fill="#ade8f4"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(120, 120) rotate(0)" fill="#ade8f4"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(120, 120) rotate(0)" fill="#ade8f4"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(120, 120) rotate(0)" fill="#ade8f4"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(120, 180) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(120, 180) rotate(90)" fill="#caf0f8"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(120, 180) rotate(90)" fill="#caf0f8"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(120, 180) rotate(90)" fill="#caf0f8"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(120, 180) rotate(90)" fill="#caf0f8"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(120, 180) rotate(90)" fill="#caf0f8"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(120, 300) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(120, 300) rotate(0)" fill="#48cae4"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(120, 300) rotate(0)" fill="#48cae4"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(120, 300) rotate(0)" fill="#48cae4"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(120, 300) rotate(0)" fill="#48cae4"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(120, 300) rotate(0)" fill="#48cae4"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(120, 420) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(120, 420) rotate(90)" fill="#ade8f4"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(120, 420) rotate(90)" fill="#ade8f4"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(120, 420) rotate(90)" fill="#ade8f4"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(120, 420) rotate(90)" fill="#ade8f4"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(120, 420) rotate(90)" fill="#ade8f4"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(120, 480) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(120, 480) rotate(0)" fill="#ade8f4"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(120, 480) rotate(0)" fill="#ade8f4"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(120, 480) rotate(0)" fill="#ade8f4"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(120, 480) rotate(0)" fill="#ade8f4"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(120, 480) rotate(0)" fill="#ade8f4"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(120, 540) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(120, 540) rotate(90)" fill="#ade8f4"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(120, 540) rotate(90)" fill="#ade8f4"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(120, 540) rotate(90)" fill="#ade8f4"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(120, 540) rotate(90)" fill="#ade8f4"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(120, 540) rotate(90)" fill="#ade8f4"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(180, 0) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(180, 0) rotate(90)" fill="#48cae4"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(180, 0) rotate(90)" fill="#48cae4"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(180, 0) rotate(90)" fill="#48cae4"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(180, 0) rotate(90)" fill="#48cae4"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(180, 0) rotate(90)" fill="#48cae4"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(180, 60) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(180, 60) rotate(0)" fill="#0077b6"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(180, 60) rotate(0)" fill="#0077b6"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(180, 60) rotate(0)" fill="#0077b6"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(180, 60) rotate(0)" fill="#0077b6"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(180, 60) rotate(0)" fill="#0077b6"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(180, 120) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(180, 120) rotate(0)" fill="#023e8a"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(180, 120) rotate(0)" fill="#023e8a"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(180, 120) rotate(0)" fill="#023e8a"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(180, 120) rotate(0)" fill="#023e8a"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(180, 120) rotate(0)" fill="#023e8a"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(180, 180) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(180, 180) rotate(0)" fill="#00b4d8"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(180, 180) rotate(0)" fill="#00b4d8"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(180, 180) rotate(0)" fill="#00b4d8"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(180, 180) rotate(0)" fill="#00b4d8"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(180, 180) rotate(0)" fill="#00b4d8"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(180, 240) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(180, 240) rotate(0)" fill="#0077b6"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(180, 240) rotate(0)" fill="#0077b6"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(180, 240) rotate(0)" fill="#0077b6"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(180, 240) rotate(0)" fill="#0077b6"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(180, 240) rotate(0)" fill="#0077b6"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(180, 300) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(180, 300) rotate(0)" fill="#0077b6"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(180, 300) rotate(0)" fill="#0077b6"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(180, 300) rotate(0)" fill="#0077b6"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(180, 300) rotate(0)" fill="#0077b6"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(180, 300) rotate(0)" fill="#0077b6"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(180, 360) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(180, 360) rotate(0)" fill="#023e8a"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(180, 360) rotate(0)" fill="#023e8a"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(180, 360) rotate(0)" fill="#023e8a"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(180, 360) rotate(0)" fill="#023e8a"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(180, 360) rotate(0)" fill="#023e8a"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(180, 420) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(180, 420) rotate(90)" fill="#0077b6"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(180, 420) rotate(90)" fill="#0077b6"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(180, 420) rotate(90)" fill="#0077b6"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(180, 420) rotate(90)" fill="#0077b6"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(180, 420) rotate(90)" fill="#0077b6"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(180, 480) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(180, 480) rotate(90)" fill="#0096c7"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(180, 480) rotate(90)" fill="#0096c7"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(180, 480) rotate(90)" fill="#0096c7"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(180, 480) rotate(90)" fill="#0096c7"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(180, 480) rotate(90)" fill="#0096c7"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(180, 540) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(180, 540) rotate(90)" fill="#ade8f4"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(180, 540) rotate(90)" fill="#ade8f4"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(180, 540) rotate(90)" fill="#ade8f4"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(180, 540) rotate(90)" fill="#ade8f4"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(180, 540) rotate(90)" fill="#ade8f4"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(240, 60) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(240, 60) rotate(90)" fill="#90e0ef"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(240, 60) rotate(90)" fill="#90e0ef"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(240, 60) rotate(90)" fill="#90e0ef"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(240, 60) rotate(90)" fill="#90e0ef"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(240, 60) rotate(90)" fill="#90e0ef"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(240, 120) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(240, 120) rotate(90)" fill="#90e0ef"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(240, 120) rotate(90)" fill="#90e0ef"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(240, 120) rotate(90)" fill="#90e0ef"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(240, 120) rotate(90)" fill="#90e0ef"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(240, 120) rotate(90)" fill="#90e0ef"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(240, 240) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(240, 240) rotate(90)" fill="#0077b6"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(240, 240) rotate(90)" fill="#0077b6"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(240, 240) rotate(90)" fill="#0077b6"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(240, 240) rotate(90)" fill="#0077b6"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(240, 240) rotate(90)" fill="#0077b6"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(240, 300) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(240, 300) rotate(0)" fill="#caf0f8"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(240, 300) rotate(0)" fill="#caf0f8"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(240, 300) rotate(0)" fill="#caf0f8"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(240, 300) rotate(0)" fill="#caf0f8"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(240, 300) rotate(0)" fill="#caf0f8"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(240, 360) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(240, 360) rotate(0)" fill="#caf0f8"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(240, 360) rotate(0)" fill="#caf0f8"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(240, 360) rotate(0)" fill="#caf0f8"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(240, 360) rotate(0)" fill="#caf0f8"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(240, 360) rotate(0)" fill="#caf0f8"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(240, 480) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(240, 480) rotate(0)" fill="#023e8a"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(240, 480) rotate(0)" fill="#023e8a"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(240, 480) rotate(0)" fill="#023e8a"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(240, 480) rotate(0)" fill="#023e8a"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(240, 480) rotate(0)" fill="#023e8a"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(240, 540) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(240, 540) rotate(0)" fill="#90e0ef"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(240, 540) rotate(0)" fill="#90e0ef"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(240, 540) rotate(0)" fill="#90e0ef"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(240, 540) rotate(0)" fill="#90e0ef"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(240, 540) rotate(0)" fill="#90e0ef"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(300, 0) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(300, 0) rotate(90)" fill="#48cae4"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(300, 0) rotate(90)" fill="#48cae4"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(300, 0) rotate(90)" fill="#48cae4"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(300, 0) rotate(90)" fill="#48cae4"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(300, 0) rotate(90)" fill="#48cae4"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(300, 60) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(300, 60) rotate(90)" fill="#023e8a"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(300, 60) rotate(90)" fill="#023e8a"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(300, 60) rotate(90)" fill="#023e8a"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(300, 60) rotate(90)" fill="#023e8a"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(300, 60) rotate(90)" fill="#023e8a"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(300, 120) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(300, 120) rotate(0)" fill="#023e8a"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(300, 120) rotate(0)" fill="#023e8a"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(300, 120) rotate(0)" fill="#023e8a"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(300, 120) rotate(0)" fill="#023e8a"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(300, 120) rotate(0)" fill="#023e8a"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(300, 180) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(300, 180) rotate(0)" fill="#90e0ef"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(300, 180) rotate(0)" fill="#90e0ef"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(300, 180) rotate(0)" fill="#90e0ef"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(300, 180) rotate(0)" fill="#90e0ef"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(300, 180) rotate(0)" fill="#90e0ef"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(300, 240) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(300, 240) rotate(90)" fill="#48cae4"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(300, 240) rotate(90)" fill="#48cae4"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(300, 240) rotate(90)" fill="#48cae4"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(300, 240) rotate(90)" fill="#48cae4"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(300, 240) rotate(90)" fill="#48cae4"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(300, 300) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(300, 300) rotate(90)" fill="#90e0ef"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(300, 300) rotate(90)" fill="#90e0ef"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(300, 300) rotate(90)" fill="#90e0ef"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(300, 300) rotate(90)" fill="#90e0ef"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(300, 300) rotate(90)" fill="#90e0ef"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(300, 360) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(300, 360) rotate(0)" fill="#90e0ef"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(300, 360) rotate(0)" fill="#90e0ef"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(300, 360) rotate(0)" fill="#90e0ef"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(300, 360) rotate(0)" fill="#90e0ef"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(300, 360) rotate(0)" fill="#90e0ef"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(300, 420) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(300, 420) rotate(90)" fill="#48cae4"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(300, 420) rotate(90)" fill="#48cae4"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(300, 420) rotate(90)" fill="#48cae4"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(300, 420) rotate(90)" fill="#48cae4"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(300, 420) rotate(90)" fill="#48cae4"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(300, 480) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(300, 480) rotate(90)" fill="#0096c7"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(300, 480) rotate(90)" fill="#0096c7"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(300, 480) rotate(90)" fill="#0096c7"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(300, 480) rotate(90)" fill="#0096c7"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(300, 480) rotate(90)" fill="#0096c7"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(300, 540) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(300, 540) rotate(90)" fill="#0096c7"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(300, 540) rotate(90)" fill="#0096c7"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(300, 540) rotate(90)" fill="#0096c7"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(300, 540) rotate(90)" fill="#0096c7"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(300, 540) rotate(90)" fill="#0096c7"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(360, 0) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(360, 0) rotate(0)" fill="#48cae4"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(360, 0) rotate(0)" fill="#48cae4"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(360, 0) rotate(0)" fill="#48cae4"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(360, 0) rotate(0)" fill="#48cae4"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(360, 0) rotate(0)" fill="#48cae4"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(360, 60) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(360, 60) rotate(90)" fill="#023e8a"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(360, 60) rotate(90)" fill="#023e8a"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(360, 60) rotate(90)" fill="#023e8a"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(360, 60) rotate(90)" fill="#023e8a"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(360, 60) rotate(90)" fill="#023e8a"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(360, 180) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(360, 180) rotate(90)" fill="#0096c7"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(360, 180) rotate(90)" fill="#0096c7"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(360, 180) rotate(90)" fill="#0096c7"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(360, 180) rotate(90)" fill="#0096c7"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(360, 180) rotate(90)" fill="#0096c7"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(360, 240) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(360, 240) rotate(0)" fill="#03045e"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(360, 240) rotate(0)" fill="#03045e"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(360, 240) rotate(0)" fill="#03045e"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(360, 240) rotate(0)" fill="#03045e"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(360, 240) rotate(0)" fill="#03045e"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(360, 300) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(360, 300) rotate(90)" fill="#90e0ef"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(360, 300) rotate(90)" fill="#90e0ef"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(360, 300) rotate(90)" fill="#90e0ef"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(360, 300) rotate(90)" fill="#90e0ef"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(360, 300) rotate(90)" fill="#90e0ef"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(360, 360) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(360, 360) rotate(0)" fill="#48cae4"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(360, 360) rotate(0)" fill="#48cae4"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(360, 360) rotate(0)" fill="#48cae4"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(360, 360) rotate(0)" fill="#48cae4"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(360, 360) rotate(0)" fill="#48cae4"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(360, 420) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(360, 420) rotate(90)" fill="#90e0ef"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(360, 420) rotate(90)" fill="#90e0ef"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(360, 420) rotate(90)" fill="#90e0ef"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(360, 420) rotate(90)" fill="#90e0ef"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(360, 420) rotate(90)" fill="#90e0ef"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(420, 0) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(420, 0) rotate(0)" fill="#0096c7"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(420, 0) rotate(0)" fill="#0096c7"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(420, 0) rotate(0)" fill="#0096c7"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(420, 0) rotate(0)" fill="#0096c7"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(420, 0) rotate(0)" fill="#0096c7"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(420, 60) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(420, 60) rotate(90)" fill="#90e0ef"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(420, 60) rotate(90)" fill="#90e0ef"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(420, 60) rotate(90)" fill="#90e0ef"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(420, 60) rotate(90)" fill="#90e0ef"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(420, 60) rotate(90)" fill="#90e0ef"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(420, 120) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(420, 120) rotate(90)" fill="#00b4d8"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(420, 120) rotate(90)" fill="#00b4d8"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(420, 120) rotate(90)" fill="#00b4d8"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(420, 120) rotate(90)" fill="#00b4d8"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(420, 120) rotate(90)" fill="#00b4d8"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(420, 240) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(420, 240) rotate(0)" fill="#90e0ef"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(420, 240) rotate(0)" fill="#90e0ef"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(420, 240) rotate(0)" fill="#90e0ef"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(420, 240) rotate(0)" fill="#90e0ef"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(420, 240) rotate(0)" fill="#90e0ef"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(420, 300) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(420, 300) rotate(90)" fill="#0096c7"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(420, 300) rotate(90)" fill="#0096c7"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(420, 300) rotate(90)" fill="#0096c7"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(420, 300) rotate(90)" fill="#0096c7"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(420, 300) rotate(90)" fill="#0096c7"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(420, 420) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(420, 420) rotate(90)" fill="#48cae4"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(420, 420) rotate(90)" fill="#48cae4"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(420, 420) rotate(90)" fill="#48cae4"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(420, 420) rotate(90)" fill="#48cae4"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(420, 420) rotate(90)" fill="#48cae4"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(420, 480) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(420, 480) rotate(90)" fill="#03045e"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(420, 480) rotate(90)" fill="#03045e"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(420, 480) rotate(90)" fill="#03045e"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(420, 480) rotate(90)" fill="#03045e"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(420, 480) rotate(90)" fill="#03045e"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(420, 540) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(420, 540) rotate(90)" fill="#48cae4"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(420, 540) rotate(90)" fill="#48cae4"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(420, 540) rotate(90)" fill="#48cae4"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(420, 540) rotate(90)" fill="#48cae4"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(420, 540) rotate(90)" fill="#48cae4"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(480, 0) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(480, 0) rotate(90)" fill="#023e8a"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(480, 0) rotate(90)" fill="#023e8a"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(480, 0) rotate(90)" fill="#023e8a"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(480, 0) rotate(90)" fill="#023e8a"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(480, 0) rotate(90)" fill="#023e8a"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(480, 60) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(480, 60) rotate(90)" fill="#0077b6"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(480, 60) rotate(90)" fill="#0077b6"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(480, 60) rotate(90)" fill="#0077b6"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(480, 60) rotate(90)" fill="#0077b6"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(480, 60) rotate(90)" fill="#0077b6"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(480, 120) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(480, 120) rotate(0)" fill="#90e0ef"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(480, 120) rotate(0)" fill="#90e0ef"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(480, 120) rotate(0)" fill="#90e0ef"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(480, 120) rotate(0)" fill="#90e0ef"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(480, 120) rotate(0)" fill="#90e0ef"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(480, 180) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(480, 180) rotate(0)" fill="#90e0ef"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(480, 180) rotate(0)" fill="#90e0ef"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(480, 180) rotate(0)" fill="#90e0ef"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(480, 180) rotate(0)" fill="#90e0ef"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(480, 180) rotate(0)" fill="#90e0ef"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(480, 300) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(480, 300) rotate(0)" fill="#0077b6"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(480, 300) rotate(0)" fill="#0077b6"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(480, 300) rotate(0)" fill="#0077b6"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(480, 300) rotate(0)" fill="#0077b6"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(480, 300) rotate(0)" fill="#0077b6"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(480, 360) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(480, 360) rotate(90)" fill="#ade8f4"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(480, 360) rotate(90)" fill="#ade8f4"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(480, 360) rotate(90)" fill="#ade8f4"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(480, 360) rotate(90)" fill="#ade8f4"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(480, 360) rotate(90)" fill="#ade8f4"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(480, 420) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(480, 420) rotate(0)" fill="#90e0ef"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(480, 420) rotate(0)" fill="#90e0ef"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(480, 420) rotate(0)" fill="#90e0ef"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(480, 420) rotate(0)" fill="#90e0ef"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(480, 420) rotate(0)" fill="#90e0ef"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(480, 480) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(480, 480) rotate(90)" fill="#48cae4"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(480, 480) rotate(90)" fill="#48cae4"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(480, 480) rotate(90)" fill="#48cae4"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(480, 480) rotate(90)" fill="#48cae4"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(480, 480) rotate(90)" fill="#48cae4"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(480, 540) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(480, 540) rotate(90)" fill="#48cae4"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(480, 540) rotate(90)" fill="#48cae4"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(480, 540) rotate(90)" fill="#48cae4"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(480, 540) rotate(90)" fill="#48cae4"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(480, 540) rotate(90)" fill="#48cae4"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(540, 0) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(540, 0) rotate(90)" fill="#48cae4"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(540, 0) rotate(90)" fill="#48cae4"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(540, 0) rotate(90)" fill="#48cae4"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(540, 0) rotate(90)" fill="#48cae4"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(540, 0) rotate(90)" fill="#48cae4"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(540, 60) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(540, 60) rotate(90)" fill="#023e8a"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(540, 60) rotate(90)" fill="#023e8a"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(540, 60) rotate(90)" fill="#023e8a"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(540, 60) rotate(90)" fill="#023e8a"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(540, 60) rotate(90)" fill="#023e8a"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(540, 120) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(540, 120) rotate(90)" fill="#0077b6"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(540, 120) rotate(90)" fill="#0077b6"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(540, 120) rotate(90)" fill="#0077b6"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(540, 120) rotate(90)" fill="#0077b6"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(540, 120) rotate(90)" fill="#0077b6"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(540, 180) rotate(90)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(540, 180) rotate(90)" fill="#48cae4"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(540, 180) rotate(90)" fill="#48cae4"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(540, 180) rotate(90)" fill="#48cae4"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(540, 180) rotate(90)" fill="#48cae4"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(540, 180) rotate(90)" fill="#48cae4"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(540, 300) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(540, 300) rotate(0)" fill="#ade8f4"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(540, 300) rotate(0)" fill="#ade8f4"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(540, 300) rotate(0)" fill="#ade8f4"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(540, 300) rotate(0)" fill="#ade8f4"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(540, 300) rotate(0)" fill="#ade8f4"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(540, 360) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(540, 360) rotate(0)" fill="#90e0ef"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(540, 360) rotate(0)" fill="#90e0ef"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(540, 360) rotate(0)" fill="#90e0ef"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(540, 360) rotate(0)" fill="#90e0ef"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(540, 360) rotate(0)" fill="#90e0ef"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(540, 420) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(540, 420) rotate(0)" fill="#023e8a"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(540, 420) rotate(0)" fill="#023e8a"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(540, 420) rotate(0)" fill="#023e8a"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(540, 420) rotate(0)" fill="#023e8a"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(540, 420) rotate(0)" fill="#023e8a"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(540, 480) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(540, 480) rotate(0)" fill="#ade8f4"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(540, 480) rotate(0)" fill="#ade8f4"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(540, 480) rotate(0)" fill="#ade8f4"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(540, 480) rotate(0)" fill="#ade8f4"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(540, 480) rotate(0)" fill="#ade8f4"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+    <g name="doubleStripes" mask="url(#mask)" mix-blend-mode="multiply">
+        <rect transform="translate(540, 540) rotate(0)" width="60" height="120" fill="none"></rect>
+        <path transform="translate(540, 540) rotate(0)" fill="#90e0ef"
+            d="M48.0004 120.462H52.0004L52.0004 0.461672L48.0004 0.461672L48.0004 120.462Z"></path>
+        <path transform="translate(540, 540) rotate(0)" fill="#90e0ef"
+            d="M38.0004 0.461671L38.0004 120.462H42.0004L42.0004 0.461671L38.0004 0.461671Z"></path>
+        <path transform="translate(540, 540) rotate(0)" fill="#90e0ef"
+            d="M28.0004 0.461671L32.0004 0.461671L32.0004 120.462H28.0004L28.0004 0.461671Z"></path>
+        <path transform="translate(540, 540) rotate(0)" fill="#90e0ef"
+            d="M18.0004 0.46167L18.0004 120.462H22.0004L22.0004 0.461671L18.0004 0.46167Z"></path>
+        <path transform="translate(540, 540) rotate(0)" fill="#90e0ef"
+            d="M8.00037 0.46167L8.00037 120.462H12.0004L12.0004 0.46167L8.00037 0.46167Z"></path>
+    </g>
+</svg>

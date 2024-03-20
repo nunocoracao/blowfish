@@ -138,6 +138,12 @@ function buildIndex() {
         { name: "content", weight: 0.4 },
       ],
     };
+    /*var finalIndex = [];
+    for (var i in data) {
+      if(data[i].type != "users" && data[i].type != "tags" && data[i].type != "categories"){
+        finalIndex.push(data[i]);
+      }
+    }*/
     fuse = new Fuse(data, options);
     indexed = true;
   });

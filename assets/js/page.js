@@ -1,7 +1,9 @@
 var liked_page = false
+var id = oid ? oid.replaceAll("/", "-") : oid
+var id_likes = oid_likes ? oid_likes.replaceAll("/", "-") : oid_likes
 
 if (typeof auth !== 'undefined') {
-    var id = oid ? oid.replaceAll("/", "-") : oid
+    
     var viewed = localStorage.getItem(id);
 
     if (!viewed) {
@@ -28,7 +30,6 @@ if (typeof auth !== 'undefined') {
             });
     }
 
-    var id_likes = oid_likes ? oid_likes.replaceAll("/", "-") : oid_likes
     var liked = localStorage.getItem(id_likes);
 
     if (liked) {
@@ -97,7 +98,6 @@ function remove_like_article(id_likes) {
 }
 
 function process_article() {
-    var id_likes = oid_likes ? oid_likes.replaceAll("/", "-") : oid_likes
     if (!liked_page) {
         like_article(id_likes)
     } else {
