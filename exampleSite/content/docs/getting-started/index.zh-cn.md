@@ -1,32 +1,32 @@
 ---
-title: "Getting Started"
+title: "入门指南"
 date: 2020-08-15
 draft: false
 description: "All the front matter variables available in Blowfish."
 slug: "getting-started"
-tags: ["installation", "docs"]
-series: ["Documentation"]
+tags: ["安装", "文档"]
+series: ["文档集合"]
 series_order: 3
 ---
 
 {{< alert >}}
-This section assumes you have already [installed the Blowfish theme]({{< ref "docs/installation" >}}).
+本节内容需要已经阅读了 [安装 Blowfish 主题]({{< ref "docs/installation" >}})。
 {{< /alert >}}
 
 </br>
 {{< alert "fire" >}}
-We just launched a CLI tool to help you get started with Blowfish. It will help you with installation and configuration. Install the CLI tool globally using:
+我们刚刚推出了一个 CLI 工具，用来帮助你快速开始 Blowfish。 它将帮助你安装和配置 Blowfish 主题。 可以使用以下命令全局安装 CLI 工具：
 ```bash
 npx blowfish-tools
 ```
 {{< /alert >}}
 
 
-The config files that ship with Blowfish contain all of the possible settings that the theme recognises. By default, many of these are commented out but you can simply uncomment them to activate or change a specific feature.
+Blowfish 中的配置文件中包含了主题需要的所有可能的设置选项。但默认情况下大多数设置都是被注释的，你只需要取消注释就可以激活或者修改设定选项。
 
-## Basic configuration
+## 基础设置
 
-Before creating any content, there are a few things you should set for a new installation. Starting in the `config.toml` file, set the `baseURL` and `languageCode` parameters. The `languageCode` should be set to the main language that you will be using to author your content.
+在刚刚安装完成，创建内容之前，有几个设置需要关注。从 `config.toml` 开始，设置 `baseURL` 和 `languageCode` 参数。`languageCode`参数是用来指定你创作内容的主要语言。
 
 ```toml
 # config/_default/config.toml
@@ -35,12 +35,12 @@ baseURL = "https://your_domain.com/"
 languageCode = "en"
 ```
 
-The next step is to configure the language settings. Although Blowfish supports multilingual setups, for now, just configure the main language.
+下一步是设置语言。尽管 Blowfish 支持多语言，但是 `config.toml` 只能配置一个主语言。
 
-Locate the `languages.en.toml` file in the config folder. If your main language is English you can use this file as is. Otherwise, rename it so that it includes the correct language code in the filename. For example, for French, rename the file to `languages.fr.toml`.
+在 `config/_default` 文件夹中找到 `languages.en.toml`。如果你的主语言是英语，你可以直接使用此文件。否则需要重命名为主语言对应的文件名。例如，如果主语言是法语，那么需要将文件命名为 `languages.fr.toml`。
 
 {{< alert >}}
-Note that the language code in the language config filename should match the `languageCode` setting in `config.toml`.
+注意：语言配置文件名中的语言代码需要与 `config.toml` 中 `languageCode` 相匹配。
 {{< /alert >}}
 
 ```toml
@@ -58,13 +58,13 @@ links = [
 ]
 ```
 
-The `[author]` configuration determines how the author information is displayed on the website. The image should be placed in the site's `assets/` folder. Links will be displayed in the order they are listed.
+`[author]` 属性决定了作者信息的展示方式。 作者的图片信息应该放在 `assets/` 文件夹中。作者相关的链接将会按照排列顺序依次展示。
 
-If you need extra detail, further information about each of these configuration options, is covered in the [Configuration]({{< ref "configuration" >}}) section.
+如果你还需要额外属性，在配置部分会有详细说明。
 
-## Colour schemes
+## 颜色方案
 
-Blowfish ships with a number of colour schemes out of the box. To change the scheme, simply set the `colorScheme` theme parameter. Valid options are `blowfish` (default), `avocado`, `fire`, `ocean`, `forest`, `princess`, `neon`, `bloody`, `terminal`, `marvel`, `noir`, `autumn`, `congo`, and`slate`.
+Blowfish 主题中包含了数个颜色方案，这些方案可以快速使用。如果需要修改方案，只需要简单的设置 `colorScheme` 参数即可。`colorScheme` 可选的值有`blowfish` （默认）、`avocado`、`fire`、`ocean`、`forest`、`princess`、`neon`、`bloody`、`terminal`、`marvel`、`noir`、`autumn`、`congo`和`slate`。
 
 ```toml
 # config/_default/params.toml
@@ -72,9 +72,9 @@ Blowfish ships with a number of colour schemes out of the box. To change the sch
 colorScheme = "blowfish"
 ```
 
-Blowfish defines a three-colour palette that is used throughout the theme. Each main colour contains ten shades which are based upon the colours that are included in [Tailwind](https://tailwindcss.com/docs/customizing-colors#color-palette-reference). The three main colours are used for the header, footer, and accent colours. Here are the colors for each scheme:
+Blowfish 定义了一种由三种主色调构成的配色方案，每种主色调包含了10种子色调，10个色调是借鉴 [Tailwind](https://tailwindcss.com/docs/customizing-colors#color-palette-reference) 中的定义。Blowfish 中定义了多个预置的三色主题，以便在整个主题中使用。
 
-#### Blowfish (default)
+#### Blowfish（默认）
 {{< swatches "#64748b" "#3b82f6" "#06b6d4" >}}
 
 #### Avocado
@@ -116,14 +116,13 @@ Blowfish defines a three-colour palette that is used throughout the theme. Each 
 #### Slate
 {{< swatches "#6B7280" "#64748b" "#6B7280" >}}
 
+尽管这些事默认的方案，你也可以创建属于你自己的，详细信息请参阅 [高级自定义]({{< ref "advanced-customisation#colour-schemes" >}}) 部分。
 
-Although these are the default schemes, you can also create your own. Refer to the [Advanced Customisation]({{< ref "advanced-customisation#colour-schemes" >}}) section for details.
+## 整理内容
 
-## Organising content
+默认情况下， Blowfish 不强制你使用特定类型的内容。这样你可以随意自定义你想要的内容。你可能喜欢用作静态网站页面、博客帖子，或作为作品集中的某个项目。
 
-By default, Blowfish doesn't force you to use a particular content type. In doing so you are free to define your content as you wish. You might prefer _pages_ for a static site, _posts_ for a blog, or _projects_ for a portfolio.
-
-Here's a quick overview of a basic Blowfish project. All content is placed within the `content` folder:
+这是基本 Blowfish 项目的快速概览。所有内容都放在 `content` 文件夹中：
 
 ```shell
 .
@@ -145,11 +144,11 @@ Here's a quick overview of a basic Blowfish project. All content is placed withi
     └── blowfish
 ```
 
-It's important to have a firm grasp of how Hugo expects content to be organised as the theme is designed to take full advantage of Hugo page bundles. Be sure to read the [official Hugo docs](https://gohugo.io/content-management/organization/) for more information.
+一定要熟练掌握在 Hugo 中组织你想要的内容，此主题也旨在充分利用 Hugo 中页面页面捆绑的逻辑。请阅读  [Hugo 官方文档](https://gohugo.io/content-management/organization/) 以获取更多内容。
 
-Blowfish is also flexible when it comes to taxonomies. Some people prefer to use _tags_ and _categories_ to group their content, others prefer to use _topics_.
+Blowfish 在分类方法上面也非常灵活。有的人喜欢使用标签（_tags_）和类别（_categories_）来分组内容，而有的人喜欢用话题（_topics_）。
 
-Hugo defaults to using posts, tags and categories out of the box and this will work fine if that's what you want. If you wish to customise this, however, you can do so by creating a `taxonomies.toml` configuration file:
+Hugo 默认是使用帖子、标签和类别，这三种可以开箱即用的。但如果你希望自定义，那么可以创建 `taxonomies.toml` 配置文件来实现：
 
 ```toml
 # config/_default/taxonomies.toml
@@ -157,15 +156,15 @@ Hugo defaults to using posts, tags and categories out of the box and this will w
 topic = "topics"
 ```
 
-This will replace the default _tags_ and _categories_ with _topics_. Refer to the [Hugo Taxonomy docs](https://gohugo.io/content-management/taxonomies/) for more information on naming taxonomies.
+这将把默认的标签和分类替换成话题。有关 Hugo 中命名分类法的更多内容，可以参考 [Hugo 分类方法](https://gohugo.io/content-management/taxonomies/)。
 
-When you create a new taxonomy, you will need to adjust the navigation links on the website to point to the correct sections, which is covered below.
+当你创建了一个新的分类法时，需要调整网站上的导航链接，以确保新分类可以指向正确的内容，下面会详细介绍。
 
-## Menus
+## 菜单
 
-Blowfish has two menus that can be customised to suit the content and layout of your site. The `main` menu appears in the site header and the `footer` menu appears at the bottom of the page just above the copyright notice.
+Blowfish 有两个可以定制的菜单，以此来适配网站中的内容和布局。`main`菜单出现在网站头部，`footer`菜单出现在页面底部和版权声明上方。
 
-Both menus are configured in the `menus.en.toml` file. Similarly to the languages config file, if you wish to use another language, rename this file and replace `en` with the language code you wish to use.
+这两个菜单都是配置在 `menus.en.toml` 文件中。与语言配置文件类似，如果你希望使用另一种语言，请重命名这个文件并将 `en` 替换为你所希望的语言代码。
 
 ```toml
 # config/_default/menus.toml
@@ -197,19 +196,19 @@ Both menus are configured in the `menus.en.toml` file. Similarly to the language
   url = "https://external-link"
 ```
 
-The `name` parameter specifies the text that is used in the menu link. You can also optionally provide a `title` which fills the HTML title attribute for the link.
+`name` 参数用于指定菜单中的文本。你还可以选择性的提供一个 `title` 标题，它将会被填充到链接的 HTML 代码的 `title` 属性中。
 
-The `pageRef` parameter allows you to easily reference Hugo content pages and taxonomies. It is the quickest way to configure the menu as you can simply refer to any Hugo content item and it will automatically build the correct link. To link to external URLs, the `url` parameter can be used.
+`pageRef` 参数用于引用 Hugo 的分类。这是配置菜单最简单的方法，你无需引用任何 Hugo 内容项，它会自动构建正确的链接。如果你需要链接到外部 URL，那么可以使用 `url` 参数。
 
-The `pre` parameter allows you to place an icon from [Blowfish's icon set]({{< ref "samples/icons" >}}) on the menu entry. This parameter can be used with `name` parameter or by itself. If you want to use multiple menu entries with just icons please set the `identifier`parameter otherwise Hugo will default to the naming tag as the id and probably not display all the menu entries.
+`pre` 参数用于设置菜单条目上的图标，这个图标需要是 [Blowfish 图标集]({{< ref "samples/icons" >}})中的一个。这个参与可以和 `name` 一起使用，也可以单独使用。如果你指向展示图标，请设置 `identifier` 参数，否则 Hugo 将默认使用 `name` 作为 id，可能不会显示所有菜单项。
 
-Menu links will be sorted from lowest to highest `weight`, and then alphabetically by `name`.
+菜单中的多个链接将会根据 `weight` 权重参数进行从低到高排序，如果权重值一样那么会按照 `name` 字母顺序排序。
 
-Both menus are completely optional and can be commented out if not required. Use the template provided in the file as a guide.
+这两个菜单都是完全可选的，如果不需要也可以注释掉。你可以使用文件中提供的模板作为示例。
 
-### Nested menus
+### 嵌套菜单
 
-The theme also supports nested menus. In order to use them you just need to define a parent entry in `menu.toml` and its sub-menus using the `parent` parameter to reference the parent. All properties can be used for sub-menus. `pageRef` and `url` can also be used in the parent entry. Nested menus are only available in the main menu not for the footer.
+Blowfish 还支持嵌套菜单。你需要在`menu.toml` 中定义一个父级菜单项及其子菜单，使用 `parent` 可以指定子菜单项的父级。在上面菜单部分提到的所有参数一样适用于子菜单项，同样地，`pageRef` 和 `url` 也可以在父菜单项中使用。还需要注意一点，嵌套菜单只能在 `main` 菜单中可用，即网站头部的菜单。
 
 ```toml
 # config/_default/menus.toml
@@ -238,10 +237,10 @@ The theme also supports nested menus. In order to use them you just need to defi
   weight = 20
 ```
 
-### Sub-Navigation menu
+### 子导航菜单
 
-Additionally, you can also configure a sub-navigation menu. Just define new menu entries as `subnavigation` in `menus.toml`.
-This will render a second line with sub-categories below the main header menu.
+此外，你可以设置一个子导航菜单。只需要在 `menus.toml` 中将新的菜单项定义为 `subnavigation` 即可。
+这将在主菜单下面展示第二行，其中包含子类别项。
 
 ```toml
 # config/_default/menus.toml
@@ -257,16 +256,17 @@ This will render a second line with sub-categories below the main header menu.
   weight = 20
 ```
 
-The default `name` is the `pageRef` title cased.
+默认的 `name` 是 `pageRef` 的首字母大写。
 
-## Thumbnails & Backgrounds
+## 缩略图 & 背景
 
-Blowfish was built so it would be easy to add visual support to your articles. If your familiar with Hugo article structure, you just need to place an image file (almost all formats are supported but we recommend `.png` or `.jpg`) that starts with `feature*` inside your article folder. And that's it, Blowfish will then be able to both use the image as a thumbnail within your website as well as for <a target="_blank" href="https://oembed.com/">oEmbed</a> cards across social platforms. 
+Blowfish 的创立开端旨在便于为文章添加视觉效果。如果你熟悉 Hugo 的文章结构，只需要在你文章所在的文件夹中，放置一个以`feature*`开头的图像文件（Blowfish支持所有格式的文件，但更推荐使用 `.png` 或 `.jpg`）。就这样，Blowfish 就能够将图像文件作为文章的缩略图，而且能够在社交平台的 `<a target="_blank" href="https://oembed.com/">oEmbed</a>` 卡片中使用。
 
-[Here]({{< ref "thumbnails" >}}) is also a guide with more info and a [sample]({{< ref "thumbnail_sample" >}}) if you want to see how you can do it.
+[这里]({{< ref "thumbnails" >}}) 有一个指南，提供了个人更多的内容和[示例]({{< ref "thumbnail_sample" >}})。如果你想看看具体如何操作可以看这里。
 
-Additionally, Blowfish also supports background hero images in articles and lists. In order to use a different image than the featured one, add an image file in which the name starts with `background*`.
+Blowfish 还支持在文章和列表中使用背景图。为了使与缩略图不同，可以添加一个名为 `background*` 开头的图像文件。当然如果你没有设置背景图片，Blowfish 会默认使用缩略图作为背景图。
 
-## Detailed configuration
+## 详细配置
 
-The steps above are the bare minimum configuration. If you now run `hugo server` you will be presented with a blank Blowfish website. Detailed configuration is covered in the [Configuration]({{< ref "configuration" >}}) section.
+上面的步骤介绍了最基本的配置。如果你现在运行 `hugo server`，你将会看到一个空白的 Blowfish 网站。更加详细的内容在[配置]({{< ref "configuration" >}})中介绍。
+

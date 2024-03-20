@@ -2,10 +2,10 @@
 title: 进阶自定义
 date: 2020-08-08
 draft: false
-description: "Learn how to build Blowfish manually."
+description: "了解如何手动构建 Blowfish。"
 slug: "advanced-customisation"
-tags: ["advanced", "css", "docs"]
-series: ["Documentation"]
+tags: ["高级", "CSS", "文档"]
+series: ["文档集"]
 series_order: 13
 ---
 
@@ -25,7 +25,7 @@ Blowfish 旨在利用所有标准的 Hugo 参数操作。它旨在允许在不�
 
 为了实现这一点，您永远不应该直接手动更改任何主题核心文件。无论你是使用 Hugo 模块安装，还是作为 git 子模块安装，还是手动将主题安装在 `themes/` 目录中，你都应该始终保持这些主题文件不变。
 
-自定义主题的正确方法是使用 Hugo 强大的 [文件查找顺序](https://gohugo.io/templates/lookup-order/) 来实现覆盖文件的目的。总之，查找顺序可确保包含在项目目录中的所有文件都将优先于主题文件。
+调整主题行为的正确方法是通过使用 Hugo 强大的[文件查找顺序](https://gohugo.io/templates/lookup-order/)覆盖文件。总之，查找顺序确保了包含在你的项目目录中的文件都会优先于主题文件。
 
 例如，如果您想覆盖 Blowfish 中的主要文章模板， 您可以创建自己的 `layouts/_default/single.html` 文件并将其放在项目的根目录中。然后，此文件将覆盖主题文件中的 `single.html` 同时也不会对主题文件本身进行更改。 这适用于任何主题文件：HTML 模板、partials、shortcodes、config 文件、data、assets 等等。
 
@@ -59,6 +59,7 @@ Blowfish 附带了多种开箱即用的配色方案。想要更改基本配色�
 **注意：** 手动生成这些文件可能会比较困难，我编写了一个 `nodejs` 工具 [Fugu](https://github.com/nunocoracao/fugu) 来帮助解决这个问题。简而言之，您只需要提供调色板的三个主要 `hex` 值，程序将生成一个可以直接导入到 Blowfish 中的 css 文件。
 {{< /alert >}}
 
+Blowfish 主题定义了一个以三个主色调为核心的颜色方案，这三个主色调分别作为 `neutral`、`primary` 和 `secondary`，其中每一个主色调对应了10个具体的颜色。
 
 Blowfish 使用一种定义了整个主题中使用的三色调色板。这三种颜色被定义为 `neutral` 、 `primary` 和 `secondary` 颜色，每种颜色包含十种色调。
 
@@ -149,7 +150,7 @@ module.exports = {
     "./themes/blowfish/content/**/*.{html,md}",
   ],
 
-  // and more...
+  // 更多...
 };
 ```
 
@@ -164,8 +165,8 @@ module.exports = {
 ├── assets
 │   └── css
 │       └── compiled
-│           └── main.css  # this is the file we will generate
-├── config  # site config
+│           └── main.css  # 这是我们生成的文件
+├── config  # 站点配置
 │   └── _default
 ├── content  # site content
 │   ├── _index.md
@@ -173,7 +174,7 @@ module.exports = {
 │   │   └── _index.md
 │   └── blog
 │       └── _index.md
-├── layouts  # custom layouts for your site
+├── layouts  # 站点的自定义布局
 │   ├── partials
 │   │   └── extend-article-link/simple.html
 │   ├── projects
@@ -181,7 +182,7 @@ module.exports = {
 │   └── shortcodes
 │       └── disclaimer.html
 └── themes
-    └── blowfish  # git submodule or manual theme install
+    └── blowfish  # Git 子模块或本地复制安装
 ```
 
 此示例结构添加了一个新自定义的 `projects` 内容类型，具有自定义的 layout 以及自定义的 shortcodes 和扩展的 partials 。如果项目遵循类似结构，所需要做的就是仅仅是重新编译 `main.css` 文件。
@@ -204,7 +205,10 @@ cd ../..
 ./themes/blowfish/node_modules/tailwindcss/lib/cli.js -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit
 ```
 
-由于涉及到路径，这是一个相对不易读的命令，但本质上你是在调用 Tailwind CLI 并将其传递给 Tailwind 配置文件（我们上面看到的那个）的位置，在那里可以找到主题的 `main.css` 文件以及编译后的 CSS 文件（它将在编译网页时生成到 Hugo 项目的 `assets/css/compiled/` 文件夹）。
+这个命令稍微有点复杂，因为涉及到几个路径。但本质上你是在调用 Tailwind CLI 并提供下面三个参数： 
+- Tailwind 配置文件 `tailwind.config.js`
+- 主题的 `main.css` 文件
+- 编译产出后的 CSS 文件的位置 `assets/css/compiled/`
 
 配置文件将自动检查项目中以及主题中的所有内容和布局，并构建一个新的 CSS 文件，其中包含网站所需的所有 CSS。由于 Hugo 处理文件层次结构的方式，此文件现在将自动覆盖主题附带的文件。
 

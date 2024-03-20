@@ -1,89 +1,91 @@
 ---
-title: "Homepage Layout"
+title: "主页布局"
 date: 2020-08-13
 draft: false
-description: "Configuring the homepage layout in the Blowfish theme."
+description: "在 Blowfish 主题中设置主页布局。"
 slug: "homepage-layout"
-tags: ["homepage", "layouts", "docs"]
-series: ["Documentation"]
+tags: ["主页", "布局", "文档"]
+series: ["文档集"]
 series_order: 5
 ---
 
-Blowfish provides a fully flexible homepage layout. There are two main templates to choose from with additional settings to adjust the design. Alternatively, you can also provide your own template and have complete control over the homepage content.
+Blowfish 提供了一个完全灵活的主页布局。你可以选择两种主要模板，并提供了额外的参数来帮助调整设计。当然，你也可以提供自己的模板，完全控制主页的内容。
 
-The layout of the homepage is controlled by the `homepage.layout` setting in the `params.toml` configuration file. Additionally, all layouts have the option to include a listing of [recent articles](#recent-articles).
+主页布局由 `params.toml` 配置文件中的 `homepage.layout` 参数来控制的。此外所有布局都默认包括 [最近文章](#recent-articles)。
 
-## Profile layout
+## 个人资料布局 (profile)
 
-The default layout is the profile layout, which is great for personal websites and blogs. It puts the author's details front and centre by providing an image and links to social profiles.
+默认的布局是 profile 布局，这非常适合个人网站和博客。它将作者的详细信息置于中心位置，并附带了头像和社交平台的链接。
 
 <img class="thumbnailshadow" src="img/home-profile.png"/>
 
-The author information is provided in the languages configuration file. Refer to the [Getting Started]({{< ref "getting-started" >}}) and [Language Configuration]({{< ref "configuration##language-and-i18n" >}}) sections for parameter details.
+作者信息是在语言配置文件中提供的。具体的参数详情，请参考[快速入门]({{< ref "getting-started" >}})和[语言配置]({{< ref "configuration##language-and-i18n" >}})的内容。
 
-Additionally, any Markdown content that is provided in the homepage content will be placed below the author profile. This allows extra flexibility for displaying a bio or other custom content using shortcodes.
+此外，主页内容中提供的任何 Markdown 都会显示在作者资料的下方。这对使用短代码显示简介或其他主页的自定义内容提供了更多的灵活性。
 
-To enable the Profile layout, set `homepage.layout = "profile"` in the `params.toml` configuration file.
+如果想要启用 profile 布局，请在 `params.toml` 配置文件中设置 `homepage.layout = "profile"`。
 
-## Page layout
+## 页面布局（page）
 
-The page layout is simply a normal content page that displays your Markdown content. It's great for static websites and provides a lot of flexibility.
+页面布局只会简单的显示你的 Markdown 内容，这种方式非常适合静态网站，并提供了很多灵活性。
 
 <img class="thumbnailshadow" src="img/home-page.png"/>
 
-To enable the Page layout, set `homepage.layout = "page"` in the `params.toml` configuration file.
+如果想要启用 page 布局，请在 `params.toml` 配置文件中设置 `homepage.layout = "page"`。
 
-## Hero layout
+## 英雄布局（hero）
 
-The hero layout brings together ideas from the profile and card layouts. This one not only displays information on the author of the site but it also loads your markdown beneath it.
+英雄布局（hearo）组合了个人资料布局（profile）和卡片布局（card）。它不仅显示了网站作者的个人信息，还在个人资料下方加载了你的 markdown 内容。 
 
 <img class="thumbnailshadow" src="img/home-hero.png"/>
 
-To enable the Hero layout, set `homepage.layout = "hero"` and `homepage.homepageImage` in the `params.toml` configuration file.
+如果想要启用 hero 布局，请在 `params.toml` 配置文件中设置 `homepage.layout = "hero"`。
 
-## Background layout
+## 背景布局（background）
 
-The background layout is a more smooth version of the hero layout. As in the Hero layout, this one also displays both information on the author of the site and loads your markdown beneath it.
+背景布局（background）相对于英雄布局（hero）更叫平滑。和英雄布局（hero）类似，它也显示了网站作者的信息，并在其下方加载 markdown 内容。
 
 <img class="thumbnailshadow" src="img/home-background.png"/>
 
-To enable the Background layout, set `homepage.layout = "background"` and `homepage.homepageImage` in the `params.toml` configuration file.
+如果想要启用 background 布局，请在 `params.toml` 配置文件中设置 `homepage.layout = "background"` 和 `homepage.homepageImage` 。
 
-## Card layout
+## 卡片布局（card）
 
-The card layout is an extension of the page layout. It provides the same level of flexibility by also displaying your markdown content and adds a card image to display visual content.
+卡片模板（card）是在页面布局上的扩展，它同样提供了灵活性。在显示了你的 markdown 内容的同时，展示了一个卡片组件中的图像。
 
 <img class="thumbnailshadow" src="img/home-card.png"/>
 
-To enable the Card layout, set `homepage.layout = "card"` and `homepage.homepageImage` in the `params.toml` configuration file. 
+如果想要启用 card 布局，请在 `params.toml` 配置文件中设置 `homepage.layout = "card"` 和 `homepage.homepageImage` 。
 
+## 自定义布局（custom）
 
-## Custom layout
+如果以上几个布局还没有满足你的需求，你还可以自己创建自定义布局。这样你可以基于一个空白的画布，来完全控制页面上的内容。
 
-If the built-in homepage layouts aren't sufficient for your needs, you have the option to provide your own custom layout. This allows you to have total control over the page content and essentially gives you a blank slate to work with.
+如果想要启用 custom 布局，请在 `params.toml` 配置文件中设置 `homepage.layout = "custom"` 。
 
-To enable the Custom layout, set `homepage.layout = "custom"` in the `params.toml` configuration file.
+配置好参数后，在  `layouts/partials/home` 目录下创建一个 `custom.html` 文件。 `custom.html` 文件中定义的任何内容都会被放置在网站主页的内容区域。你可以使用 HTML、Tailwind 或 Hugo 模板函数来定义你的布局。
 
-With the configuration value set, create a new `custom.html` file and place it in `layouts/partials/home/custom.html`. Now whatever is in the `custom.html` file will be placed in the content area of the site homepage. You may use whatever HTML, Tailwind, or Hugo templating functions you wish to define your layout.
+如果你想在自定义布局上添加 [最近文章](#recent-articles)，请使用 `recent-articles/main.html` 中的内容。
 
-To include [recent articles](#recent-articles) on the custom layout, use the `recent-articles/main.html` partial.
+如果你想在网站[主页]({{< ref "/" >}})使用自定义布局来实现在个人资料和页面布局之间的切换。这里的[GitHub 仓库](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/layouts/partials/home/custom.html)有一个例子可以参考。
 
-As an example, the [homepage]({{< ref "/" >}}) on this site uses the custom layout to allow toggling between the profile and page layouts. Visit the [GitHub repo](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/layouts/partials/home/custom.html) to see how it works.
+## 最近文章
 
-## Recent articles
-
-All homepage layouts have the option of displaying recent articles below the main page content. To enable this, simply set the `homepage.showRecent` setting to `true` in the `params.toml` configuration file.
+所有的主页布局都可以在主要内容下方显示最近文章。如果想要启用此功能，只需要在 `params.toml` 配置文件中将 `homepage.showRecent` 参数设置为 `true` 即可。
 
 <img class="thumbnailshadow" src="img/home-list.png"/>
 
-The articles listed in this section are derived from the `mainSections` setting which allows for whatever content types you are using on your website. For instance, if you had content sections for _posts_ and _projects_ you could set this setting to `["posts", "projects"]` and all the articles in these two sections would be used to populate the recent list. The theme expects this setting to be an array so if you only use one section for all your content, you should set this accordingly: `["blog"]`.
+这部分会列举出你在 `mainSections` 参数中设置的文章列表，此参数允许你使用网站上的任何内容类型。例如，如果你想在最新文章中展示 _posts_ 和 _projects_ 内容中的文章，你可以将此值设置为 `["posts", "projects"]`，这两个部分中的所有文章都会填充到最近文章列表中。Blowfish 主题期望这个参数是一个数组，如果你只想设置一个部分的所有文章，你可以设置为 `["blog"]` 即可。
 
-## Thumbnails
+## 缩略图
 
-Blowfish was built so it would be easy to add visual support to your articles. If your familiar with Hugo article structure, you just need to place an image file (almost all formats are supported bue we recommend `.png` or `.jpg`) that starts with `feature*` inside your article folder. And that's it, Blowfish will then able to both use the image as a thumbnail within your website as well as for <a target="_blank" href="https://oembed.com/">oEmbed</a> cards across social platforms. 
+Blowfish 为你的文章提供了视觉支持。如果你熟悉 Hugo 的文章结构，只需要在你的文章对应的文件夹中防止一个以`feature*`开头的图像文件即可，图像类型几乎支持所有格式，更推荐使用`.png` 或者 `.jpg`。这样一来，Blowfish 将会在你的网站内使用该图片作为缩略图，并用在社交媒体平台上的 <a target="_blank" href="https://oembed.com/">oEmbed</a> 卡片中。 
 
-[Here]({{< ref "thumbnails" >}}) is a guide with more info and a [sample]({{< ref "thumbnail_sample" >}}) if you want to see an example.
+[这是]({{< ref "thumbnails" >}})有更多详细内容，并且有一个便于理解的[示例]({{< ref "thumbnail_sample" >}})。
 
-## Card Gallery
+## 卡片画廊
 
-Blowfish also supports displaying the standard lists of articles as card galleries. You can config this both for the recent section in the homepage and for lists of articles across your website. For homepage you can use `homepage.cardView` and `homepage.cardViewScreenWidth`; and for lists use `list.cardView` and `list.cardViewScreenWidth`. Check the [Configuration docs]({{< ref "configuration" >}}) for more details, and the homepage for a live demo.
+Blowfish 支持将标准的文章列表显示为卡片画廊，你可以在主页的最近文章和网站上的文章列表中配置这个选项。
+- 对于主页可以使用 `homepage.cardView` 和 `homepage.cardViewScreenWidth` 参数
+- 对于列表页可以使用 `list.cardView` 和 `list.cardViewScreenWidth` 参数
+请查看 [配置文件]({{< ref "configuration" >}}) 以获取更多信息。

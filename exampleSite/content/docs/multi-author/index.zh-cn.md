@@ -1,11 +1,11 @@
 ---
-title: "Multiple Authors"
+title: "多创作者模式"
 date: 2020-08-10
 draft: false
-description: "Configure multiple authors for your articles."
+description: "为你的文章设置多个作者。"
 slug: "multi-author"
-tags: ["authors", "config", "docs"]
-series: ["Documentation"]
+tags: ["作者", "配置", "文档"]
+series: ["文档集"]
 series_order: 10
 showAuthor: true
 authors:
@@ -13,19 +13,17 @@ authors:
 showAuthorsBadges : false 
 ---
 
+一个网站会有多个创作者共同贡献内容，所以需要再整个网站中默认使用多创作者。对于这种情况，Blowfish 允许用户使用多创作者功能拓展创作者列表。
 
-Some websites have more than one author contributing with content and therefore require more than a single default author across the entire website. For those use-cases, Blowfish allows users to extend the list of authors using the multiple authors feature. 
+为了保持向后兼容，这个功能仅允许定义额外的创作者，并不会以任何方式修改之前通过配置文件添加的创作者。
 
-To keep everything backwards compatible, this feature only allows the definition of extra authors and does not change in any way the previous author functionality which is used via config files.  
+## 新建创作者
 
+新建创作者的第一步是设置一个 `./data/authors` 文件夹。然后，你可以在里面简单的添加新创作者的 `json` 文件。文件的名称是你在文章引用该作者时需要指定的 `key`。
 
-## Create Authors
+例如，在 `./data/authors` 文件夹中新建一个 `nunocoracao.json` 文件。文件的内容示例如下。`name`、`image`、`bio` 和 `social` 是目前创作者文件支持的4个参数，这与你在 `languages.[language-code].toml` 配置文件中的默认创作者配置类似。
 
-The first step to create new authors is to set up a new folder in `./data/authors`. Then you can simply add new `json` files inside, one for each new author. The name of the file will be the `key` for that author when referencing it in your articles. 
-
-As an example, let’s create a file called `nunocoracao.json` within `./data/authors`. The contents of the file should be similar to the ones below. `name`, `image`, `bio`, and `social` are the 4 parameters supported right for authors. They mimic the configurations available for the default author in the config files.
-
-_Note: the key in the social object will be used to fetch one of the theme’s icons, feel free to use any of the icons available in your setup._
+_注意：社交参数中的 `key` 将会默认获取主题的图标 icon，当然你也可以在 `assests/icons` 文件夹中设置任何图标。_
 
 ```json
 {
@@ -45,19 +43,18 @@ _Note: the key in the social object will be used to fetch one of the theme’s i
 }
 ```
 
+## 在文章中引用创作者
 
-## Reference Authors in Articles
+你已经新建好了创作者，下一步让我们在文章中引用它。在下面的实例中，我们使用前面新建的创作者 `key` 来引用它。
 
-Now that you created one author, the next step is to reference it in one or more articles. In the example below, we reference the author created in the previous step using its `key`.
-
-This will render an extra author using the data provided in the `json` file. This feature does not change in any way the default author configured for the overall site, and therefore, you can control both separately. Using the `showAuthor` parameter, you can configure whether to show the default author, that is the normal use-case for a single author blog. The new `authors` front-matter parameter allows you to define authors specifically to an article, and they will be rendered independently of the configurations for the default site author.
+Blowfish 将会使用额外创作者对应`json`文件中的数据，以帮助在文章中渲染此作者。这个功能不会以改变整个站点配置的默认作者，因此你可以分别控制他们。使用 `showAuthor` 参数，可以配置是否显示默认作者，这适用于单创作者的博客。扉页中的 `authors` 参数允许你为文章定义额外的创作者，这里的创作者将独立于整个站点中的默认创作者。
 
 ```md
 ---
-title: "Multiple Authors"
+title: "多创作者"
 date: 2020-08-10
 draft: false
-description: "Configure multiple authors for your articles."
+description: "为你的文章设置多个作者。"
 slug: "multi-author"
 tags: ["authors", "config", "docs"]
 showAuthor: true
@@ -67,13 +64,14 @@ showAuthorsBadges : false
 ---
 ```
 
-In the example, which matches the markdown of the current page, both the default author and the new one will be displayed. You can scroll now to see the outcome.
+上面这个示例和当前这个页面一样，将显示默认创作者和新创作者。你可以滚动此页面来查看实际效果。
 
-## Create the Authors Taxonomy
+## 新建创作者分类法
 
+如果你想要获取每个作者的文章列表，需要配置 `authors` 分类，这会让你了解到一些更有趣的配置。这个是多创作者模式中的一个可选步骤。
 To get lists of articles for each of your authors you can configure the `authors` taxonomy, which opens up some more configurations that might be interesting. This is an optional step in the process that is not required to display the authors in your articles.
 
-First step is to configure the `authors` taxonomy in your `config.toml` file, like in the example below. Even though `tag` and `category` are defined by default with Hugo, once you add a specific taxonomies section you need to add them again otherwise the site will not process them.
+第一步是在 `config.toml` 文件中配置 `authors` 分类法，如下所示。尽管 `tag` 和 `category` 默认是 Hugo 定义的，但只要你添加了一个特定的分类法，就需要显式添加 `tag` 和 `category`，否则基于 Hugo 的文件加载顺序，站点将不会处理 `tag` 和 `category`。
 
 ```toml
 [taxonomies]
@@ -82,9 +80,9 @@ First step is to configure the `authors` taxonomy in your `config.toml` file, li
   author = "authors"
 ```
 
-And that’s just about it. Now you will have pages that reference your authors and, for each, show the respective list of articles where they participate. You can also use the `article.showAuthorsBadges` on the config file, or `showAuthorsBadges` on each article to chose whether to display the `authors` taxonomy as badges in each post item. As an example, this doc is configured to not display authors but if you look at the sample referenced below you will see the authors displayed as badges.
+这样一来，你将会有一个所有创作者列表的页面，并且每个创作者都会显示他们参与创作的文章列表。如果你想在每个文章中以徽章的形式中展示作者，有两种方式：在全局配置文件添加 `article.showAuthorsBadges` 参数 或 在每篇文章的扉页参数中配置 `showAuthorsBadges`参数。
 
-Lastly, you can add more detail to each author page so that it displays a little bio, links, or whatever information fits your use-case. To achieve that, create a folder with the `key` to each author inside `./content/authors` and inside each folder place a `_index.md` file. For the example above, we would end up with a `.content/authors/nunocoracao/_index.md` file. Inside, you can configure the actual name of the author and the contents of their page. Authors in this documentation website are configured like this, so you can have a look by playing around with the site.
+最后，你可以为每个创作者页面添加更多细节内容，以便显示简介、链接或者适合你需求的任何其他信息。为了实现这一点，需要在 `./content/authors` 文件夹中为每个创作者添加一个目录名为 `key` 的文件夹，并在文件夹中添加 `_index.md` 文件，对于上面的例子，我们会得到一个 `.content/authors/nunocoracao/_index.md` 文件。在这个文件中你可以添加创作者的实际姓名和他们自己的个人信息页面。本文档站点中的作者就是这么配置的，你可以在文档站点中查看实际效果。
 
 ```md
 ---
@@ -95,8 +93,8 @@ Nuno's awesome dummy bio.
 
 ```
 
-## Sample
+## 示例
 
-This sample sample below shows an example where the default site author is turned off and the article has multiple authors.
+下面这个示例，介绍了演示了如何关闭站点默认创作者，并在文章中添加多创作者。
 
 {{< article link="/samples/multiple-authors/" >}}

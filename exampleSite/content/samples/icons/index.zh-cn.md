@@ -1,22 +1,22 @@
 ---
-title: "Icons"
+title: "图标"
 date: 2020-08-14
 lastmod: 2022-03-09
 draft: false
-description: "Icon support in Blowfish."
+description: "Blowfish 支持的图标。"
 slug: "icons"
-tags: ["icons", "sample", "shortcodes"]
+tags: ["图标", "示例", "短代码"]
 type: 'sample'
 ---
 
-Blowfish has built-in support for a number of [FontAwesome 6](https://fontawesome.com/icons) icons. These can be included in your website through either the [icon partial]({{< ref "docs/partials#icon" >}}) or [icon shortcode]({{< ref "docs/shortcodes#icon" >}}).
+Blowfish 内置了许多 [FontAwesome 6](https://fontawesome.com/icons) 中的图标。你可以使用 [图标部分]({{< ref "docs/partials#icon" >}})或者[图标短代码]({{< ref "docs/shortcodes#icon" >}})将这些图标包含在你的网站中。
 
-Additionally, custom icons are also fully supported. Simply provide your own SVG icon assets by placing them in the `assets/icons/` directory in the root of your project. Any icons in the icons directory will then be available to use throughout the theme. In order achieve automatic color filling every SVG path needs fill="currentColor" XML attribute.
+当然，Blowfish 完全支持自定义图标。只需要将自己的 SVG 文件放在 `assets/icons/` 目录下即可。图标目录中的任何图标可以在整个主题中使用。为了实现自动填充颜色，每个 SVG 图标源码中必须添加 `fill="currentColor"` 属性。
 
-The full list of built-in icons and their corresponding names can referenced below.
+下面是所有的内置图标及其名称。
 
-| Icon name            | Preview                           |
-| -------------------- | --------------------------------- |
+| 图标名称                 | 预览                                |
+|----------------------|-----------------------------------|
 | amazon               | {{< icon amazon >}}               |
 | apple                | {{< icon apple >}}                |
 | bars                 | {{< icon bars >}}                 |
