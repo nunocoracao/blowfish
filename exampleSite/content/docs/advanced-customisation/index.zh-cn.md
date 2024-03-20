@@ -1,5 +1,5 @@
 ---
-title: "Advanced Customisation"
+title: 进阶自定义
 date: 2020-08-08
 draft: false
 description: "Learn how to build Blowfish manually."
@@ -9,33 +9,33 @@ series: ["Documentation"]
 series_order: 13
 ---
 
-There are many ways you can make advanced changes to Blowfish. Read below to learn more about what can be customised and the best way of achieving your desired result.
+您可以通过多种方式对 Blowfish 进行高级自定义。请阅读下文，了解更多可自定义的内容以及实现想要效果的最佳方法。
 
-If you need further advice, post your questions on [GitHub Discussions](https://github.com/nunocoracao/blowfish/discussions).
+如果您需要更多指导，请在 [GitHub Discussions](https://github.com/nunocoracao/blowfish/discussions) 上提问。
 
-## Hugo project structure
+## Hugo 项目结构
 
-Before leaping into it, first a quick note about [Hugo project structure](https://gohugo.io/getting-started/directory-structure/) and best practices for managing your content and theme customisations.
+在开始讨论之前，首先简要介绍一下 [Hugo 项目结构](https://gohugo.io/getting-started/directory-struct/) 以及管理内容和主题自定义的最佳方式。
 
 {{< alert >}}
-**In summary:** Never directly edit the theme files. Only make customisations in your Hugo project's sub-directories, not in the themes directory itself.
+**总结：** 切勿直接编辑主题文件。一定要仅在 Hugo 项目的子目录中进行自定义，而不是在主题目录中进行自定义。
 {{< /alert >}}
 
-Blowfish is built to take advantage of all the standard Hugo practices. It is designed to allow all aspects of the theme to be customised and overridden without changing any of the core theme files. This allows for a seamless upgrade experience while giving you total control over the look and feel of your website.
+Blowfish 旨在利用所有标准的 Hugo 参数操作。它旨在允许在不更改任何核心主题文件的情况下自定义和覆盖主题的所有方面。这也给您提供了一种无缝升级的体验，同时让您完全控制网站的外观和感觉。
 
-In order to achieve this, you should never manually adjust any of the theme files directly. Whether you install using Hugo modules, as a git submodule or manually include the theme in your `themes/` directory, you should always leave these files intact.
+为了实现这一点，您永远不应该直接手动更改任何主题核心文件。无论你是使用 Hugo 模块安装，还是作为 git 子模块安装，还是手动将主题安装在 `themes/` 目录中，你都应该始终保持这些主题文件不变。
 
-The correct way to adjust any theme behaviour is by overriding files using Hugo's powerful [file lookup order](https://gohugo.io/templates/lookup-order/). In summary, the lookup order ensures any files you include in your project directory will automatically take precedence over any theme files.
+自定义主题的正确方法是使用 Hugo 强大的 [文件查找顺序](https://gohugo.io/templates/lookup-order/) 来实现覆盖文件的目的。总之，查找顺序可确保包含在项目目录中的所有文件都将优先于主题文件。
 
-For example, if you wanted to override the main article template in Blowfish, you can simply create your own `layouts/_default/single.html` file and place it in the root of your project. This file will then override the `single.html` from the theme without ever changing the theme itself. This works for any theme files - HTML templates, partials, shortcodes, config files, data, assets, etc.
+例如，如果您想覆盖 Blowfish 中的主要文章模板， 您可以创建自己的 `layouts/_default/single.html` 文件并将其放在项目的根目录中。然后，此文件将覆盖主题文件中的 `single.html` 同时也不会对主题文件本身进行更改。 这适用于任何主题文件：HTML 模板、partials、shortcodes、config 文件、data、assets 等等。
 
-As long as you follow this simple practice, you will always be able to update the theme (or test different theme versions) without worrying that you will lose any of your custom changes.
+只要您遵循这个方法，您将始终能够无缝更新主题（或测试不同的主题版本），而不必担心会丢失任何自定义更改。
 
-## Change image optimization settings
+## 修改图片优化设置
 
-Hugo has various builtin methods to resize, crop and optimize images.
+Hugo 有各种内置的方法来调整大小，裁剪和优化图像。
 
-As an example - in `layouts/partials/article-link/card.html`, you have the following code:
+举个例子，如果在 `layouts/partials/article-link/card.html` 中，您有以下代码：
 
 ```go
 {{ with .Resize "600x" }}
@@ -43,26 +43,26 @@ As an example - in `layouts/partials/article-link/card.html`, you have the follo
 {{ end }}
 ```
 
-The default behavior of Hugo here is to resize the image to 600px keeping the ratio.
+Hugo 将默认把图像大小调整为 600px 同时保持比例不变。
 
-It is worth noting here that default image configurations such as [anchor point](https://gohugo.io/content-management/image-processing/#anchor) can also be set in your [site configuration](https://gohugo.io/content-management/image-processing/#processing-options) as well as in the template itself.
+值得注意的是，默认的图像设置比如[锚点](https://gohugo.io/content-management/image-processing/#anchor) 也可以在你的 [站点配置](https://gohugo.io/content-management/image-processing/#processing-options) 中修改，就和修改模板一样。
 
-See the [Hugo docs on image processing](https://gohugo.io/content-management/image-processing/#image-processing-methods) for more info.
+想要了解更多信息，请再参考 [有关图像处理的 Hugo 文档](https://gohugo.io/content-management/image-processing/#image-processing-methods)。
 
-## Colour schemes
+## 配色方案
 
-Blowfish ships with a number of colour schemes out of the box. To change the basic colour scheme, you can set the `colorScheme` theme parameter. Refer to the [Getting Started]({{< ref "getting-started#colour-schemes" >}}) section to learn more about the built-in schemes.
+Blowfish 附带了多种开箱即用的配色方案。想要更改基本配色方案，您可以设置 `colorScheme` 主题参数。请参阅[快速上手#配色方案]({{< ref "getting-started#colour-schemes" >}}) 以了解更多内置方案。
 
-In addition to the default schemes, you can also create your own and re-style the entire website to your liking. Schemes are created by by placing a `<scheme-name>.css` file in the `assets/css/schemes/` folder. Once the file is created, simply refer to it by name in the theme configuration.
+除了默认方案之外，您还可以创建自己的方案并根据自己的喜好重新设计整个网站的样式。 通过在 `assets/css/schemes/` 中创建 `<scheme-name>.css` 文件可以创建新的配色方案。创建文件后，只需在主题配置中按名称引用它即可。
 
 {{< alert "github">}}
-**Note:** generating these files manually can be hard, I've built a `nodejs` terminal tool to help with that, [Fugu](https://github.com/nunocoracao/fugu). In a nutshell, you pass the main three `hex` values of your color palette and the program will output a css file that can be imported directly into Blowfish.
+**注意：** 手动生成这些文件可能会比较困难，我编写了一个 `nodejs` 工具 [Fugu](https://github.com/nunocoracao/fugu) 来帮助解决这个问题。简而言之，您只需要提供调色板的三个主要 `hex` 值，程序将生成一个可以直接导入到 Blowfish 中的 css 文件。
 {{< /alert >}}
 
 
-Blowfish defines a three-colour palette that is used throughout the theme. The three colours are defined as `neutral`, `primary` and `secondary` variants, each containing ten shades of colour.
+Blowfish 使用一种定义了整个主题中使用的三色调色板。这三种颜色被定义为 `neutral` 、 `primary` 和 `secondary` 颜色，每种颜色包含十种色调。
 
-Due to the way Tailwind CSS 3.0 calculates colour values with opacity, the colours specified in the scheme need to [conform to a particular format](https://github.com/adamwathan/tailwind-css-variable-text-opacity-demo) by providing the red, green and blue colour values.
+由于 Tailwind CSS 3.0 计算不透明度颜色值的方式，方案中指定的颜色需要通过提供红色、绿色和蓝色值来[符合特定格式](https://github.com/adamwathan/tailwind-css-variable-text-opacity-demo) 。
 
 ```css
 :root {
@@ -70,19 +70,19 @@ Due to the way Tailwind CSS 3.0 calculates colour values with opacity, the colou
 }
 ```
 
-This example defines a CSS variable for the `primary-500` colour with a red value of `139`, green value of `92` and blue value of `246`.
+此示例为一个 `primary-500` 的 CSS 颜色变量，红色值为 `139`，绿色值为 `92`，蓝色值为 `246`。
 
-Use one of the existing theme stylesheets as a template. You are free to define your own colours, but for some inspiration, check out the official [Tailwind colour palette reference](https://tailwindcss.com/docs/customizing-colors#color-palette-reference).
+您可以使用现有主题样式表之一作为模板并自由配置自己的颜色。如果想要寻求一些灵感，请查看官方 [Tailwind 调色板参考](https://tailwindcss.com/docs/customizing-colors#color-palette-reference) 。
 
-## Overriding the stylesheet
+## 覆盖样式
 
-Sometimes you need to add a custom style to style your own HTML elements. Blowfish provides for this scenario by allowing you to override the default styles in your own CSS stylesheet. Simply create a `custom.css` file in your project's `assets/css/` folder.
+有时您需要添加自定义样式来设置您自己的 HTML 元素的样式。 Blowfish 允许您覆盖自己的 CSS 样式表中的默认样式来进行自定义。只需在项目的 `assets/css/` 文件夹中创建一个 `custom.css` 文件即可。
 
-The `custom.css` file will be minified by Hugo and loaded automatically after all the other theme styles which means anything in your custom file will take precedence over the defaults.
+`custom.css` 文件将被 Hugo 优化并在所有其他主题样式之后自动加载，这意味着自定义文件中的任何内容都将优先于默认值。
 
-### Using additional fonts
+### 使用附加字体
 
-Blowfish allows you to easily change the font for your site. After creating a `custom.css` file in your project's `assets/css/` folder, place you font file inside a `fonts` folder within the `static` root folder.
+Blowfish 可以让您轻松更改网站的字体。在项目的 `assets/css/` 文件夹中创建 `custom.css` 文件后，将字体文件放入 `static/fonts` 文件夹中。
 
 ```shell
 .
@@ -96,7 +96,7 @@ Blowfish allows you to easily change the font for your site. After creating a `c
 
 ```
 
-This makes the font available to the website. Now, the font can just import it in your `custom.css` and replaced wherever you see fit. The example below shows what replacing the font for the entire `html` would look like.
+这样，该字体便可供网站使用。现在，可以将字体导入到您的 `custom.css` 中，并在您认为合适的地方进行替换。下面的示例展示了替换整个 `html` 字体的方法。
 
 ```css
 @font-face {
@@ -109,11 +109,11 @@ html {
 }
 ```
 
-### Adjusting the font size
+### 调整字体大小
 
-Changing the font size of your website is one example of overriding the default stylesheet. Blowfish makes this simple as it uses scaled font sizes throughout the theme which are derived from the base HTML font size. By default, Tailwind sets the default size to `12pt`, but it can be changed to whatever value you prefer.
+我们也提供更改网站的字体大小的示例。 Blowfish 使这一切变得简单，因为它在整个主题中使用源自基本 HTML 语言的缩放字体大小方法。默认情况下，Tailwind 将默认大小设置为 `12pt` ，但您可以将其更改为喜欢的大小。
 
-Create a `custom.css` file using the [instructions above]({{< ref "#overriding-the-stylesheet" >}}) and add the following CSS declaration:
+参考[上面的说明]({{< ref "#overriding-the-stylesheet" >}}) 创建一个 `custom.css` 文件并添加以下 CSS 声明：
 
 ```css
 /* Increase the default font size */
@@ -122,21 +122,21 @@ html {
 }
 ```
 
-Simply by changing this one value, all the font sizes on your website will be adjusted to match this new size. Therefore, to increase the overall font sizes used, make the value greater than `12pt`. Similarly, to decrease the font sizes, make the value less than `12pt`.
+只需更改此值，您网站上的所有字体大小都将调整为此新大小。因此，要增加使用的整体字体大小，请将该值设置为大于 `12pt` 。同样，要减小字体大小，请将值设置为小于 `12pt` 。
 
-## Building the theme CSS from source
+## 从源代码构建主题 CSS
 
-If you'd like to make a major change, you can take advantage of Tailwind CSS's JIT compiler and rebuild the entire theme CSS from scratch. This is useful if you want to adjust the Tailwind configuration or add extra Tailwind classes to the main stylesheet.
+如果您想进行大量更改，您可以利用 Tailwind CSS 的 JIT 编译器并从头开始重建整个主题 CSS。尤其是您想要调整 Tailwind 配置或向主样式表添加额外的 Tailwind 类的时候，这种方法将非常有用。
 
 {{< alert >}}
-**Note:** Building the theme manually is intended for advanced users.
+**注意：** 手动构建主题仅适用于高级用户。
 {{< /alert >}}
 
-Let's step through how building the Tailwind CSS works.
+让我们逐步了解构建 Tailwind CSS 的工作原理。
 
-### Tailwind configuration
+### Tailwind 配置
 
-In order to generate a CSS file that only contains the Tailwind classes that are actually being used the JIT compiler needs to scan through all the HTML templates and Markdown content files to check which styles are present in the markup. The compiler does this by looking at the `tailwind.config.js` file which is included in the root of the theme directory:
+为了生成仅包含用于实际使用的 Tailwind 类的 CSS 文件，JIT 编译器需要扫描所有 HTML 模板和 Markdown 文档，以检查 markup 中存在哪些样式。编译器将根据主题目录根目录中的 `tailwind.config.js` 文件来完成此操作：
 
 ```js
 // themes/blowfish/tailwind.config.js
@@ -153,11 +153,11 @@ module.exports = {
 };
 ```
 
-This default configuration has been included with these content paths so that you can easily generate your own CSS file without needing to modify it, provided you follow a particular project structure. Namely, **you have to include Blowfish in your project as a subdirectory at `themes/blowfish/`**. This means you cannot easily use Hugo Modules to install the theme and you must go down either the git submodule (recommended) or manual install routes. The [Installation docs]({{< ref "installation" >}}) explain how to install the theme using either of these methods.
+此默认配置包含了这些路径，以便您可以十分方便地生成自己的 CSS 文件，而无需修改它，前提是您遵循我们的主题项目结构。也就是说，**您必须将 Blowfish 主题文件夹 `themes/blowfish/` 作为子目录包含在项目中**。这意味着您无法使用 Hugo Modules 方式来安装主题，而必须使用 git 子模块（推荐）或手动安装。 [安装文档]({{< ref "installation" >}}) 介绍了如何使用以上方法安装主题。
 
-### Project structure
+### 项目结构
 
-In order to take advantage of the default configuration, your project should look something like this...
+为了充分利用默认配置，您的项目结构应该如下所示：
 
 ```shell
 .
@@ -184,35 +184,35 @@ In order to take advantage of the default configuration, your project should loo
     └── blowfish  # git submodule or manual theme install
 ```
 
-This example structure adds a new `projects` content type with its own custom layout along with a custom shortcode and extended partial. Provided the project follows this structure, all that's required is to recompile the `main.css` file.
+此示例结构添加了一个新自定义的 `projects` 内容类型，具有自定义的 layout 以及自定义的 shortcodes 和扩展的 partials 。如果项目遵循类似结构，所需要做的就是仅仅是重新编译 `main.css` 文件。
 
-### Install dependencies
+### 安装依赖项
 
-In order for this to work you'll need to change into the `themes/blowfish/` directory and install the project dependencies. You'll need [npm](https://docs.npmjs.com/cli/v7/configuring-npm/install) on your local machine for this step.
+为了使 Tailwind 正常工作，您需要更改终端工作目录为 `themes/blowfish/` 并安装项目依赖项。您需要安装 [npm](https://docs.npmjs.com/cli/v7/configuring-npm/install)。
 
 ```shell
 cd themes/blowfish
 npm install
 ```
 
-### Run the Tailwind compiler
+### 运行 Tailwind 编译器
 
-With the dependencies installed all that's left is to use [Tailwind CLI](https://v2.tailwindcss.com/docs/installation#using-tailwind-cli) to invoke the JIT compiler. Navigate back to the root of your Hugo project and issue the following command:
+安装依赖项后，接下来可以使用 [Tailwind CLI](https://v2.tailwindcss.com/docs/installation#using-tailwind-cli) 来调用 JIT 编译器。返回 Hugo 项目的根目录并在终端输入以下命令：
 
 ```shell
 cd ../..
 ./themes/blowfish/node_modules/tailwindcss/lib/cli.js -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit
 ```
 
-It's a bit of an ugly command due to the paths involved but essentially you're calling Tailwind CLI and passing it the location of the Tailwind config file (the one we looked at above), where to find the theme's `main.css` file and then where you want the compiled CSS file to be placed (it's going into the `assets/css/compiled/` folder of your Hugo project).
+由于涉及到路径，这是一个相对不易读的命令，但本质上你是在调用 Tailwind CLI 并将其传递给 Tailwind 配置文件（我们上面看到的那个）的位置，在那里可以找到主题的 `main.css` 文件以及编译后的 CSS 文件（它将在编译网页时生成到 Hugo 项目的 `assets/css/compiled/` 文件夹）。
 
-The config file will automatically inspect all the content and layouts in your project as well as all those in the theme and build a new CSS file that contains all the CSS required for your website. Due to the way Hugo handles file hierarchy, this file in your project will now automatically override the one that comes with the theme.
+配置文件将自动检查项目中以及主题中的所有内容和布局，并构建一个新的 CSS 文件，其中包含网站所需的所有 CSS。由于 Hugo 处理文件层次结构的方式，此文件现在将自动覆盖主题附带的文件。
 
-Each time you make a change to your layouts and need new Tailwind CSS styles, you can simply re-run the command and generate the new CSS file. You can also add `-w` to the end of the command to run the JIT compiler in watch mode.
+每次更改布局并需要新的 Tailwind CSS 样式时，您只需重新运行命令并生成新的 CSS 文件即可。您还可以在命令末尾添加 `-w` 以在监视模式下运行 JIT 编译器。
 
-### Make a build script
+### 制作构建脚本
 
-To fully complete this solution, you can simplify this whole process by adding aliases for these commands, or do what I do and add a `package.json` to the root of your project which contains the necessary scripts...
+要完成此解决方案，您可以通过为这些命令添加别名来简化整个过程，或者参照我的操作，将该 `package.json` 添加到包含必要脚本的项目的根目录：
 
 ```js
 // package.json
@@ -230,6 +230,6 @@ To fully complete this solution, you can simplify this whole process by adding a
 }
 ```
 
-Now when you want to work on designing your site, you can invoke `npm run dev` and the compiler will run in watch mode. When you're ready to deploy, run `npm run build` and you'll get a clean Tailwind CSS build.
+现在，当您想要设计站点时，可以调用 `npm run dev` ，编译器将以监视模式运行。当您准备好部署时，运行 `npm run build` ，您将生成一个编译好的 Tailwind CSS。
 
-🙋‍♀️ If you need help, feel free to ask a question on [GitHub Discussions](https://github.com/nunocoracao/blowfish/discussions).
+🙋‍♀️ 如果您需要帮助，请随时在 [GitHub Discusions](https://github.com/nunocoracao/blowfish/discussions) 上提问。
