@@ -4,7 +4,12 @@
     {{ else if eq .Kind "term"}}
     <span id="likes_term_{{ .Page.Data.Term }}" 
     {{ else }}
-    <span id="likes_{{ .File.Path }}" 
+        {{ $path := .File.Path }}
+        {{range .AllTranslations}}
+            {{ $lang := print "."  .Lang  ".md" }}
+            {{ $path = replace $path $lang ".md" }}
+        {{end}}
+    <span id="likes_{{ $path }}" 
     {{ end }}
         class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="likes">loading</span> 
     <span class="inline-block align-text-bottom">{{ partial "icon.html" "heart" }}</span>

@@ -1,16 +1,16 @@
 global:
-  language: "ZN-CN"
+  language: "ZH-CN"
 
 article:
   anchor_label: "锚点"
   date: "{{ .Date }}"
-  # date_updated: "Updated: {{ .Date }}"
+  date_updated: "更新于: {{ .Date }}"
   draft: "草稿"
   edit_title: "编辑内容"
   reading_time:
     other: "{{ .Count }} 分钟"
   reading_time_title: "预计阅读"
-  # table_of_contents: "Table of Contents"
+  table_of_contents: "目录"
   word_count:
     one: "{{ .Count }} 字"
     other: "{{ .Count }} 字"
@@ -22,9 +22,9 @@ article:
 author:
   byline_title: "作者"
 
-# code:
-#   copy: "Copy"
-#   copied: "Copied"
+code:
+  copy: "复制"
+  copied: "已复制"
 
 error:
   404_title: "找不到网页 :confused:"
@@ -40,14 +40,14 @@ list:
   externalurl_title: "链接到外部网站"
   no_articles: "这里还没有任何文章可以列出。"
 
-# nav:
-#   scroll_to_top_title: "Scroll to top"
-#   skip_to_main: "Skip to main content"
+nav:
+  scroll_to_top_title: "返回顶部"
+  skip_to_main: "跳过正文"
 
-# search:
-#   open_button_title: "Search (/)"
-#   close_button_title: "Close (Esc)"
-#   input_placeholder: "Search"
+search:
+  open_button_title: "搜索 (/)"
+  close_button_title: "关闭 (Esc)"
+  input_placeholder: "搜索"
 
 sharing:
   email: "通过电子邮件发送"
