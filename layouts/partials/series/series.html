@@ -1,0 +1,6 @@
+{{ if .Params.series }}
+<details style="margin-left:0px" class="mt-2 mb-5 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5" {{
+    if .Params.seriesOpened | default (.Site.Params.article.seriesOpened | default false) }} open {{ end }}>
+    {{ partial "series/series_base.html" . }}
+</details>
+{{end}}
