@@ -15,7 +15,7 @@ Blowfish 适宜个高度定制化的主题，使用到了一些 Hugo 中最新�
 
 {{< alert "fire" >}}
 我们刚刚推出了 CLI 工具，来帮助你快速上手 Blowfish。它将帮助你进行安装和配置。使用以下命令可以全局范围安装 CLI 工具：
-We just launched a CLI tool to help you get started with Blowfish. It will help you with installation and configuration. Install the CLI tool globally using:
+
 ```bash
 npx blowfish-tools
 ```

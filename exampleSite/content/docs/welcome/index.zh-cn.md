@@ -26,7 +26,6 @@ Tailwind CSS 带来了性能优化，并提供了一些出色的新的 CSS 特�
 
 这是一个高频需求，Blowfish 现在支持多语言！
 如果你使用多语言发布你的内容，网站将会构建包含所有可用翻译的版本。
-A highly requested feature, Blowfish is now multilingual! If you publish your content in multiple languages, the site will be built with all the translations available.
 
 <div class="text-2xl text-center" style="font-size: 2.8rem">:gb: :de: :fr: :es: :cn: :brazil: :tr: :bangladesh:</div>
 

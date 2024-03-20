@@ -59,8 +59,6 @@ Blowfish 附带了多种开箱即用的配色方案。想要更改基本配色�
 **注意：** 手动生成这些文件可能会比较困难，我编写了一个 `nodejs` 工具 [Fugu](https://github.com/nunocoracao/fugu) 来帮助解决这个问题。简而言之，您只需要提供调色板的三个主要 `hex` 值，程序将生成一个可以直接导入到 Blowfish 中的 css 文件。
 {{< /alert >}}
 
-Blowfish 主题定义了一个以三个主色调为核心的颜色方案，这三个主色调分别作为 `neutral`、`primary` 和 `secondary`，其中每一个主色调对应了10个具体的颜色。
-
 Blowfish 使用一种定义了整个主题中使用的三色调色板。这三种颜色被定义为 `neutral` 、 `primary` 和 `secondary` 颜色，每种颜色包含十种色调。
 
 由于 Tailwind CSS 3.0 计算不透明度颜色值的方式，方案中指定的颜色需要通过提供红色、绿色和蓝色值来[符合特定格式](https://github.com/adamwathan/tailwind-css-variable-text-opacity-demo) 。

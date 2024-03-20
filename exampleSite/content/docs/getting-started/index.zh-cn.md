@@ -117,6 +117,7 @@ Blowfish 定义了一种由三种主色调构成的配色方案，每种主色�
 {{< swatches "#6B7280" "#64748b" "#6B7280" >}}
 
 尽管这些事默认的方案，你也可以创建属于你自己的，详细信息请参阅 [高级自定义]({{< ref "advanced-customisation#colour-schemes" >}}) 部分。
+尽管这些事默认的方案，你也可以创建属于你自己的，详细信息请参阅 [高级自定义]({{< ref "advanced-customisation#colour-schemes" >}}) 部分。
 
 ## 整理内容
 
