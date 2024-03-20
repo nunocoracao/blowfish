@@ -1,10 +1,10 @@
 ---
-title: "Users"
+title: "友链"
 date: 2020-08-14
 draft: false
-description: "Some real-life Blowfish examples."
+description: "一些正在使用 Blowfish 的真实案例"
 slug: "users"
-tags: ["users", "sample"]
+tags: ["友链", "示例"]
 showDate: false
 showAuthor: false
 showReadingTime: false

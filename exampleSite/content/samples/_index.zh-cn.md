@@ -1,6 +1,6 @@
 ---
-title: "Samples"
-description: "See what's possible with Blowfish."
+title: "示例"
+description: "来看看通过 Blowfish 能做到什么"
 
 cascade:
   showEdit: false
@@ -9,11 +9,12 @@ cascade:
 ---
 
 {{< lead >}}
-Blowfish brings your content to life. :heart_eyes:
+Blowfish 让你的内容栩栩如生。 :heart_eyes:
 {{< /lead >}}
 
-This section contains some demo pages that show how Blowfish renders different types of content. You can also see an example [taxonomy listing]({{< ref "tags" >}}) page.
+本节包含一些演示页面，展示了Blowfish如何呈现不同类型的内容。你还可以看到一个[分类列表]({{< ref "tags" >}})页面的示例。
 
-_**Sidenote:** This page is just a standard Blowfish article listing and Hugo has been configured to generate a `samples` content type and display article summaries._
+
+_**旁注：** 这个页面只是一个标准的Blowfish文章列表，并且已经配置了Hugo来生成一个 `samples` 内容类型并显示文章摘要。_
 
 ---

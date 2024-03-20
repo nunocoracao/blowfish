@@ -14,7 +14,7 @@ description: "此页面是使用 Hugo 的 Blowfish 主题搭建的"
       id="switch-layout-button"
       class="px-4 !text-neutral !no-underline rounded-md bg-primary-600 hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700"
     >
-      Switch layout &orarr;
+      切换 layout &orarr;
     </button>
   </span>
 </div>

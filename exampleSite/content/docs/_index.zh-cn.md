@@ -1,6 +1,6 @@
 ---
-title: "Documentation"
-description: "Learn how to use Blowfish and its features."
+title: "文档"
+description: "如何使用 Blowfish。"
 
 cascade:
   showDate: false
@@ -9,9 +9,10 @@ cascade:
 ---
 
 {{< lead >}}
-Simple, yet powerful. Learn how to use Blowfish and its features.
+了解如何使用简单而强大的 Blowfish。
 {{< /lead >}}
 
-This section contains everything you need to know about Blowfish. If you're new, check out the [Installation]({{< ref "docs/installation" >}}) guide to begin or visit the [Samples]({{< ref "samples" >}}) section to see what Blowfish can do.
+本章节包含了你需要了解的有关 Blowfish 的所有信息。如果你是新用户，请查阅[安装]({{< ref "docs/installation" >}}) 指南，或者访问[示例]({{< ref "samples" >}}) 来了解 Blowfish 能做什么。
+
 
 ---

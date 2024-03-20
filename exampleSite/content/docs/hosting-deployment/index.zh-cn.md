@@ -1,11 +1,11 @@
 ---
-title: "Hosting & Deployment"
+title: "托管和部署"
 date: 2020-08-07
 draft: false
-description: "Learn how to deploy a Blowfish site."
+description: "了解如何部署 Blowfish 网页。"
 slug: "hosting-deployment"
-tags: ["docs", "hosting", "deployment", "github", "netlify", "render"]
-series: ["Documentation"]
+tags: ["文档", "托管", "部署", "github", "netlify", "渲染器"]
+series: ["部署教程"]
 series_order: 14
 ---
 

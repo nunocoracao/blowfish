@@ -2,10 +2,10 @@
 title: "Partials"
 date: 2020-08-10
 draft: false
-description: "All the partials available in Blowfish."
+description: "所有 Blowfish 可以配置的 Partials"
 slug: "partials"
-tags: ["partials", "analytics", "privacy", "comments", "favicons", "icon", "docs"]
-series: ["Documentation"]
+tags: ["partials", "统计服务", "隐私", "评论", "网站图标", "图标", "文档"]
+series: ["部署教程"]
 series_order: 9
 ---
 
