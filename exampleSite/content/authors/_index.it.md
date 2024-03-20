@@ -1,5 +1,5 @@
 ---
-title: "Authors Taxonomy Listing Example"
----
+title: "Esempio di elenco di tassonomia degli autori"
 
-A quick example of how to start using author taxonomies in your articles.
+---
+Un rapido esempio di come iniziare a utilizzare le tassonomie degli autori nei tuoi articoli.

@@ -1,9 +1,9 @@
 ---
-title: Tags
+title: Tag
+
 ---
+Blowfish ha il pieno supporto per le tassonomie Hugo e si adatterà a qualsiasi impostazione tassonomica. Gli elenchi di tassonomia come questo supportano anche il contenuto personalizzato da visualizzare sopra l'elenco dei termini.
 
-Blowfish has full support for Hugo taxonomies and will adapt to any taxonomy set up. Taxonomy listings like this one also support custom content to be displayed above the list of terms.
-
-This area could be used to add some extra descriptive text to each taxonomy. Check out the [advanced tag]({{< ref "advanced" >}}) below to see how to take this concept even further.
+Quest'area può essere utilizzata per aggiungere testo descrittivo aggiuntivo a ciascuna tassonomia. Dai un'occhiata al [tag avanzato]({{< ref "advanced" >}}) di seguito per vedere come portare questo concetto ancora oltre.
 
 ---
