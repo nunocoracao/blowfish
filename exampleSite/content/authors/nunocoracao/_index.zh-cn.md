@@ -2,4 +2,4 @@
 title: "Nuno Coração"
 ---
 
-Nuno's awesome dummy bio.
+假装这里有一份 Nuno 的简介。
