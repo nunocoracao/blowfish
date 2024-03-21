@@ -5,7 +5,7 @@ lastmod: 2022-03-09
 draft: false
 description: "Blowfish 支持的图标。"
 slug: "icons"
-tags: ["图标", "示例", "短代码"]
+tags: ["图标", "示例", "简码"]
 type: 'sample'
 ---
 
