@@ -86,15 +86,18 @@
         {{ partial "related.html" . }}  
       </div>
      
-      {{ $path := .File.Path }}
-      {{range .AllTranslations}}
-        {{ $lang := print "."  .Lang  ".md" }}
-        {{ $path = replace $path $lang ".md" }}
-      {{end}}
+      {{ $translations := .AllTranslations }}
+      {{ with .File }}
+        {{ $path := .Path }}
+        {{range $translations}}
+          {{ $lang := print "."  .Lang  ".md" }}
+          {{ $path = replace $path $lang ".md" }}
+        {{end}}
       <script>
         var oid = "views_{{ $path }}"
         var oid_likes = "likes_{{ $path }}"
       </script>
+      {{ end }}
       {{ $jsPage := resources.Get "js/page.js" }}
       {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}
       <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}"></script>
