@@ -1,19 +1,19 @@
 ---
-title: "Diagrams and Flowcharts"
+title: "流程图和思维导图"
 date: 2019-03-06
-description: "Guide to Mermaid usage in Blowfish"
-summary: "It's easy to add diagrams and flowcharts to articles using Mermaid."
-tags: ["mermaid", "sample", "diagram", "shortcodes"]
+description: "Blowfish 中 Mermaid 的使用指南"
+summary: "使用 Mermaid 可以轻松地将图表和流程图添加到文章中。"
+tags: ["mermaid", "示例", "流程图", "简码"]
 type: 'sample'
 ---
 
-Mermaid diagrams are supported in Blowfish using the `mermaid` shortcode. Simply wrap the diagram markup within the shortcode. Blowfish automatically themes Mermaid diagrams to match the configured `colorScheme` parameter.
+Blowfish 使用 `mermaid` 简码可以调用。Blowfish 会根据配置的 `colorScheme` 参数自动调用 Mermaid 生成流程图或者思维导图。
 
-Refer to the [mermaid shortcode]({{< ref "docs/shortcodes#mermaid" >}}) docs for more details.
+有关更多详细信息，请参阅 [Mermaid 简码]({{< ref "docs/shortcodes#mermaid" >}}) 文档。
 
-The examples below are a small selection taken from the [official Mermaid docs](https://mermaid-js.github.io/mermaid/). You can also [view the page source](https://raw.githubusercontent.com/nunocoracao/blowfish/main/exampleSite/content/samples/diagrams-flowcharts/index.md) on GitHub to see the markup.
+下面的示例是从[官方 Mermaid 文档](https://mermaid-js.github.io/mermaid/) 中选取的一小部分。您还可以在 GitHub 上[查看页面源代码](https://raw.githubusercontent.com/nunocoracao/blowfish/main/exampleSite/content/samples/diagrams-flowcharts/index.md) 查看书写方法。
 
-## Flowchart
+## 流程图
 
 <div style="background-color:white; padding: 20px">
 {{< mermaid >}}
@@ -34,7 +34,7 @@ end
 {{< /mermaid >}}
 </div>
 
-## Sequence diagram
+## 时序图
 
 <div style="background-color:white; padding: 20px">
 {{< mermaid >}}
@@ -56,7 +56,7 @@ end
 {{< /mermaid >}}
 </div>
 
-## Class diagram
+## 类图
 
 <div style="background-color:white; padding: 20px">
 {{< mermaid >}}
@@ -84,7 +84,7 @@ class Zebra{
 {{< /mermaid >}}
 </div>
 
-## Entity relationship diagram
+## 实体关系图
 
 <div style="background-color:white; padding: 20px">
 {{< mermaid >}}

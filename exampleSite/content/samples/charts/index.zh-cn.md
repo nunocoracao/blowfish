@@ -1,28 +1,28 @@
 ---
-title: "Charts"
+title: "图表"
 date: 2019-03-06
-description: "Guide to Chart.js usage in Blowfish"
-summary: "Blowfish includes Chart.js for powerful charts and data visualisations."
-tags: ["chart", "sample", "graph", "shortcodes"]
+description: "在Blowfish 中使用 Chart.js 指南"
+summary: "Blowfish 包含 Chart.js，可实现强大的图表和数据可视化。"
+tags: ["表格", "示例", "图片", "简码"]
 showDate: false
 type: 'sample'
 ---
 
-Blowfish includes support for Chart.js using the `chart` shortcode. Simply wrap the chart markup within the shortcode. Blowfish automatically themes charts to match the configured `colorScheme` parameter, however the colours can be customised using normal Chart.js syntax.
+Blowfish 使用 `chart` 简码来调用 Chart.js。Blowfish 会自动为图表设置主题以匹配配置的 `colorScheme` 参数，但是可以使用 Chart.js 语法来自定义图表颜色。
 
-Refer to the [chart shortcode]({{< ref "docs/shortcodes#chart" >}}) docs for more details.
+有关更多详细信息，请参阅 [图表简码]({{< ref "docs/shortcodes#chart" >}}) 文档。
 
-The examples below are a small selection taken from the [official Chart.js docs](https://www.chartjs.org/docs/latest/samples). You can also [view the page source](https://raw.githubusercontent.com/nunocoracao/blowfish/main/exampleSite/content/samples/charts/index.md) on GitHub to see the markup.
+下面的示例是从 [Chart.js 官方文档](https://www.chartjs.org/docs/latest/samples) 中选取的一小部分。您还可以在 GitHub 上[查看页面源代码](https://raw.githubusercontent.com/nunocoracao/blowfish/main/exampleSite/content/samples/charts/index.md) 查看书写方式。
 
-## Bar chart
+## 柱形图
 
 <!-- prettier-ignore-start -->
 {{< chart >}}
 type: 'bar',
 data: {
-  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+  labels: ['一月', '二月', '三月', '四月', '五月', '六月', '七月'],
   datasets: [{
-    label: 'My First Dataset',
+    label: '我的第一组数据',
     data: [65, 59, 80, 81, 56, 55, 40],
     backgroundColor: [
       'rgba(255, 99, 132, 0.2)',
@@ -48,15 +48,15 @@ data: {
 {{< /chart >}}
 <!-- prettier-ignore-end -->
 
-## Line chart
+## 折线图
 
 <!-- prettier-ignore-start -->
 {{< chart >}}
 type: 'line',
 data: {
-  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+  labels: ['一月', '二月', '三月', '四月', '五月', '六月', '七月'],
   datasets: [{
-    label: 'My First Dataset',
+    label: '我的第一组数据',
     data: [65, 59, 80, 81, 56, 55, 40],
     tension: 0.2
   }]
@@ -64,15 +64,15 @@ data: {
 {{< /chart >}}
 <!-- prettier-ignore-end -->
 
-## Doughnut chart
+## 扇形图
 
 <!-- prettier-ignore-start -->
 {{< chart >}}
 type: 'doughnut',
 data: {
-  labels: ['Red', 'Blue', 'Yellow'],
+  labels: ['红', '蓝', '黄'],
   datasets: [{
-    label: 'My First Dataset',
+    label: '我的第一组数据',
     data: [300, 50, 100],
     backgroundColor: [
       'rgba(255, 99, 132, 0.7)',
