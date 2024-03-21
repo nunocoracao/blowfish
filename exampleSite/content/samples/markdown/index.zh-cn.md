@@ -1,18 +1,18 @@
 ---
 title: "Markdown"
 date: 2019-03-11
-description: "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
-tags: ["markdown", "css", "html", "sample"]
+description: "在 Markdown 文章中添加 HTML 元素的基本语法和格式。"
+tags: ["markdown", "css", "html", "示例"]
 type: 'sample'
 ---
 
-This article offers a sample of basic Markdown formatting that can be used in Blowfish, also it shows how some basic HTML elements are decorated.
+本文提供了可在 Blowfish 中使用的基本 Markdown 格式示例，还展示了如何加入一些基本 HTML 元素。
 
 <!--more-->
 
-## Headings
+## 标题
 
-The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
+以下 HTML 元素 `<h1>`—`<h6>` 表示六个级别的标题。 `<h1>` 是最高的标题级别，而 `<h6>` 是最低的。
 
 # H1
 
@@ -26,46 +26,46 @@ The following HTML `<h1>`—`<h6>` elements represent six levels of section head
 
 ###### H6
 
-## Paragraph
+## 段落
 
 Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
 
 Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
 
-## Blockquotes
+## 块引用
 
-The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
+块引用表示从其他来源引用的内容，可以用于位于 `footer` 或 `cite` 元素内的引文，并且可以表示一些补充说明（例如注释和缩写）。
 
-### Blockquote without attribution
+### 没有参考链接的块引用
 
 > Tiam, ad mint andaepu dandae nostion secatur sequo quae.
 > **Note** that you can use _Markdown syntax_ within a blockquote.
 
-### Blockquote with attribution
+### 有参考链接的块引用
 
 > Don't communicate by sharing memory, share memory by communicating.<br>
 > — <cite>Rob Pike[^1]</cite>
 
-[^1]: The above quote is excerpted from Rob Pike's [talk `about` nothing](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
+[^1]: 上述引文摘自 Rob Pike 在 2015 年 11 月 18 日 Gopherfest 期间的[谈论“什么都没有”](https://www.youtube.com/watch?v=PAAkCSZUG1c)。
 
-## Tables
+## 表格
 
-Tables aren't part of the core Markdown spec, but Hugo supports supports them out-of-the-box.
+表格不是核心 Markdown 规范的一部分，但 Hugo 支持渲染。
 
 | Name  | Age |
 | ----- | --- |
 | Bob   | 27  |
 | Alice | 23  |
 
-### Inline Markdown within tables
+### 表格内内联 Markdown
 
 | Italics   | Bold     | Code   |
 | --------- | -------- | ------ |
 | _italics_ | **bold** | `code` |
 
-## Code Blocks
+## 代码块
 
-### Code block with backticks
+### 带反引号的代码块
 
 ```html
 <!DOCTYPE html>
@@ -80,7 +80,7 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
 </html>
 ```
 
-### Code block indented with four spaces
+### 缩进四个空格的代码块
 
     <!DOCTYPE html>
     <html lang="en">
@@ -93,7 +93,7 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
     </body>
     </html>
 
-### Code block with Hugo's internal highlight shortcode
+### 带有 Hugo 内部高亮简码的代码块
 
 {{< highlight html "linenos=table,hl_lines=4 7-9" >}}
 
@@ -109,21 +109,21 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
 </html>
 {{< /highlight >}}
 
-## List Types
+## 列表
 
-### Ordered List
+### 有序列表
 
 1. First item
 2. Second item
 3. Third item
 
-### Unordered List
+### 无序列表
 
 - List item
 - Another item
 - And another item
 
-### Nested list
+### 嵌套列表
 
 - Fruit
   - Apple
@@ -133,7 +133,7 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
   - Milk
   - Cheese
 
-## Other Elements — abbr, sub, sup, kbd, mark
+## 其他元素 — abbr、sub、sup、kbd、mark
 
 <abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
 
