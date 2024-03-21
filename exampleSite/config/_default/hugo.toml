@@ -5,7 +5,7 @@
 theme = "blowfish"
 baseURL = "https://localhost:1313"
 defaultContentLanguage = "en"
-#disableLanguages = ['ja'] #to allow translation work requiring shipping to production
+disableLanguages = ['it'] #to allow translation work requiring shipping to production
 
 # pluralizeListTitles = "true" # hugo function useful for non-english languages, find out more in  https://gohugo.io/getting-started/configuration/#pluralizelisttitles
 
