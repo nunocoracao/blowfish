@@ -15,8 +15,6 @@ Sono riportate le istruzioni dettagliate per l'installazione. Sono disponibili a
 
 ## Installazione
 
-These instructions will get you up and running using Hugo and Blowfish from a completely blank state. Most of the dependencies mentioned in this guide can be installed using the package manager of choice for your platform.
-
 Queste istruzioni ti consentiranno di iniziare a utilizzare Hugo e Blowfish partendo da uno stato completamente vuoto. La maggior parte delle dipendenze menzionate in questa guida possono essere installate utilizzando il gestore pacchetti corretti per la tua piattaforma.
 
 ### Installare Hugo
@@ -74,11 +72,11 @@ Esistono diversi modi per installare il tema Blowfish nel proprio sito web Hugo.
 
 Se non sei sicuro, scegli il metodo Git submodule.
 
-##### Install using git
+##### Installazione usando Git
 
-This method is the quickest and easiest for keeping the theme up-to-date. Besides **Hugo** and **Go**, you'll also need to ensure you have **Git** installed on your local machine.
+Questo è il metodo piu facile e veloce per mantere il tema aggiornato. Oltre **Hugo** e **Go**, dovrai assicurarti di avere **Git** installato nel tuo local machine.
 
-Change into the directory for your Hugo website (that you created above), initialise a new `git` repository and add Blowfish as a submodule.
+cambia la directory del tuo sito web Hugo (che hai creato sopra), inizializza un nuovo repository `git` e aggiungi Blowfish come sottomodulo.
 
 ```bash
 cd mywebsite
@@ -86,9 +84,9 @@ git init
 git submodule add -b main https://github.com/nunocoracao/blowfish.git themes/blowfish
 ```
 
-Then continue to [set up the theme configuration files](#set-up-theme-configuration-files).
+poi continua a [impostare i file di configurazione del tema](#set-up-theme-configuration-files).
 
-##### Install using Hugo
+##### Installazione usando Hugo
 
 For this method you'll use Hugo to manage your themes. Hugo uses **Go** to initialise and manage modules so you need to ensure you have `go` installed before proceeding.
 
