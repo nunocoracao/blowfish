@@ -1,77 +1,78 @@
 ---
-title: "Installation"
+title: "Installazione"
 date: 2020-08-16
 draft: false
-description: "How to install the Blowfish theme."
+description: "Come installare il tema Blowfish."
 slug: "installation"
-tags: ["installation", "docs"]
-series: ["Documentation"]
+tags: ["installazione", "documenti"]
+series: ["Documentazione"]
 series_order: 2
 ---
 
-Simply follow the standard Hugo [Quick Start](https://gohugo.io/getting-started/quick-start/) procedure to get up and running quickly.
+Segui semplicemente la procedura standard [Avvio Rapido](https://gohugo.io/getting-started/quick-start/) di Hugo per iniziare subito.
 
-Detailed installation instructions can be found below. Instructions for [updating the theme](#installing-updates) are also available.
+Sono riportate le istruzioni dettagliate per l'installazione. Sono disponibili anche le istruzioni per [aggiornare il tema](#installazione-aggiornamenti).
 
-## Installation
+## Installazione
 
 These instructions will get you up and running using Hugo and Blowfish from a completely blank state. Most of the dependencies mentioned in this guide can be installed using the package manager of choice for your platform.
 
-### Install Hugo
+Queste istruzioni ti consentiranno di iniziare a utilizzare Hugo e Blowfish partendo da uno stato completamente vuoto. La maggior parte delle dipendenze menzionate in questa guida possono essere installate utilizzando il gestore pacchetti corretti per la tua piattaforma.
 
-If you haven't used Hugo before, you will need to [install it onto your local machine](https://gohugo.io/getting-started/installing). You can check if it's already installed by running the command `hugo version`.
+### Installare Hugo
+
+Se non hai mai utilizzato Hugo prima, dovrai [installarlo nella tua local machine] (https://gohugo.io/getting-started/installing).
+Puoi verificare se hai già installato Hugo utilizzando il comando `hugo version`.
 
 {{< alert >}}
-Make sure you are using **Hugo version 0.87.0** or later as the theme takes advantage of some of the latest Hugo features.
+Assicurati di usare la **versione 0.87.0 di Hugo** o successiva, poiché il tema sfrutta alcune delle ultime caratteristiche di Hugo.
 {{< /alert >}}
 
-You can find detailed installation instructions for your platform in the [Hugo docs](https://gohugo.io/getting-started/installing).
+Puoi trovare le istruzioni dettagliate sull'installazione per la propria piattaforma in [Documenti Hugo](https://gohugo.io/getting-started/installing).
 
-### Blowfish Tools (recommended)
+### Strumenti Blowfish (raccomandato)
 
-We just launched a new CLI tool to help you get started with Blowfish. It will create a new Hugo project, install the theme and set up the theme configuration files for you. It's still in beta so please [report any issues you find](https://github.com/nunocoracao/blowfish-tools).
+Abbiamo appena lanciato un nuovo strumento CLI per aiutarti a iniziare con Blowfish. Questo ti permette di creare un nuovo progetto Hugo, di installare il tema e di impostare i file di configurazione del tema per te. È ancora in fase beta, quindi per favore [segnala qualsiasi problema che riscontri] (https://github.com/nunocoracao/blowfish-tools).
 
-Install the CLI tool globally using npm (or other package manager):
+Installa globalmente lo strumento CLI usando npm (o altri gestori di pacchetti):
 ```shell
 npx blowfish-tools
 ```
-or
+oppure
 
 ```shell
 npm i -g blowfish-tools
 ```
 
-Then run the command `blowfish-tools` to start an interactive run which will guide you through creation and configuration use-cases.
+Poi esegui il comando `blowfish-tools` per avviare un'esecuzione interattiva che ti guiderà attraverso la creazione e la configurazione dei casi d'uso.
 ```shell
 blowfish-tools
 ```
-
-You can also run the command `blowfish-tools new` to create a new Hugo project and install the theme in one go. Check the CLI help for more information.
+È anche possibile eseguire il comando `blowfish-tools new` per creare un nuovo progetto Hugo e installare il tema in una sola volta. Per ulteriori informazioni, consulta la guida del CLI.
 ```shell
 blowfish-tools new mynewsite
 ```
-
-Here's a quick video of how fast it is to get started with Blowfish using the CLI tool:
+Ecco un rapido video che ti mostra quanto sia veloce iniziare a utilizzare Blowfish con lo strumento CLI:
 
 <iframe width="100%" height="350" src="https://www.youtube.com/embed/SgXhGb-7QbU?si=ce44baicuQ6zMeXz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-### Install Manually
+### Installazione Manuale
 
-#### Create a new site
+#### Crea un novo sito
 
-Run the command `hugo new site mywebsite` to create a new Hugo site in a directory named `mywebsite`.
+Esegui il comando `hugo new site mywebsite` per creare un nuovo sito di Hugo in una cartella chiamata `mywebsite`.
 
-Note that you can name the project directory whatever you choose, but the instructions below will assume it's named `mywebsite`. If you use a different name, be sure to substitute it accordingly.
+La cartella del progetto può essere chiamata come si vuole, ma le istruzioni che seguono presuppongono che si chiami `mywebsite`. Se si usa un nome diverso, sostituiscilo di conseguenza.
 
-#### Download the Blowfish theme
+#### Scaricare il tema Blowfish
 
-There several different ways to install the Blowfish theme into your Hugo website. From easiest to most difficult to install and maintain, they are:
+Esistono diversi modi per installare il tema Blowfish nel proprio sito web Hugo. Dal più facile al più difficile da installare e mantenere, sono:
 
 - [Git submodule](#install-using-git) (recommended)
 - [Hugo module](#install-using-hugo) 
-- [Manual file copy](#install-manually)
+- [Copia manuale dei file](#install-manually)
 
-If you're unsure, choose the Git submodule method. 
+Se non sei sicuro, scegli il metodo Git submodule.
 
 ##### Install using git
 
