@@ -88,12 +88,12 @@ poi continua a [impostare i file di configurazione del tema](#set-up-theme-confi
 
 ##### Installazione usando Hugo
 
-For this method you'll use Hugo to manage your themes. Hugo uses **Go** to initialise and manage modules so you need to ensure you have `go` installed before proceeding.
+Per questo metodo utilizzerai Hugo per gestire i tuoi temi. Hugo utilizza **Go** per inizializzare e gestire i moduli, quindi assicurati di aver installato `go` prima di procedere.
 
-1. [Download](https://golang.org/dl/) and install Go. You can check if it's already installed by using the command `go version`.
+1. [Scarica](https://golang.org/dl/) e installa Go. Puoi verificare se l'hai già installato utilizzando il comando `go version`.
 
    {{< alert >}}
-   Make sure you are using **Go version 1.12** or later as Hugo requires this for modules to work correctly.
+   Assicurati di usare la **versione Go 1.12** o successive poiché Hugo lo richiede affinché i moduli funzionino correttamente.
    {{< /alert >}}
 
 2. From your Hugo project directory (that you created above), initialise modules for your website:
