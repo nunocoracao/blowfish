@@ -4,7 +4,7 @@
     {{ else if eq .Kind "term"}}
     <span id="views_term_{{ .Page.Data.Term }}"
     {{ else }}
-        {{ $path := .File.Path }}
+        {{ $path := .Path }}
         {{range .AllTranslations}}
             {{ $lang := print "."  .Lang  ".md" }}
             {{ $path = replace $path $lang ".md" }}
