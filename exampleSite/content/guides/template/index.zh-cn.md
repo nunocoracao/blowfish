@@ -1,36 +1,37 @@
 ---
-title: "Recipe Template"
+title: "使用指南模板"
 date: 1987-12-22
 draft: false
-description: "Template for creating a recipe for Blowfish theme"
-tags: ["template"]
+description: "用于创建 Blowfish 主题使用指南的模板"
+tags: ["模板"]
 ---
 
-Thank you for wanting to contribute to Blowfish's community.
+感谢您愿意为 Blowfish 社区做出贡献。
 
-## How to start?
-This is a template article that will explain how to create a new article for Blowfish's guide section.
+## 如何开始？
+这是一篇模板文章，将解释如何为 Blowfish 的指南部分创建新文章。
 
-## Clone Blowfish
-Clone this repo with the following command:
+## Clone Blowfish 仓库
+使用以下命令 clone 此仓库：
 
 ```bash
 git clone https://github.com/nunocoracao/blowfish.git
 ```
 
-## Setup your files
-Copy and paste the entire folder where this `.md` file is.
+## 配置您的文档
+复制并粘贴您要创建的 `.md` 文档所在的整个文件夹。
+使用 `YYYYMM-<英文标题>` 的格式（例如：`200601-tutorial`）命名文档，不允许有空格。
 
-Name it using the following convention `YYYYMM-title`, no white spaces are allowed.
+## 编写您的指南
+编写您的指南 :)
 
-## Write your guide
-Write your guide :)
+在 `img` 文件夹中储存图像并按下述格式引用它们：
 
-Use the `img` folder to place your images and use them:
-
+``` md
 ![]()
+```
 
 ![Example](img/example.jpg "Image caption")
 
-## Open a PR
-Open a PR and thanks in advance for your contribution.
+## 提交 PR
+提交您的 PR ，Blowfish 团队在这里提前感谢您对我们这个项目的贡献。

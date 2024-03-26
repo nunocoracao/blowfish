@@ -1,19 +1,17 @@
 ---
-title: "Samples"
-description: "See what's possible with Blowfish."
+title: "Campioni"
+description: "Guarda cosa è possibile fare con Blowfish."
 
 cascade:
   showEdit: false
   showSummary: false
   hideFeatureImage: true
----
 
+---
 {{< lead >}}
-Blowfish brings your content to life. :heart_eyes:
+Blowfish dà vita ai tuoi contenuti. :heart_eyes:
 {{< /lead >}}
 
-This section contains some demo pages that show how Blowfish renders different types of content. You can also see an example [taxonomy listing]({{< ref "tags" >}}) page.
+Questa sezione contiene alcune pagine demo che mostrano come Blowfish esegue il rendering di diversi tipi di contenuto. Puoi anche vedere una pagina di esempio [elenco tassonomia]({{< ref "tags" >}}).
 
-_**Sidenote:** This page is just a standard Blowfish article listing and Hugo has been configured to generate a `samples` content type and display article summaries._
-
----
+_**Nota a margine:** Questa pagina è solo un elenco standard di articoli Blowfish e Hugo è stato configurato per generare un tipo di contenuto "campioni" e visualizzare riepiloghi degli articoli._

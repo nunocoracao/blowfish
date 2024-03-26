@@ -128,6 +128,10 @@ smartTOCHideUnfocusedChildren = false
   # site = "ABC12345"
   # domain = "llama.yoursite.com"
 
+[umamiAnalytics]
+  # websiteid = "ABC12345"
+  # domain = "llama.yoursite.com"
+
 [buymeacoffee]
   identifier = "nunocoracao"
   globalWidget = true

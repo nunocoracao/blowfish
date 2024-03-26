@@ -2,4 +2,4 @@
 title: "Dummy Second Author"
 ---
 
-Dummy Second Author's awesome dummy bio.
+假装这里有一份第二位作者的简介。

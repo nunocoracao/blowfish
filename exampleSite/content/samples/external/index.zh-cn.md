@@ -1,8 +1,8 @@
 ---
-title: "An External Article"
+title: "外部文章"
 date: 2019-01-24
 externalUrl: "https://nunocoracao.com/projects/"
-summary: "The `externalUrl` front matter parameter can link to any URL."
+summary: "`externalUrl` front matter 参数可以链接到任何外部 URL."
 showReadingTime: true
 _build:
   render: "false"
@@ -10,6 +10,6 @@ _build:
 type: 'sample'
 ---
 
-This page uses the `externalUrl` front matter parameter to link to an article outside of this Hugo website.
+此页面使用 `externalUrl` front matter 参数链接到 Hugo 网站之外的文章。
 
-It's great for things like linking to posts on Medium or to research papers you may have hosted on third party websites.
+它非常适合链接到 Medium 上的帖子或在第三方网站上托管的文章。

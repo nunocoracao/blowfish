@@ -1,5 +1,5 @@
 ---
-title: "Dummy Second Author"
----
+title: "Secondo autore fittizio"
 
-Dummy Second Author's awesome dummy bio.
+---
+La fantastica biografia fittizia di Dummy Second Author.
