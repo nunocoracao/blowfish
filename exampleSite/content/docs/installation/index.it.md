@@ -129,18 +129,16 @@ Per questo metodo utilizzerai Hugo per gestire i tuoi temi. Hugo utilizza **Go**
 
 Nella cartella principale del tuo sito web, elimina il file `config.toml` generato da Hugo. Copia i file di configurazione `*.toml` dal tema nella tua cartella `config/_default/`. Ciò ti garantirà di avere tutte le impostazioni corrette del tema e ti consentirà di personalizzare facilmente il tema in base alle tue esigenze.
 
-Nella cartella principale del tuo sito web, elimina il file `config.toml` generato da Hugo. Copia i file di configurazione `*.toml` dal tema della tua cartella `config/_default/` folder. Ti garantirà di avere tutte le impostazioni corrette del tema e ti consentirà di personalizzare facilmente il tema in base alle tue esigenze.
-
 {{< alert >}}
 **Note:** Non dovresti sovrascrivere il file `module.toml` se ne esiste già uno nel tuo progetto!
 {{< /alert >}}
 
 A seconda di come hai installato il tema, troverai i file di configurazione del tema in posti diversi:
 
-- **Hugo Modules:** In the Hugo cache directory, or [download a copy](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/nunocoracao/blowfish/tree/main/config/_default) from GitHub
-- **Git submodule or Manual install:** `themes/blowfish/config/_default`
+- **Hugo modules:** Nella directory della cache di Hugo o [scarica una copia](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/nunocoracao/blowfish/ tree/main/config/_default) da GitHub
+- **Git submodule o installazione manuale:** `themes/blowfish/config/_default`
 
-Once you've copied the files, your config folder should look like this:
+Una volta che hai copiato i file, la tua cartella delle configurazioni dovrebbe essere cosi:
 
 ```shell
 config/_default/
@@ -148,15 +146,15 @@ config/_default/
 ├─ languages.en.toml
 ├─ markup.toml
 ├─ menus.en.toml
-├─ module.toml  # if you installed using Hugo Modules
+├─ module.toml  # se hai usato Hugo modules come installazione
 └─ params.toml
 ```
 
 {{< alert >}}
-**Important:** If you didn't use Hugo Modules to install Blowfish, you must add the line `theme = "blowfish"` to the top of your `config.toml` file.
+**Importante:** Se non hai utilizzato Hugo Modules per installare Blowfish, devi aggiungere la riga `theme = "blowfish"` all'inizio del tuo file `config.toml`.
 {{< /alert >}}
 
-### Next steps
+### Passo successivo
 
 The basic Blowfish installation is now complete. Continue to the [Getting Started]({{< ref "getting-started" >}}) section to learn more about configuring the theme.
 
