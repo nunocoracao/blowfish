@@ -313,10 +313,18 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 
 ### Fathom Analytics
 
-| 名称                     | 默认值   | 描述                                                                   |
-| ------------------------ | --------- |----------------------------------------------------------------------|
+| 名称                     | 默认值   | 描述                                                                  |
+| ------------------------ | --------- |---------------------------------------------------------------------|
 | `fathomAnalytics.site`   | 无 | 支持 Fathom 站点分析平台。更多详细内容请参考 [分析文档]({{< ref "partials#analytics" >}})。 |
-| `fathomAnalytics.domain` | 无 | 如果使用自定义域名的 Fathom Analytics，请在此提供，以便从自定义域名获取 `script.js`】。           |
+| `fathomAnalytics.domain` | 无 | 如果使用自定义域名的 Fathom Analytics，请在此提供，以便从自定义域名获取 `script.js`。           |
+
+### Umami Analytics
+
+| Name                     | Default   | Description                                                                                                 |
+| ------------------------ | --------- |-------------------------------------------------------------------------------------------------------------|
+| `umamiAnalytics.websiteid`   | _Not set_ | 支持 Umami 站点分析平台。更多详细内容请参考 [分析文档]({{< ref "partials#analytics" >}})。                                         |
+| `umamiAnalytics.domain` | _Not set_ | 如果使用自定义域名的 Umami Analytics，请在此提供，以便从自定义域名获取 `script.js`。 |
+
 
 ### BuyMeACoffee
 

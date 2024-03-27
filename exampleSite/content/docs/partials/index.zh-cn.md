@@ -9,13 +9,14 @@ series: ["部署教程"]
 series_order: 9
 ---
 
-## Analytics
+## 站点分析
 
-Blowfish provides built-in support for Fathom Analytics and Google Analytics. Fathom is a paid alternative to Google Analytics that respects user privacy.
+Blowfish 支持了 Fathom、Google 和 Umami。Fathom 和 Umami 都是开源、简单、且注重隐私的站点分析服务，他们可以很好地替代 Google 分析。Fathom 和 Umami 都有公有云的付费版本，当然你也可以自己手动部署开源版。
 
-### Fathom Analytics
+### Fathom
 
-To enable Fathom Analytics support, simply provide your Fathom site code in the `config/_default/params.toml` file. If you also use the custom domain feature of Fathom and would like to serve their script from your domain, you can also additionally provide the `domain` configuration value. If you don't provide a `domain` value, the script will load directly from Fathom DNS.
+只需要在 `config/_default/params.toml` 文件提供你的 Fathom 站点代码，就可以快速支持 Fathom 站点分析。
+如果你想使用自定义域名来获取跟踪脚本， 那么需要提供 `domain` 参数，否则会从 Fathom 云服务版的地址 (cdn.usefathom.com) 获取脚本。
 
 ```toml
 # config/_default/params.toml
@@ -25,38 +26,52 @@ To enable Fathom Analytics support, simply provide your Fathom site code in the 
   domain = "llama.yoursite.com"
 ```
 
-### Google Analytics
+### Google
 
-Google Analytics support is provided through the internal Hugo partial. Simply provide the `googleAnalytics` key in the `config/_default/config.toml` file and the script will be added automatically.
+Hugo partial 本身已经支持了 Google 站点分析。只需要在 `config/_default/config.toml` 文件添加 `googleAnalytics` 参数即可，跟踪脚本会自动添加。
 
-Both version 3 (analytics.js) and version 4 (gtag.js) are supported, based on the configuration value provided:
+版本3 (analytics.js) 和版本4 (gtag.js) 都是支持的，参考如下示例：
 
 ```toml
 # config/_default/config.toml
 
-# version 3
+# 版本 3
 googleAnalytics = "UA-PROPERTY_ID"
-# version 4
+# 版本 4
 googleAnalytics = "G-MEASUREMENT_ID"
 ```
 
-### Custom analytics providers
+### Umami
 
-If you wish to use a different analytics provider on your website you can also override the analytics partial and provide your own script. Simply create the file `layouts/partials/extend-head.html` in your project and it will automatically include it in the `<head>` of the website.
+只需要在 `config/_default/params.toml` 文件提供你的 [Umami 跟踪代码](https://umami.is/docs/collect-data)，就可以快速支持 Umami 站点分析。
+如果你想使用自定义域名来获取跟踪脚本， 那么需要提供 `domain` 参数，否则会从 Umami 云服务版的地址 (analytics.umami.is) 获取脚本。
 
-## Comments
+```toml
+# config/_default/params.toml
 
-To add comments to your articles, Blowfish includes support for a comments partial that is included at the base of each article page. Simply provide a `layouts/partials/comments.html` which contains the code required to display your chosen comments.
+[umamiAnalytics]
+  websiteid = "ABC12345"
+  domain = "llama.yoursite.com"
+```
 
-You can use either the built-in Hugo Disqus template, or provide your own custom code. Refer to the [Hugo docs](https://gohugo.io/content-management/comments/) for further information.
+### 提供自定义站点分析
 
-Once the partial has been provided, finer control over where comments are displayed is then managed using the `showComments` parameter. This value can be set at the theme level in the `params.toml` [config file]({{< ref "configuration#theme-parameters" >}}), or on a per-article basis by including it in the [front matter]({{< ref "front-matter" >}}). The parameter defaults to `false` so it must be set to `true` in one of these locations in order for comments to be displayed.
+如果你想在你的网站提供其他站点分析，你可以自己提供脚本，并覆盖 Blowfish 主题中内置的 partial。
+只需要创建 `layouts/partials/extend-head.html` 文件并在内容中提供脚本即可，Blowfish 主题会自动将 `extend-head.html` 中的内容添加到整个站点的 `<head>` 中。
 
-## Favicons
+## 评论
 
-Blowfish provides a default set of blank favicons to get started but you can provide your own assets to override them. The easiest way to obtain new favicon assets is to generate them using a third-party provider like [favicon.io](https://favicon.io).
+Blowfish 支持了在每篇文章底部添加一个评论功能。只需要提供一个 `layouts/partials/comments.html` 文件，并在其中添加显示评论的代码即可。
 
-Icon assets should be placed directly in the `static/` folder of your website and named as per the listing below. If you use [favicon.io](https://favicon.io), these will be the filenames that are automatically generated for you, but you can provide your own assets if you wish.
+你可以使用 Hugo 中内置的 Disqus 模板，也可以提供自定义代码。更多内容和细节可以参考 [Hugo 文档](https://gohugo.io/content-management/comments/).
+
+一旦提供了评论的 partial，你就可以使用 `showComments` 更细致地控制评论的显隐。此参数可以在 `params.toml` [配置文件]({{< ref "configuration#theme-parameters" >}}) 中全局设置，也可以在每篇文章的 [扉页参数]({{< ref "front-matter" >}}) 中单独针对特定文章设置。该参数默认为  `false`，因此需要在上面两个位置设置为 `true` 才能显示评论。 
+
+## 网站图标（Favicons）
+
+Blowfish 提供了一套空白网站图标以便快速上手，但你可以提供自己的资源来覆盖他们。想要获取新的图标资源最简单的方法是使用第三方提供商，如 [favicon.io](https://favicon.io)。
+
+网站图标资源的位置在 `static/` 文件夹中，并务必按照如下的名称命名。如果你使用了[favicon.io](https://favicon.io)，那么下载下来的文件名和下面的示例完全一致；当然你也可以通过别的方式提供，记得重命名就行。
 
 ```shell
 static/
@@ -69,34 +84,34 @@ static/
 └─ site.webmanifest
 ```
 
-Alternatively, you can also completely override the default favicon behaviour and provide your own favicon HTML tags and assets. Simply provide a `layouts/partials/favicons.html` file in your project and this will be injected into the site `<head>` in place of the default assets.
+另外，你也可以完全覆盖 Blowfish 提供的这套网站图标逻辑，只需要在 `layouts/partials/favicons.html` 文件中，提供你自己的网站图标 HTML 和对应资源，`favicons.html`文件中的内容会自动添加到网站的 `<head>` 中。
 
-## Icon
+## 图标
 
-Similar to the [icon shortcode]({{< ref "shortcodes#icon" >}}), you can include icons in your own templates and partials by using Blowfish's `icon.html` partial. The partial takes one parameter which is the name of the icon to be included.
+类似 [图标短代码]({{< ref "shortcodes#icon" >}})，Blowfish 提供了 `icon.html`，以便你在自己的模板和部分（partials）中包含图标。此 partials 只接收一个参数，即图标的名称，示例如下。
 
-**Example:**
+**示例：**
 
 ```go
   {{ partial "icon.html" "github" }}
 ```
 
-Icons are populated using Hugo pipelines which makes them very flexible. Blowfish includes a number of built-in icons for social, links and other purposes. Check the [icon samples]({{< ref "samples/icons" >}}) page for a full list of supported icons.
+图标会使用 Hugo 的管道进行填充，这会使它们非常灵活。Blowfish 内置了许多图标，用于社交、链接等其他目的。查看 [图标样本]({{< ref "samples/icons" >}}) 可以看到 Blowfish 内置的所有图标。
 
-Custom icons can be added by providing your own icon assets in the `assets/icons/` directory of your project. The icon can then be referenced in the partial by using the SVG filename without the `.svg` extension.
+你也可以在 `assets/icons/` 目录中提供你自己的图标资源。在 `icon.html` 中也可以添加不是 `.svg` 后缀的图标资源。
 
-Icons can also be used in article content by calling the [icon shortcode]({{< ref "shortcodes#icon" >}}).
+图标也可以通过[图标短代码]({{< ref "shortcodes#icon" >}})的方式使用在文章中。
 
-## Extensions
+## 扩展
 
-Blowfish also provides for a number of extension partials that allow for expanding upon base functionality.
+Blowfish 还提供了一些扩展部分，允许在基础功能上进行扩展。
 
-### Article link
+### 文章链接
 
-If you wish to insert additional code after article links, create a `layouts/partials/extend-article-link.html` file. This is especially powerful when combined with the [`badge`]({{< ref "shortcodes#badge" >}}) shortcode which can be used to highlight metadata for certain articles.
+如果你希望在文章链接中追加额外代码，可以创建  `layouts/partials/extend-article-link.html` 文件。 当与 [badge]({{< ref "shortcodes#badge" >}}) 短代码结合使用时尤其强大，可用于在链接中添加某些文章的元数据。
 
-### Head and Footer
+### 头部和尾部
 
-The theme allows for inserting additional code directly into the `<head>` and `<footer>` sections of the template. These can be useful for providing scripts or other logic that isn't part of the theme.
+Blowfish 主题允许直接在模板的 <head> 和 <footer> 部分中插入额外的代码。这些可用于提供不属于主题的脚本或其他逻辑。
 
-Simply create either `layouts/partials/extend-head.html` or `layouts/partials/extend-footer.html` and these will automatically be included in your website build. Both partials are injected as the last items in `<head>` and `<footer>` so they can be used to override theme defaults.
+只需创建 `layouts/partials/extend-head.html` 或 `layouts/partials/extend-footer.html`，这些将自动包含在您的网站构建中。这两个部分作为 `<head>` 和 `<footer>` 中的最后一项被注入，因此它们可用于覆盖主题默认设置。
