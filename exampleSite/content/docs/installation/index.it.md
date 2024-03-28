@@ -156,54 +156,54 @@ config/_default/
 
 ### Passo successivo
 
-The basic Blowfish installation is now complete. Continue to the [Getting Started]({{< ref "getting-started" >}}) section to learn more about configuring the theme.
+L'installazione di base di Blowfish è ora completa. Continua alla sezione [Per iniziare]({{< ref "getting-started" >}}) per ulteriori informazioni sulla configurazione del tema.
 
 ---
 
-## Installing updates
+## Installazione degli aggiornamenti
 
-From time to time there will be [new releases](https://github.com/nunocoracao/blowfish/releases) posted that apply fixes and add new functionality to the theme. In order to take advantage of these changes, you will need to update the theme files on your website.
+Di tanto in tanto verranno pubblicate [nuove versioni](https://github.com/nunocoracao/blowfish/releases) che applicano correzioni e aggiungono nuove funzionalità al tema. Per sfruttare questi cambiamenti, dovrai aggiornare i file del tema sul tuo sito web.
 
-How you go about this will depend on the installation method you chose when the theme was originally installed. Instructions for each method can be found below.
+Il modo in cui procedere dipenderà dal metodo di installazione scelto al momento dell'installazione originale del tema. Le istruzioni per ciascun metodo sono disponibili di seguito.
 
 - [Git submodule](#update-using-git)
 - [Hugo module](#update-using-hugo)
-- [Manual file copy](#update-manually)
+- [Copia manuale del file](#aggiornamento-manuale)
 
-### Update using git
+### Aggiornamento utilizzando Git
 
-Git submodules can be updated using the `git` command. Simply execute the following command and the latest version of the theme will be downloaded into your local repository:
+I sottomoduli Git possono essere aggiornati utilizzando il comando `git`. Esegui semplicemente il comando seguente e l'ultima versione del tema verrà scaricata nel tuo repository locale:
 
 ```shell
 git submodule update --remote --merge
 ```
 
-Once the submodule has been updated, rebuild your site and check everything works as expected.
+Una volta aggiornato il sottomodulo, riavvia il tuo sito e verifica che tutto funzioni come previsto.
 
-### Update using Hugo
+### Aggiornamento utilizzando Hugo
 
-Hugo makes updating modules super easy. Simply change into your project directory and execute the following command:
+Hugo rende l'aggiornamento dei moduli estremamente semplice. Basta passare alla directory del progetto ed eseguire il seguente comando:
 
 ```shell
 hugo mod get -u
 ```
 
-Hugo will automatically update any modules that are required for your project. It does this by inspecting your `module.toml` and `go.mod` files. If you have any issues with the update, check to ensure these files are still configured correctly.
+Hugo aggiornerà automaticamente tutti i moduli richiesti per il tuo progetto. Lo fa controllando i file `module.toml` e `go.mod`. In caso di problemi con l'aggiornamento, assicurati che questi file siano ancora configurati correttamente.
 
-Then simply rebuild your site and check everything works as expected.
+Quindi riavvia semplicemente il tuo sito e verifica che tutto funzioni come previsto.
 
-### Update manually
+### Aggiornamenti manuali
 
-Updating Blowfish manually requires you to download the latest copy of the theme and replace the old version in your project.
+L'aggiornamento manuale di Blowfish richiede il download dell'ultima copia del tema e la sostituzione della vecchia versione nel progetto.
 
 {{< alert >}}
-Note that any local customisations you have made to the theme files will be lost during this process.
+Tieni presente che ogni personalizzazione locale apportata ai file del tema andranno perse durante questo processo.
 {{< /alert >}}
 
-1. Download the latest release of the theme source code.
+1. Scarica l'ultima versione del codice sorgente del tema.
 
-   {{< button href="https://github.com/nunocoracao/blowfish/releases/latest" target="_blank" >}}Download from Github{{< /button >}}
+   {{< button href="https://github.com/nunocoracao/blowfish/releases/latest" target="_blank" >}}Scarica da Github{{< /button >}}
 
-2. Extract the archive, rename the folder to `blowfish` and move it to the `themes/` directory inside your Hugo project's root folder. You will need to overwrite the existing directory to replace all the theme files.
+2. Estrai l'archivio, rinomina la cartella in "blowfish" e spostala nella directory "themes/" all'interno della cartella principale del tuo progetto Hugo. Dovrai sovrascrivere la directory esistente per sostituire tutti i file del tema.
 
-3. Rebuild your site and check everything works as expected.
+3. Riavvia il tuo sito e verifica che tutto funzioni come previsto.
