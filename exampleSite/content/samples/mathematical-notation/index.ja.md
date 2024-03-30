@@ -1,18 +1,18 @@
 ---
-title: 数学的な表記
+title: 数学的記法
 date: 2019-03-08
-description: Blowfish での数学的な表記の簡単なサンプル。
+description: Blowfish での数学的記法の簡単なサンプル。
 tags: ["sample", "katex", "maths", "shortcodes"]
 type: 'sample'
 ---
 
-KaTeX は数学的な表記を記事内にレンダリングする際に利用できます。
+KaTeX は数学的記法を記事内にレンダリングする際に利用できます。
 
 <!--more-->
 
 {{< katex >}}
 
-Blowfish は数学的な表記を利用する場合のみ、 KaTeX アセットをプロジェクトにバンドルします。これを機能させるには、単に記事内に [`katex` ショートコード]({{< ref "docs/shortcodes#katex" >}}) を含ませてください。以下が例です:
+Blowfish は数学的記法を利用する場合のみ、 KaTeX アセットをプロジェクトにバンドルします。これを機能させるには、単に記事内に [`katex` ショートコード]({{< ref "docs/shortcodes#katex" >}}) を含ませてください。以下が例です:
 
 ```md
 {{</* katex */>}}
