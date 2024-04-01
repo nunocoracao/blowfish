@@ -4,3 +4,6 @@
 {{ with site.Config.Services.GoogleAnalytics.ID }}
 {{ partial "analytics/ga.html" }}
 {{ end }}
+{{ with site.Params.umamiAnalytics.websiteid }}
+{{ partial "analytics/umami.html" }}
+{{ end }}

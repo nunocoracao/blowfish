@@ -2,7 +2,7 @@
                 title: "ekwska.com"
                 tags: [Blog personale]
                 externalUrl: "https://ekwska.com"
-                date: 9926-08-08
+                date: 9927-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

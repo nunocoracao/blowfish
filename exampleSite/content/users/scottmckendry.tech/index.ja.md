@@ -2,7 +2,7 @@
                 title: "scottmckendry.tech"
                 tags: [個人サイト]
                 externalUrl: "https://scottmckendry.tech"
-                date: 9946-08-08
+                date: 9947-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

@@ -1,7 +1,12 @@
 {{ $disableImageOptimization := .Site.Params.disableImageOptimization | default false }}
 <div class="flex author">
   {{ with .Site.Author.image }}
-    {{ $authorImage := resources.Get . }}
+    {{ $authorImage := "" }}
+    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+      {{ $authorImage = resources.GetRemote . }}
+    {{ else }}
+      {{ $authorImage = resources.Get . }}
+    {{ end }}
     {{ if $authorImage }}
       {{ if not $disableImageOptimization }}
         {{ $authorImage = $authorImage.Fill "192x192" }}

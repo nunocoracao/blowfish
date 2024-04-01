@@ -19,10 +19,16 @@
   <div class="mt-1 mb-2 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
     {{ partial "article-meta/list.html" (dict "context" . "scope" "single") }}
   </div>
+  {{ $translations := .AllTranslations }}
   {{ with .File }}
+    {{ $path := .Path }}
+    {{range $translations}}
+      {{ $lang := print "."  .Lang  ".md" }}
+      {{ $path = replace $path $lang ".md" }}
+    {{end}}
   <script>
-    var oid = "views_{{ .Path }}"
-    var oid_likes = "likes_{{ .Path }}"
+    var oid = "views_{{ $path }}"
+    var oid_likes = "likes_{{ $path }}"
   </script>
   {{ end }}
   {{ $jsPage := resources.Get "js/page.js" }}

@@ -28,13 +28,14 @@ async function processFile(filePath, file) {
         for(var i in targetLangs) {
             const targetLang = targetLangs[i];
             var targetFilePath = filePath.replace(".md", "." + targetLang + ".md");
-            var targetFileName = file.replace(".md", "." + targetLang + ".md");
+            //var targetFileName = file.replace(".md", "." + targetLang + ".md");
 
             if(fs.existsSync(targetFilePath)) {
                 console.log("file already exists", targetFilePath);
             }else{
                 console.log("creating file", targetFilePath);
                 //fs.symlinkSync(file, targetFilePath, 'junction');
+                fs.copyFileSync(filePath, targetFilePath);
             }
         }
 

@@ -1,8 +1,8 @@
 ---
-title: "Charts"
+title: "図表"
 date: 2019-03-06
-description: "Guide to Chart.js usage in Blowfish"
-summary: "Blowfish includes Chart.js for powerful charts and data visualisations."
+description: "Blowfish での Chart.js の利用方法のガイド"
+summary: "Blowfish は強力な図表とデータの視覚化のために Chart.js を内蔵しています。"
 tags: ["chart", "sample", "graph", "shortcodes"]
 showDate: false
 type: 'sample'

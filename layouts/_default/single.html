@@ -75,21 +75,27 @@
 
       <div class="min-w-0 min-h-0 max-w-fit">
         
-        {{ partial "series.html" . }}
+        {{ partial "series/series.html" . }}
 
         <div class="article-content max-w-prose mb-20">
           {{ .Content | emojify }}
         </div>
                 
-        {{ partial "series-closed.html" . }}
+        {{ partial "series/series-closed.html" . }}
         {{ partial "sharing-links.html" . }}
         {{ partial "related.html" . }}  
       </div>
      
-    {{ with .File }}
-     <script>
-        var oid = "views_{{ .Path }}"
-        var oid_likes = "likes_{{ .Path }}"
+      {{ $translations := .AllTranslations }}
+      {{ with .File }}
+        {{ $path := .Path }}
+        {{range $translations}}
+          {{ $lang := print "."  .Lang  ".md" }}
+          {{ $path = replace $path $lang ".md" }}
+        {{end}}
+      <script>
+        var oid = "views_{{ $path }}"
+        var oid_likes = "likes_{{ $path }}"
       </script>
       {{ end }}
       {{ $jsPage := resources.Get "js/page.js" }}

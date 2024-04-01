@@ -1,0 +1,22 @@
+{{ if .Params.series }}
+    <summary
+        class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
+        {{ index .Params.series 0 }} - {{ i18n "article.part_of_series" }}
+    </summary>
+    {{ $seriesName := strings.ToLower (index .Params.series 0) }}
+    {{ range $post := sort (index .Site.Taxonomies.series $seriesName) "Params.series_order" }}
+    {{ if eq $post.Permalink $.Page.Permalink }}
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        {{ i18n "article.part" }} {{ $post.Params.series_order }}: {{ i18n "article.this_article" }}
+    </div>
+    {{ else }}
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="{{$post.Permalink}}">
+            {{ i18n "article.part" }} {{ $post.Params.series_order }}: {{ $post.Params.title}}
+        </a>
+    </div>
+    {{end}}
+    {{end}}
+{{end}}

@@ -2,7 +2,7 @@
                 title: "ricklan.photography"
                 tags: [Sito personale]
                 externalUrl: "https://ricklan.photography"
-                date: 9943-08-08
+                date: 9944-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

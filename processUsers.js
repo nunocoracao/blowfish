@@ -59,9 +59,9 @@ async function convert(text, from, to) {
         from: from,
         to: to
     };
-    if(!cache[to])
+    if (!cache[to])
         cache[to] = {};
-    if(cache[to][text])
+    if (cache[to][text])
         return cache[to][text];
     var translated_text = await translate(text, options);
     cache[to][text] = translated_text.text;
@@ -134,9 +134,6 @@ puppeteer
                 await page.goto(users[i].url);
                 await page.screenshot({ path: dir + "/feature.jpg" });
             }
-
-
-
         }
 
         await browser.close();
