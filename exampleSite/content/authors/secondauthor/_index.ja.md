@@ -1,5 +1,5 @@
 ---
-title: "Dummy Second Author"
+title: "2人目のダミー作者"
 ---
 
-Dummy Second Author's awesome dummy bio.
+2人目のダミー作者の素晴らしいダミープロフィールです。

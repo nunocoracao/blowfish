@@ -1,7 +1,7 @@
 ---
-title: "Rich Content"
+title: "リッチコンテンツ"
 date: 2019-03-10
-description: "A brief description of Hugo Shortcodes"
+description: "Hugo ショートコードの簡単な説明"
 summary: "This is an _example_ of a **rich** content summary."
 tags: ["shortcodes", "privacy", "sample", "gist", "twitter", "youtube", "vimeo"]
 type: 'sample'
@@ -11,26 +11,26 @@ Hugo ships with several [built-in shortcodes](https://gohugo.io/content-manageme
 
 ## YouTube
 
-Below is an example using the built-in `youtube` shortcode.
+下記のものは `youtube` ショートコードの組み込みを利用した例です。
 
 {{< youtube ZJthWmvUzzc >}}
 
 ## Twitter
 
-This example uses the `twitter_simple` shortcode to output a Tweet. It requires two named parameters `user` and `id`.
+この例はツイートを `twitter_simple` ショートコードを利用して出力しています。こちらは `user` と `id` の二つのパラメータを必須としています。
 
 {{< twitter_simple user="DesignReviewed" id="1085870671291310081" >}}
 
-Alternatively, the `tweet` shortcode can be used to embed a fully marked up Twitter card.
+代わりとして、 `tweet` ショートコードが完全にマークアップされた Twitter カードの埋め込みに利用できます、
 
 ## Gist
 
-The `gist` shortcode can be used to embed a GitHub Gist. It requires two unnamed parameters: the username and ID of the Gist.
+`gist` ショートコードは GitHub Gist の埋め込みに利用できます。こちらは Gist のユーザー名と ID の二つのパラメータを必須としています。
 
 {{< gist nunocoracao 2779792841f7ffa7c7e62dc4d38626d4 >}}
 
 ## Vimeo
 
-The `vimeo_simple` shortcode will embed a Vimeo video.
+`vimeo_simple` ショートコードは Vimeo 動画を埋め込むことができます。
 
 {{< vimeo_simple 48912912 >}}
