@@ -26,7 +26,7 @@ I file di configurazione forniti con Blowfish contengono tutte le possibili impo
 
 ## Configurazione di base
 
-Before creating any content, there are a few things you should set for a new installation. Starting in the `config.toml` file, set the `baseURL` and `languageCode` parameters. The `languageCode` should be set to the main language that you will be using to author your content.
+Prima di creare qualsiasi contenuto, è necessario impostare alcune cose per una nuova installazione. Iniziando dal file `config.toml`, imposta i parametri `baseURL` e `lingualCode`. Il `lingualCode` dovrebbe essere impostato sulla lingua principale che utilizzerai per creare i tuoi contenuti.
 
 ```toml
 # config/_default/config.toml
@@ -35,12 +35,12 @@ baseURL = "https://your_domain.com/"
 languageCode = "en"
 ```
 
-The next step is to configure the language settings. Although Blowfish supports multilingual setups, for now, just configure the main language.
+Il passo successivo è configurare le impostazioni della lingua. Sebbene Blowfish supporti le configurazioni multilingue, per ora basta configurare la lingua principale.
 
-Locate the `languages.en.toml` file in the config folder. If your main language is English you can use this file as is. Otherwise, rename it so that it includes the correct language code in the filename. For example, for French, rename the file to `languages.fr.toml`.
+Individua il file "languages.en.toml" nella cartella di configurazione. Se la tua lingua principale è l'inglese puoi utilizzare questo file così com'è. Altrimenti, rinominalo in modo che includa il codice della lingua corretto nel nome del file. Ad esempio, per il francese, rinominare il file in "languages.fr.toml".
 
 {{< alert >}}
-Note that the language code in the language config filename should match the `languageCode` setting in `config.toml`.
+Tieni presente che il codice della lingua nel nome del file di configurazione della lingua deve corrispondere all'impostazione "languageCode" in "config.toml".
 {{< /alert >}}
 
 ```toml
