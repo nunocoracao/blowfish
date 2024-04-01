@@ -10,7 +10,7 @@ series_order: 3
 ---
 
 {{< alert >}}
-Questa sezione presuppone che si sia già [installato il tema Blowfish]({{< ref "docs/installation" >}}).
+Questa sezione presuppone che tu abbia già [installato il tema Blowfish]({{< ref "docs/installation" >}}).
 {{< /alert >}}
 
 </br>
@@ -22,9 +22,9 @@ npx blowfish-tools
 {{< /alert >}}
 
 
-The config files that ship with Blowfish contain all of the possible settings that the theme recognises. By default, many of these are commented out but you can simply uncomment them to activate or change a specific feature.
+I file di configurazione forniti con Blowfish contengono tutte le possibili impostazioni riconosciute dal tema. Per impostazione predefinita, molti di questi sono commentati ma puoi semplicemente decommentarli per attivare o modificare una funzionalità specifica.
 
-## Basic configuration
+## Configurazione di base
 
 Before creating any content, there are a few things you should set for a new installation. Starting in the `config.toml` file, set the `baseURL` and `languageCode` parameters. The `languageCode` should be set to the main language that you will be using to author your content.
 
