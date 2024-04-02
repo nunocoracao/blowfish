@@ -57,22 +57,20 @@ links = [
   { twitter = "https://twitter.com/username" }
 ]
 ```
+La configurazione `[author]` determina il modo in cui le informazioni sull'autore vengono visualizzate sul sito web. L'immagine deve essere posizionata nella cartella `assets/`. I link verranno visualizzati nell'ordine in cui sono elencati.
 
-The `[author]` configuration determines how the author information is displayed on the website. The image should be placed in the site's `assets/` folder. Links will be displayed in the order they are listed.
+Se hai bisogno di ulteriori dettagli, ulteriori informazioni su ciascuna di queste opzioni di configurazione sono trattate nella sezione [Configurazione]({{< ref "configuration" >}}).
 
-If you need extra detail, further information about each of these configuration options, is covered in the [Configuration]({{< ref "configuration" >}}) section.
+## Schemi di colori
 
-## Colour schemes
-
-Blowfish ships with a number of colour schemes out of the box. To change the scheme, simply set the `colorScheme` theme parameter. Valid options are `blowfish` (default), `avocado`, `fire`, `ocean`, `forest`, `princess`, `neon`, `bloody`, `terminal`, `marvel`, `noir`, `autumn`, `congo`, and`slate`.
+Blowfish viene fornito con una serie di schemi di colori già pronti. Per cambiare lo schema, è sufficiente impostare il parametro del tema `colorScheme`. Le opzioni valide sono `blowfish` (default), `avocado`, `fire`, `ocean`, `forest`, `princess`, `neon`, `bloody`, `terminal`, `marvel`, `noir`, `autumn`, `congo`, and`slate`.
 
 ```toml
 # config/_default/params.toml
 
 colorScheme = "blowfish"
 ```
-
-Blowfish defines a three-colour palette that is used throughout the theme. Each main colour contains ten shades which are based upon the colours that are included in [Tailwind](https://tailwindcss.com/docs/customizing-colors#color-palette-reference). The three main colours are used for the header, footer, and accent colours. Here are the colors for each scheme:
+Blowfish definisce una palette di tre colori che viene utilizzata in tutto il tema. Ogni colore principale contiene dieci sfumature basate sui colori inclusi in [Tailwind](https://tailwindcss.com/docs/customizing-colors#color-palette-reference). I tre colori principali sono utilizzati per l'intestazione, il piè di pagina e i colori d'accento. Ecco i colori per ogni schema:
 
 #### Blowfish (default)
 {{< swatches "#64748b" "#3b82f6" "#06b6d4" >}}
@@ -117,13 +115,13 @@ Blowfish defines a three-colour palette that is used throughout the theme. Each 
 {{< swatches "#6B7280" "#64748b" "#6B7280" >}}
 
 
-Although these are the default schemes, you can also create your own. Refer to the [Advanced Customisation]({{< ref "advanced-customisation#colour-schemes" >}}) section for details.
+Sebbene questi siano gli schemi predefiniti, è possibile crearne di propri. Per maggiori informazioni, consultare la sezione [Personalizzazione avanzata]({{< ref "advanced-customisation#colour-schemes" >}}).
 
-## Organising content
+## Organizzazione dei contenuti
 
-By default, Blowfish doesn't force you to use a particular content type. In doing so you are free to define your content as you wish. You might prefer _pages_ for a static site, _posts_ for a blog, or _projects_ for a portfolio.
+Per impostazione predefinita, Blowfish non obbliga a utilizzare un particolare tipo di contenuto. In questo modo si è liberi di definire il contenuto come si desidera. Potreste preferire _pages_ per un sito statico, _posts_ per un blog o _projects_ per un portfolio.
 
-Here's a quick overview of a basic Blowfish project. All content is placed within the `content` folder:
+Ecco una rapida panoramica di un progetto base di Blowfish. Tutti i contenuti sono inseriti nella cartella `content`:
 
 ```shell
 .
@@ -144,12 +142,12 @@ Here's a quick overview of a basic Blowfish project. All content is placed withi
 └── themes
     └── blowfish
 ```
+È importante avere una conoscenza approfondita di come Hugo si aspetta che il contenuto sia organizzato, poiché il tema è progettato per sfruttare appieno i pacchetti di pagine di Hugo. Si consiglia di leggere i [documentazione ufficiale di Hugo](https://gohugo.io/content-management/organization/) per maggiori informazioni.
 
-It's important to have a firm grasp of how Hugo expects content to be organised as the theme is designed to take full advantage of Hugo page bundles. Be sure to read the [official Hugo docs](https://gohugo.io/content-management/organization/) for more information.
 
-Blowfish is also flexible when it comes to taxonomies. Some people prefer to use _tags_ and _categories_ to group their content, others prefer to use _topics_.
+Blowfish è flessibile anche per quanto riguarda le tassonomie. Alcuni preferiscono usare _tags_ e _categories_ per raggruppare i loro contenuti, altri preferiscono usare _topics_.
 
-Hugo defaults to using posts, tags and categories out of the box and this will work fine if that's what you want. If you wish to customise this, however, you can do so by creating a `taxonomies.toml` configuration file:
+Hugo usa di default post, tag e categorie e questo funziona bene se è quello che vuoi. Tuttavia, se desideri personalizzare questo aspetto, è possibile farlo creando un file di configurazione `taxonomies.toml`:
 
 ```toml
 # config/_default/taxonomies.toml
