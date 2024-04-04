@@ -2,7 +2,7 @@
 # Refer to the theme docs for more details about each of these parameters.
 # https://blowfish.page/docs/getting-started/
 
-# theme = "blowfish"
+theme = "blowfish"
 # baseURL = "https://your_domain.com/"
 defaultContentLanguage = "en"
 
