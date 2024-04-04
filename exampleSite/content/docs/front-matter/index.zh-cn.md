@@ -11,7 +11,7 @@ series_order: 7
 
 除了 [Hugo 中默认的 front matter](https://gohugo.io/content-management/front-matter/#front-matter-variables)，Blowfish 主题中还添加了大量的参数选项来自定义单个页面的展示方式。所有可用的扉页参数如下。
 
-扉页参数中的默认值是从[基础配置]({{< ref "configuration" >}})中继承的，所有只有当你想要覆盖默认值时，才需要在当前页面指定这些参数。
+front matter 参数中的默认值是从[基础配置]({{< ref "configuration" >}})中继承的，所有只有当你想要覆盖默认值时，才需要在当前页面指定这些参数。
 
 <!-- prettier-ignore-start -->
 | 名称                            | 默认值                                                                                                             | 描述                                                                                                                                            |
