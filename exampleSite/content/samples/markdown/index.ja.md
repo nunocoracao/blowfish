@@ -1,18 +1,18 @@
 ---
 title: "Markdown"
 date: 2019-03-11
-description: "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
+description: "基本的な Markdown 構文と HTML 要素のフォーマットを紹介するサンプル記事です。"
 tags: ["markdown", "css", "html", "sample"]
 type: 'sample'
 ---
 
-This article offers a sample of basic Markdown formatting that can be used in Blowfish, also it shows how some basic HTML elements are decorated.
+この記事は Blowfish を利用した基本的な Markdown フォーマットのサンプルを提供し、また基本的な HTML 要素がどのように装飾できるのかを示しています。
 
 <!--more-->
 
-## Headings
+## 見出し
 
-The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
+こちらは HTML の `<h1>`—`<h6>` 要素に相当する6種類の見出しを使用できます。 `<h1>` が最大の見出しで、 `<h6>` に近づくほど小さくなっていきます。
 
 # H1
 
@@ -26,121 +26,121 @@ The following HTML `<h1>`—`<h6>` elements represent six levels of section head
 
 ###### H6
 
-## Paragraph
+## 段落
 
 Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
 
 Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
 
-## Blockquotes
+## ブロック引用
 
-The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
+ブロック引用要素は、他の情報元から引用された内容を表します。 `footer` または `cite` 要素を使った引用や、注釈や省略形などの変更を伴うことも可能です。
 
-### Blockquote without attribution
+### 出典なしのブロック引用
 
 > Tiam, ad mint andaepu dandae nostion secatur sequo quae.
-> **Note** that you can use _Markdown syntax_ within a blockquote.
+> **ノート** ブロック構文では、 _Markdown 構文_ を利用可能です。
 
-### Blockquote with attribution
+### 出典ありのブロック引用
 
 > Don't communicate by sharing memory, share memory by communicating.<br>
 > — <cite>Rob Pike[^1]</cite>
 
-[^1]: The above quote is excerpted from Rob Pike's [talk `about` nothing](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
+[^1]: 上記の引用は、2015年11月18日に開催された Gopherfest での Rob Pike’s の [`講演`](https://www.youtube.com/watch?v=PAAkCSZUG1c) からの抜粋です。
 
-## Tables
+## テーブル
 
-Tables aren't part of the core Markdown spec, but Hugo supports supports them out-of-the-box.
+テーブルは Markdown の仕様には含まれていません。しかし Hugp はテーブルをすぐに利用できるようサポートしています。
 
-| Name  | Age |
-| ----- | --- |
-| Bob   | 27  |
-| Alice | 23  |
+| 名前  | 年齢 |
+| ----- | ---- |
+| Bob   | 27   |
+| Alice | 23   |
 
-### Inline Markdown within tables
+### テーブルないのインライン Markdown
 
-| Italics   | Bold     | Code   |
-| --------- | -------- | ------ |
-| _italics_ | **bold** | `code` |
+| 斜体   | 太字     | コード   |
+| ------ | -------- | -------- |
+| _斜体_ | **太字** | `コード` |
 
-## Code Blocks
+## コードブロック
 
-### Code block with backticks
+### バックチックによるコードブロック
 
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <title>Example HTML5 Document</title>
+    <title>HTML5 資料の例</title>
   </head>
   <body>
-    <p>Test</p>
+    <p>テスト</p>
   </body>
 </html>
 ```
 
-### Code block indented with four spaces
+### 4スペースのインデントによるコードブロック
 
     <!DOCTYPE html>
-    <html lang="en">
+    <html lang="ja">
     <head>
       <meta charset="utf-8">
-      <title>Example HTML5 Document</title>
+      <title>HTML5 資料の例</title>
     </head>
     <body>
-      <p>Test</p>
+      <p>テスト</p>
     </body>
     </html>
 
-### Code block with Hugo's internal highlight shortcode
+### Hugo 内のショートコード・ハイライトを利用したコードブロック
 
 {{< highlight html "linenos=table,hl_lines=4 7-9" >}}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>Example HTML5 Document</title>
+  <title>HTML5 資料の例</title>
 </head>
 <body>
-  <p>Test</p>
+  <p>テスト</p>
 </body>
 </html>
 {{< /highlight >}}
 
-## List Types
+## リスト形式
 
-### Ordered List
+### 順序のあるリスト
 
-1. First item
-2. Second item
-3. Third item
+1. 1つ目のアイテム
+2. 2つ目のアイテム
+3. 3つ目のアイテム
 
-### Unordered List
+### 順序がないリスト
 
-- List item
-- Another item
-- And another item
+- リストアイテム
+- 他のアイテム
+- 他のアイテム
 
-### Nested list
+### 入れ子型リスト
 
-- Fruit
-  - Apple
-  - Orange
-  - Banana
-- Dairy
-  - Milk
-  - Cheese
+- 果実
+  - りんご
+  - オレンジ
+  - バナナ
+- 乳製品
+  - 牛乳
+  - チーズ
 
-## Other Elements — abbr, sub, sup, kbd, mark
+## その他の要素 — abbr, sub, sup, kbd, mark
 
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
+<abbr title="Graphics Interchange Format">GIF</abbr> はビットマップ画像フォーマットです。
 
 H<sub>2</sub>O
 
 X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
 
-Press <kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd> to end the session.
+<kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd>を押すことでセッションを終了出来ます。
 
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
+多くの<mark>サラマンダー</mark>は夜行性で、昆虫やミミズ、その他の生物を狩ります。

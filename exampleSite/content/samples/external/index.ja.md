@@ -1,8 +1,8 @@
 ---
-title: "An External Article"
+title: "外部の記事"
 date: 2019-01-24
 externalUrl: "https://nunocoracao.com/projects/"
-summary: "The `externalUrl` front matter parameter can link to any URL."
+summary: "`externalUrl` 表示は任意の URL にリンクすることができます。"
 showReadingTime: true
 _build:
   render: "false"
@@ -10,6 +10,6 @@ _build:
 type: 'sample'
 ---
 
-This page uses the `externalUrl` front matter parameter to link to an article outside of this Hugo website.
+このページは、 `externalUrl` 表示パラメータを利用して、この Hugo ウェブサイト外の記事とリンクしています。
 
-It's great for things like linking to posts on Medium or to research papers you may have hosted on third party websites.
+Medium の投稿へのリンクや、サードパーティのウェブサイトでホストしている研究論文へのリンクなどに最適です。

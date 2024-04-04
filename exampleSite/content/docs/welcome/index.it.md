@@ -1,42 +1,42 @@
 ---
-title: "Welcome to Blowfish"
+title: "Benvenuti a Blowfish"
 date: 2022-01-19
 draft: false
-description: "Discover what's new in Blowfish version 2.0."
-tags: ["new", "docs"]
-series: ["Documentation"]
+description: "Scopri le novità della versione 2.0 di Blowfish."
+tags: ["novità", "documenti"]
+series: ["Documentazione"]
 series_order: 1
 ---
 
 {{< lead >}}
-Blowfish is packed with tons of features.
+Blowfish è ricco di tantissime funzionalità.
 {{< /lead >}}
 
-The original aim of Blowfish was to develop a theme that was simple and lightweight. The theme is a fork of <a target="_blank" href="https://github.com/nunocoracao/congo">Congo</a> and expands its initial vision.
+Lo scopo originale di Blowfish era quello di sviluppare un tema semplice e leggero. Il tema è un fork del <a target="_blank" href="https://github.com/nunocoracao/congo">Congo</a> e ne espande la visione iniziale.
 
 ## Tailwind CSS 3.0
 
-Tailwind CSS is at the heart of Blowfish and this release contains the very latest [Tailwind CSS version 3](https://tailwindcss.com/blog/tailwindcss-v3). It brings with it performance optimisations and support for some great new CSS features.
+Tailwind CSS è il cuore di Blowfish e questa versione contiene l'ultima [Tailwind CSS versione 3](https://tailwindcss.com/blog/tailwindcss-v3). Porta con sé ottimizzazioni delle prestazioni e supporto per alcune nuove fantastiche funzionalità CSS.
 
 {{< youtube "TmWIrBPE6Bc" >}}
 
-## Multilingual support
+## Supporto multilingue
 
-A highly requested feature, Blowfish is now multilingual! If you publish your content in multiple languages, the site will be built with all the translations available.
+Blowfish è ora multilingue! Una funzionalità molto richiesta. Se pubblichi i tuoi contenuti in più lingue, il sito verrà realizzato con tutte le traduzioni disponibili.
 
 <div class="text-2xl text-center" style="font-size: 2.8rem">:gb: :de: :fr: :es: :cn: :brazil: :tr: :bangladesh:</div>
 
-Thanks to submissions from the community, Blowfish has already been translated into [twenty-six languages](https://github.com/nunocoracao/blowfish/tree/main/i18n) with more to be added over time. By the way, [pull requests](https://github.com/nunocoracao/blowfish/pulls) for new languages are always welcome!
+Grazie ai contributi della community, Blowfish è già stato tradotto in [ventisei lingue](https://github.com/nunocoracao/blowfish/tree/main/i18n) e altre verranno aggiunte nel tempo. A proposito, le [richieste pull](https://github.com/nunocoracao/blowfish/pulls) per nuove lingue sono sempre benvenute!
 
-## RTL language support
+## Supporto per la lingua RTL
 
-One of the benefits of the new Tailwind and Multilingual features is the ability to add RTL language support. When enabled, the entire site will reflow content from right-to-left. Every element in the theme has been restyled to ensure it looks great in this mode which aids authors who wish to generate content in RTL languages.
+Uno dei vantaggi delle nuove funzionalità Tailwind e Multilingual è la possibilità di aggiungere il supporto della lingua RTL. Se abilitato, l'intero sito ridiscorrerà i contenuti da destra a sinistra. Ogni elemento del tema è stato ridisegnato per garantire che abbia un bell'aspetto in questa modalità che aiuta gli autori che desiderano generare contenuti nelle lingue RTL. 
 
-RTL is controlled on a per-language basis so you can mix and match both RTL and LTR content in your projects and the theme will respond accordingly.
+RTL è controllato in base alla lingua, quindi puoi mescolare e abbinare sia il contenuto RTL che LTR nei tuoi progetti e il tema risponderà di conseguenza.
 
-## Automatic image resizing
+## Ridimensionamento automatico delle immagini
 
-A big change in Blowfish 2.0 is the addition of automatic image resizing. Using the power of Hugo Pipes, images in Markdown content are now automatically scaled to different output sizes. These are then presented using HTML `srcset` attributes enabling optimised file sizes to be served to your site visitors.
+Un grande cambiamento in Blowfish 2.0 è l'aggiunta del ridimensionamento automatico delle immagini. Utilizzando la potenza di Hugo Pipes, le immagini nei contenuti Markdown vengono ora ridimensionate automaticamente in diverse dimensioni di output. Questi vengono poi presentati utilizzando gli attributi HTML "srcset" che consentono di offrire dimensioni di file ottimizzate ai visitatori del tuo sito.
 
 ![](image-resizing.png)
 
@@ -53,27 +53,27 @@ A big change in Blowfish 2.0 is the addition of automatic image resizing. Using 
 />
 ```
 
-Best of all there's nothing you need to change! Simply insert standard Markdown image syntax and let the theme do the rest. If you want a little more control, the `figure` shortcode has been completely rewritten to provide the same resizing benefits.
+La cosa interessante è che non c'è nulla che devi cambiare! Inserisci semplicemente la sintassi standard dell'immagine Markdown e lascia che il tema faccia il resto. Se desideri un po' più di controllo, lo shortcode `figure` è stato completamente riscritto per fornire gli stessi vantaggi di ridimensionamento.
 
 
-## Site search
+## Ricerca nel sito
 
-Powered by [Fuse.js](https://fusejs.io), site search allows visitors to quickly and easily find your content. All searches are performed client-side meaning there's nothing to configure on the server and queries are performed super fast. Simply enable the feature in your site configuration and you're all set. Oh, and it also supports full keyboard navigation!
+Basata su [Fuse.js](https://fusejs.io), la ricerca sul sito consente ai visitatori di trovare rapidamente e facilmente i tuoi contenuti. Tutte le ricerche vengono eseguite lato client, il che significa che non c'è nulla da configurare sul server e le query vengono eseguite molto velocemente. Abilita semplicemente la funzione nella configurazione del tuo sito e tutto è pronto. Oh, e supporta anche la navigazione completa tramite tastiera!
 
-## Tables of contents
+## Sommario
 
-A highly requested feature, Blowfish now supports tables of contents on article pages. You can see it in action on this page. The contents are fully responsive and will adjust to take advantage of the space available at different screen resolutions.
+Una funzionalità molto richiesta, Blowfish ora supporta i sommari nelle pagine degli articoli. Puoi vedere come funziona in questa pagina. I contenuti sono completamente reattivi e si adatteranno per sfruttare lo spazio disponibile con diverse risoluzioni dello schermo. 
 
-Available on a global or per article basis, the table of contents can be fully customised using standard Hugo configuration values, allowing you to adjust the behaviour to suit your project.
+Disponibile su base globale o per articolo, il sommario può essere completamente personalizzato utilizzando i valori di configurazione Hugo standard, consentendoti di adattare il comportamento al tuo progetto.
 
-## Accessibility improvements
+## Miglioramenti dell'accessibilità
 
-From adding ARIA descriptions to more items or simply adjusting the contrast of certain text elements, this release is the most accessible yet.
+Dall'aggiunta di descrizioni ARIA a più elementi o semplicemente dalla regolazione del contrasto di alcuni elementi di testo, questa versione è la più accessibile finora. 
 
-Version 2 also introduces "skip to content" and "scroll to top" links that enable quick navigation. There's also keyboard shortcuts for enabling items like search without reaching for the mouse.
+La versione 2 introduce anche i collegamenti "salta al contenuto" e "scorri verso l'alto" che consentono una navigazione rapida. Ci sono anche scorciatoie da tastiera per abilitare elementi come la ricerca senza raggiungere il mouse. 
 
-The new image resizing features also provide full control over `alt` and `title` elements enabling an accessible experience for all visitors.
+Le nuove funzionalità di ridimensionamento delle immagini forniscono inoltre il pieno controllo sugli elementi "alt" e "titolo" consentendo un'esperienza accessibile a tutti i visitatori.
 
-## A whole lot more
+## Molto altro ancora
 
-There's countless other features to explore. From being able to display taxonomies on articles and list pages, to using the new `headline` author parameter to customise your homepage. There's also improved JSON-LD structured data which further optimises SEO performance. 
+Ci sono innumerevoli altre funzioni da esplorare. Dalla possibilità di visualizzare tassonomie su articoli e pagine di elenchi, all'uso del nuovo parametro autore `headline` per personalizzare la propria homepage. Sono stati inoltre migliorati i dati strutturati JSON-LD, che ottimizzano ulteriormente le prestazioni SEO.

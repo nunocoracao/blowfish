@@ -1,28 +1,28 @@
 ---
-title: "Charts"
+title: "図表"
 date: 2019-03-06
-description: "Guide to Chart.js usage in Blowfish"
-summary: "Blowfish includes Chart.js for powerful charts and data visualisations."
+description: "Blowfish での Chart.js の利用方法のガイド"
+summary: "Blowfish は強力な図表とデータの視覚化のために Chart.js を内蔵しています。"
 tags: ["chart", "sample", "graph", "shortcodes"]
 showDate: false
 type: 'sample'
 ---
 
-Blowfish includes support for Chart.js using the `chart` shortcode. Simply wrap the chart markup within the shortcode. Blowfish automatically themes charts to match the configured `colorScheme` parameter, however the colours can be customised using normal Chart.js syntax.
+Blowfish は Chart.js の `chart` ショートコードを内蔵し、利用をサポートしています。ショートコードでグラフのマークアップを囲むだけです。 Blowfish は  `colorScheme` パラメータで自動的にグラフのテーマが適応されますが、通常の Chart.js 構文を利用して色をカスタマイズすることも可能です。
 
-Refer to the [chart shortcode]({{< ref "docs/shortcodes#chart" >}}) docs for more details.
+[グラフのショートコード]({{< ref "docs/shortcodes#chart" >}})資料で更に詳細を参照出来ます。
 
-The examples below are a small selection taken from the [official Chart.js docs](https://www.chartjs.org/docs/latest/samples). You can also [view the page source](https://raw.githubusercontent.com/nunocoracao/blowfish/main/exampleSite/content/samples/charts/index.md) on GitHub to see the markup.
+以下は [Chart.js 公式資料](https://www.chartjs.org/docs/latest/samples)から抜粋した例です。 GitHub でマークアップを[ページソースで見る](https://raw.githubusercontent.com/nunocoracao/blowfish/main/exampleSite/content/samples/charts/index.md)ことができます。
 
-## Bar chart
+## 棒グラフ
 
 <!-- prettier-ignore-start -->
 {{< chart >}}
 type: 'bar',
 data: {
-  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+  labels: ['1月', '2月', '3月', '4月', '5月', '6月', '7月'],
   datasets: [{
-    label: 'My First Dataset',
+    label: '初めてのデータセット',
     data: [65, 59, 80, 81, 56, 55, 40],
     backgroundColor: [
       'rgba(255, 99, 132, 0.2)',
@@ -48,15 +48,15 @@ data: {
 {{< /chart >}}
 <!-- prettier-ignore-end -->
 
-## Line chart
+## 折れ線グラフ
 
 <!-- prettier-ignore-start -->
 {{< chart >}}
 type: 'line',
 data: {
-  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+  labels: ['1月', '2月', '3月', '4月', '5月', '6月', '7月'],
   datasets: [{
-    label: 'My First Dataset',
+    label: '初めてのデータセット',
     data: [65, 59, 80, 81, 56, 55, 40],
     tension: 0.2
   }]
@@ -64,15 +64,15 @@ data: {
 {{< /chart >}}
 <!-- prettier-ignore-end -->
 
-## Doughnut chart
+## 円グラフ
 
 <!-- prettier-ignore-start -->
 {{< chart >}}
 type: 'doughnut',
 data: {
-  labels: ['Red', 'Blue', 'Yellow'],
+  labels: ['赤色', '青色', '黄色'],
   datasets: [{
-    label: 'My First Dataset',
+    label: '初めてのデータセット',
     data: [300, 50, 100],
     backgroundColor: [
       'rgba(255, 99, 132, 0.7)',
