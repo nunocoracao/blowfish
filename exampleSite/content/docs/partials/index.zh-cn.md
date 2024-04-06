@@ -13,10 +13,11 @@ series_order: 9
 
 Blowfish 支持了 Fathom、Google 和 Umami。Fathom 和 Umami 都是开源、简单、且注重隐私的站点分析服务，他们可以很好地替代 Google 分析。Fathom 和 Umami 都有公有云的付费版本，当然你也可以自己手动部署开源版。
 
+
 ### Fathom
 
-只需要在 `config/_default/params.toml` 文件提供你的 Fathom 站点代码，就可以快速支持 Fathom 站点分析。
-如果你想使用自定义域名来获取跟踪脚本， 那么需要提供 `domain` 参数，否则会从 Fathom 云服务版的地址 (cdn.usefathom.com) 获取脚本。
+要启用 Fathom Analytics 支持，只需在 `config/_default/params.toml` 文件中提供您的 Fathom 站点代码。如果您还使用 Fathom 的自定义域功能，并希望从您的域中提供脚本，还可以额外提供 `domain` 配置值。如果不提供 `domain` 值，脚本将直接从 Fath只需要在 `config/_default/params.toml` 文件提供你的 Fathom 站点代码，就可以快速支持 Fathom 站点分析。
+如果你想使用自定义域名来获取跟踪脚本， 那么需要提供 `domain` 参数，否则会从 Fathom 云服务版的地址 (＜cdn.usefathom.com＞) 获取脚本。
 
 ```toml
 # config/_default/params.toml
@@ -32,6 +33,7 @@ Hugo partial 本身已经支持了 Google 站点分析。只需要在 `config/_d
 
 版本3 (analytics.js) 和版本4 (gtag.js) 都是支持的，参考如下示例：
 
+
 ```toml
 # config/_default/config.toml
 
@@ -40,6 +42,7 @@ googleAnalytics = "UA-PROPERTY_ID"
 # 版本 4
 googleAnalytics = "G-MEASUREMENT_ID"
 ```
+
 
 ### Umami
 
@@ -73,6 +76,7 @@ Blowfish 提供了一套空白网站图标以便快速上手，但你可以提�
 
 网站图标资源的位置在 `static/` 文件夹中，并务必按照如下的名称命名。如果你使用了[favicon.io](https://favicon.io)，那么下载下来的文件名和下面的示例完全一致；当然你也可以通过别的方式提供，记得重命名就行。
 
+
 ```shell
 static/
 ├─ android-chrome-192x192.png
@@ -84,11 +88,13 @@ static/
 └─ site.webmanifest
 ```
 
-另外，你也可以完全覆盖 Blowfish 提供的这套网站图标逻辑，只需要在 `layouts/partials/favicons.html` 文件中，提供你自己的网站图标 HTML 和对应资源，`favicons.html`文件中的内容会自动添加到网站的 `<head>` 中。
 
-## 图标
+或者，您也可以完全覆盖默认的 favicon 行为，提供自己的 favicon HTML 标签和资源。只需在项目中提供一个 `layouts/partials/favicons.html` 文件，该文件就会被加入网站的 `<head>` 中，取代默认资源。
 
-类似 [图标短代码]({{< ref "shortcodes#icon" >}})，Blowfish 提供了 `icon.html`，以便你在自己的模板和部分（partials）中包含图标。此 partials 只接收一个参数，即图标的名称，示例如下。
+## Icon 图标
+
+与 [图标简码]（{{< ref "shortcodes#icon" >}}）类似，您也可以通过使用 Blowfish 的 `icon.html` partial，在自己的模板和 partial 中加入图标。该部分包含一个参数，即要包含的图标名称。
+
 
 **示例：**
 
@@ -96,22 +102,23 @@ static/
   {{ partial "icon.html" "github" }}
 ```
 
-图标会使用 Hugo 的管道进行填充，这会使它们非常灵活。Blowfish 内置了许多图标，用于社交、链接等其他目的。查看 [图标样本]({{< ref "samples/icons" >}}) 可以看到 Blowfish 内置的所有图标。
 
-你也可以在 `assets/icons/` 目录中提供你自己的图标资源。在 `icon.html` 中也可以添加不是 `.svg` 后缀的图标资源。
+图标使用 Hugo 管道填充，因此非常灵活。Blowfish 内置了大量用于社交、链接和其他用途的图标。请查看[图标示例]（{{< ref "samples/icons" >}}）页面，查看支持图标的完整列表。
 
-图标也可以通过[图标短代码]({{< ref "shortcodes#icon" >}})的方式使用在文章中。
+可以通过在项目的 `assets/icons/` 目录中提供自己的图标资源来添加自定义图标。然后，可以通过使用 SVG 文件名（不含`.svg`扩展名）在局部中引用图标。
+
+图标还可通过调用[图标简码]（{{< ref "shortcode#icon" >}}）在文章内容中使用。
 
 ## 扩展
 
-Blowfish 还提供了一些扩展部分，允许在基础功能上进行扩展。
+Blowfish 还提供了许多扩展 partial，可以扩展基本功能。
 
 ### 文章链接
 
-如果你希望在文章链接中追加额外代码，可以创建  `layouts/partials/extend-article-link.html` 文件。 当与 [badge]({{< ref "shortcodes#badge" >}}) 短代码结合使用时尤其强大，可用于在链接中添加某些文章的元数据。
+如果您希望在文章链接后插入附加代码，请创建一个 `layouts/partials/extend-article-link.html` 文件。如果与[`badge`]({{< ref "shortcodes#badge" >}})简码结合使用，该功能将尤为强大，可用于突出显示某些文章的元数据。
 
 ### 头部和尾部
 
-Blowfish 主题允许直接在模板的 <head> 和 <footer> 部分中插入额外的代码。这些可用于提供不属于主题的脚本或其他逻辑。
+本主题允许在模板的`<head>`和`<footer>`部分直接插入附加代码。这些代码可用于提供不属于主题的脚本或其他逻辑。
 
-只需创建 `layouts/partials/extend-head.html` 或 `layouts/partials/extend-footer.html`，这些将自动包含在您的网站构建中。这两个部分作为 `<head>` 和 `<footer>` 中的最后一项被注入，因此它们可用于覆盖主题默认设置。
+只需创建`layouts/partials/extend-head.html`或`layouts/partials/extend-footer.html`，这些部分就会自动包含在网站构建中。这两个 partial 将作为最后一项注入到 `<head>` 和 `<footer>` 中，因此它们可用于覆盖主题默认值。
