@@ -1,5 +1,5 @@
 ---
-title: "Placeholder Text"
+title: "代用語文"
 date: "2019-03-09"
 lastmod: "2022-01-24"
 draft: false

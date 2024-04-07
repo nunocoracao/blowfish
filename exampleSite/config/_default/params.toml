@@ -53,6 +53,7 @@ smartTOCHideUnfocusedChildren = false
   showDateOnlyInArticle = false
   showDateUpdated = false
   showAuthor = true
+  # showAuthorBottom = false
   showHero = true
   heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   layoutBackgroundBlur = true # only used when heroStyle equals background

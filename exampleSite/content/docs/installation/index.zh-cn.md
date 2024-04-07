@@ -9,7 +9,7 @@ series: ["部署教程"]
 series_order: 2
 ---
 
-如果想快速上有，可以按照标准的 Hugo [快速启动](https://gohugo.io/getting-started/quick-start/) 文档。
+如果想快速上手，可以按照标准的 Hugo [快速启动](https://gohugo.io/getting-started/quick-start/) 文档。
 
 更详细的安装如下，[更新主题](#installing-updates)的教程也可以看此文档。
 

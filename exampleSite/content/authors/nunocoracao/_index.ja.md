@@ -2,4 +2,4 @@
 title: "Nuno Coração"
 ---
 
-Nuno's awesome dummy bio.
+Nuno の素晴らしいダミープロフィールです。

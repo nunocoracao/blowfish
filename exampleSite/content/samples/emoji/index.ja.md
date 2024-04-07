@@ -1,20 +1,20 @@
 ---
-title: "Emoji :parachute:"
+title: "絵文字 :parachute:"
 date: 2019-03-05
-description: "Guide to Emoji usage in Blowfish"
+description: "Blowfihs での絵文字の利用方法についてのガイド"
 summary: "📖🏞️🧗🏽🐉🧙🏽‍♂️🧚🏽👸"
 tags: ["emoji", "sample"]
 type: 'sample'
 ---
 
-Emoji is supported throughout Blowfish by default. Emoji can be used in titles, menu items and article content.
+絵文字は Blowfish を通してデフォルトでサポートされています。絵文字はタイトル、メニューアイテム、そして記事のコンテンツで利用可能です。
 
 {{< alert >}}
-**Note:** The rendering of these glyphs depends on the browser and the platform. To style the emoji you can either use a third party emoji font or a font stack.
+**ノート:** これらの図形のレンダリングはブラウザとプラットフォームに依存します。絵文字をスタイルするには、サードパーティ製の絵文字フォントを利用するか、フォントスタックを利用します。
 {{< /alert >}}
 
-Emoji replacements are automatic throughout Blowfish, so you can use shorthand codes in your content and front matter and they will be converted to their corresponding symbols at build time.
+絵文字の置換は Blowfish 全体を通して自動的に行われるため、コンテンツや表で省略符号を利用しても、ビルド時に対応する記号に変換されます。
 
-**Example:** `see_no_evil` :see_no_evil:, `hear_no_evil` :hear_no_evil:, `speak_no_evil` :speak_no_evil:.
+**例:** `see_no_evil` :see_no_evil:, `hear_no_evil` :hear_no_evil:, `speak_no_evil` :speak_no_evil:
 
-The [Emoji cheat sheet](http://www.emoji-cheat-sheet.com/) is a useful reference for emoji shorthand codes.
+[絵文字チートシート](http://www.emoji-cheat-sheet.com/)は絵文字ショートハンドコードのための便利な参照ページです。

@@ -1,10 +1,10 @@
 ---
-title: "Multiple Authors"
+title: "複数人の著者"
 date: 2022-10-12
 draft: false
-description: "Sample for a multiple author setup"
+description: "複数人の著者の設定方法のサンプル"
 tags: ["authors", "sample"]
-summary: "A quick example of how multiple authors could be used."
+summary: "複数人の著者の利用方法の簡単な例。"
 showAuthor: false
 authors:
   - "nunocoracao"
@@ -12,4 +12,4 @@ authors:
 type: 'sample'
 ---
 
-This is an example of how an article with multiple authors will look like. 
+これは、著者が複数人の記事がどのように見えるかの例です。
