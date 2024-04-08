@@ -771,6 +771,6 @@ To concatenate multiple options as shown below, you need to add the `&` characte
 {{</* youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" params="start=130&end=10&controls=0" */>}}
 ```
 
-{{</* youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" params="start=130&end=10&controls=0" */>}}
+{{< youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" params="start=130&end=10&controls=0" >}}
 
 More informations can be found on the [youtubeLite GitHub repo](https://github.com/paulirish/lite-youtube-embed/blob/master/readme.md#custom-player-parameters) and Youtube's [player parameters](https://developers.google.com/youtube/player_parameters#Parameters) page.
