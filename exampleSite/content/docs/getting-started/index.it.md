@@ -155,15 +155,16 @@ Hugo usa di default post, tag e categorie e questo funziona bene se è quello ch
 topic = "topics"
 ```
 
-This will replace the default _tags_ and _categories_ with _topics_. Refer to the [Hugo Taxonomy docs](https://gohugo.io/content-management/taxonomies/) for more information on naming taxonomies.
+Sostituirà i predefiniti _tags_ e _categorie_ con _topics_. Fare riferimento a [Hugo Taxonomy docs](https://gohugo.io/content-management/taxonomies/) per ulteriori informazioni sulla denominazione delle tassonomie.
 
-When you create a new taxonomy, you will need to adjust the navigation links on the website to point to the correct sections, which is covered below.
+Quando crei una nuova tassonomia, è necessario sistemare i collegamenti di navigazione sul sito web per puntare alle sezioni corrette, come spiegato di seguito.
 
-## Menus
+## Menu
 
-Blowfish has two menus that can be customised to suit the content and layout of your site. The `main` menu appears in the site header and the `footer` menu appears at the bottom of the page just above the copyright notice.
+Blowfish dispone di due menu che possono essere personalizzati per adattarsi al contenuto e al layout del sito. Il menu `main` appare nell'intestazione del sito e il menu `footer` appare in fondo alla pagina, appena sopra la nota di copyright.
 
-Both menus are configured in the `menus.en.toml` file. Similarly to the languages config file, if you wish to use another language, rename this file and replace `en` with the language code you wish to use.
+Entrambi i menu sono configurati nel file `menus.en.toml`. Simile al file di configurazione delle lingue, se desideri utilizzare un'altra lingua, rinomina questo file e sostituisci `en` con il codice della lingua che si vuole utilizzare.
+
 
 ```toml
 # config/_default/menus.toml
@@ -195,19 +196,20 @@ Both menus are configured in the `menus.en.toml` file. Similarly to the language
   url = "https://external-link"
 ```
 
-The `name` parameter specifies the text that is used in the menu link. You can also optionally provide a `title` which fills the HTML title attribute for the link.
+Il parametro `name` specifica il testo utilizzato nel collegamento al menu. Si può anche fornire facoltativamente un `title` che riempie l'attributo HTML title per il collegamento.
 
-The `pageRef` parameter allows you to easily reference Hugo content pages and taxonomies. It is the quickest way to configure the menu as you can simply refer to any Hugo content item and it will automatically build the correct link. To link to external URLs, the `url` parameter can be used.
+Il parametro `pageRef` consente di fare facilmente riferimento alle pagine di contenuto e alle tassonomie di Hugo. È il modo più rapido per configurare il menu, in quanto è sufficiente fare riferimento a qualsiasi elemento di contenuto di Hugo per creare automaticamente il collegamento corretto. Per collegarsi a URL esterni, si può usare il parametro `url`.
 
-The `pre` parameter allows you to place an icon from [Blowfish's icon set]({{< ref "samples/icons" >}}) on the menu entry. This parameter can be used with `name` parameter or by itself. If you want to use multiple menu entries with just icons please set the `identifier`parameter otherwise Hugo will default to the naming tag as the id and probably not display all the menu entries.
+Il parametro `pre` consente di inserire un'icona dal [Set di icone di Blowfish] ({{< ref "samples/icons" >}}) nella voce di menu. Questo parametro può essere usato con il parametro `name` o da solo. Se si vogliono usare più voci di menu con le sole icone, imposta il parametro `identifier`, altrimenti Hugo sceglierà come id il tag di denominazione e probabilmente non visualizzerà tutte le voci di menu.
 
-Menu links will be sorted from lowest to highest `weight`, and then alphabetically by `name`.
+I collegamenti al menu saranno ordinati dal più basso al più alto `peso`, e poi in ordine alfabetico per `name`.
 
-Both menus are completely optional and can be commented out if not required. Use the template provided in the file as a guide.
+Entrambi i menu sono completamente opzionali e possono essere commentati se non sono necessari. Utilizzare il modello fornito nel file come guida.
 
-### Nested menus
+### Nested Menu
 
-The theme also supports nested menus. In order to use them you just need to define a parent entry in `menu.toml` and its sub-menus using the `parent` parameter to reference the parent. All properties can be used for sub-menus. `pageRef` and `url` can also be used in the parent entry. Nested menus are only available in the main menu not for the footer.
+Il tema supporta anche i menu nidificati. Per usarli devi solo definire una voce genitore in `menu.toml` e i suoi sottomenu utilizzando il parametro `parent` per fare riferimento al genitore. Tutte le proprietà possono essere utilizzate per i sottomenu. `pageRef` e `url` possono essere utilizzati anche nella voce principale. I menu nidificati sono disponibili solo nel menu principale e non nel footer.
+
 
 ```toml
 # config/_default/menus.toml
