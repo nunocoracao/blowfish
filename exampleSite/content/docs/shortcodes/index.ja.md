@@ -77,10 +77,10 @@ This is an error!
 **Example:**
 
 ```md
-{{</* article link="/docs/welcome/" */>}}
+{{</* article link="/ja/docs/welcome/" */>}}
 ```
 
-{{< article link="/docs/welcome/" >}}
+{{< article link="/ja/docs/welcome/" >}}
 
 <br/><br/><br/>
 
