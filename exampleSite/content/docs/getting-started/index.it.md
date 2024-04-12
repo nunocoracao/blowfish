@@ -238,10 +238,10 @@ Il tema supporta anche i menu nidificati. Per usarli devi solo definire una voce
   weight = 20
 ```
 
-### Sub-Navigation menu
+### Menu di navigazione secondario
 
-Additionally, you can also configure a sub-navigation menu. Just define new menu entries as `subnavigation` in `menus.toml`.
-This will render a second line with sub-categories below the main header menu.
+Inoltre, è possibile configurare un menu di sotto-navigazione. Basta definire nuove voci di menu come `subnavigation` in `menus.toml`.
+Questo renderà una seconda riga con le sottocategorie sotto il menu principale dell'intestazione.
 
 ```toml
 # config/_default/menus.toml
@@ -257,7 +257,7 @@ This will render a second line with sub-categories below the main header menu.
   weight = 20
 ```
 
-The default `name` is the `pageRef` title cased.
+Il `name' predefinito è il titolo di `pageRef', con le caselle.
 
 ## Thumbnails & Backgrounds
 
