@@ -1,8 +1,8 @@
 ---
                 title: "eallion.com"
-                tags: [Personal Site, Blog]
+                tags: [Blog,Personal Site]
                 externalUrl: "http://www.eallion.com/"
-                date: 9901-08-08
+                date: 9919-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
@@ -10,5 +10,4 @@
                 showLikes: false
                 showViews: false
                 layoutBackgroundHeaderSpace: false
-                
----
+                ---

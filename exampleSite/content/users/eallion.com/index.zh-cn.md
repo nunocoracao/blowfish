@@ -1,8 +1,8 @@
 ---
                 title: "eallion.com"
-                tags: [个人网站, 博客 ]
+                tags: [博客, 个人网站]
                 externalUrl: "http://www.eallion.com/"
-                date: 9901-08-08
+                date: 9919-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
@@ -10,6 +10,5 @@
                 showLikes: false
                 showViews: false
                 layoutBackgroundHeaderSpace: false
-                
----
+                ---
 
