@@ -1,8 +1,8 @@
 ---
-                title: "fwzyrln_"
-                tags: [個人ホームページ, ブログ]
-                externalUrl: "https://fauziralpiandi.github.io"
-                date: 9922-08-08
+                title: "eallion.com"
+                tags: [Blog, Sito personale]
+                externalUrl: "http://www.eallion.com/"
+                date: 9919-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

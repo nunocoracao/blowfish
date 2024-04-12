@@ -626,15 +626,6 @@
     ]
   },
   {
-    "title": "fwzyrln_",
-    "url": "https://fauziralpiandi.github.io",
-    "source": "n/a",
-    "tags": [
-      "Personal Homepage",
-      "Blog"
-    ]
-  },
-  {
     "title": "karlukle.site",
     "url": "https://karlukle.site",
     "source": "n/a",
@@ -642,12 +633,21 @@
       "Personal blog"
     ]
   },
-   {
+  {
     "title": "Adam Madej - Gameplay Animator",
     "url": "http://www.adammadej.com/",
     "source": "https://github.com/arahmitz/adamblogstuff",
     "tags": [
       "Portfolio Site",
+      "Blog",
+      "Personal Site"
+    ]
+  },
+  {
+    "title": "eallion.com",
+    "url": "http://www.eallion.com/",
+    "source": "https://github.com/eallion/eallion.com",
+    "tags": [
       "Blog",
       "Personal Site"
     ]

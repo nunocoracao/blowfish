@@ -77,10 +77,10 @@ This is an error!
 **例如：**
 
 ```md
-{{</* article link="/docs/welcome/" */>}}
+{{</* article link="/zh-cn/docs/welcome/" */>}}
 ```
 
-{{< article link="/docs/welcome/" >}}
+{{< article link="/zh-cn/docs/welcome/" >}}
 
 <br/><br/><br/>
 

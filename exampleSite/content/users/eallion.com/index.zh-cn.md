@@ -1,8 +1,8 @@
 ---
-                title: "fwzyrln_"
-                tags: [Personal Homepage,Blog]
-                externalUrl: "https://fauziralpiandi.github.io"
-                date: 9922-08-08
+                title: "eallion.com"
+                tags: [博客, 个人网站]
+                externalUrl: "http://www.eallion.com/"
+                date: 9919-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+
