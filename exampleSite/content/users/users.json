@@ -635,5 +635,15 @@
       "Blog",
       "Personal Site"
     ]
+  },
+  {
+    "title": "michaeldorner.de",
+    "url": "https://www.michaeldorner.de",
+    "source": "n/a",
+    "tags": [
+      "Blog",
+      "Personal Site",
+      "Academia"
+    ]
   }
 ]
