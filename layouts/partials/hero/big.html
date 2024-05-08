@@ -48,7 +48,11 @@
         </figure>
         {{ end }}
     {{ else }}
-        {{ with .Resize "1200x" }}
+        {{ $filters := slice
+            images.AutoOrient
+            (images.Process "resize 1200x")
+        }}
+        {{ with images.Filter $filters . }}
         <figure>
             <img class="w-full rounded-lg single_hero_round nozoom" alt="{{ $alt }}" width="{{ .Width }}" height="{{ .Height }}" src="{{ .RelPermalink }}">
             {{ if $caption }}

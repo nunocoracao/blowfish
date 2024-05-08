@@ -52,7 +52,11 @@
         <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
         {{ end }}
       {{ else }}
-        {{ with .Resize "600x"  }}
+        {{ $filters := slice
+          images.AutoOrient
+          (images.Process "resize 600x")
+        }}
+        {{ with images.Filter $filters . }}
         <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
         {{ end }}
       {{ end }}

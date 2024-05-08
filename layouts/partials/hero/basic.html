@@ -26,7 +26,11 @@
             <div class="w-full h-36 md:h-56 lg:h-72 single_hero_basic nozoom" style="background-image:url({{ .RelPermalink }});"></div>
         {{ end }}
     {{ else }}
-        {{ with .Resize "1200x" }}
+        {{ $filters := slice
+            images.AutoOrient
+            (images.Process "resize 1200x")
+        }}
+        {{ with images.Filter $filters . }}
             <div class="w-full h-36 md:h-56 lg:h-72 single_hero_basic nozoom" style="background-image:url({{ .RelPermalink }});"></div>
         {{ end }}
     {{ end }}

@@ -41,7 +41,11 @@
     style="background-image:url({{ .RelPermalink }});">
     {{ end }}
 {{ else }}
-    {{ with .Resize "1200x" }}
+    {{ $filters := slice
+        images.AutoOrient
+        (images.Process "resize 1200x")
+    }}
+    {{ with images.Filter $filters . }}
     <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
     style="background-image:url({{ .RelPermalink }});">
     {{ end }}
