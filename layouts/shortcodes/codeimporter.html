@@ -1,0 +1,8 @@
+{{ $url := .Get "url" }}
+{{ $type := .Get "type" }}
+{{ with resources.GetRemote (printf $url) }}
+{{ $codeBlock := printf "```%s\n%s\n```" $type .Content }}
+{{ $codeBlock | markdownify }}
+{{ else }}
+{{ errorf "Code Importer Shortcode - Unable to get remote resource" . }}
+{{ end }}
