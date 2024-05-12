@@ -635,5 +635,13 @@
       "Blog",
       "Personal Site"
     ]
+  },
+  {
+    "title": "Synaptic Sugar",
+    "url": "https://synapticsugar.games",
+    "source": "n/a",
+    "tags": [
+      "Videogame Developer"
+    ]
   }
 ]
