@@ -671,7 +671,12 @@ With other shortcodes
   <img src="gallery/07.jpg" class="grid-w33" />
 {{< /gallery >}}
 {{</ timelineItem >}}
+{{< timelineItem icon="code" header="Another Awesome Header">}}
 
+{{< github repo="nunocoracao/blowfish" >}}
+
+
+{{</ timelineItem >}}
 {{</ timeline >}}
 
 
