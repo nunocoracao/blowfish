@@ -3,7 +3,7 @@
 {{ $badge := .Get "badge" }}
 {{ $subheader := .Get "subheader" }}
 {{ $text := .Get "text" }}
-<li class="list-none">
+<li>
   <div class="flex flex-start">
     <div class="bg-primary-500 dark:bg-primary-300 text-neutral-50 dark:text-neutral-700 min-w-[30px] h-8 text-2xl flex items-center justify-center rounded-full -ml-12 mt-5">
       {{ partial "icon" $icon }}
@@ -26,7 +26,9 @@
         {{ $subheader }}
       </h4>
       {{ end }}
-      <p class="text-gray-700 mb-6">{{- .Inner -}}</p>
+      <div class="mb-6">
+        {{- .Inner -}}
+      </div>
     </div>
   </div>
 </li>
