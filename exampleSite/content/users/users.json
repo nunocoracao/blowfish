@@ -635,5 +635,23 @@
       "Blog",
       "Personal Site"
     ]
+  },
+  {
+    "title": "Synaptic Sugar",
+    "url": "https://synapticsugar.games",
+    "source": "n/a",
+    "tags": [
+      "Videogame Developer"
+    ]
+  },
+  {
+    "title": "michaeldorner.de",
+    "url": "https://www.michaeldorner.de",
+    "source": "n/a",
+    "tags": [
+      "Blog",
+      "Personal Site",
+      "Academia"
+    ]
   }
 ]
