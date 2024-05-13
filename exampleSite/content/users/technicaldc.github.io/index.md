@@ -2,7 +2,7 @@
                 title: "technicaldc.github.io"
                 tags: [Personal Site,Blog]
                 externalUrl: "https://technicaldc.github.io/"
-                date: 9935-08-08
+                date: 9936-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
