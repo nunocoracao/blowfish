@@ -639,6 +639,10 @@ With other shortcodes
 {{</* /gallery */>}}
 {{</* /timelineItem */>}}
 
+{{</* timelineItem icon="code" header="Another Awesome Header"*/>}}
+{{</* github repo="nunocoracao/blowfish" */>}}
+{{</* /timelineItem */>}}
+
 {{</* /timeline */>}}
 ```
 
@@ -672,10 +676,7 @@ With other shortcodes
 {{< /gallery >}}
 {{</ timelineItem >}}
 {{< timelineItem icon="code" header="Another Awesome Header">}}
-
 {{< github repo="nunocoracao/blowfish" >}}
-
-
 {{</ timelineItem >}}
 {{</ timeline >}}
 
