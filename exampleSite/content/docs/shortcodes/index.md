@@ -188,6 +188,31 @@ You can see some additional Chart.js examples on the [charts samples]({{< ref "c
 
 <br/><br/><br/>
 
+## Code Importer
+
+This shortcode is for importing code from external sources easily without copying and pasting.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description                                             |
+| --------- | ------------------------------------------------------- |
+| `url`     | **Required** URL to an externally hosted code file.     |
+| `type`    | Code type used for syntax highlighting.                 |
+
+
+<!-- prettier-ignore-end -->
+
+
+**Example:**
+
+```md
+{{</* codeimporter url="https://raw.githubusercontent.com/nunocoracao/blowfish/main/layouts/shortcodes/mdimporter.html" type="go" */>}}
+
+```
+{{< codeimporter url="https://raw.githubusercontent.com/nunocoracao/blowfish/main/layouts/shortcodes/mdimporter.html" type="go" >}}
+
+
+<br/><br/>
+
 ## Figure
 
 Blowfish includes a `figure` shortcode for adding images to content. The shortcode replaces the base Hugo functionality in order to provide additional performance benefits.
@@ -520,31 +545,6 @@ This shortcode allows you to import markdown files from external sources. This i
 ```
 
 {{< mdimporter url="https://raw.githubusercontent.com/nunocoracao/nunocoracao/master/README.md" >}}
-
-
-<br/><br/>
-
-## Code Importer
-
-This shortcode is for importing code from external sources easily without copying and pasting.
-
-<!-- prettier-ignore-start -->
-| Parameter | Description                                             |
-| --------- | ------------------------------------------------------- |
-| `url`     | **Required** URL to an externally hosted code file.     |
-| `type`    | Code type used for syntax highlighting.                 |
-
-
-<!-- prettier-ignore-end -->
-
-
-**Example:**
-
-```md
-{{</* codeimporter url="https://raw.githubusercontent.com/nunocoracao/blowfish/main/layouts/shortcodes/mdimporter.html" type="go" */>}}
-
-```
-{{< codeimporter url="https://raw.githubusercontent.com/nunocoracao/blowfish/main/layouts/shortcodes/mdimporter.html" type="go" >}}
 
 
 <br/><br/>

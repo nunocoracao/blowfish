@@ -77,10 +77,10 @@ This is an error!
 **Example:**
 
 ```md
-{{</* article link="/it/docs/welcome/" */>}}
+{{</* article link="/docs/welcome/" */>}}
 ```
 
-{{< article link="/it/docs/welcome/" >}}
+{{< article link="/docs/welcome/" >}}
 
 <br/><br/><br/>
 
@@ -187,6 +187,31 @@ data: {
 You can see some additional Chart.js examples on the [charts samples]({{< ref "charts" >}}) page.
 
 <br/><br/><br/>
+
+## Code Importer
+
+This shortcode is for importing code from external sources easily without copying and pasting.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description                                             |
+| --------- | ------------------------------------------------------- |
+| `url`     | **Required** URL to an externally hosted code file.     |
+| `type`    | Code type used for syntax highlighting.                 |
+
+
+<!-- prettier-ignore-end -->
+
+
+**Example:**
+
+```md
+{{</* codeimporter url="https://raw.githubusercontent.com/nunocoracao/blowfish/main/layouts/shortcodes/mdimporter.html" type="go" */>}}
+
+```
+{{< codeimporter url="https://raw.githubusercontent.com/nunocoracao/blowfish/main/layouts/shortcodes/mdimporter.html" type="go" >}}
+
+
+<br/><br/>
 
 ## Figure
 
@@ -738,17 +763,39 @@ consectetur adipiscing elit.
 A shortcut to embed youtube videos using the [lite-youtube-embed](https://github.com/paulirish/lite-youtube-embed) library. This library is a lightweight alternative to the standard youtube embeds, and it's designed to be faster and more efficient.
 
 <!-- prettier-ignore-start -->
-| Parameter | Description                         |
-| --------- | ----------------------------------- |
-| `id`      | [String] Youtube video id to embed. |
-| `label`   | [String] Label for the video        |
+| Parameter | Description                                  |
+| --------- | -------------------------------------------- |
+| `id`      | [String] Youtube video id to embed.          |
+| `label`   | [String] Label for the video                 |
+| `params`  | [String] Extras parameters for video playing |
 <!-- prettier-ignore-end -->
 
 **Example 1:**
 
 ```md
 {{</* youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" */>}}
-
 ```
 
 {{< youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" >}}
+
+**Example 2:**
+
+You can use all of Youtube's [player parameters](https://developers.google.com/youtube/player_parameters#Parameters) for the `params` variable, as demonstrated below:
+
+> This video will start after 130 seconds (2m10)
+
+```md
+{{</* youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" params="start=130" */>}}
+```
+
+> This video will not have UI controls, will start playing at 130 seconds and will stop 10 seconds later.
+
+To concatenate multiple options as shown below, you need to add the `&` character between them.
+
+```md
+{{</* youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" params="start=130&end=10&controls=0" */>}}
+```
+
+{{< youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" params="start=130&end=10&controls=0" >}}
+
+More informations can be found on the [youtubeLite GitHub repo](https://github.com/paulirish/lite-youtube-embed/blob/master/readme.md#custom-player-parameters) and Youtube's [player parameters](https://developers.google.com/youtube/player_parameters#Parameters) page.
