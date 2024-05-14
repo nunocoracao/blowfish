@@ -2,7 +2,7 @@
                 title: "theindiecoder.cloud"
                 tags: [Sito personale]
                 externalUrl: "https://theindiecoder.cloud"
-                date: 9950-08-08
+                date: 9951-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

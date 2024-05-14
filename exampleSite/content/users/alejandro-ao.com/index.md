@@ -2,7 +2,7 @@
                 title: "alejandro-ao.com"
                 tags: [Personal site]
                 externalUrl: "https://alejandro-ao.com/"
-                date: 9978-08-08
+                date: 9979-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
