@@ -74,6 +74,7 @@ The theme currently supports the following languages by default:
 | Spanish (Spain)              | `es`    |
 | Finnish                      | `fi`    |
 | French                       | `fr`    |
+| Galician                     | `gl`    |
 | Hebrew                       | `he`    |
 | Croatian                     | `hr`    |
 | Hungarian                    | `hu`    |
