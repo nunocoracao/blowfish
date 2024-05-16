@@ -421,10 +421,10 @@ The input is written in Markdown so you can format it however you please.
 **Example1 :**
 
 ```md
-{{</* keyword */>}} Super skill {{</* /keyword */>}}
+{{</* keyword */>}} *Super* skill {{</* /keyword */>}}
 ```
 
-{{< keyword >}} *Standalone* skill {{< /keyword >}}
+{{< keyword >}} *Super* skill {{< /keyword >}}
 
 **Example2 :**
 
