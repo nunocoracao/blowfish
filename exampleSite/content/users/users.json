@@ -653,5 +653,16 @@
       "Personal Site",
       "Academia"
     ]
+  },
+  {
+    "title": "Ignacio Conde",
+    "url": "http://www.ignaciomconde.com/",
+    "source": "https://github.com/DJKero/djkero.github.io",
+    "tags": [
+      "Personal Site",
+      "Portfolio Site",
+      "Software Developer",
+      "Videogame Developer"
+    ]
   }
 ]
