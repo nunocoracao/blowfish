@@ -213,6 +213,25 @@ This shortcode is for importing code from external sources easily without copyin
 
 <br/><br/>
 
+## Codeberg Card
+
+`codeberg` allows you to quickly link a Codeberg repository via the Codeberg API, providing real-time updates on stats such as stars and forks.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description                                           |
+| --------- | ----------------------------------------------------- |
+| `repo`    | [String] codeberg repo in the format of `username/repo` |
+<!-- prettier-ignore-end -->
+
+**Example 1:**
+
+```md
+{{</* codeberg repo="forgejo/forgejo" */>}}
+```
+{{< codeberg repo="forgejo/forgejo" >}}
+
+<br/><br/><br/>
+
 ## Figure
 
 Blowfish includes a `figure` shortcode for adding images to content. The shortcode replaces the base Hugo functionality in order to provide additional performance benefits.
@@ -358,25 +377,6 @@ Finally, custom GitLab instance URL can be provided, as long as the `api/v4/proj
 ```
 
 {{< gitlab projectID="278964" >}}
-
-<br/><br/><br/>
-
-## Codeberg Card
-
-`codeberg` allows you to quickly link a Codeberg repository via the Codeberg API, providing real-time updates on stats such as stars and forks."
-
-<!-- prettier-ignore-start -->
-| Parameter | Description                                           |
-| --------- | ----------------------------------------------------- |
-| `repo`    | [String] codeberg repo in the format of `username/repo` |
-<!-- prettier-ignore-end -->
-
-**Example 1:**
-
-```md
-{{</* codeberg repo="forgejo/forgejo" */>}}
-```
-{{< codeberg repo="forgejo/forgejo" >}}
 
 <br/><br/><br/>
 
