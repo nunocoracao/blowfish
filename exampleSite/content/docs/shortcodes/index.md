@@ -361,6 +361,25 @@ Finally, custom GitLab instance URL can be provided, as long as the `api/v4/proj
 
 <br/><br/><br/>
 
+## Codeberg Card
+
+`codeberg` allows you to quickly link a Codeberg repository via the Codeberg API, providing real-time updates on stats such as stars and forks."
+
+<!-- prettier-ignore-start -->
+| Parameter | Description                                           |
+| --------- | ----------------------------------------------------- |
+| `repo`    | [String] codeberg repo in the format of `username/repo` |
+<!-- prettier-ignore-end -->
+
+**Example 1:**
+
+```md
+{{</* codeberg repo="forgejo/forgejo" */>}}
+```
+{{< codeberg repo="forgejo/forgejo" >}}
+
+<br/><br/><br/>
+
 ## Icon
 
 `icon` outputs an SVG icon and takes the icon name as its only parameter. The icon is scaled to match the current text size.
