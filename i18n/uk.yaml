@@ -19,6 +19,19 @@ article:
     few: "{{ .Count }} слова"
     many: "{{ .Count }} слів"
     other: "{{ .Count }} слова"
+  views:
+    one: "{{ .Count }} view"
+    other: "{{ .Count }} views"
+  likes:
+    one: "{{ .Count }} like"
+    other: "{{ .Count }} likes"
+  part_of_series: "This article is part of a series."
+  part: "Part"
+  this_article: "This Article"
+  related_articles: "Related"
+  zen_mode_title:
+    enable: "Enable zen mode"
+    disable: "Disable zen mode"
 
 author:
   byline_title: "Автор"
@@ -60,3 +73,6 @@ sharing:
 
 shortcode:
   recent_articles: "Недавні дописи"
+
+recent:
+  show_more: "Show More"
