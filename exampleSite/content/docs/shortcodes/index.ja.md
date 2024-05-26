@@ -213,6 +213,25 @@ This shortcode is for importing code from external sources easily without copyin
 
 <br/><br/>
 
+## Codeberg Card
+
+`codeberg` allows you to quickly link a Codeberg repository via the Codeberg API, providing real-time updates on stats such as stars and forks.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description                                           |
+| --------- | ----------------------------------------------------- |
+| `repo`    | [String] codeberg repo in the format of `username/repo` |
+<!-- prettier-ignore-end -->
+
+**Example 1:**
+
+```md
+{{</* codeberg repo="forgejo/forgejo" */>}}
+```
+{{< codeberg repo="forgejo/forgejo" >}}
+
+<br/><br/><br/>
+
 ## Figure
 
 Blowfish includes a `figure` shortcode for adding images to content. The shortcode replaces the base Hugo functionality in order to provide additional performance benefits.
@@ -421,10 +440,10 @@ The input is written in Markdown so you can format it however you please.
 **Example1 :**
 
 ```md
-{{</* keyword */>}} Super skill {{</* /keyword */>}}
+{{</* keyword */>}} *Super* skill {{</* /keyword */>}}
 ```
 
-{{< keyword >}} *Standalone* skill {{< /keyword >}}
+{{< keyword >}} *Super* skill {{< /keyword >}}
 
 **Example2 :**
 
@@ -745,8 +764,9 @@ consectetur adipiscing elit.
   breakLines=false
   loop=true
 */>}}
-Lorem ipsum dolor sit amet, 
-consectetur adipiscing elit. 
+"Frankly, my dear, I don't give a damn." Gone with the Wind (1939)
+"I'm gonna make him an offer he can't refuse." The Godfather (1972)
+"Toto, I've a feeling we're not in Kansas anymore." The Wizard of Oz (1939)
 {{</* /typeit */>}}
 ```
 

@@ -214,6 +214,25 @@ data: {
 
 <br/><br/>
 
+## Codeberg Card
+
+`codeberg` 允许您通过 Codeberg API 快速链接 Codeberg 存储库，提供星号和分叉等统计信息的实时更新.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description                                           |
+| --------- | ----------------------------------------------------- |
+| `repo`    | [String] Codeberg 存储库的格式为 `username/repo` |
+<!-- prettier-ignore-end -->
+
+**Example 1:**
+
+```md
+{{</* codeberg repo="forgejo/forgejo" */>}}
+```
+{{< codeberg repo="forgejo/forgejo" >}}
+
+<br/><br/><br/>
+
 ## Figure
 
 Blowfish 包含一个 `figure` 简码，用于将图像添加到内容中。该简码取代了基本的 Hugo 功能，且性能更好。
