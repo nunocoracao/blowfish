@@ -1,7 +1,7 @@
 {
   "name": "hugo-blowfish-theme",
   "version": "2.70.0",
-  "description": "Blowfish theme for Hugo",
+  "description": "Blowfish theme for Hugo.",
   "scripts": {
     "postinstall": "vendor-copy",
     "assets": "rimraf assets/vendor && vendor-copy",
