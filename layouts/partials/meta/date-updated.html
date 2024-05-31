@@ -1,4 +1,4 @@
 <time datetime="{{ . }}">
-  {{- i18n "article.date_updated" (dict "Date" (partial "functions/date.html" .)) | markdownify | emojify -}}
+  {{- i18n "article.date_updated" (dict "Date" (partial "functions/date.html" .)) | markdownify -}}
 </time>
 {{- /* Trim EOF */ -}}

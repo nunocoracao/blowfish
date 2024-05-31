@@ -6,7 +6,7 @@
         </span>
         {{ end }}
         <p class="text-bg font-bg" title="{{ .Title }}">
-            {{ .Name | markdownify | emojify }}
+            {{ .Name | markdownify }}
         </p>
         <span>
             {{ partial "icon.html" "chevron-down" }}
@@ -23,7 +23,7 @@
         </span>
         {{ end }}
         <p class="text-sm font-small" title="{{ .Title }}">
-            {{ .Name | markdownify | emojify }}
+            {{ .Name | markdownify }}
         </p>
     </a>
 </li>

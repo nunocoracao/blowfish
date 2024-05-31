@@ -15,12 +15,12 @@
       <div
         id="{{ $id }}-full_name"
         class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
-        {{ .full_name | markdownify | emojify }}
+        {{ .full_name | markdownify }}
       </div>
     </div>
 
     <p id="{{ $id }}-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
-      {{ .description | markdownify | emojify }}
+      {{ .description | markdownify }}
     </p>
 
     <div class="m-0 mt-2 flex items-center">

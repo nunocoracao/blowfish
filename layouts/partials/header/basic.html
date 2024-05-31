@@ -5,7 +5,7 @@
     {{ if $logo }}
     <div>
         <a href="{{ "" | relLangURL }}" class="flex">
-            <span class="sr-only">{{ .Site.Title | markdownify | emojify }}</span>
+            <span class="sr-only">{{ .Site.Title | markdownify }}</span>
 
             <img src="{{ $logo.RelPermalink }}" width="{{ div $logo.Width 2 }}" height="{{ div $logo.Height 2 }}"
                 class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom" alt="{{ .Site.Title }}" />
@@ -20,7 +20,7 @@
             {{ if not .Site.Params.disableTextInHeader | default true }}
             <a href="{{ "" | relLangURL }}" class="text-base font-medium text-gray-500 hover:text-gray-900">{{
                 .Site.Title | markdownify
-                | emojify }}</a>
+                }}</a>
             {{ end }}
 
         </nav>
@@ -129,7 +129,7 @@
                             </span>
                             {{ end }}
                             <p class="text-sm font-sm text-gray-500 hover:text-gray-900" title="{{ .Title }}">
-                                {{ .Name | markdownify | emojify }}
+                                {{ .Name | markdownify }}
                             </p>
                         </a>
                     </li>
@@ -157,7 +157,7 @@
             </span>
             {{ end }}
             <p class="text-xs font-light text-gray-500 hover:text-gray-900" title="{{ .Title }}">
-                {{ .Name | markdownify | emojify }}
+                {{ .Name | markdownify }}
             </p>
         </a>
         {{ end }}
