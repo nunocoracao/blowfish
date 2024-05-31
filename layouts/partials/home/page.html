@@ -4,7 +4,7 @@
       <h1>{{ . | emojify }}</h1>
     </header>
   {{ end }}
-  <section>{{ .Content | emojify }}</section>
+  <section>{{ .Content }}</section>
 </article>
 <section>
   {{ partial "recent-articles/main.html" . }}
