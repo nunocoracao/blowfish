@@ -11,7 +11,7 @@ series_order: 9
 
 ## Analytics
 
-Blowfish provides built-in support for Fathom Analytics, Google Analytics annd Umami Analytics. Fathom is a paid alternative to Google Analytics that respects user privacy.
+Blowfish provides built-in support for Fathom Analytics, Google Analytics and Umami Analytics. Fathom is a paid alternative to Google Analytics that respects user privacy.
 
 ### Fathom Analytics
 

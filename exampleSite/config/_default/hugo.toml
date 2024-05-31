@@ -17,6 +17,7 @@ hasCJKLanguage = true
 buildDrafts = false
 buildFuture = false
 
+enableEmoji = true
 
 googleAnalytics = "G-PEDMYR1V0K"
 
