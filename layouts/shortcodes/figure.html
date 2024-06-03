@@ -2,49 +2,49 @@
 {{ if .Get "default" }}
   {{ template "_internal/shortcodes/figure.html" . }}
 {{ else }}
-  {{ $url := urls.Parse (.Get "src") }}
-  {{ $altText := .Get "alt" }}
-  {{ $caption := .Get "caption" }}
-  {{ $href := .Get "href" }}
-  {{ $class := .Get "class" }}
-  {{ $target := .Get "target" | default "_blank" }}
-  {{ $nozoom := .Get "nozoom" | default false }}
+  {{- $url := urls.Parse (.Get "src") }}
+  {{- $altText := .Get "alt" }}
+  {{- $caption := .Get "caption" }}
+  {{- $href := .Get "href" }}
+  {{- $class := .Get "class" }}
+  {{- $target := .Get "target" | default "_blank" }}
+  {{- $nozoom := .Get "nozoom" | default false -}}
 
   <figure>
-  {{ with $href }}<a href="{{ . }}" {{ with $target }}target="{{ . }}"{{ end }}>{{ end }}
-  {{ if findRE "^https?" $url.Scheme }}
-      <img class="my-0 rounded-md {{ with $nozoom }} nozoom {{ end }}{{ with $class }} {{ . }} {{ end }}" src="{{ $url.String }}" alt="{{ $altText }}" />
-  {{ else }}
-    {{ $resource := "" }}
-    {{ if $.Page.Resources.GetMatch ($url.String) }}
-      {{ $resource = $.Page.Resources.GetMatch ($url.String) }}
-    {{ else if resources.GetMatch ($url.String) }}
-      {{ $resource = resources.Get ($url.String) }}
-    {{ end }}
-    {{ with $resource }}
-          {{ if $disableImageOptimization }}
-          <img
-            class="my-0 rounded-md {{ with $nozoom }} nozoom {{ end }}{{ with $class }} {{ . }} {{ end }}"
-            src="{{ .RelPermalink }}"
-            alt="{{ $altText }}"
-          />
-          {{ else }}
-          <img
-            class="my-0 rounded-md {{ with $nozoom }} nozoom {{ end }}{{ with $class }} {{ . }} {{ end }}"
-            srcset="
-            {{ (.Resize "330x").RelPermalink }} 330w,
-            {{ (.Resize "660x").RelPermalink }} 660w,
-            {{ (.Resize "1024x").RelPermalink }} 1024w,
-            {{ (.Resize "1320x").RelPermalink }} 2x"
-            src="{{ (.Resize "660x").RelPermalink }}"
-            alt="{{ $altText }}"
-          />
-          {{ end }}
-    {{ else }}
-        <img class="my-0 rounded-md {{ with $nozoom }} nozoom {{ end }}{{ with $class }} {{ . }} {{ end }}" src="{{ $url.String }}" alt="{{ $altText }}" />
-    {{ end }}
-  {{ end }}
-  {{ with $caption }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
-  {{ if $href }}</a>{{ end }}
+  {{- with $href }}<a href="{{ . }}" {{ with $target }}target="{{ . }}"{{ end }}>{{ end -}}
+  {{- if findRE "^https?" $url.Scheme }}
+      <img class="my-0 rounded-md{{ with $nozoom }} nozoom{{ end }}{{ with $class }} {{ . }}{{ end }}" src="{{ $url.String }}" alt="{{ $altText }}" />
+  {{- else }}
+    {{- $resource := "" }}
+    {{- if $.Page.Resources.GetMatch ($url.String) }}
+      {{- $resource = $.Page.Resources.GetMatch ($url.String) }}
+    {{- else if resources.GetMatch ($url.String) }}
+      {{- $resource = resources.Get ($url.String) }}
+    {{- end }}
+    {{- with $resource }}
+      {{- if or $disableImageOptimization (eq .MediaType.SubType "svg")}}
+        <img
+          class="my-0 rounded-md{{ with $nozoom }} nozoom{{ end }}{{ with $class }} {{ . }}{{ end }}"
+          src="{{ .RelPermalink }}"
+          alt="{{ $altText }}"
+        />
+      {{- else }}
+        <img
+          class="my-0 rounded-md{{ with $nozoom }} nozoom{{ end }}{{ with $class }} {{ . }}{{ end }}"
+          srcset="
+          {{ (.Resize "330x").RelPermalink }} 330w,
+          {{ (.Resize "660x").RelPermalink }} 660w,
+          {{ (.Resize "1024x").RelPermalink }} 1024w,
+          {{ (.Resize "1320x").RelPermalink }} 2x"
+          src="{{ (.Resize "660x").RelPermalink }}"
+          alt="{{ $altText }}"
+        />
+      {{- end }}
+    {{- else }}
+      <img class="my-0 rounded-md{{ with $nozoom }} nozoom{{ end }}{{ with $class }} {{ . }}{{ end }}" src="{{ $url.String }}" alt="{{ $altText }}" />
+    {{- end }}
+  {{- end }}
+  {{- with $caption }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+  {{- if $href }}</a>{{ end }}
   </figure>
-{{ end }}
+{{- end -}}
