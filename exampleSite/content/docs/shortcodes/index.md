@@ -18,7 +18,7 @@ In addition to all the [default Hugo shortcodes](https://gohugo.io/content-manag
 <!-- prettier-ignore-start -->
 | Parameter   | Description                                                                                                                                                                                  |
 | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `icon`      | **Optional.** the icon to display on the left side.<br>**Default:** `exclaimation triangle icon` (Check out the [icon shortcode](#icon) for more details on using icons.)                    |
+| `icon`      | **Optional.** the icon to display on the left side.<br>**Default:** `triangle-exclamation` (Check out the [icon shortcode](#icon) for more details on using icons.)                    |
 | `iconColor` | **Optional.** the color for the icon in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme .            |
 | `cardColor` | **Optional.** the color for the card background in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme . |
 | `textColor` | **Optional.** the color for the text in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme .            |
@@ -496,7 +496,7 @@ When life gives you lemons, make lemonade.
 | `value`    | The value that will need to match the parameter defined in `where` for the query of articles e.g. for `where` == `Type` a valid value could be `sample` |
 
 {{< alert >}}
-The `where` and `value` values are used in the following query `where .Site.RegularPages $where $value` in the code of the shortcode. Check [Hugo docs](https://gohugo.io/variables/page/) to learn more about which parameters are available to use.
+The `where` and `value` values are used in the following query `where .Site.RegularPages $where $value` in the code of the shortcode. Check [Hugo docs](https://gohugo.io/methods/page/) to learn more about which parameters are available to use.
 {{</ alert >}}
 
 <!-- prettier-ignore-end -->
@@ -512,7 +512,7 @@ The `where` and `value` values are used in the following query `where .Site.Regu
 **Example #2:**
 
 ```md
-{{</* list title="Samples" cardView=true limit=5 where="Type" value="sample" */>}}
+{{</* list title="Samples" cardView=true limit=6 where="Type" value="sample" */>}}
 ```
 
 {{< list title="Samples" cardView=true limit=6 where="Type" value="sample">}}

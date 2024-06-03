@@ -497,7 +497,7 @@ When life gives you lemons, make lemonade.
 | `value`    | 需要与 `where` 中定义的参数匹配的值，以进行文章查询，例如对于 `where` == `Type`，可以找到文章 `sample` |
 
 {{< alert >}}
-`where` 和 `value` 值用于简码中进行以下格式的查询 `where .Site.RegularPages $where $value` 。检查 [Hugo 文档](https://gohugo.io/variables/page/) 以了解有关可用参数的更多信息。
+`where` 和 `value` 值用于简码中进行以下格式的查询 `where .Site.RegularPages $where $value` 。检查 [Hugo 文档](https://gohugo.io/methods/page/) 以了解有关可用参数的更多信息。
 {{</ alert >}}
 
 <!-- prettier-ignore-end -->
@@ -513,7 +513,7 @@ When life gives you lemons, make lemonade.
 **例 2:**
 
 ```md
-{{</* list title="Samples" cardView=true limit=5 where="Type" value="sample" */>}}
+{{</* list title="Samples" cardView=true limit=6 where="Type" value="sample" */>}}
 ```
 
 {{< list title="Samples" cardView=true limit=6 where="Type" value="sample">}}
