@@ -44,7 +44,7 @@
       <img class="my-0 rounded-md{{ with $nozoom }} nozoom{{ end }}{{ with $class }} {{ . }}{{ end }}" src="{{ $url.String }}" alt="{{ $altText }}" />
     {{- end }}
   {{- end }}
-  {{- with $caption }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
-  {{- if $href }}</a>{{ end }}
+  {{ with $caption }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+  {{ if $href }}</a>{{ end }}
   </figure>
 {{- end -}}
