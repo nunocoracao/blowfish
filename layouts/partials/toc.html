@@ -1,5 +1,5 @@
 <details open id="TOCView"
-  class="toc-right mt-0 overflow-hidden overscroll-contain scrollbar scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
   <summary
     class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
     {{ i18n "article.table_of_contents" }}
@@ -23,22 +23,24 @@
 <script>
 
   var overflowOn = false;
+  var margin = 300;
+  var marginError = 150
 
   (function () {
     var $window = $(window);
     var $toc = $('#TOCView');
-
-    console.log($toc)
+    var tocHeight = $toc.height();
 
     function onResize() {
-      var windowheight = $window.height() - 150;
-      if($toc.height() > windowheight) {
+      var windowAndMarginHeight = $window.height() - margin;
+
+      if(tocHeight >= windowAndMarginHeight) {
         $toc.css("overflow-y", "scroll")
         overflowOn = true;
       } else {
         $toc.css("overflow-y", "hidden")
       }
-      $toc.css("max-height", windowheight + "px")
+      $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
 
     }
 
