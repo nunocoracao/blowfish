@@ -14,7 +14,7 @@
         {{ if not $disableImageOptimization }}
           {{ $authorImage = $authorImage.Fill "288x288" }}
         {{ end }}
-        <img class="mb-2 rounded-full h-36 w-36" width="144" height="144" alt="{{ $.Site.Author.name | default " Author" }}"
+        <img class="mb-2 rounded-full h-100 w-100" width="144" height="144" alt="{{ $.Site.Author.name | default " Author" }}"
           src="{{ $authorImage.RelPermalink }}" />
       {{ end }}
     {{ end }}

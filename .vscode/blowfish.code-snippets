@@ -139,7 +139,7 @@
   "list": {
     "prefix": ["BFS-list", "HSC-list", "list"],
     "body": [
-      "{{< list limit=\"${1:5}\"${2| , title=\"Recent\"|}${3| , where=\"Type\"|}${4| ,value=\"article\"|} >}}",
+      "{{< list limit=\"${1:5}\"${2| , title=\"Recent projects\"|}${3| , where=\"Type\"|}${4| ,value=\"article\"|} >}}",
       "{{/* The where and value values are used in the following query where .Site.RegularPages $where $value in the code of the shortcode. See Hugo Docs: https://gohugo.io/variables/page/ */}} $0",
     ],
     "description": "Display a list of recent articles. Blowfish list Shortcode. Documentation: https://blowfish.page/docs/shortcodes/#list ",
