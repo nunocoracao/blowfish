@@ -2220,6 +2220,10 @@ select {
   overflow:visible
 }
 
+.overflow-y-scroll {
+  overflow-y:scroll
+}
+
 .overscroll-contain {
   overscroll-behavior:contain
 }
@@ -3195,6 +3199,22 @@ select {
 
 .scrollbar-thumb-neutral-400 {
   --scrollbar-thumb:rgba(var(--color-neutral-400), 1) !important
+}
+
+.scrollbar-thumb-primary-400 {
+  --scrollbar-thumb:rgba(var(--color-primary-400), 1) !important
+}
+
+.scrollbar-thumb-primary-100 {
+  --scrollbar-thumb:rgba(var(--color-primary-100), 1) !important
+}
+
+.scrollbar-thumb-primary-500 {
+  --scrollbar-thumb:rgba(var(--color-primary-500), 1) !important
+}
+
+.scrollbar-thumb-primary-600 {
+  --scrollbar-thumb:rgba(var(--color-primary-600), 1) !important
 }
 
 .\!\[clip\:rect\(0\2c 0\2c 0\2c 0\)\] {
@@ -5223,6 +5243,18 @@ pre {
 
 .dark\:scrollbar-thumb-neutral-600:is(.dark *) {
   --scrollbar-thumb:rgba(var(--color-neutral-600), 1) !important
+}
+
+.dark\:scrollbar-thumb-primary-600:is(.dark *) {
+  --scrollbar-thumb:rgba(var(--color-primary-600), 1) !important
+}
+
+.dark\:scrollbar-thumb-primary-400:is(.dark *) {
+  --scrollbar-thumb:rgba(var(--color-primary-400), 1) !important
+}
+
+.dark\:scrollbar-thumb-primary-100:is(.dark *) {
+  --scrollbar-thumb:rgba(var(--color-primary-100), 1) !important
 }
 
 .group:hover .dark\:group-hover\:text-neutral-700:is(.dark *) {
