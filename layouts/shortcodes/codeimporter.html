@@ -1,6 +1,6 @@
 {{ $url := .Get "url" }}
 {{ $type := .Get "type" }}
-{{ with resources.GetRemote (printf $url) }}
+{{ with resources.GetRemote (urls.Parse $url) }}
 {{ $codeBlock := printf "```%s\n%s\n```" $type .Content }}
 {{ $codeBlock | markdownify }}
 {{ else }}
