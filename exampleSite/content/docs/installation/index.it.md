@@ -1,6 +1,6 @@
 ---
 title: "Installazione"
-date: 2020-08-16
+weight: 2
 draft: false
 description: "Come installare il tema Blowfish."
 slug: "installation"

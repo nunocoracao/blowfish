@@ -1,6 +1,6 @@
 ---
 title: "Partials"
-date: 2020-08-10
+weight: 9
 draft: false
 description: "All the partials available in Blowfish."
 slug: "partials"

@@ -1,6 +1,6 @@
 ---
 title: "Partials"
-date: 2020-08-10
+weight: 9
 draft: false
 description: "所有 Blowfish 可以配置的 Partials"
 slug: "partials"

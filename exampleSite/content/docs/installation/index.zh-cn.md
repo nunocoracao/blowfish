@@ -1,6 +1,6 @@
 ---
 title: "安装和配置"
-date: 2020-08-16
+weight: 2
 draft: false
 description: "如何安装 Blowfish 主题。"
 slug: "installation"

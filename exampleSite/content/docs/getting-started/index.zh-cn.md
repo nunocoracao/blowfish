@@ -1,6 +1,6 @@
 ---
 title: "入门指南"
-date: 2020-08-15
+weight: 3
 draft: false
 description: "所有在你要使用 Blowfish 主题搭建网站之前的准备工作"
 slug: "getting-started"

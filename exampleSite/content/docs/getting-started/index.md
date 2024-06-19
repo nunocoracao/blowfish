@@ -1,6 +1,6 @@
 ---
 title: "Getting Started"
-date: 2020-08-15
+weight: 3
 draft: false
 description: "All the front matter variables available in Blowfish."
 slug: "getting-started"

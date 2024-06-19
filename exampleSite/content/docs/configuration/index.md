@@ -1,6 +1,6 @@
 ---
 title: "Configuration"
-date: 2020-08-14
+weight: 4
 draft: false
 description: "All the configuration variables available in Blowfish."
 slug: "configuration"
