@@ -88,6 +88,7 @@ disableTextInHeader = false
   showLikes = false
   showTableOfContents = false
   showCards = false
+  orderByWeight = false
   groupByYear = true
   cardView = false
   cardViewScreenWidth = false
