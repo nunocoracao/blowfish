@@ -1,8 +1,8 @@
 ---
-                title: "datatodroids.tech"
-                tags: [Personal site,Blog]
-                externalUrl: "https://datatodroids.tech/"
-                date: 9933-08-08
+                title: "MEM v ENNBEE"
+                tags: [技术博客, 个人网站]
+                externalUrl: "https://memv.ennbee.uk/"
+                date: 9918-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

@@ -1,6 +1,6 @@
 ---
 title: "Series"
-date: 2020-08-09
+weight: 12
 draft: false
 description: "Learn how to group articles under a series."
 slug: "series"

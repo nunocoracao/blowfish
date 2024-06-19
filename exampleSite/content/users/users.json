@@ -209,14 +209,6 @@
     ]
   },
   {
-    "title": "muhalvin.github.io",
-    "url": "https://muhalvin.github.io/",
-    "source": "n/a",
-    "tags": [
-      "Personal site"
-    ]
-  },
-  {
     "title": "mariuskimmina.com",
     "url": "https://mariuskimmina.com/",
     "source": "n/a",
@@ -532,15 +524,6 @@
     ]
   },
   {
-    "title": "datatodroids.tech",
-    "url": "https://datatodroids.tech/",
-    "source": "n/a",
-    "tags": [
-      "Personal site",
-      "Blog"
-    ]
-  },
-  {
     "title": "DXPetti.com",
     "url": "https://www.dxpetti.com/",
     "source": "n/a",
@@ -663,6 +646,25 @@
       "Portfolio Site",
       "Software Developer",
       "Videogame Developer"
+    ]
+  },
+  {
+    "title": "MEM v ENNBEE",
+    "url": "https://memv.ennbee.uk/",
+    "source": "https://github.com/ennnbeee/ennnbeee.github.io",
+    "tags": [
+      "Technology Blog",
+      "Personal site"
+    ]
+  },
+  {
+    "title": "Joshua Blais",
+    "url": "https://joshblais.com/",
+    "source": "n/a",
+    "tags": [
+      "Personal Site",
+      "Author",
+      "Digital Garden"
     ]
   }
 ]

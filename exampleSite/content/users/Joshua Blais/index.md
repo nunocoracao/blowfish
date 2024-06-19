@@ -1,8 +1,8 @@
 ---
-                title: "datatodroids.tech"
-                tags: [Sito personale, Blog]
-                externalUrl: "https://datatodroids.tech/"
-                date: 9933-08-08
+                title: "Joshua Blais"
+                tags: [Personal Site,Author,Digital Garden]
+                externalUrl: "https://joshblais.com/"
+                date: 9917-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

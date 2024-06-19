@@ -1,6 +1,6 @@
 ---
 title: "配置"
-date: 2020-08-14
+weight: 4
 draft: false
 description: "介绍 Blowfish 中所有可用的的配置变量。"
 slug: "configuration"

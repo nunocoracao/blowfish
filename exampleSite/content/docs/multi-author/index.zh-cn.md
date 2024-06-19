@@ -1,6 +1,6 @@
 ---
 title: "多创作者模式"
-date: 2020-08-10
+weight: 8
 draft: false
 description: "为你的文章设置多个作者。"
 slug: "multi-author"

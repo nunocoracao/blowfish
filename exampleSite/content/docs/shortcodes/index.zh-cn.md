@@ -1,6 +1,6 @@
 ---
 title: "简码"
-date: 2020-08-11
+weight: 6
 draft: false
 description: "所有 Blowfish 中可用的简码"
 slug: "shortcodes"

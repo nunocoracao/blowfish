@@ -1,6 +1,6 @@
 ---
 title: "Content Examples"
-date: 2020-08-09
+weight: 11
 draft: false
 description: "All the partials available in Blowfish."
 slug: "content-examples"

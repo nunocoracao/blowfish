@@ -1,8 +1,8 @@
 ---
-                title: "muhalvin.github.io"
-                tags: [個人サイト]
-                externalUrl: "https://muhalvin.github.io/"
-                date: 9973-08-08
+                title: "MEM v ENNBEE"
+                tags: [Blog sulla tecnologia, Sito personale]
+                externalUrl: "https://memv.ennbee.uk/"
+                date: 9918-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

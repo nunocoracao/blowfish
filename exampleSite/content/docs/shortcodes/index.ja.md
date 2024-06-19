@@ -1,6 +1,6 @@
 ---
 title: "Shortcodes"
-date: 2020-08-11
+weight: 6
 draft: false
 description: "All the shortcodes available in Blowfish."
 slug: "shortcodes"

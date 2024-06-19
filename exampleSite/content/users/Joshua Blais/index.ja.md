@@ -1,8 +1,8 @@
 ---
-                title: "muhalvin.github.io"
-                tags: [Personal site]
-                externalUrl: "https://muhalvin.github.io/"
-                date: 9973-08-08
+                title: "Joshua Blais"
+                tags: [個人サイト, 著者, デジタルガーデン]
+                externalUrl: "https://joshblais.com/"
+                date: 9917-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

@@ -1,6 +1,6 @@
 ---
 title: "Thumbnails"
-date: 2020-08-10
+weight: 10
 draft: false
 description: "Turn on thumbnails for your articles."
 slug: "thumbnails"

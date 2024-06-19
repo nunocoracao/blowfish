@@ -1,6 +1,6 @@
 ---
 title: "Firebase: Views & Likes"
-date: 2020-08-03
+weight: 15
 draft: false
 description: "Learn how to integrate Firebase and get dynamic data for views and likes."
 slug: "firebase-views"

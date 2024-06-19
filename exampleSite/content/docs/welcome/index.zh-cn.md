@@ -1,6 +1,6 @@
 ---
 title: "欢迎来到 Blowfish"
-date: 2022-01-19
+weight: 1
 draft: false
 description: "探索 Blowfish 2.0版本的新功能。"
 tags: ["新手", "文档"]
