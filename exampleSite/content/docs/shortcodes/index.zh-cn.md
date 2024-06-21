@@ -197,6 +197,8 @@ data: {
 | --------- | ---------------------------------- |
 | `url`     | **必需的** 外部托管代码文件的 URL. |
 | `type`    | 用于语法突出显示的代码类型.        |
+| `startLine` | **可选** 从代码文件中导入的起始行. |
+| `endLine` | **可选** 从代码文件中导入的结束行. |
 
 
 <!-- prettier-ignore-end -->
@@ -210,6 +212,13 @@ data: {
 ```
 
 {{< codeimporter url="https://raw.githubusercontent.com/nunocoracao/blowfish/main/layouts/shortcodes/mdimporter.html" type="go" >}}
+
+```md
+{{</* codeimporter url="https://raw.githubusercontent.com/nunocoracao/blowfish/main/config/_default/hugo.toml" type="c" startLine="11" endLine="18" */>}}
+
+```
+
+{{< codeimporter url="https://raw.githubusercontent.com/nunocoracao/blowfish/main/config/_default/hugo.toml" type="c" startLine="11" endLine="18">}}
 
 
 <br/><br/>
