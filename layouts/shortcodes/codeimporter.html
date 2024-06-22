@@ -4,7 +4,7 @@
 {{ $startLine = sub $startLine 1 }}
 {{ $endLine := .Get "endLine" | default -1 | int }}
 {{ $selectedLines := slice }}
-{{ with resources.GetRemote ( printf $url ) }}
+{{ with resources.GetRemote (urls.Parse $url) }}
   {{ $lines := split .Content "\n" }}
   {{ $totalLine := $lines | len }}
 
