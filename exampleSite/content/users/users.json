@@ -666,5 +666,16 @@
       "Author",
       "Digital Garden"
     ]
+  },
+  {
+    "title": "Middle of Nowhere",
+    "url": "https://blog.wtcx.dev/",
+    "source": "n/a",
+    "tags": [
+      "AWS",
+      "DevOps",
+      "Cloud Infrastructure",
+      "Blog"
+    ]
   }
 ]
