@@ -2,7 +2,7 @@
                 title: "gma.name"
                 tags: [个人网站]
                 externalUrl: "https://gma.name"
-                date: 9951-08-08
+                weight: 481
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

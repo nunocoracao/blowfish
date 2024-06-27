@@ -2,7 +2,7 @@
                 title: "technicaldc.github.io"
                 tags: [Sito personale, Blog]
                 externalUrl: "https://technicaldc.github.io/"
-                date: 9937-08-08
+                weight: 621
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

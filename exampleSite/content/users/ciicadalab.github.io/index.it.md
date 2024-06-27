@@ -2,7 +2,7 @@
                 title: "ciicadalab.github.io"
                 tags: [Sito dell'organizzazione]
                 externalUrl: "https://ciicadalab.github.io"
-                date: 9992-08-08
+                weight: 71
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

@@ -2,7 +2,7 @@
                 title: "rejowski.xyz"
                 tags: [Sito personale]
                 externalUrl: "https://rejowski.xyz/"
-                date: 9942-08-08
+                weight: 571
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

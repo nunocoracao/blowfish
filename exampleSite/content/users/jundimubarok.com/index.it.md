@@ -2,7 +2,7 @@
                 title: "jundimubarok.com"
                 tags: [Sito personale]
                 externalUrl: "https://jundimubarok.com/"
-                date: 9956-08-08
+                weight: 431
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

@@ -2,7 +2,7 @@
                 title: "talkdimsum.com"
                 tags: [应用网站]
                 externalUrl: "https://talkdimsum.com/"
-                date: 9969-08-08
+                weight: 301
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

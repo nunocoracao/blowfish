@@ -2,7 +2,7 @@
                 title: "the-maze.net"
                 tags: [个人网站, 博客]
                 externalUrl: "https://www.the-maze.net/"
-                date: 9935-08-08
+                weight: 641
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

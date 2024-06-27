@@ -2,7 +2,7 @@
                 title: "michaeldorner.de"
                 tags: [博客, 个人网站, 学术界]
                 externalUrl: "https://www.michaeldorner.de"
-                date: 9922-08-08
+                weight: 771
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

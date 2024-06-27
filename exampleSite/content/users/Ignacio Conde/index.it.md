@@ -2,7 +2,7 @@
                 title: "Ignacio Conde"
                 tags: [Sito personale, Sito portfolio, Sviluppatore di software, Sviluppatore di videogiochi]
                 externalUrl: "http://www.ignaciomconde.com/"
-                date: 9921-08-08
+                weight: 781
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

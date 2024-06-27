@@ -2,7 +2,7 @@
                 title: "mayer.life"
                 tags: [個人サイト]
                 externalUrl: "https://mayer.life"
-                date: 9950-08-08
+                weight: 491
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
