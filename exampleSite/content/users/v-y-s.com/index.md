@@ -2,7 +2,7 @@
                 title: "v-y-s.com"
                 tags: [Personal Site]
                 externalUrl: "https://v-y-s.com/"
-                date: 9940-08-08
+                date: 9941-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

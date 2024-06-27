@@ -2,7 +2,7 @@
                 title: "the-maze.net"
                 tags: [Sito personale, Blog]
                 externalUrl: "https://www.the-maze.net/"
-                date: 9934-08-08
+                date: 9935-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

@@ -2,7 +2,7 @@
                 title: "deepumohan.com/tech"
                 tags: [テクノロジーブログ]
                 externalUrl: "https://deepumohan.com/tech/"
-                date: 9944-08-08
+                date: 9945-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

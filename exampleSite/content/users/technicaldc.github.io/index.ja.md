@@ -2,7 +2,7 @@
                 title: "technicaldc.github.io"
                 tags: [個人サイト, ブログ]
                 externalUrl: "https://technicaldc.github.io/"
-                date: 9936-08-08
+                date: 9937-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

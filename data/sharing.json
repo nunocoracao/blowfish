@@ -38,5 +38,10 @@
     "icon": "telegram",
     "title": "sharing.telegram",
     "url": "https://t.me/share/url?url=%s&resubmit=true&title=%s"
+  },
+  "bluesky": {
+    "icon": "bluesky",
+    "title": "sharing.bluesky",
+    "url": "https://bsky.app/intent/compose?text=%[2]s+%[1]s"
   }
 }

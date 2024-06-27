@@ -197,7 +197,8 @@ This shortcode is for importing code from external sources easily without copyin
 | --------- | ------------------------------------------------------- |
 | `url`     | **Required** URL to an externally hosted code file.     |
 | `type`    | Code type used for syntax highlighting.                 |
-
+| `startLine` | **Optional** The line number to start the import from.    |
+| `endLine` | **Optional** The line number to end the import at.        |
 
 <!-- prettier-ignore-end -->
 
@@ -209,6 +210,13 @@ This shortcode is for importing code from external sources easily without copyin
 
 ```
 {{< codeimporter url="https://raw.githubusercontent.com/nunocoracao/blowfish/main/layouts/shortcodes/mdimporter.html" type="go" >}}
+
+```md
+{{</* codeimporter url="https://raw.githubusercontent.com/nunocoracao/blowfish/main/config/_default/hugo.toml" type="toml" startLine="11" endLine="18" */>}}
+
+```
+
+{{< codeimporter url="https://raw.githubusercontent.com/nunocoracao/blowfish/main/config/_default/hugo.toml" type="toml" startLine="11" endLine="18">}}
 
 
 <br/><br/>

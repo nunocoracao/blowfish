@@ -2,7 +2,7 @@
                 title: "talkdimsum.com"
                 tags: [アプリサイト]
                 externalUrl: "https://talkdimsum.com/"
-                date: 9968-08-08
+                date: 9969-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

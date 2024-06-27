@@ -2,7 +2,7 @@
                 title: "mayer.life"
                 tags: [Personal site]
                 externalUrl: "https://mayer.life"
-                date: 9949-08-08
+                date: 9950-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
