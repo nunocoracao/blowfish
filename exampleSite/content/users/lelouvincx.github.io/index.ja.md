@@ -2,7 +2,7 @@
                 title: "lelouvincx.github.io"
                 tags: [個人サイト]
                 externalUrl: "https://lelouvincx.github.io/"
-                date: 9965-08-08
+                weight: 341
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

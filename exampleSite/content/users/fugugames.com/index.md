@@ -2,7 +2,7 @@
                 title: "fugugames.com"
                 tags: [Games site]
                 externalUrl: "https://fugugames.com/"
-                date: 9971-08-08
+                weight: 281
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

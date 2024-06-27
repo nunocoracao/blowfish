@@ -111,7 +111,7 @@ puppeteer
                 title: \""+ users[i].title + "\"\n\
                 tags: ["+ users[i].tags + "]\n\
                 externalUrl: \""+ users[i].url + "\"\n\
-                date: "+ (9999 - i) + "-08-08\n\
+                weight: "+ (i+1) +"\n\
                 showDate: false\n\
                 showAuthor: false\n\
                 showReadingTime: false\n\

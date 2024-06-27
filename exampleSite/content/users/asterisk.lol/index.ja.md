@@ -2,7 +2,7 @@
                 title: "asterisk.lol"
                 tags: [ブログ, 個人サイト]
                 externalUrl: "https://asterisk.lol"
-                date: 9933-08-08
+                weight: 661
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

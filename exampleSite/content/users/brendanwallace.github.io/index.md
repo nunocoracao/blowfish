@@ -2,7 +2,7 @@
                 title: "brendanwallace.github.io"
                 tags: [Personal site]
                 externalUrl: "https://brendanwallace.github.io"
-                date: 9995-08-08
+                weight: 41
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

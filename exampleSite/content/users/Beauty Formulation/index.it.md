@@ -2,7 +2,7 @@
                 title: "Beauty Formulation"
                 tags: [Sito aziendale]
                 externalUrl: "https://www.beautyformulation.com/"
-                date: 9918-08-08
+                weight: 811
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

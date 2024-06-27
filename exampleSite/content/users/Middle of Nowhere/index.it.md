@@ -2,7 +2,7 @@
                 title: "Middle of Nowhere"
                 tags: [Sito personale, Blog]
                 externalUrl: "https://blog.wtcx.dev/"
-                date: 9917-08-08
+                weight: 821
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

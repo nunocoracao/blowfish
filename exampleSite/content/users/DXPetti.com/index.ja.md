@@ -2,7 +2,7 @@
                 title: "DXPetti.com"
                 tags: [個人サイト, ブログ]
                 externalUrl: "https://www.dxpetti.com/"
-                date: 9934-08-08
+                weight: 651
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

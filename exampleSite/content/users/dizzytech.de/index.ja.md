@@ -2,7 +2,7 @@
                 title: "dizzytech.de"
                 tags: [個人サイト]
                 externalUrl: "https://dizzytech.de"
-                date: 9980-08-08
+                weight: 191
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

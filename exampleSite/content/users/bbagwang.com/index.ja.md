@@ -2,7 +2,7 @@
                 title: "bbagwang.com"
                 tags: [個人サイト]
                 externalUrl: "https://bbagwang.com"
-                date: 9954-08-08
+                weight: 451
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

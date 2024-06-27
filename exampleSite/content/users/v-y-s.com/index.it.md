@@ -2,7 +2,7 @@
                 title: "v-y-s.com"
                 tags: [Sito personale]
                 externalUrl: "https://v-y-s.com/"
-                date: 9941-08-08
+                weight: 581
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
