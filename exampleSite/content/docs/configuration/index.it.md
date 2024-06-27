@@ -88,6 +88,7 @@ The theme currently supports the following languages by default:
 | Russian                      | `ru`    |
 | Turkish                      | `tr`    |
 | Vietnamese                   | `vi`    |
+| Ukrainian                    | `uk`    |
 | Simplified Chinese (China)   | `zh-cn` |
 | Traditional Chinese (Taiwan) | `zh-tw` |
 
