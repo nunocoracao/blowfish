@@ -2,7 +2,7 @@
                 title: "rejowski.xyz"
                 tags: [个人网站]
                 externalUrl: "https://rejowski.xyz/"
-                date: 9941-08-08
+                date: 9942-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

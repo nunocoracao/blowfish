@@ -2,7 +2,7 @@
                 title: "rdgo.dev"
                 tags: [Personal site]
                 externalUrl: "https://rdgo.dev/"
-                date: 9966-08-08
+                date: 9967-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

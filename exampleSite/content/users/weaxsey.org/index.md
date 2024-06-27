@@ -2,7 +2,7 @@
                 title: "weaxsey.org"
                 tags: [Personal site]
                 externalUrl: "https://weaxsey.org/"
-                date: 9963-08-08
+                date: 9964-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

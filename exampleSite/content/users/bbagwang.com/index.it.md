@@ -2,7 +2,7 @@
                 title: "bbagwang.com"
                 tags: [Sito personale]
                 externalUrl: "https://bbagwang.com"
-                date: 9953-08-08
+                date: 9954-08-08
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
