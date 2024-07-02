@@ -56,8 +56,8 @@
   "vendorCopy": [],
   "devVendorCopy": [
     {
-      "from": "node_modules/mermaid/dist",
-      "to": "assets/lib/mermaid"
+      "from": "node_modules/mermaid/dist/mermaid.min.js",
+      "to": "assets/lib/mermaid/mermaid.min.js"
     },
     {
       "from": "node_modules/chart.js/dist/chart.umd.js",
