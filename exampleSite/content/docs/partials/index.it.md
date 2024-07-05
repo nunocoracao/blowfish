@@ -44,6 +44,7 @@ googleAnalytics = "G-MEASUREMENT_ID"
 
 To enable Umami Analytics support, simply provide your [Umami tracking code](https://umami.is/docs/collect-data) in the `config/_default/params.toml` file.
 If you also use the custom domain feature of Umami and would like to serve their script from your domain, you can also additionally provide the `domain` configuration value. If you don't provide a `domain` value, the script will load directly from Umami DNS (analytics.umami.is).
+If you want the tracker to only run on specific domains, you can provide the `dataDomains` configuration value. If you don't provide a `dataDomains` value, the script will run on any website where the `domain` and` websiteid` match.
 
 ```toml
 # config/_default/params.toml
@@ -51,6 +52,7 @@ If you also use the custom domain feature of Umami and would like to serve their
 [umamiAnalytics]
   websiteid = "ABC12345"
   domain = "llama.yoursite.com"
+  dataDomains = "yoursite.com,yoursite2.com"
 ```
 
 ### Custom analytics providers
