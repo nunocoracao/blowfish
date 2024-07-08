@@ -80,7 +80,7 @@
         {{ partial "series/series.html" . }}
 
         <div class="article-content max-w-prose mb-20">
-          {{ .Content }}
+          {{- dict "Content" .Content "Ruby" .Site.Params.ruby | partial "functions/content.html" | safeHTML -}}
         </div>
         
         {{ if (.Params.showAuthorBottom | default ( .Site.Params.article.showAuthorBottom | default false)) }}

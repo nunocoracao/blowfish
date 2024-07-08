@@ -1,0 +1,7 @@
+{{- $content := .Content -}}
+
+{{- if .Ruby -}}
+    {{- $content = partial "functions/ruby.html" $content -}}
+{{- end -}}
+
+{{- return $content -}}

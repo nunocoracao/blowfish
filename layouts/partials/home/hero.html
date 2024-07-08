@@ -64,7 +64,7 @@
                         </div>
                         {{ end }}
                     </div>
-                    <section class="prose prose-invert">{{ .Content }}</section>
+                    <section class="prose prose-invert">{{- dict "Content" .Content "Ruby" .Site.Params.ruby | partial "functions/content.html" | safeHTML -}}</section>
                 </div>
             </div>
         </div>

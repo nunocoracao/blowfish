@@ -30,7 +30,7 @@
       {{ partialCached "author-links.html" . }}
     </div>
   </header>
-  <section class="prose dark:prose-invert">{{ .Content }}</section>
+  <section class="prose dark:prose-invert">{{- dict "Content" .Content "Ruby" .Site.Params.ruby | partial "functions/content.html" | safeHTML -}}</section>
 </article>
 <section>
   {{ partial "recent-articles/main.html" . }}
