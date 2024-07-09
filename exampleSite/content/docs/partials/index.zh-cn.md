@@ -48,6 +48,7 @@ googleAnalytics = "G-MEASUREMENT_ID"
 
 只需要在 `config/_default/params.toml` 文件提供你的 [Umami 跟踪代码](https://umami.is/docs/collect-data)，就可以快速支持 Umami 站点分析。
 如果你想使用自定义域名来获取跟踪脚本， 那么需要提供 `domain` 参数，否则会从 Umami 云服务版的地址 (analytics.umami.is) 获取脚本。
+如果你只想在特别的数个域名中使用 tracker 功能，那么需要提供 `dataDomains` 参数。否则任何一个匹配了 `websiteid` 和 `domain` 参数值的网站，Umami 脚本都会执行。
 
 ```toml
 # config/_default/params.toml
@@ -55,6 +56,7 @@ googleAnalytics = "G-MEASUREMENT_ID"
 [umamiAnalytics]
   websiteid = "ABC12345"
   domain = "llama.yoursite.com"
+  dataDomains = "yoursite.com,yoursite2.com"
 ```
 
 ### 提供自定义站点分析
