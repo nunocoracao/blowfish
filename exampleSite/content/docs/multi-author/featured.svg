@@ -1,0 +1,516 @@
+<svg height="100%" xmlns="http://www.w3.org/2000/svg" version="1.1"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs"
+    viewBox="0 0 600 600">
+    <rect width="600" height="600" fill="transparent"></rect>
+    <mask id="mask" mask-type="alpha" maskUnits="userSpaceOnUse">
+        <rect transform="translate(0, 0)" width="600" height="600" fill="white"></rect>
+    </mask>
+    <svg>
+        <rect transform="translate(0, 0)" fill="#ade8f4" width="60" height="60"></rect>
+        <rect transform="translate(0, 0)" fill="#90e0ef" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(0, 60)" fill="#90e0ef" width="60" height="60"></rect>
+        <path transform="translate(0, 60) translate(30,30) rotate(180) translate(-30,-30)"
+            fill="#00b4d8" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(0, 120)" fill="#00b4d8" width="60" height="60"></rect>
+        <rect transform="translate(0, 120)" fill="#48cae4" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(0, 180)" fill="#ade8f4" width="60" height="60"></rect>
+        <path transform="translate(0, 180) translate(30,30) rotate(0) translate(-30,-30)"
+            fill="#0096c7" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(0, 180)" fill="#03045e" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(0, 240)" fill="#0077b6" width="60" height="60"></rect>
+        <path transform="translate(0, 240) translate(30,30) rotate(270) translate(-30,-30)"
+            fill="#90e0ef" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(0, 240)" fill="#ade8f4" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(0, 300)" fill="#ade8f4" width="60" height="60"></rect>
+        <path transform="translate(0, 300) translate(30,30) rotate(270) translate(-30,-30)"
+            fill="#0096c7" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(0, 360)" fill="#0096c7" width="60" height="60"></rect>
+        <path transform="translate(0, 360) translate(30,30) rotate(270) translate(-30,-30)"
+            fill="#ade8f4" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(0, 360)" fill="#023e8a" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(0, 420)" fill="#0077b6" width="60" height="60"></rect>
+        <path transform="translate(0, 420) translate(30,30) rotate(90) translate(-30,-30)"
+            fill="#00b4d8" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(0, 420)" fill="#48cae4" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(0, 480)" fill="#ade8f4" width="60" height="60"></rect>
+        <rect transform="translate(0, 480)" fill="#00b4d8" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(0, 540)" fill="#00b4d8" width="60" height="60"></rect>
+        <path transform="translate(0, 540) translate(30,30) rotate(90) translate(-30,-30)"
+            fill="#ade8f4" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(0, 540)" fill="#48cae4" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(60, 0)" fill="#0096c7" width="60" height="60"></rect>
+        <path transform="translate(60, 0) translate(30,30) rotate(0) translate(-30,-30)"
+            fill="#023e8a" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(60, 60)" fill="#48cae4" width="60" height="60"></rect>
+        <path transform="translate(60, 60) translate(30,30) rotate(0) translate(-30,-30)"
+            fill="#ade8f4" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(60, 60)" fill="#caf0f8" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(60, 120)" fill="#ade8f4" width="60" height="60"></rect>
+        <path transform="translate(60, 120) translate(30,30) rotate(90) translate(-30,-30)"
+            fill="#90e0ef" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(60, 180)" fill="#023e8a" width="60" height="60"></rect>
+        <path transform="translate(60, 180) translate(30,30) rotate(90) translate(-30,-30)"
+            fill="#00b4d8" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(60, 240)" fill="#023e8a" width="60" height="60"></rect>
+        <path transform="translate(60, 240) translate(30,30) rotate(90) translate(-30,-30)"
+            fill="#0077b6" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(60, 300)" fill="#0077b6" width="60" height="60"></rect>
+        <rect transform="translate(60, 300)" fill="#90e0ef" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(60, 360)" fill="#48cae4" width="60" height="60"></rect>
+        <path transform="translate(60, 360) translate(30,30) rotate(0) translate(-30,-30)"
+            fill="#ade8f4" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(60, 360)" fill="#90e0ef" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(60, 420)" fill="#caf0f8" width="60" height="60"></rect>
+        <path transform="translate(60, 420) translate(30,30) rotate(90) translate(-30,-30)"
+            fill="#03045e" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(60, 480)" fill="#48cae4" width="60" height="60"></rect>
+        <path transform="translate(60, 480) translate(30,30) rotate(90) translate(-30,-30)"
+            fill="#023e8a" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(60, 480)" fill="#0077b6" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(60, 540)" fill="#48cae4" width="60" height="60"></rect>
+        <path transform="translate(60, 540) translate(30,30) rotate(0) translate(-30,-30)"
+            fill="#0077b6" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(60, 540)" fill="#ade8f4" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(120, 0)" fill="#0077b6" width="60" height="60"></rect>
+        <path transform="translate(120, 0) translate(30,30) rotate(0) translate(-30,-30)"
+            fill="#00b4d8" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(120, 60)" fill="#90e0ef" width="60" height="60"></rect>
+        <rect transform="translate(120, 60)" fill="#023e8a" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(120, 120)" fill="#0077b6" width="60" height="60"></rect>
+        <path transform="translate(120, 120) translate(30,30) rotate(180) translate(-30,-30)"
+            fill="#00b4d8" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(120, 180)" fill="#90e0ef" width="60" height="60"></rect>
+        <path transform="translate(120, 180) translate(30,30) rotate(180) translate(-30,-30)"
+            fill="#03045e" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(120, 240)" fill="#0096c7" width="60" height="60"></rect>
+        <path transform="translate(120, 240) translate(30,30) rotate(90) translate(-30,-30)"
+            fill="#ade8f4" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(120, 300)" fill="#00b4d8" width="60" height="60"></rect>
+        <rect transform="translate(120, 300)" fill="#023e8a" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(120, 360)" fill="#00b4d8" width="60" height="60"></rect>
+        <path transform="translate(120, 360) translate(30,30) rotate(0) translate(-30,-30)"
+            fill="#03045e" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(120, 420)" fill="#0096c7" width="60" height="60"></rect>
+        <path transform="translate(120, 420) translate(30,30) rotate(180) translate(-30,-30)"
+            fill="#00b4d8" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(120, 480)" fill="#023e8a" width="60" height="60"></rect>
+        <path transform="translate(120, 480) translate(30,30) rotate(90) translate(-30,-30)"
+            fill="#48cae4" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(120, 540)" fill="#03045e" width="60" height="60"></rect>
+        <path transform="translate(120, 540) translate(30,30) rotate(0) translate(-30,-30)"
+            fill="#90e0ef" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(180, 0)" fill="#90e0ef" width="60" height="60"></rect>
+        <path transform="translate(180, 0) translate(30,30) rotate(270) translate(-30,-30)"
+            fill="#023e8a" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(180, 0)" fill="#48cae4" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(180, 60)" fill="#03045e" width="60" height="60"></rect>
+        <rect transform="translate(180, 60)" fill="#00b4d8" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(180, 120)" fill="#0077b6" width="60" height="60"></rect>
+        <rect transform="translate(180, 120)" fill="#90e0ef" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(180, 180)" fill="#0096c7" width="60" height="60"></rect>
+        <path transform="translate(180, 180) translate(30,30) rotate(180) translate(-30,-30)"
+            fill="#0077b6" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(180, 180)" fill="#90e0ef" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(180, 240)" fill="#ade8f4" width="60" height="60"></rect>
+        <path transform="translate(180, 240) translate(30,30) rotate(270) translate(-30,-30)"
+            fill="#0077b6" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(180, 300)" fill="#023e8a" width="60" height="60"></rect>
+        <rect transform="translate(180, 300)" fill="#00b4d8" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(180, 360)" fill="#00b4d8" width="60" height="60"></rect>
+        <path transform="translate(180, 360) translate(30,30) rotate(180) translate(-30,-30)"
+            fill="#0077b6" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(180, 360)" fill="#0096c7" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(180, 420)" fill="#023e8a" width="60" height="60"></rect>
+        <path transform="translate(180, 420) translate(30,30) rotate(270) translate(-30,-30)"
+            fill="#48cae4" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(180, 480)" fill="#48cae4" width="60" height="60"></rect>
+        <path transform="translate(180, 480) translate(30,30) rotate(270) translate(-30,-30)"
+            fill="#ade8f4" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(180, 480)" fill="#00b4d8" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(180, 540)" fill="#0077b6" width="60" height="60"></rect>
+        <path transform="translate(180, 540) translate(30,30) rotate(90) translate(-30,-30)"
+            fill="#00b4d8" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(240, 0)" fill="#ade8f4" width="60" height="60"></rect>
+        <path transform="translate(240, 0) translate(30,30) rotate(270) translate(-30,-30)"
+            fill="#caf0f8" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(240, 60)" fill="#48cae4" width="60" height="60"></rect>
+        <path transform="translate(240, 60) translate(30,30) rotate(180) translate(-30,-30)"
+            fill="#03045e" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(240, 120)" fill="#caf0f8" width="60" height="60"></rect>
+        <path transform="translate(240, 120) translate(30,30) rotate(270) translate(-30,-30)"
+            fill="#90e0ef" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(240, 120)" fill="#48cae4" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(240, 180)" fill="#48cae4" width="60" height="60"></rect>
+        <path transform="translate(240, 180) translate(30,30) rotate(0) translate(-30,-30)"
+            fill="#03045e" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(240, 180)" fill="#00b4d8" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(240, 240)" fill="#48cae4" width="60" height="60"></rect>
+        <rect transform="translate(240, 240)" fill="#00b4d8" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(240, 300)" fill="#023e8a" width="60" height="60"></rect>
+        <path transform="translate(240, 300) translate(30,30) rotate(90) translate(-30,-30)"
+            fill="#90e0ef" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(240, 300)" fill="#0077b6" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(240, 360)" fill="#48cae4" width="60" height="60"></rect>
+        <path transform="translate(240, 360) translate(30,30) rotate(270) translate(-30,-30)"
+            fill="#caf0f8" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(240, 420)" fill="#90e0ef" width="60" height="60"></rect>
+        <path transform="translate(240, 420) translate(30,30) rotate(90) translate(-30,-30)"
+            fill="#ade8f4" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(240, 420)" fill="#00b4d8" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(240, 480)" fill="#03045e" width="60" height="60"></rect>
+        <rect transform="translate(240, 480)" fill="#0096c7" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(240, 540)" fill="#ade8f4" width="60" height="60"></rect>
+        <rect transform="translate(240, 540)" fill="#90e0ef" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(300, 0)" fill="#0096c7" width="60" height="60"></rect>
+        <rect transform="translate(300, 0)" fill="#00b4d8" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(300, 60)" fill="#023e8a" width="60" height="60"></rect>
+        <path transform="translate(300, 60) translate(30,30) rotate(270) translate(-30,-30)"
+            fill="#03045e" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(300, 60)" fill="#00b4d8" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(300, 120)" fill="#0096c7" width="60" height="60"></rect>
+        <path transform="translate(300, 120) translate(30,30) rotate(0) translate(-30,-30)"
+            fill="#00b4d8" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(300, 180)" fill="#03045e" width="60" height="60"></rect>
+        <path transform="translate(300, 180) translate(30,30) rotate(90) translate(-30,-30)"
+            fill="#0096c7" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(300, 180)" fill="#90e0ef" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(300, 240)" fill="#ade8f4" width="60" height="60"></rect>
+        <path transform="translate(300, 240) translate(30,30) rotate(270) translate(-30,-30)"
+            fill="#023e8a" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(300, 300)" fill="#03045e" width="60" height="60"></rect>
+        <path transform="translate(300, 300) translate(30,30) rotate(0) translate(-30,-30)"
+            fill="#00b4d8" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(300, 300)" fill="#0096c7" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(300, 360)" fill="#caf0f8" width="60" height="60"></rect>
+        <path transform="translate(300, 360) translate(30,30) rotate(180) translate(-30,-30)"
+            fill="#023e8a" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(300, 360)" fill="#ade8f4" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(300, 420)" fill="#0096c7" width="60" height="60"></rect>
+        <path transform="translate(300, 420) translate(30,30) rotate(0) translate(-30,-30)"
+            fill="#ade8f4" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(300, 480)" fill="#00b4d8" width="60" height="60"></rect>
+        <rect transform="translate(300, 480)" fill="#48cae4" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(300, 540)" fill="#48cae4" width="60" height="60"></rect>
+        <path transform="translate(300, 540) translate(30,30) rotate(0) translate(-30,-30)"
+            fill="#ade8f4" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(360, 0)" fill="#03045e" width="60" height="60"></rect>
+        <path transform="translate(360, 0) translate(30,30) rotate(180) translate(-30,-30)"
+            fill="#023e8a" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(360, 0)" fill="#90e0ef" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(360, 60)" fill="#0096c7" width="60" height="60"></rect>
+        <path transform="translate(360, 60) translate(30,30) rotate(90) translate(-30,-30)"
+            fill="#00b4d8" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(360, 120)" fill="#0077b6" width="60" height="60"></rect>
+        <path transform="translate(360, 120) translate(30,30) rotate(180) translate(-30,-30)"
+            fill="#00b4d8" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(360, 180)" fill="#00b4d8" width="60" height="60"></rect>
+        <path transform="translate(360, 180) translate(30,30) rotate(0) translate(-30,-30)"
+            fill="#48cae4" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(360, 180)" fill="#ade8f4" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(360, 240)" fill="#90e0ef" width="60" height="60"></rect>
+        <path transform="translate(360, 240) translate(30,30) rotate(270) translate(-30,-30)"
+            fill="#0077b6" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(360, 300)" fill="#0077b6" width="60" height="60"></rect>
+        <path transform="translate(360, 300) translate(30,30) rotate(90) translate(-30,-30)"
+            fill="#03045e" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(360, 300)" fill="#00b4d8" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(360, 360)" fill="#0096c7" width="60" height="60"></rect>
+        <path transform="translate(360, 360) translate(30,30) rotate(0) translate(-30,-30)"
+            fill="#90e0ef" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(360, 420)" fill="#0096c7" width="60" height="60"></rect>
+        <path transform="translate(360, 420) translate(30,30) rotate(270) translate(-30,-30)"
+            fill="#90e0ef" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(360, 480)" fill="#0077b6" width="60" height="60"></rect>
+        <rect transform="translate(360, 480)" fill="#023e8a" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(360, 540)" fill="#ade8f4" width="60" height="60"></rect>
+        <path transform="translate(360, 540) translate(30,30) rotate(90) translate(-30,-30)"
+            fill="#90e0ef" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(420, 0)" fill="#00b4d8" width="60" height="60"></rect>
+        <path transform="translate(420, 0) translate(30,30) rotate(0) translate(-30,-30)"
+            fill="#48cae4" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(420, 60)" fill="#ade8f4" width="60" height="60"></rect>
+        <path transform="translate(420, 60) translate(30,30) rotate(270) translate(-30,-30)"
+            fill="#0096c7" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(420, 120)" fill="#0096c7" width="60" height="60"></rect>
+        <path transform="translate(420, 120) translate(30,30) rotate(180) translate(-30,-30)"
+            fill="#48cae4" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(420, 120)" fill="#00b4d8" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(420, 180)" fill="#00b4d8" width="60" height="60"></rect>
+        <rect transform="translate(420, 180)" fill="#ade8f4" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(420, 240)" fill="#0096c7" width="60" height="60"></rect>
+        <path transform="translate(420, 240) translate(30,30) rotate(90) translate(-30,-30)"
+            fill="#90e0ef" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(420, 300)" fill="#caf0f8" width="60" height="60"></rect>
+        <path transform="translate(420, 300) translate(30,30) rotate(90) translate(-30,-30)"
+            fill="#90e0ef" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(420, 300)" fill="#023e8a" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(420, 360)" fill="#48cae4" width="60" height="60"></rect>
+        <path transform="translate(420, 360) translate(30,30) rotate(90) translate(-30,-30)"
+            fill="#03045e" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(420, 420)" fill="#023e8a" width="60" height="60"></rect>
+        <path transform="translate(420, 420) translate(30,30) rotate(0) translate(-30,-30)"
+            fill="#ade8f4" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(420, 480)" fill="#00b4d8" width="60" height="60"></rect>
+        <path transform="translate(420, 480) translate(30,30) rotate(0) translate(-30,-30)"
+            fill="#caf0f8" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(420, 480)" fill="#023e8a" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(420, 540)" fill="#48cae4" width="60" height="60"></rect>
+        <path transform="translate(420, 540) translate(30,30) rotate(180) translate(-30,-30)"
+            fill="#caf0f8" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(420, 540)" fill="#0096c7" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(480, 0)" fill="#caf0f8" width="60" height="60"></rect>
+        <path transform="translate(480, 0) translate(30,30) rotate(0) translate(-30,-30)"
+            fill="#ade8f4" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(480, 0)" fill="#0096c7" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(480, 60)" fill="#ade8f4" width="60" height="60"></rect>
+        <path transform="translate(480, 60) translate(30,30) rotate(90) translate(-30,-30)"
+            fill="#90e0ef" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(480, 120)" fill="#0096c7" width="60" height="60"></rect>
+        <path transform="translate(480, 120) translate(30,30) rotate(90) translate(-30,-30)"
+            fill="#023e8a" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(480, 120)" fill="#48cae4" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(480, 180)" fill="#023e8a" width="60" height="60"></rect>
+        <rect transform="translate(480, 180)" fill="#90e0ef" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(480, 240)" fill="#00b4d8" width="60" height="60"></rect>
+        <path transform="translate(480, 240) translate(30,30) rotate(270) translate(-30,-30)"
+            fill="#caf0f8" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(480, 300)" fill="#90e0ef" width="60" height="60"></rect>
+        <path transform="translate(480, 300) translate(30,30) rotate(0) translate(-30,-30)"
+            fill="#023e8a" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(480, 360)" fill="#48cae4" width="60" height="60"></rect>
+        <rect transform="translate(480, 360)" fill="#0096c7" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(480, 420)" fill="#caf0f8" width="60" height="60"></rect>
+        <path transform="translate(480, 420) translate(30,30) rotate(0) translate(-30,-30)"
+            fill="#90e0ef" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(480, 420)" fill="#023e8a" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(480, 480)" fill="#0096c7" width="60" height="60"></rect>
+        <rect transform="translate(480, 480)" fill="#ade8f4" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(480, 540)" fill="#0077b6" width="60" height="60"></rect>
+        <rect transform="translate(480, 540)" fill="#00b4d8" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(540, 0)" fill="#0096c7" width="60" height="60"></rect>
+        <path transform="translate(540, 0) translate(30,30) rotate(270) translate(-30,-30)"
+            fill="#ade8f4" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(540, 60)" fill="#03045e" width="60" height="60"></rect>
+        <path transform="translate(540, 60) translate(30,30) rotate(180) translate(-30,-30)"
+            fill="#ade8f4" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(540, 60)" fill="#0077b6" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(540, 120)" fill="#90e0ef" width="60" height="60"></rect>
+        <rect transform="translate(540, 120)" fill="#48cae4" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(540, 180)" fill="#ade8f4" width="60" height="60"></rect>
+        <rect transform="translate(540, 180)" fill="#0096c7" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(540, 240)" fill="#03045e" width="60" height="60"></rect>
+        <path transform="translate(540, 240) translate(30,30) rotate(270) translate(-30,-30)"
+            fill="#0096c7" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(540, 300)" fill="#00b4d8" width="60" height="60"></rect>
+        <rect transform="translate(540, 300)" fill="#0077b6" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(540, 360)" fill="#03045e" width="60" height="60"></rect>
+        <path transform="translate(540, 360) translate(30,30) rotate(90) translate(-30,-30)"
+            fill="#caf0f8" d="M60 0H0v60L60 0z"></path>
+        <rect transform="translate(540, 360)" fill="#90e0ef" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(540, 420)" fill="#ade8f4" width="60" height="60"></rect>
+        <path transform="translate(540, 420) translate(30,30) rotate(180) translate(-30,-30)"
+            fill="#0096c7" d="M60 0H0v60L60 0z"></path>
+    </svg>
+    <svg>
+        <rect transform="translate(540, 480)" fill="#0077b6" width="60" height="60"></rect>
+        <rect transform="translate(540, 480)" fill="#ade8f4" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+    <svg>
+        <rect transform="translate(540, 540)" fill="#48cae4" width="60" height="60"></rect>
+        <rect transform="translate(540, 540)" fill="#0077b6" x="15" y="15" width="30" height="30"></rect>
+    </svg>
+</svg>

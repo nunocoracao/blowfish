@@ -1,5 +1,5 @@
 global:
-  language: "🇹🇼"
+  language: "繁體中文"
 
 article:
   anchor_label: "定位點"
@@ -14,10 +14,10 @@ article:
   word_count:
     one: "{{ .Count }} 字"
     other: "{{ .Count }} 字"
-  part_of_series: "This article is part of a series."
-  part: "Part"
-  this_article: "This Article"
-  related_articles: "Related"
+  part_of_series: "本文屬於一個選集。"
+  part: "§"
+  this_article: "本文"
+  related_articles: "相關文章"
 
 author:
   byline_title: "作者"

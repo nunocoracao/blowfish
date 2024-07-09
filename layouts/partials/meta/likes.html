@@ -1,11 +1,22 @@
 <span>
-    {{ if eq .Kind "taxonomy"}}
-    <span id="likes_taxonomy_{{ .Page.Data.Plural }}" title="likes">0</span> 
-    {{ else if eq .Kind "term"}}
-    <span id="likes_term_{{ .Page.Data.Term }}" title="likes">0</span> 
-    {{ else }}
-    <span id="likes_{{ .File.Path }}" title="likes">0</span> 
+  {{ $id := "null" }}
+  {{ if eq .Kind "taxonomy" }}
+    {{ $id = delimit (slice "likes_taxonomy_" .Page.Data.Plural) "" }}
+  {{ else if eq .Kind "term" }}
+    {{ $id = delimit (slice "likes_term_" .Page.Data.Term) "" }}
+  {{ else }}
+    {{ $translations := .AllTranslations }}
+    {{ with .File }}
+      {{ $path := .Path }}
+      {{range $translations}}
+        {{ $lang := print "." .Lang ".md" }}
+        {{ $path = replace $path $lang ".md" }}
+      {{end}}
+      {{ $id = delimit (slice "likes_" $path) "" }}
     {{ end }}
-    <span class="inline-block align-text-bottom">{{ partial "icon.html" "heart" }}</span>
+  {{ end }}
+  <span id="{{ $id }}"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    title="likes">loading</span>
+  <span class="inline-block align-text-bottom">{{ partial "icon.html" "heart" }}</span>
 </span>
-{{- /* Trim EOF */ -}}

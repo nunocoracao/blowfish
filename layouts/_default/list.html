@@ -19,10 +19,18 @@
   <div class="mt-1 mb-2 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
     {{ partial "article-meta/list.html" (dict "context" . "scope" "single") }}
   </div>
+  {{ $translations := .AllTranslations }}
+  {{ with .File }}
+    {{ $path := .Path }}
+    {{range $translations}}
+      {{ $lang := print "."  .Lang  ".md" }}
+      {{ $path = replace $path $lang ".md" }}
+    {{end}}
   <script>
-    var oid = "views_{{ .File.Path }}"
-    var oid_likes = "likes_{{ .File.Path }}"
+    var oid = "views_{{ $path }}"
+    var oid_likes = "likes_{{ $path }}"
   </script>
+  {{ end }}
   {{ $jsPage := resources.Get "js/page.js" }}
   {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}
   <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}"></script>
@@ -41,9 +49,9 @@
     </div>
     {{ end }}
     <div class="min-w-0 min-h-0 max-w-prose">
-      {{ .Content | emojify }}
+      {{ .Content }}
     </div>
-   
+
 
 
 
@@ -53,79 +61,72 @@
     {{ $cardView := .Params.cardView | default (.Site.Params.list.cardView | default false) }}
     {{ $cardViewScreenWidth := .Params.cardViewScreenWidth | default (.Site.Params.list.cardViewScreenWidth | default false) }}
     {{ $groupByYear := .Params.groupByYear | default ($.Site.Params.list.groupByYear | default false) }}
+    {{ $orderByWeight := .Params.orderByWeight | default ($.Site.Params.list.orderByWeight | default false) }}
+    {{ $groupByYear := and (not $orderByWeight) $groupByYear }}
 
     {{ if not $cardView }}
 
     <section class="space-y-10 w-full">
-      {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
-      {{ if $groupByYear }}
-      <h2 class="mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
-        {{ .Key }}
-      </h2>
-      {{ end }}
-      {{ range .Pages }}
-      {{ partial "article-link/simple.html" . }}
-      {{ end }}
+      {{ if not $orderByWeight }}
+        {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
+        {{ if $groupByYear }}
+        <h2 class="mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
+          {{ .Key }}
+        </h2>
+        {{ end }}
+        {{ range .Pages }}
+        {{ partial "article-link/simple.html" . }}
+        {{ end }}
+        {{ end }}
+      {{ else }}
+        {{ range (.Paginate (.Pages.ByWeight)).Pages }}
+        {{ partial "article-link/simple.html" . }}
+        {{ end }}
       {{ end }}
     </section>
 
-    {{ else if and $cardView (not $cardViewScreenWidth) }}
+    {{ else }}
 
       {{ if $groupByYear }}
 
       {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
-        <h2 class="mt-12 mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
-          {{ .Key }}
-        </h2>
-        <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+        {{ if $cardViewScreenWidth }}
+        <div class="relative w-screen max-w-[1600px] px-[30px]" style="left: calc(max(-50vw,-800px) + 50%);">
+        {{ end }}
+          <h2 class="mt-12 mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
+            {{ .Key }}
+          </h2>
+        <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 {{ if $cardViewScreenWidth }} xl:grid-cols-4 2xl:grid-cols-5 {{ end }}">
           {{ range .Pages }}
           {{ partial "article-link/card.html" . }}
           {{ end }}
         </section>
+        {{ if $cardViewScreenWidth }} </div> {{ end }}
       {{ end }}
 
-    {{ else }}
+      {{ else }}
 
+        {{ if $cardViewScreenWidth }}
+        <div class="relative w-screen max-w-[1600px] px-[30px]" style="left: calc(max(-50vw,-800px) + 50%);">
+        <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+        {{ else }}
         <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+        {{ end }}
+        {{ if not $orderByWeight }}
           {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
           {{ range .Pages }}
           {{ partial "article-link/card.html" . }}
           {{ end }}
           {{ end }}
+        {{ else }}
+          {{ range (.Paginate (.Pages.ByWeight)).Pages }}
+          {{ partial "article-link/card.html" . }}
+          {{ end }}
+        {{ end }}
         </section>
+        {{ if $cardViewScreenWidth }} </div> {{ end }}
 
     {{ end }}
-
-    {{ else if and $cardView $cardViewScreenWidth }}
-
-      {{ if $groupByYear }}
-
-        {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
-        <div class="relative w-screen max-w-[1600px] px-[30px]" style="left: calc(max(-50vw,-800px) + 50%);">
-          <h2 class="mt-12 mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
-            {{ .Key }}
-          </h2>
-          <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-            {{ range .Pages }}
-            {{ partial "article-link/card.html" . }}
-            {{ end }}
-          </section>
-        </div>
-        {{ end }}
-
-      {{ else }}
-
-        <div class="relative w-screen max-w-[1600px] px-[30px]" style="left: calc(max(-50vw,-800px) + 50%);">
-          <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-            {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
-            {{ range .Pages }}
-            {{ partial "article-link/card.html" . }}
-            {{ end }}
-            {{ end }}
-          </section>
-        </div>
-
-      {{ end }}
 
     {{end}}
 

@@ -1,15 +1,5 @@
-{{ $id := delimit (slice "gallery" .Ordinal now.UnixNano) "-" }}
+{{ $id := delimit (slice "gallery" (partial "functions/uid.html" .)) "-" }}
 
-<div id="{{ $id }}">
+<div id="{{ $id }}" class="gallery">
   {{ .Inner }}
 </div>
-
-<script>
-  $(window).on("load", function () {
-    $('#{{ $id }}').packery({
-      percentPosition: true,
-      gutter: 5,
-      resize: true
-    });
-  })
-</script>

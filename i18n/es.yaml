@@ -1,5 +1,5 @@
 global:
-  language: "🇪🇸"
+  language: "ES"
 
 article:
   anchor_label: "Ancla"
@@ -25,6 +25,9 @@ article:
   part: "Parte"
   this_article: "Este artículo"
   related_articles: "Relacionados"
+  zen_mode_title:
+    enable: "Activar modo zen"
+    disable: "Desactivar modo zen"
 
 author:
   byline_title: "Autor"

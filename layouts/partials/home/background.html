@@ -6,9 +6,21 @@
             <div class="relative sm:overflow-hidden">
                 <div class="fixed inset-x-0 top-0" style="z-index:-10">
                     {{ $homepageImage := "" }}
-                    {{ with .Site.Params.defaultBackgroundImage }}{{ $homepageImage = resources.Get . }}{{ end }}
-                    {{ with .Site.Params.homepage.homepageImage }}{{ $homepageImage = resources.Get . }}{{ end }}
-                    {{ if not (eq $homepageImage "") }}
+                    {{ with .Site.Params.defaultBackgroundImage }}
+                        {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+                            {{ $homepageImage = resources.GetRemote . }}
+                        {{ else }}
+                            {{ $homepageImage = resources.Get . }}
+                        {{ end }}
+                    {{ end }}
+                    {{ with .Site.Params.homepage.homepageImage }}
+                        {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+                            {{ $homepageImage = resources.GetRemote . }}
+                        {{ else }}
+                            {{ $homepageImage = resources.Get . }}
+                        {{ end }}
+                    {{ end }}
+                    {{ if $homepageImage }}
                     <img class="w-full h-[1000px] object-cover m-0 nozoom" src="{{ $homepageImage.RelPermalink }}" role="presentation">
                     <div
                         class="absolute inset-0 h-[1000px] bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
@@ -18,23 +30,28 @@
                     </div>
                     {{ end }}
                 </div>
-                <div class="relative px-8 py-16 flex flex-col items-center justify-center text-center">
+                <div class="relative px-1 py-1 flex flex-col items-center justify-center text-center">
                     {{ with .Site.Author.image }}
-                    {{ $authorImage := resources.Get . }}
-                    {{ if $authorImage }}
-                    {{ if not $disableImageOptimization }}
-                    {{ $authorImage = $authorImage.Fill "288x288" }}
-                    {{ end }}
-                    <img class="mb-2 rounded-full h-36 w-36" width="144" height="144"
-                        alt="{{ $.Site.Author.name | default " Author" }}" src="{{ $authorImage.RelPermalink }}" />
-                    {{ end }}
+                        {{ $authorImage := "" }}
+                        {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+                            {{ $authorImage = resources.GetRemote . }}
+                        {{ else }}
+                            {{ $authorImage = resources.Get . }}
+                        {{ end }}
+                        {{ if $authorImage }}
+                            {{ if not $disableImageOptimization }}
+                                {{ $authorImage = $authorImage.Fill "288x288" }}
+                            {{ end }}
+                            <img class="mb-2 rounded-full h-36 w-36" width="144" height="144"
+                                alt="{{ $.Site.Author.name | default " Author" }}" src="{{ $authorImage.RelPermalink }}" />
+                        {{ end }}
                     {{ end }}
                     <h1 class="mb-2 text-4xl font-extrabold text-neutral-800 dark:text-neutral-200">
                         {{ .Site.Author.name | default .Site.Title }}
                     </h1>
                     {{ with .Site.Author.headline }}
                     <h2 class="mt-0 mb-0 text-xl text-neutral-800 dark:text-neutral-300">
-                        {{ . | markdownify | emojify }}
+                        {{ . | markdownify }}
                     </h2>
                     {{ end }}
                     <div class="mt-3 mb-10 text-2xl">
@@ -42,7 +59,7 @@
                         <div class="flex flex-wrap">
                             {{ range $links := . }}
                             {{ range $name, $url := $links }}
-                            <a class="px-2 hover:text-primary-400 text-primary-800 dark:text-primary-200" href="{{ $url }}" target="_blank"
+                            <a class="px-1 hover:text-primary-400 text-primary-800 dark:text-primary-200" href="{{ $url }}" target="_blank"
                                 aria-label="{{ $name | title }}" rel="me noopener noreferrer">{{ partial
                                 "icon.html" $name }}</a>
                             {{ end }}
@@ -50,7 +67,7 @@
                         </div>
                         {{ end }}
                     </div>
-                    <section class="prose dark:prose-invert">{{ .Content | emojify }}</section>
+                    <section class="prose dark:prose-invert">{{ .Content }}</section>
                 </div>
             </div>
         </div>

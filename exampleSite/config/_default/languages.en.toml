@@ -4,24 +4,19 @@ weight = 1
 title = "Blowfish"
 
 [params]
-  displayName = "EN"
+  displayName = "English"
   isoCode = "en"
   rtl = false
   dateFormat = "2 January 2006"
   logo = "img/blowfish_logo_transparent.png"
-  # secondaryLogo = "PATH"
-  description = "A powerful, lightweight theme for Hugo built with Tailwind CSS."
-  # copyright = "Copy, _right?_ :thinking_face:"
+  description = "A powerful, lightweight theme for Hugo."
 
 [author]
   name = "Blowfish"
   image = "img/blowfish_logo.png"
-  headline = "A powerful, lightweight theme for Hugo built with Tailwind CSS."
-  bio = "A powerful, lightweight theme for Hugo built with Tailwind CSS."
+  headline = "A powerful, lightweight theme for Hugo."
+  bio = "A powerful, lightweight theme for Hugo."
   links = [
     { x-twitter = "https://twitter.com/burufugu" },
-    { mastodon = "https://masto.ai/@blowfish" },
     { github = "https://github.com/nunocoracao/blowfish" },
   ]
-
-  

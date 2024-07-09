@@ -2,7 +2,7 @@
                 title: "priyakdey.com"
                 tags: [Personal site]
                 externalUrl: "https://priyakdey.com"
-                date: 9977-08-08
+                weight: 171
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

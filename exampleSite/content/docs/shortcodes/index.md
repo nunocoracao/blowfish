@@ -1,6 +1,6 @@
 ---
 title: "Shortcodes"
-date: 2020-08-11
+weight: 6
 draft: false
 description: "All the shortcodes available in Blowfish."
 slug: "shortcodes"
@@ -16,12 +16,12 @@ In addition to all the [default Hugo shortcodes](https://gohugo.io/content-manag
 `alert` outputs its contents as a stylised message box within your article. It's useful for drawing attention to important information that you don't want the reader to miss.
 
 <!-- prettier-ignore-start -->
-| Parameter      | Description                                                                                                                                                                                |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `icon`         | **Optional.** the icon to display on the left side.<br>**Default:** `exclaimation triangle icon` (Check out the [icon shortcode](#icon) for more details on using icons.)                    |
-| `iconColor`    | **Optional.** the color for the icon in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme .              |
-| `cardColor`    | **Optional.** the color for the card background in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme .   |
-| `textColor`    | **Optional.** the color for the text in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme .              |
+| Parameter   | Description                                                                                                                                                                                  |
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `icon`      | **Optional.** the icon to display on the left side.<br>**Default:** `triangle-exclamation` (Check out the [icon shortcode](#icon) for more details on using icons.)                    |
+| `iconColor` | **Optional.** the color for the icon in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme .            |
+| `cardColor` | **Optional.** the color for the card background in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme . |
+| `textColor` | **Optional.** the color for the text in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme .            |
 <!-- prettier-ignore-end -->
 
 The input is written in Markdown so you can format it however you please.
@@ -127,7 +127,7 @@ Call to action
 <!-- prettier-ignore-start -->
 | Parameter     | Description                                                                                                       |
 | ------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `images`      | **Required.** A regex string to match image names.                                                                |
+| `images`      | **Required.** A regex string to match image names or URLs.                                                        |
 | `aspectRatio` | **Optional.** The aspect ratio for the carousel. Either `16-9`, `21-9` or `32-9`. It is set to `16-9` by default. |
 | `interval`    | **Optional.** The interval for the auto-scrooling, specified in milliseconds. Defaults to `2000` (2s)             |
 <!-- prettier-ignore-end -->
@@ -135,10 +135,10 @@ Call to action
 **Example 1:** 16:9 aspect ratio and verbose list of images
 
 ```md
-{{</* carousel images="{gallery/03.jpg, gallery/01.jpg, gallery/02.jpg, gallery/04.jpg}" */>}}
+{{</* carousel images="{https://cdn.pixabay.com/photo/2016/12/11/12/02/mountains-1899264_960_720.jpg, gallery/03.jpg, gallery/01.jpg, gallery/02.jpg, gallery/04.jpg}" */>}}
 ```
 
-{{< carousel images="{gallery/03.jpg,gallery/01.jpg,gallery/02.jpg,gallery/04.jpg}" >}}
+{{< carousel images="{https://cdn.pixabay.com/photo/2016/12/11/12/02/mountains-1899264_960_720.jpg,gallery/03.jpg,gallery/01.jpg,gallery/02.jpg,gallery/04.jpg}" >}}
 
 **Example 2:** 21:9 aspect ratio and regex-ed list of images
 
@@ -188,6 +188,59 @@ You can see some additional Chart.js examples on the [charts samples]({{< ref "c
 
 <br/><br/><br/>
 
+## Code Importer
+
+This shortcode is for importing code from external sources easily without copying and pasting.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description                                             |
+| --------- | ------------------------------------------------------- |
+| `url`     | **Required** URL to an externally hosted code file.     |
+| `type`    | Code type used for syntax highlighting.                 |
+| `startLine` | **Optional** The line number to start the import from.    |
+| `endLine` | **Optional** The line number to end the import at.        |
+
+
+<!-- prettier-ignore-end -->
+
+
+**Example:**
+
+```md
+{{</* codeimporter url="https://raw.githubusercontent.com/nunocoracao/blowfish/main/layouts/shortcodes/mdimporter.html" type="go" */>}}
+
+```
+{{< codeimporter url="https://raw.githubusercontent.com/nunocoracao/blowfish/main/layouts/shortcodes/mdimporter.html" type="go" >}}
+
+```md
+{{</* codeimporter url="https://raw.githubusercontent.com/nunocoracao/blowfish/main/config/_default/hugo.toml" type="toml" startLine="11" endLine="18" */>}}
+
+```
+
+{{< codeimporter url="https://raw.githubusercontent.com/nunocoracao/blowfish/main/config/_default/hugo.toml" type="toml" startLine="11" endLine="18">}}
+
+
+<br/><br/>
+
+## Codeberg Card
+
+`codeberg` allows you to quickly link a Codeberg repository via the Codeberg API, providing real-time updates on stats such as stars and forks.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description                                           |
+| --------- | ----------------------------------------------------- |
+| `repo`    | [String] codeberg repo in the format of `username/repo` |
+<!-- prettier-ignore-end -->
+
+**Example 1:**
+
+```md
+{{</* codeberg repo="forgejo/forgejo" */>}}
+```
+{{< codeberg repo="forgejo/forgejo" >}}
+
+<br/><br/><br/>
+
 ## Figure
 
 Blowfish includes a `figure` shortcode for adding images to content. The shortcode replaces the base Hugo functionality in order to provide additional performance benefits.
@@ -204,6 +257,7 @@ The `figure` shortcode accepts six parameters:
 | `caption` | Markdown for the image caption, which will be displayed below the image.                                                                                                                                                                                                                                                                                                                  |
 | `class`   | Additional CSS classes to apply to the image.                                                                                                                                                                                                                                                                                                                                             |
 | `href`    | URL that the image should be linked to.                                                                                                                                                                                                                                                                                                                                                   |
+| `target`  | The target attribute for the `href` URL.                                                                                                                                                                                                                                                                                                                                                  |
 | `nozoom`  | `nozoom=true` disables the image "zoom" functionality. This is most useful in combination with a `href` link.                                                                                                                                                                                                                                                                             |
 | `default` | Special parameter to revert to default Hugo `figure` behaviour. Simply provide `default=true` and then use normal [Hugo shortcode syntax](https://gohugo.io/content-management/shortcodes/#figure).                                                                                                                                                                                       |
 <!-- prettier-ignore-end -->
@@ -297,7 +351,7 @@ In order to add images to the gallery, use `img` tags for each image and add `cl
 
 <!-- prettier-ignore-start -->
 | Parameter | Description                                           |
-|-----------|-------------------------------------------------------|
+| --------- | ----------------------------------------------------- |
 | `repo`    | [String] github repo in the format of `username/repo` |
 <!-- prettier-ignore-end -->
 
@@ -316,13 +370,13 @@ In order to add images to the gallery, use `img` tags for each image and add `cl
 `gitlab` allows you to quickly link a GitLab Project (GitLab's jargon for repo). 
 It displays realtime stats about it, such as the number of stars and forks it has.
 Unlike `github` it can't display the main programming language of a project.
-Finaly custom GitLab instace URL can be provided, as long as the `api/v4/projects/` endpoint is available, making this shortcode compatible with most self-hosted / entreprise deployments.
+Finally, custom GitLab instance URL can be provided, as long as the `api/v4/projects/` endpoint is available, making this shortcode compatible with most self-hosted / enterprise deployments.
 
 <!-- prettier-ignore-start -->
-| Parameter   | Description                                                            |
-|-------------|------------------------------------------------------------------------|
-| `projectID` | [String] gitlab numeric ProjectID                                      |
-| `baseURL`   | [String] optional gitlab instace URL, default is `https://gitlab.com/` |
+| Parameter   | Description                                                             |
+| ----------- | ----------------------------------------------------------------------- |
+| `projectID` | [String] gitlab numeric ProjectID                                       |
+| `baseURL`   | [String] optional gitlab instance URL, default is `https://gitlab.com/` |
 <!-- prettier-ignore-end -->
 
 **Example 1:**
@@ -355,7 +409,7 @@ Icons can also be used in partials by calling the [icon partial]({{< ref "partia
 
 <br/><br/><br/>
 
-## Katex
+## KaTeX
 
 The `katex` shortcode can be used to add mathematical expressions to article content using the KaTeX package. Refer to the online reference of [supported TeX functions](https://katex.org/docs/supported.html) for the available syntax.
 
@@ -377,6 +431,48 @@ Check out the [mathematical notation samples]({{< ref "mathematical-notation" >}
 
 <br/><br/><br/>
 
+
+## Keyword
+
+
+The `keyword` component can be used to visually highlight certain important words or phrases, e.g. professional skills etc. The `keywordList` shortcode can be used to group together multiple `keyword` items. Each item can have the following properties.
+
+
+<!-- prettier-ignore-start -->
+| Parameter | Description                             |
+| --------- | --------------------------------------- |
+| `icon`    | Optional icon to be used in the keyword |
+<!-- prettier-ignore-end -->
+
+The input is written in Markdown so you can format it however you please.
+
+**Example1 :**
+
+```md
+{{</* keyword */>}} *Super* skill {{</* /keyword */>}}
+```
+
+{{< keyword >}} *Super* skill {{< /keyword >}}
+
+**Example2 :**
+
+```md
+{{</* keywordList */>}}
+{{</* keyword icon="github" */>}} Lorem ipsum dolor. {{</* /keyword */>}}
+{{</* keyword icon="code" */>}} **Important** skill {{</* /keyword */>}}
+{{</* /keywordList */>}}
+
+{{</* keyword */>}} *Standalone* skill {{</* /keyword */>}}
+```
+
+{{< keywordList >}}
+{{< keyword icon="github" >}} Lorem ipsum dolor {{< /keyword >}}
+{{< keyword icon="code" >}} **Important** skill {{< /keyword >}}
+{{< /keywordList >}}
+{{< keyword >}} *Standalone* skill {{< /keyword >}}
+
+<br/><br/><br/>
+
 ## Lead
 
 `lead` is used to bring emphasis to the start of an article. It can be used to style an introduction, or to call out an important piece of information. Simply wrap any Markdown content in the `lead` shortcode.
@@ -393,22 +489,23 @@ When life gives you lemons, make lemonade.
 When life gives you lemons, make lemonade.
 {{< /lead >}}
 
-<br/><br/><br/>
+<br/><br/><br/> 
 
 ## List
 
 `List` will display a list of recent articles. This shortcode requires a limit value to constraint the list. Additionally, it supports a `where` and a `value` in order to filter articles by their parameters. Note that this shortcode will not display its parent page but it will count for the limit value.
 
 <!-- prettier-ignore-start -->
-| Parameter | Description                                                                                                                                             |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `limit`   | **Required.** the number of recent articles to display.                                                                                                 |
-| `title`   | Optional title for the list, default is `Recent`                                                                                                        |
-| `where`   | The variable to be used for the query of articles e.g. `Type`                                                                                           |
-| `value`   | The value that will need to match the parameter defined in `where` for the query of articles e.g. for `where` == `Type` a valid value could be `sample` |
+| Parameter  | Description                                                                                                                                             |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `limit`    | **Required.** the number of recent articles to display.                                                                                                 |
+| `title`    | Optional title for the list, default is `Recent`                                                                                                        |
+| `cardView` | Optional card view enabled for the list, default is `false`                                                                                             |
+| `where`    | The variable to be used for the query of articles e.g. `Type`                                                                                           |
+| `value`    | The value that will need to match the parameter defined in `where` for the query of articles e.g. for `where` == `Type` a valid value could be `sample` |
 
 {{< alert >}}
-The `where` and `value` values are used in the following query `where .Site.RegularPages $where $value` in the code of the shortcode. Check [Hugo docs](https://gohugo.io/variables/page/) to learn more about which parameters are available to use.
+The `where` and `value` values are used in the following query `where .Site.RegularPages $where $value` in the code of the shortcode. Check [Hugo docs](https://gohugo.io/methods/page/) to learn more about which parameters are available to use.
 {{</ alert >}}
 
 <!-- prettier-ignore-end -->
@@ -424,10 +521,10 @@ The `where` and `value` values are used in the following query `where .Site.Regu
 **Example #2:**
 
 ```md
-{{</* list title="Samples" limit=5 where="Type" value="sample" */>}}
+{{</* list title="Samples" cardView=true limit=6 where="Type" value="sample" */>}}
 ```
 
-{{< list title="Samples" limit=5 where="Type" value="sample">}}
+{{< list title="Samples" cardView=true limit=6 where="Type" value="sample">}}
 
 <br/><br/><br/>
 
@@ -454,6 +551,31 @@ The `where` and `value` values are used in the following query `where .Site.Regu
 {{% /rtl %}}
 
 <br/><br/><br/>
+
+## Markdown Importer
+
+This shortcode allows you to import markdown files from external sources. This is useful for including content from other repositories or websites without having to copy and paste the content.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description                                             |
+| --------- | ------------------------------------------------------- |
+| `url`     | **Required** URL to an externally hosted markdown file. |
+
+
+<!-- prettier-ignore-end -->
+
+
+**Example:**
+
+```md
+{{</* mdimporter url="https://raw.githubusercontent.com/nunocoracao/nunocoracao/master/README.md" */>}}
+
+```
+
+{{< mdimporter url="https://raw.githubusercontent.com/nunocoracao/nunocoracao/master/README.md" >}}
+
+
+<br/><br/>
 
 ## Mermaid
 
@@ -508,7 +630,7 @@ The `timeline` creates a visual timeline that can be used in different use-cases
 | ----------- | -------------------------------------------- |
 | `icon`      | the icon to be used in the timeline visuals. |
 | `header`    | header for each entry                        |
-| `badge`     | text to place within the top righ badge      |
+| `badge`     | text to place within the top right badge     |
 | `subheader` | entry's subheader                            |
 
 <!-- prettier-ignore-end -->
@@ -545,6 +667,10 @@ With other shortcodes
 {{</* /gallery */>}}
 {{</* /timelineItem */>}}
 
+{{</* timelineItem icon="code" header="Another Awesome Header"*/>}}
+{{</* github repo="nunocoracao/blowfish" */>}}
+{{</* /timelineItem */>}}
+
 {{</* /timeline */>}}
 ```
 
@@ -577,7 +703,9 @@ With other shortcodes
   <img src="gallery/07.jpg" class="grid-w33" />
 {{< /gallery >}}
 {{</ timelineItem >}}
-
+{{< timelineItem icon="code" header="Another Awesome Header">}}
+{{< github repo="nunocoracao/blowfish" >}}
+{{</ timelineItem >}}
 {{</ timeline >}}
 
 
@@ -645,8 +773,9 @@ consectetur adipiscing elit.
   breakLines=false
   loop=true
 */>}}
-Lorem ipsum dolor sit amet, 
-consectetur adipiscing elit. 
+"Frankly, my dear, I don't give a damn." Gone with the Wind (1939)
+"I'm gonna make him an offer he can't refuse." The Godfather (1972)
+"Toto, I've a feeling we're not in Kansas anymore." The Wizard of Oz (1939)
 {{</* /typeit */>}}
 ```
 
@@ -660,3 +789,48 @@ consectetur adipiscing elit.
 "I'm gonna make him an offer he can't refuse." The Godfather (1972)
 "Toto, I've a feeling we're not in Kansas anymore." The Wizard of Oz (1939)
 {{< /typeit >}}
+
+
+<br/><br/><br/>
+
+## Youtube Lite
+
+A shortcut to embed youtube videos using the [lite-youtube-embed](https://github.com/paulirish/lite-youtube-embed) library. This library is a lightweight alternative to the standard youtube embeds, and it's designed to be faster and more efficient.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description                                  |
+| --------- | -------------------------------------------- |
+| `id`      | [String] Youtube video id to embed.          |
+| `label`   | [String] Label for the video                 |
+| `params`  | [String] Extras parameters for video playing |
+<!-- prettier-ignore-end -->
+
+**Example 1:**
+
+```md
+{{</* youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" */>}}
+```
+
+{{< youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" >}}
+
+**Example 2:**
+
+You can use all of Youtube's [player parameters](https://developers.google.com/youtube/player_parameters#Parameters) for the `params` variable, as demonstrated below:
+
+> This video will start after 130 seconds (2m10)
+
+```md
+{{</* youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" params="start=130" */>}}
+```
+
+> This video will not have UI controls, will start playing at 130 seconds and will stop 10 seconds later.
+
+To concatenate multiple options as shown below, you need to add the `&` character between them.
+
+```md
+{{</* youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" params="start=130&end=10&controls=0" */>}}
+```
+
+{{< youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" params="start=130&end=10&controls=0" >}}
+
+More informations can be found on the [youtubeLite GitHub repo](https://github.com/paulirish/lite-youtube-embed/blob/master/readme.md#custom-player-parameters) and Youtube's [player parameters](https://developers.google.com/youtube/player_parameters#Parameters) page.

@@ -1,23 +1,23 @@
-{{ $id := delimit (slice "gitlab" .Ordinal now.UnixNano) "-" }}
+{{ $id := delimit (slice "gitlab" (partial "functions/uid.html" .)) "-" }}
 {{- $gitlabURL := print (default "https://gitlab.com/" (.Get "baseURL")) "api/v4/projects/" (.Get "projectID") -}}
 
 {{- $gitLabData := getJSON ($gitlabURL) -}}
 {{- with $gitLabData -}}
 
-<a target="_blank" href="{{ .html_url }}" class="cursor-pointer">
-  <div class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md backdrop-blur shadow-2xl">
+<a id="{{ $id }}" target="_blank" href="{{ .web_url }}" class="cursor-pointer">
+  <div class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl">
 
     <div class="flex items-center">
       <span class="text-2xl text-neutral-800 dark:text-neutral" style="margin-right:10px;">
         {{ partial "icon.html" "gitlab" }}
       </span>
       <div id="{{ $id }}-name_with_namespace" class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
-        {{ .name_with_namespace | markdownify | emojify }}
+        {{ .name_with_namespace | markdownify }}
       </div>
     </div>
 
     <p id="{{ $id }}-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
-      {{ .description | markdownify | emojify }}
+      {{ .description | markdownify }}
     </p>
 
     <div class="m-0 mt-2 flex items-center">
@@ -39,7 +39,6 @@
 
   </div>
   <script>
-    console.log({{ $gitlabURL }})
     fetch({{ $gitlabURL }}, {
       headers: new Headers({
         'User-agent': 'Mozilla/4.0 Custom User Agent'
@@ -47,7 +46,6 @@
     })
       .then(response => response.json())
       .then(data => {
-        console.log(data)
         document.getElementById('{{ $id }}-name_with_namespace').innerHTML = data.name_with_namespace;
         document.getElementById('{{ $id }}-description').innerHTML = data.description;
         document.getElementById('{{ $id }}-star_count').innerHTML = data.star_count;

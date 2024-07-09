@@ -2,7 +2,7 @@
 
 {{ $articleClasses := "flex flex-wrap article" }}
 {{ if .Site.Params.list.showCards }}
-{{ $articleClasses = delimit (slice $articleClasses "border border-neutral-200 dark:border-neutral-700 border-2 rounded-md backdrop-blur") " " }}
+{{ $articleClasses = delimit (slice $articleClasses "border border-neutral-200 dark:border-neutral-700 border-2 rounded-md overflow-hidden") " " }}
 {{ else }}
 {{ $articleClasses = delimit (slice $articleClasses "") " " }}
 {{ end }}
@@ -40,10 +40,14 @@
     {{- $images := $.Resources.ByType "image" -}}
     {{- $featured := $images.GetMatch "*feature*" -}}
     {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
+    {{ if and .Params.featureimage (not $featured) }}
+    {{- $url:= .Params.featureimage -}}
+    {{ $featured = resources.GetRemote $url }}
+    {{ end }}
     {{- if not $featured }}{{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}{{ end -}}
     {{ if .Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
     {{- with $featured -}}
-    {{ if $disableImageOptimization }}
+    {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg")}}
         {{ with . }}
         <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
         {{ end }}
@@ -60,7 +64,7 @@
 
 
     <div class="{{ $articleInnerClasses }}">
-      <div class="items-center text-xl font-semibold">
+      <div class="items-center text-left text-xl font-semibold">
         {{ with .Params.externalUrl }}
         <div>
           <div
@@ -90,7 +94,7 @@
       </div>
       {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
       <div class="py-1 max-w-fit prose dark:prose-invert">
-        {{ .Summary | emojify }}
+        {{ .Summary }}
       </div>
       {{ end }}
     </div>

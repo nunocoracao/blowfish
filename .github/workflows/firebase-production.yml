@@ -9,7 +9,10 @@ jobs:
     steps:
       
       - name: Hugo setup
-        uses: peaceiris/actions-hugo@v2.6.0
+        uses: peaceiris/actions-hugo@v3.0.0
+        with: 
+          hugo-version: 0.120.4
+          extended: true
         env:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
 

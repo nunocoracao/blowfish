@@ -30,40 +30,42 @@
     {{ $taxonomyLink := 0 }}
     {{ $showAuthor := 0 }}
 
-    {{ if .Params.showAuthor | default (.Site.Params.article.showAuthor | default true) }}
-    {{ $showAuthor = 1 }}
-    {{ partial "author.html" . }}
-    {{ end }}
-
     {{ if not (strings.HasSuffix $baseURL "/") }}
     {{ $baseURL = delimit (slice $baseURL "/") "" }}
     {{ end }}
 
-    {{ range $author := .Page.Params.authors }}
-    {{ $authorData := index $authorsData $author }}
-    {{- if $authorData -}}
+    {{ if not (.Params.showAuthorBottom | default ( .Site.Params.article.showAuthorBottom | default false)) }}
+      
+      {{ if .Params.showAuthor | default (.Site.Params.article.showAuthor | default true) }}
+        {{ $showAuthor = 1 }}
+        {{ partial "author.html" . }}
+      {{ end }}
 
-    {{ range $taxonomyname, $taxonomy := $taxonomies }}
-    {{ if (eq $taxonomyname $author) }}
-    {{ $taxonomyLink = delimit (slice $baseURL "/authors/" $author) "" }}
-    {{ end }}
+      {{ range $author := .Page.Params.authors }}
+        {{ $authorData := index $authorsData $author }}
+        {{- if $authorData -}}
+          {{ range $taxonomyname, $taxonomy := $taxonomies }}
+            {{ if (eq $taxonomyname $author) }}
+              {{ $taxonomyLink = delimit (slice $baseURL "/authors/" $author) "" }}
+            {{ end }}
+          {{ end }}
+          {{ partial "author-extra.html" (dict "context" . "data" $authorData "link" $taxonomyLink) }}
+        {{- end -}}
+      {{ end }}
+
+      {{ if or $taxonomyLink $showAuthor }}
+      <div class="mb-5"></div>
+      {{ end }}
+
     {{ end }}
 
-    {{ partial "author-extra.html" (dict "context" . "data" $authorData "link" $taxonomyLink) }}
-    {{- end -}}
-    {{ end }}
-
-    {{ if or $taxonomyLink $showAuthor }}
-    <div class="mb-5"></div>
-    {{ end }}
-  
   </header>
   
   <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
     
     {{ if or (and (.Params.showTableOfContents | default (.Site.Params.article.showTableOfContents | default false)) (in
     .TableOfContents "<ul")) (.Site.Params.article.showRelatedPosts | default false) }} <div
-      class="order-first sm:max-w-prose lg:ml-auto px-0 lg:order-last lg:max-w-xs ltr:lg:pl-8 rtl:lg:pr-8">
+      class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
       <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky {{ if hasPrefix .Site.Params.header.layout "fixed" -}}
         lg:top-[140px]{{ else }}lg:top-10{{ end }}">
 
@@ -75,21 +77,54 @@
 
       <div class="min-w-0 min-h-0 max-w-fit">
         
-        {{ partial "series.html" . }}
+        {{ partial "series/series.html" . }}
 
-        <div class="max-w-prose mb-20">
-          {{ .Content | emojify }}
+        <div class="article-content max-w-prose mb-20">
+          {{ .Content }}
         </div>
-                
-        {{ partial "series-closed.html" . }}
+        
+        {{ if (.Params.showAuthorBottom | default ( .Site.Params.article.showAuthorBottom | default false)) }}
+
+          {{ if .Params.showAuthor | default (.Site.Params.article.showAuthor | default true) }}
+            {{ $showAuthor = 1 }}
+            {{ partial "author.html" . }}
+          {{ end }}
+
+          {{ range $author := .Page.Params.authors }}
+            {{ $authorData := index $authorsData $author }}
+            {{- if $authorData -}}
+              {{ range $taxonomyname, $taxonomy := $taxonomies }}
+                {{ if (eq $taxonomyname $author) }}
+                  {{ $taxonomyLink = delimit (slice $baseURL "/authors/" $author) "" }}
+                {{ end }}
+              {{ end }}
+              {{ partial "author-extra.html" (dict "context" . "data" $authorData "link" $taxonomyLink) }}
+            {{- end -}}
+          {{ end }}
+
+          {{ if or $taxonomyLink $showAuthor }}
+          <div class="mb-10"></div>
+          {{ end }}
+
+        {{ end }}
+
+        {{ partial "series/series-closed.html" . }}
         {{ partial "sharing-links.html" . }}
         {{ partial "related.html" . }}  
       </div>
      
-     <script>
-        var oid = "views_{{ .File.Path }}"
-        var oid_likes = "likes_{{ .File.Path }}"
+      {{ $translations := .AllTranslations }}
+      {{ with .File }}
+        {{ $path := .Path }}
+        {{range $translations}}
+          {{ $lang := print "."  .Lang  ".md" }}
+          {{ $path = replace $path $lang ".md" }}
+        {{end}}
+      <script>
+        var oid = "views_{{ $path }}"
+        var oid_likes = "likes_{{ $path }}"
       </script>
+      {{ end }}
       {{ $jsPage := resources.Get "js/page.js" }}
       {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}
       <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}"></script>

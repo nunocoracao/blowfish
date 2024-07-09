@@ -2,7 +2,7 @@
                 title: "technicat.com"
                 tags: [Company site]
                 externalUrl: "https://technicat.com/"
-                date: 9966-08-08
+                weight: 271
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

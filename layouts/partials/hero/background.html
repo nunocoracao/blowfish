@@ -4,7 +4,22 @@
 {{- $featured := $images.GetMatch "*background*" -}}
 {{- if not $featured }}{{ $featured = $images.GetMatch "*feature*" }}{{ end -}}
 {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
-{{- if not $featured }}{{ with .Site.Params.defaultBackgroundImage }}{{ $featured = resources.Get . }}{{ end }}{{ end -}}
+
+{{ if and .Params.featureimage (not $featured) }}
+{{- $url:= .Params.featureimage -}}
+{{ $featured = resources.GetRemote $url }}
+{{ end }}
+
+{{- if not $featured }}
+ {{ with .Site.Params.defaultBackgroundImage }}
+  {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+   {{ $featured = resources.GetRemote . }}
+  {{ else }}
+   {{ $featured = resources.Get . }}
+  {{ end }}
+ {{ end }}
+{{ end -}}
+
 {{ $isParentList := eq (.Scratch.Get "scope") "list"  }}
 {{ $shouldBlur := $.Params.layoutBackgroundBlur | default (or 
         (and ($.Site.Params.article.layoutBackgroundBlur | default true) (not $isParentList)) 
@@ -15,10 +30,12 @@
         (and ($.Site.Params.list.layoutBackgroundHeaderSpace | default true) ($isParentList))
     ) }}
 {{- with $featured -}}
+
 {{ if $shouldAddHeaderSpace | default true}}
 <div id="hero" class="h-[150px] md:h-[200px]"></div>
 {{ end }}
-{{ if $disableImageOptimization }}
+
+{{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg")}}
     {{ with . }}
     <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
     style="background-image:url({{ .RelPermalink }});">

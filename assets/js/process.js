@@ -6,12 +6,24 @@ if (typeof auth !== 'undefined') {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     }
 
+    function toggleLoaders(node){
+        var classesString = node.className;
+        if(classesString == "") return
+        var classes = classesString.split(" ");
+        for(var i in classes){  
+            node.classList.toggle(classes[i])
+        }
+    }
+
     var update_views = function (node, id) {
         viewsCollection.doc(id).onSnapshot(doc => {
             var data = doc.data();
             if (data) {
                 node.innerText = numberWithCommas(data.views)
+            } else {
+                node.innerText = 0
             }
+            toggleLoaders(node)
         })
     }
 
@@ -20,7 +32,11 @@ if (typeof auth !== 'undefined') {
             var data = doc.data();
             if (data) {
                 node.innerText = numberWithCommas(data.likes)
+            } else {
+                node.innerText = 0
             }
+            toggleLoaders(node)
+
         })
     }
 

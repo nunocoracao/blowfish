@@ -1,0 +1,22 @@
+languageCode = "zh-cn"
+languageName = "简体中文"
+weight = 4
+title = "Blowfish"
+
+[params]
+  displayName = "简体中文"
+  isoCode = "zh-cn"
+  rtl = false
+  dateFormat = "2006-01-02"
+  logo = "img/blowfish_logo_transparent.png"
+  description = "一个强大、轻量级的 Hugo 主题。"
+
+[author]
+  name = "Blowfish"
+  image = "img/blowfish_logo.png"
+  headline = "一个强大、轻量级的 Hugo 主题。"
+  bio = "一个强大、轻量级的 Hugo 主题。"
+  links = [
+    { x-twitter = "https://twitter.com/burufugu" },
+    { github = "https://github.com/nunocoracao/blowfish" },
+  ]

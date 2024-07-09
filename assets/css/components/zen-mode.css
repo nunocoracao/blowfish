@@ -1,0 +1,16 @@
+#zen-mode-button {
+    cursor:pointer
+}
+
+.zen-mode {
+    position: relative;
+}
+
+body.zen-mode-enable {
+    #bmc-wbtn, .author {
+        display:none !important;
+    }
+}
+
+
+

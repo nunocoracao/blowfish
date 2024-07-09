@@ -1,14 +1,14 @@
 {
   "name": "hugo-blowfish-theme",
-  "version": "2.44.0",
-  "description": "Blowfish theme for Hugo",
+  "version": "2.72.1",
+  "description": "Blowfish theme for Hugo.",
   "scripts": {
-    "fullinstall": "npm run preinstall && npm install && npm run postinstall",
-    "preinstall": "rimraf assets/vendor",
     "postinstall": "vendor-copy",
     "assets": "rimraf assets/vendor && vendor-copy",
     "dev": "NODE_ENV=development ./node_modules/tailwindcss/lib/cli.js -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
     "build": "NODE_ENV=production ./node_modules/tailwindcss/lib/cli.js -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit",
+    "dev-windows": "set NODE_ENV=development&&node ./node_modules/tailwindcss/lib/cli.js -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
+    "build-windows": "set NODE_ENV=production&&node ./node_modules/tailwindcss/lib/cli.js -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit",
     "build-hugo": "hugo --minify -s exampleSite --themesDir ../.. -d ../docs --baseURL https://nunocoracao.github.io/blowfish/",
     "example": "hugo server -E -F --minify --source exampleSite --themesDir ../.. --buildDrafts -b http://localhost/ -p 1313",
     "lighthouse": "lhci autorun"
@@ -34,24 +34,31 @@
   },
   "homepage": "https://github.com/nunocoracao/blowfish#readme",
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.10",
-    "chart.js": "^4.4.0",
+    "@tailwindcss/typography": "^0.5.13",
+    "chart.js": "^4.4.3",
     "fuse.js": "^7.0.0",
     "jquery": "^3.7.1",
-    "katex": "^0.16.9",
+    "katex": "^0.16.10",
+    "lite-youtube-embed": "^0.3.2",
+    "mermaid": "^10.9.1",
     "packery": "^2.1.2",
-    "prettier": "^3.0.3",
+    "prettier": "^3.3.2",
     "prettier-plugin-go-template": "^0.0.15",
-    "prettier-plugin-tailwindcss": "^0.5.6",
-    "puppeteer": "^21.4.1",
-    "rimraf": "^5.0.5",
-    "tailwindcss": "^3.3.5",
-    "tw-elements": "1.0.0",
-    "typeit": "^8.7.1",
+    "prettier-plugin-tailwindcss": "^0.6.5",
+    "puppeteer": "^22.12.0",
+    "rimraf": "^5.0.7",
+    "tailwind-scrollbar": "^3.1.0",
+    "tailwindcss": "^3.4.4",
+    "tw-elements": "2.0.0",
+    "typeit": "^8.8.3",
     "vendor-copy": "^3.0.1"
   },
   "vendorCopy": [],
   "devVendorCopy": [
+    {
+      "from": "node_modules/mermaid/dist",
+      "to": "assets/lib/mermaid"
+    },
     {
       "from": "node_modules/chart.js/dist/chart.umd.js",
       "to": "assets/lib/chart/chart.min.js"
@@ -89,14 +96,23 @@
       "to": "assets/lib/packery/packery.pkgd.min.js"
     },
     {
-      "from": "node_modules/tw-elements/dist/js/tw-elements.umd.min.js",
+      "from": "node_modules/tw-elements/js/tw-elements.umd.min.js",
       "to": "assets/lib/tw-elements/index.min.js"
+    },
+    {
+      "from": "node_modules/lite-youtube-embed/src/lite-yt-embed.js",
+      "to": "assets/lib/lite-youtube-embed/lite-yt-embed.js"
+    },
+    {
+      "from": "node_modules/lite-youtube-embed/src/lite-yt-embed.css",
+      "to": "assets/lib/lite-youtube-embed/lite-yt-embed.css"
     }
   ],
   "dependencies": {
-    "@headlessui/react": "^1.7.17",
-    "@heroicons/react": "^2.0.18",
-    "@tailwindcss/forms": "^0.5.6",
-    "commander": "^11.1.0"
+    "@headlessui/react": "^2.1.0",
+    "@heroicons/react": "^2.1.4",
+    "@iamtraction/google-translate": "^2.0.1",
+    "@tailwindcss/forms": "^0.5.7",
+    "commander": "^12.1.0"
   }
 }

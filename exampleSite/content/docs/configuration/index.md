@@ -1,6 +1,6 @@
 ---
 title: "Configuration"
-date: 2020-08-14
+weight: 4
 draft: false
 description: "All the configuration variables available in Blowfish."
 slug: "configuration"
@@ -12,6 +12,13 @@ series_order: 4
 Blowfish is a highly customisable theme and uses some of the latest Hugo features to simplify how it is configured.
 
 The theme ships with a default configuration that gets you up and running with a basic blog or static website.
+
+{{< alert "fire" >}}
+We just launched a CLI tool to help you get started with Blowfish. It will help you with installation and configuration. Install the CLI tool globally using:
+```bash
+npx blowfish-tools
+```
+{{< /alert >}}
 
 > Configuration files bundled with the theme are provided in TOML format as this is the default Hugo syntax. Feel free to convert your config to YAML or JSON if you wish.
 
@@ -45,7 +52,7 @@ Note that the variable names provided in this table use dot notation to simplify
 
 ## Thumbnails
 
-Blowfish was built so it would be easy to add visual support to your articles. If your familiar with Hugo article strucutre, you just need to place an image file (almost all formats are supported but we recommend `.png` or `.jpg`) that starts with `feature*` inside your article folder. And that's it, Blowfish will then able to both use the image as a thumbnail within your website as well as for <a target="_blank" href="https://oembed.com/">oEmbed</a> cards across social platforms. 
+Blowfish was built so it would be easy to add visual support to your articles. If your familiar with Hugo article structure, you just need to place an image file (almost all formats are supported but we recommend `.png` or `.jpg`) that starts with `feature*` inside your article folder. And that's it, Blowfish will then able to both use the image as a thumbnail within your website as well as for <a target="_blank" href="https://oembed.com/">oEmbed</a> cards across social platforms. 
 
 [Here]({{< ref "thumbnails" >}}) is also a guide with more info and a [sample]({{< ref "thumbnail_sample" >}}) if you want to see how you can do it.
 
@@ -55,33 +62,35 @@ Blowfish is optimised for full multilingual websites and theme assets are transl
 
 The theme currently supports the following languages by default:
 
-| Language                       | Code    |
-| ------------------------------ | ------- |
-| 🇦🇪 Arabic                       | `ar`    |
-| 🇧🇬 Bulgarian                    | `bg`    |
-| 🇧🇩 Bengali                      | `bn`    |
-| 🇨🇿 Czech                        | `cs`    |
-| 🇩🇪 German                       | `de`    |
-| 🇬🇧 English                      | `en`    |
-| 🇪🇸 Spanish (Spain)              | `es`    |
-| 🇫🇮 Finnish                      | `fi`    |
-| 🇫🇷 French                       | `fr`    |
-| 🇮🇱 Hebrew                       | `he`    |
-| 🇭🇷 Croatian                     | `hr`    |
-| 🇭🇺 Hungarian                    | `hu`    |
-| 🇮🇩 Indonesian                   | `id`    |
-| 🇮🇹 Italian                      | `it`    |
-| 🇯🇵 Japanese                     | `ja`    |
-| 🇰🇷 Korean                       | `ko`    |
-| 🇵🇱 Polish                       | `pl`    |
-| 🇧🇷 Portuguese (Brazil)          | `pt-br` |
-| 🇵🇹 Portuguese (Portugal)        | `pt-pt` |
-| 🇷🇴 Romanian                     | `ro`    |
-| 🇷🇺 Russian                      | `ru`    |
-| 🇹🇷 Turkish                      | `tr`    |
-| 🇻🇳 Vietnamese                   | `vi`    |
-| 🇨🇳 Simplified Chinese (China)   | `zh-cn` |
-| 🇹🇼 Traditional Chinese (Taiwan) | `zh-tw` |
+| Language                     | Code    |
+| ---------------------------- | ------- |
+| Arabic                       | `ar`    |
+| Bulgarian                    | `bg`    |
+| Bengali                      | `bn`    |
+| Catalan                      | `ca`    |
+| Czech                        | `cs`    |
+| German                       | `de`    |
+| English                      | `en`    |
+| Spanish (Spain)              | `es`    |
+| Finnish                      | `fi`    |
+| French                       | `fr`    |
+| Galician                     | `gl`    |
+| Hebrew                       | `he`    |
+| Croatian                     | `hr`    |
+| Hungarian                    | `hu`    |
+| Indonesian                   | `id`    |
+| Italian                      | `it`    |
+| Japanese                     | `ja`    |
+| Korean                       | `ko`    |
+| Polish                       | `pl`    |
+| Portuguese (Brazil)          | `pt-br` |
+| Portuguese (Portugal)        | `pt-pt` |
+| Romanian                     | `ro`    |
+| Russian                      | `ru`    |
+| Turkish                      | `tr`    |
+| Vietnamese                   | `vi`    |
+| Simplified Chinese (China)   | `zh-cn` |
+| Traditional Chinese (Taiwan) | `zh-tw` |
 
 
 
@@ -130,7 +139,7 @@ The default file can be used as a template to create additional languages, or re
 | Name              | Default   | Description                                                                                                                                                                                                                                                                                                                 |
 | ----------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `author.name`     | _Not set_ | The author's name. This will be displayed in article footers, and on the homepage when the profile layout is used.                                                                                                                                                                                                          |
-| `author.image`    | _Not set_ | Path to the image file of the author. The image should be a 1:1 aspect ratio and placed in the site's `assets/` folder.                                                                                                                                                                                                     |
+| `author.image`    | _Not set_ | Path to the image file of the author. The image should be a 1:1 aspect ratio. The image can be placed in the site's `assets/` folder or can be external url.                                                                                                                                                                |
 | `author.headline` | _Not set_ | A Markdown string containing the author's headline. It will be displayed on the profile homepage under the author's name.                                                                                                                                                                                                   |
 | `author.bio`      | _Not set_ | A Markdown string containing the author's bio. It will be displayed in article footers.                                                                                                                                                                                                                                     |
 | `author.links`    | _Not set_ | The links to display alongside the author's details. The config file contains example links which can simply be uncommented to enable. The order that the links are displayed is determined by the order they appear in the array. Custom links can be added by providing corresponding SVG icon assets in `assets/icons/`. |
@@ -154,24 +163,25 @@ Many of the article defaults here can be overridden on a per article basis by sp
 
 ### Global
 
-| Name                            | Default      | Description                                                                                                                                                                                                                                       |
-| ------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `colorScheme`                   | `"blowfish"` | The theme colour scheme to use. Valid values are `blowfish` (default), `avocado`, `ocean`, `fire` and `slate`. Refer to the [Colour Schemes]({{< ref "getting-started#colour-schemes" >}}) section for more details.                              |
-| `defaultAppearance`             | `"light"`    | The default theme appearance, either `light` or `dark`.                                                                                                                                                                                           |
-| `autoSwitchAppearance`          | `true`       | Whether the theme appearance automatically switches based upon the visitor's operating system preference. Set to `false` to force the site to always use the `defaultAppearance`.                                                                 |
-| `enableSearch`                  | `false`      | Whether site search is enabled. Set to `true` to enable search functionality. Note that the search feature depends on the `outputs.home` setting in the [site configuration](#site-configuration) being set correctly.                            |
-| `enableCodeCopy`                | `false`      | Whether copy-to-clipboard buttons are enabled for `<code>` blocks. The `highlight.noClasses` parameter must be set to `false` for code copy to function correctly. Read more about [other configuration files](#other-configuration-files) below. |
-| `mainSections`                  | _Not set_    | The sections that should be displayed in the recent articles list. If not provided the section with the greatest number of articles is used.                                                                                                      |
-| `showViews`                     | _Not set_    | Whether or not articles and list views are displayed. This requires firebase integrations to be enabled, look below.                                                                                                                              |
-| `showLikes`                     | _Not set_    | Whether or not articles and list likes are displayed. This requires firebase integrations to be enabled, look below.                                                                                                                              |
-| `robots`                        | _Not set_    | String that indicates how robots should handle your site. If set, it will be output in the page head. Refer to [Google's docs](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag#directives) for valid values.            |
-| `disableImageZoom`              | `false`      | Disables image zoom feature across all the images in the site.                                                                                                                                                                                    |
-| `disableImageOptimization`      | `false`      | Disables image resize and optimization features across all the images in the site.                                                                                                                                                                |
-| `defaultBackgroundImage`        | _Not set_    | Default background image for both `background` homepage layout and `background` hero style                                                                                                                                                        |
-| `defaultFeaturedImage`          | _Not set_    | Default background image for all `featured` images across articles, will be overriden by a local `featured` image.                                                                                                                                |
-| `highlightCurrentMenuArea`      | _Not set_    | Marks menu entries in the main manu when selected                                                                                                                                                                                                 |
-| `smartTOC`                      | _Not set_    | Activate smart Table of Contents, items in view will be highlighted.                                                                                                                                                                              |
-| `smartTOCHideUnfocusedChildren` | _Not set_    | When smart Table of Contents is turned on, this will hide deeper levels of the table when they are not in focus.                                                                                                                                  |
+| Name                            | Default      | Description                                                                                                                                                                                                                                                                                                   |
+| ------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `colorScheme`                   | `"blowfish"` | The theme colour scheme to use. Valid values are `blowfish` (default), `avocado`, `fire`, `ocean`, `forest`, `princess`, `neon`, `bloody`, `terminal`, `marvel`, `noir`, `autumn`, `congo`, and`slate`. Refer to the [Colour Schemes]({{< ref "getting-started#colour-schemes" >}}) section for more details. |
+| `defaultAppearance`             | `"light"`    | The default theme appearance, either `light` or `dark`.                                                                                                                                                                                                                                                       |
+| `autoSwitchAppearance`          | `true`       | Whether the theme appearance automatically switches based upon the visitor's operating system preference. Set to `false` to force the site to always use the `defaultAppearance`.                                                                                                                             |
+| `enableSearch`                  | `false`      | Whether site search is enabled. Set to `true` to enable search functionality. Note that the search feature depends on the `outputs.home` setting in the [site configuration](#site-configuration) being set correctly.                                                                                        |
+| `enableCodeCopy`                | `false`      | Whether copy-to-clipboard buttons are enabled for `<code>` blocks. The `highlight.noClasses` parameter must be set to `false` for code copy to function correctly. Read more about [other configuration files](#other-configuration-files) below.                                                             |
+| `mainSections`                  | _Not set_    | The sections that should be displayed in the recent articles list. If not provided the section with the greatest number of articles is used.                                                                                                                                                                  |
+| `showViews`                     | _Not set_    | Whether or not articles and list views are displayed. This requires firebase integrations to be enabled, look below.                                                                                                                                                                                          |
+| `showLikes`                     | _Not set_    | Whether or not articles and list likes are displayed. This requires firebase integrations to be enabled, look below.                                                                                                                                                                                          |
+| `robots`                        | _Not set_    | String that indicates how robots should handle your site. If set, it will be output in the page head. Refer to [Google's docs](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag#directives) for valid values.                                                                        |
+| `disableImageZoom`              | `false`      | Disables image zoom feature across all the images in the site.                                                                                                                                                                                                                                                |
+| `disableImageOptimization`      | `false`      | Disables image resize and optimization features across all the images in the site.                                                                                                                                                                                                                            |
+| `disableTextInHeader`           | `false`      | Disables text in header, useful for logo based headers.                                                                                                                                                                                                                                                       |
+| `defaultBackgroundImage`        | _Not set_    | Default background image for both `background` homepage layout and `background` hero style                                                                                                                                                                                                                    |
+| `defaultFeaturedImage`          | _Not set_    | Default background image for all `featured` images across articles, will be overridden by a local `featured` image.                                                                                                                                                                                           |
+| `highlightCurrentMenuArea`      | _Not set_    | Marks menu entries in the main menu when selected                                                                                                                                                                                                                                                             |
+| `smartTOC`                      | _Not set_    | Activate smart Table of Contents, items in view will be highlighted.                                                                                                                                                                                                                                          |
+| `smartTOCHideUnfocusedChildren` | _Not set_    | When smart Table of Contents is turned on, this will hide deeper levels of the table when they are not in focus.                                                                                                                                                                                              |
 
 ### Header
 
@@ -192,10 +202,10 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | Name                            | Default     | Description                                                                                                                                                                                                                                                                                                        |
 | ------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `homepage.layout`               | `"profile"` | The layout of the homepage. Valid values are `page`, `profile`, `hero`, `card`, `background`, or `custom`. When set to `custom`, you must provide your own layout by creating a `/layouts/partials/home/custom.html` file. Refer to the [Homepage Layout]({{< ref "homepage-layout" >}}) section for more details. |
-| `homepage.homepageImage`        | _Not set_   | Image to be used in `hero` and `card` layouts. Refer to the [Homepage Layout]({{< ref "homepage-layout" >}}) section for more details.                                                                                                                                                                             |
+| `homepage.homepageImage`        | _Not set_   | Image to be used in `hero` and `card` layouts. Can be set as local image from asset directory or external image url. Refer to the [Homepage Layout]({{< ref "homepage-layout" >}}) section for more details.                                                                                                       |
 | `homepage.showRecent`           | `false`     | Whether or not to display the recent articles list on the homepage.                                                                                                                                                                                                                                                |
 | `homepage.showRecentItems`      | 5           | How many articles to display if showRecent is true. If variable is set to 0 or if it isn't defined the system will default to 5 articles.                                                                                                                                                                          |
-| `homepage.showMoreLink`         | `false`     | Wether or not to display a show more link at the end of your posts that takes the user to a predefined place.                                                                                                                                                                                                      |
+| `homepage.showMoreLink`         | `false`     | Whether or not to display a show more link at the end of your posts that takes the user to a predefined place.                                                                                                                                                                                                     |
 | `homepage.showMoreLinkDest`     | `/posts`    | The destination of the show more button.                                                                                                                                                                                                                                                                           |
 | `homepage.cardView`             | `false`     | Display recent articles as a gallery of cards.                                                                                                                                                                                                                                                                     |
 | `homepage.cardViewScreenWidth`  | `false`     | Enhance the width of the recent articles card gallery to take the full width available.                                                                                                                                                                                                                            |
@@ -207,8 +217,10 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `article.showDate`                    | `true`    | Whether or not article dates are displayed.                                                                                                                                                                                                                                                                            |
 | `article.showViews`                   | `false`   | Whether or not article views are displayed. This requires firebase integrations to be enabled, look below.                                                                                                                                                                                                             |
 | `article.showLikes`                   | `false`   | Whether or not article likes are displayed. This requires firebase integrations to be enabled, look below.                                                                                                                                                                                                             |
+| `article.showDateOnlyInArticle`       | `false`   | Show date within article even if not displayed in article listings/cards.                                                                                                                                                                                                                                              |
 | `article.showDateUpdated`             | `false`   | Whether or not the dates articles were updated are displayed.                                                                                                                                                                                                                                                          |
 | `article.showAuthor`                  | `true`    | Whether or not the author box is displayed in the article footer.                                                                                                                                                                                                                                                      |
+| `article.showAuthorBottom`            | `false`   | Author boxes are displayed at the bottom of each page instead of the top.                                                                                                                                                                                                                                              |
 | `article.showHero`                    | `false`   | Whether the thumbnail image will be shown as a hero image within each article page.                                                                                                                                                                                                                                    |
 | `article.heroStyle`                   | _Not set_ | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`.                                                                                                                                                                                                                |
 | `article.layoutBackgroundBlur`        | `true`    | Makes the background image in the background article heroStyle blur with the scroll                                                                                                                                                                                                                                    |
@@ -231,6 +243,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `article.showWordCount`               | `false`   | Whether or not article word counts are displayed.                                                                                                                                                                                                                                                                      |
 | `article.showComments`                | `false`   | Whether or not the [comments partial]({{< ref "partials#comments" >}}) is included after the article footer.                                                                                                                                                                                                           |
 | `article.sharingLinks`                | _Not set_ | Which sharing links to display at the end of each article. When not provided, or set to `false` no links will be displayed.  Available values are: "linkedin", "twitter", "reddit", "pinterest", "facebook", "email", "whatsapp", and "telegram"                                                                       |
+| `article.showZenMode`                 | `false`   | Flag to activate Zen Mode reading feature for articles.                                                                                                                                                                                                                                                                |
 
 ### List
 
@@ -246,6 +259,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `list.showViews`                   | `false`   | Whether or not list views are displayed. This requires firebase integrations to be enabled, look below.                                                                                                                                                        |
 | `list.showLikes`                   | `false`   | Whether or not list likes are displayed. This requires firebase integrations to be enabled, look below.                                                                                                                                                        |
 | `list.showCards`                   | `false`   | Whether or not each article is displayed as a card or as simple inline text.                                                                                                                                                                                   |
+| `list.orderByWeight`               | `false`   | Whether or not articles are sorted by [weights](https://gohugo.io/methods/page/weight/).                                                                                                                                                                       |
 | `list.groupByYear`                 | `true`    | Whether or not articles are grouped by year on list pages.                                                                                                                                                                                                     |
 | `list.cardView`                    | `false`   | Display lists as a gallery of cards.                                                                                                                                                                                                                           |
 | `list.cardViewScreenWidth`         | `false`   | Enhance the width of card galleries in lists to take the full width available.                                                                                                                                                                                 |
@@ -301,6 +315,14 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | ------------------------ | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | `fathomAnalytics.site`   | _Not set_ | The site code generated by Fathom Analytics for the website. Refer to the [Analytics docs]({{< ref "partials#analytics" >}}) for more details. |
 | `fathomAnalytics.domain` | _Not set_ | If using a custom domain with Fathom Analytics, provide it here to serve `script.js` from the custom domain.                                   |
+
+### Umami Analytics
+
+| Name                       | Default   | Description                                                                                                                                   |
+| -------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `umamiAnalytics.websiteid` | _Not set_ | The site code generated by Umami Analytics for the website. Refer to the [Analytics docs]({{< ref "partials#analytics" >}}) for more details. |
+| `umamiAnalytics.domain`    | _Not set_ | If using a custom domain with Umami Analytics, provide it here to serve `script.js` from the custom domain.                                   |
+
 
 ### BuyMeACoffee
 

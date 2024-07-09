@@ -1,5 +1,5 @@
 global:
-  language: "🇵🇹"
+  language: "PT-PT"
 
 article:
   anchor_label: "Etiqueta"
@@ -38,7 +38,7 @@ error:
 footer:
   dark_appearance: "Mudar para modo escuro"
   light_appearance: "Mudar para modo claro"
-  powered_by: "Movido por {{ .Hugo }} &amp; {{ .Theme }}"
+  powered_by: "Criado por {{ .Hugo }} &amp; {{ .Theme }}"
 
 list:
   externalurl_title: "Link para site externo"
@@ -62,7 +62,7 @@ sharing:
   twitter: "Partilhar no Twitter"
 
 shortcode:
-  recent_articles: "Recente"
+  recent_articles: "Recentes"
 
 recent:
   show_more: "Mostrar mais"

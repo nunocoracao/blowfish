@@ -5,7 +5,7 @@
     {{ if $logo }}
     <div>
         <a href="{{ "" | relLangURL }}" class="flex">
-            <span class="sr-only">{{ .Site.Title | markdownify | emojify }}</span>
+            <span class="sr-only">{{ .Site.Title | markdownify }}</span>
 
             <img src="{{ $logo.RelPermalink }}" width="{{ div $logo.Width 2 }}" height="{{ div $logo.Height 2 }}"
                 class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom" alt="{{ .Site.Title }}" />
@@ -17,10 +17,11 @@
     <div class="flex flex-1 items-center justify-between">
         <nav class="flex space-x-3">
 
+            {{ if not .Site.Params.disableTextInHeader | default true }}
             <a href="{{ "" | relLangURL }}" class="text-base font-medium text-gray-500 hover:text-gray-900">{{
                 .Site.Title | markdownify
-                | emojify }}</a>
-
+                }}</a>
+            {{ end }}
 
         </nav>
         <nav class="hidden md:flex items-center space-x-5 md:ml-12 h-12">
@@ -34,7 +35,7 @@
             {{ partial "translations.html" . }}
 
             {{ if .Site.Params.enableSearch | default false }}
-            <button id="search-button" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400 h-12"
+            <button id="search-button" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
                 title="{{ i18n " search.open_button_title" }}">
                 {{ partial "icon.html" "search" }}
             </button>
@@ -44,12 +45,12 @@
             {{/* Appearance switch */}}
             {{ if .Site.Params.footer.showAppearanceSwitcher | default false }}
             <div
-                class="{{ if .Site.Params.footer.showScrollToTop | default true -}} ltr:mr-14 rtl:ml-14 {{- end }} cursor-pointer text-sm text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400">
-                <button id="appearance-switcher" aria-label="Dark mode switcher" type="button">
-                    <div class="flex items-center justify-center h-12 dark:hidden">
+                class="{{ if .Site.Params.footer.showScrollToTop | default true -}} ltr:mr-14 rtl:ml-14 {{- end }} flex items-center">
+                <button id="appearance-switcher" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+                    <div class="flex items-center justify-center dark:hidden">
                         {{ partial "icon.html" "moon" }}
                     </div>
-                    <div class="items-center justify-center hidden h-12 dark:flex">
+                    <div class="items-center justify-center hidden dark:flex">
                         {{ partial "icon.html" "sun" }}
                     </div>
                 </button>
@@ -57,7 +58,7 @@
             {{ end }}
 
         </nav>
-        <div class="flex md:hidden items-center space-x-5 md:ml-12">
+        <div class="flex md:hidden items-center space-x-5 md:ml-12 h-12">
 
             <span></span>
 
@@ -72,11 +73,11 @@
 
             {{/* Appearance switch */}}
             {{ if .Site.Params.footer.showAppearanceSwitcher | default false }}
-            <button id="appearance-switcher-mobile" aria-label="Dark mode switcher" type="button" style="margin-right:5px">
-                <div class="flex items-center justify-center h-12 dark:hidden">
+            <button id="appearance-switcher-mobile" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400" style="margin-right:5px">
+                <div class="flex items-center justify-center dark:hidden">
                     {{ partial "icon.html" "moon" }}
                 </div>
-                <div class="items-center justify-center hidden h-12 dark:flex">
+                <div class="items-center justify-center hidden dark:flex">
                     {{ partial "icon.html" "sun" }}
                 </div>
             </button>
@@ -88,6 +89,7 @@
 
         <label id="menu-button" for="menu-controller" class="block">
             <input type="checkbox" id="menu-controller" class="hidden" />
+            {{ if .Site.Menus.main }}
             <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
                 {{ partial "icon.html" "bars" }}
             </div>
@@ -104,12 +106,10 @@
                             "xmark" }}</span>
                     </li>
 
-                    {{ if .Site.Menus.main }}
                     {{ range .Site.Menus.main }}
 
                     {{ partial "header/header-mobile-option.html" . }}
 
-                    {{ end }}
                     {{ end }}
 
                 </ul>
@@ -129,13 +129,14 @@
                             </span>
                             {{ end }}
                             <p class="text-sm font-sm text-gray-500 hover:text-gray-900" title="{{ .Title }}">
-                                {{ .Name | markdownify | emojify }}
+                                {{ .Name | markdownify }}
                             </p>
                         </a>
                     </li>
                     {{ end }}
 
                 </ul>
+                {{ end }}
                 {{ end }}
 
             </div>
@@ -156,7 +157,7 @@
             </span>
             {{ end }}
             <p class="text-xs font-light text-gray-500 hover:text-gray-900" title="{{ .Title }}">
-                {{ .Name | markdownify | emojify }}
+                {{ .Name | markdownify }}
             </p>
         </a>
         {{ end }}

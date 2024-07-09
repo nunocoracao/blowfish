@@ -1,5 +1,5 @@
 global:
-  language: "🇮🇩"
+  language: "ID"
 
 article:
   anchor_label: "Anchor"
@@ -21,10 +21,10 @@ article:
   likes:
     one: "{{ .Count }} disukai"
     other: "{{ .Count }} disukai"
-  part_of_series: "This article is part of a series."
-  part: "Part"
-  this_article: "This Article"
-  related_articles: "Related"
+  part_of_series: "Artikel ini merupakan bagian dari sebuah seri."
+  part: "Bagian"
+  this_article: "Artikel ini"
+  related_articles: "Terkait"
 
 author:
   byline_title: "Penulis"

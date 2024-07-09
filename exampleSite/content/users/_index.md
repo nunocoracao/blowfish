@@ -1,6 +1,5 @@
 ---
 title: "Users"
-date: 2020-08-14
 draft: false
 description: "Some real-life Blowfish examples."
 slug: "users"
@@ -10,7 +9,7 @@ showAuthor: false
 showReadingTime: false
 showEdit: false
 layoutBackgroundHeaderSpace: false
-cardViewScreenWidth: true
+cardViewScreenWidth: false
 ---
  
 

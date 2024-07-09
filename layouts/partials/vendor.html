@@ -4,12 +4,16 @@
 
 {{/* Mermaid */}}
 {{ if .Page.HasShortcode "mermaid" }}
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({
-    startOnLoad: true
-  });
-</script>
+  {{ $mermaidLib := resources.Get "lib/mermaid/mermaid.min.js" }}
+  {{ $mermaidConfig := resources.Get "js/mermaid.js" }}
+  {{ $mermaidConfig := $mermaidConfig | resources.Minify }}
+  {{ $mermaidJS := slice $mermaidLib $mermaidConfig | resources.Concat "js/mermaid.bundle.js" | resources.Fingerprint "sha512" }}
+  <script
+    defer
+    type="text/javascript"
+    src="{{ $mermaidJS.RelPermalink }}"
+    integrity="{{ $mermaidJS.Data.Integrity }}"
+  ></script>
 {{ end }}
 
 {{/* Chart */}}
@@ -48,12 +52,24 @@
 
 {{/* Packery */}}
 {{ if .Page.HasShortcode "gallery" }}
-{{ $packeryLib := resources.Get "lib/packery/packery.pkgd.min.js" }}
-<script defer src="{{ $packeryLib.RelPermalink }}" integrity="{{ $packeryLib.Data.Integrity }}"></script>
+    {{ $packeryLib := resources.Get "lib/packery/packery.pkgd.min.js" }}
+    <script defer src="{{ $packeryLib.RelPermalink }}" integrity="{{ $packeryLib.Data.Integrity }}"></script>
+
+    {{ $jsShortcodeGallery := resources.Get "js/shortcodes/gallery.js" }}
+    {{ $jsShortcodeGallery = $jsShortcodeGallery | resources.Minify | resources.Fingerprint "sha512" }}
+    <script type="text/javascript" src="{{ $jsShortcodeGallery.RelPermalink }}" integrity="{{ $jsShortcodeGallery.Data.Integrity }}"></script>
 {{ end }}
 
 {{/* tw-elements */}}
 {{ if or (.Page.HasShortcode "carousel") (.Page.HasShortcode "timeline")}}
 {{ $twelementsLib := resources.Get "lib/tw-elements/index.min.js" }}
 <script defer src="{{ $twelementsLib.RelPermalink }}" integrity="{{ $twelementsLib.Data.Integrity }}"></script>
+{{ end }}
+
+{{/* youtubeLite */}}
+{{ if .Page.HasShortcode "youtubeLite" }}
+{{ $youtubeLiteJS := resources.Get "lib/lite-youtube-embed/lite-yt-embed.js" }}
+{{ $youtubeLiteCSS := resources.Get "lib/lite-youtube-embed/lite-yt-embed.css" }}
+<link rel="stylesheet" href="{{ $youtubeLiteCSS.RelPermalink }}" integrity="{{ $youtubeLiteCSS.Data.Integrity }}"/>
+<script src="{{ $youtubeLiteJS.RelPermalink }}" integrity="{{ $youtubeLiteJS.Data.Integrity }}"></script>
 {{ end }}

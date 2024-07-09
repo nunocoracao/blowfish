@@ -2,7 +2,7 @@
                 title: "deepumohan.com/tech"
                 tags: [Technology Blog]
                 externalUrl: "https://deepumohan.com/tech/"
-                date: 9936-08-08
+                weight: 541
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

@@ -1,0 +1,6 @@
+{{ $url := .Get "url"}}
+{{ with resources.GetRemote (urls.Parse $url) }}
+{{ .Content | markdownify }}
+{{ else }}
+{{ errorf "Mardown Importer Shortcode - Unable to get remote resource" . }}
+{{ end }}

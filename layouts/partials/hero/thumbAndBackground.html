@@ -7,6 +7,10 @@
 {{- if not $background }}{{ $background = $images.GetMatch "*feature*" }}{{ end -}}
 {{- $featured := $images.GetMatch "*feature*" -}}
 {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
+{{ if .Params.featureimage }}
+{{- $url:= .Params.featureimage -}}
+{{- if not $featured }}{{ $featured = resources.GetRemote $url }}{{ end -}}
+{{ end }}
 {{- if not $featured }}{{ $featured = $images.GetMatch "*background*" }}{{ end -}}
 {{- if not $featured }}{{ with .Site.Params.defaultBackgroundImage }}{{ $featured = resources.Get . }}{{ end }}{{ end -}}
 {{ $isParentList := eq (.Scratch.Get "scope") "list"  }}
@@ -16,7 +20,7 @@
     ) }}
 
 {{- with $featured -}}
-{{ if $disableImageOptimization }}
+{{ if or $disableImageOptimization (strings.HasSuffix . ".svg")}}
 {{ with . }}
 <div class="w-full rounded-md h-36 md:h-56 lg:h-72 single_hero_basic nozoom" style="background-image:url({{ .RelPermalink }});"></div>
 {{ end }}
@@ -29,7 +33,7 @@
 
 {{- with $background -}}
 
-{{ if $disableImageOptimization }}
+{{ if or $disableImageOptimization (strings.HasSuffix . ".svg")}}
 {{ with . }}
 <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
     style="background-image:url({{ .RelPermalink }});">

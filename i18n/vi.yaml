@@ -1,8 +1,8 @@
 global:
-  language: "🇻🇳"
+  language: "VI"
 
 article:
-  anchor_label: "Neo"
+  anchor_label: "Cọc dấu"
   date: "{{ .Date }}"
   date_updated: "Cập nhật: {{ .Date }}"
   draft: "Bản nháp"
@@ -24,7 +24,10 @@ article:
   part_of_series: "Bài viết này là một phần của loạt bài."
   part: "Phần"
   this_article: "Bài viết này"
-  related_articles: "Related"
+  related_articles: "Bài viết liên quan"
+  zen_mode_title:
+    enable: "Bật zen mode"
+    disable: "Tắt zen mode"
 
 author:
   byline_title: "Tác giả"
@@ -41,7 +44,7 @@ error:
 footer:
   dark_appearance: "Chuyển sang giao diện tối"
   light_appearance: "Chuyển sang giao diện sáng"
-  powered_by: "Dựa trên {{ .Hugo }} &amp; {{ .Theme }}"
+  powered_by: "Bảo trợ bởi {{ .Hugo }} &amp; {{ .Theme }}"
 
 list:
   externalurl_title: "Liên kết đến trang web bên ngoài"
@@ -58,14 +61,14 @@ search:
 
 sharing:
   email: "Gửi qua email"
-  facebook: "Chia sẻ trên facebook"
-  linkedin: "Chia sẻ trên LinkedIn"
-  pinterest: "Ghim trên Pinterest"
+  facebook: "Chia sẻ lên Facebook"
+  linkedin: "Chia sẻ lên LinkedIn"
+  pinterest: "Ghim lên Pinterest"
   reddit: "Gửi lên Reddit"
-  twitter: "Tweet trên Twitter"
+  twitter: "Tweet lên Twitter"
 
 shortcode:
   recent_articles: "Gần đây"
 
 recent:
-  show_more: "Xem nhiều hơn"
+  show_more: "Xem thêm"

@@ -2,7 +2,7 @@
                 title: "halcyonstraits.com"
                 tags: [Doll photography]
                 externalUrl: "https://www.halcyonstraits.com/"
-                date: 9953-08-08
+                weight: 381
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

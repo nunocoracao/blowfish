@@ -22,6 +22,7 @@ The full list of built-in icons and their corresponding names can referenced bel
 | bars                 | {{< icon bars >}}                 |
 | bell                 | {{< icon bell >}}                 |
 | blogger              | {{< icon blogger >}}              |
+| bluesky              | {{< icon bluesky >}}              |
 | bomb                 | {{< icon bomb >}}                 |
 | bug                  | {{< icon bug >}}                  |
 | check                | {{< icon check >}}                |
@@ -37,6 +38,7 @@ The full list of built-in icons and their corresponding names can referenced bel
 | edit                 | {{< icon edit >}}                 |
 | email                | {{< icon email >}}                |
 | envelope             | {{< icon envelope >}}             |
+| expand               | {{< icon expand >}}               |
 | eye                  | {{< icon eye >}}                  |
 | facebook             | {{< icon facebook >}}             |
 | fire                 | {{< icon fire >}}                 |
@@ -56,9 +58,11 @@ The full list of built-in icons and their corresponding names can referenced bel
 | heart                | {{< icon heart >}}                |
 | image                | {{< icon image >}}                |
 | instagram            | {{< icon instagram >}}            |
+| itch-io              | {{< icon itch-io >}}              |
 | keybase              | {{< icon keybase >}}              |
 | kickstarter          | {{< icon kickstarter >}}          |
 | ko-fi                | {{< icon ko-fi >}}                |
+| language             | {{< icon language >}}             |
 | lastfm               | {{< icon lastfm >}}               |
 | lightbulb            | {{< icon lightbulb >}}            |
 | link                 | {{< icon link >}}                 |
@@ -99,6 +103,7 @@ The full list of built-in icons and their corresponding names can referenced bel
 | sun                  | {{< icon sun >}}                  |
 | tag                  | {{< icon tag >}}                  |
 | telegram             | {{< icon telegram >}}             |
+| threads              | {{< icon threads >}}              |
 | tiktok               | {{< icon tiktok >}}               |
 | triangle-exclamation | {{< icon triangle-exclamation >}} |
 | tumblr               | {{< icon tumblr >}}               |
@@ -107,5 +112,7 @@ The full list of built-in icons and their corresponding names can referenced bel
 | wand-magic-sparkles  | {{< icon wand-magic-sparkles >}}  |
 | whatsapp             | {{< icon whatsapp >}}             |
 | x-twitter            | {{< icon x-twitter >}}            |
+| xing                 | {{< icon xing >}}                 |
 | xmark                | {{< icon xmark >}}                |
 | youtube              | {{< icon youtube >}}              |
+| codeberg             | {{< icon codeberg >}}             |

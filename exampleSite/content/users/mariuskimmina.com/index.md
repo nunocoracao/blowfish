@@ -2,7 +2,7 @@
                 title: "mariuskimmina.com"
                 tags: [Personal site]
                 externalUrl: "https://mariuskimmina.com/"
-                date: 9967-08-08
+                weight: 261
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

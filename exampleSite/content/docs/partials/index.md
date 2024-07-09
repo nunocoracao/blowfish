@@ -1,6 +1,6 @@
 ---
 title: "Partials"
-date: 2020-08-10
+weight: 9
 draft: false
 description: "All the partials available in Blowfish."
 slug: "partials"
@@ -11,7 +11,7 @@ series_order: 9
 
 ## Analytics
 
-Blowfish provides built-in support for Fathom Analytics and Google Analytics. Fathom is a paid alternative to Google Analytics that respects user privacy.
+Blowfish provides built-in support for Fathom Analytics, Google Analytics and Umami Analytics. Fathom is a paid alternative to Google Analytics that respects user privacy.
 
 ### Fathom Analytics
 
@@ -40,9 +40,22 @@ googleAnalytics = "UA-PROPERTY_ID"
 googleAnalytics = "G-MEASUREMENT_ID"
 ```
 
+### Umami Analytics
+
+To enable Umami Analytics support, simply provide your [Umami tracking code](https://umami.is/docs/collect-data) in the `config/_default/params.toml` file.
+If you also use the custom domain feature of Umami and would like to serve their script from your domain, you can also additionally provide the `domain` configuration value. If you don't provide a `domain` value, the script will load directly from Umami DNS (analytics.umami.is).
+
+```toml
+# config/_default/params.toml
+
+[umamiAnalytics]
+  websiteid = "ABC12345"
+  domain = "llama.yoursite.com"
+```
+
 ### Custom analytics providers
 
-If you wish to use a different analytics provider on your website you can also override the analytics partial and provide your own script. Simply create the file `layouts/partials/analytics.html` in your project and it will automatically include it in the `<head>` of the website.
+If you wish to use a different analytics provider on your website you can also override the analytics partial and provide your own script. Simply create the file `layouts/partials/extend-head.html` in your project and it will automatically include it in the `<head>` of the website.
 
 ## Comments
 

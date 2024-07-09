@@ -1,10 +1,27 @@
 {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
 
 {{- $images := .Resources.ByType "image" -}}
-{{- $featured := $images.GetMatch "*feature*" -}}
+{{- $featured := $images.GetMatch "*background*" -}}
+{{- if not $featured }}{{ $featured = $images.GetMatch "*feature*" }}{{ end -}}
 {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
+
+{{ if and .Params.featureimage (not $featured) }}
+{{- $url:= .Params.featureimage -}}
+{{ $featured = resources.GetRemote $url }}
+{{ end }}
+
+{{- if not $featured }}
+ {{ with .Site.Params.defaultBackgroundImage }}
+  {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+   {{ $featured = resources.GetRemote . }}
+  {{ else }}
+   {{ $featured = resources.Get . }}
+  {{ end }}
+ {{ end }}
+{{ end -}}
+
 {{- with $featured -}}
-    {{ if $disableImageOptimization }}
+    {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg")}}
         {{ with . }}
             <div class="w-full h-36 md:h-56 lg:h-72 single_hero_basic nozoom" style="background-image:url({{ .RelPermalink }});"></div>
         {{ end }}

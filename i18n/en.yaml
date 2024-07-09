@@ -1,5 +1,5 @@
 global:
-  language: "🇬🇧"
+  language: "EN"
 
 article:
   anchor_label: "Anchor"
@@ -25,6 +25,9 @@ article:
   part: "Part"
   this_article: "This Article"
   related_articles: "Related"
+  zen_mode_title:
+    enable: "Enable zen mode"
+    disable: "Disable zen mode"
 
 author:
   byline_title: "Author"
@@ -63,6 +66,7 @@ sharing:
   pinterest: "Pin on Pinterest"
   reddit: "Submit to Reddit"
   twitter: "Tweet on Twitter"
+  bluesky: "Post on Bluesky"
 
 shortcode:
   recent_articles: "Recent"

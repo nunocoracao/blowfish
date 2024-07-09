@@ -1,5 +1,5 @@
 global:
-  language: "🇷🇺"
+  language: "RU"
 
 article:
   anchor_label: "Якорь"
@@ -60,7 +60,7 @@ sharing:
   email: "Отправить по электронной почте"
   facebook: "Поделиться через Facebook"
   linkedin: "Поделиться через LinkedIn"
-  pinterest: "PДобавить в Pinterest"
+  pinterest: "Добавить в Pinterest"
   reddit: "Отправить в Reddit"
   twitter: "Твитнуть в Twitter"
 
