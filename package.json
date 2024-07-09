@@ -38,7 +38,7 @@
     "chart.js": "^4.4.3",
     "fuse.js": "^7.0.0",
     "jquery": "^3.7.1",
-    "katex": "^0.16.10",
+    "katex": "^0.16.11",
     "lite-youtube-embed": "^0.3.2",
     "mermaid": "^10.9.1",
     "packery": "^2.1.2",
