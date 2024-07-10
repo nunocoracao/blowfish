@@ -85,6 +85,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon-16x16.png" | relURL }}" />
   <link rel="manifest" href="{{ "site.webmanifest" | relURL }}" />
   {{ end }}
+  {{/* Google Fonts */}}
+  {{ with .Site.Params.static.googleFonts }}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="{{ . | safeURL }}" />
+  {{ end }}
   {{/* Site Verification */}}
   {{ with .Site.Params.verification.google }}
   <meta name="google-site-verification" content="{{ . }}" />
