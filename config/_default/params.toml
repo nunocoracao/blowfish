@@ -118,6 +118,9 @@ disableTextInHeader = false
   cardView = false
   cardViewScreenWidth = false
 
+[static]
+  # googleFonts = ""
+
 [firebase]
   # apiKey = "XXXXXX"
   # authDomain = "XXXXXX"
