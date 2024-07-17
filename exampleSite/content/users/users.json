@@ -702,5 +702,15 @@
       "Portfolio Site",
       "Software Developer"
     ]
+  },
+  {
+    "title": "Jinbo Pan - Blog",
+    "url": "https://www.panjinbo.com/",
+    "source": "n/a",
+    "tags": [
+      "Personal Site",
+      "Blog",
+      "Technology Blog"
+    ]
   }
 ]
