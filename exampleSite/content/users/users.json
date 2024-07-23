@@ -712,5 +712,13 @@
       "Blog",
       "Technology Blog"
     ]
+  },
+  {
+    "title": "nveshaan",
+    "url": "https://nveshaan.github.io/",
+    "source": "n/a",
+    "tags": [
+      "Personal Site"
+    ]
   }
 ]
