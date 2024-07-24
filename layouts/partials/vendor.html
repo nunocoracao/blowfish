@@ -1,5 +1,5 @@
 {{/* jQuery */}}
-{{ $jqueryLib := resources.Get "lib/jquery/jquery.slim.min.js" }}
+{{ $jqueryLib := resources.Get "lib/jquery/jquery.slim.min.js" | resources.Fingerprint "sha512" }}
 <script src="{{ $jqueryLib.RelPermalink }}" integrity="{{ $jqueryLib.Data.Integrity }}"></script>
 
 {{/* Mermaid */}}
