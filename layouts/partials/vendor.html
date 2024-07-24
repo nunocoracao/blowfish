@@ -46,7 +46,7 @@
 
 {{/* TypeIt */}}
 {{ if .Page.HasShortcode "typeit" }}
-{{ $typeitLib := resources.Get "lib/typeit/typeit.umd.js" }}
+{{ $typeitLib := resources.Get "lib/typeit/typeit.umd.js" | resources.Fingerprint "sha512" }}
 <script defer src="{{ $typeitLib.RelPermalink }}" integrity="{{ $typeitLib.Data.Integrity }}"></script>
 {{ end }}
 
