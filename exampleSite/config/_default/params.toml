@@ -134,10 +134,11 @@ smartTOCHideUnfocusedChildren = false
   # websiteid = "ABC12345"
   # domain = "llama.yoursite.com"
   # dataDomains = "yoursite.com,yoursite2.com"
+  # enableTrackEvent = false
 
 [selineAnalytics]
-#  token = "XXXXXX"
-#  enableTrace = false
+  # token = "XXXXXX"
+  # enableTrackEvent = false
 
 [buymeacoffee]
   identifier = "nunocoracao"
