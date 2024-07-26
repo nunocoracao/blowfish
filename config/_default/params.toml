@@ -136,6 +136,10 @@ disableTextInHeader = false
   # domain = "llama.yoursite.com"
   # dataDomains = "yoursite.com,yoursite2.com"
 
+[selineAnalytics]
+#  token = "XXXXXX"
+#  enableTrace = false
+
 [buymeacoffee]
   # identifier = ""
   # globalWidget = true
