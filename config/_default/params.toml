@@ -135,11 +135,11 @@ disableTextInHeader = false
   # websiteid = "ABC12345"
   # domain = "llama.yoursite.com"
   # dataDomains = "yoursite.com,yoursite2.com"
-  # enableTrackEvent = false
+  # enableTrackEvent = true
 
 [selineAnalytics]
   # token = "XXXXXX"
-  # enableTrackEvent = false
+  # enableTrackEvent = true
 
 [buymeacoffee]
   # identifier = ""

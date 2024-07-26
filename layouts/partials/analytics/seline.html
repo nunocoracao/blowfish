@@ -1,6 +1,6 @@
 <script async src="https://cdn.seline.so/seline.js" data-token="{{ site.Params.selineAnalytics.token }}" data-id="seline-script"></script>
 
-{{ if .Site.Params.selineAnalytics.enableTrackEvent | default false }}
+{{ if .Site.Params.selineAnalytics.enableTrackEvent | default true }}
 <script type="text/javascript">
     document.querySelector('script[data-id="seline-script"]')
         .addEventListener('load', function () {
