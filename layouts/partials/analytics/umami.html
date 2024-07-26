@@ -10,6 +10,7 @@
 </script>
 {{ end }}
 
+{{ if .Site.Params.umamiAnalytics.enableTrackEvent | default true }}
 <script type="text/javascript">
     document.querySelector('script[data-id="umami-script"]')
         .addEventListener('load', function () {
@@ -19,3 +20,4 @@
             umami.track(type + ':' + title, {'url': url});
     });
 </script>
+{{ end }}

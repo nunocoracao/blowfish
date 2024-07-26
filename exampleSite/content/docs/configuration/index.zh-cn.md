@@ -321,11 +321,19 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 
 ### Umami Analytics
 
-| Name                       | Default   | Description                                                                         |
-| -------------------------- | --------- |-------------------------------------------------------------------------------------|
-| `umamiAnalytics.websiteid` | _Not set_ | 支持 Umami 站点分析平台。更多详细内容请参考 [分析文档]({{< ref "partials#analytics" >}})。                 |
-| `umamiAnalytics.domain`    | _Not set_ | 如果使用自定义域名的 Umami Analytics，请在此提供，以便从自定义域名获取 `script.js`。                            |
-| `umamiAnalytics.dataDomains`    | _Not set_ | 如果你只想在特别的数个域名中使用 tracker 功能，那么你需要设置它。这个参数的值是逗号分隔的域名列表，如：yoursite.com,yoursite2.com。 |
+| Name                         | Default   | Description                                                                         |
+|------------------------------|-----------|-------------------------------------------------------------------------------------|
+| `umamiAnalytics.websiteid`   | 无         | 支持 Umami 站点分析平台。更多详细内容请参考 [分析文档]({{< ref "partials#analytics" >}})。                 |
+| `umamiAnalytics.domain`      | 无 | 如果使用自定义域名的 Umami Analytics，请在此提供，以便从自定义域名获取 `script.js`。                            |
+| `umamiAnalytics.dataDomains` | 无 | 如果你只想在特别的数个域名中使用 tracker 功能，那么你需要设置它。这个参数的值是逗号分隔的域名列表，如：yoursite.com,yoursite2.com。 |
+| `umamiAnalytics.enableTrackEvent` | true      | 默认会自动添加 Umami Track Event。如果你不想添加 Event，那学需要设置为 `false`。                            |
+
+### Seline Analytics
+
+| Name                              | Default | Description                                                              |
+|-----------------------------------|---------|--------------------------------------------------------------------------|
+| `selineAnalytics.token`           | 无 | Seline 站点分析平台的 token。更多详细内容请参考 [分析文档]({{< ref "partials#analytics" >}})。 |
+| `selineAnalytics.enableTrackEvent` | true    | 默认会自动添加 Umami Track Event。如果你不想添加 Event，那学需要设置为 `false`。                 |
 
 
 ### BuyMeACoffee
