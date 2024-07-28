@@ -5,8 +5,8 @@
 # Refer to the theme docs for more details about each of these parameters.
 # https://blowfish.page/docs/configuration/#theme-parameters
 
-colorScheme = "congo"
-defaultAppearance = "dark" # valid options: light or dark
+colorScheme = "noir"
+defaultAppearance = "light" # valid options: light or dark
 autoSwitchAppearance = false
 
 enableSearch = true
@@ -26,17 +26,17 @@ defaultBackgroundImage = "RecordShelf_1.jpg" # used as default for background im
 # smartTOCHideUnfocusedChildren = true
 
 [header]
-  layout = "basic" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
+  layout = "fixed-gradient" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
 
 [footer]
   showMenu = true
   showCopyright = false
-  showThemeAttribution = true
+  showThemeAttribution = false
   showAppearanceSwitcher = false
   showScrollToTop = false
 
 [homepage]
-  layout = "background" # valid options: page, profile, hero, card, background, custom
+  layout = "profile" # valid options: page, profile, hero, card, background, custom
   homepageImage = "IMAGE.jpg" # used in: hero, and card
   showRecent = true
   showRecentItems = 5
@@ -78,7 +78,7 @@ defaultBackgroundImage = "RecordShelf_1.jpg" # used as default for background im
   showZenMode = false
 
 [list]
-  showHero = false
+  showHero = true
   # heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
   layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
