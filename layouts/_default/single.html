@@ -81,6 +81,11 @@
 
         <div class="article-content max-w-prose mb-20">
           {{ .Content }}
+          {{ $defaultReplyByEmail := .Site.Params.replyByEmail }}
+          {{ $replyByEmail := default $defaultReplyByEmail .Params.replyByEmail }}
+          {{ if $replyByEmail }}
+            <strong><a href="mailto:{{ .Site.Author.email }}?subject={{ replace (printf "Reply to %s" .Title) "\"" "'" }}">Reply by Email</a></strong>
+          {{ end }}
         </div>
         
         {{ if (.Params.showAuthorBottom | default ( .Site.Params.article.showAuthorBottom | default false)) }}
