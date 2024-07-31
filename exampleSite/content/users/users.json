@@ -712,5 +712,14 @@
       "Blog",
       "Technology Blog"
     ]
-  }
+  },
+  {
+    "title": "kumacat.pages.dev",
+    "url": "https://kumacat.pages.dev",
+    "source": "https://github.com/LesserCat/LesserCat.github.io",
+    "tags": [
+      "Personal Site",
+      "Blog"
+    ]
+  }  
 ]
