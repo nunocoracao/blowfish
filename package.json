@@ -1,7 +1,7 @@
 {
   "name": "hugo-blowfish-theme",
-  "version": "2.63.0",
-  "description": "Blowfish theme for Hugo",
+  "version": "2.75.0",
+  "description": "Blowfish theme for Hugo.",
   "scripts": {
     "postinstall": "vendor-copy",
     "assets": "rimraf assets/vendor && vendor-copy",
@@ -34,20 +34,21 @@
   },
   "homepage": "https://github.com/nunocoracao/blowfish#readme",
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.10",
-    "chart.js": "^4.4.2",
+    "@tailwindcss/typography": "^0.5.13",
+    "chart.js": "^4.4.3",
     "fuse.js": "^7.0.0",
     "jquery": "^3.7.1",
-    "katex": "^0.16.10",
+    "katex": "^0.16.11",
     "lite-youtube-embed": "^0.3.2",
-    "mermaid": "^10.9.0",
+    "mermaid": "^10.9.1",
     "packery": "^2.1.2",
-    "prettier": "^3.2.5",
+    "prettier": "^3.3.2",
     "prettier-plugin-go-template": "^0.0.15",
-    "prettier-plugin-tailwindcss": "^0.5.12",
-    "puppeteer": "^22.5.0",
-    "rimraf": "^5.0.5",
-    "tailwindcss": "^3.4.1",
+    "prettier-plugin-tailwindcss": "^0.6.5",
+    "puppeteer": "^22.13.0",
+    "rimraf": "^6.0.1",
+    "tailwind-scrollbar": "^3.1.0",
+    "tailwindcss": "^3.4.6",
     "tw-elements": "2.0.0",
     "typeit": "^8.8.3",
     "vendor-copy": "^3.0.1"
@@ -55,8 +56,8 @@
   "vendorCopy": [],
   "devVendorCopy": [
     {
-      "from": "node_modules/mermaid/dist",
-      "to": "assets/lib/mermaid"
+      "from": "node_modules/mermaid/dist/mermaid.min.js",
+      "to": "assets/lib/mermaid/mermaid.min.js"
     },
     {
       "from": "node_modules/chart.js/dist/chart.umd.js",
@@ -108,10 +109,10 @@
     }
   ],
   "dependencies": {
-    "@headlessui/react": "^1.7.18",
-    "@heroicons/react": "^2.1.1",
+    "@headlessui/react": "^2.1.2",
+    "@heroicons/react": "^2.1.5",
     "@iamtraction/google-translate": "^2.0.1",
     "@tailwindcss/forms": "^0.5.7",
-    "commander": "^12.0.0"
+    "commander": "^12.1.0"
   }
 }

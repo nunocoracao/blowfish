@@ -2,7 +2,7 @@
                 title: "jamiemoxon.tech"
                 tags: [Personal site]
                 externalUrl: "https://jamiemoxon.tech"
-                date: 9951-08-08
+                weight: 461
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

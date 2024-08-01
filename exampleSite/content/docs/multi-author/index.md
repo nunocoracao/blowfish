@@ -1,6 +1,6 @@
 ---
 title: "Multiple Authors"
-date: 2020-08-10
+weight: 8
 draft: false
 description: "Configure multiple authors for your articles."
 slug: "multi-author"

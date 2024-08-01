@@ -1,6 +1,6 @@
 ---
 title: "Hosting & Deployment"
-date: 2020-08-07
+weight: 14
 draft: false
 description: "Learn how to deploy a Blowfish site."
 slug: "hosting-deployment"

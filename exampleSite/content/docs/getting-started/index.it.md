@@ -1,21 +1,21 @@
 ---
-title: "Getting Started"
-date: 2020-08-15
+title: "Per iniziare"
+weight: 3
 draft: false
-description: "All the front matter variables available in Blowfish."
-slug: "getting-started"
-tags: ["installation", "docs"]
-series: ["Documentation"]
+description: "Tutte le variabili del front matter sono disponibili in Blowfish."
+slug: "per-iniziare"
+tags: ["installazione", "documenti"]
+series: ["Documentazione"]
 series_order: 3
 ---
 
 {{< alert >}}
-This section assumes you have already [installed the Blowfish theme]({{< ref "docs/installation" >}}).
+Questa sezione presuppone che si sia già [installato il tema Blowfish]({{< ref "docs/installation" >}}).
 {{< /alert >}}
 
 </br>
 {{< alert "fire" >}}
-We just launched a CLI tool to help you get started with Blowfish. It will help you with installation and configuration. Install the CLI tool globally using:
+Abbiamo appena lanciato uno strumento CLI per aiutarvi a iniziare con Blowfish. Vi aiuterà con l'installazione e la configurazione. Installate lo strumento CLI a livello globale utilizzando:
 ```bash
 npx blowfish-tools
 ```
@@ -26,10 +26,10 @@ The config files that ship with Blowfish contain all of the possible settings th
 
 ## Basic configuration
 
-Before creating any content, there are a few things you should set for a new installation. Starting in the `config.toml` file, set the `baseURL` and `languageCode` parameters. The `languageCode` should be set to the main language that you will be using to author your content.
+Before creating any content, there are a few things you should set for a new installation. Starting in the `hugo.toml` file, set the `baseURL` and `languageCode` parameters. The `languageCode` should be set to the main language that you will be using to author your content.
 
 ```toml
-# config/_default/config.toml
+# config/_default/hugo.toml
 
 baseURL = "https://your_domain.com/"
 languageCode = "en"
@@ -40,7 +40,7 @@ The next step is to configure the language settings. Although Blowfish supports 
 Locate the `languages.en.toml` file in the config folder. If your main language is English you can use this file as is. Otherwise, rename it so that it includes the correct language code in the filename. For example, for French, rename the file to `languages.fr.toml`.
 
 {{< alert >}}
-Note that the language code in the language config filename should match the `languageCode` setting in `config.toml`.
+Note that the language code in the language config filename should match the `languageCode` setting in `hugo.toml`.
 {{< /alert >}}
 
 ```toml

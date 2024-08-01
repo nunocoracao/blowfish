@@ -2,7 +2,7 @@
                 title: "jam.dsg.li"
                 tags: [組織サイト]
                 externalUrl: "https://jam.dsg.li"
-                date: 9982-08-08
+                weight: 161
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

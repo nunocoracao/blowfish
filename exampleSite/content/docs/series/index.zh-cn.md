@@ -1,6 +1,6 @@
 ---
 title: "系列"
-date: 2020-08-09
+weight: 12
 draft: false
 description: "了解如何将文章分组到系列中。"
 slug: "series"

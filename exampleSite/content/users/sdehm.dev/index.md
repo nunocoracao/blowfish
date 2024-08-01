@@ -2,7 +2,7 @@
                 title: "sdehm.dev"
                 tags: [Personal site]
                 externalUrl: "https://sdehm.dev"
-                date: 9980-08-08
+                weight: 181
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

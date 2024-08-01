@@ -1,6 +1,6 @@
 ---
 title: "主页布局"
-date: 2020-08-13
+weight: 5
 draft: false
 description: "在 Blowfish 主题中设置主页布局。"
 slug: "homepage-layout"

@@ -1,6 +1,6 @@
 ---
 title: "安装和配置"
-date: 2020-08-16
+weight: 2
 draft: false
 description: "如何安装 Blowfish 主题。"
 slug: "installation"
@@ -9,7 +9,7 @@ series: ["部署教程"]
 series_order: 2
 ---
 
-如果想快速上有，可以按照标准的 Hugo [快速启动](https://gohugo.io/getting-started/quick-start/) 文档。
+如果想快速上手，可以按照标准的 Hugo [快速启动](https://gohugo.io/getting-started/quick-start/) 文档。
 
 更详细的安装如下，[更新主题](#installing-updates)的教程也可以看此文档。
 
@@ -54,7 +54,7 @@ blowfish-tools new mynewsite
 
 <iframe width="100%" height="350" src="https://www.youtube.com/embed/SgXhGb-7QbU?si=ce44baicuQ6zMeXz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-### 手动安装
+### 无需 CLI 的安装
 
 #### 创建新站点
 
@@ -72,7 +72,7 @@ blowfish-tools new mynewsite
 
 如果你不确定用哪一个，请直接选择 Git 子模块的方式。
 
-##### 使用 Git 子模块安装
+#### 使用 Git 子模块安装
 
 这个方法可以保证主题简单且快速地安装和更新。除了 **Hugo** 和 **Go**，你还需要确保本地机器安装了 **Git**。
 
@@ -86,7 +86,7 @@ git submodule add -b main https://github.com/nunocoracao/blowfish.git themes/blo
 
 然后 [设置主题的配置文件](#set-up-theme-configuration-files)。
 
-##### 使用 Hugo 模板安装
+#### 使用 Hugo 模板安装
 
 这种方法是使用 Hugo 来管理你的主题，Hugo 使用 **Go** 来初始化和管理模块，所以首先需要确保已经安装了`go`。
 
@@ -116,7 +116,7 @@ git submodule add -b main https://github.com/nunocoracao/blowfish.git themes/blo
 4. 使用`hugo server` 命令后，主题将会自动下载。
 5. 然后 [设置主题的配置文件](#set-up-theme-configuration-files).
 
-##### 手动复制文件
+#### 手动复制文件
 
 1. 下载最新的主题源码。
 
@@ -127,7 +127,7 @@ git submodule add -b main https://github.com/nunocoracao/blowfish.git themes/blo
 
 #### 设置主题的配置文件
 
-在你的网站根目录中，删除 Hugo 自动生成的 `config.toml` 文件。从主题中复制 `*.toml` 文件，粘贴到 `config/_default/` 目录中。这将确保你的主题设置准确无误，在此基础上你能够轻松地自定义主题。
+在你的网站根目录中，删除 Hugo 自动生成的 `hugo.toml` 文件。从主题中复制 `*.toml` 文件，粘贴到 `config/_default/` 目录中。这将确保你的主题设置准确无误，在此基础上你能够轻松地自定义主题。
 
 {{< alert >}}
 **注意:** 如果项目中已经存在 `module.toml` 文件，请不要覆盖它！
@@ -142,7 +142,7 @@ git submodule add -b main https://github.com/nunocoracao/blowfish.git themes/blo
 
 ```shell
 config/_default/
-├─ config.toml
+├─ hugo.toml
 ├─ languages.en.toml
 ├─ markup.toml
 ├─ menus.en.toml
@@ -151,7 +151,7 @@ config/_default/
 ```
 
 {{< alert >}}
-**重要:** 如果你没有使用 Hugo 模块安装 Blowfish，那么你必须在 `config.toml` 文件中添加 `theme = "blowfish"`。
+**重要:** 如果你没有使用 Hugo 模块安装 Blowfish，那么你必须在 `hugo.toml` 文件中添加 `theme = "blowfish"`。
 {{< /alert >}}
 
 ### 下一步

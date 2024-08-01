@@ -1,6 +1,6 @@
 ---
 title: "托管和部署"
-date: 2020-08-07
+weight: 14
 draft: false
 description: "了解如何部署 Blowfish 网页。"
 slug: "hosting-deployment"
@@ -9,30 +9,30 @@ series: ["部署教程"]
 series_order: 14
 ---
 
-There are many ways to deploy your Hugo website built with Blowfish. The theme is designed to be flexible in almost any deployment scenario.
+有许多方法可以部署基于 Blowfish 主题的 Hugo 网站。这个主题几乎在任何部署场景中都很灵活。
 
-Blowfish is built using relative URLs throughout the theme. This enables sites to easily be deployed to sub-folders and hosts like GitHub Pages. There's usually no special configuration required for this to work as long as the `baseURL` parameter has been configured in the `config.toml` file.
+Blowfish 主题是通过将目录转换成相对 URL 路径来构建的。这让网站可以轻松地将子文件夹部署到类似 GitHub Pages 的托管服务中。只要在 `config.toml` 文件中配置了 `baseURL` 参数即可，通常不需要其他特殊的配置就能正常工作。
 
-The official Hugo [Hosting and Deployment](https://gohugo.io/hosting-and-deployment/) docs are the best place to learn how to deploy your site. The sections below contain some specific theme configuration details that can help you deploy smoothly with certain providers.
+Hugo 官方[托管与部署](https://gohugo.io/hosting-and-deployment/)文档是了解如何部署网站的最佳方案。下面会介绍详细介绍一些方案，希望能帮助你在以下平台顺利部署。
 
-**Choose your provider:**
+**选择你喜欢的服务商：**
 
 - [GitHub Pages](#github-pages)
 - [Netlify](#netlify)
 - [Render](#render)
 - [Cloudflare Pages](#cloudflare-pages)
-- [Shared hosting, VPS or private web server](#shared-hosting-vps-or-private-web-server)
+- [共享主机，VPS 或者 私有服务器](#共享主机vps-或者-私有服务器)
 
 ---
 
 ## GitHub Pages
 
-GitHub allows hosting on [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages) using Actions. To enable this functionality, enable Pages on your repo and create a new Actions workflow to build and deploy your site.
+GitHub 允许你使用 Actions 在 [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages) 上托管静态网站。如果想要启用此功能，需要你在代码库中启用 Pages 并创建一个新的 Actions 工作流，以此来构建和部署你的网站。
 
-The file needs to be in YAML format, placed within the `.github/workflows/` directory of your GitHub repository and named with a `.yml` extension.
+工作流文件需要是 YAML 格式，放置在 GitHub 仓库的 `.github/workflows/` 目录下，并以 `.yml` 后缀命名即可。
 
 {{< alert >}}
-**Important:** Ensure you set the correct branch name under `branches` and in the deploy step `if` parameter to the source branch used in your project.
+**重要：** 确保你需要部署的分支 `branches` 分支下和 YAML 的部署步骤中 `if` 参数一致，保证部署正确的分支。
 {{< /alert >}}
 
 ```yaml
@@ -74,19 +74,19 @@ jobs:
           publish_dir: ./public
 ```
 
-Push the config file to GitHub and the action should automatically run. It may fail the first time and you'll need to visit the **Settings > Pages** section of your GitHub repo to check the source is correct. It should be set to use the `gh-pages` branch.
+将配置文件推动到 Github，Github 会自动运行工作流。你需要访问 Github 代码库的 **Settings > Pages** 部分，检查 YAML 配置是否正确。它应该被设置为使用 `gh-pages` 分支。
 
 {{< screenshot src="github-pages-source.jpg" alt="Screen capture of GitHub Pages source" >}}
 
-Once the settings are configured, re-run the action and the site should build and deploy correctly. You can consult the actions log to check everything deployed successfully.
+一旦配置完成后，重新运行 Actions 工作流，网站会正确构建和部署，你就可以查看 Actions 的日志来检查是否部署成功。
 
 ## Netlify
 
-To deploy to [Netlify](https://www.netlify.com), create a new continuous deployment site and link it to your source code. The build settings can be left blank in the Netlify UI. You will only need to configure the domain you'll be using.
+想要部署 [Netlify](https://www.netlify.com)，需要创建一个新的 CI 并关联到你的源码。在 Netlify UI 中，构建的设置可以置空，你只需要配置你要绑定的域名。
 
 {{< screenshot src="netlify-build-settings.jpg" alt="Screen capture of Netlify build settings" >}}
 
-Then in the root of your site repository, create a `netlify.toml` file:
+然后在你的代码库根目录下创建一个 `netlify.toml` 文件，具体内容如下：
 
 ```toml
 # netlify.toml
@@ -108,41 +108,41 @@ Then in the root of your site repository, create a `netlify.toml` file:
   HUGO_VERSION = "0.104.1"
 ```
 
-This configuration assumes you are deploying Blowfish as a Hugo module. If you have installed the theme using another method, change the build command to simply `hugo --gc --minify -b $URL`.
+这个配置默认使用的是 Hugo module 的安装方式来加载 Blowfish 主题的。如果你是通过别的方式加载 Blowfish，请将构建命令改为 `hugo --gc --minify -b $URL`。
 
-When you push the config file to your repo, Netlify should automatically deploy your site. You can check the deploy logs in the Netlify UI to check for any errors.
+当你将配置文件推动到你的代码库时，Netlify 会自动触发并部署你的网站。你可以在 Netlify UI 中查看日志，以检查是否报错。
 
 ## Render
 
-Deploying to [Render](https://render.com) is very straightforward and all configuration is via the Render UI.
+部署到 [Render](https://render.com) 非常地简单易懂，所有的配置都可以通过 Render UI 来完成。
 
-Create a new **Static Site** and link it to your project's code repository. Then simply configure the build command to be `hugo --gc --minify` and publish directory to be `public`.
+创建一个 **静态网站** 并关联到你的代码库。然后只需要配置你的构建命令为 `hugo --gc --minify` 和发布目录为 `public` 即可。
 
 {{< screenshot src="render-settings.jpg" alt="Screen capture of Render settings" >}}
 
-The site will automatically build and deploy whenever you push a change to your repo.
+当你更新你的代码库时，[Render](https://render.com) 总会自动构建并重新部署。
 
 ## Cloudflare Pages
 
-Cloudflare offers the [Pages](https://pages.cloudflare.com/) service that can host Hugo blogs. It builds the site from a git repository and then hosts it on Cloudflare's CDN. Follow their [Hugo deployment guide](https://developers.cloudflare.com/pages/framework-guides/deploy-a-hugo-site) to get started.
+Cloudflare 提供了 [Pages](https://pages.cloudflare.com/) 服务来托管 Hugo 站点。只需要从 Git 仓库构建并托管到 Cloudflare 的 CDN 即可。这部分可以参考 [Hugo 部署指南](https://developers.cloudflare.com/pages/framework-guides/deploy-a-hugo-site)。
 
-The Rocket Loader™ feature offered by Cloudflare tries to speed up rendering of web pages with JavaScript, but it breaks the appearance switcher in the theme. It can also cause an annoying light/dark screen flash when browsing your site due to scripts loading in the wrong order.
+Cloudflare 提供的 Rocket Loader™ 可以通过 JavaScript 来加速网页渲染，但是会破坏 Blowfish 主题中的外观切换器，甚至还有可能因为错误的加载顺序导致网站出现或亮或暗的屏幕闪烁。
 
-This problem can be fixed by disabling it:
+可以通过禁用它来解决：
 
-- Go to the [Cloudflare dashboard](https://dash.cloudflare.com)
-- Click on your domain name in the list
-- Click _Optimization_ in the _Speed_ section
-- Scroll down to _Rocket Loader™_ and disable it
+- 点击 [Cloudflare 控制台](https://dash.cloudflare.com)
+- 点击你的域名
+- 点击 _Speed_ 中的 _Optimization_ 选项
+- 滚动到 _Rocket Loader™_ 并禁用它
 
-Hugo sites built with Blowfish still load very quickly, even with this feature disabled.
+即使不需要这个功能，基于 Blowfish 主题的 Hugo 站点本身加载就比较快。
 
-## Shared hosting, VPS or private web server
+## 共享主机，VPS 或者 私有服务器
 
-Using traditional web hosting, or deploying to your own web server, is as simple as building your Hugo site and transferring the files to your host.
+不论你是使用传统的网站托管，或是部署到你自己的服务器中，这和构建 Hugo 网站并传输文件到你的服务一样简单。
 
-Make sure that the `baseURL` parameter in `config.toml` is set to the full URL to the root of your website (including any sub domains or sub-folders).
+确保 `config.toml` 文件中的 `baseURL` 参数是你的网站根目录的完整 URL（包括任何子域名或子文件夹）。
 
-Then build your site using `hugo` and copy the contents of the output directory to the root of your web server and you will be ready to go. By default, the output directory is named `public`.
+然后使用 `hugo` 构建你的网站，并将输出目录复制到你的服务器根目录，至此你已经部署完毕了。需要注意的是，默认情况下构建好的网站目录是 `public`。
 
-_If you need a hosting provider, check out [Vultr](https://www.vultr.com/?ref=8957394-8H) or [DigitalOcean](https://m.do.co/c/36841235e565). Signing up using these affiliate links will give you up to $100 in free credit so you can try the service._
+_如果你需要一个托管提供商，你可以尝试 [Vultr](https://www.vultr.com/?ref=8957394-8H) 或者 [DigitalOcean](https://m.do.co/c/36841235e565)。注册这些产品默认会给你100美元的免费额度，以便你托管服务。_

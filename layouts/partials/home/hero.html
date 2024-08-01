@@ -48,7 +48,7 @@
                     </h1>
                     {{ with .Site.Author.headline }}
                     <h2 class="mt-0 mb-0 text-xl text-neutral-300">
-                        {{ . | markdownify | emojify }}
+                        {{ . | markdownify }}
                     </h2>
                     {{ end }}
                     <div class="mt-3 mb-10 text-2xl">
@@ -64,7 +64,7 @@
                         </div>
                         {{ end }}
                     </div>
-                    <section class="prose prose-invert">{{ .Content | emojify }}</section>
+                    <section class="prose prose-invert">{{ .Content }}</section>
                 </div>
             </div>
         </div>

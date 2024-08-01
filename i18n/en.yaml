@@ -66,6 +66,7 @@ sharing:
   pinterest: "Pin on Pinterest"
   reddit: "Submit to Reddit"
   twitter: "Tweet on Twitter"
+  bluesky: "Post on Bluesky"
 
 shortcode:
   recent_articles: "Recent"

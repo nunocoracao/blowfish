@@ -14,7 +14,7 @@ description: "このページは Hugo の Blowfish テーマを利用して構�
       id="switch-layout-button"
       class="px-4 !text-neutral !no-underline rounded-md bg-primary-600 hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700"
     >
-      レイアウトを変更する &orarr;
+      レイアウトを変更する&orarr;
     </button>
   </span>
 </div>

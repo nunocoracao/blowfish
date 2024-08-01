@@ -1,0 +1,74 @@
+global:
+  language: "GL"
+
+article:
+  anchor_label: "Áncora"
+  date: "{{ .Date }}"
+  date_updated: "Actualizado: {{ .Date }}"
+  draft: "Borrador"
+  edit_title: "Editar contido"
+  reading_time:
+    one: "{{ .Count }} min"
+    other: "{{ .Count }} mins"
+  reading_time_title: "Tempo de lectura"
+  table_of_contents: "Táboa de contido"
+  word_count:
+    one: "{{ .Count }} palabra"
+    other: "{{ .Count }} palabras"
+  views:
+    one: "{{ .Count }} visualización"
+    other: "{{ .Count }} visualizacións"
+  likes:
+    one: "{{ .Count }} gústame"
+    other: "{{ .Count }} gústame"
+  part_of_series: "Este artigo é parte dunha serie."
+  part: "Parte"
+  this_article: "Este artigo"
+  related_articles: "Relacionados"
+  zen_mode_title:
+    enable: "Activar modo zen"
+    disable: "Desactivar modo zen"
+
+author:
+  byline_title: "Autor"
+
+code:
+  copy: "Copiar"
+  copied: "Copiado"
+
+error:
+  404_title: "Páxina non atopada :confused:"
+  404_error: "Error 404"
+  404_description: "Parece que a páxina que solicitaches non existe."
+
+footer:
+  dark_appearance: "Cambiar a modo oscuro"
+  light_appearance: "Cambiar a modo claro"
+  powered_by: "Desenvolvida con {{ .Hugo }} &amp; {{ .Theme }}"
+
+list:
+  externalurl_title: "Ligazón a páxina externa"
+  no_articles: "Ainda non hai artigos para listar aquí."
+
+nav:
+  scroll_to_top_title: "Ir arriba"
+  skip_to_main: "Ir ó contido"
+
+search:
+  open_button_title: "Procurar (/)"
+  close_button_title: "Pechar (Esc)"
+  input_placeholder: "Procurar"
+
+sharing:
+  email: "Enviar vía email"
+  facebook: "Compartir en Facebook"
+  linkedin: "Compartir en LinkedIn"
+  pinterest: "Pinear en Pinterest"
+  reddit: "Publicar en Reddit"
+  twitter: "Tuitear en Twitter"
+
+shortcode:
+  recent_articles: "Recente"
+
+recent:
+  show_more: "Mostrar máis"

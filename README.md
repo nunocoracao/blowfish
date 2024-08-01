@@ -37,10 +37,12 @@ Blowfish is designed to be a powerful, lightweight theme for [Hugo](https://gohu
 - Multiple homepage layouts
 - Multiple authors
 - Series of articles
+- Date and weight based article sorting
 - Zen mode for article reading
 - Flexible with any content types, taxonomies and menus
 - Header and footer menus
 - Nested menus & sub-navigation menu
+- Scrollable table of contents
 - Multilingual content support including support for RTL languages
 - Ability to link to posts on third-party websites
 - Support for several shortcodes like Gallery, Timeline, GitHub cards, and Carousels

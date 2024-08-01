@@ -1,30 +1,30 @@
 ---
-title: "Diagrams and Flowcharts"
+title: "ダイアグラムとフローチャート"
 date: 2019-03-06
-description: "Guide to Mermaid usage in Blowfish"
-summary: "It's easy to add diagrams and flowcharts to articles using Mermaid."
+description: "Blowfish での Mermaid の利用方法についてのガイド"
+summary: "Mermaid を利用して簡単に図やフローチャートを記事に追加する方法。"
 tags: ["mermaid", "sample", "diagram", "shortcodes"]
 type: 'sample'
 ---
 
-Mermaid diagrams are supported in Blowfish using the `mermaid` shortcode. Simply wrap the diagram markup within the shortcode. Blowfish automatically themes Mermaid diagrams to match the configured `colorScheme` parameter.
+Mermaid 図は `mermaid` ショートコードを使うことで Blowfish でサポートされています。ダイヤグラムのマークアップをショートコードを囲むだけです。 Blowfish は設定された `colorScheme` パラメータに合うように自動T系に Mermaid ダイヤグラムをテーマ化します。
 
-Refer to the [mermaid shortcode]({{< ref "docs/shortcodes#mermaid" >}}) docs for more details.
+[mermaid ショートコード]({{< ref "docs/shortcodes#mermaid" >}})資料にてより詳細を参照できます。
 
-The examples below are a small selection taken from the [official Mermaid docs](https://mermaid-js.github.io/mermaid/). You can also [view the page source](https://raw.githubusercontent.com/nunocoracao/blowfish/main/exampleSite/content/samples/diagrams-flowcharts/index.md) on GitHub to see the markup.
+以下の例は [Mermaid 公式資料](https://mermaid-js.github.io/mermaid/)から抜粋した一分です。GitHub の[ページソース](https://raw.githubusercontent.com/nunocoracao/blowfish/main/exampleSite/content/samples/diagrams-flowcharts/index.md)でマークアップを確認することができます。
 
-## Flowchart
+## フローチャート
 
 <div style="background-color:white; padding: 20px">
 {{< mermaid >}}
 graph TD
-A[Christmas] -->|Get money| B(Go shopping)
-B --> C{Let me think}
-B --> G[/Another/]
-C ==>|One| D[Laptop]
-C -->|Two| E[iPhone]
-C -->|Three| F[Car]
-subgraph Section
+A[クリスマス] -->|収入| B(買い物にいく)
+B --> C{考える}
+B --> G[/他/]
+C ==>|1| D[ノートパソコン]
+C -->|2| E[iPhone]
+C -->|3| F[車]
+subgraph セクション
 C
 D
 E
@@ -34,29 +34,29 @@ end
 {{< /mermaid >}}
 </div>
 
-## Sequence diagram
+## 順序図
 
 <div style="background-color:white; padding: 20px">
 {{< mermaid >}}
 sequenceDiagram
 autonumber
-par Action 1
-Alice->>John: Hello John, how are you?
-and Action 2
-Alice->>Bob: Hello Bob, how are you?
+par 行動 1
+アリス->>ジョン: こんにちはジョン、お元気ですか?
+and 行動 2
+アリス->>ボブ: こんにちはボブ、お元気ですか?
 end
-Alice->>+John: Hello John, how are you?
-Alice->>+John: John, can you hear me?
-John-->>-Alice: Hi Alice, I can hear you!
-Note right of John: John is perceptive
-John-->>-Alice: I feel great!
-loop Every minute
-John-->Alice: Great!
+アリス->>+ジョン: こんにちはジョン、お元気ですか?
+アリス->>+ジョン: ジョン、聞こえていますか?
+ジョン-->>-アリス: こんにちはアリス、聞こえています!
+Note right of ジョン: ジョンは察しがよい
+ジョン-->>-アリス: とても気分がいいです!
+loop 毎分
+ジョン-->アリス: すばらしい!
 end
 {{< /mermaid >}}
 </div>
 
-## Class diagram
+## クラス図
 
 <div style="background-color:white; padding: 20px">
 {{< mermaid >}}
@@ -84,7 +84,7 @@ class Zebra{
 {{< /mermaid >}}
 </div>
 
-## Entity relationship diagram
+## 主従関係図
 
 <div style="background-color:white; padding: 20px">
 {{< mermaid >}}

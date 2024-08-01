@@ -13,7 +13,7 @@
                 {{ partial "icon.html" .Pre }}
             </span>
             {{ end }}
-            {{ .Name | markdownify | emojify }}
+            {{ .Name | markdownify }}
           </a>
         </li>
         {{ end }}
@@ -27,11 +27,11 @@
     {{ if .Site.Params.footer.showCopyright | default true }}
     <p class="text-sm text-neutral-500 dark:text-neutral-400">
       {{- with replace .Site.Params.copyright "{ year }" now.Year  }}
-      {{ . | emojify | markdownify }}
+      {{ . | markdownify }}
       {{- else }}
       &copy;
       {{ now.Format "2006" }}
-      {{ .Site.Author.name | markdownify | emojify }}
+      {{ .Site.Author.name | markdownify }}
       {{- end }}
     </p>
     {{ end }}
