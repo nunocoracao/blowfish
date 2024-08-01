@@ -75,25 +75,25 @@ Blowfish 有 [全面的文档](https://blowfish.page/zh-cn/docs/)，覆盖主题
 
 Blowfish 支持多种安装方式，既能作为 git 子模块、Hugo 模块，也可完全手动安装。
 
-每种方法的详细说明都可以在 [安装](https://blowfish.page/zh-cn/docs/installation) 文档中找到。为了获得最简单的安装体验，请查阅文档。如果您使用的是 git，请阅读下面使用子模块的快速开始指南；如果您能安装 Hugo 主题，请阅读下面 Hugo 模块的快速开始指南。
+每种方法的详细说明都可以在 [安装](https://blowfish.page/zh-cn/docs/installation) 文档中找到。为了获得最简单的安装体验，请查阅文档。如果你使用的是 git，请阅读下面使用子模块的快速开始指南；如果你能安装 Hugo 主题，请阅读下面 Hugo 模块的快速开始指南。
 
 ### 使用 Blowfish Tools 快速开始
 
 > **注：** 请确保你已安装 **Node.js**、 **Git**、 **Go** 和 **Hugo** ，且已经创建了一个 Hugo 工程。
 
-我们最新推出了一个新的 CLI 工具，帮助您开始使用 Blowfish。它将为您创建一个新的 Hugo 项目、安装主题并设置主题配置文件。它仍处于测试阶段，因此请 [报告您发现的任何问题](https://github.com/nunocoracao/blowfish-tools)。
+我们最新推出了一个新的 CLI 工具，帮助你开始使用 Blowfish。它将为你创建一个新的 Hugo 项目、安装主题并设置主题配置文件。它仍处于测试阶段，因此请 [报告你发现的任何问题](https://github.com/nunocoracao/blowfish-tools)。
 
 使用 npm（或其他软件包管理器）全局安装 CLI 工具：
 ```shell
 npm i -g blowfish-tools
 ```
 
-然后运行 "blowfish-tools "命令，开启一个交互式进程，引导您完成创建和配置。
+然后运行 "blowfish-tools "命令，开启一个交互式进程，引导你完成创建和配置。
 ```shell
 blowfish-tools
 ```
 
-您也可以运行命令 `blowfish-tools new` 来创建一个新的 Hugo 项目，并一次性安装主题。更多信息请查看 CLI 帮助。
+你也可以运行命令 `blowfish-tools new` 来创建一个新的 Hugo 项目，并一次性安装主题。更多信息请查看 CLI 帮助。
 ```shell
 blowfish-tools new mynewsite
 ```
