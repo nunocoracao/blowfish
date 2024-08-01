@@ -116,7 +116,7 @@ blowfish-tools new mynewsite
 
 3. 在你网站的根目录中删除由 Hugo 自动生成的 `config.toml`文件，并把主题文件夹中的`*.toml`配置文件复制到你的 `config/_default/`文件夹中
 
-你可在 Hugo 缓存目录中找到主题配置文件，或者也可以从[这里](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/nunocoracao/blowfish/tree/main/config/_default)下载一份。
+   你可在 Hugo 缓存目录中找到主题配置文件，或者也可以从[这里](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/nunocoracao/blowfish/tree/main/config/_default)下载一份。
 
 4. 按照[入门指南](https://blowfish.page/zh-cn/docs/getting-started/)来配置你的网站
 
