@@ -14,7 +14,7 @@ body.zen-mode-enable {
   }
 }
 
-/*! tailwindcss v3.4.6 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v3.4.7 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -5337,6 +5337,10 @@ pre {
 
   .lg\:left-0 {
     left:0px
+  }
+
+  .lg\:top-10 {
+    top:2.5rem
   }
 
   .lg\:top-\[140px\] {
