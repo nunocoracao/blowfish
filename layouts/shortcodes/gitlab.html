@@ -1,7 +1,7 @@
 {{ $id := delimit (slice "gitlab" (partial "functions/uid.html" .)) "-" }}
 {{- $gitlabURL := print (default "https://gitlab.com/" (.Get "baseURL")) "api/v4/projects/" (.Get "projectID") -}}
 
-{{- $gitLabData := getJSON ($gitlabURL) -}}
+{{- $gitLabData := resources.GetRemote $gitlabURL | transform.Unmarshal -}}
 {{- with $gitLabData -}}
 
 <a id="{{ $id }}" target="_blank" href="{{ .web_url }}" class="cursor-pointer">
