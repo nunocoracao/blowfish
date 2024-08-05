@@ -16,6 +16,11 @@ body button {
   @apply h-[1em] w-[1em];
 }
 
+/* Scale SVG logos to appropriate size */
+.logo svg {
+  @apply h-[5rem] w-[5rem];
+}
+
 /* Search */
 #search-query::-webkit-search-cancel-button,
 #search-query::-webkit-search-decoration,
