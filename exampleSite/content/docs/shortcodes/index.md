@@ -297,8 +297,6 @@ Blowfish also supports automatic conversion of images included using standard Ma
 | `server`  | [String] server URL like `https://v8.next.forgejo.org`|
 <!-- prettier-ignore-end -->
 
-A default value for `server` may be provided in `params.toml` as `.Site.Params.forgejoDefaultServer`.
-
 **Example 1:**
 
 ```md
@@ -377,8 +375,6 @@ In order to add images to the gallery, use `img` tags for each image and add `cl
 | `repo`    | [String] gitea repo in the format of `username/repo`  |
 | `server`  | [String] server URL like `https://git.fsfe.org`       |
 <!-- prettier-ignore-end -->
-
-A default value for `server` may be provided in `params.toml` as `.Site.Params.giteaDefaultServer`.
 
 **Example 1:**
 
