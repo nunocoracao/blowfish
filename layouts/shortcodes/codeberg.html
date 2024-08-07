@@ -34,14 +34,14 @@
       <span class="text-md mr-1 text-neutral-800 dark:text-neutral">
         {{ partial "icon.html" "star" }}
       </span>
-      <div id="{{ $id }}-stargazers" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+      <div id="{{ $id }}-stars_count" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
         {{ .stars_count }}
       </div>
 
       <span class="text-md mr-1 text-neutral-800 dark:text-neutral">
         {{ partial "icon.html" "fork" }}
       </span>
-      <div id="{{ $id }}-forks" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+      <div id="{{ $id }}-forks_count" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
         {{ .forks_count }}
       </div>
 
@@ -58,7 +58,7 @@
       .then(data => {
         document.getElementById('{{ $id }}-full_name').innerHTML = data.full_name;
         document.getElementById('{{ $id }}-description').innerHTML = data.description;
-        document.getElementById('{{ $id }}-stars_count').innerHTML = data.starts_count;
+        document.getElementById('{{ $id }}-stars_count').innerHTML = data.stars_count;
         document.getElementById('{{ $id }}-forks_count').innerHTML = data.forks_count;
       })
       .catch(error => console.error(error))
