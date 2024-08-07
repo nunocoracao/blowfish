@@ -41,7 +41,7 @@
     style="background-image:url({{ .RelPermalink }});">
     {{ end }}
 {{ else }}
-    {{ with .Resize "1200x" }}
+    {{ with .Resize (print (default "1200" $.Site.Params.backgroundImageWidth) "x") }}
     <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
     style="background-image:url({{ .RelPermalink }});">
     {{ end }}
