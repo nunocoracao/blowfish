@@ -48,7 +48,7 @@
         </figure>
         {{ end }}
     {{ else }}
-        {{ with .Resize "1200x" }}
+        {{ with .Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
         <figure>
             <img class="w-full rounded-lg single_hero_round nozoom" alt="{{ $alt }}" width="{{ .Width }}" height="{{ .Height }}" src="{{ .RelPermalink }}">
             {{ if $caption }}
