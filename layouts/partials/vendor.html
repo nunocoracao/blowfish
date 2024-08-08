@@ -1,5 +1,5 @@
 {{/* jQuery */}}
-{{ $jqueryLib := resources.Get "lib/jquery/jquery.slim.min.js" }}
+{{ $jqueryLib := resources.Get "lib/jquery/jquery.slim.min.js" | resources.Fingerprint "sha512" }}
 <script src="{{ $jqueryLib.RelPermalink }}" integrity="{{ $jqueryLib.Data.Integrity }}"></script>
 
 {{/* Mermaid */}}
@@ -46,7 +46,7 @@
 
 {{/* TypeIt */}}
 {{ if .Page.HasShortcode "typeit" }}
-{{ $typeitLib := resources.Get "lib/typeit/typeit.umd.js" }}
+{{ $typeitLib := resources.Get "lib/typeit/typeit.umd.js" | resources.Fingerprint "sha512" }}
 <script defer src="{{ $typeitLib.RelPermalink }}" integrity="{{ $typeitLib.Data.Integrity }}"></script>
 {{ end }}
 
@@ -68,7 +68,7 @@
 
 {{/* youtubeLite */}}
 {{ if .Page.HasShortcode "youtubeLite" }}
-{{ $youtubeLiteJS := resources.Get "lib/lite-youtube-embed/lite-yt-embed.js" }}
+{{ $youtubeLiteJS := resources.Get "lib/lite-youtube-embed/lite-yt-embed.js" | resources.Fingerprint "sha512" }}
 {{ $youtubeLiteCSS := resources.Get "lib/lite-youtube-embed/lite-yt-embed.css" }}
 <link rel="stylesheet" href="{{ $youtubeLiteCSS.RelPermalink }}" integrity="{{ $youtubeLiteCSS.Data.Integrity }}"/>
 <script src="{{ $youtubeLiteJS.RelPermalink }}" integrity="{{ $youtubeLiteJS.Data.Integrity }}"></script>
