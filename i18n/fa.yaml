@@ -1,0 +1,75 @@
+global:
+  language: "FA"
+
+article:
+  anchor_label: "لنگر"
+  date: "{{ .Date }}"
+  date_updated: "آخرین تغییر: {{ .Date }}"
+  draft: "پیش‌نویس"
+  edit_title: "ویرایش محتوا"
+  reading_time:
+    one: "{{ .Count }} دقیقه"
+    other: "{{ .Count }} دقیقه"
+  reading_time_title: "زمان مطالعه"
+  table_of_contents: "فهرست مطالب"
+  word_count:
+    one: "{{ .Count }} کلمه"
+    other: "{{ .Count }} کلمه"
+  views:
+    one: "{{ .Count }} بازدید"
+    other: "{{ .Count }} بازدید"
+  likes:
+    one: "{{ .Count }} لایک"
+    other: "{{ .Count }} لایک"
+  part_of_series: "این مقاله بخشی از یک مجموعه مقالات است."
+  part: "بخش"
+  this_article: "همین مقاله"
+  related_articles: "مقاله‌های مرتبط"
+  zen_mode_title:
+    enable: "فعال کردن حالت تمام متن"
+    disable: "غیر فعال کردن حالت تمام متن"
+
+author:
+  byline_title: "نویسنده"
+
+code:
+  copy: "کپی کردن"
+  copied: "کپی شد"
+
+error:
+  404_title: "صفحه مورد نظر یافت نشد :confused:"
+  404_error: "ارور 404"
+  404_description: "به نظر می‌رسد صفحه‌ای که درخواست کرده‌اید وجود ندارد."
+
+footer:
+  dark_appearance: "حالت تاریک"
+  light_appearance: "حالت روشن"
+  powered_by: "قدرت گرفته از {{ .Hugo }} و {{ .Theme }}"
+
+list:
+  externalurl_title: "لینک به سایت خارجی"
+  no_articles: "هیچ مقاله‌ای برای نمایش وجود ندارد."
+
+nav:
+  scroll_to_top_title: "بازگشت به بالا"
+  skip_to_main: "رفتن به محتوای اصلی"
+
+search:
+  open_button_title: "جستجو (/)"
+  close_button_title: "بستن (Esc)"
+  input_placeholder: "جستجو"
+
+sharing:
+  email: "ارسال ایمیل"
+  facebook: "اشتراک گذاری در فیسبوک"
+  linkedin: "اشتراک گذاری در لینکداین"
+  pinterest: "اشتراک گذاری در پینترست"
+  reddit: "اشتراک گذاری در ردیت"
+  twitter: "اشتراک گذاری در توییتر"
+  bluesky: "اشتراک گذاری در بلواسکای"
+
+shortcode:
+  recent_articles: "مقاله‌های اخیر"
+
+recent:
+  show_more: "نمایش بیشتر"
