@@ -28,7 +28,6 @@
         {{ .Content }}
       </div>
     </section>
-  {{ end }}
   <script>
     var oid = "views_taxonomy_{{ .Data.Plural }}"
     var oid_likes = "likes_taxonomy_{{ .Data.Plural }}"
@@ -36,7 +35,7 @@
   {{ $jsPage := resources.Get "js/page.js" }}
   {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}
   <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}"></script>
-  
+  {{ end }}
 
   {{ if .Site.Params.taxonomy.cardView }}
 

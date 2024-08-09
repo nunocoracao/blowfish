@@ -26,7 +26,6 @@
     <div class="min-w-0 min-h-0 max-w-prose">
       {{ .Content }}
     </div>
-    {{ end }}
     <script>
       var oid = "views_term_{{ .Data.Term }}"
       var oid_likes = "likes_term_{{ .Data.Term }}"
@@ -34,6 +33,7 @@
     {{ $jsPage := resources.Get "js/page.js" }}
     {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}
     <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}"></script>
+    {{ end }}
   </section>
 
 
