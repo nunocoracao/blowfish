@@ -43,7 +43,7 @@
     "icon": "bluesky",
     "title": "sharing.bluesky",
     "url": "https://bsky.app/intent/compose?text=%[2]s+%[1]s"
-  }.
+  },
   "mastodon": {
     "icon": "mastodon",
     "title": "sharing.mastodon",
