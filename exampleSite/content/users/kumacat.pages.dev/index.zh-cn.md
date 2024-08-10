@@ -1,8 +1,8 @@
 ---
-                title: "micheledinelli.github.io"
-                tags: [Sito personale, Sito portfolio, Accademia]
-                externalUrl: "https://micheledinelli.github.io"
-                weight: 871
+                title: "kumacat.pages.dev"
+                tags: [个人网站, 博客]
+                externalUrl: "https://kumacat.pages.dev"
+                weight: 881
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

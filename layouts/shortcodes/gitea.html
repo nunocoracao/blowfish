@@ -1,6 +1,6 @@
 {{ $id := delimit (slice "gitea" (partial "functions/uid.html" .)) "-" }}
 {{- $giteaURL := print (.Get "server" | default .Site.Params.giteaDefaultServer) "/api/v1/repos/" (.Get "repo") -}}
-{{- $giteaData := getJSON ($giteaURL) -}}
+{{- $giteaData := resources.GetRemote $giteaURL | transform.Unmarshal -}}
 {{- $giteaColors := .Site.Data.giteaColors -}}
 {{- with $giteaData -}}
 

@@ -1,8 +1,8 @@
 ---
                 title: "micheledinelli.github.io"
-                tags: [博客, 个人网站, 学术界]
+                tags: [个人网站, 作品集网站, 学术界]
                 externalUrl: "https://micheledinelli.github.io"
-                weight: 777
+                weight: 871
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
@@ -10,6 +10,5 @@
                 showLikes: false
                 showViews: false
                 layoutBackgroundHeaderSpace: false
-                                
----
+                ---
 

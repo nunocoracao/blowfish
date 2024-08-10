@@ -1,8 +1,8 @@
 ---
                 title: "micheledinelli.github.io"
-                tags: [Blog,Personal Site,Academia]
+                tags: [Personal Site,Portfolio Site,Academia]
                 externalUrl: "https://micheledinelli.github.io"
-                weight: 777
+                weight: 871
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
@@ -10,6 +10,4 @@
                 showLikes: false
                 showViews: false
                 layoutBackgroundHeaderSpace: false
-                
----
-
+                ---

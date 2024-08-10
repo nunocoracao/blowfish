@@ -12,11 +12,14 @@ autoSwitchAppearance = true
 enableSearch = true
 enableCodeCopy = true
 
+replyByEmail = false
+
 mainSections = ["docs"]
 # robots = ""
 
 disableImageOptimization = false
 disableTextInHeader = false
+# backgroundImageWidth = 1200
 
 defaultBackgroundImage = "/img/background.svg"
 defaultFeaturedImage = "/img/featured.svg"
