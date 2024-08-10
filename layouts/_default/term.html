@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-{{ .Scratch.Set "scope" "list" }}
+{{ .Scratch.Set "scope" "term" }}
 {{ if .Site.Params.term.showHero | default false }}
 {{ $heroStyle := print "partials/hero/" .Site.Params.term.heroStyle ".html" }}
 {{ if templates.Exists $heroStyle }}
@@ -39,9 +39,9 @@
 
   {{ if gt .Pages 0 }}
 
-  {{ $cardView := .Params.cardView | default (.Site.Params.list.cardView | default false) }}
-  {{ $cardViewScreenWidth := .Site.Params.list.cardViewScreenWidth | default false }}
-  {{ $groupByYear := .Params.groupByYear | default ($.Site.Params.list.groupByYear | default false) }}
+  {{ $cardView := .Params.cardView | default (.Site.Params.term.cardView | default false) }}
+  {{ $cardViewScreenWidth := .Site.Params.term.cardViewScreenWidth | default false }}
+  {{ $groupByYear := .Params.groupByYear | default ($.Site.Params.term.groupByYear | default false) }}
 
   {{ if not $cardView }}
 
@@ -121,7 +121,7 @@
   {{ else }}
   <section class="mt-10 prose dark:prose-invert">
     <p class="py-8 border-t">
-      <em>{{ i18n "list.no_articles" | emojify }}</em>
+      <em>{{ i18n "term.no_articles" | emojify }}</em>
     </p>
   </section>
   {{ end }}
