@@ -12,6 +12,8 @@ autoSwitchAppearance = true
 enableSearch = true
 enableCodeCopy = false
 
+replyByEmail = false
+
 # mainSections = ["section1", "section2"]
 # robots = ""
 
