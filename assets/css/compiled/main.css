@@ -3163,6 +3163,13 @@ body button {
   width:1em
 }
 
+/* Scale SVG logos to appropriate size */
+
+.logo svg {
+  height:5rem;
+  width:5rem
+}
+
 /* Search */
 
 #search-query::-webkit-search-cancel-button,
