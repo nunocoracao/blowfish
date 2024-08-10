@@ -7,3 +7,6 @@
 {{ with site.Params.umamiAnalytics.websiteid }}
 {{ partial "analytics/umami.html" }}
 {{ end }}
+{{ with site.Params.selineAnalytics.token }}
+{{ partial "analytics/seline.html" }}
+{{ end }}

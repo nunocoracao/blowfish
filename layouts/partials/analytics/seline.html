@@ -1,0 +1,18 @@
+<script async src="https://cdn.seline.so/seline.js" data-token="{{ site.Params.selineAnalytics.token }}" data-id="seline-script"></script>
+
+{{ if .Site.Params.selineAnalytics.enableTrackEvent | default true }}
+<script type="text/javascript">
+    document.querySelector('script[data-id="seline-script"]')
+        .addEventListener('load', function () {
+            const type = document.head.querySelector('meta[property = "og:type"]').getAttribute('content');
+            let title = document.head.querySelector('meta[property = "og:title"]').getAttribute('content');
+            let url = document.head.querySelector('meta[property = "og:url"]').getAttribute('content');
+
+            seline.track("user:" + type + ':' + title, {
+                type: type,
+                title: title,
+                url: url
+            });
+        });
+</script>
+{{ end }}

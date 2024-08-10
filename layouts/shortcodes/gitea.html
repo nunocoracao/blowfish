@@ -1,8 +1,8 @@
-{{ $id := delimit (slice "github" (partial "functions/uid.html" .)) "-" }}
-{{- $githubURL := print "https://api.github.com/repos/" (.Get "repo") -}}
-{{- $githubData := resources.GetRemote $githubURL | transform.Unmarshal -}}
-{{- $githubColors := .Site.Data.githubColors -}}
-{{- with $githubData -}}
+{{ $id := delimit (slice "gitea" (partial "functions/uid.html" .)) "-" }}
+{{- $giteaURL := print (.Get "server" | default .Site.Params.giteaDefaultServer) "/api/v1/repos/" (.Get "repo") -}}
+{{- $giteaData := getJSON ($giteaURL) -}}
+{{- $giteaColors := .Site.Data.giteaColors -}}
+{{- with $giteaData -}}
 
 <a id="{{ $id }}" target="_blank" href="{{ .html_url }}" class="cursor-pointer">
   <div
@@ -10,7 +10,7 @@
 
     <div class="flex items-center">
       <span class="text-2xl text-neutral-800 dark:text-neutral" style="margin-right:10px;">
-        {{ partial "icon.html" "github" }}
+        {{ partial "icon.html" "gitea" }}
       </span>
       <div
         id="{{ $id }}-full_name"
@@ -26,7 +26,7 @@
     <div class="m-0 mt-2 flex items-center">
 
       <span class="mr-1 inline-block h-3 w-3 rounded-full"
-        style="background-color: {{ if .language }} {{- index $githubColors .language -}} {{ else }} #0077b6 {{ end }}"></span>
+        style="background-color: {{ if .language }} {{- index $giteaColors .language -}} {{ else }} #0077b6 {{ end }}"></span>
       <div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
         {{ if .language }} {{ .language }} {{ else }} null {{ end }}
       </div>
@@ -34,22 +34,22 @@
       <span class="text-md mr-1 text-neutral-800 dark:text-neutral">
         {{ partial "icon.html" "star" }}
       </span>
-      <div id="{{ $id }}-stargazers" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
-        {{ .stargazers_count }}
+      <div id="{{ $id }}-stars_count" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+        {{ .stars_count }}
       </div>
 
       <span class="text-md mr-1 text-neutral-800 dark:text-neutral">
         {{ partial "icon.html" "fork" }}
       </span>
-      <div id="{{ $id }}-forks" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
-        {{ .forks }}
+      <div id="{{ $id }}-forks_count" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+        {{ .forks_count }}
       </div>
 
     </div>
 
   </div>
   <script>
-    fetch({{ $githubURL }}, {
+    fetch({{ $giteaURL }}, {
       headers: new Headers({
         'User-agent': 'Mozilla/4.0 Custom User Agent'
       })
@@ -58,8 +58,8 @@
       .then(data => {
         document.getElementById('{{ $id }}-full_name').innerHTML = data.full_name;
         document.getElementById('{{ $id }}-description').innerHTML = data.description;
-        document.getElementById('{{ $id }}-stargazers').innerHTML = data.stargazers_count;
-        document.getElementById('{{ $id }}-forks').innerHTML = data.forks;
+        document.getElementById('{{ $id }}-stars_count').innerHTML = data.stars_count;
+        document.getElementById('{{ $id }}-forks_count').innerHTML = data.forks_count;
       })
       .catch(error => console.error(error))
   </script>

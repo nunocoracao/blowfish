@@ -46,7 +46,7 @@
         {{- if $authorData -}}
           {{ range $taxonomyname, $taxonomy := $taxonomies }}
             {{ if (eq $taxonomyname $author) }}
-              {{ $taxonomyLink = delimit (slice $baseURL "/authors/" $author) "" }}
+              {{ $taxonomyLink = delimit (slice $baseURL "authors/" $author "/") "" }}
             {{ end }}
           {{ end }}
           {{ partial "author-extra.html" (dict "context" . "data" $authorData "link" $taxonomyLink) }}
@@ -106,7 +106,7 @@
             {{- if $authorData -}}
               {{ range $taxonomyname, $taxonomy := $taxonomies }}
                 {{ if (eq $taxonomyname $author) }}
-                  {{ $taxonomyLink = delimit (slice $baseURL "/authors/" $author) "" }}
+                  {{ $taxonomyLink = delimit (slice $baseURL "authors/" $author "/") "" }}
                 {{ end }}
               {{ end }}
               {{ partial "author-extra.html" (dict "context" . "data" $authorData "link" $taxonomyLink) }}
@@ -135,10 +135,10 @@
         var oid = "views_{{ $path }}"
         var oid_likes = "likes_{{ $path }}"
       </script>
-      {{ end }}
       {{ $jsPage := resources.Get "js/page.js" }}
       {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}
       <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}"></script>
+      {{ end }}
   
     </section>
   <footer class="pt-8 max-w-prose print:hidden">
