@@ -1,5 +1,5 @@
 ---
-title: "Partials"
+title: "局部模板(Partials)"
 weight: 9
 draft: false
 description: "所有 Blowfish 可以配置的 Partials"
