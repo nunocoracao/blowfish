@@ -1,5 +1,5 @@
 ---
-title: "Partials"
+title: "局部模板(Partials)"
 weight: 9
 draft: false
 description: "所有 Blowfish 可以配置的 Partials"
@@ -50,6 +50,11 @@ googleAnalytics = "G-MEASUREMENT_ID"
 如果你想使用自定义域名来获取跟踪脚本， 那么需要提供 `domain` 参数，否则会从 Umami 云服务版的地址 (analytics.umami.is) 获取脚本。
 如果你只想在特别的数个域名中使用 tracker 功能，那么需要提供 `dataDomains` 参数。否则任何一个匹配了 `websiteid` 和 `domain` 参数值的网站，Umami 脚本都会执行。
 
+{{< alert >}}
+**Note:** 开启 Umami 网站分析后, Blowfish 会自动支持 [Umami 事件追踪](https://umami.is/docs/track-events)。如果你不想支持此功能，需要把参数 `enableTrackEvent` 设置为 `false`。
+
+{{< /alert >}}
+
 ```toml
 # config/_default/params.toml
 
@@ -58,6 +63,23 @@ googleAnalytics = "G-MEASUREMENT_ID"
   domain = "llama.yoursite.com"
   dataDomains = "yoursite.com,yoursite2.com"
 ```
+
+### Seline
+
+只需要在 `config/_default/params.toml` 文件提供你的 [Seline token](https://seline.so/docs/install-seline)，就可以快速支持 Seline 站点分析。
+
+{{< alert >}}
+**Note:** 开启 Seline 网站分析后, Blowfish 会自动支持 [Seline 事件追踪](https://seline.so/docs/custom-events)。如果你不想支持此功能，需要把参数 `enableTrackEvent` 设置为 `false`。 
+{{< /alert >}}
+
+```toml
+# config/_default/params.toml
+
+[selineAnalytics]
+  token = "XXXXXX"
+  enableTrackEvent = true
+```
+
 
 ### 提供自定义站点分析
 

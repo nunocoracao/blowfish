@@ -14,7 +14,7 @@ body.zen-mode-enable {
   }
 }
 
-/*! tailwindcss v3.4.6 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v3.4.7 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -3163,6 +3163,13 @@ body button {
   width:1em
 }
 
+/* Scale SVG logos to appropriate size */
+
+.logo svg {
+  height:5rem;
+  width:5rem
+}
+
 /* Search */
 
 #search-query::-webkit-search-cancel-button,
@@ -3344,6 +3351,14 @@ code {
   /* All browsers since IE 5.5+ */
   overflow-wrap: break-word;
   /* Renamed property in CSS3 draft spec */
+}
+
+/* Fix long URLs breaking out of article bounds on mobile */
+
+a {
+  word-break: break-word;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /* -- Chroma Highlight -- */
@@ -5337,6 +5352,10 @@ pre {
 
   .lg\:left-0 {
     left:0px
+  }
+
+  .lg\:top-10 {
+    top:2.5rem
   }
 
   .lg\:top-\[140px\] {

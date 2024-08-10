@@ -16,6 +16,11 @@ body button {
   @apply h-[1em] w-[1em];
 }
 
+/* Scale SVG logos to appropriate size */
+.logo svg {
+  @apply h-[5rem] w-[5rem];
+}
+
 /* Search */
 #search-query::-webkit-search-cancel-button,
 #search-query::-webkit-search-decoration,
@@ -126,6 +131,13 @@ table {
 code {
     word-wrap: break-word;         /* All browsers since IE 5.5+ */
     overflow-wrap: break-word;     /* Renamed property in CSS3 draft spec */
+}
+
+/* Fix long URLs breaking out of article bounds on mobile */
+a {
+    word-break: break-word;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 /* -- Chroma Highlight -- */

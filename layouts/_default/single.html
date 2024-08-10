@@ -46,7 +46,7 @@
         {{- if $authorData -}}
           {{ range $taxonomyname, $taxonomy := $taxonomies }}
             {{ if (eq $taxonomyname $author) }}
-              {{ $taxonomyLink = delimit (slice $baseURL "/authors/" $author) "" }}
+              {{ $taxonomyLink = delimit (slice $baseURL "authors/" $author "/") "" }}
             {{ end }}
           {{ end }}
           {{ partial "author-extra.html" (dict "context" . "data" $authorData "link" $taxonomyLink) }}
@@ -81,6 +81,17 @@
 
         <div class="article-content max-w-prose mb-20">
           {{ .Content }}
+          {{ $defaultReplyByEmail := .Site.Params.replyByEmail }}
+          {{ $replyByEmail := default $defaultReplyByEmail .Params.replyByEmail }}
+          {{ if $replyByEmail }}
+            <strong class="block mt-8">
+              <a target="_blank" 
+              class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+              href="mailto:{{ .Site.Author.email }}?subject={{ replace (printf "Reply to %s" .Title) "\"" "'" }}">
+                Reply by Email
+              </a>
+            </strong>
+          {{ end }}
         </div>
         
         {{ if (.Params.showAuthorBottom | default ( .Site.Params.article.showAuthorBottom | default false)) }}
@@ -95,7 +106,7 @@
             {{- if $authorData -}}
               {{ range $taxonomyname, $taxonomy := $taxonomies }}
                 {{ if (eq $taxonomyname $author) }}
-                  {{ $taxonomyLink = delimit (slice $baseURL "/authors/" $author) "" }}
+                  {{ $taxonomyLink = delimit (slice $baseURL "authors/" $author "/") "" }}
                 {{ end }}
               {{ end }}
               {{ partial "author-extra.html" (dict "context" . "data" $authorData "link" $taxonomyLink) }}
@@ -124,10 +135,10 @@
         var oid = "views_{{ $path }}"
         var oid_likes = "likes_{{ $path }}"
       </script>
-      {{ end }}
       {{ $jsPage := resources.Get "js/page.js" }}
       {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}
       <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}"></script>
+      {{ end }}
   
     </section>
   <footer class="pt-8 max-w-prose print:hidden">

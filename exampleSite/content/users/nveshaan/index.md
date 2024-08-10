@@ -1,6 +1,6 @@
 ---
                 title: "nveshaan"
-                tags: [Personal site]
+                tags: [Personal Site]
                 externalUrl: "https://nveshaan.github.io/"
                 weight: 861
                 showDate: false

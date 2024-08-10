@@ -1,5 +1,5 @@
 ---
-title: "Front Matter"
+title: "Front Matter(文件头信息)"
 weight: 7
 draft: false
 description: "文本主要介绍 Blowfish 中页面中可以添加的所有的 Front Matter 参数。"

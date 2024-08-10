@@ -15,7 +15,9 @@ title = "Blowfish"
 
 # [author]
 #   name = "Your name here"
+#   email = "youremail@example.com"
 #   image = "img/blowfish_logo.png"
+#   imageQuality = 96
 #   headline = "I'm only human"
 #   bio = "A little bit about you"
 #   links = [

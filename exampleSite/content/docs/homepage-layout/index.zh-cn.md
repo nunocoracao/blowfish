@@ -35,7 +35,7 @@ Blowfish 提供了一个完全灵活的主页布局。你可以选择两种主�
 
 ## 英雄布局（hero）
 
-英雄布局（hearo）组合了个人资料布局（profile）和卡片布局（card）。它不仅显示了网站作者的个人信息，还在个人资料下方加载了你的 markdown 内容。 
+英雄布局（hero）组合了个人资料布局（profile）和卡片布局（card）。它不仅显示了网站作者的个人信息，还在个人资料下方加载了你的 markdown 内容。 
 
 <img class="thumbnailshadow" src="img/home-hero.png"/>
 
