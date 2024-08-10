@@ -47,6 +47,6 @@
   "mastodon": {
     "icon": "mastodon",
     "title": "sharing.mastodon",
-    "url": "https://toot.kytta.dev/?text=%[2]s %[1]s"
+    "url": "https://s2f.kytta.dev/?text=%[2]s %[1]s"
   }  
 }
