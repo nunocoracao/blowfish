@@ -110,6 +110,7 @@ Per questo metodo utilizzerai Hugo per gestire i tuoi temi. Hugo utilizza **Go**
 
    ```toml
    [[imports]]
+   disable = false
    path = "github.com/nunocoracao/blowfish/v2"
    ```
 
