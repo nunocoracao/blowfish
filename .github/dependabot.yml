@@ -5,7 +5,7 @@ version: 2
 updates:
   - package-ecosystem: "npm"
     directory: "/"
-    target-branch: "dev"
+    target-branch: "main"
     schedule:
       interval: "weekly"
       day: "wednesday"
@@ -15,7 +15,7 @@ updates:
       - "dependencies"
   - package-ecosystem: "github-actions"
     directory: "/"
-    target-branch: "dev"
+    target-branch: "main"
     schedule:
       interval: "weekly"
       day: "wednesday"
