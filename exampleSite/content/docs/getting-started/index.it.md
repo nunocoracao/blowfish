@@ -1,5 +1,5 @@
 ---
-title: "Per iniziare"
+title: "Getting started"
 date: 2020-08-15
 draft: false
 description: "Tutte le variabili del front matter sono disponibili in Blowfish.
