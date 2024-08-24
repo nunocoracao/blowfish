@@ -261,12 +261,13 @@ Il `name' predefinito è il titolo di `pageRef', con le caselle.
 
 ## Thumbnails & Backgrounds
 
-Blowfish was built so it would be easy to add visual support to your articles. If your familiar with Hugo article structure, you just need to place an image file (almost all formats are supported but we recommend `.png` or `.jpg`) that starts with `feature*` inside your article folder. And that's it, Blowfish will then be able to both use the image as a thumbnail within your website as well as for <a target="_blank" href="https://oembed.com/">oEmbed</a> cards across social platforms. 
+Blowfish è stato creato in modo che sia facile aggiungere supporto visivo ai tuoi articoli. Se hai familiarità con la struttura degli articoli di Hugo, devi solo inserire un file immagine (quasi tutti i formati sono supportati ma consigliamo `.png` o `.jpg`) che inizi con `feature*` all'interno della cartella dell'articolo. E questo è tutto, Blowfish sarà quindi in grado di utilizzare l'immagine sia come miniatura all'interno del tuo sito web sia per le schede <a target="_blank" href="https://oembed.com/">oEmbed</a> attraverso le piattaforme social.
 
-[Here]({{< ref "thumbnails" >}}) is also a guide with more info and a [sample]({{< ref "thumbnail_sample" >}}) if you want to see how you can do it.
+[Qui]({{< ref "thumbnails" >}}) è anche una guida con maggiori informazioni e un [esempio]({{< ref "thumbnails_sample" >}}) se vuoi vedere come puoi farlo.
 
 Additionally, Blowfish also supports background hero images in articles and lists. In order to use a different image than the featured one, add an image file in which the name starts with `background*`.
+Inoltre, Blowfish supporta anche una background hero  image in articoli ed elenchi. Per utilizzare un'immagine diversa da quella in primo piano, aggiungi un file immagine il cui nome inizia con `background*`.
 
-## Detailed configuration
+## Dettagli di configurazione
 
-The steps above are the bare minimum configuration. If you now run `hugo server` you will be presented with a blank Blowfish website. Detailed configuration is covered in the [Configuration]({{< ref "configuration" >}}) section.
+I passaggi precedenti rappresentano la configurazione minima. Se ora esegui `hugo server` ti verrà presentato un sito web Blowfish vuoto. La configurazione dettagliata è trattata nella sezione [Configurazione]({{< ref "configuration" >}}).
