@@ -1,10 +1,10 @@
 ---
-title: "Placeholder Text"
+title: "文本占位符"
 date: "2019-03-09"
 lastmod: "2022-01-24"
 draft: false
 description: "Lorem Ipsum Dolor Si Amet"
-tags: ["markdown", "text", "sample", "latin"]
+tags: ["markdown", "文本", "示例", "拉丁语"]
 showDateUpdated: true
 xml: false
 type: 'sample'

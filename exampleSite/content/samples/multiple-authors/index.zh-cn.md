@@ -1,10 +1,10 @@
 ---
-title: "Multiple Authors"
+title: "多作者"
 date: 2022-10-12
 draft: false
-description: "Sample for a multiple author setup"
-tags: ["authors", "sample"]
-summary: "A quick example of how multiple authors could be used."
+description: "多作者设置示例"
+tags: ["作者", "示例"]
+summary: "如何使用多个作者的简单示例。"
 showAuthor: false
 authors:
   - "nunocoracao"
@@ -12,4 +12,4 @@ authors:
 type: 'sample'
 ---
 
-This is an example of how an article with multiple authors will look like. 
+这是具有多个作者的文章的示例。

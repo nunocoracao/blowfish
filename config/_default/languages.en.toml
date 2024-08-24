@@ -15,7 +15,9 @@ title = "Blowfish"
 
 # [author]
 #   name = "Your name here"
+#   email = "youremail@example.com"
 #   image = "img/blowfish_logo.png"
+#   imageQuality = 96
 #   headline = "I'm only human"
 #   bio = "A little bit about you"
 #   links = [
@@ -53,6 +55,7 @@ title = "Blowfish"
 #     { slack = "https://workspace.url/team/userid" },
 #     { snapchat = "https://snapchat.com/add/username" },
 #     { soundcloud = "https://soundcloud.com/username" },
+#     { spotify = "https://open.spotify.com/user/userid" },
 #     { stack-overflow = "https://stackoverflow.com/users/userid/username" },
 #     { steam = "https://steamcommunity.com/profiles/userid" },
 #     { telegram = "https://t.me/username" },
@@ -65,4 +68,5 @@ title = "Blowfish"
 #     { whatsapp = "https://wa.me/phone-number" },
 #     { youtube = "https://youtube.com/username" },
 #     { ko-fi = "https://ko-fi.com/username" },
+#     { codeberg = "https://codeberg.org/username"},
 #   ]

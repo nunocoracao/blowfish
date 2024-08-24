@@ -2,7 +2,7 @@
                 title: "blog.enmanuelmoreira.com"
                 tags: [Personal site]
                 externalUrl: "https://blog.enmanuelmoreira.com"
-                date: 9960-08-08
+                weight: 371
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

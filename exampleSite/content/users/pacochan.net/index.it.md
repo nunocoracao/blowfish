@@ -2,7 +2,7 @@
                 title: "pacochan.net"
                 tags: [Sito personale]
                 externalUrl: "https://pacochan.net"
-                date: 9955-08-08
+                weight: 421
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

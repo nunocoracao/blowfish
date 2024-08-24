@@ -1,24 +1,24 @@
 ---
-title: "Thumbnails"
+title: "サムネイル"
 date: 2022-09-26
 draft: false
-description: "Turn on thumbnails for your articles."
+description: "記事のサムネイルを変更する。"
 slug: "thumbnail_sample"
 tags: ["thumbnail", "sample"]
 summary: "A quick example of how to start using Thumbnails in your artciles."
 type: 'sample'
 ---
 
-A quick example of how to start using Thumbnails in your articles.
+記事でどのようにサムネイルを利用するかの簡単な例です。
 
-If your average directory for an article looks like this: 
+記事の平均的なディレクトリが以下のようなものだとしたら: 
 
 ```shell
 content
 └── awesome_article.md
 ```
 
-You need to change it from a single markdown file into a folder. Create a directory with the same name of the article, inside create a `index.md` file. You'll get a structure similar to what's below.
+単一の markdown ファイルから、フォルダーに入っている形式に変更する必要があります。記事の名前と同一のディレクトリを作成し、その中に `index.md` ファイルを作成します。このようにすると、以下のような構成になります。
 
 ```shell
 content
@@ -26,7 +26,7 @@ content
     └── featured.png
 ```
 
-Inside the article you can now add an image file (almost all formats are supported but we recommend `.png` or `.jpg`) that starts with `feature*`. Example below.
+記事内に `feature*` から始まる名前の画像ファイル (ほとんど全てのフォーマットを対応していますが、 `.png` か `.jpg` を推奨しています) を追加できます。以下が例です。
 
 ```shell
 content
@@ -35,4 +35,4 @@ content
     └── featured.png
 ```
 
-This will tell Blowfish that this article has a feature image that can be used both as a thumbnail across your website as well as for <a target="_blank" href="https://oembed.com/">oEmbed</a> cards across social platforms. As an example, you can try copy pasting the URL of this article into a platform that shows oEmbeds (e.g. Twitter, WhatsApp, Telegram, etc) and see what is displayed.
+これによって Blowfish は、記事のサムネイルをウェブサイトまたは SNS の <a target="_blank" href="https://oembed.com/">oEmbed</a> カードの紹介画像として利用できます。例としては、この記事の URL を oEmbeds を表示するプラットフォーム (例: Twitter, WhatsApp, Telegram など) にコピーペーストどのように表示されるかをご覧ください。

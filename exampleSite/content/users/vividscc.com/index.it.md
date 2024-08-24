@@ -2,7 +2,7 @@
                 title: "vividscc.com"
                 tags: [Sito aziendale]
                 externalUrl: "https://vividscc.com/"
-                date: 9973-08-08
+                weight: 251
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

@@ -1,6 +1,6 @@
 ---
 title: "Installazione"
-date: 2020-08-16
+weight: 2
 draft: false
 description: "Come installare il tema Blowfish."
 slug: "installation"
@@ -54,7 +54,7 @@ Ecco un rapido video che ti mostra quanto sia veloce iniziare a utilizzare Blowf
 
 <iframe width="100%" height="350" src="https://www.youtube.com/embed/SgXhGb-7QbU?si=ce44baicuQ6zMeXz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-### Installazione Manuale
+### Installazione senza CLI
 
 #### Crea un novo sito
 
@@ -72,7 +72,7 @@ Esistono diversi modi per installare il tema Blowfish nel proprio sito web Hugo.
 
 Se non sei sicuro, scegli il metodo Git submodule.
 
-##### Installazione usando Git
+#### Installazione usando Git
 
 Questo è il metodo piu facile e veloce per mantere il tema aggiornato. Oltre **Hugo** e **Go**, dovrai assicurarti di avere **Git** installato nel tuo local machine.
 
@@ -86,7 +86,7 @@ git submodule add -b main https://github.com/nunocoracao/blowfish.git themes/blo
 
 poi continua a [impostare i file di configurazione del tema](#set-up-theme-configuration-files).
 
-##### Installazione usando Hugo
+#### Installazione usando Hugo
 
 Per questo metodo utilizzerai Hugo per gestire i tuoi temi. Hugo utilizza **Go** per inizializzare e gestire i moduli, quindi assicurati di aver installato `go` prima di procedere.
 
@@ -116,7 +116,7 @@ Per questo metodo utilizzerai Hugo per gestire i tuoi temi. Hugo utilizza **Go**
 4. Avvia il tuo server utilizzando `hugo server` e il tema verrà scaricato automaticamente.
 5. Continua con [impostare i file di configurazione del tema](#set-up-theme-configuration-files).
 
-##### Installazione manuale
+#### Installazione manuale
 1. Scarica l'ultima versione del codice sorgente del tema.
 
    {{< button href="https://github.com/nunocoracao/blowfish/releases/latest" target="_blank" >}}Scarica da Github{{< /button >}}
@@ -127,7 +127,7 @@ Per questo metodo utilizzerai Hugo per gestire i tuoi temi. Hugo utilizza **Go**
 
 #### Imposta i file di configurazione del tema
 
-Nella cartella principale del tuo sito web, elimina il file `config.toml` generato da Hugo. Copia i file di configurazione `*.toml` dal tema nella tua cartella `config/_default/`. Ciò ti garantirà di avere tutte le impostazioni corrette del tema e ti consentirà di personalizzare facilmente il tema in base alle tue esigenze.
+Nella cartella principale del tuo sito web, elimina il file `hugo.toml` generato da Hugo. Copia i file di configurazione `*.toml` dal tema nella tua cartella `config/_default/`. Ciò ti garantirà di avere tutte le impostazioni corrette del tema e ti consentirà di personalizzare facilmente il tema in base alle tue esigenze.
 
 {{< alert >}}
 **Note:** Non dovresti sovrascrivere il file `module.toml` se ne esiste già uno nel tuo progetto!
@@ -142,7 +142,7 @@ Una volta che hai copiato i file, la tua cartella delle configurazioni dovrebbe 
 
 ```shell
 config/_default/
-├─ config.toml
+├─ hugo.toml
 ├─ languages.en.toml
 ├─ markup.toml
 ├─ menus.en.toml
@@ -151,7 +151,7 @@ config/_default/
 ```
 
 {{< alert >}}
-**Importante:** Se non hai utilizzato Hugo Modules per installare Blowfish, devi aggiungere la riga `theme = "blowfish"` all'inizio del tuo file `config.toml`.
+**Importante:** Se non hai utilizzato Hugo Modules per installare Blowfish, devi aggiungere la riga `theme = "blowfish"` all'inizio del tuo file `hugo.toml`.
 {{< /alert >}}
 
 ### Passo successivo

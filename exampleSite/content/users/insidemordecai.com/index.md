@@ -2,7 +2,7 @@
                 title: "insidemordecai.com"
                 tags: [Personal site]
                 externalUrl: "https://insidemordecai.com"
-                date: 9985-08-08
+                weight: 131
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

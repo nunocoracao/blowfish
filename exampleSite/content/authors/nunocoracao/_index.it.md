@@ -1,5 +1,5 @@
 ---
-title: "Nuno Coração"
----
+title: "Nuno Coraçao"
 
-Nuno's awesome dummy bio.
+---
+La fantastica biografia di Nuno.

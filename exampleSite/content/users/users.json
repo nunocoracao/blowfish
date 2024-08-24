@@ -89,14 +89,6 @@
     ]
   },
   {
-    "title": "jeknom.github.io",
-    "url": "https://jeknom.github.io",
-    "source": "n/a",
-    "tags": [
-      "Personal site"
-    ]
-  },
-  {
     "title": "loisvelasco.is-a.dev",
     "url": "https://loisvelasco.is-a.dev",
     "source": "n/a",
@@ -214,14 +206,6 @@
     "source": "n/a",
     "tags": [
       "Business site"
-    ]
-  },
-  {
-    "title": "muhalvin.github.io",
-    "url": "https://muhalvin.github.io/",
-    "source": "n/a",
-    "tags": [
-      "Personal site"
     ]
   },
   {
@@ -523,14 +507,6 @@
     ]
   },
   {
-    "title": "binarydigit.cafe",
-    "url": "https://binarydigit.cafe/",
-    "source": "n/a",
-    "tags": [
-      "Personal site"
-    ]
-  },
-  {
     "title": "alxhslm.github.io",
     "url": "https://alxhslm.github.io/",
     "source": "n/a",
@@ -541,15 +517,6 @@
   {
     "title": "the-maze.net",
     "url": "https://www.the-maze.net/",
-    "source": "n/a",
-    "tags": [
-      "Personal site",
-      "Blog"
-    ]
-  },
-  {
-    "title": "datatodroids.tech",
-    "url": "https://datatodroids.tech/",
     "source": "n/a",
     "tags": [
       "Personal site",
@@ -626,15 +593,6 @@
     ]
   },
   {
-    "title": "fwzyrln_",
-    "url": "https://fauziralpiandi.github.io",
-    "source": "n/a",
-    "tags": [
-      "Personal Homepage",
-      "Blog"
-    ]
-  },
-  {
     "title": "karlukle.site",
     "url": "https://karlukle.site",
     "source": "n/a",
@@ -642,7 +600,7 @@
       "Personal blog"
     ]
   },
-   {
+  {
     "title": "Adam Madej - Gameplay Animator",
     "url": "http://www.adammadej.com/",
     "source": "https://github.com/arahmitz/adamblogstuff",
@@ -650,6 +608,136 @@
       "Portfolio Site",
       "Blog",
       "Personal Site"
+    ]
+  },
+  {
+    "title": "eallion.com",
+    "url": "http://www.eallion.com/",
+    "source": "https://github.com/eallion/eallion.com",
+    "tags": [
+      "Blog",
+      "Personal Site"
+    ]
+  },
+  {
+    "title": "Synaptic Sugar",
+    "url": "https://synapticsugar.games",
+    "source": "n/a",
+    "tags": [
+      "Videogame Developer"
+    ]
+  },
+  {
+    "title": "michaeldorner.de",
+    "url": "https://www.michaeldorner.de",
+    "source": "n/a",
+    "tags": [
+      "Blog",
+      "Personal Site",
+      "Academia"
+    ]
+  },
+  {
+    "title": "Ignacio Conde",
+    "url": "http://www.ignaciomconde.com/",
+    "source": "https://github.com/DJKero/djkero.github.io",
+    "tags": [
+      "Personal Site",
+      "Portfolio Site",
+      "Software Developer",
+      "Videogame Developer"
+    ]
+  },
+  {
+    "title": "MEM v ENNBEE",
+    "url": "https://memv.ennbee.uk/",
+    "source": "https://github.com/ennnbeee/ennnbeee.github.io",
+    "tags": [
+      "Technology Blog",
+      "Personal site"
+    ]
+  },
+  {
+    "title": "Joshua Blais",
+    "url": "https://joshblais.com/",
+    "source": "n/a",
+    "tags": [
+      "Personal Site",
+      "Author",
+      "Digital Garden"
+    ]
+  },
+  {
+    "title": "Beauty Formulation",
+    "url": "https://www.beautyformulation.com/",
+    "source": "n/a",
+    "tags": [
+      "Company site"
+    ]
+  },
+  {
+    "title": "Middle of Nowhere",
+    "url": "https://blog.wtcx.dev/",
+    "source": "n/a",
+    "tags": [
+      "Personal Site",
+      "Blog"
+    ]
+  },
+  {
+    "title": "UmmIt - Blog",
+    "url": "https://blog.ummit.dev/",
+    "source": "n/a",
+    "tags": [
+      "Personal Site",
+      "Blog",
+      "Technology Blog"
+    ]
+  },
+  {
+    "title": "江ノ島エスカー",
+    "url": "https://zen96k.github.io/enoshima-escar",
+    "source": "https://github.com/zen96k/enoshima-escar",
+    "tags": [
+      "Portfolio Site",
+      "Software Developer"
+    ]
+  },
+  {
+    "title": "Jinbo Pan - Blog",
+    "url": "https://www.panjinbo.com/",
+    "source": "n/a",
+    "tags": [
+      "Personal Site",
+      "Blog",
+      "Technology Blog"
+    ]
+  },
+  {
+    "title": "nveshaan",
+    "url": "https://nveshaan.github.io/",
+    "source": "n/a",
+    "tags": [
+      "Personal Site"
+    ]
+  },
+  {
+    "title": "micheledinelli.github.io",
+    "url": "https://micheledinelli.github.io",
+    "source": "n/a",
+    "tags": [
+      "Personal Site",
+      "Portfolio Site",
+      "Academia"
+    ]
+  },
+  {
+    "title": "kumacat.pages.dev",
+    "url": "https://kumacat.pages.dev",
+    "source": "https://github.com/LesserCat/LesserCat.github.io",
+    "tags": [
+      "Personal Site",
+      "Blog"
     ]
   }
 ]

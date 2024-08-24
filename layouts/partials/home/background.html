@@ -40,7 +40,7 @@
                         {{ end }}
                         {{ if $authorImage }}
                             {{ if not $disableImageOptimization }}
-                                {{ $authorImage = $authorImage.Fill "288x288" }}
+                                {{ $authorImage = $authorImage.Fill (print "288x288 q" ( $.Site.Author.imagequality | default "96" )) }}
                             {{ end }}
                             <img class="mb-2 rounded-full h-36 w-36" width="144" height="144"
                                 alt="{{ $.Site.Author.name | default " Author" }}" src="{{ $authorImage.RelPermalink }}" />
@@ -51,7 +51,7 @@
                     </h1>
                     {{ with .Site.Author.headline }}
                     <h2 class="mt-0 mb-0 text-xl text-neutral-800 dark:text-neutral-300">
-                        {{ . | markdownify | emojify }}
+                        {{ . | markdownify }}
                     </h2>
                     {{ end }}
                     <div class="mt-3 mb-10 text-2xl">
@@ -67,7 +67,7 @@
                         </div>
                         {{ end }}
                     </div>
-                    <section class="prose dark:prose-invert">{{ .Content | emojify }}</section>
+                    <section class="prose dark:prose-invert">{{ .Content }}</section>
                 </div>
             </div>
         </div>

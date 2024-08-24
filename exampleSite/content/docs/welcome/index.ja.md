@@ -1,6 +1,6 @@
 ---
 title: "Welcome to Blowfish"
-date: 2022-01-19
+weight: 1
 draft: false
 description: "Discover what's new in Blowfish version 2.0."
 tags: ["new", "docs"]

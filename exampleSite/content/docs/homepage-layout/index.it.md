@@ -1,6 +1,6 @@
 ---
 title: "Homepage Layout"
-date: 2020-08-13
+weight: 5
 draft: false
 description: "Configurazione del layout della home page nel tema Blowfish."
 slug: "homepage-layout"

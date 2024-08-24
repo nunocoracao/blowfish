@@ -1,6 +1,6 @@
 ---
 title: "Advanced Customisation"
-date: 2020-08-08
+weight: 13
 draft: false
 description: "Learn how to build Blowfish manually."
 slug: "advanced-customisation"

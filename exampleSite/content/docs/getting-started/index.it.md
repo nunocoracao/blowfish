@@ -1,8 +1,8 @@
 ---
 title: "Per iniziare"
-date: 2020-08-15
+weight: 3
 draft: false
-description: "Tutte le variabili del front matter sono disponibili in Blowfish.
+description: "Tutte le variabili del front matter sono disponibili in Blowfish."
 slug: "per-iniziare"
 tags: ["installazione", "documenti"]
 series: ["Documentazione"]
@@ -27,9 +27,10 @@ I file di configurazione forniti con Blowfish contengono tutte le possibili impo
 ## Configurazione di base
 
 Prima di creare qualsiasi contenuto, è necessario impostare alcune cose per una nuova installazione. Iniziando dal file `config.toml`, imposta i parametri `baseURL` e `lingualCode`. Il `lingualCode` dovrebbe essere impostato sulla lingua principale che utilizzerai per creare i tuoi contenuti.
+=======
 
 ```toml
-# config/_default/config.toml
+# config/_default/hugo.toml
 
 baseURL = "https://your_domain.com/"
 languageCode = "en"
@@ -40,7 +41,9 @@ Il passo successivo è configurare le impostazioni della lingua. Sebbene Blowfis
 Individua il file "languages.en.toml" nella cartella di configurazione. Se la tua lingua principale è l'inglese puoi utilizzare questo file così com'è. Altrimenti, rinominalo in modo che includa il codice della lingua corretto nel nome del file. Ad esempio, per il francese, rinominare il file in "languages.fr.toml".
 
 {{< alert >}}
+
 Tieni presente che il codice della lingua nel nome del file di configurazione della lingua deve corrispondere all'impostazione "languageCode" in "config.toml".
+
 {{< /alert >}}
 
 ```toml
@@ -257,7 +260,7 @@ Questo renderà una seconda riga con le sottocategorie sotto il menu principale 
   weight = 20
 ```
 
-Il `name' predefinito è il titolo di `pageRef', con le caselle.
+Il `name` predefinito è il titolo di `pageRef`, con le caselle.
 
 ## Thumbnails & Backgrounds
 

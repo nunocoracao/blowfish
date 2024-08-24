@@ -1,6 +1,6 @@
 ---
 title: "Shortcodes"
-date: 2020-08-11
+weight: 6
 draft: false
 description: "All the shortcodes available in Blowfish."
 slug: "shortcodes"
@@ -18,7 +18,7 @@ In addition to all the [default Hugo shortcodes](https://gohugo.io/content-manag
 <!-- prettier-ignore-start -->
 | Parameter   | Description                                                                                                                                                                                  |
 | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `icon`      | **Optional.** the icon to display on the left side.<br>**Default:** `exclaimation triangle icon` (Check out the [icon shortcode](#icon) for more details on using icons.)                    |
+| `icon`      | **Optional.** the icon to display on the left side.<br>**Default:** `triangle-exclamation` (Check out the [icon shortcode](#icon) for more details on using icons.)                    |
 | `iconColor` | **Optional.** the color for the icon in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme .            |
 | `cardColor` | **Optional.** the color for the card background in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme . |
 | `textColor` | **Optional.** the color for the text in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme .            |
@@ -188,6 +188,59 @@ You can see some additional Chart.js examples on the [charts samples]({{< ref "c
 
 <br/><br/><br/>
 
+## Code Importer
+
+This shortcode is for importing code from external sources easily without copying and pasting.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description                                             |
+| --------- | ------------------------------------------------------- |
+| `url`     | **Required** URL to an externally hosted code file.     |
+| `type`    | Code type used for syntax highlighting.                 |
+| `startLine` | **Optional** The line number to start the import from.    |
+| `endLine` | **Optional** The line number to end the import at.        |
+
+
+<!-- prettier-ignore-end -->
+
+
+**Example:**
+
+```md
+{{</* codeimporter url="https://raw.githubusercontent.com/nunocoracao/blowfish/main/layouts/shortcodes/mdimporter.html" type="go" */>}}
+
+```
+{{< codeimporter url="https://raw.githubusercontent.com/nunocoracao/blowfish/main/layouts/shortcodes/mdimporter.html" type="go" >}}
+
+```md
+{{</* codeimporter url="https://raw.githubusercontent.com/nunocoracao/blowfish/main/config/_default/hugo.toml" type="toml" startLine="11" endLine="18" */>}}
+
+```
+
+{{< codeimporter url="https://raw.githubusercontent.com/nunocoracao/blowfish/main/config/_default/hugo.toml" type="toml" startLine="11" endLine="18">}}
+
+
+<br/><br/>
+
+## Codeberg Card
+
+`codeberg` allows you to quickly link a Codeberg repository via the Codeberg API, providing real-time updates on stats such as stars and forks.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description                                           |
+| --------- | ----------------------------------------------------- |
+| `repo`    | [String] codeberg repo in the format of `username/repo` |
+<!-- prettier-ignore-end -->
+
+**Example 1:**
+
+```md
+{{</* codeberg repo="forgejo/forgejo" */>}}
+```
+{{< codeberg repo="forgejo/forgejo" >}}
+
+<br/><br/><br/>
+
 ## Figure
 
 Blowfish includes a `figure` shortcode for adding images to content. The shortcode replaces the base Hugo functionality in order to provide additional performance benefits.
@@ -230,6 +283,26 @@ Blowfish also supports automatic conversion of images included using standard Ma
 ```
 
 {{< figure src="abstract.jpg" alt="Abstract purple artwork" caption="Photo by [Jr Korpa](https://unsplash.com/@jrkorpa) on [Unsplash](https://unsplash.com/)" >}}
+
+<br/><br/><br/>
+
+## Forgejo Card
+
+`forgejo` allows you to quickly link a Forgejo repository via the forgejo API, providing real-time updates on stats such as stars and forks.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description                                           |
+| --------- | ----------------------------------------------------- |
+| `repo`    | [String] forgejo repo in the format of `username/repo`|
+| `server`  | [String] server URL like `https://v8.next.forgejo.org`|
+<!-- prettier-ignore-end -->
+
+**Example 1:**
+
+```md
+{{</* forgejo server="https://v8.next.forgejo.org" repo="forgejo/forgejo" */>}}
+```
+{{< forgejo server="https://v8.next.forgejo.org" repo="forgejo/forgejo" >}}
 
 <br/><br/><br/>
 
@@ -289,6 +362,26 @@ In order to add images to the gallery, use `img` tags for each image and add `cl
   <img src="gallery/06.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
   <img src="gallery/07.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
 {{< /gallery >}}
+
+<br/><br/><br/>
+
+## Gitea Card
+
+`gitea` allows you to quickly link a Gitea repository via the gitea API, providing real-time updates on stats such as stars and forks.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description                                           |
+| --------- | ----------------------------------------------------- |
+| `repo`    | [String] gitea repo in the format of `username/repo`  |
+| `server`  | [String] server URL like `https://git.fsfe.org`       |
+<!-- prettier-ignore-end -->
+
+**Example 1:**
+
+```md
+{{</* gitea server="https://git.fsfe.org" repo="FSFE/fsfe-website" */>}}
+```
+{{< gitea server="https://git.fsfe.org" repo="FSFE/fsfe-website" >}}
 
 <br/><br/><br/>
 
@@ -396,10 +489,10 @@ The input is written in Markdown so you can format it however you please.
 **Example1 :**
 
 ```md
-{{</* keyword */>}} Super skill {{</* /keyword */>}}
+{{</* keyword */>}} *Super* skill {{</* /keyword */>}}
 ```
 
-{{< keyword >}} *Standalone* skill {{< /keyword >}}
+{{< keyword >}} *Super* skill {{< /keyword >}}
 
 **Example2 :**
 
@@ -452,7 +545,7 @@ When life gives you lemons, make lemonade.
 | `value`    | The value that will need to match the parameter defined in `where` for the query of articles e.g. for `where` == `Type` a valid value could be `sample` |
 
 {{< alert >}}
-The `where` and `value` values are used in the following query `where .Site.RegularPages $where $value` in the code of the shortcode. Check [Hugo docs](https://gohugo.io/variables/page/) to learn more about which parameters are available to use.
+The `where` and `value` values are used in the following query `where .Site.RegularPages $where $value` in the code of the shortcode. Check [Hugo docs](https://gohugo.io/methods/page/) to learn more about which parameters are available to use.
 {{</ alert >}}
 
 <!-- prettier-ignore-end -->
@@ -468,7 +561,7 @@ The `where` and `value` values are used in the following query `where .Site.Regu
 **Example #2:**
 
 ```md
-{{</* list title="Samples" cardView=true limit=5 where="Type" value="sample" */>}}
+{{</* list title="Samples" cardView=true limit=6 where="Type" value="sample" */>}}
 ```
 
 {{< list title="Samples" cardView=true limit=6 where="Type" value="sample">}}
@@ -614,6 +707,10 @@ With other shortcodes
 {{</* /gallery */>}}
 {{</* /timelineItem */>}}
 
+{{</* timelineItem icon="code" header="Another Awesome Header"*/>}}
+{{</* github repo="nunocoracao/blowfish" */>}}
+{{</* /timelineItem */>}}
+
 {{</* /timeline */>}}
 ```
 
@@ -646,7 +743,9 @@ With other shortcodes
   <img src="gallery/07.jpg" class="grid-w33" />
 {{< /gallery >}}
 {{</ timelineItem >}}
-
+{{< timelineItem icon="code" header="Another Awesome Header">}}
+{{< github repo="nunocoracao/blowfish" >}}
+{{</ timelineItem >}}
 {{</ timeline >}}
 
 
@@ -714,8 +813,9 @@ consectetur adipiscing elit.
   breakLines=false
   loop=true
 */>}}
-Lorem ipsum dolor sit amet, 
-consectetur adipiscing elit. 
+"Frankly, my dear, I don't give a damn." Gone with the Wind (1939)
+"I'm gonna make him an offer he can't refuse." The Godfather (1972)
+"Toto, I've a feeling we're not in Kansas anymore." The Wizard of Oz (1939)
 {{</* /typeit */>}}
 ```
 
@@ -738,17 +838,39 @@ consectetur adipiscing elit.
 A shortcut to embed youtube videos using the [lite-youtube-embed](https://github.com/paulirish/lite-youtube-embed) library. This library is a lightweight alternative to the standard youtube embeds, and it's designed to be faster and more efficient.
 
 <!-- prettier-ignore-start -->
-| Parameter | Description                         |
-| --------- | ----------------------------------- |
-| `id`      | [String] Youtube video id to embed. |
-| `label`   | [String] Label for the video        |
+| Parameter | Description                                  |
+| --------- | -------------------------------------------- |
+| `id`      | [String] Youtube video id to embed.          |
+| `label`   | [String] Label for the video                 |
+| `params`  | [String] Extras parameters for video playing |
 <!-- prettier-ignore-end -->
 
 **Example 1:**
 
 ```md
 {{</* youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" */>}}
-
 ```
 
 {{< youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" >}}
+
+**Example 2:**
+
+You can use all of Youtube's [player parameters](https://developers.google.com/youtube/player_parameters#Parameters) for the `params` variable, as demonstrated below:
+
+> This video will start after 130 seconds (2m10)
+
+```md
+{{</* youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" params="start=130" */>}}
+```
+
+> This video will not have UI controls, will start playing at 130 seconds and will stop 10 seconds later.
+
+To concatenate multiple options as shown below, you need to add the `&` character between them.
+
+```md
+{{</* youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" params="start=130&end=10&controls=0" */>}}
+```
+
+{{< youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" params="start=130&end=10&controls=0" >}}
+
+More informations can be found on the [youtubeLite GitHub repo](https://github.com/paulirish/lite-youtube-embed/blob/master/readme.md#custom-player-parameters) and Youtube's [player parameters](https://developers.google.com/youtube/player_parameters#Parameters) page.

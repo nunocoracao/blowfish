@@ -95,6 +95,7 @@ The full list of built-in icons and their corresponding names can referenced bel
 | slack                | {{< icon slack >}}                |
 | snapchat             | {{< icon snapchat >}}             |
 | soundcloud           | {{< icon soundcloud >}}           |
+| spotify              | {{< icon spotify >}}              |
 | stack-overflow       | {{< icon stack-overflow >}}       |
 | star                 | {{< icon star >}}                 |
 | steam                | {{< icon steam >}}                |
@@ -115,3 +116,4 @@ The full list of built-in icons and their corresponding names can referenced bel
 | xing                 | {{< icon xing >}}                 |
 | xmark                | {{< icon xmark >}}                |
 | youtube              | {{< icon youtube >}}              |
+| codeberg             | {{< icon codeberg >}}             |

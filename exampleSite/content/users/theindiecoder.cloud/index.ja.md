@@ -2,7 +2,7 @@
                 title: "theindiecoder.cloud"
                 tags: [個人サイト]
                 externalUrl: "https://theindiecoder.cloud"
-                date: 9950-08-08
+                weight: 471
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

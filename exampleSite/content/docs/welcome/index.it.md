@@ -1,6 +1,6 @@
 ---
 title: "Benvenuti a Blowfish"
-date: 2022-01-19
+weight: 1
 draft: false
 description: "Scopri le novità della versione 2.0 di Blowfish."
 tags: ["novità", "documenti"]

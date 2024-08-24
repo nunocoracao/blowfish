@@ -1,7 +1,7 @@
 {{ $id := delimit (slice "gitlab" (partial "functions/uid.html" .)) "-" }}
 {{- $gitlabURL := print (default "https://gitlab.com/" (.Get "baseURL")) "api/v4/projects/" (.Get "projectID") -}}
 
-{{- $gitLabData := getJSON ($gitlabURL) -}}
+{{- $gitLabData := resources.GetRemote $gitlabURL | transform.Unmarshal -}}
 {{- with $gitLabData -}}
 
 <a id="{{ $id }}" target="_blank" href="{{ .web_url }}" class="cursor-pointer">
@@ -12,12 +12,12 @@
         {{ partial "icon.html" "gitlab" }}
       </span>
       <div id="{{ $id }}-name_with_namespace" class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
-        {{ .name_with_namespace | markdownify | emojify }}
+        {{ .name_with_namespace | markdownify }}
       </div>
     </div>
 
     <p id="{{ $id }}-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
-      {{ .description | markdownify | emojify }}
+      {{ .description | markdownify }}
     </p>
 
     <div class="m-0 mt-2 flex items-center">

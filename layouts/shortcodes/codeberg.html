@@ -1,0 +1,67 @@
+{{ $id := delimit (slice "codeberg" (partial "functions/uid.html" .)) "-" }}
+{{- $codebergURL := print "https://codeberg.org/api/v1/repos/" (.Get "repo") -}}
+{{- $codebergData := resources.GetRemote $codebergURL | transform.Unmarshal -}}
+{{- $codebergColors := .Site.Data.codebergColors -}}
+{{- with $codebergData -}}
+
+<a id="{{ $id }}" target="_blank" href="{{ .html_url }}" class="cursor-pointer">
+  <div
+    class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl">
+
+    <div class="flex items-center">
+      <span class="text-2xl text-neutral-800 dark:text-neutral" style="margin-right:10px;">
+        {{ partial "icon.html" "codeberg" }}
+      </span>
+      <div
+        id="{{ $id }}-full_name"
+        class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+        {{ .full_name | markdownify }}
+      </div>
+    </div>
+
+    <p id="{{ $id }}-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
+      {{ .description | markdownify }}
+    </p>
+
+    <div class="m-0 mt-2 flex items-center">
+
+      <span class="mr-1 inline-block h-3 w-3 rounded-full"
+        style="background-color: {{ if .language }} {{- index $codebergColors .language -}} {{ else }} #0077b6 {{ end }}"></span>
+      <div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+        {{ if .language }} {{ .language }} {{ else }} null {{ end }}
+      </div>
+
+      <span class="text-md mr-1 text-neutral-800 dark:text-neutral">
+        {{ partial "icon.html" "star" }}
+      </span>
+      <div id="{{ $id }}-stars_count" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+        {{ .stars_count }}
+      </div>
+
+      <span class="text-md mr-1 text-neutral-800 dark:text-neutral">
+        {{ partial "icon.html" "fork" }}
+      </span>
+      <div id="{{ $id }}-forks_count" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+        {{ .forks_count }}
+      </div>
+
+    </div>
+
+  </div>
+  <script>
+    fetch({{ $codebergURL }}, {
+      headers: new Headers({
+        'User-agent': 'Mozilla/4.0 Custom User Agent'
+      })
+    })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('{{ $id }}-full_name').innerHTML = data.full_name;
+        document.getElementById('{{ $id }}-description').innerHTML = data.description;
+        document.getElementById('{{ $id }}-stars_count').innerHTML = data.stars_count;
+        document.getElementById('{{ $id }}-forks_count').innerHTML = data.forks_count;
+      })
+      .catch(error => console.error(error))
+  </script>
+</a>
+{{- end -}}

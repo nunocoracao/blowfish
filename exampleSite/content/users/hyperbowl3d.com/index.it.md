@@ -1,8 +1,8 @@
 ---
                 title: "hyperbowl3d.com"
-                tags: [Sito di giochi]
+                tags: [Sito di gioco]
                 externalUrl: "https://hyperbowl3d.com/"
-                date: 9968-08-08
+                weight: 291
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

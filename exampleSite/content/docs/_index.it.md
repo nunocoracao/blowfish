@@ -1,17 +1,15 @@
 ---
-title: "Documentation"
-description: "Learn how to use Blowfish and its features."
+title: "Documenti"
+description: "Scopri come utilizzare Blowfish e le sue funzionalità."
 
 cascade:
   showDate: false
   showAuthor: false
   invertPagination: true
----
 
+---
 {{< lead >}}
-Simple, yet powerful. Learn how to use Blowfish and its features.
+Semplice ma potente. Scopri come utilizzare Blowfish e le sue funzionalità.
 {{< /lead >}}
 
-This section contains everything you need to know about Blowfish. If you're new, check out the [Installation]({{< ref "docs/installation" >}}) guide to begin or visit the [Samples]({{< ref "samples" >}}) section to see what Blowfish can do.
-
----
+Questa sezione contiene tutto ciò che devi sapere su Blowfish. Se sei nuovo, consulta la guida [Installazione]({{< ref "docs/installation" >}}) per iniziare o visita la sezione [Esempi]({{< ref "samples" >}}) per vedere cosa può fare Blowfish.

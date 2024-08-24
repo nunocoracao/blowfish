@@ -2,7 +2,7 @@
                 title: "mucahitkurtlar.github.io"
                 tags: [個人サイト]
                 externalUrl: "https://mucahitkurtlar.github.io"
-                date: 9996-08-08
+                weight: 31
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

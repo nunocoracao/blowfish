@@ -1,0 +1,23 @@
+{{ if isset site.Params.umamiAnalytics "domain" }}
+<script data-id="umami-script" async
+        src="https://{{ site.Params.umamiAnalytics.domain }}/script.js"
+        data-website-id="{{ site.Params.umamiAnalytics.websiteid }}"
+        {{ with site.Params.umamiAnalytics.dataDomains }}data-domains="{{ . }}"{{ end }}>
+</script>
+{{ else }}
+<script data-id="umami-script" async src="https://analytics.umami.is/script.js"
+        data-website-id="{{ site.Params.umamiAnalytics.websiteid }}">
+</script>
+{{ end }}
+
+{{ if .Site.Params.umamiAnalytics.enableTrackEvent | default true }}
+<script type="text/javascript">
+    document.querySelector('script[data-id="umami-script"]')
+        .addEventListener('load', function () {
+            const type = document.head.querySelector('meta[property = "og:type"]').getAttribute('content');
+            let title = document.head.querySelector('meta[property = "og:title"]').getAttribute('content');
+            let url = document.head.querySelector('meta[property = "og:url"]').getAttribute('content');
+            umami.track(type + ':' + title, {'url': url});
+    });
+</script>
+{{ end }}

@@ -2,7 +2,7 @@
                 title: "alanctanner.com"
                 tags: [Sito personale]
                 externalUrl: "https://alanctanner.com/"
-                date: 9966-08-08
+                weight: 311
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
