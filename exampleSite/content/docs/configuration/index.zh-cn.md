@@ -260,7 +260,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `list.showSummary`                 | `false` | 是否在列表页显示文章摘要。如果在[扉页参数]({{< ref "front-matter" >}})中没有提供摘要，那么将会使用[站点配置](#site-configuration) 中的 `summaryLength` 参数自动生成一个。 |
 | `list.showViews`                   | `false` | 是否显示文章阅读量。这需要集成 firebase ，具体可以看下面。                                                                                                                |
 | `list.showLikes`                   | `false` | 是否显示文章点赞量。这需要集成 firebase ，具体可以看下面。                                                                                                                |
-| `list.showCards`                   | `false` | 是否将每个文章显示未卡片或简单的内联文本。                                                                                                                                |
+| `list.showCards`                   | `false` | 是否将每个文章显示为卡片或简单的内联文本。                                                                                                                                |
 | `list.groupByYear`                 | `true`  | 是否根据年做聚合。                                                                                                                                                        |
 | `list.cardView`                    | `false` | 将列表展示为卡片容器。                                                                                                                                                    |
 | `list.cardViewScreenWidth`         | `false` | 增强列表中卡片的宽度，使其可以占据可用的全部宽度。                                                                                                                        |
