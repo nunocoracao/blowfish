@@ -2,88 +2,87 @@
 title: "Homepage Layout"
 weight: 5
 draft: false
-description: "Configuring the homepage layout in the Blowfish theme."
+description: "Configurazione del layout della home page nel tema Blowfish."
 slug: "homepage-layout"
 tags: ["homepage", "layouts", "docs"]
-series: ["Documentation"]
+series: ["Documentazione"]
 series_order: 5
 ---
 
-Blowfish provides a fully flexible homepage layout. There are two main templates to choose from with additional settings to adjust the design. Alternatively, you can also provide your own template and have complete control over the homepage content.
+Blowfish fornisce un layout della home page completamente flessibile. Sono disponibili due modelli principali tra cui scegliere con impostazioni aggiuntive per adattare il design. In alternativa, puoi anche fornire il tuo modello e avere il controllo completo sul contenuto della home page.
 
-The layout of the homepage is controlled by the `homepage.layout` setting in the `params.toml` configuration file. Additionally, all layouts have the option to include a listing of [recent articles](#recent-articles).
+Il layout della home page è controllato dall'impostazione `homepage.layout` nel file di configurazione `params.toml`. Inoltre, tutti i layout hanno la possibilità di includere un elenco di [articoli recenti](#recent-articles).
 
 ## Profile layout
 
-The default layout is the profile layout, which is great for personal websites and blogs. It puts the author's details front and centre by providing an image and links to social profiles.
+Il layout predefinito è quello del profilo, ideale per i siti web e i blog personali. Mette i dettagli dell'autore in primo piano, fornendo un'immagine e i link ai profili sociali.
 
 <img class="thumbnailshadow" src="img/home-profile.png"/>
 
-The author information is provided in the languages configuration file. Refer to the [Getting Started]({{< ref "getting-started" >}}) and [Language Configuration]({{< ref "configuration##language-and-i18n" >}}) sections for parameter details.
+Le informazioni sull'autore sono fornite nel file di configurazione delle lingue. Fare riferimento alle sezioni [Guida introduttiva]({{< ref “getting-started” >}}) e [Configurazione della lingua]({{< ref “configuration##language-and-i18n” >}}) per i dettagli sui parametri.
 
-Additionally, any Markdown content that is provided in the homepage content will be placed below the author profile. This allows extra flexibility for displaying a bio or other custom content using shortcodes.
+Inoltre, qualsiasi contenuto Markdown fornito nel contenuto della homepage sarà collocato sotto il profilo dell'autore. Ciò consente una maggiore flessibilità per la visualizzazione di una biografia o di altri contenuti personalizzati utilizzando gli shortcode.
 
-To enable the Profile layout, set `homepage.layout = "profile"` in the `params.toml` configuration file.
+Per abilitare il layout del profilo, impostare `homepage.layout = “profile”` nel file di configurazione `params.toml`.
 
 ## Page layout
 
-The page layout is simply a normal content page that displays your Markdown content. It's great for static websites and provides a lot of flexibility.
-
+Il layout di pagina è semplicemente una normale pagina di contenuto che visualizza il contenuto Markdown. È ottimo per i siti web statici e offre una grande flessibilità.
 <img class="thumbnailshadow" src="img/home-page.png"/>
 
-To enable the Page layout, set `homepage.layout = "page"` in the `params.toml` configuration file.
+Per abilitare il layout di pagina, impostare `homepage.layout = “page”` nel file di configurazione `params.toml`.
 
 ## Hero layout
 
-The hero layout brings together ideas from the profile and card layouts. This one not only displays information on the author of the site but it also loads your markdown beneath it.
+Il layout hero riunisce le idee dei layout profilo e scheda. Questo non solo mostra le informazioni sull'autore del sito, ma carica anche il markdown sotto di esso.
 
 <img class="thumbnailshadow" src="img/home-hero.png"/>
 
-To enable the Hero layout, set `homepage.layout = "hero"` and `homepage.homepageImage` in the `params.toml` configuration file.
+Per abilitare il layout Hero, impostare `homepage.layout = “hero”` e `homepage.homepageImage` nel file di configurazione `params.toml`.
 
 ## Background layout
 
-The background layout is a more smooth version of the hero layout. As in the Hero layout, this one also displays both information on the author of the site and loads your markdown beneath it.
+Il layout di sfondo è una versione più fluida del layout Hero. Come nel layout Hero, anche in questo caso vengono visualizzate le informazioni sull'autore del sito e viene caricato il markdown sotto di esso.
 
 <img class="thumbnailshadow" src="img/home-background.png"/>
 
-To enable the Background layout, set `homepage.layout = "background"` and `homepage.homepageImage` in the `params.toml` configuration file.
+Per abilitare il layout di sfondo, impostare `homepage.layout = “background”` e `homepage.homepageImage` nel file di configurazione `params.toml`.
 
 ## Card layout
 
-The card layout is an extension of the page layout. It provides the same level of flexibility by also displaying your markdown content and adds a card image to display visual content.
+Il layout delle schede è un'estensione del layout di pagina. Offre lo stesso livello di flessibilità, visualizzando anche i contenuti markdown e aggiungendo un'immagine per visualizzare i contenuti visivi.
 
 <img class="thumbnailshadow" src="img/home-card.png"/>
 
-To enable the Card layout, set `homepage.layout = "card"` and `homepage.homepageImage` in the `params.toml` configuration file. 
+Per abilitare il layout a scheda, impostare `homepage.layout = “card”` e `homepage.homepageImage` nel file di configurazione `params.toml`. 
 
 
 ## Custom layout
 
-If the built-in homepage layouts aren't sufficient for your needs, you have the option to provide your own custom layout. This allows you to have total control over the page content and essentially gives you a blank slate to work with.
+Se i layout integrati della homepage non sono sufficienti per le vostre esigenze, avete la possibilità di creare un layout personalizzato. Questo permette di avere un controllo totale sul contenuto della pagina e fornisce essenzialmente una lavagna vuota con cui lavorare.
 
-To enable the Custom layout, set `homepage.layout = "custom"` in the `params.toml` configuration file.
+Per abilitare il layout personalizzato, impostare `homepage.layout = “custom”` nel file di configurazione `params.toml`.
 
-With the configuration value set, create a new `custom.html` file and place it in `layouts/partials/home/custom.html`. Now whatever is in the `custom.html` file will be placed in the content area of the site homepage. You may use whatever HTML, Tailwind, or Hugo templating functions you wish to define your layout.
+Con il valore di configurazione impostato, creare un nuovo file `custom.html` e collocarlo in `layouts/partials/home/custom.html`. Ora tutto ciò che è contenuto nel file `custom.html` sarà collocato nell'area dei contenuti della homepage del sito. È possibile utilizzare qualsiasi funzione HTML, Tailwind o Hugo per definire il layout.
 
-To include [recent articles](#recent-articles) on the custom layout, use the `recent-articles/main.html` partial.
+Per includere [articoli recenti](#recent-articles) nel layout personalizzato, utilizzare il partial `recent-articles/main.html`.
 
-As an example, the [homepage]({{< ref "/" >}}) on this site uses the custom layout to allow toggling between the profile and page layouts. Visit the [GitHub repo](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/layouts/partials/home/custom.html) to see how it works.
+Ad esempio, la [homepage]({{< ref “/” >}}) di questo sito utilizza il layout personalizzato per consentire di passare dal layout del profilo a quello della pagina. Visitare il [repo GitHub](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/layouts/partials/home/custom.html) per vedere come funziona.
 
-## Recent articles
+## Articoli recenti
 
-All homepage layouts have the option of displaying recent articles below the main page content. To enable this, simply set the `homepage.showRecent` setting to `true` in the `params.toml` configuration file.
+Tutti i layout delle homepage hanno la possibilità di visualizzare gli articoli recenti sotto il contenuto della pagina principale. Per attivarla, è sufficiente impostare l'opzione `homepage.showRecent` a `true` nel file di configurazione `params.toml`.
 
 <img class="thumbnailshadow" src="img/home-list.png"/>
 
-The articles listed in this section are derived from the `mainSections` setting which allows for whatever content types you are using on your website. For instance, if you had content sections for _posts_ and _projects_ you could set this setting to `["posts", "projects"]` and all the articles in these two sections would be used to populate the recent list. The theme expects this setting to be an array so if you only use one section for all your content, you should set this accordingly: `["blog"]`.
+Gli articoli elencati in questa sezione sono derivati dall'impostazione `mainSections`, che consente di utilizzare i tipi di contenuto del sito web. Per esempio, se si hanno sezioni di contenuto per _post_ e _progetti_, si può impostare questa impostazione su `[“post”, “progetti”]` e tutti gli articoli di queste due sezioni saranno utilizzati per popolare l'elenco dei recenti. Il tema si aspetta che questa impostazione sia un array, quindi se si utilizza una sola sezione per tutti i contenuti, è necessario impostarla di conseguenza: `[“blog”]`.
 
 ## Thumbnails
 
-Blowfish was built so it would be easy to add visual support to your articles. If your familiar with Hugo article structure, you just need to place an image file (almost all formats are supported bue we recommend `.png` or `.jpg`) that starts with `feature*` inside your article folder. And that's it, Blowfish will then able to both use the image as a thumbnail within your website as well as for <a target="_blank" href="https://oembed.com/">oEmbed</a> cards across social platforms. 
+Blowfish è stato creato in modo che sia facile aggiungere supporto visivo ai tuoi articoli. Se hai familiarità con la struttura dell'articolo di Hugo, devi solo inserire un file immagine (quasi tutti i formati sono supportati ma consigliamo `.png` o `.jpg`) che inizi con `feature*` all'interno della cartella dell'articolo. E questo è tutto, Blowfish sarà quindi in grado di utilizzare l'immagine sia come miniatura all'interno del tuo sito web sia per le schede <a target="_blank" href="https://oembed.com/">oEmbed</a> su piattaforme sociali.
 
-[Here]({{< ref "thumbnails" >}}) is a guide with more info and a [sample]({{< ref "thumbnail_sample" >}}) if you want to see an example.
+[Qui]({{< ref “thumbnails” >}}) si trova una guida con maggiori informazioni e un [sample]({{< ref “thumbnail_sample” >}}) se si vuole vedere un esempio.
 
 ## Card Gallery
 
-Blowfish also supports displaying the standard lists of articles as card galleries. You can config this both for the recent section in the homepage and for lists of articles across your website. For homepage you can use `homepage.cardView` and `homepage.cardViewScreenWidth`; and for lists use `list.cardView` and `list.cardViewScreenWidth`. Check the [Configuration docs]({{< ref "configuration" >}}) for more details, and the homepage for a live demo.
+Blowfish supporta anche la visualizzazione degli elenchi standard di articoli come gallerie di schede. È possibile configurare questo sia per la sezione recente nella homepage che per gli elenchi di articoli nel sito web. Per la homepage si può usare `homepage.cardView` e `homepage.cardViewScreenWidth`; per gli elenchi si può usare `list.cardView` e `list.cardViewScreenWidth`. Per maggiori dettagli, consultare i [docs di configurazione] ({{< ref “configuration” >}}) e la homepage per una dimostrazione dal vivo.
