@@ -104,7 +104,7 @@ New article!
 
 ## Button
 
-`button` outputs a styled button component which can be used to highlight a primary action. It has two optional variables `href` and `target` which can be used to specify the URL and target of the link.
+`button` outputs a styled button component which can be used to highlight a primary action. It has three optional variables `href`, `target` and `rel` which can be used to specify the URL, target and relation of the link.
 
 **Example:**
 
