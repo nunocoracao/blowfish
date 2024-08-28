@@ -31,7 +31,7 @@
       {{- else }}
       &copy;
       {{ now.Format "2006" }}
-      {{ .Site.Author.name | markdownify }}
+      {{ .Site.Params.Author.name | markdownify }}
       {{- end }}
     </p>
     {{ end }}

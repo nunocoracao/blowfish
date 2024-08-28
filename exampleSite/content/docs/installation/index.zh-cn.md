@@ -110,6 +110,7 @@ git submodule add -b main https://github.com/nunocoracao/blowfish.git themes/blo
 
    ```toml
    [[imports]]
+   disable = false
    path = "github.com/nunocoracao/blowfish/v2"
    ```
 
