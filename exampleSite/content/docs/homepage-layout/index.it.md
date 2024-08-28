@@ -19,7 +19,7 @@ Il layout predefinito è quello del profilo, ideale per i siti web e i blog pers
 
 <img class="thumbnailshadow" src="img/home-profile.png"/>
 
-Le informazioni sull'autore sono fornite nel file di configurazione delle lingue. Fare riferimento alle sezioni [Guida introduttiva]({{< ref “getting-started” >}}) e [Configurazione della lingua]({{< ref “configuration##language-and-i18n” >}}) per i dettagli sui parametri.
+Le informazioni sull'autore sono fornite nel file di configurazione delle lingue. Fare riferimento alle sezioni [Guida introduttiva]({{< ref "getting-started" >}}) e [Configurazione della lingua]({{< ref "configuration##language-and-i18n" >}}) per i dettagli sui parametri.
 
 Inoltre, qualsiasi contenuto Markdown fornito nel contenuto della homepage sarà collocato sotto il profilo dell'autore. Ciò consente una maggiore flessibilità per la visualizzazione di una biografia o di altri contenuti personalizzati utilizzando gli shortcode.
 
@@ -67,7 +67,7 @@ Con il valore di configurazione impostato, creare un nuovo file `custom.html` e 
 
 Per includere [articoli recenti](#recent-articles) nel layout personalizzato, utilizzare il partial `recent-articles/main.html`.
 
-Ad esempio, la [homepage]({{< ref “/” >}}) di questo sito utilizza il layout personalizzato per consentire di passare dal layout del profilo a quello della pagina. Visitare il [repo GitHub](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/layouts/partials/home/custom.html) per vedere come funziona.
+Ad esempio, la [homepage]({{< ref "/" >}}) di questo sito utilizza il layout personalizzato per consentire di passare dal layout del profilo a quello della pagina. Visitare il [repo GitHub](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/layouts/partials/home/custom.html) per vedere come funziona.
 
 ## Articoli recenti
 
@@ -81,8 +81,8 @@ Gli articoli elencati in questa sezione sono derivati dall'impostazione `mainSec
 
 Blowfish è stato creato in modo che sia facile aggiungere supporto visivo ai tuoi articoli. Se hai familiarità con la struttura dell'articolo di Hugo, devi solo inserire un file immagine (quasi tutti i formati sono supportati ma consigliamo `.png` o `.jpg`) che inizi con `feature*` all'interno della cartella dell'articolo. E questo è tutto, Blowfish sarà quindi in grado di utilizzare l'immagine sia come miniatura all'interno del tuo sito web sia per le schede <a target="_blank" href="https://oembed.com/">oEmbed</a> su piattaforme sociali.
 
-[Qui]({{< ref “thumbnails” >}}) si trova una guida con maggiori informazioni e un [sample]({{< ref “thumbnail_sample” >}}) se si vuole vedere un esempio.
+[Qui]({{< ref "thumbnails" >}}) si trova una guida con maggiori informazioni e un [sample]({{< ref "thumbnail_sample" >}}) se si vuole vedere un esempio.
 
 ## Card Gallery
 
-Blowfish supporta anche la visualizzazione degli elenchi standard di articoli come gallerie di schede. È possibile configurare questo sia per la sezione recente nella homepage che per gli elenchi di articoli nel sito web. Per la homepage si può usare `homepage.cardView` e `homepage.cardViewScreenWidth`; per gli elenchi si può usare `list.cardView` e `list.cardViewScreenWidth`. Per maggiori dettagli, consultare i [docs di configurazione] ({{< ref “configuration” >}}) e la homepage per una dimostrazione dal vivo.
+Blowfish supporta anche la visualizzazione degli elenchi standard di articoli come gallerie di schede. È possibile configurare questo sia per la sezione recente nella homepage che per gli elenchi di articoli nel sito web. Per la homepage si può usare `homepage.cardView` e `homepage.cardViewScreenWidth`; per gli elenchi si può usare `list.cardView` e `list.cardViewScreenWidth`. Per maggiori dettagli, consultare i [docs di configurazione] ({{< ref "configuration" >}}) e la homepage per una dimostrazione dal vivo.

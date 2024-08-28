@@ -266,7 +266,7 @@ Il `name` predefinito è il titolo di `pageRef`, con le caselle.
 
 Blowfish è stato creato in modo che sia facile aggiungere supporto visivo ai tuoi articoli. Se hai familiarità con la struttura degli articoli di Hugo, devi solo inserire un file immagine (quasi tutti i formati sono supportati ma consigliamo `.png` o `.jpg`) che inizi con `feature*` all'interno della cartella dell'articolo. E questo è tutto, Blowfish sarà quindi in grado di utilizzare l'immagine sia come miniatura all'interno del tuo sito web sia per le schede <a target="_blank" href="https://oembed.com/">oEmbed</a> attraverso le piattaforme social.
 
-[Qui]({{< ref "thumbnails" >}}) è anche una guida con maggiori informazioni e un [esempio]({{< ref "thumbnails_sample" >}}) se vuoi vedere come puoi farlo.
+[Qui]({{< ref "thumbnails" >}}) è anche una guida con maggiori informazioni e un [esempio]({{< ref "thumbnail_sample" >}}) se vuoi vedere come puoi farlo.
 
 Additionally, Blowfish also supports background hero images in articles and lists. In order to use a different image than the featured one, add an image file in which the name starts with `background*`.
 Inoltre, Blowfish supporta anche una background hero  image in articoli ed elenchi. Per utilizzare un'immagine diversa da quella in primo piano, aggiungi un file immagine il cui nome inizia con `background*`.

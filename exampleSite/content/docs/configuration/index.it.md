@@ -55,7 +55,7 @@ Tieni presente che i nomi delle variabili forniti in questa tabella utilizzano i
 
 Blowfish è stato creato in modo che sia facile aggiungere supporto visivo ai tuoi articoli. Se hai familiarità con la struttura degli articoli di Hugo, devi solo inserire un file immagine (quasi tutti i formati sono supportati ma consigliamo `.png` o `.jpg`) che inizi con `feature*` all'interno della cartella dell'articolo. E questo è tutto, Blowfish sarà quindi in grado di utilizzare l'immagine sia come miniatura all'interno del tuo sito web sia per le schede <a target="_blank" href="https://oembed.com/">oEmbed</a> su piattaforme sociali. 
 
-[Qui]({{< ref "thumbnails" >}}) c'è anche una guida con maggiori informazioni e un [esempio]({{< ref "thumbnails_sample" >}}) se vuoi vedere come puoi farlo.
+[Qui]({{< ref "thumbnails" >}}) c'è anche una guida con maggiori informazioni e un [esempio]({{< ref "thumbnail_sample" >}}) se vuoi vedere come puoi farlo.
 
 ## Lingua e i18n
 
