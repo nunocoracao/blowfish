@@ -1,4 +1,4 @@
-{{ with .Site.Author.links }}
+{{ with .Site.Params.Author.links }}
   <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
     {{ range $links := . }}
       {{ range $name, $url := $links }}
