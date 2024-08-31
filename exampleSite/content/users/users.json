@@ -739,5 +739,14 @@
       "Personal Site",
       "Blog"
     ]
+  },
+  {
+    "title": "andrealucchini.com",
+    "url": "https://andrealucchini.com",
+    "source": "https://github.com/CommanderKen/commanderken.github.io",
+    "tags": [
+      "Personal site",
+      "Blog"
+    ]
   }
 ]
