@@ -29,19 +29,6 @@ body button {
   @apply hidden;
 }
 
-/* Hamburger menu */
-body:has(#menu-controller:checked) {
-  @apply overflow-y-hidden;
-}
-
-#menu-button:has(#menu-controller:checked) {
-  @apply invisible;
-}
-
-#menu-controller:checked~#menu-wrapper {
-  @apply visible opacity-100;
-}
-
 /* RTL support */
 .prose blockquote {
   @apply rtl:pr-4 rtl:border-l-0 rtl:border-r-4;
