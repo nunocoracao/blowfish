@@ -3182,21 +3182,6 @@ body button {
   display:none
 }
 
-/* Hamburger menu */
-
-body:has(#menu-controller:checked) {
-  overflow-y:hidden
-}
-
-#menu-button:has(#menu-controller:checked) {
-  visibility:hidden
-}
-
-#menu-controller:checked~#menu-wrapper {
-  visibility:visible;
-  opacity:1
-}
-
 /* RTL support */
 
 .prose blockquote:where([dir="rtl"], [dir="rtl"] *) {
