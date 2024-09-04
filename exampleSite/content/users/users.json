@@ -748,5 +748,14 @@
       "Personal site",
       "Blog"
     ]
+  },
+  {
+    "title": "hetong-re4per.com",
+    "url": "https://hetong-re4per.com",
+    "source": "https://github.com/HeTongRe4per/HeTongRe4per.github.io",
+    "tags": [
+      "Personal site",
+      "Blog"
+    ]
   }
 ]
