@@ -73,8 +73,6 @@ document.addEventListener("keydown", function (event) {
       } else {
         document.activeElement.click();
       }
-    }else{
-      event.preventDefault();
     }
   }
 
