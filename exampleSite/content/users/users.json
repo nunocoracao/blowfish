@@ -748,5 +748,13 @@
       "Personal site",
       "Blog"
     ]
+  },
+  {
+    "title": "glomyer.dev",
+    "url": "https://luizglomyer.github.io/",
+    "source": "https://github.com/LuizGlomyer/luizglomyer.github.io",
+    "tags": [
+      "Personal site"
+    ]
   }
 ]
