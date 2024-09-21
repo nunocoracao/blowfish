@@ -748,5 +748,14 @@
       "Personal site",
       "Blog"
     ]
+  },
+  {
+    "title": "Xeonzilla’s Note",
+    "url": "https://xeonzilla.github.io",
+    "source": "https://github.com/Xeonzilla/Xeonzilla.github.io",
+    "tags": [
+      "Personal site",
+      "Blog"
+    ]
   }
 ]
