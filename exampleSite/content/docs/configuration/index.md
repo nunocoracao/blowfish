@@ -71,6 +71,7 @@ The theme currently supports the following languages by default:
 | Czech                        | `cs`    |
 | German                       | `de`    |
 | English                      | `en`    |
+| Esperanto                    | `eo`    |
 | Spanish (Spain)              | `es`    |
 | Finnish                      | `fi`    |
 | French                       | `fr`    |

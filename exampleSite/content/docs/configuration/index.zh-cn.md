@@ -72,6 +72,7 @@ Blowfish 主题目前默认支持了以下语言：
 | Czech                        | `cs`    |
 | German                       | `de`    |
 | English                      | `en`    |
+| Esperanto                    | `eo`    |
 | Spanish (Spain)              | `es`    |
 | Finnish                      | `fi`    |
 | French                       | `fr`    |

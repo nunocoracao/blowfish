@@ -72,6 +72,7 @@ Il tema attualmente supporta le seguenti lingue per impostazione predefinita:
 | Czech                        | `cs`    |
 | German                       | `de`    |
 | English                      | `en`    |
+| Esperanto                    | `eo`    |
 | Spanish (Spain)              | `es`    |
 | Finnish                      | `fi`    |
 | French                       | `fr`    |
