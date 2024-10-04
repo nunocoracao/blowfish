@@ -26,7 +26,7 @@ A highly requested feature, Blowfish is now multilingual! If you publish your co
 
 <div class="text-2xl text-center" style="font-size: 2.8rem">:gb: :de: :fr: :es: :cn: :brazil: :tr: :bangladesh:</div>
 
-Thanks to submissions from the community, Blowfish has already been translated into [twenty-six languages](https://github.com/nunocoracao/blowfish/tree/main/i18n) with more to be added over time. By the way, [pull requests](https://github.com/nunocoracao/blowfish/pulls) for new languages are always welcome!
+Thanks to submissions from the community, Blowfish has already been translated into [thirty languages](https://github.com/nunocoracao/blowfish/tree/main/i18n) with more to be added over time. By the way, [pull requests](https://github.com/nunocoracao/blowfish/pulls) for new languages are always welcome!
 
 ## RTL language support
 
