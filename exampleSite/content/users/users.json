@@ -739,7 +739,7 @@
       "Personal Site",
       "Blog"
     ]
-  },
+  },  
   {
     "title": "andrealucchini.com",
     "url": "https://andrealucchini.com",
@@ -747,6 +747,15 @@
     "tags": [
       "Personal site",
       "Blog"
+    ]
+  },
+  {
+    "title": "utrodus.com",
+    "url": "https://utrodus.com",
+    "source": "https://github.com/utrodus/utrodus.com",
+    "tags": [
+      "Portfolio Site",
+      "Blog"    
     ]
   },
   {
