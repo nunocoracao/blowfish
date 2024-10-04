@@ -1,0 +1,75 @@
+global:
+  language: "EO"
+
+article:
+  anchor_label: "Ankro"
+  date: "{{ .Date }}"
+  date_updated: "Ĝisdatigita: {{ .Date }}"
+  draft: "Malneto"
+  edit_title: "Redakti enhavon"
+  reading_time:
+    one: "{{ .Count }} min"
+    other: "{{ .Count }} min"
+  reading_time_title: "Legotempo"
+  table_of_contents: "Enhavotabelo"
+  word_count:
+    one: "{{ .Count }} vorto"
+    other: "{{ .Count }} vortoj"
+  views:
+    one: "{{ .Count }} vido"
+    other: "{{ .Count }} vidoj"
+  likes:
+    one: "{{ .Count }} ŝato"
+    other: "{{ .Count }} ŝatoj"
+  part_of_series: "Tiu ĉi artikolo estas parto de serio."
+  part: "Parto"
+  this_article: "Tiu ĉi artikolo"
+  related_articles: "Rilataj"
+  zen_mode_title:
+    enable: "Ŝalti zen-reĝimon"
+    disable: "Malŝalti zen-reĝimon"
+
+author:
+  byline_title: "Aŭtoro"
+
+code:
+  copy: "Kopii"
+  copied: "Kopiita"
+
+error:
+  404_title: "Paĝo ne trovita :confused:"
+  404_error: "Eraro 404"
+  404_description: "Ŝajnas, ke la paĝo, kiun vi petis, ne ekzistas."
+
+footer:
+  dark_appearance: "Ŝalti malhelan etoson"
+  light_appearance: "Ŝalti helan etoson"
+  powered_by: "Funciigata de {{ .Hugo }} &amp; {{ .Theme }}"
+
+list:
+  externalurl_title: "Ligola al ekstera retejo"
+  no_articles: "Ankoraŭ ne estas artikoloj ĉi tie listendaj."
+
+nav:
+  scroll_to_top_title: "Rulumi al supro"
+  skip_to_main: "Salti al ĉefa enhavo"
+
+search:
+  open_button_title: "Serĉi (/)"
+  close_button_title: "Fermi (Esc)"
+  input_placeholder: "Serĉo"
+
+sharing:
+  email: "Sendi per retpoŝto"
+  facebook: "Konigi en Facebook"
+  linkedin: "Konigi en LinkedIn"
+  pinterest: "Alpingli sur Pinterest"
+  reddit: "Sendi al Reddit"
+  twitter: "Pepi per Twitter"
+  bluesky: "Afiŝi en Bluesky"
+
+shortcode:
+  recent_articles: "Freŝaj"
+
+recent:
+  show_more: "Montri pli"
