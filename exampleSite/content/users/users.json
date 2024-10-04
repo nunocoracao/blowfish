@@ -775,5 +775,14 @@
       "Personal site",
       "Blog"
     ]
+  },
+  {
+    "title": "lazarusoverlook.com",
+    "url": "https://lazarusoverlook.com",
+    "source": "https://github.com/RolandMarchand/lazarus-manor",
+    "tags": [
+      "Personal site",
+      "Blog"
+    ]
   }
 ]
