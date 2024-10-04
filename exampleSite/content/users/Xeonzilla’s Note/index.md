@@ -1,8 +1,8 @@
 ---
-                title: "Mare_Infinitus"
-                tags: [个人网站, 博客]
-                externalUrl: "https://lab.imgb.space"
-                weight: 721
+                title: "Xeonzilla’s Note"
+                tags: [Personal site,Blog]
+                externalUrl: "https://xeonzilla.github.io"
+                weight: 891
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-
