@@ -67,6 +67,8 @@ sharing:
   reddit: "Submit to Reddit"
   twitter: "Tweet on Twitter"
   bluesky: "Post on Bluesky"
+  whatsapp: "Share via WhatsApp"
+  telegram: "Share via Telegram"
 
 shortcode:
   recent_articles: "Recent"

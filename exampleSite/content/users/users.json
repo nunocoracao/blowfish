@@ -739,7 +739,7 @@
       "Personal Site",
       "Blog"
     ]
-  },
+  },  
   {
     "title": "andrealucchini.com",
     "url": "https://andrealucchini.com",
@@ -755,6 +755,42 @@
     "source": "https://github.com/LuizGlomyer/luizglomyer.github.io",
     "tags": [
       "Personal site"
+    ]
+  },
+  {
+    "title": "utrodus.com",
+    "url": "https://utrodus.com",
+    "source": "https://github.com/utrodus/utrodus.com",
+    "tags": [
+      "Portfolio Site",
+      "Blog"    
+    ]
+  },
+  {
+    "title": "hetong-re4per.com",
+    "url": "https://hetong-re4per.com",
+    "source": "https://github.com/HeTongRe4per/HeTongRe4per.github.io",
+    "tags": [
+      "Personal site",
+      "Blog"
+    ]
+  },
+  {
+    "title": "Xeonzilla’s Note",
+    "url": "https://xeonzilla.github.io",
+    "source": "https://github.com/Xeonzilla/Xeonzilla.github.io",
+    "tags": [
+      "Personal site",
+      "Blog"
+    ]
+  },
+  {
+    "title": "lazarusoverlook.com",
+    "url": "https://lazarusoverlook.com",
+    "source": "https://github.com/RolandMarchand/lazarus-manor",
+    "tags": [
+      "Personal site",
+      "Blog"
     ]
   }
 ]
