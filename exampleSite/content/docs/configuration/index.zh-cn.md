@@ -44,7 +44,7 @@ Blowfish 主题支持了 Hugo 框架中定义的所有标准配置变量。但�
 | `baseURL`                | 无                        | 网站 URL 根地址。                                                                                                                                                                                                                                                                                    |
 | `defaultContentLanguage` | `"en"`                    | 这个值决定了主题中组件和内容所使用的默认语言。 参考 [语言和 i18n](#language-and-i18n) 部分来了解 blowfish 支持的所有语言代码。                                                                                                                                                                       |
 | `enableRobotsTXT`        | `true`                    | 当开启这个值，`robots.txt` 文件将会被创建在站点根目录， 这将允许搜索引擎抓取整个网站。如果你想要自己提供 `robots.txt`，那么设置这个值为 `false` 并把你的文件放置到 `static` 目录下。 为了实现完全控制，你可以需要提供一个 [自定义布局]({{< ref "content-examples#custom-layouts" >}}) 来生成此文件。 |
-| `paginate`               | `10`                      | 定义文章列表中，每页展示的文章数量。                                                                                                                                                                                                                                                                 |
+| `pagination.pagerSize`   | `10`                      | 定义文章列表中，每页展示的文章数量。                                                                                                                                                                                                                                                                 |
 | `summaryLength`          | `0`                       | 当[扉页参数]({{< ref "front-matter" >}}) 中没有提供文章摘要时，此参数定义了自动生成文章摘要的单词数量。如果值为`0`，则默认使用第一句话作为摘要。当摘要被隐藏，这个值没有任何效果。                                                                                                                   |
 | `outputs.home`           | `["HTML", "RSS", "JSON"]` | 为站点自动生成输出格式。Blowfish 要求 HTML、RSS 和 JSON 都需要有，以保证主题组件可以正常运作。                                                                                                                                                                                                       |
 | `permalinks`             | 无                        | 参考 [Hugo 文档](https://gohugo.io/content-management/urls/#permalinks) 中的自定义文章的固定链接配置。                                                                                                                                                                                               |
@@ -72,6 +72,7 @@ Blowfish 主题目前默认支持了以下语言：
 | Czech                        | `cs`    |
 | German                       | `de`    |
 | English                      | `en`    |
+| Esperanto                    | `eo`    |
 | Spanish (Spain)              | `es`    |
 | Finnish                      | `fi`    |
 | French                       | `fr`    |

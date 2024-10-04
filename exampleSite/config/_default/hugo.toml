@@ -10,7 +10,6 @@ disableLanguages = [] #to allow translation work requiring shipping to productio
 # pluralizeListTitles = "true" # hugo function useful for non-english languages, find out more in  https://gohugo.io/getting-started/configuration/#pluralizelisttitles
 
 enableRobotsTXT = true
-paginate = 100
 summaryLength = 30
 hasCJKLanguage = true
 
@@ -20,6 +19,9 @@ buildFuture = false
 enableEmoji = true
 
 googleAnalytics = "G-PEDMYR1V0K"
+
+[pagination]
+  pagerSize = 100
 
 [imaging]
   anchor = 'Center'
