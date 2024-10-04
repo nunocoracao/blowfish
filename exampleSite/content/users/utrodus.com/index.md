@@ -1,8 +1,8 @@
 ---
-                title: "Mare_Infinitus"
-                tags: [個人サイト, ブログ]
-                externalUrl: "https://lab.imgb.space"
-                weight: 721
+                title: "utrodus.com"
+                tags: [Portfolio Site,Blog]
+                externalUrl: "https://utrodus.com"
+                weight: 871
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

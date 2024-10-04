@@ -1,8 +1,8 @@
 ---
-                title: "Jinbo Pan - Blog"
-                tags: [Personal Site,Blog,Technology Blog]
-                externalUrl: "https://www.panjinbo.com/"
-                weight: 851
+                title: "glomyer.dev"
+                tags: [个人网站]
+                externalUrl: "https://luizglomyer.github.io/"
+                weight: 861
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

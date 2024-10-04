@@ -1,8 +1,8 @@
 ---
-                title: "jundimubarok.com"
-                tags: [Sito personale]
-                externalUrl: "https://jundimubarok.com/"
-                weight: 431
+                title: "hetong-re4per.com"
+                tags: [個人サイト, ブログ]
+                externalUrl: "https://hetong-re4per.com"
+                weight: 881
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
