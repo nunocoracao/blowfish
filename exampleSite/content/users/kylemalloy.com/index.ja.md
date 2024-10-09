@@ -2,7 +2,7 @@
                 title: "kylemalloy.com"
                 tags: [個人サイト]
                 externalUrl: "https://kylemalloy.com"
-                weight: 551
+                weight: 531
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

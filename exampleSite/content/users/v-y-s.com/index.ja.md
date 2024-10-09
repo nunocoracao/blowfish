@@ -2,7 +2,7 @@
                 title: "v-y-s.com"
                 tags: [個人サイト]
                 externalUrl: "https://v-y-s.com/"
-                weight: 581
+                weight: 561
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

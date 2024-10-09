@@ -2,7 +2,7 @@
                 title: "DXPetti.com"
                 tags: [Personal site,Blog]
                 externalUrl: "https://www.dxpetti.com/"
-                weight: 651
+                weight: 631
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

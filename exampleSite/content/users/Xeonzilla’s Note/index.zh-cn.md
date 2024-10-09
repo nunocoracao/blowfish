@@ -1,8 +1,8 @@
 ---
-                title: "Jinbo Pan - Blog"
-                tags: [个人网站, 博客, 技术博客]
-                externalUrl: "https://www.panjinbo.com/"
-                weight: 851
+                title: "Xeonzilla’s Note"
+                tags: [个人网站, 博客]
+                externalUrl: "https://xeonzilla.github.io"
+                weight: 891
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
