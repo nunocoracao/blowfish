@@ -1,8 +1,8 @@
 ---
-                title: "jundimubarok.com"
-                tags: [个人网站]
-                externalUrl: "https://jundimubarok.com/"
-                weight: 431
+                title: "glomyer.dev"
+                tags: [Personal site]
+                externalUrl: "https://luizglomyer.github.io/"
+                weight: 861
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

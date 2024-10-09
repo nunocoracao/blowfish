@@ -2,7 +2,7 @@
                 title: "Synaptic Sugar"
                 tags: [视频游戏开发商]
                 externalUrl: "https://synapticsugar.games"
-                weight: 761
+                weight: 741
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

@@ -2,7 +2,7 @@
                 title: "micheledinelli.github.io"
                 tags: [Sito personale, Sito portfolio, Accademia]
                 externalUrl: "https://micheledinelli.github.io"
-                weight: 871
+                weight: 831
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
