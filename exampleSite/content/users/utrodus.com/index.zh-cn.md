@@ -1,8 +1,8 @@
 ---
-                title: "Jinbo Pan - Blog"
-                tags: [個人サイト, ブログ, テクノロジーブログ]
-                externalUrl: "https://www.panjinbo.com/"
-                weight: 851
+                title: "utrodus.com"
+                tags: [作品集网站, 博客]
+                externalUrl: "https://utrodus.com"
+                weight: 871
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

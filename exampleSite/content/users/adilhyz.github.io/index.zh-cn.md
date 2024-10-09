@@ -2,7 +2,7 @@
                 title: "adilhyz.github.io"
                 tags: [个人网站]
                 externalUrl: "https://adilhyz.github.io"
-                weight: 511
+                weight: 491
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

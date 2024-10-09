@@ -1,8 +1,8 @@
 ---
-                title: "cuttontail.blog"
-                tags: [个人网站]
-                externalUrl: "https://cuttontail.blog"
-                weight: 51
+                title: "Xeonzilla’s Note"
+                tags: [個人サイト, ブログ]
+                externalUrl: "https://xeonzilla.github.io"
+                weight: 891
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
