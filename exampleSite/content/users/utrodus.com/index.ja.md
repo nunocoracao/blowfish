@@ -1,8 +1,8 @@
 ---
-                title: "jundimubarok.com"
-                tags: [個人サイト]
-                externalUrl: "https://jundimubarok.com/"
-                weight: 431
+                title: "utrodus.com"
+                tags: [ポートフォリオサイト, ブログ]
+                externalUrl: "https://utrodus.com"
+                weight: 871
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

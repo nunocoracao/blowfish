@@ -1,8 +1,8 @@
 ---
-                title: "cuttontail.blog"
-                tags: [Personal site]
-                externalUrl: "https://cuttontail.blog"
-                weight: 51
+                title: "glomyer.dev"
+                tags: [個人サイト]
+                externalUrl: "https://luizglomyer.github.io/"
+                weight: 861
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

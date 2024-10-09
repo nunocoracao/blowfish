@@ -2,7 +2,7 @@
                 title: "notes.bluesdriveamelia.space"
                 tags: [Blog,Personal site]
                 externalUrl: "https://notes.bluesdriveamelia.space/"
-                weight: 671
+                weight: 651
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
