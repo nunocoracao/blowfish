@@ -27,7 +27,7 @@
     {{- with .OutputFormats.Get "RSS" -}}
     {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
     {{- end -}}
-    {{ range $pages }}
+    {{ range $pages }}{{ if and (.Param "xml" | default true) (or (not .Params.externalUrl) (and (.Params.externalUrl) (and (not (hasPrefix .Params.externalUrl "http://")) (not (hasPrefix .Params.externalUrl "https://"))))) }}
     <item>
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>
@@ -44,6 +44,6 @@
         {{- end -}}
       {{ end }}
     </item>
-    {{ end }}
+    {{ end }}{{ end }}
   </channel>
 </rss>
