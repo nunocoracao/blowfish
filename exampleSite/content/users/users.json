@@ -757,5 +757,15 @@
       "Personal site",
       "Blog"
     ]
+  },
+  {
+    "title": "Everybody wants some",
+    "url": "https://ews.ink/",
+    "source": "https://github.com/unacro/blog",
+    "tags": [
+      "Blog",
+      "Technology",
+      "Game Development"
+    ]
   }
 ]
