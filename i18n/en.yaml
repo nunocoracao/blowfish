@@ -44,7 +44,7 @@ error:
 footer:
   dark_appearance: "Switch to dark appearance"
   light_appearance: "Switch to light appearance"
-  powered_by: "Powered by {{ .Hugo }} &amp; {{ .Theme }}"
+  powered_by: "Powered by {{ .Hugo }} &amp; {{ .Theme }} <br> Designed by <a href='https://www.freepik.com' target='_blank' rel='noopener noreferrer'>Freepik</a>"
 
 list:
   externalurl_title: "Link to external site"
