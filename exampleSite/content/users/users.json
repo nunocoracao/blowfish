@@ -741,21 +741,23 @@
     ]
   },
   {
-    "title": "Xeonzilla’s Note",
-    "url": "https://xeonzilla.github.io",
-    "source": "https://github.com/Xeonzilla/Xeonzilla.github.io",
-    "tags": [
-      "Personal site",
-      "Blog"
-    ]
-  },
-  {
     "title": "lazarusoverlook.com",
     "url": "https://lazarusoverlook.com",
     "source": "https://github.com/RolandMarchand/lazarus-manor",
     "tags": [
       "Personal site",
       "Blog"
+    ]
+  },
+  {
+    "title": "merox.dev",
+    "url": "https://merox.dev",
+    "source": "https://github.com/mer0x/merox.dev",
+    "tags": [
+      "Personal site",
+      "Blog",
+      "Documentation",
+      "CV"
     ]
   }
 ]
