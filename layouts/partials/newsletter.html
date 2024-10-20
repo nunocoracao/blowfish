@@ -1,1 +1,101 @@
-<iframe width="540" height="305" src="https://b3fbfc70.sibforms.com/serve/MUIFABdGtD3WR0fuAYnLjJFGD6dTjDlHYHlYcfrZjxKi2uvFTDME9qLslNnC7lYT4BCq0reLUgAS1nsMJ3brZZnQsrGV_QVMJn6pN_a0otKckaRsZj6jZ848qYYfB8OnlO18AH5v62AVXRGbA9RDLfQETlZr5iwTxD-hbv0kVAk19zsUt4nS9QA_C3COk7AJMXE1jzGofXgoS85k" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner Abonare Newsletter</title>
+    <style>
+        /* Stiluri pentru banner */
+        .banner {
+            position: fixed;
+            bottom: 20px; /* Distanța de la partea de jos a paginii */
+            right: 20px; /* Distanța de la partea dreaptă a paginii */
+            background: #1e1e2f; /* Fundal întunecat pentru banner */
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            max-width: 400px; /* Lățimea maximă a bannerului */
+            width: 100%; /* Lățimea bannerului */
+            display: none; /* Ascuns inițial */
+            z-index: 9999; /* Asigură-te că este deasupra altor elemente */
+            padding: 15px; /* Padding pentru a face bannerul mai plăcut */
+            text-align: center; /* Centrăm textul */
+            transition: transform 0.3s ease, opacity 0.3s ease; /* Animație */
+            opacity: 0; /* Opacitate inițială */
+            transform: translateY(20px); /* Poziția inițială */
+        }
+
+        .banner.show {
+            display: block; /* Afișăm bannerul */
+            opacity: 1; /* Opacitate completă */
+            transform: translateY(0); /* Resetăm poziția */
+        }
+
+        .close-button {
+            cursor: pointer;
+            font-size: 20px;
+            background: #ff4081; /* Culoare de fundal a butonului */
+            border: none;
+            color: #ffffff; /* Culoare text buton */
+            border-radius: 5px; /* Colțuri rotunjite */
+            padding: 5px 10px; /* Padding pentru buton */
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .close-button:hover {
+            background-color: #d81b60; /* Culoare de hover pentru buton */
+        }
+
+        iframe {
+            border-radius: 8px; /* Colțuri rotunjite pentru iframe */
+            border: none; /* Eliminăm borderul iframe-ului */
+            width: 100%; /* Lățimea iframe-ului */
+            height: auto; /* Înălțimea automată pentru a se adapta */
+            max-height: 305px; /* Înălțimea maximă a iframe-ului */
+            display: block; /* Asigurăm că iframe-ul se comportă ca un bloc */
+            margin: 0; /* Eliminăm marginile */
+            padding: 0; /* Eliminăm padding-ul */
+        }
+
+        .banner-text {
+            color: #f0f0f0; /* Culoare text banner */
+            margin: 10px 0; /* Margine pentru text */
+            font-size: 14px; /* Dimensiunea textului */
+        }
+    </style>
+</head>
+<body>
+    <div id="banner" class="banner">
+        <button class="close-button" onclick="closeBanner()">&times;</button>
+        <div class="banner-text">Abonează-te la newsletter!</div>
+        <iframe 
+            src="https://b3fbfc70.sibforms.com/serve/MUIFAMgDiCnBfJxDAs4XKj1Ps52TAecEliEPWRhHaNoPFzWm9WYaGu0wgrkikX3l2f4pIR2rk65ApZOP1p78CuPtRTsBcV7TrPBlwcaD4wQbDueo9vgByFGSJxAziKeScqwawJNet2zLfRUuj45_RzIlCrm394mfktZLcckb0dl6EyO8Ek8zZNI6sI66DMRlZtyW3CdSv95d9urX" 
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <script>
+        function showBanner() {
+            if (!document.cookie.includes('bannerShown=true')) {
+                const banner = document.getElementById('banner');
+                banner.classList.add('show'); // Afișăm bannerul cu animație
+                // Setăm cookie pentru a evita afișarea repetată a bannerului
+                document.cookie = "bannerShown=true; max-age=86400; path=/";
+                // max-age=86400 setează durata cookie-ului la 24 de ore
+            }
+        }
+
+        function closeBanner() {
+            const banner = document.getElementById('banner');
+            banner.classList.remove('show'); // Ascundem bannerul
+        }
+
+        // Afișează bannerul la încărcarea paginii dacă nu s-a mai afișat recent
+        window.onload = function() {
+            showBanner();
+        };
+    </script>
+</body>
+</html>
