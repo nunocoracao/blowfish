@@ -158,4 +158,7 @@
     {{ end }}
   </footer>
 </article>
+{{ if not (eq .Params.showNewsletter false) }}  <!-- Verificăm dacă showNewsletter nu este false -->
+    {{- partial "newsletter.html" . -}} <!-- Aici apare bannerul, dacă showNewsletter nu este false -->
+{{ end }}
 {{ end }}

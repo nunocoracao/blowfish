@@ -3,99 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banner Abonare Newsletter</title>
+    <title>Pagină cu Banner Modern Profesional</title>
     <style>
-        /* Stiluri pentru banner */
-        .banner {
+        #modern-banner {
             position: fixed;
-            bottom: 20px; /* Distanța de la partea de jos a paginii */
-            right: 20px; /* Distanța de la partea dreaptă a paginii */
-            background: #1e1e2f; /* Fundal întunecat pentru banner */
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: #1e1e1e;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
             border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            max-width: 400px; /* Lățimea maximă a bannerului */
-            width: 100%; /* Lățimea bannerului */
-            display: none; /* Ascuns inițial */
-            z-index: 9999; /* Asigură-te că este deasupra altor elemente */
-            padding: 15px; /* Padding pentru a face bannerul mai plăcut */
-            text-align: center; /* Centrăm textul */
-            transition: transform 0.3s ease, opacity 0.3s ease; /* Animație */
-            opacity: 0; /* Opacitate inițială */
-            transform: translateY(20px); /* Poziția inițială */
+            padding: 15px;
+            max-width: 90%;
+            width: 400px;
+            transition: all 0.3s ease;
+            font-family: Arial, sans-serif;
         }
-
-        .banner.show {
-            display: block; /* Afișăm bannerul */
-            opacity: 1; /* Opacitate completă */
-            transform: translateY(0); /* Resetăm poziția */
+        #modern-banner .banner-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
         }
-
-        .close-button {
-            cursor: pointer;
-            font-size: 20px;
-            background: #ff4081; /* Culoare de fundal a butonului */
+        #modern-banner .banner-title {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        #modern-banner .banner-content {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            height: 250px;
+        }
+        #modern-banner iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
             border: none;
-            color: #ffffff; /* Culoare text buton */
-            border-radius: 5px; /* Colțuri rotunjite */
-            padding: 5px 10px; /* Padding pentru buton */
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            transition: background-color 0.3s ease;
         }
-
-        .close-button:hover {
-            background-color: #d81b60; /* Culoare de hover pentru buton */
+        #modern-banner .close-btn {
+            background: none;
+            color: #fff;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+            opacity: 0.7;
+            padding: 0;
+            width: 30px;
+            height: 30px;
         }
-
-        iframe {
-            border-radius: 8px; /* Colțuri rotunjite pentru iframe */
-            border: none; /* Eliminăm borderul iframe-ului */
-            width: 100%; /* Lățimea iframe-ului */
-            height: auto; /* Înălțimea automată pentru a se adapta */
-            max-height: 305px; /* Înălțimea maximă a iframe-ului */
-            display: block; /* Asigurăm că iframe-ul se comportă ca un bloc */
-            margin: 0; /* Eliminăm marginile */
-            padding: 0; /* Eliminăm padding-ul */
+        #modern-banner .close-btn:hover {
+            transform: scale(1.1);
+            opacity: 1;
         }
-
-        .banner-text {
-            color: #f0f0f0; /* Culoare text banner */
-            margin: 10px 0; /* Margine pentru text */
-            font-size: 14px; /* Dimensiunea textului */
+        @media (max-width: 600px) {
+            #modern-banner {
+                width: calc(100% - 40px);
+                max-width: none;
+            }
         }
     </style>
 </head>
 <body>
-    <div id="banner" class="banner">
-        <button class="close-button" onclick="closeBanner()">&times;</button>
-        <div class="banner-text">Abonează-te la newsletter!</div>
-        <iframe 
-            src="https://b3fbfc70.sibforms.com/serve/MUIFAMgDiCnBfJxDAs4XKj1Ps52TAecEliEPWRhHaNoPFzWm9WYaGu0wgrkikX3l2f4pIR2rk65ApZOP1p78CuPtRTsBcV7TrPBlwcaD4wQbDueo9vgByFGSJxAziKeScqwawJNet2zLfRUuj45_RzIlCrm394mfktZLcckb0dl6EyO8Ek8zZNI6sI66DMRlZtyW3CdSv95d9urX" 
-            allowfullscreen>
-        </iframe>
+    <!-- Aici este conținutul existent al site-ului dvs. -->
+
+    <div id="modern-banner" style="display: none;">
+        <div class="banner-header">
+            <div class="banner-title">Abonează-te la newsletter</div>
+            <button class="close-btn" onclick="closeBanner()">×</button>
+        </div>
+        <div class="banner-content">
+            <iframe src="https://b3fbfc70.sibforms.com/serve/MUIFAJQAf4lHXvpQRYC5kXUc2kt0fnqqdcMDEUnigL_faJ1Go5-BMyAHFLONk4Pqsr13PN2oxTv5Yd9-Efej7GzSmY2PjwYEUmWHoAkm-c_nViMitl98zUIDf8qvAX4ScG16hXXIfnX4LcKmQ9ZuTMDaTA9BgBjoVssIx4FoiSzN08PFrFqCol3sPoNrpjEZmjTDdvEghZUvyzr8" frameborder="0" scrolling="auto" allowfullscreen></iframe>
+        </div>
     </div>
 
     <script>
-        function showBanner() {
-            if (!document.cookie.includes('bannerShown=true')) {
-                const banner = document.getElementById('banner');
-                banner.classList.add('show'); // Afișăm bannerul cu animație
-                // Setăm cookie pentru a evita afișarea repetată a bannerului
-                document.cookie = "bannerShown=true; max-age=86400; path=/";
-                // max-age=86400 setează durata cookie-ului la 24 de ore
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
             }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
         }
 
         function closeBanner() {
-            const banner = document.getElementById('banner');
-            banner.classList.remove('show'); // Ascundem bannerul
+            document.getElementById('modern-banner').style.display = 'none';
+            setCookie('bannerClosed', 'true', 1); // Set cookie for 24 hours
         }
 
-        // Afișează bannerul la încărcarea paginii dacă nu s-a mai afișat recent
         window.onload = function() {
-            showBanner();
-        };
+            if (!getCookie('bannerClosed')) {
+                document.getElementById('modern-banner').style.display = 'block';
+            }
+        }
     </script>
 </body>
 </html>
