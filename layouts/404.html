@@ -1,9 +1,63 @@
 {{ define "main" }}
-  <h1 class="mb-3 text-4xl font-extrabold">{{ i18n "error.404_title" | emojify }}</h1>
-  <p class="mt-8 mb-12 text-neutral-400 dark:text-neutral-500">
-    {{ i18n "error.404_error" | emojify }}
-  </p>
-  <div class="prose dark:prose-invert">
-    <p>{{ i18n "error.404_description" | emojify }}</p>
+<div class="min-h-[70vh] flex flex-col items-center justify-center text-center px-4">
+  <div class="space-y-4">
+    <!-- Much larger 404 title -->
+
+
+    <!-- Image integration -->
+    <div>
+      <img src="rb_7971.png" 
+        alt="404 Error Illustration" 
+        class="mx-auto w-full max-w-lg h-auto" />
+    </div>
+
+    <!-- Messages with reduced spacing -->
+    <div class="space-y-2 mt-4">
+      <p class="text-2xl font-bold text-neutral-800 dark:text-neutral-200">
+        Oops! Page Not Found
+      </p>
+      <p class="text-lg text-neutral-600 dark:text-neutral-400" id="message">
+        Looks like our servers couldn't find what you're looking for!
+      </p>
+      <p class="text-neutral-500 dark:text-neutral-500 max-w-md mx-auto">
+        The page you're looking for might have been moved, deleted, or perhaps never existed.
+      </p>
+    </div>
+
+    <!-- Action buttons -->
+    <div class="flex flex-wrap justify-center gap-4 mt-6">
+      <a href="/" class="px-6 py-3 text-sm font-medium text-white bg-primary-600 dark:bg-primary-500 rounded-lg hover:bg-primary-700 dark:hover:bg-primary-400 transition-colors">
+        Back Home
+      </a>
+      <button onclick="window.history.back()" class="px-6 py-3 text-sm font-medium text-primary-600 dark:text-primary-400 border border-primary-600 dark:border-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/50 transition-colors">
+        Previous Page
+      </button>
+    </div>
   </div>
+
+  <script>
+    const messages = [
+      "Looks like our servers couldn't find what you're looking for!",
+      "Our tech team is scratching their heads on this one...",
+      "This page seems to have disappeared into the server room...",
+      "404: Page hiding in the server racks!",
+      "Even our best admins couldn't locate this page!"
+    ];
+    
+    let currentIndex = 0;
+    const messageElement = document.getElementById('message');
+    
+    // Change message periodically
+    setInterval(() => {
+      messageElement.style.opacity = '0';
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % messages.length;
+        messageElement.textContent = messages[currentIndex];
+        messageElement.style.opacity = '1';
+      }, 200);
+    }, 5000);
+
+    messageElement.style.transition = 'opacity 0.2s ease-in-out';
+  </script>
+</div>
 {{ end }}
