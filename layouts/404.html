@@ -1,64 +1,130 @@
 {{ define "main" }}
 <div class="min-h-[70vh] flex flex-col items-center justify-center text-center px-4">
-  <div class="space-y-4">
-    <!-- Much larger 404 title -->
-
-    <!-- Image integration -->
-    <div>
-      <img src="404_hu3645313582868369550.png" 
-        alt="404 Error Illustration" 
-        class="mx-auto w-[30%] max-w-[30%] h-auto" />
+  <style>
+    .glitch {
+      position: relative;
+      animation: glitch 1s infinite;
+    }
+    @keyframes glitch {
+      0% { transform: translate(0) }
+      20% { transform: translate(-2px, 2px) }
+      40% { transform: translate(-2px, -2px) }
+      60% { transform: translate(2px, 2px) }
+      80% { transform: translate(2px, -2px) }
+      100% { transform: translate(0) }
+    }
+    .message {
+      transition: opacity 0.3s ease;
+    }
+    .particle {
+      position: absolute;
+      pointer-events: none;
+      background: #3b82f6;
+      border-radius: 50%;
+      opacity: 0;
+    }
+  </style>
+<br><br><br>
+  <div class="flex justify-center items-center gap-6 mb-12">
+    <div class="font-extrabold glitch" style="font-size: 12rem;">4</div>
+    <div class="font-extrabold text-primary-600 dark:text-primary-400" style="font-size: 12rem;">0</div>
+    <div class="font-extrabold glitch" style="font-size: 12rem;">4</div>
+  </div>
+    <br>
+    <br>
+    <!-- Title -->
+    <h1 class="text-3xl font-bold mb-8">Page Not Found</h1>
+    
+    <!-- Message -->
+    <div class="message text-xl text-neutral-600 dark:text-neutral-400 mb-8" id="message">
+      Error 404: Page decided to take a coffee break ☕
     </div>
-    <a href="https://www.freepik.com/free-vector/404-error-lost-space-concept-illustration_20824296.htm#fromView=search&page=1&position=33&uuid=f4ddf9b6-d6fd-4bc9-be9b-24e9f4345eea" style="font-size: 8px;">Image by storyset on Freepik</a>
-<br>
-<br>
-    <!-- Messages with reduced spacing -->
-    <div class="space-y-2 mt-4">
-      <p class="text-2xl font-bold text-neutral-800 dark:text-neutral-200">
-        Oops! Page Not Found
-      </p>
-      <p class="text-lg text-neutral-600 dark:text-neutral-400" id="message">
-        Looks like our servers couldn't find what you're looking for!
-      </p>
-      <p class="text-neutral-500 dark:text-neutral-500 max-w-md mx-auto">
-        The page you're looking for might have been moved, deleted, or perhaps never existed.
-      </p>
-    </div>
-
-    <!-- Action buttons -->
-    <div class="flex flex-wrap justify-center gap-4 mt-6">
-      <a href="/" class="px-6 py-3 text-sm font-medium text-white bg-primary-600 dark:bg-primary-500 rounded-lg hover:bg-primary-700 dark:hover:bg-primary-400 transition-colors">
-        Back Home
+    
+    <!-- Description -->
+    <p class="text-neutral-500 dark:text-neutral-500 max-w-2xl mx-auto text-lg leading-relaxed mb-10">
+      The page you're looking for might have taken a wrong turn in cyberspace. 
+      Don't worry, even the best explorers get lost sometimes!
+    </p>
+    
+    <!-- Buttons -->
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="/" class="px-6 py-3 text-sm font-medium text-white bg-primary-600 dark:bg-primary-500 rounded-lg hover:bg-primary-700 dark:hover:bg-primary-400 transition-all hover:-translate-y-0.5">
+        Return Home
       </a>
-      <button onclick="window.history.back()" class="px-6 py-3 text-sm font-medium text-primary-600 dark:text-primary-400 border border-primary-600 dark:border-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/50 transition-colors">
-        Previous Page
+      <button onclick="window.history.back()" class="px-6 py-3 text-sm font-medium text-primary-600 dark:text-primary-400 border border-primary-600 dark:border-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/50 transition-all hover:-translate-y-0.5">
+        Go Back
       </button>
     </div>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script>
     const messages = [
-      "Looks like our servers couldn't find what you're looking for!",
-      "Our tech team is scratching their heads on this one...",
-      "This page seems to have disappeared into the server room...",
-      "404: Page hiding in the server racks!",
-      "Even our best admins couldn't locate this page!"
+      "Error 404: Page decided to take a coffee break ☕",
+      "Looks like this page took an unexpected vacation 🏖️",
+      "Our hamsters couldn't find this page in their servers 🐹",
+      "This page is playing hide and seek (and winning!) 🙈",
+      "Houston, we have a problem finding this page... 🚀"
     ];
-    
+
     let currentIndex = 0;
     const messageElement = document.getElementById('message');
-    
-    // Change message periodically
-    setInterval(() => {
-      messageElement.style.opacity = '0';
-      setTimeout(() => {
-        currentIndex = (currentIndex + 1) % messages.length;
-        messageElement.textContent = messages[currentIndex];
-        messageElement.style.opacity = '1';
-      }, 200);
-    }, 5000);
 
-    messageElement.style.transition = 'opacity 0.2s ease-in-out';
+    function createParticle(x, y) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.width = '8px';
+      particle.style.height = '8px';
+      particle.style.left = x + 'px';
+      particle.style.top = y + 'px';
+      document.body.appendChild(particle);
+
+      gsap.to(particle, {
+        duration: 1,
+        x: (Math.random() - 0.5) * 200,
+        y: (Math.random() - 0.5) * 200,
+        opacity: 1,
+        scale: 0,
+        ease: "power2.out",
+        onComplete: () => particle.remove()
+      });
+    }
+
+    function explodeParticles(event) {
+      for (let i = 0; i < 20; i++) {
+        createParticle(event.clientX, event.clientY);
+      }
+    }
+
+    document.querySelectorAll('.glitch').forEach(num => {
+      num.addEventListener('click', explodeParticles);
+    });
+
+    function updateMessage() {
+      gsap.to(messageElement, {
+        duration: 0.3,
+        opacity: 0,
+        onComplete: () => {
+          currentIndex = (currentIndex + 1) % messages.length;
+          messageElement.textContent = messages[currentIndex];
+          gsap.to(messageElement, {
+            duration: 0.3,
+            opacity: 1
+          });
+        }
+      });
+    }
+
+    setInterval(updateMessage, 4000);
+
+    // Initial animation
+    gsap.from('.glitch, .text-[12rem]', {
+      duration: 1,
+      y: -100,
+      opacity: 0,
+      stagger: 0.2,
+      ease: "bounce.out"
+    });
   </script>
 </div>
 {{ end }}
