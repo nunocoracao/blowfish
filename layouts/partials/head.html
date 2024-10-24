@@ -5,8 +5,7 @@
   {{ end }}
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  
-  {{/* Title logic */}}
+   {{/* Title logic */}}
   {{ if .IsHome -}}
   <title>Merox - IT Blog & Docs</title>
   <meta name="title" content="Merox - IT Blog & Docs" />
@@ -14,7 +13,6 @@
   <title>{{ .Title | emojify }} &middot; Merox</title>
   <meta name="title" content="{{ .Title | emojify }} &middot; Merox" />
   {{- end }}
-
   {{/* Metadata */}}
   {{ with (.Params.Summary | default .Params.Description) | default .Site.Params.description -}}
   <meta name="description" content="{{ . }}" />
@@ -29,7 +27,11 @@
   <meta name="robots" content="{{ . }}" />
   {{ end }}
   <link rel="canonical" href="{{ .Permalink }}" />
-
+  {{ range .AlternativeOutputFormats -}}
+  {{ printf `
+  <link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink ($.Site.Title | emojify) |
+  safeHTML }}
+  {{ end -}}
   {{/* Asset bundles */}}
   {{ $assets := newScratch }}
   {{ $cssScheme := resources.Get (printf "css/schemes/%s.css" (.Site.Params.colorScheme | default "blowfish")) }}
@@ -47,13 +49,10 @@
   "sha512" }}
   <link type="text/css" rel="stylesheet" href="{{ $bundleCSS.RelPermalink }}"
     integrity="{{ $bundleCSS.Data.Integrity }}" />
-
-  {{/* JavaScript Files */}}
   {{ $jsAppearance := resources.Get "js/appearance.js" }}
   {{ $jsAppearance = $jsAppearance | resources.ExecuteAsTemplate "js/appearance.js" . | resources.Minify | resources.Fingerprint "sha512" }}
   <script type="text/javascript" src="{{ $jsAppearance.RelPermalink }}"
     integrity="{{ $jsAppearance.Data.Integrity }}"></script>
-
   {{ if .Site.Params.enableSearch | default false }}
   {{ $jsFuse := resources.Get "lib/fuse/fuse.min.js" }}
   {{ $jsSearch := resources.Get "js/search.js" }}
@@ -73,15 +72,14 @@
   {{ $bundleJS := $assets.Get "js" | resources.Concat "js/main.bundle.js" | resources.Minify | resources.Fingerprint
   "sha512" }}
   <script defer type="text/javascript" id="script-bundle" src="{{ $bundleJS.RelPermalink }}"
-    integrity="{{ $bundleJS.Data.Integrity }}" data-copy="{{ i18n "code.copy" }}" data-copied="{{ i18n "code.copied" }}"></script>
+    integrity="{{ $bundleJS.Data.Integrity }}" data-copy="{{ i18n " code.copy" }}" data-copied="{{ i18n " code.copied"
+    }}"></script>
   {{ end }}
-  
   {{ if not .Site.Params.disableImageZoom | default true }}
   {{ $zoomJS := resources.Get "lib/zoom/zoom.min.js" | resources.Fingerprint "sha512" }}
   <script src="{{ $zoomJS.RelPermalink }}" integrity="{{ $zoomJS.Data.Integrity }}"></script>
   {{ end }}
-
-  {{/* Icons and other metadata */}}
+  {{/* Icons */}}
   {{ if templates.Exists "partials/favicons.html" }}
   {{ partialCached "favicons.html" .Site }}
   {{ else }}
@@ -90,24 +88,65 @@
   <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon-16x16.png" | relURL }}" />
   <link rel="manifest" href="{{ "site.webmanifest" | relURL }}" />
   {{ end }}
-
-  {{/* Social metadata */}}
+  {{/* Site Verification */}}
+  {{ with .Site.Params.verification.google }}
+  <meta name="google-site-verification" content="{{ . }}" />
+  {{ end }}
+  {{ with .Site.Params.verification.bing }}
+  <meta name="msvalidate.01" content="{{ . }}" />
+  {{ end }}
+  {{ with .Site.Params.verification.pinterest }}
+  <meta name="p:domain_verify" content="{{ . }}" />
+  {{ end }}
+  {{ with .Site.Params.verification.yandex }}
+  <meta name="yandex-verification" content="{{ . }}" />
+  {{ end }}
+  {{/* Social */}}
   {{ template "_internal/opengraph.html" . }}
   {{ template "_internal/twitter_cards.html" . }}
-
-  {{/* Schema and author information */}}
+  {{/* Schema */}}
   {{ partial "schema.html" . }}
+  {{/* Me */}}
   {{ with .Site.Params.Author.name }}
-  <meta name="author" content="{{ . }}" />
-  {{ end }}
+  <meta name="author" content="{{ . }}" />{{ end }}
   {{ with .Site.Params.Author.links }}
   {{ range $links := . }}
   {{ range $name, $url := $links }}
-  <link href="{{ $url }}" rel="me" />
+  <link href="{{ $url }}" rel="me" />{{ end }}
   {{ end }}
   {{ end }}
-  {{ end }}
-  
-  {{/* Google Analytics */}}
+  {{/* Vendor */}}
+  {{ partial "vendor.html" . }}
+  {{/* Analytics */}}
   {{ partial "analytics/main.html" .Site }}
+  {{/* Extend head - eg. for custom analytics scripts, etc. */}}
+  {{ if templates.Exists "partials/extend-head.html" }}
+  {{ partialCached "extend-head.html" .Site }}
+  {{ end }}
+  <meta name="theme-color"/>
+  {{/* Firebase */}}
+  {{ with $.Site.Params.firebase }}
+  {{ if isset $.Site.Params "firebase" }}
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script>
+
+    const firebaseConfig = {
+      apiKey: {{ $.Site.Params.firebase.apiKey }},
+      authDomain: {{ $.Site.Params.firebase.apiKey }},
+      projectId: {{ $.Site.Params.firebase.projectId }},
+      storageBucket: {{ $.Site.Params.firebase.storageBucket }},
+      messagingSenderId: {{ $.Site.Params.firebase.messagingSenderId }},
+      appId: {{ $.Site.Params.firebase.appId }},
+      measurementId: {{ $.Site.Params.firebase.measurementId }}
+    };
+
+    var app = firebase.initializeApp(firebaseConfig);
+    var db = firebase.firestore();
+    var auth = firebase.auth();
+
+  </script>
+  {{ end }}
+  {{ end }}
 </head>
