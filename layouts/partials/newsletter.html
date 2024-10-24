@@ -109,9 +109,11 @@
         }
 
         window.onload = function() {
-            if (!getCookie('bannerClosed')) {
-                document.getElementById('modern-banner').style.display = 'block';
-            }
+            setTimeout(function() {
+                if (!getCookie('bannerClosed')) {
+                    document.getElementById('modern-banner').style.display = 'block';
+                }
+            }, 10000); // 15000 milliseconds = 15 seconds
         }
     </script>
 </body>
