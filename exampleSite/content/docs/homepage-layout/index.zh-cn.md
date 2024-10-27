@@ -43,7 +43,7 @@ Blowfish 提供了一个完全灵活的主页布局。你可以选择两种主�
 
 ## 背景布局（background）
 
-背景布局（background）相对于英雄布局（hero）更叫平滑。和英雄布局（hero）类似，它也显示了网站作者的信息，并在其下方加载 markdown 内容。
+背景布局（background）相对于英雄布局（hero）更加平滑。和英雄布局（hero）类似，它也显示了网站作者的信息，并在其下方加载 markdown 内容。
 
 <img class="thumbnailshadow" src="img/home-background.png"/>
 
