@@ -27,6 +27,12 @@
     {{- with .OutputFormats.Get "RSS" -}}
     {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
     {{- end -}}
+    {{ if and (.Site.Params.RSSNext.feedId) (.Site.Params.RSSNext.userId) }}
+    <follow_challenge>
+      <feedId>{{ .Site.Params.RSSNext.feedId }}</feedId>
+      <userId>{{ .Site.Params.RSSNext.userId }}</userId>
+    </follow_challenge>
+    {{ end }}
     {{ range $pages }}
     <item>
       <title>{{ .Title }}</title>
