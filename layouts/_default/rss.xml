@@ -1,16 +1,16 @@
 {{- $pctx := . -}}
-{{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
-{{- $pages := slice -}}
-{{- if or $.IsHome $.IsSection -}}
-{{- $pages = $pctx.RegularPages -}}
-{{- else -}}
-{{- $pages = $pctx.Pages -}}
-{{- end -}}
-{{- $limit := .Site.Config.Services.RSS.Limit -}}
-{{- if ge $limit 1 -}}
-{{- $pages = $pages | first $limit -}}
-{{- end -}}
-{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+        {{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
+        {{- $pages := slice -}}
+        {{- if or $.IsHome $.IsSection -}}
+        {{- $pages = $pctx.RegularPages -}}
+        {{- else -}}
+        {{- $pages = $pctx.Pages -}}
+        {{- end -}}
+        {{- $limit := .Site.Config.Services.RSS.Limit -}}
+        {{- if ge $limit 1 -}}
+        {{- $pages = $pages | first $limit -}}
+        {{- end -}}
+        {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} on {{ end }}{{ .Site.Title }}{{ end }}</title>
@@ -27,6 +27,12 @@
     {{- with .OutputFormats.Get "RSS" -}}
     {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
     {{- end -}}
+    {{ if and (.Site.Params.RSSNext.feedId) (.Site.Params.RSSNext.userId) }}
+    <follow_challenge>
+      <feedId>{{ .Site.Params.RSSNext.feedId }}</feedId>
+      <userId>{{ .Site.Params.RSSNext.userId }}</userId>
+    </follow_challenge>
+    {{ end }}
     {{ range $pages }}
     <item>
       <title>{{ .Title }}</title>
@@ -36,12 +42,12 @@
       <guid>{{ .Permalink }}</guid>
       <description>{{ .Summary | html }}</description>
       {{ range ( where .Site.RegularPages ".RelPermalink" .RelPermalink | first 1 ) }}
-        {{- $images := .Resources.ByType "image" -}}
-        {{- $featured := $images.GetMatch "*feature*" -}}
-        {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
-        {{- with $featured -}}
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="{{ $featured.Permalink  }}" />
-        {{- end -}}
+      {{- $images := .Resources.ByType "image" -}}
+      {{- $featured := $images.GetMatch "*feature*" -}}
+      {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
+      {{- with $featured -}}
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="{{ $featured.Permalink  }}" />
+      {{- end -}}
       {{ end }}
     </item>
     {{ end }}
