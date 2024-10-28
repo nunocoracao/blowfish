@@ -90,6 +90,7 @@ forgejoDefaultServer = "https://v8.next.forgejo.org"
   layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
   showBreadcrumbs = false
   showSummary = false
+  plainifySummary = true # only used when showSummary = true
   showViews = false
   showLikes = false
   showTableOfContents = false
