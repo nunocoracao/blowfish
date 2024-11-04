@@ -51,7 +51,7 @@ Tieni presente che il codice della lingua nel nome del file di configurazione de
 
 title = "My awesome website"
 
-[author]
+[params.author]
 name = "My name"
 image = "img/author.jpg"
 headline = "A generally awesome human"
@@ -60,7 +60,7 @@ links = [
   { twitter = "https://twitter.com/username" }
 ]
 ```
-La configurazione `[author]` determina il modo in cui le informazioni sull'autore vengono visualizzate sul sito web. L'immagine deve essere posizionata nella cartella `assets/`. I link verranno visualizzati nell'ordine in cui sono elencati.
+La configurazione `[params.author]` determina il modo in cui le informazioni sull'autore vengono visualizzate sul sito web. L'immagine deve essere posizionata nella cartella `assets/`. I link verranno visualizzati nell'ordine in cui sono elencati.
 
 Se hai bisogno di ulteriori dettagli, ulteriori informazioni su ciascuna di queste opzioni di configurazione sono trattate nella sezione [Configurazione]({{< ref "configuration" >}}).
 
