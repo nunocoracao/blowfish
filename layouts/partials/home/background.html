@@ -29,7 +29,18 @@
                         class="opacity-60 absolute inset-0 h-[1000px] bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal">
                     </div>
                     {{ end }}
+
+                    <!-- Suprapunerea SVG animată 
+                    <div class="absolute inset-0 svg-overlay">
+                        {{ $svg := resources.Get "featured.svg" }}
+                        {{ if $svg }}
+                            {{ $svg.Content | safeHTML }}
+                        {{ else }}
+                            <p>SVG not found</p>
+                        {{ end }}
+                    </div> -->
                 </div>
+
                 <div class="relative px-1 py-1 flex flex-col items-center justify-center text-center">
                     {{ with .Site.Params.Author.image }}
                         {{ $authorImage := "" }}
