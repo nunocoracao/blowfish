@@ -766,5 +766,14 @@
       "Personal site",
       "Blog"
     ]
+  },
+  {
+    "title": "Handbook on Teaching Empirical Software Engineering: Online Materials",
+    "url": "https://www.emse.education",
+    "source": "https://github.com/mendezfe/temse",
+    "tags": [
+      "Book",
+      "Academia"
+    ]
   }
 ]
