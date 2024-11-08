@@ -57,9 +57,9 @@ var cache = {};
 function parseDirname(user) {
     return user.url
                 .split("//")
-                .at(1)                // take everything after protocol
-                .replaceAll('/', '-') // and replace every slash with hyphen
-                .replace(/-$/, '');   // and remove the trailing hyphen if there is one
+                .at(1)                 // take everything after protocol
+                .replace(/\/$/, '')    // and remove the trailing slash if there is one
+                .replaceAll('/', '-'); // and replace remaining slashs with hyphen
 }
 
 async function convert(text, from, to) {
