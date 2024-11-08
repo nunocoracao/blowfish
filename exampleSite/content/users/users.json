@@ -775,5 +775,15 @@
       "Book",
       "Academia"
     ]
+  },
+  {
+    "title": "blog.lofibean.cc",
+    "url": "https://blog.lofibean.cc",
+    "source": "https://github.com/bemnlam/bemnlam.github.io",
+    "tags": [
+      "Personal site",
+      "Software Developer",
+      "Blog"
+    ]
   }
 ]
