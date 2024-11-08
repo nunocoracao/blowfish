@@ -759,6 +759,34 @@
     ]
   },
   {
+    "title": "p3rception.github.io",
+    "url": "https://p3rception.github.io/",
+    "source": "https://github.com/p3rception/p3rception.github.io",
+    "tags": [
+      "Personal site",
+      "Blog"
+    ]
+  },
+  {
+    "title": "Handbook on Teaching Empirical Software Engineering: Online Materials",
+    "url": "https://www.emse.education",
+    "source": "https://github.com/mendezfe/temse",
+    "tags": [
+      "Book",
+      "Academia"
+    ]
+  },
+  {
+    "title": "blog.lofibean.cc",
+    "url": "https://blog.lofibean.cc",
+    "source": "https://github.com/bemnlam/bemnlam.github.io",
+    "tags": [
+      "Personal site",
+      "Software Developer",
+      "Blog"
+    ]
+  },
+  {
     "title": "Everybody Wants Some",
     "url": "https://ews.ink/",
     "source": "https://github.com/unacro/blog",
