@@ -121,7 +121,7 @@ puppeteer
                 layoutBackgroundHeaderSpace: false\n\
                 \r---\n";
 
-            var dir = usersFolderPath + users[i].title.replaceAll("/", "-");
+            var dir = usersFolderPath + users[i].url.split("//").at(1).replaceAll('/', '');
 
             if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir);
