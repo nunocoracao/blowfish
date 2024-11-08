@@ -704,7 +704,7 @@
       "Personal Site",
       "Blog"
     ]
-  },  
+  },
   {
     "title": "andrealucchini.com",
     "url": "https://andrealucchini.com",
@@ -728,7 +728,7 @@
     "source": "https://github.com/utrodus/utrodus.com",
     "tags": [
       "Portfolio Site",
-      "Blog"    
+      "Blog"
     ]
   },
   {
@@ -794,6 +794,17 @@
       "Blog",
       "Technology",
       "Game Development"
+    ]
+  },
+  {
+    "title": "merox.dev",
+    "url": "https://merox.dev",
+    "source": "https://github.com/mer0x/merox.dev",
+    "tags": [
+      "Personal site",
+      "Blog",
+      "Documentation",
+      "CV"
     ]
   }
 ]
