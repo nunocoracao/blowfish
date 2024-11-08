@@ -101,6 +101,9 @@
   {{ with .Site.Params.verification.yandex }}
   <meta name="yandex-verification" content="{{ . }}" />
   {{ end }}
+  {{ with .Site.Params.verification.fediverse }}
+  <meta name="fediverse:creator" content="{{ . }}" />
+  {{ end }}
   {{/* Social */}}
   {{ template "_internal/opengraph.html" . }}
   {{ template "_internal/twitter_cards.html" . }}
