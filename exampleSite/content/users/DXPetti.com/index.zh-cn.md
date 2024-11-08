@@ -2,7 +2,7 @@
                 title: "DXPetti.com"
                 tags: [个人网站, 博客]
                 externalUrl: "https://www.dxpetti.com/"
-                weight: 651
+                weight: 631
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

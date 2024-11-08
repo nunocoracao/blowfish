@@ -153,6 +153,11 @@ function executeQuery(term) {
 
   if (results.length > 0) {
     results.forEach(function (value, key) {
+      console.log(value.item.summary);
+      var html = value.item.summary;
+      var div = document.createElement("div");
+      div.innerHTML = html;
+      value.item.summary = div.textContent || div.innerText || "";
       var title = value.item.externalUrl?  value.item.title + '<span class="text-xs ml-2 align-center cursor-default text-neutral-400 dark:text-neutral-500">'+value.item.externalUrl+'</span>' : value.item.title;
       var linkconfig = value.item.externalUrl? 'target="_blank" rel="noopener" href="'+value.item.externalUrl+'"' : 'href="'+value.item.permalink+'"';
       resultsHTML =

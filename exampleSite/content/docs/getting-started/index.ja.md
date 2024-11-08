@@ -48,7 +48,7 @@ Note that the language code in the language config filename should match the `la
 
 title = "My awesome website"
 
-[author]
+[params.author]
 name = "My name"
 image = "img/author.jpg"
 headline = "A generally awesome human"
@@ -58,7 +58,7 @@ links = [
 ]
 ```
 
-The `[author]` configuration determines how the author information is displayed on the website. The image should be placed in the site's `assets/` folder. Links will be displayed in the order they are listed.
+The `[params.author]` configuration determines how the author information is displayed on the website. The image should be placed in the site's `assets/` folder. Links will be displayed in the order they are listed.
 
 If you need extra detail, further information about each of these configuration options, is covered in the [Configuration]({{< ref "configuration" >}}) section.
 

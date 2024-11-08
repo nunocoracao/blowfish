@@ -19,6 +19,7 @@ Blowfish 适宜个高度定制化的主题，使用到了一些 Hugo 中最新�
 ```bash
 npx blowfish-tools
 ```
+
 {{< /alert >}}
 
 > 配置文件是基于 TOML 格式的，这也是 Hugo 默认支持的语法。当然如果你愿意，也可以将配置转换成 YAML 或 JSON 格式。
@@ -83,6 +84,7 @@ Blowfish 主题目前默认支持了以下语言：
 | Italian                      | `it`    |
 | Japanese                     | `ja`    |
 | Korean                       | `ko`    |
+| Dutch                        | `nl`    |
 | Polish                       | `pl`    |
 | Portuguese (Brazil)          | `pt-br` |
 | Portuguese (Portugal)        | `pt-pt` |
@@ -92,7 +94,6 @@ Blowfish 主题目前默认支持了以下语言：
 | Vietnamese                   | `vi`    |
 | Simplified Chinese (China)   | `zh-cn` |
 | Traditional Chinese (Taiwan) | `zh-tw` |
-
 
 组件和静态资源的默认翻译在 `i18n/[code].yaml` 文件中，当然如果你想自定义，覆盖对应的文件即可。你也可以使用这种方法添加新的语言。如果你想与社区分享心得翻译，请[提交PR](https://github.com/nunocoracao/blowfish/pulls)。
 
@@ -105,7 +106,6 @@ Blowfish 主题目前默认支持了以下语言：
 {{< alert >}}
 **注意：** 保证 [网站设置](#site-configuration) 中的 `defaultContentLanguage`参数和你提供的语言配置文件相匹配。
 {{< /alert >}}
-
 
 #### 全局
 
@@ -132,10 +132,10 @@ Blowfish 主题目前默认支持了以下语言：
 | `params.description`   | 无                 | 网站表述。此参数将会被用作站点元数据。                                                                                                                                                                                         |
 | `params.copyright`     | 无                 | 此参数是一个 Markdown，用于网站页脚的版权声明。此参数可以包含占位符 { year } ，以此动态插入当前年份。 如果没有提供，Blowfish 将会使用网站 `title` 自动生成版权信息。                                                           |
 
-
 <!-- prettier-ignore-end -->
 
 #### 作者
+
 | 名称              | 默认值 | 描述                                                                                                                                                                                 |
 | ----------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `author.name`     | 无     | 作者名。此参数将展示在文章页脚。并且如果主页使用了个人资料布局，也会展示此值。                                                                                                       |
@@ -273,7 +273,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | ----------------------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | `sitemap.excludedKinds` | `["taxonomy", "term"]` | 从生成的 `/sitemap.xml` 文件中排除的内容。 具体的配置请参考[Hugo 文档](https://gohugo.io/templates/section-templates/#page-kinds)。 |
 
-### 分类法 
+### 分类法
 
 | 名称                           | 默认值  | 描述                                                                                      |
 | ------------------------------ | ------- | ----------------------------------------------------------------------------------------- |
@@ -326,6 +326,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `umamiAnalytics.websiteid`   | 无         | 支持 Umami 站点分析平台。更多详细内容请参考 [分析文档]({{< ref "partials#analytics" >}})。                 |
 | `umamiAnalytics.domain`      | 无 | 如果使用自定义域名的 Umami Analytics，请在此提供，以便从自定义域名获取 `script.js`。                            |
 | `umamiAnalytics.dataDomains` | 无 | 如果你只想在特别的数个域名中使用 tracker 功能，那么你需要设置它。这个参数的值是逗号分隔的域名列表，如：yoursite.com,yoursite2.com。 |
+| `umamiAnalytics.scriptName` | script.js | 用于反广告屏蔽的 script.js 名称，由环境变量 `TRACKER_SCRIPT_NAME` 配置。 |
 | `umamiAnalytics.enableTrackEvent` | true      | 默认会自动添加 Umami Track Event。如果你不想添加 Event，那学需要设置为 `false`。                            |
 
 ### Seline Analytics
@@ -334,7 +335,6 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 |-----------------------------------|---------|--------------------------------------------------------------------------|
 | `selineAnalytics.token`           | 无 | Seline 站点分析平台的 token。更多详细内容请参考 [分析文档]({{< ref "partials#analytics" >}})。 |
 | `selineAnalytics.enableTrackEvent` | true    | 默认会自动添加 Umami Track Event。如果你不想添加 Event，那学需要设置为 `false`。                 |
-
 
 ### BuyMeACoffee(赞助平台)
 
@@ -345,6 +345,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `buymeacoffee.globalWidgetMessage`  | 无     | 新用户首次访问网站时显示的消息。   |
 | `buymeacoffee.globalWidgetColor`    | 无     | 组件颜色，使用 HEX 格式。          |
 | `buymeacoffee.globalWidgetPosition` | 无     | 组件位置，例如 "Left" 或 "Right"。 |
+
 ### 验证
 
 | 名称                     | 默认值 | 描述                                                     |

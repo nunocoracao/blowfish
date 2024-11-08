@@ -94,7 +94,7 @@
       </div>
       {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
       <div class="py-1 max-w-fit prose dark:prose-invert">
-        {{ .Summary }}
+        {{ .Summary | plainify }}
       </div>
       {{ end }}
     </div>

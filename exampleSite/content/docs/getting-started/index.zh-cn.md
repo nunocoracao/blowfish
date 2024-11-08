@@ -48,7 +48,7 @@ languageCode = "en"
 
 title = "My awesome website"
 
-[author]
+[params.author]
 name = "My name"
 image = "img/author.jpg"
 headline = "A generally awesome human"
@@ -58,7 +58,7 @@ links = [
 ]
 ```
 
-`[author]` 属性决定了作者信息的展示方式。 作者的图片信息应该放在 `assets/` 文件夹中。作者相关的链接将会按照排列顺序依次展示。
+`[params.author]` 属性决定了作者信息的展示方式。 作者的图片信息应该放在 `assets/` 文件夹中。作者相关的链接将会按照排列顺序依次展示。
 
 如果你还需要额外属性，在配置部分会有详细说明。
 

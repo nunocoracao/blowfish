@@ -2,7 +2,7 @@
                 title: "innerknowing"
                 tags: [个人网站, 建模师]
                 externalUrl: "https://innerknowing.xyz/en/"
-                weight: 711
+                weight: 691
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
