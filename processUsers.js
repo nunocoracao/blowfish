@@ -31,7 +31,7 @@ let rawdata = fs.readFileSync(usersFolderPath + 'users.json');
 let users = JSON.parse(rawdata);
 let userDict = {}
 for (var i in users) {
-    userDict[users[i].title.replaceAll("/", "-")] = true;
+    userDict[parseDirname(users[i])] = true;
 }
 
 const files = fs.readdirSync(usersFolderPath);
@@ -53,6 +53,14 @@ for (file in files) {
 }
 
 var cache = {};
+
+function parseDirname(user) {
+    return user.url
+                .split("//")
+                .at(1)                 // take everything after protocol
+                .replace(/\/$/, '')    // and remove the trailing slash if there is one
+                .replaceAll('/', '-'); // and replace remaining slashs with hyphen
+}
 
 async function convert(text, from, to) {
     var options = {
@@ -121,7 +129,7 @@ puppeteer
                 layoutBackgroundHeaderSpace: false\n\
                 \r---\n";
 
-            var dir = usersFolderPath + users[i].title.replaceAll("/", "-");
+            var dir = usersFolderPath + parseDirname(users[i]);
 
             if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir);
