@@ -85,6 +85,7 @@ Il tema attualmente supporta le seguenti lingue per impostazione predefinita:
 | Italian                      | `it`    |
 | Japanese                     | `ja`    |
 | Korean                       | `ko`    |
+| Dutch                        | `nl`    |
 | Polish                       | `pl`    |
 | Portuguese (Brazil)          | `pt-br` |
 | Portuguese (Portugal)        | `pt-pt` |

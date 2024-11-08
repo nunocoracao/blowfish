@@ -85,6 +85,7 @@ The theme currently supports the following languages by default:
 | Italian                      | `it`    |
 | Japanese                     | `ja`    |
 | Korean                       | `ko`    |
+| Dutch                        | `nl`    |
 | Persian                      | `fa`    |
 | Polish                       | `pl`    |
 | Portuguese (Brazil)          | `pt-br` |
@@ -137,10 +138,10 @@ The default file can be used as a template to create additional languages, or re
 
 ##### Author
 
-| Name                  | Default   | Description                                                                                                                                                                                                                                                                                                                 |
-| --------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Name                         | Default   | Description                                                                                                                                                                                                                                                                                                                 |
+| ---------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `params.author.name`         | _Not set_ | The author's name. This will be displayed in article footers, and on the homepage when the profile layout is used.                                                                                                                                                                                                          |
-| `params.author.email`    | _Not set_ | The author's email. This will be used if the reply-via-email functionality is enabled.                                                                                                                                                                                                                                      |
+| `params.author.email`        | _Not set_ | The author's email. This will be used if the reply-via-email functionality is enabled.                                                                                                                                                                                                                                      |
 | `params.author.image`        | _Not set_ | Path to the image file of the author. The image should be a 1:1 aspect ratio. The image can be placed in the site's `assets/` folder or can be external url.                                                                                                                                                                |
 | `params.author.imageQuality` | `96`      | The author's image file will be treated as a "high quality" image to minimize artifacts on the front page. Value range 1-100.                                                                                                                                                                                               |
 | `params.author.headline`     | _Not set_ | A Markdown string containing the author's headline. It will be displayed on the profile homepage under the author's name.                                                                                                                                                                                                   |
@@ -247,7 +248,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `article.showReadingTime`             | `true`    | Whether or not article reading times are displayed.                                                                                                                                                                                                                                                                    |
 | `article.showTableOfContents`         | `false`   | Whether or not the table of contents is displayed on articles.                                                                                                                                                                                                                                                         |
 | `article.showRelatedContent`          | `false`   | Display related content for each post. Might required additional configuration to your `config.toml`. Please check the theme `config.toml` if you want to enable this feature and copy all the relevant _related_ entries. Also check [Hugo's docs](https://gohugo.io/content-management/related/) on related content. |
-| `article.relatedContentLimit`         | `3`       | Limit of related articles to display if `showRelatedContent` is turned on.                                                                                                                                                                                                                                       |
+| `article.relatedContentLimit`         | `3`       | Limit of related articles to display if `showRelatedContent` is turned on.                                                                                                                                                                                                                                             |
 | `article.showTaxonomies`              | `false`   | Whether or not the taxonomies related to this article are displayed.                                                                                                                                                                                                                                                   |
 | `article.showAuthorsBadges`           | `false`   | Whether the `authors` taxonomies are are displayed in the article or list header. This requires the setup of `multiple authors` and the `authors` taxonomy. Check [this page]({{< ref "multi-author" >}}) for more details on how to configure that feature.                                                           |
 | `article.showWordCount`               | `false`   | Whether or not article word counts are displayed.                                                                                                                                                                                                                                                                      |
@@ -330,20 +331,20 @@ Many of the article defaults here can be overridden on a per article basis by sp
 
 ### Umami Analytics
 
-| Name                       | Default   | Description                                                                                                                                                                      |
-| -------------------------- |-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `umamiAnalytics.websiteid` | _Not set_ | The site code generated by Umami Analytics for the website. Refer to the [Analytics docs]({{< ref "partials#analytics" >}}) for more details.                                    |
-| `umamiAnalytics.domain`    | _Not set_ | If using a custom domain with Umami Analytics, provide it here to serve `script.js` from the custom domain.                                                                      |
-| `umamiAnalytics.dataDomains`    | _Not set_ | If you want the tracker to only run on specific domains, provide it for your tracker script. This is a comma delimited list of domain names. Such as "yoursite.com,yoursite2.com". |
-| `umamiAnalytics.scriptName` | script.js | The name of the `script.js` used for anti-ad-blocking is configured by the environment variable `TRACKER_SCRIPT_NAME` |
-| `umamiAnalytics.enableTrackEvent`    | true      | When set to `true` track event will add automatically. If you do not want to add track event, set it to `false`.                                                            |
+| Name                              | Default   | Description                                                                                                                                                                        |
+| --------------------------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `umamiAnalytics.websiteid`        | _Not set_ | The site code generated by Umami Analytics for the website. Refer to the [Analytics docs]({{< ref "partials#analytics" >}}) for more details.                                      |
+| `umamiAnalytics.domain`           | _Not set_ | If using a custom domain with Umami Analytics, provide it here to serve `script.js` from the custom domain.                                                                        |
+| `umamiAnalytics.dataDomains`      | _Not set_ | If you want the tracker to only run on specific domains, provide it for your tracker script. This is a comma delimited list of domain names. Such as "yoursite.com,yoursite2.com". |
+| `umamiAnalytics.scriptName`       | script.js | The name of the `script.js` used for anti-ad-blocking is configured by the environment variable `TRACKER_SCRIPT_NAME`                                                              |
+| `umamiAnalytics.enableTrackEvent` | true      | When set to `true` track event will add automatically. If you do not want to add track event, set it to `false`.                                                                   |
 
 ### Seline Analytics
 
-| Name                              | Default   | Description                                                                                                                               |
-|-----------------------------------|-----------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| `selineAnalytics.token`           | _Not set_ | The token generated by Seline Analytics for the website. Refer to the [Analytics docs]({{< ref "partials#analytics" >}}) for more details. |
-| `selineAnalytics.enableTrackEvent` | true      | When set to `true` track event will add automatically. If you do not want to add track event, set it to `false`.                          |
+| Name                               | Default   | Description                                                                                                                                |
+| ---------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `selineAnalytics.token`            | _Not set_ | The token generated by Seline Analytics for the website. Refer to the [Analytics docs]({{< ref "partials#analytics" >}}) for more details. |
+| `selineAnalytics.enableTrackEvent` | true      | When set to `true` track event will add automatically. If you do not want to add track event, set it to `false`.                           |
 
 ### BuyMeACoffee
 
@@ -357,12 +358,12 @@ Many of the article defaults here can be overridden on a per article basis by sp
 
 ### Verifications
 
-| Name                     | Default   | Description                                                                             |
-| ------------------------ | --------- | --------------------------------------------------------------------------------------- |
-| `verification.google`    | _Not set_ | The site verification string provided by Google to be included in the site metadata.    |
-| `verification.bing`      | _Not set_ | The site verification string provided by Bing to be included in the site metadata.      |
-| `verification.pinterest` | _Not set_ | The site verification string provided by Pinterest to be included in the site metadata. |
-| `verification.yandex`    | _Not set_ | The site verification string provided by Yandex to be included in the site metadata.    |
+| Name                     | Default   | Description                                                                                                                       |
+| ------------------------ | --------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `verification.google`    | _Not set_ | The site verification string provided by Google to be included in the site metadata.                                              |
+| `verification.bing`      | _Not set_ | The site verification string provided by Bing to be included in the site metadata.                                                |
+| `verification.pinterest` | _Not set_ | The site verification string provided by Pinterest to be included in the site metadata.                                           |
+| `verification.yandex`    | _Not set_ | The site verification string provided by Yandex to be included in the site metadata.                                              |
 | `verification.fediverse` | _Not set_ | The fediverse handle to include in the site metadata. Include the server domain in the username, e.g. `@you@instanceaddress.tld`. |
 <!-- prettier-ignore-end -->
 

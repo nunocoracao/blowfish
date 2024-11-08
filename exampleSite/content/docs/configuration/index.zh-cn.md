@@ -84,6 +84,7 @@ Blowfish 主题目前默认支持了以下语言：
 | Italian                      | `it`    |
 | Japanese                     | `ja`    |
 | Korean                       | `ko`    |
+| Dutch                        | `nl`    |
 | Polish                       | `pl`    |
 | Portuguese (Brazil)          | `pt-br` |
 | Portuguese (Portugal)        | `pt-pt` |

@@ -84,6 +84,7 @@ The theme currently supports the following languages by default:
 | Italian                      | `it`    |
 | Japanese                     | `ja`    |
 | Korean                       | `ko`    |
+| Dutch                        | `nl`    |
 | Polish                       | `pl`    |
 | Portuguese (Brazil)          | `pt-br` |
 | Portuguese (Portugal)        | `pt-pt` |
