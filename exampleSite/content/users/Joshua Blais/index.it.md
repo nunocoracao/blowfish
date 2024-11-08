@@ -2,7 +2,7 @@
                 title: "Joshua Blais"
                 tags: [Sito personale, Autore, Giardino digitale]
                 externalUrl: "https://joshblais.com/"
-                weight: 801
+                weight: 781
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

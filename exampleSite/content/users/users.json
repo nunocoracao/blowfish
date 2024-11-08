@@ -41,14 +41,6 @@
     ]
   },
   {
-    "title": "cuttontail.blog",
-    "url": "https://cuttontail.blog",
-    "source": "n/a",
-    "tags": [
-      "Personal site"
-    ]
-  },
-  {
     "title": "pmnxis.github.io",
     "url": "https://pmnxis.github.io",
     "source": "n/a",
@@ -345,14 +337,6 @@
     ]
   },
   {
-    "title": "jundimubarok.com",
-    "url": "https://jundimubarok.com/",
-    "source": "n/a",
-    "tags": [
-      "Personal site"
-    ]
-  },
-  {
     "title": "vkmki001.github.io",
     "url": "https://vkmki001.github.io/",
     "source": "n/a",
@@ -584,15 +568,6 @@
     ]
   },
   {
-    "title": "Mare_Infinitus",
-    "url": "https://lab.imgb.space",
-    "source": "n/a",
-    "tags": [
-      "Personal Site",
-      "Blog"
-    ]
-  },
-  {
     "title": "karlukle.site",
     "url": "https://karlukle.site",
     "source": "n/a",
@@ -704,16 +679,6 @@
     ]
   },
   {
-    "title": "Jinbo Pan - Blog",
-    "url": "https://www.panjinbo.com/",
-    "source": "n/a",
-    "tags": [
-      "Personal Site",
-      "Blog",
-      "Technology Blog"
-    ]
-  },
-  {
     "title": "nveshaan",
     "url": "https://nveshaan.github.io/",
     "source": "n/a",
@@ -791,6 +756,24 @@
     "tags": [
       "Personal site",
       "Blog"
+    ]
+  },
+  {
+    "title": "p3rception.github.io",
+    "url": "https://p3rception.github.io/",
+    "source": "https://github.com/p3rception/p3rception.github.io",
+    "tags": [
+      "Personal site",
+      "Blog"
+    ]
+  },
+  {
+    "title": "Handbook on Teaching Empirical Software Engineering: Online Materials",
+    "url": "https://www.emse.education",
+    "source": "https://github.com/mendezfe/temse",
+    "tags": [
+      "Book",
+      "Academia"
     ]
   },
   {

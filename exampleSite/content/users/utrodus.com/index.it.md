@@ -1,8 +1,8 @@
 ---
-                title: "Jinbo Pan - Blog"
-                tags: [Sito personale, Blog, Blog sulla tecnologia]
-                externalUrl: "https://www.panjinbo.com/"
-                weight: 851
+                title: "utrodus.com"
+                tags: [Sito portfolio, Blog]
+                externalUrl: "https://utrodus.com"
+                weight: 871
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
