@@ -245,7 +245,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `article.showAuthorsBadges`           | `false` | 是否在文章或列表中显示 `authors` 分类。这需要开启多个作者 `multiple authors` 和 `authors` 分类法。 请阅读 [这个网页]({{< ref "multi-author" >}}) 来获取更多内容。                                                                                            |
 | `article.showWordCount`               | `false` | 是否显示文章的字数。 如果你的语言属于 CJK 语言，需要在 `config.toml` 中开启 `hasCJKLanguage` 参数。                                                                                                                                                          |
 | `article.showComments`                | `false` | 是否在文章末尾添加 [评论部分]({{< ref "partials#comments" >}})。                                                                                                                                                                                             |
-| `article.sharingLinks`                | 无      | 在文章末尾显示的分享链接。如果没有提供或设置为 `false`，则不会显示任何分享链接。可用的值包括："linkedin"、"twitter"、"reddit"、"pinterest"、"facebook"、"email"、"whatsapp" 和 "telegram"                                                                    |
+| `article.sharingLinks`                | 无      | 在文章末尾显示的分享链接。如果没有提供或设置为 `false`，则不会显示任何分享链接。可用的值包括："linkedin"、"bluesky"、"mastodon"、"twitter"、"reddit"、"pinterest"、"facebook"、"email"、"whatsapp" 和 "telegram"                                                                    |
 | `article.showZenMode`                 | `false` | 指定是否激活文章阅读的禅模式，即隐藏常规的界面元素。                                                                                                                                                                                                         |
 
 ### 列表页
