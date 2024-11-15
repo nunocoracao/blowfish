@@ -356,6 +356,14 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `verification.yandex`    | 无     | Yandex 提供的网站验证字符串，用于在网站元数据中包含。    |
 <!-- prettier-ignore-end -->
 
+## RSSNext
+
+| Name                     | Default   | Description                                                                                 |
+| ------------------------ | --------- |---------------------------------------------------------------------------------------------|
+| `rssnext.feedId`    | _Not set_ | [RSSNext/Follow](https://follow.is) 提供的 `feeId`，这将被自动添加在 `rss.xml` 中以便完成订阅源所有权验证，证明该源属于你自己。 |
+| `rssnext.userId`      | _Not set_ | [RSSNext/Follow](https://follow.is) 提供的 `userId`，这将被自动添加在 `rss.xml` 中以便完成订阅源所有权验证，证明该源属于你自己      |
+
+
 ## 别的配置文件
 
 Blowfish 主题还包括 `markup.toml` 配置文件。这个文件包含了一些重要参数，来确保 Hugo 正确配置以生成使用 Blowfish 创建的网站。

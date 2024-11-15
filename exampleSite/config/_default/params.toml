@@ -156,3 +156,7 @@ smartTOCHideUnfocusedChildren = false
   # bing = ""
   # pinterest = ""
   # yandex = ""
+
+[rssnext]
+  # feedId = ""
+  # userId = ""

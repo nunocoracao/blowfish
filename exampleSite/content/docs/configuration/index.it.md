@@ -360,6 +360,13 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `verification.yandex`    | _Not set_ | The site verification string provided by Yandex to be included in the site metadata.    |
 <!-- prettier-ignore-end -->
 
+## RSSNext
+
+| Name                     | Default   | Description                                                                                                                          |
+| ------------------------ | --------- |--------------------------------------------------------------------------------------------------------------------------------------|
+| `rssnext.feedId`    | _Not set_ | The rss `feedId` string provided by [RSSNext/Follow](https://follow.is/) to be included in the `rss.xml`, which can helps to claim rss feed as your own. |
+| `rssnext.userId`      | _Not set_ | The rss `userId` string provided by [RSSNext/Follow](https://follow.is/) to be included in the `rss.xml`, which can helps to claim rss feed as your own.     |
+
 ## Other configuration files
 
 The theme also includes a `markup.toml` configuration file. This file contains some important parameters that ensure that Hugo is correctly configured to generate sites built with Blowfish.
