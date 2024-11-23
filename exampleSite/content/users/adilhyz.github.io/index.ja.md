@@ -2,7 +2,7 @@
                 title: "adilhyz.github.io"
                 tags: [個人サイト]
                 externalUrl: "https://adilhyz.github.io"
-                date: 9947-08-08
+                weight: 491
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

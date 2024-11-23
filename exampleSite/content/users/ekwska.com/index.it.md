@@ -2,7 +2,7 @@
                 title: "ekwska.com"
                 tags: [Blog personale]
                 externalUrl: "https://ekwska.com"
-                date: 9929-08-08
+                weight: 661
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

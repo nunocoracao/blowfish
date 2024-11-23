@@ -2,7 +2,7 @@
                 title: "technicat.com"
                 tags: [企業サイト]
                 externalUrl: "https://technicat.com/"
-                date: 9971-08-08
+                weight: 271
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

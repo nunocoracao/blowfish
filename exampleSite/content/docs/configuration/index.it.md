@@ -1,66 +1,69 @@
 ---
-title: "Configuration"
 date: 2020-08-14
+title: "Configurazione"
+weight: 4
 draft: false
-description: "All the configuration variables available in Blowfish."
-slug: "configuration"
+description: "Tutte le configurazioni disponibili in Blowfish."
+slug: "configurazioni"
 tags: ["config", "docs"]
-series: ["Documentation"]
+series: ["Documentazione"]
 series_order: 4
 ---
 
-Blowfish is a highly customisable theme and uses some of the latest Hugo features to simplify how it is configured.
+Blowfish è un tema altamente personalizzabile e utilizza alcune delle più recenti funzionalità di Hugo per semplificarne la configurazione.
 
-The theme ships with a default configuration that gets you up and running with a basic blog or static website.
+Il tema viene fornito con una configurazione predefinita che ti consente di essere operativo con un blog di base o un sito Web statico.
 
 {{< alert "fire" >}}
 We just launched a CLI tool to help you get started with Blowfish. It will help you with installation and configuration. Install the CLI tool globally using:
+
 ```bash
 npx blowfish-tools
 ```
+
 {{< /alert >}}
 
-> Configuration files bundled with the theme are provided in TOML format as this is the default Hugo syntax. Feel free to convert your config to YAML or JSON if you wish.
+> I file di configurazione forniti con il tema sono forniti in formato TOML dato che questa è la sintassi predefinita di Hugo. Sentiti libero di convertire la tua configurazione in YAML o JSON se lo desideri.
 
-The default theme configuration is documented in each file so you can freely adjust the settings to meet your needs.
+La configurazione predefinita del tema è documentata in ogni file in modo da poter regolare liberamente le impostazioni per soddisfare le proprie esigenze.
 
 {{< alert >}}
 As outlined in the [installation instructions]({{< ref "/docs/installation#set-up-theme-configuration-files" >}}), you should adjust your theme configuration by modifying the files in the `config/_default/` folder of your Hugo project and delete the `config.toml` file in your project root.
 {{< /alert >}}
 
-## Site configuration
+## Configurazioni del sito
 
 Standard Hugo configuration variables are respected throughout the theme, however there are some specific things that should be configured for the best experience.
 
-The site configuration is managed through the `config/_default/config.toml` file. The table below outlines all the settings that the Blowfish takes advantage of.
+La configurazione del sito viene gestita tramite il file `config/_default/config.toml`. La tabella seguente descrive tutte le impostazioni di cui si avvale Blowfish.
 
-Note that the variable names provided in this table use dot notation to simplify the TOML data structure (ie. `outputs.home` refers to `[outputs] home`).
+Tieni presente che i nomi delle variabili forniti in questa tabella utilizzano il punto per semplificare la struttura dei dati TOML (ad esempio, "outputs.home" si riferisce a "[outputs] home").
 
 <!-- prettier-ignore-start -->
 | Name                     | Default                   | Description                                                                                                                                                                                                                                                                                                                                                                  |
 | ------------------------ | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `theme`                  | `"blowfish"`              | When using Hugo Modules this config value should be removed. For all other installation types, this must be set to `blowfish` for the theme to function.                                                                                                                                                                                                                     |
+| `theme`                  | `"blowfish"`              | Quando si utilizzano i moduli Hugo, questo valore di configurazione deve essere rimosso. Per tutti gli altri tipi di installazione, questo deve essere impostato su "blowfish" affinché il tema funzioni.                                                                                                                                                                                                                     |
 | `baseURL`                | _Not set_                 | The URL to the root of the website.                                                                                                                                                                                                                                                                                                                                          |
-| `defaultContentLanguage` | `"en"`                    | This value determines the default language of theme components and content. Refer to the [language and i18n](#language-and-i18n) section below for supported language codes.                                                                                                                                                                                                 |
-| `enableRobotsTXT`        | `true`                    | When enabled, a `robots.txt` file will be created in the site root that allows search engines to crawl the entire site. If you prefer to provide your own pre-made `robots.txt`, set to `false` and place your file in the `static` directory. For complete control, you may provide a [custom layout]({{< ref "content-examples#custom-layouts" >}}) to generate this file. |
-| `paginate`               | `10`                      | The number of articles listed on each page of the article listing.                                                                                                                                                                                                                                                                                                           |
-| `summaryLength`          | `0`                       | The number of words that are used to generate the article summary when one is not provided in the [front matter]({{< ref "front-matter" >}}). A value of `0` will use the first sentence. This value has no effect when summaries are hidden.                                                                                                                                |
-| `outputs.home`           | `["HTML", "RSS", "JSON"]` | The output formats that are generated for the site. Blowfish requires HTML, RSS and JSON for all theme components to work correctly.                                                                                                                                                                                                                                         |
-| `permalinks`             | _Not set_                 | Refer to the [Hugo docs](https://gohugo.io/content-management/urls/#permalinks) for permalink configuration.                                                                                                                                                                                                                                                                 |
-| `taxonomies`             | _Not set_                 | Refer to the [Organising content]({{< ref "getting-started#organising-content" >}}) section for taxonomy configuration.                                                                                                                                                                                                                                                      |
+| `defaultContentLanguage` | `"en"`                    | This value determines the default language of theme components and content. Refer to the [language and i18n](#language-and-i18n) section below for supported language codes.                                                                                                                                                                                                  |
+| `enableRobotsTXT`        | `true`                    | Se abilitato, verrà creato un file "robots.txt" nella radice del sito che consentirà ai motori di ricerca di eseguire la scansione dell'intero sito. Se preferisci fornire il tuo file `robots.txt` predefinito, impostalo su `false` e ​​posiziona il file nella directory `static`. Per un controllo completo, puoi fornire un [layout personalizzato]({{< ref "content-examples#custom-layouts" >}}) per generare questo file. |
+| `pagination.pagerSize`   | `10`                      | Il numero di articoli elencati in ciascuna pagina dell'elenco degli articoli.                                                                                                                                                                                                                                                                                                           |
+| `summaryLength`          | `0`                       | Il numero di parole utilizzate per generare il riepilogo dell'articolo quando non ne viene fornita una nella [front matter]({{< ref "front-matter" >}}). Un valore pari a "0" utilizzerà la prima frase. Questo valore non ha effetto quando i riepiloghi sono nascosti.                                                                                                                                |
+| `outputs.home`           | `["HTML", "RSS", "JSON"]` | I formati di output generati per il sito. Blowfish richiede HTML, RSS e JSON affinché tutti i componenti del tema funzionino correttamente.                                                                                                                                                                                                                                         |
+| `permalinks`             | _Not set_                 | Fare riferimento alla [documentazione di Hugo](https://gohugo.io/content-management/urls/#permalinks) per la configurazione del permalink.                                                                                                                                                                                                                                                                 |
+| `taxonomies`             | _Not set_                 | Fare riferimento alla sezione [Organizzazione dei contenuti]({{< ref "getting-started#organising-content" >}}) per la configurazione della tassonomia.                                                                                                                                                                                                                                                      |
 <!-- prettier-ignore-end -->
 
 ## Thumbnails
 
-Blowfish was built so it would be easy to add visual support to your articles. If your familiar with Hugo article structure, you just need to place an image file (almost all formats are supported but we recommend `.png` or `.jpg`) that starts with `feature*` inside your article folder. And that's it, Blowfish will then able to both use the image as a thumbnail within your website as well as for <a target="_blank" href="https://oembed.com/">oEmbed</a> cards across social platforms. 
+Blowfish è stato creato in modo che sia facile aggiungere supporto visivo ai tuoi articoli. Se hai familiarità con la struttura degli articoli di Hugo, devi solo inserire un file immagine (quasi tutti i formati sono supportati ma consigliamo `.png` o `.jpg`) che inizi con `feature*` all'interno della cartella dell'articolo. E questo è tutto, Blowfish sarà quindi in grado di utilizzare l'immagine sia come miniatura all'interno del tuo sito web sia per le schede <a target="_blank" href="https://oembed.com/">oEmbed</a> su piattaforme sociali.
 
-[Here]({{< ref "thumbnails" >}}) is also a guide with more info and a [sample]({{< ref "thumbnail_sample" >}}) if you want to see how you can do it.
+[Qui]({{< ref "thumbnails" >}}) c'è anche una guida con maggiori informazioni e un [esempio]({{< ref "thumbnail_sample" >}}) se vuoi vedere come puoi farlo.
 
-## Language and i18n
+## Lingua e i18n
 
-Blowfish is optimised for full multilingual websites and theme assets are translated into several languages out of the box. The language configuration allows you to generate multiple versions of your content to provide a customised experience to your visitors in their native language.
+Blowfish è ottimizzato per siti Web multilingue completi e le risorse tematiche sono tradotte in diverse lingue immediatamente. La configurazione della lingua ti consente di generare più versioni dei tuoi contenuti per fornire un'esperienza personalizzata ai tuoi visitatori nella loro lingua madre.
 
-The theme currently supports the following languages by default:
+Il tema attualmente supporta le seguenti lingue per impostazione predefinita:
 
 | Language                     | Code    |
 | ---------------------------- | ------- |
@@ -71,6 +74,7 @@ The theme currently supports the following languages by default:
 | Czech                        | `cs`    |
 | German                       | `de`    |
 | English                      | `en`    |
+| Esperanto                    | `eo`    |
 | Spanish (Spain)              | `es`    |
 | Finnish                      | `fi`    |
 | French                       | `fr`    |
@@ -81,6 +85,7 @@ The theme currently supports the following languages by default:
 | Italian                      | `it`    |
 | Japanese                     | `ja`    |
 | Korean                       | `ko`    |
+| Dutch                        | `nl`    |
 | Polish                       | `pl`    |
 | Portuguese (Brazil)          | `pt-br` |
 | Portuguese (Portugal)        | `pt-pt` |
@@ -88,53 +93,51 @@ The theme currently supports the following languages by default:
 | Russian                      | `ru`    |
 | Turkish                      | `tr`    |
 | Vietnamese                   | `vi`    |
+| Ukrainian                    | `uk`    |
 | Simplified Chinese (China)   | `zh-cn` |
 | Traditional Chinese (Taiwan) | `zh-tw` |
 
+Le traduzioni predefinite possono essere sovrascritte creando un file personalizzato in "i18n/[code].yaml" che contiene le stringhe di traduzione. Puoi anche utilizzare questo metodo per aggiungere nuove lingue. Se desideri condividere una nuova traduzione con la community, [apri una richiesta pull](https://github.com/nunocoracao/blowfish/pulls).
 
+### Configurazione
 
-The default translations can be overridden by creating a custom file in `i18n/[code].yaml` that contains the translation strings. You can also use this method to add new languages. If you'd like to share a new translation with the community, please [open a pull request](https://github.com/nunocoracao/blowfish/pulls).
+Per essere il più flessibili possibile, è necessario creare un file di configurazione lingua per ciascuna lingua sul sito web. Per impostazione predefinita Blowfish include una configurazione della lingua inglese in `config/_default/linguals.en.toml`.
 
-### Configuration
-
-In order to be as flexible as possible, a language configuration file needs to be created for each language on the website. By default Blowfish includes an English language configuration at `config/_default/languages.en.toml`.
-
-The default file can be used as a template to create additional languages, or renamed if you wish to author your website in a language other than English. Simply name the file using the format `languages.[language-code].toml`.
+Il file predefinito può essere utilizzato come modello per creare lingue aggiuntive o rinominato se desideri creare il tuo sito web in una lingua diversa dall'inglese. Basta nominare il file utilizzando il formato "lingue.[language-code].toml".
 
 {{< alert >}}
-**Note:** Ensure the `defaultContentLanguage` parameter in the [site configuration](#site-configuration) matches the language code in your language config filename.  
+**Nota:** assicurati che il parametro `defaultContentLanguage` nella [configurazione del sito](#site-configuration) corrisponda al codice della lingua nel nome del file di configurazione della lingua.  
 {{< /alert >}}
 
-
-#### Global
+#### Globale
 
 <!-- prettier-ignore-start -->
 | Name           | Default      | Description                                                                                                                                                                                                                                                                                            |
 | -------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `languageCode` | `"en"`       | The Hugo language code for this file. It can be a top-level language (ie. `en`) or a sub-variant (ie. `en-au`) and should match the language code in the filename. Hugo expects this value to always be in lowercase. For proper HTML compliance, set the `isoCode` parameter which is case-sensitive. |
-| `languageName` | `"English"`  | The name of the language.                                                                                                                                                                                                                                                                              |
-| `weight`       | `1`          | The weight determines the order of languages when building multilingual sites.                                                                                                                                                                                                                         |
-| `title`        | `"Blowfish"` | The title of the website. This will be displayed in the site header and footer.                                                                                                                                                                                                                        |
+| `languageCode` | `"en"`       | Il codice della lingua Hugo per questo file. Può essere una lingua di livello superiore (ad esempio "en") o una variante secondaria (ad esempio "en-au") e deve corrispondere al codice della lingua nel nome del file. Hugo si aspetta che questo valore sia sempre in minuscolo. Per una corretta conformità HTML, imposta il parametro "isoCode" che fa distinzione tra maiuscole e minuscole. |
+| `languageName` | `"English"`  | Il nome della lingua.                                                                                                                                                                                                                                                                              |
+| `weight`       | `1`          | Il peso determina l'ordine delle lingue durante la creazione di siti multilingue.                                                                                                                                                                                                                         |
+| `title`        | `"Blowfish"` | Il titolo del sito web. Questo verrà visualizzato nell'intestazione e nel piè di pagina del sito.                                                                                                                                                                                                                        |
 <!-- prettier-ignore-end -->
 
-#### Params
+#### Parametri
 
 <!-- prettier-ignore-start -->
 | Name                   | Default            | Description                                                                                                                                                                                                                                                                                                                |
 | ---------------------- | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `params.displayName`   | `"EN"`             | The name used when the language appears on the website.                                                                                                                                                                                                                                                                    |
-| `params.isoCode`       | `"en"`             | The ISO language code for HTML metadata purposes. It can be a top-level language (ie. `en`) or a sub-variant (ie. `en-AU`).                                                                                                                                                                                                |
-| `params.rtl`           | `false`            | Whether or not this is a RTL language. Set to `true` to reflow content from right-to-left. Blowfish fully supports using RTL and LTR languages at the same time and will dynamically adjust to both.                                                                                                                       |
-| `params.dateFormat`    | `"2 January 2006"` | How dates are formatted in this language. Refer to the [Hugo docs](https://gohugo.io/functions/format/#gos-layout-string) for acceptable formats.                                                                                                                                                                          |
-| `params.logo`          | _Not set_          | The relative path to the site logo file within the `assets/` folder. The logo file should be provided at 2x resolution and supports any image dimensions.                                                                                                                                                                  |
+| `params.displayName`   | `"EN"`             | Il nome utilizzato quando la lingua appare sul sito web.                                                                                                                                                                                                                                                                    |
+| `params.isoCode`       | `"en"`             | Il codice della lingua ISO per scopi di metadati HTML. Può essere una lingua di livello superiore (es. `en`) o una sottovariante (es. `en-AU`).                                                                                                                                                                                                |
+| `params.rtl`           | `false`            | Se si tratta o meno di un linguaggio RTL. Imposta su "true" per ridisporre il contenuto da destra a sinistra. Blowfish supporta pienamente l'uso simultaneo dei linguaggi RTL e LTR e si adatterà dinamicamente ad entrambi.                                                                                                                       |
+| `params.dateFormat`    | `"2 January 2006"` | Come vengono formattate le date in questa lingua. Fare riferimento alla [documentazione di Hugo](https://gohugo.io/functions/format/#gos-layout-string) per i formati accettabili.                                                                                                                                                                          |
+| `params.logo`          | _Not set_          | Il percorso relativo al file del logo del sito all'interno della cartella "assets/". Il file del logo deve essere fornito con una risoluzione 2x e supporta qualsiasi dimensione dell'immagine.                                                                                                                                                                  |
 | `params.secondaryLogo` | _Not set_          | The relative path to the secondary site logo file within the `assets/` folder. The logo file should be provided at 2x resolution and supports any image dimensions. This should have an inverted/contrasting colour scheme to `logo`. If set, this logo will be shown when users toggle from the `defaultAppearance` mode. |
 | `params.description`   | _Not set_          | The website description. This will be used in the site metadata.                                                                                                                                                                                                                                                           |
 | `params.copyright`     | _Not set_          | A Markdown string for the site footer copyright message can include the placeholder { year } to dynamically insert the current year. If none is provided, Blowfish will automatically generate a copyright string using the site `title`.                                                                                  |
 
-
 <!-- prettier-ignore-end -->
 
 #### Author
+
 | Name              | Default   | Description                                                                                                                                                                                                                                                                                                                 |
 | ----------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `author.name`     | _Not set_ | The author's name. This will be displayed in article footers, and on the homepage when the profile layout is used.                                                                                                                                                                                                          |
@@ -187,6 +190,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | Name            | Default   | Description                                                                                                         |
 | --------------- | --------- | ------------------------------------------------------------------------------------------------------------------- |
 | `header.layout` | `"basic"` | Defines the header for the entire site, supported values are `basic`, `fixed`, `fixed-fill`, and `fixed-fill-blur`. |
+
 ### Footer
 
 | Name                            | Default | Description                                                                                                                                                                                                               |
@@ -196,6 +200,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `footer.showThemeAttribution`   | `true`  | Whether or not to show the "powered by" theme attribution in the site footer. If you choose to disable this message, please consider attributing the theme somewhere else on your site (for example, on your about page). |
 | `footer.showAppearanceSwitcher` | `false` | Whether or not to show the appearance switcher in the site footer. The browser's local storage is used to persist the visitor's preference.                                                                               |
 | `footer.showScrollToTop`        | `true`  | When set to `true` the scroll to top arrow is displayed.                                                                                                                                                                  |
+
 ### Homepage
 
 | Name                            | Default     | Description                                                                                                                                                                                                                                                                                                        |
@@ -209,6 +214,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `homepage.cardView`             | `false`     | Display recent articles as a gallery of cards.                                                                                                                                                                                                                                                                     |
 | `homepage.cardViewScreenWidth`  | `false`     | Enhance the width of the recent articles card gallery to take the full width available.                                                                                                                                                                                                                            |
 | `homepage.layoutBackgroundBlur` | `false`     | Makes the background image in the homepage layout blur with the scroll                                                                                                                                                                                                                                             |
+
 ### Article
 
 | Name                                  | Default   | Description                                                                                                                                                                                                                                                                                                            |
@@ -235,8 +241,8 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `article.invertPagination`            | `false`   | Whether or not to flip the direction of the next/previous article links.                                                                                                                                                                                                                                               |
 | `article.showReadingTime`             | `true`    | Whether or not article reading times are displayed.                                                                                                                                                                                                                                                                    |
 | `article.showTableOfContents`         | `false`   | Whether or not the table of contents is displayed on articles.                                                                                                                                                                                                                                                         |
-| `article.showRelatedContent`          | `false`   | Display related content for each post. Might required additional configuration to your `config.toml`. Please check the theme `config.toml` if you want to enable this feature and copy all the relevant *related* entries. Also check [Hugo's docs](https://gohugo.io/content-management/related/) on related content. |
-| `article.relatedContentLimit`         | `3`       | Limit of related articles to display if `      showRelatedContent` is turned on.                                                                                                                                                                                                                                       |
+| `article.showRelatedContent`          | `false`   | Display related content for each post. Might required additional configuration to your `config.toml`. Please check the theme `config.toml` if you want to enable this feature and copy all the relevant _related_ entries. Also check [Hugo's docs](https://gohugo.io/content-management/related/) on related content. |
+| `article.relatedContentLimit`         | `3`       | Limit of related articles to display if `showRelatedContent` is turned on.                                                                                                                                                                                                                                       |
 | `article.showTaxonomies`              | `false`   | Whether or not the taxonomies related to this article are displayed.                                                                                                                                                                                                                                                   |
 | `article.showAuthorsBadges`           | `false`   | Whether the `authors` taxonomies are are displayed in the article or list header. This requires the setup of `multiple authors` and the `authors` taxonomy. Check [this page]({{< ref "multi-author" >}}) for more details on how to configure that feature.                                                           |
 | `article.showWordCount`               | `false`   | Whether or not article word counts are displayed.                                                                                                                                                                                                                                                                      |
@@ -258,6 +264,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `list.showViews`                   | `false`   | Whether or not list views are displayed. This requires firebase integrations to be enabled, look below.                                                                                                                                                        |
 | `list.showLikes`                   | `false`   | Whether or not list likes are displayed. This requires firebase integrations to be enabled, look below.                                                                                                                                                        |
 | `list.showCards`                   | `false`   | Whether or not each article is displayed as a card or as simple inline text.                                                                                                                                                                                   |
+| `list.orderByWeight`               | `false`   | Whether or not articles are sorted by [weights](https://gohugo.io/methods/page/weight/).                                                                                                                                                                       |
 | `list.groupByYear`                 | `true`    | Whether or not articles are grouped by year on list pages.                                                                                                                                                                                                     |
 | `list.cardView`                    | `false`   | Display lists as a gallery of cards.                                                                                                                                                                                                                           |
 | `list.cardViewScreenWidth`         | `false`   | Enhance the width of card galleries in lists to take the full width available.                                                                                                                                                                                 |
@@ -282,6 +289,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `taxonomy.showLikes`           | `false`   | Whether or not article likes are displayed. This requires firebase integrations to be enabled, look below. |
 | `taxonomy.showTableOfContents` | `false`   | Whether or not the table of contents is displayed on taxonomies.                                           |
 | `taxonomy.cardView`            | `false`   | Display lists as a gallery of cards.                                                                       |
+
 ### Term
 
 | Name                       | Default   | Description                                                                                                |
@@ -295,6 +303,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `term.groupByYear`         | `false`   | Whether or not articles are grouped by year on term pages.                                                 |
 | `term.cardView`            | `false`   | Display lists as a gallery of cards.                                                                       |
 | `term.cardViewScreenWidth` | `false`   | Enhance the width of card galleries in lists to take the full width available.                             |
+
 ### Firebase
 
 | Name                         | Default   | Description                                                                                                                                                                 |
@@ -316,10 +325,20 @@ Many of the article defaults here can be overridden on a per article basis by sp
 
 ### Umami Analytics
 
-| Name                       | Default   | Description                                                                                                                                   |
-| -------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `umamiAnalytics.websiteid` | _Not set_ | The site code generated by Umami Analytics for the website. Refer to the [Analytics docs]({{< ref "partials#analytics" >}}) for more details. |
-| `umamiAnalytics.domain`    | _Not set_ | If using a custom domain with Umami Analytics, provide it here to serve `script.js` from the custom domain.                                   |
+| Name                       | Default   | Description                                                                                                                                        |
+| -------------------------- | --------- |----------------------------------------------------------------------------------------------------------------------------------------------------|
+| `umamiAnalytics.websiteid` | _Not set_ | The site code generated by Umami Analytics for the website. Refer to the [Analytics docs]({{< ref "partials#analytics" >}}) for more details.      |
+| `umamiAnalytics.domain`    | _Not set_ | If using a custom domain with Umami Analytics, provide it here to serve `script.js` from the custom domain.                                        |
+| `umamiAnalytics.dataDomains`    | _Not set_ | If you want the tracker to only run on specific domains, provide it for your tracker script. This is a comma delimited list of domain names. Such as "yoursite.com,yoursite2.com". |
+| `umamiAnalytics.scriptName` | script.js | The name of the `script.js` used for anti-ad-blocking is configured by the environment variable `TRACKER_SCRIPT_NAME` |
+| `umamiAnalytics.enableTrackEvent`    | true      | When set to `true` track event will add automatically. If you do not want to add track event, set it to `false`.                                                            |
+
+### Seline Analytics
+
+| Name                              | Default   | Description                                                                                                                               |
+|-----------------------------------|-----------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| `selineAnalytics.token`           | _Not set_ | The token generated by Seline Analytics for the website. Refer to the [Analytics docs]({{< ref "partials#analytics" >}}) for more details. |
+| `selineAnalytics.enableTrackEvent` | true      | When set to `true` track event will add automatically. If you do not want to add track event, set it to `false`.                          |
 
 ### BuyMeACoffee
 
@@ -330,6 +349,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `buymeacoffee.globalWidgetMessage`  | _Not set_ | Message what will be displayed the first time a new user lands on the site. |
 | `buymeacoffee.globalWidgetColor`    | _Not set_ | Widget color in hex format.                                                 |
 | `buymeacoffee.globalWidgetPosition` | _Not set_ | Position of the widget, i.e. "Left" or "Right"                              |
+
 ### Verifications
 
 | Name                     | Default   | Description                                                                             |

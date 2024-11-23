@@ -2,7 +2,7 @@
                 title: "fahru.my.id"
                 tags: [个人网站]
                 externalUrl: "https://www.fahru.my.id"
-                date: 9989-08-08
+                weight: 101
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

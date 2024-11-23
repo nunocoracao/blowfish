@@ -1,6 +1,6 @@
 ---
 title: "入门指南"
-date: 2020-08-15
+weight: 3
 draft: false
 description: "所有在你要使用 Blowfish 主题搭建网站之前的准备工作"
 slug: "getting-started"
@@ -26,21 +26,21 @@ Blowfish 中的配置文件中包含了主题需要的所有可能的设置选�
 
 ## 基础设置
 
-在刚刚安装完成，创建内容之前，有几个设置需要关注。从 `config.toml` 开始，设置 `baseURL` 和 `languageCode` 参数。`languageCode`参数是用来指定你创作内容的主要语言。
+在刚刚安装完成，创建内容之前，有几个设置需要关注。从 `hugo.toml` 开始，设置 `baseURL` 和 `languageCode` 参数。`languageCode`参数是用来指定你创作内容的主要语言。
 
 ```toml
-# config/_default/config.toml
+# config/_default/hugo.toml
 
 baseURL = "https://your_domain.com/"
 languageCode = "en"
 ```
 
-下一步是设置语言。尽管 Blowfish 支持多语言，但是 `config.toml` 只能配置一个主语言。
+下一步是设置语言。尽管 Blowfish 支持多语言，但是 `hugo.toml` 只能配置一个主语言。
 
 在 `config/_default` 文件夹中找到 `languages.en.toml`。如果你的主语言是英语，你可以直接使用此文件。否则需要重命名为主语言对应的文件名。例如，如果主语言是法语，那么需要将文件命名为 `languages.fr.toml`。
 
 {{< alert >}}
-注意：语言配置文件名中的语言代码需要与 `config.toml` 中 `languageCode` 相匹配。
+注意：语言配置文件名中的语言代码需要与 `hugo.toml` 中 `languageCode` 相匹配。
 {{< /alert >}}
 
 ```toml
@@ -48,7 +48,7 @@ languageCode = "en"
 
 title = "My awesome website"
 
-[author]
+[params.author]
 name = "My name"
 image = "img/author.jpg"
 headline = "A generally awesome human"
@@ -58,7 +58,7 @@ links = [
 ]
 ```
 
-`[author]` 属性决定了作者信息的展示方式。 作者的图片信息应该放在 `assets/` 文件夹中。作者相关的链接将会按照排列顺序依次展示。
+`[params.author]` 属性决定了作者信息的展示方式。 作者的图片信息应该放在 `assets/` 文件夹中。作者相关的链接将会按照排列顺序依次展示。
 
 如果你还需要额外属性，在配置部分会有详细说明。
 

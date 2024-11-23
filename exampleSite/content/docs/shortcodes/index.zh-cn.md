@@ -1,6 +1,6 @@
 ---
 title: "简码"
-date: 2020-08-11
+weight: 6
 draft: false
 description: "所有 Blowfish 中可用的简码"
 slug: "shortcodes"
@@ -104,7 +104,7 @@ New article!
 
 ## Button
 
-`button` 输出一个样式化的按钮组件，可用于突出显示主要操作。它有两个可选参数 `href` 和 `target` ，可用于指定链接的 URL 或目标文档。
+`button` 输出一个样式化的按钮组件，可用于突出显示主要操作。它有三个可选变量 `href`、`target` 和 `rel`，可用于指定链接的 URL、目标和关系。
 
 **例如：**
 
@@ -197,6 +197,8 @@ data: {
 | --------- | ---------------------------------- |
 | `url`     | **必需的** 外部托管代码文件的 URL. |
 | `type`    | 用于语法突出显示的代码类型.        |
+| `startLine` | **可选** 从代码文件中导入的起始行. |
+| `endLine` | **可选** 从代码文件中导入的结束行. |
 
 
 <!-- prettier-ignore-end -->
@@ -210,6 +212,13 @@ data: {
 ```
 
 {{< codeimporter url="https://raw.githubusercontent.com/nunocoracao/blowfish/main/layouts/shortcodes/mdimporter.html" type="go" >}}
+
+```md
+{{</* codeimporter url="https://raw.githubusercontent.com/nunocoracao/blowfish/main/config/_default/hugo.toml" type="toml" startLine="11" endLine="18" */>}}
+
+```
+
+{{< codeimporter url="https://raw.githubusercontent.com/nunocoracao/blowfish/main/config/_default/hugo.toml" type="toml" startLine="11" endLine="18">}}
 
 
 <br/><br/>

@@ -2,7 +2,7 @@
                 title: "Adam Madej - Gameplay Animator"
                 tags: [作品集网站, 博客, 个人网站]
                 externalUrl: "http://www.adammadej.com/"
-                date: 9923-08-08
+                weight: 721
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

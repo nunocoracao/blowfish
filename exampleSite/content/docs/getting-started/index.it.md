@@ -1,6 +1,6 @@
 ---
 title: "Per iniziare"
-date: 2020-08-15
+weight: 3
 draft: false
 description: "Tutte le variabili del front matter sono disponibili in Blowfish."
 slug: "per-iniziare"
@@ -10,7 +10,7 @@ series_order: 3
 ---
 
 {{< alert >}}
-Questa sezione presuppone che si sia già [installato il tema Blowfish]({{< ref "docs/installation" >}}).
+Questa sezione presuppone che tu abbia già [installato il tema Blowfish]({{< ref "docs/installation" >}}).
 {{< /alert >}}
 
 </br>
@@ -22,25 +22,28 @@ npx blowfish-tools
 {{< /alert >}}
 
 
-The config files that ship with Blowfish contain all of the possible settings that the theme recognises. By default, many of these are commented out but you can simply uncomment them to activate or change a specific feature.
+I file di configurazione forniti con Blowfish contengono tutte le possibili impostazioni riconosciute dal tema. Per impostazione predefinita, molti di questi sono commentati ma puoi semplicemente decommentarli per attivare o modificare una funzionalità specifica.
 
-## Basic configuration
+## Configurazione di base
 
-Before creating any content, there are a few things you should set for a new installation. Starting in the `config.toml` file, set the `baseURL` and `languageCode` parameters. The `languageCode` should be set to the main language that you will be using to author your content.
+Prima di creare qualsiasi contenuto, è necessario impostare alcune cose per una nuova installazione. Iniziando dal file `config.toml`, imposta i parametri `baseURL` e `lingualCode`. Il `lingualCode` dovrebbe essere impostato sulla lingua principale che utilizzerai per creare i tuoi contenuti.
+=======
 
 ```toml
-# config/_default/config.toml
+# config/_default/hugo.toml
 
 baseURL = "https://your_domain.com/"
 languageCode = "en"
 ```
 
-The next step is to configure the language settings. Although Blowfish supports multilingual setups, for now, just configure the main language.
+Il passo successivo è configurare le impostazioni della lingua. Sebbene Blowfish supporti le configurazioni multilingue, per ora basta configurare la lingua principale.
 
-Locate the `languages.en.toml` file in the config folder. If your main language is English you can use this file as is. Otherwise, rename it so that it includes the correct language code in the filename. For example, for French, rename the file to `languages.fr.toml`.
+Individua il file "languages.en.toml" nella cartella di configurazione. Se la tua lingua principale è l'inglese puoi utilizzare questo file così com'è. Altrimenti, rinominalo in modo che includa il codice della lingua corretto nel nome del file. Ad esempio, per il francese, rinominare il file in "languages.fr.toml".
 
 {{< alert >}}
-Note that the language code in the language config filename should match the `languageCode` setting in `config.toml`.
+
+Tieni presente che il codice della lingua nel nome del file di configurazione della lingua deve corrispondere all'impostazione "languageCode" in "config.toml".
+
 {{< /alert >}}
 
 ```toml
@@ -48,7 +51,7 @@ Note that the language code in the language config filename should match the `la
 
 title = "My awesome website"
 
-[author]
+[params.author]
 name = "My name"
 image = "img/author.jpg"
 headline = "A generally awesome human"
@@ -57,22 +60,20 @@ links = [
   { twitter = "https://twitter.com/username" }
 ]
 ```
+La configurazione `[params.author]` determina il modo in cui le informazioni sull'autore vengono visualizzate sul sito web. L'immagine deve essere posizionata nella cartella `assets/`. I link verranno visualizzati nell'ordine in cui sono elencati.
 
-The `[author]` configuration determines how the author information is displayed on the website. The image should be placed in the site's `assets/` folder. Links will be displayed in the order they are listed.
+Se hai bisogno di ulteriori dettagli, ulteriori informazioni su ciascuna di queste opzioni di configurazione sono trattate nella sezione [Configurazione]({{< ref "configuration" >}}).
 
-If you need extra detail, further information about each of these configuration options, is covered in the [Configuration]({{< ref "configuration" >}}) section.
+## Schemi di colori
 
-## Colour schemes
-
-Blowfish ships with a number of colour schemes out of the box. To change the scheme, simply set the `colorScheme` theme parameter. Valid options are `blowfish` (default), `avocado`, `fire`, `ocean`, `forest`, `princess`, `neon`, `bloody`, `terminal`, `marvel`, `noir`, `autumn`, `congo`, and`slate`.
+Blowfish viene fornito con una serie di schemi di colori già pronti. Per cambiare lo schema, è sufficiente impostare il parametro del tema `colorScheme`. Le opzioni valide sono `blowfish` (default), `avocado`, `fire`, `ocean`, `forest`, `princess`, `neon`, `bloody`, `terminal`, `marvel`, `noir`, `autumn`, `congo`, and`slate`.
 
 ```toml
 # config/_default/params.toml
 
 colorScheme = "blowfish"
 ```
-
-Blowfish defines a three-colour palette that is used throughout the theme. Each main colour contains ten shades which are based upon the colours that are included in [Tailwind](https://tailwindcss.com/docs/customizing-colors#color-palette-reference). The three main colours are used for the header, footer, and accent colours. Here are the colors for each scheme:
+Blowfish definisce una palette di tre colori che viene utilizzata in tutto il tema. Ogni colore principale contiene dieci sfumature basate sui colori inclusi in [Tailwind](https://tailwindcss.com/docs/customizing-colors#color-palette-reference). I tre colori principali sono utilizzati per l'intestazione, il piè di pagina e i colori d'accento. Ecco i colori per ogni schema:
 
 #### Blowfish (default)
 {{< swatches "#64748b" "#3b82f6" "#06b6d4" >}}
@@ -117,13 +118,13 @@ Blowfish defines a three-colour palette that is used throughout the theme. Each 
 {{< swatches "#6B7280" "#64748b" "#6B7280" >}}
 
 
-Although these are the default schemes, you can also create your own. Refer to the [Advanced Customisation]({{< ref "advanced-customisation#colour-schemes" >}}) section for details.
+Sebbene questi siano gli schemi predefiniti, è possibile crearne di propri. Per maggiori informazioni, consultare la sezione [Personalizzazione avanzata]({{< ref "advanced-customisation#colour-schemes" >}}).
 
-## Organising content
+## Organizzazione dei contenuti
 
-By default, Blowfish doesn't force you to use a particular content type. In doing so you are free to define your content as you wish. You might prefer _pages_ for a static site, _posts_ for a blog, or _projects_ for a portfolio.
+Per impostazione predefinita, Blowfish non obbliga a utilizzare un particolare tipo di contenuto. In questo modo si è liberi di definire il contenuto come si desidera. Potreste preferire _pages_ per un sito statico, _posts_ per un blog o _projects_ per un portfolio.
 
-Here's a quick overview of a basic Blowfish project. All content is placed within the `content` folder:
+Ecco una rapida panoramica di un progetto base di Blowfish. Tutti i contenuti sono inseriti nella cartella `content`:
 
 ```shell
 .
@@ -144,12 +145,12 @@ Here's a quick overview of a basic Blowfish project. All content is placed withi
 └── themes
     └── blowfish
 ```
+È importante avere una conoscenza approfondita di come Hugo si aspetta che il contenuto sia organizzato, poiché il tema è progettato per sfruttare appieno i pacchetti di pagine di Hugo. Si consiglia di leggere i [documentazione ufficiale di Hugo](https://gohugo.io/content-management/organization/) per maggiori informazioni.
 
-It's important to have a firm grasp of how Hugo expects content to be organised as the theme is designed to take full advantage of Hugo page bundles. Be sure to read the [official Hugo docs](https://gohugo.io/content-management/organization/) for more information.
 
-Blowfish is also flexible when it comes to taxonomies. Some people prefer to use _tags_ and _categories_ to group their content, others prefer to use _topics_.
+Blowfish è flessibile anche per quanto riguarda le tassonomie. Alcuni preferiscono usare _tags_ e _categories_ per raggruppare i loro contenuti, altri preferiscono usare _topics_.
 
-Hugo defaults to using posts, tags and categories out of the box and this will work fine if that's what you want. If you wish to customise this, however, you can do so by creating a `taxonomies.toml` configuration file:
+Hugo usa di default post, tag e categorie e questo funziona bene se è quello che vuoi. Tuttavia, se desideri personalizzare questo aspetto, è possibile farlo creando un file di configurazione `taxonomies.toml`:
 
 ```toml
 # config/_default/taxonomies.toml
@@ -157,15 +158,16 @@ Hugo defaults to using posts, tags and categories out of the box and this will w
 topic = "topics"
 ```
 
-This will replace the default _tags_ and _categories_ with _topics_. Refer to the [Hugo Taxonomy docs](https://gohugo.io/content-management/taxonomies/) for more information on naming taxonomies.
+Sostituirà i predefiniti _tags_ e _categorie_ con _topics_. Fare riferimento a [Hugo Taxonomy docs](https://gohugo.io/content-management/taxonomies/) per ulteriori informazioni sulla denominazione delle tassonomie.
 
-When you create a new taxonomy, you will need to adjust the navigation links on the website to point to the correct sections, which is covered below.
+Quando crei una nuova tassonomia, è necessario sistemare i collegamenti di navigazione sul sito web per puntare alle sezioni corrette, come spiegato di seguito.
 
-## Menus
+## Menu
 
-Blowfish has two menus that can be customised to suit the content and layout of your site. The `main` menu appears in the site header and the `footer` menu appears at the bottom of the page just above the copyright notice.
+Blowfish dispone di due menu che possono essere personalizzati per adattarsi al contenuto e al layout del sito. Il menu `main` appare nell'intestazione del sito e il menu `footer` appare in fondo alla pagina, appena sopra la nota di copyright.
 
-Both menus are configured in the `menus.en.toml` file. Similarly to the languages config file, if you wish to use another language, rename this file and replace `en` with the language code you wish to use.
+Entrambi i menu sono configurati nel file `menus.en.toml`. Simile al file di configurazione delle lingue, se desideri utilizzare un'altra lingua, rinomina questo file e sostituisci `en` con il codice della lingua che si vuole utilizzare.
+
 
 ```toml
 # config/_default/menus.toml
@@ -197,19 +199,20 @@ Both menus are configured in the `menus.en.toml` file. Similarly to the language
   url = "https://external-link"
 ```
 
-The `name` parameter specifies the text that is used in the menu link. You can also optionally provide a `title` which fills the HTML title attribute for the link.
+Il parametro `name` specifica il testo utilizzato nel collegamento al menu. Si può anche fornire facoltativamente un `title` che riempie l'attributo HTML title per il collegamento.
 
-The `pageRef` parameter allows you to easily reference Hugo content pages and taxonomies. It is the quickest way to configure the menu as you can simply refer to any Hugo content item and it will automatically build the correct link. To link to external URLs, the `url` parameter can be used.
+Il parametro `pageRef` consente di fare facilmente riferimento alle pagine di contenuto e alle tassonomie di Hugo. È il modo più rapido per configurare il menu, in quanto è sufficiente fare riferimento a qualsiasi elemento di contenuto di Hugo per creare automaticamente il collegamento corretto. Per collegarsi a URL esterni, si può usare il parametro `url`.
 
-The `pre` parameter allows you to place an icon from [Blowfish's icon set]({{< ref "samples/icons" >}}) on the menu entry. This parameter can be used with `name` parameter or by itself. If you want to use multiple menu entries with just icons please set the `identifier`parameter otherwise Hugo will default to the naming tag as the id and probably not display all the menu entries.
+Il parametro `pre` consente di inserire un'icona dal [Set di icone di Blowfish] ({{< ref "samples/icons" >}}) nella voce di menu. Questo parametro può essere usato con il parametro `name` o da solo. Se si vogliono usare più voci di menu con le sole icone, imposta il parametro `identifier`, altrimenti Hugo sceglierà come id il tag di denominazione e probabilmente non visualizzerà tutte le voci di menu.
 
-Menu links will be sorted from lowest to highest `weight`, and then alphabetically by `name`.
+I collegamenti al menu saranno ordinati dal più basso al più alto `peso`, e poi in ordine alfabetico per `name`.
 
-Both menus are completely optional and can be commented out if not required. Use the template provided in the file as a guide.
+Entrambi i menu sono completamente opzionali e possono essere commentati se non sono necessari. Utilizzare il modello fornito nel file come guida.
 
-### Nested menus
+### Nested Menu
 
-The theme also supports nested menus. In order to use them you just need to define a parent entry in `menu.toml` and its sub-menus using the `parent` parameter to reference the parent. All properties can be used for sub-menus. `pageRef` and `url` can also be used in the parent entry. Nested menus are only available in the main menu not for the footer.
+Il tema supporta anche i menu nidificati. Per usarli devi solo definire una voce genitore in `menu.toml` e i suoi sottomenu utilizzando il parametro `parent` per fare riferimento al genitore. Tutte le proprietà possono essere utilizzate per i sottomenu. `pageRef` e `url` possono essere utilizzati anche nella voce principale. I menu nidificati sono disponibili solo nel menu principale e non nel footer.
+
 
 ```toml
 # config/_default/menus.toml
@@ -238,10 +241,10 @@ The theme also supports nested menus. In order to use them you just need to defi
   weight = 20
 ```
 
-### Sub-Navigation menu
+### Menu di navigazione secondario
 
-Additionally, you can also configure a sub-navigation menu. Just define new menu entries as `subnavigation` in `menus.toml`.
-This will render a second line with sub-categories below the main header menu.
+Inoltre, è possibile configurare un menu di sotto-navigazione. Basta definire nuove voci di menu come `subnavigation` in `menus.toml`.
+Questo renderà una seconda riga con le sottocategorie sotto il menu principale dell'intestazione.
 
 ```toml
 # config/_default/menus.toml
@@ -257,16 +260,17 @@ This will render a second line with sub-categories below the main header menu.
   weight = 20
 ```
 
-The default `name` is the `pageRef` title cased.
+Il `name` predefinito è il titolo di `pageRef`, con le caselle.
 
 ## Thumbnails & Backgrounds
 
-Blowfish was built so it would be easy to add visual support to your articles. If your familiar with Hugo article structure, you just need to place an image file (almost all formats are supported but we recommend `.png` or `.jpg`) that starts with `feature*` inside your article folder. And that's it, Blowfish will then be able to both use the image as a thumbnail within your website as well as for <a target="_blank" href="https://oembed.com/">oEmbed</a> cards across social platforms. 
+Blowfish è stato creato in modo che sia facile aggiungere supporto visivo ai tuoi articoli. Se hai familiarità con la struttura degli articoli di Hugo, devi solo inserire un file immagine (quasi tutti i formati sono supportati ma consigliamo `.png` o `.jpg`) che inizi con `feature*` all'interno della cartella dell'articolo. E questo è tutto, Blowfish sarà quindi in grado di utilizzare l'immagine sia come miniatura all'interno del tuo sito web sia per le schede <a target="_blank" href="https://oembed.com/">oEmbed</a> attraverso le piattaforme social.
 
-[Here]({{< ref "thumbnails" >}}) is also a guide with more info and a [sample]({{< ref "thumbnail_sample" >}}) if you want to see how you can do it.
+[Qui]({{< ref "thumbnails" >}}) è anche una guida con maggiori informazioni e un [esempio]({{< ref "thumbnail_sample" >}}) se vuoi vedere come puoi farlo.
 
 Additionally, Blowfish also supports background hero images in articles and lists. In order to use a different image than the featured one, add an image file in which the name starts with `background*`.
+Inoltre, Blowfish supporta anche una background hero  image in articoli ed elenchi. Per utilizzare un'immagine diversa da quella in primo piano, aggiungi un file immagine il cui nome inizia con `background*`.
 
-## Detailed configuration
+## Dettagli di configurazione
 
-The steps above are the bare minimum configuration. If you now run `hugo server` you will be presented with a blank Blowfish website. Detailed configuration is covered in the [Configuration]({{< ref "configuration" >}}) section.
+I passaggi precedenti rappresentano la configurazione minima. Se ora esegui `hugo server` ti verrà presentato un sito web Blowfish vuoto. La configurazione dettagliata è trattata nella sezione [Configurazione]({{< ref "configuration" >}}).

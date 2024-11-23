@@ -1,8 +1,27 @@
 {{ $url := .Get "url" }}
 {{ $type := .Get "type" }}
-{{ with resources.GetRemote (printf $url) }}
-{{ $codeBlock := printf "```%s\n%s\n```" $type .Content }}
-{{ $codeBlock | markdownify }}
+{{ $startLine := .Get "startLine" | default 1 | int }}
+{{ $startLine = sub $startLine 1 }}
+{{ $endLine := .Get "endLine" | default -1 | int }}
+{{ $selectedLines := slice }}
+{{ with resources.GetRemote (urls.Parse $url) }}
+  {{ $lines := split .Content "\n" }}
+  {{ $totalLine := $lines | len }}
+
+  {{ if ne $endLine -1 }}
+    {{ $endLine = math.Min $endLine $totalLine }}
+  {{ else }}
+    {{ $endLine = $totalLine }}
+  {{ end }}
+  
+  {{ if gt $startLine $endLine }}
+    {{ errorf "Code Importer Shortcode - startLine is greater than endLine" . }}
+  {{ end }}
+
+  {{ $selectedLines := first $endLine $lines }}
+  {{ $selectedLines = after $startLine $selectedLines }}
+  {{ $codeBlock := printf "```%s\n%s\n```" $type (delimit $selectedLines "\n") }}
+  {{ $codeBlock | markdownify }}
 {{ else }}
-{{ errorf "Code Importer Shortcode - Unable to get remote resource" . }}
+  {{ errorf "Code Importer Shortcode - Unable to get remote resource" . }}
 {{ end }}

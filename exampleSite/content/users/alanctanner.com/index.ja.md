@@ -2,7 +2,7 @@
                 title: "alanctanner.com"
                 tags: [個人サイト]
                 externalUrl: "https://alanctanner.com/"
-                date: 9967-08-08
+                weight: 311
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

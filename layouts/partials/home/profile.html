@@ -3,7 +3,7 @@
     h-full
   {{ end }} flex flex-col items-center justify-center text-center">
   <header class="relative px-1 py-1 flex flex-col items-center mb-3">
-    {{ with .Site.Author.image }}
+    {{ with .Site.Params.Author.image }}
       {{ $authorImage := "" }}
       {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
         {{ $authorImage = resources.GetRemote . }}
@@ -12,16 +12,16 @@
       {{ end }}
       {{ if $authorImage }}
         {{ if not $disableImageOptimization }}
-          {{ $authorImage = $authorImage.Fill "288x288" }}
+          {{ $authorImage = $authorImage.Fill (print "288x288 q" ( $.Site.Params.Author.imagequality | default "96" )) }}
         {{ end }}
-        <img class="mb-2 rounded-full h-100 w-100" width="144" height="144" alt="{{ $.Site.Author.name | default " Author" }}"
+        <img class="mb-2 rounded-full h-100 w-100" width="144" height="144" alt="{{ $.Site.Params.Author.name | default " Author" }}"
           src="{{ $authorImage.RelPermalink }}" />
       {{ end }}
     {{ end }}
     <h1 class="text-4xl font-extrabold">
-      {{ .Site.Author.name | default .Site.Title }}
+      {{ .Site.Params.Author.name | default .Site.Title }}
     </h1>
-    {{ with .Site.Author.headline }}
+    {{ with .Site.Params.Author.headline }}
     <h2 class="text-xl text-neutral-500 dark:text-neutral-400">
       {{ . | markdownify }}
     </h2>

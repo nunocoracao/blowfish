@@ -2,7 +2,7 @@
                 title: "blog.stonegarden.dev"
                 tags: [Personal Site]
                 externalUrl: "https://blog.stonegarden.dev/"
-                date: 9939-08-08
+                weight: 571
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

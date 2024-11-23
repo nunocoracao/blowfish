@@ -1,6 +1,6 @@
 ---
 title: "Installazione"
-date: 2020-08-16
+weight: 2
 draft: false
 description: "Come installare il tema Blowfish."
 slug: "installation"
@@ -110,6 +110,7 @@ Per questo metodo utilizzerai Hugo per gestire i tuoi temi. Hugo utilizza **Go**
 
    ```toml
    [[imports]]
+   disable = false
    path = "github.com/nunocoracao/blowfish/v2"
    ```
 

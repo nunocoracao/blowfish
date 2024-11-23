@@ -2,7 +2,7 @@
                 title: "ohdmire.github.io"
                 tags: [Personal site]
                 externalUrl: "https://ohdmire.github.io"
-                date: 9946-08-08
+                weight: 501
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

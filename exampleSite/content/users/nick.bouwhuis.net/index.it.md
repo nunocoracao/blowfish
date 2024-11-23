@@ -2,7 +2,7 @@
                 title: "nick.bouwhuis.net"
                 tags: [Sito personale]
                 externalUrl: "https://nick.bouwhuis.net"
-                date: 9975-08-08
+                weight: 241
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

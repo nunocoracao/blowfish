@@ -2,7 +2,7 @@
                 title: "todreamr.github.io"
                 tags: [個人サイト]
                 externalUrl: "https://todreamr.github.io/"
-                date: 9928-08-08
+                weight: 671
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

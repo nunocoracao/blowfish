@@ -19,7 +19,7 @@
 {{ end }}
 
 {{ if and (.Params.showDateUpdated | default (.Site.Params.article.showDateUpdated | default false)) (ne (partial
-"functions/date.html" .Date) (partial "functions/date.html" .Lastmod)) }}
+"functions/date.html" .Date) (partial "functions/date.html" .Lastmod)) (gt (.Lastmod | time.Format "2006") 1) }}
   {{ $meta.Add "partials" (slice (partial "meta/date-updated.html" .Lastmod)) }}
 {{ end }}
 

@@ -2,7 +2,7 @@
                 title: "notes.bluesdriveamelia.space"
                 tags: [ブログ, 個人サイト]
                 externalUrl: "https://notes.bluesdriveamelia.space/"
-                date: 9930-08-08
+                weight: 651
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

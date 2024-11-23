@@ -2,7 +2,7 @@
                 title: "the-maze.net"
                 tags: [Personal site,Blog]
                 externalUrl: "https://www.the-maze.net/"
-                date: 9934-08-08
+                weight: 621
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

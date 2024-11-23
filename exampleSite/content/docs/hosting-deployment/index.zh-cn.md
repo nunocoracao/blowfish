@@ -1,6 +1,6 @@
 ---
 title: "托管和部署"
-date: 2020-08-07
+weight: 14
 draft: false
 description: "了解如何部署 Blowfish 网页。"
 slug: "hosting-deployment"
@@ -21,7 +21,7 @@ Hugo 官方[托管与部署](https://gohugo.io/hosting-and-deployment/)文档是
 - [Netlify](#netlify)
 - [Render](#render)
 - [Cloudflare Pages](#cloudflare-pages)
-- [共享主机，VPS 或者 私有服务器](#shared-hosting-vps-or-private-web-server)
+- [共享主机，VPS 或者 私有服务器](#共享主机vps-或者-私有服务器)
 
 ---
 

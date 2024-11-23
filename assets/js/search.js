@@ -73,8 +73,6 @@ document.addEventListener("keydown", function (event) {
       } else {
         document.activeElement.click();
       }
-    }else{
-      event.preventDefault();
     }
   }
 
@@ -155,6 +153,11 @@ function executeQuery(term) {
 
   if (results.length > 0) {
     results.forEach(function (value, key) {
+      console.log(value.item.summary);
+      var html = value.item.summary;
+      var div = document.createElement("div");
+      div.innerHTML = html;
+      value.item.summary = div.textContent || div.innerText || "";
       var title = value.item.externalUrl?  value.item.title + '<span class="text-xs ml-2 align-center cursor-default text-neutral-400 dark:text-neutral-500">'+value.item.externalUrl+'</span>' : value.item.title;
       var linkconfig = value.item.externalUrl? 'target="_blank" rel="noopener" href="'+value.item.externalUrl+'"' : 'href="'+value.item.permalink+'"';
       resultsHTML =
@@ -166,7 +169,7 @@ function executeQuery(term) {
               <div class="-mb-1 text-lg font-bold">
                 ${title}
               </div>
-              <div class="text-sm text-neutral-500 dark:text-neutral-400">${value.item.section}<span class="px-2 text-primary-500">&middot;</span>${value.item.date}</span></div>
+              <div class="text-sm text-neutral-500 dark:text-neutral-400">${value.item.section}<span class="px-2 text-primary-500">&middot;</span>${value.item.date? value.item.date : ""}</span></div>
               <div class="text-sm italic">${value.item.summary}</div>
             </div>
             <div class="ml-2 ltr:block rtl:hidden text-neutral-500">&rarr;</div>

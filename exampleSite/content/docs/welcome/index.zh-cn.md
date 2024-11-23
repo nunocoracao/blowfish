@@ -1,6 +1,6 @@
 ---
 title: "欢迎来到 Blowfish"
-date: 2022-01-19
+weight: 1
 draft: false
 description: "探索 Blowfish 2.0版本的新功能。"
 tags: ["新手", "文档"]
@@ -29,7 +29,7 @@ Tailwind CSS 带来了性能优化，并提供了一些出色的新的 CSS 特�
 
 <div class="text-2xl text-center" style="font-size: 2.8rem">:gb: :de: :fr: :es: :cn: :brazil: :tr: :bangladesh:</div>
 
-感谢社区的贡献，目前 Blowfish 已经翻译成二十六种语言，并且随着时间的推移还会支持更多。 顺便一提，欢迎你为支持新语言提交 [PR](https://github.com/nunocoracao/blowfish/pulls)。
+感谢社区的贡献，目前 Blowfish 已经翻译成三十种语言，并且随着时间的推移还会支持更多。 顺便一提，欢迎你为支持新语言提交 [PR](https://github.com/nunocoracao/blowfish/pulls)。
 
 ## 支持 RTL 语言
 

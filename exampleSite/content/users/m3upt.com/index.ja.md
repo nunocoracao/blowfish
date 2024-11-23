@@ -2,7 +2,7 @@
                 title: "m3upt.com"
                 tags: [プロジェクトサイト]
                 externalUrl: "https://m3upt.com"
-                date: 9957-08-08
+                weight: 411
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

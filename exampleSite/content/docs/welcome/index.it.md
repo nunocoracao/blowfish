@@ -1,6 +1,6 @@
 ---
 title: "Benvenuti a Blowfish"
-date: 2022-01-19
+weight: 1
 draft: false
 description: "Scopri le novità della versione 2.0 di Blowfish."
 tags: ["novità", "documenti"]
@@ -26,7 +26,7 @@ Blowfish è ora multilingue! Una funzionalità molto richiesta. Se pubblichi i t
 
 <div class="text-2xl text-center" style="font-size: 2.8rem">:gb: :de: :fr: :es: :cn: :brazil: :tr: :bangladesh:</div>
 
-Grazie ai contributi della community, Blowfish è già stato tradotto in [ventisei lingue](https://github.com/nunocoracao/blowfish/tree/main/i18n) e altre verranno aggiunte nel tempo. A proposito, le [richieste pull](https://github.com/nunocoracao/blowfish/pulls) per nuove lingue sono sempre benvenute!
+Grazie ai contributi della community, Blowfish è già stato tradotto in [trenta lingue](https://github.com/nunocoracao/blowfish/tree/main/i18n) e altre verranno aggiunte nel tempo. A proposito, le [richieste pull](https://github.com/nunocoracao/blowfish/pulls) per nuove lingue sono sempre benvenute!
 
 ## Supporto per la lingua RTL
 

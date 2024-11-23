@@ -2,7 +2,7 @@
                 title: "asterisk.lol"
                 tags: [Blog,Personal Site]
                 externalUrl: "https://asterisk.lol"
-                date: 9931-08-08
+                weight: 641
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

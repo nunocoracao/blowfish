@@ -2,7 +2,7 @@
                 title: "rdgo.dev"
                 tags: [個人サイト]
                 externalUrl: "https://rdgo.dev/"
-                date: 9966-08-08
+                weight: 321
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

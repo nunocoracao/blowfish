@@ -2,7 +2,7 @@
                 title: "scottmckendry.tech"
                 tags: [Personal site]
                 externalUrl: "https://scottmckendry.tech"
-                date: 9948-08-08
+                weight: 481
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

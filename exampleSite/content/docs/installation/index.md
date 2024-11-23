@@ -1,6 +1,6 @@
 ---
 title: "Installation"
-date: 2020-08-16
+weight: 2
 draft: false
 description: "How to install the Blowfish theme."
 slug: "installation"
@@ -111,6 +111,7 @@ For this method you'll use Hugo to manage your themes. Hugo uses **Go** to initi
 
    ```toml
    [[imports]]
+   disable = false
    path = "github.com/nunocoracao/blowfish/v2"
    ```
 
