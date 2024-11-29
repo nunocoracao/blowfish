@@ -1,4 +1,5 @@
 const fs = require('fs');
+const crypto = require("crypto") 
 const puppeteer = require("puppeteer");
 
 const configDir = "./exampleSite/config/_default";
@@ -121,7 +122,11 @@ puppeteer
                 layoutBackgroundHeaderSpace: false\n\
                 \r---\n";
 
-            var dir = usersFolderPath + users[i].title.replaceAll("/", "-");
+            //digest the title to create a folder
+            var hash = crypto.createHash('md5');
+            hash.update(users[i].url);
+            var dir = usersFolderPath + hash.digest('hex');
+
 
             if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir);
