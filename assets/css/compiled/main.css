@@ -122,7 +122,7 @@ body.zen-mode-enable {
   --tw-contain-style: 
 }
 
-/*! tailwindcss v3.4.13 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v3.4.14 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -564,7 +564,7 @@ video {
 
 /* Make elements with the HTML hidden attribute stay hidden by default */
 
-[hidden] {
+[hidden]:where(:not([hidden="until-found"])) {
   display: none;
 }
 
