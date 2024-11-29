@@ -1,8 +1,8 @@
 ---
-                title: "albertolvera.com"
-                tags: [Personal site]
-                externalUrl: "https://albertolvera.com"
-                weight: 81
+                title: "Academy Customize"
+                tags: [Sito aziendale]
+                externalUrl: "https://acamize.com/"
+                weight: 951
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

@@ -1,8 +1,8 @@
 ---
-                title: "albertolvera.com"
-                tags: [个人网站]
-                externalUrl: "https://albertolvera.com"
-                weight: 81
+                title: "さばっこ"
+                tags: [个人网站, 博客]
+                externalUrl: "https://sabac.co"
+                weight: 961
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
