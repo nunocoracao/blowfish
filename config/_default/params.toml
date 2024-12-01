@@ -161,3 +161,7 @@ forgejoDefaultServer = "https://v8.next.forgejo.org"
   # pinterest = ""
   # yandex = ""
   # fediverse = ""
+
+[rssnext]
+  # feedId = ""
+  # userId = ""

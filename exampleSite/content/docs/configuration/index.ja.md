@@ -245,7 +245,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `article.showAuthorsBadges`           | `false`   | Whether the `authors` taxonomies are are displayed in the article or list header. This requires the setup of `multiple authors` and the `authors` taxonomy. Check [this page]({{< ref "multi-author" >}}) for more details on how to configure that feature.                                                           |
 | `article.showWordCount`               | `false`   | Whether or not article word counts are displayed.                                                                                                                                                                                                                                                                      |
 | `article.showComments`                | `false`   | Whether or not the [comments partial]({{< ref "partials#comments" >}}) is included after the article footer.                                                                                                                                                                                                           |
-| `article.sharingLinks`                | _Not set_ | Which sharing links to display at the end of each article. When not provided, or set to `false` no links will be displayed.  Available values are: "linkedin", "twitter", "reddit", "pinterest", "facebook", "email", "whatsapp", and "telegram"                                                                       |
+| `article.sharingLinks`                | _Not set_ | Which sharing links to display at the end of each article. When not provided, or set to `false` no links will be displayed.  Available values are: "linkedin", "bluesky", "mastodon", "twitter", "reddit", "pinterest", "facebook", "email", "whatsapp", and "telegram"                                                                       |
 | `article.showZenMode`                 | `false`   | Flag to activate Zen Mode reading feature for articles.                                                                                                                                                                                                                                                                |
 
 ### List
@@ -357,6 +357,13 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `verification.pinterest` | _Not set_ | The site verification string provided by Pinterest to be included in the site metadata. |
 | `verification.yandex`    | _Not set_ | The site verification string provided by Yandex to be included in the site metadata.    |
 <!-- prettier-ignore-end -->
+
+## RSSNext
+
+| Name                     | Default   | Description                                                                                                                          |
+| ------------------------ | --------- |--------------------------------------------------------------------------------------------------------------------------------------|
+| `rssnext.feedId`    | _Not set_ | The rss `feedId` string provided by [RSSNext/Follow](https://follow.is/) to be included in the `rss.xml`, which can helps to claim rss feed as your own. |
+| `rssnext.userId`      | _Not set_ | The rss `userId` string provided by [RSSNext/Follow](https://follow.is/) to be included in the `rss.xml`, which can helps to claim rss feed as your own.     |
 
 ## Other configuration files
 

@@ -65,14 +65,6 @@
     ]
   },
   {
-    "title": "albertolvera.com",
-    "url": "https://albertolvera.com",
-    "source": "n/a",
-    "tags": [
-      "Personal site"
-    ]
-  },
-  {
     "title": "fahru.my.id",
     "url": "https://www.fahru.my.id",
     "source": "n/a",
@@ -283,14 +275,6 @@
   {
     "title": "nikarashihatsu.github.io",
     "url": "https://nikarashihatsu.github.io/",
-    "source": "n/a",
-    "tags": [
-      "Personal site"
-    ]
-  },
-  {
-    "title": "blog.enmanuelmoreira.com",
-    "url": "https://blog.enmanuelmoreira.com",
     "source": "n/a",
     "tags": [
       "Personal site"
@@ -805,6 +789,23 @@
       "Blog",
       "Documentation",
       "CV"
+    ]
+  },
+  {
+    "title": "Academy Customize",
+    "url": "https://acamize.com/",
+    "source": "n/a",
+    "tags": [
+      "Business site"
+    ]
+  },
+  {
+    "title": "さばっこ",
+    "url": "https://sabac.co",
+    "source": "n/a",
+    "tags": [
+      "Personal site",
+      "Blog"
     ]
   }
 ]
