@@ -18,4 +18,4 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: config-default.zip
-          tag_name: ${{ github.ref }}
+          tag_name: ${{ github.event.release.tag_name }}
