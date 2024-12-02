@@ -20,4 +20,3 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: config-default.zip
-          tag_name: latest
