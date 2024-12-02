@@ -20,6 +20,10 @@ function _toogleZenMode(zendModeButton) {
   articleContent.classList.toggle('max-w-fit');
   articleContent.classList.toggle('max-w-prose');
 
+  // Change width of article title
+  header.classList.toggle('max-w-full');
+  header.classList.toggle('max-w-prose');
+
   // Read i18n title from data-attributes
   const titleI18nDisable = zendModeButton.getAttribute('data-title-i18n-disable');
   const titleI18nEnable = zendModeButton.getAttribute('data-title-i18n-enable');
