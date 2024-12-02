@@ -1,8 +1,10 @@
-name: Create Config ZIP
+name: Create ZIP
 on:
   push:
+    branches: ["main"]
     paths:
       - 'config/_default/**'
+  workflow_dispatch:
 
 jobs:
   zip:
