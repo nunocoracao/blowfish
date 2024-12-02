@@ -1,9 +1,7 @@
 name: Create ZIP
 on:
-  push:
-    branches: ["main"]
-    paths:
-      - 'config/_default/**'
+  release:
+    types: [published]
   workflow_dispatch:
 
 jobs:
@@ -12,8 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: zip -r config-default.zip config/_default
-      - uses: actions-ecosystem/action-get-latest-tag@v1
-        id: get-latest-tag
       - uses: actions/upload-artifact@v3
         with:
           name: config-default
@@ -22,4 +18,4 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: config-default.zip
-          tag_name: ${{ steps.get-latest-tag.outputs.tag }}
+          tag_name: ${{ github.ref }}
