@@ -136,7 +136,7 @@ git submodule add -b main https://github.com/nunocoracao/blowfish.git themes/blo
 
 根据你安装主题的不同方式，你可以在以下地方找到主题的配置文件：
 
-- **Hugo 模块:** 在 Hugo 的缓存目录, 或者从 Github [下载副本](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/nunocoracao/blowfish/tree/main/config/_default) from GitHub
+- **Hugo 模块:** 在 Hugo 的缓存目录, 或者从 Github [下载副本](https://github.com/nunocoracao/blowfish/releases/latest/download/config-default.zip) from GitHub
 - **Git 子模块 或 本地复制文件:** `themes/blowfish/config/_default`
 
 一旦你复制了这些文件，你的 config 目录看起来应该是这样：

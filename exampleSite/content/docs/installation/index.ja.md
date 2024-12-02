@@ -137,7 +137,7 @@ In the root folder of your website, delete the `hugo.toml` file that was generat
 
 Depending on how you installed the theme you will find the theme config files in different places:
 
-- **Hugo Modules:** In the Hugo cache directory, or [download a copy](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/nunocoracao/blowfish/tree/main/config/_default) from GitHub
+- **Hugo Modules:** In the Hugo cache directory, or [download a copy](https://github.com/nunocoracao/blowfish/releases/latest/download/config-default.zip) from GitHub
 - **Git submodule or Manual install:** `themes/blowfish/config/_default`
 
 Once you've copied the files, your config folder should look like this:
