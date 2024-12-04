@@ -146,7 +146,7 @@ blowfish-tools new mynewsite
 
    > **Note:** Do not overwrite the `module.toml` file you created above!
 
-   You will find these theme config files in the Hugo cache directory, or [download a copy](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/nunocoracao/blowfish/tree/main/config/_default) from GitHub.
+   You will find these theme config files in the Hugo cache directory, or [download a copy](https://github.com/nunocoracao/blowfish/releases/download/latest/config-default.zip) from GitHub.
 
 5. Follow the [Getting Started](https://blowfish.page/docs/getting-started/) instructions to configure your website.
 
