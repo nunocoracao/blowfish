@@ -1,29 +1,30 @@
 ---
-title: "Advanced Customisation"
+title: "高度なカスタマイズ"
 weight: 13
 draft: false
-description: "Learn how to build Blowfish manually."
+description: "Blowfishを手動でビルドする方法を学びましょう。"
 slug: "advanced-customisation"
 tags: ["advanced", "css", "docs"]
 series: ["Documentation"]
 series_order: 13
 ---
 
-There are many ways you can make advanced changes to Blowfish. Read below to learn more about what can be customised and the best way of achieving your desired result.
+Blowfish には高度な変更を加えるための多くの方法があります。カスタマイズできる内容や、希望する結果を得るための最良の方法については、以下をご覧ください。
 
-If you need further advice, post your questions on [GitHub Discussions](https://github.com/nunocoracao/blowfish/discussions).
+さらにアドバイスが必要な場合は、 [GitHub Discussions](https://github.com/nunocoracao/blowfish/discussions) に質問を投稿してください。
 
-## Hugo project structure
+## Hugo プロジェクトの構造
 
-Before leaping into it, first a quick note about [Hugo project structure](https://gohugo.io/getting-started/directory-structure/) and best practices for managing your content and theme customisations.
+始める前に、 [Hugo プロジェクトの構造](https://gohugo.io/getting-started/directory-structure/)と、コンテンツとテーマのカスタマイズを管理するためのベストプラクティスについて簡単に説明します。
 
 {{< alert >}}
-**In summary:** Never directly edit the theme files. Only make customisations in your Hugo project's sub-directories, not in the themes directory itself.
+**簡単に言うと:** テーマファイルを直接編集してはいけません。 カスタマイズは、テーマディレクトリ自体ではなく、Hugoプロジェクトのサブディレクトリ内でのみ行います。
 {{< /alert >}}
 
-Blowfish is built to take advantage of all the standard Hugo practices. It is designed to allow all aspects of the theme to be customised and overridden without changing any of the core theme files. This allows for a seamless upgrade experience while giving you total control over the look and feel of your website.
 
-In order to achieve this, you should never manually adjust any of the theme files directly. Whether you install using Hugo modules, as a git submodule or manually include the theme in your `themes/` directory, you should always leave these files intact.
+Blowfish は、Hugo の標準的な実装をすべて活用できるように構築されています。コアのテーマファイルを変更することなく、テーマのあらゆる側面をカスタマイズしたりオーバーライドしたりできるように設計されています。これにより、ウェブサイトの見た目を完全にコントロールしながら、シームレスな改善が可能になります。
+
+そのために、テーマファイルを手動で直接編集するのは避けてください。Hugo モジュール、git サブモジュール、または手動でテーマを `themes/` ディレクトリに格納するなど、どのインストール方法を使用する場合でも、これらのファイルは常にそのままにしておく必要があります。
 
 The correct way to adjust any theme behaviour is by overriding files using Hugo's powerful [file lookup order](https://gohugo.io/templates/lookup-order/). In summary, the lookup order ensures any files you include in your project directory will automatically take precedence over any theme files.
 
