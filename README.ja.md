@@ -15,8 +15,8 @@ Blowfishは[Hugo](https://gohugo.io)のために設計された強力で軽量�
 🌏 [デモサイト](https://blowfish.page/)  
 📑 [ドキュメント](https://blowfish.page/docs/)  
 💎 [グッズストア](http://tee.pub/lic/qwSlWVBL5zc)  
-🐛 [バグレポート & issue](https://github.com/nunocoracao/blowfish/issues)  
-💡 [質問 & 機能リクエスト](https://github.com/nunocoracao/blowfish/discussions)
+🐛 [バグ報告と問題点](https://github.com/nunocoracao/blowfish/issues)  
+💡 [質問と機能リクエスト](https://github.com/nunocoracao/blowfish/discussions)
 
 
 
