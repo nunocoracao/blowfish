@@ -53,15 +53,15 @@ npx blowfish-tools
 <!-- prettier-ignore-end -->
 
 
-## Thumbnails
+## サムネイル
 
-Blowfish was built so it would be easy to add visual support to your articles. If your familiar with Hugo article structure, you just need to place an image file (almost all formats are supported but we recommend `.png` or `.jpg`) that starts with `feature*` inside your article folder. And that's it, Blowfish will then able to both use the image as a thumbnail within your website as well as for <a target="_blank" href="https://oembed.com/">oEmbed</a> cards across social platforms.
+Blowfish は、記事に視覚的なサポートを簡単に追加できるように構築されています。Hugo の記事構造に慣れている場合は、記事フォルダ内に `feature*` で始まる画像ファイル（ほとんどすべての形式がサポートされていますが、`.png` または `.jpg` をお勧めします）を配置するだけです。これで、Blowfish は Webサイト内でサムネイルとして画像を使用したり、ソーシャルプラットフォーム全体で <a target="_blank" href="https://oembed.com/">oEmbed</a> カードに使用したりできます。
 
 [Here]({{< ref "thumbnails" >}}) is also a guide with more info and a [sample]({{< ref "thumbnail_sample" >}}) if you want to see how you can do it.
 
-## Language and i18n
+## 言語と i18n
 
-Blowfish is optimised for full multilingual websites and theme assets are translated into several languages out of the box. The language configuration allows you to generate multiple versions of your content to provide a customised experience to your visitors in their native language.
+Blowfish は多言語 Webサイト向けに最適化されており、テーマアセットはすぐに使えるように複数の言語に翻訳されています。 言語設定を使用すると、コンテンツの複数のバージョンを生成して、訪問者に母国語でカスタマイズされたエクスペリエンスを提供できます。
 
 The theme currently supports the following languages by default:
 
