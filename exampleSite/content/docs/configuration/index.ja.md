@@ -9,12 +9,12 @@ series: ["Documentation"]
 series_order: 4
 ---
 
-Blowfish は高度にカスタマイズ可能なテーマであり、最新の Hugo 機能を使用して設定方法をシンプルにしています。.
+Blowfish は高度にカスタマイズ可能なテーマであり、最新の Hugo 機能を使用して設定方法をシンプルにしています。
 
 このテーマには、基本的なブログまたは静的 Web サイトをすぐに立ち上げて実行できるデフォルト設定が付属しています。
 
 {{< alert "fire" >}}
-We just launched a CLI tool to help you get started with Blowfish. It will help you with installation and configuration. Install the CLI tool globally using:
+Blowfish を簡単に使い始められるように、新しい CLI ツールをリリースしました。インストールと設定に役立ちます。 グローバルに CLI ツールをインストールするには、以下を使用します。
 
 ```bash
 npx blowfish-tools
@@ -22,35 +22,36 @@ npx blowfish-tools
 
 {{< /alert >}}
 
-> Configuration files bundled with the theme are provided in TOML format as this is the default Hugo syntax. Feel free to convert your config to YAML or JSON if you wish.
+> テーマにバンドルされている設定ファイルは、デフォルトの Hugo 構文である TOML 形式で提供されています。必要に応じて、設定を YAML または JSON に変換できます。
 
-The default theme configuration is documented in each file so you can freely adjust the settings to meet your needs.
+デフォルトのテーマ設定は各ファイルに記載されているため、必要に応じて設定を自由に調整できます。
 
 {{< alert >}}
-As outlined in the [installation instructions]({{< ref "/docs/installation#set-up-theme-configuration-files" >}}), you should adjust your theme configuration by modifying the files in the `config/_default/` folder of your Hugo project and delete the `config.toml` file in your project root.
+[インストール手順]({{< ref "/docs/installation#set-up-theme-configuration-files" >}}) で概説されているように、Hugo プロジェクトの `config/_default/` フォルダ内のファイルを修正し、プロジェクトルートの `config.toml` ファイルを削除することで、テーマ設定を調整する必要があります。
 {{< /alert >}}
 
-## Site configuration
+## サイト設定
 
-Standard Hugo configuration variables are respected throughout the theme, however there are some specific things that should be configured for the best experience.
+テーマ全体で標準の Hugo 設定変数が適用されますが、最適なエクスペリエンスを得るために設定する必要がある特定の事項があります。
 
-The site configuration is managed through the `config/_default/config.toml` file. The table below outlines all the settings that the Blowfish takes advantage of.
+サイト設定は `config/_default/config.toml` ファイルで管理されます。 下の表は、Blowfish が活用するすべての設定の概要を示しています。
 
-Note that the variable names provided in this table use dot notation to simplify the TOML data structure (ie. `outputs.home` refers to `[outputs] home`).
+この表で提供されている変数名は、TOML データ構造を簡素化するためにドット表記を使用していることに注意してください（つまり、 `outputs.home` は `[outputs] home` を指します）。
 
 <!-- prettier-ignore-start -->
-| Name                     | Default                   | Description                                                                                                                                                                                                                                                                                                                                                                  |
-| ------------------------ | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `theme`                  | `"blowfish"`              | When using Hugo Modules this config value should be removed. For all other installation types, this must be set to `blowfish` for the theme to function.                                                                                                                                                                                                                     |
-| `baseURL`                | _Not set_                 | The URL to the root of the website.                                                                                                                                                                                                                                                                                                                                          |
-| `defaultContentLanguage` | `"en"`                    | This value determines the default language of theme components and content. Refer to the [language and i18n](#language-and-i18n) section below for supported language codes.                                                                                                                                                                                                 |
-| `enableRobotsTXT`        | `true`                    | When enabled, a `robots.txt` file will be created in the site root that allows search engines to crawl the entire site. If you prefer to provide your own pre-made `robots.txt`, set to `false` and place your file in the `static` directory. For complete control, you may provide a [custom layout]({{< ref "content-examples#custom-layouts" >}}) to generate this file. |
-| `pagination.pagerSize`   | `10`                      | The number of articles listed on each page of the article listing.                                                                                                                                                                                                                                                                                                           |
-| `summaryLength`          | `0`                       | The number of words that are used to generate the article summary when one is not provided in the [front matter]({{< ref "front-matter" >}}). A value of `0` will use the first sentence. This value has no effect when summaries are hidden.                                                                                                                                |
-| `outputs.home`           | `["HTML", "RSS", "JSON"]` | The output formats that are generated for the site. Blowfish requires HTML, RSS and JSON for all theme components to work correctly.                                                                                                                                                                                                                                         |
-| `permalinks`             | _Not set_                 | Refer to the [Hugo docs](https://gohugo.io/content-management/urls/#permalinks) for permalink configuration.                                                                                                                                                                                                                                                                 |
-| `taxonomies`             | _Not set_                 | Refer to the [Organising content]({{< ref "getting-started#organising-content" >}}) section for taxonomy configuration.                                                                                                                                                                                                                                                      |
+| Name | Default | Description |
+|---|---|---|
+| `theme` | `"blowfish"` | Hugo Modules を使用している場合は、この設定値を削除する必要があります。 他のすべてのインストールタイプでは、テーマが機能するためにこれを `blowfish` に設定する必要があります。 |
+| `baseURL` | _設定なし_ | Webサイトのルートへの URL です。 |
+| `defaultContentLanguage` | `"en"` | この値は、テーマコンポーネントとコンテンツのデフォルト言語を決定します。 サポートされている言語コードについては、以下の [言語と i18n](#language-and-i18n) セクションを参照してください。 |
+| `enableRobotsTXT` | `true` | 有効にすると、検索エンジンがサイト全体をクロールできるようにする `robots.txt` ファイルがサイトルートに作成されます。 あらかじめ作成した独自の `robots.txt` を提供する場合は、`false` に設定し、ファイルを `static` ディレクトリに配置します。 完全に制御するには、このファイルを生成するための [カスタムレイアウト]({{< ref "content-examples#custom-layouts" >}}) を提供できます。 |
+| `pagination.pagerSize` | `10` | 記事リストの各ページにリストされる記事の数です。 |
+| `summaryLength` | `0` | [フロントマター]({{< ref "front-matter" >}}) で提供されていない場合に、記事の概要を生成するために使用される単語の数です。 値 `0` は最初の文を使用します。 概要が非表示になっている場合、この値は効果がありません。 |
+| `outputs.home` | `["HTML", "RSS", "JSON"]` | サイト用に生成される出力形式です。 Blowfish では、すべてのテーマコンポーネントが正しく機能するために HTML、RSS、JSON が必要です。 |
+| `permalinks` | _設定なし_ | パーマリンクの設定については、[Hugo ドキュメント](https://gohugo.io/content-management/urls/#permalinks) を参照してください。 |
+| `taxonomies` | _設定なし_ | タクソノミーの設定については、[コンテンツの整理]({{< ref "getting-started#organising-content" >}}) セクションを参照してください。 |
 <!-- prettier-ignore-end -->
+
 
 ## Thumbnails
 
