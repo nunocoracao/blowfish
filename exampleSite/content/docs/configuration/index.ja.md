@@ -1,17 +1,17 @@
 ---
-title: "Configuration"
+title: "設定"
 weight: 4
 draft: false
-description: "All the configuration variables available in Blowfish."
+description: "Blowfish で使用可能なすべての設定変数"
 slug: "configuration"
 tags: ["config", "docs"]
 series: ["Documentation"]
 series_order: 4
 ---
 
-Blowfish is a highly customisable theme and uses some of the latest Hugo features to simplify how it is configured.
+Blowfish は高度にカスタマイズ可能なテーマであり、最新の Hugo 機能を使用して設定方法をシンプルにしています。.
 
-The theme ships with a default configuration that gets you up and running with a basic blog or static website.
+このテーマには、基本的なブログまたは静的 Web サイトをすぐに立ち上げて実行できるデフォルト設定が付属しています。
 
 {{< alert "fire" >}}
 We just launched a CLI tool to help you get started with Blowfish. It will help you with installation and configuration. Install the CLI tool globally using:
