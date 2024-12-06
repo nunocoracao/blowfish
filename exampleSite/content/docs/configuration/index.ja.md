@@ -63,38 +63,38 @@ Blowfish は、記事に視覚的なサポートを簡単に追加できるよ�
 
 Blowfish は多言語 Webサイト向けに最適化されており、テーマアセットはすぐに使えるように複数の言語に翻訳されています。 言語設定を使用すると、コンテンツの複数のバージョンを生成して、訪問者に母国語でカスタマイズされたエクスペリエンスを提供できます。
 
-The theme currently supports the following languages by default:
+このテーマは現在、デフォルトで次の言語をサポートしています:
 
-| Language                     | Code    |
-| ---------------------------- | ------- |
-| Arabic                       | `ar`    |
-| Bulgarian                    | `bg`    |
-| Bengali                      | `bn`    |
-| Catalan                      | `ca`    |
-| Czech                        | `cs`    |
-| German                       | `de`    |
-| English                      | `en`    |
-| Esperanto                    | `eo`    |
-| Spanish (Spain)              | `es`    |
-| Finnish                      | `fi`    |
-| French                       | `fr`    |
-| Hebrew                       | `he`    |
-| Croatian                     | `hr`    |
-| Hungarian                    | `hu`    |
-| Indonesian                   | `id`    |
-| Italian                      | `it`    |
-| Japanese                     | `ja`    |
-| Korean                       | `ko`    |
-| Dutch                        | `nl`    |
-| Polish                       | `pl`    |
-| Portuguese (Brazil)          | `pt-br` |
-| Portuguese (Portugal)        | `pt-pt` |
-| Romanian                     | `ro`    |
-| Russian                      | `ru`    |
-| Turkish                      | `tr`    |
-| Vietnamese                   | `vi`    |
-| Simplified Chinese (China)   | `zh-cn` |
-| Traditional Chinese (Taiwan) | `zh-tw` |
+| 言語 | コード |
+|---|---|
+| アラビア語 | `ar` |
+| ブルガリア語 | `bg` |
+| ベンガル語 | `bn` |
+| カタロニア語 | `ca` |
+| チェコ語 | `cs` |
+| ドイツ語 | `de` |
+| 英語 | `en` |
+| エスペラント語 | `eo` |
+| スペイン語（スペイン） | `es` |
+| フィンランド語 | `fi` |
+| フランス語 | `fr` |
+| ヘブライ語 | `he` |
+| クロアチア語 | `hr` |
+| ハンガリー語 | `hu` |
+| インドネシア語 | `id` |
+| イタリア語 | `it` |
+| 日本語 | `ja` |
+| 韓国語 | `ko` |
+| オランダ語 | `nl` |
+| ポーランド語 | `pl` |
+| ポルトガル語（ブラジル） | `pt-br` |
+| ポルトガル語（ポルトガル） | `pt-pt` |
+| ルーマニア語 | `ro` |
+| ロシア語 | `ru` |
+| トルコ語 | `tr` |
+| ベトナム語 | `vi` |
+| 中国語（簡体字） | `zh-cn` |
+| 中国語（繁体字） | `zh-tw` |
 
 The default translations can be overridden by creating a custom file in `i18n/[code].yaml` that contains the translation strings. You can also use this method to add new languages. If you'd like to share a new translation with the community, please [open a pull request](https://github.com/nunocoracao/blowfish/pulls).
 
