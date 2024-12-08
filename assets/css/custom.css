@@ -1,0 +1,76 @@
+.chroma .k,
+.chroma .kd,
+.chroma .kn {
+  --tw-text-opacity: 1;
+  color: rgba(215, 58, 73, var(--tw-text-opacity)); /* Rojo para palabras clave */
+}
+
+.chroma .m {
+  --tw-text-opacity: 1;
+  color: rgba(0, 92, 197, var(--tw-text-opacity)); /* Azul para números */
+}
+
+.chroma .nc {
+  --tw-text-opacity: 1;
+  color: rgba(0, 0, 0, var(--tw-text-opacity)); /* Negro para variables */
+}
+
+.chroma .kt {
+  --tw-text-opacity: 1;
+  color: rgba(227, 98, 9, var(--tw-text-opacity)); /* Naranja para variables */
+}
+
+.chroma .n {
+  --tw-text-opacity: 1;
+  color: rgba(111, 66, 193, var(--tw-text-opacity)); /* Púrpura para funciones */
+}
+
+.chroma .s,
+.chroma .sb,
+.chroma .sc {
+  --tw-text-opacity: 1;
+  color: rgba(3, 47, 98, var(--tw-text-opacity)); /* Azul oscuro para cadenas */
+}
+
+.chroma .c,
+.chroma .cm,
+.chroma .c1,
+.chroma .cs {
+  --tw-text-opacity: 1;
+  color: rgba(106, 115, 125, var(--tw-text-opacity)); /* Gris para comentarios */
+  font-style: italic; /* Opcional, para diferenciar */
+}
+
+.chroma .o {
+  --tw-text-opacity: 1;
+  color: rgba(215, 58, 73, var(--tw-text-opacity)); /* Rojo para operadores */
+}
+
+.chroma .na {
+  --tw-text-opacity: 1;
+  color: rgba(0, 92, 197, var(--tw-text-opacity)); /* Azul para atributos */
+}
+
+.chroma .nf {
+  --tw-text-opacity: 1;
+  color: rgba(111, 66, 193, var(--tw-text-opacity)); /* Púrpura para nombres de funciones */
+}
+
+.chroma .ne,
+.chroma .nt {
+  --tw-text-opacity: 1;
+  color: rgba(34, 134, 58, var(--tw-text-opacity)); /* Verde para etiquetas */
+}
+
+.chroma .err,
+.chroma .gd {
+  --tw-text-opacity: 1;
+  color: rgba(179, 29, 40, var(--tw-text-opacity)); /* Rojo oscuro para errores */
+  background-color: rgba(255, 238, 240, var(--tw-text-opacity)); /* Fondo rojo claro */
+}
+
+.chroma .gi {
+  --tw-text-opacity: 1;
+  color: rgba(34, 134, 58, var(--tw-text-opacity)); /* Verde para añadidos */
+  background-color: rgba(240, 255, 244, var(--tw-text-opacity)); /* Fondo verde claro */
+}
