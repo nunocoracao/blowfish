@@ -158,23 +158,23 @@ module.exports = {
 
 ### プロジェクト構造
 
-In order to take advantage of the default configuration, your project should look something like this...
+デフォルト設定を利用するために、プロジェクトは次のようになります...
 
 ```shell
 .
 ├── assets
 │   └── css
 │       └── compiled
-│           └── main.css  # this is the file we will generate
-├── config  # site config
+│           └── main.css  # これが生成するファイル
+├── config  # サイト設定
 │   └── _default
-├── content  # site content
+├── content  # サイトコンテンツ
 │   ├── _index.md
 │   ├── projects
 │   │   └── _index.md
 │   └── blog
 │       └── _index.md
-├── layouts  # custom layouts for your site
+├── layouts  # サイトのカスタムレイアウト
 │   ├── partials
 │   │   └── extend-article-link/simple.html
 │   ├── projects
@@ -182,10 +182,10 @@ In order to take advantage of the default configuration, your project should loo
 │   └── shortcodes
 │       └── disclaimer.html
 └── themes
-    └── blowfish  # git submodule or manual theme install
+    └── blowfish  # git サブモジュールまたは手動テーマインストール
 ```
 
-This example structure adds a new `projects` content type with its own custom layout along with a custom shortcode and extended partial. Provided the project follows this structure, all that's required is to recompile the `main.css` file.
+この例の構造では、独自のカスタムレイアウトを持つ新しい `projects` コンテンツタイプと、カスタムショートコードと拡張パーシャルが追加されています。プロジェクトがこの構造に従っている場合、必要なのは `main.css` ファイルを再コンパイルすることだけです。
 
 ### Install dependencies
 
