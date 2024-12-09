@@ -26,17 +26,17 @@ Blowfish は、Hugo の標準的な実装をすべて活用できるように構
 
 そのために、テーマファイルを手動で直接編集するのは避けてください。Hugo モジュール、git サブモジュール、または手動でテーマを `themes/` ディレクトリに格納するなど、どのインストール方法を使用する場合でも、これらのファイルは常にそのままにしておく必要があります。
 
-The correct way to adjust any theme behaviour is by overriding files using Hugo's powerful [file lookup order](https://gohugo.io/templates/lookup-order/). In summary, the lookup order ensures any files you include in your project directory will automatically take precedence over any theme files.
+テーマの動作を調整する正しい方法は、Hugo の強力な [ファイル優先順位](https://gohugo.io/templates/lookup-order/) を使用してファイルをオーバーライドすることです。要約すると、優先順位により、プロジェクトディレクトリに含めたファイルは、すべてのテーマファイルよりも自動的に優先されます。
 
-For example, if you wanted to override the main article template in Blowfish, you can simply create your own `layouts/_default/single.html` file and place it in the root of your project. This file will then override the `single.html` from the theme without ever changing the theme itself. This works for any theme files - HTML templates, partials, shortcodes, config files, data, assets, etc.
+たとえば、Blowfish のメイン記事テンプレートをオーバーライドしたい場合は、独自の `layouts/_default/single.html` ファイルを作成してプロジェクトのルートに配置するだけです。このファイルは、テーマ自体を変更することなく、テーマの `single.html` をオーバーライドします。これは、HTML テンプレート、パーシャル、ショートコード、設定ファイル、データ、アセットなど、すべてのテーマファイルで機能します。
 
-As long as you follow this simple practice, you will always be able to update the theme (or test different theme versions) without worrying that you will lose any of your custom changes.
+この簡単なプラクティスに従う限り、カスタム変更が失われることを心配することなく、いつでもテーマを更新したり（または異なるテーマバージョンをテストしたり）することができます。
 
-## Change image optimization settings
+## 画像最適化設定の変更
 
-Hugo has various builtin methods to resize, crop and optimize images.
+Hugo には、画像のサイズ変更、トリミング、最適化を行うためのさまざまな組み込みメソッドがあります。
 
-As an example - in `layouts/partials/article-link/card.html`, you have the following code:
+例として - `layouts/partials/article-link/card.html` には、次のコードがあります。
 
 ```go
 {{ with .Resize "600x" }}
@@ -44,7 +44,7 @@ As an example - in `layouts/partials/article-link/card.html`, you have the follo
 {{ end }}
 ```
 
-The default behavior of Hugo here is to resize the image to 600px keeping the ratio.
+ここで Hugo のデフォルトの動作は、比率を維持しながら画像のサイズを 600px に変更することです。
 
 It is worth noting here that default image configurations such as [anchor point](https://gohugo.io/content-management/image-processing/#anchor) can also be set in your [site configuration](https://gohugo.io/content-management/image-processing/#processing-options) as well as in the template itself.
 
