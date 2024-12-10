@@ -213,7 +213,7 @@ cd ../..
 
 ### ビルドスクリプトを作成する
 
-To fully complete this solution, you can simplify this whole process by adding aliases for these commands, or do what I do and add a `package.json` to the root of your project which contains the necessary scripts...
+このソリューションを完全に完了するには、これらのコマンドのエイリアスを追加するか、私が行っているように、必要なスクリプトを含む `package.json` をプロジェクトのルートに追加することで、このプロセス全体を簡素化できます...
 
 ```js
 // package.json
@@ -227,10 +227,10 @@ To fully complete this solution, you can simplify this whole process by adding a
     "dev": "NODE_ENV=development ./themes/blowfish/node_modules/tailwindcss/lib/cli.js -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
     "build": "NODE_ENV=production ./themes/blowfish/node_modules/tailwindcss/lib/cli.js -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit"
   },
-  // and more...
+  // その他...
 }
 ```
 
-Now when you want to work on designing your site, you can invoke `npm run dev` and the compiler will run in watch mode. When you're ready to deploy, run `npm run build` and you'll get a clean Tailwind CSS build.
+これで、サイトの設計に取り組むときは、 `npm run dev` を呼び出すと、コンパイラがウォッチモードで実行されます。 デプロイの準備ができたら、 `npm run build` を実行すると、クリーンな Tailwind CSS ビルドが得られます。
 
-🙋‍♀️ If you need help, feel free to ask a question on [GitHub Discussions](https://github.com/nunocoracao/blowfish/discussions).
+🙋‍♀️ 困ったことがあれば、[GitHub Discussions](https://github.com/nunocoracao/blowfish/discussions) で気軽に質問してください。
