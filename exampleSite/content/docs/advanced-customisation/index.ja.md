@@ -187,9 +187,9 @@ module.exports = {
 
 この例の構造では、独自のカスタムレイアウトを持つ新しい `projects` コンテンツタイプと、カスタムショートコードと拡張パーシャルが追加されています。プロジェクトがこの構造に従っている場合、必要なのは `main.css` ファイルを再コンパイルすることだけです。
 
-### Install dependencies
+### 依存関係のインストール
 
-In order for this to work you'll need to change into the `themes/blowfish/` directory and install the project dependencies. You'll need [npm](https://docs.npmjs.com/cli/v7/configuring-npm/install) on your local machine for this step.
+これが機能するには、`themes/blowfish/` ディレクトリに移動し、プロジェクトの依存関係をインストールする必要があります。この手順では、ローカルマシンに [npm](https://docs.npmjs.com/cli/v7/configuring-npm/install) が必要になります。
 
 ```shell
 cd themes/blowfish
