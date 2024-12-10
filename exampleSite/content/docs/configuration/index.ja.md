@@ -96,19 +96,19 @@ Blowfish は多言語 Webサイト向けに最適化されており、テーマ�
 | 中国語（簡体字） | `zh-cn` |
 | 中国語（繁体字） | `zh-tw` |
 
-The default translations can be overridden by creating a custom file in `i18n/[code].yaml` that contains the translation strings. You can also use this method to add new languages. If you'd like to share a new translation with the community, please [open a pull request](https://github.com/nunocoracao/blowfish/pulls).
+デフォルトの翻訳は、翻訳文字列を含むカスタムファイル `i18n/[言語コード].yaml` を作成することでオーバーライドできます。 この方法を使用して新しい言語を追加することもできます。 新しい翻訳をコミュニティと共有したい場合は、[プルリクエストを開いて](https://github.com/nunocoracao/blowfish/pulls) ください。
 
-### Configuration
+### 設定
 
-In order to be as flexible as possible, a language configuration file needs to be created for each language on the website. By default Blowfish includes an English language configuration at `config/_default/languages.en.toml`.
+可能な限り柔軟に対応するために、Web サイトの各言語の言語設定ファイルを作成する必要があります。デフォルトでは、Blowfish には `config/_default/languages.en.toml` に英語の言語設定が含まれています。
 
-The default file can be used as a template to create additional languages, or renamed if you wish to author your website in a language other than English. Simply name the file using the format `languages.[language-code].toml`.
+デフォルトのファイルは、追加の言語を作成するためのテンプレートとして使用することも、英語以外の言語で Web サイトを作成する場合は名前を変更することもできます。`languages.[言語コード].toml` 形式を使用してファイルに名前を付けるだけです。
 
 {{< alert >}}
-**Note:** Ensure the `defaultContentLanguage` parameter in the [site configuration](#site-configuration) matches the language code in your language config filename.  
+**注:** [サイト設定](#site-configuration) の `defaultContentLanguage` パラメータが、言語設定ファイル名の言語コードと一致していることを確認してください。
 {{< /alert >}}
 
-#### Global
+#### グローバル
 
 <!-- prettier-ignore-start -->
 | Name           | Default      | Description                                                                                                                                                                                                                                                                                            |
