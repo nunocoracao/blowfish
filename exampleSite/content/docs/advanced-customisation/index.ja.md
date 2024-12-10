@@ -196,22 +196,22 @@ cd themes/blowfish
 npm install
 ```
 
-### Run the Tailwind compiler
+### Tailwind コンパイラを実行する
 
-With the dependencies installed all that's left is to use [Tailwind CLI](https://v2.tailwindcss.com/docs/installation#using-tailwind-cli) to invoke the JIT compiler. Navigate back to the root of your Hugo project and issue the following command:
+依存関係がインストールされたら、あとは [Tailwind CLI](https://v2.tailwindcss.com/docs/installation#using-tailwind-cli) を使用して JIT コンパイラを呼び出すだけです。Hugo プロジェクトのルートに戻り、次のコマンドを実行します。
 
 ```shell
 cd ../..
 ./themes/blowfish/node_modules/tailwindcss/lib/cli.js -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit
 ```
 
-It's a bit of an ugly command due to the paths involved but essentially you're calling Tailwind CLI and passing it the location of the Tailwind config file (the one we looked at above), where to find the theme's `main.css` file and then where you want the compiled CSS file to be placed (it's going into the `assets/css/compiled/` folder of your Hugo project).
+関係するパスのため少し見苦しいコマンドですが、基本的に Tailwind CLI を呼び出し、Tailwind 設定ファイルの場所（上で見たもの）、テーマの `main.css` ファイルの場所、そしてコンパイル済み CSS ファイルを配置する場所（Hugo プロジェクトの `assets/css/compiled/` フォルダ）を渡しています。
 
-The config file will automatically inspect all the content and layouts in your project as well as all those in the theme and build a new CSS file that contains all the CSS required for your website. Due to the way Hugo handles file hierarchy, this file in your project will now automatically override the one that comes with the theme.
+設定ファイルは、プロジェクト内のすべてのコンテンツとレイアウト、およびテーマ内のすべてのコンテンツとレイアウトを自動的にスキャンし、Web サイトに必要なすべての CSS を含む新しい CSS ファイルを作ります。Hugo のファイル階層を処理する方法のため、プロジェクト内のこのファイルは、テーマに付属のファイルを自動的にオーバーライドするようになります。
 
-Each time you make a change to your layouts and need new Tailwind CSS styles, you can simply re-run the command and generate the new CSS file. You can also add `-w` to the end of the command to run the JIT compiler in watch mode.
+レイアウトに変更を加え、新しい Tailwind CSS スタイルが必要になるたびに、コマンドを再実行して新しい CSS ファイルを生成するだけです。 コマンドの最後に `-w` を追加して、JIT コンパイラをウォッチモードで実行することもできます。
 
-### Make a build script
+### ビルドスクリプトを作成する
 
 To fully complete this solution, you can simplify this whole process by adding aliases for these commands, or do what I do and add a `package.json` to the root of your project which contains the necessary scripts...
 
