@@ -111,96 +111,97 @@ Blowfish は多言語 Webサイト向けに最適化されており、テーマ�
 #### グローバル
 
 <!-- prettier-ignore-start -->
-| Name           | Default      | Description                                                                                                                                                                                                                                                                                            |
-| -------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `languageCode` | `"en"`       | The Hugo language code for this file. It can be a top-level language (ie. `en`) or a sub-variant (ie. `en-au`) and should match the language code in the filename. Hugo expects this value to always be in lowercase. For proper HTML compliance, set the `isoCode` parameter which is case-sensitive. |
-| `languageName` | `"English"`  | The name of the language.                                                                                                                                                                                                                                                                              |
-| `weight`       | `1`          | The weight determines the order of languages when building multilingual sites.                                                                                                                                                                                                                         |
-| `title`        | `"Blowfish"` | The title of the website. This will be displayed in the site header and footer.                                                                                                                                                                                                                        |
+| 名前 | デフォルト | 説明 |
+|---|---|---|
+| `languageCode` | `"en"` | このファイルの Hugo 言語コードです。トップレベル言語（例： `en`）またはサブバリアント（例： `en-au`）にすることができ、ファイル名の言語コードと一致する必要があります。Hugo はこの値が常に小文字であることを想定しています。適切な HTML 準拠のために、大文字と小文字を区別する `isoCode` パラメータを設定します。 |
+| `languageName` | `"English"` | 言語の名前です。 |
+| `weight` | `1` | 重みは、多言語サイトを構築するときの言語の順序を決定します。 |
+| `title` | `"Blowfish"` | Web サイトのタイトルです。これは、サイトのヘッダーとフッターに表示されます。 |
 <!-- prettier-ignore-end -->
 
-#### Params
+#### パラメーター
 
 <!-- prettier-ignore-start -->
-| Name                   | Default            | Description                                                                                                                                                                                                                                                                                                                |
-| ---------------------- | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `params.displayName`   | `"EN"`             | The name used when the language appears on the website.                                                                                                                                                                                                                                                                    |
-| `params.isoCode`       | `"en"`             | The ISO language code for HTML metadata purposes. It can be a top-level language (ie. `en`) or a sub-variant (ie. `en-AU`).                                                                                                                                                                                                |
-| `params.rtl`           | `false`            | Whether or not this is a RTL language. Set to `true` to reflow content from right-to-left. Blowfish fully supports using RTL and LTR languages at the same time and will dynamically adjust to both.                                                                                                                       |
-| `params.dateFormat`    | `"2 January 2006"` | How dates are formatted in this language. Refer to the [Hugo docs](https://gohugo.io/functions/format/#gos-layout-string) for acceptable formats.                                                                                                                                                                          |
-| `params.logo`          | _Not set_          | The relative path to the site logo file within the `assets/` folder. The logo file should be provided at 2x resolution and supports any image dimensions.                                                                                                                                                                  |
-| `params.secondaryLogo` | _Not set_          | The relative path to the secondary site logo file within the `assets/` folder. The logo file should be provided at 2x resolution and supports any image dimensions. This should have an inverted/contrasting colour scheme to `logo`. If set, this logo will be shown when users toggle from the `defaultAppearance` mode. |
-| `params.description`   | _Not set_          | The website description. This will be used in the site metadata.                                                                                                                                                                                                                                                           |
-| `params.copyright`     | _Not set_          | A Markdown string for the site footer copyright message can include the placeholder { year } to dynamically insert the current year. If none is provided, Blowfish will automatically generate a copyright string using the site `title`.                                                                                  |
+| 名前 | デフォルト | 説明 |
+|---|---|---|
+| `params.displayName` | `"EN"` | Web サイトに言語が表示されるときに使用される名前です。 |
+| `params.isoCode` | `"en"` | HTML メタデータ用の ISO 言語コードです。トップレベル言語（例： `en`）またはサブバリアント（例： `en-AU`）にすることができます。 |
+| `params.rtl` | `false` | これが RTL 言語かどうかです。`true` に設定すると、コンテンツが右から左に並べ替えられます。 Blowfish は RTL 言語と LTR 言語の同時使用を完全にサポートしており、両方に動的に調整されます。 |
+| `params.dateFormat` | `"2 January 2006"` | この言語での日付のフォーマット方法です。使用できる形式については、[Hugo ドキュメント](https://gohugo.io/functions/format/#gos-layout-string) を参照してください。 |
+| `params.logo` | _設定なし_ | `assets/` フォルダ内のサイトロゴファイルへの相対パスです。ロゴファイルは2倍の解像度で提供する必要があり、あらゆる画像サイズをサポートしています。 |
+| `params.secondaryLogo` | _設定なし_ | `assets/` フォルダ内のセカンダリサイトロゴファイルへの相対パスです。 ロゴファイルは2倍の解像度で提供する必要があり、あらゆる画像サイズをサポートしています。 これは、`logo` とは反転/対照的なカラースキームである必要があります。設定されている場合、このロゴは、ユーザーが `defaultAppearance` モードから切り替えたときに表示されます。 |
+| `params.description` | _設定なし_ | Web サイトの説明です。これはサイトのメタデータで使用されます。 |
+| `params.copyright` | _設定なし_ | サイトフッターの著作権メッセージの Markdown 文字列には、プレースホルダ { year } を含めて現在の年を動的に挿入できます。指定されていない場合、Blowfish はサイト `title` を使用して著作権文字列を自動的に生成します。 |
 
 <!-- prettier-ignore-end -->
 
-#### Author
+#### 著者(Author)
 
-| Name              | Default   | Description                                                                                                                                                                                                                                                                                                                 |
-| ----------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `author.name`     | _Not set_ | The author's name. This will be displayed in article footers, and on the homepage when the profile layout is used.                                                                                                                                                                                                          |
-| `author.image`    | _Not set_ | Path to the image file of the author. The image should be a 1:1 aspect ratio. The image can be placed in the site's `assets/` folder or can be external url.                                                                                                                                                                |
-| `author.headline` | _Not set_ | A Markdown string containing the author's headline. It will be displayed on the profile homepage under the author's name.                                                                                                                                                                                                   |
-| `author.bio`      | _Not set_ | A Markdown string containing the author's bio. It will be displayed in article footers.                                                                                                                                                                                                                                     |
-| `author.links`    | _Not set_ | The links to display alongside the author's details. The config file contains example links which can simply be uncommented to enable. The order that the links are displayed is determined by the order they appear in the array. Custom links can be added by providing corresponding SVG icon assets in `assets/icons/`. |
+<!-- prettier-ignore-start -->
+| 名前 | デフォルト | 説明 |
+|---|---|---|
+| `author.name` | _設定なし_ | 著者の名前です。これは、記事のフッターと、プロフィールレイアウトが使用されている場合はホームページに表示されます。 |
+| `author.image` | _設定なし_ | 著者の画像ファイルへのパスです。画像は縦横比 1:1 である必要があります。画像は、サイトの `assets/` フォルダに配置することも、外部 URL にすることもできます。 |
+| `author.headline` | _設定なし_ | 著者の見出しを含む Markdown 文字列です。プロフィールホームページの著者の名前に下に表示されます。 |
+| `author.bio` | _設定なし_ | 著者の略歴を含む Markdown 文字列です。記事のフッターに表示されます。 |
+| `author.links` | _設定なし_ | 著者の詳細と一緒に表示するリンクです。設定ファイルには、コメントを外すだけで有効になるリンクの例が含まれています。リンクが表示される順序は、配列に表示される順序によって決まります。`assets/icons/` に対応する SVG アイコンアセットを提供することで、カスタムリンクを追加できます。 |
 <!-- prettier-ignore-end -->
 
-### Menus
+### メニュー(Menus)
 
-Blowfish also supports language-specific menu configurations. Menu config files follow the same naming format as the languages file. Simply provide the language code in the file name to tell Hugo which language the file relates to.
+Blowfish は、言語固有のメニュー設定もサポートしています。メニュー設定ファイルは、言語ファイルと同じ命名形式に従います。ファイル名に言語コードを指定するだけで、Hugo はファイルがどの言語に関連しているかを認識します。
 
-Menu config files are named with the format `menus.[language-code].toml`. Always ensure that the language code used in the menus configuration matches the languages configuration.
+メニュー設定ファイルの名前は、 `menus.[language-code].toml` 形式です。メニュー設定で使用される言語コードが言語設定と一致していることを常に確認してください。
 
-The [Getting Started]({{< ref "getting-started#menus" >}}) section explains more about the structure of this file. You can also refer to the [Hugo menu docs](https://gohugo.io/content-management/menus/) for more configuration examples.
+[はじめに]({{< ref "getting-started#menus" >}}) セクションでは、このファイルの構造について詳しく説明しています。詳細な設定例については、[Hugo メニュー ドキュメント](https://gohugo.io/content-management/menus/) も参照できます。
 
-## Theme parameters
+## テーマパラメーター(Theme parameters)
 
-Blowfish provides a large number of configuration parameters that control how the theme functions. The table below outlines every available parameter in the `config/_default/params.toml` file.
+Blowfish は、テーマの機能を制御する多数の設定パラメータを提供します。下の表は、`config/_default/params.toml` ファイルで使用可能なすべてのパラメータの概要を示しています。
 
-Many of the article defaults here can be overridden on a per article basis by specifying it in the front matter. Refer to the [Front Matter]({{< ref "front-matter" >}}) section for further details.
+ここにある記事のデフォルトの多くは、フロントマターで指定することで、記事ごとにオーバーライドできます。詳細については、[フロントマター]({{< ref "front-matter" >}}) セクションを参照してください。
 
 <!-- prettier-ignore-start -->
 
-### Global
+### グローバル
 
-| Name                            | Default      | Description                                                                                                                                                                                                                                                                                                   |
-| ------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `colorScheme`                   | `"blowfish"` | The theme colour scheme to use. Valid values are `blowfish` (default), `avocado`, `fire`, `ocean`, `forest`, `princess`, `neon`, `bloody`, `terminal`, `marvel`, `noir`, `autumn`, `congo`, and`slate`. Refer to the [Colour Schemes]({{< ref "getting-started#colour-schemes" >}}) section for more details. |
-| `defaultAppearance`             | `"light"`    | The default theme appearance, either `light` or `dark`.                                                                                                                                                                                                                                                       |
-| `autoSwitchAppearance`          | `true`       | Whether the theme appearance automatically switches based upon the visitor's operating system preference. Set to `false` to force the site to always use the `defaultAppearance`.                                                                                                                             |
-| `enableSearch`                  | `false`      | Whether site search is enabled. Set to `true` to enable search functionality. Note that the search feature depends on the `outputs.home` setting in the [site configuration](#site-configuration) being set correctly.                                                                                        |
-| `enableCodeCopy`                | `false`      | Whether copy-to-clipboard buttons are enabled for `<code>` blocks. The `highlight.noClasses` parameter must be set to `false` for code copy to function correctly. Read more about [other configuration files](#other-configuration-files) below.                                                             |
-| `mainSections`                  | _Not set_    | The sections that should be displayed in the recent articles list. If not provided the section with the greatest number of articles is used.                                                                                                                                                                  |
-| `showViews`                     | _Not set_    | Whether or not articles and list views are displayed. This requires firebase integrations to be enabled, look below.                                                                                                                                                                                          |
-| `showLikes`                     | _Not set_    | Whether or not articles and list likes are displayed. This requires firebase integrations to be enabled, look below.                                                                                                                                                                                          |
-| `robots`                        | _Not set_    | String that indicates how robots should handle your site. If set, it will be output in the page head. Refer to [Google's docs](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag#directives) for valid values.                                                                        |
-| `disableImageZoom`              | `false`      | Disables image zoom feature across all the images in the site.                                                                                                                                                                                                                                                |
-| `disableImageOptimization`      | `false`      | Disables image resize and optimization features across all the images in the site.                                                                                                                                                                                                                            |
-| `disableTextInHeader`           | `false`      | Disables text in header, useful for logo based headers.                                                                                                                                                                                                                                                       |
-| `defaultBackgroundImage`        | _Not set_    | Default background image for both `background` homepage layout and `background` hero style                                                                                                                                                                                                                    |
-| `defaultFeaturedImage`          | _Not set_    | Default background image for all `featured` images across articles, will be overridden by a local `featured` image.                                                                                                                                                                                           |
-| `highlightCurrentMenuArea`      | _Not set_    | Marks menu entries in the main menu when selected                                                                                                                                                                                                                                                             |
-| `smartTOC`                      | _Not set_    | Activate smart Table of Contents, items in view will be highlighted.                                                                                                                                                                                                                                          |
-| `smartTOCHideUnfocusedChildren` | _Not set_    | When smart Table of Contents is turned on, this will hide deeper levels of the table when they are not in focus.                                                                                                                                                                                              |
+| 名前 | デフォルト | 説明 |
+|---|---|---|
+| `colorScheme` | `"blowfish"` | 使用するテーマのカラーテーマです。有効な値は、`blowfish`（デフォルト）、`avocado`、`fire`、`ocean`、`forest`、`princess`、`neon`、`bloody`、`terminal`、`marvel`、`noir`、`autumn`、`congo`、`slate` です。詳細については、[カラーテーマ]({{< ref "getting-started#colour-schemes" >}}) セクションを参照してください。 |
+| `defaultAppearance` | `"light"` | デフォルトのテーマの外観です。`light` または `dark` のいずれかです。 |
+| `autoSwitchAppearance` | `true` | 訪問者のオペレーティングシステムの設定に基づいてテーマの外観を自動的に切り替えるかどうかです。`false` に設定すると、サイトは常に `defaultAppearance` を使用します。 |
+| `enableSearch` | `false` | サイト内検索が有効かどうかです。`true` に設定すると、検索機能が有効になります。検索機能は、[サイト設定](#site-configuration) の `outputs.home` 設定が正しく設定されているかどうかに依存することに注意してください。 |
+| `enableCodeCopy` | `false` | `<code>` ブロックのクリップボードへのコピーボタンを有効にするかどうかです。コードコピーが正しく機能するには、`highlight.noClasses` パラメータを `false` に設定する必要があります。以下の [その他の設定ファイル](#other-configuration-files) について読んでください。 |
+| `mainSections` | _設定なし_ | 最近の記事リストに表示するセクションです。指定しない場合は、記事数が最も多いセクションが使用されます。 |
+| `showViews` | _設定なし_ | 記事とリストの表示回数を表示するかどうかです。これには Firebase 統合を有効にする必要があります。以下をご覧ください。 |
+| `showLikes` | _設定なし_ | 記事とリストのいいねを表示するかどうかです。これには Firebase 統合を有効にする必要があります。以下をご覧ください。 |
+| `robots` | _設定なし_ | ロボットがサイトをどのように処理するかを示す文字列です。設定されている場合、ページヘッダーに出力されます。有効な値については、[Google のドキュメント](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag#directives) を参照してください。 |
+| `disableImageZoom` | `false` | サイト内のすべての画像の画像ズーム機能を無効にします。 |
+| `disableImageOptimization` | `false` | サイト内のすべての画像の画像サイズ変更と最適化機能を無効にします。 |
+| `disableTextInHeader` | `false` | ヘッダーのテキストを無効にします。ロゴベースのヘッダーに役立ちます。 |
+| `defaultBackgroundImage` | _設定なし_ | `background` ホームページレイアウトと `background` ヒーロースタイルの両方のデフォルトの背景画像です。 |
+| `defaultFeaturedImage` | _設定なし_ | 記事全体のすべての `featured` 画像のデフォルトの背景画像です。ローカルの `featured` 画像によってオーバーライドされます。 |
+| `highlightCurrentMenuArea` | _設定なし_ | メインメニューのメニュー項目が選択されているときにマークを付けます。 |
+| `smartTOC` | _設定なし_ | スマート目次をアクティブにします。表示されている項目が強調表示されます。 |
+| `smartTOCHideUnfocusedChildren` | _設定なし_ | スマート目次がオンになっている場合、フォーカスされていないときに、テーブルのより深いレベルが非表示になります。 |
 
-### Header
+### ヘッダー(Header)
 
-| Name            | Default   | Description                                                                                                         |
-| --------------- | --------- | ------------------------------------------------------------------------------------------------------------------- |
-| `header.layout` | `"basic"` | Defines the header for the entire site, supported values are `basic`, `fixed`, `fixed-fill`, and `fixed-fill-blur`. |
+| 名前 | デフォルト | 説明 |
+|---|---|---|
+| `header.layout` | `"basic"` | サイト全体のヘッダーを定義します。サポートされている値は、`basic`、`fixed`、`fixed-fill`、`fixed-fill-blur` です。 |
 
-### Footer
+### フッター(Footer)
 
-| Name                            | Default | Description                                                                                                                                                                                                               |
-| ------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `footer.showMenu`               | `true`  | Show/hide the footer menu, which can be configured in the `[[footer]]` section of the `config/_default/menus.en.toml` file.                                                                                               |
-| `footer.showCopyright`          | `true`  | Whether or not to show the copyright string in the site footer. Note that the string itself can be customised using the `copyright` parameter in the [languages configuration](#language-and-i18n).                       |
-| `footer.showThemeAttribution`   | `true`  | Whether or not to show the "powered by" theme attribution in the site footer. If you choose to disable this message, please consider attributing the theme somewhere else on your site (for example, on your about page). |
-| `footer.showAppearanceSwitcher` | `false` | Whether or not to show the appearance switcher in the site footer. The browser's local storage is used to persist the visitor's preference.                                                                               |
-| `footer.showScrollToTop`        | `true`  | When set to `true` the scroll to top arrow is displayed.                                                                                                                                                                  |
+| 名前 | デフォルト | 説明 |
+|---|---|---|
+| `footer.showMenu` | `true` | フッターメニューを表示/非表示にします。これは、`config/_default/menus.en.toml` ファイルの `[[footer]]` セクションで設定できます。 |
+| `footer.showCopyright` | `true` | サイトのフッターに著作権文字列を表示するかどうかです。文字列自体は、[言語設定](#language-and-i18n) の `copyright` パラメータを使用してカスタマイズできることに注意してください。 |
+| `footer.showThemeAttribution` | `true` | サイトのフッターに「powered by」テーマの帰属を表示するかどうかです。このメッセージを無効にする場合は、サイトの他の場所（たとえば、about ページ）でテーマの帰属を検討してください。 |
+| `footer.showAppearanceSwitcher` | `false` | サイトのフッターに外観スイッチャーを表示するかどうかです。 ブラウザのローカルストレージを使用して、訪問者の設定が保持されます。 |
+| `footer.showScrollToTop` | `true` | `true` に設定すると、トップへスクロールの矢印が表示されます。 |
 
-### Homepage
+### ホームページ(Homepage)
 
 | Name                            | Default     | Description                                                                                                                                                                                                                                                                                                        |
 | ------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
