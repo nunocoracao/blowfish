@@ -39,7 +39,7 @@ npx blowfish-tools
 この表で提供されている変数名は、TOML データ構造を簡素化するためにドット表記を使用していることに注意してください（つまり、 `outputs.home` は `[outputs] home` を指します）。
 
 <!-- prettier-ignore-start -->
-| Name | Default | Description |
+| 名前 | デフォルト | 説明 |
 |---|---|---|
 | `theme` | `"blowfish"` | Hugo Modules を使用している場合は、この設定値を削除する必要があります。 他のすべてのインストールタイプでは、テーマが機能するためにこれを `blowfish` に設定する必要があります。 |
 | `baseURL` | _未設定_ | Webサイトのルートへの URL です。 |
@@ -57,7 +57,7 @@ npx blowfish-tools
 
 Blowfish は、記事に視覚的なサポートを簡単に追加できるように構築されています。Hugo の記事構造に慣れている場合は、記事フォルダ内に `feature*` で始まる画像ファイル（ほとんどすべての形式がサポートされていますが、`.png` または `.jpg` をお勧めします）を配置するだけです。これで、Blowfish は Webサイト内でサムネイルとして画像を使用したり、ソーシャルプラットフォーム全体で <a target="_blank" href="https://oembed.com/">oEmbed</a> カードに使用したりできます。
 
-[Here]({{< ref "thumbnails" >}}) is also a guide with more info and a [sample]({{< ref "thumbnail_sample" >}}) if you want to see how you can do it.
+[こちら]({{< ref "thumbnails" >}}) には、より詳細な情報と、どのように設定できるかを確認したい場合の[サンプル]({{< ref "thumbnail_sample" >}}) を含むガイドもあります。
 
 ## 言語と i18n
 
@@ -138,7 +138,7 @@ Blowfish は多言語 Webサイト向けに最適化されており、テーマ�
 #### 著者(Author)
 
 <!-- prettier-ignore-start -->
-| 名前 | デフォルト | 説明 |
+| 名前 | デフォルト　　　 | 説明 |
 |---|---|---|
 | `author.name` | _未設定_ | 著者の名前です。これは、記事のフッターと、プロフィールレイアウトが使用されている場合はホームページに表示されます。 |
 | `author.image` | _未設定_ | 著者の画像ファイルへのパスです。画像は縦横比 1:1 である必要があります。画像は、サイトの `assets/` フォルダに配置することも、外部 URL にすることもできます。 |
@@ -193,7 +193,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 
 ### フッター(Footer)
 
-| 名前 | デフォルト | 説明 |
+| 名前 | デフォルト　　　 | 説明 |
 |---|---|---|
 | `footer.showMenu` | `true` | フッターメニューを表示/非表示にします。これは、`config/_default/menus.en.toml` ファイルの `[[footer]]` セクションで設定できます。 |
 | `footer.showCopyright` | `true` | サイトのフッターに著作権文字列を表示するかどうかです。文字列自体は、[言語設定](#language-and-i18n) の `copyright` パラメータを使用してカスタマイズできることに注意してください。 |
@@ -217,7 +217,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 
 ### 記事(Article)
 
-| 名前 | デフォルト | 説明 |
+| 名前 | デフォルト　　　　 | 説明 |
 |---|---|---|
 | `article.showDate` | `true` | 記事の日付を表示するかどうかです。 |
 | `article.showViews` | `false` | 記事の表示回数を表示するかどうかです。これには Firebase 統合を有効にする必要があります。以下をご覧ください。 |
