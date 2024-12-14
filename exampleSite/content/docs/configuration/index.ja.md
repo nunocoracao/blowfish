@@ -2,7 +2,7 @@
 title: "設定"
 weight: 4
 draft: false
-description: "Blowfish で使用可能なすべての設定変数"
+description: "Blowfish で使えるなすべての設定変数"
 slug: "configuration"
 tags: ["config", "docs"]
 series: ["Documentation"]

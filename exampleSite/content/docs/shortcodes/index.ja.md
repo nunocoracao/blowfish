@@ -1,8 +1,8 @@
 ---
-title: "Shortcodes"
+title: "ショートコード"
 weight: 6
 draft: false
-description: "All the shortcodes available in Blowfish."
+description: "Blowfish で使えるすべてのショートコード"
 slug: "shortcodes"
 tags: ["shortcodes", "mermaid", "icon", "lead", "docs"]
 series: ["Documentation"]
