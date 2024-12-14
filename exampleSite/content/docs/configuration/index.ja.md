@@ -244,10 +244,10 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 | `article.showRelatedContent` | `false` | 各投稿の関連記事を表示します。`config.toml` に追加の設定が必要になる場合があります。この機能を有効にする場合は、テーマの `config.toml` を確認し、関連するすべての _related_ エントリをコピーしてください。また、関連記事については [Hugo のドキュメント](https://gohugo.io/content-management/related/) も確認してください。 |
 | `article.relatedContentLimit` | `3` | `showRelatedContent` がオンになっている場合に表示する関連記事の上限です。 |
 | `article.showTaxonomies` | `false` | この記事に関連するタクソノミーを表示するかどうかです。 |
-| `article.showAuthorsBadges` | `false` | `authors` タクソノミーを記事またはリストのヘッダーに表示するかどうかです。 これには、「複数の著者」と `authors` タクソノミーの設定が必要です。この機能の設定方法の詳細については、[このページ]({{< ref "multi-author" >}}) を確認してください。 |
+| `article.showAuthorsBadges` | `false` | `authors` タクソノミーを記事またはリストのヘッダーに表示するかどうかです。これには、「複数の著者」と `authors` タクソノミーの設定が必要です。この機能の設定方法の詳細については、[このページ]({{< ref "multi-author" >}}) を確認してください。 |
 | `article.showWordCount` | `false` | 記事の単語数を表示するかどうかです。 |
 | `article.showComments` | `false` | 記事のフッターの後に [コメントパーシャル]({{< ref "partials#comments" >}}) を含めるかどうかです。 |
-| `article.sharingLinks` | _未設定_ | 各記事の最後に表示する共有リンクです。指定されていない場合、または `false` に設定されている場合、リンクは表示されません。使用可能な値は、"linkedin"、"bluesky"、"mastodon"、"twitter"、"reddit"、"pinterest"、"facebook"、"email"、"whatsapp"、"telegram" です。 |
+| `article.sharingLinks` | _未設定_ | 各記事の最後に表示する共有リンクです。指定されていないか、`false` に設定されている場合、リンクは表示されません。使用可能な値は、<br>"linkedin"、"bluesky"、<br>"mastodon"、"twitter"、"reddit"、<br>"pinterest"、"facebook"、"email"、<br>"whatsapp"、"telegram" です。 |
 | `article.showZenMode` | `false` | 記事のZenモードリーダー機能を有効にするフラグです。 |
 
 了解しました。以下、Hugoのテーマ「Blowfish」のドキュメントを日本語に翻訳しました。
@@ -281,7 +281,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 
 ### タクソノミー(Taxonomy)
 
-| 名前                           | デフォルト   | 説明                                                                                                              |
+| 名前                           | デフォルト　　   | 説明                                                                                                              |
 | ------------------------------ | --------- | ----------------------------------------------------------------------------------------------------------------- |
 | `taxonomy.showTermCount`       | `true`    | タクソノミーリストにタクソノミー用語内の記事数を表示するかどうか。                                                    |
 | `taxonomy.showHero`            | `false`   | 各タクソノミーページ内でサムネイル画像をヒーロー画像として表示するかどうか。                                          |
@@ -294,7 +294,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 
 ### ターム(Term)
 
-| 名前                       | デフォルト   | 説明                                                                                                              |
+| 名前                       | デフォルト　　   | 説明                                                                                                              |
 | -------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------- |
 | `term.showHero`            | `false`   | 各タームページ内でサムネイル画像をヒーロー画像として表示するかどうか。                                            |
 | `term.heroStyle`           | _未設定_ | ヒーロー画像の表示スタイル。有効なオプションは `basic`、`big`、`background`、`thumbAndBackground` です。              |
@@ -308,7 +308,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 
 ### Firebase
 
-| 名前                         | デフォルト   | 説明                                                                                                                                                                               |
+| 名前                         | デフォルト　　　   | 説明                                                                                                                                                                               |
 | ---------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `firebase.apiKey`            | _未設定_ | Firebase との統合に必要な Firebase API キー。Firebase を Blowfish に統合する方法については、[このページ]({{< ref "firebase-views" >}}) を参照してください。                       |
 | `firebase.authDomain`        | _未設定_ | Firebase との統合に必要な Firebase 認証ドメイン。Firebase を Blowfish に統合する方法については、[このページ]({{< ref "firebase-views" >}}) を参照してください。                     |
@@ -320,20 +320,20 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 
 ### Fathom Analytics
 
-| 名前                     | デフォルト   | 説明                                                                                                                                                  |
+| 名前                     | デフォルト　　　 | 説明                                                                                                                                                  |
 | ------------------------ | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `fathomAnalytics.site`   | _未設定_ | ウェブサイト用に Fathom Analytics によって生成されたサイトコード。詳細については、[Analytics のドキュメント]({{< ref "partials#analytics" >}}) を参照してください。 |
 | `fathomAnalytics.domain` | _未設定_ | Fathom Analytics でカスタムドメインを使用している場合、ここに指定して、`script.js` をカスタムドメインから配信します。                                         |
 
 ### Umami Analytics
 
-| 名前 | デフォルト | 説明 |
+| 名前 | デフォルト　　　 | 説明 |
 |---|---|---|
 | `umamiAnalytics.websiteid` | _未設定_ | ウェブサイト用に Umami Analytics によって生成されたサイトコード。詳細については、[Analytics のドキュメント]({{< ref "partials#analytics" >}}) を参照してください。 |
 | `umamiAnalytics.domain` | _未設定_ | Umami Analytics でカスタムドメインを使用している場合、ここに指定して、`script.js` をカスタムドメインから配信します。 |
 | `umamiAnalytics.dataDomains` | _未設定_ | トラッカーを特定のドメインでのみ実行したい場合は、トラッカースクリプトに指定します。これは、ドメイン名のカンマ区切りリストです。例えば "yoursite.com,yoursite2.com" のようになります。 |
 | `umamiAnalytics.scriptName` | script.js | アンチ広告ブロックに使用される `script.js` の名前は、環境変数 `TRACKER_SCRIPT_NAME` で設定されます。 |
-| `umamiAnalytics.enableTrackEvent` | true | `true` に設定すると、トラックイベントが自動的に追加されます。トラックイベントを追加したくない場合は、`false` に設定してください。 |
+| `umamiAnalytics.enableTrackEvent` | `true` | `true` に設定すると、トラックイベントが自動的に追加されます。トラックイベントを追加したくない場合は、`false` に設定してください。 |
 
 ### Seline Analytics
 
@@ -344,7 +344,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 
 ### BuyMeACoffee
 
-| 名前                                | デフォルト   | 説明                                                                                   |
+| 名前                                | デフォルト　　   | 説明                                                                                   |
 | ----------------------------------- | --------- | -------------------------------------------------------------------------------------- |
 | `buymeacoffee.identifier`           | _未設定_ | ターゲットの buymeacoffee アカウントの識別子。                                           |
 | `buymeacoffee.globalWidget`         | _未設定_ | グローバル buymeacoffee ウィジェットを有効にします。                                       |
@@ -352,9 +352,9 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 | `buymeacoffee.globalWidgetColor`    | _未設定_ | ウィジェットの色（16進数形式）。                                                        |
 | `buymeacoffee.globalWidgetPosition` | _未設定_ | ウィジェットの位置。例えば "Left" または "Right"                                        |
 
-### 検証
+### verification
 
-| 名前                     | デフォルト   | 説明                                                                                                    |
+| 名前                     | デフォルト　  | 説明                                                                                                    |
 | ------------------------ | --------- | ------------------------------------------------------------------------------------------------------- |
 | `verification.google`    | _未設定_ | サイトメタデータに含まれる、Google が提供するサイト確認文字列。                                             |
 | `verification.bing`      | _未設定_ | サイトメタデータに含まれる、Bing が提供するサイト確認文字列。                                               |
@@ -364,7 +364,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 
 ## RSSNext
 
-| 名前                     | デフォルト   | 説明                                                                                                                                                             |
+| 名前                     | デフォルト　　　   | 説明                                                                                                                                                             |
 | ------------------------ | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `rssnext.feedId`    | _未設定_ | [RSSNext/Follow](https://follow.is/) によって提供される rss `feedId` 文字列。`rss.xml` に含まれ、rss フィードを自身のものとしてクレームするのに役立ちます。 |
 | `rssnext.userId`      | _未設定_ | [RSSNext/Follow](https://follow.is/) によって提供される rss `userId` 文字列。`rss.xml` に含まれ、rss フィードを自身のものとしてクレームするのに役立ちます。 |
