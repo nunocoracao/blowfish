@@ -9,72 +9,72 @@ series: ["Documentation"]
 series_order: 8
 ---
 
-In addition to all the [default Hugo shortcodes](https://gohugo.io/content-management/shortcodes/), Blowfish adds a few extras for additional functionality.
+[デフォルトの Hugo ショートコード](https://gohugo.io/content-management/shortcodes/) に加えて、Blowfish は機能拡張のためにいくつか独自のものを追加しています。
 
-## Alert
+## アラート
 
-`alert` outputs its contents as a stylised message box within your article. It's useful for drawing attention to important information that you don't want the reader to miss.
+`alert` ショートコードを使うと、記事の中にスタイリッシュなメッセージボックスを表示できます。読者に見逃してほしくない重要な情報を目立たせるのに便利です。
 
 <!-- prettier-ignore-start -->
-| Parameter   | Description                                                                                                                                                                                  |
+| パラメータ   | 説明                                                                                                                                                                                  |
 | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `icon`      | **Optional.** the icon to display on the left side.<br>**Default:** `exclaimation triangle icon` (Check out the [icon shortcode](#icon) for more details on using icons.)                    |
-| `iconColor` | **Optional.** the color for the icon in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme .            |
-| `cardColor` | **Optional.** the color for the card background in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme . |
-| `textColor` | **Optional.** the color for the text in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme .            |
+| `icon`      | **オプション** 左端に表示するアイコン。<br>**デフォルト:** `exclaimation triangle icon` (アイコンの使用方法の詳細については、[アイコンショートコード](#icon) をご覧ください。)                    |
+| `iconColor` | **オプション** 基本的な CSS スタイルのアイコンの色。<br>HEX値 (`#FFFFFF`) または色の名前 (`white`) のいずれかで指定できます。<br>デフォルトでは、現在のカラーテーマに基づいて選択されます。            |
+| `cardColor` | **オプション** 基本的な CSS スタイルのカードの背景色。<br>HEX値 (`#FFFFFF`) または色の名前 (`white`) のいずれかを指定できます。<br>デフォルトでは、現在のカラーテーマに基づいて選択されます。 |
+| `textColor` | **オプション** 基本的な CSS スタイルのテキストの色。<br>HEX値 (`#FFFFFF`) または色の名前 (`white`) のいずれかを指定できます。<br>デフォルトでは、現在のカラーテーマに基づいて選択されます。            |
 <!-- prettier-ignore-end -->
 
-The input is written in Markdown so you can format it however you please.
+入力は Markdown で記述されているため、自由にフォーマットできます。
 
-**Example 1:** No params
+**例 1:** パラメータなし
 
 ```md
 {{</* alert */>}}
-**Warning!** This action is destructive!
+**警告!** この行為は破壊的です!
 {{</* /alert */>}}
 ```
 
 {{< alert >}}
-**Warning!** This action is destructive!
+**警告!** この行為は破壊的です!
 {{< /alert >}}
 
-**Example 2:** Unnamed param
+**例 2:** 名前なしパラメータ
 
 ```md
 {{</* alert "twitter" */>}}
-Don't forget to [follow me](https://twitter.com/nunocoracao) on Twitter.
+Twitter で私を [フォロー](https://twitter.com/nunocoracao)するのを忘れないでください。
 {{</* /alert */>}}
 ```
 
 {{< alert "twitter" >}}
-Don't forget to [follow me](https://twitter.com/nunocoracao) on Twitter.
+Twitter で私を [フォロー](https://twitter.com/nunocoracao)するのを忘れないでください。
 {{< /alert >}}
 
-**Example 3:** Named params
+**例 3:** 名前付きパラメータ
 
 ```md
 {{</* alert icon="fire" cardColor="#e63946" iconColor="#1d3557" textColor="#f1faee" */>}}
-This is an error!
+これはエラーです!
 {{</* /alert */>}}
 ```
 
 {{< alert icon="fire" cardColor="#e63946" iconColor="#1d3557" textColor="#f1faee" >}}
-This is an error!
+これはエラーです!
 {{< /alert >}}
 
 <br/><br/><br/>
 
-## Article
+## 記事
 
-`Article` will embed a single article into a markdown file. The `link` to the file should be the `.RelPermalink` of the file to be embedded. Note that the shortcode will not display anything if it's referencing it's parent. *Note: if you are running your website in a subfolder like Blowfish (i.e. /blowfish/) please include that path in the link.*
+`Article` は、1つの記事を Markdown ファイルに埋め込みます。埋め込むファイルへの `link` は、埋め込むファイルの `.RelPermalink` である必要があります。ショートコードは、親を参照している場合は何も表示しないことに注意してください。*注: Blowfish (/blowfish/ など) のようなサブフォルダで Web サイトを実行している場合は、そのパスをリンクに含めてください。*
 
 <!-- prettier-ignore-start -->
-| Parameter | Description                                              |
+| パラメータ | 説明                                              |
 | --------- | -------------------------------------------------------- |
-| `link`    | **Required.** the `.RelPermalink` to the target article. |
+| `link`    | **必須** ターゲット記事への `.RelPermalink`。 |
 <!-- prettier-ignore-end -->
 
-**Example:**
+**例:**
 
 ```md
 {{</* article link="/docs/welcome/" */>}}
@@ -84,55 +84,55 @@ This is an error!
 
 <br/><br/><br/>
 
-## Badge
+## バッジ
 
-`badge` outputs a styled badge component which is useful for displaying metadata.
+`badge` は、メタデータを表示するのに役立つ、スタイリッシュなバッジを出力します。
 
-**Example:**
+**例:**
 
 ```md
 {{</* badge */>}}
-New article!
+新しい記事!
 {{</* /badge */>}}
 ```
 
 {{< badge >}}
-New article!
+新しい記事!
 {{< /badge >}}
 
 <br/><br/><br/>
 
-## Button
+## ボタン
 
-`button` outputs a styled button component which can be used to highlight a primary action. It has three optional variables `href`, `target` and `rel` which can be used to specify the URL, target and relation of the link.
+`button` は、主要なアクションを強調するために使用できる、スタイリッシュなボタンコンポーネントを出力します。リンクの URL、ターゲット、および関係を指定するために使用できる、3 つのオプション変数 `href`、`target`、`rel` があります。
 
-**Example:**
+**例:**
 
 ```md
 {{</* button href="#button" target="_self" */>}}
-Call to action
+アクションを呼び出す
 {{</* /button */>}}
 ```
 
 {{< button href="#button" target="_self" >}}
-Call to action
+アクションを呼び出す
 {{< /button >}}
 
 <br/><br/><br/>
 
-## Carousel
+## カルーセル
 
-`carousel` is used to showcase multiple images in an interactive and visually appealing way. This allows a user to slide through multiple images while only taking up the vertical space of a single one. All images are displayed using the full width of the parent component and using one of the predefined aspect ratios of `16:9`, `21:9` or `32:9`.
+`carousel` は、複数の画像をインタラクティブで魅力的に表示するために使用されます。これにより、ユーザーは画像1枚分の縦方向のスペースのみを使って、複数の画像をスライドさせながら表示できます。すべての画像は、親コンポーネントの幅いっぱいに表示され、`16:9`、`21:9`、または `32:9` の事前に決められたアスペクト比のいずれかを使用して表示されます。
 
 <!-- prettier-ignore-start -->
-| Parameter     | Description                                                                                                       |
+| パラメータ     | 説明                                                                                                       |
 | ------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `images`      | **Required.** A regex string to match image names or URLs.                                                        |
-| `aspectRatio` | **Optional.** The aspect ratio for the carousel. Either `16-9`, `21-9` or `32-9`. It is set to `16-9` by default. |
-| `interval`    | **Optional.** The interval for the auto-scrooling, specified in milliseconds. Defaults to `2000` (2s)             |
+| `images`      | **必須** 画像名または URL に一致する正規表現文字列。                                                        |
+| `aspectRatio` | **オプション** カルーセルのアスペクト比。`16-9`、`21-9`、または `32-9` のいずれか。デフォルトでは `16-9` に設定されています。 |
+| `interval`    | **オプション** 自動スクロールの間隔。ミリ秒単位で指定します。デフォルトは `2000` (2秒) です。             |
 <!-- prettier-ignore-end -->
 
-**Example 1:** 16:9 aspect ratio and verbose list of images
+**例 1:** 16:9 のアスペクト比と冗長な画像のリスト
 
 ```md
 {{</* carousel images="{https://cdn.pixabay.com/photo/2016/12/11/12/02/mountains-1899264_960_720.jpg, gallery/03.jpg, gallery/01.jpg, gallery/02.jpg, gallery/04.jpg}" */>}}
@@ -140,7 +140,7 @@ Call to action
 
 {{< carousel images="{https://cdn.pixabay.com/photo/2016/12/11/12/02/mountains-1899264_960_720.jpg,gallery/03.jpg,gallery/01.jpg,gallery/02.jpg,gallery/04.jpg}" >}}
 
-**Example 2:** 21:9 aspect ratio and regex-ed list of images
+**例 2:** 21:9 のアスペクト比と正規表現による画像のリスト
 
 ```md
 {{</* carousel images="gallery/*" aspectRatio="21-9" interval="2500" */>}}
@@ -150,21 +150,21 @@ Call to action
 
 <br/><br/><br/>
 
-## Chart
+## チャート
 
-`chart` uses the Chart.js library to embed charts into articles using simple structured data. It supports a number of [different chart styles](https://www.chartjs.org/docs/latest/samples/) and everything can be configured from within the shortcode. Simply provide the chart parameters between the shortcode tags and Chart.js will do the rest.
+`chart` は Chart.js ライブラリを使用して、シンプルな構造化データを使用して記事にチャートを埋め込みます。[さまざまなチャートスタイル](https://www.chartjs.org/docs/latest/samples/) をサポートしており、すべてをショートコード内から設定できます。ショートコードタグの間にチャートパラメータを指定するだけで、Chart.js が残りの処理を行います。
 
-Refer to the [official Chart.js docs](https://www.chartjs.org/docs/latest/general/) for details on syntax and supported chart types.
+構文とサポートされているチャートタイプの詳細については、[公式 Chart.js ドキュメント](https://www.chartjs.org/docs/latest/general/) を参照してください。
 
-**Example:**
+**例:**
 
 ```js
 {{</* chart */>}}
 type: 'bar',
 data: {
-  labels: ['Tomato', 'Blueberry', 'Banana', 'Lime', 'Orange'],
+  labels: ['トマト', 'ブルーベリー', 'バナナ', 'ライム', 'オレンジ'],
   datasets: [{
-    label: '# of votes',
+    label: '# 投票数',
     data: [12, 19, 3, 5, 3],
   }]
 }
@@ -175,35 +175,34 @@ data: {
 {{< chart >}}
 type: 'bar',
 data: {
-  labels: ['Tomato', 'Blueberry', 'Banana', 'Lime', 'Orange'],
+  labels: ['トマト', 'ブルーベリー', 'バナナ', 'ライム', 'オレンジ'],
   datasets: [{
-    label: '# of votes',
+    label: '# 投票数',
     data: [12, 19, 3, 5, 3],
   }]
 }
 {{< /chart >}}
 <!-- prettier-ignore-end -->
 
-You can see some additional Chart.js examples on the [charts samples]({{< ref "charts" >}}) page.
+[チャートのサンプル]({{< ref "charts" >}}) ページで、Chart.js の他の例を見ることができます。
 
 <br/><br/><br/>
 
-## Code Importer
+## コードインポーター
 
-This shortcode is for importing code from external sources easily without copying and pasting.
+このショートコードは、コピーアンドペーストせずに外部ソースから簡単にコードをインポートするためのものです。
 
 <!-- prettier-ignore-start -->
-| Parameter | Description                                             |
+| パラメータ | 説明                                             |
 | --------- | ------------------------------------------------------- |
-| `url`     | **Required** URL to an externally hosted code file.     |
-| `type`    | Code type used for syntax highlighting.                 |
-| `startLine` | **Optional** The line number to start the import from.    |
-| `endLine` | **Optional** The line number to end the import at.        |
+| `url`     | **必須** 外部でホストされているコードファイルへの URL。     |
+| `type`    | 構文の強調表示に使用されるコードタイプ。                 |
+| `startLine` | **オプション** インポートを開始する行番号。    |
+| `endLine` | **オプション** インポートを終了する行番号。        |
 
 <!-- prettier-ignore-end -->
 
-
-**Example:**
+**例:**
 
 ```md
 {{</* codeimporter url="https://raw.githubusercontent.com/nunocoracao/blowfish/main/layouts/shortcodes/mdimporter.html" type="go" */>}}
@@ -221,17 +220,17 @@ This shortcode is for importing code from external sources easily without copyin
 
 <br/><br/>
 
-## Codeberg Card
+## Codeberg カード
 
-`codeberg` allows you to quickly link a Codeberg repository via the Codeberg API, providing real-time updates on stats such as stars and forks.
+`codeberg` を使用すると、Codeberg API を介して Codeberg リポジトリをすばやくリンクでき、スターやフォークなどの統計に関するリアルタイムの更新を提供できます。
 
 <!-- prettier-ignore-start -->
-| Parameter | Description                                           |
+| パラメータ | 説明                                           |
 | --------- | ----------------------------------------------------- |
-| `repo`    | [String] codeberg repo in the format of `username/repo` |
+| `repo`    | [文字列] `username/repo` 形式の Codeberg リポジトリ |
 <!-- prettier-ignore-end -->
 
-**Example 1:**
+**例 1:**
 
 ```md
 {{</* codeberg repo="forgejo/forgejo" */>}}
@@ -242,56 +241,56 @@ This shortcode is for importing code from external sources easily without copyin
 
 ## Figure
 
-Blowfish includes a `figure` shortcode for adding images to content. The shortcode replaces the base Hugo functionality in order to provide additional performance benefits.
+Blowfish には、コンテンツに画像を追加するための `figure` ショートコードが含まれています。このショートコードは、追加のパフォーマンス上の利点を提供するために、基本の Hugo 機能を置き換えます。
 
-When a provided image is a page resource, it will be optimised using Hugo Pipes and scaled in order to provide images appropriate to different device resolutions. If a static asset or URL to an external image is provided, it will be included as-is without any image processing by Hugo.
+提供された画像がページリソースである場合、Hugo Pipes を使用して最適化され、さまざまなデバイス解像度に適した画像を提供するために拡大縮小されます。静的アセットまたは外部画像への URL が提供された場合、Hugo による画像処理なしにそのまま含まれます。
 
-The `figure` shortcode accepts six parameters:
+`figure` ショートコードは、6つのパラメータを受け付けます。
 
 <!-- prettier-ignore-start -->
-| Parameter | Description                                                                                                                                                                                                                                                                                                                                                                               |
+| パラメータ | 説明                                                                                                                                                                                                                                                                                                                                                                               |
 | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `src`     | **Required.** The local path/filename or URL of the image. When providing a path and filename, the theme will attempt to locate the image using the following lookup order: Firstly, as a [page resource](https://gohugo.io/content-management/page-resources/) bundled with the page; then an asset in the `assets/` directory; then finally, a static image in the `static/` directory. |
-| `alt`     | [Alternative text description](https://moz.com/learn/seo/alt-text) for the image.                                                                                                                                                                                                                                                                                                         |
-| `caption` | Markdown for the image caption, which will be displayed below the image.                                                                                                                                                                                                                                                                                                                  |
-| `class`   | Additional CSS classes to apply to the image.                                                                                                                                                                                                                                                                                                                                             |
-| `href`    | URL that the image should be linked to.                                                                                                                                                                                                                                                                                                                                                   |
-| `target`  | The target attribute for the `href` URL.                                                                                                                                                                                                                                                                                                                                                  |
-| `nozoom`  | `nozoom=true` disables the image "zoom" functionality. This is most useful in combination with a `href` link.                                                                                                                                                                                                                                                                             |
-| `default` | Special parameter to revert to default Hugo `figure` behaviour. Simply provide `default=true` and then use normal [Hugo shortcode syntax](https://gohugo.io/content-management/shortcodes/#figure).                                                                                                                                                                                       |
+| `src`     | **必須** 画像のローカルパス/ファイル名または URL。パスとファイル名を指定すると、テーマは次の優先順位を使用して画像の特定を試みます。まず、ページにバンドルされた [ページリソース](https://gohugo.io/content-management/page-resources/) として、次に `assets/` ディレクトリ内のアセット、最後に `static/` ディレクトリ内の静的画像。 |
+| `alt`     | 画像の [代替テキスト](https://moz.com/learn/seo/alt-text)。                                                                                                                                                                                                                                                                                                         |
+| `caption` | 画像の下に表示される画像キャプションの Markdown。                                                                                                                                                                                                                                                                                                                  |
+| `class`   | 画像に適用する追加の CSS クラス。                                                                                                                                                                                                                                                                                                                                             |
+| `href`    | 画像をリンクする URL。                                                                                                                                                                                                                                                                                                                                                   |
+| `target`  | `href` URL のターゲット属性。                                                                                                                                                                                                                                                                                                                                                  |
+| `nozoom`  | `nozoom=true` は、画像の「ズーム」機能を無効にします。これは、`href` リンクと組み合わせて使用​​するのが最も役立ちます。                                                                                                                                                                                                                                                                             |
+| `default` | Hugoのデフォルトの `figure` の動作に戻すための特別なパラメータ。`default=true` を指定し、通常の [Hugo ショートコード構文](https://gohugo.io/content-management/shortcodes/#figure) を使用します。                                                                                                                                                                                       |
 <!-- prettier-ignore-end -->
 
-Blowfish also supports automatic conversion of images included using standard Markdown syntax. Simply use the following format and the theme will handle the rest:
+Blowfish も、標準の Markdown 構文を使用して含まれる画像の自動変換もサポートしています。次の形式を使用するだけで、テーマが処理してくれます。
 
 ```md
-![Alt text](image.jpg "Image caption")
+![代替テキスト](image.jpg "画像キャプション")
 ```
 
-**Example:**
+**例:**
 
 ```md
 {{</* figure
     src="abstract.jpg"
-    alt="Abstract purple artwork"
+    alt="抽象的な紫のアートワーク"
     caption="Photo by [Jr Korpa](https://unsplash.com/@jrkorpa) on [Unsplash](https://unsplash.com/)"
     */>}}
 
-<!-- OR -->
+<!-- または -->
 
-![Abstract purple artwork](abstract.jpg "Photo by [Jr Korpa](https://unsplash.com/@jrkorpa) on [Unsplash](https://unsplash.com/)")
+![抽象的な紫のアートワーク](abstract.jpg "Photo by [Jr Korpa](https://unsplash.com/@jrkorpa) on [Unsplash](https://unsplash.com/)")
 ```
 
-{{< figure src="abstract.jpg" alt="Abstract purple artwork" caption="Photo by [Jr Korpa](https://unsplash.com/@jrkorpa) on [Unsplash](https://unsplash.com/)" >}}
+{{< figure src="abstract.jpg" alt="抽象的な紫のアートワーク" caption="Photo by [Jr Korpa](https://unsplash.com/@jrkorpa) on [Unsplash](https://unsplash.com/)" >}}
 
 <br/><br/><br/>
 
-## Gallery
+## ギャラリー
 
-`gallery` allows you to showcase multiple images at once, in a responsive manner with more varied and interesting layouts.
+`gallery` を使用すると、複数の画像を一度に、レスポンシブな方法で、より多様で興味深いレイアウトで紹介できます。
 
-In order to add images to the gallery, use `img` tags for each image and add `class="grid-wXX"` in order for the gallery to be able to identify the column width for each image. The widths available by default start at 10% and go all the way to 100% in 5% increments. For example, to set the width to 65%, set the class to `grid-w65`. Additionally, widths for 33% and 66% are also available in order to build galleries with 3 cols. You can also leverage tailwind's responsive indicators to have a reponsive grid.
+ギャラリーに画像を追加するには、各画像に `img` タグを使用し、ギャラリーが各画像の列幅を識別できるように `class="grid-wXX"` を追加します。デフォルトで使用可能な幅は 10% から始まり、5% 刻みで最大 100% までです。たとえば、幅を 65% に設定するには、クラスを `grid-w65` に設定します。さらに、3列のギャラリーを構築するために、33% と 66% の幅も使用できます。また、tailwind +のレスポンシブインジケーターを活用して、レスポンシブグリッドを作成することもできます。
 
-**Example 1: normal gallery**
+**例1: 通常のギャラリー**
 
 ```md
 {{</* gallery */>}}
@@ -317,8 +316,7 @@ In order to add images to the gallery, use `img` tags for each image and add `cl
 
 <br/><br/><br/>
 
-
-**Example 2: responsive gallery**
+**例2: レスポンシブギャラリー**
 
 ```md
 {{</* gallery */>}}
@@ -344,17 +342,17 @@ In order to add images to the gallery, use `img` tags for each image and add `cl
 
 <br/><br/><br/>
 
-## GitHub Card
+## GitHub カード
 
-`github` allows you to quickly link a github repository, all while showing and updating in realtime stats about it, such as the number of stars and forks it has.
+`github` を使用すると、github リポジトリをすばやくリンクでき、スター数やフォーク数などの統計情報をリアルタイムで表示および更新できます。
 
 <!-- prettier-ignore-start -->
-| Parameter | Description                                           |
+| パラメータ | 説明                                           |
 | --------- | ----------------------------------------------------- |
-| `repo`    | [String] github repo in the format of `username/repo` |
+| `repo`    | [文字列] `username/repo` 形式の github リポジトリ |
 <!-- prettier-ignore-end -->
 
-**Example 1:**
+**例1:**
 
 ```md
 {{</* github repo="nunocoracao/blowfish" */>}}
@@ -364,21 +362,21 @@ In order to add images to the gallery, use `img` tags for each image and add `cl
 
 <br/><br/><br/>
 
-## GitLab Card
+## GitLab カード
 
-`gitlab` allows you to quickly link a GitLab Project (GitLab's jargon for repo). 
-It displays realtime stats about it, such as the number of stars and forks it has.
-Unlike `github` it can't display the main programming language of a project.
-Finally, custom GitLab instance URL can be provided, as long as the `api/v4/projects/` endpoint is available, making this shortcode compatible with most self-hosted / enterprise deployments.
+`gitlab` を使用すると、GitLab プロジェクト (リポジトリの GitLab 用語) をすばやくリンクできます。
+スター数やフォーク数などのリアルタイムの統計情報を表示します。
+`github` とは異なり、プロジェクトの主要なプログラミング言語を表示することはできません。
+最後に、`api/v4/projects/` エンドポイントが利用可能である限り、カスタム GitLab インスタンス URL を指定できるため、このショートコードはほとんどのセルフホスト/エンタープライズデプロイメントと互換性があります。
 
 <!-- prettier-ignore-start -->
-| Parameter   | Description                                                             |
+| パラメータ   | 説明                                                             |
 | ----------- | ----------------------------------------------------------------------- |
-| `projectID` | [String] gitlab numeric ProjectID                                       |
-| `baseURL`   | [String] optional gitlab instance URL, default is `https://gitlab.com/` |
+| `projectID` | [文字列] GitLab の数値 ProjectID                                       |
+| `baseURL`   | [文字列] オプションの GitLab インスタンス URL。デフォルトは `https://gitlab.com/` |
 <!-- prettier-ignore-end -->
 
-**Example 1:**
+**例1:**
 
 ```md
 {{</* gitlab projectID="278964" */>}}
@@ -388,35 +386,35 @@ Finally, custom GitLab instance URL can be provided, as long as the `api/v4/proj
 
 <br/><br/><br/>
 
-## Icon
+## アイコン
 
-`icon` outputs an SVG icon and takes the icon name as its only parameter. The icon is scaled to match the current text size.
+`icon` は SVG アイコンを出力し、アイコン名を唯一のパラメータとして受け取ります。アイコンは、現在のテキストサイズに合わせてスケーリングされます。
 
-**Example:**
+**例:**
 
 ```md
 {{</* icon "github" */>}}
 ```
 
-**Output:** {{< icon "github" >}}
+**出力:** {{< icon "github" >}}
 
-Icons are populated using Hugo pipelines which makes them very flexible. Blowfish includes a number of built-in icons for social, links and other purposes. Check the [icon samples]({{< ref "samples/icons" >}}) page for a full list of supported icons.
+アイコンは Hugo パイプラインを使用して設定されるため、非常に柔軟です。Blowfish には、ソーシャル、リンク、その他の目的のための組み込みアイコンが多数含まれています。サポートされているアイコンの完全なリストについては、[アイコンのサンプル]({{< ref "samples/icons" >}}) ページを確認してください。
 
-Custom icons can be added by providing your own icon assets in the `assets/icons/` directory of your project. The icon can then be referenced in the shortcode by using the SVG filename without the `.svg` extension.
+カスタムアイコンは、プロジェクトの `assets/icons/` ディレクトリに独自のアイコンアセットを提供することで追加できます。その後、`.svg` 拡張子なしで SVG ファイル名を使用して、ショートコードでアイコンを参照できます。
 
-Icons can also be used in partials by calling the [icon partial]({{< ref "partials#icon" >}}).
+アイコンは、[アイコンパーシャル]({{< ref "partials#icon" >}}) を呼び出すことで、パーシャルでも使用できます。
 
 <br/><br/><br/>
 
 ## KaTeX
 
-The `katex` shortcode can be used to add mathematical expressions to article content using the KaTeX package. Refer to the online reference of [supported TeX functions](https://katex.org/docs/supported.html) for the available syntax.
+`katex` ショートコードを使用すると、KaTeX パッケージを使用して記事のコンテンツに数式を追加できます。利用可能な構文については、[サポートされている TeX 関数](https://katex.org/docs/supported.html) のオンラインリファレンスを参照してください。
 
-To include mathematical expressions in an article, simply place the shortcode anywhere with the content. It only needs to be included once per article and KaTeX will automatically render any markup on that page. Both inline and block notation are supported.
+記事に数式を含めるには、コンテンツを含むショートコードを任意の場所に配置するだけです。記事ごとに1回だけ含める必要があり、KaTeX はそのページのマークアップを自動的にレンダリングします。インライン表記とブロック表記の両方がサポートされています。
 
-Inline notation can be generated by wrapping the expression in `\\(` and `\\)` delimiters. Alternatively, block notation can be generated using `$$` delimiters.
+インライン表記は、式を `\\(` と `\\)` デリミタで囲むことで生成できます。また、ブロック表記は `$$` デリミタを使用して生成できます。
 
-**Example:**
+**例:**
 
 ```md
 {{</* katex */>}}
@@ -426,90 +424,87 @@ Inline notation can be generated by wrapping the expression in `\\(` and `\\)` d
 {{< katex >}}
 \\(f(a,b,c) = (a^2+b^2+c^2)^3\\)
 
-Check out the [mathematical notation samples]({{< ref "mathematical-notation" >}}) page for more examples.
+[数式表記のサンプル]({{< ref "mathematical-notation" >}}) ページで、その他の例を確認できます。
 
 <br/><br/><br/>
 
+## キーワード
 
-## Keyword
-
-
-The `keyword` component can be used to visually highlight certain important words or phrases, e.g. professional skills etc. The `keywordList` shortcode can be used to group together multiple `keyword` items. Each item can have the following properties.
-
+`keyword` コンポーネントは、特定の重要な単語やフレーズ、例えばプロフェッショナルスキルなどを視覚的に強調表示するために使用できます。`keywordList` ショートコードは、複数の `keyword` アイテムをグループ化するために使用できます。各アイテムには、次のプロパティを設定できます。
 
 <!-- prettier-ignore-start -->
-| Parameter | Description                             |
+| パラメータ | 説明                             |
 | --------- | --------------------------------------- |
-| `icon`    | Optional icon to be used in the keyword |
+| `icon`    | キーワードで使用するオプションのアイコン |
 <!-- prettier-ignore-end -->
 
-The input is written in Markdown so you can format it however you please.
+入力は Markdown で記述されているため、自由にフォーマットできます。
 
-**Example1 :**
+**例1 :**
 
 ```md
-{{</* keyword */>}} *Super* skill {{</* /keyword */>}}
+{{</* keyword */>}} *スーパー* スキル {{</* /keyword */>}}
 ```
 
-{{< keyword >}} *Super* skill {{< /keyword >}}
+{{< keyword >}} *スーパー* スキル {{< /keyword >}}
 
-**Example2 :**
+**例 2 :**
 
 ```md
 {{</* keywordList */>}}
 {{</* keyword icon="github" */>}} Lorem ipsum dolor. {{</* /keyword */>}}
-{{</* keyword icon="code" */>}} **Important** skill {{</* /keyword */>}}
+{{</* keyword icon="code" */>}} **大事な** スキル {{</* /keyword */>}}
 {{</* /keywordList */>}}
 
-{{</* keyword */>}} *Standalone* skill {{</* /keyword */>}}
+{{</* keyword */>}} *スタンドアロン* スキル {{</* /keyword */>}}
 ```
 
 {{< keywordList >}}
 {{< keyword icon="github" >}} Lorem ipsum dolor {{< /keyword >}}
-{{< keyword icon="code" >}} **Important** skill {{< /keyword >}}
+{{< keyword icon="code" >}} **大事な** スキル {{< /keyword >}}
 {{< /keywordList >}}
-{{< keyword >}} *Standalone* skill {{< /keyword >}}
+{{< keyword >}} *スタンドアロン* スキル {{< /keyword >}}
 
 <br/><br/><br/>
 
-## Lead
+## リード文
 
-`lead` is used to bring emphasis to the start of an article. It can be used to style an introduction, or to call out an important piece of information. Simply wrap any Markdown content in the `lead` shortcode.
+`lead` は、記事の冒頭を強調するために使用されます。導入部分をスタイルしたり、重要な情報を呼び出したりするために使用できます。Markdown コンテンツを `lead` ショートコードで囲むだけです。
 
-**Example:**
+**例:**
 
 ```md
 {{</* lead */>}}
-When life gives you lemons, make lemonade.
+ピンチはチャンス。
 {{</* /lead */>}}
 ```
 
 {{< lead >}}
-When life gives you lemons, make lemonade.
+ピンチはチャンス。
 {{< /lead >}}
 
 <br/><br/><br/> 
 
-## List
+## リスト
 
-`List` will display a list of recent articles. This shortcode requires a limit value to constraint the list. Additionally, it supports a `where` and a `value` in order to filter articles by their parameters. Note that this shortcode will not display its parent page but it will count for the limit value.
+`List` は、最近の記事のリストを表示します。このショートコードには、リストを制限するための制限値が必要です。さらに、記事をパラメータでフィルタリングするために、`where` と `value` をサポートしています。このショートコードは、その親ページを表示しませんが、制限値にはカウントされることに注意してください。
 
 <!-- prettier-ignore-start -->
-| Parameter  | Description                                                                                                                                             |
+| パラメータ  | 説明                                                                                                                                             |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `limit`    | **Required.** the number of recent articles to display.                                                                                                 |
-| `title`    | Optional title for the list, default is `Recent`                                                                                                        |
-| `cardView` | Optional card view enabled for the list, default is `false`                                                                                             |
-| `where`    | The variable to be used for the query of articles e.g. `Type`                                                                                           |
-| `value`    | The value that will need to match the parameter defined in `where` for the query of articles e.g. for `where` == `Type` a valid value could be `sample` |
+| `limit`    | **必須** 表示する最近の記事の数。                                                                                                 |
+| `title`    | オプションのリストのタイトル。デフォルトは `Recent` です。                                                                                                        |
+| `cardView` | オプションのカードビュー。リストに対して有効化されます。デフォルトは `false` です。                                                                                             |
+| `where`    | 記事のクエリに使用される変数。例: `Type`                                                                                           |
+| `value`    | `where` で定義されたパラメータに一致する必要がある値。記事のクエリに使用されます。例: `where` == `Type` の場合、有効な値は `sample` です。 |
 
 {{< alert >}}
-The `where` and `value` values are used in the following query `where .Site.RegularPages $where $value` in the code of the shortcode. Check [Hugo docs](https://gohugo.io/methods/page/) to learn more about which parameters are available to use.
+`where` と `value` の値は、ショートコードのコードで次のクエリ `where .Site.RegularPages $where $value` で使用されます。使用可能なパラメータの詳細については、[Hugo ドキュメント](https://gohugo.io/methods/page/) を確認してください。
 {{</ alert >}}
 
 <!-- prettier-ignore-end -->
 
-**Example #1:**
+**例 #1:**
 
 ```md
 {{</* list limit=2 */>}}
@@ -517,33 +512,33 @@ The `where` and `value` values are used in the following query `where .Site.Regu
 
 {{< list limit=2 >}}
 
-**Example #2:**
+**例 #2:**
 
 ```md
-{{</* list title="Samples" cardView=true limit=6 where="Type" value="sample" */>}}
+{{</* list title="サンプル" cardView=true limit=6 where="Type" value="sample" */>}}
 ```
 
-{{< list title="Samples" cardView=true limit=6 where="Type" value="sample">}}
+{{< list title="サンプル" cardView=true limit=6 where="Type" value="sample">}}
 
 <br/><br/><br/>
 
 ## LTR/RTL 
 
-`ltr` and `rtl` allows you to mix your contents. Many RTL language users want to include parts of the content in LTR. Using this shortcode will let you do so, and by leveraging `%` as the outer-most dilemeter in the shortcode [Hugo shortcodes](https://gohugo.io/content-management/shortcodes/#shortcodes-with-markdown), any markdown inside will be rendered normally.
+`ltr` と `rtl` を使用すると、コンテンツを混在させることができます。多くの RTL 言語ユーザーは、コンテンツの一部を LTR に含めたいと考えています。このショートコードを使用すると、それを行うことができ、[Hugo ショートコード](https://gohugo.io/content-management/shortcodes/#shortcodes-with-markdown) の最も外側のダイアメーターとして `%` を活用することで、内部のマークダウンは通常どおりレンダリングされます。
 
-**Example:**
+**例:**
 
 ```md
-- This is an markdown list.
-- Its per default a LTR direction
+- これはマークダウンリストです。
+- デフォルトでは LTR 方向です。
 {{%/* rtl */%}}
 - هذه القائمة باللغة العربية
 - من اليمين الى اليسار
 {{%/* /rtl */%}}
 ```
 
-- This is an markdown list.
-- Its per default a LTR direction
+- これはマークダウンリストです。
+- デフォルトでは LTR 方向です。
 {{% rtl %}}
 - هذه القائمة باللغة العربية
 - من اليمين الى اليسار
@@ -553,18 +548,16 @@ The `where` and `value` values are used in the following query `where .Site.Regu
 
 ## Markdown Importer
 
-This shortcode allows you to import markdown files from external sources. This is useful for including content from other repositories or websites without having to copy and paste the content.
+このショートコードを使用すると、外部ソースからマークダウンファイルをインポートできます。これは、コンテンツをコピーアンドペーストすることなく、他のリポジトリや Web サイトからコンテンツを含めるのに役立ちます。
 
 <!-- prettier-ignore-start -->
-| Parameter | Description                                             |
+| パラメータ | 説明                                             |
 | --------- | ------------------------------------------------------- |
-| `url`     | **Required** URL to an externally hosted markdown file. |
-
+| `url`     | **必須** 外部でホストされているマークダウンファイルへの URL。 |
 
 <!-- prettier-ignore-end -->
 
-
-**Example:**
+**例:**
 
 ```md
 {{</* mdimporter url="https://raw.githubusercontent.com/nunocoracao/nunocoracao/master/README.md" */>}}
@@ -573,88 +566,85 @@ This shortcode allows you to import markdown files from external sources. This i
 
 {{< mdimporter url="https://raw.githubusercontent.com/nunocoracao/nunocoracao/master/README.md" >}}
 
-
 <br/><br/>
 
 ## Mermaid
 
-`mermaid` allows you to draw detailed diagrams and visualisations using text. It uses Mermaid under the hood and supports a wide variety of diagrams, charts and other output formats.
+`mermaid` を使用すると、テキストを使用して詳細な図や視覚化を描画できます。内部で Mermaid を使用し、さまざまな図、チャート、その他の出力形式をサポートしています。
 
-Simply write your Mermaid syntax within the `mermaid` shortcode and let the plugin do the rest.
+`mermaid` ショートコード内に Mermaid 構文を記述するだけで、プラグインが残りの処理を行います。
 
-Refer to the [official Mermaid docs](https://mermaid-js.github.io/) for details on syntax and supported diagram types.
+構文とサポートされている図の種類の詳細については、[公式 Mermaid ドキュメント](https://mermaid-js.github.io/) を参照してください。
 
-**Example:**
+**例:**
 
 ```md
 {{</* mermaid */>}}
 graph LR;
-A[Lemons]-->B[Lemonade];
-B-->C[Profit]
+A[レモン]-->B[レモネード];
+B-->C[利益]
 {{</* /mermaid */>}}
 ```
 
 {{< mermaid >}}
 graph LR;
-A[Lemons]-->B[Lemonade];
-B-->C[Profit]
+A[レモン]-->B[レモネード];
+B-->C[利益]
 {{< /mermaid >}}
 
-You can see some additional Mermaid examples on the [diagrams and flowcharts samples]({{< ref "diagrams-flowcharts" >}}) page.
+[図とフローチャートのサンプル]({{< ref "diagrams-flowcharts" >}}) ページで、Mermaid の追加の例を見ることができます。
 
 <br/><br/><br/>
 
 ## Swatches
 
-`swatches` outputs a set of up to three different colors to showcase color elements like a color palette. This shortcode takes the `HEX` codes of each color and creates the visual elements for each.
+`swatches` は、カラーパレットなどのカラー要素を紹介するために、最大 3 つの異なる色のセットを出力します。このショートコードは、各色の `HEX` コードを取得し、それぞれの視覚要素を作成します。
 
-**Example**
+**例**
 
 ```md
 {{</* swatches "#64748b" "#3b82f6" "#06b6d4" */>}}
 ```
 
-**Output**
+**出力**
 {{< swatches "#64748b" "#3b82f6" "#06b6d4" >}}
 
 <br/><br/><br/>
 
 ## Timeline
 
-The `timeline` creates a visual timeline that can be used in different use-cases, e.g. professional experience, a project's achievements, etc. The `timeline` shortcode relies on the `timelineItem` sub-shortcode to define each item within the main timeline. Each item can have the following properties.
-
+`timeline` は、さまざまなユースケース (例: 職務経歴、プロジェクトの成果など) で使用できる視覚的なタイムラインを作成します。`timeline` ショートコードは、メインタイムライン内の各アイテムを定義するために `timelineItem` サブショートコードに依存しています。各アイテムには、次のプロパティを設定できます。
 
 <!-- prettier-ignore-start -->
-| Parameter   | Description                                  |
+| パラメータ   | 説明                                  |
 | ----------- | -------------------------------------------- |
-| `icon`      | the icon to be used in the timeline visuals. |
-| `header`    | header for each entry                        |
-| `badge`     | text to place within the top right badge     |
-| `subheader` | entry's subheader                            |
+| `icon`      | タイムラインのビジュアルで使用するアイコン。 |
+| `header`    | 各エントリのヘッダー                        |
+| `badge`     | 右上のバッジ内に配置するテキスト     |
+| `subheader` | エントリのサブヘッダー                            |
 
 <!-- prettier-ignore-end -->
 
-**Example:**
+**例:**
 
 ```md
 {{</* timeline */>}}
 
-{{</* timelineItem icon="github" header="header" badge="badge test" subheader="subheader" */>}}
+{{</* timelineItem icon="github" header="ヘッダー" badge="バッジテスト" subheader="サブヘッダー" */>}}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non magna ex. Donec sollicitudin ut lorem quis lobortis. Nam ac ipsum libero. Sed a ex eget ipsum tincidunt venenatis quis sed nisl. Pellentesque sed urna vel odio consequat tincidunt id ut purus. Nam sollicitudin est sed dui interdum rhoncus. 
 {{</* /timelineItem */>}}
 
-
-{{</* timelineItem icon="code" header="Another Awesome Header" badge="date - present" subheader="Awesome Subheader" */>}}
-With html code
+{{</* timelineItem icon="code" header="もう 1 つの素晴らしいヘッダー" badge="日付 - 現在" subheader="素晴らしいサブヘッダー" */>}}
+HTML コード付き
 <ul>
-  <li>Coffee</li>
-  <li>Tea</li>
-  <li>Milk</li>
+  <li>コーヒー</li>
+  <li>紅茶</li>
+  <li>牛乳</li>
 </ul>
 {{</* /timelineItem */>}}
 
-{{</* timelineItem icon="star" header="Shortcodes" badge="AWESOME" */>}}
-With other shortcodes
+{{</* timelineItem icon="star" header="ショートコード" badge="素晴らしい" */>}}
+他のショートコード付き
 {{</* gallery */>}}
   <img src="gallery/01.jpg" class="grid-w33" />
   <img src="gallery/02.jpg" class="grid-w33" />
@@ -666,32 +656,30 @@ With other shortcodes
 {{</* /gallery */>}}
 {{</* /timelineItem */>}}
 
-{{</* timelineItem icon="code" header="Another Awesome Header"*/>}}
+{{</* timelineItem icon="code" header="もう 1 つの素晴らしいヘッダー"*/>}}
 {{</* github repo="nunocoracao/blowfish" */>}}
 {{</* /timelineItem */>}}
 
 {{</* /timeline */>}}
 ```
 
-
 {{< timeline >}}
 
-{{< timelineItem icon="github" header="header" badge="badge test" subheader="subheader" >}}
+{{< timelineItem icon="github" header="ヘッダー" badge="バッジテスト" subheader="サブヘッダー" >}}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non magna ex. Donec sollicitudin ut lorem quis lobortis. Nam ac ipsum libero. Sed a ex eget ipsum tincidunt venenatis quis sed nisl. Pellentesque sed urna vel odio consequat tincidunt id ut purus. Nam sollicitudin est sed dui interdum rhoncus. 
-{{</ timelineItem >}}
+{{< /timelineItem >}}
 
-
-{{< timelineItem icon="code" header="Another Awesome Header" badge="date - present" subheader="Awesome Subheader">}}
-With html code
+{{< timelineItem icon="code" header="もう 1 つの素晴らしいヘッダー" badge="日付 - 現在" subheader="素晴らしいサブヘッダー">}}
+HTML コード付き
 <ul>
-  <li>Coffee</li>
-  <li>Tea</li>
-  <li>Milk</li>
+  <li>コーヒー</li>
+  <li>紅茶</li>
+  <li>牛乳</li>
 </ul>
-{{</ timelineItem >}}
+{{< /timelineItem >}}
 
-{{< timelineItem icon="star" header="Shortcodes" badge="AWESOME" >}}
-With other shortcodes
+{{< timelineItem icon="star" header="ショートコード" badge="素晴らしい" >}}
+他のショートコード付き
 {{< gallery >}}
   <img src="gallery/01.jpg" class="grid-w33" />
   <img src="gallery/02.jpg" class="grid-w33" />
@@ -701,135 +689,10 @@ With other shortcodes
   <img src="gallery/06.jpg" class="grid-w33" />
   <img src="gallery/07.jpg" class="grid-w33" />
 {{< /gallery >}}
-{{</ timelineItem >}}
-{{< timelineItem icon="code" header="Another Awesome Header">}}
+{{< /timelineItem >}}
+{{< timelineItem icon="code" header="もう 1 つの素晴らしいヘッダー">}}
 {{< github repo="nunocoracao/blowfish" >}}
-{{</ timelineItem >}}
-{{</ timeline >}}
+{{< /timelineItem >}}
+{{< /timeline >}}
 
-
-<br/><br/><br/>
-
-## TypeIt
-
-[TypeIt](https://www.typeitjs.com) is the most versatile JavaScript tool for creating typewriter effects on the planet. With a straightforward configuration, it allows you to type single or multiple strings that break lines, delete & replace each other, and it even handles strings that contain complex HTML.
-
-Blowfish implements a sub-set of TypeIt features using a `shortcode`. Write your text within the `typeit` shortcode and use the following parameters to configure the behavior you want.
-
-<!-- prettier-ignore-start -->
-| Parameter          | Description                                                                                                                                        |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `tag`              | [String] `html` tag that will be used to render the strings.                                                                                       |
-| `classList`        | [String] List of `css` classes to apply to the `html` element.                                                                                     |
-| `initialString`    | [String] Initial string that will appear written and will be replaced.                                                                             |
-| `speed`            | [number] Typing speed, measured in milliseconds between each step.                                                                                 |
-| `lifeLike`         | [boolean] Makes the typing pace irregular, as if a real person is doing it.                                                                        |
-| `startDelay`       | [number] The amount of time before the plugin begins typing after being initialized.                                                               |
-| `breakLines`       | [boolean] Whether multiple strings are printed on top of each other (true), or if they're deleted and replaced by each other (false).              |
-| `waitUntilVisible` | [boolean] Determines if the instance will begin when loaded or only when the target element becomes visible in the viewport. The default is `true` |
-| `loop`             | [boolean] Whether your strings will continuously loop after completing                                                                             |
-
-<!-- prettier-ignore-end -->
-
-**Example 1:**
-
-```md
-{{</* typeit */>}}
-Lorem ipsum dolor sit amet 
-{{</* /typeit */>}}
-```
-
-{{< typeit >}}
-Lorem ipsum dolor sit amet
-{{< /typeit >}}
-
-**Example 2:**
-
-```md
-{{</* typeit 
-  tag=h1
-  lifeLike=true
-*/>}}
-Lorem ipsum dolor sit amet, 
-consectetur adipiscing elit. 
-{{</* /typeit */>}}
-```
-
-{{< typeit
-  tag=h1
-  lifeLike=true
->}}
-Lorem ipsum dolor sit amet,
-consectetur adipiscing elit.
-{{< /typeit >}}
-
-**Example 3:**
-
-```md
-{{</* typeit 
-  tag=h3
-  speed=50
-  breakLines=false
-  loop=true
-*/>}}
-"Frankly, my dear, I don't give a damn." Gone with the Wind (1939)
-"I'm gonna make him an offer he can't refuse." The Godfather (1972)
-"Toto, I've a feeling we're not in Kansas anymore." The Wizard of Oz (1939)
-{{</* /typeit */>}}
-```
-
-{{< typeit
-  tag=h3
-  speed=50
-  breakLines=false
-  loop=true
->}}
-"Frankly, my dear, I don't give a damn." Gone with the Wind (1939)
-"I'm gonna make him an offer he can't refuse." The Godfather (1972)
-"Toto, I've a feeling we're not in Kansas anymore." The Wizard of Oz (1939)
-{{< /typeit >}}
-
-
-<br/><br/><br/>
-
-## Youtube Lite
-
-A shortcut to embed youtube videos using the [lite-youtube-embed](https://github.com/paulirish/lite-youtube-embed) library. This library is a lightweight alternative to the standard youtube embeds, and it's designed to be faster and more efficient.
-
-<!-- prettier-ignore-start -->
-| Parameter | Description                                  |
-| --------- | -------------------------------------------- |
-| `id`      | [String] Youtube video id to embed.          |
-| `label`   | [String] Label for the video                 |
-| `params`  | [String] Extras parameters for video playing |
-<!-- prettier-ignore-end -->
-
-**Example 1:**
-
-```md
-{{</* youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" */>}}
-```
-
-{{< youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" >}}
-
-**Example 2:**
-
-You can use all of Youtube's [player parameters](https://developers.google.com/youtube/player_parameters#Parameters) for the `params` variable, as demonstrated below:
-
-> This video will start after 130 seconds (2m10)
-
-```md
-{{</* youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" params="start=130" */>}}
-```
-
-> This video will not have UI controls, will start playing at 130 seconds and will stop 10 seconds later.
-
-To concatenate multiple options as shown below, you need to add the `&` character between them.
-
-```md
-{{</* youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" params="start=130&end=10&controls=0" */>}}
-```
-
-{{< youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" params="start=130&end=10&controls=0" >}}
-
-More informations can be found on the [youtubeLite GitHub repo](https://github.com/paulirish/lite-youtube-embed/blob/master/readme.md#custom-player-parameters) and Youtube's [player parameters](https://developers.google.com/youtube/player_parameters#Parameters) page.
+<br/><br/><
