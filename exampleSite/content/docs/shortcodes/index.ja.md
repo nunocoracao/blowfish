@@ -284,6 +284,26 @@ Blowfish も、標準の Markdown 構文を使用して含まれる画像の自�
 
 <br/><br/><br/>
 
+## Forgejo カード
+
+`forgejo` を使用すると、forgejo API を介して Forgejo リポジトリをすばやくリンクでき、スターやフォークなどの統計をリアルタイムで更新できます。
+
+<!-- prettier-ignore-start -->
+| パラメータ | 説明                                           |
+| --------- | ----------------------------------------------------- |
+| `repo`    | [文字列] `username/repo` 形式の forgejo リポジトリ|
+| `server`  | [文字列] `https://v8.next.forgejo.org` のようなサーバー URL|
+<!-- prettier-ignore-end -->
+
+**例 1:**
+
+```md
+{{</* forgejo server="https://v8.next.forgejo.org" repo="forgejo/forgejo" */>}}
+```
+{{< forgejo server="https://v8.next.forgejo.org" repo="forgejo/forgejo" >}}
+
+<br/><br/><br/>
+
 ## ギャラリー
 
 `gallery` を使用すると、複数の画像を一度に、レスポンシブな方法で、より多様で興味深いレイアウトで紹介できます。
@@ -339,6 +359,26 @@ Blowfish も、標準の Markdown 構文を使用して含まれる画像の自�
   <img src="gallery/06.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
   <img src="gallery/07.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
 {{< /gallery >}}
+
+<br/><br/><br/>
+
+## Gitea カード
+
+`gitea` を使用すると、gitea API を介して Gitea リポジトリをすばやくリンクでき、スターやフォークなどの統計に関するリアルタイムに更新できます。
+
+<!-- prettier-ignore-start -->
+| パラメータ | 説明                                           |
+| --------- | ----------------------------------------------------- |
+| `repo`    | [文字列] `username/repo` 形式の gitea リポジトリ  |
+| `server`  | [文字列] `https://git.fsfe.org` のようなサーバー URL       |
+<!-- prettier-ignore-end -->
+
+**例1:**
+
+```md
+{{</* gitea server="https://git.fsfe.org" repo="FSFE/fsfe-website" */>}}
+```
+{{< gitea server="https://git.fsfe.org" repo="FSFE/fsfe-website" >}}
 
 <br/><br/><br/>
 
@@ -524,12 +564,12 @@ Blowfish も、標準の Markdown 構文を使用して含まれる画像の自�
 
 ## LTR/RTL 
 
-`ltr` と `rtl` を使用すると、コンテンツを混在させることができます。多くの RTL 言語ユーザーは、コンテンツの一部を LTR に含めたいと考えています。このショートコードを使用すると、それを行うことができ、[Hugo ショートコード](https://gohugo.io/content-management/shortcodes/#shortcodes-with-markdown) の最も外側のダイアメーターとして `%` を活用することで、内部のマークダウンは通常どおりレンダリングされます。
+`ltr` と `rtl` を使用すると、それぞれのコンテンツを混在させることができます。多くの RTL 言語ユーザーは、コンテンツの一部を LTR に含めたいと考えています。このショートコードを使用すると、それを行うことができ、[Hugo ショートコード](https://gohugo.io/content-management/shortcodes/#shortcodes-with-markdown) の最も外側のダイアメーターとして `%` を活用することで、内部のマークダウンは通常どおりレンダリングされます。
 
 **例:**
 
 ```md
-- これはマークダウンリストです。
+- これは Markdown のリストです。
 - デフォルトでは LTR 方向です。
 {{%/* rtl */%}}
 - هذه القائمة باللغة العربية
@@ -537,7 +577,7 @@ Blowfish も、標準の Markdown 構文を使用して含まれる画像の自�
 {{%/* /rtl */%}}
 ```
 
-- これはマークダウンリストです。
+- これは Markdown のリストです。
 - デフォルトでは LTR 方向です。
 {{% rtl %}}
 - هذه القائمة باللغة العربية
@@ -546,14 +586,14 @@ Blowfish も、標準の Markdown 構文を使用して含まれる画像の自�
 
 <br/><br/><br/>
 
-## Markdown Importer
+## Markdown インポーター
 
-このショートコードを使用すると、外部ソースからマークダウンファイルをインポートできます。これは、コンテンツをコピーアンドペーストすることなく、他のリポジトリや Web サイトからコンテンツを含めるのに役立ちます。
+このショートコードを使用すると、外部のソースからマークダウンファイルをインポートできます。これは、コンテンツをコピー&ペーストすることなく、他のリポジトリや Web サイトからコンテンツを含めるのに役立ちます。
 
 <!-- prettier-ignore-start -->
 | パラメータ | 説明                                             |
 | --------- | ------------------------------------------------------- |
-| `url`     | **必須** 外部でホストされているマークダウンファイルへの URL。 |
+| `url`     | **必須** 外部でホストされている Markdown ファイルへの URL。 |
 
 <!-- prettier-ignore-end -->
 
@@ -596,9 +636,9 @@ B-->C[利益]
 
 <br/><br/><br/>
 
-## Swatches
+## 色の見本
 
-`swatches` は、カラーパレットなどのカラー要素を紹介するために、最大 3 つの異なる色のセットを出力します。このショートコードは、各色の `HEX` コードを取得し、それぞれの視覚要素を作成します。
+`swatches` は、カラーパレットなどのカラー要素を紹介するために、最大3つの異なる色のセットを出力します。このショートコードは、各色の `HEX` コードを受け取り、それぞれの視覚要素を作成します。
 
 **例**
 
@@ -611,15 +651,15 @@ B-->C[利益]
 
 <br/><br/><br/>
 
-## Timeline
+## タイムライン
 
 `timeline` は、さまざまなユースケース (例: 職務経歴、プロジェクトの成果など) で使用できる視覚的なタイムラインを作成します。`timeline` ショートコードは、メインタイムライン内の各アイテムを定義するために `timelineItem` サブショートコードに依存しています。各アイテムには、次のプロパティを設定できます。
 
 <!-- prettier-ignore-start -->
 | パラメータ   | 説明                                  |
 | ----------- | -------------------------------------------- |
-| `icon`      | タイムラインのビジュアルで使用するアイコン。 |
-| `header`    | 各エントリのヘッダー                        |
+| `icon`      | タイムラインのビジュアルで使用するアイコン |
+| `header`    | 各エントリのヘッダーー                        |
 | `badge`     | 右上のバッジ内に配置するテキスト     |
 | `subheader` | エントリのサブヘッダー                            |
 
@@ -634,7 +674,7 @@ B-->C[利益]
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non magna ex. Donec sollicitudin ut lorem quis lobortis. Nam ac ipsum libero. Sed a ex eget ipsum tincidunt venenatis quis sed nisl. Pellentesque sed urna vel odio consequat tincidunt id ut purus. Nam sollicitudin est sed dui interdum rhoncus. 
 {{</* /timelineItem */>}}
 
-{{</* timelineItem icon="code" header="もう 1 つの素晴らしいヘッダー" badge="日付 - 現在" subheader="素晴らしいサブヘッダー" */>}}
+{{</* timelineItem icon="code" header="もう1つの素晴らしいヘッダー" badge="日付 - 現在" subheader="素晴らしいサブヘッダー" */>}}
 HTML コード付き
 <ul>
   <li>コーヒー</li>
@@ -656,7 +696,7 @@ HTML コード付き
 {{</* /gallery */>}}
 {{</* /timelineItem */>}}
 
-{{</* timelineItem icon="code" header="もう 1 つの素晴らしいヘッダー"*/>}}
+{{</* timelineItem icon="code" header="もう1つの素晴らしいヘッダー"*/>}}
 {{</* github repo="nunocoracao/blowfish" */>}}
 {{</* /timelineItem */>}}
 
@@ -669,7 +709,7 @@ HTML コード付き
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non magna ex. Donec sollicitudin ut lorem quis lobortis. Nam ac ipsum libero. Sed a ex eget ipsum tincidunt venenatis quis sed nisl. Pellentesque sed urna vel odio consequat tincidunt id ut purus. Nam sollicitudin est sed dui interdum rhoncus. 
 {{< /timelineItem >}}
 
-{{< timelineItem icon="code" header="もう 1 つの素晴らしいヘッダー" badge="日付 - 現在" subheader="素晴らしいサブヘッダー">}}
+{{< timelineItem icon="code" header="もう1つの素晴らしいヘッダー" badge="日付 - 現在" subheader="素晴らしいサブヘッダー">}}
 HTML コード付き
 <ul>
   <li>コーヒー</li>
@@ -690,9 +730,132 @@ HTML コード付き
   <img src="gallery/07.jpg" class="grid-w33" />
 {{< /gallery >}}
 {{< /timelineItem >}}
-{{< timelineItem icon="code" header="もう 1 つの素晴らしいヘッダー">}}
+{{< timelineItem icon="code" header="もう1つの素晴らしいヘッダー">}}
 {{< github repo="nunocoracao/blowfish" >}}
 {{< /timelineItem >}}
 {{< /timeline >}}
 
-<br/><br/><
+<br/><br/><br/>
+
+## TypeIt
+
+[TypeIt](https://www.typeitjs.com) は、この地球上で最も用途の広い、タイプライターエフェクトを作成するための JavaScript ツールです。簡単な設定で、行を分割したり、相互に削除および置換したりする単一または複数の文字列を入力でき、複雑な HTML を含む文字列も処理できます。
+
+Blowfish は、`shortcode` を使用して TypeIt 機能のサブセットを実装しています。`typeit` ショートコード内にテキストを記述し、次のパラメータを使用して、必要な動作を設定します。
+
+<!-- prettier-ignore-start -->
+| パラメータ          | 説明                                                                                                                                        |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `tag`              | [文字列] 文字列のレンダリングに使用される `html` タグ。                                                                                       |
+| `classList`        | [文字列] `html` 要素に適用する `css` クラスのリスト。                                                                                     |
+| `initialString`    | [文字列] 書き込まれて表示され、置き換えられる初期文字列。                                                                             |
+| `speed`            | [数値] 各ステップ間のミリ秒単位で測定されるタイピング速度。                                                                                 |
+| `lifeLike`         | [ブール値] 実際の人間が行っているかのように、タイピングのペースを不規則にします。                                                                        |
+| `startDelay`       | [数値] プラグインが初期化されてからタイピングを開始するまでの時間。                                                               |
+| `breakLines`       | [ブール値] 複数の文字列が互いに上に印刷されるか (true)、削除されて互いに置き換えられるか (false)。              |
+| `waitUntilVisible` | [ブール値] インスタンスがロードされたときに開始するか、ターゲット要素がビューポートに表示されたときにのみ開始するかを決定します。デフォルトは `true` です。 |
+| `loop`             | [ブール値] 文字列が完了後に継続的にループするかどうか。                                                                             |
+
+<!-- prettier-ignore-end -->
+
+**例1:**
+
+```md
+{{</* typeit */>}}
+Lorem ipsum dolor sit amet 
+{{</* /typeit */>}}
+```
+
+{{< typeit >}}
+Lorem ipsum dolor sit amet
+{{< /typeit >}}
+
+**例2:**
+
+```md
+{{</* typeit 
+  tag=h1
+  lifeLike=true
+*/>}}
+Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit. 
+{{</* /typeit */>}}
+```
+
+{{< typeit
+  tag=h1
+  lifeLike=true
+>}}
+Lorem ipsum dolor sit amet,
+consectetur adipiscing elit.
+{{< /typeit >}}
+
+**例 3:**
+
+```md
+{{</* typeit 
+  tag=h3
+  speed=50
+  breakLines=false
+  loop=true
+*/>}}
+"正直言って、俺の知ったこっちゃない。" 風と共に去りぬ (1939)
+"イヤとは言わせない。" ゴッドファーザー (1972)
+"トト、私たちもうカンザスにいないみたい。" オズの魔法使い (1939)
+{{</* /typeit */>}}
+```
+
+{{< typeit
+  tag=h3
+  speed=50
+  breakLines=false
+  loop=true
+>}}
+"正直言って、俺の知ったこっちゃない。" 風と共に去りぬ (1939)
+"イヤとは言わせない。" ゴッドファーザー (1972)
+"トト、私たちもうカンザスにいないみたい。" オズの魔法使い (1939)
+{{< /typeit >}}
+
+<br/><br/><br/>
+
+## Youtube Lite
+
+[lite-youtube-embed](https://github.com/paulirish/lite-youtube-embed) ライブラリを使用して YouTube 動画を埋め込むためのショートカット。このライブラリは、標準の YouTube 埋め込みの軽量な代替手段であり、より高速で効率的になるように設計されています。
+
+<!-- prettier-ignore-start -->
+| パラメータ | 説明                                  |
+| --------- | -------------------------------------------- |
+| `id`      | [文字列] 埋め込む YouTube 動画の ID。          |
+| `label`   | [文字列] 動画のラベル                 |
+| `params`  | [文字列] 動画再生のための追加パラメータ |
+<!-- prettier-ignore-end -->
+
+**例1:**
+
+```md
+{{</* youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" */>}}
+```
+
+{{< youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" >}}
+
+**例2:**
+
+以下に示すように、`params` 変数に Youtube のすべての [プレーヤーパラメータ](https://developers.google.com/youtube/player_parameters#Parameters) を使用できます。
+
+> この動画は130秒 (2分10秒) 後に開始されます。
+
+```md
+{{</* youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" params="start=130" */>}}
+```
+
+> この動画には UI コントロールがなく、130秒後に再生が開始され、10秒後に停止します。
+
+以下に示すように複数のオプションを連結するには、それらの間に `&` 文字を追加する必要があります。
+
+```md
+{{</* youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" params="start=130&end=10&controls=0" */>}}
+```
+
+{{< youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" params="start=130&end=10&controls=0" >}}
+
+詳細については、[youtubeLite GitHub リポジトリ](https://github.com/paulirish/lite-youtube-embed/blob/master/readme.md#custom-player-parameters) および Youtube の [プレーヤーパラメータ](https://developers.google.com/youtube/player_parameters#Parameters) ページを参照してください。
