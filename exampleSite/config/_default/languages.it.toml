@@ -11,7 +11,7 @@ title = "Blowfish"
   logo = "img/blowfish_logo_transparent.png"
   description = "Un potente, leggero tema per Hugo."
 
-[author]
+[params.author]
   name = "Blowfish"
   image = "img/blowfish_logo.png"
   headline = "Un potente, leggero tema per Hugo."

@@ -12,11 +12,14 @@ autoSwitchAppearance = true
 enableSearch = true
 enableCodeCopy = true
 
+replyByEmail = false
+
 mainSections = ["docs"]
 # robots = ""
 
 disableImageOptimization = false
 disableTextInHeader = false
+# backgroundImageWidth = 1200
 
 defaultBackgroundImage = "/img/background.svg"
 defaultFeaturedImage = "/img/featured.svg"
@@ -133,6 +136,13 @@ smartTOCHideUnfocusedChildren = false
 [umamiAnalytics]
   # websiteid = "ABC12345"
   # domain = "llama.yoursite.com"
+  # dataDomains = "yoursite.com,yoursite2.com"
+  # scriptName = ""
+  # enableTrackEvent = false
+
+[selineAnalytics]
+  # token = "XXXXXX"
+  # enableTrackEvent = false
 
 [buymeacoffee]
   identifier = "nunocoracao"
@@ -146,3 +156,7 @@ smartTOCHideUnfocusedChildren = false
   # bing = ""
   # pinterest = ""
   # yandex = ""
+
+[rssnext]
+  # feedId = ""
+  # userId = ""

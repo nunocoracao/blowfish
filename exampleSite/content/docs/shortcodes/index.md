@@ -104,7 +104,7 @@ New article!
 
 ## Button
 
-`button` outputs a styled button component which can be used to highlight a primary action. It has two optional variables `href` and `target` which can be used to specify the URL and target of the link.
+`button` outputs a styled button component which can be used to highlight a primary action. It has three optional variables `href`, `target` and `rel` which can be used to specify the URL, target and relation of the link.
 
 **Example:**
 
@@ -286,6 +286,26 @@ Blowfish also supports automatic conversion of images included using standard Ma
 
 <br/><br/><br/>
 
+## Forgejo Card
+
+`forgejo` allows you to quickly link a Forgejo repository via the forgejo API, providing real-time updates on stats such as stars and forks.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description                                           |
+| --------- | ----------------------------------------------------- |
+| `repo`    | [String] forgejo repo in the format of `username/repo`|
+| `server`  | [String] server URL like `https://v8.next.forgejo.org`|
+<!-- prettier-ignore-end -->
+
+**Example 1:**
+
+```md
+{{</* forgejo server="https://v8.next.forgejo.org" repo="forgejo/forgejo" */>}}
+```
+{{< forgejo server="https://v8.next.forgejo.org" repo="forgejo/forgejo" >}}
+
+<br/><br/><br/>
+
 ## Gallery
 
 `gallery` allows you to showcase multiple images at once, in a responsive manner with more varied and interesting layouts.
@@ -342,6 +362,26 @@ In order to add images to the gallery, use `img` tags for each image and add `cl
   <img src="gallery/06.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
   <img src="gallery/07.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
 {{< /gallery >}}
+
+<br/><br/><br/>
+
+## Gitea Card
+
+`gitea` allows you to quickly link a Gitea repository via the gitea API, providing real-time updates on stats such as stars and forks.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description                                           |
+| --------- | ----------------------------------------------------- |
+| `repo`    | [String] gitea repo in the format of `username/repo`  |
+| `server`  | [String] server URL like `https://git.fsfe.org`       |
+<!-- prettier-ignore-end -->
+
+**Example 1:**
+
+```md
+{{</* gitea server="https://git.fsfe.org" repo="FSFE/fsfe-website" */>}}
+```
+{{< gitea server="https://git.fsfe.org" repo="FSFE/fsfe-website" >}}
 
 <br/><br/><br/>
 

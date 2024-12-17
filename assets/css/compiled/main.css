@@ -14,7 +14,115 @@ body.zen-mode-enable {
   }
 }
 
-/*! tailwindcss v3.4.4 | MIT License | https://tailwindcss.com */
+*, ::before, ::after {
+  --tw-border-spacing-x:0;
+  --tw-border-spacing-y:0;
+  --tw-translate-x:0;
+  --tw-translate-y:0;
+  --tw-rotate:0;
+  --tw-skew-x:0;
+  --tw-skew-y:0;
+  --tw-scale-x:1;
+  --tw-scale-y:1;
+  --tw-pan-x: ;
+  --tw-pan-y: ;
+  --tw-pinch-zoom: ;
+  --tw-scroll-snap-strictness:proximity;
+  --tw-gradient-from-position: ;
+  --tw-gradient-via-position: ;
+  --tw-gradient-to-position: ;
+  --tw-ordinal: ;
+  --tw-slashed-zero: ;
+  --tw-numeric-figure: ;
+  --tw-numeric-spacing: ;
+  --tw-numeric-fraction: ;
+  --tw-ring-inset: ;
+  --tw-ring-offset-width:0px;
+  --tw-ring-offset-color:#fff;
+  --tw-ring-color:rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow:0 0 #0000;
+  --tw-ring-shadow:0 0 #0000;
+  --tw-shadow:0 0 #0000;
+  --tw-shadow-colored:0 0 #0000;
+  --tw-blur: ;
+  --tw-brightness: ;
+  --tw-contrast: ;
+  --tw-grayscale: ;
+  --tw-hue-rotate: ;
+  --tw-invert: ;
+  --tw-saturate: ;
+  --tw-sepia: ;
+  --tw-drop-shadow: ;
+  --tw-backdrop-blur: ;
+  --tw-backdrop-brightness: ;
+  --tw-backdrop-contrast: ;
+  --tw-backdrop-grayscale: ;
+  --tw-backdrop-hue-rotate: ;
+  --tw-backdrop-invert: ;
+  --tw-backdrop-opacity: ;
+  --tw-backdrop-saturate: ;
+  --tw-backdrop-sepia: ;
+  --tw-contain-size: ;
+  --tw-contain-layout: ;
+  --tw-contain-paint: ;
+  --tw-contain-style: 
+}
+
+::backdrop {
+  --tw-border-spacing-x:0;
+  --tw-border-spacing-y:0;
+  --tw-translate-x:0;
+  --tw-translate-y:0;
+  --tw-rotate:0;
+  --tw-skew-x:0;
+  --tw-skew-y:0;
+  --tw-scale-x:1;
+  --tw-scale-y:1;
+  --tw-pan-x: ;
+  --tw-pan-y: ;
+  --tw-pinch-zoom: ;
+  --tw-scroll-snap-strictness:proximity;
+  --tw-gradient-from-position: ;
+  --tw-gradient-via-position: ;
+  --tw-gradient-to-position: ;
+  --tw-ordinal: ;
+  --tw-slashed-zero: ;
+  --tw-numeric-figure: ;
+  --tw-numeric-spacing: ;
+  --tw-numeric-fraction: ;
+  --tw-ring-inset: ;
+  --tw-ring-offset-width:0px;
+  --tw-ring-offset-color:#fff;
+  --tw-ring-color:rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow:0 0 #0000;
+  --tw-ring-shadow:0 0 #0000;
+  --tw-shadow:0 0 #0000;
+  --tw-shadow-colored:0 0 #0000;
+  --tw-blur: ;
+  --tw-brightness: ;
+  --tw-contrast: ;
+  --tw-grayscale: ;
+  --tw-hue-rotate: ;
+  --tw-invert: ;
+  --tw-saturate: ;
+  --tw-sepia: ;
+  --tw-drop-shadow: ;
+  --tw-backdrop-blur: ;
+  --tw-backdrop-brightness: ;
+  --tw-backdrop-contrast: ;
+  --tw-backdrop-grayscale: ;
+  --tw-backdrop-hue-rotate: ;
+  --tw-backdrop-invert: ;
+  --tw-backdrop-opacity: ;
+  --tw-backdrop-saturate: ;
+  --tw-backdrop-sepia: ;
+  --tw-contain-size: ;
+  --tw-contain-layout: ;
+  --tw-contain-paint: ;
+  --tw-contain-style: 
+}
+
+/*! tailwindcss v3.4.14 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -456,7 +564,7 @@ video {
 
 /* Make elements with the HTML hidden attribute stay hidden by default */
 
-[hidden] {
+[hidden]:where(:not([hidden="until-found"])) {
   display: none;
 }
 
@@ -660,114 +768,6 @@ select {
     scrollbar-color:initial;
     scrollbar-width:initial
   }
-}
-
-*, ::before, ::after {
-  --tw-border-spacing-x:0;
-  --tw-border-spacing-y:0;
-  --tw-translate-x:0;
-  --tw-translate-y:0;
-  --tw-rotate:0;
-  --tw-skew-x:0;
-  --tw-skew-y:0;
-  --tw-scale-x:1;
-  --tw-scale-y:1;
-  --tw-pan-x: ;
-  --tw-pan-y: ;
-  --tw-pinch-zoom: ;
-  --tw-scroll-snap-strictness:proximity;
-  --tw-gradient-from-position: ;
-  --tw-gradient-via-position: ;
-  --tw-gradient-to-position: ;
-  --tw-ordinal: ;
-  --tw-slashed-zero: ;
-  --tw-numeric-figure: ;
-  --tw-numeric-spacing: ;
-  --tw-numeric-fraction: ;
-  --tw-ring-inset: ;
-  --tw-ring-offset-width:0px;
-  --tw-ring-offset-color:#fff;
-  --tw-ring-color:rgb(59 130 246 / 0.5);
-  --tw-ring-offset-shadow:0 0 #0000;
-  --tw-ring-shadow:0 0 #0000;
-  --tw-shadow:0 0 #0000;
-  --tw-shadow-colored:0 0 #0000;
-  --tw-blur: ;
-  --tw-brightness: ;
-  --tw-contrast: ;
-  --tw-grayscale: ;
-  --tw-hue-rotate: ;
-  --tw-invert: ;
-  --tw-saturate: ;
-  --tw-sepia: ;
-  --tw-drop-shadow: ;
-  --tw-backdrop-blur: ;
-  --tw-backdrop-brightness: ;
-  --tw-backdrop-contrast: ;
-  --tw-backdrop-grayscale: ;
-  --tw-backdrop-hue-rotate: ;
-  --tw-backdrop-invert: ;
-  --tw-backdrop-opacity: ;
-  --tw-backdrop-saturate: ;
-  --tw-backdrop-sepia: ;
-  --tw-contain-size: ;
-  --tw-contain-layout: ;
-  --tw-contain-paint: ;
-  --tw-contain-style: 
-}
-
-::backdrop {
-  --tw-border-spacing-x:0;
-  --tw-border-spacing-y:0;
-  --tw-translate-x:0;
-  --tw-translate-y:0;
-  --tw-rotate:0;
-  --tw-skew-x:0;
-  --tw-skew-y:0;
-  --tw-scale-x:1;
-  --tw-scale-y:1;
-  --tw-pan-x: ;
-  --tw-pan-y: ;
-  --tw-pinch-zoom: ;
-  --tw-scroll-snap-strictness:proximity;
-  --tw-gradient-from-position: ;
-  --tw-gradient-via-position: ;
-  --tw-gradient-to-position: ;
-  --tw-ordinal: ;
-  --tw-slashed-zero: ;
-  --tw-numeric-figure: ;
-  --tw-numeric-spacing: ;
-  --tw-numeric-fraction: ;
-  --tw-ring-inset: ;
-  --tw-ring-offset-width:0px;
-  --tw-ring-offset-color:#fff;
-  --tw-ring-color:rgb(59 130 246 / 0.5);
-  --tw-ring-offset-shadow:0 0 #0000;
-  --tw-ring-shadow:0 0 #0000;
-  --tw-shadow:0 0 #0000;
-  --tw-shadow-colored:0 0 #0000;
-  --tw-blur: ;
-  --tw-brightness: ;
-  --tw-contrast: ;
-  --tw-grayscale: ;
-  --tw-hue-rotate: ;
-  --tw-invert: ;
-  --tw-saturate: ;
-  --tw-sepia: ;
-  --tw-drop-shadow: ;
-  --tw-backdrop-blur: ;
-  --tw-backdrop-brightness: ;
-  --tw-backdrop-contrast: ;
-  --tw-backdrop-grayscale: ;
-  --tw-backdrop-hue-rotate: ;
-  --tw-backdrop-invert: ;
-  --tw-backdrop-opacity: ;
-  --tw-backdrop-saturate: ;
-  --tw-backdrop-sepia: ;
-  --tw-contain-size: ;
-  --tw-contain-layout: ;
-  --tw-contain-paint: ;
-  --tw-contain-style: 
 }
 
 .container {
@@ -1121,7 +1121,6 @@ select {
 .prose :where(table):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
   width:100%;
   table-layout:auto;
-  text-align:start;
   margin-top:2em;
   margin-bottom:2em;
   font-size:0.875em;
@@ -1162,6 +1161,10 @@ select {
 
 .prose :where(tfoot td):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
   vertical-align:top
+}
+
+.prose :where(th, td):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  text-align:start
 }
 
 .prose :where(figure > *):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
@@ -2523,10 +2526,6 @@ select {
   padding:0px
 }
 
-.p-1 {
-  padding:0.25rem
-}
-
 .p-1\.5 {
   padding:0.375rem
 }
@@ -3002,19 +3001,19 @@ select {
 .backdrop-blur {
   --tw-backdrop-blur:blur(8px);
   -webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-          backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)
+  backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)
 }
 
 .backdrop-blur-2xl {
   --tw-backdrop-blur:blur(40px);
   -webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-          backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)
+  backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)
 }
 
 .backdrop-blur-sm {
   --tw-backdrop-blur:blur(4px);
   -webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-          backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)
+  backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)
 }
 
 .transition-\[height\] {
@@ -3167,6 +3166,13 @@ body button {
   width:1em
 }
 
+/* Scale SVG logos to appropriate size */
+
+.logo svg {
+  height:5rem;
+  width:5rem
+}
+
 /* Search */
 
 #search-query::-webkit-search-cancel-button,
@@ -3174,21 +3180,6 @@ body button {
 #search-query::-webkit-search-results-button,
 #search-query::-webkit-search-results-decoration {
   display:none
-}
-
-/* Hamburger menu */
-
-body:has(#menu-controller:checked) {
-  overflow-y:hidden
-}
-
-#menu-button:has(#menu-controller:checked) {
-  visibility:hidden
-}
-
-#menu-controller:checked~#menu-wrapper {
-  visibility:visible;
-  opacity:1
 }
 
 /* RTL support */
@@ -3348,6 +3339,14 @@ code {
   /* All browsers since IE 5.5+ */
   overflow-wrap: break-word;
   /* Renamed property in CSS3 draft spec */
+}
+
+/* Fix long URLs breaking out of article bounds on mobile */
+
+a {
+  word-break: break-word;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /* -- Chroma Highlight -- */
