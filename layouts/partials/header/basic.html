@@ -1,5 +1,5 @@
 <div style="padding-left:0;padding-right:0;padding-top:2px;padding-bottom:3px"
-    class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start space-x-3">
+    class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3">
     {{ if .Site.Params.Logo }}
     {{ $logo := resources.Get .Site.Params.Logo }}
     {{ if $logo }}
@@ -30,7 +30,7 @@
             {{ end }}
 
         </nav>
-        <nav class="hidden md:flex items-center space-x-5 md:ml-12 h-12">
+        <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
 
             {{ if .Site.Menus.main }}
             {{ range .Site.Menus.main }}
@@ -51,7 +51,7 @@
             {{/* Appearance switch */}}
             {{ if .Site.Params.footer.showAppearanceSwitcher | default false }}
             <div
-                class="{{ if .Site.Params.footer.showScrollToTop | default true -}} ltr:mr-14 rtl:ml-14 {{- end }} flex items-center">
+                class="{{ if .Site.Params.footer.showScrollToTop | default true -}} {{- end }} flex items-center">
                 <button id="appearance-switcher" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400">
                     <div class="flex items-center justify-center dark:hidden">
                         {{ partial "icon.html" "moon" }}
@@ -64,7 +64,7 @@
             {{ end }}
 
         </nav>
-        <div class="flex md:hidden items-center space-x-5 md:ml-12 h-12">
+        <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
 
             <span></span>
 
@@ -79,7 +79,7 @@
 
             {{/* Appearance switch */}}
             {{ if .Site.Params.footer.showAppearanceSwitcher | default false }}
-            <button id="appearance-switcher-mobile" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400" style="margin-right:5px">
+            <button id="appearance-switcher-mobile" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-1 rtl:ml-1">
                 <div class="flex items-center justify-center dark:hidden">
                     {{ partial "icon.html" "moon" }}
                 </div>
@@ -91,7 +91,7 @@
 
         </div>
     </div>
-    <div class="-my-2 -mr-2 md:hidden">
+    <div class="-my-2 md:hidden">
 
         <label id="menu-button" class="block">
             {{ if .Site.Menus.main }}
