@@ -1,17 +1,17 @@
 ---
-title: "Front Matter"
+title: "フロントマター"
 weight: 7
 draft: false
-description: "Blowfish で利用可能なすべての Front Matter 変数。"
+description: "Blowfish で利用可能なすべてのフロントマター変数。"
 slug: "front-matter"
 tags: ["front matter", "config", "docs"]
 series: ["Documentation"]
 series_order: 7
 ---
 
-[デフォルトの Hugo Front Matter パラメータ](https://gohugo.io/content-management/front-matter/#front-matter-variables) に加えて、Blowfish は個々の記事の表示をカスタマイズするための追加オプションを多数追加しています。利用可能なテーマの Front Matter パラメータはすべて以下にリストされています。
+[デフォルトの Hugo フロントマターパラメータ](https://gohugo.io/content-management/front-matter/#front-matter-variables) に加えて、Blowfish は個々の記事の表示をカスタマイズするための追加オプションを多数追加しています。利用可能なテーマのフロントマターパラメータはすべて以下にリストされています。
 
-Front Matter パラメータのデフォルト値は、テーマの [基本設定]({{< ref "configuration" >}}) から継承されるため、デフォルトを上書きする場合にのみ、Front Matter でこれらのパラメータを指定する必要があります。
+フロントマターパラメータのデフォルト値は、テーマの [基本設定]({{< ref "configuration" >}}) から継承されるため、デフォルトを上書きする場合にのみ、フロントマターでこれらのパラメータを指定する必要があります。
 
 <!-- prettier-ignore-start -->
 | 名前                          | デフォルト                                                                                                         | 説明                                                                                                                                                                                                                                                  |
