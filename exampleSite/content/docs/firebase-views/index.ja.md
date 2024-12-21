@@ -11,9 +11,9 @@ series_order: 15
 
 ウェブサイト全体で動的データをサポートできるようにするために、Firebase を統合するサポートを追加しました。これにより、リストや投稿全体で閲覧数機能を使用できるようになります。
 
-1. <a target="_blank" href="https://firebase.com">Firebase のウェブサイト</a>にアクセスして、無料のアカウントを作成します。
-2. 新しいプロジェクトを作成します。
-3. 分析ロケーションを選択します。
+1. <a target="_blank" href="https://firebase.com">Firebase の Web サイト</a>にアクセスして、無料のアカウントを作成します
+2. 新しいプロジェクトを作成します
+3. 分析ロケーションを選択します
 4. プロジェクトの変数を取得し、`params.toml` ファイル内で設定して、Blowfish で Firebase を設定します。詳細は、<a target="_blank" href="{{< ref "configuration/#theme-parameters" >}}">このページ</a>をご覧ください。Firebase が提供するファイルの例を以下に示します。FirebaseConfig オブジェクト内のパラメータに注意してください。
 
 ```
