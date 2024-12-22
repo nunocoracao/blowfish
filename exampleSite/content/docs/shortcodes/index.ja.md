@@ -18,7 +18,7 @@ series_order: 8
 <!-- prettier-ignore-start -->
 | パラメータ   | 説明                                                                                                                                                                                  |
 | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `icon`      | **オプション** 左端に表示するアイコン。<br>**デフォルト:** `exclaimation triangle icon` (アイコンの使用方法の詳細については、[アイコンショートコード](#icon) をご覧ください。)                    |
+| `icon`      | **オプション** 左端に表示するアイコン。<br>**デフォルト:** `exclamation triangle icon` (アイコンの使用方法の詳細については、[アイコンショートコード](#icon) をご覧ください。)                    |
 | `iconColor` | **オプション** 基本的な CSS スタイルのアイコンの色。<br>HEX値 (`#FFFFFF`) または色の名前 (`white`) のいずれかで指定できます。<br>デフォルトでは、現在のカラーテーマに基づいて選択されます。            |
 | `cardColor` | **オプション** 基本的な CSS スタイルのカードの背景色。<br>HEX値 (`#FFFFFF`) または色の名前 (`white`) のいずれかを指定できます。<br>デフォルトでは、現在のカラーテーマに基づいて選択されます。 |
 | `textColor` | **オプション** 基本的な CSS スタイルのテキストの色。<br>HEX値 (`#FFFFFF`) または色の名前 (`white`) のいずれかを指定できます。<br>デフォルトでは、現在のカラーテーマに基づいて選択されます。            |
@@ -26,7 +26,7 @@ series_order: 8
 
 入力は Markdown で記述されているため、自由にフォーマットできます。
 
-**例 1:** パラメータなし
+**例1:** パラメータなし
 
 ```md
 {{</* alert */>}}
@@ -38,7 +38,7 @@ series_order: 8
 **警告!** この行為は破壊的です!
 {{< /alert >}}
 
-**例 2:** 名前なしパラメータ
+**例2:** 名前なしパラメータ
 
 ```md
 {{</* alert "twitter" */>}}
@@ -50,7 +50,7 @@ Twitter で私を [フォロー](https://twitter.com/nunocoracao)するのを忘
 Twitter で私を [フォロー](https://twitter.com/nunocoracao)するのを忘れないでください。
 {{< /alert >}}
 
-**例 3:** 名前付きパラメータ
+**例3:** 名前付きパラメータ
 
 ```md
 {{</* alert icon="fire" cardColor="#e63946" iconColor="#1d3557" textColor="#f1faee" */>}}
@@ -132,7 +132,7 @@ Twitter で私を [フォロー](https://twitter.com/nunocoracao)するのを忘
 | `interval`    | **オプション** 自動スクロールの間隔。ミリ秒単位で指定します。デフォルトは `2000` (2秒) です。             |
 <!-- prettier-ignore-end -->
 
-**例 1:** 16:9 のアスペクト比と冗長な画像のリスト
+**例1:** 16:9 のアスペクト比と冗長な画像のリスト
 
 ```md
 {{</* carousel images="{https://cdn.pixabay.com/photo/2016/12/11/12/02/mountains-1899264_960_720.jpg, gallery/03.jpg, gallery/01.jpg, gallery/02.jpg, gallery/04.jpg}" */>}}
@@ -140,7 +140,7 @@ Twitter で私を [フォロー](https://twitter.com/nunocoracao)するのを忘
 
 {{< carousel images="{https://cdn.pixabay.com/photo/2016/12/11/12/02/mountains-1899264_960_720.jpg,gallery/03.jpg,gallery/01.jpg,gallery/02.jpg,gallery/04.jpg}" >}}
 
-**例 2:** 21:9 のアスペクト比と正規表現による画像のリスト
+**例2:** 21:9 のアスペクト比と正規表現による画像のリスト
 
 ```md
 {{</* carousel images="gallery/*" aspectRatio="21-9" interval="2500" */>}}
@@ -230,7 +230,7 @@ data: {
 | `repo`    | [文字列] `username/repo` 形式の Codeberg リポジトリ |
 <!-- prettier-ignore-end -->
 
-**例 1:**
+**例1:**
 
 ```md
 {{</* codeberg repo="forgejo/forgejo" */>}}
@@ -295,7 +295,7 @@ Blowfish も、標準の Markdown 構文を使用して含まれる画像の自�
 | `server`  | [文字列] `https://v8.next.forgejo.org` のようなサーバー URL|
 <!-- prettier-ignore-end -->
 
-**例 1:**
+**例1:**
 
 ```md
 {{</* forgejo server="https://v8.next.forgejo.org" repo="forgejo/forgejo" */>}}
@@ -488,7 +488,7 @@ Blowfish も、標準の Markdown 構文を使用して含まれる画像の自�
 
 {{< keyword >}} *スーパー* スキル {{< /keyword >}}
 
-**例 2 :**
+**例2 :**
 
 ```md
 {{</* keywordList */>}}
@@ -790,7 +790,7 @@ Lorem ipsum dolor sit amet,
 consectetur adipiscing elit.
 {{< /typeit >}}
 
-**例 3:**
+**例3:**
 
 ```md
 {{</* typeit 
@@ -842,7 +842,7 @@ consectetur adipiscing elit.
 
 以下に示すように、`params` 変数に Youtube のすべての [プレーヤーパラメータ](https://developers.google.com/youtube/player_parameters#Parameters) を使用できます。
 
-> この動画は130秒 (2分10秒) 後に開始されます。
+> この動画は130秒(2分10秒)後に開始されます。
 
 ```md
 {{</* youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" params="start=130" */>}}
