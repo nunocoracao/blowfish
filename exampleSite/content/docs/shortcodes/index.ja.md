@@ -564,7 +564,7 @@ Blowfish も、標準の Markdown 構文を使用して含まれる画像の自�
 
 ## LTR/RTL
 
-`ltr` と `rtl` を使用すると、それぞれのコンテンツを混在させることができます。多くの RTL 言語ユーザーは、コンテンツの一部を LTR に含めたいと考えています。このショートコードを使用するとそれを行うことができ、[Hugo ショートコード](https://gohugo.io/content-management/shortcodes/#shortcodes-with-markdown) の最も外側の要素として `%` を活用することで、内部のマークダウンは通常どおりレンダリングされます。
+`ltr` と `rtl` を使用すると、それぞれのコンテンツを混在させることができます。多くの RTL 言語ユーザーは、コンテンツの一部に LTR を含めたいと考えています。このショートコードを使用するとそれを行うことができ、[Hugo ショートコード](https://gohugo.io/content-management/shortcodes/#shortcodes-with-markdown) の最も外側の要素として `%` を活用することで、内部のマークダウンは通常どおりレンダリングされます。
 
 **例:**
 
