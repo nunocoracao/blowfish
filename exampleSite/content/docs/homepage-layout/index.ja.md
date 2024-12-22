@@ -19,7 +19,7 @@ Blowfish は完全に柔軟なホームページレイアウトを提供しま�
 
 <img class="thumbnailshadow" src="img/home-profile.png"/>
 
-著者情報は、言語設定ファイルで提供されます。パラメータの詳細については、[始める]({{< ref "getting-started" >}}) と [言語設定]({{< ref "configuration##language-and-i18n" >}}) セクションを参照してください。
+著者情報は、言語設定ファイルで提供されます。パラメータの詳細については、[始める]({{< ref "getting-started" >}})と[言語設定]({{< ref "configuration##language-and-i18n" >}})セクションを参照してください。
 
 さらに、ホームページのコンテンツで提供される Markdown コンテンツはすべて、著者プロファイルの下に配置されます。これにより、ショートコードを使用して経歴やその他のカスタムコンテンツを表示するための柔軟性が向上します。
 
@@ -67,7 +67,7 @@ Blowfish は完全に柔軟なホームページレイアウトを提供しま�
 
 カスタムレイアウトに [最新記事](#最新記事) を含めるには、`recent-articles/main.html` パーシャルを使用します。
 
-例として、このサイトの [ホームページ]({{< ref "/" >}}) では、カスタムレイアウトを使用して、プロフィールレイアウトとページレイアウトを切り替えています。動作を確認するには、[GitHub リポジトリ](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/layouts/partials/home/custom.html) にアクセスしてください。
+例として、このサイトの[ホームページ]({{< ref "/" >}})では、カスタムレイアウトを使用して、プロフィールレイアウトとページレイアウトを切り替えています。動作を確認するには、[GitHub リポジトリ](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/layouts/partials/home/custom.html)にアクセスしてください。
 
 ## 最新記事
 
@@ -81,8 +81,8 @@ Blowfish は完全に柔軟なホームページレイアウトを提供しま�
 
 Blowfish は、記事にビジュアルサポートを簡単に追加できるように構築されています。Hugo の記事構造に慣れている場合は、記事フォルダ内に `feature*` で始まる画像ファイル (ほとんどすべての形式がサポートされていますが、`.png` または `.jpg` を推奨) を配置するだけです。それだけで、Blowfish はその画像を Web サイト内のサムネイルとして使用したり、ソーシャルプラットフォーム全体の <a target="_blank" href="https://oembed.com/">oEmbed</a> カードに使用したりできるようになります。
 
-詳細情報と例を確認したい場合は、[こちら]({{< ref "thumbnails" >}}) にガイドがあります。
+詳細情報と例を確認したい場合は、[こちら]({{< ref "thumbnails" >}})にガイドがあります。
 
 ## カードギャラリー
 
-Blowfish は、記事の標準リストをカードギャラリーとして表示することもサポートしています。これは、ホームページの最新セクションと Web サイト全体の記事リストの両方で設定できます。ホームページの場合は `homepage.cardView` と `homepage.cardViewScreenWidth` を使用し、リストの場合は `list.cardView` と `list.cardViewScreenWidth` を使用します。詳細については [設定ドキュメント]({{< ref "configuration" >}}) を確認し、ライブデモについてはホームページを確認してください。
+Blowfish は、記事の標準リストをカードギャラリーとして表示することもサポートしています。これは、ホームページの最新セクションと Web サイト全体の記事リストの両方で設定できます。ホームページの場合は `homepage.cardView` と `homepage.cardViewScreenWidth` を使用し、リストの場合は `list.cardView` と `list.cardViewScreenWidth` を使用します。詳細については、[設定ドキュメント]({{< ref "configuration" >}})を確認し、ライブデモについてはホームページを確認してください。

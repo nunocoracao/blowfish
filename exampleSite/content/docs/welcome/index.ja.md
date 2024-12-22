@@ -26,7 +26,7 @@ Tailwind CSS は Blowfish の中核であり、今回のリリースには最新
 
 <div class="text-2xl text-center" style="font-size: 2.8rem">🇬🇧 🇩🇪 🇫🇷 🇪🇸 🇨🇳 🇧🇷 🇹🇷 🇧🇩</div>
 
-コミュニティからの貢献のおかげで、Blowfish はすでに [30 の言語](https://github.com/nunocoracao/blowfish/tree/main/i18n) に翻訳されており、今後も追加される予定です。ちなみに、新しい言語の [プルリクエスト](https://github.com/nunocoracao/blowfish/pulls) はいつでも大歓迎です！
+コミュニティからの貢献のおかげで、Blowfish はすでに[30の言語](https://github.com/nunocoracao/blowfish/tree/main/i18n)に翻訳されており、今後も追加される予定です。ちなみに、新しい言語の[プルリクエスト](https://github.com/nunocoracao/blowfish/pulls)はいつでも大歓迎です！
 
 ## RTL 言語対応
 

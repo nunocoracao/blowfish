@@ -42,12 +42,12 @@ googleAnalytics = "G-MEASUREMENT_ID"
 
 ### Umami Analytics
 
-Umami Analytics のサポートを有効にするには、`config/_default/params.toml` ファイルに [Umami トラッキングコード](https://umami.is/docs/collect-data) を指定するだけです。
+Umami Analytics のサポートを有効にするには、`config/_default/params.toml` ファイルに [Umami トラッキングコード](https://umami.is/docs/collect-data)を指定するだけです。
 Umami のカスタムドメイン機能を使用していて、ドメインからスクリプトを配信したい場合は、追加で `domain` 設定値を指定することもできます。`domain` 値を指定しない場合、スクリプトは Umami DNS (analytics.umami.is) から直接ロードされます。
 トラッカーを特定のドメインでのみ実行したい場合は、`dataDomains` 設定値を指定できます。`dataDomains` 値を指定しない場合、スクリプトは `domain` と `websiteid` が一致する任意のウェブサイトで実行されます。環境変数 `TRACKER_SCRIPT_NAME` が設定されている場合は、カスタムスクリプト名 `scriptName` を指定できます。設定されていない場合は、コメントアウトするか、デフォルトの `script.js` を使用してください。
 
 {{< alert >}}
-**注:** Umami Analytics を有効にすると、Blowfish は [Umami トラックイベント](https://umami.is/docs/track-events) を自動的にサポートします。トラックイベントをサポートしたくない場合は、パラメータ `enableTrackEvent` を `false` に設定する必要があります。
+**注:** Umami Analytics を有効にすると、Blowfish は [Umami トラックイベント](https://umami.is/docs/track-events)を自動的にサポートします。トラックイベントをサポートしたくない場合は、パラメータ `enableTrackEvent` を `false` に設定する必要があります。
 {{< /alert >}}
 
 ```toml
@@ -63,7 +63,7 @@ Umami のカスタムドメイン機能を使用していて、ドメインか�
 
 ### Seline Analytics
 
-Seline Analytics のサポートを有効にするには、`config/_default/params.toml` ファイルに [Seline トークン](https://seline.so/docs/install-seline) を指定するだけです。
+Seline Analytics のサポートを有効にするには、`config/_default/params.toml` ファイルに [Seline トークン](https://seline.so/docs/install-seline)を指定するだけです。
 
 {{< alert >}}
 **注:** Seline Analytics を有効にすると、Blowfish は [Seline トラックイベント](https://seline.so/docs/custom-events)を自動的にサポートします。トラックイベントをサポートしたくない場合は、パラメータ `enableTrackEvent` を `false` に設定する必要があります。
@@ -85,9 +85,9 @@ Seline Analytics のサポートを有効にするには、`config/_default/para
 
 記事にコメントを追加するために、Blowfish には、各記事ページの下部に含まれるコメントパーシャルのサポートが含まれています。選択したコメントを表示するために必要なコードを含む `layouts/partials/comments.html` を指定するだけです。
 
-組み込みの Hugo Disqus テンプレートを使用するか、独自のカスタムコードを提供できます。詳細については、[Hugo ドキュメント](https://gohugo.io/content-management/comments/) を参照してください。
+組み込みの Hugo Disqus テンプレートを使用するか、独自のカスタムコードを提供できます。詳細については、[Hugo ドキュメント](https://gohugo.io/content-management/comments/)を参照してください。
 
-パーシャルが提供されると、コメントが表示される場所をより細かく制御するために、`showComments` パラメータを使用して管理されます。この値は、`params.toml` [設定ファイル]({{< ref "configuration#theme-parameters" >}}) のテーマレベルで設定するか、[フロントマター]({{< ref "front-matter" >}}) に含めることで記事ごとに設定できます。パラメータはデフォルトで `false` であるため、コメントを表示するには、これらの場所のいずれかで `true` に設定する必要があります。
+パーシャルが提供されると、コメントが表示される場所をより細かく制御するために、`showComments` パラメータを使用して管理されます。この値は、`params.toml` [設定ファイル]({{< ref "configuration#theme-parameters" >}})のテーマレベルで設定するか、[フロントマター]({{< ref "front-matter" >}})に含めることで記事ごとに設定できます。パラメータはデフォルトで `false` であるため、コメントを表示するには、これらの場所のいずれかで `true` に設定する必要があります。
 
 ## ファビコン
 
@@ -110,7 +110,7 @@ static/
 
 ## アイコン
 
-[アイコンショートコード]({{< ref "shortcodes#icon" >}}) と同様に、Blowfish の `icon.html` パーシャルを使用して、独自のテンプレートやパーシャルにアイコンを含めることができます。パーシャルは、含めるアイコンの名前である1つのパラメータを受け取ります。
+[アイコンショートコード]({{< ref "shortcodes#icon" >}})と同様に、Blowfish の `icon.html` パーシャルを使用して、独自のテンプレートやパーシャルにアイコンを含めることができます。パーシャルは、含めるアイコンの名前である1つのパラメータを受け取ります。
 
 **例:**
 
@@ -118,11 +118,11 @@ static/
   {{ partial "icon.html" "github" }}
 ```
 
-アイコンは Hugo パイプラインを使用して設定されるため、非常に柔軟です。Blowfish には、ソーシャル、リンク、その他の目的のための組み込みアイコンが多数含まれています。サポートされているアイコンの完全なリストについては、[アイコンサンプル]({{< ref "samples/icons" >}}) ページを確認してください。
+アイコンは Hugo パイプラインを使用して設定されるため、非常に柔軟です。Blowfish には、ソーシャル、リンク、その他の目的のための組み込みアイコンが多数含まれています。サポートされているアイコンの完全なリストについては、[アイコンサンプル]({{< ref "samples/icons" >}})ページを確認してください。
 
 カスタムアイコンは、プロジェクトの `assets/icons/` ディレクトリに独自のアイコンアセットを提供することで追加できます。その後、`.svg` 拡張子なしで SVG ファイル名を使用して、パーシャルでアイコンを参照できます。
 
-アイコンは、[アイコンショートコード]({{< ref "shortcodes#icon" >}}) を呼び出すことで、記事のコンテンツでも使用できます。
+アイコンは、[アイコンショートコード]({{< ref "shortcodes#icon" >}})を呼び出すことで、記事のコンテンツでも使用できます。
 
 ## 拡張機能
 
@@ -130,7 +130,7 @@ Blowfish は、基本機能を拡張できる多数の拡張パーシャルも�
 
 ### 記事リンク
 
-記事リンクの後にコードを追加したい場合は、`layouts/partials/extend-article-link.html` ファイルを作成します。これは、特定の記事のメタデータを強調表示するために使用できる [`badge`]({{< ref "shortcodes#badge" >}}) ショートコードと組み合わせると特に効果的です。
+記事リンクの後にコードを追加したい場合は、`layouts/partials/extend-article-link.html` ファイルを作成します。これは、特定の記事のメタデータを強調表示するために使用できる [`badge` ショートコード]({{< ref "shortcodes#badge" >}})と組み合わせると特に効果的です。
 
 ### ヘッダーとフッター
 

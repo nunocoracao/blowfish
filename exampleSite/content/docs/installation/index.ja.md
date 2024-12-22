@@ -9,9 +9,9 @@ series: ["Documentation"]
 series_order: 2
 ---
 
-Hugo の標準的な [クイックスタート](https://gohugo.io/getting-started/quick-start/) ガイドに従うだけで、簡単に使い始めることができます。
+Hugo の[クイックスタートガイド](https://gohugo.io/getting-started/quick-start/)に従うだけで、簡単に使い始めることができます。
 
-詳細なインストール手順は以下に記載されています。[テーマのアップデート方法](#テーマのアップデート方法) についても説明しています。
+詳細なインストール手順は以下に記載されています。[テーマのアップデート方法](#テーマのアップデート方法)についても説明しています。
 
 ## インストール
 
@@ -19,13 +19,13 @@ Hugo の標準的な [クイックスタート](https://gohugo.io/getting-starte
 
 ### Hugo のインストール
 
-Hugo を初めて使用する場合は、[公式サイトの手順に従って、ローカルマシンにインストール](https://gohugo.io/getting-started/installing) してください。すでにインストールされているかどうかは、コマンド `hugo version` を実行して確認できます。
+Hugo を初めて使用する場合は、[公式サイトの手順に従って、ローカルマシンにインストール](https://gohugo.io/getting-started/installing)してください。すでにインストールされているかどうかは、コマンド `hugo version` を実行して確認できます。
 
 {{< alert >}}
 テーマは最新の Hugo の機能を活用しているため、**Hugo バージョン 0.87.0 以降** を使用していることを確認してください。
 {{< /alert >}}
 
-お使いのプラットフォームに合わせた詳細なインストール手順は、[Hugo の公式ドキュメント](https://gohugo.io/getting-started/installing) に記載されています。
+お使いのプラットフォームに合わせた詳細なインストール手順は、[Hugo の公式ドキュメント](https://gohugo.io/getting-started/installing)に記載されています。
 
 ### Blowfish Tools (推奨)
 
@@ -85,13 +85,13 @@ git init
 git submodule add -b main https://github.com/nunocoracao/blowfish.git themes/blowfish
 ```
 
-次に、[テーマ設定ファイルを作成する](#テーマ設定ファイルを作成する) に進みます。
+次に、[テーマ設定ファイルを作成する](#テーマ設定ファイルを作成する)に進みます。
 
 #### Hugo を使用してインストールする
 
 この方法では、Hugo を使用してテーマを管理します。Hugo は **Go** を使用してモジュールを初期化および管理するため、続行する前に `go` がインストールされていることを確認する必要があります。
 
-1. Go を [ダウンロード](https://golang.org/dl/) してインストールします。コマンド `go version` を使用して、すでにインストールされているかどうかを確認できます。
+1. Go を[ダウンロード](https://golang.org/dl/)してインストールします。コマンド `go version` を使用して、すでにインストールされているかどうかを確認できます。
 
    {{< alert >}}
    Hugo ではモジュールが正しく動作するために **Go バージョン 1.12 以降** が必要です。必ず対応バージョンを使用してください。
@@ -116,7 +116,7 @@ git submodule add -b main https://github.com/nunocoracao/blowfish.git themes/blo
    ```
 
 4. `hugo server` を実行してサーバーを起動すると、テーマが自動的にダウンロードされます。
-5. [テーマ設定ファイルを作成する](#テーマ設定ファイルを作成する) に進みます。
+5. [テーマ設定ファイルを作成する](#テーマ設定ファイルを作成する)に進みます。
 
 #### 手動でインストールする
 
@@ -125,7 +125,7 @@ git submodule add -b main https://github.com/nunocoracao/blowfish.git themes/blo
    {{< button href="https://github.com/nunocoracao/blowfish/releases/latest" target="_blank" >}}GitHub からダウンロード{{< /button >}}
 
 2. アーカイブを解凍し、フォルダ名を `blowfish` に変更して、Hugo プロジェクトのルートフォルダ内の `themes/` ディレクトリに移動します。
-3. [テーマ設定ファイルを作成する](#テーマ設定ファイルを作成する) に進みます。
+3. [テーマ設定ファイルを作成する](#テーマ設定ファイルを作成する)に進みます。
 
 #### テーマ設定ファイルを作成する
 
@@ -158,13 +158,13 @@ config/_default/
 
 ### 次のステップ
 
-これで Blowfish の基本的なインストールは完了です。[始める]({{< ref "getting-started" >}}) セクションに進んで、テーマの設定についてさらに詳しく学びましょう。
+これで Blowfish の基本的なインストールは完了です。[始める]({{< ref "getting-started" >}})セクションに進んで、テーマの設定についてさらに詳しく学びましょう。
 
 ---
 
 ## テーマのアップデート方法
 
-不具合の修正や新機能の追加を含む[新しいリリース](https://github.com/nunocoracao/blowfish/releases) が随時公開されます。これらの変更を反映するには、ウェブサイトのテーマファイルをアップデートする必要があります。
+不具合の修正や新機能の追加を含む[新しいリリース](https://github.com/nunocoracao/blowfish/releases)が随時公開されます。これらの変更を反映するには、ウェブサイトのテーマファイルをアップデートする必要があります。
 
 アップデート方法は、最初にテーマをインストールした方法によって異なります。各方法の手順は以下に記載されています。
 

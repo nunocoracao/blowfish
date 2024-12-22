@@ -13,7 +13,7 @@ Blowfish で構築された Hugo ウェブサイトをデプロイする方法�
 
 Blowfish は、テーマ全体で相対的な URL を使用して構築されています。これにより、サイトをサブフォルダや GitHub Pages などのホストに簡単にデプロイできます。`baseURL` パラメータが `config.toml` ファイルで設定されていれば、通常、これが機能するために特別な設定は必要ありません。
 
-Hugo の公式 [ホスティングとデプロイ](https://gohugo.io/hosting-and-deployment/) ドキュメントは、サイトのデプロイ方法を学ぶのに最適な場所です。以下のセクションには、特定のプロバイダーでスムーズにデプロイするのに役立つ、テーマ固有の設定の詳細が記載されています。
+Hugo の公式[ホスティングとデプロイ](https://gohugo.io/hosting-and-deployment/)ドキュメントは、サイトのデプロイ方法を学ぶのに最適な場所です。以下のセクションには、特定のプロバイダーでスムーズにデプロイするのに役立つ、テーマ固有の設定の詳細が記載されています。
 
 **プロバイダーを選択してください:**
 
@@ -124,13 +124,13 @@ jobs:
 
 ## Cloudflare Pages
 
-Cloudflare は、Hugo ブログをホストできる [Pages](https://pages.cloudflare.com/) サービスを提供しています。これは、git リポジトリからサイトをビルドし、Cloudflare の CDN でホストします。[Hugo デプロイメントガイド](https://developers.cloudflare.com/pages/framework-guides/deploy-a-hugo-site) に従って始めてください。
+Cloudflare は、Hugo ブログをホストできる [Pages](https://pages.cloudflare.com/) サービスを提供しています。これは、git リポジトリからサイトをビルドし、Cloudflare の CDN でホストします。[Hugo デプロイメントガイド](https://developers.cloudflare.com/pages/framework-guides/deploy-a-hugo-site)に従って始めてください。
 
 Cloudflare が提供する Rocket Loader™ 機能は、JavaScript を使用した Web ページのレンダリングを高速化しようとしますが、テーマの外観スイッチャーが壊れます。また、スクリプトが間違った順序で読み込まれるため、サイトの閲覧時に迷惑な明暗の画面のちらつきが発生する可能性があります。
 
 この問題は、次のように無効にすることで修正できます。
 
-- [Cloudflare ダッシュボード](https://dash.cloudflare.com) に移動します
+- [Cloudflare ダッシュボード](https://dash.cloudflare.com)に移動します
 - リストでドメイン名をクリックします
 - _Speed_ セクションで _Optimization_ をクリックします
 - _Rocket Loader™_ までスクロールして無効にします

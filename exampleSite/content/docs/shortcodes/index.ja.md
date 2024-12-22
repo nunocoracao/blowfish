@@ -9,7 +9,7 @@ series: ["Documentation"]
 series_order: 8
 ---
 
-[デフォルトの Hugo ショートコード](https://gohugo.io/content-management/shortcodes/) に加えて、Blowfish は機能拡張のためにいくつか独自のものを追加しています。
+[デフォルトの Hugo ショートコード](https://gohugo.io/content-management/shortcodes/)に加えて、Blowfish は機能拡張のためにいくつか独自のものを追加しています。
 
 ## アラート
 
@@ -18,7 +18,7 @@ series_order: 8
 <!-- prettier-ignore-start -->
 | パラメータ   | 説明                                                                                                                                                                                  |
 | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `icon`      | **オプション** 左端に表示するアイコン。<br>**デフォルト:** `exclamation triangle icon` (アイコンの使用方法の詳細については、[アイコンショートコード](#icon) をご覧ください。)                    |
+| `icon`      | **オプション** 左端に表示するアイコン。<br>**デフォルト:** `exclamation triangle icon` (アイコンの使用方法の詳細については、[アイコンショートコード](#icon)をご覧ください。)                    |
 | `iconColor` | **オプション** 基本的な CSS スタイルのアイコンの色。<br>HEX値 (`#FFFFFF`) または色の名前 (`white`) のいずれかで指定できます。<br>デフォルトでは、現在のカラースキームに基づいて選択されます。            |
 | `cardColor` | **オプション** 基本的な CSS スタイルのカードの背景色。<br>HEX値 (`#FFFFFF`) または色の名前 (`white`) のいずれかを指定できます。<br>デフォルトでは、現在のカラースキームに基づいて選択されます。 |
 | `textColor` | **オプション** 基本的な CSS スタイルのテキストの色。<br>HEX値 (`#FFFFFF`) または色の名前 (`white`) のいずれかを指定できます。<br>デフォルトでは、現在のカラースキームに基づいて選択されます。            |
@@ -42,12 +42,12 @@ series_order: 8
 
 ```md
 {{</* alert "twitter" */>}}
-Twitter で私を [フォロー](https://twitter.com/nunocoracao)するのを忘れないでください。
+Twitter で私を[フォロー](https://twitter.com/nunocoracao)するのを忘れないでください。
 {{</* /alert */>}}
 ```
 
 {{< alert "twitter" >}}
-Twitter で私を [フォロー](https://twitter.com/nunocoracao)するのを忘れないでください。
+Twitter で私を[フォロー](https://twitter.com/nunocoracao)するのを忘れないでください。
 {{< /alert >}}
 
 **例3:** 名前付きパラメータ
@@ -152,9 +152,9 @@ Twitter で私を [フォロー](https://twitter.com/nunocoracao)するのを忘
 
 ## チャート
 
-`chart` は Chart.js ライブラリを使用して、シンプルな構造化データを使用して記事にチャートを埋め込みます。[さまざまなチャートスタイル](https://www.chartjs.org/docs/latest/samples/) をサポートしており、すべてをショートコード内から設定できます。ショートコードタグの間にチャートパラメータを指定するだけで、Chart.js が残りの処理を行います。
+`chart` は Chart.js ライブラリを使用して、シンプルな構造化データを使用して記事にチャートを埋め込みます。[さまざまなチャートスタイル](https://www.chartjs.org/docs/latest/samples/)をサポートしており、すべてをショートコード内から設定できます。ショートコードタグの間にチャートパラメータを指定するだけで、Chart.js が残りの処理を行います。
 
-構文とサポートされているチャートタイプの詳細については、[公式 Chart.js ドキュメント](https://www.chartjs.org/docs/latest/general/) を参照してください。
+構文とサポートされているチャートタイプの詳細については、[公式 Chart.js ドキュメント](https://www.chartjs.org/docs/latest/general/)を参照してください。
 
 **例:**
 
@@ -184,7 +184,7 @@ data: {
 {{< /chart >}}
 <!-- prettier-ignore-end -->
 
-[チャートのサンプル]({{< ref "charts" >}}) ページで、Chart.js の他の例を見ることができます。
+[チャートのサンプル]({{< ref "charts" >}})ページで、Chart.js の他の例を見ることができます。
 
 <br/><br/><br/>
 
@@ -250,14 +250,14 @@ Blowfish には、コンテンツに画像を追加するための `figure` シ�
 <!-- prettier-ignore-start -->
 | パラメータ | 説明                                                                                                                                                                                                                                                                                                                                                                               |
 | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `src`     | **必須** 画像のローカルパス/ファイル名または URL。パスとファイル名を指定すると、テーマは次の優先順位を使用して画像の特定を試みます。まず、ページにバンドルされた [ページリソース](https://gohugo.io/content-management/page-resources/) として、次に `assets/` ディレクトリ内のアセット、最後に `static/` ディレクトリ内の静的画像。 |
-| `alt`     | 画像の [代替テキスト](https://moz.com/learn/seo/alt-text)。                                                                                                                                                                                                                                                                                                         |
+| `src`     | **必須** 画像のローカルパス/ファイル名または URL。パスとファイル名を指定すると、テーマは次の優先順位を使用して画像の特定を試みます。まず、ページにバンドルされた[ページリソース](https://gohugo.io/content-management/page-resources/)として、次に `assets/` ディレクトリ内のアセット、最後に `static/` ディレクトリ内の静的画像。 |
+| `alt`     | 画像の[代替テキスト](https://moz.com/learn/seo/alt-text)。                                                                                                                                                                                                                                                                                                         |
 | `caption` | 画像の下に表示される画像キャプションの Markdown。                                                                                                                                                                                                                                                                                                                  |
 | `class`   | 画像に適用する追加の CSS クラス。                                                                                                                                                                                                                                                                                                                                             |
 | `href`    | 画像をリンクする URL。                                                                                                                                                                                                                                                                                                                                                   |
 | `target`  | `href` URL のターゲット属性。                                                                                                                                                                                                                                                                                                                                                  |
 | `nozoom`  | `nozoom=true` は、画像の「ズーム」機能を無効にします。これは、`href` リンクと組み合わせて使用​​するのが最も役立ちます。                                                                                                                                                                                                                                                                             |
-| `default` | Hugoのデフォルトの `figure` の動作に戻すための特別なパラメータ。`default=true` を指定し、通常の [Hugo ショートコード構文](https://gohugo.io/content-management/shortcodes/#figure) を使用します。                                                                                                                                                                                       |
+| `default` | Hugoのデフォルトの `figure` の動作に戻すための特別なパラメータ。`default=true` を指定し、通常の [Hugo ショートコード構文](https://gohugo.io/content-management/shortcodes/#figure)を使用します。                                                                                                                                                                                       |
 <!-- prettier-ignore-end -->
 
 Blowfish も、標準の Markdown 構文を使用して含まれる画像の自動変換もサポートしています。次の形式を使用するだけで、テーマが処理してくれます。
@@ -438,17 +438,17 @@ Blowfish も、標準の Markdown 構文を使用して含まれる画像の自�
 
 **出力:** {{< icon "github" >}}
 
-アイコンは Hugo パイプラインを使用して設定されるため、非常に柔軟です。Blowfish には、ソーシャル、リンク、その他の目的のための組み込みアイコンが多数含まれています。サポートされているアイコンの完全なリストについては、[アイコンのサンプル]({{< ref "samples/icons" >}}) ページを確認してください。
+アイコンは Hugo パイプラインを使用して設定されるため、非常に柔軟です。Blowfish には、ソーシャル、リンク、その他の目的のための組み込みアイコンが多数含まれています。サポートされているアイコンの完全なリストについては、[アイコンのサンプル]({{< ref "samples/icons" >}})ページを確認してください。
 
 カスタムアイコンは、プロジェクトの `assets/icons/` ディレクトリに独自のアイコンアセットを提供することで追加できます。その後、`.svg` 拡張子なしで SVG ファイル名を使用して、ショートコードでアイコンを参照できます。
 
-アイコンは、[アイコンパーシャル]({{< ref "partials#icon" >}}) を呼び出すことで、パーシャルでも使用できます。
+アイコンは、[アイコンパーシャル]({{< ref "partials#icon" >}})を呼び出すことで、パーシャルでも使用できます。
 
 <br/><br/><br/>
 
 ## KaTeX
 
-`katex` ショートコードを使用すると、KaTeX パッケージを使用して記事のコンテンツに数式を追加できます。利用可能な構文については、[サポートされている TeX 関数](https://katex.org/docs/supported.html) のオンラインリファレンスを参照してください。
+`katex` ショートコードを使用すると、KaTeX パッケージを使用して記事のコンテンツに数式を追加できます。利用可能な構文については、[サポートされている TeX 関数](https://katex.org/docs/supported.html)のオンラインリファレンスを参照してください。
 
 記事に数式を含めるには、コンテンツを含むショートコードを任意の場所に配置するだけです。記事ごとに1回だけ含める必要があり、KaTeX はそのページのマークアップを自動的にレンダリングします。インライン表記とブロック表記の両方がサポートされています。
 
@@ -464,7 +464,7 @@ Blowfish も、標準の Markdown 構文を使用して含まれる画像の自�
 {{< katex >}}
 \\(f(a,b,c) = (a^2+b^2+c^2)^3\\)
 
-[数式表記のサンプル]({{< ref "mathematical-notation" >}}) ページで、その他の例を確認できます。
+[数式表記のサンプル]({{< ref "mathematical-notation" >}})ページで、その他の例を確認できます。
 
 <br/><br/><br/>
 
@@ -539,7 +539,7 @@ Blowfish も、標準の Markdown 構文を使用して含まれる画像の自�
 | `value`    | `where` で定義されたパラメータに一致する必要がある値。記事のクエリに使用されます。例: `where` == `Type` の場合、有効な値は `sample` です。 |
 
 {{< alert >}}
-`where` と `value` の値は、ショートコードのコードで次のクエリ `where .Site.RegularPages $where $value` で使用されます。使用可能なパラメータの詳細については、[Hugo ドキュメント](https://gohugo.io/methods/page/) を確認してください。
+`where` と `value` の値は、ショートコードのコードで次のクエリ `where .Site.RegularPages $where $value` で使用されます。使用可能なパラメータの詳細については、[Hugo ドキュメント](https://gohugo.io/methods/page/)を確認してください。
 {{</ alert >}}
 
 <!-- prettier-ignore-end -->
@@ -564,7 +564,7 @@ Blowfish も、標準の Markdown 構文を使用して含まれる画像の自�
 
 ## LTR/RTL
 
-`ltr` と `rtl` を使用すると、それぞれのコンテンツを混在させることができます。多くの RTL 言語ユーザーは、コンテンツの一部に LTR を含めたいと考えています。このショートコードを使用するとそれを行うことができ、[Hugo ショートコード](https://gohugo.io/content-management/shortcodes/#shortcodes-with-markdown) の最も外側の要素として `%` を活用することで、内部のマークダウンは通常どおりレンダリングされます。
+`ltr` と `rtl` を使用すると、それぞれのコンテンツを混在させることができます。多くの RTL 言語ユーザーは、コンテンツの一部に LTR を含めたいと考えています。このショートコードを使用するとそれを行うことができ、[Hugo ショートコード](https://gohugo.io/content-management/shortcodes/#shortcodes-with-markdown)の最も外側の要素として `%` を活用することで、内部のマークダウンは通常どおりレンダリングされます。
 
 **例:**
 
@@ -614,7 +614,7 @@ Blowfish も、標準の Markdown 構文を使用して含まれる画像の自�
 
 `mermaid` ショートコード内に Mermaid 構文を記述するだけで、プラグインが残りの処理を行います。
 
-構文とサポートされている図の種類の詳細については、[公式 Mermaid ドキュメント](https://mermaid-js.github.io/) を参照してください。
+構文とサポートされている図の種類の詳細については、[公式 Mermaid ドキュメント](https://mermaid-js.github.io/)を参照してください。
 
 **例:**
 
@@ -632,7 +632,7 @@ A[レモン]-->B[レモネード];
 B-->C[利益]
 {{< /mermaid >}}
 
-[図とフローチャートのサンプル]({{< ref "diagrams-flowcharts" >}}) ページで、Mermaid の追加の例を見ることができます。
+[図とフローチャートのサンプル]({{< ref "diagrams-flowcharts" >}})ページで、Mermaid の追加の例を見ることができます。
 
 <br/><br/><br/>
 
@@ -840,7 +840,7 @@ consectetur adipiscing elit.
 
 **例2:**
 
-以下に示すように、`params` 変数に Youtube のすべての [プレーヤーパラメータ](https://developers.google.com/youtube/player_parameters#Parameters) を使用できます。
+以下に示すように、`params` 変数に Youtube のすべての [プレーヤーパラメータ](https://developers.google.com/youtube/player_parameters#Parameters)を使用できます。
 
 > この動画は130秒(2分10秒)後に開始されます。
 
@@ -858,4 +858,4 @@ consectetur adipiscing elit.
 
 {{< youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" params="start=130&end=10&controls=0" >}}
 
-詳細については、[youtubeLite GitHub リポジトリ](https://github.com/paulirish/lite-youtube-embed/blob/master/readme.md#custom-player-parameters) および Youtube の [プレーヤーパラメータ](https://developers.google.com/youtube/player_parameters#Parameters) ページを参照してください。
+詳細については、[youtubeLite GitHub リポジトリ](https://github.com/paulirish/lite-youtube-embed/blob/master/readme.md#custom-player-parameters)および Youtube の[プレーヤーパラメータ](https://developers.google.com/youtube/player_parameters#Parameters)ページを参照してください。
