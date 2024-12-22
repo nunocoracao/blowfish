@@ -1,5 +1,5 @@
 ---
-title: "資料"
+title: "ドキュメント"
 description: "Blowfish の利用方法と特徴について学ぶ。"
 
 cascade:
@@ -12,6 +12,6 @@ cascade:
 シンプル、それでいて強力。 Blowfish の利用方法と特徴について学ぶ。
 {{< /lead >}}
 
-このセクションは Blowfish について知る必要のある全てのことが含まれています。新しく作成する場合は、開始するために[インストール]({{< ref "docs/installation" >}})ガイド、または Blowfish が何が出来るか[サンプル]({{< ref "samples" >}})セクションに訪れてください。
+このセクションでは、Blowfish について知っておくべきことをすべて網羅しています。初めての方は、まず[インストール]({{< ref "docs/installation" >}})ガイドをご覧いただくか、[サンプル]({{< ref "samples" >}})セクションで Blowfish で何ができるかを確認してみてください。
 
 ---
