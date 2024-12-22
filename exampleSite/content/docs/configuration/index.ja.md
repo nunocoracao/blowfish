@@ -27,7 +27,7 @@ npx blowfish-tools
 デフォルトのテーマ設定は各ファイルに記載されているため、必要に応じて設定を自由に調整できます。
 
 {{< alert >}}
-[インストール手順]({{< ref "/docs/installation#set-up-theme-configuration-files" >}}) で概説されているように、Hugo プロジェクトの `config/_default/` フォルダ内のファイルを修正し、プロジェクトルートの `config.toml` ファイルを削除することで、テーマ設定を調整する必要があります。
+[インストール手順]({{< ref "/docs/installation#set-up-theme-configuration-files" >}})で概説されているように、Hugo プロジェクトの `config/_default/` フォルダ内のファイルを修正し、プロジェクトルートの `config.toml` ファイルを削除することで、テーマ設定を調整する必要があります。
 {{< /alert >}}
 
 ## サイト設定
@@ -43,13 +43,13 @@ npx blowfish-tools
 |---|---|---|
 | `theme` | `"blowfish"` | Hugo Modules を使用している場合は、この設定値を削除する必要があります。 他のすべてのインストールタイプでは、テーマが機能するためにこれを `blowfish` に設定する必要があります。 |
 | `baseURL` | _未設定_ | Webサイトのルートへの URL です。 |
-| `defaultContentLanguage` | `"en"` | この値は、テーマコンポーネントとコンテンツのデフォルト言語を決定します。 サポートされている言語コードについては、以下の [言語と i18n](#language-and-i18n) セクションを参照してください。 |
-| `enableRobotsTXT` | `true` | 有効にすると、検索エンジンがサイト全体をクロールできるようにする `robots.txt` ファイルがサイトルートに作成されます。 あらかじめ作成した独自の `robots.txt` を提供する場合は、`false` に設定し、ファイルを `static` ディレクトリに配置します。 完全に制御するには、このファイルを生成するための [カスタムレイアウト]({{< ref "content-examples#custom-layouts" >}}) を提供できます。 |
+| `defaultContentLanguage` | `"en"` | この値は、テーマコンポーネントとコンテンツのデフォルト言語を決定します。 サポートされている言語コードについては、以下の[言語と i18n](#language-and-i18n)セクションを参照してください。 |
+| `enableRobotsTXT` | `true` | 有効にすると、検索エンジンがサイト全体をクロールできるようにする `robots.txt` ファイルがサイトルートに作成されます。 あらかじめ作成した独自の `robots.txt` を提供する場合は、`false` に設定し、ファイルを `static` ディレクトリに配置します。 完全に制御するには、このファイルを生成するための[カスタムレイアウト]({{< ref "content-examples#custom-layouts" >}})を提供できます。 |
 | `pagination.pagerSize` | `10` | 記事リストの各ページにリストされる記事の数です。 |
-| `summaryLength` | `0` | [フロントマター]({{< ref "front-matter" >}}) で提供されていない場合に、記事の概要を生成するために使用される単語の数です。 値 `0` は最初の文を使用します。 概要が非表示になっている場合、この値は効果がありません。 |
+| `summaryLength` | `0` | [フロントマター]({{< ref "front-matter" >}})で提供されていない場合に、記事の概要を生成するために使用される単語の数です。 値 `0` は最初の文を使用します。 概要が非表示になっている場合、この値は効果がありません。 |
 | `outputs.home` | `["HTML", "RSS", "JSON"]` | サイト用に生成される出力形式です。 Blowfish では、すべてのテーマコンポーネントが正しく機能するために HTML、RSS、JSON が必要です。 |
-| `permalinks` | _未設定_ | パーマリンクの設定については、[Hugo ドキュメント](https://gohugo.io/content-management/urls/#permalinks) を参照してください。 |
-| `taxonomies` | _未設定_ | 分類の設定については、[コンテンツの整理]({{< ref "getting-started#organising-content" >}}) セクションを参照してください。 |
+| `permalinks` | _未設定_ | パーマリンクの設定については、[Hugo ドキュメント](https://gohugo.io/content-management/urls/#permalinks)を参照してください。 |
+| `taxonomies` | _未設定_ | 分類の設定については、[コンテンツの整理]({{< ref "getting-started#organising-content" >}})セクションを参照してください。 |
 <!-- prettier-ignore-end -->
 
 
@@ -57,7 +57,7 @@ npx blowfish-tools
 
 Blowfish は、記事に視覚的なサポートを簡単に追加できるように構築されています。Hugo の記事構造に慣れている場合は、記事フォルダ内に `feature*` で始まる画像ファイル（ほとんどすべての形式がサポートされていますが、`.png` または `.jpg` をお勧めします）を配置するだけです。これで、Blowfish は Webサイト内でサムネイルとして画像を使用したり、ソーシャルプラットフォーム全体で <a target="_blank" href="https://oembed.com/">oEmbed</a> カードに使用したりできます。
 
-[こちら]({{< ref "thumbnails" >}}) には、より詳細な情報と、どのように設定できるかを確認したい場合の[サンプル]({{< ref "thumbnail_sample" >}}) を含むガイドもあります。
+[こちら]({{< ref "thumbnails" >}})には、より詳細な情報と、どのように設定できるかを確認したい場合の[サンプル]({{< ref "thumbnail_sample" >}})を含むガイドもあります。
 
 ## 言語と i18n
 
@@ -96,7 +96,7 @@ Blowfish は多言語 Webサイト向けに最適化されており、テーマ�
 | 中国語（簡体字） | `zh-cn` |
 | 中国語（繁体字） | `zh-tw` |
 
-デフォルトの翻訳は、翻訳文字列を含むカスタムファイル `i18n/[言語コード].yaml` を作成することでオーバーライドできます。 この方法を使用して新しい言語を追加することもできます。 新しい翻訳をコミュニティと共有したい場合は、[プルリクエストを開いて](https://github.com/nunocoracao/blowfish/pulls) ください。
+デフォルトの翻訳は、翻訳文字列を含むカスタムファイル `i18n/[言語コード].yaml` を作成することでオーバーライドできます。 この方法を使用して新しい言語を追加することもできます。 新しい翻訳をコミュニティと共有したい場合は、[プルリクエストを開いて](https://github.com/nunocoracao/blowfish/pulls)ください。
 
 ### 設定
 
@@ -105,7 +105,7 @@ Blowfish は多言語 Webサイト向けに最適化されており、テーマ�
 デフォルトのファイルは、追加の言語を作成するためのテンプレートとして使用することも、英語以外の言語で Web サイトを作成する場合は名前を変更することもできます。`languages.[言語コード].toml` 形式を使用してファイルに名前を付けるだけです。
 
 {{< alert >}}
-**注:** [サイト設定](#site-configuration) の `defaultContentLanguage` パラメータが、言語設定ファイル名の言語コードと一致していることを確認してください。
+**注:** [サイト設定](#site-configuration)の `defaultContentLanguage` パラメータが、言語設定ファイル名の言語コードと一致していることを確認してください。
 {{< /alert >}}
 
 #### グローバル
@@ -127,7 +127,7 @@ Blowfish は多言語 Webサイト向けに最適化されており、テーマ�
 | `params.displayName` | `"EN"` | Web サイトに言語が表示されるときに使用される名前です。 |
 | `params.isoCode` | `"en"` | HTML メタデータ用の ISO 言語コードです。トップレベル言語（例： `en`）またはサブバリアント（例： `en-AU`）にすることができます。 |
 | `params.rtl` | `false` | これが RTL 言語かどうかです。`true` に設定すると、コンテンツが右から左に並べ替えられます。 Blowfish は RTL 言語と LTR 言語の同時使用を完全にサポートしており、両方に動的に調整されます。 |
-| `params.dateFormat` | `"2 January 2006"` | この言語での日付のフォーマット方法です。使用できる形式については、[Hugo ドキュメント](https://gohugo.io/functions/format/#gos-layout-string) を参照してください。 |
+| `params.dateFormat` | `"2 January 2006"` | この言語での日付のフォーマット方法です。使用できる形式については、[Hugo ドキュメント](https://gohugo.io/functions/format/#gos-layout-string)を参照してください。 |
 | `params.logo` | _未設定_ | `assets/` フォルダ内のサイトロゴファイルへの相対パスです。ロゴファイルは2倍の解像度で提供する必要があり、あらゆる画像サイズをサポートしています。 |
 | `params.secondaryLogo` | _未設定_ | `assets/` フォルダ内のセカンダリサイトロゴファイルへの相対パスです。 ロゴファイルは2倍の解像度で提供する必要があり、あらゆる画像サイズをサポートしています。 これは、`logo` とは反転/対照的なカラースキームである必要があります。設定されている場合、このロゴは、ユーザーが `defaultAppearance` モードから切り替えたときに表示されます。 |
 | `params.description` | _未設定_ | Web サイトの説明です。これはサイトのメタデータで使用されます。 |
@@ -153,13 +153,13 @@ Blowfish は、言語固有のメニュー設定もサポートしています�
 
 メニュー設定ファイルの名前は、 `menus.[language-code].toml` 形式です。メニュー設定で使用される言語コードが言語設定と一致していることを常に確認してください。
 
-[はじめに]({{< ref "getting-started#menus" >}}) セクションでは、このファイルの構造について詳しく説明しています。詳細な設定例については、[Hugo メニュー ドキュメント](https://gohugo.io/content-management/menus/) も参照できます。
+[はじめに]({{< ref "getting-started#menus" >}})セクションでは、このファイルの構造について詳しく説明しています。詳細な設定例については、[Hugo メニュー ドキュメント](https://gohugo.io/content-management/menus/)も参照できます。
 
 ## テーマパラメーター(Theme parameters)
 
 Blowfish は、テーマの機能を制御する多数の設定パラメータを提供します。下の表は、`config/_default/params.toml` ファイルで使用可能なすべてのパラメータの概要を示しています。
 
-ここにある記事のデフォルトの多くは、フロントマターで指定することで、記事ごとにオーバーライドできます。詳細については、[フロントマター]({{< ref "front-matter" >}}) セクションを参照してください。
+ここにある記事のデフォルトの多くは、フロントマターで指定することで、記事ごとにオーバーライドできます。詳細については、[フロントマター]({{< ref "front-matter" >}})セクションを参照してください。
 
 <!-- prettier-ignore-start -->
 
@@ -167,15 +167,15 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 
 | 名前 | デフォルト | 説明 |
 |---|---|---|
-| `colorScheme` | `"blowfish"` | 使用するテーマのカラーテーマです。有効な値は、`blowfish`（デフォルト）、`avocado`、`fire`、`ocean`、`forest`、`princess`、`neon`、`bloody`、`terminal`、`marvel`、`noir`、`autumn`、`congo`、`slate` です。詳細については、[カラーテーマ]({{< ref "getting-started#colour-schemes" >}}) セクションを参照してください。 |
+| `colorScheme` | `"blowfish"` | 使用するテーマのカラースキームです。有効な値は、`blowfish`（デフォルト）、`avocado`、`fire`、`ocean`、`forest`、`princess`、`neon`、`bloody`、`terminal`、`marvel`、`noir`、`autumn`、`congo`、`slate` です。詳細については、[カラースキーム]({{< ref "getting-started#colour-schemes" >}})セクションを参照してください。 |
 | `defaultAppearance` | `"light"` | デフォルトのテーマの外観です。`light` または `dark` のいずれかです。 |
 | `autoSwitchAppearance` | `true` | 訪問者のオペレーティングシステムの設定に基づいてテーマの外観を自動的に切り替えるかどうかです。`false` に設定すると、サイトは常に `defaultAppearance` を使用します。 |
 | `enableSearch` | `false` | サイト内検索が有効かどうかです。`true` に設定すると、検索機能が有効になります。検索機能は、[サイト設定](#site-configuration) の `outputs.home` 設定が正しく設定されているかどうかに依存することに注意してください。 |
-| `enableCodeCopy` | `false` | `<code>` ブロックのクリップボードへのコピーボタンを有効にするかどうかです。コードコピーが正しく機能するには、`highlight.noClasses` パラメータを `false` に設定する必要があります。以下の [その他の設定ファイル](#other-configuration-files) について読んでください。 |
+| `enableCodeCopy` | `false` | `<code>` ブロックのクリップボードへのコピーボタンを有効にするかどうかです。コードコピーが正しく機能するには、`highlight.noClasses` パラメータを `false` に設定する必要があります。以下の[その他の設定ファイル](#other-configuration-files)について読んでください。 |
 | `mainSections` | _未設定_ | 最近の記事リストに表示するセクションです。指定しない場合は、記事数が最も多いセクションが使用されます。 |
 | `showViews` | _未設定_ | 記事とリストの表示回数を表示するかどうかです。これには Firebase 統合を有効にする必要があります。以下をご覧ください。 |
 | `showLikes` | _未設定_ | 記事とリストのいいねを表示するかどうかです。これには Firebase 統合を有効にする必要があります。以下をご覧ください。 |
-| `robots` | _未設定_ | ロボットがサイトをどのように処理するかを示す文字列です。設定されている場合、ページヘッダーに出力されます。有効な値については、[Google のドキュメント](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag#directives) を参照してください。 |
+| `robots` | _未設定_ | ロボットがサイトをどのように処理するかを示す文字列です。設定されている場合、ページヘッダーに出力されます。有効な値については、[Google のドキュメント](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag#directives)を参照してください。 |
 | `disableImageZoom` | `false` | サイト内のすべての画像の画像ズーム機能を無効にします。 |
 | `disableImageOptimization` | `false` | サイト内のすべての画像の画像サイズ変更と最適化機能を無効にします。 |
 | `disableTextInHeader` | `false` | ヘッダーのテキストを無効にします。ロゴベースのヘッダーに役立ちます。 |

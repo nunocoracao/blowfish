@@ -50,9 +50,9 @@ Hugo には、画像のサイズ変更、トリミング、最適化を行うた
 
 詳細については、[画像処理に関する Hugo ドキュメント](https://gohugo.io/content-management/image-processing/#image-processing-methods) を参照してください。
 
-## カラーテーマ
+## カラースキーム
 
-Blowfish には、すぐに使用できる多数のカラーテーマが付属しています。基本的なカラーテーマを変更するには、`colorScheme` テーマパラメータを設定します。 組み込みのスキームの詳細については、[はじめに]({{< ref "getting-started#colour-schemes" >}})セクションを参照してください。
+Blowfish には、すぐに使用できる多数のカラースキームが付属しています。基本的なカラースキームを変更するには、`colorScheme` テーマパラメータを設定します。 組み込みのスキームの詳細については、[はじめに]({{< ref "getting-started#colour-schemes" >}})セクションを参照してください。
 
 デフォルトのスキームに加えて、独自のスキームを作成し、Web サイト全体を好みに合わせて再スタイルすることもできます。 スキームは、`assets/css/schemes/` フォルダに `<scheme-name>.css` ファイルを配置することで作成されます。ファイルが作成されたら、テーマ設定で名前で参照するだけです。
 
