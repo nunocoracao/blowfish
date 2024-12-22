@@ -233,4 +233,4 @@ cd ../..
 
 これで、サイトの設計に取り組むときは、 `npm run dev` を呼び出すと、コンパイラがウォッチモードで実行されます。デプロイの準備ができたら、`npm run build` を実行すると、クリーンな Tailwind CSS ビルドが得られます。
 
-🙋‍♀️ 困ったことがあれば、[GitHub Discussions](https://github.com/nunocoracao/blowfish/discussions) で気軽に質問してください。
+🙋‍♀️ ご不明な点がありましたら、[GitHub Discussions](https://github.com/nunocoracao/blowfish/discussions) で気軽に質問してください。
