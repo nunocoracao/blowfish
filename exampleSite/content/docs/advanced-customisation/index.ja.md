@@ -15,7 +15,7 @@ Blowfish には高度な変更を加えるための多くの方法がありま�
 
 ## Hugo プロジェクトの構造
 
-始める前に、 [Hugo プロジェクトの構造](https://gohugo.io/getting-started/directory-structure/)と、コンテンツとテーマのカスタマイズを管理するためのベストプラクティスについて簡単に説明します。
+始める前に、[Hugo プロジェクトの構造](https://gohugo.io/getting-started/directory-structure/)と、コンテンツとテーマのカスタマイズを管理するためのベストプラクティスについて簡単に説明します。
 
 {{< alert >}}
 **簡単に言うと:** テーマファイルを直接編集してはいけません。カスタマイズは、テーマディレクトリ自体ではなく、Hugoプロジェクトのサブディレクトリ内でのみ行います。
@@ -26,7 +26,7 @@ Blowfish は、Hugo の標準的な実装をすべて活用できるように構
 
 そのために、テーマファイルを手動で直接編集するのは避けてください。Hugo モジュール、git サブモジュール、または手動でテーマを `themes/` ディレクトリに格納するなど、どのインストール方法を使用する場合でも、これらのファイルは常にそのままにしておく必要があります。
 
-テーマの動作を調整する正しい方法は、Hugo の強力な [ファイル優先順位](https://gohugo.io/templates/lookup-order/) を使用してファイルをオーバーライドすることです。要約すると、優先順位により、プロジェクトディレクトリに含めたファイルは、すべてのテーマファイルよりも自動的に優先されます。
+テーマの動作を調整する正しい方法は、Hugo の強力な[ファイル優先順位](https://gohugo.io/templates/lookup-order/)を使用してファイルをオーバーライドすることです。要約すると、優先順位により、プロジェクトディレクトリに含めたファイルは、すべてのテーマファイルよりも自動的に優先されます。
 
 たとえば、Blowfish のメイン記事テンプレートをオーバーライドしたい場合は、独自の `layouts/_default/single.html` ファイルを作成してプロジェクトのルートに配置するだけです。このファイルは、テーマ自体を変更することなく、テーマの `single.html` をオーバーライドします。これは、HTML テンプレート、パーシャル、ショートコード、設定ファイル、データ、アセットなど、すべてのテーマファイルで機能します。
 
@@ -48,11 +48,11 @@ Hugo には、画像のサイズ変更、トリミング、最適化を行うた
 
 ここで、[アンカーポイント](https://gohugo.io/content-management/image-processing/#anchor)のようなデフォルトの画像設定は、テンプレート自体だけでなく、[サイト設定](https://gohugo.io/content-management/image-processing/#processing-options)でも設定できることに注意してください。
 
-詳細については、[画像処理に関する Hugo ドキュメント](https://gohugo.io/content-management/image-processing/#image-processing-methods) を参照してください。
+詳細については、[画像処理に関する Hugo ドキュメント](https://gohugo.io/content-management/image-processing/#image-processing-methods)を参照してください。
 
 ## カラースキーム
 
-Blowfish には、すぐに使用できる多数のカラースキームが付属しています。基本的なカラースキームを変更するには、`colorScheme` テーマパラメータを設定します。 組み込みのスキームの詳細については、[はじめに]({{< ref "getting-started#colour-schemes" >}})セクションを参照してください。
+Blowfish には、すぐに使用できる多数のカラースキームが付属しています。基本的なカラースキームを変更するには、`colorScheme` テーマパラメータを設定します。 組み込みのスキームの詳細については、[はじめに]({{< ref "getting-started#カラースキーム" >}})セクションを参照してください。
 
 デフォルトのスキームに加えて、独自のスキームを作成し、ウェブサイト全体を好みに合わせて再スタイルすることもできます。 スキームは、`assets/css/schemes/` フォルダに `<scheme-name>.css` ファイルを配置することで作成されます。ファイルが作成されたら、テーマ設定で名前で参照するだけです。
 
@@ -73,7 +73,7 @@ Tailwind CSS 3.0 が不透明度で色の値を計算する方式のため、ス
 
 この例では、赤の値が `139`、緑の値が `92`、青の値が `246` の `primary-500` カラーの CSS 変数を定義しています。
 
-既存のテーマスタイルシートの1つをテンプレートとして使用します。独自の色を自由に定義できますが、インスピレーションが必要な場合は、公式の [Tailwind カラーパレットリファレンス](https://tailwindcss.com/docs/customizing-colors#color-palette-reference) を確認してください。
+既存のテーマスタイルシートの1つをテンプレートとして使用します。独自の色を自由に定義できますが、インスピレーションが必要な場合は、公式の [Tailwind カラーパレットリファレンス](https://tailwindcss.com/docs/customizing-colors#color-palette-reference)を確認してください。
 
 ## スタイルシートのオーバーライド
 
