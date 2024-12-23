@@ -19,7 +19,7 @@ Blowfish は完全に柔軟なホームページレイアウトを提供しま�
 
 <img class="thumbnailshadow" src="img/home-profile.png"/>
 
-著者情報は、言語設定ファイルで提供されます。パラメータの詳細については、[始める]({{< ref "getting-started" >}})と[言語設定]({{< ref "configuration##language-and-i18n" >}})セクションを参照してください。
+著者情報は、言語設定ファイルで提供されます。パラメータの詳細については、[始める]({{< ref "getting-started" >}})と[言語設定]({{< ref "configuration#言語と-i18n" >}})セクションを参照してください。
 
 さらに、ホームページのコンテンツで提供される Markdown コンテンツはすべて、著者プロファイルの下に配置されます。これにより、ショートコードを使用して経歴やその他のカスタムコンテンツを表示するための柔軟性が向上します。
 
@@ -65,7 +65,7 @@ Blowfish は完全に柔軟なホームページレイアウトを提供しま�
 
 設定値を設定したら、新しい `custom.html` ファイルを作成し、`layouts/partials/home/custom.html` に配置します。これで、`custom.html` ファイルの内容がサイトのホームページのコンテンツ領域に配置されます。レイアウトを定義するために、HTML、Tailwind、または Hugo テンプレート関数を自由に使用できます。
 
-カスタムレイアウトに [最新記事](#最新記事) を含めるには、`recent-articles/main.html` パーシャルを使用します。
+カスタムレイアウトに[最新記事](#最新記事)を含めるには、`recent-articles/main.html` パーシャルを使用します。
 
 例として、このサイトの[ホームページ]({{< ref "/" >}})では、カスタムレイアウトを使用して、プロフィールレイアウトとページレイアウトを切り替えています。動作を確認するには、[GitHub リポジトリ](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/layouts/partials/home/custom.html)にアクセスしてください。
 
