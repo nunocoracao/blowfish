@@ -43,13 +43,13 @@ npx blowfish-tools
 |---|---|---|
 | `theme` | `"blowfish"` | Hugo Modules を使用している場合は、この設定値を削除する必要があります。 他のすべてのインストールタイプでは、テーマが機能するためにこれを `blowfish` に設定する必要があります。 |
 | `baseURL` | _未設定_ | ウェブサイトのルートへの URL です。 |
-| `defaultContentLanguage` | `"en"` | この値は、テーマコンポーネントとコンテンツのデフォルト言語を決定します。 サポートされている言語コードについては、以下の[言語と i18n](#language-and-i18n)セクションを参照してください。 |
-| `enableRobotsTXT` | `true` | 有効にすると、検索エンジンがサイト全体をクロールできるようにする `robots.txt` ファイルがサイトルートに作成されます。 あらかじめ作成した独自の `robots.txt` を提供する場合は、`false` に設定し、ファイルを `static` ディレクトリに配置します。 完全に制御するには、このファイルを生成するための[カスタムレイアウト]({{< ref "content-examples#custom-layouts" >}})を提供できます。 |
+| `defaultContentLanguage` | `"en"` | この値は、テーマコンポーネントとコンテンツのデフォルト言語を決定します。 サポートされている言語コードについては、以下の[言語と i18n](#言語と-i18n) セクションを参照してください。 |
+| `enableRobotsTXT` | `true` | 有効にすると、検索エンジンがサイト全体をクロールできるようにする `robots.txt` ファイルがサイトルートに作成されます。 あらかじめ作成した独自の `robots.txt` を提供する場合は、`false` に設定し、ファイルを `static` ディレクトリに配置します。 完全に制御するには、このファイルを生成するための[カスタムレイアウト]({{< ref "content-examples#カスタムレイアウト" >}})を提供できます。 |
 | `pagination.pagerSize` | `10` | 記事リストの各ページにリストされる記事の数です。 |
 | `summaryLength` | `0` | [フロントマター]({{< ref "front-matter" >}})で提供されていない場合に、記事の概要を生成するために使用される単語の数です。 値 `0` は最初の文を使用します。 概要が非表示になっている場合、この値は効果がありません。 |
 | `outputs.home` | `["HTML", "RSS", "JSON"]` | サイト用に生成される出力形式です。 Blowfish では、すべてのテーマコンポーネントが正しく機能するために HTML、RSS、JSON が必要です。 |
 | `permalinks` | _未設定_ | パーマリンクの設定については、[Hugo ドキュメント](https://gohugo.io/content-management/urls/#permalinks)を参照してください。 |
-| `taxonomies` | _未設定_ | 分類の設定については、[コンテンツの整理]({{< ref "getting-started#organising-content" >}})セクションを参照してください。 |
+| `taxonomies` | _未設定_ | 分類の設定については、[コンテンツの整理]({{< ref "getting-started#コンテンツの整理" >}})セクションを参照してください。 |
 <!-- prettier-ignore-end -->
 
 
@@ -105,7 +105,7 @@ Blowfish は多言語ウェブサイト向けに最適化されており、テ�
 デフォルトのファイルは、追加の言語を作成するためのテンプレートとして使用することも、英語以外の言語でウェブサイトを作成する場合は名前を変更することもできます。`languages.[言語コード].toml` 形式を使用してファイルに名前を付けるだけです。
 
 {{< alert >}}
-**注:** [サイト設定](#site-configuration)の `defaultContentLanguage` パラメータが、言語設定ファイル名の言語コードと一致していることを確認してください。
+**注:** [サイト設定](#サイト設定)の `defaultContentLanguage` パラメータが、言語設定ファイル名の言語コードと一致していることを確認してください。
 {{< /alert >}}
 
 #### グローバル
@@ -167,11 +167,11 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 
 | 名前 | デフォルト | 説明 |
 |---|---|---|
-| `colorScheme` | `"blowfish"` | 使用するテーマのカラースキームです。有効な値は、`blowfish`（デフォルト）、`avocado`、`fire`、`ocean`、`forest`、`princess`、`neon`、`bloody`、`terminal`、`marvel`、`noir`、`autumn`、`congo`、`slate` です。詳細については、[カラースキーム]({{< ref "getting-started#colour-schemes" >}})セクションを参照してください。 |
+| `colorScheme` | `"blowfish"` | 使用するテーマのカラースキームです。有効な値は、`blowfish`（デフォルト）、`avocado`、`fire`、`ocean`、`forest`、`princess`、`neon`、`bloody`、`terminal`、`marvel`、`noir`、`autumn`、`congo`、`slate` です。詳細については、[カラースキーム]({{< ref "getting-started#カラースキーム" >}})セクションを参照してください。 |
 | `defaultAppearance` | `"light"` | デフォルトのテーマの外観です。`light` または `dark` のいずれかです。 |
 | `autoSwitchAppearance` | `true` | 訪問者のオペレーティングシステムの設定に基づいてテーマの外観を自動的に切り替えるかどうかです。`false` に設定すると、サイトは常に `defaultAppearance` を使用します。 |
-| `enableSearch` | `false` | サイト内検索が有効かどうかです。`true` に設定すると、検索機能が有効になります。検索機能は、[サイト設定](#site-configuration)の `outputs.home` 設定が正しく設定されているかどうかに依存することに注意してください。 |
-| `enableCodeCopy` | `false` | `<code>` ブロックのクリップボードへのコピーボタンを有効にするかどうかです。コードコピーが正しく機能するには、`highlight.noClasses` パラメータを `false` に設定する必要があります。以下の[その他の設定ファイル](#other-configuration-files)について読んでください。 |
+| `enableSearch` | `false` | サイト内検索が有効かどうかです。`true` に設定すると、検索機能が有効になります。検索機能は、[サイト設定](#サイト設定)の `outputs.home` 設定が正しく設定されているかどうかに依存することに注意してください。 |
+| `enableCodeCopy` | `false` | `<code>` ブロックのクリップボードへのコピーボタンを有効にするかどうかです。コードコピーが正しく機能するには、`highlight.noClasses` パラメータを `false` に設定する必要があります。以下の[その他の設定ファイル](#その他の設定ファイル)について読んでください。 |
 | `mainSections` | _未設定_ | 最近の記事リストに表示するセクションです。指定しない場合は、記事数が最も多いセクションが使用されます。 |
 | `showViews` | _未設定_ | 記事とリストの表示回数を表示するかどうかです。これには Firebase 統合を有効にする必要があります。以下をご覧ください。 |
 | `showLikes` | _未設定_ | 記事とリストのいいねを表示するかどうかです。これには Firebase 統合を有効にする必要があります。以下をご覧ください。 |
@@ -196,8 +196,8 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 | 名前 | デフォルト　　　 | 説明 |
 |---|---|---|
 | `footer.showMenu` | `true` | フッターメニューを表示/非表示にします。これは、`config/_default/menus.en.toml` ファイルの `[[footer]]` セクションで設定できます。 |
-| `footer.showCopyright` | `true` | サイトのフッターに著作権文字列を表示するかどうかです。文字列自体は、[言語設定](#language-and-i18n) の `copyright` パラメータを使用してカスタマイズできることに注意してください。 |
-| `footer.showThemeAttribution` | `true` | サイトのフッターに「powered by」テーマの帰属を表示するかどうかです。このメッセージを無効にする場合は、サイトの他の場所（たとえば、about ページ）でテーマの帰属を検討してください。 |
+| `footer.showCopyright` | `true` | サイトのフッターに著作権文字列を表示するかどうかです。文字列自体は、[言語設定](#言語と-i18n) の `copyright` パラメータを使用してカスタマイズできることに注意してください。 |
+| `footer.showThemeAttribution` | `true` | サイトのフッターに「powered by」というテーマの帰属を表示するかどうかです。このメッセージを無効にする場合は、サイトの他の場所（たとえば、about ページ）でテーマの帰属を検討してください。 |
 | `footer.showAppearanceSwitcher` | `false` | サイトのフッターに外観スイッチャーを表示するかどうかです。 ブラウザのローカルストレージを使用して、訪問者の設定が保持されます。 |
 | `footer.showScrollToTop` | `true` | `true` に設定すると、トップへスクロールの矢印が表示されます。 |
 
@@ -246,7 +246,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 | `article.showTaxonomies` | `false` | この記事に関連するタクソノミーを表示するかどうかです。 |
 | `article.showAuthorsBadges` | `false` | `authors` タクソノミーを記事またはリストのヘッダーに表示するかどうかです。これには、「複数の著者」と `authors` タクソノミーの設定が必要です。この機能の設定方法の詳細については、[このページ]({{< ref "multi-author" >}}) を確認してください。 |
 | `article.showWordCount` | `false` | 記事の単語数を表示するかどうかです。 |
-| `article.showComments` | `false` | 記事のフッターの後に [コメントパーシャル]({{< ref "partials#comments" >}}) を含めるかどうかです。 |
+| `article.showComments` | `false` | 記事のフッターの後に [コメントパーシャル]({{< ref "partials#コメント" >}}) を含めるかどうかです。 |
 | `article.sharingLinks` | _未設定_ | 各記事の最後に表示する共有リンクです。指定されていないか、`false` に設定されている場合、リンクは表示されません。使用可能な値は、<br>"linkedin"、"bluesky"、<br>"mastodon"、"twitter"、"reddit"、<br>"pinterest"、"facebook"、"email"、<br>"whatsapp"、"telegram" です。 |
 | `article.showZenMode` | `false` | 記事のZenモードリーダー機能を有効にするフラグです。 |
 
@@ -264,7 +264,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 | `list.showViews`                   | `false`   | リストの閲覧数を表示するかどうか。これを有効にするには、Firebase の統合を有効にする必要があります。以下をご覧ください。                                                                                                                                                                              |
 | `list.showLikes`                   | `false`   | リストのいいね数を表示するかどうか。これを有効にするには、Firebase の統合を有効にする必要があります。以下をご覧ください。                                                                                                                                                                              |
 | `list.showCards`                   | `false`   | 各記事をカードとして表示するか、シンプルなインラインテキストとして表示するかどうか。                                                                                                                                                                                                               |
-| `list.orderByWeight`               | `false`   | 記事を [重み](https://gohugo.io/methods/page/weight/) で並べ替えるかどうか。                                                                                                                                                                                                                         |
+| `list.orderByWeight`               | `false`   | 記事を[重み](https://gohugo.io/methods/page/weight/)で並べ替えるかどうか。                                                                                                                                                                                                                         |
 | `list.groupByYear`                 | `true`    | リストページで記事を年別にグループ化するかどうか。                                                                                                                                                                                                                                                    |
 | `list.cardView`                    | `false`   | リストをカードのギャラリーとして表示します。                                                                                                                                                                                                                                                      |
 | `list.cardViewScreenWidth`         | `false`   | リスト内のカードギャラリーの幅を、利用可能な全幅を使用するように拡張します。                                                                                                                                                                                                                          |
@@ -275,7 +275,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 
 | 名前                    | デフォルト                | 説明                                                                                                                                                                                 |
 | ----------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `sitemap.excludedKinds` | `["taxonomy", "term"]` | 生成された `/sitemap.xml` ファイルから除外するコンテンツの種類。許容される値については、[Hugo のドキュメント](https://gohugo.io/templates/section-templates/#page-kinds) を参照してください。 |
+| `sitemap.excludedKinds` | `["taxonomy", "term"]` | 生成された `/sitemap.xml` ファイルから除外するコンテンツの種類。許容される値については、[Hugo のドキュメント](https://gohugo.io/templates/section-templates/#page-kinds)を参照してください。 |
 
 ### タクソノミー(Taxonomy)
 
@@ -308,26 +308,26 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 
 | 名前                         | デフォルト　　　   | 説明                                                                                                                                                                               |
 | ---------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `firebase.apiKey`            | _未設定_ | Firebase との統合に必要な Firebase API キー。Firebase を Blowfish に統合する方法については、[このページ]({{< ref "firebase-views" >}}) を参照してください。                       |
-| `firebase.authDomain`        | _未設定_ | Firebase との統合に必要な Firebase 認証ドメイン。Firebase を Blowfish に統合する方法については、[このページ]({{< ref "firebase-views" >}}) を参照してください。                     |
-| `firebase.projectId`         | _未設定_ | Firebase との統合に必要な Firebase プロジェクト ID。Firebase を Blowfish に統合する方法については、[このページ]({{< ref "firebase-views" >}}) を参照してください。                    |
-| `firebase.storageBucket`     | _未設定_ | Firebase との統合に必要な Firebase ストレージバケット。Firebase を Blowfish に統合する方法については、[このページ]({{< ref "firebase-views" >}}) を参照してください。                  |
-| `firebase.messagingSenderId` | _未設定_ | Firebase との統合に必要な Firebase メッセージング送信者 ID。Firebase を Blowfish に統合する方法については、[このページ]({{< ref "firebase-views" >}}) を参照してください。              |
-| `firebase.appId`             | _未設定_ | Firebase との統合に必要な Firebase アプリ ID。Firebase を Blowfish に統合する方法については、[このページ]({{< ref "firebase-views" >}}) を参照してください。                          |
-| `firebase.measurementId`     | _未設定_ | Firebase との統合に必要な Firebase 測定 ID。Firebase を Blowfish に統合する方法については、[このページ]({{< ref "firebase-views" >}}) を参照してください。                          |
+| `firebase.apiKey`            | _未設定_ | Firebase との統合に必要な Firebase API キー。Firebase を Blowfish に統合する方法については、[このページ]({{< ref "firebase-views" >}})を参照してください。                       |
+| `firebase.authDomain`        | _未設定_ | Firebase との統合に必要な Firebase 認証ドメイン。Firebase を Blowfish に統合する方法については、[このページ]({{< ref "firebase-views" >}})を参照してください。                     |
+| `firebase.projectId`         | _未設定_ | Firebase との統合に必要な Firebase プロジェクト ID。Firebase を Blowfish に統合する方法については、[このページ]({{< ref "firebase-views" >}})を参照してください。                    |
+| `firebase.storageBucket`     | _未設定_ | Firebase との統合に必要な Firebase ストレージバケット。Firebase を Blowfish に統合する方法については、[このページ]({{< ref "firebase-views" >}})を参照してください。                  |
+| `firebase.messagingSenderId` | _未設定_ | Firebase との統合に必要な Firebase メッセージング送信者 ID。Firebase を Blowfish に統合する方法については、[このページ]({{< ref "firebase-views" >}})を参照してください。              |
+| `firebase.appId`             | _未設定_ | Firebase との統合に必要な Firebase アプリ ID。Firebase を Blowfish に統合する方法については、[このページ]({{< ref "firebase-views" >}})を参照してください。                          |
+| `firebase.measurementId`     | _未設定_ | Firebase との統合に必要な Firebase 測定 ID。Firebase を Blowfish に統合する方法については、[このページ]({{< ref "firebase-views" >}})を参照してください。                          |
 
 ### Fathom Analytics
 
 | 名前                     | デフォルト　　　 | 説明                                                                                                                                                  |
 | ------------------------ | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `fathomAnalytics.site`   | _未設定_ | ウェブサイト用に Fathom Analytics によって生成されたサイトコード。詳細については、[Analytics のドキュメント]({{< ref "partials#analytics" >}}) を参照してください。 |
+| `fathomAnalytics.site`   | _未設定_ | ウェブサイト用に Fathom Analytics によって生成されたサイトコード。詳細については、[Analytics のドキュメント]({{< ref "partials#アナリティクス" >}})を参照してください。 |
 | `fathomAnalytics.domain` | _未設定_ | Fathom Analytics でカスタムドメインを使用している場合、ここに指定して、`script.js` をカスタムドメインから配信します。                                         |
 
 ### Umami Analytics
 
 | 名前 | デフォルト　　　 | 説明 |
 |---|---|---|
-| `umamiAnalytics.websiteid` | _未設定_ | ウェブサイト用に Umami Analytics によって生成されたサイトコード。詳細については、[Analytics のドキュメント]({{< ref "partials#analytics" >}}) を参照してください。 |
+| `umamiAnalytics.websiteid` | _未設定_ | ウェブサイト用に Umami Analytics によって生成されたサイトコード。詳細については、[Analytics のドキュメント]({{< ref "partials#アナリティクス" >}})を参照してください。 |
 | `umamiAnalytics.domain` | _未設定_ | Umami Analytics でカスタムドメインを使用している場合、ここに指定して、`script.js` をカスタムドメインから配信します。 |
 | `umamiAnalytics.dataDomains` | _未設定_ | トラッカーを特定のドメインでのみ実行したい場合は、トラッカースクリプトに指定します。これは、ドメイン名のカンマ区切りリストです。例えば "yoursite.com,yoursite2.com" のようになります。 |
 | `umamiAnalytics.scriptName` | script.js | アンチ広告ブロックに使用される `script.js` の名前は、環境変数 `TRACKER_SCRIPT_NAME` で設定されます。 |
@@ -337,7 +337,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 
 | 名前                              | デフォルト　　　   | 説明                                                                                                                               |
 |-----------------------------------|-----------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| `selineAnalytics.token`           | _未設定_ | ウェブサイト用に Seline Analytics によって生成されたトークン。詳細については、[Analytics のドキュメント]({{< ref "partials#analytics" >}}) を参照してください。 |
+| `selineAnalytics.token`           | _未設定_ | ウェブサイト用に Seline Analytics によって生成されたトークン。詳細については、[Analytics のドキュメント]({{< ref "partials#アナリティクス" >}})を参照してください。 |
 | `selineAnalytics.enableTrackEvent` | `true`      | `true` に設定すると、トラックイベントが自動的に追加されます。トラックイベントを追加したくない場合は、`false` に設定してください。                          |
 
 ### BuyMeACoffee
