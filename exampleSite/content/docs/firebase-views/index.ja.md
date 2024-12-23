@@ -14,7 +14,7 @@ series_order: 15
 1. <a target="_blank" href="https://firebase.com">Firebase のウェブサイト</a>にアクセスして、無料のアカウントを作成します
 2. 新規プロジェクトを作成します
 3. 分析ロケーションを選択します
-4. プロジェクトの変数を取得し、`params.toml` ファイル内で設定して、Blowfish で Firebase を設定します。詳細は、<a target="_blank" href="{{< ref "configuration/#theme-parameters" >}}">このページ</a>をご覧ください。Firebase が提供するファイルの例を以下に示します。FirebaseConfig オブジェクト内のパラメータに注意してください。
+4. プロジェクトの変数を取得し、`params.toml` ファイル内で設定して、Blowfish で Firebase を設定します。詳細は、<a target="_blank" href="{{< ref "configuration/#テーマパラメーターtheme-parameters" >}}">このページ</a>をご覧ください。Firebase が提供するファイルの例を以下に示します。FirebaseConfig オブジェクト内のパラメータに注意してください。
 
 ```
 // 必要な SDK から必要な関数をインポートします

@@ -21,7 +21,7 @@ Hugo の公式[ホスティングとデプロイ](https://gohugo.io/hosting-and-
 - [Netlify](#netlify)
 - [Render](#render)
 - [Cloudflare Pages](#cloudflare-pages)
-- [共有ホスティング、VPS、またはプライベート Web サーバー](#共有ホスティング-vps-またはプライベート-web-サーバー)
+- [共有ホスティング、VPS、またはプライベート Web サーバー](#共有ホスティングvpsまたはプライベート-web-サーバー)
 
 ---
 
