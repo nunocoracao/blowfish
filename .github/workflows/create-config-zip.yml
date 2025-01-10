@@ -1,4 +1,4 @@
-name: Create Config ZIP
+name: Create ZIP
 on:
   release:
     types: [published]
@@ -10,15 +10,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: zip -r config-default.zip config/_default
-      - name: Create/Update latest release # adds file static url 
-        uses: softprops/action-gh-release@v1
+      - uses: actions/upload-artifact@v3
         with:
-          files: config-default.zip
-          tag_name: latest
-          name: Latest Config Files
-          body: Automated config files bundle
-      - name: Add to version release # adds file to the release assets
-        if: github.event_name == 'release'  # run on actual releases, not manual triggers
+          name: config-default
+          path: config-default.zip
+      - name: Upload to release
         uses: softprops/action-gh-release@v1
         with:
           files: config-default.zip
