@@ -1,30 +1,30 @@
 ---
-title: "Firebase: Views & Likes"
+title: "Firebase: 閲覧数といいね"
 weight: 15
 draft: false
-description: "Learn how to integrate Firebase and get dynamic data for views and likes."
+description: "Firebase を統合して、閲覧数といいねの動的データを取得する方法を学びます。"
 slug: "firebase-views"
-tags: ["firebase", "views", likes]
+tags: ["firebase", "views", "likes"]
 series: ["Documentation"]
 series_order: 15
 ---
 
-In order to be able to support dynamic data across your website we've added the support to integrate Firebase. This will allow you to use the views feature across lists and posts. 
+ウェブサイト全体で動的データをサポートできるようにするために、Firebase を統合するサポートを追加しました。これにより、リストや投稿全体で閲覧数機能を使用できるようになります。
 
-1. Go to <a target="_blank" href="https://firebase.com">Firebase website</a> and create an account for free
-2. Create a new project
-3. Select analytics location
-4. Setup firebase in Blowfish by getting the variables for your project and setting them inside `params.toml` file. More details can be found in <a target="_blank" href="{{< ref "configuration/#theme-parameters" >}}">this page</a>. You can find an example of the file Firebase will provide below, notice the parameters within the FirebaseConfig object.
+1. <a target="_blank" href="https://firebase.com">Firebase のウェブサイト</a>にアクセスして、無料のアカウントを作成します
+2. 新規プロジェクトを作成します
+3. 分析ロケーションを選択します
+4. プロジェクトの変数を取得し、`params.toml` ファイル内で設定して、Blowfish で Firebase を設定します。詳細は、<a target="_blank" href="{{< ref "configuration/#テーマパラメーターtheme-parameters" >}}">このページ</a>をご覧ください。Firebase が提供するファイルの例を以下に示します。FirebaseConfig オブジェクト内のパラメータに注意してください。
 
 ```
-// Import the functions you need from the SDKs you need
+// 必要な SDK から必要な関数をインポートします
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
+// TODO: 使用する Firebase 製品の SDK を追加します
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// ウェブアプリの Firebase 設定
+// Firebase JS SDK v7.20.0 以降では、measurementId はオプションです
 const firebaseConfig = {
   apiKey: "AIzaSyB5tqlqDky77Vb4Tc4apiHV4hRZI18KGiY",
   authDomain: "blowfish-21fff.firebaseapp.com",
@@ -35,12 +35,12 @@ const firebaseConfig = {
   measurementId: "G-PEDMYR1V0K"
 };
 
-// Initialize Firebase
+// Firebase を初期化する
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 ```
 
-5. Setup Firestore - Select Build and open Firestore. Create a new database and choose to start in production mode. Select server location and wait. Once that is started you need to configure the rules. Just copy and paste the file below and press publish.
+5. Firestore を設定する - 「ビルド」を選択して Firestore を開きます。新しいデータベースを作成し、本番モードで開始することを選択します。サーバーの場所を選択して待ちます。開始したら、ルールを設定する必要があります。以下のファイルをコピーして貼り付け、「公開」をクリックします。
 ```
 rules_version = '2';
 service cloud.firestore {
@@ -51,5 +51,5 @@ service cloud.firestore {
   }
 }
 ```
-6. Enable anonymous authorization - Select Build and open Authentication. Select get started, click Anonymous and turn it on, save.
-7. Enjoy - you can now activate views and likes on Blowfish for all (or specific) articles.
+6. 匿名認証を有効にする - 「ビルド」を選択して「認証」を開きます。「開始する」を選択し、「匿名」をクリックしてオンにし、保存します。
+7. お楽しみください - すべて (または特定の) 記事に対して、Blowfish で閲覧数といいねを有効にできるようになりました。

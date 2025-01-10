@@ -113,7 +113,7 @@ Next step, let's install Blowfish using `git submodules` which will make it easi
 git submodule add -b main https://github.com/nunocoracao/blowfish.git themes/blowfish
 ```
 
-Next, create the following folder structure at the root of your code directory - `config/_default/`. Now you will need to download [these files](https://minhaskamal.github.io/DownGit/#/home?url=https:%2F%2Fgithub.com%2Fnunocoracao%2Fblowfish%2Ftree%2Fmain%2Fconfig%2F%5C_default) and place them in _\_default_ folder you just created. The final structure should look something like this.
+Next, create the following folder structure at the root of your code directory - `config/_default/`. Now you will need to download [these files](https://github.com/nunocoracao/blowfish/releases/latest/download/config-default.zip) and place them in _\_default_ folder you just created. The final structure should look something like this.
 
 ```md
 config/_default/

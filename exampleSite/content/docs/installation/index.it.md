@@ -136,7 +136,7 @@ Nella cartella principale del tuo sito web, elimina il file `hugo.toml` generato
 
 A seconda di come hai installato il tema, troverai i file di configurazione del tema in posti diversi:
 
-- **Hugo modules:** Nella directory della cache di Hugo o [scarica una copia](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/nunocoracao/blowfish/ tree/main/config/_default) da GitHub
+- **Hugo modules:** Nella directory della cache di Hugo o [scarica una copia](https://github.com/nunocoracao/blowfish/releases/latest/download/config-default.zip tree/main/config/_default) da GitHub
 - **Git submodule o installazione manuale:** `themes/blowfish/config/_default`
 
 Una volta che hai copiato i file, la tua cartella delle configurazioni dovrebbe essere cosi:

@@ -113,7 +113,7 @@ emmmm… 页面未找到404了，是吧？
 git submodule add -b main https://github.com/nunocoracao/blowfish.git themes/blowfish
 ```
 
-接下来，在你的代码根目录下创建 `config/_default/` 文件夹。现在你需要下载[这些文件](https://minhaskamal.github.io/DownGit/#/home?url=https:%2F%2Fgithub.com%2Fnunocoracao%2Fblowfish%2Ftree%2Fmain%2Fconfig%2F%5C_default)，并把它们放在刚刚创建的 _\_default_ 文件夹内。最终的文件结构看起来应该是这样的。
+接下来，在你的代码根目录下创建 `config/_default/` 文件夹。现在你需要下载[这些文件](https://github.com/nunocoracao/blowfish/releases/latest/download/config-default.zip)，并把它们放在刚刚创建的 _\_default_ 文件夹内。最终的文件结构看起来应该是这样的。
 
 ```md
 config/_default/

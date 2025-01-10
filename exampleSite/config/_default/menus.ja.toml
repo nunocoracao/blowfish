@@ -11,7 +11,7 @@
 # このメニューは weight が低い値から高い値に順に表示されます。
 
 [[main]]
-  name = "資料"
+  name = "ドキュメント"
   pageRef = "docs"
   weight = 10
 

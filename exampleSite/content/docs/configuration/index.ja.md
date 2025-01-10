@@ -1,20 +1,20 @@
 ---
-title: "Configuration"
+title: "設定"
 weight: 4
 draft: false
-description: "All the configuration variables available in Blowfish."
+description: "Blowfish で使えるすべての設定変数"
 slug: "configuration"
 tags: ["config", "docs"]
 series: ["Documentation"]
 series_order: 4
 ---
 
-Blowfish is a highly customisable theme and uses some of the latest Hugo features to simplify how it is configured.
+Blowfish は高度にカスタマイズ可能なテーマであり、最新の Hugo 機能を使用して設定方法をシンプルにしています。
 
-The theme ships with a default configuration that gets you up and running with a basic blog or static website.
+このテーマには、基本的なブログまたは静的サイトをすぐに立ち上げて実行できるデフォルト設定が付属しています。
 
 {{< alert "fire" >}}
-We just launched a CLI tool to help you get started with Blowfish. It will help you with installation and configuration. Install the CLI tool globally using:
+Blowfish を簡単に使い始められるように、新しい CLI ツールをリリースしました。インストールと設定に役立ちます。 グローバルに CLI ツールをインストールするには、以下を使用します。
 
 ```bash
 npx blowfish-tools
@@ -22,351 +22,353 @@ npx blowfish-tools
 
 {{< /alert >}}
 
-> Configuration files bundled with the theme are provided in TOML format as this is the default Hugo syntax. Feel free to convert your config to YAML or JSON if you wish.
+> テーマにバンドルされている設定ファイルは、デフォルトの Hugo 構文である TOML 形式で提供されています。必要に応じて、設定を YAML または JSON に変換できます。
 
-The default theme configuration is documented in each file so you can freely adjust the settings to meet your needs.
-
-{{< alert >}}
-As outlined in the [installation instructions]({{< ref "/docs/installation#set-up-theme-configuration-files" >}}), you should adjust your theme configuration by modifying the files in the `config/_default/` folder of your Hugo project and delete the `config.toml` file in your project root.
-{{< /alert >}}
-
-## Site configuration
-
-Standard Hugo configuration variables are respected throughout the theme, however there are some specific things that should be configured for the best experience.
-
-The site configuration is managed through the `config/_default/config.toml` file. The table below outlines all the settings that the Blowfish takes advantage of.
-
-Note that the variable names provided in this table use dot notation to simplify the TOML data structure (ie. `outputs.home` refers to `[outputs] home`).
-
-<!-- prettier-ignore-start -->
-| Name                     | Default                   | Description                                                                                                                                                                                                                                                                                                                                                                  |
-| ------------------------ | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `theme`                  | `"blowfish"`              | When using Hugo Modules this config value should be removed. For all other installation types, this must be set to `blowfish` for the theme to function.                                                                                                                                                                                                                     |
-| `baseURL`                | _Not set_                 | The URL to the root of the website.                                                                                                                                                                                                                                                                                                                                          |
-| `defaultContentLanguage` | `"en"`                    | This value determines the default language of theme components and content. Refer to the [language and i18n](#language-and-i18n) section below for supported language codes.                                                                                                                                                                                                 |
-| `enableRobotsTXT`        | `true`                    | When enabled, a `robots.txt` file will be created in the site root that allows search engines to crawl the entire site. If you prefer to provide your own pre-made `robots.txt`, set to `false` and place your file in the `static` directory. For complete control, you may provide a [custom layout]({{< ref "content-examples#custom-layouts" >}}) to generate this file. |
-| `pagination.pagerSize`   | `10`                      | The number of articles listed on each page of the article listing.                                                                                                                                                                                                                                                                                                           |
-| `summaryLength`          | `0`                       | The number of words that are used to generate the article summary when one is not provided in the [front matter]({{< ref "front-matter" >}}). A value of `0` will use the first sentence. This value has no effect when summaries are hidden.                                                                                                                                |
-| `outputs.home`           | `["HTML", "RSS", "JSON"]` | The output formats that are generated for the site. Blowfish requires HTML, RSS and JSON for all theme components to work correctly.                                                                                                                                                                                                                                         |
-| `permalinks`             | _Not set_                 | Refer to the [Hugo docs](https://gohugo.io/content-management/urls/#permalinks) for permalink configuration.                                                                                                                                                                                                                                                                 |
-| `taxonomies`             | _Not set_                 | Refer to the [Organising content]({{< ref "getting-started#organising-content" >}}) section for taxonomy configuration.                                                                                                                                                                                                                                                      |
-<!-- prettier-ignore-end -->
-
-## Thumbnails
-
-Blowfish was built so it would be easy to add visual support to your articles. If your familiar with Hugo article structure, you just need to place an image file (almost all formats are supported but we recommend `.png` or `.jpg`) that starts with `feature*` inside your article folder. And that's it, Blowfish will then able to both use the image as a thumbnail within your website as well as for <a target="_blank" href="https://oembed.com/">oEmbed</a> cards across social platforms.
-
-[Here]({{< ref "thumbnails" >}}) is also a guide with more info and a [sample]({{< ref "thumbnail_sample" >}}) if you want to see how you can do it.
-
-## Language and i18n
-
-Blowfish is optimised for full multilingual websites and theme assets are translated into several languages out of the box. The language configuration allows you to generate multiple versions of your content to provide a customised experience to your visitors in their native language.
-
-The theme currently supports the following languages by default:
-
-| Language                     | Code    |
-| ---------------------------- | ------- |
-| Arabic                       | `ar`    |
-| Bulgarian                    | `bg`    |
-| Bengali                      | `bn`    |
-| Catalan                      | `ca`    |
-| Czech                        | `cs`    |
-| German                       | `de`    |
-| English                      | `en`    |
-| Esperanto                    | `eo`    |
-| Spanish (Spain)              | `es`    |
-| Finnish                      | `fi`    |
-| French                       | `fr`    |
-| Hebrew                       | `he`    |
-| Croatian                     | `hr`    |
-| Hungarian                    | `hu`    |
-| Indonesian                   | `id`    |
-| Italian                      | `it`    |
-| Japanese                     | `ja`    |
-| Korean                       | `ko`    |
-| Dutch                        | `nl`    |
-| Polish                       | `pl`    |
-| Portuguese (Brazil)          | `pt-br` |
-| Portuguese (Portugal)        | `pt-pt` |
-| Romanian                     | `ro`    |
-| Russian                      | `ru`    |
-| Turkish                      | `tr`    |
-| Vietnamese                   | `vi`    |
-| Simplified Chinese (China)   | `zh-cn` |
-| Traditional Chinese (Taiwan) | `zh-tw` |
-
-The default translations can be overridden by creating a custom file in `i18n/[code].yaml` that contains the translation strings. You can also use this method to add new languages. If you'd like to share a new translation with the community, please [open a pull request](https://github.com/nunocoracao/blowfish/pulls).
-
-### Configuration
-
-In order to be as flexible as possible, a language configuration file needs to be created for each language on the website. By default Blowfish includes an English language configuration at `config/_default/languages.en.toml`.
-
-The default file can be used as a template to create additional languages, or renamed if you wish to author your website in a language other than English. Simply name the file using the format `languages.[language-code].toml`.
+デフォルトのテーマ設定は各ファイルに記載されているため、必要に応じて設定を自由に調整できます。
 
 {{< alert >}}
-**Note:** Ensure the `defaultContentLanguage` parameter in the [site configuration](#site-configuration) matches the language code in your language config filename.  
+[インストール手順]({{< ref "/docs/installation#set-up-theme-configuration-files" >}})で概説されているように、Hugo プロジェクトの `config/_default/` フォルダ内のファイルを修正し、プロジェクトルートの `config.toml` ファイルを削除することで、テーマ設定を調整する必要があります。
 {{< /alert >}}
 
-#### Global
+## サイト設定
+
+テーマ全体で標準の Hugo 設定変数が適用されますが、最適なエクスペリエンスを得るために設定する必要がある特定の事項があります。
+
+サイト設定は `config/_default/config.toml` ファイルで管理されます。 下の表は、Blowfish が活用するすべての設定の概要を示しています。
+
+この表で提供されている変数名は、TOML データ構造を簡素化するためにドット表記を使用していることに注意してください（つまり、 `outputs.home` は `[outputs] home` を指します）。
 
 <!-- prettier-ignore-start -->
-| Name           | Default      | Description                                                                                                                                                                                                                                                                                            |
-| -------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `languageCode` | `"en"`       | The Hugo language code for this file. It can be a top-level language (ie. `en`) or a sub-variant (ie. `en-au`) and should match the language code in the filename. Hugo expects this value to always be in lowercase. For proper HTML compliance, set the `isoCode` parameter which is case-sensitive. |
-| `languageName` | `"English"`  | The name of the language.                                                                                                                                                                                                                                                                              |
-| `weight`       | `1`          | The weight determines the order of languages when building multilingual sites.                                                                                                                                                                                                                         |
-| `title`        | `"Blowfish"` | The title of the website. This will be displayed in the site header and footer.                                                                                                                                                                                                                        |
+| 名前 | デフォルト | 説明 |
+|---|---|---|
+| `theme` | `"blowfish"` | Hugo Modules を使用している場合は、この設定値を削除する必要があります。 他のすべてのインストールタイプでは、テーマが機能するためにこれを `blowfish` に設定する必要があります。 |
+| `baseURL` | _未設定_ | ウェブサイトのルートへの URL です。 |
+| `defaultContentLanguage` | `"en"` | この値は、テーマコンポーネントとコンテンツのデフォルト言語を決定します。 サポートされている言語コードについては、以下の[言語と i18n](#言語と-i18n) セクションを参照してください。 |
+| `enableRobotsTXT` | `true` | 有効にすると、検索エンジンがサイト全体をクロールできるようにする `robots.txt` ファイルがサイトルートに作成されます。 あらかじめ作成した独自の `robots.txt` を提供する場合は、`false` に設定し、ファイルを `static` ディレクトリに配置します。 完全に制御するには、このファイルを生成するための[カスタムレイアウト]({{< ref "content-examples#カスタムレイアウト" >}})を提供できます。 |
+| `pagination.pagerSize` | `10` | 記事リストの各ページにリストされる記事の数です。 |
+| `summaryLength` | `0` | [フロントマター]({{< ref "front-matter" >}})で提供されていない場合に、記事の概要を生成するために使用される単語の数です。 値 `0` は最初の文を使用します。 概要が非表示になっている場合、この値は効果がありません。 |
+| `outputs.home` | `["HTML", "RSS", "JSON"]` | サイト用に生成される出力形式です。 Blowfish では、すべてのテーマコンポーネントが正しく機能するために HTML、RSS、JSON が必要です。 |
+| `permalinks` | _未設定_ | パーマリンクの設定については、[Hugo ドキュメント](https://gohugo.io/content-management/urls/#permalinks)を参照してください。 |
+| `taxonomies` | _未設定_ | 分類の設定については、[コンテンツの整理]({{< ref "getting-started#コンテンツの整理" >}})セクションを参照してください。 |
 <!-- prettier-ignore-end -->
 
-#### Params
+
+## サムネイル
+
+Blowfish は、記事に視覚的なサポートを簡単に追加できるように構築されています。Hugo の記事構造に慣れている場合は、記事フォルダ内に `feature*` で始まる画像ファイル（ほとんどすべての形式がサポートされていますが、`.png` または `.jpg` をお勧めします）を配置するだけです。これで、Blowfish はサイト内でサムネイルとして画像を使用したり、ソーシャルプラットフォーム全体で <a target="_blank" href="https://oembed.com/">oEmbed</a> カードに使用したりできます。
+
+[こちら]({{< ref "thumbnails" >}})には、より詳細な情報と、どのように設定できるかを確認したい場合の[サンプル]({{< ref "thumbnail_sample" >}})を含むガイドもあります。
+
+## 言語と i18n
+
+Blowfish は多言語ウェブサイト向けに最適化されており、テーマアセットはすぐに使えるように複数の言語に翻訳されています。 言語設定を使用すると、コンテンツの複数のバージョンを生成して、訪問者に母国語でカスタマイズされたエクスペリエンスを提供できます。
+
+このテーマは現在、デフォルトで次の言語をサポートしています:
+
+| 言語 | コード |
+|---|---|
+| アラビア語 | `ar` |
+| ブルガリア語 | `bg` |
+| ベンガル語 | `bn` |
+| カタロニア語 | `ca` |
+| チェコ語 | `cs` |
+| ドイツ語 | `de` |
+| 英語 | `en` |
+| エスペラント語 | `eo` |
+| スペイン語（スペイン） | `es` |
+| フィンランド語 | `fi` |
+| フランス語 | `fr` |
+| ヘブライ語 | `he` |
+| クロアチア語 | `hr` |
+| ハンガリー語 | `hu` |
+| インドネシア語 | `id` |
+| イタリア語 | `it` |
+| 日本語 | `ja` |
+| 韓国語 | `ko` |
+| オランダ語 | `nl` |
+| ポーランド語 | `pl` |
+| ポルトガル語（ブラジル） | `pt-br` |
+| ポルトガル語（ポルトガル） | `pt-pt` |
+| ルーマニア語 | `ro` |
+| ロシア語 | `ru` |
+| トルコ語 | `tr` |
+| ベトナム語 | `vi` |
+| 中国語（簡体字） | `zh-cn` |
+| 中国語（繁体字） | `zh-tw` |
+
+デフォルトの翻訳は、翻訳文字列を含むカスタムファイル `i18n/[言語コード].yaml` を作成することでオーバーライドできます。 この方法を使用して新しい言語を追加することもできます。 新しい翻訳をコミュニティと共有したい場合は、[プルリクエストを開いて](https://github.com/nunocoracao/blowfish/pulls)ください。
+
+### 設定
+
+可能な限り柔軟に対応するために、ウェブサイトの各言語の言語設定ファイルを作成する必要があります。デフォルトでは、Blowfish には `config/_default/languages.en.toml` に英語の言語設定が含まれています。
+
+デフォルトのファイルは、追加の言語を作成するためのテンプレートとして使用することも、英語以外の言語でウェブサイトを作成する場合は名前を変更することもできます。`languages.[言語コード].toml` 形式を使用してファイルに名前を付けるだけです。
+
+{{< alert >}}
+**注:** [サイト設定](#サイト設定)の `defaultContentLanguage` パラメータが、言語設定ファイル名の言語コードと一致していることを確認してください。
+{{< /alert >}}
+
+#### グローバル
 
 <!-- prettier-ignore-start -->
-| Name                   | Default            | Description                                                                                                                                                                                                                                                                                                                |
-| ---------------------- | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `params.displayName`   | `"EN"`             | The name used when the language appears on the website.                                                                                                                                                                                                                                                                    |
-| `params.isoCode`       | `"en"`             | The ISO language code for HTML metadata purposes. It can be a top-level language (ie. `en`) or a sub-variant (ie. `en-AU`).                                                                                                                                                                                                |
-| `params.rtl`           | `false`            | Whether or not this is a RTL language. Set to `true` to reflow content from right-to-left. Blowfish fully supports using RTL and LTR languages at the same time and will dynamically adjust to both.                                                                                                                       |
-| `params.dateFormat`    | `"2 January 2006"` | How dates are formatted in this language. Refer to the [Hugo docs](https://gohugo.io/functions/format/#gos-layout-string) for acceptable formats.                                                                                                                                                                          |
-| `params.logo`          | _Not set_          | The relative path to the site logo file within the `assets/` folder. The logo file should be provided at 2x resolution and supports any image dimensions.                                                                                                                                                                  |
-| `params.secondaryLogo` | _Not set_          | The relative path to the secondary site logo file within the `assets/` folder. The logo file should be provided at 2x resolution and supports any image dimensions. This should have an inverted/contrasting colour scheme to `logo`. If set, this logo will be shown when users toggle from the `defaultAppearance` mode. |
-| `params.description`   | _Not set_          | The website description. This will be used in the site metadata.                                                                                                                                                                                                                                                           |
-| `params.copyright`     | _Not set_          | A Markdown string for the site footer copyright message can include the placeholder { year } to dynamically insert the current year. If none is provided, Blowfish will automatically generate a copyright string using the site `title`.                                                                                  |
+| 名前 | デフォルト | 説明 |
+|---|---|---|
+| `languageCode` | `"en"` | このファイルの Hugo 言語コードです。トップレベル言語（例： `en`）またはサブバリアント（例： `en-au`）にすることができ、ファイル名の言語コードと一致する必要があります。Hugo はこの値が常に小文字であることを想定しています。適切な HTML 準拠のために、大文字と小文字を区別する `isoCode` パラメータを設定します。 |
+| `languageName` | `"English"` | 言語の名前です。 |
+| `weight` | `1` | 重みは、多言語サイトを構築するときの言語の順序を決定します。 |
+| `title` | `"Blowfish"` | ウェブサイトのタイトルです。これは、サイトのヘッダーとフッターに表示されます。 |
+<!-- prettier-ignore-end -->
+
+#### パラメーター
+
+<!-- prettier-ignore-start -->
+| 名前 | デフォルト | 説明 |
+|---|---|---|
+| `params.displayName` | `"EN"` | ウェブサイトに言語が表示されるときに使用される名前です。 |
+| `params.isoCode` | `"en"` | HTML メタデータ用の ISO 言語コードです。トップレベル言語（例： `en`）またはサブバリアント（例： `en-AU`）にすることができます。 |
+| `params.rtl` | `false` | これが RTL 言語かどうかです。`true` に設定すると、コンテンツが右から左に並べ替えられます。 Blowfish は RTL 言語と LTR 言語の同時使用を完全にサポートしており、両方に動的に調整されます。 |
+| `params.dateFormat` | `"2 January 2006"` | この言語での日付のフォーマット方法です。使用できる形式については、[Hugo ドキュメント](https://gohugo.io/functions/format/#gos-layout-string)を参照してください。 |
+| `params.logo` | _未設定_ | `assets/` フォルダ内のサイトロゴファイルへの相対パスです。ロゴファイルは2倍の解像度で提供する必要があり、あらゆる画像サイズをサポートしています。 |
+| `params.secondaryLogo` | _未設定_ | `assets/` フォルダ内のセカンダリサイトロゴファイルへの相対パスです。 ロゴファイルは2倍の解像度で提供する必要があり、あらゆる画像サイズをサポートしています。 これは、`logo` とは反転/対照的なカラースキームである必要があります。設定されている場合、このロゴは、ユーザーが `defaultAppearance` モードから切り替えたときに表示されます。 |
+| `params.description` | _未設定_ | ウェブサイトの説明です。これはサイトのメタデータで使用されます。 |
+| `params.copyright` | _未設定_ | サイトフッターの著作権メッセージの Markdown 文字列には、プレースホルダ { year } を含めて現在の年を動的に挿入できます。指定されていない場合、Blowfish はサイト `title` を使用して著作権文字列を自動的に生成します。 |
 
 <!-- prettier-ignore-end -->
 
-#### Author
+#### 著者(Author)
 
-| Name              | Default   | Description                                                                                                                                                                                                                                                                                                                 |
-| ----------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `author.name`     | _Not set_ | The author's name. This will be displayed in article footers, and on the homepage when the profile layout is used.                                                                                                                                                                                                          |
-| `author.image`    | _Not set_ | Path to the image file of the author. The image should be a 1:1 aspect ratio. The image can be placed in the site's `assets/` folder or can be external url.                                                                                                                                                                |
-| `author.headline` | _Not set_ | A Markdown string containing the author's headline. It will be displayed on the profile homepage under the author's name.                                                                                                                                                                                                   |
-| `author.bio`      | _Not set_ | A Markdown string containing the author's bio. It will be displayed in article footers.                                                                                                                                                                                                                                     |
-| `author.links`    | _Not set_ | The links to display alongside the author's details. The config file contains example links which can simply be uncommented to enable. The order that the links are displayed is determined by the order they appear in the array. Custom links can be added by providing corresponding SVG icon assets in `assets/icons/`. |
+<!-- prettier-ignore-start -->
+| 名前 | デフォルト　　　 | 説明 |
+|---|---|---|
+| `author.name` | _未設定_ | 著者の名前です。これは、記事のフッターと、プロフィールレイアウトが使用されている場合はホームページに表示されます。 |
+| `author.image` | _未設定_ | 著者の画像ファイルへのパスです。画像は縦横比 1:1 である必要があります。画像は、サイトの `assets/` フォルダに配置することも、外部 URL にすることもできます。 |
+| `author.headline` | _未設定_ | 著者の見出しを含む Markdown 文字列です。プロフィールホームページの著者の名前に下に表示されます。 |
+| `author.bio` | _未設定_ | 著者の略歴を含む Markdown 文字列です。記事のフッターに表示されます。 |
+| `author.links` | _未設定_ | 著者の詳細と一緒に表示するリンクです。設定ファイルには、コメントを外すだけで有効になるリンクの例が含まれています。リンクが表示される順序は、配列に表示される順序によって決まります。`assets/icons/` に対応する SVG アイコンアセットを提供することで、カスタムリンクを追加できます。 |
 <!-- prettier-ignore-end -->
 
-### Menus
+### メニュー(Menus)
 
-Blowfish also supports language-specific menu configurations. Menu config files follow the same naming format as the languages file. Simply provide the language code in the file name to tell Hugo which language the file relates to.
+Blowfish は、言語固有のメニュー設定もサポートしています。メニュー設定ファイルは、言語ファイルと同じ命名形式に従います。ファイル名に言語コードを指定するだけで、Hugo はファイルがどの言語に関連しているかを認識します。
 
-Menu config files are named with the format `menus.[language-code].toml`. Always ensure that the language code used in the menus configuration matches the languages configuration.
+メニュー設定ファイルの名前は、 `menus.[language-code].toml` 形式です。メニュー設定で使用される言語コードが言語設定と一致していることを常に確認してください。
 
-The [Getting Started]({{< ref "getting-started#menus" >}}) section explains more about the structure of this file. You can also refer to the [Hugo menu docs](https://gohugo.io/content-management/menus/) for more configuration examples.
+[はじめに]({{< ref "getting-started#menus" >}})セクションでは、このファイルの構造について詳しく説明しています。詳細な設定例については、[Hugo メニュー ドキュメント](https://gohugo.io/content-management/menus/)も参照できます。
 
-## Theme parameters
+## テーマパラメーター(Theme parameters)
 
-Blowfish provides a large number of configuration parameters that control how the theme functions. The table below outlines every available parameter in the `config/_default/params.toml` file.
+Blowfish は、テーマの機能を制御する多数の設定パラメータを提供します。下の表は、`config/_default/params.toml` ファイルで使用可能なすべてのパラメータの概要を示しています。
 
-Many of the article defaults here can be overridden on a per article basis by specifying it in the front matter. Refer to the [Front Matter]({{< ref "front-matter" >}}) section for further details.
+ここにある記事のデフォルトの多くは、フロントマターで指定することで、記事ごとにオーバーライドできます。詳細については、[フロントマター]({{< ref "front-matter" >}})セクションを参照してください。
 
 <!-- prettier-ignore-start -->
 
-### Global
+### グローバル
 
-| Name                            | Default      | Description                                                                                                                                                                                                                                                                                                   |
-| ------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `colorScheme`                   | `"blowfish"` | The theme colour scheme to use. Valid values are `blowfish` (default), `avocado`, `fire`, `ocean`, `forest`, `princess`, `neon`, `bloody`, `terminal`, `marvel`, `noir`, `autumn`, `congo`, and`slate`. Refer to the [Colour Schemes]({{< ref "getting-started#colour-schemes" >}}) section for more details. |
-| `defaultAppearance`             | `"light"`    | The default theme appearance, either `light` or `dark`.                                                                                                                                                                                                                                                       |
-| `autoSwitchAppearance`          | `true`       | Whether the theme appearance automatically switches based upon the visitor's operating system preference. Set to `false` to force the site to always use the `defaultAppearance`.                                                                                                                             |
-| `enableSearch`                  | `false`      | Whether site search is enabled. Set to `true` to enable search functionality. Note that the search feature depends on the `outputs.home` setting in the [site configuration](#site-configuration) being set correctly.                                                                                        |
-| `enableCodeCopy`                | `false`      | Whether copy-to-clipboard buttons are enabled for `<code>` blocks. The `highlight.noClasses` parameter must be set to `false` for code copy to function correctly. Read more about [other configuration files](#other-configuration-files) below.                                                             |
-| `mainSections`                  | _Not set_    | The sections that should be displayed in the recent articles list. If not provided the section with the greatest number of articles is used.                                                                                                                                                                  |
-| `showViews`                     | _Not set_    | Whether or not articles and list views are displayed. This requires firebase integrations to be enabled, look below.                                                                                                                                                                                          |
-| `showLikes`                     | _Not set_    | Whether or not articles and list likes are displayed. This requires firebase integrations to be enabled, look below.                                                                                                                                                                                          |
-| `robots`                        | _Not set_    | String that indicates how robots should handle your site. If set, it will be output in the page head. Refer to [Google's docs](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag#directives) for valid values.                                                                        |
-| `disableImageZoom`              | `false`      | Disables image zoom feature across all the images in the site.                                                                                                                                                                                                                                                |
-| `disableImageOptimization`      | `false`      | Disables image resize and optimization features across all the images in the site.                                                                                                                                                                                                                            |
-| `disableTextInHeader`           | `false`      | Disables text in header, useful for logo based headers.                                                                                                                                                                                                                                                       |
-| `defaultBackgroundImage`        | _Not set_    | Default background image for both `background` homepage layout and `background` hero style                                                                                                                                                                                                                    |
-| `defaultFeaturedImage`          | _Not set_    | Default background image for all `featured` images across articles, will be overridden by a local `featured` image.                                                                                                                                                                                           |
-| `highlightCurrentMenuArea`      | _Not set_    | Marks menu entries in the main menu when selected                                                                                                                                                                                                                                                             |
-| `smartTOC`                      | _Not set_    | Activate smart Table of Contents, items in view will be highlighted.                                                                                                                                                                                                                                          |
-| `smartTOCHideUnfocusedChildren` | _Not set_    | When smart Table of Contents is turned on, this will hide deeper levels of the table when they are not in focus.                                                                                                                                                                                              |
+| 名前 | デフォルト | 説明 |
+|---|---|---|
+| `colorScheme` | `"blowfish"` | 使用するテーマのカラースキームです。有効な値は、`blowfish`（デフォルト）、`avocado`、`fire`、`ocean`、`forest`、`princess`、`neon`、`bloody`、`terminal`、`marvel`、`noir`、`autumn`、`congo`、`slate` です。詳細については、[カラースキーム]({{< ref "getting-started#カラースキーム" >}})セクションを参照してください。 |
+| `defaultAppearance` | `"light"` | デフォルトのテーマの外観です。`light` または `dark` のいずれかです。 |
+| `autoSwitchAppearance` | `true` | 訪問者のオペレーティングシステムの設定に基づいてテーマの外観を自動的に切り替えるかどうかです。`false` に設定すると、サイトは常に `defaultAppearance` を使用します。 |
+| `enableSearch` | `false` | サイト内検索が有効かどうかです。`true` に設定すると、検索機能が有効になります。検索機能は、[サイト設定](#サイト設定)の `outputs.home` 設定が正しく設定されているかどうかに依存することに注意してください。 |
+| `enableCodeCopy` | `false` | `<code>` ブロックのクリップボードへのコピーボタンを有効にするかどうかです。コードコピーが正しく機能するには、`highlight.noClasses` パラメータを `false` に設定する必要があります。以下の[その他の設定ファイル](#その他の設定ファイル)について読んでください。 |
+| `mainSections` | _未設定_ | 最近の記事リストに表示するセクションです。指定しない場合は、記事数が最も多いセクションが使用されます。 |
+| `showViews` | _未設定_ | 記事とリストの表示回数を表示するかどうかです。これには Firebase 統合を有効にする必要があります。以下をご覧ください。 |
+| `showLikes` | _未設定_ | 記事とリストのいいねを表示するかどうかです。これには Firebase 統合を有効にする必要があります。以下をご覧ください。 |
+| `robots` | _未設定_ | ロボットがサイトをどのように処理するかを示す文字列です。設定されている場合、ページヘッダーに出力されます。有効な値については、[Google のドキュメント](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag#directives)を参照してください。 |
+| `disableImageZoom` | `false` | サイト内のすべての画像の画像ズーム機能を無効にします。 |
+| `disableImageOptimization` | `false` | サイト内のすべての画像の画像サイズ変更と最適化機能を無効にします。 |
+| `disableTextInHeader` | `false` | ヘッダーのテキストを無効にします。ロゴベースのヘッダーに役立ちます。 |
+| `defaultBackgroundImage` | _未設定_ | `background` ホームページレイアウトと `background` ヒーロースタイルの両方のデフォルトの背景画像です。 |
+| `defaultFeaturedImage` | _未設定_ | 記事全体のすべての `featured` 画像のデフォルトの背景画像です。ローカルの `featured` 画像によってオーバーライドされます。 |
+| `highlightCurrentMenuArea` | _未設定_ | メインメニューのメニュー項目が選択されているときにマークを付けます。 |
+| `smartTOC` | _未設定_ | スマート目次をアクティブにします。表示されている項目が強調表示されます。 |
+| `smartTOCHideUnfocusedChildren` | _未設定_ | スマート目次がオンになっている場合、フォーカスされていないときに、テーブルのより深いレベルが非表示になります。 |
 
-### Header
+### ヘッダー(Header)
 
-| Name            | Default   | Description                                                                                                         |
-| --------------- | --------- | ------------------------------------------------------------------------------------------------------------------- |
-| `header.layout` | `"basic"` | Defines the header for the entire site, supported values are `basic`, `fixed`, `fixed-fill`, and `fixed-fill-blur`. |
+| 名前 | デフォルト | 説明 |
+|---|---|---|
+| `header.layout` | `"basic"` | サイト全体のヘッダーを定義します。サポートされている値は、`basic`、`fixed`、`fixed-fill`、`fixed-fill-blur` です。 |
 
-### Footer
+### フッター(Footer)
 
-| Name                            | Default | Description                                                                                                                                                                                                               |
-| ------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `footer.showMenu`               | `true`  | Show/hide the footer menu, which can be configured in the `[[footer]]` section of the `config/_default/menus.en.toml` file.                                                                                               |
-| `footer.showCopyright`          | `true`  | Whether or not to show the copyright string in the site footer. Note that the string itself can be customised using the `copyright` parameter in the [languages configuration](#language-and-i18n).                       |
-| `footer.showThemeAttribution`   | `true`  | Whether or not to show the "powered by" theme attribution in the site footer. If you choose to disable this message, please consider attributing the theme somewhere else on your site (for example, on your about page). |
-| `footer.showAppearanceSwitcher` | `false` | Whether or not to show the appearance switcher in the site footer. The browser's local storage is used to persist the visitor's preference.                                                                               |
-| `footer.showScrollToTop`        | `true`  | When set to `true` the scroll to top arrow is displayed.                                                                                                                                                                  |
+| 名前 | デフォルト　　　 | 説明 |
+|---|---|---|
+| `footer.showMenu` | `true` | フッターメニューを表示/非表示にします。これは、`config/_default/menus.en.toml` ファイルの `[[footer]]` セクションで設定できます。 |
+| `footer.showCopyright` | `true` | サイトのフッターに著作権文字列を表示するかどうかです。文字列自体は、[言語設定](#言語と-i18n) の `copyright` パラメータを使用してカスタマイズできることに注意してください。 |
+| `footer.showThemeAttribution` | `true` | サイトのフッターに「powered by」というテーマの帰属を表示するかどうかです。このメッセージを無効にする場合は、サイトの他の場所（たとえば、about ページ）でテーマの帰属を検討してください。 |
+| `footer.showAppearanceSwitcher` | `false` | サイトのフッターに外観スイッチャーを表示するかどうかです。 ブラウザのローカルストレージを使用して、訪問者の設定が保持されます。 |
+| `footer.showScrollToTop` | `true` | `true` に設定すると、トップへスクロールの矢印が表示されます。 |
 
-### Homepage
+### ホームページ(Homepage)
 
-| Name                            | Default     | Description                                                                                                                                                                                                                                                                                                        |
-| ------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `homepage.layout`               | `"profile"` | The layout of the homepage. Valid values are `page`, `profile`, `hero`, `card`, `background`, or `custom`. When set to `custom`, you must provide your own layout by creating a `/layouts/partials/home/custom.html` file. Refer to the [Homepage Layout]({{< ref "homepage-layout" >}}) section for more details. |
-| `homepage.homepageImage`        | _Not set_   | Image to be used in `hero` and `card` layouts. Can be set as local image from asset directory or external image url. Refer to the [Homepage Layout]({{< ref "homepage-layout" >}}) section for more details.                                                                                                       |
-| `homepage.showRecent`           | `false`     | Whether or not to display the recent articles list on the homepage.                                                                                                                                                                                                                                                |
-| `homepage.showRecentItems`      | 5           | How many articles to display if showRecent is true. If variable is set to 0 or if it isn't defined the system will default to 5 articles.                                                                                                                                                                          |
-| `homepage.showMoreLink`         | `false`     | Whether or not to display a show more link at the end of your posts that takes the user to a predefined place.                                                                                                                                                                                                     |
-| `homepage.showMoreLinkDest`     | `/posts`    | The destination of the show more button.                                                                                                                                                                                                                                                                           |
-| `homepage.cardView`             | `false`     | Display recent articles as a gallery of cards.                                                                                                                                                                                                                                                                     |
-| `homepage.cardViewScreenWidth`  | `false`     | Enhance the width of the recent articles card gallery to take the full width available.                                                                                                                                                                                                                            |
-| `homepage.layoutBackgroundBlur` | `false`     | Makes the background image in the homepage layout blur with the scroll                                                                                                                                                                                                                                             |
+| 名前 | デフォルト | 説明 |
+|---|---|---|
+| `homepage.layout` | `"profile"` | ホームページのレイアウトです。有効な値は、`page`、`profile`、`hero`、`card`、`background`、`custom` です。`custom` に設定した場合、`/layouts/partials/home/custom.html` ファイルを作成して独自のレイアウトを提供する必要があります。詳細については、[ホームページレイアウト]({{< ref "homepage-layout" >}}) セクションを参照してください。 |
+| `homepage.homepageImage` | _未設定_ | `hero` レイアウトと `card` レイアウトで使用される画像です。アセットディレクトリからのローカル画像または外部画像 URL として設定できます。詳細については、[ホームページレイアウト]({{< ref "homepage-layout" >}}) セクションを参照してください。 |
+| `homepage.showRecent` | `false` | ホームページに最近の記事リストを表示するかどうかです。 |
+| `homepage.showRecentItems` | 5 | showRecent が true の場合に表示する記事の数です。変数が0に設定されている場合、または定義されていない場合は、システムはデフォルトで5つの記事に設定されます。 |
+| `homepage.showMoreLink` | `false` | ユーザーを事前に定義された場所に移動する「もっと見る」リンクを投稿の最後に表示するかどうかです。 |
+| `homepage.showMoreLinkDest` | `/posts` | 「もっと見る」ボタンの移動先です。 |
+| `homepage.cardView` | `false` | 最近の記事をカードのギャラリーとして表示します。 |
+| `homepage.cardViewScreenWidth` | `false` | 最近の記事カードギャラリーの幅を拡張して、利用可能な幅全体を使用します。 |
+| `homepage.layoutBackgroundBlur` | `false` | ホームページレイアウトの背景画像をスクロールに合わせてぼかします。 |
 
-### Article
+### 記事(Article)
 
-| Name                                  | Default   | Description                                                                                                                                                                                                                                                                                                            |
-| ------------------------------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `article.showDate`                    | `true`    | Whether or not article dates are displayed.                                                                                                                                                                                                                                                                            |
-| `article.showViews`                   | `false`   | Whether or not article views are displayed. This requires firebase integrations to be enabled, look below.                                                                                                                                                                                                             |
-| `article.showLikes`                   | `false`   | Whether or not article likes are displayed. This requires firebase integrations to be enabled, look below.                                                                                                                                                                                                             |
-| `article.showDateOnlyInArticle`       | `false`   | Show date within article even if not displayed in article listings/cards.                                                                                                                                                                                                                                              |
-| `article.showDateUpdated`             | `false`   | Whether or not the dates articles were updated are displayed.                                                                                                                                                                                                                                                          |
-| `article.showAuthor`                  | `true`    | Whether or not the author box is displayed in the article footer.                                                                                                                                                                                                                                                      |
-| `article.showAuthorBottom`            | `false`   | Author boxes are displayed at the bottom of each page instead of the top.                                                                                                                                                                                                                                              |
-| `article.showHero`                    | `false`   | Whether the thumbnail image will be shown as a hero image within each article page.                                                                                                                                                                                                                                    |
-| `article.heroStyle`                   | _Not set_ | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`.                                                                                                                                                                                                                |
-| `article.layoutBackgroundBlur`        | `true`    | Makes the background image in the background article heroStyle blur with the scroll                                                                                                                                                                                                                                    |
-| `article.layoutBackgroundHeaderSpace` | `true`    | Add space between the header and the body.                                                                                                                                                                                                                                                                             |
-| `article.showBreadcrumbs`             | `false`   | Whether or not breadcrumbs are displayed in the article header.                                                                                                                                                                                                                                                        |
-| `article.showDraftLabel`              | `true`    | Whether or not the draft indicator is shown next to articles when site is built with `--buildDrafts`.                                                                                                                                                                                                                  |
-| `article.showEdit`                    | `false`   | Whether or not the link to edit the article content should be displayed.                                                                                                                                                                                                                                               |
-| `article.editURL`                     | _Not set_ | When `article.showEdit` is active, the URL for the edit link.                                                                                                                                                                                                                                                          |
-| `article.editAppendPath`              | `true`    | When `article.showEdit` is active, whether or not the path to the current article should be appended to the URL set at `article.editURL`.                                                                                                                                                                              |
-| `article.seriesOpened`                | `false`   | Whether or not the series module will be displayed open by default or not.                                                                                                                                                                                                                                             |
-| `article.showHeadingAnchors`          | `true`    | Whether or not heading anchor links are displayed alongside headings within articles.                                                                                                                                                                                                                                  |
-| `article.showPagination`              | `true`    | Whether or not the next/previous article links are displayed in the article footer.                                                                                                                                                                                                                                    |
-| `article.invertPagination`            | `false`   | Whether or not to flip the direction of the next/previous article links.                                                                                                                                                                                                                                               |
-| `article.showReadingTime`             | `true`    | Whether or not article reading times are displayed.                                                                                                                                                                                                                                                                    |
-| `article.showTableOfContents`         | `false`   | Whether or not the table of contents is displayed on articles.                                                                                                                                                                                                                                                         |
-| `article.showRelatedContent`          | `false`   | Display related content for each post. Might required additional configuration to your `config.toml`. Please check the theme `config.toml` if you want to enable this feature and copy all the relevant _related_ entries. Also check [Hugo's docs](https://gohugo.io/content-management/related/) on related content. |
-| `article.relatedContentLimit`         | `3`       | Limit of related articles to display if `showRelatedContent` is turned on.                                                                                                                                                                                                                                       |
-| `article.showTaxonomies`              | `false`   | Whether or not the taxonomies related to this article are displayed.                                                                                                                                                                                                                                                   |
-| `article.showAuthorsBadges`           | `false`   | Whether the `authors` taxonomies are are displayed in the article or list header. This requires the setup of `multiple authors` and the `authors` taxonomy. Check [this page]({{< ref "multi-author" >}}) for more details on how to configure that feature.                                                           |
-| `article.showWordCount`               | `false`   | Whether or not article word counts are displayed.                                                                                                                                                                                                                                                                      |
-| `article.showComments`                | `false`   | Whether or not the [comments partial]({{< ref "partials#comments" >}}) is included after the article footer.                                                                                                                                                                                                           |
-| `article.sharingLinks`                | _Not set_ | Which sharing links to display at the end of each article. When not provided, or set to `false` no links will be displayed.  Available values are: "linkedin", "bluesky", "mastodon", "twitter", "reddit", "pinterest", "facebook", "email", "whatsapp", and "telegram"                                                                       |
-| `article.showZenMode`                 | `false`   | Flag to activate Zen Mode reading feature for articles.                                                                                                                                                                                                                                                                |
+| 名前 | デフォルト　　　　 | 説明 |
+|---|---|---|
+| `article.showDate` | `true` | 記事の日付を表示するかどうかです。 |
+| `article.showViews` | `false` | 記事の表示回数を表示するかどうかです。これには Firebase 統合を有効にする必要があります。以下をご覧ください。 |
+| `article.showLikes` | `false` | 記事のいいねを表示するかどうかです。これには Firebase 統合を有効にする必要があります。以下をご覧ください。 |
+| `article.showDateOnlyInArticle` | `false` | 記事リスト/カードに表示されていない場合でも、記事内に日付を表示します。 |
+| `article.showDateUpdated` | `false` | 記事が更新された日付を表示するかどうかです。 |
+| `article.showAuthor` | `true` | 記事のフッターに著者ボックスを表示するかどうかです。 |
+| `article.showAuthorBottom` | `false` | 著者ボックスは、各ページの上部ではなく下部に表示されます。 |
+| `article.showHero` | `false` | サムネイル画像を各記事ページ内でヒーロー画像として表示するかどうかです。 |
+| `article.heroStyle` | _未設定_ | ヒーロー画像を表示するスタイルです。有効なオプションは、`basic`、`big`、`background`、`thumbAndBackground` です。 |
+| `article.layoutBackgroundBlur` | `true` | 背景記事 heroStyle の背景画像をスクロールに合わせてぼかします。 |
+| `article.layoutBackgroundHeaderSpace` | `true` | ヘッダーと本文の間にスペースを追加します。 |
+| `article.showBreadcrumbs` | `false` | 記事のヘッダーにパンくずリストを表示するかどうかです。 |
+| `article.showDraftLabel` | `true` | サイトが `--buildDrafts` でビルドされたときに、記事の横にドラフトインジケータを表示するかどうかです。 |
+| `article.showEdit` | `false` | 記事コンテンツを編集するためのリンクを表示するかどうかです。 |
+| `article.editURL` | _未設定_ | `article.showEdit` がアクティブな場合、編集リンクの URL です。 |
+| `article.editAppendPath` | `true` | `article.showEdit` がアクティブな場合、現在の記事へのパスを `article.editURL` で設定された URL に追加するかどうかです。 |
+| `article.seriesOpened` | `false` | シリーズモジュールがデフォルトで開いた状態で表示されるかどうかです。 |
+| `article.showHeadingAnchors` | `true` | 記事内の見出しの横にアンカーリンク見出しを表示するかどうかです。 |
+| `article.showPagination` | `true` | 記事のフッターに次/前の記事リンクを表示するかどうかです。 |
+| `article.invertPagination` | `false` | 次/前の記事リンクの方向を反転するかどうかです。 |
+| `article.showReadingTime` | `true` | 記事の読了時間を表示するかどうかです。 |
+| `article.showTableOfContents` | `false` | 記事に目次を表示するかどうかです。 |
+| `article.showRelatedContent` | `false` | 各投稿の関連記事を表示します。`config.toml` に追加の設定が必要になる場合があります。この機能を有効にする場合は、テーマの `config.toml` を確認し、関連するすべての _related_ エントリをコピーしてください。また、関連記事については [Hugo のドキュメント](https://gohugo.io/content-management/related/) も確認してください。 |
+| `article.relatedContentLimit` | `3` | `showRelatedContent` がオンになっている場合に表示する関連記事の上限です。 |
+| `article.showTaxonomies` | `false` | この記事に関連するタクソノミーを表示するかどうかです。 |
+| `article.showAuthorsBadges` | `false` | `authors` タクソノミーを記事またはリストのヘッダーに表示するかどうかです。これには、「複数の著者」と `authors` タクソノミーの設定が必要です。この機能の設定方法の詳細については、[このページ]({{< ref "multi-author" >}}) を確認してください。 |
+| `article.showWordCount` | `false` | 記事の単語数を表示するかどうかです。 |
+| `article.showComments` | `false` | 記事のフッターの後に [コメントパーシャル]({{< ref "partials#コメント" >}}) を含めるかどうかです。 |
+| `article.sharingLinks` | _未設定_ | 各記事の最後に表示する共有リンクです。指定されていないか、`false` に設定されている場合、リンクは表示されません。使用可能な値は、<br>"linkedin"、"bluesky"、<br>"mastodon"、"twitter"、"reddit"、<br>"pinterest"、"facebook"、"email"、<br>"whatsapp"、"telegram" です。 |
+| `article.showZenMode` | `false` | 記事のZenモードリーダー機能を有効にするフラグです。 |
 
-### List
+### リスト(List)
 
-| Name                               | Default   | Description                                                                                                                                                                                                                                                    |
-| ---------------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `list.showHero`                    | `false`   | Whether the thumbnail image will be shown as a hero image within each list page.                                                                                                                                                                               |
-| `list.heroStyle`                   | _Not set_ | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`.                                                                                                                                                        |
-| `list.showBreadcrumbs`             | `false`   | Whether or not breadcrumbs are displayed in the header on list pages.                                                                                                                                                                                          |
-| `list.layoutBackgroundBlur`        | `true`    | Makes the background image in the background list heroStyle blur with the scroll                                                                                                                                                                               |
-| `list.layoutBackgroundHeaderSpace` | `true`    | Add space between the header and the body.                                                                                                                                                                                                                     |
-| `list.showTableOfContents`         | `false`   | Whether or not the table of contents is displayed on list pages.                                                                                                                                                                                               |
-| `list.showSummary`                 | `false`   | Whether or not article summaries are displayed on list pages. If a summary is not provided in the [front matter]({{< ref "front-matter" >}}), one will be auto generated using the `summaryLength` parameter in the [site configuration](#site-configuration). |
-| `list.showViews`                   | `false`   | Whether or not list views are displayed. This requires firebase integrations to be enabled, look below.                                                                                                                                                        |
-| `list.showLikes`                   | `false`   | Whether or not list likes are displayed. This requires firebase integrations to be enabled, look below.                                                                                                                                                        |
-| `list.showCards`                   | `false`   | Whether or not each article is displayed as a card or as simple inline text.                                                                                                                                                                                   |
-| `list.orderByWeight`               | `false`   | Whether or not articles are sorted by [weights](https://gohugo.io/methods/page/weight/).                                                                                                                                                                       |
-| `list.groupByYear`                 | `true`    | Whether or not articles are grouped by year on list pages.                                                                                                                                                                                                     |
-| `list.cardView`                    | `false`   | Display lists as a gallery of cards.                                                                                                                                                                                                                           |
-| `list.cardViewScreenWidth`         | `false`   | Enhance the width of card galleries in lists to take the full width available.                                                                                                                                                                                 |
-| `list.constrainItemsWidth`         | `false`   | Limit item width to `prose` to increase readability. Useful when no feature images are available.                                                                                                                                                              |
-| `list.showTableOfContents`         | `false`   | Whether or not the table of contents is displayed on articles.                                                                                                                                                                                                 |
+| 名前                               | デフォルト　　　   | 説明                                                                                                                                                                                                                                                                                            |
+| ---------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `list.showHero`                    | `false`   | 各リストページ内でサムネイル画像をヒーロー画像として表示するかどうか。                                                                                                                                                                                                                               |
+| `list.heroStyle`                   | _未設定_ | ヒーロー画像の表示スタイル。有効なオプションは `basic`、`big`、`background`、`thumbAndBackground` です。                                                                                                                                                                                            |
+| `list.showBreadcrumbs`             | `false`   | リストページのヘッダーにパンくずリストを表示するかどうか。                                                                                                                                                                                                                                        |
+| `list.layoutBackgroundBlur`        | `true`    | `background` リストの heroStyle の背景画像をスクロールでぼかします。                                                                                                                                                                                                                              |
+| `list.layoutBackgroundHeaderSpace` | `true`    | ヘッダーと本文の間にスペースを追加します。                                                                                                                                                                                                                                                          |
+| `list.showTableOfContents`         | `false`   | リストページに目次を表示するかどうか。                                                                                                                                                                                                                                                            |
+| `list.showSummary`                 | `false`   | リストページに記事の要約を表示するかどうか。[フロントマター]({{< ref "front-matter" >}}) で要約が提供されていない場合、[サイト設定](#site-configuration) の `summaryLength` パラメータを使用して自動的に生成されます。                                                                          |
+| `list.showViews`                   | `false`   | リストの閲覧数を表示するかどうか。これを有効にするには、Firebase の統合を有効にする必要があります。以下をご覧ください。                                                                                                                                                                              |
+| `list.showLikes`                   | `false`   | リストのいいね数を表示するかどうか。これを有効にするには、Firebase の統合を有効にする必要があります。以下をご覧ください。                                                                                                                                                                              |
+| `list.showCards`                   | `false`   | 各記事をカードとして表示するか、シンプルなインラインテキストとして表示するかどうか。                                                                                                                                                                                                               |
+| `list.orderByWeight`               | `false`   | 記事を[重み](https://gohugo.io/methods/page/weight/)で並べ替えるかどうか。                                                                                                                                                                                                                         |
+| `list.groupByYear`                 | `true`    | リストページで記事を年別にグループ化するかどうか。                                                                                                                                                                                                                                                    |
+| `list.cardView`                    | `false`   | リストをカードのギャラリーとして表示します。                                                                                                                                                                                                                                                      |
+| `list.cardViewScreenWidth`         | `false`   | リスト内のカードギャラリーの幅を、利用可能な全幅を使用するように拡張します。                                                                                                                                                                                                                          |
+| `list.constrainItemsWidth`         | `false`   | 読みやすくするために、アイテムの幅を `prose` に制限します。フィーチャー画像が利用できない場合に役立ちます。                                                                                                                                                                                         |
+| `list.showTableOfContents`         | `false`   | 記事に目次を表示するかどうか。                                                                                                                                                                                                                                                                    |
 
-### Sitemap
+### サイトマップ(Sitemap)
 
-| Name                    | Default                | Description                                                                                                                                                                                 |
+| 名前                    | デフォルト                | 説明                                                                                                                                                                                 |
 | ----------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `sitemap.excludedKinds` | `["taxonomy", "term"]` | Kinds of content that should be excluded from the generated `/sitemap.xml` file. Refer to the [Hugo docs](https://gohugo.io/templates/section-templates/#page-kinds) for acceptable values. |
+| `sitemap.excludedKinds` | `["taxonomy", "term"]` | 生成された `/sitemap.xml` ファイルから除外するコンテンツの種類。許容される値については、[Hugo のドキュメント](https://gohugo.io/templates/section-templates/#page-kinds)を参照してください。 |
 
-### Taxonomy
+### タクソノミー(Taxonomy)
 
-| Name                           | Default   | Description                                                                                                |
-| ------------------------------ | --------- | ---------------------------------------------------------------------------------------------------------- |
-| `taxonomy.showTermCount`       | `true`    | Whether or not the number of articles within a taxonomy term is displayed on the taxonomy listing.         |
-| `taxonomy.showHero`            | `false`   | Whether the thumbnail image will be shown as a hero image within each taxonomy page.                       |
-| `taxonomy.heroStyle`           | _Not set_ | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`.    |
-| `taxonomy.showBreadcrumbs`     | `false`   | Whether or not breadcrumbs are displayed in the taxonomy header.                                           |
-| `taxonomy.showViews`           | `false`   | Whether or not article views are displayed. This requires firebase integrations to be enabled, look below. |
-| `taxonomy.showLikes`           | `false`   | Whether or not article likes are displayed. This requires firebase integrations to be enabled, look below. |
-| `taxonomy.showTableOfContents` | `false`   | Whether or not the table of contents is displayed on taxonomies.                                           |
-| `taxonomy.cardView`            | `false`   | Display lists as a gallery of cards.                                                                       |
+| 名前                           | デフォルト　　   | 説明                                                                                                              |
+| ------------------------------ | --------- | ----------------------------------------------------------------------------------------------------------------- |
+| `taxonomy.showTermCount`       | `true`    | タクソノミーリストにタクソノミー用語内の記事数を表示するかどうか。                                                    |
+| `taxonomy.showHero`            | `false`   | 各タクソノミーページ内でサムネイル画像をヒーロー画像として表示するかどうか。                                          |
+| `taxonomy.heroStyle`           | _未設定_ | ヒーロー画像の表示スタイル。有効なオプションは `basic`、`big`、`background`、`thumbAndBackground` です。              |
+| `taxonomy.showBreadcrumbs`     | `false`   | タクソノミーのヘッダーにパンくずリストを表示するかどうか。                                                            |
+| `taxonomy.showViews`           | `false`   | 記事の閲覧数を表示するかどうか。これを有効にするには、Firebase の統合を有効にする必要があります。以下をご覧ください。 |
+| `taxonomy.showLikes`           | `false`   | 記事のいいね数を表示するかどうか。これを有効にするには、Firebase の統合を有効にする必要があります。以下をご覧ください。 |
+| `taxonomy.showTableOfContents` | `false`   | タクソノミーに目次を表示するかどうか。                                                                                |
+| `taxonomy.cardView`            | `false`   | リストをカードのギャラリーとして表示します。                                                                          |
 
-### Term
+### ターム(Term)
 
-| Name                       | Default   | Description                                                                                                |
-| -------------------------- | --------- | ---------------------------------------------------------------------------------------------------------- |
-| `term.showHero`            | `false`   | Whether the thumbnail image will be shown as a hero image within each term page.                           |
-| `term.heroStyle`           | _Not set_ | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`.    |
-| `term.showBreadcrumbs`     | `false`   | Whether or not breadcrumbs are displayed in the term header.                                               |
-| `term.showViews`           | `false`   | Whether or not article views are displayed. This requires firebase integrations to be enabled, look below. |
-| `term.showLikes`           | `false`   | Whether or not article likes are displayed. This requires firebase integrations to be enabled, look below. |
-| `term.showTableOfContents` | `false`   | Whether or not the table of contents is displayed on terms.                                                |
-| `term.groupByYear`         | `false`   | Whether or not articles are grouped by year on term pages.                                                 |
-| `term.cardView`            | `false`   | Display lists as a gallery of cards.                                                                       |
-| `term.cardViewScreenWidth` | `false`   | Enhance the width of card galleries in lists to take the full width available.                             |
+| 名前                       | デフォルト　　   | 説明                                                                                                              |
+| -------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------- |
+| `term.showHero`            | `false`   | 各タームページ内でサムネイル画像をヒーロー画像として表示するかどうか。                                            |
+| `term.heroStyle`           | _未設定_ | ヒーロー画像の表示スタイル。有効なオプションは `basic`、`big`、`background`、`thumbAndBackground` です。              |
+| `term.showBreadcrumbs`     | `false`   | タームのヘッダーにパンくずリストを表示するかどうか。                                                                  |
+| `term.showViews`           | `false`   | 記事の閲覧数を表示するかどうか。これを有効にするには、Firebase の統合を有効にする必要があります。以下をご覧ください。 |
+| `term.showLikes`           | `false`   | 記事のいいね数を表示するかどうか。これを有効にするには、Firebase の統合を有効にする必要があります。以下をご覧ください。 |
+| `term.showTableOfContents` | `false`   | タームに目次を表示するかどうか。                                                                                  |
+| `term.groupByYear`         | `false`   | タームページで記事を年別にグループ化するかどうか。                                                                  |
+| `term.cardView`            | `false`   | リストをカードのギャラリーとして表示します。                                                                          |
+| `term.cardViewScreenWidth` | `false`   | リスト内のカードギャラリーの幅を、利用可能な全幅を使用するように拡張します。                                          |
 
 ### Firebase
 
-| Name                         | Default   | Description                                                                                                                                                                 |
-| ---------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `firebase.apiKey`            | _Not set_ | Firebase apiKey, required to integrate against Firebase. Check [this page]({{< ref "firebase-views" >}}) for a guide on how to integrate Firebase into Blowfish.            |
-| `firebase.authDomain`        | _Not set_ | Firebase authDomain, required to integrate against Firebase. Check [this page]({{< ref "firebase-views" >}}) for a guide on how to integrate Firebase into Blowfish.        |
-| `firebase.projectId`         | _Not set_ | Firebase projectId, required to integrate against Firebase. Check [this page]({{< ref "firebase-views" >}}) for a guide on how to integrate Firebase into Blowfish.         |
-| `firebase.storageBucket`     | _Not set_ | Firebase storageBucket, required to integrate against Firebase. Check [this page]({{< ref "firebase-views" >}}) for a guide on how to integrate Firebase into Blowfish.     |
-| `firebase.messagingSenderId` | _Not set_ | Firebase messagingSenderId, required to integrate against Firebase. Check [this page]({{< ref "firebase-views" >}}) for a guide on how to integrate Firebase into Blowfish. |
-| `firebase.appId`             | _Not set_ | Firebase appId, required to integrate against Firebase. Check [this page]({{< ref "firebase-views" >}}) for a guide on how to integrate Firebase into Blowfish.             |
-| `firebase.measurementId`     | _Not set_ | Firebase measurementId, required to integrate against Firebase. Check [this page]({{< ref "firebase-views" >}}) for a guide on how to integrate Firebase into Blowfish.     |
+| 名前                         | デフォルト　　　   | 説明                                                                                                                                                                               |
+| ---------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `firebase.apiKey`            | _未設定_ | Firebase との統合に必要な Firebase API キー。Firebase を Blowfish に統合する方法については、[このページ]({{< ref "firebase-views" >}})を参照してください。                       |
+| `firebase.authDomain`        | _未設定_ | Firebase との統合に必要な Firebase 認証ドメイン。Firebase を Blowfish に統合する方法については、[このページ]({{< ref "firebase-views" >}})を参照してください。                     |
+| `firebase.projectId`         | _未設定_ | Firebase との統合に必要な Firebase プロジェクト ID。Firebase を Blowfish に統合する方法については、[このページ]({{< ref "firebase-views" >}})を参照してください。                    |
+| `firebase.storageBucket`     | _未設定_ | Firebase との統合に必要な Firebase ストレージバケット。Firebase を Blowfish に統合する方法については、[このページ]({{< ref "firebase-views" >}})を参照してください。                  |
+| `firebase.messagingSenderId` | _未設定_ | Firebase との統合に必要な Firebase メッセージング送信者 ID。Firebase を Blowfish に統合する方法については、[このページ]({{< ref "firebase-views" >}})を参照してください。              |
+| `firebase.appId`             | _未設定_ | Firebase との統合に必要な Firebase アプリ ID。Firebase を Blowfish に統合する方法については、[このページ]({{< ref "firebase-views" >}})を参照してください。                          |
+| `firebase.measurementId`     | _未設定_ | Firebase との統合に必要な Firebase 測定 ID。Firebase を Blowfish に統合する方法については、[このページ]({{< ref "firebase-views" >}})を参照してください。                          |
 
 ### Fathom Analytics
 
-| Name                     | Default   | Description                                                                                                                                    |
-| ------------------------ | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `fathomAnalytics.site`   | _Not set_ | The site code generated by Fathom Analytics for the website. Refer to the [Analytics docs]({{< ref "partials#analytics" >}}) for more details. |
-| `fathomAnalytics.domain` | _Not set_ | If using a custom domain with Fathom Analytics, provide it here to serve `script.js` from the custom domain.                                   |
+| 名前                     | デフォルト　　　 | 説明                                                                                                                                                  |
+| ------------------------ | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `fathomAnalytics.site`   | _未設定_ | ウェブサイト用に Fathom Analytics によって生成されたサイトコード。詳細については、[Analytics のドキュメント]({{< ref "partials#アナリティクス" >}})を参照してください。 |
+| `fathomAnalytics.domain` | _未設定_ | Fathom Analytics でカスタムドメインを使用している場合、ここに指定して、`script.js` をカスタムドメインから配信します。                                         |
 
 ### Umami Analytics
 
-| Name                       | Default   | Description                                                                                                                                                                        |
-| -------------------------- | --------- |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `umamiAnalytics.websiteid` | _Not set_ | The site code generated by Umami Analytics for the website. Refer to the [Analytics docs]({{< ref "partials#analytics" >}}) for more details.                                      |
-| `umamiAnalytics.domain`    | _Not set_ | If using a custom domain with Umami Analytics, provide it here to serve `script.js` from the custom domain.                                                                        |
-| `umamiAnalytics.dataDomains`    | _Not set_ | If you want the tracker to only run on specific domains, provide it for your tracker script. This is a comma delimited list of domain names. Such as "yoursite.com,yoursite2.com". |
-| `umamiAnalytics.scriptName` | script.js | The name of the `script.js` used for anti-ad-blocking is configured by the environment variable `TRACKER_SCRIPT_NAME` |
-| `umamiAnalytics.enableTrackEvent`    | true      | When set to `true` track event will add automatically. If you do not want to add track event, set it to `false`.                                                            |
+| 名前 | デフォルト　　　 | 説明 |
+|---|---|---|
+| `umamiAnalytics.websiteid` | _未設定_ | ウェブサイト用に Umami Analytics によって生成されたサイトコード。詳細については、[Analytics のドキュメント]({{< ref "partials#アナリティクス" >}})を参照してください。 |
+| `umamiAnalytics.domain` | _未設定_ | Umami Analytics でカスタムドメインを使用している場合、ここに指定して、`script.js` をカスタムドメインから配信します。 |
+| `umamiAnalytics.dataDomains` | _未設定_ | トラッカーを特定のドメインでのみ実行したい場合は、トラッカースクリプトに指定します。これは、ドメイン名のカンマ区切りリストです。例えば "yoursite.com,yoursite2.com" のようになります。 |
+| `umamiAnalytics.scriptName` | script.js | アンチ広告ブロックに使用される `script.js` の名前は、環境変数 `TRACKER_SCRIPT_NAME` で設定されます。 |
+| `umamiAnalytics.enableTrackEvent` | `true` | `true` に設定すると、トラックイベントが自動的に追加されます。トラックイベントを追加したくない場合は、`false` に設定してください。 |
 
 ### Seline Analytics
 
-| Name                              | Default   | Description                                                                                                                               |
+| 名前                              | デフォルト　　　   | 説明                                                                                                                               |
 |-----------------------------------|-----------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| `selineAnalytics.token`           | _Not set_ | The token generated by Seline Analytics for the website. Refer to the [Analytics docs]({{< ref "partials#analytics" >}}) for more details. |
-| `selineAnalytics.enableTrackEvent` | true      | When set to `true` track event will add automatically. If you do not want to add track event, set it to `false`.                          |
+| `selineAnalytics.token`           | _未設定_ | ウェブサイト用に Seline Analytics によって生成されたトークン。詳細については、[Analytics のドキュメント]({{< ref "partials#アナリティクス" >}})を参照してください。 |
+| `selineAnalytics.enableTrackEvent` | `true`      | `true` に設定すると、トラックイベントが自動的に追加されます。トラックイベントを追加したくない場合は、`false` に設定してください。                          |
 
 ### BuyMeACoffee
 
-| Name                                | Default   | Description                                                                 |
-| ----------------------------------- | --------- | --------------------------------------------------------------------------- |
-| `buymeacoffee.identifier`           | _Not set_ | The identifier to the target buymeacoffee account.                          |
-| `buymeacoffee.globalWidget`         | _Not set_ | Activate the global buymeacoffee widget.                                    |
-| `buymeacoffee.globalWidgetMessage`  | _Not set_ | Message what will be displayed the first time a new user lands on the site. |
-| `buymeacoffee.globalWidgetColor`    | _Not set_ | Widget color in hex format.                                                 |
-| `buymeacoffee.globalWidgetPosition` | _Not set_ | Position of the widget, i.e. "Left" or "Right"                              |
+| 名前                                | デフォルト　　   | 説明                                                                                   |
+| ----------------------------------- | --------- | -------------------------------------------------------------------------------------- |
+| `buymeacoffee.identifier`           | _未設定_ | ターゲットの buymeacoffee アカウントの識別子。                                           |
+| `buymeacoffee.globalWidget`         | _未設定_ | グローバル buymeacoffee ウィジェットを有効にします。                                       |
+| `buymeacoffee.globalWidgetMessage`  | _未設定_ | 新しいユーザーが初めてサイトにアクセスしたときに表示されるメッセージ。                     |
+| `buymeacoffee.globalWidgetColor`    | _未設定_ | ウィジェットの色（16進数形式）。                                                        |
+| `buymeacoffee.globalWidgetPosition` | _未設定_ | ウィジェットの位置。例えば "Left" または "Right"                                        |
 
-### Verifications
+### verification
 
-| Name                     | Default   | Description                                                                             |
-| ------------------------ | --------- | --------------------------------------------------------------------------------------- |
-| `verification.google`    | _Not set_ | The site verification string provided by Google to be included in the site metadata.    |
-| `verification.bing`      | _Not set_ | The site verification string provided by Bing to be included in the site metadata.      |
-| `verification.pinterest` | _Not set_ | The site verification string provided by Pinterest to be included in the site metadata. |
-| `verification.yandex`    | _Not set_ | The site verification string provided by Yandex to be included in the site metadata.    |
+| 名前                     | デフォルト　  | 説明                                                                                                    |
+| ------------------------ | --------- | ------------------------------------------------------------------------------------------------------- |
+| `verification.google`    | _未設定_ | サイトメタデータに含まれる、Google が提供するサイト確認文字列。                                             |
+| `verification.bing`      | _未設定_ | サイトメタデータに含まれる、Bing が提供するサイト確認文字列。                                               |
+| `verification.pinterest` | _未設定_ | サイトメタデータに含まれる、Pinterest が提供するサイト確認文字列。                                          |
+| `verification.yandex`    | _未設定_ | サイトメタデータに含まれる、Yandex が提供するサイト確認文字列。                                             |
 <!-- prettier-ignore-end -->
 
 ## RSSNext
 
-| Name                     | Default   | Description                                                                                                                          |
-| ------------------------ | --------- |--------------------------------------------------------------------------------------------------------------------------------------|
-| `rssnext.feedId`    | _Not set_ | The rss `feedId` string provided by [RSSNext/Follow](https://follow.is/) to be included in the `rss.xml`, which can helps to claim rss feed as your own. |
-| `rssnext.userId`      | _Not set_ | The rss `userId` string provided by [RSSNext/Follow](https://follow.is/) to be included in the `rss.xml`, which can helps to claim rss feed as your own.     |
+| 名前                     | デフォルト　　　   | 説明                                                                                                                                                             |
+| ------------------------ | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `rssnext.feedId`    | _未設定_ | [RSSNext/Follow](https://follow.is/) によって提供される rss `feedId` 文字列。`rss.xml` に含まれ、rss フィードを自身のものとしてクレームするのに役立ちます。 |
+| `rssnext.userId`      | _未設定_ | [RSSNext/Follow](https://follow.is/) によって提供される rss `userId` 文字列。`rss.xml` に含まれ、rss フィードを自身のものとしてクレームするのに役立ちます。 |
 
-## Other configuration files
+## その他の設定ファイル
 
-The theme also includes a `markup.toml` configuration file. This file contains some important parameters that ensure that Hugo is correctly configured to generate sites built with Blowfish.
+このテーマには `markup.toml` 設定ファイルも含まれています。このファイルには、Hugo が Blowfish で構築されたサイトを正しく生成するために重要なパラメータがいくつか含まれています。
 
-Always ensure this file is present in the config directory and that the required values are set. Failure to do so may cause certain features to function incorrectly and could result in unintended behaviour.
+このファイルが常に config ディレクトリに存在し、必要な値が設定されていることを確認してください。そうしないと、特定の機能が正しく機能せず、意図しない動作を引き起こす可能性があります。
