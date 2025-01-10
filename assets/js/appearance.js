@@ -76,14 +76,24 @@ var updateMeta = () => {
 {{ $secondaryLogo := resources.Get .Site.Params.SecondaryLogo }}
 {{ if and ($primaryLogo) ($secondaryLogo) }}
 var updateLogo = (targetAppearance) => {
-  var elems;
-  elems = document.querySelectorAll("img.logo")
+  var imgElems = document.querySelectorAll("img.logo");
+  var logoContainers = document.querySelectorAll("span.logo");
+  
   targetLogoPath = 
     targetAppearance == "{{ .Site.Params.DefaultAppearance }}" ?
     "{{ $primaryLogo.RelPermalink }}" : "{{ $secondaryLogo.RelPermalink }}"
-  for (const elem of elems) {
+  for (const elem of imgElems) {
     elem.setAttribute("src", targetLogoPath)
   }
+
+  {{ if eq $primaryLogo.MediaType.SubType "svg" }}
+  targetContent = 
+    targetAppearance == "{{ .Site.Params.DefaultAppearance }}" ?
+    `{{ $primaryLogo.Content | safeHTML }}` : `{{ $secondaryLogo.Content | safeHTML }}`
+  for (const container of logoContainers) {
+    container.innerHTML = targetContent;
+  }
+  {{ end }}
 }
 {{ end }}
 {{- end }}

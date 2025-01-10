@@ -2,7 +2,7 @@
                 title: "ekwska.com"
                 tags: [Personal blog]
                 externalUrl: "https://ekwska.com"
-                weight: 651
+                weight: 611
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

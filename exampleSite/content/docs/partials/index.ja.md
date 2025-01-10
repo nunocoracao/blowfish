@@ -1,21 +1,21 @@
 ---
-title: "Partials"
+title: "パーシャル"
 weight: 9
 draft: false
-description: "All the partials available in Blowfish."
+description: "Blowfish で利用可能なすべてのパーシャル。"
 slug: "partials"
 tags: ["partials", "analytics", "privacy", "comments", "favicons", "icon", "docs"]
 series: ["Documentation"]
 series_order: 9
 ---
 
-## Analytics
+## アナリティクス
 
-Blowfish provides built-in support for Fathom Analytics and Google Analytics. Fathom is a paid alternative to Google Analytics that respects user privacy.
+Blowfish は、Fathom Analytics、Google アナリティクス、Umami Analytics のビルトインサポートを提供しています。Fathom は、ユーザーのプライバシーを尊重する Google アナリティクスの有料の代替手段です。
 
 ### Fathom Analytics
 
-To enable Fathom Analytics support, simply provide your Fathom site code in the `config/_default/params.toml` file. If you also use the custom domain feature of Fathom and would like to serve their script from your domain, you can also additionally provide the `domain` configuration value. If you don't provide a `domain` value, the script will load directly from Fathom DNS.
+Fathom Analytics のサポートを有効にするには、`config/_default/params.toml` ファイルに Fathom サイトコードを指定するだけです。Fathom のカスタムドメイン機能を使用していて、ドメインからスクリプトを配信したい場合は、追加で `domain` 設定値を指定することもできます。`domain` 値を指定しない場合、スクリプトは Fathom DNS から直接ロードされます。
 
 ```toml
 # config/_default/params.toml
@@ -25,29 +25,29 @@ To enable Fathom Analytics support, simply provide your Fathom site code in the 
   domain = "llama.yoursite.com"
 ```
 
-### Google Analytics
+### Google アナリティクス
 
-Google Analytics support is provided through the internal Hugo partial. Simply provide the `googleAnalytics` key in the `config/_default/config.toml` file and the script will be added automatically.
+Google アナリティクスのサポートは、Hugo の内部パーシャルを介して提供されます。`config/_default/config.toml` ファイルに `googleAnalytics` キーを指定するだけで、スクリプトが自動的に追加されます。
 
-Both version 3 (analytics.js) and version 4 (gtag.js) are supported, based on the configuration value provided:
+指定された設定値に基づいて、バージョン 3 (analytics.js) とバージョン 4 (gtag.js) の両方がサポートされています。
 
 ```toml
 # config/_default/config.toml
 
-# version 3
+# バージョン 3
 googleAnalytics = "UA-PROPERTY_ID"
-# version 4
+# バージョン 4
 googleAnalytics = "G-MEASUREMENT_ID"
 ```
 
 ### Umami Analytics
 
-To enable Umami Analytics support, simply provide your [Umami tracking code](https://umami.is/docs/collect-data) in the `config/_default/params.toml` file.
-If you also use the custom domain feature of Umami and would like to serve their script from your domain, you can also additionally provide the `domain` configuration value. If you don't provide a `domain` value, the script will load directly from Umami DNS (analytics.umami.is).
-If you want the tracker to only run on specific domains, you can provide the `dataDomains` configuration value. If you don't provide a `dataDomains` value, the script will run on any website where the `domain` and`websiteid` match. If the environment variable `TRACKER_SCRIPT_NAME` is configured, you can specify a custom script name `scriptName`. If it is not configured, either comment it out or use the default `script.js`.
+Umami Analytics のサポートを有効にするには、`config/_default/params.toml` ファイルに [Umami トラッキングコード](https://umami.is/docs/collect-data)を指定するだけです。
+Umami のカスタムドメイン機能を使用していて、ドメインからスクリプトを配信したい場合は、追加で `domain` 設定値を指定することもできます。`domain` 値を指定しない場合、スクリプトは Umami DNS (analytics.umami.is) から直接ロードされます。
+トラッカーを特定のドメインでのみ実行したい場合は、`dataDomains` 設定値を指定できます。`dataDomains` 値を指定しない場合、スクリプトは `domain` と `websiteid` が一致する任意のウェブサイトで実行されます。環境変数 `TRACKER_SCRIPT_NAME` が設定されている場合は、カスタムスクリプト名 `scriptName` を指定できます。設定されていない場合は、コメントアウトするか、デフォルトの `script.js` を使用してください。
 
 {{< alert >}}
-**Note:** If you enable Umami Analytics, Blowfish will support [Umami Track Event](https://umami.is/docs/track-events) automatically. If you do not want to support Track Event, the param `enableTrackEvent` must set to `false`.
+**注:** Umami Analytics を有効にすると、Blowfish は [Umami トラックイベント](https://umami.is/docs/track-events)を自動的にサポートします。トラックイベントをサポートしたくない場合は、パラメータ `enableTrackEvent` を `false` に設定する必要があります。
 {{< /alert >}}
 
 ```toml
@@ -63,9 +63,10 @@ If you want the tracker to only run on specific domains, you can provide the `da
 
 ### Seline Analytics
 
-To enable Seline Analytics support, simply provide your [Seline token](https://seline.so/docs/install-seline) in the `config/_default/params.toml` file.
+Seline Analytics のサポートを有効にするには、`config/_default/params.toml` ファイルに [Seline トークン](https://seline.so/docs/install-seline)を指定するだけです。
+
 {{< alert >}}
-**Note:** If you enable Seline Analytics, Blowfish will support [Seline Track Event](https://seline.so/docs/custom-events) automatically. If you do not want to support Track Event, the param `enableTrackEvent` must set to `false`.
+**注:** Seline Analytics を有効にすると、Blowfish は [Seline トラックイベント](https://seline.so/docs/custom-events)を自動的にサポートします。トラックイベントをサポートしたくない場合は、パラメータ `enableTrackEvent` を `false` に設定する必要があります。
 {{< /alert >}}
 
 ```toml
@@ -76,23 +77,23 @@ To enable Seline Analytics support, simply provide your [Seline token](https://s
   enableTrackEvent = true
 ```
 
-### Custom analytics providers
+### カスタムアナリティクスプロバイダー
 
-If you wish to use a different analytics provider on your website you can also override the analytics partial and provide your own script. Simply create the file `layouts/partials/extend-head.html` in your project and it will automatically include it in the `<head>` of the website.
+ウェブサイトで別のアナリティクスプロバイダーを使用したい場合は、アナリティクスパーシャルをオーバーライドして、独自のスクリプトを提供することもできます。プロジェクトに `layouts/partials/extend-head.html` ファイルを作成するだけで、ウェブサイトの `<head>` に自動的に含まれます。
 
-## Comments
+## コメント
 
-To add comments to your articles, Blowfish includes support for a comments partial that is included at the base of each article page. Simply provide a `layouts/partials/comments.html` which contains the code required to display your chosen comments.
+記事にコメントを追加するために、Blowfish には、各記事ページの下部に含まれるコメントパーシャルのサポートが含まれています。選択したコメントを表示するために必要なコードを含む `layouts/partials/comments.html` を指定するだけです。
 
-You can use either the built-in Hugo Disqus template, or provide your own custom code. Refer to the [Hugo docs](https://gohugo.io/content-management/comments/) for further information.
+組み込みの Hugo Disqus テンプレートを使用するか、独自のカスタムコードを提供できます。詳細については、[Hugo ドキュメント](https://gohugo.io/content-management/comments/)を参照してください。
 
-Once the partial has been provided, finer control over where comments are displayed is then managed using the `showComments` parameter. This value can be set at the theme level in the `params.toml` [config file]({{< ref "configuration#theme-parameters" >}}), or on a per-article basis by including it in the [front matter]({{< ref "front-matter" >}}). The parameter defaults to `false` so it must be set to `true` in one of these locations in order for comments to be displayed.
+パーシャルが提供されると、コメントが表示される場所をより細かく制御するために、`showComments` パラメータを使用して管理されます。この値は、`params.toml` [設定ファイル]({{< ref "configuration#テーマパラメーターtheme-parameters" >}})のテーマレベルで設定するか、[フロントマター]({{< ref "front-matter" >}})に含めることで記事ごとに設定できます。パラメータはデフォルトで `false` であるため、コメントを表示するには、これらの場所のいずれかで `true` に設定する必要があります。
 
-## Favicons
+## ファビコン
 
-Blowfish provides a default set of blank favicons to get started but you can provide your own assets to override them. The easiest way to obtain new favicon assets is to generate them using a third-party provider like [favicon.io](https://favicon.io).
+Blowfish は、開始するための空白のファビコンのデフォルトセットを提供しますが、独自のアセットを提供してそれらを上書きできます。新しいファビコンアセットを取得する最も簡単な方法は、[favicon.io](https://favicon.io) などのサードパーティプロバイダーを使用してそれらを生成することです。
 
-Icon assets should be placed directly in the `static/` folder of your website and named as per the listing below. If you use [favicon.io](https://favicon.io), these will be the filenames that are automatically generated for you, but you can provide your own assets if you wish.
+アイコンアセットは、ウェブサイトの `static/` フォルダに直接配置し、以下のリストに従って名前を付ける必要があります。[favicon.io](https://favicon.io) を使用する場合、これらは自動的に生成されるファイル名になりますが、必要に応じて独自のアセットを提供できます。
 
 ```shell
 static/
@@ -105,34 +106,34 @@ static/
 └─ site.webmanifest
 ```
 
-Alternatively, you can also completely override the default favicon behaviour and provide your own favicon HTML tags and assets. Simply provide a `layouts/partials/favicons.html` file in your project and this will be injected into the site `<head>` in place of the default assets.
+または、デフォルトのファビコンの動作を完全にオーバーライドして、独自のファビコン HTML タグとアセットを提供することもできます。プロジェクトに `layouts/partials/favicons.html` ファイルを提供するだけで、デフォルトのアセットの代わりにサイトの `<head>` に挿入されます。
 
-## Icon
+## アイコン
 
-Similar to the [icon shortcode]({{< ref "shortcodes#icon" >}}), you can include icons in your own templates and partials by using Blowfish's `icon.html` partial. The partial takes one parameter which is the name of the icon to be included.
+[アイコンショートコード]({{< ref "shortcodes#アイコン" >}})と同様に、Blowfish の `icon.html` パーシャルを使用して、独自のテンプレートやパーシャルにアイコンを含めることができます。パーシャルは、含めるアイコンの名前である1つのパラメータを受け取ります。
 
-**Example:**
+**例:**
 
 ```go
   {{ partial "icon.html" "github" }}
 ```
 
-Icons are populated using Hugo pipelines which makes them very flexible. Blowfish includes a number of built-in icons for social, links and other purposes. Check the [icon samples]({{< ref "samples/icons" >}}) page for a full list of supported icons.
+アイコンは Hugo パイプラインを使用して設定されるため、非常に柔軟です。Blowfish には、ソーシャル、リンク、その他の目的のための組み込みアイコンが多数含まれています。サポートされているアイコンの完全なリストについては、[アイコンサンプル]({{< ref "samples/icons" >}})ページを確認してください。
 
-Custom icons can be added by providing your own icon assets in the `assets/icons/` directory of your project. The icon can then be referenced in the partial by using the SVG filename without the `.svg` extension.
+カスタムアイコンは、プロジェクトの `assets/icons/` ディレクトリに独自のアイコンアセットを提供することで追加できます。その後、`.svg` 拡張子なしで SVG ファイル名を使用して、パーシャルでアイコンを参照できます。
 
-Icons can also be used in article content by calling the [icon shortcode]({{< ref "shortcodes#icon" >}}).
+アイコンは、[アイコンショートコード]({{< ref "shortcodes#アイコン" >}})を呼び出すことで、記事のコンテンツでも使用できます。
 
-## Extensions
+## 拡張機能
 
-Blowfish also provides for a number of extension partials that allow for expanding upon base functionality.
+Blowfish は、基本機能を拡張できる多数の拡張パーシャルも提供しています。
 
-### Article link
+### 記事リンク
 
-If you wish to insert additional code after article links, create a `layouts/partials/extend-article-link.html` file. This is especially powerful when combined with the [`badge`]({{< ref "shortcodes#badge" >}}) shortcode which can be used to highlight metadata for certain articles.
+記事リンクの後にコードを追加したい場合は、`layouts/partials/extend-article-link.html` ファイルを作成します。これは、特定の記事のメタデータを強調表示するために使用できる [`badge` ショートコード]({{< ref "shortcodes#バッジ" >}})と組み合わせると特に効果的です。
 
-### Head and Footer
+### ヘッダーとフッター
 
-The theme allows for inserting additional code directly into the `<head>` and `<footer>` sections of the template. These can be useful for providing scripts or other logic that isn't part of the theme.
+このテーマでは、テンプレートの `<head>` セクションと `<footer>` セクションに直接コードを追加できます。これらは、テーマの一部ではないスクリプトやその他のロジックを提供するのに役立ちます。
 
-Simply create either `layouts/partials/extend-head.html` or `layouts/partials/extend-footer.html` and these will automatically be included in your website build. Both partials are injected as the last items in `<head>` and `<footer>` so they can be used to override theme defaults.
+`layouts/partials/extend-head.html` または `layouts/partials/extend-footer.html` を作成するだけで、これらは自動的にウェブサイトのビルドに含まれます。どちらのパーシャルも `<head>` と `<footer>` の最後の項目として挿入されるため、テーマのデフォルトを上書きするために使用できます。

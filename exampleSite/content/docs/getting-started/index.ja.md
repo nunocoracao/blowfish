@@ -1,8 +1,8 @@
 ---
-title: "Getting Started"
+title: "始める"
 weight: 3
 draft: false
-description: "All the front matter variables available in Blowfish."
+description: "Blowfish で利用可能なすべてのフロントマター変数。"
 slug: "getting-started"
 tags: ["installation", "docs"]
 series: ["Documentation"]
@@ -10,61 +10,60 @@ series_order: 3
 ---
 
 {{< alert >}}
-This section assumes you have already [installed the Blowfish theme]({{< ref "docs/installation" >}}).
+このセクションでは、[Blowfish テーマをすでにインストールしている]({{< ref "docs/installation" >}})ことを前提としています。
 {{< /alert >}}
 
 </br>
 {{< alert "fire" >}}
-We just launched a CLI tool to help you get started with Blowfish. It will help you with installation and configuration. Install the CLI tool globally using:
+Blowfish の使用開始を支援する CLI ツールをリリースしました。インストールと設定に役立ちます。次のコマンドで CLI ツールをグローバルにインストールします。
 ```bash
 npx blowfish-tools
 ```
 {{< /alert >}}
 
+Blowfish に同梱されている設定ファイルには、テーマが認識できるすべての設定が含まれています。デフォルトでは、これらの多くはコメントアウトされていますが、コメントを解除するだけで特定の機能を有効化または変更できます。
 
-The config files that ship with Blowfish contain all of the possible settings that the theme recognises. By default, many of these are commented out but you can simply uncomment them to activate or change a specific feature.
+## 基本設定
 
-## Basic configuration
-
-Before creating any content, there are a few things you should set for a new installation. Starting in the `hugo.toml` file, set the `baseURL` and `languageCode` parameters. The `languageCode` should be set to the main language that you will be using to author your content.
+コンテンツを作成する前に、新しいインストール用に設定する必要があるものがいくつかあります。まず、`hugo.toml` ファイルで、`baseURL` と `languageCode` パラメータを設定します。`languageCode` は、コンテンツの作成に使用する主要言語に設定する必要があります。
 
 ```toml
 # config/_default/hugo.toml
 
 baseURL = "https://your_domain.com/"
-languageCode = "en"
+languageCode = "ja"
 ```
 
-The next step is to configure the language settings. Although Blowfish supports multilingual setups, for now, just configure the main language.
+次のステップは、言語設定です。Blowfish は多言語設定をサポートしていますが、ここではまず主要言語を設定します。
 
-Locate the `languages.en.toml` file in the config folder. If your main language is English you can use this file as is. Otherwise, rename it so that it includes the correct language code in the filename. For example, for French, rename the file to `languages.fr.toml`.
+設定フォルダで `languages.en.toml` ファイルを見つけます。主要言語が英語の場合は、このファイルをそのまま使用できます。それ以外の場合は、ファイル名に正しい言語コードが含まれるように名前を変更します。例えば日本語の場合は、`languages.ja.toml`にファイル名を変更します。
 
 {{< alert >}}
-Note that the language code in the language config filename should match the `languageCode` setting in `hugo.toml`.
+言語設定ファイル名の言語コードは、`hugo.toml` の `languageCode` 設定と一致する必要があることに注意してください。
 {{< /alert >}}
 
 ```toml
-# config/_default/languages.en.toml
+# config/_default/languages.ja.toml
 
-title = "My awesome website"
+title = "私の素晴らしいウェブサイト"
 
 [params.author]
-name = "My name"
+name = "私の名前"
 image = "img/author.jpg"
-headline = "A generally awesome human"
-bio = "A little bit about me"
+headline = "一般的に素晴らしい人間"
+bio = "私について少し"
 links = [
   { twitter = "https://twitter.com/username" }
 ]
 ```
 
-The `[params.author]` configuration determines how the author information is displayed on the website. The image should be placed in the site's `assets/` folder. Links will be displayed in the order they are listed.
+`[params.author]` 設定は、ウェブサイトに著者情報をどのように表示するかを決定します。画像はサイトの `assets/` フォルダに配置する必要があります。リンクはリストされている順序で表示されます。
 
-If you need extra detail, further information about each of these configuration options, is covered in the [Configuration]({{< ref "configuration" >}}) section.
+これらの設定オプションの詳細については、[設定]({{< ref "configuration" >}})セクションで説明しています。
 
-## Colour schemes
+## カラースキーム
 
-Blowfish ships with a number of colour schemes out of the box. To change the scheme, simply set the `colorScheme` theme parameter. Valid options are `blowfish` (default), `avocado`, `fire`, `ocean`, `forest`, `princess`, `neon`, `bloody`, `terminal`, `marvel`, `noir`, `autumn`, `congo`, and`slate`.
+Blowfish には、すぐに使用できる多くのカラースキームが付属しています。スキームを変更するには、`colorScheme` テーマパラメータを設定するだけです。有効なオプションは、`blowfish` (デフォルト)、`avocado`、`fire`、`ocean`、`forest`、`princess`、`neon`、`bloody`、`terminal`、`marvel`、`noir`、`autumn`、`congo`、`slate` です。
 
 ```toml
 # config/_default/params.toml
@@ -72,9 +71,9 @@ Blowfish ships with a number of colour schemes out of the box. To change the sch
 colorScheme = "blowfish"
 ```
 
-Blowfish defines a three-colour palette that is used throughout the theme. Each main colour contains ten shades which are based upon the colours that are included in [Tailwind](https://tailwindcss.com/docs/customizing-colors#color-palette-reference). The three main colours are used for the header, footer, and accent colours. Here are the colors for each scheme:
+Blowfish は、テーマ全体で使用される3色のパレットを定義しています。各メインカラーには、[Tailwind](https://tailwindcss.com/docs/customizing-colors#color-palette-reference) に含まれる色に基づいた10の色合いが含まれています。3つのメインカラーは、ヘッダー、フッター、およびアクセントカラーに使用されます。各スキームの色は次のとおりです。
 
-#### Blowfish (default)
+#### Blowfish (デフォルト)
 {{< swatches "#64748b" "#3b82f6" "#06b6d4" >}}
 
 #### Avocado
@@ -116,14 +115,13 @@ Blowfish defines a three-colour palette that is used throughout the theme. Each 
 #### Slate
 {{< swatches "#6B7280" "#64748b" "#6B7280" >}}
 
+これらはデフォルトのスキームですが、独自のスキームを作成することもできます。詳細については、[高度なカスタマイズ]({{< ref "advanced-customisation#colour-schemes" >}})セクションを参照してください。
 
-Although these are the default schemes, you can also create your own. Refer to the [Advanced Customisation]({{< ref "advanced-customisation#colour-schemes" >}}) section for details.
+## コンテンツの整理
 
-## Organising content
+デフォルトでは、Blowfish は特定のコンテンツタイプを使用することを強制しません。そのため、コンテンツを自由に定義できます。静的サイトの場合は _pages_、ブログの場合は _posts_、ポートフォリオの場合は _projects_ を使用することをお勧めします。
 
-By default, Blowfish doesn't force you to use a particular content type. In doing so you are free to define your content as you wish. You might prefer _pages_ for a static site, _posts_ for a blog, or _projects_ for a portfolio.
-
-Here's a quick overview of a basic Blowfish project. All content is placed within the `content` folder:
+基本的な Blowfish プロジェクトの概要を簡単に説明します。すべてのコンテンツは `content` フォルダ内に配置されます。
 
 ```shell
 .
@@ -145,11 +143,11 @@ Here's a quick overview of a basic Blowfish project. All content is placed withi
     └── blowfish
 ```
 
-It's important to have a firm grasp of how Hugo expects content to be organised as the theme is designed to take full advantage of Hugo page bundles. Be sure to read the [official Hugo docs](https://gohugo.io/content-management/organization/) for more information.
+このテーマは Hugo のページバンドルを最大限に活用するように設計されているため、Hugo がどのようにコンテンツを整理することを想定しているかをしっかりと把握することが重要です。詳細については、[Hugo 公式ドキュメント](https://gohugo.io/content-management/organization/)を参照してください。
 
-Blowfish is also flexible when it comes to taxonomies. Some people prefer to use _tags_ and _categories_ to group their content, others prefer to use _topics_.
+Blowfish はタクソノミーに関しても柔軟です。_tags_ と _categories_ を使用してコンテンツをグループ化することを好む人もいれば、_topics_ を使用することを好む人もいます。
 
-Hugo defaults to using posts, tags and categories out of the box and this will work fine if that's what you want. If you wish to customise this, however, you can do so by creating a `taxonomies.toml` configuration file:
+Hugo はデフォルトで posts、tags、categories を使用するように設定されており、これを希望する場合は問題なく動作します。ただし、これをカスタマイズしたい場合は、`taxonomies.toml` 設定ファイルを作成することでカスタマイズできます。
 
 ```toml
 # config/_default/taxonomies.toml
@@ -157,26 +155,26 @@ Hugo defaults to using posts, tags and categories out of the box and this will w
 topic = "topics"
 ```
 
-This will replace the default _tags_ and _categories_ with _topics_. Refer to the [Hugo Taxonomy docs](https://gohugo.io/content-management/taxonomies/) for more information on naming taxonomies.
+これにより、デフォルトの _tags_ と _categories_ が _topic_ に置き換えられます。タクソノミーの命名の詳細については、[Hugo タクソノミードキュメント](https://gohugo.io/content-management/taxonomies/)を参照してください。
 
-When you create a new taxonomy, you will need to adjust the navigation links on the website to point to the correct sections, which is covered below.
+新しいタクソノミーを作成する場合は、ウェブサイトのナビゲーションリンクを調整して、正しいセクションを指すようにする必要があります。これについては以下で説明します。
 
-## Menus
+## メニュー
 
-Blowfish has two menus that can be customised to suit the content and layout of your site. The `main` menu appears in the site header and the `footer` menu appears at the bottom of the page just above the copyright notice.
+Blowfish には、サイトのコンテンツとレイアウトに合わせてカスタマイズできる2つのメニューがあります。`main` メニューはサイトヘッダーに表示され、`footer` メニューはページの下部、著作権表示のすぐ上に表示されます。
 
-Both menus are configured in the `menus.en.toml` file. Similarly to the languages config file, if you wish to use another language, rename this file and replace `en` with the language code you wish to use.
+どちらのメニューも `menus.ja.toml` ファイルで設定できます。言語設定ファイルと同様に、別の言語を使用したい場合は、このファイルの名前を変更して、`en` を使用したい言語コードに置き換えます。
 
 ```toml
-# config/_default/menus.toml
+# config/_default/menus.ja.toml
 
 [[main]]
-  name = "Blog"
+  name = "ブログ"
   pageRef = "posts"
   weight = 10
 
 [[main]]
-  name = "Topics"
+  name = "トピック"
   pageRef = "topics"
   weight = 20
 
@@ -193,80 +191,80 @@ Both menus are configured in the `menus.en.toml` file. Similarly to the language
   weight = 40
 
 [[footer]]
-  name = "Privacy"
+  name = "プライバシー"
   url = "https://external-link"
 ```
 
-The `name` parameter specifies the text that is used in the menu link. You can also optionally provide a `title` which fills the HTML title attribute for the link.
+`name` パラメータは、メニューリンクで使用されるテキストを指定します。オプションで、リンクの HTML タイトル属性を設定する `title` を指定することもできます。
 
-The `pageRef` parameter allows you to easily reference Hugo content pages and taxonomies. It is the quickest way to configure the menu as you can simply refer to any Hugo content item and it will automatically build the correct link. To link to external URLs, the `url` parameter can be used.
+`pageRef` パラメータを使用すると、Hugo コンテンツページとタクソノミーを簡単に参照できます。これは、Hugo コンテンツアイテムを参照するだけで正しいリンクが自動的に作成されるため、メニューを設定する最も簡単な方法です。外部 URL にリンクするには、`url` パラメータを使用できます。
 
-The `pre` parameter allows you to place an icon from [Blowfish's icon set]({{< ref "samples/icons" >}}) on the menu entry. This parameter can be used with `name` parameter or by itself. If you want to use multiple menu entries with just icons please set the `identifier`parameter otherwise Hugo will default to the naming tag as the id and probably not display all the menu entries.
+`pre` パラメータを使用すると、[Blowfish のアイコンセット]({{< ref "samples/icons" >}})からメニューエントリにアイコンを配置できます。このパラメータは、`name` パラメータと組み合わせて使用することも、単独で使用することもできます。アイコンのみを使用して複数のメニューエントリを使用する場合は、`identifier` パラメータを設定してください。そうしないと、Hugo はデフォルトで命名タグを ID として使用し、おそらくすべてのメニューエントリを表示しません。
 
-Menu links will be sorted from lowest to highest `weight`, and then alphabetically by `name`.
+メニューリンクは、`weight` が低い順に並べ替えられ、次に `name` でアルファベット順に並べ替えられます。
 
-Both menus are completely optional and can be commented out if not required. Use the template provided in the file as a guide.
+どちらのメニューも完全にオプションであり、不要な場合はコメントアウトできます。ファイルに記載されているテンプレートをガイドとして使用してください。
 
-### Nested menus
+### ネストされたメニュー
 
-The theme also supports nested menus. In order to use them you just need to define a parent entry in `menu.toml` and its sub-menus using the `parent` parameter to reference the parent. All properties can be used for sub-menus. `pageRef` and `url` can also be used in the parent entry. Nested menus are only available in the main menu not for the footer.
+テーマはネストされたメニューもサポートしています。これらを使用するには、`menu.toml` で親エントリを定義し、`parent` パラメータを使用し親を参照してサブメニューを定義するだけです。すべてのプロパティは、サブメニューに使用できます。`pageRef` と `url` は、親エントリでも使用できます。ネストされたメニューは、メインメニューでのみ使用でき、フッターでは使用できません。
 
 ```toml
-# config/_default/menus.toml
+# config/_default/menus.ja.toml
 
 [[main]]
-  name = "Parent"
+  name = "親"
   weight = 20
 
 [[main]]
-  name = "sub-menu 1"
-  parent = "Parent"
+  name = "サブメニュー 1"
+  parent = "親"
   pageRef = "samples"
   weight = 20
 
 [[main]]
-  name = "sub-menu 2"
-  parent = "Parent"
+  name = "サブメニュー 2"
+  parent = "親"
   pageRef = "samples"
   weight = 20
 
 [[main]]
-  name = "sub-menu 3"
-  parent = "Parent"
+  name = "サブメニュー 3"
+  parent = "親"
   pre = "github"
   pageRef = "samples"
   weight = 20
 ```
 
-### Sub-Navigation menu
+### サブナビゲーションメニュー
 
-Additionally, you can also configure a sub-navigation menu. Just define new menu entries as `subnavigation` in `menus.toml`.
-This will render a second line with sub-categories below the main header menu.
+さらに、サブナビゲーションメニューを設定することもできます。`menus.toml` で新しいメニューエントリを `subnavigation` として定義するだけです。
+これにより、メインヘッダーメニューの下に、サブカテゴリを含む2行目が表示されます。
 
 ```toml
-# config/_default/menus.toml
+# config/_default/menus.ja.toml
 
 [[subnavigation]]
-  name = "An interesting topic"
+  name = "興味深いトピック"
   pageRef = "tags/interesting-topic"
   weight = 10
 
 [[subnavigation]]
-  name = "My Awesome Category"
+  name = "私の素晴らしいカテゴリ"
   pageRef = "categories/awesome"
   weight = 20
 ```
 
-The default `name` is the `pageRef` title cased.
+デフォルトの `name` は、`pageRef` のタイトルになります。
 
-## Thumbnails & Backgrounds
+## サムネイルと背景
 
-Blowfish was built so it would be easy to add visual support to your articles. If your familiar with Hugo article structure, you just need to place an image file (almost all formats are supported but we recommend `.png` or `.jpg`) that starts with `feature*` inside your article folder. And that's it, Blowfish will then be able to both use the image as a thumbnail within your website as well as for <a target="_blank" href="https://oembed.com/">oEmbed</a> cards across social platforms. 
+Blowfish は、記事に視覚的なサポートを簡単に追加できるように構築されました。Hugo の記事構造に慣れている場合は、記事フォルダ内に `feature*` で始まる画像ファイル (ほとんどすべての形式がサポートされていますが、`.png` または `.jpg` を推奨) を配置するだけです。それだけで、Blowfish はその画像をウェブサイト内のサムネイルとして使用したり、ソーシャルプラットフォーム全体の <a target="_blank" href="https://oembed.com/">oEmbed</a> カードに使用したりできるようになります。
 
-[Here]({{< ref "thumbnails" >}}) is also a guide with more info and a [sample]({{< ref "thumbnail_sample" >}}) if you want to see how you can do it.
+詳細な情報と、設定方法を確認するための[サンプル]({{< ref "thumbnail_sample" >}})を含むガイドも[こちら]({{< ref "thumbnails" >}})にあります。
 
-Additionally, Blowfish also supports background hero images in articles and lists. In order to use a different image than the featured one, add an image file in which the name starts with `background*`.
+さらに、Blowfish は記事やリストの背景ヒーロー画像もサポートしています。フィーチャー画像とは異なる画像を使用するには、名前が `background*` で始まる画像ファイルを（記事フォルダに）追加します。
 
-## Detailed configuration
+## 詳細設定
 
-The steps above are the bare minimum configuration. If you now run `hugo server` you will be presented with a blank Blowfish website. Detailed configuration is covered in the [Configuration]({{< ref "configuration" >}}) section.
+上記の手順は、最低限の設定です。`hugo server` を実行すると、空の Blowfish ウェブサイトが表示されます。詳細な設定については、[設定]({{< ref "configuration" >}})セクションで説明しています。

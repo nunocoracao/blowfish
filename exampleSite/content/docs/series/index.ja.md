@@ -1,8 +1,8 @@
 ---
-title: "Series"
+title: "シリーズ"
 weight: 12
 draft: false
-description: "Learn how to group articles under a series."
+description: "記事をシリーズの下にグループ化する方法を学びます。"
 slug: "series"
 tags: ["series", "docs"]
 series: ["Documentation"]
@@ -10,10 +10,10 @@ series_order: 11
 seriesOpened: true
 ---
 
-Blowfish provides a feature to group a set of articles together under a "series". Placing an article under a series will display the rest of the series articles in each single page and provide a quick way to navigate amongst them. You can see an example of this above.
+Blowfish は、一連の記事を「シリーズ」でグループ化する機能を提供します。記事をシリーズの下に配置すると、残りのシリーズ記事が各ページに表示され、それらの間をすばやく移動できるようになります。この例は、上で確認できます。
 
-## Create Taxonomy
-The first step to enable series is to create the `series` taxonomy. For doing this just add the `series` taxonomy to your taxonomy list in the `config.toml`.
+## タクソノミーの作成
+シリーズを有効にするにはまず、`series` タクソノミーを作成してください。具体的には、`config.toml` のタクソノミーリストに `series` タクソノミーを追加するだけです。
 
 ```toml
 [taxonomies]
@@ -23,14 +23,14 @@ The first step to enable series is to create the `series` taxonomy. For doing th
   series = "series"
 ```
 
-## Mark Articles
+## 記事をマークする
 
-Then you just need to mark each article using the `series` parameter and the `series_order`. The `series` parameter will be the id and name of the series you are placing the article into (even though the variable is an array we recommend keeping each article to a single series.). And the `series_order` defines the order of that article within the series. In the example below the article is number `11` in the `Documentation` series.
+次に、`series` パラメータと `series_order` を使用して各記事をマークする必要があります。`series` パラメータは、記事を配置するシリーズの ID と名前になります (変数は配列ですが、各記事を単一のシリーズに保つことをお勧めします)。そして、`series_order` は、シリーズ内のその記事の順序を定義します。以下の例では、記事は `Documentation` シリーズの `11` 番です。
 
 ```md
 series: ["Documentation"]
 series_order: 11
 ```
 
-## Series Behavior
-Marking an article as part of a series will automatically display the series module as you see in this page for example. You can choose whether that module starts opened or not using the `article.seriesOpened` global variable in `params.toml` or the front-matter parameter `seriesOpened` to specify an override at the article level.
+## シリーズの動作
+記事をシリーズの一部としてマークすると、このページでご覧いただけるように、シリーズモジュールが自動的に表示されます。そのモジュールを開始時に開くかどうかは、`params.toml` の `article.seriesOpened` グローバル変数、または記事レベルでオーバーライドを指定するフロントマターパラメータ `seriesOpened` を使用して選択できます。

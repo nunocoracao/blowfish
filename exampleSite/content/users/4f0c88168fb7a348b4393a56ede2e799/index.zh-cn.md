@@ -2,7 +2,7 @@
                 title: "renaud.warnotte.be"
                 tags: [个人网站]
                 externalUrl: "https://renaud.warnotte.be"
-                weight: 571
+                weight: 531
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

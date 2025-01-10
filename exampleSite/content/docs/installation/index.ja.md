@@ -1,83 +1,83 @@
 ---
-title: "Installation"
+title: "インストール"
 weight: 2
 draft: false
-description: "How to install the Blowfish theme."
+description: "Blowfish テーマのインストール方法"
 slug: "installation"
 tags: ["installation", "docs"]
 series: ["Documentation"]
 series_order: 2
 ---
 
-Simply follow the standard Hugo [Quick Start](https://gohugo.io/getting-started/quick-start/) procedure to get up and running quickly.
+Hugo の[クイックスタートガイド](https://gohugo.io/getting-started/quick-start/)に従うだけで、簡単に使い始めることができます。
 
-Detailed installation instructions can be found below. Instructions for [updating the theme](#installing-updates) are also available.
+詳細なインストール手順は以下に記載されています。[テーマのアップデート方法](#テーマのアップデート方法)についても説明しています。
 
-## Installation
+## インストール
 
-These instructions will get you up and running using Hugo and Blowfish from a completely blank state. Most of the dependencies mentioned in this guide can be installed using the package manager of choice for your platform.
+以下の手順では、全くの新規状態から Hugo と Blowfish を使用してウェブサイトを立ち上げる方法を説明します。このガイドで紹介するツールのほとんどは、お使いのプラットフォームに対応したパッケージマネージャーからインストール可能です。
 
-### Install Hugo
+### Hugo のインストール
 
-If you haven't used Hugo before, you will need to [install it onto your local machine](https://gohugo.io/getting-started/installing). You can check if it's already installed by running the command `hugo version`.
+Hugo を初めて使用する場合は、[公式サイトの手順](https://gohugo.io/getting-started/installing)に従って、ローカルマシンにインストールしてください。すでにインストールされているかどうかは、コマンド `hugo version` を実行して確認できます。
 
 {{< alert >}}
-Make sure you are using **Hugo version 0.87.0** or later as the theme takes advantage of some of the latest Hugo features.
+テーマは最新の Hugo の機能を活用しているため、**Hugo バージョン 0.87.0 以降**を使用していることを確認してください。
 {{< /alert >}}
 
-You can find detailed installation instructions for your platform in the [Hugo docs](https://gohugo.io/getting-started/installing).
+お使いのプラットフォームに合わせた詳細なインストール手順は、[Hugo の公式ドキュメント](https://gohugo.io/getting-started/installing)に記載されています。
 
-### Blowfish Tools (recommended)
+### Blowfish Tools (推奨)
 
-We just launched a new CLI tool to help you get started with Blowfish. It will create a new Hugo project, install the theme and set up the theme configuration files for you. It's still in beta so please [report any issues you find](https://github.com/nunocoracao/blowfish-tools).
+Blowfish を簡単に使い始められるよう、新しく CLI ツールをリリースしました。このツールは、新しい Hugo プロジェクトの作成、テーマのインストール、そしてテーマ設定ファイルのセットアップを自動的に行います。まだベータ版ですので、[問題を発見した場合は報告にご協力ください](https://github.com/nunocoracao/blowfish-tools)。
 
-Install the CLI tool globally using npm (or other package manager):
+npm (または他のパッケージマネージャー) を使用して、CLI ツールをグローバルにインストールします。
 ```shell
 npx blowfish-tools
 ```
-or
+または
 
 ```shell
 npm i -g blowfish-tools
 ```
 
-Then run the command `blowfish-tools` to start an interactive run which will guide you through creation and configuration use-cases.
+次に、コマンド `blowfish-tools` を実行すると、対話形式でプロジェクトの作成と設定をガイドしてくれます。
 ```shell
 blowfish-tools
 ```
 
-You can also run the command `blowfish-tools new` to create a new Hugo project and install the theme in one go. Check the CLI help for more information.
+また、コマンド `blowfish-tools new` を実行すれば、新しい Hugo プロジェクトの作成とテーマのインストールを一度に行うこともできます。詳細は、CLI のヘルプを参照してください。
 ```shell
 blowfish-tools new mynewsite
 ```
 
-Here's a quick video of how fast it is to get started with Blowfish using the CLI tool:
+CLI ツールを使って Blowfish を迅速に使い始める方法を、以下の動画でご覧いただけます。
 
 <iframe width="100%" height="350" src="https://www.youtube.com/embed/SgXhGb-7QbU?si=ce44baicuQ6zMeXz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-### Install without CLI
+### CLI を使用しないインストール
 
-#### Create a new site
+#### 新しいサイトの作成
 
-Run the command `hugo new site mywebsite` to create a new Hugo site in a directory named `mywebsite`.
+コマンド `hugo new site mywebsite` を実行して、`mywebsite` という名前のディレクトリに新しい Hugo サイトを作成します。
 
-Note that you can name the project directory whatever you choose, but the instructions below will assume it's named `mywebsite`. If you use a different name, be sure to substitute it accordingly.
+プロジェクトディレクトリには任意の名前を付けることができますが、以降の手順では `mywebsite` という名前を想定して説明します。別の名前を使用する場合は、適宜読み替えてください。
 
-#### Download the Blowfish theme
+#### Blowfish テーマのダウンロード
 
-There several different ways to install the Blowfish theme into your Hugo website. From easiest to most difficult to install and maintain, they are:
+Hugo ウェブサイトに Blowfish テーマをインストールするには、いくつかの方法があります。インストールとメンテナンスが簡単な方法から難しい方法まで、以下の通りです。
 
-- [Git submodule](#install-using-git) (recommended)
-- [Hugo module](#install-using-hugo) 
-- [Manual file copy](#install-manually)
+- [Git サブモジュールを使用する](#git-を使用してインストールする) (推奨)
+- [Hugo モジュールを使用する](#hugo-を使用してインストールする)
+- [手動でファイルをコピーする](#手動でインストールする)
 
-If you're unsure, choose the Git submodule method. 
+どの方法を選べば良いか分からない場合は、Git サブモジュール方式を選択することをお勧めします。
 
-#### Install using git
+#### Git を使用してインストールする
 
-This method is the quickest and easiest for keeping the theme up-to-date. Besides **Hugo** and **Go**, you'll also need to ensure you have **Git** installed on your local machine.
+この方法は、テーマを最新の状態に保つための最も迅速で簡単な方法です。**Hugo** と **Go** に加えて、ローカルマシンに **Git** がインストールされていることも確認してください。
 
-Change into the directory for your Hugo website (that you created above), initialise a new `git` repository and add Blowfish as a submodule.
+(上記で作成した) Hugo ウェブサイトのディレクトリに移動し、新しい `git` リポジトリを初期化して、Blowfish をサブモジュールとして追加します。
 
 ```bash
 cd mywebsite
@@ -85,29 +85,29 @@ git init
 git submodule add -b main https://github.com/nunocoracao/blowfish.git themes/blowfish
 ```
 
-Then continue to [set up the theme configuration files](#set-up-theme-configuration-files).
+次に、[テーマ設定ファイルを作成する](#テーマ設定ファイルを作成する)に進みます。
 
-#### Install using Hugo
+#### Hugo を使用してインストールする
 
-For this method you'll use Hugo to manage your themes. Hugo uses **Go** to initialise and manage modules so you need to ensure you have `go` installed before proceeding.
+この方法では、Hugo を使用してテーマを管理します。Hugo は **Go** を使用してモジュールを初期化および管理するため、続行する前に `go` がインストールされていることを確認する必要があります。
 
-1. [Download](https://golang.org/dl/) and install Go. You can check if it's already installed by using the command `go version`.
+1. Go を[ダウンロード](https://golang.org/dl/)してインストールします。コマンド `go version` を使用して、すでにインストールされているかどうかを確認できます。
 
    {{< alert >}}
-   Make sure you are using **Go version 1.12** or later as Hugo requires this for modules to work correctly.
+   Hugo ではモジュールが正しく動作するために **Go バージョン 1.12 以降** が必要です。必ず対応バージョンを使用してください。
    {{< /alert >}}
 
-2. From your Hugo project directory (that you created above), initialise modules for your website:
+2. (上記で作成した) Hugo プロジェクトディレクトリから、ウェブサイトのモジュールを初期化します。
 
    ```shell
-   # If you're managing your project on GitHub
-   hugo mod init github.com/<username>/<repo-name>
+   # プロジェクトを GitHub で管理している場合
+   hugo mod init github.com/<ユーザー名>/<リポジトリ名>
 
-   # If you're managing your project locally
+   # プロジェクトをローカルで管理している場合
    hugo mod init my-project
    ```
 
-3. Add the theme to your configuration by creating a new file `config/_default/module.toml` and adding the following:
+3. 新しいファイル `config/_default/module.toml` を作成し、以下を記述して、テーマを設定に追加します。
 
    ```toml
    [[imports]]
@@ -115,32 +115,32 @@ For this method you'll use Hugo to manage your themes. Hugo uses **Go** to initi
    path = "github.com/nunocoracao/blowfish/v2"
    ```
 
-4. Start your server using `hugo server` and the theme will be downloaded automatically.
-5. Continue to [set up the theme configuration files](#set-up-theme-configuration-files).
+4. `hugo server` を実行してサーバーを起動すると、テーマが自動的にダウンロードされます。
+5. [テーマ設定ファイルを作成する](#テーマ設定ファイルを作成する)に進みます。
 
-#### Install manually
+#### 手動でインストールする
 
-1. Download the latest release of the theme source code.
+1. テーマソースコードの最新リリースをダウンロードします。
 
-   {{< button href="https://github.com/nunocoracao/blowfish/releases/latest" target="_blank" >}}Download from Github{{< /button >}}
+   {{< button href="https://github.com/nunocoracao/blowfish/releases/latest" target="_blank" >}}GitHub からダウンロード{{< /button >}}
 
-2. Extract the archive, rename the folder to `blowfish` and move it to the `themes/` directory inside your Hugo project's root folder.
-3. Continue to [set up the theme configuration files](#set-up-theme-configuration-files).
+2. アーカイブを解凍し、フォルダ名を `blowfish` に変更して、Hugo プロジェクトのルートフォルダ内の `themes/` ディレクトリに移動します。
+3. [テーマ設定ファイルを作成する](#テーマ設定ファイルを作成する)に進みます。
 
-#### Set up theme configuration files
+#### テーマ設定ファイルを作成する
 
-In the root folder of your website, delete the `hugo.toml` file that was generated by Hugo. Copy the `*.toml` config files from the theme into your `config/_default/` folder. This will ensure you have all the correct theme settings and will enable you to easily customise the theme to your needs.
+ウェブサイトのルートフォルダで、Hugo によって自動生成された `hugo.toml` ファイルを削除します。`*.toml` 設定ファイルをテーマから `config/_default/` フォルダにコピーします。これにより、必要なテーマ設定がすべて適用され、テーマを簡単にカスタマイズできるようになります。
 
 {{< alert >}}
-**Note:** You should not overwrite the `module.toml` file if one already exists in your project!
+**注意:** プロジェクトに `module.toml` ファイルがすでに存在する場合は、上書きしないでください。
 {{< /alert >}}
 
-Depending on how you installed the theme you will find the theme config files in different places:
+テーマのインストール方法によって、テーマ設定ファイルの場所は異なります。
 
-- **Hugo Modules:** In the Hugo cache directory, or [download a copy](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/nunocoracao/blowfish/tree/main/config/_default) from GitHub
-- **Git submodule or Manual install:** `themes/blowfish/config/_default`
+- **Hugo モジュール:** Hugo キャッシュディレクトリ、または GitHub から [設定ファイルのコピーをダウンロード](https://github.com/nunocoracao/blowfish/releases/latest/download/config-default.zip) します
+- **Git サブモジュールまたは手動インストール:** `themes/blowfish/config/_default`
 
-Once you've copied the files, your config folder should look like this:
+ファイルをコピーしたら、設定フォルダは次のようになります。
 
 ```shell
 config/_default/
@@ -148,64 +148,64 @@ config/_default/
 ├─ languages.en.toml
 ├─ markup.toml
 ├─ menus.en.toml
-├─ module.toml  # if you installed using Hugo Modules
+├─ module.toml  # Hugo モジュールを使用してインストールした場合
 └─ params.toml
 ```
 
 {{< alert >}}
-**Important:** If you didn't use Hugo Modules to install Blowfish, you must add the line `theme = "blowfish"` to the top of your `hugo.toml` file.
+**重要:** Hugo モジュールを使用せずに Blowfish をインストールした場合は、`hugo.toml` ファイルの先頭に `theme = "blowfish"` という行を追加する必要があります。
 {{< /alert >}}
 
-### Next steps
+### 次のステップ
 
-The basic Blowfish installation is now complete. Continue to the [Getting Started]({{< ref "getting-started" >}}) section to learn more about configuring the theme.
+これで Blowfish の基本的なインストールは完了です。[始める]({{< ref "getting-started" >}})セクションに進んで、テーマの設定についてさらに詳しく学びましょう。
 
 ---
 
-## Installing updates
+## テーマのアップデート方法
 
-From time to time there will be [new releases](https://github.com/nunocoracao/blowfish/releases) posted that apply fixes and add new functionality to the theme. In order to take advantage of these changes, you will need to update the theme files on your website.
+不具合の修正や新機能の追加を含む[新しいリリース](https://github.com/nunocoracao/blowfish/releases)が随時公開されます。これらの変更を反映するには、ウェブサイトのテーマファイルをアップデートする必要があります。
 
-How you go about this will depend on the installation method you chose when the theme was originally installed. Instructions for each method can be found below.
+アップデート方法は、最初にテーマをインストールした方法によって異なります。各方法の手順は以下に記載されています。
 
-- [Git submodule](#update-using-git)
-- [Hugo module](#update-using-hugo)
-- [Manual file copy](#update-manually)
+- [Git サブモジュール](#git-を使用してアップデートする)
+- [Hugo モジュール](#hugo-を使用してアップデートする)
+- [手動でファイルをコピー](#手動でアップデートする)
 
-### Update using git
+### Git を使用してアップデートする
 
-Git submodules can be updated using the `git` command. Simply execute the following command and the latest version of the theme will be downloaded into your local repository:
+Git サブモジュールは、`git` コマンドを使用してアップデートできます。次のコマンドを実行するだけで、テーマの最新バージョンがローカルリポジトリにダウンロードされます。
 
 ```shell
 git submodule update --remote --merge
 ```
 
-Once the submodule has been updated, rebuild your site and check everything works as expected.
+サブモジュールがアップデートされたら、サイトを再びビルドし、すべてが期待通りに動作することを確認してください。
 
-### Update using Hugo
+### Hugo を使用してアップデートする
 
-Hugo makes updating modules super easy. Simply change into your project directory and execute the following command:
+Hugo を使用すると、モジュールのアップデートが非常に簡単になります。プロジェクトディレクトリに移動して、次のコマンドを実行するだけです。
 
 ```shell
 hugo mod get -u
 ```
 
-Hugo will automatically update any modules that are required for your project. It does this by inspecting your `module.toml` and `go.mod` files. If you have any issues with the update, check to ensure these files are still configured correctly.
+Hugo は、プロジェクトに必要なモジュールを自動的にアップデートします。これは、`module.toml` ファイルと `go.mod` ファイルを調べることで行われます。アップデートに問題がある場合は、これらのファイルが正しく設定されていることを確認してください。
 
-Then simply rebuild your site and check everything works as expected.
+その後、サイトを再びビルドし、すべてが期待通りに動作することを確認してください。
 
-### Update manually
+### 手動でアップデートする
 
-Updating Blowfish manually requires you to download the latest copy of the theme and replace the old version in your project.
+Blowfish を手動でアップデートするには、テーマの最新コピーをダウンロードして、プロジェクトの古いバージョンを置き換える必要があります。
 
 {{< alert >}}
-Note that any local customisations you have made to the theme files will be lost during this process.
+この処理を行うと、テーマファイルに加えたローカルの変更はすべて失われるので注意してください。
 {{< /alert >}}
 
-1. Download the latest release of the theme source code.
+1. テーマソースコードの最新リリースをダウンロードします。
 
-   {{< button href="https://github.com/nunocoracao/blowfish/releases/latest" target="_blank" >}}Download from Github{{< /button >}}
+   {{< button href="https://github.com/nunocoracao/blowfish/releases/latest" target="_blank" >}}GitHub からダウンロード{{< /button >}}
 
-2. Extract the archive, rename the folder to `blowfish` and move it to the `themes/` directory inside your Hugo project's root folder. You will need to overwrite the existing directory to replace all the theme files.
+2. アーカイブを解凍し、フォルダ名を `blowfish` に変更して、Hugo プロジェクトのルートフォルダ内の `themes/` ディレクトリに移動します。すべてのテーマファイルを置き換えるには、既存のディレクトリを上書きする必要があります。
 
-3. Rebuild your site and check everything works as expected.
+3. サイトを再びビルドし、すべてが期待通りに動作することを確認してください。

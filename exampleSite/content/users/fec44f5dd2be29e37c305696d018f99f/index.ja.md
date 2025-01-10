@@ -2,7 +2,7 @@
                 title: "ohdmire.github.io"
                 tags: [個人サイト]
                 externalUrl: "https://ohdmire.github.io"
-                weight: 491
+                weight: 471
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

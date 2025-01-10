@@ -2,7 +2,7 @@
                 title: "blastomussa.dev"
                 tags: [个人网站]
                 externalUrl: "https://blastomussa.dev"
-                weight: 131
+                weight: 111
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

@@ -2,7 +2,7 @@
                 title: "theindiecoder.cloud"
                 tags: [Sito personale]
                 externalUrl: "https://theindiecoder.cloud"
-                weight: 441
+                weight: 421
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

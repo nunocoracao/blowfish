@@ -2,7 +2,7 @@
                 title: "ekwska.com"
                 tags: [个人博客]
                 externalUrl: "https://ekwska.com"
-                weight: 651
+                weight: 611
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

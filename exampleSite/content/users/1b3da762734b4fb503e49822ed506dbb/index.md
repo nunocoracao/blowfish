@@ -1,8 +1,8 @@
 ---
-                title: "omarohn.de"
-                tags: [Sito personale]
-                externalUrl: "https://omarohn.de"
-                weight: 111
+                title: "StepaniaH"
+                tags: [Personal site,Blog]
+                externalUrl: "https://stepaniah.me"
+                weight: 941
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

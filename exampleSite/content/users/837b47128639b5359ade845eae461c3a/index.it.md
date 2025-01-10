@@ -1,8 +1,8 @@
 ---
-                title: "v-y-s.com"
-                tags: [个人网站]
-                externalUrl: "https://v-y-s.com/"
-                weight: 551
+                title: "mrtruongvu.com"
+                tags: [Sito personale, Blog]
+                externalUrl: "https://mrtruongvu.com"
+                weight: 931
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

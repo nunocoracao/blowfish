@@ -2,7 +2,7 @@
                 title: "asterisk.lol"
                 tags: [Blog, Sito personale]
                 externalUrl: "https://asterisk.lol"
-                weight: 631
+                weight: 591
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

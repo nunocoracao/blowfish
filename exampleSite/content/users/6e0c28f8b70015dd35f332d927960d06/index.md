@@ -2,7 +2,7 @@
                 title: "marupanda.art/marucomics"
                 tags: [Comics site]
                 externalUrl: "https://marupanda.art/marucomics/"
-                weight: 381
+                weight: 361
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

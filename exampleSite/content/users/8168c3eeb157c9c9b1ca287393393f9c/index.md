@@ -2,7 +2,7 @@
                 title: "alanctanner.com"
                 tags: [Personal site]
                 externalUrl: "https://alanctanner.com/"
-                weight: 301
+                weight: 281
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

@@ -2,7 +2,7 @@
                 title: "fahru.my.id"
                 tags: [Sito personale]
                 externalUrl: "https://www.fahru.my.id"
-                weight: 91
+                weight: 81
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

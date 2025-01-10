@@ -1,8 +1,8 @@
 ---
-                title: "omarohn.de"
-                tags: [个人网站]
-                externalUrl: "https://omarohn.de"
-                weight: 111
+                title: "Laterre Dev"
+                tags: [Sito personale, Blog sulla tecnologia, Sviluppatore di software, Sito portfolio]
+                externalUrl: "https://laterre.dev/"
+                weight: 951
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

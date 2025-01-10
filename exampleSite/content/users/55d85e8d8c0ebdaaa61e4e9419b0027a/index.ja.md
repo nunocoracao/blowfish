@@ -2,7 +2,7 @@
                 title: "江ノ島エスカー"
                 tags: [ポートフォリオサイト, ソフトウェア開発者]
                 externalUrl: "https://zen96k.github.io/enoshima-escar"
-                weight: 801
+                weight: 761
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

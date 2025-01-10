@@ -1,8 +1,8 @@
 ---
-title: "Multiple Authors"
+title: "複数の著者"
 weight: 8
 draft: false
-description: "Configure multiple authors for your articles."
+description: "記事に複数の著者を設定する。"
 slug: "multi-author"
 tags: ["authors", "config", "docs"]
 series: ["Documentation"]
@@ -14,24 +14,23 @@ showAuthorsBadges : false
 ---
 
 
-Some websites have more than one author contributing with content and therefore require more than a single default author across the entire website. For those use-cases, Blowfish allows users to extend the list of authors using the multiple authors feature. 
+一部のウェブサイトでは、複数の著者がコンテンツを提供しているため、ウェブサイト全体で単一のデフォルト著者以上のものが必要になります。このようなユースケースのために、Blowfish では、複数著者機能を使用して著者リストを拡張できます。
 
-To keep everything backwards compatible, this feature only allows the definition of extra authors and does not change in any way the previous author functionality which is used via config files.  
+すべての後方互換性を維持するために、この機能では追加の著者の定義のみを許可し、設定ファイルを介して使用される以前の著者機能を一切変更しません。
 
+## 著者の作成
 
-## Create Authors
+新しい著者を作成する最初のステップは、`./data/authors` に新しいフォルダを設定することです。次に、その中に新しい `json` ファイルを、新しい著者ごとに1つずつ追加できます。ファイルの名前は、記事で参照する際のその著者の `key` になります。
 
-The first step to create new authors is to set up a new folder in `./data/authors`. Then you can simply add new `json` files inside, one for each new author. The name of the file will be the `key` for that author when referencing it in your articles. 
+例として、`./data/authors` 内に `nunocoracao.json` というファイルを作成しましょう。ファイルの内容は以下のものと同様である必要があります。`name`、`image`、`bio`、および `social` は、著者に対して現在サポートされている4つのパラメータです。これらは、設定ファイルでデフォルトの著者に対して使用できる設定を模倣しています。
 
-As an example, let’s create a file called `nunocoracao.json` within `./data/authors`. The contents of the file should be similar to the ones below. `name`, `image`, `bio`, and `social` are the 4 parameters supported right for authors. They mimic the configurations available for the default author in the config files.
-
-_Note: the key in the social object will be used to fetch one of the theme’s icons, feel free to use any of the icons available in your setup._
+_注: ソーシャルオブジェクトのキーは、テーマのアイコンの1つを取得するために使用されます。セットアップで利用可能な任意のアイコンを自由に使用してください。_
 
 ```json
 {
     "name": "Nuno Coração",
     "image" : "img/nuno_avatar.jpg",
-    "bio": "Theme Creator",
+    "bio": "テーマ作成者",
     "social": [
         { "linkedin": "https://linkedin.com/in/nunocoracao" },
         { "twitter": "https://twitter.com/nunocoracao" },
@@ -45,19 +44,18 @@ _Note: the key in the social object will be used to fetch one of the theme’s i
 }
 ```
 
+## 記事で著者を参照する
 
-## Reference Authors in Articles
+著者を作成したので、次のステップは1つ以上の記事でそれを参照することです。以下の例では、前のステップで作成した著者をその `key` を使用して参照しています。
 
-Now that you created one author, the next step is to reference it in one or more articles. In the example below, we reference the author created in the previous step using its `key`.
-
-This will render an extra author using the data provided in the `json` file. This feature does not change in any way the default author configured for the overall site, and therefore, you can control both separately. Using the `showAuthor` parameter, you can configure whether to show the default author, that is the normal use-case for a single author blog. The new `authors` front-matter parameter allows you to define authors specifically to an article, and they will be rendered independently of the configurations for the default site author.
+これにより、`json` ファイルで提供されたデータを使用して追加の著者がレンダリングされます。この機能は、サイト全体に設定されたデフォルトの著者を一切変更しないため、両方を個別に制御できます。`showAuthor` パラメータを使用すると、デフォルトの著者を表示するかどうかを設定できます。これは、単一著者のブログの通常の使用例です。新しい `authors` フロントマターパラメータを使用すると、記事に固有の著者を定義でき、それらはデフォルトのサイト著者の設定とは独立してレンダリングされます。
 
 ```md
 ---
-title: "Multiple Authors"
+title: "複数の著者"
 date: 2020-08-10
 draft: false
-description: "Configure multiple authors for your articles."
+description: "記事に複数の著者を設定する。"
 slug: "multi-author"
 tags: ["authors", "config", "docs"]
 showAuthor: true
@@ -67,13 +65,13 @@ showAuthorsBadges : false
 ---
 ```
 
-In the example, which matches the markdown of the current page, both the default author and the new one will be displayed. You can scroll now to see the outcome.
+この例は、現在のページの Markdown と同じもので、デフォルトの著者と新しい著者の両方が表示されます。スクロールして結果を確認できます。
 
-## Create the Authors Taxonomy
+## 著者タクソノミーを作成する
 
-To get lists of articles for each of your authors you can configure the `authors` taxonomy, which opens up some more configurations that might be interesting. This is an optional step in the process that is not required to display the authors in your articles.
+著者ごとに記事のリストを取得するには、`authors` タクソノミーを設定できます。これにより、さらに興味深い設定がいくつか可能になります。これは、記事に著者を表示するために必要なプロセスではオプションのステップです。
 
-First step is to configure the `authors` taxonomy in your `config.toml` file, like in the example below. Even though `tag` and `category` are defined by default with Hugo, once you add a specific taxonomies section you need to add them again otherwise the site will not process them.
+最初のステップは、以下の例のように、`config.toml` ファイルで `authors` タクソノミーを設定することです。`tag` と `category` はデフォルトで Hugo で定義されていますが、一度特定のタクソノミーセクションを追加したら、再度追加する必要があります。そうしないと、サイトはそれらを処理しません。
 
 ```toml
 [taxonomies]
@@ -82,21 +80,21 @@ First step is to configure the `authors` taxonomy in your `config.toml` file, li
   author = "authors"
 ```
 
-And that’s just about it. Now you will have pages that reference your authors and, for each, show the respective list of articles where they participate. You can also use the `article.showAuthorsBadges` on the config file, or `showAuthorsBadges` on each article to chose whether to display the `authors` taxonomy as badges in each post item. As an example, this doc is configured to not display authors but if you look at the sample referenced below you will see the authors displayed as badges.
+これでほぼ完了です。著者を指定するページが作成され、それぞれに、参加している記事のリストが表示されます。設定ファイルで `article.showAuthorsBadges` を使用したり、各記事で `showAuthorsBadges` を使用したりして、各投稿アイテムに `authors` タクソノミーをバッジとして表示するかを選択できます。例として、このドキュメントでは著者を表示しないように設定されていますが、以下に参照されているサンプルを見ると、著者がバッジとして表示されていることがわかります。
 
-Lastly, you can add more detail to each author page so that it displays a little bio, links, or whatever information fits your use-case. To achieve that, create a folder with the `key` to each author inside `./content/authors` and inside each folder place a `_index.md` file. For the example above, we would end up with a `.content/authors/nunocoracao/_index.md` file. Inside, you can configure the actual name of the author and the contents of their page. Authors in this documentation website are configured like this, so you can have a look by playing around with the site.
+最後に、各著者ページに詳細を追加して、ちょっとした経歴、リンク、または用途に合った情報を表示できます。これを実現するには、`./content/authors` 内に各著者への `key` を持つフォルダを作成し、各フォルダ内に `_index.md` ファイルを配置します。上記の例では、`.content/authors/nunocoracao/_index.md` ファイルが作成されます。この中で、著者の実際の名前とそのページの内容を設定できます。このドキュメントウェブサイトの著者はこのように設定されているため、サイトをいじって見てください。
 
 ```md
 ---
 title: "Nuno Coração"
 ---
 
-Nuno's awesome dummy bio.
+Nuno の素晴らしいダミー経歴。
 
 ```
 
-## Sample
+## サンプル
 
-This sample sample below shows an example where the default site author is turned off and the article has multiple authors.
+以下のサンプルは、デフォルトのサイト作成者がオフになっており、記事に複数の作成者がいる例を示しています。
 
 {{< article link="/samples/multiple-authors/" >}}

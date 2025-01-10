@@ -1,10 +1,10 @@
 ---
-title: "複数人の著者"
+title: "複数の著者"
 date: 2022-10-12
 draft: false
-description: "複数人の著者の設定方法のサンプル"
+description: "複数の著者の設定方法のサンプル"
 tags: ["authors", "sample"]
-summary: "複数人の著者の利用方法の簡単な例。"
+summary: "複数の著者の利用方法の簡単な例。"
 showAuthor: false
 authors:
   - "nunocoracao"

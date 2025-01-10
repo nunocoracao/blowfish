@@ -1,8 +1,8 @@
 ---
-                title: "v-y-s.com"
-                tags: [Sito personale]
-                externalUrl: "https://v-y-s.com/"
-                weight: 551
+                title: "StepaniaH"
+                tags: [个人网站, 博客]
+                externalUrl: "https://stepaniah.me"
+                weight: 941
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

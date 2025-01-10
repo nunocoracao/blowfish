@@ -2,7 +2,7 @@
                 title: "rdgo.dev"
                 tags: [个人网站]
                 externalUrl: "https://rdgo.dev/"
-                weight: 311
+                weight: 291
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

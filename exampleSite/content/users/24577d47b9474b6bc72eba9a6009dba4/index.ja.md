@@ -2,7 +2,7 @@
                 title: "50-nuances-octets.fr"
                 tags: [組織サイト]
                 externalUrl: "https://www.50-nuances-octets.fr/"
-                weight: 371
+                weight: 351
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
