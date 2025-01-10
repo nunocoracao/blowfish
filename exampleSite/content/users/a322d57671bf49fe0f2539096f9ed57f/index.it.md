@@ -2,7 +2,7 @@
                 title: "aakashnand.com"
                 tags: [Sito personale]
                 externalUrl: "https://aakashnand.com/"
-                weight: 671
+                weight: 631
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

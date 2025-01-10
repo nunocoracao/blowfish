@@ -1,8 +1,8 @@
 ---
-                title: "v-y-s.com"
-                tags: [Personal Site]
-                externalUrl: "https://v-y-s.com/"
-                weight: 551
+                title: "Laterre Dev"
+                tags: [個人サイト, テクノロジーブログ, ソフトウェア開発者, ポートフォリオサイト]
+                externalUrl: "https://laterre.dev/"
+                weight: 951
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

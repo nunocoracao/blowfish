@@ -2,7 +2,7 @@
                 title: "ricklan.photography"
                 tags: [Personal site]
                 externalUrl: "https://ricklan.photography"
-                weight: 501
+                weight: 481
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

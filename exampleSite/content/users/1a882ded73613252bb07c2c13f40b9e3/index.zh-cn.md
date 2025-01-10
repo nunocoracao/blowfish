@@ -2,7 +2,7 @@
                 title: "sdehm.dev"
                 tags: [个人网站]
                 externalUrl: "https://sdehm.dev"
-                weight: 171
+                weight: 151
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

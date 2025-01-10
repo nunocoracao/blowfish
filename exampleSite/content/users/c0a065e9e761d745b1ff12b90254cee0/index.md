@@ -2,7 +2,7 @@
                 title: "さばっこ"
                 tags: [Personal site,Blog]
                 externalUrl: "https://sabac.co"
-                weight: 961
+                weight: 921
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

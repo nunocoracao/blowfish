@@ -2,7 +2,7 @@
                 title: "halcyonstraits.com"
                 tags: [Doll photography]
                 externalUrl: "https://www.halcyonstraits.com/"
-                weight: 361
+                weight: 341
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

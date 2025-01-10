@@ -1,8 +1,8 @@
 ---
-                title: "v-y-s.com"
-                tags: [個人サイト]
-                externalUrl: "https://v-y-s.com/"
-                weight: 551
+                title: "mrtruongvu.com"
+                tags: [Personal site,Blog]
+                externalUrl: "https://mrtruongvu.com"
+                weight: 931
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

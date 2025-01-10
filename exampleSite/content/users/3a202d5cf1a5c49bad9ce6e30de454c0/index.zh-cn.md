@@ -2,7 +2,7 @@
                 title: "Xeonzilla’s Note"
                 tags: [个人网站, 博客]
                 externalUrl: "https://xeonzilla.github.io"
-                weight: 881
+                weight: 841
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

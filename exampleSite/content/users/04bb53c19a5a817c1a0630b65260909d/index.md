@@ -2,7 +2,7 @@
                 title: "Beauty Formulation"
                 tags: [Company site]
                 externalUrl: "https://www.beautyformulation.com/"
-                weight: 771
+                weight: 731
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

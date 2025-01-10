@@ -2,7 +2,7 @@
                 title: "priyakdey.com"
                 tags: [Sito personale]
                 externalUrl: "https://priyakdey.com"
-                weight: 161
+                weight: 141
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

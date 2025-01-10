@@ -2,7 +2,7 @@
                 title: "hetong-re4per.com"
                 tags: [Sito personale, Blog]
                 externalUrl: "https://hetong-re4per.com"
-                weight: 871
+                weight: 831
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

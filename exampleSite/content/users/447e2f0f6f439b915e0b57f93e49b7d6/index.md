@@ -1,8 +1,8 @@
 ---
-                title: "omarohn.de"
-                tags: [個人サイト]
-                externalUrl: "https://omarohn.de"
-                weight: 111
+                title: "Laterre Dev"
+                tags: [Personal site,Technology Blog,Software Developer,Portfolio Site]
+                externalUrl: "https://laterre.dev/"
+                weight: 951
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

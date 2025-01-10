@@ -2,7 +2,7 @@
                 title: "blastomussa.dev"
                 tags: [Sito personale]
                 externalUrl: "https://blastomussa.dev"
-                weight: 131
+                weight: 111
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

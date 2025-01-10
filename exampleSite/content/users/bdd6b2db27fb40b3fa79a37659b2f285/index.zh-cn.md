@@ -2,7 +2,7 @@
                 title: "andrealucchini.com"
                 tags: [个人网站, 博客]
                 externalUrl: "https://andrealucchini.com"
-                weight: 841
+                weight: 801
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
