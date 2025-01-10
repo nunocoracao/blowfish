@@ -15,10 +15,19 @@ article:
   word_count:
     one: "{{ .Count }} 文字"
     other: "{{ .Count }} 文字"
+  views:
+    one: "{{ .Count }} ビュー"
+    other: "{{ .Count }} ビュー"
+  likes:
+    one: "{{ .Count }} いいね"
+    other: "{{ .Count }} いいね"
   part_of_series: "この記事は連載の一部です"
   part: "パート"
   this_article: "この記事"
   related_articles: "関連記事"
+  zen_mode_title:
+    enable: "Zenモードを有効にする"
+    disable: "Zenモードを無効にする"
 
 author:
   byline_title: "著者"
@@ -57,6 +66,9 @@ sharing:
   pinterest: "Pinterestでピンする"
   reddit: "Redditに投稿する"
   twitter: "Twitterに投稿する"
+  bluesky: "Blueskyに投稿する"
+  whatsapp: "WhatsAppでシェアする"
+  telegram: "Telegramでシェアする"
 
 shortcode:
   recent_articles: "最近の記事"

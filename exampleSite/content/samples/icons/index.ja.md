@@ -11,7 +11,7 @@ type: 'sample'
 
 Blowfish はいくつもの [FontAwesome 6](https://fontawesome.com/icons) のアイコンを組み込み、サポートしています。これらは[アイコンパーシャル]({{< ref "docs/partials#icon" >}})または[アイコンショートコード]({{< ref "docs/shortcodes#icon" >}})のどちらかを利用してウェブサイトに含めることが出来ます。
 
-加えて、カスタムアイコンも完全にサポートされています。プロジェクトのルートにある `assets/icons/` ディレクトリーに SVG アイコンアセットを置くだけです。アイコンディレクトリ内のアイコンはテーマ全体で利用可能になります。自動的に色を塗りつぶすために、全ての SVG パスは fill="currentColor" の XML 属性が必要です。
+加えて、カスタムアイコンも完全にサポートされています。プロジェクトのルートにある `assets/icons/` ディレクトリーに SVG アイコンアセットを置くだけです。アイコンディレクトリ内のアイコンはテーマ全体で利用可能になります。自動的に色を塗りつぶすために、すべての SVG パスは fill="currentColor" の XML 属性が必要です。
 
 組み込んでいるアイコンと対応する名称の全リストは以下を参照してください。
 
@@ -19,98 +19,101 @@ Blowfish はいくつもの [FontAwesome 6](https://fontawesome.com/icons) の�
 | -------------------- | --------------------------------- |
 | amazon               | {{< icon amazon >}}               |
 | apple                | {{< icon apple >}}                |
-| バー                 | {{< icon bars >}}                 |
-| ベル                 | {{< icon bell >}}                 |
+| bars                 | {{< icon bars >}}                 |
+| bell                 | {{< icon bell >}}                 |
 | blogger              | {{< icon blogger >}}              |
 | bluesky              | {{< icon bluesky >}}              |
-| ボム                 | {{< icon bomb >}}                 |
-| バグ                 | {{< icon bug >}}                  |
-| チェック             | {{< icon check >}}                |
-| 情報 (円)            | {{< icon circle-info >}}          |
-| コード               | {{< icon code>}}                  |
+| bomb                 | {{< icon bomb >}}                 |
+| bug                  | {{< icon bug >}}                  |
+| check                | {{< icon check >}}                |
+| circle-info          | {{< icon circle-info >}}          |
+| code                 | {{< icon code>}}                  |
 | codepen              | {{< icon codepen >}}              |
-| コメント             | {{< icon comment >}}              |
+| comment              | {{< icon comment >}}              |
 | dev                  | {{< icon dev >}}                  |
 | discourse            | {{< icon discourse >}}            |
 | docker               | {{< icon docker >}}               |
-| ダウンロード         | {{< icon download >}}             |
+| download             | {{< icon download >}}             |
 | dribbble             | {{< icon dribbble >}}             |
-| 編集                 | {{< icon edit >}}                 |
-| メール               | {{< icon email >}}                |
-| 封筒                 | {{< icon envelope >}}             |
-| 拡大                 | {{< icon expand >}}               |
-| 目                   | {{< icon eye >}}                  |
+| edit                 | {{< icon edit >}}                 |
+| email                | {{< icon email >}}                |
+| envelope             | {{< icon envelope >}}             |
+| expand               | {{< icon expand >}}               |
+| eye                  | {{< icon eye >}}                  |
 | facebook             | {{< icon facebook >}}             |
-| 炎                   | {{< icon fire >}}                 |
+| fire                 | {{< icon fire >}}                 |
 | flickr               | {{< icon flickr >}}               |
 | fork                 | {{< icon fork >}}                 |
 | foursquare           | {{< icon foursquare >}}           |
-| 幽霊                 | {{< icon ghost >}}                |
+| ghost                | {{< icon ghost >}}                |
 | github               | {{< icon github >}}               |
 | gitlab               | {{< icon gitlab >}}               |
-| 地球                 | {{< icon globe >}}                |
+| globe                | {{< icon globe >}}                |
 | goodreads            | {{< icon goodreads >}}            |
 | google               | {{< icon google >}}               |
-| 卒業帽               | {{< icon graduation-cap >}}       |
+| graduation-cap       | {{< icon graduation-cap >}}       |
 | hackernews           | {{< icon hackernews >}}           |
 | hashnode             | {{< icon hashnode >}}             |
-| ハート (空)          | {{< icon heart-empty >}}          |
-| ハート               | {{< icon heart >}}                |
-| 画像                 | {{< icon image >}}                |
+| heart-empty          | {{< icon heart-empty >}}          |
+| heart                | {{< icon heart >}}                |
+| image                | {{< icon image >}}                |
 | instagram            | {{< icon instagram >}}            |
+| itch-io              | {{< icon itch-io >}}              |
 | keybase              | {{< icon keybase >}}              |
 | kickstarter          | {{< icon kickstarter >}}          |
 | ko-fi                | {{< icon ko-fi >}}                |
-| 言語                 | {{< icon language >}}             |
+| language             | {{< icon language >}}             |
 | lastfm               | {{< icon lastfm >}}               |
-| ひらめき             | {{< icon lightbulb >}}            |
-| リンク               | {{< icon link >}}                 |
+| lightbulb            | {{< icon lightbulb >}}            |
+| link                 | {{< icon link >}}                 |
 | linkedin             | {{< icon linkedin >}}             |
-| リスト               | {{< icon list >}}                 |
-| 地図のピン           | {{< icon location-dot >}}         |
-| ロック               | {{< icon lock >}}                 |
+| list                 | {{< icon list >}}                 |
+| location-dot         | {{< icon location-dot >}}         |
+| lock                 | {{< icon lock >}}                 |
 | mastodon             | {{< icon mastodon >}}             |
 | medium               | {{< icon medium >}}               |
 | microsoft            | {{< icon microsoft >}}            |
-| 月                   | {{< icon moon >}}                 |
-| ホットマグカップ     | {{< icon mug-hot >}}              |
-| 音楽                 | {{< icon music >}}                |
+| moon                 | {{< icon moon >}}                 |
+| mug-hot              | {{< icon mug-hot >}}              |
+| music                | {{< icon music >}}                |
 | orcid                | {{< icon orcid >}}                |
 | patreon              | {{< icon patreon >}}              |
 | paypal               | {{< icon paypal >}}               |
-| 鉛筆                 | {{< icon pencil >}}               |
-| pgp キー             | {{< icon pgpkey >}}               |
-| 電話                 | {{< icon phone >}}                |
+| pencil               | {{< icon pencil >}}               |
+| pgpkey               | {{< icon pgpkey >}}               |
+| phone                | {{< icon phone >}}                |
 | pinterest            | {{< icon pinterest >}}            |
-| うんち               | {{< icon poo >}}                  |
+| poo                  | {{< icon poo >}}                  |
 | reddit               | {{< icon reddit >}}               |
 | researchgate         | {{< icon researchgate >}}         |
 | rss                  | {{< icon rss >}}                  |
-| rss (四角)           | {{< icon rss-square >}}           |
-| 天秤                 | {{< icon scale-balanced >}}       |
-| 検索                 | {{< icon search >}}               |
-| 盾                   | {{< icon shield >}}               |
-| ドクロ               | {{< icon skull-crossbones >}}     |
+| rss-square           | {{< icon rss-square >}}           |
+| scale-balanced       | {{< icon scale-balanced >}}       |
+| search               | {{< icon search >}}               |
+| shield               | {{< icon shield >}}               |
+| skull-crossbones     | {{< icon skull-crossbones >}}     |
 | slack                | {{< icon slack >}}                |
 | snapchat             | {{< icon snapchat >}}             |
 | soundcloud           | {{< icon soundcloud >}}           |
+| spotify              | {{< icon spotify >}}              |
 | stack-overflow       | {{< icon stack-overflow >}}       |
-| 星                   | {{< icon star >}}                 |
+| star                 | {{< icon star >}}                 |
 | steam                | {{< icon steam >}}                |
 | stripe               | {{< icon stripe >}}               |
 | substack             | {{< icon substack >}}             |
-| 太陽                 | {{< icon sun >}}                  |
-| タグ                 | {{< icon tag >}}                  |
+| sun                  | {{< icon sun >}}                  |
+| tag                  | {{< icon tag >}}                  |
 | telegram             | {{< icon telegram >}}             |
 | threads              | {{< icon threads >}}              |
 | tiktok               | {{< icon tiktok >}}               |
-| 警告 (三角)          | {{< icon triangle-exclamation >}} |
+| triangle-exclamation | {{< icon triangle-exclamation >}} |
 | tumblr               | {{< icon tumblr >}}               |
 | twitch               | {{< icon twitch >}}               |
 | twitter              | {{< icon twitter >}}              |
-| 輝く魔法の杖         | {{< icon wand-magic-sparkles >}}  |
+| wand-magic-sparkles  | {{< icon wand-magic-sparkles >}}  |
 | whatsapp             | {{< icon whatsapp >}}             |
 | x-twitter            | {{< icon x-twitter >}}            |
 | xing                 | {{< icon xing >}}                 |
 | xmark                | {{< icon xmark >}}                |
 | youtube              | {{< icon youtube >}}              |
+| codeberg             | {{< icon codeberg >}}             |

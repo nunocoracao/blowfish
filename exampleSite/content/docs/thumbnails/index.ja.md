@@ -1,17 +1,17 @@
 ---
-title: "Thumbnails"
+title: "サムネイル"
 weight: 10
 draft: false
-description: "Turn on thumbnails for your articles."
+description: "記事にサムネイル画像を設定する。"
 slug: "thumbnails"
 tags: ["thumbnail", "config", "docs"]
 series: ["Documentation"]
 series_order: 6
 ---
 
-## Thumbnails
+## サムネイル
 
-Blowfish was enhanced in order to make it easy to add visual support to your posts. To do so, you just need to place an image file (almost all formats are supported but we recommend `.png` or `.jpg`) that starts with `feature*` inside your article's main directory, as shown in the example below.
+Blowfish は、記事に視覚的な要素を簡単に追加できるように改良されました。サムネイル画像を設定するには、以下の例のように、記事のメインディレクトリ内に `feature*` で始まる画像ファイル (ほとんどすべての形式がサポートされていますが、`.png` または `.jpg` を推奨) を配置するだけです。
 
 ```shell
 content
@@ -20,18 +20,18 @@ content
     └── featured.png
 ```
 
-This will tell Blowfish that this article has a feature image that can be used both as a thumbnail across your website as well as for <a target="_blank" href="https://oembed.com/">oEmbed</a> cards across social platforms. 
+このように配置することで、Blowfish は記事にサムネイル画像があることを認識し、ウェブサイト全体でサムネイルとして使用したり、ソーシャルプラットフォームで共有する際の <a target="_blank" href="https://oembed.com/">oEmbed</a> カード用画像として使用したりできます。
 
-## Folder Structure
+## フォルダ構成
 
-If you are using single `.md` files for your articles and have a file structure similar to this:
+記事を単一の `.md` ファイルで管理していて、次のようなファイル構成になっている場合:
 
 ```shell
 content
 └── awesome_article.md
 ```
 
-You need to change it from a single Markdown file into a folder. Create a directory with the same name of the article, inside create a `index.md` file. You'll get a structure similar to what's below. 
+単一の Markdown ファイルからフォルダ形式に変更する必要があります。記事と同じ名前のディレクトリを作成し、その中に `index.md` ファイルを作成します。以下のような構成になります。
 
 ```shell
 content
@@ -39,8 +39,8 @@ content
     └── index.md
 ```
 
-Then you just need to add an image like explained earlier. If you want to see a sample of this, you can consult [this sample]({{< ref "thumbnail_sample" >}}).
+あとは、前述のように画像を追加するだけです。設定例を確認したい場合は、[こちらのサンプル]({{< ref "thumbnail_sample" >}})をご覧ください。
 
-## Hero Images
+## ヒーロー画像
 
-Thumbnails will be used by default as hero images within each article. Use the global `article.showHero` or the front-matter parameter `showHero` to control this feature across the entire site or for each specific post. If you want to override the style of the hero image, you can create a file called `hero.html` in `./layouts/partials/` that will override the original partial from the theme.
+サムネイル画像は、デフォルトで各記事のヒーロー画像としても使用されます。サイト全体、または特定の記事ごとにこの機能を設定するには、`config/_default/params.toml` 内の `article.showHero`、または各記事のフロントマターパラメータ `showHero` を使用します。ヒーロー画像のスタイルを変更したい場合は、`./layouts/partials/` に `hero.html` というファイルを作成することで、テーマの元のパーシャルを上書きできます。
