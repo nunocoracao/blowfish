@@ -15,7 +15,7 @@ jobs:
           name: config-default
           path: config-default.zip
       - name: Upload to release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: config-default.zip
           tag_name: ${{ github.event.release.tag_name }}
