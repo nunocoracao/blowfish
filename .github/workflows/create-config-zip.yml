@@ -8,7 +8,7 @@ jobs:
   zip:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: zip -r config-default.zip config/_default
       - uses: actions/upload-artifact@v3
         with:
