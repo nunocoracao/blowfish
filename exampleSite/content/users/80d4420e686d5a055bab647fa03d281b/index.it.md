@@ -1,6 +1,6 @@
 ---
                 title: "talkdimsum.com"
-                tags: [Sito dell'app]
+                tags: [Sito di app]
                 externalUrl: "https://talkdimsum.com/"
                 weight: 271
                 showDate: false

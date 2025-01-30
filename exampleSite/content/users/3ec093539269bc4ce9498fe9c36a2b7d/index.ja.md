@@ -1,6 +1,6 @@
 ---
                 title: "blog.stonegarden.dev"
-                tags: [個人サイト]
+                tags: [パーソナルサイト]
                 externalUrl: "https://blog.stonegarden.dev/"
                 weight: 521
                 showDate: false

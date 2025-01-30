@@ -1,6 +1,6 @@
 ---
                 title: "merox.dev"
-                tags: [個人サイト, ブログ, ドキュメント, 履歴書]
+                tags: [パーソナルサイト, ブログ, ドキュメント, cv]
                 externalUrl: "https://merox.dev"
                 weight: 901
                 showDate: false

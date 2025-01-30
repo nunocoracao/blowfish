@@ -1,6 +1,6 @@
 ---
                 title: "m3upt.com"
-                tags: [Sito del progetto]
+                tags: [Sito di progetto]
                 externalUrl: "https://m3upt.com"
                 weight: 371
                 showDate: false

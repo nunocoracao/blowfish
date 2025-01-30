@@ -1,6 +1,6 @@
 ---
                 title: "michaeldorner.de"
-                tags: [ブログ, 個人サイト, 学術界]
+                tags: [ブログ, パーソナルサイト, アカデミア]
                 externalUrl: "https://www.michaeldorner.de"
                 weight: 691
                 showDate: false

@@ -1,6 +1,6 @@
 ---
                 title: "clemsau.com"
-                tags: [個人サイト]
+                tags: [パーソナルサイト]
                 externalUrl: "https://clemsau.com/"
                 weight: 301
                 showDate: false

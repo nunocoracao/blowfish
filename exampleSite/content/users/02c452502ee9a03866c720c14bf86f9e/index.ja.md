@@ -1,6 +1,6 @@
 ---
                 title: "nveshaan"
-                tags: [個人サイト]
+                tags: [パーソナルサイト]
                 externalUrl: "https://nveshaan.github.io/"
                 weight: 771
                 showDate: false

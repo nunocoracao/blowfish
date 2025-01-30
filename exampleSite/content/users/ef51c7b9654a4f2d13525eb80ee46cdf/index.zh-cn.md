@@ -1,6 +1,6 @@
 ---
                 title: "ciicadalab.github.io"
-                tags: [组织站点]
+                tags: [组织网站]
                 externalUrl: "https://ciicadalab.github.io"
                 weight: 61
                 showDate: false

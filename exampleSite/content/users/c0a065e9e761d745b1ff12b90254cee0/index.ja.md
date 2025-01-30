@@ -1,6 +1,6 @@
 ---
                 title: "さばっこ"
-                tags: [個人サイト, ブログ]
+                tags: [パーソナルサイト, ブログ]
                 externalUrl: "https://sabac.co"
                 weight: 921
                 showDate: false

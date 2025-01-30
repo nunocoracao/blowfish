@@ -1,6 +1,6 @@
 ---
                 title: "MEM v ENNBEE"
-                tags: [テクノロジーブログ, 個人サイト]
+                tags: [テクノロジーブログ, パーソナルサイト]
                 externalUrl: "https://memv.ennbee.uk/"
                 weight: 711
                 showDate: false

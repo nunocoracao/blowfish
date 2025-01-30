@@ -1,6 +1,6 @@
 ---
                 title: "madoke.org"
-                tags: [個人サイト]
+                tags: [パーソナルサイト]
                 externalUrl: "https://madoke.org/"
                 weight: 11
                 showDate: false

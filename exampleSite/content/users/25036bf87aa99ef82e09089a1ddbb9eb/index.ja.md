@@ -1,6 +1,6 @@
 ---
                 title: "georgiancodeclub.github.io"
-                tags: [大学のクラブサイト]
+                tags: [カレッジクラブサイト]
                 externalUrl: "https://georgiancodeclub.github.io"
                 weight: 71
                 showDate: false
