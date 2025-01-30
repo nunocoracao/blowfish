@@ -814,12 +814,31 @@
     ]
   },
   {
-    "title": "zzzhome",
-    "url": "https://zzzhome.cc/",
+    "title": "WillHack - service for reality hackers",
+    "url": "https://willhack.top/",
+    "source": "https://github.com/willhack-g/hugo.git",
+    "tags": [
+      "Technology Blog",
+      "News that matters Blog",
+      "AI",
+    ]
+  },
+   {
+    "title": "Lazy Product Reviews",
+    "url": "https://lazyproductreviews.com/",
     "source": "n/a",
     "tags": [
       "Personal site",
       "Blog"
     ]
-  }
+  },
+{
+   "title": "zzzhome",
+    "url": "https://zzzhome.cc/",
+   "source": "n/a",
+    "tags": [
+      "Personal site",
+      "Blog"
+    ]
+}
 ]
