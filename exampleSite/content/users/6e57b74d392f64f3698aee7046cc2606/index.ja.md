@@ -1,6 +1,6 @@
 ---
                 title: "asterisk.lol"
-                tags: [ブログ, 個人サイト]
+                tags: [ブログ, パーソナルサイト]
                 externalUrl: "https://asterisk.lol"
                 weight: 591
                 showDate: false

@@ -1,6 +1,6 @@
 ---
                 title: "ricklan.photography"
-                tags: [個人サイト]
+                tags: [パーソナルサイト]
                 externalUrl: "https://ricklan.photography"
                 weight: 481
                 showDate: false

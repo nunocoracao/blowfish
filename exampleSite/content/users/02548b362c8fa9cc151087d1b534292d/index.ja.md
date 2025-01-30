@@ -1,6 +1,6 @@
 ---
                 title: "lelouvincx.github.io"
-                tags: [個人サイト]
+                tags: [パーソナルサイト]
                 externalUrl: "https://lelouvincx.github.io/"
                 weight: 311
                 showDate: false

@@ -1,6 +1,6 @@
 ---
                 title: "theindiecoder.cloud"
-                tags: [個人サイト]
+                tags: [パーソナルサイト]
                 externalUrl: "https://theindiecoder.cloud"
                 weight: 421
                 showDate: false

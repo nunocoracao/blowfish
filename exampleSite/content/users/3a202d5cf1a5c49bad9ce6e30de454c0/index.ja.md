@@ -1,6 +1,6 @@
 ---
                 title: "Xeonzilla’s Note"
-                tags: [個人サイト, ブログ]
+                tags: [パーソナルサイト, ブログ]
                 externalUrl: "https://xeonzilla.github.io"
                 weight: 841
                 showDate: false

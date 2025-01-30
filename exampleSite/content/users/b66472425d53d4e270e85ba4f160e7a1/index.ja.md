@@ -1,6 +1,6 @@
 ---
                 title: "joush007.github.io"
-                tags: [個人サイト]
+                tags: [パーソナルサイト]
                 externalUrl: "https://joush007.github.io"
                 weight: 501
                 showDate: false

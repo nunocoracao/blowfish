@@ -1,6 +1,6 @@
 ---
                 title: "nick.bouwhuis.net"
-                tags: [個人サイト]
+                tags: [パーソナルサイト]
                 externalUrl: "https://nick.bouwhuis.net"
                 weight: 211
                 showDate: false

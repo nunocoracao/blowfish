@@ -1,6 +1,6 @@
 ---
                 title: "Adam Madej - Gameplay Animator"
-                tags: [ポートフォリオサイト, ブログ, 個人サイト]
+                tags: [ポートフォリオサイト, ブログ, パーソナルサイト]
                 externalUrl: "http://www.adammadej.com/"
                 weight: 661
                 showDate: false

@@ -820,10 +820,10 @@
     "tags": [
       "Technology Blog",
       "News that matters Blog",
-      "AI",
+      "AI"
     ]
   },
-   {
+  {
     "title": "Lazy Product Reviews",
     "url": "https://lazyproductreviews.com/",
     "source": "n/a",
@@ -832,13 +832,13 @@
       "Blog"
     ]
   },
-{
-   "title": "zzzhome",
+  {
+    "title": "zzzhome",
     "url": "https://zzzhome.cc/",
-   "source": "n/a",
+    "source": "n/a",
     "tags": [
       "Personal site",
       "Blog"
     ]
-}
+  }
 ]

@@ -1,6 +1,6 @@
 ---
                 title: "niklas-hartmann-dev.de"
-                tags: [個人サイト]
+                tags: [パーソナルサイト]
                 externalUrl: "https://niklas-hartmann-dev.de/"
                 weight: 191
                 showDate: false

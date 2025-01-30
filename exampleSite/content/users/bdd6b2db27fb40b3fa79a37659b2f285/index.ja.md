@@ -1,6 +1,6 @@
 ---
                 title: "andrealucchini.com"
-                tags: [個人サイト, ブログ]
+                tags: [パーソナルサイト, ブログ]
                 externalUrl: "https://andrealucchini.com"
                 weight: 801
                 showDate: false

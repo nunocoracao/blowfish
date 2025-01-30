@@ -1,6 +1,6 @@
 ---
                 title: "halcyonstraits.com"
-                tags: [人形撮影]
+                tags: [人形の写真]
                 externalUrl: "https://www.halcyonstraits.com/"
                 weight: 341
                 showDate: false

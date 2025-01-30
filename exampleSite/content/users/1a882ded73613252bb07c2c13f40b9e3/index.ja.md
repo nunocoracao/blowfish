@@ -1,6 +1,6 @@
 ---
                 title: "sdehm.dev"
-                tags: [個人サイト]
+                tags: [パーソナルサイト]
                 externalUrl: "https://sdehm.dev"
                 weight: 151
                 showDate: false
