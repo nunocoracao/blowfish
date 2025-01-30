@@ -812,5 +812,15 @@
       "Software Developer",
       "Portfolio Site"
     ]
+  },
+  {
+    "title": "WillHack - service for reality hackers",
+    "url": "https://willhack.top/",
+    "source": "https://github.com/willhack-g/hugo.git",
+    "tags": [
+      "Technology Blog",
+      "News that matters Blog",
+      "AI",
+    ]
   }
 ]
