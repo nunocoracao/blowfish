@@ -1,8 +1,4 @@
-Berikut terjemahan ke dalam bahasa Indonesia:  
-
----
-
-**English | [Indonesian](https://github.com/nunocoracao/blowfish/blob/main/README.id.md) | [简体中文](https://github.com/nunocoracao/blowfish/blob/main/README.zh-cn.md) | [日本語](https://github.com/nunocoracao/blowfish/blob/main/README.ja.md)**  
+**[English](https://github.com/nunocoracao/blowfish/blob/main/README.md) | Indonesian | [简体中文](https://github.com/nunocoracao/blowfish/blob/main/README.zh-cn.md) | [日本語](https://github.com/nunocoracao/blowfish/blob/main/README.ja.md)**  
 
 # Blowfish  
 [![Deploy Produksi ke Firebase](https://github.com/nunocoracao/blowfish/actions/workflows/firebase-production.yml/badge.svg)](https://github.com/nunocoracao/blowfish/actions/workflows/firebase-production.yml)  
