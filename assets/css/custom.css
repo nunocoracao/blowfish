@@ -1,9 +1,16 @@
 /* Slate scheme */
+
+
 :root {
 
   --color-link: 58, 84, 215;
 
 }
+
+.max-w-prose {
+  max-width: 100ch;
+}
+
 .chroma .k,
 .chroma .kd,
 .chroma .kn {
