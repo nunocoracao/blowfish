@@ -1,3 +1,9 @@
+/* Slate scheme */
+:root {
+
+  --color-link: 58, 84, 215;
+
+}
 .chroma .k,
 .chroma .kd,
 .chroma .kn {
