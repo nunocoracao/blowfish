@@ -1183,7 +1183,7 @@ select {
   --tw-prose-body:rgba(var(--color-neutral-700), 1);
   --tw-prose-headings:rgba(var(--color-neutral-800), 1);
   --tw-prose-lead:rgba(var(--color-neutral-500), 1);
-  --tw-prose-links:rgba(var(--color-primary-600), 1);
+  --tw-prose-links:rgba(var(--color-link), 1);
   --tw-prose-bold:rgba(var(--color-neutral-900), 1);
   --tw-prose-counters:rgba(var(--color-neutral-800), 1);
   --tw-prose-bullets:rgba(var(--color-neutral-500), 1);
