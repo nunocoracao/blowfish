@@ -11,6 +11,15 @@
   max-width: 100ch;
 }
 
+.prose .chroma {
+  border: 2px solid rgb(243, 243, 243); /* Ajusta el grosor y color */
+  padding: 20px; /* Espacio interno para que no se vea pegado */
+  border-radius: 8px; /* Bordes redondeados opcionales */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+}
+
+
+
 .chroma .k,
 .chroma .kd,
 .chroma .kn {
