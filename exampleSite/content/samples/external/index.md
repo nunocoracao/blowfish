@@ -1,7 +1,7 @@
 ---
 title: "An External Article"
 date: 2019-01-24
-externalUrl: "https://nunocoracao.com/projects/"
+externalUrl: "https://n9o.xyz/projects/"
 summary: "The `externalUrl` front matter parameter can link to any URL."
 showReadingTime: true
 _build:
