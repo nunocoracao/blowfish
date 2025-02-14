@@ -90,6 +90,64 @@ _In this example, the special `cascade` parameter is being used to hide the read
 
 The [samples section]({{< ref "samples" >}}) of this site is an example of a list page.
 
+### Linktree Page
+
+|                |                                               |
+| -------------- | --------------------------------------------- |
+| **Layout:**    | `linktree` (e.g. `layouts/_default/linktree.html`)  |
+| **Content:**   | `content/links/_index.md`                        |
+
+The [Linktree Page](/links) enables you to quickly build a page that displays a list of links—similar to Linktree. This component pulls links from two sources:
+
+- Page Front Matter:
+    You can directly define custom links in the Markdown file.
+- Author Social Links:
+    It also automatically appends social links defined in the Author configuration.
+
+**How It Works**
+
+The component retrieves the links parameter from the page’s front matter. Each link is defined as a mapping, with the link text as the key and the destination URL as the value. After rendering these links, the component will also include the social links configured under `.Site.Params.Author.Links`` at the bottom of the page.
+
+**Usage**
+
+In your Markdown file, set the layout to `linktree` and define your links like this:
+
+```yaml
+---
+layout: linktree
+links:
+  - "Awesome Masterclass": "https://example.com"
+---
+```
+
+*Note:*  
+- Each link is an item in a list.  
+- The key (e.g., `"Awesome Masterclass"`) represents the text to display.  
+- The value (e.g., `"https://example.com"`) is the URL where the link should navigate.
+
+**Directory Structure**
+
+For example, you might organize your site as follows:
+
+```shell
+.
+└── content
+    └── links
+        └── _index.md
+```
+
+**Adding More Links:**  
+  To add more links, simply update the front matter in your Markdown file by adding more items to the `links` list:
+
+  ```yaml
+  ---
+  layout: linktree
+  links:
+    - "Awesome Masterclass": "https://example.com"
+    - "Another Resource": "https://example.com"
+  ---
+  ```
+
 ### Taxonomy pages
 
 |                  |                                  |
