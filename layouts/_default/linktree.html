@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div class="flex flex-col items-center justify-center text-center">
+    <img class="mb-2 rounded-full h-36 w-36 medium-zoom-image" width="144" height="144" alt="{{ .Params.Author.name }}" src="{{ .Params.Author.image }}">
+      {{ with .Site.Params.Author.name | markdownify }}
+    <div class="font-extrabold leading-6 text-neutral-800 dark:text-neutral-300">
+      {{ . }}
+    </div>
+    {{ end }}
+</div>
+  <article class="max-w-full">
+    <header>
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        {{ .Title | emojify }}
+      </h1>
+    </header>
+    <section class="max-w-full mt-6 prose dark:prose-invert">
+      {{ partial "linktree_list.html" . }}
+    </section>
+  </article>
+{{ end }}

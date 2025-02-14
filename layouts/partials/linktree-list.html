@@ -1,0 +1,34 @@
+<div class="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+    <div class="w-full max-w-md">
+      {{ $siteLinks := .Site.Params.Author.Links | default (slice) }}
+      {{ $pageLinks := .Params.Links | default (slice) }}
+      {{ $allLinks := slice }}
+  
+      {{ range $link := $pageLinks }}
+        {{ $allLinks = $allLinks | append $link }}
+      {{ end }}
+  
+      {{ range $link := $siteLinks }}
+        {{ $allLinks = $allLinks | append $link }}
+      {{ end }}
+  
+      {{ if gt (len $allLinks) 0 }}
+        {{ range $links := $allLinks }}
+          {{ range $name, $url := $links }}
+            <a class="text-center justify-center flex w-full h-24 mb-6 fold-bold relative inline-flex items-center justify-center rounded border-2 border-black bg-white px-3 py-2 text-base font-bold text-black transition duration-100 hover:bg-primary-400 hover:text-primary-900" href="{{ $url }}" target="_blank" rel="noopener">
+              {{ $icon := resources.Get (print "icons/" $name ".svg") }}
+              {{ if $icon }}
+                <span class="w-6 h-6 mr-2 inline-block">
+                  {{ $icon.Content | safeHTML }}
+                </span>
+              {{ end }}
+              <span>{{ $name }}</span>
+            </a>
+          {{ end }}
+        {{ end }}
+      {{ else }}
+        <p class="text-gray-500">No links configured.</p>
+      {{ end }}
+    </div>
+  </div>
+  
