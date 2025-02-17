@@ -849,5 +849,14 @@
       "Author Site",
       "Blog"
     ]
+  },
+  {
+    "title": "Hudson McNamara",
+    "url": "https://hudsonmcnamara.com",
+    "source": "https://github.com/hudsonm62/hudsonmcnamara.com.git",
+    "tags": [
+      "Personal Site",
+      "Blog"
+    ]
   }
 ]
