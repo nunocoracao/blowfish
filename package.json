@@ -5,10 +5,10 @@
   "scripts": {
     "postinstall": "vendor-copy",
     "assets": "rimraf assets/vendor && vendor-copy",
-    "dev": "NODE_ENV=development ./node_modules/tailwindcss/lib/cli.js -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
-    "build": "NODE_ENV=production ./node_modules/tailwindcss/lib/cli.js -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit",
-    "dev-windows": "set NODE_ENV=development&&node ./node_modules/tailwindcss/lib/cli.js -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
-    "build-windows": "set NODE_ENV=production&&node ./node_modules/tailwindcss/lib/cli.js -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit",
+    "dev": "NODE_ENV=development npx @tailwindcss/cli -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
+    "build": "NODE_ENV=production npx @tailwindcss/cli -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit",
+    "dev-windows": "set NODE_ENV=development&& npx @tailwindcss/cli -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
+    "build-windows": "set NODE_ENV=production&& npx @tailwindcss/cli -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit",
     "build-hugo": "hugo --minify -s exampleSite --themesDir ../.. -d ../docs --baseURL https://nunocoracao.github.io/blowfish/",
     "example": "hugo server -E -F --minify --source exampleSite --themesDir ../.. --buildDrafts -b http://localhost/ -p 1313",
     "lighthouse": "lhci autorun"
@@ -34,6 +34,7 @@
   },
   "homepage": "https://github.com/nunocoracao/blowfish#readme",
   "devDependencies": {
+    "@tailwindcss/cli": "^4.0.7",
     "@tailwindcss/typography": "^0.5.16",
     "chart.js": "^4.4.7",
     "fuse.js": "^7.1.0",
@@ -48,7 +49,7 @@
     "puppeteer": "^24.2.0",
     "rimraf": "^6.0.1",
     "tailwind-scrollbar": "^4.0.0",
-    "tailwindcss": "^4.0.6",
+    "tailwindcss": "^4.0.7",
     "tw-elements": "2.0.0",
     "typeit": "^8.8.7",
     "vendor-copy": "^3.0.1"
