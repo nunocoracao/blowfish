@@ -13,7 +13,7 @@
     {{ else }}
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="{{$post.Permalink}}">
+        <a href="{{$post.RelPermalink}}">
             {{ i18n "article.part" }} {{ $post.Params.series_order }}: {{ $post.Params.title}}
         </a>
     </div>
