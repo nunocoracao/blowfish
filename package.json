@@ -45,7 +45,7 @@
     "prettier": "^3.5.0",
     "prettier-plugin-go-template": "^0.0.15",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "puppeteer": "^24.2.0",
+    "puppeteer": "^24.3.0",
     "rimraf": "^6.0.1",
     "tailwind-scrollbar": "^4.0.0",
     "tailwindcss": "^4.0.6",
