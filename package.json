@@ -42,7 +42,7 @@
     "lite-youtube-embed": "^0.3.3",
     "mermaid": "^11.4.1",
     "packery": "^2.1.2",
-    "prettier": "^3.5.0",
+    "prettier": "^3.5.2",
     "prettier-plugin-go-template": "^0.0.15",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "puppeteer": "^24.2.0",
