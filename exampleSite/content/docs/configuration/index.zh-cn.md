@@ -138,11 +138,13 @@ Blowfish 主题目前默认支持了以下语言：
 
 | 名称              | 默认值 | 描述                                                                                                                                                                                 |
 | ----------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `author.name`     | 无     | 作者名。此参数将展示在文章页脚。并且如果主页使用了个人资料布局，也会展示此值。                                                                                                       |
-| `author.image`    | 无     | 作者头像的文件路径。图像应该是 1:1 的宽高比。可以放在网站的 `assets/` 文件夹中，也可以是外部 URL。                                                                                   |
-| `author.headline` | 无     | 包含作者头衔的 Markdown。它将展示在主页中作者姓名打分下方。                                                                                                                          |
-| `author.bio`      | 无     | 包含作者简介的 Markdown。它将展示在文章页脚。                                                                                                                                        |
-| `author.links`    | 无     | 与作者详细信息一起显示的链接。配置文件中包含示例链接，取消注释即可启用。链接展示的顺序由他们在数组中定义的顺序决定。如果你想自定义链接，可以在 `assets/icons/` 中提供相应的SVG图片。 |
+| `params.author.name`     | 无     | 作者名。此参数将展示在文章页脚。并且如果主页使用了个人资料布局，也会展示此值。                                                                                                       |
+| `params.author.email`        | 无     | 作者邮箱。如果启用了“通过邮件回复”功能，则会启用此值。                                                                                                                                                                                                                                      |
+| `params.author.image`    | 无     | 作者头像的文件路径。图像应该是 1:1 的宽高比。可以放在网站的 `assets/` 文件夹中，也可以是外部 URL。                                                                                   |
+| `params.author.imageQuality` | `96`      | 作者的头像将被视为“高质量”图像，以最小化首页上的瑕疵。值的范围是 1-100。                                                                                                                                                                                               |
+| `params.author.headline` | 无     | 包含作者头衔的 Markdown。它将展示在主页中作者姓名打分下方。                                                                                                                          |
+| `params.author.bio`      | 无     | 包含作者简介的 Markdown。它将展示在文章页脚。                                                                                                                                        |
+| `params.author.links`    | 无     | 与作者详细信息一起显示的链接。配置文件中包含示例链接，取消注释即可启用。链接展示的顺序由他们在数组中定义的顺序决定。如果你想自定义链接，可以在 `assets/icons/` 中提供相应的SVG图片。 |
 <!-- prettier-ignore-end -->
 
 ### 菜单
@@ -170,12 +172,16 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `autoSwitchAppearance`          | `true`       | 主题外观是否根据访问者操作系统的偏好自动切换。设置为 `false` 会强制网站始终使用 `defaultAppearance`。                                                                                                                                                                   |
 | `enableSearch`                  | `false`      | 是否开启网站的搜索功能，设为 `true` 即为启用。注意，搜索功能依赖于[站点设置](#site-configuration)中的 `outputs.home` 设置，请确保此值配置正确。                                                                                                                         |
 | `enableCodeCopy`                | `false`      | 是否可以将`<code>`代码块复制到剪贴板。想要使用代码复制功能，需要将 `highlight.noClasses` 参数设置为 `false`。 阅读 [其他配置文件](#other-configuration-files) 以获取更多信息。                                                                                          |
+| `replyByEmail`                  | `false`      | 是否在发布后启用“通过邮件回复”的链接。如果使用，则必须设置 `config/_default/languages.en.toml` 中的 `params.author.email` 参数。                                                                                                                                                                        |
+| `forgejoDefaultServer`          | _Not set_    | 短代码 `forgejo` 的默认 `server` 参数。                                                                                                                                                                                                                                                   |
+| `giteaDefaultServer`            | _Not set_    | 短代码 `gitea` 的默认 `server` 参数。                                                                                                                                                                                                                                                     |
 | `mainSections`                  | 无           | 指定最近文章中应该展示的模块。 如果没有指定，则使用文章数量最多的板块。                                                                                                                                                                                                 |
 | `showViews`                     | 无           | 是否显示文章和列表页面的阅读量。这需要集成 firebase ，具体可以看下面。                                                                                                                                                                                                  |
 | `showLikes`                     | 无           | 是否显示文章和列表页面的点赞量。这需要集成 firebase ，具体可以看下面。                                                                                                                                                                                                  |
 | `robots`                        | 无           | 用于支持搜索引擎爬虫如何处理你的网站。如果设置了该值，它将被输出在页面头部。具体的参数值请参考 [Google 文档](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag#directives)。                                                                    |
 | `disableImageZoom`              | `false`      | 禁用网站上所有图片缩放功能。                                                                                                                                                                                                                                            |
 | `disableImageOptimization`      | `false`      | 禁用图片上所有图片的调整大小和优化功能。                                                                                                                                                                                                                                |
+| `backgroundImageWidth`          | `1200`       | 宽度（以像素为单位）用于缩放背景图像。                                                                                                                                                                                                                                                              |
 | `disableTextInHeader`           | `false`      | 禁用文本类型的标题，对基于 logo 的标题很有用。                                                                                                                                                                                                                          |
 | `defaultBackgroundImage`        | 无           | 设置默认背景图，用于 `background` 和 `hero` 布局下的主页。                                                                                                                                                                                                              |
 | `defaultFeaturedImage`          | 无           | 设置默认背景图片，用于所有文章的`featured`图片，可以通过文章目录中的 `featured` 图片替换。                                                                                                                                                                              |
@@ -262,10 +268,12 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `list.showViews`                   | `false` | 是否显示文章阅读量。这需要集成 firebase ，具体可以看下面。                                                                                                                |
 | `list.showLikes`                   | `false` | 是否显示文章点赞量。这需要集成 firebase ，具体可以看下面。                                                                                                                |
 | `list.showCards`                   | `false` | 是否将每个文章显示为卡片或简单的内联文本。                                                                                                                                |
+| `list.orderByWeight`               | `false`   | 是否按照[权重（weights）](https://gohugo.io/methods/page/weight/)排序文章。                                                                                                                                                                       |
 | `list.groupByYear`                 | `true`  | 是否根据年做聚合。                                                                                                                                                        |
 | `list.cardView`                    | `false` | 将列表展示为卡片容器。                                                                                                                                                    |
 | `list.cardViewScreenWidth`         | `false` | 增强列表中卡片的宽度，使其可以占据可用的全部宽度。                                                                                                                        |
 | `list.constrainItemsWidth`         | `false` | 将项目宽度限制为 `prose` 以提高可读性。在没有 featurn 图片的时候非常有用。                                                                                                |
+| `list.showTableOfContents`         | `false`   | 是否在文章中显示目录表。                                                                                                                                                                                                 |
 
 ### 网站地图
 
@@ -354,6 +362,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `verification.bing`      | 无     | Bing 提供的网站验证字符串，用于在网站元数据中包含。      |
 | `verification.pinterest` | 无     | Pinterest 提供的网站验证字符串，用于在网站元数据中包含。 |
 | `verification.yandex`    | 无     | Yandex 提供的网站验证字符串，用于在网站元数据中包含。    |
+| `verification.fediverse` | 无     | 联邦域用户名，包括在网站元数据中。将服务器域名包含在用户名中，例如 `@you@instanceaddress.tld`。 |
 <!-- prettier-ignore-end -->
 
 ## RSSNext
