@@ -2,7 +2,6 @@
 {{ $header := .Get "header" }}
 {{ $badge := .Get "badge" }}
 {{ $subheader := .Get "subheader" }}
-{{ $text := .Get "text" }}
 <li>
   <div class="flex flex-start">
     <div class="bg-primary-500 dark:bg-primary-300 text-neutral-50 dark:text-neutral-700 min-w-[30px] h-8 text-2xl flex items-center justify-center rounded-full -ml-12 mt-5">
@@ -17,7 +16,7 @@
         {{ end }}
         {{ if $badge }}
         <h3 class="">
-          {{ partial "badge"  $badge}}
+          {{ partial "badge" $badge}}
         </h3>
         {{ end }}
       </div>
