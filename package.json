@@ -40,6 +40,7 @@
     "jquery": "^3.7.1",
     "katex": "^0.16.21",
     "lite-youtube-embed": "^0.3.3",
+    "medium-zoom": "^1.1.0",
     "mermaid": "^11.4.1",
     "packery": "^2.1.2",
     "prettier": "^3.5.0",
@@ -106,6 +107,10 @@
     {
       "from": "node_modules/lite-youtube-embed/src/lite-yt-embed.css",
       "to": "assets/lib/lite-youtube-embed/lite-yt-embed.css"
+    },
+    {
+      "from": "node_modules/medium-zoom/dist/medium-zoom.min.js",
+      "to": "assets/lib/zoom/zoom.min.js"
     }
   ],
   "dependencies": {
