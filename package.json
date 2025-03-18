@@ -47,7 +47,7 @@
     "prettier-plugin-tailwindcss": "^0.6.11",
     "puppeteer": "^24.4.0",
     "rimraf": "^6.0.1",
-    "tailwind-scrollbar": "^4.0.0",
+    "tailwind-scrollbar": "^4.0.1",
     "tailwindcss": "^4.0.13",
     "tw-elements": "2.0.0",
     "typeit": "^8.8.7",
