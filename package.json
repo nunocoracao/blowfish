@@ -41,7 +41,7 @@
     "katex": "^0.16.21",
     "lite-youtube-embed": "^0.3.3",
     "mermaid": "^11.5.0",
-    "packery": "^2.1.2",
+    "packery": "^3.0.0",
     "prettier": "^3.5.3",
     "prettier-plugin-go-template": "^0.0.15",
     "prettier-plugin-tailwindcss": "^0.6.11",
