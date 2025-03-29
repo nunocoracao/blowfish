@@ -150,7 +150,7 @@
       {{ end }}
   
     </section>
-  <footer class="pt-8 max-w-prose print:hidden">
+  <footer id="single_footer" class="pt-8 max-w-prose print:hidden">
 
     {{ partial "article-pagination.html" . }}
     {{ if .Params.showComments | default (.Site.Params.article.showComments | default false) }}
