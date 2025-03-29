@@ -5,7 +5,6 @@ function _toogleZenMode(zendModeButton) {
   const tocInside = document.querySelector('.toc-inside');
   const articleContent = document.querySelector('.article-content');
   const header = document.querySelector('#single_header');
-  const footer = document.querySelector(''#single_footer'');    // Add footer ref for class transformation
 
 
   // Add semantic class into body tag
@@ -24,10 +23,6 @@ function _toogleZenMode(zendModeButton) {
   // Change width of article title
   header.classList.toggle('max-w-full');
   header.classList.toggle('max-w-prose');
-	
-  // Change width of article footer 
-  header.classList.toggle('max-w-full');
-  header.classList.toggle('max-w-prose');	
 
   // Read i18n title from data-attributes
   const titleI18nDisable = zendModeButton.getAttribute('data-title-i18n-disable');
