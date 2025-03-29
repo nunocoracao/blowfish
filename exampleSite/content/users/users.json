@@ -851,12 +851,31 @@
     ]
   },
   {
-    "title": "Hudson McNamara",
+    "title": "ZSL",
+    "url": "https://blog.zsl0621.cc/",
+    "source": "https://github.com/ZhenShuo2021/ZhenShuo2021.github.io",
+    "tags": [
+      "Blog",
+      "Personal Site"
+    ]
+  },
+  {
+    "title": "Chill-Try",
+    "url": "https://ctry.tech/",
+    "source": "n/a",
+    "tags": [
+      "Technology Blog",
+      "Personal site",
+      "Blog"
+    ]
+  },
+{
+      "title": "Hudson McNamara",
     "url": "https://hudsonmcnamara.com",
     "source": "https://github.com/hudsonm62/hudsonmcnamara.com.git",
     "tags": [
       "Personal Site",
-      "Blog"
-    ]
-  }
+      "Blog",
+      ]
+}
 ]
