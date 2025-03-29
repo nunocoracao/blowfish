@@ -877,5 +877,14 @@
       "Personal Site",
       "Blog",
       ]
-}
+},
+  {
+    "title": "Weg um Weg",
+    "url": "https://www.wegumweg.de",
+    "source": "n/a",
+    "tags": [
+      "Blog",
+      "Outdoor Blog"
+    ]
+  }
 ]
