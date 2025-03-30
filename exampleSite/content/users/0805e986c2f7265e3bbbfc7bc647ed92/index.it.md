@@ -1,8 +1,8 @@
 ---
-                title: "Xeonzilla’s Note"
-                tags: [パーソナルサイト, ブログ]
-                externalUrl: "https://xeonzilla.github.io"
-                weight: 841
+                title: "Chill-Try"
+                tags: [Blog tecnologico, Sito personale, Blog]
+                externalUrl: "https://ctry.tech/"
+                weight: 1011
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

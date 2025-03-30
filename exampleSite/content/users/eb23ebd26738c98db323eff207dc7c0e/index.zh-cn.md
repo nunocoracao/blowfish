@@ -1,8 +1,8 @@
 ---
-                title: "Xeonzilla’s Note"
-                tags: [Personal site,Blog]
-                externalUrl: "https://xeonzilla.github.io"
-                weight: 841
+                title: "Weg um Weg"
+                tags: [博客, 户外博客]
+                externalUrl: "https://www.wegumweg.de"
+                weight: 1031
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+
