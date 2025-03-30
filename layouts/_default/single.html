@@ -49,7 +49,16 @@
               {{ $taxonomyLink = delimit (slice $baseURL "authors/" $author "/") "" }}
             {{ end }}
           {{ end }}
-          {{ partial "author-extra.html" (dict "context" . "data" $authorData "link" $taxonomyLink) }}
+
+          {{ $finalLink := $taxonomyLink }}
+          {{ $currentLang := $.Site.Language.Lang }}
+          {{ if eq $.Site.LanguagePrefix "" }}
+            {{ $finalLink = printf "%sauthors/%s/" $baseURL $author }}
+          {{ else }}
+            {{ $finalLink = printf "%s%s/authors/%s/" $baseURL $currentLang $author }}
+          {{ end }} 
+
+          {{ partial "author-extra.html" (dict "context" . "data" $authorData "link" $finalLink) }}
         {{- end -}}
       {{ end }}
 

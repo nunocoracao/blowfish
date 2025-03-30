@@ -702,8 +702,8 @@
   },
   {
     "title": "Xeonzilla’s Note",
-    "url": "https://xeonzilla.github.io",
-    "source": "https://github.com/Xeonzilla/Xeonzilla.github.io",
+    "url": "https://xeonzilla.top",
+    "source": "https://github.com/Xeonzilla/blog",
     "tags": [
       "Personal site",
       "Blog"
@@ -842,12 +842,49 @@
     ]
   },
   {
-    "title": "Bootleg Coal Rebellion  ",
+    "title": "Bootleg Coal Rebellion",
     "url": "https://bootlegcoal.com",
     "source": "n/a",
     "tags": [
       "Author Site",
       "Blog"
+    ]
+  },
+  {
+    "title": "ZSL",
+    "url": "https://blog.zsl0621.cc/",
+    "source": "https://github.com/ZhenShuo2021/ZhenShuo2021.github.io",
+    "tags": [
+      "Blog",
+      "Personal Site"
+    ]
+  },
+  {
+    "title": "Chill-Try",
+    "url": "https://ctry.tech/",
+    "source": "n/a",
+    "tags": [
+      "Technology Blog",
+      "Personal site",
+      "Blog"
+    ]
+  },
+  {
+    "title": "Hudson McNamara",
+    "url": "https://hudsonmcnamara.com",
+    "source": "https://github.com/hudsonm62/hudsonmcnamara.com.git",
+    "tags": [
+      "Personal Site",
+      "Blog"
+    ]
+  },
+  {
+    "title": "Weg um Weg",
+    "url": "https://www.wegumweg.de",
+    "source": "n/a",
+    "tags": [
+      "Blog",
+      "Outdoor Blog"
     ]
   }
 ]

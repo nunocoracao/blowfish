@@ -7,7 +7,7 @@
   {{ else if not .p1.IsHome }}
     {{ template "crumb" (dict "p1" .p1.Site.Home "p2" .p2 ) }}
   {{ end }}
-  <li class="inline {{ if or (eq .p1 .p2) (.p1.IsHome) }}hidden{{ end }}">
+  <li class="{{ if or (eq .p1 .p2) (.p1.IsHome) }}hidden{{else}}inline{{ end }}">
     <a
       class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
       href="{{ .p1.RelPermalink }}"

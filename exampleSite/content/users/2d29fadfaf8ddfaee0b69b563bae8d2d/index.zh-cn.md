@@ -1,8 +1,8 @@
 ---
-                title: "Xeonzilla’s Note"
+                title: "Hudson McNamara"
                 tags: [个人网站, 博客]
-                externalUrl: "https://xeonzilla.github.io"
-                weight: 841
+                externalUrl: "https://hudsonmcnamara.com"
+                weight: 1021
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

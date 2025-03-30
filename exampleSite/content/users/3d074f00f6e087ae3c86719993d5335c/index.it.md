@@ -1,7 +1,7 @@
 ---
                 title: "Xeonzilla’s Note"
                 tags: [Sito personale, Blog]
-                externalUrl: "https://xeonzilla.github.io"
+                externalUrl: "https://xeonzilla.top"
                 weight: 841
                 showDate: false
                 showAuthor: false

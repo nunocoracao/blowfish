@@ -1,5 +1,5 @@
 ---
-                title: "Bootleg Coal Rebellion  "
+                title: "Bootleg Coal Rebellion"
                 tags: [Sito dell'autore, Blog]
                 externalUrl: "https://bootlegcoal.com"
                 weight: 991
