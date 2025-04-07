@@ -886,5 +886,14 @@
       "Blog",
       "Outdoor Blog"
     ]
+  },
+  {
+    "title": "The Space 🌍",
+    "url": "https://panoskorovesis.github.io/",
+    "source": "https://github.com/panoskorovesis/panoskorovesis.github.io",
+    "tags": [
+      "Personal Website",
+      "Tech Blog"
+    ]
   }
 ]
