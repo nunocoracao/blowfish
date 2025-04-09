@@ -33,6 +33,15 @@
     ]
   },
   {
+    "title": "blog.francescopapini.com",
+    "url": "https://blog.francescopapini.com",
+    "source": "https://github.com/papo1011/blog",
+    "tags": [
+      "Personal site",
+      "blog"
+    ]
+  },
+  {
     "title": "brendanwallace.github.io",
     "url": "https://brendanwallace.github.io",
     "source": "n/a",
