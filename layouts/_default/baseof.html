@@ -15,11 +15,11 @@
         class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>{{ i18n
       "nav.skip_to_main" }}</a>
   </div>
-  {{ $header := print "partials/header/" .Site.Params.header.layout ".html" }}
-  {{ if templates.Exists $header }}
+  {{ $header := print "header/" .Site.Params.header.layout ".html" }}
+  {{ if templates.Exists ( printf "partials/%s" $header ) }}
   {{ partial $header . }}
   {{ else }}
-  {{ partial "partials/header/basic.html" . }}
+  {{ partial "header/basic.html" . }}
   {{ end }}
   <div class="relative flex flex-col grow">
     <main id="main-content" class="grow">
