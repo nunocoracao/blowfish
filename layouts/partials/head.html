@@ -80,7 +80,7 @@
   <script src="{{ $zoomJS.RelPermalink }}" integrity="{{ $zoomJS.Data.Integrity }}"></script>
   {{ end }}
   {{/* Icons */}}
-  {{ if templates.Exists "partials/favicons.html" }}
+  {{ if templates.Exists "favicons.html" }}
   {{ partialCached "favicons.html" .Site }}
   {{ else }}
   <link rel="apple-touch-icon" sizes="180x180" href="{{ "apple-touch-icon.png" | relURL }}" />
@@ -123,7 +123,7 @@
   {{/* Analytics */}}
   {{ partial "analytics/main.html" .Site }}
   {{/* Extend head - eg. for custom analytics scripts, etc. */}}
-  {{ if templates.Exists "partials/extend-head.html" }}
+  {{ if templates.Exists "extend-head.html" }}
   {{ partialCached "extend-head.html" .Site }}
   {{ end }}
   <meta name="theme-color"/>
