@@ -154,7 +154,7 @@
 
     {{ partial "article-pagination.html" . }}
     {{ if .Params.showComments | default (.Site.Params.article.showComments | default false) }}
-    {{ if templates.Exists "comments.html" }}
+    {{ if templates.Exists "partials/comments.html" }}
     <div class="pt-3">
       <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
       <div class="pt-3">

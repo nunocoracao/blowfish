@@ -62,7 +62,7 @@
   {{ $jsProcess = $jsProcess | resources.Minify | resources.Fingerprint "sha512" }}
   <script type="text/javascript" src="{{ $jsProcess.RelPermalink }}" integrity="{{ $jsProcess.Data.Integrity }}"></script>
   {{/* Extend footer - eg. for extra scripts, etc. */}}
-  {{ if templates.Exists "extend-footer.html" }}
+  {{ if templates.Exists "partials/extend-footer.html" }}
   {{ partialCached "extend-footer.html" . }}
   {{ end }}
 </footer>
