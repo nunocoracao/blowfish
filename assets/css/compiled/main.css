@@ -103,6 +103,14 @@ body.zen-mode-enable {
     --drop-shadow-lg: 0 4px 4px rgb(0 0 0 / 0.15);
     --drop-shadow-xl: 0 9px 7px rgb(0 0 0 / 0.1);
     --drop-shadow-2xl: 0 25px 25px rgb(0 0 0 / 0.15);
+    --text-shadow-2xs: 0px 1px 0px rgb(0 0 0 / 0.15);
+    --text-shadow-xs: 0px 1px 1px rgb(0 0 0 / 0.2);
+    --text-shadow-sm: 0px 1px 0px rgb(0 0 0 / 0.075), 0px 1px 1px rgb(0 0 0 / 0.075),
+      0px 2px 2px rgb(0 0 0 / 0.075);
+    --text-shadow-md: 0px 1px 1px rgb(0 0 0 / 0.1), 0px 1px 2px rgb(0 0 0 / 0.1),
+      0px 2px 4px rgb(0 0 0 / 0.1);
+    --text-shadow-lg: 0px 1px 2px rgb(0 0 0 / 0.1), 0px 3px 2px rgb(0 0 0 / 0.1),
+      0px 4px 8px rgb(0 0 0 / 0.1);
     --ease-in: cubic-bezier(0.4, 0, 1, 1);
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
@@ -244,7 +252,7 @@ body.zen-mode-enable {
   }
   @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
     ::placeholder {
-      color: color-mix(in oklab, currentColor 50%, transparent);
+      color: color-mix(in oklab, currentcolor 50%, transparent);
     }
   }
   textarea {
@@ -783,7 +791,7 @@ body.zen-mode-enable {
     --tw-prose-quotes: color-mix(in oklab, rgba(var(--color-neutral-700), 1) 100%, transparent);
     --tw-prose-quote-borders: color-mix(in oklab, rgba(var(--color-primary-200), 1) 100%, transparent);
     --tw-prose-captions: color-mix(in oklab, rgba(var(--color-neutral-500), 1) 100%, transparent);
-    --tw-prose-kbd: oklch(0.21 0.034 264.665);
+    --tw-prose-kbd: oklch(21% 0.034 264.665);
     --tw-prose-kbd-shadows: NaN NaN NaN;
     --tw-prose-code: color-mix(in oklab, rgba(var(--color-secondary-700), 1) 100%, transparent);
     --tw-prose-pre-code: color-mix(in oklab, rgba(var(--color-neutral-700), 1) 100%, transparent);
@@ -2238,10 +2246,10 @@ body.zen-mode-enable {
     a-zA-Z:  ;
   }
   .scrollbar-thumb-neutral-400 {
-    --scrollbar-thumb: oklch(0.708 0 0);
+    --scrollbar-thumb: oklch(70.8% 0 0);
   }
   .scrollbar-track-neutral-200 {
-    --scrollbar-track: oklch(0.922 0 0);
+    --scrollbar-track: oklch(92.2% 0 0);
   }
   .group-hover\:text-primary-300 {
     &:is(:where(.group):hover *) {
@@ -3295,12 +3303,12 @@ body.zen-mode-enable {
   }
   .dark\:scrollbar-thumb-neutral-600 {
     &:is(.dark *) {
-      --scrollbar-thumb: oklch(0.439 0 0);
+      --scrollbar-thumb: oklch(43.9% 0 0);
     }
   }
   .dark\:scrollbar-track-neutral-800 {
     &:is(.dark *) {
-      --scrollbar-track: oklch(0.269 0 0);
+      --scrollbar-track: oklch(26.9% 0 0);
     }
   }
   .dark\:group-hover\:text-neutral-700 {
@@ -4375,7 +4383,7 @@ pre {
   [type='text'],input:where(:not([type])),[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select {
     appearance: none;
     background-color: #fff;
-    border-color: oklch(0.551 0.027 264.364);
+    border-color: oklch(55.1% 0.027 264.364);
     border-width: 1px;
     border-radius: 0px;
     padding-top: 0.5rem;
@@ -4391,15 +4399,15 @@ pre {
       --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
-      --tw-ring-color: oklch(0.546 0.245 262.881);
+      --tw-ring-color: oklch(54.6% 0.245 262.881);
       --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
       --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
       box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-      border-color: oklch(0.546 0.245 262.881);
+      border-color: oklch(54.6% 0.245 262.881);
     }
   }
   input::placeholder,textarea::placeholder {
-    color: oklch(0.551 0.027 264.364);
+    color: oklch(55.1% 0.027 264.364);
     opacity: 1;
   }
   ::-webkit-datetime-edit-fields-wrapper {
@@ -4419,7 +4427,7 @@ pre {
     padding-bottom: 0;
   }
   select {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='oklch(0.551 0.027 264.364)' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='oklch(55.1%25 0.027 264.364)' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
     background-position: right 0.5rem center;
     background-repeat: no-repeat;
     background-size: 1.5em 1.5em;
@@ -4445,9 +4453,9 @@ pre {
     flex-shrink: 0;
     height: 1rem;
     width: 1rem;
-    color: oklch(0.546 0.245 262.881);
+    color: oklch(54.6% 0.245 262.881);
     background-color: #fff;
-    border-color: oklch(0.551 0.027 264.364);
+    border-color: oklch(55.1% 0.027 264.364);
     border-width: 1px;
     --tw-shadow: 0 0 #0000;
   }
@@ -4463,7 +4471,7 @@ pre {
     --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);
     --tw-ring-offset-width: 2px;
     --tw-ring-offset-color: #fff;
-    --tw-ring-color: oklch(0.546 0.245 262.881);
+    --tw-ring-color: oklch(54.6% 0.245 262.881);
     --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
     --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
     box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
