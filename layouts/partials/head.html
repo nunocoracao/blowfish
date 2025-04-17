@@ -115,7 +115,9 @@
   {{ with .Site.Params.Author.links }}
   {{ range $links := . }}
   {{ range $name, $url := $links }}
+  {{ if not (strings.HasPrefix $url "mailto:") }}
   <link href="{{ $url }}" rel="me" />{{ end }}
+  {{ end }}
   {{ end }}
   {{ end }}
   {{/* Vendor */}}
