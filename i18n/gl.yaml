@@ -42,7 +42,7 @@ error:
   404_description: "Parece que a páxina que solicitaches non existe."
 
 footer:
-  dark_appearance: "Cambiar a modo oscuro"
+  dark_appearance: "Cambiar a modo escuro"
   light_appearance: "Cambiar a modo claro"
   powered_by: "Desenvolvida con {{ .Hugo }} &amp; {{ .Theme }}"
 
@@ -66,6 +66,9 @@ sharing:
   pinterest: "Pinear en Pinterest"
   reddit: "Publicar en Reddit"
   twitter: "Tuitear en Twitter"
+  bluesky: "Publicar en Bluesky"
+  whatsapp: "Compartir vía WhatsApp"
+  telegram: "Compartir vía Telegram"
 
 shortcode:
   recent_articles: "Recente"
