@@ -32,6 +32,7 @@
         {{ (.Resize "660x").RelPermalink }} 660w,
         {{ (.Resize "1024x").RelPermalink }} 1024w,
         {{ (.Resize "1320x").RelPermalink }} 2x"
+        data-zoom-src="{{ (.Resize "1320x").RelPermalink }}"
         src="{{ (.Resize "660x").RelPermalink }}"
         alt="{{ $altText }}"
       />
