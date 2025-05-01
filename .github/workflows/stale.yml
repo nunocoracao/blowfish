@@ -29,4 +29,4 @@ jobs:
         days-before-stale: 60
         days-before-close: 0
         remove-stale-when-updated: true
-        operations-per-run: 30
+        operations-per-run: 100
