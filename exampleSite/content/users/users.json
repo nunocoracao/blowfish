@@ -904,5 +904,15 @@
       "Personal site",
       "blog"
     ]
+  },
+  {
+    "title": "Adri Antunez's Cloud Site",
+    "url": "https://adriantunez.cloud",
+    "source": "n/a",
+    "tags": [
+      "Technology Blog",
+      "Personal site",
+      "Blog"
+    ]
   }
 ]
