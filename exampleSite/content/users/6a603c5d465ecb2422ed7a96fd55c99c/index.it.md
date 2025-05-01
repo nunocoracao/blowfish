@@ -2,7 +2,7 @@
                 title: "technicaldc.github.io"
                 tags: [Sito personale, Blog]
                 externalUrl: "https://technicaldc.github.io/"
-                weight: 551
+                weight: 541
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

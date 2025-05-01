@@ -2,7 +2,7 @@
                 title: "fugugames.com"
                 tags: [游戏网站]
                 externalUrl: "https://fugugames.com/"
-                weight: 251
+                weight: 241
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

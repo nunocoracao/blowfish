@@ -2,7 +2,7 @@
                 title: "blog.stonegarden.dev"
                 tags: [Personal Site]
                 externalUrl: "https://blog.stonegarden.dev/"
-                weight: 521
+                weight: 511
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

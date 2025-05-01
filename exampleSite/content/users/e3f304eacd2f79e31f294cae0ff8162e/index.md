@@ -1,8 +1,8 @@
 ---
-                title: "lelouvincx.github.io"
-                tags: [Personal site]
-                externalUrl: "https://lelouvincx.github.io/"
-                weight: 311
+                title: "irusukan"
+                tags: [Personal Site,Blog]
+                externalUrl: "https://irusukan.com"
+                weight: 1051
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

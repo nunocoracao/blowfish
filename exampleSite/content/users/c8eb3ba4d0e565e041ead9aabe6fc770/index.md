@@ -2,7 +2,7 @@
                 title: "pacochan.net"
                 tags: [Personal site]
                 externalUrl: "https://pacochan.net"
-                weight: 381
+                weight: 371
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

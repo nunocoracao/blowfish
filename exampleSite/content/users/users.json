@@ -153,14 +153,6 @@
     ]
   },
   {
-    "title": "niklas-hartmann-dev.de",
-    "url": "https://niklas-hartmann-dev.de/",
-    "source": "n/a",
-    "tags": [
-      "Personal site"
-    ]
-  },
-  {
     "title": "blog.muffn.io",
     "url": "https://blog.muffn.io/",
     "source": "n/a",
@@ -243,14 +235,6 @@
   {
     "title": "clemsau.com",
     "url": "https://clemsau.com/",
-    "source": "n/a",
-    "tags": [
-      "Personal site"
-    ]
-  },
-  {
-    "title": "lelouvincx.github.io",
-    "url": "https://lelouvincx.github.io/",
     "source": "n/a",
     "tags": [
       "Personal site"
@@ -630,15 +614,6 @@
     ]
   },
   {
-    "title": "江ノ島エスカー",
-    "url": "https://zen96k.github.io/enoshima-escar",
-    "source": "https://github.com/zen96k/enoshima-escar",
-    "tags": [
-      "Portfolio Site",
-      "Software Developer"
-    ]
-  },
-  {
     "title": "nveshaan",
     "url": "https://nveshaan.github.io/",
     "source": "n/a",
@@ -907,12 +882,12 @@
     ]
   },
   {
-     "title": "irusukan",
+    "title": "irusukan",
     "url": "https://irusukan.com",
     "source": "n/a",
     "tags": [
       "Personal Site",
-    "Blog"
-   ]
+      "Blog"
+    ]
   }
 ]

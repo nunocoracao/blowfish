@@ -2,7 +2,7 @@
                 title: "clemsau.com"
                 tags: [パーソナルサイト]
                 externalUrl: "https://clemsau.com/"
-                weight: 301
+                weight: 291
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

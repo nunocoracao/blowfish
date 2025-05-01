@@ -1,8 +1,8 @@
 ---
-                title: "Xeonzilla’s Note"
-                tags: [Personal site,Blog]
-                externalUrl: "https://xeonzilla.top"
-                weight: 841
+                title: "irusukan"
+                tags: [パーソナルサイト, ブログ]
+                externalUrl: "https://irusukan.com"
+                weight: 1051
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

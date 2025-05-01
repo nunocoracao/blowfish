@@ -2,7 +2,7 @@
                 title: "vkmki001.github.io"
                 tags: [パーソナルサイト]
                 externalUrl: "https://vkmki001.github.io/"
-                weight: 391
+                weight: 381
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

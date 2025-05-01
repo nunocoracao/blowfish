@@ -1,8 +1,8 @@
 ---
-                title: "江ノ島エスカー"
-                tags: [ポートフォリオサイト, ソフトウェア開発者]
-                externalUrl: "https://zen96k.github.io/enoshima-escar"
-                weight: 761
+                title: "Adri Antunez's Cloud Site"
+                tags: [Blog tecnologico, Sito personale, Blog]
+                externalUrl: "https://adriantunez.cloud"
+                weight: 1041
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

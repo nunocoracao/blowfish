@@ -2,7 +2,7 @@
                 title: "karlukle.site"
                 tags: [Personal blog]
                 externalUrl: "https://karlukle.site"
-                weight: 651
+                weight: 641
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

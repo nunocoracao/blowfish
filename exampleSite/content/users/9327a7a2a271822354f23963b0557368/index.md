@@ -2,7 +2,7 @@
                 title: "mariuskimmina.com"
                 tags: [Personal site]
                 externalUrl: "https://mariuskimmina.com/"
-                weight: 231
+                weight: 221
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

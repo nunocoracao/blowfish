@@ -1,8 +1,8 @@
 ---
-                title: "lelouvincx.github.io"
-                tags: [パーソナルサイト]
-                externalUrl: "https://lelouvincx.github.io/"
-                weight: 311
+                title: "The Space 🌍"
+                tags: [Sito web personale, Blog tecnologico]
+                externalUrl: "https://panoskorovesis.github.io/"
+                weight: 1021
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

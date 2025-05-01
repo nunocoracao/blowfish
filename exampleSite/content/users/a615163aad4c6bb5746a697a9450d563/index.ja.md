@@ -1,8 +1,8 @@
 ---
-                title: "lelouvincx.github.io"
-                tags: [个人网站]
-                externalUrl: "https://lelouvincx.github.io/"
-                weight: 311
+                title: "blog.francescopapini.com"
+                tags: [パーソナルサイト, ブログ]
+                externalUrl: "https://blog.francescopapini.com"
+                weight: 1031
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
