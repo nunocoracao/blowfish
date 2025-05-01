@@ -2766,6 +2766,11 @@ body.zen-mode-enable {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
+  .md\:flex-nowrap {
+    @media (width >= 853px) {
+      flex-wrap: nowrap;
+    }
+  }
   .md\:justify-start {
     @media (width >= 853px) {
       justify-content: flex-start;

@@ -2,6 +2,17 @@ function css(name) {
   return "rgb(" + getComputedStyle(document.documentElement).getPropertyValue(name) + ")";
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const mermaidDivs = document.querySelectorAll("div.mermaid");
+
+  for (const div of mermaidDivs) {
+    const preElement = div.querySelector("pre");
+    if (preElement) {
+      div.textContent = preElement.textContent;
+    }
+  }
+});
+
 mermaid.initialize({
   theme: "base",
   themeVariables: {
