@@ -2,7 +2,7 @@
                 title: "m3upt.com"
                 tags: [项目站点]
                 externalUrl: "https://m3upt.com"
-                weight: 371
+                weight: 361
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

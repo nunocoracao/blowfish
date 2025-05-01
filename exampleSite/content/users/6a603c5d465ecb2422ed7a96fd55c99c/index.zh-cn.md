@@ -2,7 +2,7 @@
                 title: "technicaldc.github.io"
                 tags: [个人网站, 博客]
                 externalUrl: "https://technicaldc.github.io/"
-                weight: 551
+                weight: 541
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

@@ -2,7 +2,7 @@
                 title: "Weg um Weg"
                 tags: [Blog, Blog all'aperto]
                 externalUrl: "https://www.wegumweg.de"
-                weight: 1031
+                weight: 1011
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

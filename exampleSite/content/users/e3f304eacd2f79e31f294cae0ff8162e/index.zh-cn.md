@@ -1,8 +1,8 @@
 ---
-                title: "江ノ島エスカー"
-                tags: [投资组合网站, 软件开发人员]
-                externalUrl: "https://zen96k.github.io/enoshima-escar"
-                weight: 761
+                title: "irusukan"
+                tags: [个人网站, 博客]
+                externalUrl: "https://irusukan.com"
+                weight: 1051
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

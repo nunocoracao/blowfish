@@ -1,8 +1,8 @@
 ---
-                title: "niklas-hartmann-dev.de"
-                tags: [パーソナルサイト]
-                externalUrl: "https://niklas-hartmann-dev.de/"
-                weight: 191
+                title: "The Space 🌍"
+                tags: [個人的なウェブサイト, 技術ブログ]
+                externalUrl: "https://panoskorovesis.github.io/"
+                weight: 1021
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

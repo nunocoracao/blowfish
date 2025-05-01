@@ -2,7 +2,7 @@
                 title: "rdgo.dev"
                 tags: [Sito personale]
                 externalUrl: "https://rdgo.dev/"
-                weight: 291
+                weight: 281
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

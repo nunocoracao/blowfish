@@ -1,8 +1,8 @@
 ---
-                title: "niklas-hartmann-dev.de"
-                tags: [Sito personale]
-                externalUrl: "https://niklas-hartmann-dev.de/"
-                weight: 191
+                title: "blog.francescopapini.com"
+                tags: [Personal site,blog]
+                externalUrl: "https://blog.francescopapini.com"
+                weight: 1031
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

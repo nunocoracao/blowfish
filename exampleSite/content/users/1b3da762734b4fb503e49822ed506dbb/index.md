@@ -2,7 +2,7 @@
                 title: "StepaniaH"
                 tags: [Personal site,Blog]
                 externalUrl: "https://stepaniah.me"
-                weight: 941
+                weight: 921
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

@@ -1,6 +1,6 @@
 {{ $constrainItemsWidth := .Page.Site.Params.list.constrainItemsWidth | default false }}
 
-{{ $articleClasses := "flex flex-wrap article" }}
+{{ $articleClasses := "flex flex-wrap md:flex-nowrap article" }}
 {{ if .Site.Params.list.showCards }}
 {{ $articleClasses = delimit (slice $articleClasses "border border-neutral-200 dark:border-neutral-700 border-2 rounded-md overflow-hidden") " " }}
 {{ else }}

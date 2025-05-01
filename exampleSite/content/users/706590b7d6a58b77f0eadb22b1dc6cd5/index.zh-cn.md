@@ -1,8 +1,8 @@
 ---
-                title: "Xeonzilla’s Note"
-                tags: [パーソナルサイト, ブログ]
-                externalUrl: "https://xeonzilla.top"
-                weight: 841
+                title: "The Space 🌍"
+                tags: [个人网站, 技术博客]
+                externalUrl: "https://panoskorovesis.github.io/"
+                weight: 1021
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

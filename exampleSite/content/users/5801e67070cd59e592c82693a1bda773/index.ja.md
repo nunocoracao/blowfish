@@ -2,7 +2,7 @@
                 title: "weaxsey.org"
                 tags: [パーソナルサイト]
                 externalUrl: "https://weaxsey.org/"
-                weight: 321
+                weight: 311
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
