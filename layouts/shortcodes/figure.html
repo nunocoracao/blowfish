@@ -1,6 +1,6 @@
 {{ $disableImageOptimization := .Site.Params.disableImageOptimization | default false }}
 {{ if .Get "default" }}
-  {{ template "_internal/shortcodes/figure.html" . }}
+  {{ partial "shortcodes/figure.html" . }}
 {{ else }}
   {{- $url := urls.Parse (.Get "src") }}
   {{- $altText := .Get "alt" }}
@@ -37,6 +37,7 @@
           {{ (.Resize "1024x").RelPermalink }} 1024w,
           {{ (.Resize "1320x").RelPermalink }} 2x"
           src="{{ (.Resize "660x").RelPermalink }}"
+          data-zoom-src="{{ (.Resize "1320x").RelPermalink }}"
           alt="{{ $altText }}"
         />
       {{- end }}
