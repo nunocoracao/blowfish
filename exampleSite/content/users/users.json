@@ -895,5 +895,14 @@
       "Personal Website",
       "Tech Blog"
     ]
+  },
+  {
+    "title": "blog.francescopapini.com",
+    "url": "https://blog.francescopapini.com",
+    "source": "https://github.com/papo1011/blog",
+    "tags": [
+      "Personal site",
+      "blog"
+    ]
   }
 ]
