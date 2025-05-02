@@ -107,6 +107,14 @@
   {{/* Social */}}
   {{ template "_internal/opengraph.html" . }}
   {{ template "_internal/twitter_cards.html" . }}
+  {{- /* Image for both main page and backoff if not `*feature*` image found */ -}}
+  {{- /* See https://gohugo.io/templates/embedded/#open-graph */ -}}
+  {{ if not ($.Resources.GetMatch "*feature*") }}
+    {{ with .Site.Params.defaultSocialImage }}
+    <meta name="twitter:image" content="{{ . | absURL }}" />
+    <meta property="og:image" content="{{ . | absURL }}" />
+    {{ end }}
+  {{ end }}
   {{/* Schema */}}
   {{ partial "schema.html" . }}
   {{/* Me */}}
