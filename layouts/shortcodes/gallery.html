@@ -1,5 +1,31 @@
 {{ $id := delimit (slice "gallery" (partial "functions/uid.html" .)) "-" }}
 
 <div id="{{ $id }}" class="gallery">
-  {{ .Inner }}
+  {{ $page := .Page }}
+  
+  {{/* find all img tags */}}
+  {{ $imgTagRegex := `<img\s+[^>]*>` }}
+  {{ $imgTags := findRE $imgTagRegex .Inner }}
+  {{ $newContent := .Inner }}
+  
+  {{ range $imgTags }}
+    {{ $imgTag := . }}
+    {{/* extract src attribute */}}
+    {{ $srcRegex := `src=['"]([^'"]+)['"]` }}
+    {{ $srcMatches := findRESubmatch $srcRegex $imgTag }}
+    
+    {{ if $srcMatches }}
+      {{ $srcFull := index (index $srcMatches 0) 0 }}
+      {{ $src := index (index $srcMatches 0) 1 }}
+      
+      {{ $resource := $page.Resources.GetMatch $src }}
+      {{ if $resource }}
+        {{ $newSrc := printf `src="%s"` $resource.RelPermalink }}
+        {{ $newImg := replace $imgTag $srcFull $newSrc }}
+        {{ $newContent = replace $newContent $imgTag $newImg }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  
+  {{ $newContent | safeHTML }}
 </div>
