@@ -72,7 +72,7 @@
   {{ $bundleJS := $assets.Get "js" | resources.Concat "js/main.bundle.js" | resources.Minify | resources.Fingerprint
   "sha512" }}
   <script defer type="text/javascript" id="script-bundle" src="{{ $bundleJS.RelPermalink }}"
-    integrity="{{ $bundleJS.Data.Integrity }}" data-copy="{{ i18n " code.copy" }}" data-copied="{{ i18n " code.copied"
+    integrity="{{ $bundleJS.Data.Integrity }}" data-copy="{{ i18n "code.copy" }}" data-copied="{{ i18n "code.copied"
     }}"></script>
   {{ end }}
   {{ if not .Site.Params.disableImageZoom | default true }}
