@@ -107,7 +107,7 @@
   {{/* Social */}}
   {{ template "_internal/opengraph.html" . }}
   {{ template "_internal/twitter_cards.html" . }}
-  {{- /* Image for both main page and backoff if not `*feature*` image found */ -}}
+  {{- /* Main page always uses this; fallback elsewhere if no feature image */ -}}
   {{- /* See https://gohugo.io/templates/embedded/#open-graph */ -}}
   {{ if not ($.Resources.GetMatch "*feature*") }}
     {{ with .Site.Params.defaultSocialImage }}
