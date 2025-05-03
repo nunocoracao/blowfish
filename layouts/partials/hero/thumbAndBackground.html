@@ -2,7 +2,17 @@
 
 {{- $images := .Resources.ByType "image" -}}
 {{- $background := $images.GetMatch "*background*" -}}
-{{- if not $background }}{{ with .Site.Params.defaultBackgroundImage }}{{ $background = resources.Get . }}{{ end }}{{ end -}}
+
+{{- if not $background }}
+ {{ with .Site.Params.defaultBackgroundImage }}
+  {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+   {{ $background = resources.GetRemote . }}
+  {{ else }}
+   {{ $background = resources.Get . }}
+  {{ end }}
+ {{ end }}
+{{ end -}}
+
 {{- if not $background }}{{ $background = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
 {{- if not $background }}{{ $background = $images.GetMatch "*feature*" }}{{ end -}}
 {{- $featured := $images.GetMatch "*feature*" -}}
@@ -12,7 +22,17 @@
 {{- if not $featured }}{{ $featured = resources.GetRemote $url }}{{ end -}}
 {{ end }}
 {{- if not $featured }}{{ $featured = $images.GetMatch "*background*" }}{{ end -}}
-{{- if not $featured }}{{ with .Site.Params.defaultBackgroundImage }}{{ $featured = resources.Get . }}{{ end }}{{ end -}}
+
+{{- if not $featured }}
+ {{ with .Site.Params.defaultFeaturedImage }}
+  {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+   {{ $featured = resources.GetRemote . }}
+  {{ else }}
+   {{ $featured = resources.Get . }}
+  {{ end }}
+ {{ end }}
+{{ end -}}
+
 {{ $isParentList := eq (.Scratch.Get "scope") "list"  }}
 {{ $shouldBlur := $.Params.layoutBackgroundBlur | default (or 
         (and ($.Site.Params.article.layoutBackgroundBlur | default true) (not $isParentList)) 
