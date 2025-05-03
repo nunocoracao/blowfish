@@ -6,7 +6,7 @@
   {{ $heroStyle := .Params.heroStyle }}
   {{ if not $heroStyle }}{{ $heroStyle = .Site.Params.article.heroStyle }}{{ end }}
   {{ $heroStyle := print "hero/" $heroStyle ".html" }}
-  {{ if templates.Exists ( printf "partials/%s" $heroStyle ) }}
+  {{ if or ( templates.Exists ( printf "partials/%s" $heroStyle )) ( templates.Exists ( printf "partials/%s" ( $heroStyle | lower ))) }}
   {{ partial $heroStyle . }}
   {{ else }}
   {{ partial "hero/basic.html" . }}
