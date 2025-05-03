@@ -10,28 +10,56 @@
       {{- range first 6 . }}
       <meta property="og:image" content="{{ . | absURL }}" />{{ end -}}
       {{- else -}}
+
+      {{- $externalImage := false -}}
+      {{- $externalImageURL := "" -}}
       {{- $images := $.Resources.ByType "image" -}}
       {{- $featured := $images.GetMatch "*feature*" -}}
-      {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
-      {{ if and .Params.featureimage (not $featured) }}
-      {{- $url:= .Params.featureimage -}}
-      {{ $featured = resources.GetRemote $url }}
-      {{ end }}
-      {{- if not $featured }}{{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}{{ end -}}
-      {{- with $featured -}}
-      {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg")}}
-        {{ with . }}
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url({{ .RelPermalink }});"></div>
-        {{ end }}
-      {{ else }}
-        {{ with .Resize "600x" }}
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url({{ .RelPermalink }});"></div>
-        {{ end }}
-      {{ end }}
-      {{- else -}}
-      {{- with $.Site.Params.images }}
-      <meta property="og:image" content="{{ index . 0 | absURL }}" />{{ end -}}
+      {{- if not $featured -}}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" -}}{{ end -}}
+
+      {{- if not $featured -}}
+        {{- if .Params.featureimage -}}
+          {{- $url := .Params.featureimage -}}
+          {{- if or (strings.HasPrefix $url "http:") (strings.HasPrefix $url "https:") -}}
+          {{- $externalImage = true -}}
+          {{- $externalImageURL = $url -}}
+          {{- else -}}
+          {{- $featured = resources.Get $url -}}
+          {{- end -}}
+        {{- else if .Site.Params.defaultFeaturedImage -}}
+          {{- if or (strings.HasPrefix .Site.Params.defaultFeaturedImage "http:") (strings.HasPrefix .Site.Params.defaultFeaturedImage "https:") -}}
+          {{- $externalImage = true -}}
+          {{- $externalImageURL = .Site.Params.defaultFeaturedImage -}}
+          {{- else -}}
+          {{- $featured = resources.Get .Site.Params.defaultFeaturedImage -}}
+          {{- end -}}
+        {{- else -}}
+        {{- end -}}
       {{- end -}}
+
+      {{- if $externalImage -}}
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url({{ $externalImageURL }});"></div>
+        <meta property="og:image" content="{{ $externalImageURL }}" />
+      {{- else -}}
+        {{- with $featured -}}
+          {{- if or $disableImageOptimization (strings.HasSuffix $featured ".svg")}}
+          {{- with . -}}
+          <div class="w-full thumbnail_card_related nozoom" style="background-image:url({{ .RelPermalink }});"></div>
+          <meta property="og:image" content="{{ .Permalink }}" />
+          {{- end -}}
+          {{- else -}}
+          {{- with .Resize "600x" -}}
+          <div class="w-full thumbnail_card_related nozoom" style="background-image:url({{ .RelPermalink }});"></div>
+          <meta property="og:image" content="{{ .Permalink }}" />
+          {{- end -}}
+          {{- end -}}
+        <!-- else: featured is nil -->
+        {{- else -}}
+          {{- with $.Site.Params.images -}}
+          <meta property="og:image" content="{{ index . 0 | absURL }}" />{{- end -}}
+        {{- end -}}
+      {{- end -}}
+      <!-- end of with $.Params.images -->
       {{- end -}}
 
 
