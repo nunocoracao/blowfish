@@ -59,6 +59,10 @@ body button {
 }
 
 /* Table of Contents */
+#TableOfContents {
+  max-width: 25vw;
+}
+
 .toc ul,
 .toc li {
   @apply px-0 leading-snug list-none;

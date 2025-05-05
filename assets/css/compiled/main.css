@@ -3534,6 +3534,9 @@ body a, body button {
 .prose div.min-w-0.max-w-prose>*:first-child {
   margin-top: calc(var(--spacing) * 3);
 }
+#TableOfContents {
+  max-width: 25vw;
+}
 .toc ul, .toc li {
   list-style-type: none;
   padding-inline: calc(var(--spacing) * 0);
