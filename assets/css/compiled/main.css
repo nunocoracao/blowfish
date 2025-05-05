@@ -1507,8 +1507,8 @@ body.zen-mode-enable {
   .overflow-visible {
     overflow: visible;
   }
-  .overflow-y-scroll {
-    overflow-y: scroll;
+  .overflow-y-auto {
+    overflow-y: auto;
   }
   .overscroll-contain {
     overscroll-behavior: contain;
@@ -3536,6 +3536,11 @@ body a, body button {
 }
 #TableOfContents {
   max-width: 25vw;
+}
+#TOCView {
+  max-height: calc(100vh - 150px);
+  min-height: 0;
+  overflow-x: hidden;
 }
 .toc ul, .toc li {
   list-style-type: none;
