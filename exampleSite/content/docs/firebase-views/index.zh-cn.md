@@ -16,7 +16,7 @@ series_order: 15
 3. 选择分析位置 
 4. Blowfish 是通过 `params.toml` 配置文件中的 firebase 相关参数，来和 firebase 集成的，更多的细节内容可以参考  <a target="_blank" href="{{< ref "configuration/#theme-parameters" >}}">这个页面</a>。你可以在下面找到集成 firebase 的文件示例，请注意 FirebaseConfig 对象内的参数。
 
-```
+```js
 // 从你需要的 SDK 中导入所需的函数
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
@@ -41,7 +41,7 @@ const analytics = getAnalytics(app);
 ```
 
 5. 设置 Firestore - 选择 Build 并打开 Firestore. 创建一个数据库，并在生产环境中启动。选择服务器位置然后等待其部署完成。启动之后你需要配置规则。只需要复制并粘贴下面的内容，然后点击发布即可。
-```
+```txt
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
