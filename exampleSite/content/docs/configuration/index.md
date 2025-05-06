@@ -220,6 +220,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `homepage.cardView`             | `false`     | Display recent articles as a gallery of cards.                                                                                                                                                                                                                                                                     |
 | `homepage.cardViewScreenWidth`  | `false`     | Enhance the width of the recent articles card gallery to take the full width available.                                                                                                                                                                                                                            |
 | `homepage.layoutBackgroundBlur` | `false`     | Makes the background image in the homepage layout blur with the scroll                                                                                                                                                                                                                                             |
+| `homepage.disableHeroImageFilter` | `false` | Whether to apply an image filter on the homepage background.                                                                                                                                                                                                                                                         |
 
 ### Article
 
