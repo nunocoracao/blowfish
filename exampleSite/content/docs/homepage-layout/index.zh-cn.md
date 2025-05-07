@@ -11,7 +11,7 @@ series_order: 5
 
 Blowfish 提供了一个完全灵活的主页布局。你可以选择两种主要模板，并提供了额外的参数来帮助调整设计。当然，你也可以提供自己的模板，完全控制主页的内容。
 
-主页布局由 `params.toml` 配置文件中的 `homepage.layout` 参数来控制的。此外所有布局都默认包括 [最近文章](#recent-articles)。
+主页布局由 `params.toml` 配置文件中的 `homepage.layout` 参数来控制的。此外所有布局都默认包括 [最近文章](#最近文章)。
 
 ## 个人资料布局 (profile)
 
@@ -65,7 +65,7 @@ Blowfish 提供了一个完全灵活的主页布局。你可以选择两种主�
 
 配置好参数后，在  `layouts/partials/home` 目录下创建一个 `custom.html` 文件。 `custom.html` 文件中定义的任何内容都会被放置在网站主页的内容区域。你可以使用 HTML、Tailwind 或 Hugo 模板函数来定义你的布局。
 
-如果你想在自定义布局上添加 [最近文章](#recent-articles)，请使用 `recent-articles/main.html` 中的内容。
+如果你想在自定义布局上添加 [最近文章](#最近文章)，请使用 `recent-articles/main.html` 中的内容。
 
 如果你想在网站[主页]({{< ref "/" >}})使用自定义布局来实现在个人资料和页面布局之间的切换。这里的[GitHub 仓库](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/layouts/partials/home/custom.html)有一个例子可以参考。
 

@@ -11,7 +11,7 @@ series_order: 5
 
 Blowfish fornisce un layout della home page completamente flessibile. Sono disponibili due modelli principali tra cui scegliere con impostazioni aggiuntive per adattare il design. In alternativa, puoi anche fornire il tuo modello e avere il controllo completo sul contenuto della home page.
 
-Il layout della home page è controllato dall'impostazione `homepage.layout` nel file di configurazione `params.toml`. Inoltre, tutti i layout hanno la possibilità di includere un elenco di [articoli recenti](#recent-articles).
+Il layout della home page è controllato dall'impostazione `homepage.layout` nel file di configurazione `params.toml`. Inoltre, tutti i layout hanno la possibilità di includere un elenco di [articoli recenti](#articoli-recenti).
 
 ## Profile layout
 
@@ -65,7 +65,7 @@ Per abilitare il layout personalizzato, impostare `homepage.layout = “custom�
 
 Con il valore di configurazione impostato, creare un nuovo file `custom.html` e collocarlo in `layouts/partials/home/custom.html`. Ora tutto ciò che è contenuto nel file `custom.html` sarà collocato nell'area dei contenuti della homepage del sito. È possibile utilizzare qualsiasi funzione HTML, Tailwind o Hugo per definire il layout.
 
-Per includere [articoli recenti](#recent-articles) nel layout personalizzato, utilizzare il partial `recent-articles/main.html`.
+Per includere [articoli recenti](#articoli-recenti) nel layout personalizzato, utilizzare il partial `recent-articles/main.html`.
 
 Ad esempio, la [homepage]({{< ref "/" >}}) di questo sito utilizza il layout personalizzato per consentire di passare dal layout del profilo a quello della pagina. Visitare il [repo GitHub](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/layouts/partials/home/custom.html) per vedere come funziona.
 
