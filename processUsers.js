@@ -140,7 +140,7 @@ puppeteer
           fs.writeFileSync(dir + '/index.' + targetLangs[j] + '.md', content);
         }
         await page.goto(users[i].url);
-        await page.screenshot({ path: dir + "/feature.jpg" });
+        await page.screenshot({ path: dir + "/feature.jpg", type: 'webp', quality: 50, });
       }
     }
 
