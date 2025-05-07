@@ -24,7 +24,7 @@ Tailwind CSS è il cuore di Blowfish e questa versione contiene l'ultima [Tailwi
 
 Blowfish è ora multilingue! Una funzionalità molto richiesta. Se pubblichi i tuoi contenuti in più lingue, il sito verrà realizzato con tutte le traduzioni disponibili.
 
-<div class="text-2xl text-center" style="font-size: 2.8rem">:gb: :de: :fr: :es: :cn: :brazil: :tr: :bangladesh:</div>
+<div class="text-2xl text-center" style="font-size: 2.8rem">🇬🇧 🇩🇪 🇫🇷 🇪🇸 🇨🇳 🇧🇷 🇹🇷 🇧🇩</div>
 
 Grazie ai contributi della community, Blowfish è già stato tradotto in [trenta lingue](https://github.com/nunocoracao/blowfish/tree/main/i18n) e altre verranno aggiunte nel tempo. A proposito, le [richieste pull](https://github.com/nunocoracao/blowfish/pulls) per nuove lingue sono sempre benvenute!
 

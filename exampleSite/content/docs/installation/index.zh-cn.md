@@ -11,7 +11,7 @@ series_order: 2
 
 如果想快速上手，可以按照标准的 Hugo [快速启动](https://gohugo.io/getting-started/quick-start/) 文档。
 
-更详细的安装如下，[更新主题](#installing-updates)的教程也可以看此文档。
+更详细的安装如下，[更新主题](#更新主题)的教程也可以看此文档。
 
 ## 前言
 
@@ -66,9 +66,9 @@ blowfish-tools new mynewsite
 
 有多种方法可以将 Blowfish 主题安装在 Hugo 站点中。下面我们由易到难逐一介绍：
 
-- [使用 Git 子模块安装](#install-using-git) (推荐)
-- [使用 Hugo 模块安装](#install-using-hugo)
-- [手动文件复制](#install-manually)
+- [使用 Git 子模块安装](#使用-git-子模块安装) (推荐)
+- [使用 Hugo 模块安装](#使用-hugo-模板安装)
+- [手动文件复制](#手动复制文件)
 
 如果你不确定用哪一个，请直接选择 Git 子模块的方式。
 
@@ -84,7 +84,7 @@ git init
 git submodule add -b main https://github.com/nunocoracao/blowfish.git themes/blowfish
 ```
 
-然后 [设置主题的配置文件](#set-up-theme-configuration-files)。
+然后 [设置主题的配置文件](#手动复制文件)。
 
 #### 使用 Hugo 模板安装
 
@@ -115,7 +115,7 @@ git submodule add -b main https://github.com/nunocoracao/blowfish.git themes/blo
    ```
 
 4. 使用`hugo server` 命令后，主题将会自动下载。
-5. 然后 [设置主题的配置文件](#set-up-theme-configuration-files).
+5. 然后 [设置主题的配置文件](#手动复制文件).
 
 #### 手动复制文件
 
@@ -124,7 +124,7 @@ git submodule add -b main https://github.com/nunocoracao/blowfish.git themes/blo
    {{< button href="https://github.com/nunocoracao/blowfish/releases/latest" target="_blank" >}}从 Github 下载{{< /button >}}
 
 2. 解压缩, 并将文件夹重命名为  `blowfish`，将其移动到你的 Hugo 项目根目录下的 `themes/` 目录中。
-3. 然后 [设置主题的配置文件](#set-up-theme-configuration-files).
+3. 然后 [设置主题的配置文件](#手动复制文件).
 
 #### 设置主题的配置文件
 
@@ -167,11 +167,11 @@ config/_default/
 
 如何更新主题取决于最初安装主题时选择的安装方式，具体如下：
 
-- [使用 Git 子模块安装](#update-using-git)
-- [使用 Hugo 模块安装](#update-using-hugo)
-- [手动文件复制](#update-manually)
+- [使用 Git 子模块安装](#使用-git-更新)
+- [使用 Hugo 模块安装](#使用-hugo-更新)
+- [手动文件复制](#手动更新)
 
-### 利用 git 更新
+### 使用 git 更新
 
 Git 子模块的方式，可以使用 `git` 命令更新。只需执行以下命令，最新版的主题将会下载到你的本地仓库中：
 
