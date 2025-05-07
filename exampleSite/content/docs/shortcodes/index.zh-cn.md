@@ -679,17 +679,17 @@ With other shortcodes
 
 {{< timelineItem icon="github" header="header" badge="badge test" subheader="subheader" >}}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non magna ex. Donec sollicitudin ut lorem quis lobortis. Nam ac ipsum libero. Sed a ex eget ipsum tincidunt venenatis quis sed nisl. Pellentesque sed urna vel odio consequat tincidunt id ut purus. Nam sollicitudin est sed dui interdum rhoncus. 
-{{</ timelineItem >}}
+{{< /timelineItem >}}
 
 
-{{< timelineItem icon="code" header="Another Awesome Header" badge="date - present" subheader="Awesome Subheader">}}
+{{< timelineItem icon="code" header="Another Awesome Header" badge="date - present" subheader="Awesome Subheader" >}}
 With html code
 <ul>
   <li>Coffee</li>
   <li>Tea</li>
   <li>Milk</li>
 </ul>
-{{</ timelineItem >}}
+{{< /timelineItem >}}
 
 {{< timelineItem icon="star" header="Shortcodes" badge="AWESOME" >}}
 With other shortcodes
@@ -702,12 +702,13 @@ With other shortcodes
   <img src="gallery/06.jpg" class="grid-w33" />
   <img src="gallery/07.jpg" class="grid-w33" />
 {{< /gallery >}}
+{{< /timelineItem >}}
+
 {{< timelineItem icon="code" header="Another Awesome Header">}}
 {{< github repo="nunocoracao/blowfish" >}}
-{{</ timelineItem >}}
-{{</ timelineItem >}}
+{{< /timelineItem >}}
 
-{{</ timeline >}}
+{{< /timeline >}}
 
 
 <br/><br/><br/>
