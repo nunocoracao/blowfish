@@ -3844,6 +3844,9 @@ pre {
   height: 0px;
   visibility: hidden;
 }
+[id^="fn"], [id^="fnref"] {
+  scroll-margin-top: 92px;
+}
 @screen sm {
   .thumbnail {
     min-width: 100%;

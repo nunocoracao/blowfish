@@ -424,6 +424,11 @@ pre {
   visibility: hidden;
 }
 
+/* Offset scroll position to avoid header overlap */
+[id^="fn"], [id^="fnref"] {
+  scroll-margin-top: 92px;
+}
+
 @screen sm {
   .thumbnail {
     min-width: 100%;
