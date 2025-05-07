@@ -17,7 +17,7 @@ Il layout della home page è controllato dall'impostazione `homepage.layout` nel
 
 Il layout predefinito è quello del profilo, ideale per i siti web e i blog personali. Mette i dettagli dell'autore in primo piano, fornendo un'immagine e i link ai profili sociali.
 
-<img class="thumbnailshadow" src="img/home-profile.png"/>
+{{< figure src="img/home-profile.png" class="thumbnailshadow" >}}
 
 Le informazioni sull'autore sono fornite nel file di configurazione delle lingue. Fare riferimento alle sezioni [Guida introduttiva]({{< ref "getting-started" >}}) e [Configurazione della lingua]({{< ref "configuration##language-and-i18n" >}}) per i dettagli sui parametri.
 
@@ -28,7 +28,7 @@ Per abilitare il layout del profilo, impostare `homepage.layout = “profile”`
 ## Page layout
 
 Il layout di pagina è semplicemente una normale pagina di contenuto che visualizza il contenuto Markdown. È ottimo per i siti web statici e offre una grande flessibilità.
-<img class="thumbnailshadow" src="img/home-page.png"/>
+{{< figure src="img/home-page.png" class="thumbnailshadow" >}}
 
 Per abilitare il layout di pagina, impostare `homepage.layout = “page”` nel file di configurazione `params.toml`.
 
@@ -36,7 +36,7 @@ Per abilitare il layout di pagina, impostare `homepage.layout = “page”` nel 
 
 Il layout hero riunisce le idee dei layout profilo e scheda. Questo non solo mostra le informazioni sull'autore del sito, ma carica anche il markdown sotto di esso.
 
-<img class="thumbnailshadow" src="img/home-hero.png"/>
+{{< figure src="img/home-hero.png" class="thumbnailshadow" >}}
 
 Per abilitare il layout Hero, impostare `homepage.layout = “hero”` e `homepage.homepageImage` nel file di configurazione `params.toml`.
 
@@ -44,7 +44,7 @@ Per abilitare il layout Hero, impostare `homepage.layout = “hero”` e `homepa
 
 Il layout di sfondo è una versione più fluida del layout Hero. Come nel layout Hero, anche in questo caso vengono visualizzate le informazioni sull'autore del sito e viene caricato il markdown sotto di esso.
 
-<img class="thumbnailshadow" src="img/home-background.png"/>
+{{< figure src="img/home-background.png" class="thumbnailshadow" >}}
 
 Per abilitare il layout di sfondo, impostare `homepage.layout = “background”` e `homepage.homepageImage` nel file di configurazione `params.toml`.
 
@@ -52,7 +52,7 @@ Per abilitare il layout di sfondo, impostare `homepage.layout = “background”
 
 Il layout delle schede è un'estensione del layout di pagina. Offre lo stesso livello di flessibilità, visualizzando anche i contenuti markdown e aggiungendo un'immagine per visualizzare i contenuti visivi.
 
-<img class="thumbnailshadow" src="img/home-card.png"/>
+{{< figure src="img/home-card.png" class="thumbnailshadow" >}}
 
 Per abilitare il layout a scheda, impostare `homepage.layout = “card”` e `homepage.homepageImage` nel file di configurazione `params.toml`. 
 
@@ -73,7 +73,7 @@ Ad esempio, la [homepage]({{< ref "/" >}}) di questo sito utilizza il layout per
 
 Tutti i layout delle homepage hanno la possibilità di visualizzare gli articoli recenti sotto il contenuto della pagina principale. Per attivarla, è sufficiente impostare l'opzione `homepage.showRecent` a `true` nel file di configurazione `params.toml`.
 
-<img class="thumbnailshadow" src="img/home-list.png"/>
+{{< figure src="img/home-list.png" class="thumbnailshadow" >}}
 
 Gli articoli elencati in questa sezione sono derivati dall'impostazione `mainSections`, che consente di utilizzare i tipi di contenuto del sito web. Per esempio, se si hanno sezioni di contenuto per _post_ e _progetti_, si può impostare questa impostazione su `[“post”, “progetti”]` e tutti gli articoli di queste due sezioni saranno utilizzati per popolare l'elenco dei recenti. Il tema si aspetta che questa impostazione sia un array, quindi se si utilizza una sola sezione per tutti i contenuti, è necessario impostarla di conseguenza: `[“blog”]`.
 
