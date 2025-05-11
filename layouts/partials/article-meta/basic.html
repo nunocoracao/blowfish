@@ -96,4 +96,15 @@
 </div>
 {{ end }}
 
+{{/* Output only category */}}
+{{ if .Params.showCategoryOnly | default (.Site.Params.article.showCategoryOnly | default false) }}
+<div class="flex flex-row flex-wrap items-center">
+  {{ range (.GetTerms "categories") }}
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open({{ .RelPermalink }},'_self');return false;">
+    {{ partial "badge.html" .LinkTitle }}
+  </span>
+{{ end }}
+</div>
+{{ end }}
+
 {{ end }}
