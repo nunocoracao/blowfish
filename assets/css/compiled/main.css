@@ -1344,6 +1344,9 @@ body.zen-mode-enable {
   .shrink-0 {
     flex-shrink: 0;
   }
+  .flex-grow {
+    flex-grow: 1;
+  }
   .grow {
     flex-grow: 1;
   }
@@ -3845,7 +3848,7 @@ pre {
   visibility: hidden;
 }
 [id^="fn"], [id^="fnref"] {
-  scroll-margin-top: 92px;
+  scroll-margin-top: 145px;
 }
 @screen sm {
   .thumbnail {

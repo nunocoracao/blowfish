@@ -426,7 +426,7 @@ pre {
 
 /* Offset scroll position to avoid header overlap */
 [id^="fn"], [id^="fnref"] {
-  scroll-margin-top: 92px;
+  scroll-margin-top: 145px;
 }
 
 @screen sm {
