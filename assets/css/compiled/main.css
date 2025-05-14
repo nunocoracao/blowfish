@@ -1344,6 +1344,9 @@ body.zen-mode-enable {
   .shrink-0 {
     flex-shrink: 0;
   }
+  .flex-grow {
+    flex-grow: 1;
+  }
   .grow {
     flex-grow: 1;
   }
@@ -3609,6 +3612,10 @@ body a, body button {
 }
 .katex-display {
   overflow: auto hidden;
+}
+.katex-display {
+  padding-right: 2px;
+  width: calc(100% - 2px);
 }
 table {
   display: block;
