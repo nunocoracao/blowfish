@@ -1,9 +1,11 @@
 var layouts = [
+  "bento",
   "background",
   "hero",
   "profile",
   "page",
-  "card"
+  "card",
+
 ]
 
 var currentLayout = 0

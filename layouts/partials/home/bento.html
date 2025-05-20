@@ -1,0 +1,85 @@
+{{ $disableImageOptimization := .Site.Params.disableImageOptimization | default false }}
+<article class="max-w-full prose dark:prose-invert">
+  <div class="relative">
+    <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100"></div>
+    <div class="mx-auto max-w-7xl p-0">
+      <div class="relative sm:overflow-hidden">
+        <div class="fixed inset-x-0 top-0" style="z-index:-10">
+          {{ $homepageImage := "" }}
+          {{ with .Site.Params.defaultBackgroundImage }}
+          {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+          {{ $homepageImage = resources.GetRemote . }}
+          {{ else }}
+          {{ $homepageImage = resources.Get . }}
+          {{ end }}
+          {{ end }}
+          {{ with .Site.Params.homepage.homepageImage }}
+          {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+          {{ $homepageImage = resources.GetRemote . }}
+          {{ else }}
+          {{ $homepageImage = resources.Get . }}
+          {{ end }}
+          {{ end }}
+          {{ if $homepageImage }}
+          <img class="w-full h-[1000px] object-cover m-0 nozoom" src="{{ $homepageImage.RelPermalink }}"
+            role="presentation" style="margin: 0">
+          <div
+            class="absolute inset-0 h-[1000px] bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
+          </div>
+          <div
+            class="opacity-60 absolute inset-0 h-[1000px] bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal">
+          </div>
+          {{ end }}
+        </div>
+        <div class="relative px-1 py-1 flex flex-col items-center justify-center text-center">
+          <!--section>{{ .Content }}</section-->
+        </div>
+
+
+        <div class="bentogrid absolute inset-x-0 bottom-0 h-1/2 bg-gray-100">
+          // fetch all the articles using Hugo syntax and render them using the partial card
+          {{ $articles := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+          {{ $articles = first 5 $articles }}
+          {{ range $index, $article := $articles }}
+          <div class="bentogrid-item w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+            {{ partial "article-link/card.html" $article }}
+          </div>
+          {{ end }}
+        </div>
+
+
+
+      </div>
+      </section>
+
+    </div>
+  </div>
+  </div>
+</article>
+<section>
+  {{ partial "recent-articles/main.html" . }}
+</section>
+{{ if .Site.Params.homepage.layoutBackgroundBlur | default false }}
+<div id="background-blur"
+  class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"></div>
+<script>
+  window.addEventListener('scroll', function (e) {
+    var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    var background_blur = document.getElementById('background-blur');
+    background_blur.style.opacity = (scroll / 300)
+  });
+</script>
+{{ $packeryLib := resources.Get "lib/packery/packery.pkgd.min.js" }}
+<script defer src="{{ $packeryLib.RelPermalink }}" integrity="{{ $packeryLib.Data.Integrity }}"></script>
+<script>
+  $(window).on("load", function () {
+
+    var elem = document.querySelector('.bentogrid');
+    var pckry = new Packery(elem, {
+      // options
+      itemSelector: '.bentogrid-item',
+      gutter: 0
+    });
+  });
+</script>
+{{ end }}
