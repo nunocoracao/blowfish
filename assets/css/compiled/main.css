@@ -1,4 +1,4 @@
-/*! tailwindcss v4.1.4 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.1.5 | MIT License | https://tailwindcss.com */
 /*! Blowfish | MIT License | https://github.com/nunocoracao/blowfish */
 @layer properties;
 #zen-mode-button {
@@ -392,15 +392,9 @@ body.zen-mode-enable {
       color: var(--tw-prose-links);
       text-decoration: none;
       font-weight: 500;
-      text-decoration-color: color-mix(in srgb, rgba(rgba(var(--color-primary-300), 1), 1) 100%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        text-decoration-color: color-mix(in oklab, rgba(var(--color-primary-300), 1) 100%, transparent);
-      }
+      text-decoration-color: rgba(var(--color-primary-300), 1);
       &:hover {
-        color: color-mix(in srgb, rgba(rgba(var(--color-primary-600), 1), 1) 100%, transparent);
-        @supports (color: color-mix(in lab, red, red)) {
-          color: color-mix(in oklab, rgba(var(--color-primary-600), 1) 100%, transparent);
-        }
+        color: rgba(var(--color-primary-600), 1);
         text-decoration: none;
         border-radius: 0.09rem;
       }
@@ -563,20 +557,14 @@ body.zen-mode-enable {
       padding-inline-end: 0.375em;
       padding-bottom: 0.1875em;
       padding-inline-start: 0.375em;
-      background-color: color-mix(in srgb, rgba(rgba(var(--color-neutral-200), 1), 1) 100%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        background-color: color-mix(in oklab, rgba(var(--color-neutral-200), 1) 100%, transparent);
-      }
+      background-color: rgba(var(--color-neutral-200), 1);
       padding: 0.1rem 0.4rem;
     }
     :where(code):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
       color: var(--tw-prose-code);
       font-weight: 600;
       font-size: 0.875em;
-      background-color: color-mix(in srgb, rgba(rgba(var(--color-neutral-50), 1), 1) 100%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        background-color: color-mix(in oklab, rgba(var(--color-neutral-50), 1) 100%, transparent);
-      }
+      background-color: rgba(var(--color-neutral-50), 1);
       padding-top: 3px;
       padding-bottom: 3px;
       padding-left: 5px;
@@ -696,138 +684,42 @@ body.zen-mode-enable {
       line-height: 1.4285714;
       margin-top: 0.8571429em;
     }
-    --tw-prose-body: color-mix(in srgb, rgba(rgba(var(--color-neutral-700), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-body: color-mix(in oklab, rgba(var(--color-neutral-700), 1) 100%, transparent);
-    }
-    --tw-prose-headings: color-mix(in srgb, rgba(rgba(var(--color-neutral-800), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-headings: color-mix(in oklab, rgba(var(--color-neutral-800), 1) 100%, transparent);
-    }
-    --tw-prose-lead: color-mix(in srgb, rgba(rgba(var(--color-neutral-500), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-lead: color-mix(in oklab, rgba(var(--color-neutral-500), 1) 100%, transparent);
-    }
-    --tw-prose-links: color-mix(in srgb, rgba(rgba(var(--color-primary-600), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-links: color-mix(in oklab, rgba(var(--color-primary-600), 1) 100%, transparent);
-    }
-    --tw-prose-bold: color-mix(in srgb, rgba(rgba(var(--color-neutral-900), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-bold: color-mix(in oklab, rgba(var(--color-neutral-900), 1) 100%, transparent);
-    }
-    --tw-prose-counters: color-mix(in srgb, rgba(rgba(var(--color-neutral-800), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-counters: color-mix(in oklab, rgba(var(--color-neutral-800), 1) 100%, transparent);
-    }
-    --tw-prose-bullets: color-mix(in srgb, rgba(rgba(var(--color-neutral-500), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-bullets: color-mix(in oklab, rgba(var(--color-neutral-500), 1) 100%, transparent);
-    }
-    --tw-prose-hr: color-mix(in srgb, rgba(rgba(var(--color-neutral-200), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-hr: color-mix(in oklab, rgba(var(--color-neutral-200), 1) 100%, transparent);
-    }
-    --tw-prose-quotes: color-mix(in srgb, rgba(rgba(var(--color-neutral-700), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-quotes: color-mix(in oklab, rgba(var(--color-neutral-700), 1) 100%, transparent);
-    }
-    --tw-prose-quote-borders: color-mix(in srgb, rgba(rgba(var(--color-primary-200), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-quote-borders: color-mix(in oklab, rgba(var(--color-primary-200), 1) 100%, transparent);
-    }
-    --tw-prose-captions: color-mix(in srgb, rgba(rgba(var(--color-neutral-500), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-captions: color-mix(in oklab, rgba(var(--color-neutral-500), 1) 100%, transparent);
-    }
+    --tw-prose-body: rgba(var(--color-neutral-700), 1);
+    --tw-prose-headings: rgba(var(--color-neutral-800), 1);
+    --tw-prose-lead: rgba(var(--color-neutral-500), 1);
+    --tw-prose-links: rgba(var(--color-primary-600), 1);
+    --tw-prose-bold: rgba(var(--color-neutral-900), 1);
+    --tw-prose-counters: rgba(var(--color-neutral-800), 1);
+    --tw-prose-bullets: rgba(var(--color-neutral-500), 1);
+    --tw-prose-hr: rgba(var(--color-neutral-200), 1);
+    --tw-prose-quotes: rgba(var(--color-neutral-700), 1);
+    --tw-prose-quote-borders: rgba(var(--color-primary-200), 1);
+    --tw-prose-captions: rgba(var(--color-neutral-500), 1);
     --tw-prose-kbd: oklch(21% 0.034 264.665);
     --tw-prose-kbd-shadows: NaN NaN NaN;
-    --tw-prose-code: color-mix(in srgb, rgba(rgba(var(--color-secondary-700), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-code: color-mix(in oklab, rgba(var(--color-secondary-700), 1) 100%, transparent);
-    }
-    --tw-prose-pre-code: color-mix(in srgb, rgba(rgba(var(--color-neutral-700), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-pre-code: color-mix(in oklab, rgba(var(--color-neutral-700), 1) 100%, transparent);
-    }
-    --tw-prose-pre-bg: color-mix(in srgb, rgba(rgba(var(--color-neutral-50), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-pre-bg: color-mix(in oklab, rgba(var(--color-neutral-50), 1) 100%, transparent);
-    }
-    --tw-prose-th-borders: color-mix(in srgb, rgba(rgba(var(--color-neutral-500), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-th-borders: color-mix(in oklab, rgba(var(--color-neutral-500), 1) 100%, transparent);
-    }
-    --tw-prose-td-borders: color-mix(in srgb, rgba(rgba(var(--color-neutral-300), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-td-borders: color-mix(in oklab, rgba(var(--color-neutral-300), 1) 100%, transparent);
-    }
-    --tw-prose-invert-body: color-mix(in srgb, rgba(rgba(var(--color-neutral-300), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-invert-body: color-mix(in oklab, rgba(var(--color-neutral-300), 1) 100%, transparent);
-    }
-    --tw-prose-invert-headings: color-mix(in srgb, rgba(rgba(var(--color-neutral-50), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-invert-headings: color-mix(in oklab, rgba(var(--color-neutral-50), 1) 100%, transparent);
-    }
-    --tw-prose-invert-lead: color-mix(in srgb, rgba(rgba(var(--color-neutral-500), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-invert-lead: color-mix(in oklab, rgba(var(--color-neutral-500), 1) 100%, transparent);
-    }
-    --tw-prose-invert-links: color-mix(in srgb, rgba(rgba(var(--color-primary-400), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-invert-links: color-mix(in oklab, rgba(var(--color-primary-400), 1) 100%, transparent);
-    }
-    --tw-prose-invert-bold: color-mix(in srgb, rgba(rgba(var(--color-neutral), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-invert-bold: color-mix(in oklab, rgba(var(--color-neutral), 1) 100%, transparent);
-    }
-    --tw-prose-invert-counters: color-mix(in srgb, rgba(rgba(var(--color-neutral-400), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-invert-counters: color-mix(in oklab, rgba(var(--color-neutral-400), 1) 100%, transparent);
-    }
-    --tw-prose-invert-bullets: color-mix(in srgb, rgba(rgba(var(--color-neutral-600), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-invert-bullets: color-mix(in oklab, rgba(var(--color-neutral-600), 1) 100%, transparent);
-    }
-    --tw-prose-invert-hr: color-mix(in srgb, rgba(rgba(var(--color-neutral-500), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-invert-hr: color-mix(in oklab, rgba(var(--color-neutral-500), 1) 100%, transparent);
-    }
-    --tw-prose-invert-quotes: color-mix(in srgb, rgba(rgba(var(--color-neutral-200), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-invert-quotes: color-mix(in oklab, rgba(var(--color-neutral-200), 1) 100%, transparent);
-    }
-    --tw-prose-invert-quote-borders: color-mix(in srgb, rgba(rgba(var(--color-primary-900), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-invert-quote-borders: color-mix(in oklab, rgba(var(--color-primary-900), 1) 100%, transparent);
-    }
-    --tw-prose-invert-captions: color-mix(in srgb, rgba(rgba(var(--color-neutral-400), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-invert-captions: color-mix(in oklab, rgba(var(--color-neutral-400), 1) 100%, transparent);
-    }
+    --tw-prose-code: rgba(var(--color-secondary-700), 1);
+    --tw-prose-pre-code: rgba(var(--color-neutral-700), 1);
+    --tw-prose-pre-bg: rgba(var(--color-neutral-50), 1);
+    --tw-prose-th-borders: rgba(var(--color-neutral-500), 1);
+    --tw-prose-td-borders: rgba(var(--color-neutral-300), 1);
+    --tw-prose-invert-body: rgba(var(--color-neutral-300), 1);
+    --tw-prose-invert-headings: rgba(var(--color-neutral-50), 1);
+    --tw-prose-invert-lead: rgba(var(--color-neutral-500), 1);
+    --tw-prose-invert-links: rgba(var(--color-primary-400), 1);
+    --tw-prose-invert-bold: rgba(var(--color-neutral), 1);
+    --tw-prose-invert-counters: rgba(var(--color-neutral-400), 1);
+    --tw-prose-invert-bullets: rgba(var(--color-neutral-600), 1);
+    --tw-prose-invert-hr: rgba(var(--color-neutral-500), 1);
+    --tw-prose-invert-quotes: rgba(var(--color-neutral-200), 1);
+    --tw-prose-invert-quote-borders: rgba(var(--color-primary-900), 1);
+    --tw-prose-invert-captions: rgba(var(--color-neutral-400), 1);
     --tw-prose-invert-kbd: #fff;
     --tw-prose-invert-kbd-shadows: 255 255 255;
-    --tw-prose-invert-code: color-mix(in srgb, rgba(rgba(var(--color-secondary-400), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-invert-code: color-mix(in oklab, rgba(var(--color-secondary-400), 1) 100%, transparent);
-    }
-    --tw-prose-invert-pre-code: color-mix(in srgb, rgba(rgba(var(--color-neutral-200), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-invert-pre-code: color-mix(in oklab, rgba(var(--color-neutral-200), 1) 100%, transparent);
-    }
-    --tw-prose-invert-pre-bg: color-mix(in srgb, rgba(rgba(var(--color-neutral-700), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-invert-pre-bg: color-mix(in oklab, rgba(var(--color-neutral-700), 1) 100%, transparent);
-    }
-    --tw-prose-invert-th-borders: color-mix(in srgb, rgba(rgba(var(--color-neutral-500), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-invert-th-borders: color-mix(in oklab, rgba(var(--color-neutral-500), 1) 100%, transparent);
-    }
-    --tw-prose-invert-td-borders: color-mix(in srgb, rgba(rgba(var(--color-neutral-700), 1), 1) 100%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-invert-td-borders: color-mix(in oklab, rgba(var(--color-neutral-700), 1) 100%, transparent);
-    }
+    --tw-prose-invert-code: rgba(var(--color-secondary-400), 1);
+    --tw-prose-invert-pre-code: rgba(var(--color-neutral-200), 1);
+    --tw-prose-invert-pre-bg: rgba(var(--color-neutral-700), 1);
+    --tw-prose-invert-th-borders: rgba(var(--color-neutral-500), 1);
+    --tw-prose-invert-td-borders: rgba(var(--color-neutral-700), 1);
     font-size: 1rem;
     line-height: 1.75;
     :where(picture > img):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
@@ -913,14 +805,8 @@ body.zen-mode-enable {
       margin-bottom: 0;
     }
     :where(mark):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-      color: color-mix(in srgb, rgba(rgba(var(--color-neutral-800), 1), 1) 100%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        color: color-mix(in oklab, rgba(var(--color-neutral-800), 1) 100%, transparent);
-      }
-      background-color: color-mix(in srgb, rgba(rgba(var(--color-primary-600), 1), 1) 100%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        background-color: color-mix(in oklab, rgba(var(--color-primary-600), 1) 100%, transparent);
-      }
+      color: rgba(var(--color-neutral-800), 1);
+      background-color: rgba(var(--color-primary-600), 1);
       padding: 0.1rem 0.2rem;
       border-radius: 0.25rem;
     }
@@ -931,16 +817,10 @@ body.zen-mode-enable {
       display: none;
     }
     :where(a.active):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-      text-decoration-color: color-mix(in srgb, rgba(rgba(var(--color-primary-600), 1), 1) 100%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        text-decoration-color: color-mix(in oklab, rgba(var(--color-primary-600), 1) 100%, transparent);
-      }
+      text-decoration-color: rgba(var(--color-primary-600), 1);
     }
     :where(p.active):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-      text-decoration-color: color-mix(in srgb, rgba(rgba(var(--color-primary-600), 1), 1) 100%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        text-decoration-color: color-mix(in oklab, rgba(var(--color-primary-600), 1) 100%, transparent);
-      }
+      text-decoration-color: rgba(var(--color-primary-600), 1);
     }
   }
   .\!mt-0 {
@@ -1649,50 +1529,26 @@ body.zen-mode-enable {
     --tw-prose-th-borders: var(--tw-prose-invert-th-borders);
     --tw-prose-td-borders: var(--tw-prose-invert-td-borders);
     :where(a):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-      text-decoration-color: color-mix(in srgb, rgba(rgba(var(--color-neutral-600), 1), 1) 100%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        text-decoration-color: color-mix(in oklab, rgba(var(--color-neutral-600), 1) 100%, transparent);
-      }
+      text-decoration-color: rgba(var(--color-neutral-600), 1);
       &:hover {
-        color: color-mix(in srgb, rgba(rgba(var(--color-primary-400), 1), 1) 100%, transparent);
-        @supports (color: color-mix(in lab, red, red)) {
-          color: color-mix(in oklab, rgba(var(--color-primary-400), 1) 100%, transparent);
-        }
+        color: rgba(var(--color-primary-400), 1);
       }
     }
     :where(kbd):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-      color: color-mix(in srgb, rgba(rgba(var(--color-neutral-200), 1), 1) 100%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        color: color-mix(in oklab, rgba(var(--color-neutral-200), 1) 100%, transparent);
-      }
-      background-color: color-mix(in srgb, rgba(rgba(var(--color-neutral-700), 1), 1) 100%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        background-color: color-mix(in oklab, rgba(var(--color-neutral-700), 1) 100%, transparent);
-      }
+      color: rgba(var(--color-neutral-200), 1);
+      background-color: rgba(var(--color-neutral-700), 1);
     }
     :where(mark):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-      background-color: color-mix(in srgb, rgba(rgba(var(--color-primary-400), 1), 1) 100%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        background-color: color-mix(in oklab, rgba(var(--color-primary-400), 1) 100%, transparent);
-      }
+      background-color: rgba(var(--color-primary-400), 1);
     }
     :where(code):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-      background-color: color-mix(in srgb, rgba(rgba(var(--color-neutral-700), 1), 1) 100%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        background-color: color-mix(in oklab, rgba(var(--color-neutral-700), 1) 100%, transparent);
-      }
+      background-color: rgba(var(--color-neutral-700), 1);
     }
     :where(a.active):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-      text-decoration-color: color-mix(in srgb, rgba(rgba(var(--color-primary-400), 1), 1) 100%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        text-decoration-color: color-mix(in oklab, rgba(var(--color-primary-400), 1) 100%, transparent);
-      }
+      text-decoration-color: rgba(var(--color-primary-400), 1);
     }
     :where(p.active):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-      text-decoration-color: color-mix(in srgb, rgba(rgba(var(--color-primary-400), 1), 1) 100%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        text-decoration-color: color-mix(in oklab, rgba(var(--color-primary-400), 1) 100%, transparent);
-      }
+      text-decoration-color: rgba(var(--color-primary-400), 1);
     }
   }
   .bg-\[\#6d6d6d\] {
@@ -2215,7 +2071,7 @@ body.zen-mode-enable {
     backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
   }
   .transition {
-    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, visibility, content-visibility, overlay, pointer-events;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
@@ -3205,50 +3061,26 @@ body.zen-mode-enable {
       --tw-prose-th-borders: var(--tw-prose-invert-th-borders);
       --tw-prose-td-borders: var(--tw-prose-invert-td-borders);
       :where(a):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-        text-decoration-color: color-mix(in srgb, rgba(rgba(var(--color-neutral-600), 1), 1) 100%, transparent);
-        @supports (color: color-mix(in lab, red, red)) {
-          text-decoration-color: color-mix(in oklab, rgba(var(--color-neutral-600), 1) 100%, transparent);
-        }
+        text-decoration-color: rgba(var(--color-neutral-600), 1);
         &:hover {
-          color: color-mix(in srgb, rgba(rgba(var(--color-primary-400), 1), 1) 100%, transparent);
-          @supports (color: color-mix(in lab, red, red)) {
-            color: color-mix(in oklab, rgba(var(--color-primary-400), 1) 100%, transparent);
-          }
+          color: rgba(var(--color-primary-400), 1);
         }
       }
       :where(kbd):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-        color: color-mix(in srgb, rgba(rgba(var(--color-neutral-200), 1), 1) 100%, transparent);
-        @supports (color: color-mix(in lab, red, red)) {
-          color: color-mix(in oklab, rgba(var(--color-neutral-200), 1) 100%, transparent);
-        }
-        background-color: color-mix(in srgb, rgba(rgba(var(--color-neutral-700), 1), 1) 100%, transparent);
-        @supports (color: color-mix(in lab, red, red)) {
-          background-color: color-mix(in oklab, rgba(var(--color-neutral-700), 1) 100%, transparent);
-        }
+        color: rgba(var(--color-neutral-200), 1);
+        background-color: rgba(var(--color-neutral-700), 1);
       }
       :where(mark):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-        background-color: color-mix(in srgb, rgba(rgba(var(--color-primary-400), 1), 1) 100%, transparent);
-        @supports (color: color-mix(in lab, red, red)) {
-          background-color: color-mix(in oklab, rgba(var(--color-primary-400), 1) 100%, transparent);
-        }
+        background-color: rgba(var(--color-primary-400), 1);
       }
       :where(code):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-        background-color: color-mix(in srgb, rgba(rgba(var(--color-neutral-700), 1), 1) 100%, transparent);
-        @supports (color: color-mix(in lab, red, red)) {
-          background-color: color-mix(in oklab, rgba(var(--color-neutral-700), 1) 100%, transparent);
-        }
+        background-color: rgba(var(--color-neutral-700), 1);
       }
       :where(a.active):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-        text-decoration-color: color-mix(in srgb, rgba(rgba(var(--color-primary-400), 1), 1) 100%, transparent);
-        @supports (color: color-mix(in lab, red, red)) {
-          text-decoration-color: color-mix(in oklab, rgba(var(--color-primary-400), 1) 100%, transparent);
-        }
+        text-decoration-color: rgba(var(--color-primary-400), 1);
       }
       :where(p.active):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-        text-decoration-color: color-mix(in srgb, rgba(rgba(var(--color-primary-400), 1), 1) 100%, transparent);
-        @supports (color: color-mix(in lab, red, red)) {
-          text-decoration-color: color-mix(in oklab, rgba(var(--color-primary-400), 1) 100%, transparent);
-        }
+        text-decoration-color: rgba(var(--color-primary-400), 1);
       }
     }
   }
