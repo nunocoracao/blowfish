@@ -1,0 +1,18 @@
+
+/* Card Hover Effects */
+.min-h-full.rounded.-xloverflow-hidden.shadow-lg {
+  transition: transform 0.3s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.min-h-full.rounded-xl.overflow-hidden.shadow-lg:hover {
+  transform: scale(1.04);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  /* box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.3); */
+}
+
+/* Make sure images and content don't overflow when zoomed */
+.min-h-full.rounded-xl.overflow-hidden.shadow-lg {
+  overflow: hidden !important;
+}
+
+

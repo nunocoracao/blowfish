@@ -4,7 +4,7 @@
   {{ else }}
   <a href="{{ .RelPermalink }}" class="min-w-full">
     {{ end }}
-    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+    <div class="min-h-full rounded-xl overflow-hidden shadow-lg relative">
 
       {{- with $.Params.images -}}
       {{- range first 6 . }}
@@ -42,13 +42,11 @@
       </span>
       {{ end }}
 
-      <div class="px-6 py-4">
-
-        {{ with .Params.externalUrl }}
+      <div class="px-6 py-4">        {{ with .Params.externalUrl }}
         <div>
           <div
-            class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
-            {{ $.Title | emojify }}
+            class="font-bold text-xl text-neutral-800 dark:text-neutral">
+            <span class="title-text decoration-primary-500">{{ $.Title | emojify }}</span>
             <span class="text-xs align-top cursor-default text-neutral-400 dark:text-neutral-500">
               <span class="rtl:hidden">&#8599;</span>
               <span class="ltr:hidden">&#8598;</span>
@@ -56,8 +54,8 @@
           </div>
         </div>
         {{ else }}
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="{{ .RelPermalink }}">{{ .Title | emojify }}</div>
+        <div class="font-bold text-xl text-neutral-800 dark:text-neutral"
+          href="{{ .RelPermalink }}"><span class="title-text decoration-primary-500">{{ .Title | emojify }}</span></div>
         {{ end }}
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
