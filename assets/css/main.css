@@ -7,7 +7,7 @@
 
 body a,
 body button {
-  @apply transition-colors;
+  @apply transition-colors cursor-pointer;
 }
 
 /* Scale SVG icons to text size */
