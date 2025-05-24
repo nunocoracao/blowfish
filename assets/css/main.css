@@ -10,6 +10,11 @@ body button {
   @apply transition-colors;
 }
 
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
 /* Scale SVG icons to text size */
 .icon svg {
   @apply h-[1em] w-[1em];
