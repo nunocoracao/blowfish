@@ -1,8 +1,8 @@
-{{ define "inline-image-simple" -}}
+{{ define "RenderImageSimple" -}}
   <img class="my-0 rounded-md" loading="lazy" alt="{{ .alt }}" src="{{ .src }}" />
 {{- end }}
 
-{{ define "inline-image-responsive" -}}
+{{ define "RenderImageResponsive" -}}
   <img
     class="my-0 rounded-md" loading="lazy" decoding="async" fetchpriority="low" alt="{{ .alt }}"
     srcset="
@@ -14,7 +14,7 @@
   />
 {{- end }}
 
-{{ define "inline-image-caption" -}}
+{{ define "RenderImageCaption" -}}
   {{- with .caption }}
     <figcaption>{{ . | markdownify }}</figcaption>
   {{- end }}
@@ -33,18 +33,18 @@
 
 <figure>
   {{- if $isRemote }}
-    {{ template "inline-image-simple" (dict "src" $url.String "alt" $altText) }}
+    {{ template "RenderImageSimple" (dict "src" $url.String "alt" $altText) }}
   {{- else if $resource }}
     {{- $isSVG := eq $resource.MediaType.SubType "svg" }}
     {{- $shouldOptimize := and (not $disableImageOptimization) (not $isSVG) }}
     {{- if $shouldOptimize }}
-      {{ template "inline-image-responsive" (dict "resource" $resource "alt" $altText) }}
+      {{ template "RenderImageResponsive" (dict "resource" $resource "alt" $altText) }}
     {{- else }}
-      {{ template "inline-image-simple" (dict "src" $resource.RelPermalink "alt" $altText) }}
+      {{ template "RenderImageSimple" (dict "src" $resource.RelPermalink "alt" $altText) }}
     {{- end }}
   {{- else }}
-    {{ template "inline-image-simple" (dict "src" $url.String "alt" $altText) }}
+    {{ template "RenderImageSimple" (dict "src" $url.String "alt" $altText) }}
   {{- end }}
 
-  {{ template "inline-image-caption" (dict "caption" $caption) }}
+  {{ template "RenderImageCaption" (dict "caption" $caption) }}
 </figure>
