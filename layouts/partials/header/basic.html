@@ -1,25 +1,29 @@
 {{/* Logo section */}}
-{{ define "RenderLogoSection" }}
-    {{ if .Site.Params.Logo }}
-    {{ $logo := resources.Get .Site.Params.Logo }}
-    {{ if $logo }}
-    <div>
-        <a href="{{ "" | relLangURL }}" class="flex">
-            <span class="sr-only">{{ .Site.Title | markdownify }}</span>
+{{ define "header/render-logo" }}
+  {{- $logoPath := .Site.Params.Logo -}}
+  {{- if not $logoPath }}{{ return }}{{ end }}
 
-            {{ if eq $logo.MediaType.SubType "svg" }}
-            <span class="logo object-scale-down object-left nozoom">
-                {{ $logo.Content | safeHTML }}
-            </span>
-            {{ else }}
-            <img src="{{ $logo.RelPermalink }}" width="{{ div $logo.Width 2 }}" height="{{ div $logo.Height 2 }}"
-                class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom" alt="{{ .Site.Title }}" />
-            {{ end }}
+  {{- $logo := resources.Get $logoPath -}}
+  {{- if not $logo }}{{ return }}{{ end }}
 
-        </a>
-    </div>
-    {{ end }}
-    {{- end }}
+  <div>
+    <a href="{{ "" | relLangURL }}" class="flex">
+      <span class="sr-only">{{ .Site.Title | markdownify }}</span>
+
+      {{- if eq $logo.MediaType.SubType "svg" -}}
+        <span class="logo object-scale-down object-left nozoom">
+          {{ $logo.Content | safeHTML }}
+        </span>
+      {{- else -}}
+        <img
+          src="{{ $logo.RelPermalink }}"
+          width="{{ div $logo.Width 2 }}"
+          height="{{ div $logo.Height 2 }}"
+          class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom"
+          alt="{{ .Site.Title }}">
+      {{- end }}
+    </a>
+  </div>
 {{ end }}
 
 
