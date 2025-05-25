@@ -27,13 +27,14 @@
       <img
         class="my-0 rounded-md"
         loading="lazy"
+        decoding="async"
+        fetchpriority="low"
         srcset="
         {{ (.Resize "330x").RelPermalink }} 330w,
         {{ (.Resize "660x").RelPermalink }} 660w,
-        {{ (.Resize "1024x").RelPermalink }} 1024w,
-        {{ (.Resize "1320x").RelPermalink }} 2x"
-        data-zoom-src="{{ (.Resize "1320x").RelPermalink }}"
-        src="{{ (.Resize "660x").RelPermalink }}"
+        {{ (.Resize "1280x").RelPermalink }} 1280w"
+        data-zoom-src="{{ .RelPermalink }}"
+        src="{{ .RelPermalink }}"
         alt="{{ $altText }}"
       />
       {{- end }}
