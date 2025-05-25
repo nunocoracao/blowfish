@@ -38,7 +38,7 @@ RTL は言語ごとに制御されるため、プロジェクト内で RTL と L
 
 Blowfish 2.0 の大きな変更点は、自動画像リサイズ機能の追加です。Hugo Pipes の力を使って、Markdown コンテンツ内の画像が自動的に異なる出力サイズにスケーリングされるようになりました。これらは HTML の `srcset` 属性を使用して表示され、最適化されたファイルサイズをサイト訪問者に提供できます。
 
-![](image-resizing.png)
+![Image with alternate text](image-resizing.png)
 
 ```html
 <!-- Markdown: ![私の画像](image.jpg) -->
@@ -46,8 +46,7 @@ Blowfish 2.0 の大きな変更点は、自動画像リサイズ機能の追加�
   srcset="
     /image_320x0_resize_q75_box.jpg 320w,
     /image_635x0_resize_q75_box.jpg 635w,
-    /image_1024x0_resize_q75_box.jpg 1024w,
-    /image_1270x0_resize_q75_box.jpg 2x"
+    /image_1024x0_resize_q75_box.jpg 1024w"
   src="/image_635x0_resize_q75_box.jpg"
   alt="私の画像"
 />
