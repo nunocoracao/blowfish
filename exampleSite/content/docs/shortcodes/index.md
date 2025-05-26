@@ -427,10 +427,10 @@ In order to add images to the gallery, use `img` tags for each image and add `cl
 **Example 1:**
 
 ```md
-{{</* github repo="nunocoracao/blowfish" */>}}
+{{</* github repo="nunocoracao/blowfish" showThumbnail=true */>}}
 ```
 
-{{< github repo="nunocoracao/blowfish" >}}
+{{< github repo="nunocoracao/blowfish" showThumbnail=true >}}
 
 <br/><br/><br/>
 

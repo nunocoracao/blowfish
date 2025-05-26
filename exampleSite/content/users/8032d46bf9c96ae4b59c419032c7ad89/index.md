@@ -2,7 +2,7 @@
                 title: "deepumohan.com/tech"
                 tags: [Technology Blog]
                 externalUrl: "https://deepumohan.com/tech/"
-                weight: 481
+                weight: 471
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

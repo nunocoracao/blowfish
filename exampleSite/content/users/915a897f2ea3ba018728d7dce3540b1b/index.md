@@ -2,7 +2,7 @@
                 title: "Bootleg Coal Rebellion"
                 tags: [Author Site,Blog]
                 externalUrl: "https://bootlegcoal.com"
-                weight: 971
+                weight: 931
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

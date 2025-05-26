@@ -2,7 +2,7 @@
                 title: "scottmckendry.tech"
                 tags: [个人网站]
                 externalUrl: "https://scottmckendry.tech"
-                weight: 441
+                weight: 431
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

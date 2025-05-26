@@ -2,7 +2,7 @@
                 title: "micheledinelli.github.io"
                 tags: [个人网站, 投资组合网站, 学术界]
                 externalUrl: "https://micheledinelli.github.io"
-                weight: 771
+                weight: 741
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

@@ -2,7 +2,7 @@
                 title: "eallion.com"
                 tags: [博客, 个人网站]
                 externalUrl: "http://www.eallion.com/"
-                weight: 661
+                weight: 641
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

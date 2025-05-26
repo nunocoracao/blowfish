@@ -1,8 +1,8 @@
 ---
-                title: "notes.bluesdriveamelia.space"
-                tags: [Blog,Personal site]
-                externalUrl: "https://notes.bluesdriveamelia.space/"
-                weight: 591
+                title: "FEEC/UNICAMP IA382 - Seminar in Computer Engineering"
+                tags: [Seminari, Classe]
+                externalUrl: "https://feec-seminar-comp-eng.github.io/"
+                weight: 1021
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

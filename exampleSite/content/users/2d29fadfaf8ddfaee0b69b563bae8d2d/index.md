@@ -2,7 +2,7 @@
                 title: "Hudson McNamara"
                 tags: [Personal Site,Blog]
                 externalUrl: "https://hudsonmcnamara.com"
-                weight: 1001
+                weight: 961
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

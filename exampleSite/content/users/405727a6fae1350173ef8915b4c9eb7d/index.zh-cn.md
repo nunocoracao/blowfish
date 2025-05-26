@@ -1,8 +1,8 @@
 ---
-                title: "さばっこ"
-                tags: [个人网站, 博客]
-                externalUrl: "https://sabac.co"
-                weight: 901
+                title: "FEEC/UNICAMP IA382 - Seminar in Computer Engineering"
+                tags: [研讨会, 班级]
+                externalUrl: "https://feec-seminar-comp-eng.github.io/"
+                weight: 1021
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

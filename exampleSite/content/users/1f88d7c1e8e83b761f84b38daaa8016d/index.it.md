@@ -2,7 +2,7 @@
                 title: "todreamr.github.io"
                 tags: [Sito personale]
                 externalUrl: "https://todreamr.github.io/"
-                weight: 611
+                weight: 591
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

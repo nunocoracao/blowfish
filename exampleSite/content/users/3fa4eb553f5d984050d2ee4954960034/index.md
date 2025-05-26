@@ -2,7 +2,7 @@
                 title: "Lazy Product Reviews"
                 tags: [Personal site,Blog]
                 externalUrl: "https://lazyproductreviews.com/"
-                weight: 951
+                weight: 911
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
