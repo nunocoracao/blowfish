@@ -28,6 +28,7 @@ The full list of built-in icons and their corresponding names can referenced bel
 | check                | {{< icon check >}}                |
 | circle-info          | {{< icon circle-info >}}          |
 | code                 | {{< icon code>}}                  |
+| codeberg             | {{< icon codeberg >}}             |
 | codepen              | {{< icon codepen >}}              |
 | comment              | {{< icon comment >}}              |
 | dev                  | {{< icon dev >}}                  |
@@ -58,6 +59,7 @@ The full list of built-in icons and their corresponding names can referenced bel
 | heart                | {{< icon heart >}}                |
 | image                | {{< icon image >}}                |
 | instagram            | {{< icon instagram >}}            |
+| itch-io              | {{< icon itch-io >}}              |
 | keybase              | {{< icon keybase >}}              |
 | kickstarter          | {{< icon kickstarter >}}          |
 | ko-fi                | {{< icon ko-fi >}}                |
@@ -78,10 +80,12 @@ The full list of built-in icons and their corresponding names can referenced bel
 | orcid                | {{< icon orcid >}}                |
 | patreon              | {{< icon patreon >}}              |
 | paypal               | {{< icon paypal >}}               |
+| peertube             | {{< icon peertube >}}             |
 | pencil               | {{< icon pencil >}}               |
 | pgpkey               | {{< icon pgpkey >}}               |
 | phone                | {{< icon phone >}}                |
 | pinterest            | {{< icon pinterest >}}            |
+| pixelfed             | {{< icon pixelfed >}}             |
 | poo                  | {{< icon poo >}}                  |
 | reddit               | {{< icon reddit >}}               |
 | researchgate         | {{< icon researchgate >}}         |
@@ -94,6 +98,7 @@ The full list of built-in icons and their corresponding names can referenced bel
 | slack                | {{< icon slack >}}                |
 | snapchat             | {{< icon snapchat >}}             |
 | soundcloud           | {{< icon soundcloud >}}           |
+| spotify              | {{< icon spotify >}}              |
 | stack-overflow       | {{< icon stack-overflow >}}       |
 | star                 | {{< icon star >}}                 |
 | steam                | {{< icon steam >}}                |

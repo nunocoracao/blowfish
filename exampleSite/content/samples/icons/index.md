@@ -28,6 +28,7 @@ The full list of built-in icons and their corresponding names can referenced bel
 | check                | {{< icon check >}}                |
 | circle-info          | {{< icon circle-info >}}          |
 | code                 | {{< icon code>}}                  |
+| codeberg             | {{< icon codeberg >}}             |
 | codepen              | {{< icon codepen >}}              |
 | comment              | {{< icon comment >}}              |
 | dev                  | {{< icon dev >}}                  |
@@ -79,10 +80,12 @@ The full list of built-in icons and their corresponding names can referenced bel
 | orcid                | {{< icon orcid >}}                |
 | patreon              | {{< icon patreon >}}              |
 | paypal               | {{< icon paypal >}}               |
+| peertube             | {{< icon peertube >}}             |
 | pencil               | {{< icon pencil >}}               |
 | pgpkey               | {{< icon pgpkey >}}               |
 | phone                | {{< icon phone >}}                |
 | pinterest            | {{< icon pinterest >}}            |
+| pixelfed             | {{< icon pixelfed >}}             |
 | poo                  | {{< icon poo >}}                  |
 | reddit               | {{< icon reddit >}}               |
 | researchgate         | {{< icon researchgate >}}         |
@@ -116,4 +119,3 @@ The full list of built-in icons and their corresponding names can referenced bel
 | xing                 | {{< icon xing >}}                 |
 | xmark                | {{< icon xmark >}}                |
 | youtube              | {{< icon youtube >}}              |
-| codeberg             | {{< icon codeberg >}}             |
