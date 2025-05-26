@@ -3639,6 +3639,9 @@ a {
     color: rgba(var(--color-neutral-200), 1);
   }
 }
+.prose-invert .highlight pre > code {
+  background-color: unset;
+}
 .chroma .lntd, .chroma .lntd pre {
   margin: calc(var(--spacing) * 0);
   --tw-border-style: none;

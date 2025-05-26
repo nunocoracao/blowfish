@@ -20,7 +20,7 @@ description: "このページは Hugo の Blowfish テーマを利用して構�
 </div>
 
 
-```node
+```shell
 npx blowfish-tools
 ```  
 
