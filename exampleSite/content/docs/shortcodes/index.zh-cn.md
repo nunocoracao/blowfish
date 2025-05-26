@@ -346,6 +346,34 @@ Blowfish 还支持使用标准 Markdown 语法自动转换图像。只需使用�
 
 <br/><br/><br/>
 
+## Gist
+
+`gist` 短代码允许你通过指定 Gist 用户名、ID 以及可选的特定文件，直接将 GitHub Gist 嵌入到内容中。
+
+| 参数        | 描述                       |
+| --------- | ------------------------ |
+| `[0]`     | \[字符串] GitHub 用户名        |
+| `[1]`     | \[字符串] Gist ID           |
+| `[2]`（可选） | \[字符串] Gist 中要嵌入的文件名（可选） |
+
+**示例 1：嵌入整个 Gist**
+
+```md
+{{</* gist "octocat" "6cad326836d38bd3a7ae" */>}}
+```
+
+{{< gist "octocat" "6cad326836d38bd3a7ae" >}}
+
+**示例 2：嵌入 Gist 中的特定文件**
+
+```md
+{{</* gist "rauchg" "2052694" "README.md" */>}}
+```
+
+{{< gist "rauchg" "2052694" "README.md" >}}
+
+<br/><br/><br/>
+
 ## GitHub 卡片
 
 `github` 允许您快速链接到 github Repo，同时显示和更新有关它的实时统计信息，例如它的 star 和 fork 数。
