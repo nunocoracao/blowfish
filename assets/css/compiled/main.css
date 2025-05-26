@@ -3579,6 +3579,10 @@ body a, body button {
   z-index: 10;
   width: calc(var(--spacing) * 20);
   cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   border-top-right-radius: var(--radius-md);
   border-bottom-left-radius: var(--radius-md);
   background-color: rgba(var(--color-neutral-200), 1);

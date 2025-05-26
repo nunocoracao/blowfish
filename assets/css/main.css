@@ -90,7 +90,9 @@ body button {
 }
 
 .copy-button {
-  @apply absolute top-0 right-0 z-10 invisible w-20 py-1 font-mono text-sm cursor-pointer opacity-90 bg-neutral-200 whitespace-nowrap rounded-bl-md rounded-tr-md text-neutral-700 dark:bg-neutral-600 dark:text-neutral-200;
+  @apply absolute top-0 right-0 z-10 invisible w-20 py-1 font-mono text-sm cursor-pointer
+  opacity-90 bg-neutral-200 whitespace-nowrap rounded-bl-md rounded-tr-md text-neutral-700
+  dark:bg-neutral-600 dark:text-neutral-200 overflow-hidden truncate;
 }
 
 .copy-button:hover,
