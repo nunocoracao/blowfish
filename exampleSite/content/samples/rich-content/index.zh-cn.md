@@ -17,9 +17,9 @@ Hugo 附带了几个用于丰富内容的[内置简码](https://gohugo.io/conten
 
 ## Twitter
 
-此示例使用 `twitter_simple` 简码来显示推文。它需要两个参数 `user` 和 `id` 。
+此示例使用 `x` 简码来显示推文。它需要两个参数 `user` 和 `id` 。
 
-{{< twitter_simple user="DesignReviewed" id="1085870671291310081" >}}
+{{< x user="DesignReviewed" id="1085870671291310081" >}}
 
 或者，`tweet` 简码可用于生成嵌入式的 Twitter 卡片。
 
