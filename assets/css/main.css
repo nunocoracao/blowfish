@@ -59,6 +59,16 @@ body button {
 }
 
 /* Table of Contents */
+#TableOfContents {
+  max-width: 25vw;
+}
+
+#TOCView {
+    max-height: calc(100vh - 150px);
+    min-height: 0;
+    overflow-x: hidden;
+}
+
 .toc ul,
 .toc li {
   @apply px-0 leading-snug list-none;
