@@ -891,6 +891,15 @@
     ]
   },
   {
+    "title": "FEEC/UNICAMP IA382 - Seminar in Computer Engineering",
+    "url": "https://feec-seminar-comp-eng.github.io/",
+    "source" : "https://github.com/feec-seminar-comp-eng/feec-seminar-comp-eng.github.io",
+    "tags" : [
+      "Seminars",
+      "Class"
+    ]
+  },
+  {
     "title": "blog.francescopapini.com",
     "url": "https://blog.francescopapini.com",
     "source": "n/a",
