@@ -17,7 +17,7 @@ The layout of the homepage is controlled by the `homepage.layout` setting in the
 
 The default layout is the profile layout, which is great for personal websites and blogs. It puts the author's details front and centre by providing an image and links to social profiles.
 
-<img class="thumbnailshadow" src="img/home-profile.png"/>
+{{< figure src="img/home-profile.png" class="thumbnailshadow" >}}
 
 The author information is provided in the languages configuration file. Refer to the [Getting Started]({{< ref "getting-started" >}}) and [Language Configuration]({{< ref "configuration##language-and-i18n" >}}) sections for parameter details.
 
@@ -29,7 +29,7 @@ To enable the Profile layout, set `homepage.layout = "profile"` in the `params.t
 
 The page layout is simply a normal content page that displays your Markdown content. It's great for static websites and provides a lot of flexibility.
 
-<img class="thumbnailshadow" src="img/home-page.png"/>
+{{< figure src="img/home-page.png" class="thumbnailshadow" >}}
 
 To enable the Page layout, set `homepage.layout = "page"` in the `params.toml` configuration file.
 
@@ -37,7 +37,7 @@ To enable the Page layout, set `homepage.layout = "page"` in the `params.toml` c
 
 The hero layout brings together ideas from the profile and card layouts. This one not only displays information on the author of the site but it also loads your markdown beneath it.
 
-<img class="thumbnailshadow" src="img/home-hero.png"/>
+{{< figure src="img/home-hero.png" class="thumbnailshadow" >}}
 
 To enable the Hero layout, set `homepage.layout = "hero"` and `homepage.homepageImage` in the `params.toml` configuration file.
 
@@ -45,7 +45,7 @@ To enable the Hero layout, set `homepage.layout = "hero"` and `homepage.homepage
 
 The background layout is a more smooth version of the hero layout. As in the Hero layout, this one also displays both information on the author of the site and loads your markdown beneath it.
 
-<img class="thumbnailshadow" src="img/home-background.png"/>
+{{< figure src="img/home-background.png" class="thumbnailshadow" >}}
 
 To enable the Background layout, set `homepage.layout = "background"` and `homepage.homepageImage` in the `params.toml` configuration file.
 
@@ -53,7 +53,7 @@ To enable the Background layout, set `homepage.layout = "background"` and `homep
 
 The card layout is an extension of the page layout. It provides the same level of flexibility by also displaying your markdown content and adds a card image to display visual content.
 
-<img class="thumbnailshadow" src="img/home-card.png"/>
+{{< figure src="img/home-card.png" class="thumbnailshadow" >}}
 
 To enable the Card layout, set `homepage.layout = "card"` and `homepage.homepageImage` in the `params.toml` configuration file. 
 
@@ -74,7 +74,7 @@ As an example, the [homepage]({{< ref "/" >}}) on this site uses the custom layo
 
 All homepage layouts have the option of displaying recent articles below the main page content. To enable this, simply set the `homepage.showRecent` setting to `true` in the `params.toml` configuration file.
 
-<img class="thumbnailshadow" src="img/home-list.png"/>
+{{< figure src="img/home-list.png" class="thumbnailshadow" >}}
 
 The articles listed in this section are derived from the `mainSections` setting which allows for whatever content types you are using on your website. For instance, if you had content sections for _posts_ and _projects_ you could set this setting to `["posts", "projects"]` and all the articles in these two sections would be used to populate the recent list. The theme expects this setting to be an array so if you only use one section for all your content, you should set this accordingly: `["blog"]`.
 
