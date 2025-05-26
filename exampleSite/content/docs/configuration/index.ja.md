@@ -215,6 +215,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 | `homepage.cardView` | `false` | 最近の記事をカードのギャラリーとして表示します。 |
 | `homepage.cardViewScreenWidth` | `false` | 最近の記事カードギャラリーの幅を拡張して、利用可能な幅全体を使用します。 |
 | `homepage.layoutBackgroundBlur` | `false` | ホームページレイアウトの背景画像をスクロールに合わせてぼかします。 |
+| `homepage.disableHeroImageFilter` | `false` | ホームページの背景画像にフィルターを適用するかどうか。 |
 
 ### 記事(Article)
 
