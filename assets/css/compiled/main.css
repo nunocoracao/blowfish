@@ -3625,6 +3625,10 @@ body a, body button {
 .katex-display {
   overflow: auto hidden;
 }
+.katex-display {
+  padding-right: 2px;
+  width: calc(100% - 2px);
+}
 table {
   display: block;
   overflow: auto;

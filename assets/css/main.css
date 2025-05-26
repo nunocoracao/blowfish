@@ -119,6 +119,12 @@ body button {
 /* Fix long KaTeX equations on mobile (see https://katex.org/docs/issues.html#css-customization) */
 .katex-display { overflow: auto hidden }
 
+/* Fix katex overflow https://github.com/nunocoracao/blowfish/issues/2138 */
+.katex-display {
+  padding-right: 2px;
+  width: calc(100% - 2px);
+}
+
 /* Fix long tables breaking out of article on mobile */
 table {
     display: block;
