@@ -365,6 +365,34 @@ In order to add images to the gallery, use `img` tags for each image and add `cl
 
 <br/><br/><br/>
 
+## Gist
+
+`gist` shortcode allows you to embed a GitHub Gist directly into your content by specifying the Gist user, ID, and optionally a specific file.
+
+| Parameter      | Description                                                        |
+| -------------- | ------------------------------------------------------------------ |
+| `[0]`          | [String] GitHub username                                           |
+| `[1]`          | [String] Gist ID                                                   |
+| `[2]` (optional)| [String] Filename within the Gist to embed (optional)             |
+
+**Example 1: Embed entire Gist**
+
+```md
+{{</* gist "octocat" "6cad326836d38bd3a7ae" */>}}
+````
+
+{{< gist "octocat" "6cad326836d38bd3a7ae" >}}
+
+**Example 2: Embed specific file from Gist**
+
+```md
+{{</* gist "rauchg" "2052694" "README.md" */>}}
+```
+
+{{< gist "rauchg" "2052694" "README.md" >}}
+
+<br/><br/><br/>
+
 ## Gitea Card
 
 `gitea` allows you to quickly link a Gitea repository via the gitea API, providing real-time updates on stats such as stars and forks.
@@ -390,18 +418,19 @@ In order to add images to the gallery, use `img` tags for each image and add `cl
 `github` allows you to quickly link a github repository, all while showing and updating in realtime stats about it, such as the number of stars and forks it has.
 
 <!-- prettier-ignore-start -->
-| Parameter | Description                                           |
-| --------- | ----------------------------------------------------- |
-| `repo`    | [String] github repo in the format of `username/repo` |
+| Parameter       | Description                                                   |
+|-----------------|---------------------------------------------------------------|
+| `repo`          | [String] github repo in the format of `username/repo`         |
+| `showThumbnail` | **Optional** [boolean] display a thumbnail for the repository |
 <!-- prettier-ignore-end -->
 
 **Example 1:**
 
 ```md
-{{</* github repo="nunocoracao/blowfish" */>}}
+{{</* github repo="nunocoracao/blowfish" showThumbnail=true */>}}
 ```
 
-{{< github repo="nunocoracao/blowfish" >}}
+{{< github repo="nunocoracao/blowfish" showThumbnail=true >}}
 
 <br/><br/><br/>
 

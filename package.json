@@ -1,6 +1,6 @@
 {
   "name": "hugo-blowfish-theme",
-  "version": "2.85.1",
+  "version": "2.86.0",
   "description": "Blowfish theme for Hugo.",
   "scripts": {
     "postinstall": "vendor-copy",
@@ -10,7 +10,9 @@
     "dev-windows": "set NODE_ENV=development&& npx @tailwindcss/cli -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
     "build-windows": "set NODE_ENV=production&& npx @tailwindcss/cli -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit",
     "build-hugo": "hugo --minify -s exampleSite --themesDir ../.. -d ../docs --baseURL https://nunocoracao.github.io/blowfish/",
-    "example": "hugo server -E -F --minify --source exampleSite --themesDir ../.. --buildDrafts -b http://localhost/ -p 1313",
+    "example": "hugo server -E -F --minify --source exampleSite --themesDir ../.. --buildDrafts -b http://localhost/ -p 1313 -e production",
+    "example:site_core": "hugo server -E -F --minify --source exampleSite --themesDir ../.. --buildDrafts -b http://localhost/ -p 1313 --renderSegments site_core",
+    "example:site_core:en_only": "hugo server -E -F --minify --source exampleSite --themesDir ../.. --buildDrafts -b http://localhost/ -p 1313 --renderSegments site_core,en_only",
     "lighthouse": "lhci autorun"
   },
   "repository": {
@@ -34,7 +36,7 @@
   },
   "homepage": "https://github.com/nunocoracao/blowfish#readme",
   "devDependencies": {
-    "@tailwindcss/cli": "^4.1.4",
+    "@tailwindcss/cli": "^4.1.7",
     "@tailwindcss/typography": "^0.5.16",
     "chart.js": "^4.4.9",
     "fuse.js": "^7.1.0",
@@ -47,10 +49,10 @@
     "prettier": "^3.5.3",
     "prettier-plugin-go-template": "^0.0.15",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "puppeteer": "^24.7.2",
+    "puppeteer": "^24.9.0",
     "rimraf": "^6.0.1",
     "tailwind-scrollbar": "^4.0.2",
-    "tailwindcss": "^4.0.16",
+    "tailwindcss": "^4.1.7",
     "tw-elements": "2.0.0",
     "typeit": "^8.8.7",
     "vendor-copy": "^3.0.1"
@@ -115,10 +117,10 @@
     }
   ],
   "dependencies": {
-    "@headlessui/react": "^2.2.2",
+    "@headlessui/react": "^2.2.4",
     "@heroicons/react": "^2.2.0",
     "@iamtraction/google-translate": "^2.0.1",
     "@tailwindcss/forms": "^0.5.10",
-    "commander": "^13.1.0"
+    "commander": "^14.0.0"
   }
 }

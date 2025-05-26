@@ -10,6 +10,11 @@ body button {
   @apply transition-colors;
 }
 
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
 /* Scale SVG icons to text size */
 .icon svg {
   @apply h-[1em] w-[1em];
@@ -59,6 +64,16 @@ body button {
 }
 
 /* Table of Contents */
+#TableOfContents {
+  max-width: 25vw;
+}
+
+#TOCView {
+    max-height: calc(100vh - 150px);
+    min-height: 0;
+    overflow-x: hidden;
+}
+
 .toc ul,
 .toc li {
   @apply px-0 leading-snug list-none;
@@ -90,7 +105,9 @@ body button {
 }
 
 .copy-button {
-  @apply absolute top-0 right-0 z-10 invisible w-20 py-1 font-mono text-sm cursor-pointer opacity-90 bg-neutral-200 whitespace-nowrap rounded-bl-md rounded-tr-md text-neutral-700 dark:bg-neutral-600 dark:text-neutral-200;
+  @apply absolute top-0 right-0 z-10 invisible w-20 py-1 font-mono text-sm cursor-pointer
+  opacity-90 bg-neutral-200 whitespace-nowrap rounded-bl-md rounded-tr-md text-neutral-700
+  dark:bg-neutral-600 dark:text-neutral-200 overflow-hidden truncate;
 }
 
 .copy-button:hover,
@@ -106,6 +123,12 @@ body button {
 
 /* Fix long KaTeX equations on mobile (see https://katex.org/docs/issues.html#css-customization) */
 .katex-display { overflow: auto hidden }
+
+/* Fix katex overflow https://github.com/nunocoracao/blowfish/issues/2138 */
+.katex-display {
+  padding-right: 2px;
+  width: calc(100% - 2px);
+}
 
 /* Fix long tables breaking out of article on mobile */
 table {
@@ -130,6 +153,10 @@ a {
 /* Background */
 .prose .chroma {
   @apply static rounded-md text-neutral-700 bg-neutral-50 dark:bg-neutral-700 dark:text-neutral-200;
+}
+
+.prose-invert .highlight pre > code {
+    background-color: unset;
 }
 
 /* LineTableTD */
@@ -422,6 +449,11 @@ pre {
   top: -150px;
   height: 0px;
   visibility: hidden;
+}
+
+/* Offset scroll position to avoid header overlap */
+[id^="fn"], [id^="fnref"] {
+  scroll-margin-top: 145px;
 }
 
 @screen sm {

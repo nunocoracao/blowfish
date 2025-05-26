@@ -2,7 +2,7 @@
                 title: "StepaniaH"
                 tags: [パーソナルサイト, ブログ]
                 externalUrl: "https://stepaniah.me"
-                weight: 921
+                weight: 881
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

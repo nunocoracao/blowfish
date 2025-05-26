@@ -1,8 +1,8 @@
 ---
-                title: "さばっこ"
+                title: "Kyo's Garden"
                 tags: [Sito personale, Blog]
-                externalUrl: "https://sabac.co"
-                weight: 901
+                externalUrl: "https://heykyo.com"
+                weight: 1041
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

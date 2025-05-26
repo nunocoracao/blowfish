@@ -470,15 +470,6 @@
     ]
   },
   {
-    "title": "notes.bluesdriveamelia.space",
-    "url": "https://notes.bluesdriveamelia.space/",
-    "source": "n/a",
-    "tags": [
-      "Blog",
-      "Personal site"
-    ]
-  },
-  {
     "title": "ekwska.com",
     "url": "https://ekwska.com",
     "source": "n/a",
@@ -742,15 +733,6 @@
     ]
   },
   {
-    "title": "さばっこ",
-    "url": "https://sabac.co",
-    "source": "n/a",
-    "tags": [
-      "Personal site",
-      "Blog"
-    ]
-  },
-  {
     "title": "mrtruongvu.com",
     "url": "https://mrtruongvu.com",
     "source": "n/a",
@@ -884,6 +866,34 @@
   {
     "title": "irusukan",
     "url": "https://irusukan.com",
+    "source": "n/a",
+    "tags": [
+      "Personal Site",
+      "Blog"
+    ]
+  },
+  {
+    "title": "FEEC/UNICAMP IA382 - Seminar in Computer Engineering",
+    "url": "https://feec-seminar-comp-eng.github.io/",
+    "source": "https://github.com/feec-seminar-comp-eng/feec-seminar-comp-eng.github.io",
+    "tags": [
+      "Seminars",
+      "Class"
+    ]
+  },
+  {
+    "title": "blog.francescopapini.com",
+    "url": "https://blog.francescopapini.com",
+    "source": "n/a",
+    "tags": [
+      "Technology Blog",
+      "Personal Site",
+      "Blog"
+    ]
+  },
+  {
+    "title": "Kyo's Garden",
+    "url": "https://heykyo.com",
     "source": "n/a",
     "tags": [
       "Personal Site",

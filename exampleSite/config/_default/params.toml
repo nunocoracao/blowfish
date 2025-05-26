@@ -18,11 +18,13 @@ mainSections = ["docs"]
 # robots = ""
 
 disableImageOptimization = false
+disableImageOptimizationMD = false
 disableTextInHeader = false
 # backgroundImageWidth = 1200
 
 defaultBackgroundImage = "/img/background.svg"
 defaultFeaturedImage = "/img/featured.svg"
+defaultSocialImage = "/img/blowfish.jpg"
 
 highlightCurrentMenuArea = true
 smartTOC = true
@@ -48,6 +50,7 @@ smartTOCHideUnfocusedChildren = false
   cardView = true
   cardViewScreenWidth = false
   layoutBackgroundBlur = true # only used when layout equals background
+  disableHeroImageFilter = false # only used when layout equals hero
 
 [article]
   showDate = false

@@ -16,7 +16,7 @@ In order to be able to support dynamic data across your website we've added the 
 3. Select analytics location
 4. Setup firebase in Blowfish by getting the variables for your project and setting them inside `params.toml` file. More details can be found in <a target="_blank" href="{{< ref "configuration/#theme-parameters" >}}">this page</a>. You can find an example of the file Firebase will provide below, notice the parameters within the FirebaseConfig object.
 
-```
+```js
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
@@ -41,7 +41,7 @@ const analytics = getAnalytics(app);
 ```
 
 5. Setup Firestore - Select Build and open Firestore. Create a new database and choose to start in production mode. Select server location and wait. Once that is started you need to configure the rules. Just copy and paste the file below and press publish.
-```
+```txt
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {

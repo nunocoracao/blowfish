@@ -2,7 +2,7 @@
                 title: "Handbook on Teaching Empirical Software Engineering: Online Materials"
                 tags: [Book,Academia]
                 externalUrl: "https://www.emse.education"
-                weight: 851
+                weight: 821
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

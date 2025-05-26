@@ -18,7 +18,7 @@ In addition to all the [default Hugo shortcodes](https://gohugo.io/content-manag
 <!-- prettier-ignore-start -->
 | Parameter   | Description                                                                                                                                                                                  |
 | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `icon`      | **Optional.** the icon to display on the left side.<br>**Default:** `exclaimation triangle icon` (Check out the [icon shortcode](#icon) for more details on using icons.)                    |
+| `icon`      | **Optional.** the icon to display on the left side.<br>**Default:** `triangle-exclamation` (Check out the [icon shortcode](#icon) for more details on using icons.)                    |
 | `iconColor` | **Optional.** the color for the icon in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme .            |
 | `cardColor` | **Optional.** the color for the card background in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme . |
 | `textColor` | **Optional.** the color for the text in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme .            |
@@ -286,6 +286,26 @@ Blowfish also supports automatic conversion of images included using standard Ma
 
 <br/><br/><br/>
 
+## Forgejo Card
+
+`forgejo` allows you to quickly link a Forgejo repository via the forgejo API, providing real-time updates on stats such as stars and forks.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description                                           |
+| --------- | ----------------------------------------------------- |
+| `repo`    | [String] forgejo repo in the format of `username/repo`|
+| `server`  | [String] server URL like `https://v8.next.forgejo.org`|
+<!-- prettier-ignore-end -->
+
+**Example 1:**
+
+```md
+{{</* forgejo server="https://v8.next.forgejo.org" repo="forgejo/forgejo" */>}}
+```
+{{< forgejo server="https://v8.next.forgejo.org" repo="forgejo/forgejo" >}}
+
+<br/><br/><br/>
+
 ## Gallery
 
 `gallery` allows you to showcase multiple images at once, in a responsive manner with more varied and interesting layouts.
@@ -342,6 +362,51 @@ In order to add images to the gallery, use `img` tags for each image and add `cl
   <img src="gallery/06.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
   <img src="gallery/07.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
 {{< /gallery >}}
+
+<br/><br/><br/>
+
+## Gist
+
+`gist` shortcode allows you to embed a GitHub Gist directly into your content by specifying the Gist user, ID, and optionally a specific file.
+
+| Parameter      | Description                                                        |
+| -------------- | ------------------------------------------------------------------ |
+| `[0]`          | [String] GitHub username                                           |
+| `[1]`          | [String] Gist ID                                                   |
+| `[2]` (optional)| [String] Filename within the Gist to embed (optional)             |
+
+**Example 1: Embed entire Gist**
+
+```md
+{{</* gist "octocat" "6cad326836d38bd3a7ae" */>}}
+````
+
+
+**Example 2: Embed specific file from Gist**
+
+```md
+{{</* gist "rauchg" "2052694" "README.md" */>}}
+```
+
+<br/><br/><br/>
+
+## Gitea Card
+
+`gitea` allows you to quickly link a Gitea repository via the gitea API, providing real-time updates on stats such as stars and forks.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description                                           |
+| --------- | ----------------------------------------------------- |
+| `repo`    | [String] gitea repo in the format of `username/repo`  |
+| `server`  | [String] server URL like `https://git.fsfe.org`       |
+<!-- prettier-ignore-end -->
+
+**Example 1:**
+
+```md
+{{</* gitea server="https://git.fsfe.org" repo="FSFE/fsfe-website" */>}}
+```
+{{< gitea server="https://git.fsfe.org" repo="FSFE/fsfe-website" >}}
 
 <br/><br/><br/>
 
@@ -678,7 +743,7 @@ With other shortcodes
 {{< timeline >}}
 
 {{< timelineItem icon="github" header="header" badge="badge test" subheader="subheader" >}}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non magna ex. Donec sollicitudin ut lorem quis lobortis. Nam ac ipsum libero. Sed a ex eget ipsum tincidunt venenatis quis sed nisl. Pellentesque sed urna vel odio consequat tincidunt id ut purus. Nam sollicitudin est sed dui interdum rhoncus. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non magna ex. Donec sollicitudin ut lorem quis lobortis. Nam ac ipsum libero. Sed a ex eget ipsum tincidunt venenatis quis sed nisl. Pellentesque sed urna vel odio consequat tincidunt id ut purus. Nam sollicitudin est sed dui interdum rhoncus.
 {{</ timelineItem >}}
 
 

@@ -4,6 +4,7 @@
 {{- $gitLabData := resources.GetRemote $gitlabURL | transform.Unmarshal -}}
 {{- with $gitLabData -}}
 
+<div class="gitlab-card-wrapper">
 <a id="{{ $id }}" target="_blank" href="{{ .web_url }}" class="cursor-pointer">
   <div class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl">
 
@@ -54,4 +55,5 @@
       .catch(error => console.error(error))
   </script>
 </a>
+</div>
 {{- end -}}

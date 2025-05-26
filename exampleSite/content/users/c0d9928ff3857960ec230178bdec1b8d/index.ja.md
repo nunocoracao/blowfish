@@ -2,7 +2,7 @@
                 title: "Synaptic Sugar"
                 tags: [ビデオゲーム開発者]
                 externalUrl: "https://synapticsugar.games"
-                weight: 671
+                weight: 651
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

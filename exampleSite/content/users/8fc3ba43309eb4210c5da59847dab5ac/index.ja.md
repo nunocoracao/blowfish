@@ -2,7 +2,7 @@
                 title: "rejowski.xyz"
                 tags: [パーソナルサイト]
                 externalUrl: "https://rejowski.xyz/"
-                weight: 501
+                weight: 491
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

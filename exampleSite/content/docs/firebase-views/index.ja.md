@@ -16,7 +16,7 @@ series_order: 15
 3. 分析ロケーションを選択します
 4. プロジェクトの変数を取得し、`params.toml` ファイル内で設定して、Blowfish で Firebase を設定します。詳細は、<a target="_blank" href="{{< ref "configuration/#テーマパラメーターtheme-parameters" >}}">このページ</a>をご覧ください。Firebase が提供するファイルの例を以下に示します。FirebaseConfig オブジェクト内のパラメータに注意してください。
 
-```
+```js
 // 必要な SDK から必要な関数をインポートします
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
@@ -41,7 +41,7 @@ const analytics = getAnalytics(app);
 ```
 
 5. Firestore を設定する - 「ビルド」を選択して Firestore を開きます。新しいデータベースを作成し、本番モードで開始することを選択します。サーバーの場所を選択して待ちます。開始したら、ルールを設定する必要があります。以下のファイルをコピーして貼り付け、「公開」をクリックします。
-```
+```txt
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {

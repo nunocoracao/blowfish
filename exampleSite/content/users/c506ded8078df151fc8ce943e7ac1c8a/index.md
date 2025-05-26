@@ -2,7 +2,7 @@
                 title: "UmmIt - Blog"
                 tags: [Personal Site,Blog,Technology Blog]
                 externalUrl: "https://blog.ummit.dev/"
-                weight: 741
+                weight: 721
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

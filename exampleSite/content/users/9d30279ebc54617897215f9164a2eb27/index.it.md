@@ -2,7 +2,7 @@
                 title: "Everybody Wants Some"
                 tags: [Blog, Tecnologia, Sviluppo del gioco]
                 externalUrl: "https://ews.ink/"
-                weight: 871
+                weight: 841
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

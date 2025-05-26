@@ -1,6 +1,7 @@
 function _toogleZenMode(zendModeButton) {
   // Nodes selection
   const body = document.querySelector('body');
+  const footer = document.querySelector('footer');
   const tocRight = document.querySelector('.toc-right');
   const tocInside = document.querySelector('.toc-inside');
   const articleContent = document.querySelector('.article-content');
@@ -20,9 +21,11 @@ function _toogleZenMode(zendModeButton) {
   articleContent.classList.toggle('max-w-fit');
   articleContent.classList.toggle('max-w-prose');
 
-  // Change width of article title
+  // Change width of article title and footer
   header.classList.toggle('max-w-full');
   header.classList.toggle('max-w-prose');
+  footer.classList.toggle('max-w-full');
+  footer.classList.toggle('max-w-prose');
 
   // Read i18n title from data-attributes
   const titleI18nDisable = zendModeButton.getAttribute('data-title-i18n-disable');

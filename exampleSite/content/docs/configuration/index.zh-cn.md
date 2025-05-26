@@ -43,7 +43,7 @@ Blowfish 主题支持了 Hugo 框架中定义的所有标准配置变量。但�
 | ------------------------ | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `theme`                  | `"blowfish"`              | 当你使用 Hugo 模块安装时，应该移除这个配置项。但对 Git 子模块或本地文件复制的安装方式，必须将其设置为 blowfish 才能正常工作。                                                                                                                                                                        |
 | `baseURL`                | 无                        | 网站 URL 根地址。                                                                                                                                                                                                                                                                                    |
-| `defaultContentLanguage` | `"en"`                    | 这个值决定了主题中组件和内容所使用的默认语言。 参考 [语言和 i18n](#language-and-i18n) 部分来了解 blowfish 支持的所有语言代码。                                                                                                                                                                       |
+| `defaultContentLanguage` | `"en"`                    | 这个值决定了主题中组件和内容所使用的默认语言。 参考 [语言和 i18n](#语言和i18n) 部分来了解 blowfish 支持的所有语言代码。                                                                                                                                                                       |
 | `enableRobotsTXT`        | `true`                    | 当开启这个值，`robots.txt` 文件将会被创建在站点根目录， 这将允许搜索引擎抓取整个网站。如果你想要自己提供 `robots.txt`，那么设置这个值为 `false` 并把你的文件放置到 `static` 目录下。 为了实现完全控制，你可以需要提供一个 [自定义布局]({{< ref "content-examples#custom-layouts" >}}) 来生成此文件。 |
 | `pagination.pagerSize`   | `10`                      | 定义文章列表中，每页展示的文章数量。                                                                                                                                                                                                                                                                 |
 | `summaryLength`          | `0`                       | 当[扉页参数]({{< ref "front-matter" >}}) 中没有提供文章摘要时，此参数定义了自动生成文章摘要的单词数量。如果值为`0`，则默认使用第一句话作为摘要。当摘要被隐藏，这个值没有任何效果。                                                                                                                   |
@@ -104,7 +104,7 @@ Blowfish 主题目前默认支持了以下语言：
 默认的文件可以用来作为创建其他语言的一个模板，如果你希望用英语以外的语言撰写网站，也可以对其重命名。只需要格式遵循 `languages.[language-code].toml` 的命名即可。
 
 {{< alert >}}
-**注意：** 保证 [网站设置](#site-configuration) 中的 `defaultContentLanguage`参数和你提供的语言配置文件相匹配。
+**注意：** 保证 [网站设置](#网站配置) 中的 `defaultContentLanguage`参数和你提供的语言配置文件相匹配。
 {{< /alert >}}
 
 #### 全局
@@ -170,8 +170,8 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `colorScheme`                   | `"blowfish"` | 主题使用的颜色方案。合法的值有： `blowfish` （默认）、`avocado`、`fire`、`ocean`、`forest`、`princess`、`neon`、`bloody`、`terminal`、`marvel`、`noir`、`autumn`、`congo` 和 `slate`。 具体参考[颜色方案]({{< ref "getting-started#colour-schemes" >}})以获取更多信息。 |
 | `defaultAppearance`             | `"light"`    | 默认的主题外观，可以是 `light` 或者 `dark`。                                                                                                                                                                                                                            |
 | `autoSwitchAppearance`          | `true`       | 主题外观是否根据访问者操作系统的偏好自动切换。设置为 `false` 会强制网站始终使用 `defaultAppearance`。                                                                                                                                                                   |
-| `enableSearch`                  | `false`      | 是否开启网站的搜索功能，设为 `true` 即为启用。注意，搜索功能依赖于[站点设置](#site-configuration)中的 `outputs.home` 设置，请确保此值配置正确。                                                                                                                         |
-| `enableCodeCopy`                | `false`      | 是否可以将`<code>`代码块复制到剪贴板。想要使用代码复制功能，需要将 `highlight.noClasses` 参数设置为 `false`。 阅读 [其他配置文件](#other-configuration-files) 以获取更多信息。                                                                                          |
+| `enableSearch`                  | `false`      | 是否开启网站的搜索功能，设为 `true` 即为启用。注意，搜索功能依赖于[站点设置](#网站配置)中的 `outputs.home` 设置，请确保此值配置正确。                                                                                                                         |
+| `enableCodeCopy`                | `false`      | 是否可以将`<code>`代码块复制到剪贴板。想要使用代码复制功能，需要将 `highlight.noClasses` 参数设置为 `false`。 阅读 [其他配置文件](#其他配置文件) 以获取更多信息。                                                                                          |
 | `replyByEmail`                  | `false`      | 是否在发布后启用“通过邮件回复”的链接。如果使用，则必须设置 `config/_default/languages.en.toml` 中的 `params.author.email` 参数。                                                                                                                                                                        |
 | `forgejoDefaultServer`          | _Not set_    | 短代码 `forgejo` 的默认 `server` 参数。                                                                                                                                                                                                                                                   |
 | `giteaDefaultServer`            | _Not set_    | 短代码 `gitea` 的默认 `server` 参数。                                                                                                                                                                                                                                                     |
@@ -180,11 +180,13 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `showLikes`                     | 无           | 是否显示文章和列表页面的点赞量。这需要集成 firebase ，具体可以看下面。                                                                                                                                                                                                  |
 | `robots`                        | 无           | 用于支持搜索引擎爬虫如何处理你的网站。如果设置了该值，它将被输出在页面头部。具体的参数值请参考 [Google 文档](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag#directives)。                                                                    |
 | `disableImageZoom`              | `false`      | 禁用网站上所有图片缩放功能。                                                                                                                                                                                                                                            |
-| `disableImageOptimization`      | `false`      | 禁用图片上所有图片的调整大小和优化功能。                                                                                                                                                                                                                                |
+| `disableImageOptimization`      | `false`      | 禁用图片上所有图片的调整大小和优化功能，使用 Markdown 语法插入的图片（`![](image.jpg)`）除外。                                                                                                                                                                             |
+| `disableImageOptimizationMD`    | `false`      | 所有以 Markdown 语法（`![](image.jpg)`）插入的图片，禁用其调整大小和优化功能。                                                                                                                                                                                           |
 | `backgroundImageWidth`          | `1200`       | 宽度（以像素为单位）用于缩放背景图像。                                                                                                                                                                                                                                                              |
 | `disableTextInHeader`           | `false`      | 禁用文本类型的标题，对基于 logo 的标题很有用。                                                                                                                                                                                                                          |
 | `defaultBackgroundImage`        | 无           | 设置默认背景图，用于 `background` 和 `hero` 布局下的主页。                                                                                                                                                                                                              |
 | `defaultFeaturedImage`          | 无           | 设置默认背景图片，用于所有文章的`featured`图片，可以通过文章目录中的 `featured` 图片替换。                                                                                                                                                                              |
+| `defaultSocialImage`            | 无           | 社交媒体分享（Open Graph 和 Twitter）使用的默认图片，可以通过文章目录中的 `featured` 图片替换。                                                                                                                                                                        |
 | `highlightCurrentMenuArea`      | 无           | 当菜单被选择时，标记主菜单中的菜单项。                                                                                                                                                                                                                                  |
 | `smartTOC`                      | 无           | 开启智能目录，视图中的项目将会被高亮显示。                                                                                                                                                                                                                              |
 | `smartTOCHideUnfocusedChildren` | 无           | 当开启智能目录，如果目录级别不再被聚焦时，将会隐藏更深层次的目录。                                                                                                                                                                                                      |
@@ -200,7 +202,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | 名称                            | 默认值  | 描述                                                                                                                        |
 | ------------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------- |
 | `footer.showMenu`               | `true`  | 显示/隐藏页面底部菜单，该菜单可以在 `config/_default/menus.en.toml` 文件中的 `[[footer]]` 部分进行配置。                    |
-| `footer.showCopyright`          | `true`  | 是否在底部显示 copyright 版权信息。请注意，如果你想定制，可以在[语言配置](#language-and-i18n)中使用 `copyright` 参数。      |
+| `footer.showCopyright`          | `true`  | 是否在底部显示 copyright 版权信息。请注意，如果你想定制，可以在[语言配置](#语言和i18n)中使用 `copyright` 参数。      |
 | `footer.showThemeAttribution`   | `true`  | 是否在网站底部中显示"powered by" 的主题归属信息。如果禁用此参数，请考虑在你网站的其他位置设置主题归属信息，例如在关于页面。 |
 | `footer.showAppearanceSwitcher` | `false` | 是否在也页面底部显示外观切换器。浏览器的本地存储会缓存访问者的偏好设置。                                                    |
 | `footer.showScrollToTop`        | `true`  | 当设置为 `true` 时，显示返回顶部的箭头按钮。                                                                                |
@@ -218,6 +220,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `homepage.cardView`             | `false`     | 将列表展示为卡片容器。                                                                                                                                                                                                                                  |
 | `homepage.cardViewScreenWidth`  | `false`     | 增强列表中卡片的宽度，使其可以占据可用的全部宽度。                                                                                                                                                                                                      |
 | `homepage.layoutBackgroundBlur` | `false`     | 向下滚动主页时，是否模糊背景图。                                                                                                                                                                                                                        |
+| `homepage.disableHeroImageFilter` | `false`   | 主页背景是否套用图片滤镜。                                                                                                                                                                                                                             |
 
 ### 文章页
 
@@ -245,7 +248,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `article.invertPagination`            | `false` | 是否翻转下一篇/上一篇文章链接的方向。                                                                                                                                                                                                                        |
 | `article.showReadingTime`             | `true`  | 是否展示文章的阅读时间。如果你的语言包含 CJK 语言，需要在 `config.toml` 中开启 `hasCJKLanguage` 参数。                                                                                                                                                       |
 | `article.showTableOfContents`         | `false` | 是否展示文章的目录。                                                                                                                                                                                                                                         |
-| `article.showRelatedContent`          | `false` | 为文章显示相关内容。如果你想要启用此功能，请检查 `config.toml` 文件并复制所有 *related* 相关的参数，如果你想自定义，也可以对 `config.toml` 添加额外配置。更多内容请参考 [Hugo 文档](https://gohugo.io/content-management/related/) 中关于 *related* 的内容。 |
+| `article.showRelatedContent`          | `false` | 为文章显示相关内容。如果你想要启用此功能，请检查 `config.toml` 文件并复制所有 _related_ 相关的参数，如果你想自定义，也可以对 `config.toml` 添加额外配置。更多内容请参考 [Hugo 文档](https://gohugo.io/content-management/related/) 中关于 _related_ 的内容。 |
 | `article.relatedContentLimit`         | `3`     | 如果启用`showRelatedContent`，则限制显示相关文章的数量。                                                                                                                                                                                                     |
 | `article.showTaxonomies`              | `false` | 是否显示文章的分类或标签信息。                                                                                                                                                                                                                               |
 | `article.showAuthorsBadges`           | `false` | 是否在文章或列表中显示 `authors` 分类。这需要开启多个作者 `multiple authors` 和 `authors` 分类法。 请阅读 [这个网页]({{< ref "multi-author" >}}) 来获取更多内容。                                                                                            |
@@ -264,7 +267,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `list.layoutBackgroundBlur`        | `true`  | 向下滚动列表页时，是否模糊背景图。                                                                                                                                        |
 | `list.layoutBackgroundHeaderSpace` | `true`  | 在标题和正文之间添加空白区域间隔。                                                                                                                                        |
 | `list.showTableOfContents`         | `false` | 是否展示目录。                                                                                                                                                            |
-| `list.showSummary`                 | `false` | 是否在列表页显示文章摘要。如果在[扉页参数]({{< ref "front-matter" >}})中没有提供摘要，那么将会使用[站点配置](#site-configuration) 中的 `summaryLength` 参数自动生成一个。 |
+| `list.showSummary`                 | `false` | 是否在列表页显示文章摘要。如果在[扉页参数]({{< ref "front-matter" >}})中没有提供摘要，那么将会使用[站点配置](#网站配置) 中的 `summaryLength` 参数自动生成一个。 |
 | `list.showViews`                   | `false` | 是否显示文章阅读量。这需要集成 firebase ，具体可以看下面。                                                                                                                |
 | `list.showLikes`                   | `false` | 是否显示文章点赞量。这需要集成 firebase ，具体可以看下面。                                                                                                                |
 | `list.showCards`                   | `false` | 是否将每个文章显示为卡片或简单的内联文本。                                                                                                                                |
@@ -372,8 +375,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `rssnext.feedId`    | _Not set_ | [RSSNext/Follow](https://follow.is) 提供的 `feeId`，这将被自动添加在 `rss.xml` 中以便完成订阅源所有权验证，证明该源属于你自己。 |
 | `rssnext.userId`      | _Not set_ | [RSSNext/Follow](https://follow.is) 提供的 `userId`，这将被自动添加在 `rss.xml` 中以便完成订阅源所有权验证，证明该源属于你自己      |
 
-
-## 别的配置文件
+## 其他配置文件
 
 Blowfish 主题还包括 `markup.toml` 配置文件。这个文件包含了一些重要参数，来确保 Hugo 正确配置以生成使用 Blowfish 创建的网站。
 

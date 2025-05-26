@@ -2,7 +2,7 @@
                 title: "WillHack - service for reality hackers"
                 tags: [Blog tecnologico, Notizie che contano il blog, AI]
                 externalUrl: "https://willhack.top/"
-                weight: 941
+                weight: 901
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
