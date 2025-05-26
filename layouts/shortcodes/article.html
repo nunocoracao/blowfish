@@ -1,9 +1,10 @@
-{{ $parent := .Page.RelPermalink }}
-<section class="space-y-10 w-full">
-    {{ $RelPermalink := .Get "link" }}
-    {{ range ( where .Site.RegularPages "RelPermalink" $RelPermalink | first 1 ) }}
-        {{ if not (eq .RelPermalink $parent) }}
-            {{ partial "article-link/simple.html" . }}
-        {{ end }}
-    {{end}}
-</section>
+{{ $link := .Get "link" }}
+{{ $target := .Page }}
+{{ if ne $link .Page.RelPermalink }}
+  {{ $target = index (first 1 (where .Site.AllPages "RelPermalink" $link)) 0 }}
+{{ end }}
+{{ if $target }}
+  <section class="space-y-10 w-full">
+    {{ partial "article-link/simple.html" $target }}
+  </section>
+{{ end }}

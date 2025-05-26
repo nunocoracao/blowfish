@@ -17,7 +17,7 @@ Blowfish は完全に柔軟なホームページレイアウトを提供しま�
 
 デフォルトのレイアウトはプロフィールレイアウトで、個人ウェブサイトやブログに最適です。画像とソーシャルプロファイルへのリンクを提供することで、著者の詳細を前面に押し出します。
 
-<img class="thumbnailshadow" src="img/home-profile.png"/>
+{{< figure src="img/home-profile.png" class="thumbnailshadow" >}}
 
 著者情報は、言語設定ファイルで提供されます。パラメータの詳細については、[始める]({{< ref "getting-started" >}})と[言語設定]({{< ref "configuration#言語と-i18n" >}})セクションを参照してください。
 
@@ -29,7 +29,7 @@ Blowfish は完全に柔軟なホームページレイアウトを提供しま�
 
 ページレイアウトは、Markdown コンテンツを表示する通常のコンテンツページです。静的ウェブサイトに最適で、高い柔軟性を提供します。
 
-<img class="thumbnailshadow" src="img/home-page.png"/>
+{{< figure src="img/home-page.png" class="thumbnailshadow" >}}
 
 ページレイアウトを有効にするには、`params.toml` 設定ファイルで `homepage.layout = "page"` を設定します。
 
@@ -37,7 +37,7 @@ Blowfish は完全に柔軟なホームページレイアウトを提供しま�
 
 ヒーローレイアウトは、プロフィールレイアウトとカードレイアウトのアイデアを組み合わせたものです。これは、サイトの著者に関する情報を表示するだけでなく、その下に Markdown をロードします。
 
-<img class="thumbnailshadow" src="img/home-hero.png"/>
+{{< figure src="img/home-hero.png" class="thumbnailshadow" >}}
 
 ヒーローレイアウトを有効にするには、`params.toml` 設定ファイルで `homepage.layout = "hero"` と `homepage.homepageImage` を設定します。
 
@@ -45,7 +45,7 @@ Blowfish は完全に柔軟なホームページレイアウトを提供しま�
 
 背景レイアウトは、ヒーローレイアウトをより滑らかにしたバージョンです。ヒーローレイアウトと同様に、サイトの著者に関する情報を表示し、その下に Markdown をロードします。
 
-<img class="thumbnailshadow" src="img/home-background.png"/>
+{{< figure src="img/home-background.png" class="thumbnailshadow" >}}
 
 背景レイアウトを有効にするには、`params.toml` 設定ファイルで `homepage.layout = "background"` と `homepage.homepageImage` を設定します。
 
@@ -53,7 +53,7 @@ Blowfish は完全に柔軟なホームページレイアウトを提供しま�
 
 カードレイアウトは、ページレイアウトの拡張版です。Markdown コンテンツも表示することで同じレベルの柔軟性を提供し、ビジュアルコンテンツを表示するためのカード画像も追加します。
 
-<img class="thumbnailshadow" src="img/home-card.png"/>
+{{< figure src="img/home-card.png" class="thumbnailshadow" >}}
 
 カードレイアウトを有効にするには、`params.toml` 設定ファイルで `homepage.layout = "card"` と `homepage.homepageImage` を設定します。
 
@@ -73,7 +73,7 @@ Blowfish は完全に柔軟なホームページレイアウトを提供しま�
 
 すべてのホームページレイアウトには、メインページコンテンツの下に最新記事を表示するオプションがあります。これを有効にするには、`params.toml` 設定ファイルで `homepage.showRecent` 設定を `true` に設定するだけです。
 
-<img class="thumbnailshadow" src="img/home-list.png"/>
+{{< figure src="img/home-list.png" class="thumbnailshadow" >}}
 
 このセクションにリストされている記事は、`mainSections` 設定から派生したもので、ウェブサイトで使用しているコンテンツタイプを指定できます。たとえば、_posts_ と _projects_ のコンテンツセクションがある場合、この設定を `["posts", "projects"]` に設定すると、これら2つのセクションのすべての記事が最新リストに表示されます。テーマはこの設定を配列として想定しているため、すべてのコンテンツに1つのセクションのみを使用する場合は、それに応じて設定する必要があります: `["blog"]`。
 

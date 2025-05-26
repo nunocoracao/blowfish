@@ -418,9 +418,10 @@ In order to add images to the gallery, use `img` tags for each image and add `cl
 `github` allows you to quickly link a github repository, all while showing and updating in realtime stats about it, such as the number of stars and forks it has.
 
 <!-- prettier-ignore-start -->
-| Parameter | Description                                           |
-| --------- | ----------------------------------------------------- |
-| `repo`    | [String] github repo in the format of `username/repo` |
+| Parameter       | Description                                                   |
+|-----------------|---------------------------------------------------------------|
+| `repo`          | [String] github repo in the format of `username/repo`         |
+| `showThumbnail` | **Optional** [boolean] display a thumbnail for the repository |
 <!-- prettier-ignore-end -->
 
 **Example 1:**

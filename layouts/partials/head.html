@@ -107,6 +107,14 @@
   {{/* Social */}}
   {{ template "_internal/opengraph.html" . }}
   {{ template "_internal/twitter_cards.html" . }}
+  {{- /* Main page always uses this; fallback elsewhere if no feature image */ -}}
+  {{- /* See https://gohugo.io/templates/embedded/#open-graph */ -}}
+  {{ if not ($.Resources.GetMatch "*feature*") }}
+    {{ with .Site.Params.defaultSocialImage }}
+    <meta name="twitter:image" content="{{ . | absURL }}" />
+    <meta property="og:image" content="{{ . | absURL }}" />
+    {{ end }}
+  {{ end }}
   {{/* Schema */}}
   {{ partial "schema.html" . }}
   {{/* Me */}}
@@ -127,6 +135,10 @@
   {{/* Extend head - eg. for custom analytics scripts, etc. */}}
   {{ if templates.Exists "partials/extend-head.html" }}
   {{ partialCached "extend-head.html" .Site }}
+  {{ end }}
+  {{/* Uncached extend head - e.g. {{ with .Page.HasShortcode "gallery" }} do something {{ end }}  */}}
+  {{ if templates.Exists "partials/extend-head-uncached.html" }}
+  {{ partial "extend-head-uncached.html" . }}
   {{ end }}
   <meta name="theme-color"/>
   {{/* Firebase */}}

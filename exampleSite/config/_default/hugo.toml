@@ -69,3 +69,12 @@ googleAnalytics = "G-PEDMYR1V0K"
       name = 'fragmentrefs'
       type = 'fragments'
       weight = 10
+
+# Render only specific parts of the site for faster development. Use: hugo --renderSegments site_core
+[segments]
+  [segments.site_core]
+    [[segments.site_core.includes]]
+      path = '{/,/docs,/docs/**,/samples,/samples/**}'
+  [segments.en_only]
+    [[segments.en_only.includes]]
+      lang = 'en'

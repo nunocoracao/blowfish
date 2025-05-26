@@ -18,7 +18,7 @@ series_order: 8
 <!-- prettier-ignore-start -->
 | 参数        | 功能                                                                                                                             |
 | ----------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `icon`      | **可选** 显示在左侧的图标。<br>**默认：** `exclaimation triangle icon` (查看[图标简码](#icon)，了解有关使用图标的更多详细信息。) |
+| `icon`      | **可选** 显示在左侧的图标。<br>**默认：** `exclaimation triangle icon` (查看[图标简码](#图标)，了解有关使用图标的更多详细信息。) |
 | `iconColor` | **可选** 基本 CSS 样式中图标的颜色。<br>可以是十六进制值 (`#FFFFFF`) 或颜色名称 (`white`)<br>默认情况下由当前配色方案决定。      |
 | `cardColor` | **可选** 基本 CSS 样式中卡片背景的颜色。<br>可以是十六进制值 (`#FFFFFF`) 或颜色名称 (`white`)<br>默认情况下由当前配色方案决定。  |
 | `textColor` | **可选** 基本 CSS 样式中文本的颜色。<br>可以是十六进制值 (`#FFFFFF`) 或颜色名称 (`white`)<br>默认情况下由当前配色方案决定。      |
@@ -362,7 +362,6 @@ Blowfish 还支持使用标准 Markdown 语法自动转换图像。只需使用�
 {{</* gist "octocat" "6cad326836d38bd3a7ae" */>}}
 ```
 
-{{< gist "octocat" "6cad326836d38bd3a7ae" >}}
 
 **示例 2：嵌入 Gist 中的特定文件**
 
@@ -370,7 +369,27 @@ Blowfish 还支持使用标准 Markdown 语法自动转换图像。只需使用�
 {{</* gist "rauchg" "2052694" "README.md" */>}}
 ```
 
-{{< gist "rauchg" "2052694" "README.md" >}}
+<br/><br/><br/>
+
+
+## Gitea 卡片
+
+`gitea` 允许你通过 gitea API 快速链接一个 Gitea 仓库，提供诸如 stars 和 forks 等统计数据的实时更新。
+
+<!-- prettier-ignore-start -->
+| 参数       | 描述                                      |
+| -------- | --------------------------------------- |
+| `repo`   | \[字符串] 以 `用户名/仓库名` 格式表示的 gitea 仓库       |
+| `server` | \[字符串] 服务器 URL，如 `https://git.fsfe.org` |
+<!-- prettier-ignore-end -->
+
+**示例 1：**
+
+```md
+{{</* gitea server="https://git.fsfe.org" repo="FSFE/fsfe-website" */>}}
+```
+
+{{< gitea server="https://git.fsfe.org" repo="FSFE/fsfe-website" >}}
 
 <br/><br/><br/>
 
@@ -707,17 +726,17 @@ With other shortcodes
 
 {{< timelineItem icon="github" header="header" badge="badge test" subheader="subheader" >}}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non magna ex. Donec sollicitudin ut lorem quis lobortis. Nam ac ipsum libero. Sed a ex eget ipsum tincidunt venenatis quis sed nisl. Pellentesque sed urna vel odio consequat tincidunt id ut purus. Nam sollicitudin est sed dui interdum rhoncus. 
-{{</ timelineItem >}}
+{{< /timelineItem >}}
 
 
-{{< timelineItem icon="code" header="Another Awesome Header" badge="date - present" subheader="Awesome Subheader">}}
+{{< timelineItem icon="code" header="Another Awesome Header" badge="date - present" subheader="Awesome Subheader" >}}
 With html code
 <ul>
   <li>Coffee</li>
   <li>Tea</li>
   <li>Milk</li>
 </ul>
-{{</ timelineItem >}}
+{{< /timelineItem >}}
 
 {{< timelineItem icon="star" header="Shortcodes" badge="AWESOME" >}}
 With other shortcodes
@@ -730,12 +749,13 @@ With other shortcodes
   <img src="gallery/06.jpg" class="grid-w33" />
   <img src="gallery/07.jpg" class="grid-w33" />
 {{< /gallery >}}
+{{< /timelineItem >}}
+
 {{< timelineItem icon="code" header="Another Awesome Header">}}
 {{< github repo="nunocoracao/blowfish" >}}
-{{</ timelineItem >}}
-{{</ timelineItem >}}
+{{< /timelineItem >}}
 
-{{</ timeline >}}
+{{< /timeline >}}
 
 
 <br/><br/><br/>

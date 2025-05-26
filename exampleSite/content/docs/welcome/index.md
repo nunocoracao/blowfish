@@ -38,7 +38,7 @@ RTL is controlled on a per-language basis so you can mix and match both RTL and 
 
 A big change in Blowfish 2.0 is the addition of automatic image resizing. Using the power of Hugo Pipes, images in Markdown content are now automatically scaled to different output sizes. These are then presented using HTML `srcset` attributes enabling optimised file sizes to be served to your site visitors.
 
-![](image-resizing.png)
+![Image with alternate text](image-resizing.png)
 
 ```html
 <!-- Markdown: ![My image](image.jpg) -->
@@ -46,8 +46,7 @@ A big change in Blowfish 2.0 is the addition of automatic image resizing. Using 
   srcset="
     /image_320x0_resize_q75_box.jpg 320w,
     /image_635x0_resize_q75_box.jpg 635w,
-    /image_1024x0_resize_q75_box.jpg 1024w,
-    /image_1270x0_resize_q75_box.jpg 2x"
+    /image_1024x0_resize_q75_box.jpg 1024w"
   src="/image_635x0_resize_q75_box.jpg"
   alt="My image"
 />

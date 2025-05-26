@@ -1344,6 +1344,9 @@ body.zen-mode-enable {
   .shrink-0 {
     flex-shrink: 0;
   }
+  .flex-grow {
+    flex-grow: 1;
+  }
   .grow {
     flex-grow: 1;
   }
@@ -1507,8 +1510,8 @@ body.zen-mode-enable {
   .overflow-visible {
     overflow: visible;
   }
-  .overflow-y-scroll {
-    overflow-y: scroll;
+  .overflow-y-auto {
+    overflow-y: auto;
   }
   .overscroll-contain {
     overscroll-behavior: contain;
@@ -3478,6 +3481,9 @@ body a, body button {
   transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
   transition-duration: var(--tw-duration, var(--default-transition-duration));
 }
+button, [role="button"] {
+  cursor: pointer;
+}
 .icon svg {
   height: 1em;
   width: 1em;
@@ -3534,6 +3540,14 @@ body a, body button {
 .prose div.min-w-0.max-w-prose>*:first-child {
   margin-top: calc(var(--spacing) * 3);
 }
+#TableOfContents {
+  max-width: 25vw;
+}
+#TOCView {
+  max-height: calc(100vh - 150px);
+  min-height: 0;
+  overflow-x: hidden;
+}
 .toc ul, .toc li {
   list-style-type: none;
   padding-inline: calc(var(--spacing) * 0);
@@ -3579,6 +3593,10 @@ body a, body button {
   z-index: 10;
   width: calc(var(--spacing) * 20);
   cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   border-top-right-radius: var(--radius-md);
   border-bottom-left-radius: var(--radius-md);
   background-color: rgba(var(--color-neutral-200), 1);
@@ -3610,6 +3628,10 @@ body a, body button {
 .katex-display {
   overflow: auto hidden;
 }
+.katex-display {
+  padding-right: 2px;
+  width: calc(100% - 2px);
+}
 table {
   display: block;
   overflow: auto;
@@ -3634,6 +3656,9 @@ a {
   &:is(.dark *) {
     color: rgba(var(--color-neutral-200), 1);
   }
+}
+.prose-invert .highlight pre > code {
+  background-color: unset;
 }
 .chroma .lntd, .chroma .lntd pre {
   margin: calc(var(--spacing) * 0);
@@ -3843,6 +3868,9 @@ pre {
   top: -150px;
   height: 0px;
   visibility: hidden;
+}
+[id^="fn"], [id^="fnref"] {
+  scroll-margin-top: 145px;
 }
 @screen sm {
   .thumbnail {

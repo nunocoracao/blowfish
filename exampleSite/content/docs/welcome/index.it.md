@@ -24,7 +24,7 @@ Tailwind CSS è il cuore di Blowfish e questa versione contiene l'ultima [Tailwi
 
 Blowfish è ora multilingue! Una funzionalità molto richiesta. Se pubblichi i tuoi contenuti in più lingue, il sito verrà realizzato con tutte le traduzioni disponibili.
 
-<div class="text-2xl text-center" style="font-size: 2.8rem">:gb: :de: :fr: :es: :cn: :brazil: :tr: :bangladesh:</div>
+<div class="text-2xl text-center" style="font-size: 2.8rem">🇬🇧 🇩🇪 🇫🇷 🇪🇸 🇨🇳 🇧🇷 🇹🇷 🇧🇩</div>
 
 Grazie ai contributi della community, Blowfish è già stato tradotto in [trenta lingue](https://github.com/nunocoracao/blowfish/tree/main/i18n) e altre verranno aggiunte nel tempo. A proposito, le [richieste pull](https://github.com/nunocoracao/blowfish/pulls) per nuove lingue sono sempre benvenute!
 
@@ -38,7 +38,7 @@ RTL è controllato in base alla lingua, quindi puoi mescolare e abbinare sia il 
 
 Un grande cambiamento in Blowfish 2.0 è l'aggiunta del ridimensionamento automatico delle immagini. Utilizzando la potenza di Hugo Pipes, le immagini nei contenuti Markdown vengono ora ridimensionate automaticamente in diverse dimensioni di output. Questi vengono poi presentati utilizzando gli attributi HTML "srcset" che consentono di offrire dimensioni di file ottimizzate ai visitatori del tuo sito.
 
-![](image-resizing.png)
+![Image with alternate text](image-resizing.png)
 
 ```html
 <!-- Markdown: ![My image](image.jpg) -->
@@ -46,8 +46,7 @@ Un grande cambiamento in Blowfish 2.0 è l'aggiunta del ridimensionamento automa
   srcset="
     /image_320x0_resize_q75_box.jpg 320w,
     /image_635x0_resize_q75_box.jpg 635w,
-    /image_1024x0_resize_q75_box.jpg 1024w,
-    /image_1270x0_resize_q75_box.jpg 2x"
+    /image_1024x0_resize_q75_box.jpg 1024w"
   src="/image_635x0_resize_q75_box.jpg"
   alt="My image"
 />
