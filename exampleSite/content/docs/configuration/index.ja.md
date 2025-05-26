@@ -177,7 +177,8 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 | `showLikes` | _未設定_ | 記事とリストのいいねを表示するかどうかです。これには Firebase 統合を有効にする必要があります。以下をご覧ください。 |
 | `robots` | _未設定_ | ロボットがサイトをどのように処理するかを示す文字列です。設定されている場合、ページヘッダーに出力されます。有効な値については、[Google のドキュメント](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag#directives)を参照してください。 |
 | `disableImageZoom` | `false` | サイト内のすべての画像の画像ズーム機能を無効にします。 |
-| `disableImageOptimization` | `false` | サイト内のすべての画像の画像サイズ変更と最適化機能を無効にします。 |
+| `disableImageOptimization` | `false` | サイト内のすべての画像の画像サイズ変更と最適化機能を無効にします。Markdown 記法（例：`![](image.jpg)`）の画像は対象外です。 |
+| `disableImageOptimizationMD` | `false` | Markdown 記法（例：`![](image.jpg)`）の画像の画像サイズ変更と最適化機能のみを無効にします。他の画像には適用されます。 |
 | `disableTextInHeader` | `false` | ヘッダーのテキストを無効にします。ロゴベースのヘッダーに役立ちます。 |
 | `defaultBackgroundImage` | _未設定_ | `background` ホームページレイアウトと `background` ヒーロースタイルの両方のデフォルトの背景画像です。 |
 | `defaultFeaturedImage` | _未設定_ | 記事全体のすべての `featured` 画像のデフォルトの背景画像です。ローカルの `featured` 画像によってオーバーライドされます。 |
