@@ -346,6 +346,32 @@ Blowfish 还支持使用标准 Markdown 语法自动转换图像。只需使用�
 
 <br/><br/><br/>
 
+## Gist
+
+`gist` 短代码允许你通过指定 Gist 用户名、ID 以及可选的特定文件，直接将 GitHub Gist 嵌入到内容中。
+
+| 参数        | 描述                       |
+| --------- | ------------------------ |
+| `[0]`     | \[字符串] GitHub 用户名        |
+| `[1]`     | \[字符串] Gist ID           |
+| `[2]`（可选） | \[字符串] Gist 中要嵌入的文件名（可选） |
+
+**示例 1：嵌入整个 Gist**
+
+```md
+{{</* gist "octocat" "6cad326836d38bd3a7ae" */>}}
+```
+
+
+**示例 2：嵌入 Gist 中的特定文件**
+
+```md
+{{</* gist "rauchg" "2052694" "README.md" */>}}
+```
+
+<br/><br/><br/>
+
+
 ## Gitea 卡片
 
 `gitea` 允许你通过 gitea API 快速链接一个 Gitea 仓库，提供诸如 stars 和 forks 等统计数据的实时更新。
