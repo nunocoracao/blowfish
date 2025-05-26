@@ -20,7 +20,7 @@
   {{- end }}
 {{- end }}
 
-{{- $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
+{{- $disableImageOptimizationMD := .Page.Site.Params.disableImageOptimizationMD | default false }}
 {{- $url := urls.Parse .Destination }}
 {{- $altText := .Text }}
 {{- $caption := .Title }}
@@ -36,7 +36,7 @@
     {{ template "RenderImageSimple" (dict "src" $url.String "alt" $altText) }}
   {{- else if $resource }}
     {{- $isSVG := eq $resource.MediaType.SubType "svg" }}
-    {{- $shouldOptimize := and (not $disableImageOptimization) (not $isSVG) }}
+    {{- $shouldOptimize := and (not $disableImageOptimizationMD) (not $isSVG) }}
     {{- if $shouldOptimize }}
       {{ template "RenderImageResponsive" (dict "resource" $resource "alt" $altText) }}
     {{- else }}
