@@ -346,6 +346,27 @@ Blowfish 还支持使用标准 Markdown 语法自动转换图像。只需使用�
 
 <br/><br/><br/>
 
+## Gitea 卡片
+
+`gitea` 允许你通过 gitea API 快速链接一个 Gitea 仓库，提供诸如 stars 和 forks 等统计数据的实时更新。
+
+<!-- prettier-ignore-start -->
+| 参数       | 描述                                      |
+| -------- | --------------------------------------- |
+| `repo`   | \[字符串] 以 `用户名/仓库名` 格式表示的 gitea 仓库       |
+| `server` | \[字符串] 服务器 URL，如 `https://git.fsfe.org` |
+<!-- prettier-ignore-end -->
+
+**示例 1：**
+
+```md
+{{</* gitea server="https://git.fsfe.org" repo="FSFE/fsfe-website" */>}}
+```
+
+{{< gitea server="https://git.fsfe.org" repo="FSFE/fsfe-website" >}}
+
+<br/><br/><br/>
+
 ## GitHub 卡片
 
 `github` 允许您快速链接到 github Repo，同时显示和更新有关它的实时统计信息，例如它的 star 和 fork 数。
