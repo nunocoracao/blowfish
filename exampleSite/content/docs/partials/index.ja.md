@@ -137,3 +137,11 @@ Blowfish は、基本機能を拡張できる多数の拡張パーシャルも�
 このテーマでは、テンプレートの `<head>` セクションと `<footer>` セクションに直接コードを追加できます。これらは、テーマの一部ではないスクリプトやその他のロジックを提供するのに役立ちます。
 
 `layouts/partials/extend-head.html` または `layouts/partials/extend-footer.html` を作成するだけで、これらは自動的にウェブサイトのビルドに含まれます。どちらのパーシャルも `<head>` と `<footer>` の最後の項目として挿入されるため、テーマのデフォルトを上書きするために使用できます。
+
+### 非キャッシュの head 拡張
+
+`extend-head.html` は[キャッシュされる](https://gohugo.io/functions/partials/includecached/)が、Blowfish ではページ単位の条件に応じてスクリプトやメタデータを動的に含めるための、非キャッシュの head 拡張にも対応している。この機能を使うには、プロジェクト内に `layouts/partials/extend-head-uncached.html` ファイルを作成する。このファイルは HTML の `<head>` タグ内に読み込まれる。
+
+これは、ショートコードや front matter のフラグなど、ビルド間でキャッシュされるべきでないページ固有の要素に基づいて、スクリプトやメタデータを動的に含めたい場合に有用。
+
+たとえば、ショートコードの有無に応じて CDN の JavaScript ファイルを読み込むには、`extend-head-uncached.html` 内で [HasShortcode](https://gohugo.io/methods/page/hasshortcode/#article) メソッドを使う。
