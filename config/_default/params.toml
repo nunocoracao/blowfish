@@ -18,6 +18,7 @@ replyByEmail = false
 # robots = ""
 
 disableImageOptimization = false
+disableImageOptimizationMD = false
 disableTextInHeader = false
 # backgroundImageWidth = 1200
 
@@ -52,6 +53,7 @@ forgejoDefaultServer = "https://v8.next.forgejo.org"
   cardView = false
   cardViewScreenWidth = false
   layoutBackgroundBlur = false # only used when layout equals background
+  disableHeroImageFilter = false # only used when layout equals hero
 
 [article]
   showDate = true
