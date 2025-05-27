@@ -137,3 +137,11 @@ If you wish to insert additional code after article links, create a `layouts/par
 The theme allows for inserting additional code directly into the `<head>` and `<footer>` sections of the template. These can be useful for providing scripts or other logic that isn't part of the theme.
 
 Simply create either `layouts/partials/extend-head.html` or `layouts/partials/extend-footer.html` and these will automatically be included in your website build. Both partials are injected as the last items in `<head>` and `<footer>` so they can be used to override theme defaults.
+
+### Uncached Head Extension
+
+The `extend-head.html` is [cached](https://gohugo.io/functions/partials/includecached/), and Blowfish also supports an uncached head extension for **conditionally** including scripts or metadata based on page-level properties. To use this feature, create a `layouts/partials/extend-head-uncached.html` file in your project. This file will be included in `<head>` HTML tag.
+
+This is useful when you need to include dynamic elements—such as scripts or metadata—based on properties like shortcodes, front matter flags, or other page-specific data that should not be cached across builds.
+
+For example, to dynamically load a CDN JavaScript file base on the appearance of a shortcode, you can use the [HasShortcode](https://gohugo.io/methods/page/hasshortcode/#article) method within `extend-head-uncached.html`.
