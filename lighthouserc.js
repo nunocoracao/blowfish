@@ -1,7 +1,7 @@
 module.exports = {
   ci: {
     collect: {
-      startServerCommand: "npm run example -- --disableLiveReload --minify",
+      startServerCommand: "npm run example:production -- --disableLiveReload --minify",
       startServerReadyPattern: "Web Server is available",
       url: ["http://localhost:8008/blowfish/samples/emoji/"],
       settings: {
