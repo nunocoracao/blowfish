@@ -253,7 +253,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `article.showTaxonomies`              | `false` | 是否显示文章的分类或标签信息。                                                                                                                                                                                                                               |
 | `article.showAuthorsBadges`           | `false` | 是否在文章或列表中显示 `authors` 分类。这需要开启多个作者 `multiple authors` 和 `authors` 分类法。 请阅读 [这个网页]({{< ref "multi-author" >}}) 来获取更多内容。                                                                                            |
 | `article.showWordCount`               | `false` | 是否显示文章的字数。 如果你的语言属于 CJK 语言，需要在 `config.toml` 中开启 `hasCJKLanguage` 参数。                                                                                                                                                          |
-| `article.showComments`                | `false` | 是否在文章末尾添加 [评论部分]({{< ref "partials#comments" >}})。                                                                                                                                                                                             |
+| `article.showComments`                | `false` | 是否在文章末尾添加 [评论部分]({{< ref "extensions#comments" >}})。                                                                                                                                                                                             |
 | `article.sharingLinks`                | 无      | 在文章末尾显示的分享链接。如果没有提供或设置为 `false`，则不会显示任何分享链接。可用的值包括："linkedin"、"bluesky"、"mastodon"、"twitter"、"reddit"、"pinterest"、"facebook"、"email"、"whatsapp" 和 "telegram"                                                                    |
 | `article.showZenMode`                 | `false` | 指定是否激活文章阅读的禅模式，即隐藏常规的界面元素。                                                                                                                                                                                                         |
 
@@ -327,14 +327,14 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 
 | 名称                     | 默认值 | 描述                                                                                        |
 | ------------------------ | ------ | ------------------------------------------------------------------------------------------- |
-| `fathomAnalytics.site`   | 无     | 支持 Fathom 站点分析平台。更多详细内容请参考 [分析文档]({{< ref "partials#analytics" >}})。 |
+| `fathomAnalytics.site`   | 无     | 支持 Fathom 站点分析平台。更多详细内容请参考 [分析文档]({{< ref "extensions#analytics" >}})。 |
 | `fathomAnalytics.domain` | 无     | 如果使用自定义域名的 Fathom Analytics，请在此提供，以便从自定义域名获取 `script.js`。       |
 
 ### Umami Analytics(一种网站分析工具)
 
 | Name                         | Default   | Description                                                                         |
 |------------------------------|-----------|-------------------------------------------------------------------------------------|
-| `umamiAnalytics.websiteid`   | 无         | 支持 Umami 站点分析平台。更多详细内容请参考 [分析文档]({{< ref "partials#analytics" >}})。                 |
+| `umamiAnalytics.websiteid`   | 无         | 支持 Umami 站点分析平台。更多详细内容请参考 [分析文档]({{< ref "extensions#analytics" >}})。                 |
 | `umamiAnalytics.domain`      | 无 | 如果使用自定义域名的 Umami Analytics，请在此提供，以便从自定义域名获取 `script.js`。                            |
 | `umamiAnalytics.dataDomains` | 无 | 如果你只想在特别的数个域名中使用 tracker 功能，那么你需要设置它。这个参数的值是逗号分隔的域名列表，如：yoursite.com,yoursite2.com。 |
 | `umamiAnalytics.scriptName` | script.js | 用于反广告屏蔽的 script.js 名称，由环境变量 `TRACKER_SCRIPT_NAME` 配置。 |
@@ -344,7 +344,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 
 | Name                              | Default | Description                                                              |
 |-----------------------------------|---------|--------------------------------------------------------------------------|
-| `selineAnalytics.token`           | 无 | Seline 站点分析平台的 token。更多详细内容请参考 [分析文档]({{< ref "partials#analytics" >}})。 |
+| `selineAnalytics.token`           | 无 | Seline 站点分析平台的 token。更多详细内容请参考 [分析文档]({{< ref "extensions#analytics" >}})。 |
 | `selineAnalytics.enableTrackEvent` | true    | 默认会自动添加 Umami Track Event。如果你不想添加 Event，那学需要设置为 `false`。                 |
 
 ### BuyMeACoffee(赞助平台)

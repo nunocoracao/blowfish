@@ -1,17 +1,17 @@
 ---
-title: "Partials"
+title: Extensions
 weight: 9
 draft: false
-description: "All the partials available in Blowfish."
-slug: "partials"
-tags: ["partials", "analytics", "privacy", "comments", "favicons", "icon", "docs"]
+description: "All the extensions available in Blowfish."
+slug: "extensions"
+tags: ["extensions", "analytics", "privacy", "comments", "favicons", "icon", "docs"]
 series: ["Documentation"]
 series_order: 9
 ---
 
 ## Analytics
 
-Blowfish provides built-in support for Fathom Analytics and Google Analytics. Fathom is a paid alternative to Google Analytics that respects user privacy.
+Blowfish provides built-in support for Fathom Analytics, Google Analytics and Umami Analytics. Fathom is a paid alternative to Google Analytics that respects user privacy.
 
 ### Fathom Analytics
 
@@ -124,9 +124,9 @@ Custom icons can be added by providing your own icon assets in the `assets/icons
 
 Icons can also be used in article content by calling the [icon shortcode]({{< ref "shortcodes#icon" >}}).
 
-## Extensions
+## Page Customization
 
-Blowfish also provides for a number of extension partials that allow for expanding upon base functionality.
+Blowfish also provides multiple ways to insert custom code directly into specific parts of a page.
 
 ### Article link
 
@@ -137,3 +137,11 @@ If you wish to insert additional code after article links, create a `layouts/par
 The theme allows for inserting additional code directly into the `<head>` and `<footer>` sections of the template. These can be useful for providing scripts or other logic that isn't part of the theme.
 
 Simply create either `layouts/partials/extend-head.html` or `layouts/partials/extend-footer.html` and these will automatically be included in your website build. Both partials are injected as the last items in `<head>` and `<footer>` so they can be used to override theme defaults.
+
+### Uncached Head Extension
+
+The `extend-head.html` is [cached](https://gohugo.io/functions/partials/includecached/), and Blowfish also supports an uncached head extension for **conditionally** including scripts or metadata based on page-level properties. To use this feature, create a `layouts/partials/extend-head-uncached.html` file in your project. This file will be included in `<head>` HTML tag.
+
+This is useful when you need to include dynamic elements—such as scripts or metadata—based on properties like shortcodes, front matter flags, or other page-specific data that should not be cached across builds.
+
+For example, to dynamically load a CDN JavaScript file base on the appearance of a shortcode, you can use the [HasShortcode](https://gohugo.io/methods/page/hasshortcode/#article) method within `extend-head-uncached.html`.

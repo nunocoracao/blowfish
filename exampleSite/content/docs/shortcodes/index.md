@@ -436,7 +436,7 @@ In order to add images to the gallery, use `img` tags for each image and add `cl
 
 ## GitLab Card
 
-`gitlab` allows you to quickly link a GitLab Project (GitLab's jargon for repo). 
+`gitlab` allows you to quickly link a GitLab Project (GitLab's jargon for repo).
 It displays realtime stats about it, such as the number of stars and forks it has.
 Unlike `github` it can't display the main programming language of a project.
 Finally, custom GitLab instance URL can be provided, as long as the `api/v4/projects/` endpoint is available, making this shortcode compatible with most self-hosted / enterprise deployments.
@@ -474,7 +474,7 @@ Icons are populated using Hugo pipelines which makes them very flexible. Blowfis
 
 Custom icons can be added by providing your own icon assets in the `assets/icons/` directory of your project. The icon can then be referenced in the shortcode by using the SVG filename without the `.svg` extension.
 
-Icons can also be used in partials by calling the [icon partial]({{< ref "partials#icon" >}}).
+Icons can also be used in partials by calling the [icon partial]({{< ref "extensions#icon" >}}).
 
 <br/><br/><br/>
 
@@ -558,7 +558,7 @@ When life gives you lemons, make lemonade.
 When life gives you lemons, make lemonade.
 {{< /lead >}}
 
-<br/><br/><br/> 
+<br/><br/><br/>
 
 ## List
 
@@ -597,7 +597,7 @@ The `where` and `value` values are used in the following query `where .Site.Regu
 
 <br/><br/><br/>
 
-## LTR/RTL 
+## LTR/RTL
 
 `ltr` and `rtl` allows you to mix your contents. Many RTL language users want to include parts of the content in LTR. Using this shortcode will let you do so, and by leveraging `%` as the outer-most dilemeter in the shortcode [Hugo shortcodes](https://gohugo.io/content-management/shortcodes/#shortcodes-with-markdown), any markdown inside will be rendered normally.
 
@@ -710,7 +710,7 @@ The `timeline` creates a visual timeline that can be used in different use-cases
 {{</* timeline */>}}
 
 {{</* timelineItem icon="github" header="header" badge="badge test" subheader="subheader" */>}}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non magna ex. Donec sollicitudin ut lorem quis lobortis. Nam ac ipsum libero. Sed a ex eget ipsum tincidunt venenatis quis sed nisl. Pellentesque sed urna vel odio consequat tincidunt id ut purus. Nam sollicitudin est sed dui interdum rhoncus. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non magna ex. Donec sollicitudin ut lorem quis lobortis. Nam ac ipsum libero. Sed a ex eget ipsum tincidunt venenatis quis sed nisl. Pellentesque sed urna vel odio consequat tincidunt id ut purus. Nam sollicitudin est sed dui interdum rhoncus.
 {{</* /timelineItem */>}}
 
 
@@ -805,7 +805,7 @@ Blowfish implements a sub-set of TypeIt features using a `shortcode`. Write your
 
 ```md
 {{</* typeit */>}}
-Lorem ipsum dolor sit amet 
+Lorem ipsum dolor sit amet
 {{</* /typeit */>}}
 ```
 
@@ -816,12 +816,12 @@ Lorem ipsum dolor sit amet
 **Example 2:**
 
 ```md
-{{</* typeit 
+{{</* typeit
   tag=h1
   lifeLike=true
 */>}}
-Lorem ipsum dolor sit amet, 
-consectetur adipiscing elit. 
+Lorem ipsum dolor sit amet,
+consectetur adipiscing elit.
 {{</* /typeit */>}}
 ```
 
@@ -836,7 +836,7 @@ consectetur adipiscing elit.
 **Example 3:**
 
 ```md
-{{</* typeit 
+{{</* typeit
   tag=h3
   speed=50
   breakLines=false

@@ -1,10 +1,10 @@
 ---
-title: "局部模板(Partials)"
+title: 扩展功能
 weight: 9
 draft: false
-description: "所有 Blowfish 可以配置的 Partials"
-slug: "partials"
-tags: ["partials", "统计服务", "隐私", "评论", "网站图标", "图标", "文档"]
+description: "Blowfish 中可用的所有扩展功能。"
+slug: "extensions"
+tags: ["扩展", "分析", "隐私", "评论", "图标", "图示", "文档"]
 series: ["部署教程"]
 series_order: 9
 ---
@@ -127,9 +127,9 @@ static/
 
 图标还可通过调用[图标简码]（{{< ref "shortcodes#icon" >}}）在文章内容中使用。
 
-## 扩展
+## 页面自定义
 
-Blowfish 还提供了许多扩展 partial，可以扩展基本功能。
+Blowfish 还提供多种方式，能够将自定义代码直接插入页面的特定部分。
 
 ### 文章链接
 
@@ -140,3 +140,11 @@ Blowfish 还提供了许多扩展 partial，可以扩展基本功能。
 本主题允许在模板的`<head>`和`<footer>`部分直接插入附加代码。这些代码可用于提供不属于主题的脚本或其他逻辑。
 
 只需创建`layouts/partials/extend-head.html`或`layouts/partials/extend-footer.html`，这些部分就会自动包含在网站构建中。这两个 partial 将作为最后一项注入到 `<head>` 和 `<footer>` 中，因此它们可用于覆盖主题默认值。
+
+### 非缓存的 Head 扩展
+
+`extend-head.html` 是被[缓存](https://gohugo.io/functions/partials/includecached/)的，Blowfish 同时支持一种非缓存的 head 扩展方式，用于根据页面属性**条件性地**插入脚本或元数据。要使用此功能，请在项目中创建 `layouts/partials/extend-head-uncached.html` 文件，该文件会被插入到 `<head>` 标签中。
+
+此功能适用于根据 shortcode、front matter 标记或其他页面专属数据，动态添加脚本或元数据，避免内容在构建时被缓存。
+
+例如，可在 `extend-head-uncached.html` 中使用 [HasShortcode](https://gohugo.io/methods/page/hasshortcode/#article) 方法，根据 shortcode 是否存在动态加载 CDN JavaScript 文件。
