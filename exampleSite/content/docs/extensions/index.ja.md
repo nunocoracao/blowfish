@@ -1,10 +1,10 @@
 ---
-title: "パーシャル"
+title: 拡張機能
 weight: 9
 draft: false
 description: "Blowfish で利用可能なすべてのパーシャル。"
-slug: "partials"
-tags: ["partials", "analytics", "privacy", "comments", "favicons", "icon", "docs"]
+slug: "extensions"
+tags: ["extensions", "analytics", "privacy", "comments", "favicons", "icon", "docs"]
 series: ["Documentation"]
 series_order: 9
 ---
@@ -124,9 +124,9 @@ static/
 
 アイコンは、[アイコンショートコード]({{< ref "shortcodes#アイコン" >}})を呼び出すことで、記事のコンテンツでも使用できます。
 
-## 拡張機能
+## ページカスタマイズ
 
-Blowfish は、基本機能を拡張できる多数の拡張パーシャルも提供しています。
+Blowfish は、ページの特定の部分にカスタムコードを直接挿入するための複数の方法を提供しています。
 
 ### 記事リンク
 

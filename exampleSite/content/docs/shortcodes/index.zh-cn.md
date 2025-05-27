@@ -453,7 +453,7 @@ Blowfish 还支持使用标准 Markdown 语法自动转换图像。只需使用�
 
 可以通过在项目的 `assets/icons/` 目录中提供您自己的图标来添加自定义图标。然后可以使用不带 `.svg` 扩展名的 SVG 文件名在简码中引用该图标。
 
-还可以通过调用 [iconpartial]({{< ref "partials#icon" >}}) 在 partials 中使用图标。
+还可以通过调用 [iconpartial]({{< ref "extensions#icon" >}}) 在 partials 中使用图标。
 
 <br/><br/><br/>
 
@@ -537,7 +537,7 @@ When life gives you lemons, make lemonade.
 When life gives you lemons, make lemonade.
 {{< /lead >}}
 
-<br/><br/><br/> 
+<br/><br/><br/>
 
 ## 列表
 
@@ -576,7 +576,7 @@ When life gives you lemons, make lemonade.
 
 <br/><br/><br/>
 
-## 文字书写方向 
+## 文字书写方向
 
 `ltr` 和 `rtl` 允许您混排内容。许多从左往右书写语言的用户希望在文章中包含部分从右往左的书写内容。使用此简码可以让您做到这一点，并利用 `%` 作为简码中最外层的标识符 [Hugo Shortcodes](https://gohugo.io/content-management/shortcodes/#shortcodes-with-markdown)，其中任何 markdown 内容都会正常渲染。
 
@@ -688,7 +688,7 @@ B-->C[Profit]
 {{</* timeline */>}}
 
 {{</* timelineItem icon="github" header="header" badge="badge test" subheader="subheader" */>}}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non magna ex. Donec sollicitudin ut lorem quis lobortis. Nam ac ipsum libero. Sed a ex eget ipsum tincidunt venenatis quis sed nisl. Pellentesque sed urna vel odio consequat tincidunt id ut purus. Nam sollicitudin est sed dui interdum rhoncus. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non magna ex. Donec sollicitudin ut lorem quis lobortis. Nam ac ipsum libero. Sed a ex eget ipsum tincidunt venenatis quis sed nisl. Pellentesque sed urna vel odio consequat tincidunt id ut purus. Nam sollicitudin est sed dui interdum rhoncus.
 {{</* /timelineItem */>}}
 
 
@@ -725,7 +725,7 @@ With other shortcodes
 {{< timeline >}}
 
 {{< timelineItem icon="github" header="header" badge="badge test" subheader="subheader" >}}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non magna ex. Donec sollicitudin ut lorem quis lobortis. Nam ac ipsum libero. Sed a ex eget ipsum tincidunt venenatis quis sed nisl. Pellentesque sed urna vel odio consequat tincidunt id ut purus. Nam sollicitudin est sed dui interdum rhoncus. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non magna ex. Donec sollicitudin ut lorem quis lobortis. Nam ac ipsum libero. Sed a ex eget ipsum tincidunt venenatis quis sed nisl. Pellentesque sed urna vel odio consequat tincidunt id ut purus. Nam sollicitudin est sed dui interdum rhoncus.
 {{< /timelineItem >}}
 
 
@@ -785,7 +785,7 @@ Blowfish 使用简码实现 TypeIt 功能的子集。在 `typeit` 简码中编�
 
 ```md
 {{</* typeit */>}}
-Lorem ipsum dolor sit amet 
+Lorem ipsum dolor sit amet
 {{</* /typeit */>}}
 ```
 
@@ -796,12 +796,12 @@ Lorem ipsum dolor sit amet
 **例2:**
 
 ```md
-{{</* typeit 
+{{</* typeit
   tag=h1
   lifeLike=true
 */>}}
-Lorem ipsum dolor sit amet, 
-consectetur adipiscing elit. 
+Lorem ipsum dolor sit amet,
+consectetur adipiscing elit.
 {{</* /typeit */>}}
 ```
 
@@ -816,14 +816,14 @@ consectetur adipiscing elit.
 **例3:**
 
 ```md
-{{</* typeit 
+{{</* typeit
   tag=h3
   speed=50
   breakLines=false
   loop=true
 */>}}
-Lorem ipsum dolor sit amet, 
-consectetur adipiscing elit. 
+Lorem ipsum dolor sit amet,
+consectetur adipiscing elit.
 {{</* /typeit */>}}
 ```
 

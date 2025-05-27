@@ -470,7 +470,7 @@ Blowfish も、標準の Markdown 構文を使用して含まれる画像の自�
 
 カスタムアイコンは、プロジェクトの `assets/icons/` ディレクトリに独自のアイコンアセットを提供することで追加できます。その後、`.svg` 拡張子なしで SVG ファイル名を使用して、ショートコードでアイコンを参照できます。
 
-アイコンは、[アイコンパーシャル]({{< ref "partials#アイコン" >}})を呼び出すことで、パーシャルでも使用できます。
+アイコンは、[アイコンパーシャル]({{< ref "extensions#アイコン" >}})を呼び出すことで、パーシャルでも使用できます。
 
 <br/><br/><br/>
 
@@ -551,7 +551,7 @@ Blowfish も、標準の Markdown 構文を使用して含まれる画像の自�
 ピンチはチャンス。
 {{< /lead >}}
 
-<br/><br/><br/> 
+<br/><br/><br/>
 
 ## リスト
 
@@ -699,7 +699,7 @@ B-->C[利益]
 {{</* timeline */>}}
 
 {{</* timelineItem icon="github" header="ヘッダー" badge="バッジテスト" subheader="サブヘッダー" */>}}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non magna ex. Donec sollicitudin ut lorem quis lobortis. Nam ac ipsum libero. Sed a ex eget ipsum tincidunt venenatis quis sed nisl. Pellentesque sed urna vel odio consequat tincidunt id ut purus. Nam sollicitudin est sed dui interdum rhoncus. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non magna ex. Donec sollicitudin ut lorem quis lobortis. Nam ac ipsum libero. Sed a ex eget ipsum tincidunt venenatis quis sed nisl. Pellentesque sed urna vel odio consequat tincidunt id ut purus. Nam sollicitudin est sed dui interdum rhoncus.
 {{</* /timelineItem */>}}
 
 {{</* timelineItem icon="code" header="もう1つの素晴らしいヘッダー" badge="日付 - 現在" subheader="素晴らしいサブヘッダー" */>}}
@@ -734,7 +734,7 @@ HTML コード付き
 {{< timeline >}}
 
 {{< timelineItem icon="github" header="ヘッダー" badge="バッジテスト" subheader="サブヘッダー" >}}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non magna ex. Donec sollicitudin ut lorem quis lobortis. Nam ac ipsum libero. Sed a ex eget ipsum tincidunt venenatis quis sed nisl. Pellentesque sed urna vel odio consequat tincidunt id ut purus. Nam sollicitudin est sed dui interdum rhoncus. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non magna ex. Donec sollicitudin ut lorem quis lobortis. Nam ac ipsum libero. Sed a ex eget ipsum tincidunt venenatis quis sed nisl. Pellentesque sed urna vel odio consequat tincidunt id ut purus. Nam sollicitudin est sed dui interdum rhoncus.
 {{< /timelineItem >}}
 
 {{< timelineItem icon="code" header="もう1つの素晴らしいヘッダー" badge="日付 - 現在" subheader="素晴らしいサブヘッダー">}}
@@ -790,7 +790,7 @@ Blowfish は、`shortcode` を使用して TypeIt 機能のサブセットを実
 
 ```md
 {{</* typeit */>}}
-Lorem ipsum dolor sit amet 
+Lorem ipsum dolor sit amet
 {{</* /typeit */>}}
 ```
 
@@ -801,12 +801,12 @@ Lorem ipsum dolor sit amet
 **例2:**
 
 ```md
-{{</* typeit 
+{{</* typeit
   tag=h1
   lifeLike=true
 */>}}
-Lorem ipsum dolor sit amet, 
-consectetur adipiscing elit. 
+Lorem ipsum dolor sit amet,
+consectetur adipiscing elit.
 {{</* /typeit */>}}
 ```
 
@@ -821,7 +821,7 @@ consectetur adipiscing elit.
 **例3:**
 
 ```md
-{{</* typeit 
+{{</* typeit
   tag=h3
   speed=50
   breakLines=false

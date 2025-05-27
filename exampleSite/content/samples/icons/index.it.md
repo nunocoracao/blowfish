@@ -9,7 +9,7 @@ tags: ["icons", "sample", "shortcodes"]
 type: 'sample'
 ---
 
-Blowfish has built-in support for a number of [FontAwesome 6](https://fontawesome.com/icons) icons. These can be included in your website through either the [icon partial]({{< ref "docs/partials#icon" >}}) or [icon shortcode]({{< ref "docs/shortcodes#icon" >}}).
+Blowfish has built-in support for a number of [FontAwesome 6](https://fontawesome.com/icons) icons. These can be included in your website through either the [icon partial]({{< ref "docs/extensions#icon" >}}) or [icon shortcode]({{< ref "docs/shortcodes#icon" >}}).
 
 Additionally, custom icons are also fully supported. Simply provide your own SVG icon assets by placing them in the `assets/icons/` directory in the root of your project. Any icons in the icons directory will then be available to use throughout the theme. In order achieve automatic color filling every SVG path needs fill="currentColor" XML attribute.
 

@@ -1,10 +1,10 @@
 ---
-title: "局部模板(Partials)"
+title: 扩展功能
 weight: 9
 draft: false
-description: "所有 Blowfish 可以配置的 Partials"
-slug: "partials"
-tags: ["partials", "统计服务", "隐私", "评论", "网站图标", "图标", "文档"]
+description: "Blowfish 中可用的所有扩展功能。"
+slug: "extensions"
+tags: ["扩展", "分析", "隐私", "评论", "图标", "图示", "文档"]
 series: ["部署教程"]
 series_order: 9
 ---
@@ -127,9 +127,9 @@ static/
 
 图标还可通过调用[图标简码]（{{< ref "shortcodes#icon" >}}）在文章内容中使用。
 
-## 扩展
+## 页面自定义
 
-Blowfish 还提供了许多扩展 partial，可以扩展基本功能。
+Blowfish 还提供多种方式，能够将自定义代码直接插入页面的特定部分。
 
 ### 文章链接
 

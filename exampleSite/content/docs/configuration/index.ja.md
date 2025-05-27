@@ -249,7 +249,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 | `article.showTaxonomies` | `false` | この記事に関連するタクソノミーを表示するかどうかです。 |
 | `article.showAuthorsBadges` | `false` | `authors` タクソノミーを記事またはリストのヘッダーに表示するかどうかです。これには、「複数の著者」と `authors` タクソノミーの設定が必要です。この機能の設定方法の詳細については、[このページ]({{< ref "multi-author" >}}) を確認してください。 |
 | `article.showWordCount` | `false` | 記事の単語数を表示するかどうかです。 |
-| `article.showComments` | `false` | 記事のフッターの後に [コメントパーシャル]({{< ref "partials#コメント" >}}) を含めるかどうかです。 |
+| `article.showComments` | `false` | 記事のフッターの後に [コメントパーシャル]({{< ref "extensions#コメント" >}}) を含めるかどうかです。 |
 | `article.sharingLinks` | _未設定_ | 各記事の最後に表示する共有リンクです。指定されていないか、`false` に設定されている場合、リンクは表示されません。使用可能な値は、<br>"linkedin"、"bluesky"、<br>"mastodon"、"twitter"、"reddit"、<br>"pinterest"、"facebook"、"email"、<br>"whatsapp"、"telegram" です。 |
 | `article.showZenMode` | `false` | 記事のZenモードリーダー機能を有効にするフラグです。 |
 
@@ -323,14 +323,14 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 
 | 名前                     | デフォルト　　　 | 説明                                                                                                                                                  |
 | ------------------------ | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `fathomAnalytics.site`   | _未設定_ | ウェブサイト用に Fathom Analytics によって生成されたサイトコード。詳細については、[Analytics のドキュメント]({{< ref "partials#アナリティクス" >}})を参照してください。 |
+| `fathomAnalytics.site`   | _未設定_ | ウェブサイト用に Fathom Analytics によって生成されたサイトコード。詳細については、[Analytics のドキュメント]({{< ref "extensions#アナリティクス" >}})を参照してください。 |
 | `fathomAnalytics.domain` | _未設定_ | Fathom Analytics でカスタムドメインを使用している場合、ここに指定して、`script.js` をカスタムドメインから配信します。                                         |
 
 ### Umami Analytics
 
 | 名前 | デフォルト　　　 | 説明 |
 |---|---|---|
-| `umamiAnalytics.websiteid` | _未設定_ | ウェブサイト用に Umami Analytics によって生成されたサイトコード。詳細については、[Analytics のドキュメント]({{< ref "partials#アナリティクス" >}})を参照してください。 |
+| `umamiAnalytics.websiteid` | _未設定_ | ウェブサイト用に Umami Analytics によって生成されたサイトコード。詳細については、[Analytics のドキュメント]({{< ref "extensions#アナリティクス" >}})を参照してください。 |
 | `umamiAnalytics.domain` | _未設定_ | Umami Analytics でカスタムドメインを使用している場合、ここに指定して、`script.js` をカスタムドメインから配信します。 |
 | `umamiAnalytics.dataDomains` | _未設定_ | トラッカーを特定のドメインでのみ実行したい場合は、トラッカースクリプトに指定します。これは、ドメイン名のカンマ区切りリストです。例えば "yoursite.com,yoursite2.com" のようになります。 |
 | `umamiAnalytics.scriptName` | script.js | アンチ広告ブロックに使用される `script.js` の名前は、環境変数 `TRACKER_SCRIPT_NAME` で設定されます。 |
@@ -340,7 +340,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 
 | 名前                              | デフォルト　　　   | 説明                                                                                                                               |
 |-----------------------------------|-----------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| `selineAnalytics.token`           | _未設定_ | ウェブサイト用に Seline Analytics によって生成されたトークン。詳細については、[Analytics のドキュメント]({{< ref "partials#アナリティクス" >}})を参照してください。 |
+| `selineAnalytics.token`           | _未設定_ | ウェブサイト用に Seline Analytics によって生成されたトークン。詳細については、[Analytics のドキュメント]({{< ref "extensions#アナリティクス" >}})を参照してください。 |
 | `selineAnalytics.enableTrackEvent` | `true`      | `true` に設定すると、トラックイベントが自動的に追加されます。トラックイベントを追加したくない場合は、`false` に設定してください。                          |
 
 ### BuyMeACoffee
