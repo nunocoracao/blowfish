@@ -36,6 +36,5 @@ layouts/partials/hero/background.html
 layouts/partials/head.html
 layouts/shortcodes/screenshot.html
 layouts/shortcodes/figure.html
-layouts/shortcodes/gist.html
 
 assets/js/appearance.js
