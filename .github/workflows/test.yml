@@ -22,4 +22,6 @@ jobs:
 
       - name: Build
         working-directory: ./exampleSite
-        run: hugo --minify --themesDir ../.. --baseURL https://nunocoracao.github.io/blowfish/
+        run:
+          hugo --minify --themesDir ../.. --baseURL
+          https://nunocoracao.github.io/blowfish/

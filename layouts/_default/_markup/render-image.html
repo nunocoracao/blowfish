@@ -1,17 +1,21 @@
 {{ define "RenderImageSimple" -}}
-  <img class="my-0 rounded-md" loading="lazy" alt="{{ .alt }}" src="{{ .src }}" />
+  <img class="my-0 rounded-md" loading="lazy" alt="{{ .alt }}" src="{{ .src }}">
 {{- end }}
 
 {{ define "RenderImageResponsive" -}}
   <img
-    class="my-0 rounded-md" loading="lazy" decoding="async" fetchpriority="low" alt="{{ .alt }}"
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="{{ .alt }}"
     srcset="
-      {{ (.resource.Resize "330x").RelPermalink }} 330w,
-      {{ (.resource.Resize "660x").RelPermalink }} 660w,
-      {{ (.resource.Resize "1280x").RelPermalink }} 1280w"
+      {{ (.resource.Resize "330x").RelPermalink }}  330w,
+      {{ (.resource.Resize "660x").RelPermalink }}  660w,
+      {{ (.resource.Resize "1280x").RelPermalink }} 1280w
+    "
     data-zoom-src="{{ .resource.RelPermalink }}"
-    src="{{ .resource.RelPermalink }}"
-  />
+    src="{{ .resource.RelPermalink }}">
 {{- end }}
 
 {{ define "RenderImageCaption" -}}
@@ -30,6 +34,7 @@
 {{- if not $isRemote }}
   {{- $resource = or ($.Page.Resources.GetMatch $url.String) (resources.Get $url.String) }}
 {{- end }}
+
 
 <figure>
   {{- if $isRemote }}

@@ -5,11 +5,10 @@
 {{- $startDelay := .Get "startDelay" | default 0 -}}
 {{- $breakLines := .Get "breakLines" | default true -}}
 {{- $waitUntilVisible := .Get "waitUntilVisible" | default true -}}
-{{- $loop := .Get "loop" | default false -}}                                                                    
-
+{{- $loop := .Get "loop" | default false -}}
 {{- $classList := slice -}}
 {{- with .Get "class" -}}
-    {{- $classList = $classList | append . -}}
+  {{- $classList = $classList | append . -}}
 {{- end -}}
 {{- $tag := .Get "tag" | default "div" -}}
 
@@ -17,7 +16,7 @@
 
 {{- $attrs := printf `id="%v"` $id -}}
 {{- with $classList -}}
-    {{- $attrs = delimit $classList " " | printf `%v class="%v"` $attrs -}}
+  {{- $attrs = delimit $classList " " | printf `%v class="%v"` $attrs -}}
 {{- end -}}
 
 {{ printf `<%v %v>%s</%v>` $tag $attrs $initialString $tag | safeHTML }}

@@ -1,7 +1,9 @@
 {{ $id := delimit (slice "gallery" (partial "functions/uid.html" .)) "-" -}}
 
+
 <div id="{{- $id -}}" class="gallery">
   {{ $page := .Page -}}
+
 
   <!-- find all img tags -->
   {{ $imgTagRegex := `<img\s+[^>]*>` -}}
@@ -24,7 +26,8 @@
       {{ if $isExternalURL -}}
         {{ with resources.GetRemote $src -}}{{ $finalSrc = .RelPermalink -}}{{ end -}}
       {{ else -}}
-        {{ with $page.Resources.GetMatch $src -}}{{ $finalSrc = .RelPermalink -}}
+        {{ with $page.Resources.GetMatch $src -}}
+          {{ $finalSrc = .RelPermalink -}}
         {{ else -}}
           {{ with resources.GetMatch $src -}}{{ $finalSrc = .RelPermalink }}{{ end -}}
         {{ end -}}

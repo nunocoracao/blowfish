@@ -13,7 +13,7 @@
   {{ else }}
     {{ $endLine = $totalLine }}
   {{ end }}
-  
+
   {{ if gt $startLine $endLine }}
     {{ errorf "Code Importer Shortcode - startLine is greater than endLine" . }}
   {{ end }}
