@@ -1,31 +1,27 @@
 {{ $constrainItemsWidth := .Page.Site.Params.list.constrainItemsWidth | default false }}
 
-{{ $articleClasses := "flex flex-wrap md:flex-nowrap article" }}
-{{ if .Site.Params.list.showCards }}
-  {{ $articleClasses = delimit (slice $articleClasses "border border-neutral-200 dark:border-neutral-700 border-2 rounded-md overflow-hidden") " " }}
-{{ else }}
-  {{ $articleClasses = delimit (slice $articleClasses "") " " }}
-{{ end }}
-
-{{ $articleImageClasses := "w-full md:w-auto h-full thumbnail nozoom" }}
-{{ if .Site.Params.list.showCards }}
-  {{ $articleImageClasses = delimit (slice $articleImageClasses "") " " }}
-{{ else }}
-  {{ $articleImageClasses = delimit (slice $articleImageClasses "thumbnailshadow md:mr-7") " " }}
-{{ end }}
-
+{{ $showCards := .Site.Params.list.showCards | default false }}
 {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
 
-{{ $articleInnerClasses := "" }}
-{{ if .Site.Params.list.showCards }}
-  {{ $articleInnerClasses = delimit (slice $articleInnerClasses "p-4") " " }}
+{{ $articleClassList := slice "flex" "flex-wrap" "md:flex-nowrap" "article" }}
+{{ $articleImageClassList := slice "w-full" "md:w-auto" "h-full" "thumbnail" "nozoom" }}
+{{ $articleInnerClassList := slice }}
+
+{{ if $showCards }}
+  {{ $articleClassList = $articleClassList | append "border" "border-neutral-200" "dark:border-neutral-700" "border-2" "rounded-md" "overflow-hidden" }}
+  {{ $articleInnerClassList = $articleInnerClassList | append "p-4" }}
 {{ else }}
-  {{ $articleInnerClasses = delimit (slice $articleInnerClasses "mt-3 md:mt-0") " " }}
+  {{ $articleImageClassList = $articleImageClassList | append "thumbnailshadow" "md:mr-7" }}
+  {{ $articleInnerClassList = $articleInnerClassList | append "mt-3" "md:mt-0" }}
 {{ end }}
 
 {{ if $constrainItemsWidth }}
-  {{ $articleClasses = delimit (slice $articleClasses "max-w-prose") " " }}
+  {{ $articleClassList = $articleClassList | append "max-w-prose" }}
 {{ end }}
+
+{{ $articleClasses := delimit $articleClassList " " }}
+{{ $articleImageClasses := delimit $articleImageClassList " " }}
+{{ $articleInnerClasses := delimit $articleInnerClassList " " }}
 
 
 <a class="{{ $articleClasses }}" {{ partial "inline/article-link/external-link.html" . | safeHTMLAttr }}>
