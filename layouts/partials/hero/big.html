@@ -1,11 +1,5 @@
 {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
 
-{{- $images := .Resources.ByType "image" -}}
-{{- $featured := $images.GetMatch "*background*" -}}
-{{- if not $featured }}{{ $featured = $images.GetMatch "*feature*" }}{{ end -}}
-{{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
-{{- $featured := partial "inline/hero/get-hero-image.html" (dict "context" . "imageSrc" $featured) -}}
-
 {{ $caption := "" }}
 {{ if .Params.featureimagecaption }}
   {{- $caption = .Params.featureimagecaption -}}
@@ -13,6 +7,12 @@
 
 {{- $alt := .Page.Title -}}
 {{- with .Page.Params.alt }}{{ $alt = . }}{{ end -}}
+
+{{- $images := .Resources.ByType "image" -}}
+{{- $featured := $images.GetMatch "*background*" -}}
+{{- if not $featured }}{{ $featured = $images.GetMatch "*feature*" }}{{ end -}}
+{{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
+{{- $featured := partial "inline/hero/get-hero-image.html" (dict "context" . "imageSrc" $featured) -}}
 
 {{ if strings.HasSuffix $featured ".svg" }}
   <figure>
@@ -30,7 +30,8 @@
     "imageObj" $featured
     "imageWidth" ($.Site.Params.backgroundImageWidth | default "1200")
     "disableImageOptimization" $disableImageOptimization
-  ) }}
+    )
+  }}
   {{ $imageURL := $processedImage.RelPermalink | safeHTMLAttr }}
   <figure>
     <img

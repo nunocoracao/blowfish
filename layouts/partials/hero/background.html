@@ -1,46 +1,55 @@
 {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
 
+{{ $isParentList := eq (.Scratch.Get "scope") "list" }}
+{{ $shouldBlur := $.Params.layoutBackgroundBlur | default (or
+  (and ($.Site.Params.article.layoutBackgroundBlur | default true) (not $isParentList))
+  (and ($.Site.Params.list.layoutBackgroundBlur | default true) ($isParentList))
+  )
+}}
+{{ $shouldAddHeaderSpace := $.Params.layoutBackgroundHeaderSpace | default (or
+  (and ($.Site.Params.article.layoutBackgroundHeaderSpace | default true) (not $isParentList))
+  (and ($.Site.Params.list.layoutBackgroundHeaderSpace | default true) ($isParentList))
+  )
+}}
+
 {{- $images := .Resources.ByType "image" -}}
 {{- $featured := $images.GetMatch "*background*" -}}
 {{- if not $featured }}{{ $featured = $images.GetMatch "*feature*" }}{{ end -}}
 {{- if not $featured }}{{ $featured = $images.GetMatch "{*thumbnail*}" }}{{ end -}}
 {{- $featured := partial "inline/hero/get-hero-image.html" (dict "context" . "imageSrc" $featured) -}}
 
-{{ $isParentList := eq (.Scratch.Get "scope") "list"  }}
-{{ $shouldBlur := $.Params.layoutBackgroundBlur | default (or
-        (and ($.Site.Params.article.layoutBackgroundBlur | default true) (not $isParentList))
-        (and ($.Site.Params.list.layoutBackgroundBlur | default true) ($isParentList))
-    ) }}
-{{ $shouldAddHeaderSpace := $.Params.layoutBackgroundHeaderSpace | default (or
-        (and ($.Site.Params.article.layoutBackgroundHeaderSpace | default true) (not $isParentList))
-        (and ($.Site.Params.list.layoutBackgroundHeaderSpace | default true) ($isParentList))
-    ) }}
-
-{{ if $shouldAddHeaderSpace | default true}}
-<div id="hero" class="h-[150px] md:h-[200px]"></div>
+{{ if $shouldAddHeaderSpace | default true }}
+  <div id="hero" class="h-[150px] md:h-[200px]"></div>
 {{ end }}
 
 {{ $processedImage := partial "inline/hero/process-image.html" (dict
   "imageObj" $featured
   "imageWidth" ($.Site.Params.backgroundImageWidth | default "1200")
   "disableImageOptimization" $disableImageOptimization
-) }}
+  )
+}}
 {{ $imageURL := $processedImage.RelPermalink | safeHTMLAttr }}
 
-<div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom" style="background-image: url({{ $imageURL }});">
-    <div class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
-    </div>
-    <div
-        class="absolute inset-0 opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal">
-    </div>
+
+<div
+  class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
+  style="background-image: url({{ $imageURL }});">
+  <div
+    class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal"></div>
+  <div
+    class="absolute inset-0 opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal"></div>
 </div>
+
 {{ if $shouldBlur | default false }}
-<div id="background-blur" class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"></div>
-<script>
-    window.addEventListener('scroll', function (e) {
-        var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-        var background_blur = document.getElementById('background-blur');
-        background_blur.style.opacity = (scroll / 300)
+  <div
+    id="background-blur"
+    class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl">
+  </div>
+  <script>
+    window.addEventListener("scroll", function (e) {
+      var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      var background_blur = document.getElementById("background-blur");
+      background_blur.style.opacity = scroll / 300;
     });
-</script>
+  </script>
 {{ end }}

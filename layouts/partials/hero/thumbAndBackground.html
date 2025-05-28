@@ -1,5 +1,12 @@
 {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
 
+{{ $isParentList := eq (.Scratch.Get "scope") "list" }}
+{{ $shouldBlur := $.Params.layoutBackgroundBlur | default (or
+  (and ($.Site.Params.article.layoutBackgroundBlur | default true) (not $isParentList))
+  (and ($.Site.Params.list.layoutBackgroundBlur | default true) ($isParentList))
+  )
+}}
+
 {{- $images := .Resources.ByType "image" -}}
 {{- $background := $images.GetMatch "*background*" -}}
 
@@ -33,27 +40,25 @@
   {{ end }}
 {{ end -}}
 
-{{ $isParentList := eq (.Scratch.Get "scope") "list" }}
-{{ $shouldBlur := $.Params.layoutBackgroundBlur | default (or
-  (and ($.Site.Params.article.layoutBackgroundBlur | default true) (not $isParentList))
-  (and ($.Site.Params.list.layoutBackgroundBlur | default true) ($isParentList))
-  )
-}}
-
 {{ $processedFeaturedImage := partial "inline/hero/process-image.html" (dict
   "imageObj" $featured
   "imageWidth" ($.Site.Params.backgroundImageWidth | default "1200")
   "disableImageOptimization" $disableImageOptimization
-) }}
+  )
+}}
 {{ $processedBackgroundImage := partial "inline/hero/process-image.html" (dict
   "imageObj" $background
   "imageWidth" ($.Site.Params.backgroundImageWidth | default "1200")
   "disableImageOptimization" $disableImageOptimization
-) }}
+  )
+}}
 {{ $processedFeaturedURL := $processedFeaturedImage.RelPermalink | safeHTMLAttr }}
 {{ $processedBackgroundURL := $processedBackgroundImage.RelPermalink | safeHTMLAttr }}
 
-<div class="w-full rounded-md h-36 md:h-56 lg:h-72 single_hero_basic nozoom" style="background-image: url({{ $processedFeaturedURL }});">
+
+<div
+  class="w-full rounded-md h-36 md:h-56 lg:h-72 single_hero_basic nozoom"
+  style="background-image: url({{ $processedFeaturedURL }});">
 </div>
 
 <div
@@ -63,7 +68,8 @@
     class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
   </div>
   <div
-    class="absolute inset-0 opacity-30 dark:opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral dark:to-neutral-800 mix-blend-normal"></div>
+    class="absolute inset-0 opacity-30 dark:opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral dark:to-neutral-800 mix-blend-normal">
+  </div>
 </div>
 
 {{ if $shouldBlur | default false }}

@@ -10,8 +10,12 @@
   "imageObj" $featured
   "imageWidth" ($.Site.Params.backgroundImageWidth | default "1200")
   "disableImageOptimization" $disableImageOptimization
-) }}
+  )
+}}
 {{ $imageURL := $processedImage.RelPermalink | safeHTMLAttr }}
 
-<div class="w-full h-36 md:h-56 lg:h-72 single_hero_basic nozoom" style="background-image: url({{ $imageURL }});">
+
+<div
+  class="w-full h-36 md:h-56 lg:h-72 single_hero_basic nozoom"
+  style="background-image: url({{ $imageURL }});">
 </div>
