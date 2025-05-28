@@ -1,9 +1,5 @@
 {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
-{{ with .Params.externalUrl }}
-<a href="{{ . }}" target="_blank" rel="external" class="min-w-full">
-  {{ else }}
-  <a href="{{ .RelPermalink }}" class="min-w-full">
-    {{ end }}
+<a {{ partial "inline/article-link/external-link.html" . | safeHTMLAttr }} class="min-w-full">
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
 
       {{- with $.Params.images -}}

@@ -28,11 +28,7 @@
 {{ end }}
 
 
-{{ with .Params.externalUrl }}
-<a class="{{ $articleClasses }}" href="{{ . }}" target="_blank" rel="external">
-  {{ else }}
-  <a class="{{ $articleClasses }}" href="{{ .RelPermalink }}">
-    {{ end }}
+<a class="{{ $articleClasses }}" {{ partial "inline/article-link/external-link.html" . | safeHTMLAttr }}>
     {{- with $.Params.images -}}
     {{- range first 6 . }}
     <meta property="og:image" content="{{ . | absURL }}" />{{ end -}}
@@ -99,3 +95,12 @@
       {{ end }}
     </div>
   </a>
+
+{{/*  Inline partial for article-link  */}}
+{{ define "partials/inline/article-link/external-link.html" }}
+  {{ with .Params.externalUrl }}
+    href="{{ . }}" target="_blank" rel="external"
+  {{ else }}
+    href="{{ .RelPermalink }}"
+  {{ end }}
+{{ end }}
