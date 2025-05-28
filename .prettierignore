@@ -31,7 +31,6 @@ layouts/_default/list.html
 layouts/partials/article-link/card-related.html
 layouts/partials/article-link/card.html
 layouts/partials/article-link/simple.html
-layouts/partials/hero/background.html
 layouts/partials/head.html
 layouts/shortcodes/screenshot.html
 layouts/shortcodes/figure.html

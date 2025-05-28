@@ -3,50 +3,31 @@
 {{- $images := .Resources.ByType "image" -}}
 {{- $featured := $images.GetMatch "*background*" -}}
 {{- if not $featured }}{{ $featured = $images.GetMatch "*feature*" }}{{ end -}}
-{{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
-
-{{ if and .Params.featureimage (not $featured) }}
-{{- $url:= .Params.featureimage -}}
-{{ $featured = resources.GetRemote $url }}
-{{ end }}
-
-{{- if not $featured }}
- {{ with .Site.Params.defaultBackgroundImage }}
-  {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-   {{ $featured = resources.GetRemote . }}
-  {{ else }}
-   {{ $featured = resources.Get . }}
-  {{ end }}
- {{ end }}
-{{ end -}}
+{{- if not $featured }}{{ $featured = $images.GetMatch "{*thumbnail*}" }}{{ end -}}
+{{- $featured := partial "inline/hero/get-hero-image.html" (dict "context" . "imageSrc" $featured) -}}
 
 {{ $isParentList := eq (.Scratch.Get "scope") "list"  }}
-{{ $shouldBlur := $.Params.layoutBackgroundBlur | default (or 
-        (and ($.Site.Params.article.layoutBackgroundBlur | default true) (not $isParentList)) 
+{{ $shouldBlur := $.Params.layoutBackgroundBlur | default (or
+        (and ($.Site.Params.article.layoutBackgroundBlur | default true) (not $isParentList))
         (and ($.Site.Params.list.layoutBackgroundBlur | default true) ($isParentList))
     ) }}
-{{ $shouldAddHeaderSpace := $.Params.layoutBackgroundHeaderSpace | default (or 
-        (and ($.Site.Params.article.layoutBackgroundHeaderSpace | default true) (not $isParentList)) 
+{{ $shouldAddHeaderSpace := $.Params.layoutBackgroundHeaderSpace | default (or
+        (and ($.Site.Params.article.layoutBackgroundHeaderSpace | default true) (not $isParentList))
         (and ($.Site.Params.list.layoutBackgroundHeaderSpace | default true) ($isParentList))
     ) }}
-{{- with $featured -}}
 
 {{ if $shouldAddHeaderSpace | default true}}
 <div id="hero" class="h-[150px] md:h-[200px]"></div>
 {{ end }}
 
-{{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg")}}
-    {{ with . }}
-    <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url({{ .RelPermalink }});">
-    {{ end }}
-{{ else }}
-    {{ with .Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
-    <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url({{ .RelPermalink }});">
-    {{ end }}
-{{ end }}
+{{ $processedImage := partial "inline/hero/process-image.html" (dict
+  "imageObj" $featured
+  "imageWidth" ($.Site.Params.backgroundImageWidth | default "1200")
+  "disableImageOptimization" $disableImageOptimization
+) }}
+{{ $imageURL := $processedImage.RelPermalink | safeHTMLAttr }}
 
+<div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom" style="background-image: url({{ $imageURL }});">
     <div class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
     </div>
     <div
@@ -63,4 +44,3 @@
     });
 </script>
 {{ end }}
-{{- end -}}

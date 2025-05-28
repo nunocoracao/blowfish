@@ -1,0 +1,69 @@
+{{/* Returns the hero image resource with fallback logic.
+  Parameters:
+  .context             (required) Page context
+  .imageSrc            (optional) Pre-existing image resource
+  .paramKey            (optional) Page param key for image (default: "featureimage")
+  .defaultImageParam   (optional) Site param key for default image (default: "defaultBackgroundImage")
+*/}}
+{{ define "partials/inline/hero/get-hero-image.html" }}
+  {{- $context := .context -}}
+  {{- $imageSrc := .imageSrc -}}
+  {{- $paramKey := .paramKey | default "featureimage" -}}
+  {{- $defaultImageParam := .defaultImageParam | default "defaultBackgroundImage" -}}
+
+  {{- if not $imageSrc -}}
+    {{- with index $context.Params $paramKey -}}
+      {{- $imageSrc = partial "inline/hero/get-resource.html" (dict "url" .) -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- if not $imageSrc -}}
+    {{- with index $context.Site.Params $defaultImageParam -}}
+      {{- $imageSrc = partial "inline/hero/get-resource.html" (dict "url" .) -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- return $imageSrc -}}
+{{ end }}
+
+{{ define "partials/inline/hero/get-resource.html" }}
+  {{- $url := .url -}}
+  {{- $resource := false -}}
+
+  {{- if $url -}}
+    {{- if or (strings.HasPrefix $url "http:") (strings.HasPrefix $url "https:") -}}
+      {{- $resource = resources.GetRemote $url -}}
+    {{- else -}}
+      {{- $resource = resources.Get $url -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- return $resource -}}
+{{ end }}
+
+{{/* Returns the processed image (optimized by .Resize function).
+  Parameters:
+  .imageObj    (required) Hugo image resource object
+  .imgWidth    (optional) Width to resize the image to (default: "1200")
+  .disableImageOptimization  (optional) Boolean; if true, skips image optimization
+*/}}
+{{ define "partials/inline/hero/process-image.html" -}}
+  {{ $imageObj := .imageObj }}
+  {{ $imageWidth := .imageWidth | default "1200" }}
+  {{ $disableImageOptimization := .disableImageOptimization }}
+
+  {{ $result := $imageObj }}
+
+  {{ if not $disableImageOptimization -}}
+    {{/* Do nothing */}}
+  {{ else if strings.HasSuffix $imageObj ".svg" -}}
+    {{/* Do nothing */}}
+  {{ else }}
+    {{/* Optimize image */}}
+    {{ with $imageObj.Resize (print $imageWidth "x") -}}
+      {{ $result = . }}
+    {{ end -}}
+  {{ end -}}
+
+  {{ return $result }}
+{{ end }}
