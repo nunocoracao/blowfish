@@ -12,8 +12,8 @@ var openMenu = function (e) {
     menuWrapper.style.visibility = "visible";
     menuWrapper.style.opacity = "1";
     window.onbeforeunload = function (event) {
-      closeMenu()
-    }
+      closeMenu();
+    };
   }
 };
 
@@ -24,10 +24,10 @@ var closeMenu = function (e) {
     menuButton.style.visibility = "visible";
     menuWrapper.style.visibility = "hidden";
     menuWrapper.style.opacity = "0";
-    window.onbeforeunload = function (event) { }
+    window.onbeforeunload = function (event) {};
     e.stopPropagation();
   }
-}
+};
 
 menuButton.addEventListener("click", openMenu);
 menuCloseButton.addEventListener("click", closeMenu);
