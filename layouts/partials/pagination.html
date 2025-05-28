@@ -2,13 +2,14 @@
   <ul class="flex flex-row mt-8 justify-center">
     {{- .Scratch.Set "paginator.ellipsed" false -}}
     {{ if $.Paginator.HasPrev }}
-    <li>
-      <a
+      <li>
+        <a
           href="{{ $.Paginator.Prev.URL }}"
           class="mx-1 block min-w-[1.8rem] rounded text-center hover:bg-primary-600 hover:text-neutral"
           rel="prev"
-      >&larr;</a>
-    </li>
+          >&larr;</a
+        >
+      </li>
     {{ end }}
     {{- range $.Paginator.Pagers -}}
       {{- $right := sub .TotalPages .PageNumber -}}
@@ -24,12 +25,13 @@
       {{- if $showNumber -}}
         <li>
           <a
-              href="{{ .URL }}"
-              class="{{ if eq . $.Paginator }}
-          bg-primary-200 dark:bg-primary-400 dark:text-neutral-800
-        {{ end }} mx-1 block min-w-[1.8rem] rounded text-center hover:bg-primary-600 hover:text-neutral"
-          >{{ .PageNumber }}</a>
-      </li>
+            href="{{ .URL }}"
+            class="{{ if eq . $.Paginator }}
+              bg-primary-200 dark:bg-primary-400 dark:text-neutral-800
+            {{ end }} mx-1 block min-w-[1.8rem] rounded text-center hover:bg-primary-600 hover:text-neutral"
+            >{{ .PageNumber }}</a
+          >
+        </li>
       {{- else if ($.Scratch.Get "paginator.shouldEllipse") -}}
         <li class="page-item ">
           <span class="page-link" aria-hidden="true">&hellip;</span>
@@ -37,13 +39,14 @@
       {{- end -}}
     {{- end -}}
     {{ if $.Paginator.HasNext }}
-    <li>
-      <a
+      <li>
+        <a
           href="{{ $.Paginator.Next.URL }}"
           class="mx-1 block min-w-[1.8rem] rounded text-center hover:bg-primary-600 hover:text-neutral"
           rel="next"
-      >&rarr;</a>
-    </li>
+          >&rarr;</a
+        >
+      </li>
     {{ end }}
   </ul>
 {{- end -}}
