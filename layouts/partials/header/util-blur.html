@@ -1,0 +1,16 @@
+<script>
+  (function() {
+    const scrollDivisor = 300;
+
+    const updateOpacity = () => {
+      const scrollY = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      const blurElement = document.getElementById("menu-blur");
+      if (blurElement) {
+        blurElement.style.opacity = Math.min(scrollY / scrollDivisor, 1);
+      }
+    };
+
+    updateOpacity();
+    window.addEventListener("scroll", updateOpacity);
+  })();
+</script>

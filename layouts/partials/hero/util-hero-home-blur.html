@@ -1,0 +1,50 @@
+{{ $id := .id }}
+{{ $hasDiv := .hasDiv | default false }}
+{{ $classes := .classes | default "" }}
+{{ $scrollDivisor := .scrollDivisor | default 300 }}
+
+{{ if $hasDiv }}
+  <div id="{{ $id }}" {{ with $classes }}class="{{ . }}"{{ end }}></div>
+{{ end }}
+
+<script>
+  (function() {
+    const blurId = "{{ $id }}";
+    const blurElement = document.getElementById(blurId);
+    const scrollDivisor = Number({{ $scrollDivisor }});
+
+    const isA11yMode = () => {
+      return localStorage.getItem("a11yMode") === "true";
+    };
+
+    const getScrollOpacity = () => {
+      const scrollY = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      return scrollY / scrollDivisor;
+    };
+
+    const applyBlurState = () => {
+      if (!blurElement) return;
+      if (isA11yMode()) {
+        blurElement.style.display = "none";
+        blurElement.style.opacity = "0";
+      } else {
+        blurElement.style.display = "";
+        blurElement.style.opacity = getScrollOpacity();
+      }
+    };
+
+    if (blurElement) {
+      applyBlurState();
+      window.addEventListener("scroll", () => {
+        if (!isA11yMode()) {
+          blurElement.style.opacity = getScrollOpacity();
+        }
+      });
+    }
+
+    window.toggleA11yMode = function() {
+      localStorage.setItem("a11yMode", String(!isA11yMode()));
+      applyBlurState();
+    };
+  })();
+</script>

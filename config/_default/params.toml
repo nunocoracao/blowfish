@@ -9,6 +9,7 @@ colorScheme = "blowfish"
 defaultAppearance = "light" # valid options: light or dark
 autoSwitchAppearance = true
 
+enableA11y = false
 enableSearch = true
 enableCodeCopy = false
 

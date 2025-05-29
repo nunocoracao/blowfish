@@ -73,14 +73,10 @@
 </div>
 
 {{ if $shouldBlur | default false }}
-  <div
-    id="background-blur"
-    class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"></div>
-  <script>
-    window.addEventListener("scroll", function (e) {
-      var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-      var background_blur = document.getElementById("background-blur");
-      background_blur.style.opacity = scroll / 300;
-    });
-  </script>
+  {{ partial "hero/util-hero-home-blur.html" (dict
+    "id" "background-blur"
+    "hasDiv" true
+    "classes" "fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"
+    ) | safeHTML
+  }}
 {{ end }}

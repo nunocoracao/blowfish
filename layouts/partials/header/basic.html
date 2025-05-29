@@ -36,6 +36,19 @@
 
     {{ partial "translations.html" . }}
 
+    {{ if .Site.Params.enableA11y | default false }}
+      <button
+        id="a11y-toggle"
+        aria-label="Toggle accessibility background animation"
+        type="button"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        onclick="toggleA11yMode()"
+        role="button"
+        aria-pressed="false">
+        {{ partial "icon.html" "a11y" }}
+      </button>
+    {{ end }}
+
     {{ if .Site.Params.enableSearch | default false }}
       <button
         id="search-button"
@@ -71,6 +84,19 @@
     <span></span>
 
     {{ partial "translations.html" . }}
+
+    {{ if .Site.Params.enableA11y | default false }}
+      <button
+        id="a11y-toggle"
+        aria-label="Toggle accessibility background animation"
+        type="button"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        onclick="toggleA11yMode()"
+        role="button"
+        aria-pressed="false">
+        {{ partial "icon.html" "a11y" }}
+      </button>
+    {{ end }}
 
     {{ if .Site.Params.enableSearch | default false }}
       <button
