@@ -31,3 +31,20 @@ var closeMenu = function (e) {
 
 menuButton.addEventListener("click", openMenu);
 menuCloseButton.addEventListener("click", closeMenu);
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.toggle-chevron').forEach(chevron => {
+    const icon = chevron.querySelector('svg, .icon')
+    if (icon) {
+      icon.style.transition = 'transform 0.3s ease'
+      icon.style.transform ||= 'rotate(0deg)'
+    }
+    chevron.onclick = e => {
+      e.preventDefault()
+      e.stopPropagation()
+      const submenu = chevron.closest('li')?.querySelector('.submenu')
+      if (!submenu) return
+      const show = submenu.classList.toggle('hidden')
+      if (icon) icon.style.transform = show ? 'rotate(180deg)' : 'rotate(0deg)'
+    }
+  })
+})
