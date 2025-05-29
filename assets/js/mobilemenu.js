@@ -1,5 +1,4 @@
 var menuButton = document.getElementById("menu-button");
-var menuCloseButton = document.getElementById("menu-close-button");
 var menuWrapper = document.getElementById("menu-wrapper");
 
 var menuOpen = false;
@@ -30,7 +29,7 @@ var closeMenu = function (e) {
 };
 
 menuButton.addEventListener("click", openMenu);
-menuCloseButton.addEventListener("click", closeMenu);
+menuWrapper.addEventListener("click", closeMenu);
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.toggle-chevron').forEach(chevron => {
     const icon = chevron.querySelector('svg, .icon')
