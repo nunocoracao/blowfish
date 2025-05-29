@@ -62,6 +62,7 @@
 </div>
 
 <div
+  id="hero-bg-image"
   class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
   style="background-image: url({{ $processedBackgroundURL }});">
   <div
@@ -73,10 +74,12 @@
 </div>
 
 {{ if $shouldBlur | default false }}
-  {{ partial "hero/util-hero-home-blur.html" (dict
-    "id" "background-blur"
+  {{ partial "hero/util-blur.html" (dict
+    "blurId" "background-blur"
     "hasDiv" true
     "classes" "fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"
+    "imageId" "hero-bg-image"
+    "imageURL" $processedBackgroundURL
     ) | safeHTML
   }}
 {{ end }}

@@ -22,6 +22,7 @@
           {{ end }}
           {{ if $homepageImage }}
             <img
+              id="home-bg-image"
               class="w-full h-[1000px] object-cover m-0 nozoom"
               src="{{ $homepageImage.RelPermalink }}"
               role="presentation"
@@ -90,10 +91,12 @@
   {{ partial "recent-articles/main.html" . }}
 </section>
 {{ if .Site.Params.homepage.layoutBackgroundBlur | default false }}
-  {{ partial "hero/util-hero-home-blur.html" (dict
-    "id" "background-blur"
+  {{ partial "home/util-blur.html" (dict
+    "blurId" "background-blur"
     "hasDiv" true
     "classes" "fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"
+    "imageId" "home-bg-image"
+    "imageURL" $homepageImage.RelPermalink
     ) | safeHTML
   }}
 {{ end }}

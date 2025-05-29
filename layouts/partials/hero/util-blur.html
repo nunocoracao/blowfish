@@ -1,17 +1,22 @@
-{{ $id := .id }}
+{{ $blurId := .blurId }}
+{{ $imageId := .imageId }}
+{{ $imageURL := .imageURL }}
 {{ $hasDiv := .hasDiv | default false }}
 {{ $classes := .classes | default "" }}
 {{ $scrollDivisor := .scrollDivisor | default 300 }}
 
 {{ if $hasDiv }}
-  <div id="{{ $id }}" {{ with $classes }}class="{{ . }}"{{ end }}></div>
+  <div id="{{ $blurId }}" {{ with $classes }}class="{{ . }}"{{ end }}></div>
 {{ end }}
 
 <script>
   (function() {
-    const blurId = "{{ $id }}";
+    const blurId = "{{ $blurId }}";
     const blurElement = document.getElementById(blurId);
+    const imgURL = "{{ $imageURL }}"
+    const imageElement = document.getElementById("{{ $imageId }}");
     const scrollDivisor = Number({{ $scrollDivisor }});
+    const imageStyle = `background-image:url({{ $imageURL }});`
 
     const isA11yMode = () => {
       return localStorage.getItem("a11yMode") === "true";
@@ -23,18 +28,22 @@
     };
 
     const applyBlurState = () => {
-      if (!blurElement) return;
-      if (isA11yMode()) {
-        blurElement.style.display = "none";
-        blurElement.style.opacity = "0";
-      } else {
-        blurElement.style.display = "";
-        blurElement.style.opacity = getScrollOpacity();
+      const isA11y = isA11yMode();
+
+      if (blurElement) {
+        blurElement.style.display = isA11y ? 'none' : '';
+        blurElement.style.opacity = isA11y ? '0' : getScrollOpacity();
+      }
+
+      if (imageElement) {
+        const styleValue = isA11y ? 'background-image: none;' : imageStyle;
+        imageElement.setAttribute('style', styleValue);
       }
     };
 
+    applyBlurState();
+
     if (blurElement) {
-      applyBlurState();
       window.addEventListener("scroll", () => {
         if (!isA11yMode()) {
           blurElement.style.opacity = getScrollOpacity();
