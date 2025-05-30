@@ -1,4 +1,4 @@
-<li class="mt-1">
+<li class="mb-1">
   <div class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
     {{ if .Children }}
       <span class="toggle-chevron cursor-pointer ml-auto text-2xl">
@@ -18,7 +18,7 @@
   </div>
 
   {{ if .Children }}
-    <ul class="submenu">
+    <ul class="submenu ml-4 mt-1 space-y-1">
       {{ range .Children }}
         <li class="mt-1">
           <a
@@ -36,4 +36,3 @@
     </ul>
   {{ end }}
 </li>
-<li class="mb-2"></li>
