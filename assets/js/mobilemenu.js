@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const submenu = chevron.closest('li')?.querySelector('.submenu')
       if (!submenu) return
       const show = submenu.classList.toggle('hidden')
-      if (icon) icon.style.transform = show ? 'rotate(180deg)' : 'rotate(0deg)'
+      if (icon) icon.style.transform = show ? 'rotate(-90deg)' : 'rotate(0deg)'
     }
   })
 })
