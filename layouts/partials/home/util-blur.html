@@ -35,9 +35,13 @@
       }
 
       if (imageElement) {
-        isA11y
-          ? imageElement.removeAttribute('src')
-          : imageElement.setAttribute('src', imgURL);
+        if (isA11y) {
+          imageElement.src = '';
+          imageElement.style.opacity = '0';
+        } else {
+          imageElement.src = imgURL;
+          imageElement.style.opacity = '1';
+        }
       }
     };
 
