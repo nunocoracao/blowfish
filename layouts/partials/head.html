@@ -137,8 +137,20 @@
   {{- /* See https://gohugo.io/templates/embedded/#open-graph */ -}}
   {{ if not ($.Resources.GetMatch "*feature*") }}
     {{ with .Site.Params.defaultSocialImage }}
-      <meta name="twitter:image" content="{{ . | absURL }}">
-      <meta property="og:image" content="{{ . | absURL }}">
+      {{ $imageURL := "" }}
+      {{ $isExternalURL := or (hasPrefix . "http://") (hasPrefix . "https://") -}}
+      {{ if $isExternalURL }}
+        {{ $resource := resources.GetRemote . }}
+        {{ $imageURL = $resource.Permalink }}
+      {{ else }}
+        {{ with resources.GetMatch . }}
+          {{ $imageURL = .Permalink }}
+        {{ else }}
+          {{ $imageURL = . | absURL }}
+        {{ end }}
+      {{ end }}
+      <meta name="twitter:image" content="{{ $imageURL }}">
+      <meta property="og:image" content="{{ $imageURL }}">
     {{ end }}
   {{ end }}
 
