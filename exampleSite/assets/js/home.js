@@ -1,20 +1,13 @@
-var layouts = [
-  "background",
-  "hero",
-  "profile",
-  "page",
-  "card"
-]
+var layouts = ["background", "hero", "profile", "page", "card"];
 
-var currentLayout = 0
+var currentLayout = 0;
 
 function switchHomeLayout() {
+  var old = currentLayout;
+  currentLayout = currentLayout == layouts.length - 1 ? 0 : currentLayout + 1;
 
-  var old = currentLayout
-  currentLayout = currentLayout == layouts.length - 1 ? 0 : currentLayout + 1
-
-  var oldDiv = document.getElementById(layouts[old])
-  var currentDiv = document.getElementById(layouts[currentLayout])
+  var oldDiv = document.getElementById(layouts[old]);
+  var currentDiv = document.getElementById(layouts[currentLayout]);
   const layoutCode = document.querySelectorAll("code[id=layout]");
 
   currentDiv.style.display = "block";
@@ -22,7 +15,6 @@ function switchHomeLayout() {
   layoutCode.forEach(function (el) {
     el.innerText = layouts[currentLayout];
   });
-
 }
 
 window.addEventListener("DOMContentLoaded", (event) => {
@@ -30,31 +22,26 @@ window.addEventListener("DOMContentLoaded", (event) => {
     button.addEventListener("click", function (e) {
       e.preventDefault();
       switchHomeLayout();
-    })
+    }),
   );
 });
 
-var list_config = [
-  "CardViewProse",
-  "CardViewScreenWidth",
-  "NormalView"
-]
+var list_config = ["CardViewProse", "CardViewScreenWidth", "NormalView"];
 
 var titles = {
-  "CardViewProse" : "card view with constrained width",
-  "CardViewScreenWidth" : "card view with full width",
-  "NormalView" : "standard list view"
-}
+  CardViewProse: "card view with constrained width",
+  CardViewScreenWidth: "card view with full width",
+  NormalView: "standard list view",
+};
 
-var currentConfig = 0
+var currentConfig = 0;
 
 function switchList() {
+  var old = currentConfig;
+  currentConfig = currentConfig == list_config.length - 1 ? 0 : currentConfig + 1;
 
-  var old = currentConfig
-  currentConfig = currentConfig == list_config.length - 1 ? 0 : currentConfig + 1
-
-  var oldDiv = document.getElementById(list_config[old])
-  var currentDiv = document.getElementById(list_config[currentConfig])
+  var oldDiv = document.getElementById(list_config[old]);
+  var currentDiv = document.getElementById(list_config[currentConfig]);
   const configCode = document.querySelectorAll("code[id=config]");
 
   currentDiv.style.display = "block";
@@ -63,7 +50,6 @@ function switchList() {
   configCode.forEach(function (el) {
     el.innerText = titles[list_config[currentConfig]];
   });
-
 }
 
 window.addEventListener("DOMContentLoaded", (event) => {
@@ -71,6 +57,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
     button.addEventListener("click", function (e) {
       e.preventDefault();
       switchList();
-    })
+    }),
   );
 });
