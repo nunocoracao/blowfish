@@ -6,28 +6,32 @@
 {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
 
 {{ if and .Params.featureimage (not $featured) }}
-{{- $url:= .Params.featureimage -}}
-{{ $featured = resources.GetRemote $url }}
+  {{- $url:= .Params.featureimage -}}
+  {{ $featured = resources.GetRemote $url }}
 {{ end }}
 
 {{- if not $featured }}
- {{ with .Site.Params.defaultBackgroundImage }}
-  {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-   {{ $featured = resources.GetRemote . }}
-  {{ else }}
-   {{ $featured = resources.Get . }}
+  {{ with .Site.Params.defaultBackgroundImage }}
+    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+      {{ $featured = resources.GetRemote . }}
+    {{ else }}
+      {{ $featured = resources.Get . }}
+    {{ end }}
   {{ end }}
- {{ end }}
 {{ end -}}
 
 {{- with $featured -}}
-    {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg")}}
-        {{ with . }}
-            <div class="w-full h-36 md:h-56 lg:h-72 single_hero_basic nozoom" style="background-image:url({{ .RelPermalink }});"></div>
-        {{ end }}
-    {{ else }}
-        {{ with .Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
-            <div class="w-full h-36 md:h-56 lg:h-72 single_hero_basic nozoom" style="background-image:url({{ .RelPermalink }});"></div>
-        {{ end }}
+  {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg") }}
+    {{ with . }}
+      <div
+        class="w-full h-36 md:h-56 lg:h-72 single_hero_basic nozoom"
+        style="background-image:url({{ .RelPermalink }});"></div>
     {{ end }}
+  {{ else }}
+    {{ with .Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
+      <div
+        class="w-full h-36 md:h-56 lg:h-72 single_hero_basic nozoom"
+        style="background-image:url({{ .RelPermalink }});"></div>
+    {{ end }}
+  {{ end }}
 {{- end -}}
