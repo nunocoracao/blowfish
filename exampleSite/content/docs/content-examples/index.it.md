@@ -198,7 +198,7 @@ date: 2022-01-25
 externalUrl: "https://medium.com/"
 summary: "I wrote a post on Medium."
 showReadingTime: false
-_build:
+build:
   render: "false"
   list: "local"
 ---
@@ -206,7 +206,7 @@ _build:
 
 Along with the normal front matter parameters like `title` and `summary`, the `externalUrl` parameter is used to tell Blowfish that this is not an ordinary article. The URL provided here will be where visitors are directed when they select this article.
 
-Additionally, we use a special Hugo front matter parameter `_build` to prevent a normal page for this content being generated - there's no point generating a page since we're linking to an external URL!
+Additionally, we use a special Hugo front matter parameter `build` to prevent a normal page for this content being generated - there's no point generating a page since we're linking to an external URL!
 
 The theme includes an archetype to make generating these external link articles simple. Just specify `-k external` when making new content.
 

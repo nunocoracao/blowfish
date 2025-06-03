@@ -198,7 +198,7 @@ date: 2022-01-25
 externalUrl: "https://medium.com/"
 summary: "我在Medium上写了一篇文章。"
 showReadingTime: false
-_build:
+build:
   render: "false"
   list: "local"
 ---
@@ -206,7 +206,7 @@ _build:
 
 除了像 `title` 和 `summary` 这种普通的扉页参数外，需要设置 `externalUrl` 参数来告诉 Blowfish 这不是一篇普通的文章。访问者在访问后，会被重定向到这里提供的 URL。
 
-此外，我们使用了 `_build` 参数来避免 Hugo 生成一个普通页面。因为我们是一个连接到外部的 URL，生成页面是没有意义的。
+此外，我们使用了 `build` 参数来避免 Hugo 生成一个普通页面。因为我们是一个连接到外部的 URL，生成页面是没有意义的。
 
 Hugo 中可以通过命令来快速生成一个外部链接的文件，在创建新的外部链接是，只需要指定 `-k external` 即可。这让生成外部链接文章变得更简单。
 
