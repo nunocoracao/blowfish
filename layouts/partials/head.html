@@ -76,7 +76,8 @@
     }}"></script>
   {{ end }}
   {{ if not .Site.Params.disableImageZoom | default true }}
-  {{ $zoomJS := resources.Get "lib/zoom/zoom.min.js" | resources.Fingerprint "sha512" }}
+  {{ $zoomJS := resources.Get "lib/zoom/medium-zoom.js" }}
+  {{ $zoomJS = $zoomJS | resources.ExecuteAsTemplate "lib/zoom/medium-zoom.js" . | resources.Minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
   <script src="{{ $zoomJS.RelPermalink }}" integrity="{{ $zoomJS.Data.Integrity }}"></script>
   {{ end }}
   {{/* Icons */}}
