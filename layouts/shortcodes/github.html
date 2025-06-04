@@ -65,21 +65,9 @@
         </div>
       </div>
     </div>
-    <script>
-      fetch({{ $githubURL }}, {
-        headers: new Headers({
-          'User-agent': 'Mozilla/4.0 Custom User Agent'
-        })
-      })
-        .then(response => response.json())
-        .then(data => {
-          document.getElementById('{{ $id }}-full_name').innerHTML = data.full_name;
-          document.getElementById('{{ $id }}-description').innerHTML = data.description;
-          document.getElementById('{{ $id }}-stargazers').innerHTML = data.stargazers_count;
-          document.getElementById('{{ $id }}-forks').innerHTML = data.forks;
-        })
-        .catch(error => console.error(error))
-    </script>
+  {{ $fetchRepo := resources.Get "js/fetch-repo.js" }}
+  {{ $fetchRepo = $fetchRepo | resources.Minify | resources.Fingerprint ($.Site.Params.fingerprintAlgorithm | default "sha512") }}
+  <script type="text/javascript" src="{{ $fetchRepo.RelPermalink }}" integrity="{{ $fetchRepo.Data.Integrity }}" data-url="{{ $githubURL }}" data-id="{{ $id }}"></script>
   </a>
   {{- end -}}
 

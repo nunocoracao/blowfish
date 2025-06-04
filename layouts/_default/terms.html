@@ -28,13 +28,9 @@
         {{ .Content }}
       </div>
     </section>
-  <script>
-    var oid = "views_taxonomy_{{ .Data.Plural }}"
-    var oid_likes = "likes_taxonomy_{{ .Data.Plural }}"
-  </script>
   {{ $jsPage := resources.Get "js/page.js" }}
   {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
-  <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}"></script>
+  <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}" data-oid="views_taxonomy_{{ .Data.Plural }}" data-oid-likes="likes_taxonomy_{{ .Data.Plural }}"></script>
   {{ end }}
 
   {{ if .Site.Params.taxonomy.cardView }}
