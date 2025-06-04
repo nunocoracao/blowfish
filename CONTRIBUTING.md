@@ -45,7 +45,7 @@ The project includes a Prettier config that helps to format code in line with th
 
 #### Commit message guidelines
 
-- Use [Gitmoji](https://gitmoji.dev) in commit messages to provide context.
+- Use [Gitmoji](https://gitmoji.dev) in PR messages to provide context.
 - Clearly describe the change with a short summary in the first 72 characters.
 - Place more detailed explanations in paragraphs below the summary, separated by a blank line.
 - Use imperative language (ie. "Fix bug", not "Fixed bug" or "Fixes bug").

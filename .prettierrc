@@ -1,0 +1,45 @@
+{
+  "singleQuote": false,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": true,
+  "trailingComma": "all",
+  "proseWrap": "always",
+  "plugins": [
+    "prettier-plugin-go-template",
+    "@awmottaz/prettier-plugin-void-html"
+  ],
+  "overrides": [
+    {
+      "files": ["*.html"],
+      "options": {
+        "useTabs": false,
+        "parser": "go-template",
+        "goTemplateBracketSpacing": true,
+        "printWidth": 112,
+        "bracketSameLine": true
+      }
+    },
+    {
+      "files": ["*.js", "*.mjs", "*.mts", "*.ts"],
+      "options": {
+        "semi": true,
+        "useTabs": false,
+        "printWidth": 112,
+        "singleQuote": false
+      }
+    },
+    {
+      "files": ["*.yml", "*.yaml"],
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": ["*.json*"],
+      "options": {
+        "trailingComma": "none"
+      }
+    }
+  ]
+}
