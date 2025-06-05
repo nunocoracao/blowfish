@@ -67,7 +67,7 @@
     </div>
   {{ $fetchRepo := resources.Get "js/fetch-repo.js" }}
   {{ $fetchRepo = $fetchRepo | resources.Minify | resources.Fingerprint ($.Site.Params.fingerprintAlgorithm | default "sha512") }}
-  <script type="text/javascript" src="{{ $fetchRepo.RelPermalink }}" integrity="{{ $fetchRepo.Data.Integrity }}" data-url="{{ $githubURL }}" data-id="{{ $id }}"></script>
+  <script type="text/javascript" src="{{ $fetchRepo.RelPermalink }}" integrity="{{ $fetchRepo.Data.Integrity }}" data-repo-url="{{ $githubURL }}" data-repo-id="{{ $id }}"></script>
   </a>
   {{- end -}}
 

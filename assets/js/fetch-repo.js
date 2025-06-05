@@ -1,9 +1,9 @@
 function fetchRepo() {
-  const script = document.currentScript;
-  const repoURL = script && script.getAttribute("data-url") ? script.getAttribute("data-url")
-    : (console.error("data-url is null"), null);
-  const repoId = script && script.getAttribute("data-id") ? script.getAttribute("data-id")
-    : (console.error("data-id is null"), null);
+  const scriptElement = document.currentScript;
+  const repoURL = scriptElement && scriptElement.getAttribute("data-repo-url") ? scriptElement.getAttribute("data-repo-url")
+    : (console.error("data-repo-url is null"), null);
+  const repoId = scriptElement && scriptElement.getAttribute("data-repo-id") ? scriptElement.getAttribute("data-repo-id")
+    : (console.error("data-repo-id is null"), null);
   const requestObjects =
     repoId.startsWith("github") ? ["full_name", "description", "stargazers_count", "forks"]
     : repoId.startsWith("gitlab") ? ["name_with_namespace", "description", "star_count", "forks_count"]
@@ -21,7 +21,7 @@ function fetchRepo() {
             element = document.getElementById(`${repoId}-stargazers`);
         }
         element ? (element.innerHTML = data[requestObject])
-          : (console.error(`element.innerHTML for '${repoId}-${requestObject}' is null`), null);
+          : (console.error(`Element '${repoId}-${requestObject}' not found`), null);
       });
     })
     .catch((error) => console.error(error));
