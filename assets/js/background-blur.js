@@ -1,6 +1,6 @@
-function backgroundBlur() {
-  const script = document.currentScript;
-  const targetId = script && script.getAttribute("data-target-id") ? script.getAttribute("data-target-id")
+function setBackgroundBlur() {
+  const scriptElement = document.currentScript;
+  const targetId = scriptElement && scriptElement.getAttribute("data-target-id") ? scriptElement.getAttribute("data-target-id")
     : (console.error("data-target-id is null"), null);
 
   window.addEventListener("scroll", () => {
@@ -10,4 +10,4 @@ function backgroundBlur() {
   });
 }
 
-backgroundBlur();
+setBackgroundBlur();
