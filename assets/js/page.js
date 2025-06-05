@@ -1,15 +1,17 @@
-var liked_page = false
-var id = oid ? oid.replaceAll("/", "-") : oid
-var id_likes = oid_likes ? oid_likes.replaceAll("/", "-") : oid_likes
+const pageScriptElement = document.currentScript;
+const oid = pageScriptElement && pageScriptElement.getAttribute("data-oid") ? pageScriptElement.getAttribute("data-oid") : (console.error("data-oid is null"), null);
+const oid_likes = pageScriptElement && pageScriptElement.getAttribute("data-oid-likes") ? pageScriptElement.getAttribute("data-oid-likes") : (console.error("data-oid-likes is null"), null);
+const liked_page = false;
+const id = oid ? oid.replaceAll("/", "-") : oid;
+const id_likes = oid_likes ? oid_likes.replaceAll("/", "-") : oid_likes;
 
-if (typeof auth !== 'undefined') {
-    
-    var viewed = localStorage.getItem(id);
+if (typeof auth !== "undefined") {
+  const viewed = localStorage.getItem(id);
 
     if (!viewed) {
         auth.signInAnonymously()
             .then(() => {
-                var docRef = db.collection('views').doc(id)
+                const docRef = db.collection('views').doc(id)
                 localStorage.setItem(id, true);
                 docRef.get().then((doc) => {
                     if (doc.exists) {
@@ -24,13 +26,13 @@ if (typeof auth !== 'undefined') {
                 });
             })
             .catch((error) => {
-                var errorCode = error.code;
-                var errorMessage = error.message;
+                const errorCode = error.code;
+                const errorMessage = error.message;
                 console.error(errorCode, errorMessage)
             });
     }
 
-    var liked = localStorage.getItem(id_likes);
+    const liked = localStorage.getItem(id_likes);
 
     if (liked) {
         liked_page = true
@@ -44,7 +46,7 @@ if (typeof auth !== 'undefined') {
 function like_article(id_likes) {
     auth.signInAnonymously()
         .then(() => {
-            var docRef = db.collection('likes').doc(id_likes)
+            const docRef = db.collection('likes').doc(id_likes)
             docRef.get().then((doc) => {
                 liked_page = true
                 localStorage.setItem(id_likes, true);
@@ -63,8 +65,8 @@ function like_article(id_likes) {
             });
         })
         .catch((error) => {
-            var errorCode = error.code;
-            var errorMessage = error.message;
+            const errorCode = error.code;
+            const errorMessage = error.message;
             console.error(errorCode, errorMessage)
         });
 }
@@ -72,7 +74,7 @@ function like_article(id_likes) {
 function remove_like_article(id_likes) {
     auth.signInAnonymously()
         .then(() => {
-            var docRef = db.collection('likes').doc(id_likes)
+            const docRef = db.collection('likes').doc(id_likes)
             docRef.get().then((doc) => {
                 liked_page = false
                 localStorage.removeItem(id_likes);
@@ -91,8 +93,8 @@ function remove_like_article(id_likes) {
             });
         })
         .catch((error) => {
-            var errorCode = error.code;
-            var errorMessage = error.message;
+            const errorCode = error.code;
+            const errorMessage = error.message;
             console.error(errorCode, errorMessage)
         });
 }
