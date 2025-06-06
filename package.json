@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/nunocoracao/blowfish#readme",
   "devDependencies": {
-    "@tailwindcss/cli": "^4.1.7",
+    "@tailwindcss/cli": "^4.1.8",
     "@tailwindcss/typography": "^0.5.16",
     "chart.js": "^4.4.9",
     "fuse.js": "^7.1.0",
