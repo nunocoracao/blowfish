@@ -190,6 +190,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `highlightCurrentMenuArea`      | 无           | 当菜单被选择时，标记主菜单中的菜单项。                                                                                                                                                                                                                                  |
 | `smartTOC`                      | 无           | 开启智能目录，视图中的项目将会被高亮显示。                                                                                                                                                                                                                              |
 | `smartTOCHideUnfocusedChildren` | 无           | 当开启智能目录，如果目录级别不再被聚焦时，将会隐藏更深层次的目录。                                                                                                                                                                                                      |
+| `fingerprintAlgorithm`          | `"sha512"`   | This configures the fingerprint or resources.Fingerprint used in .Data.Integrity for files provided by the theme. Valid values are `sha512` (default), `sha384`, `sha256`                                                                                                                                     |
 
 ### 页头
 

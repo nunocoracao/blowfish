@@ -1,5 +1,5 @@
 {{ $jsZenMode := resources.Get "js/zen-mode.js" }}
-{{ $jsZenMode = $jsZenMode | resources.Minify | resources.Fingerprint "sha512" }}
+{{ $jsZenMode = $jsZenMode | resources.Minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
 
 <script type="text/javascript" src="{{ $jsZenMode.RelPermalink }}" integrity="{{ $jsZenMode.Data.Integrity }}"></script>
 

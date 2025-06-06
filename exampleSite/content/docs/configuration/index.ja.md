@@ -186,6 +186,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 | `highlightCurrentMenuArea` | _未設定_ | メインメニューのメニュー項目が選択されているときにマークを付けます。 |
 | `smartTOC` | _未設定_ | スマート目次をアクティブにします。表示されている項目が強調表示されます。 |
 | `smartTOCHideUnfocusedChildren` | _未設定_ | スマート目次がオンになっている場合、フォーカスされていないときに、テーブルのより深いレベルが非表示になります。 |
+| `fingerprintAlgorithm`          | `"sha512"`   | This configures the fingerprint or resources.Fingerprint used in .Data.Integrity for files provided by the theme. Valid values are `sha512` (default), `sha384`, `sha256`                                                                                                                                     |
 
 ### ヘッダー(Header)
 

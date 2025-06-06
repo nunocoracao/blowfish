@@ -4,7 +4,7 @@ date: 2019-01-24
 externalUrl: "https://n9o.xyz/projects/"
 summary: "The `externalUrl` front matter parameter can link to any URL."
 showReadingTime: true
-_build:
+build:
   render: "false"
   list: "local"
 type: 'sample'
