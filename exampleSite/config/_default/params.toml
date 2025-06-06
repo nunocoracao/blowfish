@@ -33,6 +33,8 @@ smartTOCHideUnfocusedChildren = false
 # giteaDefaultServer = "https://git.fsfe.org"
 # forgejoDefaultServer = "https://v8.next.forgejo.org"
 
+fingerprintAlgorithm = "sha512" # Valid values are "sha512" (default), "sha384", "sha256"
+
 [header]
   layout = "fixed" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
 

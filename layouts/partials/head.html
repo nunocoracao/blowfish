@@ -46,11 +46,11 @@
   {{ $assets.Add "css" (slice $cssCustom) }}
   {{ end }}
   {{ $bundleCSS := $assets.Get "css" | resources.Concat "css/main.bundle.css" | resources.Minify | resources.Fingerprint
-  "sha512" }}
+  (.Site.Params.fingerprintAlgorithm | default "sha512") }}
   <link type="text/css" rel="stylesheet" href="{{ $bundleCSS.RelPermalink }}"
     integrity="{{ $bundleCSS.Data.Integrity }}" />
   {{ $jsAppearance := resources.Get "js/appearance.js" }}
-  {{ $jsAppearance = $jsAppearance | resources.ExecuteAsTemplate "js/appearance.js" . | resources.Minify | resources.Fingerprint "sha512" }}
+  {{ $jsAppearance = $jsAppearance | resources.ExecuteAsTemplate "js/appearance.js" . | resources.Minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
   <script type="text/javascript" src="{{ $jsAppearance.RelPermalink }}"
     integrity="{{ $jsAppearance.Data.Integrity }}"></script>
   {{ if .Site.Params.enableSearch | default false }}
@@ -70,13 +70,13 @@
   {{ $assets.Add "js" (slice $jsMobileMenu) }}
   {{ if $assets.Get "js" }}
   {{ $bundleJS := $assets.Get "js" | resources.Concat "js/main.bundle.js" | resources.Minify | resources.Fingerprint
-  "sha512" }}
+  (.Site.Params.fingerprintAlgorithm | default "sha512") }}
   <script defer type="text/javascript" id="script-bundle" src="{{ $bundleJS.RelPermalink }}"
     integrity="{{ $bundleJS.Data.Integrity }}" data-copy="{{ i18n "code.copy" }}" data-copied="{{ i18n "code.copied"
     }}"></script>
   {{ end }}
   {{ if not .Site.Params.disableImageZoom | default true }}
-  {{ $zoomJS := resources.Get "lib/zoom/zoom.min.js" | resources.Fingerprint "sha512" }}
+  {{ $zoomJS := resources.Get "lib/zoom/zoom.min.js" | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
   <script src="{{ $zoomJS.RelPermalink }}" integrity="{{ $zoomJS.Data.Integrity }}"></script>
   {{ end }}
   {{/* Icons */}}
