@@ -62,6 +62,7 @@ search:
 sharing:
   email: " Eメールを送る"
   facebook: "Facebookでシェアする"
+  line: "LINEでシェアする"
   linkedin: "LinkedInでシェアする"
   pinterest: "Pinterestでピンする"
   reddit: "Redditに投稿する"

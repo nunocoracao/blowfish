@@ -250,7 +250,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 | `article.showAuthorsBadges` | `false` | `authors` タクソノミーを記事またはリストのヘッダーに表示するかどうかです。これには、「複数の著者」と `authors` タクソノミーの設定が必要です。この機能の設定方法の詳細については、[このページ]({{< ref "multi-author" >}}) を確認してください。 |
 | `article.showWordCount` | `false` | 記事の単語数を表示するかどうかです。 |
 | `article.showComments` | `false` | 記事のフッターの後に [コメントパーシャル]({{< ref "partials#コメント" >}}) を含めるかどうかです。 |
-| `article.sharingLinks` | _未設定_ | 各記事の最後に表示する共有リンクです。指定されていないか、`false` に設定されている場合、リンクは表示されません。使用可能な値は、<br>"linkedin"、"bluesky"、<br>"mastodon"、"twitter"、"reddit"、<br>"pinterest"、"facebook"、"email"、<br>"whatsapp"、"telegram" です。 |
+| `article.sharingLinks` | _未設定_ | 各記事の最後に表示する共有リンクです。指定されていないか、`false` に設定されている場合、リンクは表示されません。使用可能な値は、"bluesky"、"email"、"facebook"、"line"、"linkedin"、"mastodon"、"pinterest"、"reddit"、"telegram"、"twitter"、"whatsapp"です。 |
 | `article.showZenMode` | `false` | 記事のZenモードリーダー機能を有効にするフラグです。 |
 
 ### リスト(List)

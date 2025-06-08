@@ -59,6 +59,7 @@ search:
 sharing:
   email: "Отправить по электронной почте"
   facebook: "Поделиться через Facebook"
+  line: "Поделиться через LINE"
   linkedin: "Поделиться через LinkedIn"
   pinterest: "Добавить в Pinterest"
   reddit: "Отправить в Reddit"
