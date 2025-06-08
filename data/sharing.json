@@ -9,6 +9,11 @@
     "title": "sharing.facebook",
     "url": "https://www.facebook.com/sharer/sharer.php?u=%s&quote=%s"
   },
+  "line": {
+    "icon": "line",
+    "title": "sharing.line",
+    "url": "https://line.me/R/share?text=%s%s"
+  },
   "linkedin": {
     "icon": "linkedin",
     "title": "sharing.linkedin",
