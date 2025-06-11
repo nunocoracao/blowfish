@@ -10,8 +10,8 @@
     "dev-windows": "set NODE_ENV=development&& npx @tailwindcss/cli -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
     "build-windows": "set NODE_ENV=production&& npx @tailwindcss/cli -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit",
     "build-hugo": "hugo --minify -s exampleSite --themesDir ../.. -d ../docs --baseURL https://nunocoracao.github.io/blowfish/",
-    "example:dev": "hugo server -E -F --minify --source exampleSite --themesDir ../.. --buildDrafts -b http://localhost/ -p 1313",
-    "example:dev:core": "hugo server -E -F --minify --source exampleSite --themesDir ../.. --buildDrafts -b http://localhost/ -p 1313 --renderSegments core",
+    "example": "hugo server -E -F --minify --source exampleSite --themesDir ../.. --buildDrafts -b http://localhost/ -p 1313",
+    "example:core": "hugo server -E -F --minify --source exampleSite --themesDir ../.. --buildDrafts -b http://localhost/ -p 1313 --renderSegments core",
     "example:production": "hugo server -E -F --minify --source exampleSite --themesDir ../.. --buildDrafts -b http://localhost/ -p 1313 -e production",
     "lighthouse": "lhci autorun"
   },
