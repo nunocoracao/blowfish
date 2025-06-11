@@ -1,0 +1,77 @@
+global:
+  language: "TH"
+
+article:
+  anchor_label: "จุดยึด"
+  date: "{{ .Date }}"
+  date_updated: "อัปเดต: {{ .Date }}"
+  draft: "ฉบับร่าง"
+  edit_title: "แก้ไขเนื้อหา"
+  reading_time:
+    one: "{{ .Count }} นาที"
+    other: "{{ .Count }} นาที"
+  reading_time_title: "ใช้เวลาอ่าน"
+  table_of_contents: "หัวข้อเนื้อหา"
+  word_count:
+    one: "{{ .Count }} คำ"
+    other: "{{ .Count }} คำ"
+  views:
+    one: "{{ .Count }} ครั้ง"
+    other: "{{ .Count }} ครั้ง"
+  likes:
+    one: "{{ .Count }} ไลค์"
+    other: "{{ .Count }} ไลค์"
+  part_of_series: "บทความในชุดเดียวกัน"
+  part: "ตอนที่"
+  this_article: "บทความนี้"
+  related_articles: "บทความที่เกี่ยวข้อง"
+  zen_mode_title:
+    enable: "เปิดโหมดเซน"
+    disable: "ปิดโหมดเซน"
+
+author:
+  byline_title: "ผู้เขียน"
+
+code:
+  copy: "คัดลอก"
+  copied: "คัดลอกแล้ว"
+
+error:
+  404_title: "ไม่พบหน้าที่ต้องการ :confused:"
+  404_error: "ข้อผิดพลาด 404"
+  404_description: "ดูเหมือนว่าหน้าที่คุณต้องการจะไม่มีอยู่"
+
+footer:
+  dark_appearance: "เปลี่ยนเป็นธีมมืด"
+  light_appearance: "เปลี่ยนเป็นธีมสว่าง"
+  powered_by: "สร้างด้วย {{ .Hugo }} &amp; {{ .Theme }}"
+
+list:
+  externalurl_title: "ลิงก์ไปยังเว็บไซต์ภายนอก"
+  no_articles: "ยังไม่มีบทความให้แสดงในส่วนนี้"
+
+nav:
+  scroll_to_top_title: "เลื่อนขึ้นด้านบน"
+  skip_to_main: "ข้ามไปยังเนื้อหาหลัก"
+
+search:
+  open_button_title: "ค้นหา (/)"
+  close_button_title: "ปิด (Esc)"
+  input_placeholder: "ค้นหา"
+
+sharing:
+  email: "ส่งทางอีเมล"
+  facebook: "แชร์บน Facebook"
+  linkedin: "แชร์บน LinkedIn"
+  pinterest: "ปักหมุดบน Pinterest"
+  reddit: "โพสต์บน Reddit"
+  twitter: "ทวีตบน Twitter"
+  bluesky: "โพสต์บน Bluesky"
+  whatsapp: "แชร์ทาง WhatsApp"
+  telegram: "แชร์ทาง Telegram"
+
+shortcode:
+  recent_articles: "บทความล่าสุด"
+
+recent:
+  show_more: "แสดงเพิ่มเติม"
