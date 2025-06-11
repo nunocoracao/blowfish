@@ -16,28 +16,28 @@ jobs:
       - run: npm install
       - run: npm run assets
       - name: Commit and push Chart.js changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v6
         with:
           branch: "${{ github.head_ref }}"
           push_options: "--dry-run"
           file_pattern: "assets/lib/chart/*"
           commit_message: "📦 Update packaged ChartJS"
       - name: Commit Fuse changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v6
         with:
           branch: "${{ github.head_ref }}"
           push_options: "--dry-run"
           file_pattern: "assets/lib/fuse/*"
           commit_message: "📦 Update packaged FuseJS"
       - name: Commit KaTeX changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v6
         with:
           branch: "${{ github.head_ref }}"
           push_options: "--dry-run"
           file_pattern: "assets/lib/katex/*"
           commit_message: "📦 Update packaged KaTeX"
       - name: Commit Mermaid changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v6
         with:
           branch: "${{ github.head_ref }}"
           push_options: "--dry-run"
@@ -45,7 +45,7 @@ jobs:
           commit_message: "📦 Update packaged Mermaid"
       - run: npm run build
       - name: Commit CSS changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v6
         with:
           branch: "${{ github.head_ref }}"
           push_options: "--dry-run"
