@@ -46,7 +46,7 @@
     defer
     src="{{ $katexRenderJS.RelPermalink }}"
     integrity="{{ $katexRenderJS.Data.Integrity }}"
-    onload="renderMathInElement(document.body);"></script>
+    class="katex-render"></script>
   {{ $katexFonts := resources.Match "lib/katex/fonts/*" }}
   {{ range $katexFonts }}
     <!-- {{ .RelPermalink }} -->
