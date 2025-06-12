@@ -1,5 +1,4 @@
-<div style="padding-left:0;padding-right:0;padding-top:2px;padding-bottom:3px"
-    class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3">
+<div class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3 padding-main-menu">
     {{ if .Site.Params.Logo }}
     {{ $logo := resources.Get .Site.Params.Logo }}
     {{ if $logo }}
@@ -98,8 +97,7 @@
             <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
                 {{ partial "icon.html" "bars" }}
             </div>
-            <div id="menu-wrapper" style="padding-top:5px;"
-                class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50">
+            <div id="menu-wrapper" class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 padding-top-[5px]">
                 <ul
                     class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
 
@@ -150,8 +148,7 @@
 </div>
 
 {{ if .Site.Menus.subnavigation }}
-<div class="main-menu flex pb-3 flex-col items-end justify-between md:justify-start space-x-3" {{ if .Site.Params.Logo
-    }} style="margin-top:-15px" {{ end }}>
+<div class="main-menu flex pb-3 flex-col items-end justify-between md:justify-start space-x-3{{ if .Site.Params.Logo }} margin-top-[-15px]{{ end }}">
     <div class="hidden md:flex items-center space-x-5">
         {{ range .Site.Menus.subnavigation }}
         <a href="{{ .URL }}" {{ if or (strings.HasPrefix .URL "http:" ) (strings.HasPrefix .URL "https:" ) }}
