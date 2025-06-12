@@ -49,21 +49,9 @@
     </div>
 
   </div>
-  <script>
-    fetch({{ $forgejoURL }}, {
-      headers: new Headers({
-        'User-agent': 'Mozilla/4.0 Custom User Agent'
-      })
-    })
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById('{{ $id }}-full_name').innerHTML = data.full_name;
-        document.getElementById('{{ $id }}-description').innerHTML = data.description;
-        document.getElementById('{{ $id }}-stars_count').innerHTML = data.stars_count;
-        document.getElementById('{{ $id }}-forks_count').innerHTML = data.forks_count;
-      })
-      .catch(error => console.error(error))
-  </script>
+  {{ $fetchRepo := resources.Get "js/fetch-repo.js" }}
+  {{ $fetchRepo = $fetchRepo | resources.Minify | resources.Fingerprint ($.Site.Params.fingerprintAlgorithm | default "sha512") }}
+  <script type="text/javascript" src="{{ $fetchRepo.RelPermalink }}" integrity="{{ $fetchRepo.Data.Integrity }}" data-repo-url="{{ $forgejoURL }}" data-repo-id="{{ $id }}"></script>
 </a>
 </div>
 {{- end -}}

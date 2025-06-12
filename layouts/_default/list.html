@@ -26,13 +26,9 @@
       {{ $lang := print "."  .Lang  ".md" }}
       {{ $path = replace $path $lang ".md" }}
     {{end}}
-  <script>
-    var oid = "views_{{ $path }}"
-    var oid_likes = "likes_{{ $path }}"
-  </script>
   {{ $jsPage := resources.Get "js/page.js" }}
   {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint ($.Site.Params.fingerprintAlgorithm | default "sha512") }}
-  <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}"></script>
+  <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}" data-oid="views_{{ $path }}" data-oid-likes="likes_{{ $path }}"></script>
   {{ end }}
   </header>
   <section class="{{ if $toc -}}

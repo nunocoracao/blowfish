@@ -5,10 +5,6 @@
     {{ partial "header/basic.html" . }}
   </div>
 </div>
-<script>
-  window.addEventListener('scroll', function (e) {
-    var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    var background_blur = document.getElementById('menu-blur');
-    background_blur.style.opacity = (scroll / 300);
-  });
-</script>
+{{ $backgroundBlur := resources.Get "js/background-blur.js" }}
+{{ $backgroundBlur = $backgroundBlur | resources.Minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
+<script type="text/javascript" src="{{ $backgroundBlur.RelPermalink }}" integrity="{{ $backgroundBlur.Data.Integrity }}" data-target-id="menu-blur"></script>
