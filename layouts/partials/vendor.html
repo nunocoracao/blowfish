@@ -36,8 +36,7 @@
 <script defer src="{{ $katexJS.RelPermalink }}" integrity="{{ $katexJS.Data.Integrity }}"></script>
 {{ $katexRenderJS := resources.Get "lib/katex/auto-render.min.js" }}
 {{ $katexRenderJS := $katexRenderJS | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
-<script defer src="{{ $katexRenderJS.RelPermalink }}" integrity="{{ $katexRenderJS.Data.Integrity }}"
-  onload="renderMathInElement(document.body);"></script>
+<script defer src="{{ $katexRenderJS.RelPermalink }}" integrity="{{ $katexRenderJS.Data.Integrity }}" class="katex-render"></script>
 {{ $katexFonts := resources.Match "lib/katex/fonts/*" }}
 {{ range $katexFonts }}
 <!-- {{ .RelPermalink }} -->
