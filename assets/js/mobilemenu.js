@@ -4,16 +4,16 @@ var menuWrapper = document.getElementById("menu-wrapper");
 
 var menuOpen = false;
 
-var openMenu = function (e) {
+var openMenu = function () {
   if (!menuOpen) {
     menuOpen = true;
     document.body.style.overflowY = "hidden";
     menuButton.style.visibility = "hidden";
     menuWrapper.style.visibility = "visible";
     menuWrapper.style.opacity = "1";
-    window.onbeforeunload = function (event) {
-      closeMenu()
-    }
+    window.onbeforeunload = function () {
+      closeMenu();
+    };
   }
 };
 
@@ -24,10 +24,10 @@ var closeMenu = function (e) {
     menuButton.style.visibility = "visible";
     menuWrapper.style.visibility = "hidden";
     menuWrapper.style.opacity = "0";
-    window.onbeforeunload = function (event) { }
+    window.onbeforeunload = function () {};
     e.stopPropagation();
   }
-}
+};
 
-menuButton.addEventListener("click", openMenu);
-menuCloseButton.addEventListener("click", closeMenu);
+menuButton && menuButton.addEventListener("click", openMenu);
+menuCloseButton && menuCloseButton.addEventListener("click", closeMenu);
