@@ -163,3 +163,6 @@ smartTOCHideUnfocusedChildren = false
 [rssnext]
   # feedId = ""
   # userId = ""
+
+[advertisement]
+  # adsense = ""
