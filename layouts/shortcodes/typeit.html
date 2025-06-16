@@ -22,16 +22,16 @@
 
 {{ printf `<%v %v>%s</%v>` $tag $attrs $initialString $tag | safeHTML }}
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-      new TypeIt("#{{ $id }}", {
-        strings: {{ $content }},
-        speed: {{ $speed }},
-        lifeLike: {{ $lifeLike }},
-        startDelay: {{ $startDelay }},
-        breakLines: {{ $breakLines }},
-        waitUntilVisible: {{ $waitUntilVisible }},
-        loop: {{ $loop }}
-      }).go();
-    });
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    new TypeIt("#{{ $id }}", {
+      strings: {{ $content }},
+      speed: {{ $speed }},
+      lifeLike: {{ $lifeLike }},
+      startDelay: {{ $startDelay }},
+      breakLines: {{ $breakLines }},
+      waitUntilVisible: {{ $waitUntilVisible }},
+      loop: {{ $loop }}
+    }).go();
+  });
 </script>

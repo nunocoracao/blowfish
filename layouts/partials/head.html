@@ -76,8 +76,8 @@
     }}"></script>
   {{ end }}
   {{ if not .Site.Params.disableImageZoom | default true }}
-  {{ $zoomJS := resources.Get "lib/zoom/zoom.min.js" | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
-  <script src="{{ $zoomJS.RelPermalink }}" integrity="{{ $zoomJS.Data.Integrity }}"></script>
+  {{ $zoomJS := resources.Get "lib/zoom/zoom.min.js" | resources.Minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
+  <script type="text/javascript" src="{{ $zoomJS.RelPermalink }}" integrity="{{ $zoomJS.Data.Integrity }}"></script>
   {{ end }}
   {{/* Icons */}}
   {{ if templates.Exists "partials/favicons.html" }}
@@ -144,11 +144,10 @@
   {{/* Firebase */}}
   {{ with $.Site.Params.firebase }}
   {{ if isset $.Site.Params "firebase" }}
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-  <script>
-
+  <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script type="text/javascript">
     const firebaseConfig = {
       apiKey: {{ $.Site.Params.firebase.apiKey }},
       authDomain: {{ $.Site.Params.firebase.apiKey }},
@@ -162,7 +161,6 @@
     var app = firebase.initializeApp(firebaseConfig);
     var db = firebase.firestore();
     var auth = firebase.auth();
-
   </script>
   {{ end }}
   {{ end }}

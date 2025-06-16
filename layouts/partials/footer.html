@@ -49,13 +49,13 @@
     {{ end }}
 
   </div>
-  <script>
+  <script type="text/javascript">
     {{ if not .Site.Params.disableImageZoom | default true }}
-    mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
-      margin: 24,
-      background: 'rgba(0,0,0,0.5)',
-      scrollOffset: 0,
-    })
+      mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+        margin: 24,
+        background: 'rgba(0,0,0,0.5)',
+        scrollOffset: 0,
+      })
     {{ end }}
   </script>
   {{ $jsProcess := resources.Get "js/process.js" }}

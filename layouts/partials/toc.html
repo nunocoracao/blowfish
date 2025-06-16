@@ -19,47 +19,47 @@
   </div>
 </details>
 
-<script>
-{{ if .Site.Params.smartTOC }}
-  (function () {
-    var $toc = $('#TableOfContents');
-    if ($toc.length > 0) {
-      var $window = $(window);
+<script type="text/javascript">
+  {{ if .Site.Params.smartTOC }}
+    (function () {
+      var $toc = $('#TableOfContents');
+      if ($toc.length > 0) {
+        var $window = $(window);
 
-      function onScroll() {
-        var currentScroll = $window.scrollTop();
-        var h = $('.anchor');
-        var id = "";
-        h.each(function (i, e) {
-          e = $(e);
-          if (e.offset().top - $(window).height()/3 <= currentScroll) {
-            id = decodeURIComponent(e.attr('id'));
-          }
-        });
-        var active = $toc.find('a.active');      
-        if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
+        function onScroll() {
+          var currentScroll = $window.scrollTop();
+          var h = $('.anchor');
+          var id = "";
+          h.each(function (i, e) {
+            e = $(e);
+            if (e.offset().top - $(window).height()/3 <= currentScroll) {
+              id = decodeURIComponent(e.attr('id'));
+            }
+          });
+          var active = $toc.find('a.active');      
+          if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
 
-        active.each(function (i, e) {
+          active.each(function (i, e) {
+            {{ if .Site.Params.smartTOCHideUnfocusedChildren }} 
+              $(e).removeClass('active').siblings('ul').hide();
+            {{ else }}
+              $(e).removeClass('active');
+            {{ end }}
+          });
+          $toc.find('a[href="#' + id + '"]').addClass('active');
+          $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
+            $(e).children('a').parents('ul').show();          
+          });
+        }
+
+        $window.on('scroll', onScroll);
+        $(document).ready(function () {
           {{ if .Site.Params.smartTOCHideUnfocusedChildren }} 
-            $(e).removeClass('active').siblings('ul').hide();
-          {{ else }}
-            $(e).removeClass('active');
+            $toc.find('a').parent('li').find('ul').hide();
           {{ end }}
-        });
-        $toc.find('a[href="#' + id + '"]').addClass('active');
-        $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
-          $(e).children('a').parents('ul').show();          
+          onScroll();
         });
       }
-
-      $window.on('scroll', onScroll);
-      $(document).ready(function () {
-        {{ if .Site.Params.smartTOCHideUnfocusedChildren }} 
-          $toc.find('a').parent('li').find('ul').hide();
-        {{ end }}
-        onScroll();
-      });
-    }
-  })();
-{{ end }}
+    })();
+  {{ end }}
 </script>
