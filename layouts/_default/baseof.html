@@ -44,13 +44,14 @@
   </body>
   {{ if .Site.Params.buymeacoffee.globalWidget | default false }}
     <script
-      data-name="BMC-Widget"
-      data-cfasync="false"
+      type="text/javascript"
       src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
-      data-id="{{ .Site.Params.buymeacoffee.identifier }}"
-      data-description="Support me on Buy me a coffee!"
-      data-message="{{ .Site.Params.buymeacoffee.globalWidgetMessage | default "" }}"
+      data-cfasync="false"
       data-color="{{ .Site.Params.buymeacoffee.globalWidgetColor | default "#FFDD00" }}"
+      data-description="Support me on Buy me a coffee!"
+      data-id="{{ .Site.Params.buymeacoffee.identifier }}"
+      data-message="{{ .Site.Params.buymeacoffee.globalWidgetMessage | default "" }}"
+      data-name="BMC-Widget"
       data-position="{{ .Site.Params.buymeacoffee.globalWidgetPosition | default "Left" }}"
       data-x_margin="18"
       data-y_margin="18"></script>

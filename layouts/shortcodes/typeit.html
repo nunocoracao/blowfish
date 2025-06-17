@@ -21,7 +21,7 @@
 
 {{ printf `<%v %v>%s</%v>` $tag $attrs $initialString $tag | safeHTML }}
 
-<script>
+<script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function () {
       new TypeIt("#{{ $id }}", {
         strings: {{ $content }},
