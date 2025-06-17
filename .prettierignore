@@ -1,0 +1,40 @@
+# https://github.com/gohugoio/hugo/blob/b39b24962350090122b5f3927456dde710cffb57/docs/.prettierignore
+# https://github.com/gohugoio/hugo/blob/b39b24962350090122b5f3927456dde710cffb57/docs/.prettierrc
+
+# develop
+.vscode
+node_modules
+package.json
+
+# Hugo
+assets/lib
+assets/css/compiled
+content
+themes
+public
+static
+*.md
+
+# Invalid nodes and unexpected tokens, mostly caused by unmatched tags in Hugo statements.
+# For example:
+# {{ with .Params.externalUrl }}
+# <a href="{{ . }}">
+#   {{ else }}
+#   <a href="{{ .RelPermalink }}" class="min-w-full">
+#     {{ end }}
+# 
+# This create an unclose node
+
+layouts/_default/_markup/render-heading.html
+layouts/_default/index.json
+layouts/_default/list.html
+layouts/partials/article-link/card-related.html
+layouts/partials/article-link/card.html
+layouts/partials/article-link/simple.html
+layouts/partials/header/basic.html
+layouts/partials/hero/background.html
+layouts/partials/head.html
+layouts/shortcodes/screenshot.html
+layouts/shortcodes/figure.html
+
+assets/js/appearance.js
