@@ -1,9 +1,9 @@
 {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
 <div class="min-w-full min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
   {{ with .Params.externalUrl }}
-    <a href="{{ . }}" target="_blank" rel="external" class="absolute inset-0"></a>
+    <a href="{{ . }}" target="_blank" rel="external" class="absolute inset-0" aria-label="{{ $.Title }}"></a>
   {{ else }}
-    <a href="{{ .RelPermalink }}" class="absolute inset-0"></a>
+    <a href="{{ .RelPermalink }}" class="absolute inset-0" aria-label="{{ $.Title }}"></a>
   {{ end }}
   {{- with $.Params.images -}}
     {{- range first 6 . }}
