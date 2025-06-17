@@ -12,18 +12,16 @@
   {{ if not ($.Scratch.Get "cardColor") }}
     class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
   {{ else }}
-    class="flex px-4 py-3 rounded-md"
-    style="background-color: {{ $.Scratch.Get "cardColor" }}"
-  {{ end }}>
-
+    class="flex px-4 py-3 rounded-md" style="background-color: {{ $.Scratch.Get "cardColor" }}"
+  {{ end }}
+  >
   <span
     {{ if not ($.Scratch.Get "iconColor") }}
       class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
     {{ else }}
-      class="ltr:pr-3 rtl:pl-3 flex items-center"
-      style="color: {{ $.Scratch.Get "iconColor" }}"
-    {{ end }}>
-
+      class="ltr:pr-3 rtl:pl-3 flex items-center" style="color: {{ $.Scratch.Get "iconColor" }}"
+    {{ end }}
+    >
     {{ partial "icon.html" ($.Scratch.Get "icon") }}
   </span>
 
@@ -32,8 +30,8 @@
       class="dark:text-neutral-300"
     {{ else }}
       style="color: {{ $.Scratch.Get "textColor" }}"
-    {{ end }}>
-    
+    {{ end }}
+    >
     {{- .Inner | markdownify -}}
   </span>
 </div>
