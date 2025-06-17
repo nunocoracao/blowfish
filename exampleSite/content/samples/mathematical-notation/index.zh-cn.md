@@ -21,16 +21,16 @@ KaTeX 可用于在文章中呈现数学表达式。
 
 ## 内联表示法
 
-可以通过将表达式包装在 `\\(` 和 `\\)` 分隔符中来生成内联表示法。
+可以通过将表达式包装在 `\(` 和 `\)` 分隔符中来生成内联表示法。
 
 **例如：**
 
 ```tex
 % KaTeX inline notation
-Inline notation: \\(\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…\\)
+Inline notation: \(\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…\)
 ```
 
-Inline notation: \\(\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…\\)
+Inline notation: \(\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…\)
 
 ## 表达式块
 
