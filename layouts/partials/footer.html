@@ -59,7 +59,7 @@
     {{ end }}
   </script>
   {{ $jsProcess := resources.Get "js/process.js" }}
-  {{ $jsProcess = $jsProcess | resources.Minify | resources.Fingerprint "sha512" }}
+  {{ $jsProcess = $jsProcess | resources.Minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
   <script type="text/javascript" src="{{ $jsProcess.RelPermalink }}" integrity="{{ $jsProcess.Data.Integrity }}"></script>
   {{/* Extend footer - eg. for extra scripts, etc. */}}
   {{ if templates.Exists "partials/extend-footer.html" }}

@@ -12,7 +12,7 @@
 
 - Great! Open a new GitHub pull request with the patch.
 - All development occurs on the `dev` branch and new PRs should be forked from here.
-- The command `npm run example` can be used to test local changes using the example site.
+- The commands `npm run example`, `npm run example:core`, and `npm run example:production` can be used to test local changes using the example site.
 - Ensure the PR description clearly describes the problem and solution. Include the relevant issue number, if applicable.
 - **Before submitting**, check the [coding conventions](#coding-conventions) section below to learn more about coding and commit message expectations.
 
