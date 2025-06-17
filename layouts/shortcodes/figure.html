@@ -1,6 +1,6 @@
 {{ $disableImageOptimization := .Site.Params.disableImageOptimization | default false }}
 {{ if .Get "default" }}
-  {{ partial "shortcodes/figure.html" . }}
+  {{ partial "hugo-embedded/shortcodes/figure-default.html" . }}
 {{ else }}
   {{- $url := urls.Parse (.Get "src") }}
   {{- $altText := .Get "alt" }}
