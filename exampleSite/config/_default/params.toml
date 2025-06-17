@@ -28,7 +28,7 @@ defaultSocialImage = "/img/blowfish.jpg"
 
 highlightCurrentMenuArea = true
 smartTOC = true
-smartTOCHideUnfocusedChildren = false
+smartTOCHideUnfocusedChildren = true
 
 # giteaDefaultServer = "https://git.fsfe.org"
 # forgejoDefaultServer = "https://v8.next.forgejo.org"
@@ -81,7 +81,7 @@ fingerprintAlgorithm = "sha512" # Valid values are "sha512" (default), "sha384",
   showReadingTime = true
   showTableOfContents = true
   showRelatedContent = true
-  relatedContentLimit = 6
+  relatedContentLimit = 9
   showTaxonomies = true 
   showAuthorsBadges = true 
   showWordCount = false
