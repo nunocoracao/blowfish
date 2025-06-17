@@ -59,6 +59,7 @@ search:
 sharing:
   email: "이메일로 전송"
   facebook: "Facebook에서 공유"
+  line: "LINE에 공유하기"
   linkedin: "LinkedIn에서 공유"
   pinterest: "Pinterest에 고정"
   reddit: "Reddit에 게시"
