@@ -13,8 +13,8 @@ var indexed = false;
 var hasResults = false;
 
 // Listen for events
-showButton? showButton.addEventListener("click", displaySearch) : null;
-showButtonMobile? showButtonMobile.addEventListener("click", displaySearch) : null;
+showButton ? showButton.addEventListener("click", displaySearch) : null;
+showButtonMobile ? showButtonMobile.addEventListener("click", displaySearch) : null;
 hideButton.addEventListener("click", hideSearch);
 wrapper.addEventListener("click", hideSearch);
 modal.addEventListener("click", function (event) {
@@ -25,12 +25,9 @@ modal.addEventListener("click", function (event) {
 document.addEventListener("keydown", function (event) {
   // Forward slash to open search wrapper
   if (event.key == "/") {
-    const active = document.activeElement
-    const tag = active.tagName
-    const isInputField =
-      tag === "INPUT" ||
-      tag === "TEXTAREA" ||
-      active.isContentEditable
+    const active = document.activeElement;
+    const tag = active.tagName;
+    const isInputField = tag === "INPUT" || tag === "TEXTAREA" || active.isContentEditable;
 
     if (!searchVisible && !isInputField) {
       event.preventDefault();
@@ -82,7 +79,6 @@ document.addEventListener("keydown", function (event) {
       }
     }
   }
-
 });
 
 // Update search on each keypress
@@ -129,7 +125,7 @@ function fetchJSON(path, callback) {
 
 function buildIndex() {
   var baseURL = wrapper.getAttribute("data-url");
-  baseURL = baseURL.replace(/\/?$/, '/');
+  baseURL = baseURL.replace(/\/?$/, "/");
   fetchJSON(baseURL + "index.json", function (data) {
     var options = {
       shouldSort: true,
@@ -165,8 +161,15 @@ function executeQuery(term) {
       var div = document.createElement("div");
       div.innerHTML = html;
       value.item.summary = div.textContent || div.innerText || "";
-      var title = value.item.externalUrl?  value.item.title + '<span class="text-xs ml-2 align-center cursor-default text-neutral-400 dark:text-neutral-500">'+value.item.externalUrl+'</span>' : value.item.title;
-      var linkconfig = value.item.externalUrl? 'target="_blank" rel="noopener" href="'+value.item.externalUrl+'"' : 'href="'+value.item.permalink+'"';
+      var title = value.item.externalUrl
+        ? value.item.title +
+          '<span class="text-xs ml-2 align-center cursor-default text-neutral-400 dark:text-neutral-500">' +
+          value.item.externalUrl +
+          "</span>"
+        : value.item.title;
+      var linkconfig = value.item.externalUrl
+        ? 'target="_blank" rel="noopener" href="' + value.item.externalUrl + '"'
+        : 'href="' + value.item.permalink + '"';
       resultsHTML =
         resultsHTML +
         `<li class="mb-2">
@@ -176,7 +179,7 @@ function executeQuery(term) {
               <div class="-mb-1 text-lg font-bold">
                 ${title}
               </div>
-              <div class="text-sm text-neutral-500 dark:text-neutral-400">${value.item.section}<span class="px-2 text-primary-500">&middot;</span>${value.item.date? value.item.date : ""}</span></div>
+              <div class="text-sm text-neutral-500 dark:text-neutral-400">${value.item.section}<span class="px-2 text-primary-500">&middot;</span>${value.item.date ? value.item.date : ""}</span></div>
               <div class="text-sm italic">${value.item.summary}</div>
             </div>
             <div class="ml-2 ltr:block rtl:hidden text-neutral-500">&rarr;</div>

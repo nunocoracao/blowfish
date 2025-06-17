@@ -1,17 +1,18 @@
 {{ define "main" }}
+  {{ .Scratch.Set "scope" "list" }}
+  {{ if .Site.Params.taxonomy.showHero | default false }}
+    {{ $heroStyle := print "hero/" .Site.Params.taxonomy.heroStyle ".html" }}
+    {{ if templates.Exists ( printf "partials/%s" $heroStyle ) }}
+      {{ partial $heroStyle . }}
+    {{ else }}
+      {{ partial "hero/basic.html" . }}
+    {{ end }}
+  {{- end -}}
 
-{{ .Scratch.Set "scope" "list" }}
-{{ if .Site.Params.taxonomy.showHero | default false }}
-{{ $heroStyle := print "hero/" .Site.Params.taxonomy.heroStyle ".html" }}
-{{ if templates.Exists ( printf "partials/%s" $heroStyle ) }}
-{{ partial $heroStyle . }}
-{{ else }}
-{{ partial "hero/basic.html" . }}
-{{ end }}
-{{- end -}}
+  {{ $toc := and (.Params.showTableOfContents | default (.Site.Params.taxonomy.showTableOfContents | default false)) (in
+    .TableOfContents "<ul")
+  }}
 
-{{ $toc := and (.Params.showTableOfContents | default (.Site.Params.taxonomy.showTableOfContents | default false)) (in
-.TableOfContents "<ul") }} 
 
   <header>
     {{ if .Params.showBreadcrumbs | default (.Site.Params.taxonomy.showBreadcrumbs | default false) }}
@@ -28,32 +29,29 @@
         {{ .Content }}
       </div>
     </section>
-  <script>
-    var oid = "views_taxonomy_{{ .Data.Plural }}"
-    var oid_likes = "likes_taxonomy_{{ .Data.Plural }}"
-  </script>
-  {{ $jsPage := resources.Get "js/page.js" }}
-  {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}
-  <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}"></script>
+    {{ $jsPage := resources.Get "js/page.js" }}
+    {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
+    <script
+      type="text/javascript"
+      src="{{ $jsPage.RelPermalink }}"
+      integrity="{{ $jsPage.Data.Integrity }}"
+      data-oid="views_taxonomy_{{ .Data.Plural }}"
+      data-oid-likes="likes_taxonomy_{{ .Data.Plural }}"></script>
   {{ end }}
 
   {{ if .Site.Params.taxonomy.cardView }}
-
-  <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-    {{ range .Data.Terms }}
-    {{ partial "term-link/card.html" . }}
-    {{ end }}
-  </section>
-
+    <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      {{ range .Data.Terms }}
+        {{ partial "term-link/card.html" . }}
+      {{ end }}
+    </section>
   {{ else }}
 
-  <section class="flex flex-wrap max-w-prose -mx-2 overflow-hidden">
-    {{ range .Data.Terms }}
-      {{ partial "term-link/text.html" . }}
-    {{ end }}
-  </section>
-
+    <section class="flex flex-wrap max-w-prose -mx-2 overflow-hidden">
+      {{ range .Data.Terms }}
+        {{ partial "term-link/text.html" . }}
+      {{ end }}
+    </section>
   {{ end }}
-
 
 {{ end }}

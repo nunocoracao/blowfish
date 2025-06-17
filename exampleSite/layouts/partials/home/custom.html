@@ -1,4 +1,4 @@
-{{ $jsHome := resources.Get "js/home.js" | resources.Minify | resources.Fingerprint "sha512" }}
+{{ $jsHome := resources.Get "js/home.js" | resources.Minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
 <div id="background">
   {{ partial "home/background.html" . }}
 </div>
@@ -17,4 +17,8 @@
 <section>
   {{ partial "recent-articles-demo.html" . }}
 </section>
-<script defer type="text/javascript" src="{{ $jsHome.RelPermalink }}" integrity="{{ $jsHome.Data.Integrity }}"></script>
+<script
+  defer
+  type="text/javascript"
+  src="{{ $jsHome.RelPermalink }}"
+  integrity="{{ $jsHome.Data.Integrity }}"></script>

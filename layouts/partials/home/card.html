@@ -1,43 +1,44 @@
 <div class="relative pt-16 pb-32">
-    <div aria-hidden="true" class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-gray-100"></div>
-    <div class="relative">
-        <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
-            <div class="mx-auto max-w-xl px-4 sm:px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0">
-                <article class="max-w-full prose dark:prose-invert">
-                    {{ with .Title }}
-                      <header>
-                        <h1>{{ . | emojify }}</h1>
-                      </header>
-                    {{ end }}
-                    <section>{{ .Content }}</section>
-                  </article>
-            </div>
-            <div class="mt-6 sm:mt-16 lg:mt-0 mx-auto max-w-xl px-4 sm:px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0">
-                <div class="-mr-48 md:-mr-16 lg:relative lg:m-0 lg:h-full lg:px-0" style="width:100%">
-                    {{ $homepageImage := "" }}
-                    {{ with .Site.Params.defaultBackgroundImage }}
-                        {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-                            {{ $homepageImage = resources.GetRemote . }}
-                        {{ else }}
-                            {{ $homepageImage = resources.Get . }}
-                        {{ end }}
-                    {{ end }}
-                    {{ with .Site.Params.homepage.homepageImage }}
-                        {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-                            {{ $homepageImage = resources.GetRemote . }}
-                        {{ else }}
-                            {{ $homepageImage = resources.Get . }}
-                        {{ end }}
-                    {{ end }}
-                    {{ if $homepageImage }}
-                    <img class="w-full rounded-xl shadow-xl lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
-                        src="{{ $homepageImage.RelPermalink }}">
-                    {{ end }}
-                </div>
-            </div>
+  <div aria-hidden="true" class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-gray-100"></div>
+  <div class="relative">
+    <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
+      <div class="mx-auto max-w-xl px-4 sm:px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0">
+        <article class="max-w-full prose dark:prose-invert">
+          {{ with .Title }}
+            <header>
+              <h1>{{ . | emojify }}</h1>
+            </header>
+          {{ end }}
+          <section>{{ .Content }}</section>
+        </article>
+      </div>
+      <div class="mt-6 sm:mt-16 lg:mt-0 mx-auto max-w-xl px-4 sm:px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0">
+        <div class="-mr-48 md:-mr-16 lg:relative lg:m-0 lg:h-full lg:px-0 w-full">
+          {{ $homepageImage := "" }}
+          {{ with .Site.Params.defaultBackgroundImage }}
+            {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+              {{ $homepageImage = resources.GetRemote . }}
+            {{ else }}
+              {{ $homepageImage = resources.Get . }}
+            {{ end }}
+          {{ end }}
+          {{ with .Site.Params.homepage.homepageImage }}
+            {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+              {{ $homepageImage = resources.GetRemote . }}
+            {{ else }}
+              {{ $homepageImage = resources.Get . }}
+            {{ end }}
+          {{ end }}
+          {{ if $homepageImage }}
+            <img
+              class="w-full rounded-xl shadow-xl lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
+              src="{{ $homepageImage.RelPermalink }}">
+          {{ end }}
         </div>
+      </div>
     </div>
+  </div>
 </div>
 <section>
-    {{ partial "recent-articles/main.html" . }}
+  {{ partial "recent-articles/main.html" . }}
 </section>

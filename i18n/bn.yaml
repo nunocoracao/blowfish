@@ -59,6 +59,7 @@ search:
 sharing:
   email: "ইমেল করুন"
   facebook: "ফেসবুকে শেয়ার করুন"
+  line: "লাইনে শেয়ার করুন"
   linkedin: "লিংকডইনে শেয়ার করুন"
   pinterest: "পিন্টারেস্টে পিন করুন"
   reddit: "রেড্ডিটে জমা দিন"
@@ -66,6 +67,6 @@ sharing:
 
 shortcode:
   recent_articles: "সাম্প্রতিক"
-  
+
 recent:
   show_more: "আরো দেখুন"

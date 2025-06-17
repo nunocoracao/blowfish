@@ -91,6 +91,7 @@ Il tema attualmente supporta le seguenti lingue per impostazione predefinita:
 | Portuguese (Portugal)        | `pt-pt` |
 | Romanian                     | `ro`    |
 | Russian                      | `ru`    |
+| Thai                         | `th`    |
 | Turkish                      | `tr`    |
 | Vietnamese                   | `vi`    |
 | Ukrainian                    | `uk`    |
@@ -186,6 +187,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `highlightCurrentMenuArea`      | _Not set_    | Marks menu entries in the main menu when selected                                                                                                                                                                                                                                                             |
 | `smartTOC`                      | _Not set_    | Activate smart Table of Contents, items in view will be highlighted.                                                                                                                                                                                                                                          |
 | `smartTOCHideUnfocusedChildren` | _Not set_    | When smart Table of Contents is turned on, this will hide deeper levels of the table when they are not in focus.                                                                                                                                                                                              |
+| `fingerprintAlgorithm`          | `"sha512"`   | This configures the fingerprint or resources.Fingerprint used in .Data.Integrity for files provided by the theme. Valid values are `sha512` (default), `sha384`, `sha256`                                                                                                                                     |
 
 ### Header
 
@@ -250,7 +252,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `article.showAuthorsBadges`           | `false`   | Whether the `authors` taxonomies are are displayed in the article or list header. This requires the setup of `multiple authors` and the `authors` taxonomy. Check [this page]({{< ref "multi-author" >}}) for more details on how to configure that feature.                                                           |
 | `article.showWordCount`               | `false`   | Whether or not article word counts are displayed.                                                                                                                                                                                                                                                                      |
 | `article.showComments`                | `false`   | Whether or not the [comments partial]({{< ref "partials#comments" >}}) is included after the article footer.                                                                                                                                                                                                           |
-| `article.sharingLinks`                | _Not set_ | Which sharing links to display at the end of each article. When not provided, or set to `false` no links will be displayed.  Available values are: "linkedin", "bluesky", "mastodon", "twitter", "reddit", "pinterest", "facebook", "email", "whatsapp", and "telegram"                                                                       |
+| `article.sharingLinks` | _Not set_ | Which sharing links to display at the end of each article. When not provided, or set to `false` no links will be displayed. Available values are: "bluesky", "email", "facebook", "line", "linkedin", "mastodon", "pinterest", "reddit", "telegram", "twitter", and "whatsapp" |
 | `article.showZenMode`                 | `false`   | Flag to activate Zen Mode reading feature for articles.                                                                                                                                                                                                                                                                |
 
 ### List

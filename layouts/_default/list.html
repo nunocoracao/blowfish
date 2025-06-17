@@ -26,13 +26,9 @@
       {{ $lang := print "."  .Lang  ".md" }}
       {{ $path = replace $path $lang ".md" }}
     {{end}}
-  <script>
-    var oid = "views_{{ $path }}"
-    var oid_likes = "likes_{{ $path }}"
-  </script>
   {{ $jsPage := resources.Get "js/page.js" }}
-  {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}
-  <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}"></script>
+  {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint ($.Site.Params.fingerprintAlgorithm | default "sha512") }}
+  <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}" data-oid="views_{{ $path }}" data-oid-likes="likes_{{ $path }}"></script>
   {{ end }}
   </header>
   <section class="{{ if $toc -}}
@@ -91,7 +87,7 @@
 
       {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
         {{ if $cardViewScreenWidth }}
-        <div class="relative w-screen max-w-[1600px] px-[30px]" style="left: calc(max(-50vw,-800px) + 50%);">
+        <div class="relative w-screen max-w-[1600px] px-[30px] center-relative-left">
         {{ end }}
           <h2 class="mt-12 mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
             {{ .Key }}
@@ -107,7 +103,7 @@
       {{ else }}
 
         {{ if $cardViewScreenWidth }}
-        <div class="relative w-screen max-w-[1600px] px-[30px]" style="left: calc(max(-50vw,-800px) + 50%);">
+        <div class="relative w-screen max-w-[1600px] px-[30px] center-relative-left">
         <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
         {{ else }}
         <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">

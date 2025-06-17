@@ -66,6 +66,7 @@ The full list of built-in icons and their corresponding names can referenced bel
 | language             | {{< icon language >}}             |
 | lastfm               | {{< icon lastfm >}}               |
 | lightbulb            | {{< icon lightbulb >}}            |
+| line                 | {{< icon line >}}                 |
 | link                 | {{< icon link >}}                 |
 | linkedin             | {{< icon linkedin >}}             |
 | list                 | {{< icon list >}}                 |
@@ -115,6 +116,7 @@ The full list of built-in icons and their corresponding names can referenced bel
 | twitter              | {{< icon twitter >}}              |
 | wand-magic-sparkles  | {{< icon wand-magic-sparkles >}}  |
 | whatsapp             | {{< icon whatsapp >}}             |
+| worktree             | {{< icon worktree >}}             |
 | x-twitter            | {{< icon x-twitter >}}            |
 | xing                 | {{< icon xing >}}                 |
 | xmark                | {{< icon xmark >}}                |

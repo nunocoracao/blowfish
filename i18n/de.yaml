@@ -13,8 +13,8 @@ article:
   reading_time_title: "Lesezeit"
   table_of_contents: "Inhaltsverzeichnis"
   word_count:
-   one: "{{ .Count }} Wort"
-   other: "{{ .Count }} Wörter"
+    one: "{{ .Count }} Wort"
+    other: "{{ .Count }} Wörter"
   part_of_series: "Dieser Artikel ist Teil einer Serie."
   part: "Teil"
   this_article: "Dieser Artikel"
@@ -42,17 +42,18 @@ list:
   no_articles: "Es gibt hier noch keine Beiträge."
 
 nav:
-   scroll_to_top_title: "Zum Anfang scrollen"
-   skip_to_main: "Zum Hauptinhalt springen"
+  scroll_to_top_title: "Zum Anfang scrollen"
+  skip_to_main: "Zum Hauptinhalt springen"
 
 search:
-   open_button_title: "Suche (/)"
-   close_button_title: "Schließen (Esc)"
-   input_placeholder: "Suchen"
+  open_button_title: "Suche (/)"
+  close_button_title: "Schließen (Esc)"
+  input_placeholder: "Suchen"
 
 sharing:
   email: "Per E-Mail teilen"
   facebook: "Auf Facebook teilen"
+  line: "Auf LINE teilen"
   linkedin: "Auf LinkedIn teilen"
   pinterest: "Auf Pinterest pinnen"
   reddit: "An Reddit senden"
@@ -60,7 +61,6 @@ sharing:
 
 shortcode:
   recent_articles: "Neue Beiträge"
-
 
 recent:
   show_more: "Zeige Mehr"

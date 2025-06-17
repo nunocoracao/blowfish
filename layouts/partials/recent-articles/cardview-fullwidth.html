@@ -1,12 +1,13 @@
 {{ $recentArticles := 5 }}
 {{ $recentArticles = .Site.Params.homepage.showRecentItems }}
 
-<div class="relative w-screen max-w-[1600px] px-[30px]" style="left: calc(max(-50vw,-800px) + 50%);">
-  <section
-    class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+
+<div class="relative w-screen max-w-[1600px] px-[30px] center-relative-left">
+  <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
     {{ range first $recentArticles (.Paginate (where .Site.RegularPages "Type" "in"
-    .Site.Params.mainSections)).Pages }}
-    {{ partial "article-link/card.html" . }}
+      .Site.Params.mainSections)).Pages
+    }}
+      {{ partial "article-link/card.html" . }}
     {{ end }}
   </section>
 </div>

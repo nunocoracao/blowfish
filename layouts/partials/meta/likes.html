@@ -8,15 +8,18 @@
     {{ $translations := .AllTranslations }}
     {{ with .File }}
       {{ $path := .Path }}
-      {{range $translations}}
+      {{ range $translations }}
         {{ $lang := print "." .Lang ".md" }}
         {{ $path = replace $path $lang ".md" }}
-      {{end}}
+      {{ end }}
       {{ $id = delimit (slice "likes_" $path) "" }}
     {{ end }}
   {{ end }}
-  <span id="{{ $id }}"
+  <span
+    id="{{ $id }}"
     class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
-    title="likes">loading</span>
+    title="likes"
+    >loading</span
+  >
   <span class="inline-block align-text-bottom">{{ partial "icon.html" "heart" }}</span>
 </span>

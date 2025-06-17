@@ -70,11 +70,19 @@ googleAnalytics = "G-PEDMYR1V0K"
       type = 'fragments'
       weight = 10
 
-# Render only specific parts of the site for faster development. Use: hugo --renderSegments site_core
+# Render only specific parts of the site for faster development. 
+# Note that there are more files are ignored in development/hugo.toml
+#
+# Usage: `hugo --renderSegments core` or `hugo --renderSegments core,en_only`
 [segments]
-  [segments.site_core]
-    [[segments.site_core.includes]]
+  [segments.core]
+    [[segments.core.includes]]
+      # Debug core pages
       path = '{/,/docs,/docs/**,/samples,/samples/**}'
   [segments.en_only]
     [[segments.en_only.includes]]
+      # Alternatively, you can use environment variable
+      #   - UNIX: HUGO_DISABLELANGUAGES='it ja zh-cn' npm run example:core
+      #   - Windows CMD: set "HUGO_DISABLELANGUAGES=it ja zh-cn" && npm run example:core
+      #   - Windows PowerShell: $env:HUGO_DISABLELANGUAGES="it ja zh-cn"; npm run example:core
       lang = 'en'

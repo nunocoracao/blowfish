@@ -1,6 +1,10 @@
 var scriptBundle = document.getElementById("script-bundle");
-var copyText = scriptBundle && scriptBundle.getAttribute("data-copy")? scriptBundle.getAttribute("data-copy") : "Copy";
-var copiedText = scriptBundle && scriptBundle.getAttribute("data-copied")? scriptBundle.getAttribute("data-copied") : "Copied";
+var copyText =
+  scriptBundle && scriptBundle.getAttribute("data-copy") ? scriptBundle.getAttribute("data-copy") : "Copy";
+var copiedText =
+  scriptBundle && scriptBundle.getAttribute("data-copied")
+    ? scriptBundle.getAttribute("data-copied")
+    : "Copied";
 
 function createCopyButton(highlightDiv) {
   const button = document.createElement("button");

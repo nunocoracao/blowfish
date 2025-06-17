@@ -6,55 +6,71 @@
 {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
 
 {{ if .Params.featureimage }}
-{{- $url:= .Params.featureimage -}}
-{{- if not $featured }}{{ $featured = resources.GetRemote $url }}{{ end -}}
+  {{- $url:= .Params.featureimage -}}
+  {{- if not $featured }}{{ $featured = resources.GetRemote $url }}{{ end -}}
 {{ end }}
 
 {{- if not $featured }}
- {{ with .Site.Params.defaultBackgroundImage }}
-  {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-   {{ $featured = resources.GetRemote . }}
-  {{ else }}
-   {{ $featured = resources.Get . }}
+  {{ with .Site.Params.defaultBackgroundImage }}
+    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+      {{ $featured = resources.GetRemote . }}
+    {{ else }}
+      {{ $featured = resources.Get . }}
+    {{ end }}
   {{ end }}
- {{ end }}
 {{ end -}}
 
 {{ $caption := "" }}
 {{ if .Params.featureimagecaption }}
-{{- $caption = .Params.featureimagecaption -}}
+  {{- $caption = .Params.featureimagecaption -}}
 {{ end }}
 
 {{- $alt := .Page.Title -}}
 {{- with .Page.Params.alt }}{{ $alt = . }}{{ end -}}
 
 {{- with $featured -}}
-    {{ if strings.HasSuffix $featured ".svg" }}
-        {{ with . }}
-        <figure>
-            <img class="w-full rounded-lg single_hero_round nozoom" alt="{{ $alt }}" src="{{ .RelPermalink }}">
-            {{ if $caption }}
-                <figcaption class="text-sm text-neutral-700 dark:text-neutral-400 hover:underline" style="text-align: center;"> {{ $caption | markdownify }} </figcaption>
-            {{end}}
-        </figure>
+  {{ if strings.HasSuffix $featured ".svg" }}
+    {{ with . }}
+      <figure>
+        <img class="w-full rounded-lg single_hero_round nozoom" alt="{{ $alt }}" src="{{ .RelPermalink }}">
+        {{ if $caption }}
+          <figcaption class="text-sm text-neutral-700 dark:text-neutral-400 hover:underline text-center">
+            {{ $caption | markdownify }}
+          </figcaption>
         {{ end }}
-    {{ else if $disableImageOptimization }}
-        {{ with . }}
-        <figure>
-            <img class="w-full rounded-lg single_hero_round nozoom" alt="{{ $alt }}" width="{{ .Width }}" height="{{ .Height }}" src="{{ .RelPermalink }}">
-            {{ if $caption }}
-                <figcaption class="text-sm text-neutral-700 dark:text-neutral-400 hover:underline" style="text-align: center;"> {{ $caption | markdownify }} </figcaption>
-            {{end}}
-        </figure>
-        {{ end }}
-    {{ else }}
-        {{ with .Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
-        <figure>
-            <img class="w-full rounded-lg single_hero_round nozoom" alt="{{ $alt }}" width="{{ .Width }}" height="{{ .Height }}" src="{{ .RelPermalink }}">
-            {{ if $caption }}
-                <figcaption class="text-sm text-neutral-700 dark:text-neutral-400 hover:underline" style="text-align: center;"> {{ $caption | markdownify }} </figcaption>
-            {{end}}
-        </figure>
-        {{ end }}
+      </figure>
     {{ end }}
+  {{ else if $disableImageOptimization }}
+    {{ with . }}
+      <figure>
+        <img
+          class="w-full rounded-lg single_hero_round nozoom"
+          alt="{{ $alt }}"
+          width="{{ .Width }}"
+          height="{{ .Height }}"
+          src="{{ .RelPermalink }}">
+        {{ if $caption }}
+          <figcaption class="text-sm text-neutral-700 dark:text-neutral-400 hover:underline text-center">
+            {{ $caption | markdownify }}
+          </figcaption>
+        {{ end }}
+      </figure>
+    {{ end }}
+  {{ else }}
+    {{ with .Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
+      <figure>
+        <img
+          class="w-full rounded-lg single_hero_round nozoom"
+          alt="{{ $alt }}"
+          width="{{ .Width }}"
+          height="{{ .Height }}"
+          src="{{ .RelPermalink }}">
+        {{ if $caption }}
+          <figcaption class="text-sm text-neutral-700 dark:text-neutral-400 hover:underline text-center">
+            {{ $caption | markdownify }}
+          </figcaption>
+        {{ end }}
+      </figure>
+    {{ end }}
+  {{ end }}
 {{- end -}}

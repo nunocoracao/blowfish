@@ -9,6 +9,11 @@
     "title": "sharing.facebook",
     "url": "https://www.facebook.com/sharer/sharer.php?u=%s&quote=%s"
   },
+  "line": {
+    "icon": "line",
+    "title": "sharing.line",
+    "url": "https://line.me/R/share?text=%s%%20%s"
+  },
   "linkedin": {
     "icon": "linkedin",
     "title": "sharing.linkedin",
@@ -48,5 +53,5 @@
     "icon": "mastodon",
     "title": "sharing.mastodon",
     "url": "https://s2f.kytta.dev/?text=%[2]s %[1]s"
-  }  
+  }
 }

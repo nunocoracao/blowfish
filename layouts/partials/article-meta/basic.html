@@ -9,102 +9,117 @@
 {{ end }}
 
 {{ with $context }}
-{{ $meta := newScratch }}
+  {{ $meta := newScratch }}
 
-{{/* Gather partials for this context */}}
-{{ if .Params.showDate | default (.Site.Params.article.showDate | default true) }}
-  {{ $meta.Add "partials" (slice (partial "meta/date.html" .Date)) }}
-{{else if and (eq $scope "single") (.Params.showDateOnlyInArticle | default (.Site.Params.article.showDateOnlyInArticle | default false)) }}
-  {{ $meta.Add "partials" (slice (partial "meta/date.html" .Date)) }}
-{{ end }}
-
-{{ if and (.Params.showDateUpdated | default (.Site.Params.article.showDateUpdated | default false)) (ne (partial
-"functions/date.html" .Date) (partial "functions/date.html" .Lastmod)) (gt (.Lastmod | time.Format "2006") 1) }}
-  {{ $meta.Add "partials" (slice (partial "meta/date-updated.html" .Lastmod)) }}
-{{ end }}
-
-{{ if and (.Params.showWordCount | default (.Site.Params.article.showWordCount | default false)) (ne .WordCount 0) }}
-  {{ $meta.Add "partials" (slice (partial "meta/word-count.html" .)) }}
-{{ end }}
-
-{{ if and (.Params.showReadingTime | default (.Site.Params.article.showReadingTime | default true)) (ne .ReadingTime 0)
-}}
-  {{ $meta.Add "partials" (slice (partial "meta/reading-time.html" .)) }}
-{{ end }}
-
-{{ if and (not .Params.externalURL) (.Params.showViews | default (.Site.Params.article.showViews | default false)) }}
-  {{ $meta.Add "partials" (slice (partial "meta/views.html" .)) }}
-{{ end }}
-
-{{ if and (not .Params.externalURL) (.Params.showLikes | default (.Site.Params.article.showLikes | default false)) }}
-  {{ $meta.Add "partials" (slice (partial "meta/likes.html" .)) }}
-{{ end }}
-
-{{ if and (eq $scope "single") (not .Params.externalURL) (.Params.showLikes | default (.Site.Params.article.showLikes | default false)) }}
-  {{ $meta.Add "partials" (slice (partial "meta/likes_button.html" .)) }}
-{{ end }}
-
-{{ if and (eq $scope "single") (.Params.showEdit | default (.Site.Params.article.showEdit | default false)) }}
-  {{ $meta.Add "partials" (slice (partial "meta/edit.html" .)) }}
-{{ end }}
-
-{{ if and (eq $scope "single") (.Params.showZenMode | default (.Site.Params.article.showZenMode | default false)) }}
-  {{ $meta.Add "partials" (slice (partial "meta/zen-mode.html" .)) }}
-{{ end }}
-
-
-<div class="flex flex-row flex-wrap items-center">
-  {{/* Output partials */}}
-  {{ with ($meta.Get "partials") }}
-  {{ delimit . "<span class=\"px-2 text-primary-500\">&middot;</span>" | safeHTML }}
+  {{/* Gather partials for this context */}}
+  {{ $shouldShowDate := false }}
+  {{ if and (eq $scope "single") (.Params.showDateOnlyInArticle | default (.Site.Params.article.showDateOnlyInArticle | default false)) }}
+    {{ $shouldShowDate = true }}
   {{ end }}
 
-  {{/* Output draft label */}}
-  {{ if and (eq $scope "single") (and .Draft .Site.Params.article.showDraftLabel) }}
-  <span class="pl-2">{{ partial "badge.html" (i18n "article.draft" | emojify) }}</span>
+  {{/* showDate has higher priority than showDateOnlyInArticle */}}
+  {{ if .Params.showDate | default (.Site.Params.article.showDate | default true) }}
+    {{ $shouldShowDate = true }}
+  {{ else }}
+    {{ $shouldShowDate = false }}
   {{ end }}
-</div>
 
-{{ if .Params.showAuthorsBadges | default (.Site.Params.article.showAuthorsBadges | default false) }}
-<div class="flex flex-row flex-wrap items-center">
-  {{ range $taxonomy, $terms := .Site.Taxonomies }}
-  {{ if (eq $taxonomy "authors")}}
-  {{ if (gt (len ($context.GetTerms $taxonomy)) 0) }}
-  {{ range $i, $a := $context.GetTerms $taxonomy }}
-    {{ if not (eq $i 0) }} ,&nbsp; {{ end }} <div style="cursor: pointer;" onclick="window.open({{ $a.RelPermalink }},'_self');return false;">{{ $a.LinkTitle }}</div>
+  {{ if $shouldShowDate }}
+    {{ $meta.Add "partials" (slice (partial "meta/date.html" .Date)) }}
   {{ end }}
-  {{ end }}
-  {{ end }}
-  {{ end }}
-</div>
-{{ end }}
 
-{{/* Output taxonomies */}}
-{{ if .Params.showTaxonomies | default (.Site.Params.article.showTaxonomies | default false) }}
-<div class="flex flex-row flex-wrap items-center">
-  {{ range $taxonomy, $terms := .Site.Taxonomies }}
-  {{ if and (not (eq $taxonomy "authors")) (not (eq $taxonomy "series"))}}
-  {{ if (gt (len ($context.GetTerms $taxonomy)) 0) }}
-  {{ range $context.GetTerms $taxonomy }}
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open({{ .RelPermalink }},'_self');return false;">
-    {{ partial "badge.html" .LinkTitle }}
-  </span>
+  {{ if and (.Params.showDateUpdated | default (.Site.Params.article.showDateUpdated | default false)) (ne (partial
+    "functions/date.html" .Date) (partial "functions/date.html" .Lastmod)) (gt (.Lastmod | time.Format "2006") 1)
+  }}
+    {{ $meta.Add "partials" (slice (partial "meta/date-updated.html" .Lastmod)) }}
   {{ end }}
-  {{ end }}
-  {{ end }}
-  {{ end }}
-</div>
-{{ end }}
 
-{{/* Output only category */}}
-{{ if .Params.showCategoryOnly | default (.Site.Params.article.showCategoryOnly | default false) }}
-<div class="flex flex-row flex-wrap items-center">
-  {{ range (.GetTerms "categories") }}
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open({{ .RelPermalink }},'_self');return false;">
-    {{ partial "badge.html" .LinkTitle }}
-  </span>
-{{ end }}
-</div>
-{{ end }}
+  {{ if and (.Params.showWordCount | default (.Site.Params.article.showWordCount | default false)) (ne .WordCount 0) }}
+    {{ $meta.Add "partials" (slice (partial "meta/word-count.html" .)) }}
+  {{ end }}
+
+  {{ if and (.Params.showReadingTime | default (.Site.Params.article.showReadingTime | default true)) (ne .ReadingTime 0) }}
+    {{ $meta.Add "partials" (slice (partial "meta/reading-time.html" .)) }}
+  {{ end }}
+
+  {{ if and (not .Params.externalURL) (.Params.showViews | default (.Site.Params.article.showViews | default false)) }}
+    {{ $meta.Add "partials" (slice (partial "meta/views.html" .)) }}
+  {{ end }}
+
+  {{ if and (not .Params.externalURL) (.Params.showLikes | default (.Site.Params.article.showLikes | default false)) }}
+    {{ $meta.Add "partials" (slice (partial "meta/likes.html" .)) }}
+  {{ end }}
+
+  {{ if and (eq $scope "single") (not .Params.externalURL) (.Params.showLikes | default (.Site.Params.article.showLikes | default false)) }}
+    {{ $meta.Add "partials" (slice (partial "meta/likes_button.html" .)) }}
+  {{ end }}
+
+  {{ if and (eq $scope "single") (.Params.showEdit | default (.Site.Params.article.showEdit | default false)) }}
+    {{ $meta.Add "partials" (slice (partial "meta/edit.html" .)) }}
+  {{ end }}
+
+  {{ if and (eq $scope "single") (.Params.showZenMode | default (.Site.Params.article.showZenMode | default false)) }}
+    {{ $meta.Add "partials" (slice (partial "meta/zen-mode.html" .)) }}
+  {{ end }}
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    {{/* Output partials */}}
+    {{ with ($meta.Get "partials") }}
+      {{ delimit . "<span class=\"px-2 text-primary-500\">&middot;</span>" | safeHTML }}
+    {{ end }}
+
+    {{/* Output draft label */}}
+    {{ if and (eq $scope "single") (and .Draft .Site.Params.article.showDraftLabel) }}
+      <span class="pl-2">{{ partial "badge.html" (i18n "article.draft" | emojify) }}</span>
+    {{ end }}
+  </div>
+
+  {{ if .Params.showAuthorsBadges | default (.Site.Params.article.showAuthorsBadges | default false) }}
+    <div class="flex flex-row flex-wrap items-center">
+      {{ range $taxonomy, $terms := .Site.Taxonomies }}
+        {{ if (eq $taxonomy "authors") }}
+          {{ if (gt (len ($context.GetTerms $taxonomy)) 0) }}
+            {{ range $i, $a := $context.GetTerms $taxonomy }}
+              {{ if not (eq $i 0) }},&nbsp;{{ end }}
+              <div class="cursor-pointer" onclick="window.open({{ $a.RelPermalink }},'_self');return false;">
+                {{ $a.LinkTitle }}
+              </div>
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    </div>
+  {{ end }}
+
+  {{/* Output taxonomies */}}
+  {{ if .Params.showTaxonomies | default (.Site.Params.article.showTaxonomies | default false) }}
+    <div class="flex flex-row flex-wrap items-center">
+      {{ range $taxonomy, $terms := .Site.Taxonomies }}
+        {{ if and (not (eq $taxonomy "authors")) (not (eq $taxonomy "series")) }}
+          {{ if (gt (len ($context.GetTerms $taxonomy)) 0) }}
+            {{ range $context.GetTerms $taxonomy }}
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open({{ .RelPermalink }},'_self');return false;">
+                {{ partial "badge.html" .LinkTitle }}
+              </span>
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    </div>
+  {{ end }}
+
+  {{/* Output only category */}}
+  {{ if .Params.showCategoryOnly | default (.Site.Params.article.showCategoryOnly | default false) }}
+    <div class="flex flex-row flex-wrap items-center">
+      {{ range (.GetTerms "categories") }}
+        <span class="mr-2 margin-top-[0.5rem]" onclick="window.open({{ .RelPermalink }},'_self');return false;">
+          {{ partial "badge.html" .LinkTitle }}
+        </span>
+      {{ end }}
+    </div>
+  {{ end }}
 
 {{ end }}

@@ -36,7 +36,8 @@ code:
 error:
   404_title: "Strona nie znaleziona :confused:"
   404_error: "Błąd 404"
-  404_description: "Wydaje się, że strona, którą chcesz wyświetlić, nie istnieje."
+  404_description:
+    "Wydaje się, że strona, którą chcesz wyświetlić, nie istnieje."
 
 footer:
   dark_appearance: "Zmień na tryb ciemny"
@@ -59,6 +60,7 @@ search:
 sharing:
   email: "Wyślij jako email"
   facebook: "Udostępnij na Facebooku"
+  line: "Udostępnij na LINE"
   linkedin: "Udostępnij na LinkedInie"
   pinterest: "Przypnij na Pinterest"
   reddit: "Prześlij na Reddita"

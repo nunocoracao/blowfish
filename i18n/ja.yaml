@@ -38,13 +38,13 @@ code:
 
 error:
   404_title: "ページが見つかりませんでした。 :confused:"
-  404_error: "Error 404"
+  404_error: "404エラー"
   404_description: "ご要望のページは存在しないようです。"
 
 footer:
   dark_appearance: "ダークモードへ切り替え"
   light_appearance: "ライトモードへ切り替え"
-  powered_by: "Powered by {{ .Hugo }} &amp; {{ .Theme }}"
+  powered_by: "{{ .Hugo }} &amp; {{ .Theme }} で構築されています"
 
 list:
   externalurl_title: "外部サイトへリンク"
@@ -62,6 +62,7 @@ search:
 sharing:
   email: " Eメールを送る"
   facebook: "Facebookでシェアする"
+  line: "LINEでシェアする"
   linkedin: "LinkedInでシェアする"
   pinterest: "Pinterestでピンする"
   reddit: "Redditに投稿する"

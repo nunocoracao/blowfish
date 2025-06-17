@@ -7,7 +7,7 @@
       {{ $prev = .NextInSection }}
     {{ end }}
     <div class="pt-8">
-      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
       <div class="flex justify-between pt-3">
         <span>
           {{ if $prev }}
@@ -21,8 +21,7 @@
                 >&rarr;</span
               >
               <span class="flex flex-col">
-                <span
-                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
                   >{{ $prev.Title | emojify }}</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
@@ -38,8 +37,7 @@
           {{ if $next }}
             <a class="flex text-right group ml-3" href="{{ $next.RelPermalink }}">
               <span class="flex flex-col">
-                <span
-                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
                   >{{ $next.Title | emojify }}</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">

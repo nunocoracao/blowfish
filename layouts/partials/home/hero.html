@@ -1,99 +1,116 @@
 {{ $disableImageOptimization := .Site.Params.disableImageOptimization | default false }}
 {{ $disableHeroImageFilter := .Site.Params.homepage.disableHeroImageFilter | default false }}
 <article class="max-w-full prose dark:prose-invert">
-    <div class="relative">
-        <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100"></div>
-        <div class="mx-auto max-w-7xl p-0">
-            <div class="relative shadow-xl sm:overflow-hidden rounded-2xl">
-                <div class="absolute inset-0">
-                    {{ $homepageImage := "" }}
-                    {{ with .Site.Params.defaultBackgroundImage }}
-                        {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-                            {{ $homepageImage = resources.GetRemote . }}
-                        {{ else }}
-                            {{ $homepageImage = resources.Get . }}
-                        {{ end }}
-                    {{ end }}
-                    {{ with .Site.Params.homepage.homepageImage }}
-                        {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-                            {{ $homepageImage = resources.GetRemote . }}
-                        {{ else }}
-                            {{ $homepageImage = resources.Get . }}
-                        {{ end }}
-                    {{ end }}
-                    {{ if $homepageImage }}
-                    <img class="h-full w-full object-cover m-0 nozoom" src="{{ $homepageImage.RelPermalink }}" style="margin: 0">
-                    {{ if not $disableHeroImageFilter }}
-                        <div
-                            class="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-600 dark:from-primary-600 dark:to-secondary-800 mix-blend-multiply">
-                        </div>
-                    {{ else }}
-                        <div
-                            class="absolute inset-0 from-primary-500 to-secondary-600 dark:from-primary-600 dark:to-secondary-800 mix-blend-multiply">
-                        </div>
-                    {{ end }}
-                    {{ end }}
-                </div>
-                <div class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8 flex flex-col items-center justify-center text-center">
-                    {{ with .Site.Params.Author.image }}
-                        {{ $authorImage := "" }}
-                        {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-                            {{ $authorImage = resources.GetRemote . }}
-                        {{ else }}
-                            {{ $authorImage = resources.Get . }}
-                        {{ end }}
-                        {{ if $authorImage }}
-                            {{ if not $disableImageOptimization }}
-                                {{ $authorImage = $authorImage.Fill (print "288x288 q" ( $.Site.Params.Author.imagequality | default "96" )) }}
-                            {{ end }}
-                            <img class="mb-2 rounded-full h-36 w-36" width="144" height="144"
-                                alt="{{ $.Site.Params.Author.name | default " Author" }}" src="{{ $authorImage.RelPermalink }}" />
-                        {{ end }}
-                    {{ end }}
-                    {{ if not $disableHeroImageFilter }}
-                        <h1 class="mb-2 text-4xl font-extrabold text-neutral-200">
-                            {{ .Site.Params.Author.name | default .Site.Title }}
-                        </h1>
-                        {{ with .Site.Params.Author.headline }}
-                            <h2 class="mt-0 mb-0 text-xl text-neutral-300">
-                                {{ . | markdownify }}
-                            </h2>
-                        {{ end }}
-                    {{ else }}
-                        <h1 class="mb-2 text-4xl font-extrabold text-neutral-800 dark:text-neutral-200">
-                            {{ .Site.Params.Author.name | default .Site.Title }}
-                        </h1>
-                        {{ with .Site.Params.Author.headline }}
-                            <h2 class="mt-0 mb-0 text-xl text-neutral-800 dark:text-neutral-300">
-                                {{ . | markdownify }}
-                            </h2>
-                        {{ end }}
-                    {{ end }}
-                    <div class="mt-3 mb-10 text-2xl">
-                        {{ with .Site.Params.Author.links }}
-                        <div class="flex flex-wrap">
-                            {{ range $links := . }}
-                            {{ range $name, $url := $links }}
-                            {{ if not $disableHeroImageFilter }}
-                                <a class="px-1 hover:text-primary-400 text-primary-300" href="{{ $url }}" target="_blank"
-                                aria-label="{{ $name | title }}" rel="me noopener noreferrer">{{ partial
-                                "icon.html" $name }}</a>
-                            {{ else }}
-                                <a class="px-1 hover:text-primary-400 text-primary-800 dark:text-primary-200" href="{{ $url }}" target="_blank"
-                                aria-label="{{ $name | title }}" rel="me noopener noreferrer">{{ partial
-                                "icon.html" $name }}</a>
-                            {{ end }}
-                            {{ end }}
-                            {{ end }}
-                        </div>
-                        {{ end }}
-                    </div>
-                    <section class="prose prose-invert">{{ .Content }}</section>
-                </div>
-            </div>
+  <div class="relative">
+    <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100"></div>
+    <div class="mx-auto max-w-7xl p-0">
+      <div class="relative shadow-xl sm:overflow-hidden rounded-2xl">
+        <div class="absolute inset-0">
+          {{ $homepageImage := "" }}
+          {{ with .Site.Params.defaultBackgroundImage }}
+            {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+              {{ $homepageImage = resources.GetRemote . }}
+            {{ else }}
+              {{ $homepageImage = resources.Get . }}
+            {{ end }}
+          {{ end }}
+          {{ with .Site.Params.homepage.homepageImage }}
+            {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+              {{ $homepageImage = resources.GetRemote . }}
+            {{ else }}
+              {{ $homepageImage = resources.Get . }}
+            {{ end }}
+          {{ end }}
+          {{ if $homepageImage }}
+            <img class="h-full w-full object-cover m-0 nozoom margin-0" src="{{ $homepageImage.RelPermalink }}">
+            {{ if not $disableHeroImageFilter }}
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-600 dark:from-primary-600 dark:to-secondary-800 mix-blend-multiply"></div>
+            {{ else }}
+              <div
+                class="absolute inset-0 from-primary-500 to-secondary-600 dark:from-primary-600 dark:to-secondary-800 mix-blend-multiply"></div>
+            {{ end }}
+          {{ end }}
         </div>
+        <div
+          class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8 flex flex-col items-center justify-center text-center">
+          {{ with .Site.Params.Author.image }}
+            {{ $authorImage := "" }}
+            {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+              {{ $authorImage = resources.GetRemote . }}
+            {{ else }}
+              {{ $authorImage = resources.Get . }}
+            {{ end }}
+            {{ if $authorImage }}
+              {{ if not $disableImageOptimization }}
+                {{ $authorImage = $authorImage.Fill (print "288x288 q" ( $.Site.Params.Author.imagequality | default "96" )) }}
+              {{ end }}
+              <img
+                class="mb-2 rounded-full h-36 w-36"
+                width="144"
+                height="144"
+                alt="{{ $.Site.Params.Author.name | default " Author" }}"
+                src="{{ $authorImage.RelPermalink }}">
+            {{ end }}
+          {{ end }}
+          {{ if not $disableHeroImageFilter }}
+            <h1 class="mb-2 text-4xl font-extrabold text-neutral-200">
+              {{ .Site.Params.Author.name | default .Site.Title }}
+            </h1>
+            {{ with .Site.Params.Author.headline }}
+              <h2 class="mt-0 mb-0 text-xl text-neutral-300">
+                {{ . | markdownify }}
+              </h2>
+            {{ end }}
+          {{ else }}
+            <h1 class="mb-2 text-4xl font-extrabold text-neutral-800 dark:text-neutral-200">
+              {{ .Site.Params.Author.name | default .Site.Title }}
+            </h1>
+            {{ with .Site.Params.Author.headline }}
+              <h2 class="mt-0 mb-0 text-xl text-neutral-800 dark:text-neutral-300">
+                {{ . | markdownify }}
+              </h2>
+            {{ end }}
+          {{ end }}
+          <div class="mt-3 mb-10 text-2xl">
+            {{ with .Site.Params.Author.links }}
+              <div class="flex flex-wrap">
+                {{ range $links := . }}
+                  {{ range $name, $url := $links }}
+                    {{ if not $disableHeroImageFilter }}
+                      <a
+                        class="px-1 hover:text-primary-400 text-primary-300"
+                        href="{{ $url }}"
+                        target="_blank"
+                        aria-label="{{ $name | title }}"
+                        rel="me noopener noreferrer"
+                        >{{ partial
+                          "icon.html" $name
+                        }}</a
+                      >
+                    {{ else }}
+                      <a
+                        class="px-1 hover:text-primary-400 text-primary-800 dark:text-primary-200"
+                        href="{{ $url }}"
+                        target="_blank"
+                        aria-label="{{ $name | title }}"
+                        rel="me noopener noreferrer"
+                        >{{ partial
+                          "icon.html" $name
+                        }}</a
+                      >
+                    {{ end }}
+                  {{ end }}
+                {{ end }}
+              </div>
+            {{ end }}
+          </div>
+          <section class="prose prose-invert">{{ .Content }}</section>
+        </div>
+      </div>
     </div>
+  </div>
 </article>
 <section>
-    {{ partial "recent-articles/main.html" . }}
+  {{ partial "recent-articles/main.html" . }}
 </section>

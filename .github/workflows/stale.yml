@@ -7,26 +7,28 @@ name: Mark stale issues and pull requests
 
 on:
   schedule:
-  - cron: '0 1 * * *'
+    - cron: "0 1 * * *"
   workflow_dispatch:
 
 jobs:
   stale:
-
     runs-on: ubuntu-latest
     permissions:
       issues: write
       pull-requests: write
 
     steps:
-    - uses: actions/stale@v9
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        stale-issue-message: 'This issue will be closed since it has been stale for 60 days.'
-        stale-pr-message: 'This pull request will be closed since it has been stale for 60 days.'
-        stale-issue-label: 'no-issue-activity'
-        stale-pr-label: 'no-pr-activity'
-        days-before-stale: 60
-        days-before-close: 0
-        remove-stale-when-updated: true
-        operations-per-run: 100
+      - uses: actions/stale@v9
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          stale-issue-message:
+            "This issue will be closed since it has been stale for 60 days."
+          stale-pr-message:
+            "This pull request will be closed since it has been stale for 60
+            days."
+          stale-issue-label: "no-issue-activity"
+          stale-pr-label: "no-pr-activity"
+          days-before-stale: 60
+          days-before-close: 0
+          remove-stale-when-updated: true
+          operations-per-run: 100
