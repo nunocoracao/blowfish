@@ -90,6 +90,7 @@ Blowfish 主题目前默认支持了以下语言：
 | Portuguese (Portugal)        | `pt-pt` |
 | Romanian                     | `ro`    |
 | Russian                      | `ru`    |
+| Thai                         | `th`    |
 | Turkish                      | `tr`    |
 | Vietnamese                   | `vi`    |
 | Simplified Chinese (China)   | `zh-cn` |

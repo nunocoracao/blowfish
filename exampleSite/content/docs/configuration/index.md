@@ -92,6 +92,7 @@ The theme currently supports the following languages by default:
 | Portuguese (Portugal)        | `pt-pt` |
 | Romanian                     | `ro`    |
 | Russian                      | `ru`    |
+| Thai                         | `th`    |
 | Turkish                      | `tr`    |
 | Vietnamese                   | `vi`    |
 | Simplified Chinese (China)   | `zh-cn` |

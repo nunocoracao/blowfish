@@ -91,6 +91,7 @@ Il tema attualmente supporta le seguenti lingue per impostazione predefinita:
 | Portuguese (Portugal)        | `pt-pt` |
 | Romanian                     | `ro`    |
 | Russian                      | `ru`    |
+| Thai                         | `th`    |
 | Turkish                      | `tr`    |
 | Vietnamese                   | `vi`    |
 | Ukrainian                    | `uk`    |
