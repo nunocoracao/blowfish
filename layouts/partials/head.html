@@ -72,8 +72,6 @@
   {{ $assets.Add "js" (slice $buttonLikes) }}
   {{ $katexRender := resources.Get "js/katex-render.js" }}
   {{ $assets.Add "js" (slice $katexRender) }}
-  {{ $taxonomiesHref := resources.Get "js/taxonomies-href.js" }}
-  {{ $assets.Add "js" (slice $taxonomiesHref) }}
   {{ if $assets.Get "js" }}
   {{ $bundleJS := $assets.Get "js" | resources.Concat "js/main.bundle.js" | resources.Minify | resources.Fingerprint
   (.Site.Params.fingerprintAlgorithm | default "sha512") }}

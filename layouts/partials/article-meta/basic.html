@@ -72,7 +72,7 @@
   {{ if (gt (len ($context.GetTerms $taxonomy)) 0) }}
   {{ range $i, $a := $context.GetTerms $taxonomy }}
     {{ if not (eq $i 0) }} ,&nbsp; {{ end }}
-    <div style="cursor: pointer;" class="taxonomies-href" role="button" tabindex="0" aria-label="Open Link {{ $a.RelPermalink }}" title="{{ $a.RelPermalink }}" data-href="{{ $a.RelPermalink }}">{{ $a.LinkTitle }}</div>
+    <a href="{{ $a.RelPermalink }}" class="z-10">{{ $a.LinkTitle }}</a>
   {{ end }}
   {{ end }}
   {{ end }}
@@ -87,7 +87,7 @@
   {{ if and (not (eq $taxonomy "authors")) (not (eq $taxonomy "series"))}}
   {{ if (gt (len ($context.GetTerms $taxonomy)) 0) }}
   {{ range $context.GetTerms $taxonomy }}
-  <span style="margin-top:0.5rem" class="taxonomies-href mr-2" role="button" tabindex="0" aria-label="Open Link {{ .RelPermalink }}" title="{{ .RelPermalink }}" data-href="{{ .RelPermalink }}">{{ partial "badge.html" .LinkTitle }}</span>
+  <a style="margin-top:0.5rem" class="z-10 mr-2" href="{{ .RelPermalink }}">{{ partial "badge.html" .LinkTitle }}</a>
   {{ end }}
   {{ end }}
   {{ end }}
@@ -99,7 +99,7 @@
 {{ if .Params.showCategoryOnly | default (.Site.Params.article.showCategoryOnly | default false) }}
 <div class="flex flex-row flex-wrap items-center">
   {{ range (.GetTerms "categories") }}
-  <span style="margin-top:0.5rem" class="taxonomies-href mr-2" role="button" tabindex="0" aria-label="Open Link {{ .RelPermalink }}" title="{{ .RelPermalink }}" data-href="{{ .RelPermalink }}">{{ partial "badge.html" .LinkTitle }}</span>
+  <a style="margin-top:0.5rem" class="z-10 mr-2" href="{{ .RelPermalink }}">{{ partial "badge.html" .LinkTitle }}</a>
 {{ end }}
 </div>
 {{ end }}
