@@ -12,7 +12,7 @@
             </span>
             {{ else }}
             <img src="{{ $logo.RelPermalink }}" width="{{ div $logo.Width 2 }}" height="{{ div $logo.Height 2 }}"
-                class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom" alt="{{ .Site.Title }}" />
+                class="logo w-12 h-12 object-scale-down object-left nozoom rounded-full" alt="{{ .Site.Title }}" />
             {{ end }}
 
         </a>

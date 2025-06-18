@@ -7,11 +7,12 @@
       <div class="relative shadow-xl sm:overflow-hidden rounded-2xl">
         <div class="absolute inset-0">
           {{ $homepageImage := "" }}
+          {{ $circleImage := "" }}
           {{ with .Site.Params.defaultBackgroundImage }}
             {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-              {{ $homepageImage = resources.GetRemote . }}
+            {{ $homepageImage = resources.GetRemote . }}
             {{ else }}
-              {{ $homepageImage = resources.Get . }}
+            {{ $homepageImage = resources.Get . }}
             {{ end }}
           {{ end }}
           {{ with .Site.Params.homepage.homepageImage }}
@@ -21,8 +22,16 @@
               {{ $homepageImage = resources.Get . }}
             {{ end }}
           {{ end }}
+          {{ with .Site.Params.homepage.circleImage }}
+            {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+              {{ $circleImage = resources.GetRemote . }}
+            {{ else }}
+              {{ $circleImage = resources.Get . }}
+            {{ end }}
+          {{ end }}
           {{ if $homepageImage }}
-            <img class="h-full w-full object-cover m-0 nozoom margin-0" src="{{ $homepageImage.RelPermalink }}">
+            <!-- <img class="h-full w-full object-cover m-0 nozoom margin-0" src="{{ $homepageImage.RelPermalink }}"> -->
+            <div class="w-full h-full absolute mask-repeat mask-[url({{ $circleImage.RelPermalink }})] mask-size-[50px_50px] bg-[url({{ $homepageImage.RelPermalink }})]"></div>
             {{ if not $disableHeroImageFilter }}
               <div
                 class="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-600 dark:from-primary-600 dark:to-secondary-800 mix-blend-multiply"></div>
