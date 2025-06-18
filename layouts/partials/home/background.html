@@ -20,8 +20,22 @@
               {{ $homepageImage = resources.Get . }}
             {{ end }}
           {{ end }}
+          {{ $homeBackgroundImage := "" }}
+          {{ with .Site.Params.homepage.homeBackgroundImage }}
+            {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+              {{ $homeBackgroundImage = resources.GetRemote . }}
+            {{ else }}
+              {{ $homeBackgroundImage = resources.Get . }}
+            {{ end }}
+          {{ end }}
           {{ if $homepageImage }}
-            <img
+          <img
+              class="w-full h-[1000px] object-cover m-0 nozoom margin-0 absolute"
+              style="z-index:-1;"
+              src="{{ $homeBackgroundImage.RelPermalink }}"
+              role="presentation">
+          <div class="absolute w-full h-full bg-black"></div>
+          <img
               class="w-full h-[1000px] object-cover m-0 nozoom margin-0"
               src="{{ $homepageImage.RelPermalink }}"
               role="presentation">
@@ -52,9 +66,9 @@
             {{ end }}
           {{ end }}
           <h1 class="mb-2 text-4xl font-extrabold text-neutral-800 dark:text-neutral-200">
-            {{ .Site.Params.Author.name | default .Site.Title }}
+            {{ .Site.Params.Title | default .Site.Title }}
           </h1>
-          {{ with .Site.Params.Author.headline }}
+          {{ with .Site.Params.Description }}
             <h2 class="mt-0 mb-0 text-xl text-neutral-800 dark:text-neutral-300">
               {{ . | markdownify }}
             </h2>

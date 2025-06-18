@@ -1,7 +1,7 @@
 {{ $disableImageOptimization := .Site.Params.disableImageOptimization | default false }}
 {{ $disableHeroImageFilter := .Site.Params.homepage.disableHeroImageFilter | default false }}
 <article class="max-w-full prose dark:prose-invert">
-  <div class="relative">
+  <div class="relative py-2">
     <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100"></div>
     <div class="mx-auto max-w-7xl p-0">
       <div class="relative shadow-xl sm:overflow-hidden rounded-2xl">
@@ -31,7 +31,8 @@
           {{ end }}
           {{ if $homepageImage }}
             <!-- <img class="h-full w-full object-cover m-0 nozoom margin-0" src="{{ $homepageImage.RelPermalink }}"> -->
-            <div class="w-full h-full absolute mask-repeat mask-[url({{ $circleImage.RelPermalink }})] mask-size-[50px_50px] bg-[url({{ $homepageImage.RelPermalink }})]"></div>
+            <div
+            class="w-full h-full absolute mask-repeat" style="mask-image: url({{ $circleImage.RelPermalink }}); mask-size: 10px; background-image: url({{ $homepageImage.RelPermalink }}); background-size: cover; background-position: center;"></div>
             {{ if not $disableHeroImageFilter }}
               <div
                 class="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-600 dark:from-primary-600 dark:to-secondary-800 mix-blend-multiply"></div>
@@ -42,31 +43,31 @@
           {{ end }}
         </div>
         <div
-          class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8 flex flex-col items-center justify-center text-center">
-          {{ with .Site.Params.Author.image }}
-            {{ $authorImage := "" }}
+          class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-16 lg:px-8 flex flex-col items-center justify-center text-center">
+          {{ with .Site.Params.logo }}
+            {{ $siteLogo := "" }}
             {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-              {{ $authorImage = resources.GetRemote . }}
+              {{ $siteLogo = resources.GetRemote . }}
             {{ else }}
-              {{ $authorImage = resources.Get . }}
+              {{ $siteLogo = resources.Get . }}
             {{ end }}
-            {{ if $authorImage }}
+            {{ if $siteLogo }}
               {{ if not $disableImageOptimization }}
-                {{ $authorImage = $authorImage.Fill (print "288x288 q" ( $.Site.Params.Author.imagequality | default "96" )) }}
+                {{ $siteLogo = $siteLogo.Fill (print "288x288 q" ( $.Site.Params.Author.imagequality | default "96" )) }}
               {{ end }}
               <img
                 class="mb-2 rounded-full h-36 w-36"
                 width="144"
                 height="144"
                 alt="{{ $.Site.Params.Author.name | default " Author" }}"
-                src="{{ $authorImage.RelPermalink }}">
+                src="{{ $siteLogo.RelPermalink }}">
             {{ end }}
           {{ end }}
           {{ if not $disableHeroImageFilter }}
             <h1 class="mb-2 text-4xl font-extrabold text-neutral-200">
-              {{ .Site.Params.Author.name | default .Site.Title }}
+              {{ .Site.Params.title | default .Site.Title }}
             </h1>
-            {{ with .Site.Params.Author.headline }}
+            {{ with .Site.Params.description }}
               <h2 class="mt-0 mb-0 text-xl text-neutral-300">
                 {{ . | markdownify }}
               </h2>
@@ -75,7 +76,7 @@
             <h1 class="mb-2 text-4xl font-extrabold text-neutral-800 dark:text-neutral-200">
               {{ .Site.Params.Author.name | default .Site.Title }}
             </h1>
-            {{ with .Site.Params.Author.headline }}
+            {{ with .Site.Params.Description }}
               <h2 class="mt-0 mb-0 text-xl text-neutral-800 dark:text-neutral-300">
                 {{ . | markdownify }}
               </h2>

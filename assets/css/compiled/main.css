@@ -1635,9 +1635,6 @@ body.zen-mode-enable {
   .bg-clip-padding {
     background-clip: padding-box;
   }
-  .mask-size-\[50px_50px\] {
-    mask-size: 50px 50px;
-  }
   .mask-repeat {
     mask-repeat: repeat;
   }
@@ -2795,11 +2792,6 @@ body.zen-mode-enable {
   .lg\:py-16 {
     @media (width >= 1024px) {
       padding-block: calc(var(--spacing) * 16);
-    }
-  }
-  .lg\:py-32 {
-    @media (width >= 1024px) {
-      padding-block: calc(var(--spacing) * 32);
     }
   }
   .xl\:w-1\/4 {
