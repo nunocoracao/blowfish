@@ -39,7 +39,7 @@
     "@awmottaz/prettier-plugin-void-html": "^1.8.0",
     "@tailwindcss/cli": "^4.1.8",
     "@tailwindcss/typography": "^0.5.16",
-    "chart.js": "^4.4.9",
+    "chart.js": "^4.5.0",
     "fuse.js": "^7.1.0",
     "jquery": "^3.7.1",
     "katex": "^0.16.22",
