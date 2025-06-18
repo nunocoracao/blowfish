@@ -1,0 +1,6 @@
+{{/* This file is just used for making article-link formattable */}}
+{{ with .Params.externalUrl }}
+  href="{{ . }}" target="_blank" rel="external"
+{{ else }}
+  href="{{ .RelPermalink }}"
+{{ end }}
