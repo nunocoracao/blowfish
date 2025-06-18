@@ -31,7 +31,7 @@ code:
   copied: "Copiado"
 
 error:
-  404_title: "Página não econtrada :confused:"
+  404_title: "Página não encontrada :confused:"
   404_error: "Erro 404"
   404_description: "Aparentemente a página pretendida não existe."
 
