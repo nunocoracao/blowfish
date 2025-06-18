@@ -33,7 +33,6 @@ layouts/partials/article-link/card.html
 layouts/partials/article-link/simple.html
 layouts/partials/header/basic.html
 layouts/partials/hero/background.html
-layouts/partials/head.html
 layouts/shortcodes/screenshot.html
 layouts/shortcodes/figure.html
 

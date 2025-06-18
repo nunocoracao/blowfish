@@ -149,7 +149,7 @@
   {{ if templates.Exists "partials/extend-head.html" }}
   {{ partialCached "extend-head.html" .Site }}
   {{ end }}
-  {{/* Uncached extend head - e.g. {{ with .Page.HasShortcode "gallery" }} do something {{ end }}  */}}
+  {{/* Uncached extend head - Example: https://gohugo.io/methods/page/hasshortcode/ */}}
   {{ if templates.Exists "partials/extend-head-uncached.html" }}
   {{ partial "extend-head-uncached.html" . }}
   {{ end }}
