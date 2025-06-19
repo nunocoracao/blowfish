@@ -113,8 +113,12 @@
       "to": "assets/lib/lite-youtube-embed/lite-yt-embed.css"
     },
     {
-      "from": "node_modules/medium-zoom/dist/medium-zoom.min.js",
-      "to": "assets/lib/zoom/zoom.min.js"
+      "from": "node_modules/medium-zoom/dist/pure/medium-zoom.min.umd.js",
+      "to": "assets/lib/zoom/zoom.min.umd.js"
+    },
+    {
+      "from": "node_modules/medium-zoom/dist/style.css",
+      "to": "assets/lib/zoom/style.css"
     }
   ],
   "dependencies": {
