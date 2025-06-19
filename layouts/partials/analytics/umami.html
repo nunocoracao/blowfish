@@ -1,3 +1,4 @@
+{{/* prettier-ignore-start */}}
 {{ if isset site.Params.umamiAnalytics "domain" }}
   <script
     data-id="umami-script"
@@ -12,6 +13,7 @@
     src="https://analytics.umami.is/script.js"
     data-website-id="{{ site.Params.umamiAnalytics.websiteid }}"></script>
 {{ end }}
+{{/* prettier-ignore-end */}}
 
 {{ if .Site.Params.umamiAnalytics.enableTrackEvent | default true }}
   <script type="text/javascript">
