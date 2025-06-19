@@ -23,7 +23,7 @@
         {{ .Title | emojify }}
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
-        {{ partial "article-meta/basic.html" (dict "context" . "scope" "single") }}
+        {{ partial "article-meta/basic.html" (dict "context" . "scope" "single" "showLink" true) }}
       </div>
 
       {{ $authorsData := .Site.Data.authors }}

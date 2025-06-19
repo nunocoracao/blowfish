@@ -1,0 +1,8 @@
+{{ with .Params.podcastlink }}
+<a href="{{ . }}" target="_blank" rel="noopener" class="flex items-center gap-2 underline">
+  {{ partial "icon-inline.html" "spotify" }}
+    <span class="podcast-link">
+    <span>Podcast Link</span>
+  </a>
+</span>
+{{ end }}

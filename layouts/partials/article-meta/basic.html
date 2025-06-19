@@ -2,10 +2,17 @@
 {{/* This allows for different logic depending on where the partial is called */}}
 {{ $context := . }}
 {{ $scope := default nil }}
+{{ $showLink := false }}
 
 {{ if (reflect.IsMap . ) }}
   {{ $context = .context }}
   {{ $scope = cond (not .scope) nil .scope }}
+  {{ $showLink = .showLink }}
+{{ else }}
+  {{/* We received just the page context */}}
+  {{ $context = . }}
+  {{ $scope = "default" }}
+  {{ $showLink = false }}
 {{ end }}
 
 {{ with $context }}
@@ -36,6 +43,10 @@
 
   {{ if and (.Params.showWordCount | default (.Site.Params.article.showWordCount | default false)) (ne .WordCount 0) }}
     {{ $meta.Add "partials" (slice (partial "meta/word-count.html" .)) }}
+  {{ end }}
+
+  {{ if $showLink }}
+    {{ $meta.Add "partials" (slice (partial "meta/podcast-link.html" .)) }}
   {{ end }}
 
   {{ if and (.Params.showReadingTime | default (.Site.Params.article.showReadingTime | default true)) (ne .ReadingTime 0) }}

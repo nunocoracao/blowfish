@@ -37,12 +37,12 @@
 
 {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg")}}
     {{ with . }}
-    <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
+    <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom blur-xs"
     style="background-image:url({{ .RelPermalink }});">
     {{ end }}
 {{ else }}
     {{ with .Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
-    <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
+    <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom blur-xs"
     style="background-image:url({{ .RelPermalink }});">
     {{ end }}
 {{ end }}
