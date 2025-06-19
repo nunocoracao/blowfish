@@ -109,12 +109,25 @@
   {{ template "_internal/twitter_cards.html" . }}
   {{- /* Main page always uses this; fallback elsewhere if no feature image */ -}}
   {{- /* See https://gohugo.io/templates/embedded/#open-graph */ -}}
-  {{ if not ($.Resources.GetMatch "*feature*") }}
-    {{ with .Site.Params.defaultSocialImage }}
-    <meta name="twitter:image" content="{{ . | absURL }}" />
-    <meta property="og:image" content="{{ . | absURL }}" />
-    {{ end }}
-  {{ end }}
+
+  {{- $images := .Resources.ByType "image" -}}
+  {{- $socialImage := $images.GetMatch "*feature*" -}}
+
+  {{- if not $socialImage -}}
+    {{- with .Site.Params.defaultSocialImage -}}
+      {{- if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") -}}
+        {{- $socialImage = resources.GetRemote . -}}
+      {{- else -}}
+        {{- $socialImage = resources.Get . -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- with $socialImage -}}
+    <meta name="twitter:image" content="{{ .RelPermalink | absURL }}" />
+    <meta property="og:image" content="{{ .RelPermalink | absURL }}" />
+  {{- end -}}
+
   {{/* Schema */}}
   {{ partial "schema.html" . }}
   {{/* Me */}}
