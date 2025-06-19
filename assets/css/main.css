@@ -64,10 +64,8 @@ button,
 }
 
 /* Table of Contents */
-@media (min-width: 1024px) {
-  #TableOfContents {
-    max-width: 25vw;
-  }
+#TableOfContents {
+  @apply lg:max-w-[25vw];
 }
 
 #TOCView {
