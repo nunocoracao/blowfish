@@ -7,7 +7,7 @@ const oid_likes =
   pageScriptElement && pageScriptElement.getAttribute("data-oid-likes")
     ? pageScriptElement.getAttribute("data-oid-likes")
     : (console.error("data-oid-likes is null"), null);
-const liked_page = false;
+let liked_page = false;
 const id = oid ? oid.replaceAll("/", "-") : oid;
 const id_likes = oid_likes ? oid_likes.replaceAll("/", "-") : oid_likes;
 

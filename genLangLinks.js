@@ -1,52 +1,57 @@
-const fs = require("fs");
+const fs = require("fs/promises");
 
 const configDir = "./exampleSite/config/_default";
 const contentDir = "./exampleSite/content";
 const defaultLang = "en";
 
-var targetLangs = [];
+const targetLangs = [];
 
-function readConfigs() {
-  const files = fs.readdirSync(configDir);
-  files.forEach((file) => {
+async function readConfigs() {
+  const files = await fs.readdir(configDir);
+  for (const file of files) {
     console.log(file);
     if (file.indexOf("languages.") > -1) {
-      var lang = file.split(".")[1];
+      const lang = file.split(".")[1];
       console.log(lang);
       if (lang != defaultLang) {
         targetLangs.push(lang);
       }
     }
-  });
+  }
 }
 
 async function processFile(filePath, file) {
   if (filePath.indexOf("index.md") > -1) {
     console.log("processing", filePath);
 
-    for (var i in targetLangs) {
-      const targetLang = targetLangs[i];
-      var targetFilePath = filePath.replace(".md", "." + targetLang + ".md");
-      //var targetFileName = file.replace(".md", "." + targetLang + ".md");
+    for (const targetLang of targetLangs) {
+      const targetFilePath = filePath.replace(".md", "." + targetLang + ".md");
 
-      if (fs.existsSync(targetFilePath)) {
+      let exists = true;
+      try {
+        await fs.access(targetFilePath);
+      } catch {
+        exists = false;
+      }
+
+      if (exists) {
         console.log("file already exists", targetFilePath);
       } else {
         console.log("creating file", targetFilePath);
-        //fs.symlinkSync(file, targetFilePath, 'junction');
-        fs.copyFileSync(filePath, targetFilePath);
+        await fs.copyFile(filePath, targetFilePath);
       }
     }
-  } else return;
+  } else {
+    return;
+  }
 }
 
 async function processFolder(folderPath) {
-  const files = fs.readdirSync(folderPath);
+  const files = await fs.readdir(folderPath);
 
-  for (var i in files) {
-    const file = files[i];
+  for (const file of files) {
     const filePath = `${folderPath}/${file}`;
-    const isDir = fs.lstatSync(filePath).isDirectory();
+    const isDir = (await fs.lstat(filePath)).isDirectory();
     if (isDir) {
       await processFolder(filePath);
     } else {
@@ -56,8 +61,11 @@ async function processFolder(folderPath) {
 }
 
 async function createLinks() {
-  processFolder(contentDir);
+  await processFolder(contentDir);
 }
 
-readConfigs();
-createLinks();
+(async () => {
+  await readConfigs();
+  await createLinks();
+})();
+
