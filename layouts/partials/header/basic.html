@@ -99,7 +99,7 @@
 
 {{ define "HeaderMobileMenu" }}
   <div class="-my-2 md:hidden">
-    <label id="menu-button" class="block">
+    <div id="menu-button" class="block">
       {{ if .Site.Menus.main }}
         <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
           {{ partial "icon.html" "bars" }}
@@ -148,7 +148,7 @@
           {{ end }}
         </div>
       {{ end }}
-    </label>
+    </div>
   </div>
 {{ end }}
 
