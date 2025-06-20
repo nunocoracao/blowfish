@@ -2,11 +2,11 @@
   <script
     data-id="umami-script"
     async
-    src="https://{{ site.Params.umamiAnalytics.domain }}/{{ with site.Params.umamiAnalytics.scriptName }}
-      {{ . }}
-    {{ else }}
+    src="https://{{- site.Params.umamiAnalytics.domain -}}/{{- with site.Params.umamiAnalytics.scriptName -}}
+      {{ . -}}
+    {{- else -}}
       script.js
-    {{ end }}"
+    {{- end -}}"
     data-website-id="{{ site.Params.umamiAnalytics.websiteid }}"
     {{ with site.Params.umamiAnalytics.dataDomains }}data-domains="{{ . }}"{{ end }}></script>
 {{ else }}
