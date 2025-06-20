@@ -1,4 +1,4 @@
-async function fetchRepo() {
+(async () => {
   const script = document.currentScript;
   const repoURL = script?.getAttribute("data-repo-url");
   const repoId = script?.getAttribute("data-repo-id");
@@ -54,6 +54,4 @@ async function fetchRepo() {
   } catch (error) {
     console.error(error);
   }
-}
-
-fetchRepo();
+})();
