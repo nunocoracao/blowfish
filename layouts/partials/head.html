@@ -45,6 +45,38 @@
   {{ if $cssCustom }}
   {{ $assets.Add "css" (slice $cssCustom) }}
   {{ end }}
+
+  {{ $images := slice }}
+  {{ $backgroundAndfeaturedImages := slice }}
+  {{ range .Site.Pages }}
+    {{ $images = $images | append (.Page.Resources.ByType "image") }}
+    {{ if .Params.featureimage }}
+      {{ $backgroundAndfeaturedImages = $backgroundAndfeaturedImages | append (resources.GetRemote .Params.featureimage) }}
+    {{ end }}
+  {{ end }}
+  {{ $backgroundAndfeaturedImages = $backgroundAndfeaturedImages | append ($images.Match "{*background*,*feature*,*cover*,*thumbnail*}") }}
+  {{ $siteParams := slice .Site.Params.defaultFeaturedImage .Site.Params.defaultBackgroundImage }}
+  {{ range $siteParams }}
+    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+      {{ $backgroundAndfeaturedImages = $backgroundAndfeaturedImages | append (resources.GetRemote .) }}
+    {{ else }}
+      {{ $backgroundAndfeaturedImages = $backgroundAndfeaturedImages | append (resources.Get .) }}
+    {{ end }}
+  {{ end }}
+  {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
+  {{ range $backgroundAndfeaturedImages }}
+    {{ $backgroundAndfeaturedImages := . }}
+    {{ if not (or ($disableImageOptimization) (strings.HasSuffix .Name ".svg")) }}
+      {{ $backgroundAndfeaturedImages = .Resize "600x" }}
+    {{ end }}
+    {{ with $backgroundAndfeaturedImages }}
+      {{ $className := printf "background-image-%s" (md5 .RelPermalink) }}
+      {{ $cssBackgroundImage := printf ".%s { background-image: url(\"%s\"); }" $className .RelPermalink }}
+      {{ $cssBackgroundImage = $cssBackgroundImage | resources.FromString "css/background-image.css" }}
+      {{ $assets.Add "css" (slice $cssBackgroundImage) }}
+    {{ end }}
+  {{ end }}
+
   {{ $bundleCSS := $assets.Get "css" | resources.Concat "css/main.bundle.css" | resources.Minify | resources.Fingerprint
   (.Site.Params.fingerprintAlgorithm | default "sha512") }}
   <link type="text/css" rel="stylesheet" href="{{ $bundleCSS.RelPermalink }}"

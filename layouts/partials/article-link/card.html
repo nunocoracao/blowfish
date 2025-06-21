@@ -1,4 +1,3 @@
-{{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
 {{ with .Params.externalUrl }}
 <a href="{{ . }}" target="_blank" rel="external" class="min-w-full">
   {{ else }}
@@ -10,30 +9,33 @@
       {{- range first 6 . }}
       <meta property="og:image" content="{{ . | absURL }}" />{{ end -}}
       {{- else -}}
-      {{- $images := $.Resources.ByType "image" -}}
-      {{- $featured := $images.GetMatch "*feature*" -}}
-      {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
-      {{ if and .Params.featureimage (not $featured) }}
-      {{- $url:= .Params.featureimage -}}
-      {{ $featured = resources.GetRemote $url }}
-      {{ end }}
-      {{- if not $featured }}{{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}{{ end -}}
-      {{ if .Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
-      {{- with $featured -}}
-      {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg")}}
-        {{ with . }}
-        <div class="w-full thumbnail_card nozoom" style="background-image:url({{ .RelPermalink }});"></div>
+        {{ $images := $.Resources.ByType "image" }}
+        {{ $featuredImage := $images.GetMatch "*feature*" }}
+        {{ if not $featuredImage }}
+          {{ $featuredImage = $images.GetMatch "{*cover*,*thumbnail*}" }}
         {{ end }}
-      {{ else }}
-        {{ with .Resize "600x" }}
-        <div class="w-full thumbnail_card nozoom" style="background-image:url({{ .RelPermalink }});"></div>
+        {{ if and (not $featuredImage) .Params.featureimage }}
+          {{ $featuredImage = resources.GetRemote .Params.featureimage }}
+        {{ end }}
+        {{ if not $featuredImage }}
+          {{ $featuredImage = resources.Get .Site.Params.defaultFeaturedImage }}
+        {{ end }}
+        {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
+        {{ if and ($featuredImage) (not (or ($disableImageOptimization) (strings.HasSuffix $featuredImage.Name ".svg"))) }}
+          {{ $featuredImage = $featuredImage.Resize "600x" }}
+        {{ end }}
+        {{ if .Params.hideFeatureImage }}
+          {{ $featuredImage = false }}
+        {{ end }}
+        {{ with $featuredImage }}
+          {{ $className := printf "background-image-%s" (md5 .RelPermalink) }}
+          <div class="w-full thumbnail_card nozoom {{ $className }}"></div>
+        {{ else }}
+          {{ with $.Site.Params.images }}
+            <meta property="og:image" content="{{ index . 0 | absURL }}" />
         {{ end }}
       {{ end }}
-      {{- else -}}
-      {{- with $.Site.Params.images }}
-      <meta property="og:image" content="{{ index . 0 | absURL }}" />{{ end -}}
-      {{- end -}}
-      {{- end -}}
+    {{ end }}
 
 
       {{ if and .Draft .Site.Params.article.showDraftLabel }}
