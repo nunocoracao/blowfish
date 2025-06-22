@@ -5,16 +5,16 @@
   {{ $classNameMap = merge $classNameMap (dict $className $language) }}
 {{ end }}
 
-{{ $classNames := slice }}
+{{ $repoLanguages := slice }}
 {{ range site.Pages }}
   {{ $matchedClasses := findRE `background-color-[a-f0-9]{32}` .Content }}
   {{ range $matchedClasses }}
     {{ with index $classNameMap . }}
-      {{ $classNames = $classNames | append . }}
+      {{ $repoLanguages = $repoLanguages | append . }}
     {{ else }}
-      {{ $classNames = $classNames | append "fallback" }}
+      {{ $repoLanguages = $repoLanguages | append "fallback" }}
     {{ end }}
   {{ end }}
 {{ end }}
 
-{{ return (uniq $classNames) }}
+{{ return (uniq $repoLanguages) }}
