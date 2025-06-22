@@ -37,10 +37,8 @@
           </p>
 
           <div class="m-0 mt-2 flex items-center">
-            {{ $className := "color-repo-fallback" }}
-            {{ if .language }}
-              {{ $className = printf "color-repo-%s" (md5 .language) }}
-            {{ end }}
+            {{ $language := .language | default "fallback" }}
+            {{ $className := printf "background-color-%s" (md5 $language) }}
             <span
               class="mr-1 inline-block h-3 w-3 rounded-full {{ $className }}"></span>
             <div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
@@ -73,5 +71,4 @@
         data-repo-id="{{ $id }}"></script>
     </a>
   {{- end -}}
-
 </div>

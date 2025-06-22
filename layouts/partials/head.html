@@ -85,28 +85,14 @@
     {{ end }}
   {{ end }}
 
-  {{ $repoShortcodeExists := false }}
-  {{ range .Site.Pages }}
-    {{ if or (.Page.HasShortcode "codeberg") (.Page.HasShortcode "forgejo") (.Page.HasShortcode "gitea") (.Page.HasShortcode "github") }}
-      {{ $repoShortcodeExists = true }}
-    {{ end }}
-  {{ end }}
-  {{ if $repoShortcodeExists }}
-    {{ $colorsRepos := .Site.Data.colorsRepos }}
-    {{ range $language, $color := $colorsRepos }}
-      {{ if not $color }}
-        {{ $color = "" }}
-      {{ end }}
-      {{ $className := printf "color-repo-%s" (md5 $language) }}
-      {{ $cssColorRepos := printf ".%s { background-color: %s; }" $className $color }}
-      {{ $cssColorRepos = $cssColorRepos | resources.FromString "css/color-repo.css" }}
-      {{ $assets.Add "css" (slice $cssColorRepos) }}
-    {{ end }}
-    {{ $color := "#0077b6" }}
-    {{ $className := "color-repo-fallback" }}
-    {{ $cssColorRepos := printf ".%s { background-color: %s; }" $className $color }}
-    {{ $cssColorRepos = $cssColorRepos | resources.FromString "css/color-repo.css" }}
-    {{ $assets.Add "css" (slice $cssColorRepos) }}
+  {{ $repoLanguages := partial "functions/repo-languages.html" }}
+  {{ $repoColors := .Site.Data.repoColors }}
+  {{ range $repoLanguages }}
+    {{ $color := index $repoColors . | default "#0077b6" }}
+    {{ $className := printf "background-color-%s" (md5 .) }}
+    {{ $cssRepoColor := printf ".%s { background-color: %s; }" $className $color }}
+    {{ $cssRepoColor = $cssRepoColor | resources.FromString (printf "css/background-color.css") }}
+    {{ $assets.Add "css" (slice $cssRepoColor) }}
   {{ end }}
 
   {{ $bundleCSS := $assets.Get "css" | resources.Concat "css/main.bundle.css" | resources.Minify | resources.Fingerprint
