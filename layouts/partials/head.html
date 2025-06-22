@@ -85,6 +85,30 @@
     {{ end }}
   {{ end }}
 
+  {{ $repoShortcodeExists := false }}
+  {{ range .Site.Pages }}
+    {{ if or (.Page.HasShortcode "codeberg") (.Page.HasShortcode "forgejo") (.Page.HasShortcode "gitea") (.Page.HasShortcode "github") }}
+      {{ $repoShortcodeExists = true }}
+    {{ end }}
+  {{ end }}
+  {{ if $repoShortcodeExists }}
+    {{ $colorsRepos := .Site.Data.colorsRepos }}
+    {{ range $language, $color := $colorsRepos }}
+      {{ if not $color }}
+        {{ $color = "" }}
+      {{ end }}
+      {{ $className := printf "color-repo-%s" (md5 $language) }}
+      {{ $cssColorRepos := printf ".%s { background-color: %s; }" $className $color }}
+      {{ $cssColorRepos = $cssColorRepos | resources.FromString "css/color-repo.css" }}
+      {{ $assets.Add "css" (slice $cssColorRepos) }}
+    {{ end }}
+    {{ $color := "#0077b6" }}
+    {{ $className := "color-repo-fallback" }}
+    {{ $cssColorRepos := printf ".%s { background-color: %s; }" $className $color }}
+    {{ $cssColorRepos = $cssColorRepos | resources.FromString "css/color-repo.css" }}
+    {{ $assets.Add "css" (slice $cssColorRepos) }}
+  {{ end }}
+
   {{ $bundleCSS := $assets.Get "css" | resources.Concat "css/main.bundle.css" | resources.Minify | resources.Fingerprint
     (.Site.Params.fingerprintAlgorithm | default "sha512")
   }}
