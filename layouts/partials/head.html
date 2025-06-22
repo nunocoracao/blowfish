@@ -46,7 +46,7 @@
   {{ $assets.Add "css" (slice $cssCustom) }}
   {{ end }}
 
-  {{ $repoLanguages := partial "get-repo-languages.html" }}
+  {{ $repoLanguages := partial "functions/repo-languages.html" }}
   {{ $repoColors := .Site.Data.repoColors }}
   {{ range $repoLanguages }}
     {{ $color := index $repoColors . | default "#0077b6" }}
