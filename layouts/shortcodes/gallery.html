@@ -1,45 +1,37 @@
 {{ $id := delimit (slice "gallery" (partial "functions/uid.html" .)) "-" -}}
+{{ $page := .Page -}}
+{{ $content := .Inner -}}
 
 
 <div id="{{- $id -}}" class="gallery">
-  {{ $page := .Page -}}
-
-
-  <!-- find all img tags -->
-  {{ $imgTagRegex := `<img\s+[^>]*>` -}}
-  {{ $imgTags := findRE $imgTagRegex .Inner -}}
-  {{ $newContent := .Inner -}}
-
-  {{ range $imgTags -}}
+  {{/* find all img tags */}}
+  {{ range findRE `<img\s+[^>]*>` $content -}}
     {{ $imgTag := . -}}
-    <!-- extract src attribute -->
-    {{ $srcRegex := `src=['"]([^'"]+)['"]` -}}
-    {{ $srcMatches := findRESubmatch $srcRegex $imgTag -}}
+    {{/* extract src attribute */}}
+    {{ with findRESubmatch `src=['"]([^'"]+)['"]` $imgTag -}}
+      {{ $srcAttr := index (index . 0) 0 -}}
+      {{ $srcValue := index (index . 0) 1 -}}
+      {{ $srcValueFinal := $srcValue -}}
 
-    {{ if $srcMatches -}}
-      {{ $srcFull := index (index $srcMatches 0) 0 -}}
-      {{ $src := index (index $srcMatches 0) 1 -}}
-
-      {{ $finalSrc := $src -}}
-      {{ $isExternalURL := or (hasPrefix $src "http://") (hasPrefix $src "https://") -}}
-
-      {{ if $isExternalURL -}}
-        {{ with resources.GetRemote $src -}}{{ $finalSrc = .RelPermalink -}}{{ end -}}
-      {{ else if hasPrefix $src "/" }}
-        {{ $finalSrc = $src }}
+      {{ if or (hasPrefix $srcValue "http://") (hasPrefix $srcValue "https://") -}}
+        {{ with resources.GetRemote $srcValue -}}
+          {{ $srcValueFinal = .RelPermalink -}}
+        {{ end -}}
+      {{ else if hasPrefix $srcValue "/" -}}
+        {{ $srcValueFinal = $srcValue -}}
       {{ else -}}
-        {{ with $page.Resources.GetMatch $src -}}
-          {{ $finalSrc = .RelPermalink -}}
+        {{ with $page.Resources.GetMatch $srcValue -}}
+          {{ $srcValueFinal = .RelPermalink -}}
         {{ else -}}
-          {{ with resources.GetMatch $src -}}{{ $finalSrc = .RelPermalink }}{{ end -}}
+          {{ with resources.GetMatch $srcValue -}}
+            {{ $srcValueFinal = .RelPermalink -}}
+          {{ end -}}
         {{ end -}}
       {{ end -}}
 
-      {{ $newSrc := printf `src="%s"` $finalSrc -}}
-      {{ $newImg := replace $imgTag $srcFull $newSrc -}}
-      {{ $newContent = replace $newContent $imgTag $newImg -}}
+      {{ $newTag := replace $imgTag $srcAttr (printf `src="%s"` $srcValueFinal) -}}
+      {{ $content = replace $content $imgTag $newTag -}}
     {{ end -}}
   {{ end -}}
-
-  {{ $newContent | safeHTML -}}
+  {{ $content | safeHTML -}}
 </div>
