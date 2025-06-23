@@ -1,7 +1,7 @@
 {{ $images := .Resources.ByType "image" }}
 {{ $backgroundImage := $images.GetMatch "*background*" }}
 {{ if not $backgroundImage }}
-  {{ $backgroundImage := $images.GetMatch "*feature*" }}
+  {{ $backgroundImage = $images.GetMatch "*feature*" }}
 {{ end }}
 {{ if not $backgroundImage }}
   {{ $backgroundImage = $images.GetMatch "{*cover*,*thumbnail*}" }}

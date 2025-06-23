@@ -65,14 +65,14 @@
   {{ end }}
   {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
   {{ range $backgroundAndFeaturedImages }}
-    {{ $images := slice }}
+    {{ $classImages := slice }}
     {{ if or $disableImageOptimization (strings.HasSuffix .Name ".svg") }}
-      {{ $images = $images | append . }}
+      {{ $classImages = $classImages | append . }}
     {{ else }}
-      {{ $images = $images | append (.Resize "600x") }}
-      {{ $images = $images | append (.Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x")) }}
+      {{ $classImages = $classImages | append (.Resize "600x") }}
+      {{ $classImages = $classImages | append (.Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x")) }}
     {{ end }}
-    {{ range $images }}
+    {{ range $classImages }}
       {{ $className := printf "background-image-%s" (md5 .RelPermalink) }}
       {{ $cssBackgroundImage := printf ".%s { background-image: url(\"%s\"); }" $className .RelPermalink }}
       {{ $cssBackgroundImage = $cssBackgroundImage | resources.FromString "css/background-image.css" }}
