@@ -25,6 +25,8 @@
 
       {{ if $isExternalURL -}}
         {{ with resources.GetRemote $src -}}{{ $finalSrc = .RelPermalink -}}{{ end -}}
+      {{ else if hasPrefix $src "/" }}
+        {{ $finalSrc = $src }}
       {{ else -}}
         {{ with $page.Resources.GetMatch $src -}}
           {{ $finalSrc = .RelPermalink -}}
