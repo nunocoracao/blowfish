@@ -30,7 +30,7 @@
 
 
 <div class="{{ $classes }}">
-  <div id="{{ $mapId }}" class="rounded border-2 border-neutral-200 shadow-2xl dark:border-neutral-700"></div>
+  <div id="{{ $mapId }}" class="rounded border-2 border-neutral-200 dark:border-neutral-700"></div>
 </div>
 
 {{ $leafletJS := resources.Get "js/leaflet.js" | resources.Minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
