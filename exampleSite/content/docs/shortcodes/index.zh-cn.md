@@ -548,16 +548,16 @@ When life gives you lemons, make lemonade.
 | `mapCenterX`       | Optional float value with a coordinate (Longitude) for the center of the map, for example `40.690136`         |
 | `mapCenterY`       | Optional float value with a coordinate (Latitude) for the center of the map, for, for example `-74.045301`    |
 | `defaultZoom`      | Optional integer that sets the default zoom, default is `15`                                                  |
-| `tileBaseURL`      | Optional base URL of the raster tile provider, default is `"https://tile.openstreetmap.org"`                  |
+| `tileBaseURL`      | Optional string with base URL of the raster tile provider, default is `"https://tile.openstreetmap.org"`      |
 | `minZoom`          | Optional integer that sets the minimum zoom, default is `15`                                                  |
 | `maxZoom`          | Optional integer that sets the maximum zoom, default is `19`                                                  |
 | `copyrightURL`     | Optional string with URL that sets the copyright link, default is `"https://openstreetmap.org/copyright"`     |
-| `copyrightName`    | Optional string with URL that sets the copyright text, default is `OpenStreetMap Contributors`                |
+| `copyrightName`    | Optional string with URL that sets the copyright text, default is `"OpenStreetMap Contributors"`              |
 | `markerX`          | Optional float value with a coordinate (Longitude) for an optional marker in the map, for example `40.689272` |
 | `markerY`          | Optional float value with a coordinate (Latitude) for an optional marker in the map, for example `-74.044512` |
 | `markerTooltip`    | Optional string with text for a marker tooltip, for example `"Statue of Liberty"`                             |
-| `mapHeight`        | Optional height of the map element, default is `"600px"`                                                      |
-| `mapWidth`         | Optional width of the map element, default is equal to `mapHeight`                                            |
+| `mapHeight`        | Optional string with height of the map element, default is `"600px"`                                          |
+| `mapWidth`         | Optional string with width of the map element, default is equal to `mapHeight`                                |
 <!-- prettier-ignore-end -->
 
 **Example:**
