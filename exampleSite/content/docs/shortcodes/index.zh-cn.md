@@ -539,6 +539,37 @@ When life gives you lemons, make lemonade.
 
 <br/><br/><br/> 
 
+## Leaflet
+
+<!-- prettier-ignore-start -->
+| Parameter          | Description                                                                                                   |
+| ------------------ | ------------------------------------------------------------------------------------------------------------- |
+| `centerMapElement` | Optional boolean that centers the map element, default is `false`                                             |
+| `mapCenterX`       | Optional float value with a coordinate (Longitude) for the center of the map, for example `40.690136`         |
+| `mapCenterY`       | Optional float value with a coordinate (Latitude) for the center of the map, for, for example `-74.045301`    |
+| `defaultZoom`      | Optional integer that sets the default zoom, default is `15`                                                  |
+| `tileBaseURL`      | Optional base URL of the raster tile provider, default is `"https://tile.openstreetmap.org"`                  |
+| `minZoom`          | Optional integer that sets the minimum zoom, default is `15`                                                  |
+| `maxZoom`          | Optional integer that sets the maximum zoom, default is `19`                                                  |
+| `copyrightURL`     | Optional string with URL that sets the copyright link, default is `"https://openstreetmap.org/copyright"`     |
+| `copyrightName`    | Optional string with URL that sets the copyright text, default is `OpenStreetMap`                             |
+| `markerX`          | Optional float value with a coordinate (Longitude) for an optional marker in the map, for example `40.689272` |
+| `markerY`          | Optional float value with a coordinate (Latitude) for an optional marker in the map, for example `-74.044512` |
+| `markerTooltip`    | Optional string with text for a marker tooltip, for example `"Statue of Liberty"`                             |
+| `mapHeight`        | Optional height of the map element, default is `"600px"`                                                      |
+| `mapWidth`         | Optional width of the map element, default is equal to `"600px"`                                            |
+<!-- prettier-ignore-end -->
+
+**Example:**
+
+```md
+{{</* leaflet centerMapElement=true mapCenterX=40.690136 mapCenterY=-74.045301 defaultZoom=18 tileBaseURL="https://tile.openstreetmap.de" minZoom=10 maxZoom=18 copyrightURL="https://openstreetmap.org/copyright" copyrightName="OpenStreetMap" markerX=40.689272 markerY=-74.044512 markerTooltip="Statue of Liberty" mapHeight="550px" mapWidth="600px" */>}}
+```
+
+{{< leaflet centerMapElement=true mapCenterX=40.690136 mapCenterY=-74.045301 defaultZoom=18 tileBaseURL="https://tile.openstreetmap.de" minZoom=10 maxZoom=18 copyrightURL="https://openstreetmap.org/copyright" copyrightName="OpenStreetMap" markerX=40.689272 markerY=-74.044512 markerTooltip="Statue of Liberty" mapHeight="550px" mapWidth="600px" >}}
+
+<br/><br/><br/> 
+
 ## 列表
 
 `List` 将显示最近文章的列表。此简码需要一个限制值来约束列表。此外，它还支持输入 `where` 和 `value` ，以便按参数过滤文章。请注意，此简码不会显示其父页面，但会计入限制值。
