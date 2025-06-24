@@ -24,7 +24,9 @@
   const mapWidth = script?.getAttribute("data-map-width");
 
   const mapElement = document.getElementById(mapId);
+  mapElement.style.maxHeight = "100vh";
   mapElement.style.height = mapHeight;
+  mapElement.style.maxWidth = "80vw";
   mapElement.style.width = mapWidth;
 
   const map = L.map(mapId).setView([mapCenterX, mapCenterY], defaultZoom);

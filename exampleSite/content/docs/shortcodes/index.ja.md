@@ -569,18 +569,18 @@ Blowfish も、標準の Markdown 構文を使用して含まれる画像の自�
 | `copyrightName`    | Optional string with URL that sets the copyright text, default is `"OpenStreetMap Contributors"`              |
 | `markerX`          | Optional float value with a coordinate (Longitude) for an optional marker in the map, for example `40.689272` |
 | `markerY`          | Optional float value with a coordinate (Latitude) for an optional marker in the map, for example `-74.044512` |
-| `markerTooltip`    | Optional string with text for a marker tooltip, for example `"Statue of Liberty"`                             |
-| `mapHeight`        | Optional string with height of the map element, default is `"600px"`                                          |
+| `markerTooltip`    | Optional string with text for a marker tooltip, for example `"The Statue of Liberty"`                         |
+| `mapHeight`        | Optional string with height of the map element, default is `"400px"`                                          |
 | `mapWidth`         | Optional string with width of the map element, default is equal to `mapHeight`                                |
 <!-- prettier-ignore-end -->
 
 **Example:**
 
 ```md
-{{</* leaflet centerMapElement=true mapCenterX=40.690136 mapCenterY=-74.045301 defaultZoom=18 tileBaseURL="https://tile.openstreetmap.org" minZoom=10 maxZoom=18 copyrightURL="https://openstreetmap.org/copyright" copyrightName="OpenStreetMap Contributors" markerX=40.689272 markerY=-74.044512 markerTooltip="Statue of Liberty" mapHeight="550px" mapWidth="600px" */>}}
+{{</* leaflet centerMapElement=true mapCenterX=40.690136 mapCenterY=-74.045301 defaultZoom=18 tileBaseURL="https://tile.openstreetmap.org" minZoom=10 maxZoom=18 copyrightURL="https://openstreetmap.org/copyright" copyrightName="OpenStreetMap Contributors" markerX=40.689272 markerY=-74.044512 markerTooltip="The Statue of Liberty" mapHeight="400px" mapWidth="400px" */>}}
 ```
 
-{{< leaflet centerMapElement=true mapCenterX=40.690136 mapCenterY=-74.045301 defaultZoom=18 tileBaseURL="https://tile.openstreetmap.org" minZoom=10 maxZoom=18 copyrightURL="https://openstreetmap.org/copyright" copyrightName="OpenStreetMap Contributors" markerX=40.689272 markerY=-74.044512 markerTooltip="Statue of Liberty" mapHeight="550px" mapWidth="600px" >}}
+{{< leaflet centerMapElement=true mapCenterX=40.690136 mapCenterY=-74.045301 defaultZoom=18 tileBaseURL="https://tile.openstreetmap.org" minZoom=10 maxZoom=18 copyrightURL="https://openstreetmap.org/copyright" copyrightName="OpenStreetMap Contributors" markerX=40.689272 markerY=-74.044512 markerTooltip="The Statue of Liberty" mapHeight="400px" mapWidth="400px" >}}
 
 <br/><br/><br/> 
 
