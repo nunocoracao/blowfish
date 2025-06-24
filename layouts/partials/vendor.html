@@ -53,6 +53,19 @@
   {{ end }}
 {{ end }}
 
+{{/* Leaflet */}}
+{{ if .Page.HasShortcode "leaflet" }}
+  {{ $cssLeaflet := resources.Get "lib/leaflet/leaflet.css" | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="{{ $cssLeaflet.RelPermalink }}"
+    integrity="{{ $cssLeaflet.Data.Integrity }}"
+    crossorigin="anonymous">
+  {{ $leafletLib := resources.Get "lib/leaflet/leaflet.js" | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
+  <script src="{{ $leafletLib.RelPermalink }} " integrity="{{ $leafletLib.Data.Integrity }}"></script>
+{{ end }}
+
 {{/* TypeIt */}}
 {{ if .Page.HasShortcode "typeit" }}
   {{ $typeitLib := resources.Get "lib/typeit/typeit.umd.js" | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}

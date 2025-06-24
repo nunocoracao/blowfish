@@ -43,6 +43,7 @@
     "fuse.js": "^7.1.0",
     "jquery": "^3.7.1",
     "katex": "^0.16.22",
+    "leaflet":"1.9.4",
     "lite-youtube-embed": "^0.3.3",
     "medium-zoom": "^1.1.0",
     "mermaid": "^11.6.0",
@@ -115,6 +116,30 @@
     {
       "from": "node_modules/medium-zoom/dist/medium-zoom.min.js",
       "to": "assets/lib/zoom/zoom.min.js"
+    },
+    {
+      "from": "node_modules/leaflet/LICENSE",
+      "to": "assets/lib/leaflet/LICENSE"
+    },
+    {
+      "from": "node_modules/leaflet/dist/leaflet.css",
+      "to": "assets/lib/leaflet/leaflet.css"
+    },
+    {
+      "from": "node_modules/leaflet/dist/leaflet.js",
+      "to": "assets/lib/leaflet/leaflet.js"
+    },
+    {
+      "from": "node_modules/leaflet/dist/images/marker-icon.png",
+      "to": "assets/lib/leaflet/images/marker-icon.png"
+    },
+    {
+      "from": "node_modules/leaflet/dist/images/marker-icon-2x.png",
+      "to": "assets/lib/leaflet/images/marker-icon-2x.png"
+    },
+    {
+      "from": "node_modules/leaflet/dist/images/marker-shadow.png",
+      "to": "assets/lib/leaflet/images/marker-shadow.png"
     }
   ],
   "dependencies": {

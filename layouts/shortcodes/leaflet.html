@@ -1,0 +1,56 @@
+{{ $mapId := printf "leaflet-map-%d4" .Ordinal }}
+
+{{ $centerMapElement := .Get "centerMapElement" | default false }}
+
+{{ $mapCenterX := .Get "mapCenterX" }}
+{{ $mapCenterY := .Get "mapCenterY" }}
+{{ $defaultZoom := .Get "defaultZoom" | default 15 }}
+
+{{ $tileBaseURL := .Get "tileBaseURL" | default "https://tile.openstreetmap.org" }}
+{{ $minZoom := .Get "minZoom" | default 15 }}
+{{ $maxZoom := .Get "maxZoom" | default 19 }}
+{{ $copyrightURL := .Get "copyrightURL" | default "https://openstreetmap.org/copyright" }}
+{{ $copyrightName := .Get "copyrightName" | default "OpenStreetMap" }}
+
+{{ $markerIcon := resources.Get "lib/leaflet/images/marker-icon.png" }}
+{{ $markerIconRetina := resources.Get "lib/leaflet/images/marker-icon-2x.png" }}
+{{ $markerIconShadow := resources.Get "lib/leaflet/images/marker-shadow.png" }}
+
+{{ $markerX := .Get "markerX" }}
+{{ $markerY := .Get "markerY" }}
+{{ $markerTooltip := .Get "markerTooltip" }}
+
+{{ $mapHeight := .Get "mapHeight" | default "600px" }}
+{{ $mapWidth := .Get "mapWidth" | default $mapHeight }}
+
+{{ $classes := "flex" }}
+{{ if $centerMapElement }}
+  {{ $classes = delimit (slice $classes "justify-center") " " }}
+{{ end }}
+
+
+<div class="{{ $classes }}">
+  <div id="{{ $mapId }}" class="rounded border-2 border-neutral-200 shadow-2xl dark:border-neutral-700"></div>
+</div>
+
+{{ $leafletJS := resources.Get "js/leaflet.js" | resources.Minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
+<script
+  src="{{ $leafletJS.RelPermalink }} "
+  integrity="{{ $leafletJS.Data.Integrity }}"
+  data-map-id="{{ $mapId }}"
+  data-map-center-x="{{- $mapCenterX -}}"
+  data-map-center-y="{{- $mapCenterY -}}"
+  data-default-zoom="{{- $defaultZoom -}}"
+  data-tile-base-url="{{- $tileBaseURL -}}"
+  data-min-zoom="{{- $minZoom -}}"
+  data-max-zoom="{{- $maxZoom -}}"
+  data-copyright-url="{{- $copyrightURL -}}"
+  data-copyright-name="{{- $copyrightName -}}"
+  data-marker-icon-url="{{ $markerIcon.RelPermalink }}"
+  data-marker-icon-retina-url="{{ $markerIconRetina.RelPermalink }}"
+  data-marker-icon-shadow-url="{{ $markerIconShadow.RelPermalink }}"
+  data-marker-x="{{- $markerX -}}"
+  data-marker-y="{{- $markerY -}}"
+  data-marker-tooltip="{{- $markerTooltip -}}"
+  data-map-height="{{- $mapHeight -}}"
+  data-map-width="{{- $mapWidth -}}"></script>
