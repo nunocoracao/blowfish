@@ -156,7 +156,6 @@ function executeQuery(term) {
 
   if (results.length > 0) {
     results.forEach(function (value, key) {
-      console.log(value.item.summary);
       var html = value.item.summary;
       var div = document.createElement("div");
       div.innerHTML = html;
