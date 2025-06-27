@@ -6,8 +6,9 @@
   "trailingComma": "all",
   "proseWrap": "always",
   "plugins": [
+    "@awmottaz/prettier-plugin-void-html",
     "prettier-plugin-go-template",
-    "@awmottaz/prettier-plugin-void-html"
+    "prettier-plugin-tailwindcss"
   ],
   "overrides": [
     {
