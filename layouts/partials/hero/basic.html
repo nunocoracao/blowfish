@@ -1,37 +1,29 @@
-{{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
-
-{{- $images := .Resources.ByType "image" -}}
-{{- $featured := $images.GetMatch "*background*" -}}
-{{- if not $featured }}{{ $featured = $images.GetMatch "*feature*" }}{{ end -}}
-{{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
-
-{{ if and .Params.featureimage (not $featured) }}
-  {{- $url:= .Params.featureimage -}}
-  {{ $featured = resources.GetRemote $url }}
+{{ $images := .Resources.ByType "image" }}
+{{ $backgroundImage := $images.GetMatch "*background*" }}
+{{ if not $backgroundImage }}
+  {{ $backgroundImage = $images.GetMatch "*feature*" }}
 {{ end }}
-
-{{- if not $featured }}
+{{ if not $backgroundImage }}
+  {{ $backgroundImage = $images.GetMatch "{*cover*,*thumbnail*}" }}
+{{ end }}
+{{ if and (not $backgroundImage) .Params.featureimage }}
+  {{ $backgroundImage = resources.GetRemote .Params.featureimage }}
+{{ end }}
+{{ if not $backgroundImage }}
   {{ with .Site.Params.defaultBackgroundImage }}
     {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-      {{ $featured = resources.GetRemote . }}
+      {{ $backgroundImage = resources.GetRemote . }}
     {{ else }}
-      {{ $featured = resources.Get . }}
+      {{ $backgroundImage = resources.Get . }}
     {{ end }}
   {{ end }}
-{{ end -}}
+{{ end }}
+{{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
+{{ if and ($backgroundImage) (not (or ($disableImageOptimization) (strings.HasSuffix $backgroundImage.Name ".svg"))) }}
+  {{ $backgroundImage = $backgroundImage.Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
+{{ end }}
 
-{{- with $featured -}}
-  {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg") }}
-    {{ with . }}
-      <div
-        class="w-full h-36 md:h-56 lg:h-72 single_hero_basic nozoom"
-        style="background-image:url({{ .RelPermalink }});"></div>
-    {{ end }}
-  {{ else }}
-    {{ with .Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
-      <div
-        class="w-full h-36 md:h-56 lg:h-72 single_hero_basic nozoom"
-        style="background-image:url({{ .RelPermalink }});"></div>
-    {{ end }}
-  {{ end }}
-{{- end -}}
+{{ with $backgroundImage }}
+  {{ $className := printf "background-image-%s" (md5 .RelPermalink) }}
+  <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom {{ $className }}"></div>
+{{ end }}
