@@ -1,7 +1,6 @@
 {{ $id := delimit (slice "forgejo" (partial "functions/uid.html" .)) "-" }}
 {{- $forgejoURL := print (.Get "server" | default .Site.Params.forgejoDefaultServer) "/api/v1/repos/" (.Get "repo") -}}
 {{- $forgejoData := resources.GetRemote $forgejoURL | transform.Unmarshal -}}
-{{- $forgejoColors := .Site.Data.forgejoColors -}}
 {{- with $forgejoData -}}
   <div class="forgejo-card-wrapper">
     <a id="{{ $id }}" target="_blank" href="{{ .html_url }}" class="cursor-pointer">
@@ -23,13 +22,10 @@
         </p>
 
         <div class="m-0 mt-2 flex items-center">
+          {{ $language := .language | default "fallback" }}
+          {{ $className := printf "background-color-%s" (md5 $language) }}
           <span
-            class="mr-1 inline-block h-3 w-3 rounded-full"
-            style="background-color: {{ if .language }}
-              {{- index $forgejoColors .language -}}
-            {{ else }}
-              #0077b6
-            {{ end }}"></span>
+            class="mr-1 inline-block h-3 w-3 rounded-full {{ $className }}"></span>
           <div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
             {{ if .language }}{{ .language }}{{ else }}null{{ end }}
           </div>
