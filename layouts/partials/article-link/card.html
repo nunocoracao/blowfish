@@ -6,35 +6,42 @@
     {{ end }}
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
 
-      {{- with $.Params.images -}}
-      {{- range first 6 . }}
-      <meta property="og:image" content="{{ . | absURL }}" />{{ end -}}
-      {{- else -}}
-      {{- $images := $.Resources.ByType "image" -}}
-      {{- $featured := $images.GetMatch "*feature*" -}}
-      {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
-      {{ if and .Params.featureimage (not $featured) }}
-      {{- $url:= .Params.featureimage -}}
-      {{ $featured = resources.GetRemote $url }}
-      {{ end }}
-      {{- if not $featured }}{{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}{{ end -}}
-      {{ if .Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
-      {{- with $featured -}}
-      {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg")}}
-        {{ with . }}
-        <div class="w-full thumbnail_card nozoom" style="background-image:url({{ .RelPermalink }});"></div>
-        {{ end }}
-      {{ else }}
-        {{ with .Resize "600x" }}
-        <div class="w-full thumbnail_card nozoom" style="background-image:url({{ .RelPermalink }});"></div>
-        {{ end }}
-      {{ end }}
-      {{- else -}}
-      {{- with $.Site.Params.images }}
-      <meta property="og:image" content="{{ index . 0 | absURL }}" />{{ end -}}
-      {{- end -}}
-      {{- end -}}
-
+      {{- if .Params.video }}
+        <video class="w-full thumbnail_card nozoom" controls preload="metadata" poster="{{ with .Params.featureimage }}{{ . }}{{ end }}">
+          <source src="{{ .Params.video }}" type="video/mp4">
+          Il tuo browser non supporta il tag video.
+        </video>
+      {{- else }}
+      {{- with .Params.images }}
+        {{- range first 6 . }}
+          <meta property="og:image" content="{{ . | absURL }}" />
+        {{- end }}
+      {{- else }}
+        {{- $images := .Resources.ByType "image" }}
+        {{- $featured := $images.GetMatch "*feature*" }}
+        {{- if not $featured }}{{ $featured = $images.GetMatch "*cover*" }}{{ end }}
+        {{- if not $featured }}{{ $featured = $images.GetMatch "*thumbnail*" }}{{ end }}
+        {{- if and .Params.featureimage (not $featured) }}
+          {{- $url := .Params.featureimage }}
+          {{- $featured = resources.GetRemote $url }}
+        {{- end }}
+        {{- if not $featured }}{{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}{{ end }}
+        {{- if .Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
+        {{- with $featured }}
+          {{- if or $disableImageOptimization (strings.HasSuffix $featured ".svg") }}
+            <div class="w-full thumbnail_card nozoom" style="background-image:url('{{ .RelPermalink }}');"></div>
+          {{- else }}
+            {{- with .Resize "600x" }}
+              <div class="w-full thumbnail_card nozoom" style="background-image:url('{{ .RelPermalink }}');"></div>
+            {{- end }}
+          {{- end }}
+        {{- else }}
+          {{- with .Site.Params.images }}
+            <meta property="og:image" content="{{ index . 0 | absURL }}" />
+          {{- end }}
+        {{- end }}
+      {{- end }}
+      {{- end }}
 
       {{ if and .Draft .Site.Params.article.showDraftLabel }}
       <span class="absolute top-0 right-0 m-2">

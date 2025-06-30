@@ -8,12 +8,12 @@
             <span class="sr-only">{{ .Site.Title | markdownify }}</span>
 
             {{ if eq $logo.MediaType.SubType "svg" }}
-            <span class="logo object-scale-down object-left nozoom">
+            <span class="logo object-scale-down object-right nozoom">
                 {{ $logo.Content | safeHTML }}
             </span>
             {{ else }}
             <img src="{{ $logo.RelPermalink }}" width="{{ div $logo.Width 2 }}" height="{{ div $logo.Height 2 }}"
-                class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom" alt="{{ .Site.Title }}" />
+                class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-right nozoom" alt="{{ .Site.Title }}" />
             {{ end }}
 
         </a>
