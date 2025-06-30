@@ -72,17 +72,17 @@ This is an error!
 | 参数   | 功能                                  |
 | ------ | ------------------------------------- |
 | `link` | **必填** 要嵌入文章的 `.RelPermalink` |
-| `showSummary` | **可选。** 一个布尔值，指示是否显示文章摘要。如果未设置，将使用站点的默认配置。 |
-
+| `showSummary` | **可选** 布尔值，指示是否显示文章摘要。如果未设置，将使用站点的默认配置。 |
+| `compactSummary` | **可选** 布尔值，指示是否以紧凑模式显示摘要。默认为 false。 |
 <!-- prettier-ignore-end -->
 
 **例如：**
 
 ```md
-{{</* article link="/zh-cn/docs/welcome/" */>}}
+{{</* article link="/zh-cn/docs/welcome/" showSummary=true compactSummary=true */>}}
 ```
 
-{{< article link="/zh-cn/docs/welcome/" >}}
+{{< article link="/zh-cn/docs/welcome/" showSummary=true compactSummary=true >}}
 
 <br/><br/><br/>
 
