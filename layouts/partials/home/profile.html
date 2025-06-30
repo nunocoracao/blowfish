@@ -35,8 +35,7 @@
       {{ partialCached "author-links.html" . }}
     </div>
   </header>
-  <!-- FIXME: This lets section expand too much on larger screens-->
-  <section class="prose dark:prose-invert max-w-full">{{ .Content }}</section>
+  <section class="prose dark:prose-invert w-full">{{ .Content }}</section>
 </article>
 <section>
   {{ partial "recent-articles/main.html" . }}
