@@ -72,16 +72,17 @@ Twitter で私を[フォロー](https://twitter.com/nunocoracao)するのを忘�
 | パラメータ | 説明                                              |
 | --------- | -------------------------------------------------------- |
 | `link`    | **必須** ターゲット記事への `.RelPermalink`。 |
-| `showSummary` | **任意。** 記事の要約を表示するかどうかを示すブール値。設定されていない場合、サイトのデフォルト設定が使用されます。 |
+| `showSummary` | **オプション** のブール値で、記事の要約を表示するかどうかを示します。設定されていない場合は、サイトのデフォルト設定が使用されます。 |
+| `compactSummary` | **オプション** のブール値で、要約をコンパクトモードで表示するかどうかを示します。デフォルトは false です。 |
 <!-- prettier-ignore-end -->
 
 **例:**
 
 ```md
-{{</* article link="/docs/welcome/" */>}}
+{{</* article link="/ja/docs/welcome/" showSummary=true compactSummary=true */>}}
 ```
 
-{{< article link="/docs/welcome/" >}}
+{{< article link="/ja/docs/welcome/" showSummary=true compactSummary=true >}}
 
 <br/><br/><br/>
 
