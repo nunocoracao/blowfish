@@ -1,5 +1,6 @@
 {{ $target := .target }}
 {{ $shortcodeShowSummary := .showSummary }}
+{{ $shortcodeCompactSummary := .compactSummary }}
 {{ $constrainItemsWidth := site.Params.list.constrainItemsWidth | default false }}
 {{ $disableImageOptimization := site.Params.disableImageOptimization | default false }}
 
@@ -103,8 +104,14 @@
       {{ $showSummary = $target.Params.showSummary | default (site.Params.list.showSummary | default false) }}
     {{ end }}
     {{ if $showSummary }}
+      {{ $compactSummary := false }}
+      {{ if ne $shortcodeCompactSummary nil }}
+        {{ $compactSummary = $shortcodeCompactSummary }}
+      {{ else }}
+        {{ $compactSummary = $target.Params.compactSummary | default (site.Params.list.compactSummary | default false) }}
+      {{ end }}
       <div class="overflow-hidden pt-1">
-        <div class="prose dark:prose-invert max-w-fit">
+        <div class="{{ if $compactSummary }}line-clamp-3{{ end }} max-w-fit prose dark:prose-invert">
           {{ $target.Summary | plainify }}
         </div>
       </div>
