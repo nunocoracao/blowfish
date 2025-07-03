@@ -7,7 +7,7 @@ tags: ["简码", "隐私", "示例", "gist", "twitter", "youtube", "vimeo"]
 type: 'sample'
 ---
 
-Hugo 附带了几个用于丰富内容的[内置简码](https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes)，以及一个[隐私配置](https: //gohugo.io/about/hugo-and-gdpr/) 和一组干练的简码，支持各种社交媒体嵌入的静态窗口。
+Hugo 附带了几个用于丰富内容的[内置简码](https://gohugo.io/content-management/shortcodes/#embedded)，以及一个[隐私配置](https://gohugo.io/about/hugo-and-gdpr/) 和一组干练的简码，支持各种社交媒体嵌入的静态窗口。
 
 ## YouTube
 
