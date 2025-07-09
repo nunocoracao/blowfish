@@ -37,16 +37,15 @@
     rel="stylesheet"
     href="{{ $katexCSS.RelPermalink }}"
     integrity="{{ $katexCSS.Data.Integrity }}">
-  {{ $katexJS := resources.Get "lib/katex/katex.min.js" }}
-  {{ $katexJS := $katexJS | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
-  <script defer src="{{ $katexJS.RelPermalink }}" integrity="{{ $katexJS.Data.Integrity }}"></script>
-  {{ $katexRenderJS := resources.Get "lib/katex/auto-render.min.js" }}
-  {{ $katexRenderJS := $katexRenderJS | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
+  {{ $katexLib := resources.Get "lib/katex/katex.min.js" }}
+  {{ $katexRenderLib := resources.Get "lib/katex/auto-render.min.js" }}
+  {{ $katexJS := slice $katexLib $katexRenderLib | resources.Concat "js/katex.bundle.js" | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
   <script
     defer
-    src="{{ $katexRenderJS.RelPermalink }}"
-    integrity="{{ $katexRenderJS.Data.Integrity }}"
-    onload="renderMathInElement(document.body);"></script>
+    type="text/javascript"
+    src="{{ $katexJS.RelPermalink }}"
+    integrity="{{ $katexJS.Data.Integrity }}"
+    id="katex-render"></script>
   {{ $katexFonts := resources.Match "lib/katex/fonts/*" }}
   {{ range $katexFonts }}
     <!-- {{ .RelPermalink }} -->
