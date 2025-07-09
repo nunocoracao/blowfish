@@ -370,12 +370,18 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `verification.fediverse` | 无     | 联邦域用户名，包括在网站元数据中。将服务器域名包含在用户名中，例如 `@you@instanceaddress.tld`。 |
 <!-- prettier-ignore-end -->
 
-## RSSNext
+### RSSNext
 
-| Name                     | Default   | Description                                                                                 |
+| 名称                     | 默认值   | 描述                                                                                 |
 | ------------------------ | --------- |---------------------------------------------------------------------------------------------|
-| `rssnext.feedId`    | _Not set_ | [RSSNext/Follow](https://follow.is) 提供的 `feeId`，这将被自动添加在 `rss.xml` 中以便完成订阅源所有权验证，证明该源属于你自己。 |
-| `rssnext.userId`      | _Not set_ | [RSSNext/Follow](https://follow.is) 提供的 `userId`，这将被自动添加在 `rss.xml` 中以便完成订阅源所有权验证，证明该源属于你自己      |
+| `rssnext.feedId`    | _无_ | [RSSNext/Follow](https://follow.is) 提供的 `feeId`，这将被自动添加在 `rss.xml` 中以便完成订阅源所有权验证，证明该源属于你自己。 |
+| `rssnext.userId`      | _无_ | [RSSNext/Follow](https://follow.is) 提供的 `userId`，这将被自动添加在 `rss.xml` 中以便完成订阅源所有权验证，证明该源属于你自己      |
+
+### Advertisement
+
+| 名称                     | 默认值   | 描述 |
+| ------------------------ | --------- |-------------|
+| `advertisement.adsense`    | _无_ | 您的 Google AdSense 发布商 ID (例如 `ca-pub-1234567890abcdef`)。设置此参数可在您的网站上启用 AdSense 广告。 |
 
 ## 其他配置文件
 
