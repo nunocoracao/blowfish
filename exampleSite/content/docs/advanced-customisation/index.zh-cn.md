@@ -15,7 +15,7 @@ series_order: 13
 
 ## Hugo 项目结构
 
-在开始讨论之前，首先简要介绍一下 [Hugo 项目结构](https://gohugo.io/getting-started/directory-struct/) 以及管理内容和主题自定义的最佳方式。
+在开始讨论之前，首先简要介绍一下 [Hugo 项目结构](https://gohugo.io/getting-started/directory-structure/) 以及管理内容和主题自定义的最佳方式。
 
 {{< alert >}}
 **总结：** 切勿直接编辑主题文件。一定要仅在 Hugo 项目的子目录中进行自定义，而不是在主题目录中进行自定义。
