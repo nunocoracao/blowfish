@@ -65,7 +65,7 @@ button,
 
 /* Table of Contents */
 #TableOfContents {
-  max-width: 25vw;
+  @apply lg:max-w-[25vw];
 }
 
 #TOCView {

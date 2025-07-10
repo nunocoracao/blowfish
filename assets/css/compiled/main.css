@@ -3415,7 +3415,9 @@ button, [role="button"] {
   margin-top: calc(var(--spacing) * 3);
 }
 #TableOfContents {
-  max-width: 25vw;
+  @media (width >= 1024px) {
+    max-width: 25vw;
+  }
 }
 #TOCView {
   max-height: calc(100vh - 150px);
