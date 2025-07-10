@@ -2,7 +2,7 @@
                 title: "Bootleg Coal Rebellion"
                 tags: [著者サイト, ブログ]
                 externalUrl: "https://bootlegcoal.com"
-                weight: 931
+                weight: 94
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

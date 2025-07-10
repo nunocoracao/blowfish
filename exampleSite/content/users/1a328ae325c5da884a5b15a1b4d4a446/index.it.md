@@ -2,7 +2,7 @@
                 title: "innerknowing"
                 tags: [Sito personale, Modellatore]
                 externalUrl: "https://innerknowing.xyz/en/"
-                weight: 611
+                weight: 62
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

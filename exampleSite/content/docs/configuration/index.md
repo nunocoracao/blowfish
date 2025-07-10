@@ -48,7 +48,7 @@ Note that the variable names provided in this table use dot notation to simplify
 | `pagination.pagerSize`   | `10`                      | The number of articles listed on each page of the article listing.                                                                                                                                                                                                                                                                                                           |
 | `summaryLength`          | `0`                       | The number of words that are used to generate the article summary when one is not provided in the [front matter]({{< ref "front-matter" >}}). A value of `0` will use the first sentence. This value has no effect when summaries are hidden.                                                                                                                                |
 | `outputs.home`           | `["HTML", "RSS", "JSON"]` | The output formats that are generated for the site. Blowfish requires HTML, RSS and JSON for all theme components to work correctly.                                                                                                                                                                                                                                         |
-| `permalinks`             | _Not set_                 | Refer to the [Hugo docs](https://gohugo.io/content-management/urls/#permalinks) for permalink configuration.                                                                                                                                                                                                                                                                 |
+| `permalinks`             | _Not set_                 | Refer to the [Hugo docs](https://gohugo.io/configuration/permalinks/) for permalink configuration.                                                                                                                                                                                                                                                                 |
 | `taxonomies`             | _Not set_                 | Refer to the [Organising content]({{< ref "getting-started#organising-content" >}}) section for taxonomy configuration.                                                                                                                                                                                                                                                      |
 <!-- prettier-ignore-end -->
 
@@ -129,7 +129,7 @@ The default file can be used as a template to create additional languages, or re
 | `params.displayName`   | `"EN"`             | The name used when the language appears on the website.                                                                                                                                                                                                                                                                    |
 | `params.isoCode`       | `"en"`             | The ISO language code for HTML metadata purposes. It can be a top-level language (ie. `en`) or a sub-variant (ie. `en-AU`).                                                                                                                                                                                                |
 | `params.rtl`           | `false`            | Whether or not this is a RTL language. Set to `true` to reflow content from right-to-left. Blowfish fully supports using RTL and LTR languages at the same time and will dynamically adjust to both.                                                                                                                       |
-| `params.dateFormat`    | `"2 January 2006"` | How dates are formatted in this language. Refer to the [Hugo docs](https://gohugo.io/functions/format/#gos-layout-string) for acceptable formats.                                                                                                                                                                          |
+| `params.dateFormat`    | `"2 January 2006"` | How dates are formatted in this language. Refer to the [Hugo docs](https://gohugo.io/functions/time/format/#layout-string) for acceptable formats.                                                                                                                                                                          |
 | `params.logo`          | _Not set_          | The relative path to the site logo file within the `assets/` folder. The logo file should be provided at 2x resolution and supports any image dimensions.                                                                                                                                                                  |
 | `params.secondaryLogo` | _Not set_          | The relative path to the secondary site logo file within the `assets/` folder. The logo file should be provided at 2x resolution and supports any image dimensions. This should have an inverted/contrasting colour scheme to `logo`. If set, this logo will be shown when users toggle from the `defaultAppearance` mode. |
 | `params.description`   | _Not set_          | The website description. This will be used in the site metadata.                                                                                                                                                                                                                                                           |
@@ -287,7 +287,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 
 | Name                    | Default                | Description                                                                                                                                                                                 |
 | ----------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `sitemap.excludedKinds` | `["taxonomy", "term"]` | Kinds of content that should be excluded from the generated `/sitemap.xml` file. Refer to the [Hugo docs](https://gohugo.io/templates/section-templates/#page-kinds) for acceptable values. |
+| `sitemap.excludedKinds` | `["taxonomy", "term"]` | Kinds of content that should be excluded from the generated `/sitemap.xml` file. Refer to the [Hugo docs](https://gohugo.io/methods/page/kind/) for acceptable values. |
 
 ### Taxonomy
 
@@ -373,13 +373,18 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `verification.fediverse` | _Not set_ | The fediverse handle to include in the site metadata. Include the server domain in the username, e.g. `@you@instanceaddress.tld`. |
 <!-- prettier-ignore-end -->
 
-## RSSNext
+### RSSNext
 
 | Name                     | Default   | Description                                                                                                                          |
 | ------------------------ | --------- |--------------------------------------------------------------------------------------------------------------------------------------|
 | `rssnext.feedId`    | _Not set_ | The rss `feedId` string provided by [RSSNext/Follow](https://follow.is/) to be included in the `rss.xml`, which can helps to claim rss feed as your own. |
 | `rssnext.userId`      | _Not set_ | The rss `userId` string provided by [RSSNext/Follow](https://follow.is/) to be included in the `rss.xml`, which can helps to claim rss feed as your own.     |
 
+### Advertisement
+
+| Name                     | Default   | Description |
+| ------------------------ | --------- |-------------|
+| `advertisement.adsense`    | _Not set_ | Your Google AdSense Publisher ID (e.g. `ca-pub-1234567890abcdef`). Set this parameter to enable AdSense ads on your site. |
 
 ## Other configuration files
 

@@ -22,7 +22,7 @@
             {{ end }}
           {{ end }}
           {{ if $homepageImage }}
-            <img class="h-full w-full object-cover m-0 nozoom margin-0" src="{{ $homepageImage.RelPermalink }}">
+            <img class="h-full w-full object-cover nozoom mt-0 mr-0 mb-0 ml-0" src="{{ $homepageImage.RelPermalink }}">
             {{ if not $disableHeroImageFilter }}
               <div
                 class="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-600 dark:from-primary-600 dark:to-secondary-800 mix-blend-multiply"></div>
@@ -105,7 +105,7 @@
               </div>
             {{ end }}
           </div>
-          <section class="prose prose-invert">{{ .Content }}</section>
+          <section class="prose prose-invert w-full">{{ .Content }}</section>
         </div>
       </div>
     </div>

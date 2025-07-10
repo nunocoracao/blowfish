@@ -1,7 +1,6 @@
 {{ $id := delimit (slice "github" (partial "functions/uid.html" .)) "-" }}
 {{- $githubURL := print "https://api.github.com/repos/" (.Get "repo") -}}
 {{- $githubData := resources.GetRemote $githubURL | transform.Unmarshal -}}
-{{- $githubColors := .Site.Data.githubColors -}}
 {{- $githubThumbnailURL := print "https://opengraph.githubassets.com/0/" (.Get "repo") -}}
 {{- $showThumbnail := .Get "showThumbnail" | default true -}}
 
@@ -23,7 +22,7 @@
 
         <div class="w-full md:w-auto pt-3 p-5">
           <div class="flex items-center">
-            <span class="text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]">
+            <span class="text-2xl text-neutral-800 dark:text-neutral mr-[10px]">
               {{ partial "icon.html" "github" }}
             </span>
             <div
@@ -38,13 +37,10 @@
           </p>
 
           <div class="m-0 mt-2 flex items-center">
+            {{ $language := .language | default "fallback" }}
+            {{ $className := printf "background-color-%s" (md5 $language) }}
             <span
-              class="mr-1 inline-block h-3 w-3 rounded-full"
-              style="background-color: {{ if .language }}
-                {{- index $githubColors .language -}}
-              {{ else }}
-                #0077b6
-              {{ end }}"></span>
+              class="mr-1 inline-block h-3 w-3 rounded-full {{ $className }}"></span>
             <div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
               {{ if .language }}{{ .language }}{{ else }}null{{ end }}
             </div>
@@ -68,6 +64,7 @@
       {{ $fetchRepo := resources.Get "js/fetch-repo.js" }}
       {{ $fetchRepo = $fetchRepo | resources.Minify | resources.Fingerprint ($.Site.Params.fingerprintAlgorithm | default "sha512") }}
       <script
+        async
         type="text/javascript"
         src="{{ $fetchRepo.RelPermalink }}"
         integrity="{{ $fetchRepo.Data.Integrity }}"
@@ -75,5 +72,4 @@
         data-repo-id="{{ $id }}"></script>
     </a>
   {{- end -}}
-
 </div>

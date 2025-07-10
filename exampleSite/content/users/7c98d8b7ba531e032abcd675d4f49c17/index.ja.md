@@ -1,8 +1,8 @@
 ---
-                title: "ZSL"
-                tags: [Blog,Personal Site]
-                externalUrl: "https://blog.zsl0621.cc/"
-                weight: 941
+                title: "abantikabhuti.github.io"
+                tags: [パーソナルサイト, ポートフォリオ]
+                externalUrl: "https://abantikabhuti.github.io"
+                weight: 106
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

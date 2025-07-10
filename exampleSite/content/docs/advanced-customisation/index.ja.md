@@ -198,11 +198,11 @@ npm install
 
 ### Tailwind コンパイラを実行する
 
-依存関係がインストールされたら、あとは [Tailwind CLI](https://v2.tailwindcss.com/docs/installation#using-tailwind-cli) を使用して JIT コンパイラを呼び出すだけです。Hugo プロジェクトのルートに戻り、次のコマンドを実行します。
+依存関係がインストールされたら、あとは [Tailwind CLI](https://tailwindcss.com/docs/installation/tailwind-cli) を使用して JIT コンパイラを呼び出すだけです。Hugo プロジェクトのルートに戻り、次のコマンドを実行します。
 
 ```shell
 cd ../..
-./themes/blowfish/node_modules/tailwindcss/lib/cli.js -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit
+./themes/blowfish/node_modules/@tailwindcss/cli/dist/index.mjs -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit
 ```
 
 関係するパスのため少し見苦しいコマンドですが、基本的に Tailwind CLI を呼び出し、Tailwind 設定ファイルの場所（上で見たもの）、テーマの `main.css` ファイルの場所、そしてコンパイル済み CSS ファイルを配置する場所（Hugo プロジェクトの `assets/css/compiled/` フォルダ）を渡しています。
@@ -224,8 +224,8 @@ cd ../..
   "description": "",
   "scripts": {
     "server": "hugo server -b http://localhost -p 8000",
-    "dev": "NODE_ENV=development ./themes/blowfish/node_modules/tailwindcss/lib/cli.js -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
-    "build": "NODE_ENV=production ./themes/blowfish/node_modules/tailwindcss/lib/cli.js -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit"
+    "dev": "NODE_ENV=development ./themes/blowfish/node_modules/@tailwindcss/cli/dist/index.mjs -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
+    "build": "NODE_ENV=production ./themes/blowfish/node_modules/@tailwindcss/cli/dist/index.mjs -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit"
   },
   // その他...
 }

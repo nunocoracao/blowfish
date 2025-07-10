@@ -1,8 +1,8 @@
 ---
-                title: "hetong-re4per.com"
-                tags: [パーソナルサイト, ブログ]
-                externalUrl: "https://hetong-re4per.com"
-                weight: 791
+                title: "abantikabhuti.github.io"
+                tags: [Sito personale, Portfolio]
+                externalUrl: "https://abantikabhuti.github.io"
+                weight: 106
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

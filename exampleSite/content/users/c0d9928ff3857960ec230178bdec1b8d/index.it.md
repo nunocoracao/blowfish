@@ -2,7 +2,7 @@
                 title: "Synaptic Sugar"
                 tags: [Sviluppatore di videogiochi]
                 externalUrl: "https://synapticsugar.games"
-                weight: 651
+                weight: 66
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

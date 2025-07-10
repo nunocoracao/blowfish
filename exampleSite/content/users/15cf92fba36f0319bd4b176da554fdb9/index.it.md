@@ -2,7 +2,7 @@
                 title: "Adam Madej - Gameplay Animator"
                 tags: [Sito di portafoglio, Blog, Sito personale]
                 externalUrl: "http://www.adammadej.com/"
-                weight: 631
+                weight: 64
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

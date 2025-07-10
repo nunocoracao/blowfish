@@ -2,7 +2,7 @@
                 title: "merox.dev"
                 tags: [Personal site,Blog,Documentation,CV]
                 externalUrl: "https://merox.dev"
-                weight: 851
+                weight: 86
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

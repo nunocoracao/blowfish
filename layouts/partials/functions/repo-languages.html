@@ -1,0 +1,20 @@
+{{ $repoColors := site.Data.repoColors }}
+{{ $classNameMap := dict }}
+{{ range $language, $unused := $repoColors }}
+  {{ $className := printf "background-color-%s" (md5 $language) }}
+  {{ $classNameMap = merge $classNameMap (dict $className $language) }}
+{{ end }}
+
+{{ $repoLanguages := slice }}
+{{ range site.Pages }}
+  {{ $matchedClasses := findRE `background-color-[a-f0-9]{32}` .Content }}
+  {{ range $matchedClasses }}
+    {{ with index $classNameMap . }}
+      {{ $repoLanguages = $repoLanguages | append . }}
+    {{ else }}
+      {{ $repoLanguages = $repoLanguages | append "fallback" }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ return (uniq $repoLanguages) }}

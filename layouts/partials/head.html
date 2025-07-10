@@ -1,152 +1,246 @@
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   {{ with .Site.Language.Params.htmlCode | default .Site.LanguageCode }}
-  <meta http-equiv="content-language" content="{{ . }}" />
+    <meta http-equiv="content-language" content="{{ . }}">
   {{ end }}
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
   {{/* Title */}}
   {{ if .IsHome -}}
-  <title>{{ .Site.Title | emojify }}</title>
-  <meta name="title" content="{{ .Site.Title | emojify }}" />
+    <title>{{ .Site.Title | emojify }}</title>
+    <meta name="title" content="{{ .Site.Title | emojify }}">
   {{- else -}}
-  <title>{{ .Title | emojify }} &middot; {{ .Site.Title | emojify }}</title>
-  <meta name="title" content="{{ .Title | emojify }} &middot; {{ .Site.Title | emojify }}" />
+    <title>{{ .Title | emojify }} &middot; {{ .Site.Title | emojify }}</title>
+    <meta name="title" content="{{ .Title | emojify }} &middot; {{ .Site.Title | emojify }}">
   {{- end }}
+
   {{/* Metadata */}}
   {{ with (.Params.Summary | default .Params.Description) | default .Site.Params.description -}}
-  <meta name="description" content="{{ . }}" />
+    <meta name="description" content="{{ . }}">
   {{- end }}
   {{ with  .Params.Tags | default .Site.Params.keywords -}}
-  <meta name="keywords" content="{{ range . }}{{ . }}, {{ end -}}" />
+    <meta name="keywords" content="{{ range . }}{{ . }},{{ end -}}">
   {{- end }}
   {{ with .Site.Params.robots }}
-  <meta name="robots" content="{{ . }}" />
+    <meta name="robots" content="{{ . }}">
   {{ end }}
   {{ with .Params.robots }}
-  <meta name="robots" content="{{ . }}" />
+    <meta name="robots" content="{{ . }}">
   {{ end }}
-  <link rel="canonical" href="{{ .Permalink }}" />
+  <link rel="canonical" href="{{ .Permalink }}">
   {{ range .AlternativeOutputFormats -}}
-  {{ printf `
-  <link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink ($.Site.Title | emojify) |
-  safeHTML }}
+    {{ printf `
+      <link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink ($.Site.Title | emojify) |
+      safeHTML
+    }}
   {{ end -}}
+
   {{/* Asset bundles */}}
   {{ $assets := newScratch }}
   {{ $cssScheme := resources.Get (printf "css/schemes/%s.css" (.Site.Params.colorScheme | default "blowfish")) }}
   {{ if not $cssScheme }}
-  {{ $cssScheme = resources.Get "css/schemes/blowfish.css" }}
+    {{ $cssScheme = resources.Get "css/schemes/blowfish.css" }}
   {{ end }}
   {{ $assets.Add "css" (slice $cssScheme) }}
   {{ $cssMain := resources.Get "css/compiled/main.css" }}
   {{ $assets.Add "css" (slice $cssMain) }}
   {{ $cssCustom := resources.Get "css/custom.css" }}
   {{ if $cssCustom }}
-  {{ $assets.Add "css" (slice $cssCustom) }}
+    {{ $assets.Add "css" (slice $cssCustom) }}
   {{ end }}
+  {{ if not .Site.Params.disableImageZoom | default true }}
+    {{ $cssZoom := resources.Get "lib/zoom/style.css" }}
+    {{ $assets.Add "css" (slice $cssZoom) }}
+  {{ end }}
+
+  {{ $images := slice }}
+  {{ $backgroundAndFeaturedImages := slice }}
+  {{ range .Site.Pages }}
+    {{ $images = $images | append (.Page.Resources.ByType "image") }}
+    {{ if .Params.featureimage }}
+      {{ $backgroundAndFeaturedImages = $backgroundAndFeaturedImages | append (resources.GetRemote .Params.featureimage) }}
+    {{ end }}
+  {{ end }}
+  {{ $backgroundAndFeaturedImages = $backgroundAndFeaturedImages | append ($images.Match "{*background*,*feature*,*cover*,*thumbnail*}") }}
+  {{ $siteParams := slice .Site.Params.defaultFeaturedImage .Site.Params.defaultBackgroundImage }}
+  {{ range $siteParams }}
+    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+      {{ $backgroundAndFeaturedImages = $backgroundAndFeaturedImages | append (resources.GetRemote .) }}
+    {{ else }}
+      {{ $backgroundAndFeaturedImages = $backgroundAndFeaturedImages | append (resources.Get .) }}
+    {{ end }}
+  {{ end }}
+  {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
+  {{ range $backgroundAndFeaturedImages }}
+    {{ $classImages := slice }}
+    {{ if or $disableImageOptimization (strings.HasSuffix .Name ".svg") }}
+      {{ $classImages = $classImages | append . }}
+    {{ else }}
+      {{ $classImages = $classImages | append (.Resize "600x") }}
+      {{ $classImages = $classImages | append (.Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x")) }}
+    {{ end }}
+    {{ range $classImages }}
+      {{ $className := printf "background-image-%s" (md5 .RelPermalink) }}
+      {{ $cssBackgroundImage := printf ".%s { background-image: url(\"%s\"); }" $className .RelPermalink }}
+      {{ $cssBackgroundImage = $cssBackgroundImage | resources.FromString "css/background-image.css" }}
+      {{ $assets.Add "css" (slice $cssBackgroundImage) }}
+    {{ end }}
+  {{ end }}
+
+  {{ $repoLanguages := partial "functions/repo-languages.html" }}
+  {{ $repoColors := .Site.Data.repoColors }}
+  {{ range $repoLanguages }}
+    {{ $color := index $repoColors . | default "#0077b6" }}
+    {{ $className := printf "background-color-%s" (md5 .) }}
+    {{ $cssRepoColor := printf ".%s { background-color: %s; }" $className $color }}
+    {{ $cssRepoColor = $cssRepoColor | resources.FromString (printf "css/background-color.css") }}
+    {{ $assets.Add "css" (slice $cssRepoColor) }}
+  {{ end }}
+
   {{ $bundleCSS := $assets.Get "css" | resources.Concat "css/main.bundle.css" | resources.Minify | resources.Fingerprint
-  (.Site.Params.fingerprintAlgorithm | default "sha512") }}
-  <link type="text/css" rel="stylesheet" href="{{ $bundleCSS.RelPermalink }}"
-    integrity="{{ $bundleCSS.Data.Integrity }}" />
+    (.Site.Params.fingerprintAlgorithm | default "sha512")
+  }}
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="{{ $bundleCSS.RelPermalink }}"
+    integrity="{{ $bundleCSS.Data.Integrity }}">
+
   {{ $jsAppearance := resources.Get "js/appearance.js" }}
   {{ $jsAppearance = $jsAppearance | resources.ExecuteAsTemplate "js/appearance.js" . | resources.Minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
-  <script type="text/javascript" src="{{ $jsAppearance.RelPermalink }}"
+  <script
+    type="text/javascript"
+    src="{{ $jsAppearance.RelPermalink }}"
     integrity="{{ $jsAppearance.Data.Integrity }}"></script>
   {{ if .Site.Params.enableSearch | default false }}
-  {{ $jsFuse := resources.Get "lib/fuse/fuse.min.js" }}
-  {{ $jsSearch := resources.Get "js/search.js" }}
-  {{ $assets.Add "js" (slice $jsFuse $jsSearch) }}
+    {{ $jsFuse := resources.Get "lib/fuse/fuse.min.js" }}
+    {{ $jsSearch := resources.Get "js/search.js" }}
+    {{ $assets.Add "js" (slice $jsFuse $jsSearch) }}
   {{ end }}
   {{ if .Site.Params.enableCodeCopy | default false }}
-  {{ $jsCode := resources.Get "js/code.js" }}
-  {{ $assets.Add "js" (slice $jsCode) }}
+    {{ $jsCode := resources.Get "js/code.js" }}
+    {{ $assets.Add "js" (slice $jsCode) }}
   {{ end }}
   {{ if .Site.Params.rtl | default false }}
-  {{ $jsRTL := resources.Get "js/rtl.js" }}
-  {{ $assets.Add "js" (slice $jsRTL) }}
+    {{ $jsRTL := resources.Get "js/rtl.js" }}
+    {{ $assets.Add "js" (slice $jsRTL) }}
   {{ end }}
   {{ $jsMobileMenu := resources.Get "js/mobilemenu.js" }}
   {{ $assets.Add "js" (slice $jsMobileMenu) }}
+  {{ $buttonLikes := resources.Get "js/button-likes.js" }}
+  {{ $assets.Add "js" (slice $buttonLikes) }}
+  {{ $katexRender := resources.Get "js/katex-render.js" }}
+  {{ $assets.Add "js" (slice $katexRender) }}
   {{ if $assets.Get "js" }}
-  {{ $bundleJS := $assets.Get "js" | resources.Concat "js/main.bundle.js" | resources.Minify | resources.Fingerprint
-  (.Site.Params.fingerprintAlgorithm | default "sha512") }}
-  <script defer type="text/javascript" id="script-bundle" src="{{ $bundleJS.RelPermalink }}"
-    integrity="{{ $bundleJS.Data.Integrity }}" data-copy="{{ i18n "code.copy" }}" data-copied="{{ i18n "code.copied"
-    }}"></script>
+    {{ $bundleJS := $assets.Get "js" | resources.Concat "js/main.bundle.js" | resources.Minify | resources.Fingerprint
+      (.Site.Params.fingerprintAlgorithm | default "sha512")
+    }}
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="{{ $bundleJS.RelPermalink }}"
+      integrity="{{ $bundleJS.Data.Integrity }}"
+      data-copy="{{ i18n "code.copy" }}"
+      data-copied="{{ i18n "code.copied" }}"></script>
   {{ end }}
   {{ if not .Site.Params.disableImageZoom | default true }}
-  {{ $zoomJS := resources.Get "lib/zoom/zoom.min.js" | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
-  <script src="{{ $zoomJS.RelPermalink }}" integrity="{{ $zoomJS.Data.Integrity }}"></script>
+    {{ $zoomJS := resources.Get "lib/zoom/zoom.min.umd.js" | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
+    <script src="{{ $zoomJS.RelPermalink }}" integrity="{{ $zoomJS.Data.Integrity }}"></script>
   {{ end }}
+
   {{/* Icons */}}
   {{ if templates.Exists "partials/favicons.html" }}
-  {{ partialCached "favicons.html" .Site }}
+    {{ partialCached "favicons.html" .Site }}
   {{ else }}
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ "apple-touch-icon.png" | relURL }}" />
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | relURL }}" />
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon-16x16.png" | relURL }}" />
-  <link rel="manifest" href="{{ "site.webmanifest" | relURL }}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ "apple-touch-icon.png" | relURL }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | relURL }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon-16x16.png" | relURL }}">
+    <link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
   {{ end }}
+
   {{/* Site Verification */}}
   {{ with .Site.Params.verification.google }}
-  <meta name="google-site-verification" content="{{ . }}" />
+    <meta name="google-site-verification" content="{{ . }}">
   {{ end }}
   {{ with .Site.Params.verification.bing }}
-  <meta name="msvalidate.01" content="{{ . }}" />
+    <meta name="msvalidate.01" content="{{ . }}">
   {{ end }}
   {{ with .Site.Params.verification.pinterest }}
-  <meta name="p:domain_verify" content="{{ . }}" />
+    <meta name="p:domain_verify" content="{{ . }}">
   {{ end }}
   {{ with .Site.Params.verification.yandex }}
-  <meta name="yandex-verification" content="{{ . }}" />
+    <meta name="yandex-verification" content="{{ . }}">
   {{ end }}
   {{ with .Site.Params.verification.fediverse }}
-  <meta name="fediverse:creator" content="{{ . }}" />
+    <meta name="fediverse:creator" content="{{ . }}">
   {{ end }}
+
   {{/* Social */}}
   {{ template "_internal/opengraph.html" . }}
   {{ template "_internal/twitter_cards.html" . }}
+
   {{- /* Main page always uses this; fallback elsewhere if no feature image */ -}}
   {{- /* See https://gohugo.io/templates/embedded/#open-graph */ -}}
-  {{ if not ($.Resources.GetMatch "*feature*") }}
-    {{ with .Site.Params.defaultSocialImage }}
-    <meta name="twitter:image" content="{{ . | absURL }}" />
-    <meta property="og:image" content="{{ . | absURL }}" />
-    {{ end }}
-  {{ end }}
+  {{- $images := .Resources.ByType "image" -}}
+  {{- $socialImage := $images.GetMatch "*feature*" -}}
+
+  {{- if not $socialImage -}}
+    {{- with .Site.Params.defaultSocialImage -}}
+      {{- if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") -}}
+        {{- $socialImage = resources.GetRemote . -}}
+      {{- else -}}
+        {{- $socialImage = resources.Get . -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- with $socialImage -}}
+    <meta name="twitter:image" content="{{ .RelPermalink | absURL }}">
+    <meta property="og:image" content="{{ .RelPermalink | absURL }}">
+  {{- end -}}
+
   {{/* Schema */}}
   {{ partial "schema.html" . }}
+
   {{/* Me */}}
   {{ with .Site.Params.Author.name }}
-  <meta name="author" content="{{ . }}" />{{ end }}
+    <meta name="author" content="{{ . }}">
+  {{ end }}
   {{ with .Site.Params.Author.links }}
-  {{ range $links := . }}
-  {{ range $name, $url := $links }}
-  {{ if not (strings.HasPrefix $url "mailto:") }}
-  <link href="{{ $url }}" rel="me" />{{ end }}
+    {{ range $links := . }}
+      {{ range $name, $url := $links }}
+        {{ if not (strings.HasPrefix $url "mailto:") }}
+          <link href="{{ $url }}" rel="me">
+        {{ end }}
+      {{ end }}
+    {{ end }}
   {{ end }}
-  {{ end }}
-  {{ end }}
+
   {{/* Vendor */}}
   {{ partial "vendor.html" . }}
+
   {{/* Analytics */}}
   {{ partial "analytics/main.html" .Site }}
+
   {{/* Extend head - eg. for custom analytics scripts, etc. */}}
   {{ if templates.Exists "partials/extend-head.html" }}
-  {{ partialCached "extend-head.html" .Site }}
+    {{ partialCached "extend-head.html" .Site }}
   {{ end }}
-  {{/* Uncached extend head - e.g. {{ with .Page.HasShortcode "gallery" }} do something {{ end }}  */}}
+
+  {{/* Uncached extend head - Example: https://gohugo.io/methods/page/hasshortcode/ */}}
   {{ if templates.Exists "partials/extend-head-uncached.html" }}
-  {{ partial "extend-head-uncached.html" . }}
+    {{ partial "extend-head-uncached.html" . }}
   {{ end }}
-  <meta name="theme-color"/>
+
   {{/* Firebase */}}
   {{ with $.Site.Params.firebase }}
-  {{ if isset $.Site.Params "firebase" }}
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    {{ if isset $.Site.Params "firebase" }}
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
   <script>
 
     const firebaseConfig = {
@@ -164,11 +258,11 @@
     var auth = firebase.auth();
 
   </script>
-  {{ end }}
+    {{ end }}
   {{ end }}
 
   {{/* Advertisement */}}
   {{ with .Site.Params.advertisement.adsense }}
-  <meta name="google-adsense-account" content="{{ . }}" />
+    <meta name="google-adsense-account" content="{{ . }}">
   {{ end }}
 </head>

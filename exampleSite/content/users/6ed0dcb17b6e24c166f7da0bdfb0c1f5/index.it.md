@@ -2,7 +2,7 @@
                 title: "technicat.com"
                 tags: [Sito aziendale]
                 externalUrl: "https://technicat.com/"
-                weight: 231
+                weight: 24
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

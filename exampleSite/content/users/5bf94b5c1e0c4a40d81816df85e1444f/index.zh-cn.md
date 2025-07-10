@@ -2,7 +2,7 @@
                 title: "pmnxis.github.io"
                 tags: [个人网站]
                 externalUrl: "https://pmnxis.github.io"
-                weight: 51
+                weight: 6
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

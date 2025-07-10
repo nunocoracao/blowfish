@@ -2,7 +2,7 @@
                 title: "joush007.github.io"
                 tags: [个人网站]
                 externalUrl: "https://joush007.github.io"
-                weight: 481
+                weight: 49
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

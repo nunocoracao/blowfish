@@ -2,7 +2,7 @@
                 title: "alejandro-ao.com"
                 tags: [パーソナルサイト]
                 externalUrl: "https://alejandro-ao.com/"
-                weight: 171
+                weight: 18
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

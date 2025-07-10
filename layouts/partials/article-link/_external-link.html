@@ -1,0 +1,5 @@
+{{ with .Params.externalUrl }}
+  href="{{ . }}" target="_blank" rel="external"
+{{ else }}
+  href="{{ .RelPermalink }}"
+{{- end -}}
