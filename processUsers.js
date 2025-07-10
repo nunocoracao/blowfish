@@ -123,15 +123,16 @@ async function translateFrontMatterTags(block, targetLang, tags) {
       await fs.access(dir);
     } catch {
       await fs.mkdir(dir);
+
+      console.log(i, user.title, dir);
+      await fs.writeFile(dir + "/index.md", userMDFile);
+      for (const lang of targetLangs) {
+        const content = await translateFrontMatterTags(userMDFile, lang, user.tags);
+        await fs.writeFile(dir + `/index.${lang}.md`, content);
+      }
+      await page.goto(user.url);
+      await page.screenshot({ path: dir + "/feature.jpg", type: "webp", quality: 50 });
     }
-    console.log(i, user.title);
-    await fs.writeFile(dir + "/index.md", userMDFile);
-    for (const lang of targetLangs) {
-      const content = await translateFrontMatterTags(userMDFile, lang, user.tags);
-      await fs.writeFile(dir + `/index.${lang}.md`, content);
-    }
-    await page.goto(user.url);
-    await page.screenshot({ path: dir + "/feature.jpg", type: "webp", quality: 50 });
   }
 
   await browser.close();

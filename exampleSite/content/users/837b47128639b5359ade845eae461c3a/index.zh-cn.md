@@ -2,7 +2,7 @@
                 title: "mrtruongvu.com"
                 tags: [个人网站, 博客]
                 externalUrl: "https://mrtruongvu.com"
-                weight: 871
+                weight: 88
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

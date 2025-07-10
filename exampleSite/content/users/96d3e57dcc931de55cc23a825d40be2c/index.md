@@ -2,7 +2,7 @@
                 title: "madoke.org"
                 tags: [Personal site]
                 externalUrl: "https://madoke.org/"
-                weight: 11
+                weight: 2
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

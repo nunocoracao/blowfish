@@ -2,7 +2,7 @@
                 title: "lazarusoverlook.com"
                 tags: [パーソナルサイト, ブログ]
                 externalUrl: "https://lazarusoverlook.com"
-                weight: 801
+                weight: 81
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

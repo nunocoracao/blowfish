@@ -2,7 +2,7 @@
                 title: "asterisk.lol"
                 tags: [博客, 个人网站]
                 externalUrl: "https://asterisk.lol"
-                weight: 571
+                weight: 58
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

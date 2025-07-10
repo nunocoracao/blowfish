@@ -658,15 +658,6 @@
     ]
   },
   {
-    "title": "hetong-re4per.com",
-    "url": "https://hetong-re4per.com",
-    "source": "https://github.com/HeTongRe4per/HeTongRe4per.github.io",
-    "tags": [
-      "Personal site",
-      "Blog"
-    ]
-  },
-  {
     "title": "lazarusoverlook.com",
     "url": "https://lazarusoverlook.com",
     "source": "https://github.com/RolandMarchand/lazarus-manor",
@@ -701,16 +692,6 @@
       "Personal site",
       "Software Developer",
       "Blog"
-    ]
-  },
-  {
-    "title": "Everybody Wants Some",
-    "url": "https://ews.ink/",
-    "source": "https://github.com/unacro/blog",
-    "tags": [
-      "Blog",
-      "Technology",
-      "Game Development"
     ]
   },
   {
@@ -796,15 +777,6 @@
     "tags": [
       "Author Site",
       "Blog"
-    ]
-  },
-  {
-    "title": "ZSL",
-    "url": "https://blog.zsl0621.cc/",
-    "source": "https://github.com/ZhenShuo2021/ZhenShuo2021.github.io",
-    "tags": [
-      "Blog",
-      "Personal Site"
     ]
   },
   {

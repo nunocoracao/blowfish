@@ -2,7 +2,7 @@
                 title: "jam.dsg.li"
                 tags: [Sito dell'organizzazione]
                 externalUrl: "https://jam.dsg.li"
-                weight: 131
+                weight: 14
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
