@@ -4,7 +4,7 @@
     <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100"></div>
     <div class="mx-auto max-w-7xl p-0">
       <div class="relative sm:overflow-hidden">
-        <div class="fixed inset-x-0 top-0 z-index-[-10]">
+        <div class="fixed inset-x-0 top-0 -z-10">
           {{ $homepageImage := "" }}
           {{ with .Site.Params.defaultBackgroundImage }}
             {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
@@ -22,7 +22,7 @@
           {{ end }}
           {{ if $homepageImage }}
             <img
-              class="w-full h-[1000px] object-cover m-0 nozoom margin-0"
+              class="w-full h-[1000px] object-cover nozoom mt-0 mr-0 mb-0 ml-0"
               src="{{ $homepageImage.RelPermalink }}"
               role="presentation">
             <div
