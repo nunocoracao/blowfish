@@ -1,77 +1,98 @@
-{{ $images := .Resources.ByType "image" }}
-{{ $backgroundImage := $images.GetMatch "*background*" }}
-{{ if not $backgroundImage }}
+{{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
+
+{{- $images := .Resources.ByType "image" -}}
+{{- $background := $images.GetMatch "*background*" -}}
+
+{{- if not $background }}
   {{ with .Site.Params.defaultBackgroundImage }}
     {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-      {{ $backgroundImage = resources.GetRemote . }}
+      {{ $background = resources.GetRemote . }}
     {{ else }}
-      {{ $backgroundImage = resources.Get . }}
+      {{ $background = resources.Get . }}
     {{ end }}
   {{ end }}
-{{ end }}
-{{ if not $backgroundImage }}
-  {{ $backgroundImage = $images.GetMatch "{*cover*,*thumbnail*}" }}
-{{ end }}
-{{ if not $backgroundImage }}
-  {{ $backgroundImage := $images.GetMatch "*feature*" }}
-{{ end }}
-{{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
-{{ if and ($backgroundImage) (not (or ($disableImageOptimization) (strings.HasSuffix $backgroundImage.Name ".svg"))) }}
-  {{ $backgroundImage = $backgroundImage.Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
-{{ end }}
+{{ end -}}
 
-{{ $featuredImage := $images.GetMatch "*feature*" }}
-{{ if not $featuredImage }}
-  {{ $featuredImage = $images.GetMatch "{*cover*,*thumbnail*}" }}
+{{- if not $background }}{{ $background = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
+{{- if not $background }}{{ $background = $images.GetMatch "*feature*" }}{{ end -}}
+{{- $featured := $images.GetMatch "*feature*" -}}
+{{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
+{{ if .Params.featureimage }}
+  {{- $url:= .Params.featureimage -}}
+  {{- if not $featured }}{{ $featured = resources.GetRemote $url }}{{ end -}}
 {{ end }}
-{{ if and (not $featuredImage) .Params.featureimage }}
-  {{ $featuredImage = resources.GetRemote .Params.featureimage }}
-{{ end }}
-{{ if not $featuredImage }}
-  {{ $featuredImage = resources.Get .Site.Params.defaultFeaturedImage }}
-{{ end }}
-{{ if not $featuredImage }}
-  {{ $featuredImage := $images.GetMatch "*background*" }}
-{{ end }}
-{{ if not $featuredImage }}
+{{- if not $featured }}{{ $featured = $images.GetMatch "*background*" }}{{ end -}}
+
+{{- if not $featured }}
   {{ with .Site.Params.defaultFeaturedImage }}
     {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-      {{ $featuredImage = resources.GetRemote . }}
+      {{ $featured = resources.GetRemote . }}
     {{ else }}
-      {{ $featuredImage = resources.Get . }}
+      {{ $featured = resources.Get . }}
     {{ end }}
   {{ end }}
-{{ end }}
-{{ if and ($featuredImage) (not (or ($disableImageOptimization) (strings.HasSuffix $featuredImage.Name ".svg"))) }}
-  {{ $featuredImage = $featuredImage.Resize "600x" }}
-{{ end }}
+{{ end -}}
 
-{{ $isParentList := eq (.Scratch.Get "scope") "list"  }}
+{{ $isParentList := eq (.Scratch.Get "scope") "list" }}
 {{ $shouldBlur := $.Params.layoutBackgroundBlur | default (or
-        (and ($.Site.Params.article.layoutBackgroundBlur | default true) (not $isParentList))
-        (and ($.Site.Params.list.layoutBackgroundBlur | default true) ($isParentList))
-    ) }}
+  (and ($.Site.Params.article.layoutBackgroundBlur | default true) (not $isParentList))
+  (and ($.Site.Params.list.layoutBackgroundBlur | default true) ($isParentList))
+  )
+}}
 
-{{ with $featuredImage }}
-  {{ $className := printf "background-image-%s" (md5 .RelPermalink) }}
-  <div class="w-full rounded-md h-36 md:h-56 lg:h-72 single_hero_basic nozoom {{ $className }}"></div>
-{{ end }}
+{{- with $featured -}}
+  {{ if or $disableImageOptimization (strings.HasSuffix . ".svg") }}
+    {{ with . }}
+      <div
+        class="w-full rounded-md h-36 md:h-56 lg:h-72 single_hero_basic nozoom"
+        style="background-image:url({{ .RelPermalink }});"></div>
+    {{ end }}
+  {{ else }}
+    {{ with .Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
+      <div
+        class="w-full rounded-md h-36 md:h-56 lg:h-72 single_hero_basic nozoom"
+        style="background-image:url({{ .RelPermalink }});"></div>
+    {{ end }}
+  {{ end }}
+{{- end -}}
 
-{{ with $backgroundImage }}
-  {{ $className := printf "background-image-%s" (md5 .RelPermalink) }}
-  <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom {{ $className }}">
-    <div
-      class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
-    </div>
-    <div
-      class="absolute inset-0 opacity-30 dark:opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral dark:to-neutral-800 mix-blend-normal">
-    </div>
-  </div>
-{{ end }}
+{{- with $background -}}
+
+  {{ if or $disableImageOptimization (strings.HasSuffix . ".svg") }}
+    {{ with . }}
+      <div
+        class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
+        style="background-image:url({{ .RelPermalink }});">
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal"></div>
+        <div
+          class="absolute inset-0 opacity-30 dark:opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral dark:to-neutral-800 mix-blend-normal"></div>
+      </div>
+    {{ end }}
+  {{ else }}
+    {{ with .Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
+      <div
+        class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
+        style="background-image:url({{ .RelPermalink }});">
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal"></div>
+        <div
+          class="absolute inset-0 opacity-30 dark:opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral dark:to-neutral-800 mix-blend-normal"></div>
+      </div>
+    {{ end }}
+  {{ end }}
+
+{{- end -}}
 
 {{ if $shouldBlur | default false }}
-  <div id="background-blur" class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"></div>
+  <div
+    id="background-blur"
+    class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"></div>
   {{ $backgroundBlur := resources.Get "js/background-blur.js" }}
-  {{ $backgroundBlur = $backgroundBlur | resources.Minify | resources.Fingerprint ($.Site.Params.fingerprintAlgorithm | default "sha512") }}
-  <script type="text/javascript" src="{{ $backgroundBlur.RelPermalink }}" integrity="{{ $backgroundBlur.Data.Integrity }}" data-target-id="background-blur"></script>
+  {{ $backgroundBlur = $backgroundBlur | resources.Minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
+  <script
+    type="text/javascript"
+    src="{{ $backgroundBlur.RelPermalink }}"
+    integrity="{{ $backgroundBlur.Data.Integrity }}"
+    data-target-id="background-blur"></script>
 {{ end }}

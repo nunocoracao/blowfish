@@ -54,48 +54,6 @@
     {{ $cssZoom := resources.Get "lib/zoom/style.css" }}
     {{ $assets.Add "css" (slice $cssZoom) }}
   {{ end }}
-
-  {{ $images := slice }}
-  {{ $backgroundAndfeaturedImages := slice }}
-  {{ range .Site.Pages }}
-    {{ $images = $images | append (.Page.Resources.ByType "image") }}
-    {{ if .Params.featureimage }}
-      {{ $backgroundAndfeaturedImages = $backgroundAndfeaturedImages | append (resources.GetRemote .Params.featureimage) }}
-    {{ end }}
-  {{ end }}
-  {{ $backgroundAndfeaturedImages = $backgroundAndfeaturedImages | append ($images.Match "{*background*,*feature*,*cover*,*thumbnail*}") }}
-  {{ $siteParams := slice .Site.Params.defaultFeaturedImage .Site.Params.defaultBackgroundImage }}
-  {{ range $siteParams }}
-    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-      {{ $backgroundAndfeaturedImages = $backgroundAndfeaturedImages | append (resources.GetRemote .) }}
-    {{ else }}
-      {{ $backgroundAndfeaturedImages = $backgroundAndfeaturedImages | append (resources.Get .) }}
-    {{ end }}
-  {{ end }}
-  {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
-  {{ range $backgroundAndfeaturedImages }}
-    {{ $backgroundAndfeaturedImages := . }}
-    {{ if not (or ($disableImageOptimization) (strings.HasSuffix .Name ".svg")) }}
-      {{ $backgroundAndfeaturedImages = .Resize "600x" }}
-    {{ end }}
-    {{ with $backgroundAndfeaturedImages }}
-      {{ $className := printf "background-image-%s" (md5 .RelPermalink) }}
-      {{ $cssBackgroundImage := printf ".%s { background-image: url(\"%s\"); }" $className .RelPermalink }}
-      {{ $cssBackgroundImage = $cssBackgroundImage | resources.FromString "css/background-image.css" }}
-      {{ $assets.Add "css" (slice $cssBackgroundImage) }}
-    {{ end }}
-  {{ end }}
-
-  {{ $repoLanguages := partial "functions/repo-languages.html" }}
-  {{ $repoColors := .Site.Data.repoColors }}
-  {{ range $repoLanguages }}
-    {{ $color := index $repoColors . | default "#0077b6" }}
-    {{ $className := printf "background-color-%s" (md5 .) }}
-    {{ $cssRepoColor := printf ".%s { background-color: %s; }" $className $color }}
-    {{ $cssRepoColor = $cssRepoColor | resources.FromString (printf "css/background-color.css") }}
-    {{ $assets.Add "css" (slice $cssRepoColor) }}
-  {{ end }}
-
   {{ $bundleCSS := $assets.Get "css" | resources.Concat "css/main.bundle.css" | resources.Minify | resources.Fingerprint
     (.Site.Params.fingerprintAlgorithm | default "sha512")
   }}
