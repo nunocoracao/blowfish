@@ -2,7 +2,7 @@
                 title: "zzzhome"
                 tags: [Personal site,Blog]
                 externalUrl: "https://zzzhome.cc/"
-                weight: 93
+                weight: 91
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

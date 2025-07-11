@@ -2,7 +2,7 @@
                 title: "Chill-Try"
                 tags: [Technology Blog,Personal site,Blog]
                 externalUrl: "https://ctry.tech/"
-                weight: 96
+                weight: 93
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
