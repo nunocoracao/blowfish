@@ -55,39 +55,58 @@
     {{ $assets.Add "css" (slice $cssZoom) }}
   {{ end }}
 
-  {{ $images := slice }}
+  {{/* Start of CSS for background-images */}}
+  {{/* collect images from each page */}}
   {{ $backgroundAndFeaturedImages := slice }}
   {{ range .Site.Pages }}
-    {{ $images = $images | append (.Page.Resources.ByType "image") }}
-    {{ if .Params.featureimage }}
-      {{ $backgroundAndFeaturedImages = $backgroundAndFeaturedImages | append (resources.GetRemote .Params.featureimage) }}
+    {{ with .Page.Resources.ByType "image" }}
+      {{ $backgroundAndFeaturedImages = $backgroundAndFeaturedImages | append (.Match "{*background*,*feature*,*cover*,*thumbnail*}") }}
+    {{ end }}
+    {{ with .Params.featureimage }}
+      {{ with resources.GetRemote . }}
+        {{ $backgroundAndFeaturedImages = $backgroundAndFeaturedImages | append . }}
+      {{ end }}
     {{ end }}
   {{ end }}
-  {{ $backgroundAndFeaturedImages = $backgroundAndFeaturedImages | append ($images.Match "{*background*,*feature*,*cover*,*thumbnail*}") }}
-  {{ $siteParams := slice .Site.Params.defaultFeaturedImage .Site.Params.defaultBackgroundImage }}
-  {{ range $siteParams }}
-    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-      {{ $backgroundAndFeaturedImages = $backgroundAndFeaturedImages | append (resources.GetRemote .) }}
-    {{ else }}
-      {{ $backgroundAndFeaturedImages = $backgroundAndFeaturedImages | append (resources.Get .) }}
+
+  {{/* collect images from config file */}}
+  {{ range (slice .Site.Params.defaultFeaturedImage .Site.Params.defaultBackgroundImage) }}
+    {{ with . }}
+      {{ if or (strings.HasPrefix . "http://") (strings.HasPrefix . "https://") }}
+        {{ with resources.GetRemote . }}
+          {{ $backgroundAndFeaturedImages = $backgroundAndFeaturedImages | append . }}
+        {{ end }}
+      {{ else }}
+        {{ with resources.Get . }}
+          {{ $backgroundAndFeaturedImages = $backgroundAndFeaturedImages | append . }}
+        {{ end }}
+      {{ end }}
     {{ end }}
   {{ end }}
-  {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
+
+  {{/* generate CSS */}}
+  {{ $disableOptimization := .Site.Params.disableImageOptimization | default false }}
+  {{ $bgWidth := .Site.Params.backgroundImageWidth | default "1200" }}
   {{ range $backgroundAndFeaturedImages }}
-    {{ $classImages := slice }}
-    {{ if or $disableImageOptimization (strings.HasSuffix .Name ".svg") }}
-      {{ $classImages = $classImages | append . }}
-    {{ else }}
-      {{ $classImages = $classImages | append (.Resize "600x") }}
-      {{ $classImages = $classImages | append (.Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x")) }}
-    {{ end }}
-    {{ range $classImages }}
-      {{ $className := printf "background-image-%s" (md5 .RelPermalink) }}
-      {{ $cssBackgroundImage := printf ".%s { background-image: url(\"%s\"); }" $className .RelPermalink }}
-      {{ $cssBackgroundImage = $cssBackgroundImage | resources.FromString "css/background-image.css" }}
-      {{ $assets.Add "css" (slice $cssBackgroundImage) }}
+    {{ with . }}
+      {{ $variants := slice }}
+      {{ if or $disableOptimization (strings.HasSuffix .Name ".svg") }}
+        {{ $variants = slice . }}
+      {{ else }}
+        {{ $variants = slice (.Resize "600x") (.Resize (print $bgWidth "x")) }}
+      {{ end }}
+      {{ range $variants }}
+        {{ with . }}
+          {{ $className := printf "background-image-%s" (md5 .RelPermalink) }}
+          {{ $css := printf ".%s { background-image: url(\"%s\"); }" $className .RelPermalink }}
+          {{ with $css | resources.FromString "css/background-image.css" }}
+            {{ $assets.Add "css" (slice .) }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
     {{ end }}
   {{ end }}
+  {{/* End of CSS for background-images */}}
 
   {{ $repoLanguages := partial "functions/repo-languages.html" }}
   {{ $repoColors := .Site.Data.repoColors }}
