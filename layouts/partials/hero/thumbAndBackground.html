@@ -13,7 +13,7 @@
   {{ $backgroundImage = $images.GetMatch "{*cover*,*thumbnail*}" }}
 {{ end }}
 {{ if not $backgroundImage }}
-  {{ $backgroundImage = $images.GetMatch "*feature*" }}
+  {{ $backgroundImage := $images.GetMatch "*feature*" }}
 {{ end }}
 {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
 {{ if and ($backgroundImage) (not (or ($disableImageOptimization) (strings.HasSuffix $backgroundImage.Name ".svg"))) }}
@@ -31,7 +31,7 @@
   {{ $featuredImage = resources.Get .Site.Params.defaultFeaturedImage }}
 {{ end }}
 {{ if not $featuredImage }}
-  {{ $featuredImage = $images.GetMatch "*background*" }}
+  {{ $featuredImage := $images.GetMatch "*background*" }}
 {{ end }}
 {{ if not $featuredImage }}
   {{ with .Site.Params.defaultFeaturedImage }}
@@ -53,13 +53,13 @@
     ) }}
 
 {{ with $featuredImage }}
-  {{ $classNameFeaturedImage := printf "background-image-%s" (md5 .RelPermalink) }}
-  <div class="w-full rounded-md h-36 md:h-56 lg:h-72 single_hero_basic nozoom {{ $classNameFeaturedImage }}"></div>
+  {{ $className := printf "background-image-%s" (md5 .RelPermalink) }}
+  <div class="w-full rounded-md h-36 md:h-56 lg:h-72 single_hero_basic nozoom {{ $className }}"></div>
 {{ end }}
 
 {{ with $backgroundImage }}
-  {{ $classNameBackgroundImage := printf "background-image-%s" (md5 .RelPermalink) }}
-  <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom {{ $classNameBackgroundImage }}">
+  {{ $className := printf "background-image-%s" (md5 .RelPermalink) }}
+  <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom {{ $className }}">
     <div
       class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
     </div>
