@@ -56,32 +56,29 @@
   {{ end }}
 
   {{ $images := slice }}
-  {{ $backgroundAndFeaturedImages := slice }}
+  {{ $backgroundAndfeaturedImages := slice }}
   {{ range .Site.Pages }}
     {{ $images = $images | append (.Page.Resources.ByType "image") }}
     {{ if .Params.featureimage }}
-      {{ $backgroundAndFeaturedImages = $backgroundAndFeaturedImages | append (resources.GetRemote .Params.featureimage) }}
+      {{ $backgroundAndfeaturedImages = $backgroundAndfeaturedImages | append (resources.GetRemote .Params.featureimage) }}
     {{ end }}
   {{ end }}
-  {{ $backgroundAndFeaturedImages = $backgroundAndFeaturedImages | append ($images.Match "{*background*,*feature*,*cover*,*thumbnail*}") }}
+  {{ $backgroundAndfeaturedImages = $backgroundAndfeaturedImages | append ($images.Match "{*background*,*feature*,*cover*,*thumbnail*}") }}
   {{ $siteParams := slice .Site.Params.defaultFeaturedImage .Site.Params.defaultBackgroundImage }}
   {{ range $siteParams }}
     {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-      {{ $backgroundAndFeaturedImages = $backgroundAndFeaturedImages | append (resources.GetRemote .) }}
+      {{ $backgroundAndfeaturedImages = $backgroundAndfeaturedImages | append (resources.GetRemote .) }}
     {{ else }}
-      {{ $backgroundAndFeaturedImages = $backgroundAndFeaturedImages | append (resources.Get .) }}
+      {{ $backgroundAndfeaturedImages = $backgroundAndfeaturedImages | append (resources.Get .) }}
     {{ end }}
   {{ end }}
   {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
-  {{ range $backgroundAndFeaturedImages }}
-    {{ $images := slice }}
-    {{ if or $disableImageOptimization (strings.HasSuffix .Name ".svg") }}
-      {{ $images = $images | append . }}
-    {{ else }}
-      {{ $images = $images | append (.Resize "600x") }}
-      {{ $images = $images | append (.Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x")) }}
+  {{ range $backgroundAndfeaturedImages }}
+    {{ $backgroundAndfeaturedImages := . }}
+    {{ if not (or ($disableImageOptimization) (strings.HasSuffix .Name ".svg")) }}
+      {{ $backgroundAndfeaturedImages = .Resize "600x" }}
     {{ end }}
-    {{ range $images }}
+    {{ with $backgroundAndfeaturedImages }}
       {{ $className := printf "background-image-%s" (md5 .RelPermalink) }}
       {{ $cssBackgroundImage := printf ".%s { background-image: url(\"%s\"); }" $className .RelPermalink }}
       {{ $cssBackgroundImage = $cssBackgroundImage | resources.FromString "css/background-image.css" }}
