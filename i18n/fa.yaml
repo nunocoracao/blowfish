@@ -47,7 +47,7 @@ footer:
   powered_by: "قدرت گرفته از {{ .Hugo }} و {{ .Theme }}"
 
 list:
-  externalurl_title: "پیوند به وبگاهئ خارجی"
+  externalurl_title: "پیوند به وبگاه خارجی"
   no_articles: "هیچ مقاله‌ای برای نمایش وجود ندارد."
 
 nav:
@@ -63,7 +63,7 @@ sharing:
   email: "ارسال ایمیل"
   facebook: "هم‌رسانی در فیس‌بوک"
   line: "هم‌رسانی در لاین"
-  linkedin: "هم‌رسانی در لینکداین"
+  linkedin: "هم‌رسانی در لینکدین"
   pinterest: "هم‌رسانی در پینترست"
   reddit: "هم‌رسانی در ردیت"
   twitter: "هم‌رسانی در توییتر"
