@@ -99,7 +99,8 @@
         {{ with . }}
           {{ $className := printf "background-image-%s" (md5 .RelPermalink) }}
           {{ $css := printf ".%s { background-image: url(\"%s\"); }" $className .RelPermalink }}
-          {{ with $css | resources.FromString "css/background-image.css" }}
+          {{ $cssFileName := printf "css/background-image-%s.css" (md5 .RelPermalink) }}
+          {{ with $css | resources.FromString $cssFileName }}
             {{ $assets.Add "css" (slice .) }}
           {{ end }}
         {{ end }}
