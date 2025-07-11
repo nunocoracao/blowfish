@@ -2,7 +2,7 @@
                 title: "Hudson McNamara"
                 tags: [个人网站, 博客]
                 externalUrl: "https://hudsonmcnamara.com"
-                weight: 97
+                weight: 94
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

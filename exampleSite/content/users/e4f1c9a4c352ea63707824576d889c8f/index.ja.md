@@ -1,8 +1,8 @@
 ---
-                title: "merox.dev"
-                tags: [个人网站, 博客, 文档, 简历]
-                externalUrl: "https://merox.dev"
-                weight: 84
+                title: "yag0x1.github.io"
+                tags: [パーソナルサイト, ポートフォリオ]
+                externalUrl: "https://yag0x1.github.io"
+                weight: 104
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
