@@ -269,6 +269,27 @@ Blowfish 还支持使用标准 Markdown 语法自动转换图像。只需使用�
 ![Alt text](image.jpg "Image caption")
 ```
 
+## Forgejo Card
+
+`forgejo` allows you to quickly link a Forgejo repository via the forgejo API, providing real-time updates on stats such as stars and forks.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description                                           |
+| --------- | ----------------------------------------------------- |
+| `repo`    | [String] forgejo repo in the format of `username/repo`|
+| `server`  | [String] server URL like `https://v11.next.forgejo.org`|
+<!-- prettier-ignore-end -->
+
+**Example 1:**
+
+```md
+{{</* forgejo server="https://v11.next.forgejo.org" repo="a/mastodon" */>}}
+```
+{{< forgejo server="https://v11.next.forgejo.org" repo="a/mastodon" >}}
+
+<br/><br/><br/>
+
+
 **例如：**
 
 ```md

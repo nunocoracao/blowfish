@@ -2,7 +2,7 @@
                 title: "code-chimp.com"
                 tags: [个人网站]
                 externalUrl: "https://code-chimp.com"
-                weight: 21
+                weight: 3
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

@@ -2,7 +2,7 @@
                 title: "gma.name"
                 tags: [Sito personale]
                 externalUrl: "https://gma.name"
-                weight: 411
+                weight: 42
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

@@ -2,7 +2,7 @@
                 title: "jamiemoxon.tech"
                 tags: [Personal site]
                 externalUrl: "https://jamiemoxon.tech"
-                weight: 391
+                weight: 40
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

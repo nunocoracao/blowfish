@@ -2,7 +2,7 @@
                 title: "n9o.xyz"
                 tags: [パーソナルサイト, テーマ著者]
                 externalUrl: "https://n9o.xyz"
-                weight: 01
+                weight: 1
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

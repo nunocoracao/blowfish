@@ -2,7 +2,7 @@
                 title: "cdell.io"
                 tags: [Sito personale]
                 externalUrl: "https://cdell.io"
-                weight: 121
+                weight: 13
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

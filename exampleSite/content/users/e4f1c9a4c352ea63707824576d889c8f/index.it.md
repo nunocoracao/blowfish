@@ -1,8 +1,8 @@
 ---
-                title: "hetong-re4per.com"
-                tags: [Personal site,Blog]
-                externalUrl: "https://hetong-re4per.com"
-                weight: 791
+                title: "yag0x1.github.io"
+                tags: [Sito personale, Portfolio]
+                externalUrl: "https://yag0x1.github.io"
+                weight: 104
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
@@ -11,3 +11,4 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
+

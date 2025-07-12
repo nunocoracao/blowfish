@@ -2,7 +2,7 @@
                 title: "Kyo's Garden"
                 tags: [Sito personale, Blog]
                 externalUrl: "https://heykyo.com"
-                weight: 1041
+                weight: 102
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

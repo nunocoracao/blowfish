@@ -2,7 +2,7 @@
                 title: "nick.bouwhuis.net"
                 tags: [个人网站]
                 externalUrl: "https://nick.bouwhuis.net"
-                weight: 201
+                weight: 21
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

@@ -2,7 +2,7 @@
                 title: "Ignacio Conde"
                 tags: [パーソナルサイト, ポートフォリオサイト, ソフトウェア開発者, ビデオゲーム開発者]
                 externalUrl: "http://www.ignaciomconde.com/"
-                weight: 671
+                weight: 68
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

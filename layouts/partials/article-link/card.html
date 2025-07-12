@@ -35,16 +35,15 @@
       {{- end -}}
       {{- end -}}
 
-
-      {{ if and .Draft .Site.Params.article.showDraftLabel }}
+    {{ if and .Draft .Site.Params.article.showDraftLabel }}
       <span class="absolute top-0 right-0 m-2">
         {{ partial "badge.html" (i18n "article.draft" | emojify) }}
       </span>
-      {{ end }}
+    {{ end }}
 
-      <div class="px-6 py-4">
 
-        {{ with .Params.externalUrl }}
+    <div class="px-6 py-4">
+      {{ with .Params.externalUrl }}
         <div>
           <div
             class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
@@ -55,23 +54,25 @@
             </span>
           </div>
         </div>
-        {{ else }}
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="{{ .RelPermalink }}">{{ .Title | emojify }}</div>
-        {{ end }}
-
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          {{ partial "article-meta/basic.html" . }}
+      {{ else }}
+        <div
+          class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="{{ .RelPermalink }}">
+          {{ .Title | emojify }}
         </div>
+      {{ end }}
 
-        {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
+
+      <div class="text-sm text-neutral-500 dark:text-neutral-400">
+        {{ partial "article-meta/basic.html" . }}
+      </div>
+
+      {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
         <div class="py-1 prose dark:prose-invert">
           {{ .Summary | plainify }}
         </div>
-        {{ end }}
-      </div>
-      <div class="px-6 pt-4 pb-2">
-
-      </div>
+      {{ end }}
     </div>
-  </a>
+    <div class="px-6 pt-4 pb-2"></div>
+  </div>
+</a>

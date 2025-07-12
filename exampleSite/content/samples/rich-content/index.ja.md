@@ -7,7 +7,7 @@ tags: ["shortcodes", "privacy", "sample", "gist", "twitter", "youtube", "vimeo"]
 type: 'sample'
 ---
 
-Hugo には、リッチコンテンツのためのいくつかの[組み込みショートコード](https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes)と[プライバシー設定](https://gohugo.io/about/hugo-and-gdpr/)、そして様々なソーシャルメディアの埋め込みを静的に、 JS なしで可能にする _simple shortcodes_ のセットが同梱されています。
+Hugo には、リッチコンテンツのためのいくつかの[組み込みショートコード](https://gohugo.io/content-management/shortcodes/#embedded)と[プライバシー設定](https://gohugo.io/about/hugo-and-gdpr/)、そして様々なソーシャルメディアの埋め込みを静的に、 JS なしで可能にする _simple shortcodes_ のセットが同梱されています。
 
 ## YouTube
 

@@ -2,7 +2,7 @@
                 title: "blog.francescopapini.com"
                 tags: [Personal site,blog]
                 externalUrl: "https://blog.francescopapini.com"
-                weight: 991
+                weight: 97
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

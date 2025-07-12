@@ -15,7 +15,7 @@ series_order: 13
 
 ## Hugo 项目结构
 
-在开始讨论之前，首先简要介绍一下 [Hugo 项目结构](https://gohugo.io/getting-started/directory-struct/) 以及管理内容和主题自定义的最佳方式。
+在开始讨论之前，首先简要介绍一下 [Hugo 项目结构](https://gohugo.io/getting-started/directory-structure/) 以及管理内容和主题自定义的最佳方式。
 
 {{< alert >}}
 **总结：** 切勿直接编辑主题文件。一定要仅在 Hugo 项目的子目录中进行自定义，而不是在主题目录中进行自定义。
@@ -196,14 +196,14 @@ npm install
 
 ### 运行 Tailwind 编译器
 
-安装依赖项后，接下来可以使用 [Tailwind CLI](https://v2.tailwindcss.com/docs/installation#using-tailwind-cli) 来调用 JIT 编译器。返回 Hugo 项目的根目录并在终端输入以下命令：
+安装依赖项后，接下来可以使用 [Tailwind CLI](https://tailwindcss.com/docs/installation/tailwind-cli) 来调用 JIT 编译器。返回 Hugo 项目的根目录并在终端输入以下命令：
 
 ```shell
 cd ../..
-./themes/blowfish/node_modules/tailwindcss/lib/cli.js -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit
+./themes/blowfish/node_modules/@tailwindcss/cli/dist/index.mjs -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit
 ```
 
-这个命令稍微有点复杂，因为涉及到几个路径。但本质上你是在调用 Tailwind CLI 并提供下面三个参数： 
+这个命令稍微有点复杂，因为涉及到几个路径。但本质上你是在调用 Tailwind CLI 并提供下面三个参数：
 - Tailwind 配置文件 `tailwind.config.js`
 - 主题的 `main.css` 文件
 - 编译产出后的 CSS 文件的位置 `assets/css/compiled/`
@@ -225,8 +225,8 @@ cd ../..
   "description": "",
   "scripts": {
     "server": "hugo server -b http://localhost -p 8000",
-    "dev": "NODE_ENV=development ./themes/blowfish/node_modules/tailwindcss/lib/cli.js -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
-    "build": "NODE_ENV=production ./themes/blowfish/node_modules/tailwindcss/lib/cli.js -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit"
+    "dev": "NODE_ENV=development ./themes/blowfish/node_modules/@tailwindcss/cli/dist/index.mjs -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
+    "build": "NODE_ENV=production ./themes/blowfish/node_modules/@tailwindcss/cli/dist/index.mjs -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit"
   },
   // and more...
 }

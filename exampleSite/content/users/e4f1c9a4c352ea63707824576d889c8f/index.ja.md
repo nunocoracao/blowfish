@@ -1,8 +1,8 @@
 ---
-                title: "ZSL"
-                tags: [Blog, Sito personale]
-                externalUrl: "https://blog.zsl0621.cc/"
-                weight: 941
+                title: "yag0x1.github.io"
+                tags: [パーソナルサイト, ポートフォリオ]
+                externalUrl: "https://yag0x1.github.io"
+                weight: 104
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
