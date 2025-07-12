@@ -31,32 +31,36 @@
 <a class="{{ $articleClasses }}" {{ partial "article-link/_external-link.html" . | safeHTMLAttr }}>
   {{- with $.Params.images -}}
     {{- range first 6 . }}
-    <meta property="og:image" content="{{ . | absURL }}" />{{ end -}}
-    {{- else -}}
+      <meta property="og:image" content="{{ . | absURL }}">
+    {{ end -}}
+  {{- else -}}
     {{- $images := $.Resources.ByType "image" -}}
     {{- $featured := $images.GetMatch "*feature*" -}}
     {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
     {{ if and .Params.featureimage (not $featured) }}
-    {{- $url:= .Params.featureimage -}}
-    {{ $featured = resources.GetRemote $url }}
+      {{- $url:= .Params.featureimage -}}
+      {{ $featured = resources.GetRemote $url }}
     {{ end }}
-    {{- if not $featured }}{{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}{{ end -}}
+    {{- if not $featured }}
+      {{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}
+    {{ end -}}
     {{ if .Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
     {{- with $featured -}}
-    {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg")}}
+      {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg") }}
         {{ with . }}
-        <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
+          <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
         {{ end }}
       {{ else }}
-        {{ with .Resize "600x"  }}
-        <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
+        {{ with .Resize "600x" }}
+          <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
         {{ end }}
       {{ end }}
     {{- else -}}
-    {{- with $.Site.Params.images }}
-    <meta property="og:image" content="{{ index . 0 | absURL }}" />{{ end -}}
+      {{- with $.Site.Params.images }}
+        <meta property="og:image" content="{{ index . 0 | absURL }}">
+      {{ end -}}
     {{- end -}}
-    {{- end -}}
+  {{- end -}}
 
 
   <div class="{{ $articleInnerClasses }}">
@@ -64,9 +68,9 @@
       {{ with .Params.externalUrl }}
         <div>
           <div
-            class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+            class="decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
             {{ $.Title | emojify }}
-            <span class="text-xs align-top cursor-default text-neutral-400 dark:text-neutral-500">
+            <span class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500">
               <span class="rtl:hidden">&#8599;</span>
               <span class="ltr:hidden">&#8598;</span>
             </span>
@@ -74,13 +78,13 @@
         </div>
       {{ else }}
         <div
-          class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          class="decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2"
           href="{{ .RelPermalink }}">
           {{ .Title | emojify }}
         </div>
       {{ end }}
       {{ if and .Draft .Site.Params.article.showDraftLabel }}
-        <div class=" ltr:ml-2 rtl:mr-2">
+        <div class="ltr:ml-2 rtl:mr-2">
           {{ partial "badge.html" (i18n "article.draft" | emojify) }}
         </div>
       {{ end }}
@@ -92,7 +96,7 @@
       {{ partial "article-meta/basic.html" . }}
     </div>
     {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
-      <div class="py-1 max-w-fit prose dark:prose-invert">
+      <div class="prose dark:prose-invert max-w-fit py-1">
         {{ .Summary | plainify }}
       </div>
     {{ end }}

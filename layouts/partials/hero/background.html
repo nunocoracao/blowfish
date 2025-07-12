@@ -6,52 +6,58 @@
 {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
 
 {{ if and .Params.featureimage (not $featured) }}
-{{- $url:= .Params.featureimage -}}
-{{ $featured = resources.GetRemote $url }}
+  {{- $url:= .Params.featureimage -}}
+  {{ $featured = resources.GetRemote $url }}
 {{ end }}
 
 {{- if not $featured }}
- {{ with .Site.Params.defaultBackgroundImage }}
-  {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-   {{ $featured = resources.GetRemote . }}
-  {{ else }}
-   {{ $featured = resources.Get . }}
+  {{ with .Site.Params.defaultBackgroundImage }}
+    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+      {{ $featured = resources.GetRemote . }}
+    {{ else }}
+      {{ $featured = resources.Get . }}
+    {{ end }}
   {{ end }}
- {{ end }}
 {{ end -}}
 
-{{ $isParentList := eq (.Scratch.Get "scope") "list"  }}
-{{ $shouldBlur := $.Params.layoutBackgroundBlur | default (or 
-        (and ($.Site.Params.article.layoutBackgroundBlur | default true) (not $isParentList)) 
-        (and ($.Site.Params.list.layoutBackgroundBlur | default true) ($isParentList))
-    ) }}
-{{ $shouldAddHeaderSpace := $.Params.layoutBackgroundHeaderSpace | default (or 
-        (and ($.Site.Params.article.layoutBackgroundHeaderSpace | default true) (not $isParentList)) 
-        (and ($.Site.Params.list.layoutBackgroundHeaderSpace | default true) ($isParentList))
-    ) }}
+{{ $isParentList := eq (.Scratch.Get "scope") "list" }}
+{{ $shouldBlur := $.Params.layoutBackgroundBlur | default (or
+  (and ($.Site.Params.article.layoutBackgroundBlur | default true) (not $isParentList))
+  (and ($.Site.Params.list.layoutBackgroundBlur | default true) ($isParentList))
+  )
+}}
+{{ $shouldAddHeaderSpace := $.Params.layoutBackgroundHeaderSpace | default (or
+  (and ($.Site.Params.article.layoutBackgroundHeaderSpace | default true) (not $isParentList))
+  (and ($.Site.Params.list.layoutBackgroundHeaderSpace | default true) ($isParentList))
+  )
+}}
 
 {{- with $featured -}}
-{{ $processedImage := . }}
-{{ if not (or $disableImageOptimization (strings.HasSuffix . ".svg")) }}
+  {{ $processedImage := . }}
+  {{ if not (or $disableImageOptimization (strings.HasSuffix . ".svg")) }}
     {{ $processedImage = .Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
-{{ end }}
-
-{{ if $shouldAddHeaderSpace | default true}}
-<div id="hero" class="h-[150px] md:h-[200px]"></div>
-{{ end }}
-
-    <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
+  {{ end }}
+  {{ if $shouldAddHeaderSpace | default true }}
+    <div id="hero" class="h-[150px] md:h-[200px]"></div>
+  {{ end }}
+  <div
+    class="single_hero_background nozoom fixed inset-x-0 top-0 h-[800px]"
     style="background-image:url({{ $processedImage.RelPermalink }});">
-    <div class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
-    </div>
     <div
-        class="absolute inset-0 opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal">
-    </div>
-</div>
-{{ if $shouldBlur | default false }}
-<div id="background-blur" class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"></div>
-{{ $backgroundBlur := resources.Get "js/background-blur.js" }}
-{{ $backgroundBlur = $backgroundBlur | resources.Minify | resources.Fingerprint ($.Site.Params.fingerprintAlgorithm | default "sha512") }}
-<script type="text/javascript" src="{{ $backgroundBlur.RelPermalink }}" integrity="{{ $backgroundBlur.Data.Integrity }}" data-target-id="background-blur"></script>
-{{ end }}
+      class="from-neutral absolute inset-0 bg-gradient-to-t to-transparent mix-blend-normal dark:from-neutral-800"></div>
+    <div
+      class="from-neutral absolute inset-0 bg-gradient-to-t to-neutral-100 opacity-60 mix-blend-normal dark:from-neutral-800 dark:to-neutral-800"></div>
+  </div>
+  {{ if $shouldBlur | default false }}
+    <div
+      id="background-blur"
+      class="single_hero_background nozoom fixed inset-x-0 top-0 h-full opacity-0 backdrop-blur-2xl"></div>
+    {{ $backgroundBlur := resources.Get "js/background-blur.js" }}
+    {{ $backgroundBlur = $backgroundBlur | resources.Minify | resources.Fingerprint ($.Site.Params.fingerprintAlgorithm | default "sha512") }}
+    <script
+      type="text/javascript"
+      src="{{ $backgroundBlur.RelPermalink }}"
+      integrity="{{ $backgroundBlur.Data.Integrity }}"
+      data-target-id="background-blur"></script>
+  {{ end }}
 {{- end -}}
