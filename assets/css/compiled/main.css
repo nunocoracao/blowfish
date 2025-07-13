@@ -2194,6 +2194,10 @@ body.zen-mode-enable {
     --tw-ease: var(--ease-out);
     transition-timing-function: var(--ease-out);
   }
+  .select-none {
+    -webkit-user-select: none;
+    user-select: none;
+  }
   .\!\[clip\:rect\(0\,0\,0\,0\)\] {
     clip: rect(0,0,0,0) !important;
   }
