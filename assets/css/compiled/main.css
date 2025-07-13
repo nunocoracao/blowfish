@@ -12,6 +12,168 @@ body.zen-mode-enable {
     display: none !important;
   }
 }
+.prose .chroma {
+  position: static;
+  border-radius: var(--radius-md);
+  background-color: rgba(var(--color-neutral-50), 1);
+  color: rgba(var(--color-neutral-700), 1);
+  &:is(.dark *) {
+    background-color: rgba(var(--color-neutral-700), 1);
+  }
+  &:is(.dark *) {
+    color: rgba(var(--color-neutral-200), 1);
+  }
+}
+.chroma .lntd, .chroma .lntd pre {
+  margin: calc(var(--spacing) * 0);
+  --tw-border-style: none;
+  border-style: none;
+  padding: calc(var(--spacing) * 0);
+  vertical-align: top;
+}
+.chroma .lntable {
+  display: block;
+  width: auto;
+  overflow: hidden;
+  padding-inline: calc(var(--spacing) * 4);
+  padding-block: calc(var(--spacing) * 3);
+  font-size: var(--text-base);
+  line-height: var(--tw-leading, var(--text-base--line-height));
+  border-spacing: 0;
+}
+.chroma .hl {
+  margin-inline: calc(var(--spacing) * -4);
+  display: block;
+  width: auto;
+  background-color: rgba(var(--color-primary-100), 1);
+  padding-inline: calc(var(--spacing) * 4);
+  &:is(.dark *) {
+    background-color: rgba(var(--color-primary-900), 1);
+  }
+}
+.chroma .lntd .hl {
+  margin: calc(var(--spacing) * 0);
+  padding: calc(var(--spacing) * 0);
+}
+.chroma .lnt, .chroma .ln {
+  margin-right: 0.4em;
+  padding-inline: 0.4em;
+  padding-block: calc(var(--spacing) * 0);
+  color: rgba(var(--color-neutral-600), 1);
+  &:is(.dark *) {
+    color: rgba(var(--color-neutral-300), 1);
+  }
+}
+.chroma .k, .chroma .kd, .chroma .kn, .chroma .kp, .chroma .kr, .chroma .nc, .chroma .fm, .chroma .nn, .chroma .vc, .chroma .o {
+  color: rgba(var(--color-primary-600), 1);
+  &:is(.dark *) {
+    color: rgba(var(--color-primary-300), 1);
+  }
+}
+.chroma .kc {
+  --tw-font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-semibold);
+  color: rgba(var(--color-secondary-400), 1);
+  &:is(.dark *) {
+    color: rgba(var(--color-secondary-500), 1);
+  }
+}
+.chroma .kt, .chroma .nv, .chroma .vi, .chroma .vm, .chroma .m, .chroma .mb, .chroma .mf, .chroma .mh, .chroma .mi, .chroma .il, .chroma .mo {
+  color: rgba(var(--color-secondary-400), 1);
+  &:is(.dark *) {
+    color: rgba(var(--color-secondary-600), 1);
+  }
+}
+.chroma .n, .chroma .nd, .chroma .ni, .chroma .nl {
+  color: rgba(var(--color-secondary-900), 1);
+  &:is(.dark *) {
+    color: rgba(var(--color-secondary-200), 1);
+  }
+}
+.chroma .na, .chroma .nb, .chroma .bp, .chroma .nx, .chroma .py, .chroma .nt {
+  color: rgba(var(--color-secondary-800), 1);
+  &:is(.dark *) {
+    color: rgba(var(--color-secondary-300), 1);
+  }
+}
+.chroma .no, .chroma .ne, .chroma .vg {
+  --tw-font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-semibold);
+  color: rgba(var(--color-secondary-400), 1);
+  &:is(.dark *) {
+    color: rgba(var(--color-secondary-500), 1);
+  }
+}
+.chroma .nf {
+  color: rgba(var(--color-secondary-600), 1);
+  &:is(.dark *) {
+    color: rgba(var(--color-secondary-500), 1);
+  }
+}
+.chroma .l, .chroma .ld, .chroma .s, .chroma .sa, .chroma .sb, .chroma .sc, .chroma .dl, .chroma .sd, .chroma .s2, .chroma .sh, .chroma .si, .chroma .sx, .chroma .s1, .chroma .gi, .chroma .go, .chroma .gp {
+  color: rgba(var(--color-primary-800), 1);
+  &:is(.dark *) {
+    color: rgba(var(--color-primary-400), 1);
+  }
+}
+.chroma .se {
+  --tw-font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-semibold);
+  color: rgba(var(--color-secondary-400), 1);
+  &:is(.dark *) {
+    color: rgba(var(--color-secondary-500), 1);
+  }
+}
+.chroma .sr, .chroma .ss {
+  --tw-font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-semibold);
+  color: rgba(var(--color-primary-800), 1);
+  &:is(.dark *) {
+    color: rgba(var(--color-primary-400), 1);
+  }
+}
+.chroma .ow {
+  --tw-font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-semibold);
+  color: rgba(var(--color-primary-400), 1);
+  &:is(.dark *) {
+    color: rgba(var(--color-primary-600), 1);
+  }
+}
+.chroma .c, .chroma .cm, .chroma .c1, .chroma .cs, .chroma .cp, .chroma .cpf {
+  color: rgba(var(--color-neutral-500), 1);
+  font-style: italic;
+  &:is(.dark *) {
+    color: rgba(var(--color-neutral-400), 1);
+  }
+}
+.chroma .ch {
+  --tw-font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-semibold);
+  color: rgba(var(--color-neutral-500), 1);
+  font-style: italic;
+  &:is(.dark *) {
+    color: rgba(var(--color-neutral-400), 1);
+  }
+}
+.chroma .ge {
+  font-style: italic;
+}
+.chroma .gh {
+  --tw-font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-semibold);
+  color: rgba(var(--color-neutral-500), 1);
+}
+.chroma .gs {
+  --tw-font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-semibold);
+}
+.chroma .gu, .chroma .gt {
+  color: rgba(var(--color-neutral-500), 1);
+}
+.chroma .gl {
+  text-decoration-line: underline;
+}
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
@@ -3521,170 +3683,8 @@ a {
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
-.prose .chroma {
-  position: static;
-  border-radius: var(--radius-md);
-  background-color: rgba(var(--color-neutral-50), 1);
-  color: rgba(var(--color-neutral-700), 1);
-  &:is(.dark *) {
-    background-color: rgba(var(--color-neutral-700), 1);
-  }
-  &:is(.dark *) {
-    color: rgba(var(--color-neutral-200), 1);
-  }
-}
 .prose-invert .highlight pre > code {
   background-color: unset;
-}
-.chroma .lntd, .chroma .lntd pre {
-  margin: calc(var(--spacing) * 0);
-  --tw-border-style: none;
-  border-style: none;
-  padding: calc(var(--spacing) * 0);
-  vertical-align: top;
-}
-.chroma .lntable {
-  display: block;
-  width: auto;
-  overflow: hidden;
-  padding-inline: calc(var(--spacing) * 4);
-  padding-block: calc(var(--spacing) * 3);
-  font-size: var(--text-base);
-  line-height: var(--tw-leading, var(--text-base--line-height));
-  border-spacing: 0;
-}
-.chroma .hl {
-  margin-inline: calc(var(--spacing) * -4);
-  display: block;
-  width: auto;
-  background-color: rgba(var(--color-primary-100), 1);
-  padding-inline: calc(var(--spacing) * 4);
-  &:is(.dark *) {
-    background-color: rgba(var(--color-primary-900), 1);
-  }
-}
-.chroma .lntd .hl {
-  margin: calc(var(--spacing) * 0);
-  padding: calc(var(--spacing) * 0);
-}
-.chroma .lnt, .chroma .ln {
-  margin-right: 0.4em;
-  padding-inline: 0.4em;
-  padding-block: calc(var(--spacing) * 0);
-  color: rgba(var(--color-neutral-600), 1);
-  &:is(.dark *) {
-    color: rgba(var(--color-neutral-300), 1);
-  }
-}
-.chroma .k, .chroma .kd, .chroma .kn, .chroma .kp, .chroma .kr, .chroma .nc, .chroma .fm, .chroma .nn, .chroma .vc, .chroma .o {
-  color: rgba(var(--color-primary-600), 1);
-  &:is(.dark *) {
-    color: rgba(var(--color-primary-300), 1);
-  }
-}
-.chroma .kc {
-  --tw-font-weight: var(--font-weight-semibold);
-  font-weight: var(--font-weight-semibold);
-  color: rgba(var(--color-secondary-400), 1);
-  &:is(.dark *) {
-    color: rgba(var(--color-secondary-500), 1);
-  }
-}
-.chroma .kt, .chroma .nv, .chroma .vi, .chroma .vm, .chroma .m, .chroma .mb, .chroma .mf, .chroma .mh, .chroma .mi, .chroma .il, .chroma .mo {
-  color: rgba(var(--color-secondary-400), 1);
-  &:is(.dark *) {
-    color: rgba(var(--color-secondary-600), 1);
-  }
-}
-.chroma .n, .chroma .nd, .chroma .ni, .chroma .nl {
-  color: rgba(var(--color-secondary-900), 1);
-  &:is(.dark *) {
-    color: rgba(var(--color-secondary-200), 1);
-  }
-}
-.chroma .na, .chroma .nb, .chroma .bp, .chroma .nx, .chroma .py, .chroma .nt {
-  color: rgba(var(--color-secondary-800), 1);
-  &:is(.dark *) {
-    color: rgba(var(--color-secondary-300), 1);
-  }
-}
-.chroma .no, .chroma .ne, .chroma .vg {
-  --tw-font-weight: var(--font-weight-semibold);
-  font-weight: var(--font-weight-semibold);
-  color: rgba(var(--color-secondary-400), 1);
-  &:is(.dark *) {
-    color: rgba(var(--color-secondary-500), 1);
-  }
-}
-.chroma .nf {
-  color: rgba(var(--color-secondary-600), 1);
-  &:is(.dark *) {
-    color: rgba(var(--color-secondary-500), 1);
-  }
-}
-.chroma .l, .chroma .ld, .chroma .s, .chroma .sa, .chroma .sb, .chroma .sc, .chroma .dl, .chroma .sd, .chroma .s2, .chroma .sh, .chroma .si, .chroma .sx, .chroma .s1, .chroma .gi, .chroma .go, .chroma .gp {
-  color: rgba(var(--color-primary-800), 1);
-  &:is(.dark *) {
-    color: rgba(var(--color-primary-400), 1);
-  }
-}
-.chroma .se {
-  --tw-font-weight: var(--font-weight-semibold);
-  font-weight: var(--font-weight-semibold);
-  color: rgba(var(--color-secondary-400), 1);
-  &:is(.dark *) {
-    color: rgba(var(--color-secondary-500), 1);
-  }
-}
-.chroma .sr, .chroma .ss {
-  --tw-font-weight: var(--font-weight-semibold);
-  font-weight: var(--font-weight-semibold);
-  color: rgba(var(--color-primary-800), 1);
-  &:is(.dark *) {
-    color: rgba(var(--color-primary-400), 1);
-  }
-}
-.chroma .ow {
-  --tw-font-weight: var(--font-weight-semibold);
-  font-weight: var(--font-weight-semibold);
-  color: rgba(var(--color-primary-400), 1);
-  &:is(.dark *) {
-    color: rgba(var(--color-primary-600), 1);
-  }
-}
-.chroma .c, .chroma .cm, .chroma .c1, .chroma .cs, .chroma .cp, .chroma .cpf {
-  color: rgba(var(--color-neutral-500), 1);
-  font-style: italic;
-  &:is(.dark *) {
-    color: rgba(var(--color-neutral-400), 1);
-  }
-}
-.chroma .ch {
-  --tw-font-weight: var(--font-weight-semibold);
-  font-weight: var(--font-weight-semibold);
-  color: rgba(var(--color-neutral-500), 1);
-  font-style: italic;
-  &:is(.dark *) {
-    color: rgba(var(--color-neutral-400), 1);
-  }
-}
-.chroma .ge {
-  font-style: italic;
-}
-.chroma .gh {
-  --tw-font-weight: var(--font-weight-semibold);
-  font-weight: var(--font-weight-semibold);
-  color: rgba(var(--color-neutral-500), 1);
-}
-.chroma .gs {
-  --tw-font-weight: var(--font-weight-semibold);
-  font-weight: var(--font-weight-semibold);
-}
-.chroma .gu, .chroma .gt {
-  color: rgba(var(--color-neutral-500), 1);
-}
-.chroma .gl {
-  text-decoration-line: underline;
 }
 pre {
   text-align: left;
@@ -3946,6 +3946,10 @@ pre {
     }
   }
 }
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;
@@ -4066,10 +4070,6 @@ pre {
   initial-value: 100%;
 }
 @property --tw-leading {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-font-weight {
   syntax: "*";
   inherits: false;
 }
@@ -4277,6 +4277,7 @@ pre {
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-font-weight: initial;
       --tw-translate-x: 0;
       --tw-translate-y: 0;
       --tw-translate-z: 0;
@@ -4304,7 +4305,6 @@ pre {
       --tw-gradient-via-position: 50%;
       --tw-gradient-to-position: 100%;
       --tw-leading: initial;
-      --tw-font-weight: initial;
       --tw-tracking: initial;
       --tw-ordinal: initial;
       --tw-slashed-zero: initial;
