@@ -3746,7 +3746,7 @@ pre {
 [id^="fn"], [id^="fnref"] {
   scroll-margin-top: 145px;
 }
-@screen sm {
+@media (width >= 640px) {
   .thumbnail {
     min-width: 100%;
     height: 180px;
@@ -3755,7 +3755,7 @@ pre {
     flex-wrap: wrap;
   }
 }
-@screen md {
+@media (width >= 853px) {
   .thumbnail {
     min-width: 300px;
     min-height: 180px;
@@ -3873,7 +3873,7 @@ pre {
   width: calc(100% - 5px);
   margin: 0px !important;
 }
-@screen sm {
+@media (width >= 640px) {
   .sm\:grid-w10 {
     width: calc(10% - 5px);
     margin: 0px !important;
@@ -3959,7 +3959,7 @@ pre {
     margin: 0px !important;
   }
 }
-@screen md {
+@media (width >= 853px) {
   .md\:grid-w10 {
     width: calc(10% - 5px);
     margin: 0px !important;
@@ -4045,7 +4045,7 @@ pre {
     margin: 0px !important;
   }
 }
-@screen lg {
+@media (width >= 1024px) {
   .lg\:grid-w10 {
     width: calc(10% - 5px);
     margin: 0px !important;
@@ -4131,7 +4131,7 @@ pre {
     margin: 0px !important;
   }
 }
-@screen xl {
+@media (width >= 1280px) {
   .xl\:grid-w10 {
     width: calc(10% - 5px);
     margin: 0px !important;
@@ -4217,7 +4217,7 @@ pre {
     margin: 0px !important;
   }
 }
-@screen 2xl {
+@media (width >= 1536px) {
   .2xl\:grid-w10 {
     width: calc(10% - 5px);
     margin: 0px !important;
@@ -4312,7 +4312,7 @@ pre {
 .ratio-32-9 {
   padding-top: 28.125%;
 }
-@screen sm {
+@media (width >= 640px) {
   .sm\:ratio-16-9 {
     padding-top: 56.25%;
   }
@@ -4323,7 +4323,7 @@ pre {
     padding-top: 28.125%;
   }
 }
-@screen md {
+@media (width >= 853px) {
   .md\:ratio-16-9 {
     padding-top: 56.25%;
   }
@@ -4334,7 +4334,7 @@ pre {
     padding-top: 28.125%;
   }
 }
-@screen lg {
+@media (width >= 1024px) {
   .lg\:ratio-16-9 {
     padding-top: 56.25%;
   }
@@ -4345,7 +4345,7 @@ pre {
     padding-top: 28.125%;
   }
 }
-@screen xl {
+@media (width >= 1280px) {
   .xl\:ratio-16-9 {
     padding-top: 56.25%;
   }
@@ -4356,7 +4356,7 @@ pre {
     padding-top: 28.125%;
   }
 }
-@screen 2xl {
+@media (width >= 1536px) {
   .2xl\:ratio-16-9 {
     padding-top: 56.25%;
   }

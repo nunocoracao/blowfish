@@ -457,7 +457,7 @@ pre {
   scroll-margin-top: 145px;
 }
 
-@screen sm {
+@variant sm {
   .thumbnail {
     min-width: 100%;
     height: 180px;
@@ -467,7 +467,7 @@ pre {
   }
 }
 
-@screen md {
+@variant md {
   .thumbnail {
     min-width: 300px;
     min-height: 180px;
@@ -599,7 +599,7 @@ pre {
   margin: 0px !important;
 }
 
-@screen sm {
+@variant sm {
   .sm\:grid-w10 {
     width: calc(10% - 5px);
     margin: 0px !important;
@@ -686,7 +686,7 @@ pre {
   }
 }
 
-@screen md {
+@variant md {
   .md\:grid-w10 {
     width: calc(10% - 5px);
     margin: 0px !important;
@@ -773,7 +773,7 @@ pre {
   }
 }
 
-@screen lg {
+@variant lg {
   .lg\:grid-w10 {
     width: calc(10% - 5px);
     margin: 0px !important;
@@ -860,7 +860,7 @@ pre {
   }
 }
 
-@screen xl {
+@variant xl {
   .xl\:grid-w10 {
     width: calc(10% - 5px);
     margin: 0px !important;
@@ -947,7 +947,7 @@ pre {
   }
 }
 
-@screen 2xl {
+@variant 2xl {
   .2xl\:grid-w10 {
     width: calc(10% - 5px);
     margin: 0px !important;
@@ -1045,7 +1045,7 @@ pre {
   padding-top: 28.125%;
 } /* 32:9 Aspect Ratio */
 
-@screen sm {
+@variant sm {
   .sm\:ratio-16-9 {
     padding-top: 56.25%;
   } /* 16:9 Aspect Ratio */
@@ -1057,7 +1057,7 @@ pre {
   } /* 32:9 Aspect Ratio */
 }
 
-@screen md {
+@variant md {
   .md\:ratio-16-9 {
     padding-top: 56.25%;
   } /* 16:9 Aspect Ratio */
@@ -1069,7 +1069,7 @@ pre {
   } /* 32:9 Aspect Ratio */
 }
 
-@screen lg {
+@variant lg {
   .lg\:ratio-16-9 {
     padding-top: 56.25%;
   } /* 16:9 Aspect Ratio */
@@ -1081,7 +1081,7 @@ pre {
   } /* 32:9 Aspect Ratio */
 }
 
-@screen xl {
+@variant xl {
   .xl\:ratio-16-9 {
     padding-top: 56.25%;
   } /* 16:9 Aspect Ratio */
@@ -1093,7 +1093,7 @@ pre {
   } /* 32:9 Aspect Ratio */
 }
 
-@screen 2xl {
+@variant 2xl {
   .2xl\:ratio-16-9 {
     padding-top: 56.25%;
   } /* 16:9 Aspect Ratio */
