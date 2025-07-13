@@ -56,4 +56,6 @@
         data-repo-id="{{ $id }}"></script>
     </a>
   </div>
+{{- else -}}
+  {{ warnf "codeberg shortcode: unable to fetch %q: %s" $codebergURL .Position }}
 {{- end -}}

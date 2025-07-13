@@ -71,5 +71,7 @@
         data-repo-url="{{ $githubURL }}"
         data-repo-id="{{ $id }}"></script>
     </a>
+  {{- else -}}
+    {{ warnf "github shortcode: unable to fetch %q: %s" $githubURL .Position }}
   {{- end -}}
 </div>

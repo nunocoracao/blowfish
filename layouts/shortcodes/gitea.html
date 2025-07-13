@@ -56,4 +56,6 @@
         data-repo-id="{{ $id }}"></script>
     </a>
   </div>
+{{- else -}}
+  {{ warnf "gitea shortcode: unable to fetch %q: %s" $giteaURL .Position }}
 {{- end -}}

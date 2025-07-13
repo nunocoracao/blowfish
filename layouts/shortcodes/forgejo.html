@@ -56,4 +56,6 @@
         data-repo-id="{{ $id }}"></script>
     </a>
   </div>
+{{- else -}}
+  {{ warnf "forgejo shortcode: unable to fetch %q: %s" $forgejoURL .Position }}
 {{- end -}}
