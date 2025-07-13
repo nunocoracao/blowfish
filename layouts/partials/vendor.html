@@ -60,6 +60,13 @@
 
 {{/* Packery */}}
 {{ if .Page.HasShortcode "gallery" }}
+  {{ $galleryCSS := resources.Get "css/components/gallery.css" }}
+  {{ $galleryCSS = $galleryCSS | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="{{ $galleryCSS.RelPermalink }}"
+    integrity="{{ $galleryCSS.Data.Integrity }}">
   {{ $packeryLib := resources.Get "lib/packery/packery.pkgd.min.js" }}
   {{ $packeryLib = $packeryLib | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
   <script
@@ -78,6 +85,13 @@
 
 {{/* tw-elements */}}
 {{ if or (.Page.HasShortcode "carousel") (.Page.HasShortcode "timeline") }}
+  {{ $carouselCSS := resources.Get "css/components/carousel.css" }}
+  {{ $carouselCSS = $carouselCSS | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="{{ $carouselCSS.RelPermalink }}"
+    integrity="{{ $carouselCSS.Data.Integrity }}">
   {{ $twelementsLib := resources.Get "lib/tw-elements/index.min.js" }}
   {{ $twelementsLib = $twelementsLib | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
   <script
