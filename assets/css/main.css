@@ -162,39 +162,32 @@ pre {
   text-align: left;
 }
 
-.thumbnail {
-  min-width: 300px;
-  height: 180px;
+.thumbnail,
+.thumbnail_card,
+.thumbnail_card_related,
+.thumbnail_card_term,
+.single_hero_basic,
+.single_hero_background {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+.thumbnail {
+  min-width: 300px;
+  height: 180px;
 }
 
 .thumbnail_card {
   height: 200px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
 }
 
 .thumbnail_card_related {
   height: 150px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
 }
 
 .thumbnail_card_term {
   height: 150px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-.single_hero_basic {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
 }
 
 .single_hero_round {
@@ -203,9 +196,6 @@ pre {
 }
 
 .single_hero_background {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   z-index: -10;
 }
 
