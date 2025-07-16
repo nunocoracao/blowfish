@@ -81,17 +81,24 @@
             {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
               {{ if $cardViewScreenWidth }}
                 <div class="relative w-screen max-w-[1600px] px-[30px] left-[calc(max(-50vw,-800px)+50%)]">
-              {{ end }}
-              <h2 class="mt-12 mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
-                {{ .Key }}
-              </h2>
-              <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 {{ if $cardViewScreenWidth }} xl:grid-cols-4 2xl:grid-cols-5 {{ end }}">
-                {{ range .Pages }}
-                  {{ partial "article-link/card.html" . }}
-                {{ end }}
-              </section>
-              {{ if $cardViewScreenWidth }}
+                  <h2 class="mt-12 mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
+                    {{ .Key }}
+                  </h2>
+                  <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 {{ if $cardViewScreenWidth }} xl:grid-cols-4 2xl:grid-cols-5 {{ end }}">
+                    {{ range .Pages }}
+                      {{ partial "article-link/card.html" . }}
+                    {{ end }}
+                  </section>
                 </div>
+              {{ else }}
+                <h2 class="mt-12 mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
+                  {{ .Key }}
+                </h2>
+                <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 {{ if $cardViewScreenWidth }} xl:grid-cols-4 2xl:grid-cols-5 {{ end }}">
+                  {{ range .Pages }}
+                    {{ partial "article-link/card.html" . }}
+                  {{ end }}
+                </section>
               {{ end }}
             {{ end }}
 
@@ -99,24 +106,34 @@
 
             {{ if $cardViewScreenWidth }}
               <div class="relative w-screen max-w-[1600px] px-[30px] left-[calc(max(-50vw,-800px)+50%)]">
-              <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+                <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+                  {{ if not $orderByWeight }}
+                    {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
+                      {{ range .Pages }}
+                        {{ partial "article-link/card.html" . }}
+                      {{ end }}
+                    {{ end }}
+                  {{ else }}
+                    {{ range (.Paginate (.Pages.ByWeight)).Pages }}
+                      {{ partial "article-link/card.html" . }}
+                    {{ end }}
+                  {{ end }}
+                </section>
+              </div>
             {{ else }}
               <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-            {{ end }}  
-            {{ if not $orderByWeight }}
-              {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
-                {{ range .Pages }}
-                  {{ partial "article-link/card.html" . }}
+                {{ if not $orderByWeight }}
+                  {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
+                    {{ range .Pages }}
+                      {{ partial "article-link/card.html" . }}
+                    {{ end }}
+                  {{ end }}
+                {{ else }}
+                  {{ range (.Paginate (.Pages.ByWeight)).Pages }}
+                    {{ partial "article-link/card.html" . }}
+                  {{ end }}
                 {{ end }}
-              {{ end }}
-            {{ else }}
-              {{ range (.Paginate (.Pages.ByWeight)).Pages }}
-                {{ partial "article-link/card.html" . }}
-              {{ end }}
-            {{ end }}
-            </section>
-            {{ if $cardViewScreenWidth }}
-              </div>
+              </section>
             {{ end }}
           {{ end }}
 
