@@ -31,32 +31,36 @@
 <a class="{{ $articleClasses }}" {{ partial "article-link/_external-link.html" . | safeHTMLAttr }}>
   {{- with $.Params.images -}}
     {{- range first 6 . }}
-    <meta property="og:image" content="{{ . | absURL }}" />{{ end -}}
-    {{- else -}}
+      <meta property="og:image" content="{{ . | absURL }}">
+    {{ end -}}
+  {{- else -}}
     {{- $images := $.Resources.ByType "image" -}}
     {{- $featured := $images.GetMatch "*feature*" -}}
     {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
     {{ if and .Params.featureimage (not $featured) }}
-    {{- $url:= .Params.featureimage -}}
-    {{ $featured = resources.GetRemote $url }}
+      {{- $url:= .Params.featureimage -}}
+      {{ $featured = resources.GetRemote $url }}
     {{ end }}
-    {{- if not $featured }}{{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}{{ end -}}
+    {{- if not $featured }}
+      {{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}
+    {{ end -}}
     {{ if .Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
     {{- with $featured -}}
-    {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg")}}
+      {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg") }}
         {{ with . }}
-        <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
+          <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
         {{ end }}
       {{ else }}
-        {{ with .Resize "600x"  }}
-        <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
+        {{ with .Resize "600x" }}
+          <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
         {{ end }}
       {{ end }}
     {{- else -}}
-    {{- with $.Site.Params.images }}
-    <meta property="og:image" content="{{ index . 0 | absURL }}" />{{ end -}}
+      {{- with $.Site.Params.images }}
+        <meta property="og:image" content="{{ index . 0 | absURL }}">
+      {{ end -}}
     {{- end -}}
-    {{- end -}}
+  {{- end -}}
 
 
   <div class="{{ $articleInnerClasses }}">
