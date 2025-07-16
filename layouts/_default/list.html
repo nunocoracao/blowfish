@@ -25,125 +25,139 @@
         {{ $lang := print "."  .Lang  ".md" }}
         {{ $path = replace $path $lang ".md" }}
       {{ end }}
-    {{ $jsPage := resources.Get "js/page.js" }}
-    {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint ($.Site.Params.fingerprintAlgorithm | default "sha512") }}
-    <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}" data-oid="views_{{ $path }}" data-oid-likes="likes_{{ $path }}"></script>
+      {{ $jsPage := resources.Get "js/page.js" }}
+      {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint ($.Site.Params.fingerprintAlgorithm | default "sha512") }}
+      <script
+        type="text/javascript"
+        src="{{ $jsPage.RelPermalink }}"
+        integrity="{{ $jsPage.Data.Integrity }}"
+        data-oid="views_{{ $path }}"
+        data-oid-likes="likes_{{ $path }}"></script>
     {{ end }}
   </header>
-    <section class="{{ if $toc -}}
-        mt-12
-      {{- else -}}
-        mt-0
-      {{- end }} prose flex max-w-full flex-col dark:prose-invert lg:flex-row">
-      {{ if $toc }}
+  <section
+    class="{{ if $toc -}}
+      mt-12
+    {{- else -}}
+      mt-0
+    {{- end }} prose flex max-w-full flex-col dark:prose-invert lg:flex-row">
+    {{ if $toc }}
       <div class="order-first px-0 lg:order-last lg:max-w-xs ltr:lg:pl-8 rtl:lg:pr-8">
-        <div class="toc ltr:pl-5 rtl:pr-5 lg:sticky {{ if hasPrefix .Site.Params.header.layout "fixed" -}}
-        lg:top-[140px]{{ else }}lg:top-10{{ end }}">
+        <div
+          class="toc ltr:pl-5 rtl:pr-5 lg:sticky {{ if hasPrefix .Site.Params.header.layout "fixed" -}}
+            lg:top-[140px]
+          {{ else }}
+            lg:top-10
+          {{ end }}">
           {{ partial "toc.html" . }}
         </div>
       </div>
-      {{ end }}
-      <div class="min-w-0 min-h-0 max-w-prose">
-        {{ .Content }}
-      </div>
-    </section>
+    {{ end }}
+    <div class="min-w-0 min-h-0 max-w-prose">
+      {{ .Content }}
+    </div>
+  </section>
 
-    {{ if gt .Pages 0 }}
-      {{ $cardView := .Params.cardView | default (.Site.Params.list.cardView | default false) }}
-      {{ $cardViewScreenWidth := .Params.cardViewScreenWidth | default (.Site.Params.list.cardViewScreenWidth | default false) }}
-      {{ $groupByYear := .Params.groupByYear | default ($.Site.Params.list.groupByYear | default false) }}
-      {{ $orderByWeight := .Params.orderByWeight | default ($.Site.Params.list.orderByWeight | default false) }}
-      {{ $groupByYear := and (not $orderByWeight) $groupByYear }}
+  {{ if gt .Pages 0 }}
+    {{ $cardView := .Params.cardView | default (.Site.Params.list.cardView | default false) }}
+    {{ $cardViewScreenWidth := .Params.cardViewScreenWidth | default (.Site.Params.list.cardViewScreenWidth | default false) }}
+    {{ $groupByYear := .Params.groupByYear | default ($.Site.Params.list.groupByYear | default false) }}
+    {{ $orderByWeight := .Params.orderByWeight | default ($.Site.Params.list.orderByWeight | default false) }}
+    {{ $groupByYear := and (not $orderByWeight) $groupByYear }}
 
-      {{ if not $cardView }}
-        <section class="space-y-10 w-full">
-          {{ if not $orderByWeight }}
-            {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
-              {{ if $groupByYear }}
-                <h2 class="mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
-                  {{ .Key }}
-                </h2>
-              {{ end }}
-              {{ range .Pages }}
-                {{ partial "article-link/simple.html" . }}
-              {{ end }}
+    {{ if not $cardView }}
+      <section class="space-y-10 w-full">
+        {{ if not $orderByWeight }}
+          {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
+            {{ if $groupByYear }}
+              <h2 class="mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
+                {{ .Key }}
+              </h2>
             {{ end }}
-          {{ else }}
-            {{ range (.Paginate (.Pages.ByWeight)).Pages }}
+            {{ range .Pages }}
               {{ partial "article-link/simple.html" . }}
             {{ end }}
           {{ end }}
-        </section>
-
         {{ else }}
+          {{ range (.Paginate (.Pages.ByWeight)).Pages }}
+            {{ partial "article-link/simple.html" . }}
+          {{ end }}
+        {{ end }}
+      </section>
+    {{ else }}
 
-          {{ if $groupByYear }}
-            {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
-              {{ if $cardViewScreenWidth }}
-                <div class="relative w-screen max-w-[1600px] px-[30px] left-[calc(max(-50vw,-800px)+50%)]">
-                  <h2 class="mt-12 mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
-                    {{ .Key }}
-                  </h2>
-                  <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 {{ if $cardViewScreenWidth }} xl:grid-cols-4 2xl:grid-cols-5 {{ end }}">
-                    {{ range .Pages }}
-                      {{ partial "article-link/card.html" . }}
-                    {{ end }}
-                  </section>
-                </div>
-              {{ else }}
-                <h2 class="mt-12 mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
-                  {{ .Key }}
-                </h2>
-                <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 {{ if $cardViewScreenWidth }} xl:grid-cols-4 2xl:grid-cols-5 {{ end }}">
+      {{ if $groupByYear }}
+        {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
+          {{ if $cardViewScreenWidth }}
+            <div class="relative w-screen max-w-[1600px] px-[30px] left-[calc(max(-50vw,-800px)+50%)]">
+              <h2 class="mt-12 mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
+                {{ .Key }}
+              </h2>
+              <section
+                class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 {{ if $cardViewScreenWidth }}
+                  xl:grid-cols-4 2xl:grid-cols-5
+                {{ end }}">
+                {{ range .Pages }}
+                  {{ partial "article-link/card.html" . }}
+                {{ end }}
+              </section>
+            </div>
+          {{ else }}
+            <h2 class="mt-12 mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
+              {{ .Key }}
+            </h2>
+            <section
+              class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 {{ if $cardViewScreenWidth }}
+                xl:grid-cols-4 2xl:grid-cols-5
+              {{ end }}">
+              {{ range .Pages }}
+                {{ partial "article-link/card.html" . }}
+              {{ end }}
+            </section>
+          {{ end }}
+        {{ end }}
+
+      {{ else }}
+        {{ if $cardViewScreenWidth }}
+          <div class="relative w-screen max-w-[1600px] px-[30px] left-[calc(max(-50vw,-800px)+50%)]">
+            <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+              {{ if not $orderByWeight }}
+                {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
                   {{ range .Pages }}
                     {{ partial "article-link/card.html" . }}
                   {{ end }}
-                </section>
+                {{ end }}
+              {{ else }}
+                {{ range (.Paginate (.Pages.ByWeight)).Pages }}
+                  {{ partial "article-link/card.html" . }}
+                {{ end }}
+              {{ end }}
+            </section>
+          </div>
+        {{ else }}
+          <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+            {{ if not $orderByWeight }}
+              {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
+                {{ range .Pages }}
+                  {{ partial "article-link/card.html" . }}
+                {{ end }}
+              {{ end }}
+            {{ else }}
+              {{ range (.Paginate (.Pages.ByWeight)).Pages }}
+                {{ partial "article-link/card.html" . }}
               {{ end }}
             {{ end }}
-
-          {{ else }}
-
-            {{ if $cardViewScreenWidth }}
-              <div class="relative w-screen max-w-[1600px] px-[30px] left-[calc(max(-50vw,-800px)+50%)]">
-                <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-                  {{ if not $orderByWeight }}
-                    {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
-                      {{ range .Pages }}
-                        {{ partial "article-link/card.html" . }}
-                      {{ end }}
-                    {{ end }}
-                  {{ else }}
-                    {{ range (.Paginate (.Pages.ByWeight)).Pages }}
-                      {{ partial "article-link/card.html" . }}
-                    {{ end }}
-                  {{ end }}
-                </section>
-              </div>
-            {{ else }}
-              <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-                {{ if not $orderByWeight }}
-                  {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
-                    {{ range .Pages }}
-                      {{ partial "article-link/card.html" . }}
-                    {{ end }}
-                  {{ end }}
-                {{ else }}
-                  {{ range (.Paginate (.Pages.ByWeight)).Pages }}
-                    {{ partial "article-link/card.html" . }}
-                  {{ end }}
-                {{ end }}
-              </section>
-            {{ end }}
-          {{ end }}
-
+          </section>
+        {{ end }}
       {{ end }}
-    {{ else }}
-      <section class="mt-10 prose dark:prose-invert">
-        <p class="py-8 border-t">
-          <em>{{ i18n "list.no_articles" | emojify }}</em>
-        </p>
-      </section>
+
     {{ end }}
+  {{ else }}
+    <section class="mt-10 prose dark:prose-invert">
+      <p class="py-8 border-t">
+        <em>{{ i18n "list.no_articles" | emojify }}</em>
+      </p>
+    </section>
+  {{ end }}
   {{ partial "pagination.html" . }}
 {{ end }}
