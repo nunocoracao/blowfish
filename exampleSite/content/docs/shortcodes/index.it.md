@@ -381,12 +381,15 @@ In order to add images to the gallery, use `img` tags for each image and add `cl
 {{</* gist "octocat" "6cad326836d38bd3a7ae" */>}}
 ````
 
+{{< gist "octocat" "6cad326836d38bd3a7ae" >}}
 
 **Example 2: Embed specific file from Gist**
 
 ```md
 {{</* gist "rauchg" "2052694" "README.md" */>}}
 ```
+
+{{< gist "rauchg" "2052694" "README.md" >}}
 
 <br/><br/><br/>
 
