@@ -54,15 +54,6 @@
     {{ $cssZoom := resources.Get "lib/zoom/style.css" }}
     {{ $assets.Add "css" (slice $cssZoom) }}
   {{ end }}
-  {{ $repoLanguages := partial "functions/repo-languages.html" }}
-  {{ $repoColors := .Site.Data.repoColors }}
-  {{ range $repoLanguages }}
-    {{ $color := index $repoColors . | default "#0077b6" }}
-    {{ $className := printf "background-color-%s" (md5 .) }}
-    {{ $cssRepoColor := printf ".%s { background-color: %s; }" $className $color }}
-    {{ $cssRepoColor = $cssRepoColor | resources.FromString (printf "css/background-color.css") }}
-    {{ $assets.Add "css" (slice $cssRepoColor) }}
-  {{ end }}
   {{ $bundleCSS := $assets.Get "css" | resources.Concat "css/main.bundle.css" | resources.Minify | resources.Fingerprint
     (.Site.Params.fingerprintAlgorithm | default "sha512")
   }}
