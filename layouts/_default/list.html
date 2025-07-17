@@ -1,5 +1,9 @@
 {{ define "main" }}
   {{ .Scratch.Set "scope" "list" }}
+  {{ $enableToc := .Params.showTableOfContents | default (.Site.Params.list.showTableOfContents | default false) }}
+  {{ $showToc := and $enableToc (in .TableOfContents "<ul") }}
+
+  {{/* Hero */}}
   {{ if .Site.Params.list.showHero | default false }}
     {{ $heroStyle := print "hero/" .Site.Params.list.heroStyle ".html" }}
     {{ if templates.Exists ( printf "partials/%s" $heroStyle ) }}
@@ -7,10 +11,9 @@
     {{ else }}
       {{ partial "hero/basic.html" . }}
     {{ end }}
-  {{- end -}}
+  {{ end }}
 
-  {{ $enableToc := .Params.showTableOfContents | default (.Site.Params.list.showTableOfContents | default false) }}
-  {{ $showToc := and $enableToc (in .TableOfContents "<ul") }}
+  {{/* Header */}}
   <header>
     {{ if .Params.showBreadcrumbs | default (.Site.Params.list.showBreadcrumbs | default false) }}
       {{ partial "breadcrumbs.html" . }}
@@ -36,10 +39,12 @@
         data-oid-likes="likes_{{ $path }}"></script>
     {{ end }}
   </header>
-  {{ $tocMargin := cond $toc "mt-12" "mt-0" -}}
+
+  {{/* Description (markdown content) */}}
+  {{ $tocMargin := cond $showToc "mt-12" "mt-0" }}
   {{ $topClass := cond (hasPrefix .Site.Params.header.layout "fixed") "lg:top-[140px]" "lg:top-10" }}
   <section class="{{ $tocMargin }} prose flex max-w-full flex-col dark:prose-invert lg:flex-row">
-    {{ if $toc }}
+    {{ if $showToc }}
       <div class="order-first px-0 lg:order-last lg:max-w-xs ltr:lg:pl-8 rtl:lg:pr-8">
         <div class="toc ltr:pl-5 rtl:pr-5 lg:sticky {{ $topClass }}">
           {{ partial "toc.html" . }}
@@ -51,6 +56,7 @@
     </div>
   </section>
 
+  {{/* Article Grid */}}
   {{ if gt .Pages 0 }}
     {{ $cardView := .Params.cardView | default (.Site.Params.list.cardView | default false) }}
     {{ $cardViewScreenWidth := .Params.cardViewScreenWidth | default (.Site.Params.list.cardViewScreenWidth | default false) }}
@@ -77,8 +83,8 @@
           {{ end }}
         {{ end }}
       </section>
+    {{/* else: is cardView */}}
     {{ else }}
-
       {{ if $groupByYear }}
         {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
           {{ if $cardViewScreenWidth }}
@@ -86,8 +92,7 @@
               <h2 class="mt-12 mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
                 {{ .Key }}
               </h2>
-              <section
-                class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+              <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
                 {{ range .Pages }}
                   {{ partial "article-link/card.html" . }}
                 {{ end }}
@@ -97,8 +102,7 @@
             <h2 class="mt-12 mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
               {{ .Key }}
             </h2>
-            <section
-              class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+            <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
               {{ range .Pages }}
                 {{ partial "article-link/card.html" . }}
               {{ end }}
@@ -106,6 +110,7 @@
           {{ end }}
         {{ end }}
 
+      {{/* else: not groupByYear */}}
       {{ else }}
         {{ if $cardViewScreenWidth }}
           <div class="relative w-screen max-w-[1600px] px-[30px] left-[calc(max(-50vw,-800px)+50%)]">
@@ -137,10 +142,10 @@
               {{ end }}
             {{ end }}
           </section>
-        {{ end }}
-      {{ end }}
-
-    {{ end }}
+        {{ end }}{{/* End of cardViewScreenWidth */}}
+      {{ end }}{{/* End of groupByYear */}}
+    {{ end }}{{/* End of cardView */}}
+  {{/* else: .Pages not greater to zero */}}
   {{ else }}
     <section class="mt-10 prose dark:prose-invert">
       <p class="py-8 border-t">
