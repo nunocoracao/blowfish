@@ -1,6 +1,6 @@
 {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
 <div
-  class="relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
+  class="group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
   <a
     {{ partial "article-link/_external-link.html" . | safeHTMLAttr }}
     class="absolute inset-0"
@@ -45,7 +45,7 @@
   <div class="px-6 py-4">
     {{ with .Params.externalUrl }}
       <div
-        class="decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
+        class="decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
         {{ $.Title | emojify }}
         <span class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500">
           <span class="rtl:hidden">&#8599;</span>
@@ -54,7 +54,7 @@
       </div>
     {{ else }}
       <div
-        class="decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
+        class="decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
         {{ .Title | emojify }}
       </div>
     {{ end }}

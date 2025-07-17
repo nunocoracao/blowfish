@@ -1,4 +1,4 @@
-/*! tailwindcss v4.1.11 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.1.8 | MIT License | https://tailwindcss.com */
 /*! Blowfish | MIT License | https://github.com/nunocoracao/blowfish */
 @layer properties;
 #zen-mode-button {
@@ -2412,6 +2412,13 @@ body.zen-mode-enable {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
         text-decoration-color: rgba(var(--color-primary-500), 1);
+      }
+    }
+  }
+  .group-hover\:underline-offset-2 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        text-underline-offset: 2px;
       }
     }
   }
