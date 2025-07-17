@@ -1,14 +1,14 @@
 <!doctype html>
 <html
-  lang="{{ with .Site.Params.isoCode | default (.Site.LanguageCode | default " en") }}{{- . -}}{{ end }}"
-  dir="{{ if .Site.Params.rtl | default false -}}
+  lang="{{ with site.Params.isoCode | default (site.LanguageCode | default " en") }}{{- . -}}{{ end }}"
+  dir="{{ if site.Params.rtl | default false -}}
     rtl
   {{- else -}}
     ltr
   {{- end }}"
   class="scroll-smooth"
-  data-default-appearance="{{ .Site.Params.defaultAppearance | default " light" }}"
-  data-auto-appearance="{{ .Site.Params.autoSwitchAppearance | default " true" }}">
+  data-default-appearance="{{ site.Params.defaultAppearance | default " light" }}"
+  data-auto-appearance="{{ site.Params.autoSwitchAppearance | default " true" }}">
   {{- partial "head.html" . -}}
 
 
@@ -22,7 +22,7 @@
         {{ i18n "nav.skip_to_main" }}
       </a>
     </div>
-    {{ $header := print "header/" .Site.Params.header.layout ".html" }}
+    {{ $header := print "header/" site.Params.header.layout ".html" }}
     {{ if templates.Exists ( printf "partials/%s" $header ) }}
       {{ partial $header . }}
     {{ else }}
@@ -31,26 +31,26 @@
     <div class="relative flex flex-col grow">
       <main id="main-content" class="grow">
         {{ block "main" . }}{{ end }}
-        {{ if and (.Site.Params.footer.showScrollToTop | default true) (gt .WordCount 1) }}
+        {{ if and (site.Params.footer.showScrollToTop | default true) (gt .WordCount 1) }}
           {{- partial "scroll-to-top.html" . -}}
         {{ end }}
       </main>
       {{- partial "footer.html" . -}}
-      {{ if .Site.Params.enableSearch | default false }}
+      {{ if site.Params.enableSearch | default false }}
         {{- partial "search.html" . -}}
       {{ end }}
     </div>
   </body>
-  {{ if .Site.Params.buymeacoffee.globalWidget | default false }}
+  {{ if site.Params.buymeacoffee.globalWidget | default false }}
     <script
       data-name="BMC-Widget"
       data-cfasync="false"
       src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
-      data-id="{{ .Site.Params.buymeacoffee.identifier }}"
+      data-id="{{ site.Params.buymeacoffee.identifier }}"
       data-description="Support me on Buy me a coffee!"
-      data-message="{{ .Site.Params.buymeacoffee.globalWidgetMessage | default "" }}"
-      data-color="{{ .Site.Params.buymeacoffee.globalWidgetColor | default "#FFDD00" }}"
-      data-position="{{ .Site.Params.buymeacoffee.globalWidgetPosition | default "Left" }}"
+      data-message="{{ site.Params.buymeacoffee.globalWidgetMessage | default "" }}"
+      data-color="{{ site.Params.buymeacoffee.globalWidgetColor | default "#FFDD00" }}"
+      data-position="{{ site.Params.buymeacoffee.globalWidgetPosition | default "Left" }}"
       data-x_margin="18"
       data-y_margin="18"></script>
   {{ end }}
