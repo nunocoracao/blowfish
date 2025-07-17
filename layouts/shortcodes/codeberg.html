@@ -1,6 +1,16 @@
 {{ $id := delimit (slice "codeberg" (partial "functions/uid.html" .)) "-" }}
 {{- $codebergURL := print "https://codeberg.org/api/v1/repos/" (.Get "repo") -}}
-{{- $codebergData := resources.GetRemote $codebergURL | transform.Unmarshal -}}
+{{- $codebergData := dict -}}
+{{- with try (resources.GetRemote $codebergURL) -}}
+  {{- with .Err -}}
+    {{- warnf "codeberg shortcode: failed to fetch remote resource from %q: %s" $codebergURL .Position -}}
+  {{- else with .Value -}}
+    {{- $codebergData = . | transform.Unmarshal -}}
+  {{- else -}}
+    {{- warnf "codeberg shortcode: unable to get remote resource from %q: %s" $codebergURL .Position -}}
+  {{- end -}}
+{{- end -}}
+
 {{- with $codebergData -}}
   <div class="codeberg-card-wrapper">
     <a id="{{ $id }}" target="_blank" href="{{ .html_url }}" class="cursor-pointer">
