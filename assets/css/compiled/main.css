@@ -2905,6 +2905,11 @@ body.zen-mode-enable {
       margin-left: calc(var(--spacing) * -5);
     }
   }
+  .ltr\:ml-0 {
+    &:where(:dir(ltr), [dir="ltr"], [dir="ltr"] *) {
+      margin-left: calc(var(--spacing) * 0);
+    }
+  }
   .ltr\:ml-2 {
     &:where(:dir(ltr), [dir="ltr"], [dir="ltr"] *) {
       margin-left: calc(var(--spacing) * 2);
@@ -2987,6 +2992,11 @@ body.zen-mode-enable {
   .rtl\:-mr-5 {
     &:where(:dir(rtl), [dir="rtl"], [dir="rtl"] *) {
       margin-right: calc(var(--spacing) * -5);
+    }
+  }
+  .rtl\:mr-0 {
+    &:where(:dir(rtl), [dir="rtl"], [dir="rtl"] *) {
+      margin-right: calc(var(--spacing) * 0);
     }
   }
   .rtl\:mr-2 {
