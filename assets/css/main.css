@@ -513,6 +513,10 @@ pre {
   text-underline-offset: 4px;
 }
 
+.group-hover-card:hover:has(.group-hover-cancel:hover) .group-hover-card-title {
+  text-decoration: none !important;
+}
+
 /* Gallery Specific Styles */
 .grid-w10 {
   width: calc(10% - 5px);

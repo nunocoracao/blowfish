@@ -2249,6 +2249,13 @@ body.zen-mode-enable {
       }
     }
   }
+  .group-hover\:underline-offset-2 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        text-underline-offset: 2px;
+      }
+    }
+  }
   .group-hover\:opacity-100 {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
@@ -3806,6 +3813,9 @@ pre {
   text-decoration-line: underline;
   text-decoration-thickness: 3px;
   text-underline-offset: 4px;
+}
+.group-hover-card:hover:has(.group-hover-cancel:hover) .group-hover-card-title {
+  text-decoration: none !important;
 }
 .grid-w10 {
   width: calc(10% - 5px);
