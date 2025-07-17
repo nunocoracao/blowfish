@@ -1,6 +1,6 @@
 {{ $constrainItemsWidth := .Page.Site.Params.list.constrainItemsWidth | default false }}
 
-{{ $articleClasses := "flex flex-wrap md:flex-nowrap article" }}
+{{ $articleClasses := "flex flex-wrap md:flex-nowrap article relative" }}
 {{ if .Site.Params.list.showCards }}
   {{ $articleClasses = delimit (slice $articleClasses "border border-neutral-200 dark:border-neutral-700 border-2 rounded-md overflow-hidden") " " }}
 {{ else }}
@@ -28,73 +28,73 @@
 {{ end }}
 
 
-<a class="{{ $articleClasses }}" {{ partial "article-link/_external-link.html" . | safeHTMLAttr }}>
+<div class="{{ $articleClasses }}">
+  <a
+    {{ partial "article-link/_external-link.html" . | safeHTMLAttr }}
+    class="absolute inset-0"
+    aria-label="{{ $.Title }}"></a>
   {{- with $.Params.images -}}
     {{- range first 6 . }}
-    <meta property="og:image" content="{{ . | absURL }}" />{{ end -}}
-    {{- else -}}
+      <meta property="og:image" content="{{ . | absURL }}">
+    {{ end -}}
+  {{- else -}}
     {{- $images := $.Resources.ByType "image" -}}
     {{- $featured := $images.GetMatch "*feature*" -}}
     {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
     {{ if and .Params.featureimage (not $featured) }}
-    {{- $url:= .Params.featureimage -}}
-    {{ $featured = resources.GetRemote $url }}
+      {{- $url:= .Params.featureimage -}}
+      {{ $featured = resources.GetRemote $url }}
     {{ end }}
-    {{- if not $featured }}{{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}{{ end -}}
+    {{- if not $featured }}
+      {{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}
+    {{ end -}}
     {{ if .Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
     {{- with $featured -}}
-    {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg")}}
+      {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg") }}
         {{ with . }}
-        <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
+          <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
         {{ end }}
       {{ else }}
-        {{ with .Resize "600x"  }}
-        <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
+        {{ with .Resize "600x" }}
+          <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
         {{ end }}
       {{ end }}
     {{- else -}}
-    {{- with $.Site.Params.images }}
-    <meta property="og:image" content="{{ index . 0 | absURL }}" />{{ end -}}
+      {{- with $.Site.Params.images }}
+        <meta property="og:image" content="{{ index . 0 | absURL }}">
+      {{ end -}}
     {{- end -}}
-    {{- end -}}
+  {{- end -}}
 
 
   <div class="{{ $articleInnerClasses }}">
     <div class="items-center text-left text-xl font-semibold">
       {{ with .Params.externalUrl }}
-        <div>
-          <div
-            class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
-            {{ $.Title | emojify }}
-            <span class="text-xs align-top cursor-default text-neutral-400 dark:text-neutral-500">
-              <span class="rtl:hidden">&#8599;</span>
-              <span class="ltr:hidden">&#8598;</span>
-            </span>
-          </div>
+        <div
+          class="decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
+          {{ $.Title | emojify }}
+          <span class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500">
+            <span class="rtl:hidden">&#8599;</span>
+            <span class="ltr:hidden">&#8598;</span>
+          </span>
         </div>
       {{ else }}
         <div
-          class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="{{ .RelPermalink }}">
+          class="decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
           {{ .Title | emojify }}
         </div>
       {{ end }}
       {{ if and .Draft .Site.Params.article.showDraftLabel }}
-        <div class=" ltr:ml-2 rtl:mr-2">
-          {{ partial "badge.html" (i18n "article.draft" | emojify) }}
-        </div>
+        <div class="ltr:ml-2 rtl:mr-2">{{ partial "badge.html" (i18n "article.draft" | emojify) }}</div>
       {{ end }}
       {{ if templates.Exists "partials/extend-article-link.html" }}
         {{ partial "extend-article-link.html" . }}
       {{ end }}
     </div>
-    <div class="text-sm text-neutral-500 dark:text-neutral-400">
-      {{ partial "article-meta/basic.html" . }}
-    </div>
+    <div class="text-sm text-neutral-500 dark:text-neutral-400">{{ partial "article-meta/basic.html" . }}</div>
     {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
-      <div class="py-1 max-w-fit prose dark:prose-invert">
-        {{ .Summary | plainify }}
-      </div>
+      <div class="prose dark:prose-invert max-w-fit py-1">{{ .Summary | plainify }}</div>
     {{ end }}
   </div>
-</a>
+  <div class="px-6 pt-4 pb-2"></div>
+</div>
