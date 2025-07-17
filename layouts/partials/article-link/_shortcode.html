@@ -30,7 +30,12 @@
 {{ end }}
 
 
-<a class="{{ $articleClasses }}" {{ partial "article-link/_external-link.html" $target | safeHTMLAttr }}>
+<div class="{{ $articleClasses }}">
+  <a
+    {{ partial "article-link/_external-link.html" $target | safeHTMLAttr }}
+    class="absolute inset-0"
+    aria-label="{{ $.Title }}"></a>
+
   {{- with $target.Params.images -}}
     {{- range first 6 . }}
       <meta property="og:image" content="{{ . | absURL }}">
@@ -111,10 +116,10 @@
         {{ $compactSummary = $target.Params.compactSummary | default (site.Params.list.compactSummary | default false) }}
       {{ end }}
       <div class="overflow-hidden pt-1">
-        <div class="{{ if $compactSummary }}line-clamp-3{{ end }} max-w-fit prose dark:prose-invert">
+        <div class="{{ if $compactSummary }}line-clamp-3{{ end }} prose dark:prose-invert max-w-fit">
           {{ $target.Summary | plainify }}
         </div>
       </div>
     {{ end }}
   </div>
-</a>
+</div>
