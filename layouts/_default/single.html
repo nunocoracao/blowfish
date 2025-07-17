@@ -39,26 +39,17 @@
 {{ end }}
 
 {{ define "SingleBody" }}
+  {{ $showToc := and (.Params.showTableOfContents | default (.Site.Params.article.showTableOfContents | default false)) (in .TableOfContents "<ul") }}
+  {{ $showRelated := .Site.Params.article.showRelatedPosts | default false }}
+  {{ $topClass := cond (hasPrefix .Site.Params.header.layout "fixed") "lg:top-[140px]" "lg:top-10" }}
   <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
-    {{ if or (and (.Params.showTableOfContents | default (.Site.Params.article.showTableOfContents | default false)) (in
-      .TableOfContents "<ul")) (.Site.Params.article.showRelatedPosts | default false)
-    }}
+    {{ if or $showToc $showRelated }}
       <div class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
-        <div
-          class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky {{ if hasPrefix .Site.Params.header.layout "fixed" -}}
-            lg:top-[140px]
-          {{ else }}
-            lg:top-10
-          {{ end }}
-            ">
-          {{ if and (.Params.showTableOfContents | default (.Site.Params.article.showTableOfContents | default false)) (in
-            .TableOfContents "<ul")
-          }}
+        <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky {{ $topClass }}">
+          {{ if $showToc }}
             {{ partial "toc.html" . }}
           {{ end }}
-          {{ if .Site.Params.article.showRelatedPosts |
-            default false
-          }}
+          {{ if $showRelated }}
             sd
           {{ end }}
         </div>
@@ -91,23 +82,6 @@
       {{ partial "sharing-links.html" . }}
       {{ partial "related.html" . }}
     </div>
-
-    {{ $translations := .AllTranslations }}
-    {{ with .File }}
-      {{ $path := .Path }}
-      {{ range $translations }}
-        {{ $lang := print "."  .Lang  ".md" }}
-        {{ $path = replace $path $lang ".md" }}
-      {{ end }}
-      {{ $jsPage := resources.Get "js/page.js" }}
-      {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint ($.Site.Params.fingerprintAlgorithm | default "sha512") }}
-      <script
-        type="text/javascript"
-        src="{{ $jsPage.RelPermalink }}"
-        integrity="{{ $jsPage.Data.Integrity }}"
-        data-oid="views_{{ $path }}"
-        data-oid-likes="likes_{{ $path }}"></script>
-    {{ end }}
   </section>
 {{ end }}
 
@@ -125,6 +99,23 @@
       {{ else }}
         {{ warnf "[BLOWFISH] Comments are enabled for %s but no comments partial exists." .File.Path }}
       {{ end }}
+    {{ end }}
+
+    {{ $translations := .AllTranslations }}
+    {{ with .File }}
+      {{ $path := .Path }}
+      {{ range $translations }}
+        {{ $lang := print "."  .Lang  ".md" }}
+        {{ $path = replace $path $lang ".md" }}
+      {{ end }}
+      {{ $jsPage := resources.Get "js/page.js" }}
+      {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint ($.Site.Params.fingerprintAlgorithm | default "sha512") }}
+      <script
+        type="text/javascript"
+        src="{{ $jsPage.RelPermalink }}"
+        integrity="{{ $jsPage.Data.Integrity }}"
+        data-oid="views_{{ $path }}"
+        data-oid-likes="likes_{{ $path }}"></script>
     {{ end }}
   </footer>
 {{ end }}
