@@ -1,8 +1,17 @@
 {{ $id := delimit (slice "github" (partial "functions/uid.html" .)) "-" }}
 {{- $githubURL := print "https://api.github.com/repos/" (.Get "repo") -}}
-{{- $githubData := resources.GetRemote $githubURL | transform.Unmarshal -}}
 {{- $githubThumbnailURL := print "https://opengraph.githubassets.com/0/" (.Get "repo") -}}
 {{- $showThumbnail := .Get "showThumbnail" | default true -}}
+{{- $githubData := dict -}}
+{{- with try (resources.GetRemote $githubURL) -}}
+  {{- with .Err -}}
+    {{- warnf "github shortcode: failed to fetch remote resource from %q: %s" $githubURL .Position -}}
+  {{- else with .Value -}}
+    {{- $githubData = . | transform.Unmarshal -}}
+  {{- else -}}
+    {{- warnf "github shortcode: unable to get remote resource from %q: %s" $githubURL .Position -}}
+  {{- end -}}
+{{- end -}}
 
 {{- with $githubData -}}
   <div class="github-card-wrapper">
