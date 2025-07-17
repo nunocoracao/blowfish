@@ -26,48 +26,8 @@
         {{ partial "article-meta/basic.html" (dict "context" . "scope" "single") }}
       </div>
 
-      {{ $authorsData := .Site.Data.authors }}
-      {{ $taxonomies := .Site.Taxonomies.authors }}
-      {{ $baseURL := .Site.BaseURL }}
-      {{ $taxonomyLink := 0 }}
-      {{ $showAuthor := 0 }}
-
-      {{ if not (strings.HasSuffix $baseURL "/") }}
-        {{ $baseURL = delimit (slice $baseURL "/") "" }}
-      {{ end }}
-
       {{ if not (.Params.showAuthorBottom | default ( .Site.Params.article.showAuthorBottom | default false)) }}
-
-        {{ if .Params.showAuthor | default (.Site.Params.article.showAuthor | default true) }}
-          {{ $showAuthor = 1 }}
-          {{ partial "author.html" . }}
-        {{ end }}
-
-        {{ range $author := .Page.Params.authors }}
-          {{ $authorData := index $authorsData $author }}
-          {{- if $authorData -}}
-            {{ range $taxonomyname, $taxonomy := $taxonomies }}
-              {{ if (eq $taxonomyname $author) }}
-                {{ $taxonomyLink = delimit (slice $baseURL "authors/" $author "/") "" }}
-              {{ end }}
-            {{ end }}
-
-            {{ $finalLink := $taxonomyLink }}
-            {{ $currentLang := $.Site.Language.Lang }}
-            {{ if eq $.Site.LanguagePrefix "" }}
-              {{ $finalLink = printf "%sauthors/%s/" $baseURL $author }}
-            {{ else }}
-              {{ $finalLink = printf "%s%s/authors/%s/" $baseURL $currentLang $author }}
-            {{ end }}
-
-            {{ partial "author-extra.html" (dict "context" . "data" $authorData "link" $finalLink) }}
-          {{- end -}}
-        {{ end }}
-
-        {{ if or $taxonomyLink $showAuthor }}
-          <div class="mb-5"></div>
-        {{ end }}
-
+        {{ template "SingleAuthor" . }}
       {{ end }}
 
     </header>
@@ -120,28 +80,7 @@
         </div>
 
         {{ if (.Params.showAuthorBottom | default ( .Site.Params.article.showAuthorBottom | default false)) }}
-
-          {{ if .Params.showAuthor | default (.Site.Params.article.showAuthor | default true) }}
-            {{ $showAuthor = 1 }}
-            {{ partial "author.html" . }}
-          {{ end }}
-
-          {{ range $author := .Page.Params.authors }}
-            {{ $authorData := index $authorsData $author }}
-            {{- if $authorData -}}
-              {{ range $taxonomyname, $taxonomy := $taxonomies }}
-                {{ if (eq $taxonomyname $author) }}
-                  {{ $taxonomyLink = delimit (slice $baseURL "authors/" $author "/") "" }}
-                {{ end }}
-              {{ end }}
-              {{ partial "author-extra.html" (dict "context" . "data" $authorData "link" $taxonomyLink) }}
-            {{- end -}}
-          {{ end }}
-
-          {{ if or $taxonomyLink $showAuthor }}
-            <div class="mb-10"></div>
-          {{ end }}
-
+          {{ template "SingleAuthor" . }}
         {{ end }}
 
         {{ partial "series/series-closed.html" . }}
@@ -183,4 +122,47 @@
       {{ end }}
     </footer>
   </article>
+{{ end }}
+
+{{ define "SingleAuthor" }}
+  {{ $authorsData := .Site.Data.authors }}
+  {{ $taxonomies := .Site.Taxonomies.authors }}
+  {{ $baseURL := .Site.BaseURL }}
+  {{ $taxonomyLink := 0 }}
+  {{ $showAuthor := 0 }}
+  {{ $isAuthorBottom := (.Params.showAuthorBottom | default ( .Site.Params.article.showAuthorBottom | default false)) }}
+
+  {{ if not (strings.HasSuffix $baseURL "/") }}
+    {{ $baseURL = delimit (slice $baseURL "/") "" }}
+  {{ end }}
+
+  {{ if .Params.showAuthor | default (.Site.Params.article.showAuthor | default true) }}
+    {{ $showAuthor = 1 }}
+    {{ partial "author.html" . }}
+  {{ end }}
+
+  {{ range $author := .Page.Params.authors }}
+    {{ $authorData := index $authorsData $author }}
+    {{- if $authorData -}}
+      {{ range $taxonomyname, $taxonomy := $taxonomies }}
+        {{ if (eq $taxonomyname $author) }}
+          {{ $taxonomyLink = delimit (slice $baseURL "authors/" $author "/") "" }}
+        {{ end }}
+      {{ end }}
+
+      {{ $finalLink := $taxonomyLink }}
+      {{ $currentLang := $.Site.Language.Lang }}
+      {{ if eq $.Site.LanguagePrefix "" }}
+        {{ $finalLink = printf "%sauthors/%s/" $baseURL $author }}
+      {{ else }}
+        {{ $finalLink = printf "%s%s/authors/%s/" $baseURL $currentLang $author }}
+      {{ end }}
+
+      {{ partial "author-extra.html" (dict "context" . "data" $authorData "link" $finalLink) }}
+    {{- end -}}
+  {{ end }}
+
+  {{ if or $taxonomyLink $showAuthor }}
+    <div class="{{ cond $isAuthorBottom "mb-10" "mb-5" }}"></div>
+  {{ end }}
 {{ end }}
