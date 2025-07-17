@@ -82,7 +82,9 @@
           {{ if (gt (len ($context.GetTerms $taxonomy)) 0) }}
             {{ range $i, $a := $context.GetTerms $taxonomy }}
               {{ if not (eq $i 0) }},&nbsp;{{ end }}
-              <a href="{{ $a.RelPermalink }}" class="relative">{{ $a.LinkTitle }}</a>
+              <div class="cursor-pointer" onclick="window.open({{ $a.RelPermalink }},'_self');return false;">
+                {{ $a.LinkTitle }}
+              </div>
             {{ end }}
           {{ end }}
         {{ end }}
@@ -97,7 +99,11 @@
         {{ if and (not (eq $taxonomy "authors")) (not (eq $taxonomy "series")) }}
           {{ if (gt (len ($context.GetTerms $taxonomy)) 0) }}
             {{ range $context.GetTerms $taxonomy }}
-              <a class="mr-2 mt-[0.5rem] relative" href="{{ .RelPermalink }}">{{ partial "badge.html" .LinkTitle }}</a>
+              <span
+                class="mr-2 mt-[0.5rem]"
+                onclick="window.open({{ .RelPermalink }},'_self');return false;">
+                {{ partial "badge.html" .LinkTitle }}
+              </span>
             {{ end }}
           {{ end }}
         {{ end }}
@@ -109,7 +115,9 @@
   {{ if .Params.showCategoryOnly | default (.Site.Params.article.showCategoryOnly | default false) }}
     <div class="flex flex-row flex-wrap items-center">
       {{ range (.GetTerms "categories") }}
-        <a class="mr-2 mt-[0.5rem] relative" href="{{ .RelPermalink }}">{{ partial "badge.html" .LinkTitle }}</a>
+        <span class="mr-2 mt-[0.5rem]" onclick="window.open({{ .RelPermalink }},'_self');return false;">
+          {{ partial "badge.html" .LinkTitle }}
+        </span>
       {{ end }}
     </div>
   {{ end }}
