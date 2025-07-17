@@ -1,4 +1,4 @@
-/*! tailwindcss v4.1.8 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.1.11 | MIT License | https://tailwindcss.com */
 /*! Blowfish | MIT License | https://github.com/nunocoracao/blowfish */
 @layer properties;
 #zen-mode-button {
@@ -3728,44 +3728,29 @@ a {
 pre {
   text-align: left;
 }
+.thumbnail, .thumbnail_card, .thumbnail_card_related, .thumbnail_card_term, .single_hero_basic, .single_hero_background {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 .thumbnail {
   min-width: 300px;
   height: 180px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
 }
 .thumbnail_card {
   height: 200px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
 }
 .thumbnail_card_related {
   height: 150px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
 }
 .thumbnail_card_term {
   height: 150px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-.single_hero_basic {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
 }
 .single_hero_round {
   max-height: 50vh;
   object-fit: cover;
 }
 .single_hero_background {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   z-index: -10;
 }
 .hero_gradient {
@@ -3827,6 +3812,9 @@ pre {
   text-decoration-line: underline;
   text-decoration-thickness: 3px;
   text-underline-offset: 4px;
+}
+.group-hover-card:hover:has(.group-hover-cancel:hover) .group-hover-card-title {
+  text-decoration: none !important;
 }
 @layer base {
   [type='text'],input:where(:not([type])),[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select {
