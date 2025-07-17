@@ -1,0 +1,200 @@
+{{ $id := delimit (slice "external" (partial "functions/uid.html" .)) "-" }}
+{{- $url := .Get "url" -}}
+{{- $title := .Get "title" -}}
+{{- $description := .Get "description" -}}
+{{- $thumbnail := .Get "thumbnail" -}}
+{{- $processImage := .Get "processImage" | default false -}}
+{{- $thumbnailURL := "" -}}
+
+{{/* Handle local thumbnail images */}}
+{{- if $thumbnail -}}
+  {{- if hasPrefix $thumbnail "http" -}}
+    {{/* External URL - use as is */}}
+    {{- $thumbnailURL = $thumbnail -}}
+  {{- else if hasPrefix $thumbnail "/" -}}
+    {{/* Static file - use as is */}}
+    {{- $thumbnailURL = $thumbnail -}}
+  {{- else -}}
+    {{/* Try to find as page resource first */}}
+    {{- $resource := .Page.Resources.GetMatch $thumbnail -}}
+    {{- if $resource -}}
+      {{- if $processImage -}}
+        {{/* Process image for better performance */}}
+        {{- $processed := $resource.Resize "800x400 webp q85" -}}
+        {{- $thumbnailURL = $processed.RelPermalink -}}
+      {{- else -}}
+        {{- $thumbnailURL = $resource.RelPermalink -}}
+      {{- end -}}
+    {{- else -}}
+      {{/* Try global resources */}}
+      {{- $globalResource := resources.Get $thumbnail -}}
+      {{- if $globalResource -}}
+        {{- if $processImage -}}
+          {{- $processed := $globalResource.Resize "800x400 webp q85" -}}
+          {{- $thumbnailURL = $processed.RelPermalink -}}
+        {{- else -}}
+          {{- $thumbnailURL = $globalResource.RelPermalink -}}
+        {{- end -}}
+      {{- else -}}
+        {{/* Fallback to static file */}}
+        {{- $thumbnailURL = print "/" $thumbnail -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $showThumbnail := .Get "showThumbnail" | default true -}}
+{{- $icon := .Get "icon" | default "link" -}}
+{{- $language := .Get "language" -}}
+{{- $stats1Label := .Get "stats1Label" -}}
+{{- $stats1Value := .Get "stats1Value" -}}
+{{- $stats2Label := .Get "stats2Label" -}}
+{{- $stats2Value := .Get "stats2Value" -}}
+{{- $newTab := .Get "newTab" | default true -}}
+
+{{/* Auto-fetch Open Graph data if URL is provided and no thumbnail/title/description */}}
+{{- if and $url (or (not $thumbnailURL) (not $title) (not $description)) -}}
+  {{- with resources.GetRemote $url -}}
+    {{/* Extract Open Graph and meta data */}}
+    {{- $ogTitleRegex := `<meta\s+(?:property="og:title"|name="og:title")\s+content=["']([^"']+)["']` -}}
+    {{- $ogDescRegex := `<meta\s+(?:property="og:description"|name="og:description")\s+content=["']([^"']+)["']` -}}
+    {{- $ogImageRegex := `<meta\s+(?:property="og:image"|name="og:image")\s+content=["']([^"']+)["']` -}}
+    {{- $titleRegex := `<title[^>]*>([^<]+)</title>` -}}
+    {{- $descRegex := `<meta\s+name="description"\s+content=["']([^"']+)["']` -}}
+    
+    {{/* Get title */}}
+    {{- if not $title -}}
+      {{- $ogTitleMatch := findRE $ogTitleRegex .Content 1 -}}
+      {{- if $ogTitleMatch -}}
+        {{- $title = index (findRESubmatch $ogTitleRegex (index $ogTitleMatch 0)) 1 -}}
+      {{- else -}}
+        {{- $titleMatch := findRE $titleRegex .Content 1 -}}
+        {{- if $titleMatch -}}
+          {{- $title = index (findRESubmatch $titleRegex (index $titleMatch 0)) 1 -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    
+    {{/* Get description */}}
+    {{- if not $description -}}
+      {{- $ogDescMatch := findRE $ogDescRegex .Content 1 -}}
+      {{- if $ogDescMatch -}}
+        {{- $description = index (findRESubmatch $ogDescRegex (index $ogDescMatch 0)) 1 -}}
+      {{- else -}}
+        {{- $descMatch := findRE $descRegex .Content 1 -}}
+        {{- if $descMatch -}}
+          {{- $description = index (findRESubmatch $descRegex (index $descMatch 0)) 1 -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    
+    {{/* Get thumbnail */}}
+    {{- if not $thumbnailURL -}}
+      {{- $ogImageMatch := findRE $ogImageRegex .Content 1 -}}
+      {{- if $ogImageMatch -}}
+        {{- $thumbnailURL = index (findRESubmatch $ogImageRegex (index $ogImageMatch 0)) 1 -}}
+        {{/* Make relative URLs absolute */}}
+        {{- if and $thumbnailURL (not (hasPrefix $thumbnailURL "http")) -}}
+          {{- $baseURL := urls.Parse $url -}}
+          {{- if hasPrefix $thumbnailURL "/" -}}
+            {{- $thumbnailURL = print $baseURL.Scheme "://" $baseURL.Host $thumbnailURL -}}
+          {{- else -}}
+            {{- $thumbnailURL = print $baseURL.Scheme "://" $baseURL.Host "/" $thumbnailURL -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* Fallback values */}}
+{{- $title = $title | default "External Link" -}}
+{{- $description = $description | default "" -}}
+
+<div class="external-card-wrapper">
+  <a id="{{ $id }}" href="{{ $url }}" 
+     {{- if $newTab }} target="_blank" rel="noopener noreferrer"{{ end }} 
+     class="cursor-pointer group">
+    <div class="w-full md:w-auto p-0 m-0 border border-neutral-200 dark:border-neutral-700 rounded-md shadow-2xl hover:shadow-3xl transition-all duration-300 group-hover:scale-[1.02]">
+      
+      {{- if and $showThumbnail $thumbnailURL -}}
+        <div class="w-full nozoom overflow-hidden rounded-t-md">
+          <img
+            src="{{ $thumbnailURL }}"
+            alt="{{ $title }} Thumbnail"
+            class="nozoom mt-0 mb-0 w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+            loading="lazy">
+        </div>
+      {{- end -}}
+
+      <div class="w-full md:w-auto pt-3 p-5">
+        <div class="flex items-center mb-2">
+          <!-- <span class="text-2xl text-neutral-800 dark:text-neutral mr-3">
+            {{ partial "icon.html" $icon }}
+          </span> -->
+          <div class="m-0 font-bold text-xl text-neutral-800 dark:text-neutral group-hover:text-primary-500 transition-colors duration-200">
+            {{ $title | markdownify }}
+          </div>
+          {{- if $newTab -}}
+            <span class="ml-2 text-sm text-neutral-500 dark:text-neutral-400">
+              {{ partial "icon.html" "external-link" }}
+            </span>
+          {{- end -}}
+        </div>
+
+        <p class="m-0 mt-2 text-md text-neutral-600 dark:text-neutral-300 line-clamp-3">
+          {{ $description | markdownify }}
+        </p>
+
+        {{- if or $language $stats1Value $stats2Value -}}
+          <div class="m-0 mt-3 flex items-center flex-wrap gap-4">
+            {{- if $language -}}
+              <div class="flex items-center">
+                <span class="mr-1 inline-block h-3 w-3 rounded-full bg-primary-500"></span>
+                <div class="text-sm text-neutral-700 dark:text-neutral-300">
+                  {{ $language }}
+                </div>
+              </div>
+            {{- end -}}
+
+            {{- if $stats1Value -}}
+              <!-- <div class="flex items-center">
+                <span class="text-sm mr-1 text-neutral-600 dark:text-neutral-400">
+                  {{ partial "icon.html" ($stats1Label | default "star") }}
+                </span>
+                <div class="text-sm text-neutral-700 dark:text-neutral-300">
+                  {{ $stats1Value }}
+                </div>
+              </div> -->
+            {{- end -}}
+
+            {{- if $stats2Value -}}
+              <div class="flex items-center">
+                <span class="text-sm mr-1 text-neutral-600 dark:text-neutral-400">
+                  {{ partial "icon.html" ($stats2Label | default "users") }}
+                </span>
+                <div class="text-sm text-neutral-700 dark:text-neutral-300">
+                  {{ $stats2Value }}
+                </div>
+              </div>
+            {{- end -}}
+          </div>
+        {{- end -}}
+
+        {{- if $url -}}
+          <div class="mt-3 text-xs text-neutral-500 dark:text-neutral-400 truncate">
+            {{ $url }}
+          </div>
+        {{- end -}}
+      </div>
+    </div>
+  </a>
+</div>
+
+<style>
+.external-card-wrapper .line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+</style>
