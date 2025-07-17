@@ -4,7 +4,7 @@
 {{ $constrainItemsWidth := site.Params.list.constrainItemsWidth | default false }}
 {{ $disableImageOptimization := site.Params.disableImageOptimization | default false }}
 
-{{ $articleClasses := "flex flex-wrap md:flex-nowrap article" }}
+{{ $articleClasses := "group flex flex-wrap md:flex-nowrap article relative" }}
 {{ if site.Params.list.showCards }}
   {{ $articleClasses = delimit (slice $articleClasses "border border-neutral-200 dark:border-neutral-700 border-2 rounded-md overflow-hidden") " " }}
 {{ else }}
@@ -75,7 +75,7 @@
       {{ with $target.Params.externalUrl }}
         <div>
           <div
-            class="decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
+            class="decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
             {{ $target.Title | emojify }}
             <span class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500">
               <span class="rtl:hidden">&#8599;</span>
@@ -85,7 +85,7 @@
         </div>
       {{ else }}
         <div
-          class="decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2"
+          class="decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2"
           href="{{ $target.RelPermalink }}">
           {{ $target.Title | emojify }}
         </div>
