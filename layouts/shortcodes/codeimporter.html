@@ -15,7 +15,7 @@
   {{ end }}
 
   {{ if gt $startLine $endLine }}
-    {{ errorf "Code Importer Shortcode - startLine is greater than endLine" . }}
+    {{ errorf "codeimporter shortcode: startLine is greater than endLine" . }}
   {{ end }}
 
   {{ $selectedLines := first $endLine $lines }}
@@ -23,5 +23,5 @@
   {{ $codeBlock := printf "```%s\n%s\n```" $type (delimit $selectedLines "\n") }}
   {{ $codeBlock | markdownify }}
 {{ else }}
-  {{ errorf "Code Importer Shortcode - Unable to get remote resource" . }}
+  {{ warnf "codeimporter shortcode: unable to fetch %q: %s" $url .Position }}
 {{ end }}
