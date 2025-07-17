@@ -1,8 +1,14 @@
 {{ define "main" }}
   {{ .Scratch.Set "scope" "single" }}
-
-
   <article>
+    {{ template "SingleHero" . }}
+    {{ template "SingleHeader" . }}
+    {{ template "SingleBody" . }}
+    {{ template "SingleFooter" . }}
+  </article>
+{{ end }}
+
+{{ define "SingleHero" }}
     {{ if .Params.showHero | default (.Site.Params.article.showHero | default false) }}
       {{ $heroStyle := .Params.heroStyle }}
       {{ if not $heroStyle }}{{ $heroStyle = .Site.Params.article.heroStyle }}{{ end }}
@@ -13,8 +19,9 @@
         {{ partial "hero/basic.html" . }}
       {{ end }}
     {{ end }}
+{{ end }}
 
-
+{{ define "SingleHeader" }}
     <header id="single_header" class="mt-5 max-w-prose">
       {{ if .Params.showBreadcrumbs | default (.Site.Params.article.showBreadcrumbs | default false) }}
         {{ partial "breadcrumbs.html" . }}
@@ -31,7 +38,9 @@
       {{ end }}
 
     </header>
+{{ end }}
 
+{{ define "SingleBody" }}
     <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
       {{ if or (and (.Params.showTableOfContents | default (.Site.Params.article.showTableOfContents | default false)) (in
         .TableOfContents "<ul")) (.Site.Params.article.showRelatedPosts | default false)
@@ -106,6 +115,9 @@
       {{ end }}
 
     </section>
+{{ end }}
+
+{{ define "SingleFooter" }}
     <footer class="pt-8 max-w-prose print:hidden">
       {{ partial "article-pagination.html" . }}
       {{ if .Params.showComments | default (.Site.Params.article.showComments | default false) }}
@@ -121,7 +133,6 @@
         {{ end }}
       {{ end }}
     </footer>
-  </article>
 {{ end }}
 
 {{ define "SingleAuthor" }}
