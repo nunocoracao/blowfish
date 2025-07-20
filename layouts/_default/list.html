@@ -11,7 +11,103 @@
 {{- end -}}
 
 {{ $toc := and (.Params.showTableOfContents | default (.Site.Params.list.showTableOfContents | default false)) (in
-.TableOfContents "<ul") }} <header>
+.TableOfContents "<ul") }} 
+
+<!-- Add custom CSS for animations only -->
+<style>
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes staggerIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Animation wrapper for cards */
+.card-animate {
+  animation: staggerIn 0.6s ease-out forwards;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-animate:nth-child(1) { animation-delay: 0.1s; }
+.card-animate:nth-child(2) { animation-delay: 0.2s; }
+.card-animate:nth-child(3) { animation-delay: 0.3s; }
+.card-animate:nth-child(4) { animation-delay: 0.4s; }
+.card-animate:nth-child(5) { animation-delay: 0.5s; }
+.card-animate:nth-child(n+6) { animation-delay: 0.6s; }
+
+.card-animate:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
+}
+
+.header-animate {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.section-animate {
+  animation: fadeInUp 1s ease-out 0.2s backwards;
+}
+
+/* Hover effects for simple article links */
+.simple-link-animate {
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: -1rem;
+}
+
+.simple-link-animate:hover {
+  background: rgba(0, 0, 0, 0.05);
+  transform: translateX(8px);
+}
+
+.dark .simple-link-animate:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Smooth year header animations */
+.year-header {
+  animation: fadeInUp 0.6s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.year-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, currentColor, transparent);
+  transform: translateX(-100%);
+  animation: slideIn 0.8s ease-out 0.3s forwards;
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateX(0);
+  }
+}
+</style>
+
+<header class="header-animate">
   {{ if .Params.showBreadcrumbs | default (.Site.Params.list.showBreadcrumbs | default false) }}
   {{ partial "breadcrumbs.html" . }}
   {{ end }}
@@ -30,110 +126,118 @@
   {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint ($.Site.Params.fingerprintAlgorithm | default "sha512") }}
   <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}" data-oid="views_{{ $path }}" data-oid-likes="likes_{{ $path }}"></script>
   {{ end }}
-  </header>
-  <section class="{{ if $toc -}}
-      mt-12
-    {{- else -}}
-      mt-0
-    {{- end }} prose flex max-w-full flex-col dark:prose-invert lg:flex-row">
-    {{ if $toc }}
-    <div class="order-first px-0 lg:order-last lg:max-w-xs ltr:lg:pl-8 rtl:lg:pr-8">
-      <div class="toc ltr:pl-5 rtl:pr-5 lg:sticky {{ if hasPrefix .Site.Params.header.layout "fixed" -}}
-      lg:top-[140px]{{ else }}lg:top-10{{ end }}">
-        {{ partial "toc.html" . }}
+</header>
+
+<section class="{{ if $toc -}}
+    mt-12
+  {{- else -}}
+    mt-0
+  {{- end }} prose flex max-w-full flex-col dark:prose-invert lg:flex-row section-animate">
+  {{ if $toc }}
+  <div class="order-first px-0 lg:order-last lg:max-w-xs ltr:lg:pl-8 rtl:lg:pr-8">
+    <div class="toc ltr:pl-5 rtl:pr-5 lg:sticky {{ if hasPrefix .Site.Params.header.layout "fixed" -}}
+    lg:top-[140px]{{ else }}lg:top-10{{ end }}">
+      {{ partial "toc.html" . }}
+    </div>
+  </div>
+  {{ end }}
+  <div class="min-w-0 min-h-0 max-w-prose">
+    {{ .Content }}
+  </div>
+</section>
+
+{{ if gt .Pages 0 }}
+
+  {{ $cardView := .Params.cardView | default (.Site.Params.list.cardView | default false) }}
+  {{ $cardViewScreenWidth := .Params.cardViewScreenWidth | default (.Site.Params.list.cardViewScreenWidth | default false) }}
+  {{ $groupByYear := .Params.groupByYear | default ($.Site.Params.list.groupByYear | default false) }}
+  {{ $orderByWeight := .Params.orderByWeight | default ($.Site.Params.list.orderByWeight | default false) }}
+  {{ $groupByYear := and (not $orderByWeight) $groupByYear }}
+
+  {{ if not $cardView }}
+
+  <section class="space-y-10 w-full section-animate">
+    {{ if not $orderByWeight }}
+      {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
+      {{ if $groupByYear }}
+      <h2 class="mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300 year-header">
+        {{ .Key }}
+      </h2>
+      {{ end }}
+      {{ range .Pages }}
+      <div class="simple-link-animate">
+        {{ partial "article-link/simple.html" . }}
       </div>
-    </div>
+      {{ end }}
+      {{ end }}
+    {{ else }}
+      {{ range (.Paginate (.Pages.ByWeight)).Pages }}
+      <div class="simple-link-animate">
+        {{ partial "article-link/simple.html" . }}
+      </div>
+      {{ end }}
     {{ end }}
-    <div class="min-w-0 min-h-0 max-w-prose">
-      {{ .Content }}
-    </div>
-
-
-
-
   </section>
-  {{ if gt .Pages 0 }}
 
-    {{ $cardView := .Params.cardView | default (.Site.Params.list.cardView | default false) }}
-    {{ $cardViewScreenWidth := .Params.cardViewScreenWidth | default (.Site.Params.list.cardViewScreenWidth | default false) }}
-    {{ $groupByYear := .Params.groupByYear | default ($.Site.Params.list.groupByYear | default false) }}
-    {{ $orderByWeight := .Params.orderByWeight | default ($.Site.Params.list.orderByWeight | default false) }}
-    {{ $groupByYear := and (not $orderByWeight) $groupByYear }}
+  {{ else }}
 
-    {{ if not $cardView }}
+    {{ if $groupByYear }}
 
-    <section class="space-y-10 w-full">
-      {{ if not $orderByWeight }}
-        {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
-        {{ if $groupByYear }}
-        <h2 class="mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
+    {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
+      {{ if $cardViewScreenWidth }}
+      <div class="relative w-screen max-w-[1600px] px-[30px] left-[calc(max(-50vw,-800px)+50%)] section-animate">
+      {{ end }}
+        <h2 class="mt-12 mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300 year-header">
           {{ .Key }}
         </h2>
-        {{ end }}
+      <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 {{ if $cardViewScreenWidth }} xl:grid-cols-4 2xl:grid-cols-5 {{ end }}">
         {{ range .Pages }}
-        {{ partial "article-link/simple.html" . }}
+        <div class="card-animate">
+          {{ partial "article-link/card.html" . }}
+        </div>
+        {{ end }}
+      </section>
+      {{ if $cardViewScreenWidth }} </div> {{ end }}
+    {{ end }}
+
+    {{ else }}
+
+      {{ if $cardViewScreenWidth }}
+      <div class="relative w-screen max-w-[1600px] px-[30px] left-[calc(max(-50vw,-800px)+50%)] section-animate">
+      <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+      {{ else }}
+      <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 section-animate">
+      {{ end }}
+      {{ if not $orderByWeight }}
+        {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
+        {{ range .Pages }}
+        <div class="card-animate">
+          {{ partial "article-link/card.html" . }}
+        </div>
         {{ end }}
         {{ end }}
       {{ else }}
         {{ range (.Paginate (.Pages.ByWeight)).Pages }}
-        {{ partial "article-link/simple.html" . }}
+        <div class="card-animate">
+          {{ partial "article-link/card.html" . }}
+        </div>
         {{ end }}
       {{ end }}
-    </section>
-
-    {{ else }}
-
-      {{ if $groupByYear }}
-
-      {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
-        {{ if $cardViewScreenWidth }}
-        <div class="relative w-screen max-w-[1600px] px-[30px] left-[calc(max(-50vw,-800px)+50%)]">
-        {{ end }}
-          <h2 class="mt-12 mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
-            {{ .Key }}
-          </h2>
-        <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 {{ if $cardViewScreenWidth }} xl:grid-cols-4 2xl:grid-cols-5 {{ end }}">
-          {{ range .Pages }}
-          {{ partial "article-link/card.html" . }}
-          {{ end }}
-        </section>
-        {{ if $cardViewScreenWidth }} </div> {{ end }}
-      {{ end }}
-
-      {{ else }}
-
-        {{ if $cardViewScreenWidth }}
-        <div class="relative w-screen max-w-[1600px] px-[30px] left-[calc(max(-50vw,-800px)+50%)]">
-        <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-        {{ else }}
-        <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-        {{ end }}
-        {{ if not $orderByWeight }}
-          {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
-          {{ range .Pages }}
-          {{ partial "article-link/card.html" . }}
-          {{ end }}
-          {{ end }}
-        {{ else }}
-          {{ range (.Paginate (.Pages.ByWeight)).Pages }}
-          {{ partial "article-link/card.html" . }}
-          {{ end }}
-        {{ end }}
-        </section>
-        {{ if $cardViewScreenWidth }} </div> {{ end }}
-
-    {{ end }}
-
-    {{end}}
-
-  {{ else }}
-  <section class="mt-10 prose dark:prose-invert">
-    <p class="py-8 border-t">
-      <em>{{ i18n "list.no_articles" | emojify }}</em>
-    </p>
-  </section>
-  {{ end }}
-
-    {{ partial "pagination.html" . }}
+      </section>
+      {{ if $cardViewScreenWidth }} </div> {{ end }}
 
   {{ end }}
+
+  {{end}}
+
+{{ else }}
+<section class="mt-10 prose dark:prose-invert section-animate">
+  <p class="py-8 border-t">
+    <em>{{ i18n "list.no_articles" | emojify }}</em>
+  </p>
+</section>
+{{ end }}
+
+  {{ partial "pagination.html" . }}
+
+{{ end }}
