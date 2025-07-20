@@ -1,8 +1,58 @@
 {{ define "main" }}
   {{ .Scratch.Set "scope" "single" }}
 
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-  <article>
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInScale {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .animate-fade-in-up {
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .animate-fade-in {
+      opacity: 0;
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    .animate-fade-in-delay {
+      opacity: 0;
+      animation: fadeIn 1.5s ease-out forwards;
+    }
+
+    .animate-scale-in {
+      opacity: 0;
+      animation: fadeInScale 0.8s ease-out forwards;
+    }
+
+    .article-content a {
+      transition: all 0.3s ease;
+    }
+
+    .article-content a:hover {
+      transform: translateY(-2px);
+      color: #3b82f6;
+      box-shadow: 0 1px 0 0 #3b82f6;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+
+  <article class="animate-fade-in">
     {{ if .Params.showHero | default (.Site.Params.article.showHero | default false) }}
       {{ $heroStyle := .Params.heroStyle }}
       {{ if not $heroStyle }}{{ $heroStyle = .Site.Params.article.heroStyle }}{{ end }}
@@ -14,8 +64,7 @@
       {{ end }}
     {{ end }}
 
-
-    <header id="single_header" class="mt-5 max-w-prose">
+    <header id="single_header" class="mt-5 max-w-prose animate-fade-in-up">
       {{ if .Params.showBreadcrumbs | default (.Site.Params.article.showBreadcrumbs | default false) }}
         {{ partial "breadcrumbs.html" . }}
       {{ end }}
@@ -37,7 +86,6 @@
       {{ end }}
 
       {{ if not (.Params.showAuthorBottom | default ( .Site.Params.article.showAuthorBottom | default false)) }}
-
         {{ if .Params.showAuthor | default (.Site.Params.article.showAuthor | default true) }}
           {{ $showAuthor = 1 }}
           {{ partial "author.html" . }}
@@ -67,9 +115,7 @@
         {{ if or $taxonomyLink $showAuthor }}
           <div class="mb-5"></div>
         {{ end }}
-
       {{ end }}
-
     </header>
 
     <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
@@ -82,28 +128,21 @@
               lg:top-[140px]
             {{ else }}
               lg:top-10
-            {{ end }}
-            ">
-            {{ if and (.Params.showTableOfContents | default (.Site.Params.article.showTableOfContents | default false)) (in
-              .TableOfContents "<ul")
-            }}
+            {{ end }}">
+            {{ if and (.Params.showTableOfContents | default (.Site.Params.article.showTableOfContents | default false)) (in .TableOfContents "<ul") }}
               {{ partial "toc.html" . }}
             {{ end }}
-            {{ if .Site.Params.article.showRelatedPosts |
-              default false
-            }}
+            {{ if .Site.Params.article.showRelatedPosts | default false }}
               sd
             {{ end }}
           </div>
         </div>
       {{ end }}
 
-
       <div class="min-w-0 min-h-0 max-w-fit">
         {{ partial "series/series.html" . }}
 
-
-        <div class="article-content max-w-prose mb-20">
+        <div class="article-content max-w-prose mb-20 animate-scale-in">
           {{ .Content }}
           {{ $defaultReplyByEmail := .Site.Params.replyByEmail }}
           {{ $replyByEmail := default $defaultReplyByEmail .Params.replyByEmail }}
@@ -120,7 +159,6 @@
         </div>
 
         {{ if (.Params.showAuthorBottom | default ( .Site.Params.article.showAuthorBottom | default false)) }}
-
           {{ if .Params.showAuthor | default (.Site.Params.article.showAuthor | default true) }}
             {{ $showAuthor = 1 }}
             {{ partial "author.html" . }}
@@ -141,7 +179,6 @@
           {{ if or $taxonomyLink $showAuthor }}
             <div class="mb-10"></div>
           {{ end }}
-
         {{ end }}
 
         {{ partial "series/series-closed.html" . }}
@@ -165,9 +202,9 @@
           data-oid="views_{{ $path }}"
           data-oid-likes="likes_{{ $path }}"></script>
       {{ end }}
-
     </section>
-    <footer class="pt-8 max-w-prose print:hidden">
+
+    <footer class="pt-8 max-w-prose print:hidden animate-fade-in-delay">
       {{ partial "article-pagination.html" . }}
       {{ if .Params.showComments | default (.Site.Params.article.showComments | default false) }}
         {{ if templates.Exists "partials/comments.html" }}
