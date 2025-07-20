@@ -1,28 +1,60 @@
 {{ define "main" }}
+<style>
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+.slide-down {
+  animation: slideDown 0.6s ease-out;
+}
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+.hover-scale:hover {
+  transform: scale(1.03);
+}
+</style>
+
   {{ .Scratch.Set "scope" "term" }}
   {{ if .Site.Params.term.showHero | default false }}
     {{ $heroStyle := print "hero/" .Site.Params.term.heroStyle ".html" }}
     {{ if templates.Exists ( printf "partials/%s" $heroStyle ) }}
-      {{ partial $heroStyle . }}
+      <div class="fade-in">
+        {{ partial $heroStyle . }}
+      </div>
     {{ else }}
-      {{ partial "hero/basic.html" . }}
+      <div class="fade-in">
+        {{ partial "hero/basic.html" . }}
+      </div>
     {{ end }}
   {{- end -}}
 
-  {{ $toc := and (.Params.showTableOfContents | default (.Site.Params.term.showTableOfContents | default false)) (in
-    .TableOfContents "<ul")
-  }}
-  <header>
+  {{ $toc := and (.Params.showTableOfContents | default (.Site.Params.term.showTableOfContents | default false)) (in .TableOfContents "<ul") }}
+
+  <header class="slide-down">
     {{ if .Params.showBreadcrumbs | default (.Site.Params.term.showBreadcrumbs | default false) }}
       {{ partial "breadcrumbs.html" . }}
     {{ end }}
-    <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
-    <div class="mt-1 mb-2 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+    <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral fade-in">{{ .Title }}</h1>
+    <div class="mt-1 mb-2 text-base text-neutral-500 dark:text-neutral-400 print:hidden fade-in">
       {{ partial "article-meta/term.html" (dict "context" . "scope" "single") }}
     </div>
   </header>
 
-  <section class="flex flex-col max-w-full mt-0 mb-5 prose dark:prose-invert lg:flex-row">
+  <section class="flex flex-col max-w-full mt-0 mb-5 prose dark:prose-invert lg:flex-row fade-in">
     {{ if .Content }}
       <div class="min-w-0 min-h-0 max-w-prose">
         {{ .Content }}
@@ -44,8 +76,7 @@
     {{ $groupByYear := .Params.groupByYear | default ($.Site.Params.term.groupByYear | default false) }}
 
     {{ if not $cardView }}
-
-      <section class="space-y-10 w-full">
+      <section class="space-y-10 w-full fade-in">
         {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
           {{ if $groupByYear }}
             <h2 class="mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
@@ -53,70 +84,71 @@
             </h2>
           {{ end }}
           {{ range .Pages }}
-            {{ partial "article-link/simple.html" . }}
+            <div class="hover-scale">
+              {{ partial "article-link/simple.html" . }}
+            </div>
           {{ end }}
         {{ end }}
       </section>
+
     {{ else if and $cardView (not $cardViewScreenWidth) }}
-
       {{ if $groupByYear }}
-
         {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
           <h2 class="mt-12 mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
             {{ .Key }}
           </h2>
-          <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+          <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 fade-in">
             {{ range .Pages }}
-              {{ partial "article-link/card.html" . }}
+              <div class="hover-scale">
+                {{ partial "article-link/card.html" . }}
+              </div>
             {{ end }}
           </section>
         {{ end }}
-
       {{ else }}
-
-        <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+        <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 fade-in">
           {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
             {{ range .Pages }}
-              {{ partial "article-link/card.html" . }}
+              <div class="hover-scale">
+                {{ partial "article-link/card.html" . }}
+              </div>
             {{ end }}
           {{ end }}
         </section>
       {{ end }}
 
     {{ else if and $cardView $cardViewScreenWidth }}
-
       {{ if $groupByYear }}
-
         {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
-          <div class="relative w-screen max-w-[1600px] px-[30px] left-[calc(max(-50vw,-800px)+50%)]">
+          <div class="relative w-screen max-w-[1600px] px-[30px] left-[calc(max(-50vw,-800px)+50%)] fade-in">
             <h2 class="mt-12 mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
               {{ .Key }}
             </h2>
             <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
               {{ range .Pages }}
-                {{ partial "article-link/card.html" . }}
+                <div class="hover-scale">
+                  {{ partial "article-link/card.html" . }}
+                </div>
               {{ end }}
             </section>
           </div>
         {{ end }}
-
       {{ else }}
-
-        <div class="relative w-screen max-w-[1600px] px-[30px] left-[calc(max(-50vw,-800px)+50%)]">
+        <div class="relative w-screen max-w-[1600px] px-[30px] left-[calc(max(-50vw,-800px)+50%)] fade-in">
           <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
             {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
               {{ range .Pages }}
-                {{ partial "article-link/card.html" . }}
+                <div class="hover-scale">
+                  {{ partial "article-link/card.html" . }}
+                </div>
               {{ end }}
             {{ end }}
           </section>
         </div>
       {{ end }}
-
     {{ end }}
-
   {{ else }}
-    <section class="mt-10 prose dark:prose-invert">
+    <section class="mt-10 prose dark:prose-invert fade-in">
       <p class="py-8 border-t">
         <em>{{ i18n "term.no_articles" | emojify }}</em>
       </p>
@@ -124,5 +156,4 @@
   {{ end }}
 
   {{ partial "pagination.html" . }}
-
 {{ end }}
