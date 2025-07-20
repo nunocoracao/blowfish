@@ -62,7 +62,7 @@
             .timeline li > h4,
             .timeline li > h5,
             .timeline li > h6 {
-              background: rgba(255, 255, 255, 0.35); /* more transparent */
+              background: transparent; /* more transparent */
               backdrop-filter: blur(14px);
               -webkit-backdrop-filter: blur(14px);
               border: 1px solid rgba(255, 255, 255, 0.15);
@@ -92,16 +92,18 @@
             }
 
             .timeline li:hover > *::before {
+              background: rgba(255, 255, 255, 0.95) !important;
               width: 8px;
             }
 
             .dark .timeline li > * {
-              background: rgba(17, 24, 39, 0.8);
+              background: transparent;
               border-color: rgba(75, 85, 99, 0.3);
               box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             }
 
             .dark .timeline li:hover > * {
+              background: rgba(17, 24, 39, 0.95) !important;
               box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
             }
 
@@ -115,7 +117,7 @@
               font-size: 0.9rem !important;
               font-weight: 600 !important;
               color: rgb(55, 65, 81) !important;
-              background: rgba(255, 255, 255, 0.9) !important;
+              background: transparent !important;
               backdrop-filter: blur(15px) !important;
               padding: 12px 16px !important;
               border-radius: 25px !important;
@@ -140,7 +142,7 @@
 
             .dark .timeline-date {
               color: rgb(209, 213, 219) !important;
-              background: rgba(17, 24, 39, 0.9) !important;
+              background: transparent !important;
               border-color: rgba(75, 85, 99, 0.4) !important;
               box-shadow: 0 8px 25px 0 rgba(0, 0, 0, 0.4) !important;
             }
