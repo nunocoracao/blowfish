@@ -1,8 +1,23 @@
 {{ define "main" }}
+
+<style>
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+}
+</style>
+
+<div class="animate-fade-in">
   {{ $partial := print "home/" .Site.Params.homepage.layout ".html" }}
   {{ if templates.Exists ( printf "partials/%s" $partial ) }}
     {{ partial $partial . }}
   {{ else }}
     {{ partial "home/profile.html" . }}
   {{ end }}
+</div>
+
 {{ end }}
