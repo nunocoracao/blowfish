@@ -1,0 +1,32 @@
+{{ define "main" }}
+
+{{ .Scratch.Set "scope" "list" }}
+{{ if .Site.Params.list.showHero | default false }}
+{{ $heroStyle := print "hero/" .Site.Params.list.heroStyle ".html" }}
+{{ if templates.Exists ( printf "partials/%s" $heroStyle ) }}
+{{ partial $heroStyle . }}
+{{ else }}
+{{ partial "hero/basic.html" . }}
+{{ end }}
+{{- end -}}
+
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}" {{ with .Site.Params.theme }}data-theme="{{ . }}"{{ end }}>
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body>
+    <main class="flex justify-center">
+      <section class="w-full max-w-4xl px-4 py-10">
+        <h1 class="text-center text-4xl font-extrabold text-neutral-900 dark:text-neutral mb-10">
+          {{ .Title }}
+        </h1>
+
+        <ul class="timeline relative border-l-2 border-primary-500 dark:border-primary-400 pl-6 space-y-12">
+          {{ .Content }}
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
+{{ end }}
