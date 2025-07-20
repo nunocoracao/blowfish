@@ -2,31 +2,37 @@
 {{ $header := .Get "header" }}
 {{ $badge := .Get "badge" }}
 {{ $subheader := .Get "subheader" }}
-<li>
-  <div class="flex flex-start">
-    <div
-      class="bg-primary-500 dark:bg-primary-300 text-neutral-50 dark:text-neutral-700 min-w-[30px] h-8 text-2xl flex items-center justify-center rounded-full -ml-12 mt-5">
-      {{ partial "icon" $icon }}
-    </div>
-    <div class="block p-6 rounded-lg shadow-2xl min-w-full ml-6 mb-10 break-words">
-      <div class="flex justify-between">
-        {{ if $header }}
-          <h2 class="mt-0">{{ $header }}</h2>
-        {{ end }}
-        {{ if $badge }}
-          <h3 class="">
-            {{ partial "badge" $badge }}
-          </h3>
-        {{ end }}
-      </div>
-      {{ if $subheader }}
-        <h4 class="mt-0">
-          {{ $subheader }}
-        </h4>
+{{ $date := .Get "date" | default "2025" }}
+
+<li class="relative pl-10 mb-10">
+  <div class="absolute left-0 top-2 w-6 h-6 bg-primary-500 dark:bg-primary-300 rounded-full border-2 border-white dark:border-neutral-900 shadow flex items-center justify-center text-white font-bold text-base">
+    {{ partial "icon" $icon }}
+  </div>
+  <div class="p-6 rounded-lg shadow-2xl bg-surface-100 dark:bg-surface-800">
+    <div class="flex items-center justify-between flex-wrap gap-4 mb-1">
+      {{ if $header }}
+        <h2 class="text-xl font-bold m-0">{{ $header }}</h2>
       {{ end }}
-      <div class="mb-6">
-        {{- .Inner -}}
+      <div class="flex items-center gap-4">
+        {{ if $badge }}
+          <span class="inline-block align-middle">
+            {{ partial "badge" $badge }}
+          </span>
+        {{ end }}
+        {{ if $date }}
+          <span class="text-sm font-semibold text-neutral-500 dark:text-neutral-400">
+            {{ $date }}
+          </span>
+        {{ end }}
       </div>
+    </div>
+    {{ if $subheader }}
+      <h4 class="text-md font-medium text-neutral-600 dark:text-neutral-300 mt-1">
+        {{ $subheader }}
+      </h4>
+    {{ end }}
+    <div class="mt-4 text-neutral-700 dark:text-neutral-200">
+      {{ .Inner }}
     </div>
   </div>
 </li>
