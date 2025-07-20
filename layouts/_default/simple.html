@@ -1,17 +1,21 @@
 {{ define "main" }}
-  <article class="max-w-full">
-    <header>
+  <article class="max-w-full animate-fadeIn">
+    <header class="animate-slideUp opacity-0 animate-delay-100 animation-fill-forwards">
       {{ if .Params.showBreadcrumbs | default (.Site.Params.article.showBreadcrumbs | default false) }}
-        {{ partial "breadcrumbs.html" . }}
+        <div class="animate-fadeIn opacity-0 animate-delay-200 animation-fill-forwards">
+          {{ partial "breadcrumbs.html" . }}
+        </div>
       {{ end }}
-      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral transition-colors duration-700">
         {{ .Title | emojify }}
       </h1>
     </header>
-    <section class="max-w-full mt-6 prose dark:prose-invert">
+
+    <section class="max-w-full mt-6 prose dark:prose-invert animate-fadeIn opacity-0 animate-delay-300 animation-fill-forwards">
       {{ .Content }}
     </section>
-    <footer class="pt-8">
+
+    <footer class="pt-8 animate-fadeIn opacity-0 animate-delay-500 animation-fill-forwards">
       {{ partial "sharing-links.html" . }}
     </footer>
   </article>
