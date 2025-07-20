@@ -21,10 +21,56 @@
         <h1 class="text-center text-4xl font-extrabold text-neutral-900 dark:text-neutral mb-10">
           {{ .Title }}
         </h1>
-
-        <ul class="timeline relative border-l-2 border-primary-500 dark:border-primary-400 pl-6 space-y-12">
-          {{ .Content }}
-        </ul>
+        <h2 class="text-center text-3l font-bold text-neutral-900 dark:text-neutral mb-10">
+          {{ .Description }}
+        </h2>
+        <div class="ml-32 relative">
+          <ul class="timeline relative border-l-2 border-primary-500 dark:border-primary-400 pl-6 space-y-12">
+            {{ .Content }}
+          </ul>
+          
+          <style>
+            .timeline-date {
+              position: absolute !important;
+              left: -130px !important;
+              top: 4px !important;
+              width: 110px !important;
+              text-align: center !important;
+              display: block !important;
+              font-size: 0.9rem !important;
+              font-weight: 600 !important;
+              color: rgb(55, 65, 81) !important;
+              background: rgba(255, 255, 255, 0.1) !important;
+              backdrop-filter: blur(10px) !important;
+              padding: 8px 12px !important;
+              border-radius: 20px !important;
+              box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.1) !important;
+              border: 1px solid rgba(255, 255, 255, 0.2) !important;
+              letter-spacing: 0.5px !important;
+              text-transform: uppercase !important;
+              font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+              transition: all 0.3s ease !important;
+            }
+            
+            .timeline-date:hover {
+              transform: translateY(-2px) !important;
+              background: rgba(255, 255, 255, 0.2) !important;
+              box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.15) !important;
+            }
+            
+            .dark .timeline-date {
+              color: rgb(209, 213, 219) !important;
+              background: rgba(0, 0, 0, 0.2) !important;
+              border-color: rgba(255, 255, 255, 0.1) !important;
+              box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.3) !important;
+            }
+            
+            .dark .timeline-date:hover {
+              background: rgba(0, 0, 0, 0.3) !important;
+              box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.4) !important;
+            }
+          </style>
+        </div>
       </section>
     </main>
   </body>
