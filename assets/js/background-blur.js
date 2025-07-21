@@ -99,10 +99,12 @@
     applyA11ySettings();
   };
 
-  const toggleA11yPanel = () => {
-    const panel = document.getElementById("a11y-panel");
-    const overlay = document.getElementById("a11y-overlay");
-    const button = document.getElementById("a11y-toggle");
+  window.toggleA11yPanel = function (prefix = "") {
+    const panel = document.getElementById(`${prefix}a11y-panel`);
+    const overlay = document.getElementById(`${prefix}a11y-overlay`);
+    const button = document.getElementById(`${prefix}a11y-toggle`);
+
+    if (!panel || !overlay || !button) return;
 
     if (overlay.classList.contains("hidden")) {
       overlay.classList.remove("hidden");
@@ -117,51 +119,59 @@
     }
   };
 
-  const initA11yPanel = () => {
+  window.initA11yPanel = function (prefix = "") {
     const settings = getA11ySettings();
 
-    document.getElementById("disable-blur").checked = settings.disableBlur;
-    document.getElementById("disable-images").checked = settings.disableImages;
+    const checkboxBlur = document.getElementById(`${prefix}disable-blur`);
+    const checkboxImages = document.getElementById(`${prefix}disable-images`);
+    const checkboxUnderline = document.getElementById(`${prefix}underline-links`);
+    const fontSizeSelect = document.getElementById(`${prefix}font-size-select`);
 
-    const fontSizeSelect = document.getElementById("font-size-select");
+    if (!checkboxBlur || !checkboxImages || !checkboxUnderline || !fontSizeSelect) return;
+
+    checkboxBlur.checked = settings.disableBlur;
+    checkboxImages.checked = settings.disableImages;
     fontSizeSelect.value = settings.fontSize;
+    checkboxUnderline.checked = settings.underlineLinks;
 
-    document.getElementById("underline-links").checked = settings.underlineLinks;
-
-    document.getElementById("disable-blur").addEventListener("change", (e) => {
+    checkboxBlur.addEventListener("change", (e) => {
       updateA11ySetting("disableBlur", e.target.checked);
     });
 
-    document.getElementById("disable-images").addEventListener("change", (e) => {
+    checkboxImages.addEventListener("change", (e) => {
       updateA11ySetting("disableImages", e.target.checked);
     });
 
-    document.getElementById("font-size-select").addEventListener("change", (e) => {
+    fontSizeSelect.addEventListener("change", (e) => {
       updateA11ySetting("fontSize", e.target.value);
     });
 
-    document.getElementById("underline-links").addEventListener("change", (e) => {
+    checkboxUnderline.addEventListener("change", (e) => {
       updateA11ySetting("underlineLinks", e.target.checked);
     });
 
     document.querySelectorAll(".ios-toggle").forEach((toggle) => {
+      const checkbox = toggle.querySelector('input[type="checkbox"]');
+      if (!checkbox || !checkbox.id.startsWith(prefix)) return;
       toggle.addEventListener("click", () => {
-        const checkbox = toggle.querySelector('input[type="checkbox"]');
         checkbox.checked = !checkbox.checked;
         checkbox.dispatchEvent(new Event("change"));
       });
     });
 
-    document.addEventListener("click", (e) => {
-      const overlay = document.getElementById("a11y-overlay");
-      const button = document.getElementById("a11y-toggle");
-      if (e.target === overlay) {
-        overlay.classList.add("hidden");
-        document.getElementById("a11y-panel").classList.add("hidden");
-        button.setAttribute("aria-pressed", "false");
-        button.setAttribute("aria-expanded", "false");
-      }
-    });
+    const overlay = document.getElementById(`${prefix}a11y-overlay`);
+    const button = document.getElementById(`${prefix}a11y-toggle`);
+    if (overlay && button) {
+      document.addEventListener("click", (e) => {
+        if (e.target === overlay) {
+          overlay.classList.add("hidden");
+          const panel = document.getElementById(`${prefix}a11y-panel`);
+          if (panel) panel.classList.add("hidden");
+          button.setAttribute("aria-pressed", "false");
+          button.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
   };
 
   scripts.forEach((script) => {
@@ -187,12 +197,13 @@
     }
   });
 
-  window.toggleA11yPanel = toggleA11yPanel;
-
   document.addEventListener("DOMContentLoaded", () => {
     applyA11ySettings();
-    if (document.getElementById("a11y-panel")) {
-      initA11yPanel();
-    }
+
+    const allPanels = document.querySelectorAll('[id$="a11y-panel"]');
+    allPanels.forEach((panel) => {
+      const prefix = panel.id.replace("a11y-panel", "");
+      window.initA11yPanel(prefix);
+    });
   });
 })();
