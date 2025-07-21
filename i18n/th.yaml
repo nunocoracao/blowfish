@@ -29,6 +29,12 @@ article:
     enable: "เปิดโหมดเซน"
     disable: "ปิดโหมดเซน"
 
+a11y:
+  disable_blur: "ปิดการเบลอ"
+  disable_images: "ปิดการแสดงรูปภาพ"
+  show_link_underline: "แสดงเส้นใต้ลิงก์"
+  font_size: "ขนาดตัวอักษร"
+
 author:
   byline_title: "ผู้เขียน"
 

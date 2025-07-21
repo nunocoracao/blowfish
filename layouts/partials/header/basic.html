@@ -199,10 +199,11 @@
 
       <div class="space-y-5">
         {{- $toggles := slice
-          (dict "id" (print $prefix "disable-blur") "label" "Disable background blur")
-          (dict "id" (print $prefix "disable-images") "label" "Disable background image")
-          (dict "id" (print $prefix "underline-links") "label" "Show link underline")
+          (dict "id" (print $prefix "disable-blur") "label" (i18n "a11y.disable_blur"))
+          (dict "id" (print $prefix "disable-images") "label" (i18n "a11y.disable_images"))
+          (dict "id" (print $prefix "underline-links") "label" (i18n "a11y.show_link_underline"))
         -}}
+
 
         {{- range $toggles }}
           <div class="flex items-center justify-between">
@@ -220,7 +221,7 @@
           <label
             for="{{ $prefix }}font-size-select"
             class="text-sm font-medium text-neutral-700 dark:text-neutral-300">
-            Font size
+            {{ i18n "a11y.font_size" }}
           </label>
           <select
             id="{{ $prefix }}font-size-select"

@@ -20,6 +20,12 @@ article:
   this_article: "This Article"
   related_articles: "Related"
 
+a11y:
+  disable_blur: "Elmosódás kikapcsolása"
+  disable_images: "Képek kikapcsolása"
+  show_link_underline: "Link aláhúzásának megjelenítése"
+  font_size: "Betűméret"
+
 author:
   byline_title: "Szerző"
 
