@@ -1,0 +1,65 @@
+/* Carousel Specific Styles */
+.ratio-16-9 {
+  padding-top: 56.25%;
+}
+.ratio-21-9 {
+  padding-top: 42.85%;
+}
+.ratio-32-9 {
+  padding-top: 28.125%;
+}
+@media (width >= 640px) {
+  .sm\:ratio-16-9 {
+    padding-top: 56.25%;
+  }
+  .sm\:ratio-21-9 {
+    padding-top: 42.85%;
+  }
+  .sm\:ratio-32-9 {
+    padding-top: 28.125%;
+  }
+}
+@media (width >= 853px) {
+  .md\:ratio-16-9 {
+    padding-top: 56.25%;
+  }
+  .md\:ratio-21-9 {
+    padding-top: 42.85%;
+  }
+  .md\:ratio-32-9 {
+    padding-top: 28.125%;
+  }
+}
+@media (width >= 1024px) {
+  .lg\:ratio-16-9 {
+    padding-top: 56.25%;
+  }
+  .lg\:ratio-21-9 {
+    padding-top: 42.85%;
+  }
+  .lg\:ratio-32-9 {
+    padding-top: 28.125%;
+  }
+}
+@media (width >= 1280px) {
+  .xl\:ratio-16-9 {
+    padding-top: 56.25%;
+  }
+  .xl\:ratio-21-9 {
+    padding-top: 42.85%;
+  }
+  .xl\:ratio-32-9 {
+    padding-top: 28.125%;
+  }
+}
+@media (width >= 1536px) {
+  .\32xl\:ratio-16-9 {
+    padding-top: 56.25%;
+  }
+  .\32xl\:ratio-21-9 {
+    padding-top: 42.85%;
+  }
+  .\32xl\:ratio-32-9 {
+    padding-top: 28.125%;
+  }
+}

@@ -1,0 +1,226 @@
+
+/* -- Chroma Highlight -- */
+/* Background */
+.prose .chroma {
+  @apply static rounded-md text-neutral-700 bg-neutral-50 dark:bg-neutral-700 dark:text-neutral-200;
+}
+
+/* LineTableTD */
+.chroma .lntd,
+.chroma .lntd pre {
+  @apply p-0 m-0 align-top border-none;
+}
+
+/* LineTable */
+.chroma .lntable {
+  @apply block w-auto px-4 py-3 overflow-hidden text-base;
+  border-spacing: 0;
+}
+
+/* LineHighlight */
+.chroma .hl {
+  @apply block w-auto px-4 -mx-4 bg-primary-100 dark:bg-primary-900;
+}
+
+.chroma .lntd .hl {
+  @apply p-0 m-0;
+}
+
+/* LineNumbersTable */
+/* LineNumbers */
+.chroma .lnt,
+.chroma .ln {
+  @apply text-neutral-600 dark:text-neutral-300 mr-[0.4em] px-[0.4em] py-0;
+}
+
+/* Keyword */
+/* KeywordDeclaration */
+/* KeywordNamespace */
+/* KeywordPseudo */
+/* KeywordReserved */
+/* NameClass */
+/* NameFunctionMagic */
+/* NameNamespace */
+/* NameVariableClass */
+/* Operator */
+.chroma .k,
+.chroma .kd,
+.chroma .kn,
+.chroma .kp,
+.chroma .kr,
+.chroma .nc,
+.chroma .fm,
+.chroma .nn,
+.chroma .vc,
+.chroma .o {
+  @apply text-primary-600 dark:text-primary-300;
+}
+
+/* KeywordConstant */
+.chroma .kc {
+  @apply font-semibold text-secondary-400 dark:text-secondary-500;
+}
+
+/* KeywordType */
+/* NameVariable */
+/* NameVariableInstance */
+/* NameVariableMagic */
+/* LiteralNumber */
+/* LiteralNumberBin */
+/* LiteralNumberFloat */
+/* LiteralNumberHex */
+/* LiteralNumberInteger */
+/* LiteralNumberIntegerLong */
+/* LiteralNumberOct */
+.chroma .kt,
+.chroma .nv,
+.chroma .vi,
+.chroma .vm,
+.chroma .m,
+.chroma .mb,
+.chroma .mf,
+.chroma .mh,
+.chroma .mi,
+.chroma .il,
+.chroma .mo {
+  @apply text-secondary-400 dark:text-secondary-600;
+}
+
+/* Name */
+/* NameDecorator */
+/* NameEntity */
+/* NameLabel */
+.chroma .n,
+.chroma .nd,
+.chroma .ni,
+.chroma .nl {
+  @apply text-secondary-900 dark:text-secondary-200;
+}
+
+/* NameAttribute */
+/* NameBuiltin */
+/* NameBuiltinPseudo */
+/* NameOther */
+/* NameProperty */
+/* NameTag */
+.chroma .na,
+.chroma .nb,
+.chroma .bp,
+.chroma .nx,
+.chroma .py,
+.chroma .nt {
+  @apply text-secondary-800 dark:text-secondary-300;
+}
+
+/* NameConstant */
+/* NameException */
+/* NameVariableGlobal */
+.chroma .no,
+.chroma .ne,
+.chroma .vg {
+  @apply font-semibold text-secondary-400 dark:text-secondary-500;
+}
+
+/* NameFunction */
+.chroma .nf {
+  @apply text-secondary-600 dark:text-secondary-500;
+}
+
+/* Literal */
+/* LiteralDate */
+/* LiteralString */
+/* LiteralStringAffix */
+/* LiteralStringBacktick */
+/* LiteralStringChar */
+/* LiteralStringDelimiter */
+/* LiteralStringDoc */
+/* LiteralStringDouble */
+/* LiteralStringHeredoc */
+/* LiteralStringInterpol */
+/* LiteralStringOther */
+/* LiteralStringSingle */
+/* GenericInserted */
+/* GenericOutput */
+/* GenericPrompt */
+.chroma .l,
+.chroma .ld,
+.chroma .s,
+.chroma .sa,
+.chroma .sb,
+.chroma .sc,
+.chroma .dl,
+.chroma .sd,
+.chroma .s2,
+.chroma .sh,
+.chroma .si,
+.chroma .sx,
+.chroma .s1,
+.chroma .gi,
+.chroma .go,
+.chroma .gp {
+  @apply text-primary-800 dark:text-primary-400;
+}
+
+/* LiteralStringEscape */
+.chroma .se {
+  @apply font-semibold text-secondary-400 dark:text-secondary-500;
+}
+
+/* LiteralStringRegex */
+/* LiteralStringSymbol */
+.chroma .sr,
+.chroma .ss {
+  @apply font-semibold text-primary-800 dark:text-primary-400;
+}
+
+/* OperatorWord */
+.chroma .ow {
+  @apply font-semibold text-primary-400 dark:text-primary-600;
+}
+
+/* Comment */
+/* CommentMultiline */
+/* CommentSingle */
+/* CommentSpecial */
+/* CommentPreproc */
+/* CommentPreprocFile */
+.chroma .c,
+.chroma .cm,
+.chroma .c1,
+.chroma .cs,
+.chroma .cp,
+.chroma .cpf {
+  @apply italic text-neutral-500 dark:text-neutral-400;
+}
+
+/* CommentHashbang */
+.chroma .ch {
+  @apply italic font-semibold text-neutral-500 dark:text-neutral-400;
+}
+
+/* GenericEmph */
+.chroma .ge {
+  @apply italic;
+}
+
+/* GenericHeading */
+.chroma .gh {
+  @apply font-semibold text-neutral-500;
+}
+
+/* GenericStrong */
+.chroma .gs {
+  @apply font-semibold;
+}
+
+/* GenericSubheading */
+/* GenericTraceback */
+.chroma .gu,
+.chroma .gt {
+  @apply text-neutral-500;
+}
+
+/* GenericUnderline */
+.chroma .gl {
+  @apply underline;
+}

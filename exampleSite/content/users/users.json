@@ -889,5 +889,13 @@
       "Personal site",
       "Portfolio"
     ]
+  },
+    {
+    "title": "cayte.xyz",
+    "url": "https://cayte.xyz",
+    "source": "n/a",
+    "tags": [
+      "Personal site",
+    ]
   }
 ]

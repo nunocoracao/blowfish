@@ -72,15 +72,17 @@ This is an error!
 | Parameter | Description                                              |
 | --------- | -------------------------------------------------------- |
 | `link`    | **Required.** the `.RelPermalink` to the target article. |
+| `showSummary` | **Optional.** A boolean value indicating whether to show the article summary. If not set, the site's default configuration will be used. |
+| `compactSummary` | **Optional.** A boolean value indicating whether to display the summary in compact mode. Default to false. |
 <!-- prettier-ignore-end -->
 
 **Example:**
 
 ```md
-{{</* article link="/docs/welcome/" */>}}
+{{</* article link="/it/docs/welcome/" showSummary=true compactSummary=true */>}}
 ```
 
-{{< article link="/docs/welcome/" >}}
+{{< article link="/it/docs/welcome/" showSummary=true compactSummary=true >}}
 
 <br/><br/><br/>
 
@@ -381,12 +383,15 @@ In order to add images to the gallery, use `img` tags for each image and add `cl
 {{</* gist "octocat" "6cad326836d38bd3a7ae" */>}}
 ````
 
+{{< gist "octocat" "6cad326836d38bd3a7ae" >}}
 
 **Example 2: Embed specific file from Gist**
 
 ```md
 {{</* gist "rauchg" "2052694" "README.md" */>}}
 ```
+
+{{< gist "rauchg" "2052694" "README.md" >}}
 
 <br/><br/><br/>
 

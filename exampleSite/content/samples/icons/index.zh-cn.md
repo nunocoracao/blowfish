@@ -52,6 +52,7 @@ Blowfish 内置了许多 [FontAwesome 6](https://fontawesome.com/icons) 中的�
 | globe                | {{< icon globe >}}                |
 | goodreads            | {{< icon goodreads >}}            |
 | google               | {{< icon google >}}               |
+| google-scholar       | {{< icon google-scholar >}}       |
 | graduation-cap       | {{< icon graduation-cap >}}       |
 | hackernews           | {{< icon hackernews >}}           |
 | hashnode             | {{< icon hashnode >}}             |

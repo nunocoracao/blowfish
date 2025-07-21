@@ -2,5 +2,5 @@
 {{ with resources.GetRemote (urls.Parse $url) }}
   {{ .Content | markdownify }}
 {{ else }}
-  {{ errorf "Mardown Importer Shortcode - Unable to get remote resource" . }}
+  {{ warnf "mdimporter shortcode: unable to fetch %q: %s" $url .Position }}
 {{ end }}
