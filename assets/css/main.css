@@ -2,6 +2,7 @@
 
 @import "./components/zen-mode.css";
 @import "./components/chroma.css";
+@import "./components/a11y.css";
 
 @import "tailwindcss";
 @config "../../tailwind.config.js";
