@@ -30,7 +30,7 @@
 {{ end }}
 
 
-<a class="{{ $articleClasses }}" {{ partial "article-link/_external-link.html" . | safeHTMLAttr }}>
+<a class="{{ $articleClasses }}" {{ partial "article-link/_external-link.html" $target | safeHTMLAttr }}>
   {{- with $target.Params.images -}}
     {{- range first 6 . }}
       <meta property="og:image" content="{{ . | absURL }}">
