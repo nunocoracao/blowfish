@@ -385,12 +385,15 @@ Blowfish 还支持使用标准 Markdown 语法自动转换图像。只需使用�
 {{</* gist "octocat" "6cad326836d38bd3a7ae" */>}}
 ```
 
+{{< gist "octocat" "6cad326836d38bd3a7ae" >}}
 
 **示例 2：嵌入 Gist 中的特定文件**
 
 ```md
 {{</* gist "rauchg" "2052694" "README.md" */>}}
 ```
+
+{{< gist "rauchg" "2052694" "README.md" >}}
 
 <br/><br/><br/>
 
