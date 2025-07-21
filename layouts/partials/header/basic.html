@@ -168,7 +168,6 @@
       aria-expanded="false"
       type="button"
       class="text-base hover:text-primary-600 dark:hover:text-primary-400"
-      onclick="toggleA11yPanel('{{ $prefix }}')"
       role="button"
       aria-pressed="false">
       {{ partial "icon.html" "a11y" }}
@@ -189,7 +188,7 @@
           Accessibility settings
         </h3>
         <button
-          onclick="toggleA11yPanel('{{ $prefix }}')"
+          id="{{ $prefix }}a11y-close"
           class="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200"
           aria-label="Close a11y panel">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

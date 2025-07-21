@@ -68,7 +68,7 @@ const updateA11ySetting = (key, value) => {
   applyA11ySettings();
 };
 
-window.toggleA11yPanel = function (prefix = "") {
+const toggleA11yPanel = (prefix = "") => {
   const panel = document.getElementById(`${prefix}a11y-panel`);
   const overlay = document.getElementById(`${prefix}a11y-overlay`);
   const button = document.getElementById(`${prefix}a11y-toggle`);
@@ -86,24 +86,47 @@ window.toggleA11yPanel = function (prefix = "") {
   }
 };
 
-window.initA11yPanel = function (prefix = "") {
+const initA11yPanel = (prefix = "") => {
   const settings = getA11ySettings();
   const checkboxBlur = document.getElementById(`${prefix}disable-blur`);
   const checkboxImages = document.getElementById(`${prefix}disable-images`);
   const checkboxUnderline = document.getElementById(`${prefix}underline-links`);
   const fontSizeSelect = document.getElementById(`${prefix}font-size-select`);
-  if (!checkboxBlur || !checkboxImages || !checkboxUnderline || !fontSizeSelect) {
+  const toggleButton = document.getElementById(`${prefix}a11y-toggle`);
+  const closeButton = document.getElementById(`${prefix}a11y-close`);
+  const overlay = document.getElementById(`${prefix}a11y-overlay`);
+
+  if (
+    !checkboxBlur ||
+    !checkboxImages ||
+    !checkboxUnderline ||
+    !fontSizeSelect ||
+    !toggleButton ||
+    !closeButton ||
+    !overlay
+  ) {
     console.warn(`One or more a11y elements not found for prefix: ${prefix}`);
     return;
   }
+
   checkboxBlur.checked = settings.disableBlur;
   checkboxImages.checked = settings.disableImages;
   fontSizeSelect.value = settings.fontSize;
   checkboxUnderline.checked = settings.underlineLinks;
+
   checkboxBlur.addEventListener("change", (e) => updateA11ySetting("disableBlur", e.target.checked));
   checkboxImages.addEventListener("change", (e) => updateA11ySetting("disableImages", e.target.checked));
   fontSizeSelect.addEventListener("change", (e) => updateA11ySetting("fontSize", e.target.value));
   checkboxUnderline.addEventListener("change", (e) => updateA11ySetting("underlineLinks", e.target.checked));
+
+  toggleButton.addEventListener("click", () => toggleA11yPanel(prefix));
+  closeButton.addEventListener("click", () => toggleA11yPanel(prefix));
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) {
+      toggleA11yPanel(prefix);
+    }
+  });
+
   document.querySelectorAll(`.ios-toggle${prefix ? `[id^="${prefix}"]` : ""}`).forEach((toggle) => {
     const checkbox = toggle.querySelector('input[type="checkbox"]');
     if (!checkbox) return;
@@ -117,19 +140,6 @@ window.initA11yPanel = function (prefix = "") {
       }
     });
   });
-  const overlay = document.getElementById(`${prefix}a11y-overlay`);
-  const button = document.getElementById(`${prefix}a11y-toggle`);
-  if (overlay && button) {
-    document.addEventListener("click", (e) => {
-      if (e.target === overlay) {
-        overlay.classList.add("hidden");
-        const panel = document.getElementById(`${prefix}a11y-panel`);
-        if (panel) panel.classList.add("hidden");
-        button.setAttribute("aria-pressed", "false");
-        button.setAttribute("aria-expanded", "false");
-      }
-    });
-  }
 };
 
 document.querySelectorAll("script[data-target-id]").forEach((script) => {
@@ -144,6 +154,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const allPanels = document.querySelectorAll('[id$="a11y-panel"]');
   allPanels.forEach((panel) => {
     const prefix = panel.id.replace("a11y-panel", "");
-    window.initA11yPanel(prefix);
+    initA11yPanel(prefix);
   });
 });
