@@ -52,6 +52,7 @@ Blowfish はいくつもの [FontAwesome 6](https://fontawesome.com/icons) の�
 | globe                | {{< icon globe >}}                |
 | goodreads            | {{< icon goodreads >}}            |
 | google               | {{< icon google >}}               |
+| google-scholar       | {{< icon google-scholar >}}       |
 | graduation-cap       | {{< icon graduation-cap >}}       |
 | hackernews           | {{< icon hackernews >}}           |
 | hashnode             | {{< icon hashnode >}}             |
