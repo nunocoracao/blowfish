@@ -1,7 +1,7 @@
 {{ define "main" }}
   {{ .Scratch.Set "scope" "term" }}
-  {{ if .Site.Params.term.showHero | default false }}
-    {{ $heroStyle := print "hero/" .Site.Params.term.heroStyle ".html" }}
+  {{ if site.Params.term.showHero | default false }}
+    {{ $heroStyle := print "hero/" site.Params.term.heroStyle ".html" }}
     {{ if templates.Exists ( printf "partials/%s" $heroStyle ) }}
       {{ partial $heroStyle . }}
     {{ else }}
@@ -9,11 +9,9 @@
     {{ end }}
   {{- end -}}
 
-  {{ $toc := and (.Params.showTableOfContents | default (.Site.Params.term.showTableOfContents | default false)) (in
-    .TableOfContents "<ul")
-  }}
+
   <header>
-    {{ if .Params.showBreadcrumbs | default (.Site.Params.term.showBreadcrumbs | default false) }}
+    {{ if .Params.showBreadcrumbs | default (site.Params.term.showBreadcrumbs | default false) }}
       {{ partial "breadcrumbs.html" . }}
     {{ end }}
     <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
@@ -28,7 +26,7 @@
         {{ .Content }}
       </div>
       {{ $jsPage := resources.Get "js/page.js" }}
-      {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
+      {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint (site.Params.fingerprintAlgorithm | default "sha512") }}
       <script
         type="text/javascript"
         src="{{ $jsPage.RelPermalink }}"
@@ -39,9 +37,9 @@
   </section>
 
   {{ if gt .Pages 0 }}
-    {{ $cardView := .Params.cardView | default (.Site.Params.term.cardView | default false) }}
-    {{ $cardViewScreenWidth := .Site.Params.term.cardViewScreenWidth | default false }}
-    {{ $groupByYear := .Params.groupByYear | default ($.Site.Params.term.groupByYear | default false) }}
+    {{ $cardView := .Params.cardView | default (site.Params.term.cardView | default false) }}
+    {{ $cardViewScreenWidth := site.Params.term.cardViewScreenWidth | default false }}
+    {{ $groupByYear := .Params.groupByYear | default (site.Params.term.groupByYear | default false) }}
 
     {{ if not $cardView }}
 
@@ -124,5 +122,4 @@
   {{ end }}
 
   {{ partial "pagination.html" . }}
-
 {{ end }}
