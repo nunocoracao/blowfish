@@ -36,15 +36,11 @@
 {{ end }}
 
 <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom">
-    {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg")}}
-        {{ with . }}
-        <img id="background-image" src="{{ .RelPermalink }}" alt="Background Image" class="absolute inset-0 w-full h-full object-cover">
-        {{ end }}
-    {{ else }}
-        {{ with .Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
-        <img id="background-image" src="{{ .RelPermalink }}" alt="Background Image" class="absolute inset-0 w-full h-full object-cover">
-        {{ end }}
+    {{ $imageURL := .RelPermalink }}
+    {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
+      {{ $imageURL = (.Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x")).RelPermalink }}
     {{ end }}
+    <img id="background-image" src="{{ $imageURL }}" alt="Background Image" class="absolute inset-0 w-full h-full object-cover">
 
     <div class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
     </div>
