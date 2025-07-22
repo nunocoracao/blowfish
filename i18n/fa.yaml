@@ -29,6 +29,12 @@ article:
     enable: "فعال کردن حالت تمام متن"
     disable: "غیر فعال کردن حالت تمام متن"
 
+a11y:
+  disable_blur: "غیرفعال کردن تاری"
+  disable_images: "غیرفعال کردن تصاویر"
+  show_link_underline: "نمایش زیرخط لینک"
+  font_size: "اندازه فونت"
+
 author:
   byline_title: "نویسنده"
 

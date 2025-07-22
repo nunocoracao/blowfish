@@ -20,6 +20,12 @@ article:
   this_article: "This Article"
   related_articles: "Related"
 
+a11y:
+  disable_blur: "Dezactivează estomparea"
+  disable_images: "Dezactivează imaginile"
+  show_link_underline: "Afișează sublinierea linkurilor"
+  font_size: "Dimensiunea fontului"
+
 author:
   byline_title: "Autor"
 

@@ -26,6 +26,12 @@ article:
   this_article: "This Article"
   related_articles: "Related"
 
+a11y:
+  disable_blur: "Wyłącz rozmycie"
+  disable_images: "Wyłącz obrazy"
+  show_link_underline: "Pokaż podkreślenie linków"
+  font_size: "Rozmiar czcionki"
+
 author:
   byline_title: "Autor"
 

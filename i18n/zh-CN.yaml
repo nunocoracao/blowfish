@@ -19,6 +19,12 @@ article:
   this_article: "本文"
   related_articles: "相关文章"
 
+a11y:
+  disable_blur: "禁用模糊效果"
+  disable_images: "禁用图片"
+  show_link_underline: "显示链接下划线"
+  font_size: "字体大小"
+
 author:
   byline_title: "作者"
 
