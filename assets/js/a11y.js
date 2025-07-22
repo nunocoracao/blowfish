@@ -5,7 +5,7 @@ const getA11ySettings = () => {
     : {
         disableBlur: false,
         disableImages: false,
-        fontSize: "16px", // 1rem
+        fontSize: "default",
         underlineLinks: false,
       };
 };
@@ -27,7 +27,10 @@ const applyImageState = (imageElement, imageUrl, disableImages) => {
 };
 
 const applyFontSize = (fontSizePx) => {
-  document.documentElement.style.fontSize = fontSizePx;
+  const isDefaultSettings = localStorage.getItem("a11ySettings") === null;
+  if (!isDefaultSettings && fontSizePx !== "default") {
+    document.documentElement.style.fontSize = fontSizePx;
+  }
 };
 
 const applyUnderlineLinks = (enabled) => {
@@ -116,8 +119,18 @@ const initA11yPanel = (prefix = "") => {
 
   checkboxBlur.addEventListener("change", (e) => updateA11ySetting("disableBlur", e.target.checked));
   checkboxImages.addEventListener("change", (e) => updateA11ySetting("disableImages", e.target.checked));
-  fontSizeSelect.addEventListener("change", (e) => updateA11ySetting("fontSize", e.target.value));
   checkboxUnderline.addEventListener("change", (e) => updateA11ySetting("underlineLinks", e.target.checked));
+  fontSizeSelect.addEventListener("change", (e) => {
+    // Remove fontSize from localStorage when default is selected
+    if (e.target.value === "default") {
+      const settings = getA11ySettings();
+      delete settings.fontSize;
+      saveA11ySettings(settings);
+      document.documentElement.style.fontSize = "";
+    } else {
+      updateA11ySetting("fontSize", e.target.value);
+    }
+  });
 
   toggleButton.addEventListener("click", () => toggleA11yPanel(prefix));
   closeButton.addEventListener("click", () => toggleA11yPanel(prefix));

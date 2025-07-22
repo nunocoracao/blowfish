@@ -226,7 +226,7 @@
           <select
             id="{{ $prefix }}font-size-select"
             class="border rounded-lg px-3 py-1.5 pr-8 text-neutral-900 text-sm dark:bg-neutral-700 dark:text-neutral-200 focus:ring-primary-500 focus:border-primary-500">
-            {{ $fontSizes := slice "12px" "14px" "16px" "18px" "20px" "22px" "24px" }}
+            {{ $fontSizes := slice "default" "12px" "14px" "16px" "18px" "20px" "22px" "24px" }}
             {{ range $fontSizes }}
               <option value="{{ . }}">{{ . }}</option>
             {{ end }}
