@@ -23,6 +23,12 @@ article:
   this_article: "Esse Artigo"
   related_articles: "Relacionados"
 
+a11y:
+  disable_blur: "Desativar desfoque"
+  disable_images: "Desativar imagens"
+  show_link_underline: "Mostrar sublinhado de links"
+  font_size: "Tamanho da fonte"
+
 author:
   byline_title: "Autor"
 

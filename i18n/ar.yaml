@@ -25,6 +25,12 @@ article:
   part: "جزء"
   this_article: "هذه المقالة"
 
+a11y:
+  disable_blur: "تعطيل التمويه"
+  disable_images: "تعطيل الصور"
+  show_link_underline: "إظهار خط تحت الروابط"
+  font_size: "حجم الخط"
+
 author:
   byline_title: "الناشر"
 

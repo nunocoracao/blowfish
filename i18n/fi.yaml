@@ -20,6 +20,12 @@ article:
   this_article: "This Article"
   related_articles: "Related"
 
+a11y:
+  disable_blur: "Poista sumennus käytöstä"
+  disable_images: "Poista kuvat käytöstä"
+  show_link_underline: "Näytä linkkien alleviivaus"
+  font_size: "Fonttikoko"
+
 author:
   byline_title: "Kirjoittaja"
 

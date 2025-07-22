@@ -20,6 +20,12 @@ article:
   this_article: "This Article"
   related_articles: "Related"
 
+a11y:
+  disable_blur: "השבת טשטוש"
+  disable_images: "השבת תמונות"
+  show_link_underline: "הצג קו תחתון לקישורים"
+  font_size: "גודל גופן"
+
 author:
   byline_title: "מחבר"
 

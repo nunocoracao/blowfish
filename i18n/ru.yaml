@@ -26,6 +26,12 @@ article:
   this_article: "This Article"
   related_articles: "Related"
 
+a11y:
+  disable_blur: "Отключить размытие"
+  disable_images: "Отключить изображения"
+  show_link_underline: "Показать подчеркивание ссылок"
+  font_size: "Размер шрифта"
+
 author:
   byline_title: "Автор"
 

@@ -20,6 +20,12 @@ article:
   this_article: "Denna artikel"
   related_articles: "Relaterade"
 
+a11y:
+  disable_blur: "Inaktivera suddighet"
+  disable_images: "Inaktivera bilder"
+  show_link_underline: "Visa länkunderstrykning"
+  font_size: "Teckenstorlek"
+
 author:
   byline_title: "Författare"
 

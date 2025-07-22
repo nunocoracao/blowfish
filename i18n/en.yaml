@@ -29,6 +29,12 @@ article:
     enable: "Enable zen mode"
     disable: "Disable zen mode"
 
+a11y:
+  disable_blur: "Disable blur"
+  disable_images: "Disable images"
+  show_link_underline: "Show link underline"
+  font_size: "Font size"
+
 author:
   byline_title: "Author"
 

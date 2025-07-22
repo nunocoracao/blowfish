@@ -29,6 +29,12 @@ article:
     enable: "Zenモードを有効にする"
     disable: "Zenモードを無効にする"
 
+a11y:
+  disable_blur: "ぼかしを無効にする"
+  disable_images: "画像を無効にする"
+  show_link_underline: "リンクの下線を表示する"
+  font_size: "フォントサイズ"
+
 author:
   byline_title: "著者"
 
