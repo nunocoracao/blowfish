@@ -51,9 +51,13 @@ const applyUnderlineLinks = (enabled) => {
 };
 
 const applyZenMode = (enabled) => {
-  if (enabled && typeof _toggleZenMode === 'function') {
+  const body = document.querySelector("body");
+  const isZenModeActive = body && body.classList.contains("zen-mode-enable");
+
+  // Toggle only if current state doesn't match desired state
+  if (enabled !== isZenModeActive) {
     const zenModeCheckbox = document.querySelector('[id$="zen-mode"]');
-    if (zenModeCheckbox) {
+    if (zenModeCheckbox && typeof _toggleZenMode === "function") {
       _toggleZenMode(zenModeCheckbox, { scrollToHeader: false });
     }
   }
@@ -135,9 +139,9 @@ const initA11yPanel = (prefix = "") => {
   checkboxImages.addEventListener("change", (e) => updateA11ySetting("disableImages", e.target.checked));
   checkboxUnderline.addEventListener("change", (e) => updateA11ySetting("underlineLinks", e.target.checked));
   checkboxZenMode.addEventListener("change", (e) => {
-    updateA11ySetting("zenMode", e.target.checked)
-    _toggleZenMode(checkboxZenMode, { scrollToHeader: false })
-  })
+    // Only save setting, let applyZenMode handle the toggle logic
+    updateA11ySetting("zenMode", e.target.checked);
+  });
   fontSizeSelect.addEventListener("change", (e) => {
     // Remove fontSize from localStorage when default is selected
     if (e.target.value === "default") {
