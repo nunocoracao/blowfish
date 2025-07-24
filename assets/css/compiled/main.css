@@ -1,4 +1,4 @@
-/*! tailwindcss v4.1.13 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.1.12 | MIT License | https://tailwindcss.com */
 /*! Blowfish | MIT License | https://github.com/nunocoracao/blowfish */
 @layer properties;
 #zen-mode-button {
@@ -463,7 +463,7 @@ body.zen-mode-enable {
     padding: 0;
     margin: -1px;
     overflow: hidden;
-    clip-path: inset(50%);
+    clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border-width: 0;
   }
@@ -497,6 +497,9 @@ body.zen-mode-enable {
   .start-\[calc\(max\(-50vw\,-800px\)\+50\%\)\] {
     inset-inline-start: calc(max(-50vw, -800px) + 50%);
   }
+  .end-6 {
+    inset-inline-end: calc(var(--spacing) * 6);
+  }
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
@@ -506,17 +509,17 @@ body.zen-mode-enable {
   .top-20 {
     top: calc(var(--spacing) * 20);
   }
-  .top-\[110vh\] {
-    top: 110vh;
-  }
-  .top-\[calc\(100vh-5\.5rem\)\] {
-    top: calc(100vh - 5.5rem);
-  }
   .right-0 {
     right: calc(var(--spacing) * 0);
   }
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
+  }
+  .bottom-6 {
+    bottom: calc(var(--spacing) * 6);
+  }
+  .bottom-24 {
+    bottom: calc(var(--spacing) * 24);
   }
   .left-0 {
     left: calc(var(--spacing) * 0);
@@ -535,6 +538,9 @@ body.zen-mode-enable {
   }
   .z-30 {
     z-index: 30;
+  }
+  .z-50 {
+    z-index: 50;
   }
   .z-80 {
     z-index: 80;
@@ -1204,9 +1210,6 @@ body.zen-mode-enable {
   .mb-12 {
     margin-bottom: calc(var(--spacing) * 12);
   }
-  .mb-16 {
-    margin-bottom: calc(var(--spacing) * 16);
-  }
   .mb-20 {
     margin-bottom: calc(var(--spacing) * 20);
   }
@@ -1536,6 +1539,14 @@ body.zen-mode-enable {
   }
   .-translate-y-8 {
     --tw-translate-y: calc(var(--spacing) * -8);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .translate-y-0 {
+    --tw-translate-y: calc(var(--spacing) * 0);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .translate-y-4 {
+    --tw-translate-y: calc(var(--spacing) * 4);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .scale-0 {
@@ -2424,7 +2435,7 @@ body.zen-mode-enable {
     backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
   }
   .transition {
-    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, visibility, content-visibility, overlay, pointer-events;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
@@ -2659,6 +2670,7 @@ body.zen-mode-enable {
   }
   .after\:content-\[\'\'\] {
     &::after {
+      content: var(--tw-content);
       --tw-content: '';
       content: var(--tw-content);
     }
@@ -3213,11 +3225,6 @@ body.zen-mode-enable {
       grid-template-columns: repeat(5, minmax(0, 1fr));
     }
   }
-  .ltr\:right-0 {
-    &:where(:dir(ltr), [dir="ltr"], [dir="ltr"] *) {
-      right: calc(var(--spacing) * 0);
-    }
-  }
   .ltr\:mr-4 {
     &:where(:dir(ltr), [dir="ltr"], [dir="ltr"] *) {
       margin-right: calc(var(--spacing) * 4);
@@ -3241,11 +3248,6 @@ body.zen-mode-enable {
   .ltr\:inline {
     &:where(:dir(ltr), [dir="ltr"], [dir="ltr"] *) {
       display: inline;
-    }
-  }
-  .rtl\:left-0 {
-    &:where(:dir(rtl), [dir="rtl"], [dir="rtl"] *) {
-      left: calc(var(--spacing) * 0);
     }
   }
   .rtl\:-mr-\[79px\] {
@@ -3711,7 +3713,9 @@ button, [role="button"] {
   z-index: 10;
   width: calc(var(--spacing) * 20);
   cursor: pointer;
+  overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
   overflow: hidden;
   border-top-right-radius: var(--radius-md);
   border-bottom-left-radius: var(--radius-md);
