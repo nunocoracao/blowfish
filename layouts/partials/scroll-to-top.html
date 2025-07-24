@@ -1,4 +1,4 @@
-{{ $coffeeIsRight := and site.Params.buymeacoffee.globalWidget (eq site.Params.buymeacoffee.globalWidgetPosition "Right") }}
+{{ $coffeeIsRight := and site.Params.buymeacoffee.globalWidget (eq (lower site.Params.buymeacoffee.globalWidgetPosition) "right") }}
 {{ $toTopYOffset := cond $coffeeIsRight "bottom-24" "bottom-6" }}
 <div
   id="scroll-to-top"
