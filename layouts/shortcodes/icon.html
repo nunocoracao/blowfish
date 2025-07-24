@@ -1,8 +1,10 @@
-{{ $icon := resources.Get (printf "icons/%s.svg" ($.Get 0)) }}
-{{ if $icon }}
+{{- /* Avoid extra whitespace */ -}}
+{{- /* https://discourse.gohugo.io/t/55399/5 */ -}}
+{{- $icon := resources.Get (printf "icons/%s.svg" ($.Get 0)) -}}
+{{- if $icon -}}
   <span class="relative inline-block align-text-bottom icon">
-    {{ $icon.Content | safeHTML }}
+    {{- strings.Replace $icon.Content "\n" "" | safeHTML -}}
   </span>
-{{ else }}
-  {{ errorf `[BLOWFISH] Shortcode "icon" error in "%s": Resource "%s" not found. Check the path is correct or remove the shortcode.` .Page.Path (printf "icons/%s.svg" ($.Get 0)) }}
-{{ end }}
+{{- else -}}
+  {{- errorf `icon shortcode: resource "%s" not found. Check the path is correct or remove the shortcode: %s` (printf "icons/%s.svg" ($.Get 0)) .Position -}}
+{{- end -}}
