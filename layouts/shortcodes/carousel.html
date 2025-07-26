@@ -1,4 +1,4 @@
-{{ $id := delimit (slice "carousel" (partial "functions/uid.html" .)) "-" }}
+{{ $id := delimit (slice "carousel" (partial "functions/uid.html" .) (now.UnixNano)) "-" }}
 {{ $aspect := default "16-9" (.Get "aspectRatio") }}
 {{ $interval := default "2000" (.Get "interval") }}
 
@@ -17,7 +17,12 @@
 {{ end }}
 
 
-<div id="{{ $id }}" class="relative" data-twe-carousel-init data-twe-ride="carousel">
+<div
+  id="{{ $id }}"
+  class="relative"
+  data-twe-carousel-init
+  data-twe-ride="carousel"
+  data-twe-interval="{{ $interval }}">
   <div
     class="absolute right-0 bottom-0 left-0 z-2 mx-[15%] mb-10 flex list-none justify-center p-0"
     data-twe-carousel-indicators>
@@ -30,32 +35,27 @@
         {{ if eq $num 0 }}data-twe-carousel-active aria-current="true"{{ end }}
         class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-neutral bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
         aria-label="Slide {{ $num }}"></button>
-
       {{ $num = add $num 1 }}
     {{ end }}
-
   </div>
+
   <div class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
-    {{ $num := 0 }}
-    {{ range $images }}
+    {{ range $index, $image := $images }}
+      {{ $hiddenClass := cond (eq $index 0) "" "hidden" }}
       <div
-        class="relative float-left -mr-[100%] {{ if not (eq $num 0) }}
-          hidden
-        {{ end }} w-full transition-transform duration-[{{ $interval }}ms] ease-in-out motion-reduce:transition-none"
+        class="relative float-left -mr-[100%] {{ $hiddenClass }} w-full transition-transform ease-in-out motion-reduce:transition-none"
         data-twe-carousel-item
-        {{ if eq $num 0 }}data-twe-carousel-active{{ end }}>
+        {{ if eq $index 0 }}data-twe-carousel-active{{ end }}>
         <div class="ratio-{{ $aspect }} single_hero_background">
           <img
-            src="{{ .RelPermalink }}"
+            src="{{ $image.RelPermalink }}"
             class="block absolute top-0 object-cover w-full h-full nozoom"
-            alt="carousel image {{ $num }}">
+            alt="carousel image {{ add $index 1 }}">
         </div>
       </div>
-
-      {{ $num = add $num 1 }}
     {{ end }}
-
   </div>
+
   <button
     class="absolute top-0 bottom-0 left-0 z-2 flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
     type="button"
@@ -77,6 +77,7 @@
       >Previous</span
     >
   </button>
+
   <button
     class="absolute top-0 bottom-0 right-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
     type="button"
@@ -95,7 +96,7 @@
     </span>
     <span
       class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
-      >Nextsads</span
+      >Next</span
     >
   </button>
 </div>
