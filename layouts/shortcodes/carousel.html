@@ -16,6 +16,14 @@
   {{ end }}
 {{ end }}
 
+<style>
+  #{{ $id }} [data-twe-carousel-item] {
+    transition-duration: {{ $interval }}ms !important;
+  }
+  #{{ $id }} [data-twe-carousel-init] {
+    --twe-carousel-interval: {{ $interval }};
+  }
+</style>
 
 <div
   id="{{ $id }}"
