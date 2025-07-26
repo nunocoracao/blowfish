@@ -2,6 +2,20 @@
 {{ $aspect := default "16-9" (.Get "aspectRatio") }}
 {{ $interval := default "2000" (.Get "interval") }}
 
+{{ $carouselItemCSS := printf 
+`
+  #%s [data-twe-carousel-item] {
+  transition-duration: %sms !important;
+}` $id $interval }}
+{{ $carouselInitCSS := printf
+`
+#%s [data-twe-carousel-init] {
+  --twe-carousel-interval: %s;
+}` $id $interval }}
+{{ $cssContent := printf "%s%s" $carouselItemCSS $carouselInitCSS }}
+{{ $css := resources.FromString (printf "css/carousel-%s.css" $id) $cssContent | minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+
 {{ $page := .Page.Resources }}
 {{ $imagesTemp := .Get "images" }}
 {{ $imagesTemp = strings.TrimPrefix "{" $imagesTemp }}
@@ -16,14 +30,6 @@
   {{ end }}
 {{ end }}
 
-<style>
-  #{{ $id }} [data-twe-carousel-item] {
-    transition-duration: {{ $interval }}ms !important;
-  }
-  #{{ $id }} [data-twe-carousel-init] {
-    --twe-carousel-interval: {{ $interval }};
-  }
-</style>
 
 <div
   id="{{ $id }}"
