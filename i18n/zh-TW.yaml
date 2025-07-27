@@ -8,16 +8,26 @@ article:
   draft: "草稿"
   edit_title: "編輯內容"
   reading_time:
+    one: "{{ .Count }} 分鐘"
     other: "{{ .Count }} 分鐘"
   reading_time_title: "預計閱讀時間"
   table_of_contents: "目錄"
   word_count:
     one: "{{ .Count }} 字"
     other: "{{ .Count }} 字"
+  views:
+    one: "{{ .Count }} 瀏覽"
+    other: "{{ .Count }} 瀏覽"
+  likes:
+    one: "{{ .Count }} 喜歡"
+    other: "{{ .Count }} 喜歡"
   part_of_series: "本文屬於一個選集。"
   part: "§"
   this_article: "本文"
   related_articles: "相關文章"
+  zen_mode_title:
+    enable: "啟用閱讀模式"
+    disable: "停用閱讀模式"
 
 author:
   byline_title: "作者"
@@ -57,6 +67,9 @@ sharing:
   pinterest: "釘到 Pinterest"
   reddit: "發送到 Reddit"
   twitter: "推到 Twitter"
+  bluesky: "發布到 Bluesky"
+  whatsapp: "以 WhatsApp 分享"
+  telegram: "以 Telegram 分享"
 
 shortcode:
   recent_articles: "最近的文章"
