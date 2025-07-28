@@ -1,0 +1,113 @@
+name: Bug Report
+description: Create a report to help us improve
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for raising a bug report! Please fill out the following template to help us understand the issue you are experiencing.
+
+        You can view the contributing guidelines for this project at: <https://github.com/nunocoracao/blowfish/blob/main/CONTRIBUTING.md>
+
+        - 🐛 **Bug reports & issues:** Use [GitHub Issues](https://github.com/nunocoracao/blowfish/issues)
+        - 💡 **Ideas for new features:** Open a discussion on [GitHub Discussions](https://github.com/nunocoracao/blowfish/discussions)
+        - 🙋‍♀️ **General questions:** Head to [GitHub Discussions](https://github.com/nunocoracao/blowfish/discussions)
+  - type: checkboxes
+    id: issue-check
+    attributes:
+      label: Issue Check
+      description: We ask that you [check existing Issues](https://github.com/nunocoracao/blowfish/issues) to see if your bug report has already been raised.
+      options:
+        - label: I have checked existing Issues and I feel this bug has not been raised
+          required: true
+  - type: textarea
+    id: describe-bug
+    attributes:
+      label: Describe the Bug
+      description: A clear and concise description of what the bug is.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: To Reproduce
+      description: |
+        Please provide the steps to reproduce the behaviour.
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. Scroll down to '...'
+        4. *See error*
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behaviour
+      description: A clear and concise description of what you expected to happen.
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: |
+        If applicable, add screenshots to help explain your problem.
+
+        *Click inside the textbox to highlight it, then you can upload screenshots by dragging them in.*
+        *Alternatively, you can click on "Paste, drop or click to add files" or "Add files" below the textbox.*
+    validations:
+      required: false
+  - type: textarea
+    id: platform
+    attributes:
+      label: Platform
+      description: |
+        Add information associated with the platform you are experience this bug on.
+
+        Example:
+          - OS: [e.g. iOS, MacOS, Windows, Linux]
+          - Browser: [e.g. chrome, safari, edge, firefox]
+          - Version [e.g. 22, Version 138.0.3351.77]
+      value: |
+          - OS:
+          - Browser:
+          - Version:
+    validations:
+      required: true
+  - type: textarea
+    id: hugo-version
+    attributes:
+      label: Hugo Version
+      description: Run `hugo version` and paste the output below.
+      placeholder: hugo v0.147.6-0a5fd8ebb8e2ca798515e8c564c14e32db3b4127 linux/amd64 BuildDate=2025-05-27T11:17:16Z VendorInfo=gohugoio
+      render: console
+    validations:
+      required: true
+  - type: textarea
+    id: blowfish-version
+    attributes:
+      label: Blowfish Version
+      description: Log the version of Blowfish you are running.
+      placeholder: v2.88.1
+      render: console
+    validations:
+      required: true
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: |
+        Add any other context about the problem here. Are there existing GitHub Issues/Discussions that you feel are related?
+    validations:
+      required: false
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/nunocoracao/blowfish?tab=coc-ov-file#readme).
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
+
