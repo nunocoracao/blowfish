@@ -463,6 +463,35 @@ Blowfish 还支持使用标准 Markdown 语法自动转换图像。只需使用�
 
 <br/><br/><br/>
 
+## Hugging Face 卡片
+
+`huggingface` 让您能够快速链接 Hugging Face 模型或数据集，显示实时信息如点赞数和下载量，以及类型和描述。
+
+| 参数      | 描述                                                         |
+|-----------|--------------------------------------------------------------|
+| `model`   | [字符串] 格式为 `用户名/模型名` 的 Hugging Face 模型         |
+| `dataset` | [字符串] 格式为 `用户名/数据集名` 的 Hugging Face 数据集     |
+
+**注意：** 使用 `model` 或 `dataset` 参数中的一个，不要同时使用。
+
+**示例1（模型）：**
+
+```md
+{{</* huggingface model="google-bert/bert-base-uncased" */>}}
+```
+
+{{< huggingface model="google-bert/bert-base-uncased" >}}
+
+**示例2（数据集）：**
+
+```md
+{{</* huggingface dataset="stanfordnlp/imdb" */>}}
+```
+
+{{< huggingface dataset="stanfordnlp/imdb" >}}
+
+<br/><br/><br/>
+
 ## 图标
 
 `icon` 输出一个 SVG 图标并以图标名称作为其唯一参数。图标会自动缩放以匹配当前文本大小。
