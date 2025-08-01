@@ -86,7 +86,7 @@
         </div>
       {{ end }}
       {{ if and $target.Draft site.Params.article.showDraftLabel }}
-        <div class="ltr:ml-2 rtl:mr-2">
+        <div class="ms-2">
           {{ partial "badge.html" (i18n "article.draft" | emojify) }}
         </div>
       {{ end }}

@@ -85,7 +85,7 @@
         id="appearance-switcher-mobile"
         aria-label="Dark mode switcher"
         type="button"
-        class="text-base hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-1 rtl:ml-1">
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400 me-1">
         <div class="flex items-center justify-center dark:hidden">
           {{ partial "icon.html" "moon" }}
         </div>
@@ -108,7 +108,7 @@
           id="menu-wrapper"
           class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]">
           <ul
-            class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
+            class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none text-end max-w-7xl">
             <li id="menu-close-button">
               <span
                 class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
@@ -124,7 +124,7 @@
           {{ if .Site.Menus.subnavigation }}
             <hr>
             <ul
-              class="flex mt-4 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
+              class="flex mt-4 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none text-end max-w-7xl">
               {{ range .Site.Menus.subnavigation }}
                 <li class="mb-1">
                   <a
