@@ -494,6 +494,9 @@ body.zen-mode-enable {
   .-start-6 {
     inset-inline-start: calc(var(--spacing) * -6);
   }
+  .start-\[calc\(max\(-50vw\,-800px\)\+50\%\)\] {
+    inset-inline-start: calc(max(-50vw, -800px) + 50%);
+  }
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
@@ -520,9 +523,6 @@ body.zen-mode-enable {
   }
   .left-1\/2 {
     left: calc(1/2 * 100%);
-  }
-  .left-\[calc\(max\(-50vw\,-800px\)\+50\%\)\] {
-    left: calc(max(-50vw, -800px) + 50%);
   }
   .-z-10 {
     z-index: calc(10 * -1);
