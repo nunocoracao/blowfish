@@ -1,7 +1,7 @@
 <li class="mt-1">
   <a
     href="{{ .URL }}"
-    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
     {{ if .Pre }}
       <span {{ if and .Pre .Name }}class="mr-1"{{ end }}>
         {{ partial "icon.html" .Pre }}
@@ -24,7 +24,7 @@
       }}
         target="_blank"
       {{ end }}
-      class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+      class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
       {{ if .Pre }}
         <span {{ if and .Pre .Name }}class="mr-1"{{ end }}>
           {{ partial "icon.html" .Pre }}

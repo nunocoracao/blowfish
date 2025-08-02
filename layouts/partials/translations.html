@@ -5,7 +5,7 @@
         {{ partial "icon.html" "language" }}
       </span>
       <div
-        class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400"
+        class="text-sm font-medium hover:text-primary-600 dark:hover:text-primary-400"
         title="{{ .Title }}">
         {{- i18n "global.language" | markdownify -}}
       </div>
@@ -16,7 +16,7 @@
           {{ range .AllTranslations }}
             <a href="{{ .RelPermalink }}" class="flex items-center">
               <p
-                class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400"
+                class="text-sm font-sm hover:text-primary-600 dark:hover:text-primary-400"
                 title="{{ .Title }}">
                 {{ .Language.Params.displayName | emojify }}
               </p>

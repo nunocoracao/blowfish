@@ -145,7 +145,7 @@
                         {{ partial "icon.html" .Pre }}
                       </span>
                     {{ end }}
-                    <p class="text-sm font-sm text-gray-500 hover:text-gray-900" title="{{ .Title }}">
+                    <p class="text-sm font-sm" title="{{ .Title }}">
                       {{ .Name | markdownify }}
                     </p>
                   </a>
@@ -245,7 +245,7 @@
   <div class="flex flex-1 items-center justify-between">
     <nav class="flex space-x-3">
       {{ if not .Site.Params.disableTextInHeader | default true }}
-        <a href="{{ "" | relLangURL }}" class="text-base font-medium text-gray-500 hover:text-gray-900">
+        <a href="{{ "" | relLangURL }}" class="text-base font-medium">
           {{ .Site.Title | markdownify }}
         </a>
       {{ end }}
@@ -274,7 +274,7 @@
               {{ partial "icon.html" .Pre }}
             </span>
           {{ end }}
-          <p class="text-xs font-light text-gray-500 hover:text-gray-900" title="{{ .Title }}">
+          <p class="text-xs font-light" title="{{ .Title }}">
             {{ .Name | markdownify }}
           </p>
         </a>
