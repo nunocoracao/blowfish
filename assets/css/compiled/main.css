@@ -2053,6 +2053,9 @@ body.zen-mode-enable {
   .py-\[1px\] {
     padding-block: 1px;
   }
+  .ps-2 {
+    padding-inline-start: calc(var(--spacing) * 2);
+  }
   .ps-5 {
     padding-inline-start: calc(var(--spacing) * 5);
   }
@@ -2118,9 +2121,6 @@ body.zen-mode-enable {
   }
   .pl-0 {
     padding-left: calc(var(--spacing) * 0);
-  }
-  .pl-2 {
-    padding-left: calc(var(--spacing) * 2);
   }
   .pl-4 {
     padding-left: calc(var(--spacing) * 4);
