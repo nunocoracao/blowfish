@@ -18,11 +18,11 @@
 {{- $huggingfaceData := dict -}}
 {{- with try (resources.GetRemote $hfAPI) -}}
   {{- with .Err -}}
-    {{- warnf "huggingface shortcode: failed to fetch remote resource from %q: %s" $hfAPI .Position -}}
+    {{- warnf "huggingface shortcode: failed to fetch remote resource from %q: %s" $hfAPI $.Position -}}
   {{- else with .Value -}}
     {{- $huggingfaceData = . | transform.Unmarshal -}}
   {{- else -}}
-    {{- warnf "huggingface shortcode: unable to get remote resource from %q: %s" $hfAPI .Position -}}
+    {{- warnf "huggingface shortcode: unable to get remote resource from %q: %s" $hfAPI $.Position -}}
   {{- end -}}
 {{- end -}}
 
@@ -33,7 +33,7 @@
         class="w-full md:w-auto p-0 m-0 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl">
         <div class="w-full md:w-auto pt-3 p-5">
           <div class="flex items-center">
-            <span class="text-2xl text-neutral-800 dark:text-neutral mr-[10px]">
+            <span class="text-2xl text-neutral-800 dark:text-neutral me-2">
               <span class="relative inline-block align-text-bottom icon">
                 {{ template "HuggingFaceSVG" . }}
               </span>
