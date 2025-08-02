@@ -4,11 +4,11 @@
 {{- $codebergData := dict -}}
 {{- with try (resources.GetRemote $codebergURL) -}}
   {{- with .Err -}}
-    {{- warnf "codeberg shortcode: failed to fetch remote resource from %q: %s" $codebergURL .Position -}}
+    {{- warnf "codeberg shortcode: failed to fetch remote resource from %q: %s" $codebergURL $.Position -}}
   {{- else with .Value -}}
     {{- $codebergData = . | transform.Unmarshal -}}
   {{- else -}}
-    {{- warnf "codeberg shortcode: unable to get remote resource from %q: %s" $codebergURL .Position -}}
+    {{- warnf "codeberg shortcode: unable to get remote resource from %q: %s" $codebergURL $.Position -}}
   {{- end -}}
 {{- end -}}
 
