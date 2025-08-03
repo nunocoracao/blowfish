@@ -4,11 +4,11 @@
 {{- $forgejoData := dict -}}
 {{- with try (resources.GetRemote $forgejoURL) -}}
   {{- with .Err -}}
-    {{- warnf "forgejo shortcode: failed to fetch remote resource from %q: %s" $forgejoURL .Position -}}
+    {{- warnf "forgejo shortcode: failed to fetch remote resource from %q: %s" $forgejoURL $.Position -}}
   {{- else with .Value -}}
     {{- $forgejoData = . | transform.Unmarshal -}}
   {{- else -}}
-    {{- warnf "forgejo shortcode: unable to get remote resource from %q: %s" $forgejoURL .Position -}}
+    {{- warnf "forgejo shortcode: unable to get remote resource from %q: %s" $forgejoURL $.Position -}}
   {{- end -}}
 {{- end -}}
 

@@ -6,11 +6,11 @@
 {{- $githubData := dict -}}
 {{- with try (resources.GetRemote $githubURL) -}}
   {{- with .Err -}}
-    {{- warnf "github shortcode: failed to fetch remote resource from %q: %s" $githubURL .Position -}}
+    {{- warnf "github shortcode: failed to fetch remote resource from %q: %s" $githubURL $.Position -}}
   {{- else with .Value -}}
     {{- $githubData = . | transform.Unmarshal -}}
   {{- else -}}
-    {{- warnf "github shortcode: unable to get remote resource from %q: %s" $githubURL .Position -}}
+    {{- warnf "github shortcode: unable to get remote resource from %q: %s" $githubURL $.Position -}}
   {{- end -}}
 {{- end -}}
 
