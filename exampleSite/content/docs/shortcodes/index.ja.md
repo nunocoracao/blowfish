@@ -456,6 +456,35 @@ Blowfish も、標準の Markdown 構文を使用して含まれる画像の自�
 
 <br/><br/><br/>
 
+## Hugging Face カード
+
+`huggingface` を使用すると、Hugging Face のモデルやデータセットを素早くリンクし、いいね数やダウンロード数などのリアルタイム情報を表示できます。
+
+| パラメータ | 説明                                                          |
+|-----------|---------------------------------------------------------------|
+| `model`   | [文字列] `ユーザー名/モデル名` の形式での Hugging Face モデル  |
+| `dataset` | [文字列] `ユーザー名/データセット名` の形式での Hugging Face データセット |
+
+**注意:** `model` または `dataset` パラメータのどちらか一方を使用してください。
+
+**例1（モデル）:**
+
+```md
+{{</* huggingface model="google-bert/bert-base-uncased" */>}}
+```
+
+{{< huggingface model="google-bert/bert-base-uncased" >}}
+
+**例2（データセット）:**
+
+```md
+{{</* huggingface dataset="stanfordnlp/imdb" */>}}
+```
+
+{{< huggingface dataset="stanfordnlp/imdb" >}}
+
+<br/><br/><br/>
+
 ## アイコン
 
 `icon` は SVG アイコンを出力し、アイコン名を唯一のパラメータとして受け取ります。アイコンは、現在のテキストサイズに合わせてスケーリングされます。
