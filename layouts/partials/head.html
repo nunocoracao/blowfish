@@ -226,5 +226,7 @@
   {{/* Advertisement */}}
   {{ with .Site.Params.advertisement.adsense }}
     <meta name="google-adsense-account" content="{{ . }}">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ . }}"
+        crossorigin="anonymous"></script>
   {{ end }}
 </head>
