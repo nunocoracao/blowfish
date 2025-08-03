@@ -353,14 +353,6 @@
     ]
   },
   {
-    "title": "adilhyz.github.io",
-    "url": "https://adilhyz.github.io",
-    "source": "n/a",
-    "tags": [
-      "Personal site"
-    ]
-  },
-  {
     "title": "ohdmire.github.io",
     "url": "https://ohdmire.github.io",
     "source": "n/a",
@@ -387,14 +379,6 @@
   {
     "title": "joush007.github.io",
     "url": "https://joush007.github.io",
-    "source": "n/a",
-    "tags": [
-      "Personal Site"
-    ]
-  },
-  {
-    "title": "rejowski.xyz",
-    "url": "https://rejowski.xyz/",
     "source": "n/a",
     "tags": [
       "Personal Site"
@@ -895,7 +879,7 @@
     "url": "https://caytejohn.xyz",
     "source": "n/a",
     "tags": [
-      "Personal site",
+      "Personal site"
     ]
   }
 ]

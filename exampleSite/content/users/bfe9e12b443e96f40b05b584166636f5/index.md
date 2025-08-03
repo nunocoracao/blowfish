@@ -1,8 +1,8 @@
 ---
-                title: "blog.francescopapini.com"
-                tags: [技术博客, 个人网站, 博客]
-                externalUrl: "https://blog.francescopapini.com"
-                weight: 101
+                title: "caytejohn.xyz"
+                tags: [Personal site]
+                externalUrl: "https://caytejohn.xyz"
+                weight: 105
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-
