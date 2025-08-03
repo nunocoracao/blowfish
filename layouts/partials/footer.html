@@ -2,11 +2,20 @@
   {{/* Footer menu */}}
   {{ if .Site.Params.footer.showMenu | default true }}
     {{ if .Site.Menus.footer }}
-      <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400">
-        <ul class="flex flex-col list-none sm:flex-row">
+      {{ $onlyIcon := true }}
+      {{ range .Site.Menus.footer }}
+        {{ if .Name }}
+          {{ $onlyIcon = false }}
+          {{ break }}
+        {{ end }}
+      {{ end }}
+      {{ $navClass := printf "flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400 %s" (cond $onlyIcon "overflow-x-auto py-2" "") }}
+      {{ $ulClass := printf "flex list-none %s" (cond $onlyIcon "flex-row" "flex-col sm:flex-row") }}
+      {{ $liClass := printf "flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0 %s" (cond $onlyIcon "ltr:mr-4 rtl:ml-4" "") }}
+      <nav class="{{ $navClass }}">
+        <ul class="{{ $ulClass }}">
           {{ range .Site.Menus.footer }}
-            <li
-              class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
+            <li class=" {{ $liClass }}">
               <a
                 class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
                 href="{{ .URL }}"
@@ -50,17 +59,17 @@
         {{ i18n "footer.powered_by" (dict "Hugo" $hugo "Theme" $blowfish) | safeHTML }}
       </p>
     {{ end }}
-
   </div>
-  <script>
-    {{ if not .Site.Params.disableImageZoom | default true }}
-    mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
-      margin: 24,
-      background: 'rgba(0,0,0,0.5)',
-      scrollOffset: 0,
-    })
-    {{ end }}
-  </script> {{ $jsProcess := resources.Get "js/process.js" }}
+  {{ if not .Site.Params.disableImageZoom | default true }}
+    <script>
+      mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+        margin: 24,
+        background: "rgba(0,0,0,0.5)",
+        scrollOffset: 0,
+      });
+    </script>
+  {{ end }}
+  {{ $jsProcess := resources.Get "js/process.js" }}
   {{ $jsProcess = $jsProcess | resources.Minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
   <script
     type="text/javascript"
