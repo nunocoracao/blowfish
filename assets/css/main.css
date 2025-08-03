@@ -277,3 +277,8 @@ pre {
   text-decoration-thickness: 3px;
   text-underline-offset: 4px;
 }
+
+/* Cancel group hover if .group-hover-card contains .group-hover-cancel*/
+.group-hover-card:hover:has(.group-hover-cancel:hover) .group-hover-card-title {
+  text-decoration: none !important;
+}
