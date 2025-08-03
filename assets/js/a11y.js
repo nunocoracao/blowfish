@@ -7,6 +7,7 @@ const getA11ySettings = () => {
         disableImages: false,
         fontSize: "default",
         underlineLinks: false,
+        zenMode: false,
       };
 };
 
@@ -49,6 +50,19 @@ const applyUnderlineLinks = (enabled) => {
   }
 };
 
+const applyZenMode = (enabled) => {
+  const body = document.querySelector("body");
+  const isZenModeActive = body && body.classList.contains("zen-mode-enable");
+
+  // Toggle only if current state doesn't match desired state
+  if (enabled !== isZenModeActive) {
+    const zenModeCheckbox = document.querySelector('[id$="zen-mode"]');
+    if (zenModeCheckbox && typeof _toggleZenMode === "function") {
+      _toggleZenMode(zenModeCheckbox, { scrollToHeader: false });
+    }
+  }
+};
+
 const applyA11ySettings = () => {
   const settings = getA11ySettings();
   document.querySelectorAll("script[data-target-id]").forEach((script) => {
@@ -62,6 +76,7 @@ const applyA11ySettings = () => {
   });
   applyFontSize(settings.fontSize);
   applyUnderlineLinks(settings.underlineLinks);
+  applyZenMode(settings.zenMode);
 };
 
 const updateA11ySetting = (key, value) => {
@@ -94,6 +109,7 @@ const initA11yPanel = (prefix = "") => {
   const checkboxBlur = document.getElementById(`${prefix}disable-blur`);
   const checkboxImages = document.getElementById(`${prefix}disable-images`);
   const checkboxUnderline = document.getElementById(`${prefix}underline-links`);
+  const checkboxZenMode = document.getElementById(`${prefix}zen-mode`);
   const fontSizeSelect = document.getElementById(`${prefix}font-size-select`);
   const toggleButton = document.getElementById(`${prefix}a11y-toggle`);
   const closeButton = document.getElementById(`${prefix}a11y-close`);
@@ -103,6 +119,7 @@ const initA11yPanel = (prefix = "") => {
     !checkboxBlur ||
     !checkboxImages ||
     !checkboxUnderline ||
+    !checkboxZenMode ||
     !fontSizeSelect ||
     !toggleButton ||
     !closeButton ||
@@ -114,12 +131,17 @@ const initA11yPanel = (prefix = "") => {
 
   checkboxBlur.checked = settings.disableBlur;
   checkboxImages.checked = settings.disableImages;
-  fontSizeSelect.value = settings.fontSize;
   checkboxUnderline.checked = settings.underlineLinks;
+  checkboxZenMode.checked = settings.zenMode;
+  fontSizeSelect.value = settings.fontSize;
 
   checkboxBlur.addEventListener("change", (e) => updateA11ySetting("disableBlur", e.target.checked));
   checkboxImages.addEventListener("change", (e) => updateA11ySetting("disableImages", e.target.checked));
   checkboxUnderline.addEventListener("change", (e) => updateA11ySetting("underlineLinks", e.target.checked));
+  checkboxZenMode.addEventListener("change", (e) => {
+    // Only save setting, let applyZenMode handle the toggle logic
+    updateA11ySetting("zenMode", e.target.checked);
+  });
   fontSizeSelect.addEventListener("change", (e) => {
     // Remove fontSize from localStorage when default is selected
     if (e.target.value === "default") {

@@ -1,4 +1,4 @@
-function _toogleZenMode(zendModeButton) {
+function _toggleZenMode(zendModeButton, options = { scrollToHeader: true }) {
   // Nodes selection
   const body = document.querySelector("body");
   const footer = document.querySelector("footer");
@@ -35,11 +35,15 @@ function _toogleZenMode(zendModeButton) {
     // Change title to enable
     zendModeButton.setAttribute("title", titleI18nEnable);
     // Auto-scroll to title article
-    window.scrollTo(window.scrollX, header.getBoundingClientRect().top - 90);
+    if (options.scrollToHeader) {
+      window.scrollTo(window.scrollX, header.getBoundingClientRect().top - 90);
+    }
   } else {
     //localStorage.setItem('blowfish-zen-mode-enabled', 'false');
     zendModeButton.setAttribute("title", titleI18nDisable);
-    document.querySelector("body").scrollIntoView();
+    if (options.scrollToHeader) {
+      document.querySelector("body").scrollIntoView();
+    }
   }
 }
 
@@ -48,7 +52,7 @@ function _registerZendModeButtonClick(zendModeButton) {
     event.preventDefault();
 
     // Toggle zen-mode
-    _toogleZenMode(zendModeButton);
+    _toggleZenMode(zendModeButton);
   });
 }
 
