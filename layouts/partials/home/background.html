@@ -1,5 +1,5 @@
 {{ $disableImageOptimization := .Site.Params.disableImageOptimization | default false }}
-<article class="max-w-full prose dark:prose-invert">
+<article class="prose dark:prose-invert max-w-full">
   <div class="relative">
     <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100"></div>
     <div class="mx-auto max-w-7xl p-0">
@@ -22,16 +22,17 @@
           {{ end }}
           {{ if $homepageImage }}
             <img
-              class="w-full h-[1000px] object-cover nozoom mt-0 mr-0 mb-0 ml-0"
+              id="homepage-background-image"
+              class="nozoom mt-0 mr-0 mb-0 ml-0 h-[1000px] w-full object-cover"
               src="{{ $homepageImage.RelPermalink }}"
               role="presentation">
             <div
-              class="absolute inset-0 h-[1000px] bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal"></div>
+              class="from-neutral absolute inset-0 h-[1000px] bg-gradient-to-t to-transparent mix-blend-normal dark:from-neutral-800"></div>
             <div
-              class="opacity-60 absolute inset-0 h-[1000px] bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal"></div>
+              class="from-neutral absolute inset-0 h-[1000px] bg-gradient-to-t to-neutral-100 opacity-60 mix-blend-normal dark:from-neutral-800 dark:to-neutral-800"></div>
           {{ end }}
         </div>
-        <div class="relative px-1 py-1 flex flex-col items-center justify-center text-center">
+        <div class="relative flex flex-col items-center justify-center px-1 py-1 text-center">
           {{ with .Site.Params.Author.image }}
             {{ $authorImage := "" }}
             {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
@@ -44,7 +45,7 @@
                 {{ $authorImage = $authorImage.Fill (print "288x288 q" ( $.Site.Params.Author.imagequality | default "96" )) }}
               {{ end }}
               <img
-                class="mb-2 rounded-full h-36 w-36"
+                class="mb-2 h-36 w-36 rounded-full"
                 width="144"
                 height="144"
                 alt="{{ $.Site.Params.Author.name | default " Author" }}"
@@ -65,7 +66,7 @@
                 {{ range $links := . }}
                   {{ range $name, $url := $links }}
                     <a
-                      class="px-1 hover:text-primary-400 text-primary-800 dark:text-primary-200"
+                      class="hover:text-primary-400 text-primary-800 dark:text-primary-200 px-1"
                       href="{{ $url }}"
                       target="_blank"
                       aria-label="{{ $name | title }}"
@@ -98,5 +99,7 @@
     type="text/javascript"
     src="{{ $backgroundBlur.RelPermalink }}"
     integrity="{{ $backgroundBlur.Data.Integrity }}"
-    data-target-id="background-blur"></script>
+    data-target-id="background-blur"
+    data-image-id="homepage-background-image"
+    {{ if $homepageImage }}data-image-url="{{ $homepageImage.RelPermalink }}"{{ end }}></script>
 {{ end }}
