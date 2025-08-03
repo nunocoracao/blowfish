@@ -1,0 +1,22 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Contributing Guidelines
+    url: https://github.com/nunocoracao/blowfish/blob/main/CONTRIBUTING.md
+    about: Read the contributing guidelines for this project.
+
+  - name: Blowfish Code of Conduct
+    url: https://github.com/nunocoracao/blowfish?tab=coc-ov-file#readme
+    about: View the Code of Conduct for this project.
+
+  - name: Ideas for New Features
+    url: https://github.com/nunocoracao/blowfish/discussions
+    about: Open a discussion using GitHub Discussions.
+
+  - name: General Questions
+    url: https://github.com/nunocoracao/blowfish/discussions
+    about: Open a discussion using GitHub Discussions.
+
+  - name: Blowfish Homepage
+    url: https://blowfish.page/
+    about: Visit the homepage for more information about Blowfish.
+
