@@ -2137,6 +2137,9 @@ body.zen-mode-enable {
   .text-right {
     text-align: right;
   }
+  .text-start {
+    text-align: start;
+  }
   .-indent-\[999px\] {
     text-indent: calc(999px * -1);
   }
