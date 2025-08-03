@@ -4,6 +4,12 @@
   const repoId = script?.getAttribute("data-repo-id");
 
   if (!repoURL || !repoId) return;
+  if (repoId.startsWith("forgejo")) {
+    console.log(
+      "fetch-repo.js: Forgejo server blocks cross-origin requests. Live JavaScript updates are not supported.",
+    );
+    return;
+  }
 
   const platforms = {
     github: {
@@ -69,6 +75,6 @@
       }
     });
   } catch (error) {
-    console.error(error);
+    console.error(`fetch-repo.js: ${error}`);
   }
 })();
