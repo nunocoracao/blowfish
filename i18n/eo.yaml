@@ -29,6 +29,12 @@ article:
     enable: "Ŝalti zen-reĝimon"
     disable: "Malŝalti zen-reĝimon"
 
+a11y:
+  disable_blur: "Malŝalti malklarigon"
+  disable_images: "Malŝalti bildojn"
+  show_link_underline: "Montri substrekojn de ligiloj"
+  font_size: "Tipara grandeco"
+
 author:
   byline_title: "Aŭtoro"
 

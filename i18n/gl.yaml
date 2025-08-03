@@ -29,6 +29,12 @@ article:
     enable: "Activar modo zen"
     disable: "Desactivar modo zen"
 
+a11y:
+  disable_blur: "Desactivar o desenfoque"
+  disable_images: "Desactivar as imaxes"
+  show_link_underline: "Mostrar subliñado da ligazón"
+  font_size: "Tamaño de letra"
+
 author:
   byline_title: "Autor"
 

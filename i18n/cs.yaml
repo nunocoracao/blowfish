@@ -26,6 +26,12 @@ article:
   this_article: "Tento článek"
   related_articles: "Related"
 
+a11y:
+  disable_blur: "Zakázat rozmazání"
+  disable_images: "Zakázat obrázky"
+  show_link_underline: "Zobrazit podtržení odkazů"
+  font_size: "Velikost písma"
+
 author:
   byline_title: "Autor"
 
