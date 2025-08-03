@@ -69,6 +69,13 @@
     type="text/javascript"
     src="{{ $jsAppearance.RelPermalink }}"
     integrity="{{ $jsAppearance.Data.Integrity }}"></script>
+  {{ if .Site.Params.enableA11y | default false }}
+    {{ $jsA11y := resources.Get "js/a11y.js" }}
+    {{ $jsA11y = $jsA11y | resources.Minify | resources.Fingerprint (site.Params.fingerprintAlgorithm | default "sha512") }}
+    <script
+      src="{{ $jsA11y.RelPermalink }}"
+      integrity="{{ $jsA11y.Data.Integrity }}"></script>
+  {{ end }}
   {{ if .Site.Params.enableSearch | default false }}
     {{ $jsFuse := resources.Get "lib/fuse/fuse.min.js" }}
     {{ $jsSearch := resources.Get "js/search.js" }}
@@ -219,5 +226,7 @@
   {{/* Advertisement */}}
   {{ with .Site.Params.advertisement.adsense }}
     <meta name="google-adsense-account" content="{{ . }}">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ . }}"
+        crossorigin="anonymous"></script>
   {{ end }}
 </head>

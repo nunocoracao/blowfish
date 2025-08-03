@@ -1,7 +1,16 @@
 {{ $id := delimit (slice "gitlab" (partial "functions/uid.html" .)) "-" }}
 {{- $gitlabURL := print (default "https://gitlab.com/" (.Get "baseURL")) "api/v4/projects/" (.Get "projectID") -}}
+{{- $gitLabData := dict -}}
+{{- with try (resources.GetRemote $gitlabURL) -}}
+  {{- with .Err -}}
+    {{- warnf "gitlab shortcode: failed to fetch remote resource from %q: %s" $gitlabURL $.Position -}}
+  {{- else with .Value -}}
+    {{- $gitLabData = . | transform.Unmarshal -}}
+  {{- else -}}
+    {{- warnf "gitlab shortcode: unable to get remote resource from %q: %s" $gitlabURL $.Position -}}
+  {{- end -}}
+{{- end -}}
 
-{{- $gitLabData := resources.GetRemote $gitlabURL | transform.Unmarshal -}}
 {{- with $gitLabData -}}
   <div class="gitlab-card-wrapper">
     <a id="{{ $id }}" target="_blank" href="{{ .web_url }}" class="cursor-pointer">

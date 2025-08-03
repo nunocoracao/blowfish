@@ -26,6 +26,12 @@ article:
   this_article: "Тази Статия"
   related_articles: "Подобни"
 
+a11y:
+  disable_blur: "Изключване на замъгляването"
+  disable_images: "Изключване на изображенията"
+  show_link_underline: "Показване на подчертаване на връзките"
+  font_size: "Размер на шрифта"
+
 author:
   byline_title: "Автор"
 

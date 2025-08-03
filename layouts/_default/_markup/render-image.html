@@ -25,20 +25,21 @@
 {{- end }}
 
 {{- $disableImageOptimizationMD := .Page.Site.Params.disableImageOptimizationMD | default false }}
-{{- $url := urls.Parse .Destination }}
+{{- $urlStr := .Destination | safeURL -}}
+{{- $url := urls.Parse $urlStr -}}
 {{- $altText := .Text }}
 {{- $caption := .Title }}
-{{- $isRemote := findRE "^https?" $url.Scheme }}
+{{- $isRemote := findRE "^(https?|data)" $url.Scheme }}
 {{- $resource := "" }}
 
 {{- if not $isRemote }}
-  {{- $resource = or ($.Page.Resources.GetMatch $url.String) (resources.Get $url.String) }}
+  {{- $resource = or ($.Page.Resources.GetMatch $urlStr) (resources.Get $urlStr) }}
 {{- end }}
 
 
 <figure>
   {{- if $isRemote }}
-    {{ template "RenderImageSimple" (dict "src" $url.String "alt" $altText) }}
+    {{ template "RenderImageSimple" (dict "src" $urlStr "alt" $altText) }}
   {{- else if $resource }}
     {{- $isSVG := eq $resource.MediaType.SubType "svg" }}
     {{- $shouldOptimize := and (not $disableImageOptimizationMD) (not $isSVG) }}
@@ -48,7 +49,7 @@
       {{ template "RenderImageSimple" (dict "src" $resource.RelPermalink "alt" $altText) }}
     {{- end }}
   {{- else }}
-    {{ template "RenderImageSimple" (dict "src" $url.String "alt" $altText) }}
+    {{ template "RenderImageSimple" (dict "src" $urlStr "alt" $altText) }}
   {{- end }}
 
   {{ template "RenderImageCaption" (dict "caption" $caption) }}

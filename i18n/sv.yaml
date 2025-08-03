@@ -1,0 +1,72 @@
+global:
+  language: "SV"
+
+article:
+  anchor_label: "Ankare"
+  date: "{{ .Date }}"
+  date_updated: "Uppdaterad: {{ .Date }}"
+  draft: "Utkast"
+  edit_title: "Redigera innehåll"
+  reading_time:
+    one: "{{ .Count }} minut"
+    other: "{{ .Count }} minuter"
+  reading_time_title: "Lästid"
+  table_of_contents: "Innehållsförteckning"
+  word_count:
+    one: "{{ .Count }} ord"
+    other: "{{ .Count }} ord"
+  part_of_series: "Denna artikel är en del av en serie."
+  part: "Del"
+  this_article: "Denna artikel"
+  related_articles: "Relaterade"
+
+a11y:
+  disable_blur: "Inaktivera suddighet"
+  disable_images: "Inaktivera bilder"
+  show_link_underline: "Visa länkunderstrykning"
+  font_size: "Teckenstorlek"
+
+author:
+  byline_title: "Författare"
+
+code:
+  copy: "Kopiera"
+  copied: "Kopierad"
+
+error:
+  404_title: "Sidan hittades inte :confused:"
+  404_error: "Fel 404"
+  404_description: "Tyvärr finns inte sidan du begärde."
+
+footer:
+  dark_appearance: "Byt till mörkt tema"
+  light_appearance: "Byt till ljust tema"
+  powered_by: "Drivs av {{ .Hugo }} &amp; {{ .Theme }}"
+
+list:
+  externalurl_title: "Länk till extern webbplats"
+  no_articles: "Det finns ännu inga artiklar listade här."
+
+nav:
+  scroll_to_top_title: "Tillbaka upp"
+  skip_to_main: "Hoppa till huvudinnehållet"
+
+search:
+  open_button_title: "Sök (/)"
+  close_button_title: "Stäng (Esc)"
+  input_placeholder: "Sök"
+
+sharing:
+  email: "Skicka med e-post"
+  facebook: "Dela på Facebook"
+  line: "Dela på LINE"
+  linkedin: "Dela på LinkedIn"
+  pinterest: "Fäst på Pinterest"
+  reddit: "Skicka till Reddit"
+  twitter: "Twittra på Twitter"
+
+shortcode:
+  recent_articles: "Senaste"
+
+recent:
+  show_more: "Visa mer"

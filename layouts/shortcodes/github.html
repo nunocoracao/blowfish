@@ -1,12 +1,21 @@
 {{ $id := delimit (slice "github" (partial "functions/uid.html" .)) "-" }}
 {{- $githubURL := print "https://api.github.com/repos/" (.Get "repo") -}}
-{{- $githubData := resources.GetRemote $githubURL | transform.Unmarshal -}}
 {{- $githubThumbnailURL := print "https://opengraph.githubassets.com/0/" (.Get "repo") -}}
 {{- $showThumbnail := .Get "showThumbnail" | default true -}}
+{{- $githubColors := .Site.Data.repoColors -}}
+{{- $githubData := dict -}}
+{{- with try (resources.GetRemote $githubURL) -}}
+  {{- with .Err -}}
+    {{- warnf "github shortcode: failed to fetch remote resource from %q: %s" $githubURL $.Position -}}
+  {{- else with .Value -}}
+    {{- $githubData = . | transform.Unmarshal -}}
+  {{- else -}}
+    {{- warnf "github shortcode: unable to get remote resource from %q: %s" $githubURL $.Position -}}
+  {{- end -}}
+{{- end -}}
 
-
-<div class="github-card-wrapper">
-  {{- with $githubData -}}
+{{- with $githubData -}}
+  <div class="github-card-wrapper">
     <a id="{{ $id }}" target="_blank" href="{{ .html_url }}" class="cursor-pointer">
       <div
         class="w-full md:w-auto p-0 m-0 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl">
@@ -37,10 +46,13 @@
           </p>
 
           <div class="m-0 mt-2 flex items-center">
-            {{ $language := .language | default "fallback" }}
-            {{ $className := printf "background-color-%s" (md5 $language) }}
             <span
-              class="mr-1 inline-block h-3 w-3 rounded-full {{ $className }}"></span>
+              class="mr-1 inline-block h-3 w-3 rounded-full"
+              style="background-color: {{ if .language }}
+                {{- index $githubColors .language -}}
+              {{ else }}
+                #0077b6
+              {{ end }}"></span>
             <div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
               {{ if .language }}{{ .language }}{{ else }}null{{ end }}
             </div>
@@ -71,5 +83,7 @@
         data-repo-url="{{ $githubURL }}"
         data-repo-id="{{ $id }}"></script>
     </a>
-  {{- end -}}
-</div>
+  </div>
+{{- else -}}
+  {{ warnf "github shortcode: unable to fetch %q: %s" $githubURL .Position }}
+{{- end -}}

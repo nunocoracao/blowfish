@@ -19,8 +19,8 @@ article:
     one: "{{ .Count }} بازدید"
     other: "{{ .Count }} بازدید"
   likes:
-    one: "{{ .Count }} لایک"
-    other: "{{ .Count }} لایک"
+    one: "{{ .Count }} نفر پسندید"
+    other: "{{ .Count }} نفر پسندیدن"
   part_of_series: "این مقاله بخشی از یک مجموعه مقالات است."
   part: "بخش"
   this_article: "همین مقاله"
@@ -28,6 +28,12 @@ article:
   zen_mode_title:
     enable: "فعال کردن حالت تمام متن"
     disable: "غیر فعال کردن حالت تمام متن"
+
+a11y:
+  disable_blur: "غیرفعال کردن تاری"
+  disable_images: "غیرفعال کردن تصاویر"
+  show_link_underline: "نمایش زیرخط لینک"
+  font_size: "اندازه فونت"
 
 author:
   byline_title: "نویسنده"
@@ -38,7 +44,7 @@ code:
 
 error:
   404_title: "صفحه مورد نظر یافت نشد :confused:"
-  404_error: "ارور 404"
+  404_error: "خطای ۴۰۴"
   404_description: "به نظر می‌رسد صفحه‌ای که درخواست کرده‌اید وجود ندارد."
 
 footer:
@@ -47,7 +53,7 @@ footer:
   powered_by: "قدرت گرفته از {{ .Hugo }} و {{ .Theme }}"
 
 list:
-  externalurl_title: "لینک به سایت خارجی"
+  externalurl_title: "پیوند به وبگاه خارجی"
   no_articles: "هیچ مقاله‌ای برای نمایش وجود ندارد."
 
 nav:
@@ -60,14 +66,16 @@ search:
   input_placeholder: "جستجو"
 
 sharing:
-  email: "ارسال ایمیل"
-  facebook: "اشتراک گذاری در فیسبوک"
-  line: "اشتراک گذاری در لاین"
-  linkedin: "اشتراک گذاری در لینکداین"
-  pinterest: "اشتراک گذاری در پینترست"
-  reddit: "اشتراک گذاری در ردیت"
-  twitter: "اشتراک گذاری در توییتر"
-  bluesky: "اشتراک گذاری در بلواسکای"
+  email: "ارسال از طریق ایمیل"
+  facebook: "هم‌رسانی در فیس‌بوک"
+  line: "هم‌رسانی در لاین"
+  linkedin: "هم‌رسانی در لینکدین"
+  pinterest: "هم‌رسانی در پینترست"
+  reddit: "هم‌رسانی در ردیت"
+  twitter: "هم‌رسانی در توییتر"
+  bluesky: "هم‌رسانی در بلواسکای"
+  whatsapp: "هم‌رسانی در واتس‌اپ"
+  telegram: "هم‌رسانی در تلگرام"
 
 shortcode:
   recent_articles: "مقاله‌های اخیر"

@@ -8,16 +8,32 @@ article:
   draft: "草稿"
   edit_title: "编辑内容"
   reading_time:
+    one: "{{ .Count }} 分钟"
     other: "{{ .Count }} 分钟"
   reading_time_title: "预计阅读"
   table_of_contents: "目录"
   word_count:
     one: "{{ .Count }} 字"
     other: "{{ .Count }} 字"
+  views:
+    one: "{{ .Count }} 次浏览"
+    other: "{{ .Count }} 次浏览"
+  likes:
+    one: "{{ .Count }} 个赞"
+    other: "{{ .Count }} 个赞"
   part_of_series: "这篇文章属于一个选集。"
   part: "§"
   this_article: "本文"
   related_articles: "相关文章"
+  zen_mode_title:
+    enable: "啟用阅读模式"
+    disable: "停用阅读模式"
+
+a11y:
+  disable_blur: "禁用模糊效果"
+  disable_images: "禁用图片"
+  show_link_underline: "显示链接下划线"
+  font_size: "字体大小"
 
 author:
   byline_title: "作者"
@@ -57,6 +73,9 @@ sharing:
   pinterest: "钉到 Pinterest"
   reddit: "提交到 Reddit"
   twitter: "分享到 Twitter"
+  bluesky: "发布到 Bluesky"
+  whatsapp: "通过 WhatsApp 分享"
+  telegram: "通过 Telegram 分享"
 
 shortcode:
   recent_articles: "最近的文章"

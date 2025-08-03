@@ -1,0 +1,125 @@
+{{ $target := .target }}
+{{ $shortcodeShowSummary := .showSummary }}
+{{ $shortcodeCompactSummary := .compactSummary }}
+{{ $constrainItemsWidth := site.Params.list.constrainItemsWidth | default false }}
+{{ $disableImageOptimization := site.Params.disableImageOptimization | default false }}
+
+{{ $articleClasses := "group-hover-card group flex flex-wrap md:flex-nowrap article relative" }}
+{{ if site.Params.list.showCards }}
+  {{ $articleClasses = delimit (slice $articleClasses "border border-neutral-200 dark:border-neutral-700 border-2 rounded-md overflow-hidden") " " }}
+{{ else }}
+  {{ $articleClasses = delimit (slice $articleClasses "") " " }}
+{{ end }}
+
+{{ $articleImageClasses := "w-full md:w-auto h-full thumbnail nozoom" }}
+{{ if site.Params.list.showCards }}
+  {{ $articleImageClasses = delimit (slice $articleImageClasses "") " " }}
+{{ else }}
+  {{ $articleImageClasses = delimit (slice $articleImageClasses "thumbnailshadow md:mr-7") " " }}
+{{ end }}
+
+{{ $articleInnerClasses := "" }}
+{{ if site.Params.list.showCards }}
+  {{ $articleInnerClasses = delimit (slice $articleInnerClasses "p-2.5 pl-4 pb-0") " " }}
+{{ else }}
+  {{ $articleInnerClasses = delimit (slice $articleInnerClasses "mt-3 md:mt-0") " " }}
+{{ end }}
+
+{{ if $constrainItemsWidth }}
+  {{ $articleClasses = delimit (slice $articleClasses "max-w-prose") " " }}
+{{ end }}
+
+
+<div class="{{ $articleClasses }}">
+  <a
+    {{ partial "article-link/_external-link.html" $target | safeHTMLAttr }}
+    class="absolute inset-0"
+    aria-label="{{ $.Title }}"></a>
+
+  {{- with $target.Params.images -}}
+    {{- range first 6 . }}
+      <meta property="og:image" content="{{ . | absURL }}">
+    {{ end -}}
+  {{- else -}}
+    {{- $images := $target.Resources.ByType "image" -}}
+    {{- $featured := $images.GetMatch "*feature*" -}}
+    {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
+    {{ if and $target.Params.featureimage (not $featured) }}
+      {{- $url:= $target.Params.featureimage -}}
+      {{ $featured = resources.GetRemote $url }}
+    {{ end }}
+    {{- if not $featured }}
+      {{ with site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}
+    {{ end -}}
+    {{ if $target.Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
+    {{- with $featured -}}
+      {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg") }}
+        {{ with . }}
+          <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
+        {{ end }}
+      {{ else }}
+        {{ with .Resize "600x" }}
+          <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
+        {{ end }}
+      {{ end }}
+    {{- else -}}
+      {{- with site.Params.images }}
+        <meta property="og:image" content="{{ index . 0 | absURL }}">
+      {{ end -}}
+    {{- end -}}
+  {{- end -}}
+
+
+  <div class="{{ $articleInnerClasses }}">
+    <div class="items-center text-left text-xl font-semibold">
+      {{ with $target.Params.externalUrl }}
+        <div>
+          <div
+            class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
+            {{ $target.Title | emojify }}
+            <span class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500">
+              <span class="rtl:hidden">&#8599;</span>
+              <span class="ltr:hidden">&#8598;</span>
+            </span>
+          </div>
+        </div>
+      {{ else }}
+        <div
+          class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2"
+          href="{{ $target.RelPermalink }}">
+          {{ $target.Title | emojify }}
+        </div>
+      {{ end }}
+      {{ if and $target.Draft site.Params.article.showDraftLabel }}
+        <div class="ltr:ml-2 rtl:mr-2">
+          {{ partial "badge.html" (i18n "article.draft" | emojify) }}
+        </div>
+      {{ end }}
+      {{ if templates.Exists "partials/extend-article-link.html" }}
+        {{ partial "extend-article-link.html" $target }}
+      {{ end }}
+    </div>
+    <div class="group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400">
+      {{ partial "article-meta/basic.html" $target }}
+    </div>
+    {{ $showSummary := false }}
+    {{ if ne $shortcodeShowSummary nil }}
+      {{ $showSummary = $shortcodeShowSummary }}
+    {{ else }}
+      {{ $showSummary = $target.Params.showSummary | default (site.Params.list.showSummary | default false) }}
+    {{ end }}
+    {{ if $showSummary }}
+      {{ $compactSummary := false }}
+      {{ if ne $shortcodeCompactSummary nil }}
+        {{ $compactSummary = $shortcodeCompactSummary }}
+      {{ else }}
+        {{ $compactSummary = $target.Params.compactSummary | default (site.Params.list.compactSummary | default false) }}
+      {{ end }}
+      <div class="overflow-hidden pt-1">
+        <div class="{{ if $compactSummary }}line-clamp-3{{ end }} prose dark:prose-invert max-w-fit">
+          {{ $target.Summary | plainify }}
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</div>

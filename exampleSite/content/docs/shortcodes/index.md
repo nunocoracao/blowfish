@@ -72,15 +72,17 @@ This is an error!
 | Parameter | Description                                              |
 | --------- | -------------------------------------------------------- |
 | `link`    | **Required.** the `.RelPermalink` to the target article. |
+| `showSummary` | **Optional.** A boolean value indicating whether to show the article summary. If not set, the site's default configuration will be used. |
+| `compactSummary` | **Optional.** A boolean value indicating whether to display the summary in compact mode. Default to false. |
 <!-- prettier-ignore-end -->
 
 **Example:**
 
 ```md
-{{</* article link="/docs/welcome/" */>}}
+{{</* article link="/docs/welcome/" showSummary=true compactSummary=true */>}}
 ```
 
-{{< article link="/docs/welcome/" >}}
+{{< article link="/docs/welcome/" showSummary=true compactSummary=true >}}
 
 <br/><br/><br/>
 
@@ -455,6 +457,35 @@ Finally, custom GitLab instance URL can be provided, as long as the `api/v4/proj
 ```
 
 {{< gitlab projectID="278964" >}}
+
+<br/><br/><br/>
+
+## Hugging Face Card
+
+`huggingface` allows you to quickly link a Hugging Face model or dataset, displaying real-time information such as the number of likes and downloads, along with type and description.
+
+| Parameter  | Description                                                    |
+|------------|----------------------------------------------------------------|
+| `model`    | [String] Hugging Face model in the format of `username/model` |
+| `dataset`  | [String] Hugging Face dataset in the format of `username/dataset` |
+
+**Note:** Use either `model` or `dataset` parameter, not both.
+
+**Example 1 (Model):**
+
+```md
+{{</* huggingface model="google-bert/bert-base-uncased" */>}}
+```
+
+{{< huggingface model="google-bert/bert-base-uncased" >}}
+
+**Example 2 (Dataset):**
+
+```md
+{{</* huggingface dataset="stanfordnlp/imdb" */>}}
+```
+
+{{< huggingface dataset="stanfordnlp/imdb" >}}
 
 <br/><br/><br/>
 

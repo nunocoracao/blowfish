@@ -72,15 +72,17 @@ This is an error!
 | 参数   | 功能                                  |
 | ------ | ------------------------------------- |
 | `link` | **必填** 要嵌入文章的 `.RelPermalink` |
+| `showSummary` | **可选** 布尔值，指示是否显示文章摘要。如果未设置，将使用站点的默认配置。 |
+| `compactSummary` | **可选** 布尔值，指示是否以紧凑模式显示摘要。默认为 false。 |
 <!-- prettier-ignore-end -->
 
 **例如：**
 
 ```md
-{{</* article link="/zh-cn/docs/welcome/" */>}}
+{{</* article link="/zh-cn/docs/welcome/" showSummary=true compactSummary=true */>}}
 ```
 
-{{< article link="/zh-cn/docs/welcome/" >}}
+{{< article link="/zh-cn/docs/welcome/" showSummary=true compactSummary=true >}}
 
 <br/><br/><br/>
 
@@ -383,12 +385,15 @@ Blowfish 还支持使用标准 Markdown 语法自动转换图像。只需使用�
 {{</* gist "octocat" "6cad326836d38bd3a7ae" */>}}
 ```
 
+{{< gist "octocat" "6cad326836d38bd3a7ae" >}}
 
 **示例 2：嵌入 Gist 中的特定文件**
 
 ```md
 {{</* gist "rauchg" "2052694" "README.md" */>}}
 ```
+
+{{< gist "rauchg" "2052694" "README.md" >}}
 
 <br/><br/><br/>
 
@@ -455,6 +460,35 @@ Blowfish 还支持使用标准 Markdown 语法自动转换图像。只需使用�
 ```
 
 {{< gitlab projectID="278964" >}}
+
+<br/><br/><br/>
+
+## Hugging Face 卡片
+
+`huggingface` 让您能够快速链接 Hugging Face 模型或数据集，显示实时信息如点赞数和下载量，以及类型和描述。
+
+| 参数      | 描述                                                         |
+|-----------|--------------------------------------------------------------|
+| `model`   | [字符串] 格式为 `用户名/模型名` 的 Hugging Face 模型         |
+| `dataset` | [字符串] 格式为 `用户名/数据集名` 的 Hugging Face 数据集     |
+
+**注意：** 使用 `model` 或 `dataset` 参数中的一个，不要同时使用。
+
+**示例1（模型）：**
+
+```md
+{{</* huggingface model="google-bert/bert-base-uncased" */>}}
+```
+
+{{< huggingface model="google-bert/bert-base-uncased" >}}
+
+**示例2（数据集）：**
+
+```md
+{{</* huggingface dataset="stanfordnlp/imdb" */>}}
+```
+
+{{< huggingface dataset="stanfordnlp/imdb" >}}
 
 <br/><br/><br/>
 

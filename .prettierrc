@@ -7,8 +7,7 @@
   "proseWrap": "always",
   "plugins": [
     "@awmottaz/prettier-plugin-void-html",
-    "prettier-plugin-go-template",
-    "prettier-plugin-tailwindcss"
+    "prettier-plugin-go-template"
   ],
   "overrides": [
     {

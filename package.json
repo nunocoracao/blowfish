@@ -1,6 +1,6 @@
 {
   "name": "hugo-blowfish-theme",
-  "version": "2.88.1",
+  "version": "2.89.0",
   "description": "Blowfish theme for Hugo.",
   "scripts": {
     "postinstall": "vendor-copy",
@@ -45,12 +45,11 @@
     "katex": "^0.16.22",
     "lite-youtube-embed": "^0.3.3",
     "medium-zoom": "^1.1.0",
-    "mermaid": "^11.7.0",
+    "mermaid": "^11.9.0",
     "packery": "^3.0.0",
     "prettier": "^3.6.2",
     "prettier-plugin-go-template": "^0.0.15",
-    "prettier-plugin-tailwindcss": "^0.6.13",
-    "puppeteer": "^24.12.1",
+    "puppeteer": "^24.15.0",
     "rimraf": "^6.0.1",
     "tailwind-scrollbar": "^4.0.2",
     "tailwindcss": "^4.1.11",
@@ -122,7 +121,7 @@
     }
   ],
   "dependencies": {
-    "@headlessui/react": "^2.2.4",
+    "@headlessui/react": "^2.2.6",
     "@heroicons/react": "^2.2.0",
     "@iamtraction/google-translate": "^2.0.1",
     "@tailwindcss/forms": "^0.5.10",

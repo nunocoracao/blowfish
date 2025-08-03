@@ -4,6 +4,12 @@
   const repoId = script?.getAttribute("data-repo-id");
 
   if (!repoURL || !repoId) return;
+  if (repoId.startsWith("forgejo")) {
+    console.log(
+      "fetch-repo.js: Forgejo server blocks cross-origin requests. Live JavaScript updates are not supported.",
+    );
+    return;
+  }
 
   const platforms = {
     github: {
@@ -36,6 +42,17 @@
       stars_count: "stars_count",
       forks_count: "forks_count",
     },
+    huggingface: {
+      description: "description",
+      likes: "likes",
+      downloads: "downloads",
+    },
+  };
+
+  const processors = {
+    huggingface: {
+      description: (value) => value?.replace(/Dataset Card for .+?\s+Dataset Summary\s+/, "").trim() || value,
+    },
   };
 
   const platform = Object.keys(platforms).find((p) => repoId.startsWith(p)) || "github";
@@ -49,9 +66,15 @@
 
     Object.entries(mapping).forEach(([dataField, elementSuffix]) => {
       const element = document.getElementById(`${repoId}-${elementSuffix}`);
-      if (element) element.innerHTML = data[dataField];
+      if (element) {
+        let value = data[dataField];
+        if (processors[platform]?.[dataField]) {
+          value = processors[platform][dataField](value);
+        }
+        element.innerHTML = value;
+      }
     });
   } catch (error) {
-    console.error(error);
+    console.error(`fetch-repo.js: ${error}`);
   }
 })();

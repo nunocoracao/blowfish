@@ -72,15 +72,17 @@ Twitter で私を[フォロー](https://twitter.com/nunocoracao)するのを忘�
 | パラメータ | 説明                                              |
 | --------- | -------------------------------------------------------- |
 | `link`    | **必須** ターゲット記事への `.RelPermalink`。 |
+| `showSummary` | **オプション** のブール値で、記事の要約を表示するかどうかを示します。設定されていない場合は、サイトのデフォルト設定が使用されます。 |
+| `compactSummary` | **オプション** のブール値で、要約をコンパクトモードで表示するかどうかを示します。デフォルトは false です。 |
 <!-- prettier-ignore-end -->
 
 **例:**
 
 ```md
-{{</* article link="/docs/welcome/" */>}}
+{{</* article link="/ja/docs/welcome/" showSummary=true compactSummary=true */>}}
 ```
 
-{{< article link="/docs/welcome/" >}}
+{{< article link="/ja/docs/welcome/" showSummary=true compactSummary=true >}}
 
 <br/><br/><br/>
 
@@ -451,6 +453,35 @@ Blowfish も、標準の Markdown 構文を使用して含まれる画像の自�
 ```
 
 {{< gitlab projectID="278964" >}}
+
+<br/><br/><br/>
+
+## Hugging Face カード
+
+`huggingface` を使用すると、Hugging Face のモデルやデータセットを素早くリンクし、いいね数やダウンロード数などのリアルタイム情報を表示できます。
+
+| パラメータ | 説明                                                          |
+|-----------|---------------------------------------------------------------|
+| `model`   | [文字列] `ユーザー名/モデル名` の形式での Hugging Face モデル  |
+| `dataset` | [文字列] `ユーザー名/データセット名` の形式での Hugging Face データセット |
+
+**注意:** `model` または `dataset` パラメータのどちらか一方を使用してください。
+
+**例1（モデル）:**
+
+```md
+{{</* huggingface model="google-bert/bert-base-uncased" */>}}
+```
+
+{{< huggingface model="google-bert/bert-base-uncased" >}}
+
+**例2（データセット）:**
+
+```md
+{{</* huggingface dataset="stanfordnlp/imdb" */>}}
+```
+
+{{< huggingface dataset="stanfordnlp/imdb" >}}
 
 <br/><br/><br/>
 
