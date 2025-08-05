@@ -37,16 +37,3 @@ document.querySelectorAll("script[data-target-id]").forEach((script) => {
   const disableBlur = settings.disableBlur || false;
   setBackgroundBlur(targetId, scrollDivisor, disableBlur, isMenuBlur);
 });
-
-// Prevent disableImages FOUC
-// Note: I tried putting this in a11y.js but it did not work, and placing it here prevents FOUC
-(() => {
-  const settings = JSON.parse(localStorage.getItem("a11ySettings") || "{}");
-  if (settings.disableImages) {
-    document.querySelectorAll("script[data-image-id]").forEach((script) => {
-      const imageId = script.getAttribute("data-image-id");
-      const image = imageId && document.getElementById(imageId);
-      if (image) image.style.display = "none";
-    });
-  }
-})();

@@ -144,7 +144,10 @@ window.A11yPanel = (() => {
   };
 
   if (getSettings().disableImages) {
-    FEATURES.disableImages.apply(true);
+    new MutationObserver(() => {
+      const img = document.getElementById("background-image");
+      if (img) img.style.display = "none";
+    }).observe(document, { childList: true, subtree: true });
   }
 
   if (document.readyState === "loading") {
