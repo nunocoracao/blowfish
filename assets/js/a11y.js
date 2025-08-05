@@ -3,8 +3,8 @@ window.A11yPanel = (() => {
     disableBlur: {
       default: false,
       apply: (enabled) => {
-        document.querySelectorAll("script[data-target-id]").forEach((script) => {
-          const targetId = script.getAttribute("data-target-id");
+        document.querySelectorAll("script[data-blur-id]").forEach((script) => {
+          const targetId = script.getAttribute("data-blur-id");
           const scrollDivisor = Number(script.getAttribute("data-scroll-divisor") || 300);
           if (typeof setBackgroundBlur === "function") {
             setBackgroundBlur(targetId, scrollDivisor, enabled, targetId === "menu-blur");

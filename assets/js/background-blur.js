@@ -1,6 +1,6 @@
 function setBackgroundBlur(targetId, scrollDivisor = 300, disableBlur = false, isMenuBlur = false) {
   if (!targetId) {
-    console.error("data-target-id is null");
+    console.error("data-blur-id is null");
     return;
   }
   const blurElement = document.getElementById(targetId);
@@ -29,8 +29,8 @@ function setBackgroundBlur(targetId, scrollDivisor = 300, disableBlur = false, i
   updateBlur();
 }
 
-document.querySelectorAll("script[data-target-id]").forEach((script) => {
-  const targetId = script.getAttribute("data-target-id");
+document.querySelectorAll("script[data-blur-id]").forEach((script) => {
+  const targetId = script.getAttribute("data-blur-id");
   const scrollDivisor = Number(script.getAttribute("data-scroll-divisor") || 300);
   const isMenuBlur = targetId === "menu-blur";
   const settings = JSON.parse(localStorage.getItem("a11ySettings") || "{}");
