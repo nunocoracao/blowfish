@@ -16,14 +16,10 @@ window.A11yPanel = (() => {
     disableImages: {
       default: false,
       apply: (enabled) => {
-        document.querySelectorAll("script[data-target-id]").forEach((script) => {
-          const image = document.getElementById(script.getAttribute("data-image-id"));
-          const imageUrl = script.getAttribute("data-image-url");
-          if (image) {
-            image.style.display = enabled ? "none" : "";
-            if (!enabled && imageUrl && !image.src) image.src = imageUrl;
-          }
-        });
+        const image = document.getElementById("background-image");
+        if (image) {
+          image.style.display = enabled ? "none" : "";
+        }
       },
     },
 
