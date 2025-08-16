@@ -17,7 +17,7 @@ function createCopyButton(highlightDiv) {
 }
 
 async function copyCodeToClipboard(button, highlightDiv) {
-  const codeToCopy = highlightDiv.querySelector(":last-child").innerText;
+  const codeToCopy = getCleanCodeText(highlightDiv);
   try {
     result = await navigator.permissions.query({ name: "clipboard-write" });
     if (result.state == "granted" || result.state == "prompt") {
@@ -30,6 +30,25 @@ async function copyCodeToClipboard(button, highlightDiv) {
   } finally {
     codeWasCopied(button);
   }
+}
+
+function getCleanCodeText(highlightDiv) {
+  const codeElement = highlightDiv.querySelector("code");
+  if (!codeElement) return "";
+
+  const contentElements = codeElement.querySelectorAll(".cl");
+
+  if (contentElements.length > 0) {
+    const lines = Array.from(contentElements).map((el) => el.textContent.replace(/\n$/, ""));
+    return lines.join("\n");
+  }
+
+  const tableCell = highlightDiv.querySelector(".lntable .lntd:last-child code");
+  if (tableCell) {
+    return tableCell.textContent.trim();
+  }
+
+  return codeElement.textContent.trim();
 }
 
 function copyCodeBlockExecCommand(codeToCopy, highlightDiv) {
