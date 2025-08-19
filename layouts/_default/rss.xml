@@ -6,6 +6,13 @@
 {{- else -}}
 {{- $pages = $pctx.Pages -}}
 {{- end -}}
+{{- $filteredPages := slice -}}
+{{- range $pages -}}
+  {{- if ne .Params.xml false -}}
+    {{- $filteredPages = $filteredPages | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- $pages = $filteredPages -}}
 {{- $limit := .Site.Config.Services.RSS.Limit -}}
 {{- if ge $limit 1 -}}
 {{- $pages = $pages | first $limit -}}
