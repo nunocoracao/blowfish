@@ -620,6 +620,9 @@ body.zen-mode-enable {
   .my-3 {
     margin-block: calc(var(--spacing) * 3);
   }
+  .me-2 {
+    margin-inline-end: calc(var(--spacing) * 2);
+  }
   .prose {
     color: var(--tw-prose-body);
     max-width: 65ch;
