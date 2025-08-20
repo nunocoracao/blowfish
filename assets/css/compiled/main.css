@@ -1,4 +1,4 @@
-/*! tailwindcss v4.1.11 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.1.12 | MIT License | https://tailwindcss.com */
 /*! Blowfish | MIT License | https://github.com/nunocoracao/blowfish */
 @layer properties;
 #zen-mode-button {
@@ -421,6 +421,9 @@ body.zen-mode-enable {
   ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
     padding-block: 0;
   }
+  ::-webkit-calendar-picker-indicator {
+    line-height: 1;
+  }
   :-moz-ui-invalid {
     box-shadow: none;
   }
@@ -619,6 +622,9 @@ body.zen-mode-enable {
   }
   .my-3 {
     margin-block: calc(var(--spacing) * 3);
+  }
+  .me-2 {
+    margin-inline-end: calc(var(--spacing) * 2);
   }
   .prose {
     color: var(--tw-prose-body);
