@@ -56,22 +56,22 @@ async function copyCodeToClipboard(button, highlightDiv) {
 }
 
 function getCodeText(highlightDiv) {
-  const codeElement = highlightDiv.querySelector("code");
-  if (!codeElement) return "";
+  const codeBlock = highlightDiv.querySelector("code");
+  const inlineLines = codeBlock?.querySelectorAll(".cl"); // linenos=inline
+  const tableCodeCell = highlightDiv?.querySelector(".lntable .lntd:last-child code"); // linenos=table
 
-  const contentElements = codeElement.querySelectorAll(".cl");
+  if (!codeBlock) return "";
 
-  if (contentElements.length > 0) {
-    const lines = Array.from(contentElements).map((el) => el.textContent.replace(/\n$/, ""));
-    return lines.join("\n");
+  if (inlineLines.length > 0) {
+    const cleanedLines = Array.from(inlineLines).map((line) => line.textContent.replace(/\n$/, ""));
+    return cleanedLines.join("\n");
   }
 
-  const tableCell = highlightDiv.querySelector(".lntable .lntd:last-child code");
-  if (tableCell) {
-    return tableCell.textContent.trim();
+  if (tableCodeCell) {
+    return tableCodeCell.textContent.trim();
   }
 
-  return codeElement.textContent.trim();
+  return codeBlock.textContent.trim();
 }
 
 window.addEventListener("DOMContentLoaded", (event) => {
