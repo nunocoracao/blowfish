@@ -1842,6 +1842,9 @@ body.zen-mode-enable {
   .bg-\[\#6d6d6d\] {
     background-color: #6d6d6d;
   }
+  .bg-black {
+    background-color: #000;
+  }
   .bg-neutral {
     background-color: rgba(var(--color-neutral), 1);
   }
@@ -1886,6 +1889,9 @@ body.zen-mode-enable {
   }
   .bg-transparent {
     background-color: transparent;
+  }
+  .bg-white {
+    background-color: #fff;
   }
   .bg-gradient-to-b {
     --tw-gradient-position: to bottom in oklab;
@@ -2258,6 +2264,9 @@ body.zen-mode-enable {
   .text-transparent {
     color: transparent;
   }
+  .text-white {
+    color: #fff;
+  }
   .capitalize {
     text-transform: capitalize;
   }
@@ -2547,9 +2556,22 @@ body.zen-mode-enable {
       border-style: solid;
     }
   }
+  .group-data-\[twe-input-focused\]\:border-white {
+    &:is(:where(.group)[data-twe-input-focused] *) {
+      border-color: #fff;
+    }
+  }
   .group-data-\[twe-input-focused\]\:border-t-transparent {
     &:is(:where(.group)[data-twe-input-focused] *) {
       border-top-color: transparent;
+    }
+  }
+  .group-data-\[twe-input-focused\]\:shadow-white {
+    &:is(:where(.group)[data-twe-input-focused] *) {
+      --tw-shadow-color: #fff;
+      @supports (color: color-mix(in lab, red, red)) {
+        --tw-shadow-color: color-mix(in oklab, #fff var(--tw-shadow-alpha), transparent);
+      }
     }
   }
   .group-data-\[twe-input-state-active\]\:border-x-0 {
@@ -3377,6 +3399,11 @@ body.zen-mode-enable {
       border-color: rgba(var(--color-primary-600), 1);
     }
   }
+  .dark\:border-white\/10 {
+    &:is(.dark *) {
+      border-color: color-mix(in oklab, #fff 10%, transparent);
+    }
+  }
   .dark\:prose-invert {
     &:is(.dark *) {
       --tw-prose-body: var(--tw-prose-invert-body);
@@ -3549,6 +3576,11 @@ body.zen-mode-enable {
   .dark\:text-primary-400 {
     &:is(.dark *) {
       color: rgba(var(--color-primary-400), 1);
+    }
+  }
+  .dark\:text-white {
+    &:is(.dark *) {
+      color: #fff;
     }
   }
   .dark\:opacity-60 {
