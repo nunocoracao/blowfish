@@ -4,6 +4,8 @@
 @import "./components/chroma.css";
 @import "./components/a11y.css";
 
+@import "./schemes/starry-night-both.css";
+
 @import "tailwindcss";
 @config "../../tailwind.config.js";
 
@@ -132,6 +134,19 @@ button,
 .katex-display {
   padding-right: 2px;
   width: calc(100% - 2px);
+}
+
+/* Fix long Mathjax equations (see https://meta.stackexchange.com/q/325870) */
+mjx-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  display: inline-block;
+}
+
+mjx-container[display="true"] {
+  padding-bottom: 1rem;
+  scrollbar-gutter: stable;
 }
 
 /* Fix long tables breaking out of article on mobile */

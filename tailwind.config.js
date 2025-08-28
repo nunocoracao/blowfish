@@ -70,7 +70,7 @@ module.exports = {
             "--tw-prose-quotes": theme("colors.neutral.700 / 1"),
             "--tw-prose-quote-borders": theme("colors.primary.200 / 1"),
             "--tw-prose-captions": theme("colors.neutral.500 / 1"),
-            "--tw-prose-code": theme("colors.secondary.700 / 1"),
+            "--tw-prose-code": theme("colors.neutral.700 / 1"),
             "--tw-prose-pre-code": theme("colors.neutral.700 / 1"),
             "--tw-prose-pre-bg": theme("colors.neutral.50 / 1"),
             "--tw-prose-th-borders": theme("colors.neutral.500 / 1"),
@@ -86,23 +86,22 @@ module.exports = {
             "--tw-prose-invert-quotes": theme("colors.neutral.200 / 1"),
             "--tw-prose-invert-quote-borders": theme("colors.primary.900 / 1"),
             "--tw-prose-invert-captions": theme("colors.neutral.400 / 1"),
-            "--tw-prose-invert-code": theme("colors.secondary.400 / 1"),
+            "--tw-prose-invert-code": theme("colors.neutral.200 / 1"),
             "--tw-prose-invert-pre-code": theme("colors.neutral.200 / 1"),
             "--tw-prose-invert-pre-bg": theme("colors.neutral.700 / 1"),
             "--tw-prose-invert-th-borders": theme("colors.neutral.500 / 1"),
             "--tw-prose-invert-td-borders": theme("colors.neutral.700 / 1"),
             a: {
               textDecoration: "none",
-              textDecorationColor: theme("colors.primary.300 / 1"),
+              textDecorationColor: "var(--tw-prose-links)",
               fontWeight: "500",
               "&:hover": {
-                color: theme("colors.primary.600 / 1"),
-                textDecoration: "none",
-                borderRadius: "0.09rem",
+                color: "var(--tw-prose-links)",
+                textDecoration: "underline",
               },
             },
             "a code": {
-              color: "var(--tw-prose-code)",
+              color: "var(--tw-prose-links)",
             },
             kbd: {
               backgroundColor: theme("colors.neutral.200 / 1"),
@@ -148,9 +147,9 @@ module.exports = {
         invert: {
           css: {
             a: {
-              textDecorationColor: theme("colors.neutral.600 / 1"),
+              textDecorationColor: "var(--tw-prose-invert-links)",
               "&:hover": {
-                color: theme("colors.primary.400 / 1"),
+                color: "var(--tw-prose-invert-links)",
               },
             },
             kbd: {

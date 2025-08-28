@@ -52,6 +52,13 @@
   {{ end }}
 {{ end }}
 
+{{/* MathJax */}}
+{{ if .Page.HasShortcode "mathjax" }}
+{{ $jsMathjax := resources.Get "js/mathjax-render.js" }}
+{{ $jsMathjax := $jsMathjax | resources.ExecuteAsTemplate "js/mathjax-render.js" . | resources.Minify | resources.Fingerprint "sha512" }}
+<script type="text/javascript" src="{{ $jsMathjax.RelPermalink }}" integrity="{{ $jsMathjax.Data.Integrity }}" async></script>
+{{ end }}
+
 {{/* TypeIt */}}
 {{ if .Page.HasShortcode "typeit" }}
   {{ $typeitLib := resources.Get "lib/typeit/typeit.umd.js" | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
