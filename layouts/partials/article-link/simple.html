@@ -46,18 +46,12 @@
   {{ end }}
   {{ if .Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
   {{ with $featured }}
-    {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg") }}
-      {{ with . }}
-        <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
-      {{ end }}
-    {{ else }}
-      {{ with .Resize "600x" }}
-        <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
-      {{ end }}
+    {{ $featuredURL := .RelPermalink }}
+    {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
+      {{ $featuredURL = (.Resize "600x").RelPermalink }}
     {{ end }}
+    <div class="{{ $articleImageClasses }}" style="background-image:url({{ $featuredURL }});"></div>
   {{ end }}
-
-
   <div class="{{ $articleInnerClasses }}">
     <div class="items-center text-start text-xl font-semibold">
       {{ with .Params.externalUrl }}

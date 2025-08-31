@@ -18,15 +18,11 @@
   {{ end }}
   {{ if .Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
   {{ with $featured }}
-    {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg") }}
-      {{ with . }}
-        <div class="thumbnail_card nozoom w-full" style="background-image:url({{ .RelPermalink }});"></div>
-      {{ end }}
-    {{ else }}
-      {{ with .Resize "600x" }}
-        <div class="thumbnail_card nozoom w-full" style="background-image:url({{ .RelPermalink }});"></div>
-      {{ end }}
+    {{ $featuredURL := .RelPermalink }}
+    {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
+      {{ $featuredURL = (.Resize "600x").RelPermalink }}
     {{ end }}
+    <div class="thumbnail_card nozoom w-full" style="background-image:url({{ $featuredURL }});"></div>
   {{ end }}
   {{ if and .Draft .Site.Params.article.showDraftLabel }}
     <span class="absolute top-0 right-0 m-2">
