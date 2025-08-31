@@ -23,6 +23,12 @@ article:
 author:
   byline_title: "Autor"
 
+a11y:
+  disable_blur: "Blur deaktivieren"
+  disable_images: "Bilder deaktivieren"
+  show_link_underline: "Links unterstreichen"
+  font_size: "Schriftgröße"
+
 code:
   copy: "Kopieren"
   copied: "Kopiert"
