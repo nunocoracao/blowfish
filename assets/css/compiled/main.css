@@ -3239,11 +3239,6 @@ body.zen-mode-enable {
       display: inline;
     }
   }
-  .ltr\:text-right {
-    &:where(:dir(ltr), [dir="ltr"], [dir="ltr"] *) {
-      text-align: right;
-    }
-  }
   .rtl\:left-0 {
     &:where(:dir(rtl), [dir="rtl"], [dir="rtl"] *) {
       left: calc(var(--spacing) * 0);

@@ -36,38 +36,28 @@
     class="absolute inset-0"
     aria-label="{{ $.Title }}"></a>
 
-  {{- with $target.Params.images -}}
-    {{- range first 6 . }}
-      <meta property="og:image" content="{{ . | absURL }}">
-    {{ end -}}
-  {{- else -}}
-    {{- $images := $target.Resources.ByType "image" -}}
-    {{- $featured := $images.GetMatch "*feature*" -}}
-    {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
-    {{ if and $target.Params.featureimage (not $featured) }}
-      {{- $url:= $target.Params.featureimage -}}
-      {{ $featured = resources.GetRemote $url }}
-    {{ end }}
-    {{- if not $featured }}
-      {{ with site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}
-    {{ end -}}
-    {{ if $target.Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
-    {{- with $featured -}}
-      {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg") }}
-        {{ with . }}
-          <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
-        {{ end }}
-      {{ else }}
-        {{ with .Resize "600x" }}
-          <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
-        {{ end }}
+  {{ $images := $target.Resources.ByType "image" }}
+  {{ $featured := $images.GetMatch "*feature*" }}
+  {{ if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end }}
+  {{ if and $target.Params.featureimage (not $featured) }}
+    {{ $url:= $target.Params.featureimage }}
+    {{ $featured = resources.GetRemote $url }}
+  {{ end }}
+  {{ if not $featured }}
+    {{ with site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}
+  {{ end }}
+  {{ if $target.Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
+  {{ with $featured }}
+    {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg") }}
+      {{ with . }}
+        <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
       {{ end }}
-    {{- else -}}
-      {{- with site.Params.images }}
-        <meta property="og:image" content="{{ index . 0 | absURL }}">
-      {{ end -}}
-    {{- end -}}
-  {{- end -}}
+    {{ else }}
+      {{ with .Resize "600x" }}
+        <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
+      {{ end }}
+    {{ end }}
+  {{ end }}
 
 
   <div class="{{ $articleInnerClasses }}">
