@@ -33,9 +33,11 @@
 {{ end }}
 
 {{ $images := $target.Resources.ByType "image" }}
-{{ $featured := $images.GetMatch "*feature*" }}
+{{ $featured := "" }}
 {{ $featuredURL := "" }}
-{{ if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end }}
+{{ range slice "*feature*" "*cover*" "*thumbnail*" }}
+  {{ if not $featured }}{{ $featured = $images.GetMatch . }}{{ end }}
+{{ end }}
 {{ if and $target.Params.featureimage (not $featured) }}
   {{ $url:= $target.Params.featureimage }}
   {{ $featured = resources.GetRemote $url }}
