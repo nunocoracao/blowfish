@@ -34,18 +34,25 @@
 
 {{ $featured := "" }}
 {{ $featuredURL := "" }}
-{{ if not .Params.hideFeatureImage }}
-  {{ $images := $target.Resources.ByType "image" }}
-  {{ range slice "*feature*" "*cover*" "*thumbnail*" }}
-    {{ if not $featured }}{{ $featured = $images.GetMatch . }}{{ end }}
+{{ if not $target.Params.hideFeatureImage }}
+  {{ with $target.Params.featureimage }}
+    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+      {{ $featured = resources.GetRemote . }}
+    {{ else }}
+      {{ $featured = resources.Get . }}
+    {{ end }}
   {{ end }}
-  {{ if and $target.Params.featureimage (not $featured) }}
-    {{ $url:= $target.Params.featureimage }}
-    {{ $featured = resources.GetRemote $url }}
-  {{ end }}
+
   {{ if not $featured }}
-    {{ with site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}
+    {{ $images := $target.Resources.ByType "image" }}
+    {{ range slice "*feature*" "*cover*" "*thumbnail*" }}
+      {{ if not $featured }}{{ $featured = $images.GetMatch . }}{{ end }}
+    {{ end }}
+    {{ if not $featured }}
+      {{ with site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}
+    {{ end }}
   {{ end }}
+
   {{ with $featured }}
     {{ $featuredURL = .RelPermalink }}
     {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
