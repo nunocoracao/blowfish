@@ -15,6 +15,7 @@
 {{ end }}
 
 {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
+{{ $disableFeaturedImageProcessing := .Page.Site.Params.disableFeaturedImageProcessing | default false }}
 
 {{ $articleInnerClasses := "" }}
 {{ if .Site.Params.list.showCards }}
@@ -43,20 +44,46 @@
     {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
     {{ if and .Params.featureimage (not $featured) }}
       {{- $url:= .Params.featureimage -}}
-      {{ $featured = resources.GetRemote $url }}
+      {{ if $disableFeaturedImageProcessing }}
+        {{ if or (strings.HasPrefix $url "http:") (strings.HasPrefix $url "https:") }}
+          {{- $featured = $url -}}
+        {{ else }}
+          {{ with resources.Get $url }}
+            {{- $featured = .RelPermalink -}}
+          {{ end }}
+        {{ end }}
+      {{ else }}
+        {{ $featured = resources.GetRemote $url }}
+      {{ end }}
     {{ end }}
     {{- if not $featured }}
-      {{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}
+      {{ if $disableFeaturedImageProcessing }}
+        {{ with .Site.Params.defaultFeaturedImage }}
+          {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+            {{- $featured = . -}}
+          {{ else }}
+            {{ with resources.Get . }}
+              {{- $featured = .RelPermalink -}}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      {{ else }}
+        {{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}
+      {{ end }}
     {{ end -}}
     {{ if .Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
     {{- with $featured -}}
-      {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg") }}
-        {{ with . }}
-          <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
-        {{ end }}
+      {{ if $disableFeaturedImageProcessing }}
+        <div class="{{ $articleImageClasses }}" style="background-image:url({{ . }});"></div>
       {{ else }}
-        {{ with .Resize "600x" }}
-          <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
+        {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg") }}
+          {{ with . }}
+            <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
+          {{ end }}
+        {{ else }}
+          {{ with .Resize "600x" }}
+            <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
+          {{ end }}
         {{ end }}
       {{ end }}
     {{- else -}}

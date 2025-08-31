@@ -3,6 +3,7 @@
 {{ $shortcodeCompactSummary := .compactSummary }}
 {{ $constrainItemsWidth := site.Params.list.constrainItemsWidth | default false }}
 {{ $disableImageOptimization := site.Params.disableImageOptimization | default false }}
+{{ $disableFeaturedImageProcessing := site.Params.disableFeaturedImageProcessing | default false }}
 
 {{ $articleClasses := "group-hover-card group flex flex-wrap md:flex-nowrap article relative" }}
 {{ if site.Params.list.showCards }}
@@ -46,20 +47,46 @@
     {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
     {{ if and $target.Params.featureimage (not $featured) }}
       {{- $url:= $target.Params.featureimage -}}
-      {{ $featured = resources.GetRemote $url }}
+      {{ if $disableFeaturedImageProcessing }}
+        {{ if or (strings.HasPrefix $url "http:") (strings.HasPrefix $url "https:") }}
+          {{- $featured = $url -}}
+        {{ else }}
+          {{ with resources.Get $url }}
+            {{- $featured = .RelPermalink -}}
+          {{ end }}
+        {{ end }}
+      {{ else }}
+        {{ $featured = resources.GetRemote $url }}
+      {{ end }}
     {{ end }}
     {{- if not $featured }}
-      {{ with site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}
+      {{ if $disableFeaturedImageProcessing }}
+        {{ with site.Params.defaultFeaturedImage }}
+          {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+            {{- $featured = . -}}
+          {{ else }}
+            {{ with resources.Get . }}
+              {{- $featured = .RelPermalink -}}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      {{ else }}
+        {{ with site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}
+      {{ end }}
     {{ end -}}
     {{ if $target.Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
     {{- with $featured -}}
-      {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg") }}
-        {{ with . }}
-          <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
-        {{ end }}
+      {{ if $disableFeaturedImageProcessing }}
+        <div class="{{ $articleImageClasses }}" style="background-image:url({{ . }});"></div>
       {{ else }}
-        {{ with .Resize "600x" }}
-          <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
+        {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg") }}
+          {{ with . }}
+            <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
+          {{ end }}
+        {{ else }}
+          {{ with .Resize "600x" }}
+            <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
+          {{ end }}
         {{ end }}
       {{ end }}
     {{- else -}}

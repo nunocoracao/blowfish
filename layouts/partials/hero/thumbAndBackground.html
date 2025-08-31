@@ -1,14 +1,27 @@
 {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
+{{ $disableFeaturedImageProcessing := .Page.Site.Params.disableFeaturedImageProcessing | default false }}
 
 {{- $images := .Resources.ByType "image" -}}
 {{- $background := $images.GetMatch "*background*" -}}
 
 {{- if not $background }}
-  {{ with .Site.Params.defaultBackgroundImage }}
-    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-      {{ $background = resources.GetRemote . }}
-    {{ else }}
-      {{ $background = resources.Get . }}
+  {{ if $disableFeaturedImageProcessing }}
+    {{ with .Site.Params.defaultBackgroundImage }}
+      {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+        {{- $background = . -}}
+      {{ else }}
+        {{ with resources.Get . }}
+          {{- $background = .RelPermalink -}}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ else }}
+    {{ with .Site.Params.defaultBackgroundImage }}
+      {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+        {{ $background = resources.GetRemote . }}
+      {{ else }}
+        {{ $background = resources.Get . }}
+      {{ end }}
     {{ end }}
   {{ end }}
 {{ end -}}
@@ -19,16 +32,38 @@
 {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
 {{ if .Params.featureimage }}
   {{- $url:= .Params.featureimage -}}
-  {{- if not $featured }}{{ $featured = resources.GetRemote $url }}{{ end -}}
+  {{ if $disableFeaturedImageProcessing }}
+    {{ if or (strings.HasPrefix $url "http:") (strings.HasPrefix $url "https:") }}
+      {{- if not $featured }}{{ $featured = $url }}{{ end -}}
+    {{ else }}
+      {{ with resources.Get $url }}
+        {{- if not $featured }}{{ $featured = .RelPermalink }}{{ end -}}
+      {{ end }}
+    {{ end }}
+  {{ else }}
+    {{- if not $featured }}{{ $featured = resources.GetRemote $url }}{{ end -}}
+  {{ end }}
 {{ end }}
 {{- if not $featured }}{{ $featured = $images.GetMatch "*background*" }}{{ end -}}
 
 {{- if not $featured }}
-  {{ with .Site.Params.defaultFeaturedImage }}
-    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-      {{ $featured = resources.GetRemote . }}
-    {{ else }}
-      {{ $featured = resources.Get . }}
+  {{ if $disableFeaturedImageProcessing }}
+    {{ with .Site.Params.defaultFeaturedImage }}
+      {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+        {{- $featured = . -}}
+      {{ else }}
+        {{ with resources.Get . }}
+          {{- $featured = .RelPermalink -}}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ else }}
+    {{ with .Site.Params.defaultFeaturedImage }}
+      {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+        {{ $featured = resources.GetRemote . }}
+      {{ else }}
+        {{ $featured = resources.Get . }}
+      {{ end }}
     {{ end }}
   {{ end }}
 {{ end -}}
@@ -41,17 +76,23 @@
 }}
 
 {{- with $featured -}}
-  {{ if or $disableImageOptimization (strings.HasSuffix . ".svg") }}
-    {{ with . }}
-      <div
-        class="w-full rounded-md h-36 md:h-56 lg:h-72 single_hero_basic nozoom"
-        style="background-image:url({{ .RelPermalink }});"></div>
-    {{ end }}
+  {{ if $disableFeaturedImageProcessing }}
+    <div
+      class="w-full rounded-md h-36 md:h-56 lg:h-72 single_hero_basic nozoom"
+      style="background-image:url({{ . }});"></div>
   {{ else }}
-    {{ with .Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
-      <div
-        class="w-full rounded-md h-36 md:h-56 lg:h-72 single_hero_basic nozoom"
-        style="background-image:url({{ .RelPermalink }});"></div>
+    {{ if or $disableImageOptimization (strings.HasSuffix . ".svg") }}
+      {{ with . }}
+        <div
+          class="w-full rounded-md h-36 md:h-56 lg:h-72 single_hero_basic nozoom"
+          style="background-image:url({{ .RelPermalink }});"></div>
+      {{ end }}
+    {{ else }}
+      {{ with .Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
+        <div
+          class="w-full rounded-md h-36 md:h-56 lg:h-72 single_hero_basic nozoom"
+          style="background-image:url({{ .RelPermalink }});"></div>
+      {{ end }}
     {{ end }}
   {{ end }}
 {{- end -}}
@@ -59,21 +100,29 @@
 {{- with $background -}}
 
   <div class="single_hero_background nozoom fixed inset-x-0 top-0 h-[800px]">
-    {{ if or $disableImageOptimization (strings.HasSuffix . ".svg") }}
-      {{ with . }}
-        <img
-          id="background-image-main"
-          src="{{ .RelPermalink }}"
-          alt="Background Image"
-          class="absolute inset-0 h-full w-full object-cover">
-      {{ end }}
+    {{ if $disableFeaturedImageProcessing }}
+      <img
+        id="background-image-main"
+        src="{{ . }}"
+        alt="Background Image"
+        class="absolute inset-0 h-full w-full object-cover">
     {{ else }}
-      {{ with .Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
-        <img
-          id="background-image-main"
-          src="{{ .RelPermalink }}"
-          alt="Background Image"
-          class="absolute inset-0 h-full w-full object-cover">
+      {{ if or $disableImageOptimization (strings.HasSuffix . ".svg") }}
+        {{ with . }}
+          <img
+            id="background-image-main"
+            src="{{ .RelPermalink }}"
+            alt="Background Image"
+            class="absolute inset-0 h-full w-full object-cover">
+        {{ end }}
+      {{ else }}
+        {{ with .Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
+          <img
+            id="background-image-main"
+            src="{{ .RelPermalink }}"
+            alt="Background Image"
+            class="absolute inset-0 h-full w-full object-cover">
+        {{ end }}
       {{ end }}
     {{ end }}
     <div
@@ -95,5 +144,9 @@
     integrity="{{ $backgroundBlur.Data.Integrity }}"
     data-target-id="background-blur"
     data-image-id="background-image-main"
-    {{ with $background }}data-image-url="{{ .RelPermalink }}"{{ end }}></script>
+    {{ if $disableFeaturedImageProcessing }}
+      {{ with $background }}data-image-url="{{ . }}"{{ end }}
+    {{ else }}
+      {{ with $background }}data-image-url="{{ .RelPermalink }}"{{ end }}
+    {{ end }}></script>
 {{ end }}

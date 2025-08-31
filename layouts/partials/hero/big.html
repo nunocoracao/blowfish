@@ -1,4 +1,5 @@
 {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
+{{ $disableFeaturedImageProcessing := .Page.Site.Params.disableFeaturedImageProcessing | default false }}
 
 {{- $images := .Resources.ByType "image" -}}
 {{- $featured := $images.GetMatch "*background*" -}}
@@ -7,15 +8,37 @@
 
 {{ if .Params.featureimage }}
   {{- $url:= .Params.featureimage -}}
-  {{- if not $featured }}{{ $featured = resources.GetRemote $url }}{{ end -}}
+  {{ if $disableFeaturedImageProcessing }}
+    {{ if or (strings.HasPrefix $url "http:") (strings.HasPrefix $url "https:") }}
+      {{- if not $featured }}{{ $featured = $url }}{{ end -}}
+    {{ else }}
+      {{ with resources.Get $url }}
+        {{- if not $featured }}{{ $featured = .RelPermalink }}{{ end -}}
+      {{ end }}
+    {{ end }}
+  {{ else }}
+    {{- if not $featured }}{{ $featured = resources.GetRemote $url }}{{ end -}}
+  {{ end }}
 {{ end }}
 
 {{- if not $featured }}
-  {{ with .Site.Params.defaultBackgroundImage }}
-    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-      {{ $featured = resources.GetRemote . }}
-    {{ else }}
-      {{ $featured = resources.Get . }}
+  {{ if $disableFeaturedImageProcessing }}
+    {{ with .Site.Params.defaultBackgroundImage }}
+      {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+        {{- $featured = . -}}
+      {{ else }}
+        {{ with resources.Get . }}
+          {{- $featured = .RelPermalink -}}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ else }}
+    {{ with .Site.Params.defaultBackgroundImage }}
+      {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+        {{ $featured = resources.GetRemote . }}
+      {{ else }}
+        {{ $featured = resources.Get . }}
+      {{ end }}
     {{ end }}
   {{ end }}
 {{ end -}}
@@ -29,48 +52,59 @@
 {{- with .Page.Params.alt }}{{ $alt = . }}{{ end -}}
 
 {{- with $featured -}}
-  {{ if strings.HasSuffix $featured ".svg" }}
-    {{ with . }}
-      <figure>
-        <img class="w-full rounded-lg single_hero_round nozoom" alt="{{ $alt }}" src="{{ .RelPermalink }}">
-        {{ if $caption }}
-          <figcaption class="text-sm text-neutral-700 dark:text-neutral-400 hover:underline text-center">
-            {{ $caption | markdownify }}
-          </figcaption>
-        {{ end }}
-      </figure>
-    {{ end }}
-  {{ else if $disableImageOptimization }}
-    {{ with . }}
-      <figure>
-        <img
-          class="w-full rounded-lg single_hero_round nozoom"
-          alt="{{ $alt }}"
-          width="{{ .Width }}"
-          height="{{ .Height }}"
-          src="{{ .RelPermalink }}">
-        {{ if $caption }}
-          <figcaption class="text-sm text-neutral-700 dark:text-neutral-400 hover:underline text-center">
-            {{ $caption | markdownify }}
-          </figcaption>
-        {{ end }}
-      </figure>
-    {{ end }}
+  {{ if $disableFeaturedImageProcessing }}
+    <figure>
+      <img class="w-full rounded-lg single_hero_round nozoom" alt="{{ $alt }}" src="{{ . }}">
+      {{ if $caption }}
+        <figcaption class="text-sm text-neutral-700 dark:text-neutral-400 hover:underline text-center">
+          {{ $caption | markdownify }}
+        </figcaption>
+      {{ end }}
+    </figure>
   {{ else }}
-    {{ with .Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
-      <figure>
-        <img
-          class="w-full rounded-lg single_hero_round nozoom"
-          alt="{{ $alt }}"
-          width="{{ .Width }}"
-          height="{{ .Height }}"
-          src="{{ .RelPermalink }}">
-        {{ if $caption }}
-          <figcaption class="text-sm text-neutral-700 dark:text-neutral-400 hover:underline text-center">
-            {{ $caption | markdownify }}
-          </figcaption>
-        {{ end }}
-      </figure>
+    {{ if strings.HasSuffix $featured ".svg" }}
+      {{ with . }}
+        <figure>
+          <img class="w-full rounded-lg single_hero_round nozoom" alt="{{ $alt }}" src="{{ .RelPermalink }}">
+          {{ if $caption }}
+            <figcaption class="text-sm text-neutral-700 dark:text-neutral-400 hover:underline text-center">
+              {{ $caption | markdownify }}
+            </figcaption>
+          {{ end }}
+        </figure>
+      {{ end }}
+    {{ else if $disableImageOptimization }}
+      {{ with . }}
+        <figure>
+          <img
+            class="w-full rounded-lg single_hero_round nozoom"
+            alt="{{ $alt }}"
+            width="{{ .Width }}"
+            height="{{ .Height }}"
+            src="{{ .RelPermalink }}">
+          {{ if $caption }}
+            <figcaption class="text-sm text-neutral-700 dark:text-neutral-400 hover:underline text-center">
+              {{ $caption | markdownify }}
+            </figcaption>
+          {{ end }}
+        </figure>
+      {{ end }}
+    {{ else }}
+      {{ with .Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
+        <figure>
+          <img
+            class="w-full rounded-lg single_hero_round nozoom"
+            alt="{{ $alt }}"
+            width="{{ .Width }}"
+            height="{{ .Height }}"
+            src="{{ .RelPermalink }}">
+          {{ if $caption }}
+            <figcaption class="text-sm text-neutral-700 dark:text-neutral-400 hover:underline text-center">
+              {{ $caption | markdownify }}
+            </figcaption>
+          {{ end }}
+        </figure>
+      {{ end }}
     {{ end }}
   {{ end }}
 {{- end -}}

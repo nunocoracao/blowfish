@@ -1,4 +1,5 @@
 {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
+{{ $disableFeaturedImageProcessing := .Page.Site.Params.disableFeaturedImageProcessing | default false }}
 <div
   class="group-hover-card group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
   <a
@@ -15,23 +16,51 @@
     {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
     {{ if and .Params.featureimage (not $featured) }}
       {{- $url:= .Params.featureimage -}}
-      {{ $featured = resources.GetRemote $url }}
-    {{ end }}
-    {{- if not $featured }}
-      {{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}
-    {{ end -}}
-    {{- with $featured -}}
-      {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg") }}
-        {{ with . }}
-          <div
-            class="thumbnail_card_related nozoom w-full"
-            style="background-image:url({{ .RelPermalink }});"></div>
+      {{ if $disableFeaturedImageProcessing }}
+        {{ if or (strings.HasPrefix $url "http:") (strings.HasPrefix $url "https:") }}
+          {{- $featured = $url -}}
+        {{ else }}
+          {{ with resources.Get $url }}
+            {{- $featured = .RelPermalink -}}
+          {{ end }}
         {{ end }}
       {{ else }}
-        {{ with .Resize "600x" }}
-          <div
-            class="thumbnail_card_related nozoom w-full"
-            style="background-image:url({{ .RelPermalink }});"></div>
+        {{ $featured = resources.GetRemote $url }}
+      {{ end }}
+    {{ end }}
+    {{- if not $featured }}
+      {{ if $disableFeaturedImageProcessing }}
+        {{ with .Site.Params.defaultFeaturedImage }}
+          {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+            {{- $featured = . -}}
+          {{ else }}
+            {{ with resources.Get . }}
+              {{- $featured = .RelPermalink -}}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      {{ else }}
+        {{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}
+      {{ end }}
+    {{ end -}}
+    {{- with $featured -}}
+      {{ if $disableFeaturedImageProcessing }}
+        <div
+          class="thumbnail_card_related nozoom w-full"
+          style="background-image:url({{ . }});"></div>
+      {{ else }}
+        {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg") }}
+          {{ with . }}
+            <div
+              class="thumbnail_card_related nozoom w-full"
+              style="background-image:url({{ .RelPermalink }});"></div>
+          {{ end }}
+        {{ else }}
+          {{ with .Resize "600x" }}
+            <div
+              class="thumbnail_card_related nozoom w-full"
+              style="background-image:url({{ .RelPermalink }});"></div>
+          {{ end }}
         {{ end }}
       {{ end }}
     {{- else -}}
