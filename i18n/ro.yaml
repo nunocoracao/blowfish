@@ -21,6 +21,7 @@ article:
   related_articles: "Related"
 
 a11y:
+  title: "Setări de accesibilitate"
   disable_blur: "Dezactivează estomparea"
   disable_images: "Dezactivează imaginile"
   show_link_underline: "Afișează sublinierea linkurilor"

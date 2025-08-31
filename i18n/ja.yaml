@@ -30,6 +30,7 @@ article:
     disable: "Zenモードを無効にする"
 
 a11y:
+  title: "アクセシビリティ設定"
   disable_blur: "ぼかしを無効にする"
   disable_images: "画像を無効にする"
   show_link_underline: "リンクの下線を表示する"

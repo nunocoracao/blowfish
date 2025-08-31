@@ -21,6 +21,7 @@ article:
   related_articles: "Related"
 
 a11y:
+  title: "Esteettömyysasetukset"
   disable_blur: "Poista sumennus käytöstä"
   disable_images: "Poista kuvat käytöstä"
   show_link_underline: "Näytä linkkien alleviivaus"

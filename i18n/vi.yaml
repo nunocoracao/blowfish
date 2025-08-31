@@ -30,6 +30,7 @@ article:
     disable: "Tắt zen mode"
 
 a11y:
+  title: "Cài đặt khả năng truy cập"
   disable_blur: "Tắt làm mờ"
   disable_images: "Tắt hình ảnh"
   show_link_underline: "Hiển thị gạch chân liên kết"

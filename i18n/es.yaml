@@ -29,6 +29,9 @@ article:
     enable: "Activar modo zen"
     disable: "Desactivar modo zen"
 
+a11y:
+  title: "Configuración de accesibilidad"
+
 author:
   byline_title: "Autor"
 
