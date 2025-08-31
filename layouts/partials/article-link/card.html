@@ -1,28 +1,38 @@
+{{/* Used by
+  1. list.html and term.html (when the cardView option is enabled)
+  2. Recent articles template (when the cardView option is enabled)
+  3. Shortcode list.html
+*/}}
 {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
+
+{{ $images := $.Resources.ByType "image" }}
+{{ $featured := $images.GetMatch "*feature*" }}
+{{ $featuredURL := "" }}
+{{ if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end }}
+{{ if and .Params.featureimage (not $featured) }}
+  {{ $url:= .Params.featureimage }}
+  {{ $featured = resources.GetRemote $url }}
+{{ end }}
+{{ if not $featured }}
+  {{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}
+{{ end }}
+{{ if .Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
+{{ with $featured }}
+  {{ $featuredURL = .RelPermalink }}
+  {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
+    {{ $featuredURL = (.Resize "600x").RelPermalink }}
+  {{ end }}
+{{ end }}
+
+
 <div
   class="group-hover-card group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
   <a
     {{ partial "article-link/_external-link.html" . | safeHTMLAttr }}
     class="absolute inset-0"
     aria-label="{{ $.Title }}"></a>
-
-  {{ $images := $.Resources.ByType "image" }}
-  {{ $featured := $images.GetMatch "*feature*" }}
-  {{ if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end }}
-  {{ if and .Params.featureimage (not $featured) }}
-    {{ $url:= .Params.featureimage }}
-    {{ $featured = resources.GetRemote $url }}
-  {{ end }}
-  {{ if not $featured }}
-    {{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}
-  {{ end }}
-  {{ if .Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
-  {{ with $featured }}
-    {{ $featuredURL := .RelPermalink }}
-    {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
-      {{ $featuredURL = (.Resize "600x").RelPermalink }}
-    {{ end }}
-    <div class="thumbnail_card nozoom w-full" style="background-image:url({{ $featuredURL }});"></div>
+  {{ with $featuredURL }}
+    <div class="thumbnail_card nozoom w-full" style="background-image:url({{ . }});"></div>
   {{ end }}
   {{ if and .Draft .Site.Params.article.showDraftLabel }}
     <span class="absolute top-0 right-0 m-2">

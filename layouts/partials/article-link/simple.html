@@ -1,3 +1,8 @@
+{{/* Used by
+  1. list.html and term.html (when the cardView option is not enabled)
+  2. Recent articles template (when the cardView option is not enabled)
+  3. Shortcode list.html
+*/}}
 {{ $constrainItemsWidth := .Page.Site.Params.list.constrainItemsWidth | default false }}
 
 {{ $articleClasses := "group-hover-card group flex flex-wrap md:flex-nowrap article relative" }}
@@ -27,30 +32,33 @@
   {{ $articleClasses = delimit (slice $articleClasses "max-w-prose") " " }}
 {{ end }}
 
+{{ $images := $.Resources.ByType "image" }}
+{{ $featured := $images.GetMatch "*feature*" }}
+{{ $featuredURL := "" }}
+{{ if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end }}
+{{ if and .Params.featureimage (not $featured) }}
+  {{ $url:= .Params.featureimage }}
+  {{ $featured = resources.GetRemote $url }}
+{{ end }}
+{{ if not $featured }}
+  {{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}
+{{ end }}
+{{ if .Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
+{{ with $featured }}
+  {{ $featuredURL = .RelPermalink }}
+  {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
+    {{ $featuredURL = (.Resize "600x").RelPermalink }}
+  {{ end }}
+{{ end }}
+
 
 <div class="{{ $articleClasses }}">
   <a
     {{ partial "article-link/_external-link.html" . | safeHTMLAttr }}
     class="absolute inset-0"
     aria-label="{{ $.Title }}"></a>
-
-  {{ $images := $.Resources.ByType "image" }}
-  {{ $featured := $images.GetMatch "*feature*" }}
-  {{ if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end }}
-  {{ if and .Params.featureimage (not $featured) }}
-    {{ $url:= .Params.featureimage }}
-    {{ $featured = resources.GetRemote $url }}
-  {{ end }}
-  {{ if not $featured }}
-    {{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}
-  {{ end }}
-  {{ if .Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
-  {{ with $featured }}
-    {{ $featuredURL := .RelPermalink }}
-    {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
-      {{ $featuredURL = (.Resize "600x").RelPermalink }}
-    {{ end }}
-    <div class="{{ $articleImageClasses }}" style="background-image:url({{ $featuredURL }});"></div>
+  {{ with $featuredURL }}
+    <div class="{{ $articleImageClasses }}" style="background-image:url({{ . }});"></div>
   {{ end }}
   <div class="{{ $articleInnerClasses }}">
     <div class="items-center text-start text-xl font-semibold">
