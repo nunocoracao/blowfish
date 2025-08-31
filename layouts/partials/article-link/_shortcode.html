@@ -32,24 +32,25 @@
   {{ $articleClasses = delimit (slice $articleClasses "max-w-prose") " " }}
 {{ end }}
 
-{{ $images := $target.Resources.ByType "image" }}
 {{ $featured := "" }}
 {{ $featuredURL := "" }}
-{{ range slice "*feature*" "*cover*" "*thumbnail*" }}
-  {{ if not $featured }}{{ $featured = $images.GetMatch . }}{{ end }}
-{{ end }}
-{{ if and $target.Params.featureimage (not $featured) }}
-  {{ $url:= $target.Params.featureimage }}
-  {{ $featured = resources.GetRemote $url }}
-{{ end }}
-{{ if not $featured }}
-  {{ with site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}
-{{ end }}
-{{ if $target.Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
-{{ with $featured }}
-  {{ $featuredURL = .RelPermalink }}
-  {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
-    {{ $featuredURL = (.Resize "600x").RelPermalink }}
+{{ if not .Params.hideFeatureImage }}
+  {{ $images := $target.Resources.ByType "image" }}
+  {{ range slice "*feature*" "*cover*" "*thumbnail*" }}
+    {{ if not $featured }}{{ $featured = $images.GetMatch . }}{{ end }}
+  {{ end }}
+  {{ if and $target.Params.featureimage (not $featured) }}
+    {{ $url:= $target.Params.featureimage }}
+    {{ $featured = resources.GetRemote $url }}
+  {{ end }}
+  {{ if not $featured }}
+    {{ with site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}
+  {{ end }}
+  {{ with $featured }}
+    {{ $featuredURL = .RelPermalink }}
+    {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
+      {{ $featuredURL = (.Resize "600x").RelPermalink }}
+    {{ end }}
   {{ end }}
 {{ end }}
 

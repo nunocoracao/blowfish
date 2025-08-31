@@ -3,9 +3,9 @@
 */}}
 {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
 
-{{ $images := $.Resources.ByType "image" }}
 {{ $featured := "" }}
 {{ $featuredURL := "" }}
+{{ $images := $.Resources.ByType "image" }}
 {{ range slice "*feature*" "*cover*" "*thumbnail*" }}
   {{ if not $featured }}{{ $featured = $images.GetMatch . }}{{ end }}
 {{ end }}
@@ -14,7 +14,7 @@
   {{ $featured = resources.GetRemote $url }}
 {{ end }}
 {{ if not $featured }}
-  {{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}
+  {{ with site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}
 {{ end }}
 {{ with $featured }}
   {{ $featuredURL = .RelPermalink }}
