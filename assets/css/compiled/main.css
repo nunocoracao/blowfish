@@ -933,7 +933,7 @@ body.zen-mode-enable {
     --tw-prose-body: rgba(var(--color-neutral-700), 1);
     --tw-prose-headings: rgba(var(--color-neutral-800), 1);
     --tw-prose-lead: rgba(var(--color-neutral-500), 1);
-    --tw-prose-links: rgba(var(--color-primary-600), 1);
+    --tw-prose-links:rgba(var(--color-link), 1);
     --tw-prose-bold: rgba(var(--color-neutral-900), 1);
     --tw-prose-counters: rgba(var(--color-neutral-800), 1);
     --tw-prose-bullets: rgba(var(--color-neutral-500), 1);
@@ -951,13 +951,13 @@ body.zen-mode-enable {
     --tw-prose-invert-body: rgba(var(--color-neutral-300), 1);
     --tw-prose-invert-headings: rgba(var(--color-neutral-50), 1);
     --tw-prose-invert-lead: rgba(var(--color-neutral-500), 1);
-    --tw-prose-invert-links: rgba(var(--color-primary-400), 1);
+    --tw-prose-invert-links:rgba(var(--color-link-invert), 1);
     --tw-prose-invert-bold: rgba(var(--color-neutral), 1);
     --tw-prose-invert-counters: rgba(var(--color-neutral-400), 1);
     --tw-prose-invert-bullets: rgba(var(--color-neutral-600), 1);
     --tw-prose-invert-hr: rgba(var(--color-neutral-500), 1);
     --tw-prose-invert-quotes: rgba(var(--color-neutral-200), 1);
-    --tw-prose-invert-quote-borders: rgba(var(--color-primary-900), 1);
+    --tw-prose-invert-quote-borders:rgba(var(--invert-quote-borders), 1);
     --tw-prose-invert-captions: rgba(var(--color-neutral-400), 1);
     --tw-prose-invert-kbd: #fff;
     --tw-prose-invert-kbd-shadows: 255 255 255;
