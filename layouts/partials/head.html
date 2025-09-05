@@ -54,25 +54,25 @@
   {{/* Social */}}
   {{ template "_internal/opengraph.html" . }}
   {{ template "_internal/twitter_cards.html" . }}
-
-  {{/* Main page always uses this; fallback elsewhere if no feature image */}}
-  {{/* See https://gohugo.io/templates/embedded/#open-graph */}}
-  {{ $images := .Resources.ByType "image" }}
-  {{ $socialImage := $images.GetMatch "*feature*" }}
-
-  {{ if not $socialImage }}
-    {{ with site.Params.defaultSocialImage }}
-      {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-        {{ $socialImage = resources.GetRemote . }}
-      {{ else }}
-        {{ $socialImage = resources.Get . }}
-      {{ end }}
+  {{/* Use defaultSocialImage if feature image does not exist */}}
+  {{ $featureImage := "" }}
+  {{ $pageImages := .Resources.ByType "image" }}
+  {{ range slice "*featured*" "*cover*" "*thumbnail*" }}
+    {{ if not $featureImage }}
+      {{ $featureImage = $pageImages.GetMatch . }}
     {{ end }}
   {{ end }}
-
-  {{ with $socialImage }}
-    <meta name="twitter:image" content="{{ .RelPermalink | absURL }}">
-    <meta property="og:image" content="{{ .RelPermalink | absURL }}">
+  {{ if not $featureImage }}
+    {{ $defaultSocialImage := "" }}
+    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+      {{ $defaultSocialImage = resources.GetRemote . }}
+    {{ else }}
+      {{ $defaultSocialImage = resources.Get . }}
+    {{ end }}
+    {{ with $defaultSocialImage }}
+      <meta name="twitter:image" content="{{ .RelPermalink | absURL }}">
+      <meta property="og:image" content="{{ .RelPermalink | absURL }}">
+    {{ end }}
   {{ end }}
 
   {{/* Site Verification */}}
