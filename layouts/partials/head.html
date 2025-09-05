@@ -187,7 +187,9 @@
   {{ partial "vendor.html" . }}
 
   {{/* Analytics */}}
-  {{ partial "analytics/main.html" . }}
+  {{ if hugo.IsProduction }}
+    {{ partial "analytics/main.html" . }}
+  {{ end }}
 
   {{/* Extend head - eg. for custom analytics scripts, etc. */}}
   {{ if templates.Exists "partials/extend-head.html" }}
