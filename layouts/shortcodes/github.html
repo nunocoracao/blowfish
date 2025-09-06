@@ -2,7 +2,7 @@
 {{- $githubURL := print "https://api.github.com/repos/" (.Get "repo") -}}
 {{- $githubThumbnailURL := print "https://opengraph.githubassets.com/0/" (.Get "repo") -}}
 {{- $showThumbnail := .Get "showThumbnail" | default true -}}
-{{- $githubColors := .Site.Data.repoColors -}}
+{{- $repoColors := .Site.Data.repoColors -}}
 {{- $githubData := dict -}}
 {{- with try (resources.GetRemote $githubURL) -}}
   {{- with .Err -}}
@@ -46,13 +46,12 @@
           </p>
 
           <div class="m-0 mt-2 flex items-center">
-            <span
-              class="mr-1 inline-block h-3 w-3 rounded-full"
-              style="background-color: {{ if .language }}
-                {{- index $githubColors .language -}}
-              {{ else }}
-                #0077b6
-              {{ end }}"></span>
+            {{ $languageDotColor := cond .language (index $repoColors .language) "#0077b6" }}
+            {{ $css := resources.FromString (printf "css/%s.css" $id) (printf ".language-dot-%s{background-color:%s}" $id $languageDotColor)
+              | minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512")
+            }}
+            <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+            <span class="mr-1 inline-block h-3 w-3 rounded-full language-dot-{{ $id }}"></span>
             <div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
               {{ if .language }}{{ .language }}{{ else }}null{{ end }}
             </div>
