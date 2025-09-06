@@ -3,33 +3,25 @@
   2. Recent articles template (when the cardView option is not enabled)
   3. Shortcode list.html
 */}}
-{{ $constrainItemsWidth := .Page.Site.Params.list.constrainItemsWidth | default false }}
+{{ $constrainItemsWidth := site.Params.list.constrainItemsWidth | default false }}
+{{ $disableImageOptimization := site.Params.disableImageOptimization | default false }}
 
-{{ $articleClasses := "flex flex-wrap md:flex-nowrap article relative" }}
-{{ if .Site.Params.list.showCards }}
-  {{ $articleClasses = delimit (slice $articleClasses "border border-neutral-200 dark:border-neutral-700 border-2 rounded-md overflow-hidden") " " }}
+{{ $cardClasses := "flex flex-col md:flex-row relative" }}
+{{ $figureClasses := "" }}
+{{ $cardContentClasses := "" }}
+
+{{ if site.Params.list.showCards }}
+  {{ $cardClasses = printf "%s overflow-hidden rounded-md border-2 border-neutral-200 dark:border-neutral-700" $cardClasses }}
+  {{ $figureClasses = "" }}
+  {{ $cardContentClasses = printf "%s p-4" $cardContentClasses }}
 {{ else }}
-  {{ $articleClasses = delimit (slice $articleClasses "") " " }}
-{{ end }}
-
-{{ $articleImageClasses := "w-full md:w-auto h-full thumbnail nozoom" }}
-{{ if .Site.Params.list.showCards }}
-  {{ $articleImageClasses = delimit (slice $articleImageClasses "") " " }}
-{{ else }}
-  {{ $articleImageClasses = delimit (slice $articleImageClasses "thumbnailshadow md:mr-7") " " }}
-{{ end }}
-
-{{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
-
-{{ $articleInnerClasses := "" }}
-{{ if .Site.Params.list.showCards }}
-  {{ $articleInnerClasses = delimit (slice $articleInnerClasses "p-4") " " }}
-{{ else }}
-  {{ $articleInnerClasses = delimit (slice $articleInnerClasses "mt-3 md:mt-0") " " }}
+  {{ $cardClasses = $cardClasses }}
+  {{ $figureClasses = printf "%s thumbnail-shadow md:mr-7" $figureClasses }}
+  {{ $cardContentClasses = printf "%s mt-3 md:mt-0" $cardContentClasses }}
 {{ end }}
 
 {{ if $constrainItemsWidth }}
-  {{ $articleClasses = delimit (slice $articleClasses "max-w-prose") " " }}
+  {{ $cardClasses = printf "%s max-w-prose" $cardClasses }}
 {{ end }}
 
 {{ $featured := "" }}
@@ -62,11 +54,19 @@
 {{ end }}
 
 
-<article class="{{ $articleClasses }}">
+<article class="{{ $cardClasses }}">
   {{ with $featuredURL }}
-    <div class="{{ $articleImageClasses }}" style="background-image:url({{ . }});"></div>
+    <figure
+      class="not-prose flex-none relative overflow-hidden {{ $figureClasses }} thumbnail--simple">
+      <img
+        src="{{ . }}"
+        alt="{{ $.Title }}"
+        loading="lazy"
+        decoding="async"
+        class="not-prose absolute inset-0 w-full h-full object-cover">
+    </figure>
   {{ end }}
-  <div class="{{ $articleInnerClasses }}">
+  <div class="{{ $cardContentClasses }}">
     <header class="items-center text-start text-xl font-semibold">
       <a
         {{ partial "article-link/_external-link.html" . | safeHTMLAttr }}
@@ -79,7 +79,7 @@
               <span class="ltr:hidden">&#8598;</span>
             </span>
           {{ end }}
-          </h2>
+        </h2>
       </a>
       {{ if and .Draft .Site.Params.article.showDraftLabel }}
         <div class="ms-2">{{ partial "badge.html" (i18n "article.draft" | emojify) }}</div>
