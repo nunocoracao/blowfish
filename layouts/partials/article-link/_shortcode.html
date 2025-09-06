@@ -62,16 +62,16 @@
 {{ end }}
 
 
-<div class="{{ $articleClasses }}">
+<article class="{{ $articleClasses }}">
   {{ with $featuredURL }}
     <div class="{{ $articleImageClasses }}" style="background-image:url({{ . }});"></div>
   {{ end }}
   <div class="{{ $articleInnerClasses }}">
-    <div class="items-center text-start text-xl font-semibold">
+    <header class="items-center text-start text-xl font-semibold">
       <a
         {{ partial "article-link/_external-link.html" . | safeHTMLAttr }}
         class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
-        <div>
+        <h2>
           {{ $target.Title | emojify }}
           {{ if $target.Params.externalUrl }}
             <span class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500">
@@ -79,7 +79,7 @@
               <span class="ltr:hidden">&#8598;</span>
             </span>
           {{ end }}
-        </div>
+        </h2>
       </a>
       {{ if and $target.Draft site.Params.article.showDraftLabel }}
         <div class="ms-2">
@@ -89,7 +89,7 @@
       {{ if templates.Exists "partials/extend-article-link.html" }}
         {{ partial "extend-article-link.html" $target }}
       {{ end }}
-    </div>
+    </header>
     <div class="text-sm text-neutral-500 dark:text-neutral-400">
       {{ partial "article-meta/basic.html" $target }}
     </div>
@@ -113,4 +113,4 @@
       </div>
     {{ end }}
   </div>
-</div>
+</article>

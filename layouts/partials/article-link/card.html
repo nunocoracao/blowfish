@@ -35,7 +35,7 @@
 {{ end }}
 
 
-<div
+<article
   class="relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
   {{ with $featuredURL }}
     <div class="thumbnail_card nozoom w-full" style="background-image:url({{ . }});"></div>
@@ -46,19 +46,21 @@
     </span>
   {{ end }}
   <div class="px-6 py-4">
-    <a
-      {{ partial "article-link/_external-link.html" . | safeHTMLAttr }}
-      class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
-      <div>
-        {{ .Title | emojify }}
-        {{ if .Params.externalUrl }}
-          <span class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500">
-            <span class="rtl:hidden">&#8599;</span>
-            <span class="ltr:hidden">&#8598;</span>
-          </span>
-        {{ end }}
-      </div>
-    </a>
+    <header>
+      <a
+        {{ partial "article-link/_external-link.html" . | safeHTMLAttr }}
+        class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
+        <h2>
+          {{ .Title | emojify }}
+          {{ if .Params.externalUrl }}
+            <span class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500">
+              <span class="rtl:hidden">&#8599;</span>
+              <span class="ltr:hidden">&#8598;</span>
+            </span>
+          {{ end }}
+        </h2>
+      </a>
+    </header>
     <div class="text-sm text-neutral-500 dark:text-neutral-400">
       {{ partial "article-meta/basic.html" . }}
     </div>
@@ -67,4 +69,4 @@
     {{ end }}
   </div>
   <div class="px-6 pt-4 pb-2"></div>
-</div>
+</article>
