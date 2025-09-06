@@ -1,6 +1,7 @@
 {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
 
 {{ $featured := "" }}
+{{ $featuredURL := "" }}
 {{ if .Params.featureimage }}
   {{ $url := .Params.featureimage }}
   {{ if or (strings.HasPrefix $url "http:") (strings.HasPrefix $url "https:") }}
@@ -27,18 +28,22 @@
   {{ end }}
 {{ end }}
 
-{{- with $featured -}}
-  {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg") }}
-    {{ with . }}
-      <div
-        class="w-full h-36 md:h-56 lg:h-72 single_hero_basic nozoom"
-        style="background-image:url({{ .RelPermalink }});"></div>
-    {{ end }}
-  {{ else }}
-    {{ with .Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
-      <div
-        class="w-full h-36 md:h-56 lg:h-72 single_hero_basic nozoom"
-        style="background-image:url({{ .RelPermalink }});"></div>
-    {{ end }}
+{{ with $featured }}
+  {{ $featuredURL = .RelPermalink }}
+  {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
+    {{ $size := (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
+    {{ $featuredURL = (.Resize $size).RelPermalink }}
   {{ end }}
-{{- end -}}
+{{ end }}
+
+{{ with $featuredURL }}
+  <div class="overflow-hidden h-36 md:h-56 lg:h-72">
+    <img
+      src="{{ . }}"
+      alt="{{ $.Title }}"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+      class="w-full h-full nozoom object-cover">
+  </div>
+{{ end }}
