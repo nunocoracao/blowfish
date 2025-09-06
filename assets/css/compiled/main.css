@@ -2543,13 +2543,6 @@ body.zen-mode-enable {
       }
     }
   }
-  .group-hover\:underline-offset-2 {
-    &:is(:where(.group):hover *) {
-      @media (hover: hover) {
-        text-underline-offset: 2px;
-      }
-    }
-  }
   .group-hover\:opacity-100 {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
@@ -2638,6 +2631,18 @@ body.zen-mode-enable {
   .group-data-\[twe-input-state-active\]\:border-t-transparent {
     &:is(:where(.group)[data-twe-input-state-active] *) {
       border-top-color: transparent;
+    }
+  }
+  .before\:absolute {
+    &::before {
+      content: var(--tw-content);
+      position: absolute;
+    }
+  }
+  .before\:inset-0 {
+    &::before {
+      content: var(--tw-content);
+      inset: calc(var(--spacing) * 0);
     }
   }
   .after\:clear-both {
@@ -3849,9 +3854,6 @@ pre {
   text-decoration-line: underline;
   text-decoration-thickness: 3px;
   text-underline-offset: 4px;
-}
-.group-hover-card:hover:has(.group-hover-cancel:hover) .group-hover-card-title {
-  text-decoration: none !important;
 }
 @layer base {
   [type='text'],input:where(:not([type])),[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select {

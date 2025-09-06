@@ -7,7 +7,7 @@
 {{ $constrainItemsWidth := site.Params.list.constrainItemsWidth | default false }}
 {{ $disableImageOptimization := site.Params.disableImageOptimization | default false }}
 
-{{ $articleClasses := "group-hover-card group flex flex-wrap md:flex-nowrap article relative" }}
+{{ $articleClasses := "flex flex-wrap md:flex-nowrap article relative" }}
 {{ if site.Params.list.showCards }}
   {{ $articleClasses = delimit (slice $articleClasses "border border-neutral-200 dark:border-neutral-700 border-2 rounded-md overflow-hidden") " " }}
 {{ else }}
@@ -63,33 +63,30 @@
 
 
 <div class="{{ $articleClasses }}">
-  <a
-    {{ partial "article-link/_external-link.html" $target | safeHTMLAttr }}
-    class="absolute inset-0"
-    aria-label="{{ $.Title }}"></a>
   {{ with $featuredURL }}
     <div class="{{ $articleImageClasses }}" style="background-image:url({{ . }});"></div>
   {{ end }}
   <div class="{{ $articleInnerClasses }}">
     <div class="items-center text-start text-xl font-semibold">
-      {{ with $target.Params.externalUrl }}
-        <div>
-          <div
-            class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
-            {{ $target.Title | emojify }}
-            <span class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500">
-              <span class="rtl:hidden">&#8599;</span>
-              <span class="ltr:hidden">&#8598;</span>
-            </span>
+      <a
+        {{ partial "article-link/_external-link.html" . | safeHTMLAttr }}
+        class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
+        {{ with $target.Params.externalUrl }}
+          <div>
+            <div>
+              {{ $target.Title | emojify }}
+              <span class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500">
+                <span class="rtl:hidden">&#8599;</span>
+                <span class="ltr:hidden">&#8598;</span>
+              </span>
+            </div>
           </div>
-        </div>
-      {{ else }}
-        <div
-          class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2"
-          href="{{ $target.RelPermalink }}">
-          {{ $target.Title | emojify }}
-        </div>
-      {{ end }}
+        {{ else }}
+          <div>
+            {{ $target.Title | emojify }}
+          </div>
+        {{ end }}
+      </a>
       {{ if and $target.Draft site.Params.article.showDraftLabel }}
         <div class="ms-2">
           {{ partial "badge.html" (i18n "article.draft" | emojify) }}
@@ -99,7 +96,7 @@
         {{ partial "extend-article-link.html" $target }}
       {{ end }}
     </div>
-    <div class="group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400">
+    <div class="text-sm text-neutral-500 dark:text-neutral-400">
       {{ partial "article-meta/basic.html" $target }}
     </div>
     {{ $showSummary := false }}
