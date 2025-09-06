@@ -71,21 +71,15 @@
       <a
         {{ partial "article-link/_external-link.html" . | safeHTMLAttr }}
         class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
-        {{ with $target.Params.externalUrl }}
-          <div>
-            <div>
-              {{ $target.Title | emojify }}
-              <span class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500">
-                <span class="rtl:hidden">&#8599;</span>
-                <span class="ltr:hidden">&#8598;</span>
-              </span>
-            </div>
-          </div>
-        {{ else }}
-          <div>
-            {{ $target.Title | emojify }}
-          </div>
-        {{ end }}
+        <div>
+          {{ $target.Title | emojify }}
+          {{ if $target.Params.externalUrl }}
+            <span class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500">
+              <span class="rtl:hidden">&#8599;</span>
+              <span class="ltr:hidden">&#8598;</span>
+            </span>
+          {{ end }}
+        </div>
       </a>
       {{ if and $target.Draft site.Params.article.showDraftLabel }}
         <div class="ms-2">
