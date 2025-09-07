@@ -1,4 +1,5 @@
 {{ $icon := .Get "icon" | default "check" }}
+{{ $md := .Get "md" | default false }}
 {{ $header := .Get "header" }}
 {{ $badge := .Get "badge" }}
 {{ $subheader := .Get "subheader" }}
@@ -25,7 +26,11 @@
         </h4>
       {{ end }}
       <div class="mb-6">
-        {{- .Inner -}}
+        {{ if $md }}
+          {{- .Inner | markdownify -}}
+        {{ else }}
+          {{- .Inner -}}
+        {{ end }}
       </div>
     </div>
   </div>
