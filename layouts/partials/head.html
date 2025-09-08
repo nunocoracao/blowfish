@@ -46,6 +46,11 @@
   {{ $assets.Add "css" (slice $cssScheme) }}
   {{ $cssMain := resources.Get "css/compiled/main.css" }}
   {{ $assets.Add "css" (slice $cssMain) }}
+  {{/* Include GFM blockquotes (GitHub-style callouts) CSS after compiled main to ensure overrides */}}
+  {{ $cssGfm := resources.Get "css/components/gfm-blockquotes.css" }}
+  {{ if $cssGfm }}
+    {{ $assets.Add "css" (slice $cssGfm) }}
+  {{ end }}
   {{ $cssCustom := resources.Get "css/custom.css" }}
   {{ if $cssCustom }}
     {{ $assets.Add "css" (slice $cssCustom) }}

@@ -1,0 +1,76 @@
+{{/* layouts/_default/_markup/render-blockquote.html */}}
+{{/*
+   Enhanced alert/callout render‑hook for Hugo ≥ 0.134.
+   Features:
+   1. Supports custom titles via .AlertTitle (e.g. "> [!note] My Title").
+   2. Supports foldable callouts when .AlertSign is "+" or "-".
+      – "+" → expanded by default (open)
+      – "-" → collapsed by default
+   3. Keeps original icon‑selection logic.
+*/}}
+
+{{ if eq .Type "alert" }}
+  {{- $alertType := .AlertType | lower -}}
+
+  {{/* ───  Title  ────────────────────────────────────────────── */}}
+  {{- $alertTitle := "" -}}
+  {{- if .AlertTitle -}}
+    {{- $alertTitle = .AlertTitle -}}
+  {{- else -}}
+    {{- $alertTitle = or (i18n .AlertType) (.AlertType | title) -}}
+  {{- end -}}
+
+  {{/* ───  Icon  ─────────────────────────────────────────────── */}}
+  {{- $iconPath := "" -}}
+  {{- if in (slice "note" "info") $alertType -}}
+    {{- $iconPath = "assets/icons/circle-info.svg" -}}
+  {{- else if eq $alertType "tip" -}}
+    {{- $iconPath = "assets/icons/lightbulb.svg" -}}
+  {{- else if eq $alertType "important" -}}
+    {{- $iconPath = "assets/icons/bell.svg" -}}
+  {{- else if eq $alertType "warning" -}}
+    {{- $iconPath = "assets/icons/triangle-exclamation.svg" -}}
+  {{- else if in (slice "caution" "danger" "error") $alertType -}}
+    {{- $iconPath = "assets/icons/fire.svg" -}}
+  {{- else if in (slice "success" "check") $alertType -}}
+    {{- $iconPath = "assets/icons/check.svg" -}}
+  {{- else -}}
+    {{- $iconPath = "assets/icons/circle-info.svg" -}}
+  {{- end -}}
+
+  {{/* ───  Foldable?  ────────────────────────────────────────── */}}
+  {{- if .AlertSign -}}
+    {{- $isOpen := eq .AlertSign "+" -}}
+    <details class="gfm-bq gfm-bq-{{ $alertType }} prose" {{ if $isOpen }}open{{ end }}>
+      <summary class="gfm-bq-heading">
+        <span class="gfm-bq-icon">
+          {{- if and $iconPath (fileExists $iconPath) -}}
+            {{- readFile $iconPath | safeHTML -}}
+          {{- end -}}
+        </span>
+        <span class="gfm-bq-title-text">{{ $alertTitle }}</span>
+      </summary>
+      <div class="gfm-bq-content">
+        {{ .Text | safeHTML }}
+      </div>
+    </details>
+  {{- else -}}
+    <blockquote class="gfm-bq gfm-bq-{{ $alertType }} prose">
+      <div class="gfm-bq-heading">
+        <span class="gfm-bq-icon">
+          {{- if and $iconPath (fileExists $iconPath) -}}
+            {{- readFile $iconPath | safeHTML -}}
+          {{- end -}}
+        </span>
+        <span class="gfm-bq-title-text">{{ $alertTitle }}</span>
+      </div>
+      <div class="gfm-bq-content">
+        {{ .Text | safeHTML }}
+      </div>
+    </blockquote>
+  {{- end -}}
+{{ else }}
+  <blockquote>
+    {{ .Text }}
+  </blockquote>
+{{ end }}

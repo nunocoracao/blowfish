@@ -3,6 +3,7 @@
 @import "./components/zen-mode.css";
 @import "./components/chroma.css";
 @import "./components/a11y.css";
+@import "./components/gfm-blockquotes.css";
 
 @import "tailwindcss";
 @config "../../tailwind.config.js";
@@ -283,3 +284,4 @@ pre {
 .group-hover-card:hover:has(.group-hover-cancel:hover) .group-hover-card-title {
   text-decoration: none !important;
 }
+/* GFM Blockquotes CSS moved to assets/css/components/gfm-blockquotes.css and is now included via layouts/partials/head.html */

@@ -1,0 +1,228 @@
+/* ==========================================================================
+   Styles for GFM Blockquotes (GitHub-style callouts)
+   (via layouts/_default/_markup/render-blockquote.html)
+   ========================================================================== */
+
+/* ─── Base Alert Styles ──────────────────────────────────────────────── */
+.prose .gfm-bq {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent; /* Border color will be set per type */
+  border-radius: 4px;
+  position: relative;
+  font-style: normal; /* Cancel any inherited italic style */
+}
+
+.prose .gfm-bq .gfm-bq-heading {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.prose .gfm-bq .gfm-bq-icon {
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  margin-right: 0.5em;
+  flex-shrink: 0;
+}
+
+.prose .gfm-bq .gfm-bq-icon svg {
+  width: 100% !important;
+  height: 100% !important;
+  fill: currentColor; /* Key for color inheritance */
+}
+
+.prose .gfm-bq .gfm-bq-title-text {
+  /* Color is inherited from .gfm-bq-heading or set per type if needed */
+}
+
+.prose .gfm-bq .gfm-bq-content {
+  /* Content styling */
+}
+
+.prose .gfm-bq .gfm-bq-content p:first-child {
+  margin-top: 0;
+}
+
+.prose .gfm-bq .gfm-bq-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* ─── Alert Type Specific Styles ─────────────────────────────────────── */
+
+/* CAUTION, DANGER, ERROR types */
+.prose .gfm-bq.gfm-bq-caution,
+.prose .gfm-bq.gfm-bq-danger,
+.prose .gfm-bq.gfm-bq-error {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+.prose .gfm-bq.gfm-bq-caution .gfm-bq-heading,
+.prose .gfm-bq.gfm-bq-danger .gfm-bq-heading,
+.prose .gfm-bq.gfm-bq-error .gfm-bq-heading {
+  color: #a94442;
+}
+
+/* IMPORTANT type */
+.prose .gfm-bq.gfm-bq-important {
+  color: #31708f; /* Using info colors for important for now */
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+.prose .gfm-bq.gfm-bq-important .gfm-bq-heading {
+  color: #31708f;
+}
+
+/* INFO type (and NOTE from GitHub) */
+.prose .gfm-bq.gfm-bq-info,
+.prose .gfm-bq.gfm-bq-note {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+.prose .gfm-bq.gfm-bq-info .gfm-bq-heading,
+.prose .gfm-bq.gfm-bq-note .gfm-bq-heading {
+  color: #31708f;
+}
+
+/* SUCCESS / CHECK type */
+.prose .gfm-bq.gfm-bq-success,
+.prose .gfm-bq.gfm-bq-check {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+.prose .gfm-bq.gfm-bq-success .gfm-bq-heading,
+.prose .gfm-bq.gfm-bq-check .gfm-bq-heading {
+  color: #3c763d;
+}
+
+/* TIP type */
+.prose .gfm-bq.gfm-bq-tip {
+  color: #299797;
+  background-color: #e0f7f7;
+  border-color: #a7eded;
+}
+.prose .gfm-bq.gfm-bq-tip .gfm-bq-heading {
+  color: #299797;
+}
+
+/* WARNING type */
+.prose .gfm-bq.gfm-bq-warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+.prose .gfm-bq.gfm-bq-warning .gfm-bq-heading {
+  color: #8a6d3b;
+}
+
+/* Fallback for unspecified custom-alert types */
+.prose .gfm-bq:not(.gfm-bq-caution):not(.gfm-bq-danger):not(.gfm-bq-error):not(.gfm-bq-important):not(.gfm-bq-info):not(.gfm-bq-note):not(.gfm-bq-success):not(.gfm-bq-check):not(.gfm-bq-tip):not(.gfm-bq-warning) {
+  color: #555;
+  background-color: #f5f5f5;
+  border-color: #ddd;
+}
+.prose .gfm-bq:not(.gfm-bq-caution):not(.gfm-bq-danger):not(.gfm-bq-error):not(.gfm-bq-important):not(.gfm-bq-info):not(.gfm-bq-note):not(.gfm-bq-success):not(.gfm-bq-check):not(.gfm-bq-tip):not(.gfm-bq-warning) .gfm-bq-heading {
+  color: #555;
+}
+
+/* ─── Dark Mode Considerations ───────────────────────────────────────── */
+/*
+  Dark mode styles are assumed to be handled by the Blowfish theme's global styles
+  or via CSS variables. If specific overrides are needed for these custom alerts
+  in dark mode, they should be added here.
+  The `fill: currentColor` on SVGs and inherited text colors will adapt if the
+  theme changes the base `color` property for dark mode.
+  Explicit background and border colors defined above might need dark mode versions
+  if the theme doesn't automatically handle them for these specific classes.
+*/
+
+/* ==========================================================================
+   Styles for Foldable GFM Blockquotes (<details> / <summary>)
+   ========================================================================== */
+
+/* Apply main alert styles to the <details> element itself */
+details.prose.gfm-bq {
+  /* Base styles like padding, margin, border-radius are inherited from .prose .gfm-bq */
+  /* Background and color are set by type-specific classes like .gfm-bq-info */
+}
+
+/* Hide default <summary> marker */
+details.prose.gfm-bq summary::-webkit-details-marker {
+  display: none;
+}
+details.prose.gfm-bq summary::marker {
+  content: ''; /* For Firefox */
+}
+
+/* Style <summary> to act like .gfm-bq-heading */
+details.prose.gfm-bq > summary {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 5px; /* Space between summary and content */
+  padding: 0 !important; /* Padding is on parent <details> */
+  border: none !important; /* Border is on parent <details> */
+  border-radius: 0 !important; /* Border-radius is on parent <details> */
+  cursor: pointer;
+  background-color: transparent !important; /* Summary should not have its own background */
+  color: inherit; /* Inherit color from parent <details> */
+  list-style: none !important; /* Ensure no marker */
+}
+
+/* Icon within <summary> */
+details.prose.gfm-bq > summary .gfm-bq-icon {
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  margin-right: 0.5em;
+  flex-shrink: 0;
+}
+details.prose.gfm-bq > summary .gfm-bq-icon svg {
+  width: 100% !important;
+  height: 100% !important;
+  fill: currentColor;
+}
+
+/* Title text within <summary> */
+details.prose.gfm-bq > summary .gfm-bq-title-text {
+  /* Color is inherited from summary -> details */
+}
+
+/* Content area of the <details> element */
+details.prose.gfm-bq > .gfm-bq-content {
+  padding: 0 !important; /* Padding is on parent <details> */
+  margin-top: 0;
+}
+
+/* Paragraphs within the <details> content area */
+details.prose.gfm-bq > .gfm-bq-content p:first-child {
+  margin-top: 0 !important;
+}
+details.prose.gfm-bq > .gfm-bq-content p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Custom disclosure arrow for <summary> */
+details.prose.gfm-bq > summary::after {
+  content: "";
+  display: inline-block;
+  width: 0.6em;
+  height: 0.6em;
+  margin-left: auto; /* Align to the right */
+  border-top: 2px solid currentColor;
+  border-left: 2px solid currentColor;
+  transform: rotate(-45deg); /* Collapsed state: < arrow */
+  transition: transform 0.2s ease;
+}
+
+/* Expanded state disclosure arrow */
+details.prose.gfm-bq[open] > summary::after {
+  transform: rotate(-135deg); /* Expanded state: v arrow */
+}
