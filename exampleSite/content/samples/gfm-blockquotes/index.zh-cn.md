@@ -8,7 +8,7 @@ tags: ["alerts", "blockquote", "markdown", "sample"]
 type: 'sample'
 ---
 
-本页演示使用 Markdown 引用语法（`> [!TYPE]`）实现的 GFM 引用块（GitHub 风格 callout）。与内建的 `alert` shortcode 相比，这种写法更简单、更通用。另见：{{< ref "docs/shortcodes#alert" >}}。
+本页演示使用 Markdown 引用语法（`> [!TYPE]`）实现的 GFM 引用块（GitHub 风格 callout）。与内建的 `alert` shortcode 相比，这种写法更简单、更通用。另见：[alert shortcode]({{< ref "docs/shortcodes#alert" >}})。
 
 <!--more-->
 

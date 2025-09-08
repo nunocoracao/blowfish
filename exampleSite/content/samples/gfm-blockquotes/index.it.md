@@ -8,7 +8,7 @@ tags: ["alerts", "blockquote", "markdown", "sample"]
 type: 'sample'
 ---
 
-Questa pagina dimostra i GFM blockquotes (callout in stile GitHub) utilizzando i blockquote Markdown. È un’alternativa più semplice e portabile rispetto allo shortcode `alert`. Consulta anche {{< ref "docs/shortcodes#alert" >}}.
+Questa pagina dimostra i GFM blockquotes (callout in stile GitHub) utilizzando i blockquote Markdown. È un’alternativa più semplice e portabile rispetto allo shortcode `alert`. Consulta anche lo [shortcode alert]({{< ref "docs/shortcodes#alert" >}}).
 
 <!--more-->
 

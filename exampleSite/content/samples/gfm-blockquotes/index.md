@@ -10,7 +10,7 @@ type: 'sample'
 
 This page demonstrates the GFM blockquotes (GitHub-style callouts) supported by this theme via the blockquote render-hook.
 
-Compared to the built-in alert shortcode, this syntax is simpler and more portable because it uses plain Markdown blockquotes. See the shortcode alternative in the docs: {{< ref "docs/shortcodes#alert" >}}.
+Compared to the built-in alert shortcode, this syntax is simpler and more portable because it uses plain Markdown blockquotes. See the [alert shortcode]({{< ref "docs/shortcodes#alert" >}}) alternative in the docs.
 
 <!--more-->
 

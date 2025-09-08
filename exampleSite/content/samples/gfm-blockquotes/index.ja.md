@@ -8,7 +8,7 @@ tags: ["alerts", "blockquote", "markdown", "sample"]
 type: 'sample'
 ---
 
-このページは、Markdown の引用（`> [!TYPE]`）で実現する GFM Blockquotes（GitHub スタイルの callout）を紹介します。内蔵の `alert` ショートコードよりも、より簡単で汎用的です。参考：{{< ref "docs/shortcodes#alert" >}}。
+このページは、Markdown の引用（`> [!TYPE]`）で実現する GFM Blockquotes（GitHub スタイルの callout）を紹介します。内蔵の `alert` ショートコードよりも、より簡単で汎用的です。参考：[alert ショートコード]({{< ref "docs/shortcodes#alert" >}})。
 
 <!--more-->
 
