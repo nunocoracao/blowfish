@@ -13,6 +13,18 @@
   font-style: normal; /* Cancel any inherited italic style */
 }
 
+/* Reset Tailwind Typography defaults applied to <blockquote> so alerts don't look like quotes */
+.prose blockquote.gfm-bq {
+  quotes: none;
+  border-inline-start-width: 0;
+  border-inline-start-color: transparent;
+  padding-inline-start: 15px; /* keep content alignment consistent */
+}
+.prose blockquote.gfm-bq p:first-of-type::before,
+.prose blockquote.gfm-bq p:last-of-type::after {
+  content: none;
+}
+
 .prose .gfm-bq .gfm-bq-heading {
   display: flex;
   align-items: center;
@@ -51,57 +63,19 @@
   margin-bottom: 0;
 }
 
-/* ─── Alert Type Specific Styles ─────────────────────────────────────── */
+/* ─── Alert Type Specific Styles (GFM 5 only) ─────────────────────────── */
 
-/* CAUTION, DANGER, ERROR types */
-.prose .gfm-bq.gfm-bq-caution,
-.prose .gfm-bq.gfm-bq-danger,
-.prose .gfm-bq.gfm-bq-error {
-  color: #a94442;
-  background-color: #f2dede;
-  border-color: #ebccd1;
-}
-.prose .gfm-bq.gfm-bq-caution .gfm-bq-heading,
-.prose .gfm-bq.gfm-bq-danger .gfm-bq-heading,
-.prose .gfm-bq.gfm-bq-error .gfm-bq-heading {
-  color: #a94442;
-}
-
-/* IMPORTANT type */
-.prose .gfm-bq.gfm-bq-important {
-  color: #31708f; /* Using info colors for important for now */
-  background-color: #d9edf7;
-  border-color: #bce8f1;
-}
-.prose .gfm-bq.gfm-bq-important .gfm-bq-heading {
-  color: #31708f;
-}
-
-/* INFO type (and NOTE from GitHub) */
-.prose .gfm-bq.gfm-bq-info,
+/* NOTE */
 .prose .gfm-bq.gfm-bq-note {
   color: #31708f;
   background-color: #d9edf7;
   border-color: #bce8f1;
 }
-.prose .gfm-bq.gfm-bq-info .gfm-bq-heading,
 .prose .gfm-bq.gfm-bq-note .gfm-bq-heading {
   color: #31708f;
 }
 
-/* SUCCESS / CHECK type */
-.prose .gfm-bq.gfm-bq-success,
-.prose .gfm-bq.gfm-bq-check {
-  color: #3c763d;
-  background-color: #dff0d8;
-  border-color: #d6e9c6;
-}
-.prose .gfm-bq.gfm-bq-success .gfm-bq-heading,
-.prose .gfm-bq.gfm-bq-check .gfm-bq-heading {
-  color: #3c763d;
-}
-
-/* TIP type */
+/* TIP */
 .prose .gfm-bq.gfm-bq-tip {
   color: #299797;
   background-color: #e0f7f7;
@@ -111,7 +85,17 @@
   color: #299797;
 }
 
-/* WARNING type */
+/* IMPORTANT */
+.prose .gfm-bq.gfm-bq-important {
+  color: #31708f; /* using info-like palette */
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+.prose .gfm-bq.gfm-bq-important .gfm-bq-heading {
+  color: #31708f;
+}
+
+/* WARNING */
 .prose .gfm-bq.gfm-bq-warning {
   color: #8a6d3b;
   background-color: #fcf8e3;
@@ -121,14 +105,14 @@
   color: #8a6d3b;
 }
 
-/* Fallback for unspecified custom-alert types */
-.prose .gfm-bq:not(.gfm-bq-caution):not(.gfm-bq-danger):not(.gfm-bq-error):not(.gfm-bq-important):not(.gfm-bq-info):not(.gfm-bq-note):not(.gfm-bq-success):not(.gfm-bq-check):not(.gfm-bq-tip):not(.gfm-bq-warning) {
-  color: #555;
-  background-color: #f5f5f5;
-  border-color: #ddd;
+/* CAUTION */
+.prose .gfm-bq.gfm-bq-caution {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
 }
-.prose .gfm-bq:not(.gfm-bq-caution):not(.gfm-bq-danger):not(.gfm-bq-error):not(.gfm-bq-important):not(.gfm-bq-info):not(.gfm-bq-note):not(.gfm-bq-success):not(.gfm-bq-check):not(.gfm-bq-tip):not(.gfm-bq-warning) .gfm-bq-heading {
-  color: #555;
+.prose .gfm-bq.gfm-bq-caution .gfm-bq-heading {
+  color: #a94442;
 }
 
 /* ─── Dark Mode Considerations ───────────────────────────────────────── */
@@ -147,21 +131,21 @@
    ========================================================================== */
 
 /* Apply main alert styles to the <details> element itself */
-details.prose.gfm-bq {
+.prose details.gfm-bq {
   /* Base styles like padding, margin, border-radius are inherited from .prose .gfm-bq */
-  /* Background and color are set by type-specific classes like .gfm-bq-info */
+  /* Background and color are set by type-specific classes like .gfm-bq-note */
 }
 
 /* Hide default <summary> marker */
-details.prose.gfm-bq summary::-webkit-details-marker {
+.prose details.gfm-bq summary::-webkit-details-marker {
   display: none;
 }
-details.prose.gfm-bq summary::marker {
+.prose details.gfm-bq summary::marker {
   content: ''; /* For Firefox */
 }
 
 /* Style <summary> to act like .gfm-bq-heading */
-details.prose.gfm-bq > summary {
+.prose details.gfm-bq > summary {
   display: flex;
   align-items: center;
   font-weight: bold;
@@ -177,40 +161,40 @@ details.prose.gfm-bq > summary {
 }
 
 /* Icon within <summary> */
-details.prose.gfm-bq > summary .gfm-bq-icon {
+.prose details.gfm-bq > summary .gfm-bq-icon {
   display: inline-block;
   width: 1.2em;
   height: 1.2em;
   margin-right: 0.5em;
   flex-shrink: 0;
 }
-details.prose.gfm-bq > summary .gfm-bq-icon svg {
+.prose details.gfm-bq > summary .gfm-bq-icon svg {
   width: 100% !important;
   height: 100% !important;
   fill: currentColor;
 }
 
 /* Title text within <summary> */
-details.prose.gfm-bq > summary .gfm-bq-title-text {
+.prose details.gfm-bq > summary .gfm-bq-title-text {
   /* Color is inherited from summary -> details */
 }
 
 /* Content area of the <details> element */
-details.prose.gfm-bq > .gfm-bq-content {
+.prose details.gfm-bq > .gfm-bq-content {
   padding: 0 !important; /* Padding is on parent <details> */
   margin-top: 0;
 }
 
 /* Paragraphs within the <details> content area */
-details.prose.gfm-bq > .gfm-bq-content p:first-child {
+.prose details.gfm-bq > .gfm-bq-content p:first-child {
   margin-top: 0 !important;
 }
-details.prose.gfm-bq > .gfm-bq-content p:last-child {
+.prose details.gfm-bq > .gfm-bq-content p:last-child {
   margin-bottom: 0 !important;
 }
 
 /* Custom disclosure arrow for <summary> */
-details.prose.gfm-bq > summary::after {
+.prose details.gfm-bq > summary::after {
   content: "";
   display: inline-block;
   width: 0.6em;
@@ -223,6 +207,6 @@ details.prose.gfm-bq > summary::after {
 }
 
 /* Expanded state disclosure arrow */
-details.prose.gfm-bq[open] > summary::after {
+.prose details.gfm-bq[open] > summary::after {
   transform: rotate(-135deg); /* Expanded state: v arrow */
 }

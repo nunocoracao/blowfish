@@ -62,6 +62,80 @@ This is an error!
 This is an error!
 {{< /alert >}}
 
+## GFM Blockquotes
+
+Use Markdown blockquotes to create callouts. Start the first line with `[!TYPE]`, optionally followed by a custom title. Supported types include NOTE, TIP, IMPORTANT, WARNING, and CAUTION.
+
+**Basic examples**
+
+```md
+> [!NOTE]
+> Useful information for readers.
+
+> [!TIP]
+> A practical suggestion to do things better.
+
+> [!IMPORTANT]
+> Key information to achieve the goal.
+
+> [!WARNING]
+> Requires attention to avoid problems.
+
+> [!CAUTION]
+> Be careful about potential risks.
+```
+
+> [!NOTE]
+> Useful information for readers.
+
+> [!TIP]
+> A practical suggestion to do things better.
+
+> [!IMPORTANT]
+> Key information to achieve the goal.
+
+> [!WARNING]
+> Requires attention to avoid problems.
+
+> [!CAUTION]
+> Be careful about potential risks.
+
+**Collapsible examples**
+
+```md
+> [!NOTE]+
+> Expanded by default.
+
+> [!WARNING]-
+> Collapsed by default.
+```
+
+> [!NOTE]+
+> Expanded by default.
+
+> [!WARNING]-
+> Collapsed by default.
+
+**Mixed content**
+
+```md
+> [!NOTE] Lists, formatting and code
+> - A list item
+> - **Bold** and *italic*
+> - `inline code`
+>
+> A closing paragraph.
+```
+
+> [!NOTE] Lists, formatting and code
+> - A list item
+> - **Bold** and *italic*
+> - `inline code`
+>
+> A closing paragraph.
+
+Standard blockquotes without `[!TYPE]` render as regular quotes.
+
 <br/><br/><br/>
 
 ## Article

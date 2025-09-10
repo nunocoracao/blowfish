@@ -62,6 +62,80 @@ This is an error!
 This is an error!
 {{< /alert >}}
 
+## GFM Blockquotes
+
+Usa i blockquote Markdown per creare callout. Inizia la prima riga con `[!TYPE]`, facoltativamente seguito da un titolo personalizzato. I tipi supportati includono: NOTE, TIP, IMPORTANT, WARNING, CAUTION.
+
+**Esempi di base**
+
+```md
+> [!NOTE]
+> Informazioni utili per il lettore.
+
+> [!TIP]
+> Un suggerimento pratico per fare meglio.
+
+> [!IMPORTANT]
+> Informazioni chiave per raggiungere l'obiettivo.
+
+> [!WARNING]
+> Richiede attenzione per evitare problemi.
+
+> [!CAUTION]
+> Fare attenzione a possibili rischi.
+```
+
+> [!NOTE]
+> Informazioni utili per il lettore.
+
+> [!TIP]
+> Un suggerimento pratico per fare meglio.
+
+> [!IMPORTANT]
+> Informazioni chiave per raggiungere l'obiettivo.
+
+> [!WARNING]
+> Richiede attenzione per evitare problemi。
+
+> [!CAUTION]
+> Fare attenzione a possibili rischi。
+
+**Esempi comprimibili**
+
+```md
+> [!NOTE]+
+> Espanso per impostazione predefinita.
+
+> [!WARNING]-
+> Compresso per impostazione predefinita.
+```
+
+> [!NOTE]+
+> Espanso per impostazione predefinita.
+
+> [!WARNING]-
+> Compresso per impostazione predefinita。
+
+**Contenuti misti**
+
+```md
+> [!NOTE] Elenchi, formattazione e codice
+> - Un elemento di elenco
+> - **Grassetto** e *corsivo*
+> - `codice inline`
+>
+> Un paragrafo di chiusura.
+```
+
+> [!NOTE] Elenchi, formattazione e codice
+> - Un elemento di elenco
+> - **Grassetto** e *corsivo*
+> - `codice inline`
+>
+> Un paragrafo di chiusura。
+
+I blockquote senza `[!TYPE]` vengono renderizzati come citazioni normali.
+
 <br/><br/><br/>
 
 ## Article
