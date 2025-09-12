@@ -117,3 +117,32 @@
     src="{{ $youtubeLiteLib.RelPermalink }}"
     integrity="{{ $youtubeLiteLib.Data.Integrity }}"></script>
 {{ end }}
+
+{{/* Repo cards */}}
+{{ $repoCards := slice "github" "gitea" "hugging-face" "codeberg" "forgejo" }}
+{{ $hasRepoCards := false }}
+{{ range $repoCards }}
+  {{ if $.Page.HasShortcode . }}
+    {{ $hasRepoCards = true }}
+  {{ end }}
+{{ end }}
+
+{{ if $hasRepoCards }}
+  {{ $repoColors := site.Data.repoColors }}
+  {{ $cssRules := slice }}
+
+  {{/* default color */}}
+  {{ $cssRules = $cssRules | append ".language-dot[data-language=\"default\"] { background-color: #0077b6; }" }}
+
+  {{/* Hugging Face model color */}}
+  {{ $cssRules = $cssRules | append ".language-dot[data-language=\"model\"] { background-color: #ff6b35; }" }}
+
+  {{ range $lang, $color := $repoColors }}
+    {{ $cssRules = $cssRules | append (printf ".language-dot[data-language=\"%s\"] { background-color: %s; }" $lang $color) }}
+  {{ end }}
+
+  {{ $repoCardCss := resources.FromString "css/repo-cards.css" (delimit $cssRules "\n")
+    | minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512")
+  }}
+  <link rel="stylesheet" href="{{ $repoCardCss.RelPermalink }}" integrity="{{ $repoCardCss.Data.Integrity }}">
+{{ end }}
