@@ -119,7 +119,7 @@
 {{ end }}
 
 {{/* Repo cards */}}
-{{ $repoCards := slice "github" "gitea" "hugging-face" "codeberg" "forgejo" }}
+{{ $repoCards := slice "codeberg" "forgejo" "gitea" "github" "hugging-face" }}
 {{ $hasRepoCards := false }}
 {{ range $repoCards }}
   {{ if $.Page.HasShortcode . }}
@@ -131,18 +131,26 @@
   {{ $repoColors := site.Data.repoColors }}
   {{ $cssRules := slice }}
 
-  {{/* default color */}}
-  {{ $cssRules = $cssRules | append ".language-dot[data-language=\"default\"] { background-color: #0077b6; }" }}
-
-  {{/* Hugging Face model color */}}
-  {{ $cssRules = $cssRules | append ".language-dot[data-language=\"model\"] { background-color: #ff6b35; }" }}
-
-  {{ range $lang, $color := $repoColors }}
-    {{ $cssRules = $cssRules | append (printf ".language-dot[data-language=\"%s\"] { background-color: %s; }" $lang $color) }}
+  {{ $usedLanguages := $.Page.Store.Get "repoCardLanguages" }}
+  {{ if not $usedLanguages }}
+    {{ $usedLanguages = slice "default" }}
+  {{ else }}
+    {{ $usedLanguages = $usedLanguages | append "default" }}
   {{ end }}
 
-  {{ $repoCardCss := resources.FromString "css/repo-cards.css" (delimit $cssRules "\n")
+  {{ range $usedLanguages }}
+    {{ if eq . "default" }}
+      {{ $cssRules = $cssRules | append ".language-dot[data-language=\"default\"] { background-color: #0077b6; }" }}
+    {{ else if eq . "model" }}
+      {{ $cssRules = $cssRules | append ".language-dot[data-language=\"model\"] { background-color: #ff6b35; }" }}
+    {{ else if index $repoColors . }}
+      {{ $color := index $repoColors . }}
+      {{ $cssRules = $cssRules | append (printf ".language-dot[data-language=\"%s\"] { background-color: %s; }" . $color) }}
+    {{ end }}
+  {{ end }}
+
+  {{ $repoCardCSS := resources.FromString "css/repo-cards.css" (delimit $cssRules "\n")
     | minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512")
   }}
-  <link rel="stylesheet" href="{{ $repoCardCss.RelPermalink }}" integrity="{{ $repoCardCss.Data.Integrity }}">
+  <link rel="stylesheet" href="{{ $repoCardCSS.RelPermalink }}" integrity="{{ $repoCardCSS.Data.Integrity }}">
 {{ end }}
