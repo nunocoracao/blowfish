@@ -1,6 +1,7 @@
 {{ define "main" }}
   {{ .Scratch.Set "scope" "term" }}
-  {{ if site.Params.term.showHero | default false }}
+  {{ $showHero := .Params.showHero | default site.Params.term.showHero | default false }}
+  {{ if $showHero }}
     {{ $heroStyle := print "hero/" site.Params.term.heroStyle ".html" }}
     {{ if templates.Exists ( printf "partials/%s" $heroStyle ) }}
       {{ partial $heroStyle . }}
