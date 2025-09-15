@@ -721,6 +721,7 @@ The `timeline` creates a visual timeline that can be used in different use-cases
 <!-- prettier-ignore-start -->
 | Parameter   | Description                                  |
 | ----------- | -------------------------------------------- |
+| `md`        | render the content as Markdown (true/false)  |
 | `icon`      | the icon to be used in the timeline visuals. |
 | `header`    | header for each entry                        |
 | `badge`     | text to place within the top right badge     |
