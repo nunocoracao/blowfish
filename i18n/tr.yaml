@@ -19,6 +19,9 @@ article:
   this_article: "This Article"
   related_articles: "Related"
 
+a11y:
+  title: "Erişilebilirlik ayarları"
+
 author:
   byline_title: "Yazar"
 

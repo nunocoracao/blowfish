@@ -27,6 +27,7 @@ article:
   related_articles: "Terkait"
 
 a11y:
+  title: "Pengaturan aksesibilitas"
   disable_blur: "Nonaktifkan blur"
   disable_images: "Nonaktifkan gambar"
   show_link_underline: "Tampilkan garis bawah tautan"

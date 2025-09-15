@@ -2,7 +2,7 @@
                 title: "the-maze.net"
                 tags: [Personal site,Blog]
                 externalUrl: "https://www.the-maze.net/"
-                weight: 56
+                weight: 54
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

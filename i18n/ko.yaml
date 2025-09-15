@@ -27,6 +27,7 @@ article:
   related_articles: "관련 글"
 
 a11y:
+  title: "접근성 설정"
   disable_blur: "흐림 효과 끄기"
   disable_images: "이미지 끄기"
   show_link_underline: "링크 밑줄 표시"

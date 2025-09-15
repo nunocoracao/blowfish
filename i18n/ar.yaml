@@ -26,6 +26,7 @@ article:
   this_article: "هذه المقالة"
 
 a11y:
+  title: "إعدادات إمكانية الوصول"
   disable_blur: "تعطيل التمويه"
   disable_images: "تعطيل الصور"
   show_link_underline: "إظهار خط تحت الروابط"

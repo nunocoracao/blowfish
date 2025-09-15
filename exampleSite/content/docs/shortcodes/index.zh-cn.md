@@ -426,7 +426,8 @@ Blowfish 还支持使用标准 Markdown 语法自动转换图像。只需使用�
 <!-- prettier-ignore-start -->
 | 参数   | 功能                                           |
 | ------ | ---------------------------------------------- |
-| `repo` | [String] 格式为 `username/repo` 的 github repo |
+| `repo` | \[字符串] 格式为 `username/repo` 的 github repo |
+| `showThumbnail` | **可选** \[布尔值] 是否显示缩略图，默认为 `true` |
 <!-- prettier-ignore-end -->
 
 **例1:**
@@ -728,12 +729,13 @@ B-->C[Profit]
 `timeline` 创建了一个可视化时间线，用于展示专业经验、项目成就等。 `timeline` 简码依赖于 `timelineItem` 子简码来定义主时间线中的每个项目。每个项目可以具有以下属性。
 
 <!-- prettier-ignore-start -->
-| 参数        | 功能                     |
-| ----------- | ------------------------ |
-| `icon`      | 要在时间线中使用的图标。 |
-| `header`    | 每个条目的标题           |
-| `badge`     | 放置在右上角徽章内的文本 |
-| `subheader` | 每个条目的副标题         |
+| 参数        | 功能                                |
+| ----------- | ----------------------------------- |
+| `md`        | 将内容渲染为 Markdown (true/false)  |
+| `icon`      | 要在时间线中使用的图标              |
+| `header`    | 每个条目的标题                      |
+| `badge`     | 放置在右上角徽章内的文本            |
+| `subheader` | 每个条目的副标题                    |
 
 <!-- prettier-ignore-end -->
 

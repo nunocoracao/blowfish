@@ -30,6 +30,7 @@ article:
     disable: "Desactivar modo zen"
 
 a11y:
+  title: "Axustes de accesibilidade"
   disable_blur: "Desactivar o desenfoque"
   disable_images: "Desactivar as imaxes"
   show_link_underline: "Mostrar subliñado da ligazón"

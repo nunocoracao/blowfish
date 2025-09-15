@@ -2,7 +2,7 @@
                 title: "alxhslm.github.io"
                 tags: [Sito personale]
                 externalUrl: "https://alxhslm.github.io/"
-                weight: 55
+                weight: 53
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

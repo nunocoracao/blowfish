@@ -34,6 +34,7 @@ article:
     disable: "Disable zen mode"
 
 a11y:
+  title: "Налаштування доступності"
   disable_blur: "Вимкнути розмиття"
   disable_images: "Вимкнути зображення"
   show_link_underline: "Показати підкреслення посилань"

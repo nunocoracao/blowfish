@@ -2,7 +2,7 @@
                 title: "UmmIt - Blog"
                 tags: [パーソナルサイト, ブログ, テクノロジーブログ]
                 externalUrl: "https://blog.ummit.dev/"
-                weight: 73
+                weight: 71
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

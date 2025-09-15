@@ -2,7 +2,7 @@
                 title: "blog.lofibean.cc"
                 tags: [パーソナルサイト, ソフトウェア開発者, ブログ]
                 externalUrl: "https://blog.lofibean.cc"
-                weight: 83
+                weight: 81
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

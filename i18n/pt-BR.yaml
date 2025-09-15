@@ -24,6 +24,7 @@ article:
   related_articles: "Relacionados"
 
 a11y:
+  title: "Configurações de acessibilidade"
   disable_blur: "Desativar desfoque"
   disable_images: "Desativar imagens"
   show_link_underline: "Mostrar sublinhado de links"

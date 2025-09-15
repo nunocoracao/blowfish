@@ -71,7 +71,7 @@
 
 
   <div class="{{ $articleInnerClasses }}">
-    <div class="items-center text-left text-xl font-semibold">
+    <div class="items-center text-start text-xl font-semibold">
       {{ with $target.Params.externalUrl }}
         <div>
           <div
@@ -91,7 +91,7 @@
         </div>
       {{ end }}
       {{ if and $target.Draft site.Params.article.showDraftLabel }}
-        <div class="ltr:ml-2 rtl:mr-2">
+        <div class="ms-2">
           {{ partial "badge.html" (i18n "article.draft" | emojify) }}
         </div>
       {{ end }}

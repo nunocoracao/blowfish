@@ -30,6 +30,7 @@ article:
     disable: "Desactivar mode zen"
 
 a11y:
+  title: "Configuració d'accessibilitat"
   disable_blur: "Desactiva el desenfocament"
   disable_images: "Desactiva les imatges"
   show_link_underline: "Mostra el subratllat dels enllaços"

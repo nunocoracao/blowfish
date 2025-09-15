@@ -2,7 +2,7 @@
                 title: "yag0x1.github.io"
                 tags: [Sito personale, Portfolio]
                 externalUrl: "https://yag0x1.github.io"
-                weight: 104
+                weight: 102
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
