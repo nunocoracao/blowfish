@@ -2,7 +2,7 @@
                 title: "andrealucchini.com"
                 tags: [Personal site,Blog]
                 externalUrl: "https://andrealucchini.com"
-                weight: 77
+                weight: 75
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

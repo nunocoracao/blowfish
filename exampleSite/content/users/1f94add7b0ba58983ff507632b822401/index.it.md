@@ -2,7 +2,7 @@
                 title: "eallion.com"
                 tags: [Blog, Sito personale]
                 externalUrl: "http://www.eallion.com/"
-                weight: 65
+                weight: 63
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

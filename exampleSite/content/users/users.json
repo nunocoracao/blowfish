@@ -543,25 +543,6 @@
     ]
   },
   {
-    "title": "MEM v ENNBEE",
-    "url": "https://memv.ennbee.uk/",
-    "source": "https://github.com/ennnbeee/ennnbeee.github.io",
-    "tags": [
-      "Technology Blog",
-      "Personal site"
-    ]
-  },
-  {
-    "title": "Joshua Blais",
-    "url": "https://joshblais.com/",
-    "source": "n/a",
-    "tags": [
-      "Personal Site",
-      "Author",
-      "Digital Garden"
-    ]
-  },
-  {
     "title": "Beauty Formulation",
     "url": "https://www.beautyformulation.com/",
     "source": "n/a",
@@ -594,16 +575,6 @@
     "source": "n/a",
     "tags": [
       "Personal Site"
-    ]
-  },
-  {
-    "title": "micheledinelli.github.io",
-    "url": "https://micheledinelli.github.io",
-    "source": "n/a",
-    "tags": [
-      "Personal Site",
-      "Portfolio Site",
-      "Academia"
     ]
   },
   {
@@ -676,17 +647,6 @@
       "Personal site",
       "Software Developer",
       "Blog"
-    ]
-  },
-  {
-    "title": "merox.dev",
-    "url": "https://merox.dev",
-    "source": "https://github.com/mer0x/merox.dev",
-    "tags": [
-      "Personal site",
-      "Blog",
-      "Documentation",
-      "CV"
     ]
   },
   {
@@ -875,14 +835,6 @@
     ]
   },
   {
-    "title": "caytejohn.xyz",
-    "url": "https://caytejohn.xyz",
-    "source": "n/a",
-    "tags": [
-      "Personal site"
-    ]
-  },
-  {
     "title": "Learn-Software.com",
     "url": "https://learn-software.com",
     "source": "https://github.com/learn-software-engineering/website",
@@ -895,17 +847,16 @@
       "Artificial intelligence"
     ]
   },
-{
-  "title": "mitri.lol",
-  "url": "https://mitri.lol",
-  "source": "n/a",
-  "tags": [
+  {
+    "title": "mitri.lol",
+    "url": "https://mitri.lol",
+    "source": "n/a",
+    "tags": [
       "Personal site",
       "Fun Project"
-      "Project Manager"
     ]
   },
-   {
+  {
     "title": "kieranlowe.io",
     "url": "https://kieranlowe.io",
     "source": "n/a",
@@ -914,20 +865,21 @@
     ]
   },
   {
-      "title": "eike.in",
+    "title": "eike.in",
     "url": "https://eike.in",
     "source": "https://github.com/LarvenStein/eike.in",
     "tags": [
       "Personal site",
       "Portfolio"
+    ]
   },
-      {
-          "title": "Dan Davidson | Where Crypto, Charts and Curiosity Collide",
+  {
+    "title": "Dan Davidson | Where Crypto, Charts and Curiosity Collide",
     "url": "https://danly.io",
     "source": "n/a",
     "tags": [
       "Personal site",
       "Technology Blog"
     ]
-      }
+  }
 ]

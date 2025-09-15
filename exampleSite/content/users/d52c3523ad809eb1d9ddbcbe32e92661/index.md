@@ -2,7 +2,7 @@
                 title: "kumacat.pages.dev"
                 tags: [Personal Site,Blog]
                 externalUrl: "https://kumacat.pages.dev"
-                weight: 76
+                weight: 74
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
