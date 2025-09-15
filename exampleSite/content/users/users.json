@@ -883,12 +883,51 @@
     ]
   },
   {
-    "title": "Dan Davidson | Where Crypto, Charts and Curiosity Collide",
+    "title": "Learn-Software.com",
+    "url": "https://learn-software.com",
+    "source": "https://github.com/learn-software-engineering/website",
+    "tags": [
+      "Personal Website",
+      "Tech Blog",
+      "Learning",
+      "Software Engineering",
+      "Programming",
+      "Artificial intelligence"
+    ]
+  },
+{
+  "title": "mitri.lol",
+  "url": "https://mitri.lol",
+  "source": "n/a",
+  "tags": [
+      "Personal site",
+      "Fun Project"
+      "Project Manager"
+    ]
+  },
+   {
+    "title": "kieranlowe.io",
+    "url": "https://kieranlowe.io",
+    "source": "n/a",
+    "tags": [
+      "Technology Blog"
+    ]
+  },
+  {
+      "title": "eike.in",
+    "url": "https://eike.in",
+    "source": "https://github.com/LarvenStein/eike.in",
+    "tags": [
+      "Personal site",
+      "Portfolio"
+  },
+      {
+          "title": "Dan Davidson | Where Crypto, Charts and Curiosity Collide",
     "url": "https://danly.io",
     "source": "n/a",
     "tags": [
       "Personal site",
       "Technology Blog"
     ]
-  }
+      }
 ]
