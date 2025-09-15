@@ -45,8 +45,8 @@
   {{ $topClass := cond (hasPrefix site.Params.header.layout "fixed") "lg:top-[140px]" "lg:top-10" }}
   <section class="{{ $tocMargin }} prose flex max-w-full flex-col dark:prose-invert lg:flex-row">
     {{ if $showToc }}
-      <div class="order-first px-0 lg:order-last lg:max-w-xs ltr:lg:pl-8 rtl:lg:pr-8">
-        <div class="toc ltr:pl-5 rtl:pr-5 lg:sticky {{ $topClass }}">
+      <div class="order-first px-0 lg:order-last lg:max-w-xs lg:ps-8">
+        <div class="toc ps-5 lg:sticky {{ $topClass }}">
           {{ partial "toc.html" . }}
         </div>
       </div>

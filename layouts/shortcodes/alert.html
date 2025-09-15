@@ -17,9 +17,9 @@
   >
   <span
     {{ if not ($.Scratch.Get "iconColor") }}
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+      class="text-primary-400 pe-3 flex items-center"
     {{ else }}
-      class="ltr:pr-3 rtl:pl-3 flex items-center" style="color: {{ $.Scratch.Get "iconColor" }}"
+      class="pe-3 flex items-center" style="color: {{ $.Scratch.Get "iconColor" }}"
     {{ end }}
     >
     {{ partial "icon.html" ($.Scratch.Get "icon") }}
