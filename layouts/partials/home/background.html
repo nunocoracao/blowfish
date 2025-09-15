@@ -22,7 +22,7 @@
           {{ end }}
           {{ if $homepageImage }}
             <img
-              id="homepage-background-image"
+              id="background-image"
               class="nozoom mt-0 mr-0 mb-0 ml-0 h-[1000px] w-full object-cover"
               src="{{ $homepageImage.RelPermalink }}"
               role="presentation">
@@ -99,7 +99,7 @@
     type="text/javascript"
     src="{{ $backgroundBlur.RelPermalink }}"
     integrity="{{ $backgroundBlur.Data.Integrity }}"
-    data-target-id="background-blur"
-    data-image-id="homepage-background-image"
+    data-blur-id="background-blur"
+    data-image-id="background-image"
     {{ if $homepageImage }}data-image-url="{{ $homepageImage.RelPermalink }}"{{ end }}></script>
 {{ end }}

@@ -27,6 +27,7 @@ article:
   related_articles: "Related"
 
 a11y:
+  title: "Nastavení přístupnosti"
   disable_blur: "Zakázat rozmazání"
   disable_images: "Zakázat obrázky"
   show_link_underline: "Zobrazit podtržení odkazů"

@@ -59,23 +59,15 @@
 {{- with $background -}}
 
   <div class="single_hero_background nozoom fixed inset-x-0 top-0 h-[800px]">
-    {{ if or $disableImageOptimization (strings.HasSuffix . ".svg") }}
-      {{ with . }}
-        <img
-          id="background-image-main"
-          src="{{ .RelPermalink }}"
-          alt="Background Image"
-          class="absolute inset-0 h-full w-full object-cover">
-      {{ end }}
-    {{ else }}
-      {{ with .Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
-        <img
-          id="background-image-main"
-          src="{{ .RelPermalink }}"
-          alt="Background Image"
-          class="absolute inset-0 h-full w-full object-cover">
-      {{ end }}
+    {{ $imageURL := .RelPermalink }}
+    {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
+      {{ $imageURL = (.Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x")).RelPermalink }}
     {{ end }}
+    <img
+      id="background-image"
+      src="{{ $imageURL }}"
+      alt="Background Image"
+      class="absolute inset-0 h-full w-full object-cover">
     <div
       class="from-neutral absolute inset-0 bg-gradient-to-t to-transparent mix-blend-normal dark:from-neutral-800"></div>
     <div
@@ -93,7 +85,7 @@
     type="text/javascript"
     src="{{ $backgroundBlur.RelPermalink }}"
     integrity="{{ $backgroundBlur.Data.Integrity }}"
-    data-target-id="background-blur"
+    data-blur-id="background-blur"
     data-image-id="background-image-main"
     {{ with $background }}data-image-url="{{ .RelPermalink }}"{{ end }}></script>
 {{ end }}

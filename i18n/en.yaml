@@ -30,6 +30,7 @@ article:
     disable: "Disable zen mode"
 
 a11y:
+  title: "Accessibility settings"
   disable_blur: "Disable blur"
   disable_images: "Disable images"
   show_link_underline: "Show link underline"

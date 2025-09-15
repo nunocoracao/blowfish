@@ -21,6 +21,7 @@ article:
   related_articles: "Related"
 
 a11y:
+  title: "הגדרות נגישות"
   disable_blur: "השבת טשטוש"
   disable_images: "השבת תמונות"
   show_link_underline: "הצג קו תחתון לקישורים"
