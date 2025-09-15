@@ -88,7 +88,7 @@
       {{ if $groupByYear }}
         {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
           {{ if $cardViewScreenWidth }}
-            <div class="relative w-screen max-w-[1600px] px-[30px] left-[calc(max(-50vw,-800px)+50%)]">
+            <div class="relative w-screen max-w-[1600px] px-[30px] start-[calc(max(-50vw,-800px)+50%)]">
               <h2 class="mt-12 mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
                 {{ .Key }}
               </h2>
@@ -113,7 +113,7 @@
       {{/* else: not groupByYear */}}
       {{ else }}
         {{ if $cardViewScreenWidth }}
-          <div class="relative w-screen max-w-[1600px] px-[30px] left-[calc(max(-50vw,-800px)+50%)]">
+          <div class="relative w-screen max-w-[1600px] px-[30px] start-[calc(max(-50vw,-800px)+50%)]">
             <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
               {{ if not $orderByWeight }}
                 {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
