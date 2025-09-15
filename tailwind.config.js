@@ -16,6 +16,7 @@ module.exports = {
       "2xl": "1536px",
     },
     colors: {
+      ...require('tailwindcss/colors'),
       transparent: "transparent",
       neutral: {
         DEFAULT: "rgba(var(--color-neutral), <alpha-value>)",
