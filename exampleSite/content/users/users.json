@@ -882,6 +882,19 @@
       "Personal site"
     ]
   },
+  {
+    "title": "Learn-Software.com",
+    "url": "https://learn-software.com",
+    "source": "https://github.com/learn-software-engineering/website",
+    "tags": [
+      "Personal Website",
+      "Tech Blog",
+      "Learning",
+      "Software Engineering",
+      "Programming",
+      "Artificial intelligence"
+    ]
+  },
 {
   "title": "mitri.lol",
   "url": "https://mitri.lol",
@@ -892,4 +905,4 @@
       "Project Manager"
     ]
   }
-  [
+]
