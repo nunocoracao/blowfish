@@ -21,6 +21,14 @@ body:
       options:
         - label: I have checked existing Issues and I feel this bug has not been raised
           required: true
+  - type: checkboxes
+    id: hugo-version-check
+    attributes:
+      label: Hugo Version Check
+      description: Please confirm that your Hugo version is within the supported range specified in the [config](https://github.com/nunocoracao/blowfish/blob/main/config.toml)
+      options:
+        - label: My Hugo version is within the supported range
+          required: true
   - type: textarea
     id: describe-bug
     attributes:
