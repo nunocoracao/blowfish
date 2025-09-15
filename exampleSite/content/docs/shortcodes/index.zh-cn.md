@@ -426,7 +426,8 @@ Blowfish 还支持使用标准 Markdown 语法自动转换图像。只需使用�
 <!-- prettier-ignore-start -->
 | 参数   | 功能                                           |
 | ------ | ---------------------------------------------- |
-| `repo` | [String] 格式为 `username/repo` 的 github repo |
+| `repo` | \[字符串] 格式为 `username/repo` 的 github repo |
+| `showThumbnail` | **可选** \[布尔值] 是否显示缩略图，默认为 `true` |
 <!-- prettier-ignore-end -->
 
 **例1:**

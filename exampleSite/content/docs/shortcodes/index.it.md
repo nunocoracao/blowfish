@@ -423,6 +423,7 @@ In order to add images to the gallery, use `img` tags for each image and add `cl
 | Parameter | Description                                           |
 | --------- | ----------------------------------------------------- |
 | `repo`    | [String] github repo in the format of `username/repo` |
+| `showThumbnail` | **Optional.** [Boolean] Whether to show the thumbnail, defaults to `true` |
 <!-- prettier-ignore-end -->
 
 **Example 1:**
