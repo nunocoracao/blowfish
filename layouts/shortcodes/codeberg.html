@@ -1,6 +1,6 @@
 {{ $id := delimit (slice "codeberg" (partial "functions/uid.html" .)) "-" }}
 {{- $codebergURL := print "https://codeberg.org/api/v1/repos/" (.Get "repo") -}}
-{{- $codebergColors := .Site.Data.repoColors -}}
+{{- $repoColors := .Site.Data.repoColors -}}
 {{- $codebergData := dict -}}
 {{- with try (resources.GetRemote $codebergURL) -}}
   {{- with .Err -}}
@@ -33,13 +33,12 @@
         </p>
 
         <div class="m-0 mt-2 flex items-center">
+          {{ $language := cond .language .language "default" }}
+          {{ $currentLangs := $.Page.Store.Get "repoCardLanguages" | default slice }}
+          {{ $.Page.Store.Set "repoCardLanguages" ($currentLangs | append $language) }}
           <span
-            class="mr-1 inline-block h-3 w-3 rounded-full"
-            style="background-color: {{ if .language }}
-              {{- index $codebergColors .language -}}
-            {{ else }}
-              #0077b6
-            {{ end }}"></span>
+            class="mr-1 inline-block h-3 w-3 rounded-full language-dot"
+            data-language="{{ $language }}"></span>
           <div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
             {{ if .language }}{{ .language }}{{ else }}null{{ end }}
           </div>
