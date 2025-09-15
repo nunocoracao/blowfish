@@ -12,7 +12,7 @@ jobs:
         with:
           ref: "${{ github.head_ref }}"
       - name: Install dependencies and Build Theme
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
       - run: npm install
       - run: npm run assets
       - name: Commit and push Chart.js changes
