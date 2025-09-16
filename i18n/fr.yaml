@@ -23,6 +23,13 @@ article:
     enable: "Activer le mode zen"
     disable: "Désactiver le mode zen"
 
+a11y:
+  title: "Paramètres d'accessibilité"
+  disable_blur: "Désactiver le flou"
+  disable_images: "Désactiver les images"
+  show_link_underline: "Afficher le soulignement des liens"
+  font_size: "Taille de la police"
+
 author:
   byline_title: "Auteur"
 

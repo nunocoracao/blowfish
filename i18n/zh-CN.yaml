@@ -30,6 +30,7 @@ article:
     disable: "停用阅读模式"
 
 a11y:
+  title: "无障碍设定"
   disable_blur: "禁用模糊效果"
   disable_images: "禁用图片"
   show_link_underline: "显示链接下划线"

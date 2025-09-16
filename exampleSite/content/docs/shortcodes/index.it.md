@@ -423,6 +423,7 @@ In order to add images to the gallery, use `img` tags for each image and add `cl
 | Parameter | Description                                           |
 | --------- | ----------------------------------------------------- |
 | `repo`    | [String] github repo in the format of `username/repo` |
+| `showThumbnail` | **Optional.** [Boolean] Whether to show the thumbnail, defaults to `true` |
 <!-- prettier-ignore-end -->
 
 **Example 1:**
@@ -720,6 +721,7 @@ The `timeline` creates a visual timeline that can be used in different use-cases
 <!-- prettier-ignore-start -->
 | Parameter   | Description                                  |
 | ----------- | -------------------------------------------- |
+| `md`        | render the content as Markdown (true/false)  |
 | `icon`      | the icon to be used in the timeline visuals. |
 | `header`    | header for each entry                        |
 | `badge`     | text to place within the top right badge     |

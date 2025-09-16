@@ -36,8 +36,8 @@
       {{ $showRelated := site.Params.article.showRelatedPosts | default false }}
       {{ $topClass := cond (hasPrefix site.Params.header.layout "fixed") "lg:top-[140px]" "lg:top-10" }}
       {{ if or $showToc $showRelated }}
-        <div class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
-          <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky {{ $topClass }}">
+        <div class="order-first lg:ml-auto px-0 lg:order-last lg:ps-8">
+          <div class="toc ps-5 print:hidden lg:sticky {{ $topClass }}">
             {{ if $showToc }}
               {{ partial "toc.html" . }}
             {{ end }}

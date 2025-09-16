@@ -30,6 +30,7 @@ article:
     disable: "Malŝalti zen-reĝimon"
 
 a11y:
+  title: "Alirebleco-agordoj"
   disable_blur: "Malŝalti malklarigon"
   disable_images: "Malŝalti bildojn"
   show_link_underline: "Montri substrekojn de ligiloj"

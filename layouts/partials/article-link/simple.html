@@ -1,97 +1,94 @@
-{{ $constrainItemsWidth := .Page.Site.Params.list.constrainItemsWidth | default false }}
+{{/* Used by
+  1. list.html and term.html (when the cardView option is not enabled)
+  2. Recent articles template (when the cardView option is not enabled)
+  3. Shortcode list.html
+*/}}
+{{ $constrainItemsWidth := site.Params.list.constrainItemsWidth | default false }}
+{{ $disableImageOptimization := site.Params.disableImageOptimization | default false }}
 
-{{ $articleClasses := "group-hover-card group flex flex-wrap md:flex-nowrap article relative" }}
-{{ if .Site.Params.list.showCards }}
-  {{ $articleClasses = delimit (slice $articleClasses "border border-neutral-200 dark:border-neutral-700 border-2 rounded-md overflow-hidden") " " }}
+{{ $cardClasses := "flex flex-col md:flex-row relative" }}
+{{ $figureClasses := "" }}
+{{ $cardContentClasses := "" }}
+
+{{ if site.Params.list.showCards }}
+  {{ $cardClasses = printf "%s overflow-hidden rounded-md border-2 border-neutral-200 dark:border-neutral-700" $cardClasses }}
+  {{ $figureClasses = "" }}
+  {{ $cardContentClasses = printf "%s p-4" $cardContentClasses }}
 {{ else }}
-  {{ $articleClasses = delimit (slice $articleClasses "") " " }}
-{{ end }}
-
-{{ $articleImageClasses := "w-full md:w-auto h-full thumbnail nozoom" }}
-{{ if .Site.Params.list.showCards }}
-  {{ $articleImageClasses = delimit (slice $articleImageClasses "") " " }}
-{{ else }}
-  {{ $articleImageClasses = delimit (slice $articleImageClasses "thumbnailshadow md:mr-7") " " }}
-{{ end }}
-
-{{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
-
-{{ $articleInnerClasses := "" }}
-{{ if .Site.Params.list.showCards }}
-  {{ $articleInnerClasses = delimit (slice $articleInnerClasses "p-4") " " }}
-{{ else }}
-  {{ $articleInnerClasses = delimit (slice $articleInnerClasses "mt-3 md:mt-0") " " }}
+  {{ $cardClasses = $cardClasses }}
+  {{ $figureClasses = printf "%s thumbnail-shadow md:mr-7" $figureClasses }}
+  {{ $cardContentClasses = printf "%s mt-3 md:mt-0" $cardContentClasses }}
 {{ end }}
 
 {{ if $constrainItemsWidth }}
-  {{ $articleClasses = delimit (slice $articleClasses "max-w-prose") " " }}
+  {{ $cardClasses = printf "%s max-w-prose" $cardClasses }}
+{{ end }}
+
+{{ $featured := "" }}
+{{ $featuredURL := "" }}
+{{ if not .Params.hideFeatureImage }}
+  {{ with .Params.featureimage }}
+    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+      {{ $featured = resources.GetRemote . }}
+    {{ else }}
+      {{ $featured = resources.Get . }}
+    {{ end }}
+  {{ end }}
+
+  {{ if not $featured }}
+    {{ $images := $.Resources.ByType "image" }}
+    {{ range slice "*feature*" "*cover*" "*thumbnail*" }}
+      {{ if not $featured }}{{ $featured = $images.GetMatch . }}{{ end }}
+    {{ end }}
+    {{ if not $featured }}
+      {{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{ with $featured }}
+    {{ $featuredURL = .RelPermalink }}
+    {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
+      {{ $featuredURL = (.Resize "600x").RelPermalink }}
+    {{ end }}
+  {{ end }}
 {{ end }}
 
 
-<div class="{{ $articleClasses }}">
-  <a
-    {{ partial "article-link/_external-link.html" . | safeHTMLAttr }}
-    class="absolute inset-0"
-    aria-label="{{ $.Title }}"></a>
-  {{- with $.Params.images -}}
-    {{- range first 6 . }}
-      <meta property="og:image" content="{{ . | absURL }}">
-    {{ end -}}
-  {{- else -}}
-    {{- $images := $.Resources.ByType "image" -}}
-    {{- $featured := $images.GetMatch "*feature*" -}}
-    {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
-    {{ if and .Params.featureimage (not $featured) }}
-      {{- $url:= .Params.featureimage -}}
-      {{ $featured = resources.GetRemote $url }}
-    {{ end }}
-    {{- if not $featured }}
-      {{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}
-    {{ end -}}
-    {{ if .Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
-    {{- with $featured -}}
-      {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg") }}
-        {{ with . }}
-          <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
-        {{ end }}
-      {{ else }}
-        {{ with .Resize "600x" }}
-          <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
-        {{ end }}
-      {{ end }}
-    {{- else -}}
-      {{- with $.Site.Params.images }}
-        <meta property="og:image" content="{{ index . 0 | absURL }}">
-      {{ end -}}
-    {{- end -}}
-  {{- end -}}
-
-
-  <div class="{{ $articleInnerClasses }}">
-    <div class="items-center text-left text-xl font-semibold">
-      {{ with .Params.externalUrl }}
-        <div
-          class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
-          {{ $.Title | emojify }}
-          <span class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500">
-            <span class="rtl:hidden">&#8599;</span>
-            <span class="ltr:hidden">&#8598;</span>
-          </span>
-        </div>
-      {{ else }}
-        <div
-          class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
+<article class="{{ $cardClasses }}">
+  {{ with $featuredURL }}
+    <figure
+      class="not-prose flex-none relative overflow-hidden {{ $figureClasses }} thumbnail--simple">
+      <img
+        src="{{ . }}"
+        alt="{{ $.Title }}"
+        loading="lazy"
+        decoding="async"
+        class="not-prose absolute inset-0 w-full h-full object-cover">
+    </figure>
+  {{ end }}
+  <div class="{{ $cardContentClasses }}">
+    <header class="items-center text-start text-xl font-semibold">
+      <a
+        {{ partial "article-link/_external-link.html" . | safeHTMLAttr }}
+        class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
+        <h2>
           {{ .Title | emojify }}
-        </div>
-      {{ end }}
+          {{ if .Params.externalUrl }}
+            <span class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500">
+              <span class="rtl:hidden">&#8599;</span>
+              <span class="ltr:hidden">&#8598;</span>
+            </span>
+          {{ end }}
+        </h2>
+      </a>
       {{ if and .Draft .Site.Params.article.showDraftLabel }}
-        <div class="ltr:ml-2 rtl:mr-2">{{ partial "badge.html" (i18n "article.draft" | emojify) }}</div>
+        <div class="ms-2">{{ partial "badge.html" (i18n "article.draft" | emojify) }}</div>
       {{ end }}
       {{ if templates.Exists "partials/extend-article-link.html" }}
         {{ partial "extend-article-link.html" . }}
       {{ end }}
-    </div>
-    <div class="group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400">
+    </header>
+    <div class="text-sm text-neutral-500 dark:text-neutral-400">
       {{ partial "article-meta/basic.html" . }}
     </div>
     {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
@@ -99,4 +96,4 @@
     {{ end }}
   </div>
   <div class="px-6 pt-4 pb-2"></div>
-</div>
+</article>

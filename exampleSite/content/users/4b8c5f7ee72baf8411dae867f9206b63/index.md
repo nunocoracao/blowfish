@@ -2,7 +2,7 @@
                 title: "Middle of Nowhere"
                 tags: [Personal Site,Blog]
                 externalUrl: "https://blog.wtcx.dev/"
-                weight: 72
+                weight: 70
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
