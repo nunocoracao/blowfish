@@ -6,14 +6,17 @@
     }}
       target="_blank"
     {{ end }}
-    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    title="{{ .Title }}">
     {{ if .Pre }}
       <div {{ if and .Pre .Name }}class="mr-2"{{ end }}>
         {{ partial "icon.html" .Pre }}
       </div>
     {{ end }}
-    <p class="text-bg font-bg" title="{{ .Title }}">
-      {{ .Name | markdownify }}
-    </p>
+    {{ if .Name }}
+      <p class="text-bg font-bg">
+        {{ .Name | markdownify }}
+      </p>
+    {{ end }}
   </a>
 </li>
