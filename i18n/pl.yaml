@@ -27,6 +27,7 @@ article:
   related_articles: "Related"
 
 a11y:
+  title: "Ustawienia dostępności"
   disable_blur: "Wyłącz rozmycie"
   disable_images: "Wyłącz obrazy"
   show_link_underline: "Pokaż podkreślenie linków"

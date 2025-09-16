@@ -20,6 +20,9 @@ article:
   this_article: "Dieser Artikel"
   related_articles: "Verwandte Artikel"
 
+a11y:
+  title: "Einstellungen zur Barrierefreiheit"
+
 author:
   byline_title: "Autor"
 

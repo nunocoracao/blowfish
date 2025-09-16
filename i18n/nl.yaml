@@ -29,6 +29,9 @@ article:
     enable: "Zen-modus inschakelen"
     disable: "Zen-modus uitschakelen"
 
+a11y:
+  title: "Toegankelijkheidsinstellingen"
+
 author:
   byline_title: "Auteur"
 

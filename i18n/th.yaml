@@ -30,6 +30,7 @@ article:
     disable: "ปิดโหมดเซน"
 
 a11y:
+  title: "การตั้งค่าการเข้าถึง"
   disable_blur: "ปิดการเบลอ"
   disable_images: "ปิดการแสดงรูปภาพ"
   show_link_underline: "แสดงเส้นใต้ลิงก์"

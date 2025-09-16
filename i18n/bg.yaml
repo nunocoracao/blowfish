@@ -27,6 +27,7 @@ article:
   related_articles: "Подобни"
 
 a11y:
+  title: "Настройки за достъпност"
   disable_blur: "Изключване на замъгляването"
   disable_images: "Изключване на изображенията"
   show_link_underline: "Показване на подчертаване на връзките"

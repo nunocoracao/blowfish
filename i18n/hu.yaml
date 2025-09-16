@@ -21,6 +21,7 @@ article:
   related_articles: "Related"
 
 a11y:
+  title: "Akadálymentességi beállítások"
   disable_blur: "Elmosódás kikapcsolása"
   disable_images: "Képek kikapcsolása"
   show_link_underline: "Link aláhúzásának megjelenítése"

@@ -26,6 +26,9 @@ article:
   this_article: "This Article"
   related_articles: "Related"
 
+a11y:
+  title: "অ্যাক্সেসিবিলিটি সেটিংস"
+
 author:
   byline_title: "লেখক"
 

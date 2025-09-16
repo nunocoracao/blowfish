@@ -1,8 +1,8 @@
 ---
                 title: "Synaptic Sugar"
-                tags: [电子游戏开发人员]
+                tags: [视频游戏开发人员]
                 externalUrl: "https://synapticsugar.games"
-                weight: 66
+                weight: 64
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

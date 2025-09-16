@@ -21,6 +21,7 @@ article:
   related_articles: "Relaterade"
 
 a11y:
+  title: "Tillgänglighetsinställningar"
   disable_blur: "Inaktivera suddighet"
   disable_images: "Inaktivera bilder"
   show_link_underline: "Visa länkunderstrykning"

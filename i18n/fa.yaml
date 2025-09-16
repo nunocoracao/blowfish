@@ -30,6 +30,7 @@ article:
     disable: "غیر فعال کردن حالت تمام متن"
 
 a11y:
+  title: "تنظیمات دسترسی"
   disable_blur: "غیرفعال کردن تاری"
   disable_images: "غیرفعال کردن تصاویر"
   show_link_underline: "نمایش زیرخط لینک"

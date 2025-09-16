@@ -64,6 +64,16 @@
     });
     const data = await response.json();
 
+    if (!response.ok) {
+      console.error(`fetch-repo.js: HTTP Error: ${response.status} ${response.statusText}`);
+      return;
+    }
+
+    if (!data || typeof data !== "object") {
+      console.error("fetch-repo.js: Invalid or empty data received from remote");
+      return;
+    }
+
     Object.entries(mapping).forEach(([dataField, elementSuffix]) => {
       const element = document.getElementById(`${repoId}-${elementSuffix}`);
       if (element) {
@@ -71,7 +81,9 @@
         if (processors[platform]?.[dataField]) {
           value = processors[platform][dataField](value);
         }
-        element.innerHTML = value;
+        if (value != null && value !== "") {
+          element.innerHTML = value;
+        }
       }
     });
   } catch (error) {

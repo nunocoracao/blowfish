@@ -27,6 +27,7 @@ article:
   related_articles: "Related"
 
 a11y:
+  title: "Настройки доступности"
   disable_blur: "Отключить размытие"
   disable_images: "Отключить изображения"
   show_link_underline: "Показать подчеркивание ссылок"
