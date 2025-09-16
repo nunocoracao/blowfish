@@ -27,6 +27,8 @@ The full list of built-in icons and their corresponding names can referenced bel
 | bug                  | {{< icon bug >}}                  |
 | check                | {{< icon check >}}                |
 | circle-info          | {{< icon circle-info >}}          |
+| cloud                | {{< icon cloud >}}                |
+| cloud-moon           | {{< icon cloud-moon >}}           |
 | code                 | {{< icon code>}}                  |
 | codeberg             | {{< icon codeberg >}}             |
 | codepen              | {{< icon codepen >}}              |
