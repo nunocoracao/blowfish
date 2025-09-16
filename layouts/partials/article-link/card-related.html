@@ -1,67 +1,63 @@
+{{/* Used by
+  1. layouts/partials/related.html (related articles in single page)
+*/}}
 {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
-<div
-  class="group-hover-card group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
-  <a
-    {{ partial "article-link/_external-link.html" . | safeHTMLAttr }}
-    class="absolute inset-0"
-    aria-label="{{ $.Title }}"></a>
-  {{- with $.Params.images -}}
-    {{- range first 6 . }}
-      <meta property="og:image" content="{{ . | absURL }}">
-    {{ end -}}
-  {{- else -}}
-    {{- $images := $.Resources.ByType "image" -}}
-    {{- $featured := $images.GetMatch "*feature*" -}}
-    {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
-    {{ if and .Params.featureimage (not $featured) }}
-      {{- $url:= .Params.featureimage -}}
-      {{ $featured = resources.GetRemote $url }}
-    {{ end }}
-    {{- if not $featured }}
-      {{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}
-    {{ end -}}
-    {{- with $featured -}}
-      {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg") }}
-        {{ with . }}
-          <div
-            class="thumbnail_card_related nozoom w-full"
-            style="background-image:url({{ .RelPermalink }});"></div>
-        {{ end }}
-      {{ else }}
-        {{ with .Resize "600x" }}
-          <div
-            class="thumbnail_card_related nozoom w-full"
-            style="background-image:url({{ .RelPermalink }});"></div>
-        {{ end }}
-      {{ end }}
-    {{- else -}}
-      {{- with $.Site.Params.images }}
-        <meta property="og:image" content="{{ index . 0 | absURL }}">
-      {{ end -}}
-    {{- end -}}
-  {{- end -}}
+
+{{ $featured := "" }}
+{{ $featuredURL := "" }}
+{{ with .Params.featureimage }}
+  {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+    {{ $featured = resources.GetRemote . }}
+  {{ else }}
+    {{ $featured = resources.Get . }}
+  {{ end }}
+{{ end }}
+
+{{ if not $featured }}
+  {{ $images := $.Resources.ByType "image" }}
+  {{ range slice "*feature*" "*cover*" "*thumbnail*" }}
+    {{ if not $featured }}{{ $featured = $images.GetMatch . }}{{ end }}
+  {{ end }}
+  {{ if not $featured }}
+    {{ with site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}
+  {{ end }}
+{{ end }}
+
+{{ with $featured }}
+  {{ $featuredURL = .RelPermalink }}
+  {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
+    {{ $featuredURL = (.Resize "600x").RelPermalink }}
+  {{ end }}
+{{ end }}
+
+
+<article
+  class="relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
+  {{ with $featuredURL }}
+    <div class="thumbnail_card_related nozoom w-full" style="background-image:url({{ . }});"></div>
+  {{ end }}
   {{ if and .Draft .Site.Params.article.showDraftLabel }}
     <span class="absolute top-0 right-0 m-2">
       {{ partial "badge.html" (i18n "article.draft" | emojify) }}
     </span>
   {{ end }}
   <div class="px-6 py-4">
-    {{ with .Params.externalUrl }}
-      <div
-        class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
-        {{ $.Title | emojify }}
-        <span class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500">
-          <span class="rtl:hidden">&#8599;</span>
-          <span class="ltr:hidden">&#8598;</span>
-        </span>
-      </div>
-    {{ else }}
-      <div
-        class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
-        {{ .Title | emojify }}
-      </div>
-    {{ end }}
-    <div class="group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400">
+    <header>
+      <a
+        {{ partial "article-link/_external-link.html" . | safeHTMLAttr }}
+        class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
+        <h2>
+          {{ .Title | emojify }}
+          {{ if .Params.externalUrl }}
+            <span class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500">
+              <span class="rtl:hidden">&#8599;</span>
+              <span class="ltr:hidden">&#8598;</span>
+            </span>
+          {{ end }}
+        </h2>
+      </a>
+    </header>
+    <div class="text-sm text-neutral-500 dark:text-neutral-400">
       {{ partial "article-meta/basic.html" . }}
     </div>
     {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
@@ -69,4 +65,4 @@
     {{ end }}
   </div>
   <div class="px-6 pt-4 pb-2"></div>
-</div>
+</article>
