@@ -34,7 +34,15 @@
 <article
   class="relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
   {{ with $featuredURL }}
-    <div class="thumbnail_card_related nozoom w-full" style="background-image:url({{ . }});"></div>
+    <figure class="not-prose flex-none relative overflow-hidden thumbnail--related">
+      <img
+        src="{{ . }}"
+        alt="{{ $.Title }}"
+        loading="lazy"
+        decoding="async"
+        fetchpriority="low"
+        class="not-prose absolute inset-0 w-full h-full object-cover">
+    </figure>
   {{ end }}
   {{ if and .Draft .Site.Params.article.showDraftLabel }}
     <span class="absolute top-0 right-0 m-2">

@@ -2,6 +2,7 @@
 
 {{ $images := .Resources.ByType "image" }}
 {{ $background := $images.GetMatch "*background*" }}
+{{ $backgroundURL := "" }}
 
 {{ if not $background }}
   {{ with .Site.Params.defaultBackgroundImage }}
@@ -17,7 +18,16 @@
   {{ if not $background }}{{ $background = $images.GetMatch . }}{{ end }}
 {{ end }}
 
+{{ with $background }}
+  {{ $backgroundURL = .RelPermalink }}
+  {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
+    {{ $size := (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
+    {{ $backgroundURL = (.Resize $size).RelPermalink }}
+  {{ end }}
+{{ end }}
+
 {{ $featured := "" }}
+{{ $featuredURL := "" }}
 {{ if .Params.featureimage }}
   {{ $url := .Params.featureimage }}
   {{ if or (strings.HasPrefix $url "http:") (strings.HasPrefix $url "https:") }}
@@ -44,6 +54,14 @@
   {{ end }}
 {{ end }}
 
+{{ with $featured }}
+  {{ $featuredURL = .RelPermalink }}
+  {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
+    {{ $size := (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
+    {{ $featuredURL = (.Resize $size).RelPermalink }}
+  {{ end }}
+{{ end }}
+
 {{ $isParentList := eq (.Scratch.Get "scope") "list" }}
 {{ $shouldBlur := $.Params.layoutBackgroundBlur | default (or
   (and ($.Site.Params.article.layoutBackgroundBlur | default true) (not $isParentList))
@@ -51,40 +69,32 @@
   )
 }}
 
-{{- with $featured -}}
-  {{ if or $disableImageOptimization (strings.HasSuffix . ".svg") }}
-    {{ with . }}
-      <div
-        class="w-full rounded-md h-36 md:h-56 lg:h-72 single_hero_basic nozoom"
-        style="background-image:url({{ .RelPermalink }});"></div>
-    {{ end }}
-  {{ else }}
-    {{ with .Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
-      <div
-        class="w-full rounded-md h-36 md:h-56 lg:h-72 single_hero_basic nozoom"
-        style="background-image:url({{ .RelPermalink }});"></div>
-    {{ end }}
-  {{ end }}
-{{- end -}}
-
-{{- with $background -}}
-
-  <div class="single_hero_background nozoom fixed inset-x-0 top-0 h-[800px]">
-    {{ $imageURL := .RelPermalink }}
-    {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
-      {{ $imageURL = (.Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x")).RelPermalink }}
-    {{ end }}
+{{ with $featuredURL }}
+  <div class="overflow-hidden rounded-md h-36 md:h-56 lg:h-72 nozoom">
     <img
-      id="background-image"
-      src="{{ $imageURL }}"
+      src="{{ . }}"
+      alt="{{ $.Title }}"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+      class="w-full h-full nozoom object-cover">
+  </div>
+{{ end }}
+
+
+<div class="single_hero_background nozoom fixed inset-x-0 top-0 h-[800px]">
+  {{ with $backgroundURL }}
+    <img
+      id="background-image-main"
+      src="{{ . }}"
       alt="Background Image"
       class="absolute inset-0 h-full w-full object-cover">
-    <div
-      class="from-neutral absolute inset-0 bg-gradient-to-t to-transparent mix-blend-normal dark:from-neutral-800"></div>
-    <div
-      class="from-neutral to-neutral absolute inset-0 bg-gradient-to-t opacity-30 mix-blend-normal dark:from-neutral-800 dark:to-neutral-800 dark:opacity-60"></div>
-  </div>
-{{- end -}}
+  {{ end }}
+  <div
+    class="from-neutral absolute inset-0 bg-gradient-to-t to-transparent mix-blend-normal dark:from-neutral-800"></div>
+  <div
+    class="from-neutral to-neutral absolute inset-0 bg-gradient-to-t opacity-30 mix-blend-normal dark:from-neutral-800 dark:to-neutral-800 dark:opacity-60"></div>
+</div>
 
 {{ if $shouldBlur | default false }}
   <div

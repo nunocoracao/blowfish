@@ -1,23 +1,43 @@
-<a href="{{ .Page.RelPermalink }}" class="min-w-full">
-  <div
-    class="border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-    {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
+{{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
 
-    {{- $images := .Page.Resources.ByType "image" -}}
-    {{- $featured := $images.GetMatch "*feature*" -}}
-    {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
-    {{- with $featured -}}
-      {{ if $disableImageOptimization }}
-        {{ with . }}
-          <div class="w-full thumbnail_card nozoom" style="background-image:url({{ .RelPermalink }});"></div>
-        {{ end }}
-      {{ else }}
-        {{ with .Resize "600x" }}
-          <div class="w-full thumbnail_card nozoom" style="background-image:url({{ .RelPermalink }});"></div>
-        {{ end }}
-      {{ end }}
-    {{- end -}}
+{{ $featured := "" }}
+{{ $featuredURL := "" }}
+{{ with .Page.Params.featureimage }}
+  {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+    {{ $featured = resources.GetRemote . }}
+  {{ else }}
+    {{ $featured = resources.Get . }}
+  {{ end }}
+{{ end }}
 
+{{ if not $featured }}
+  {{ $images := .Page.Resources.ByType "image" }}
+  {{ range slice "*feature*" "*cover*" "*thumbnail*" }}
+    {{ if not $featured }}{{ $featured = $images.GetMatch . }}{{ end }}
+  {{ end }}
+{{ end }}
+
+{{ with $featured }}
+  {{ $featuredURL = .RelPermalink }}
+  {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
+    {{ $featuredURL = (.Resize "600x").RelPermalink }}
+  {{ end }}
+{{ end }}
+
+
+<div class="min-w-full">
+  <div class="border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+    {{ with $featuredURL }}
+      <figure class="not-prose flex-none relative overflow-hidden thumbnail--card">
+        <img
+          src="{{ . }}"
+          alt="{{ $.Page.Title }}"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="low"
+          class="not-prose absolute inset-0 w-full h-full object-cover">
+      </figure>
+    {{ end }}
     {{ if site.Params.taxonomy.showTermCount | default true }}
       <span class="absolute bottom-0 right-0 m-2">
         <span class="flex">
@@ -28,14 +48,16 @@
         </span>
       </span>
     {{ end }}
-
-
     <div class="px-6 py-4">
-      <div
-        class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
-        {{ .Page.Title | emojify }}
-      </div>
+      <a
+        {{ partial "article-link/_external-link.html" .Page | safeHTMLAttr }}
+        class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
+        <div
+          class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+          {{ .Page.Title | emojify }}
+        </div>
+      </a>
     </div>
     <div class="px-6 pt-4 pb-2"></div>
   </div>
-</a>
+</div>
