@@ -189,6 +189,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `defaultBackgroundImage` | 无 | 设置默认背景图，用于 `background` 和 `hero` 布局下的主页。 |
 | `defaultFeaturedImage` | 无 | 设置默认背景图片，用于所有文章的`featured`图片，可以通过文章目录中的 `featured` 图片替换。 |
 | `defaultSocialImage` | 无 | 社交媒体分享（Open Graph 和 Twitter）使用的默认图片，可以通过文章目录中的 `featured` 图片替换。 |
+| `hotlinkFeatureImages` | `false` | 在文章特色图片和文章卡片中外链图片。这些图片不会被 Hugo 处理。 |
 | `highlightCurrentMenuArea` | 无 | 当菜单被选择时，标记主菜单中的菜单项。 |
 | `smartTOC` | 无 | 开启智能目录，视图中的项目将会被高亮显示。 |
 | `smartTOCHideUnfocusedChildren` | 无 | 当开启智能目录，如果目录级别不再被聚焦时，将会隐藏更深层次的目录。 |

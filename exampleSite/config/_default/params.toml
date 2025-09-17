@@ -26,6 +26,7 @@ disableTextInHeader = false
 defaultBackgroundImage = "/img/background.svg"
 defaultFeaturedImage = "/img/featured.svg"
 defaultSocialImage = "/img/blowfish_banner.png"
+hotlinkFeatureImages = false
 
 highlightCurrentMenuArea = true
 smartTOC = true

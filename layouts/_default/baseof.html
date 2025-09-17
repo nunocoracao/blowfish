@@ -6,6 +6,7 @@
   data-default-appearance="{{ site.Params.defaultAppearance | default `light` }}"
   data-auto-appearance="{{ site.Params.autoSwitchAppearance | default `true` }}">
   {{- partial "head.html" . -}}
+  {{- partialCached "init.html" . -}}
 
 
   <body
