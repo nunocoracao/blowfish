@@ -1,38 +1,43 @@
-{{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
+{{ $disableImageOptimization := site.Store.Get "disableImageOptimization" }}
 
 {{ $featured := "" }}
 {{ $featuredURL := "" }}
-{{ if .Params.featureimage }}
-  {{ $url := .Params.featureimage }}
-  {{ if or (strings.HasPrefix $url "http:") (strings.HasPrefix $url "https:") }}
-    {{ $featured = resources.GetRemote $url }}
+{{ with .Params.featureimage }}
+  {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+    {{ if site.Params.hotlinkFeatureImages }}
+      {{ $featuredURL = . }}
+    {{ else }}
+      {{ $featured = resources.GetRemote . }}
+    {{ end }}
   {{ else }}
-    {{ $featured = resources.Get $url }}
+    {{ $featured = resources.Get . }}
   {{ end }}
 {{ end }}
 
-{{ if not $featured }}
-  {{ $images := $.Resources.ByType "image" }}
+{{ if not (or $featured $featuredURL) }}
+  {{ $images := .Resources.ByType "image" }}
   {{ range slice "*background*" "*feature*" "*cover*" "*thumbnail*" }}
     {{ if not $featured }}{{ $featured = $images.GetMatch . }}{{ end }}
   {{ end }}
 {{ end }}
 
-{{ if not $featured }}
-  {{ with .Site.Params.defaultBackgroundImage }}
-    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-      {{ $featured = resources.GetRemote . }}
-    {{ else }}
-      {{ $featured = resources.Get . }}
-    {{ end }}
+{{ if not (or $featured $featuredURL) }}
+  {{ $default := site.Store.Get "defaultBackgroundImage" }}
+  {{ if $default.url }}
+    {{ $featuredURL = $default.url }}
+  {{ else if $default.obj }}
+    {{ $featured = $default.obj }}
   {{ end }}
 {{ end }}
 
-{{ with $featured }}
-  {{ $featuredURL = .RelPermalink }}
-  {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
-    {{ $size := (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
-    {{ $featuredURL = (.Resize $size).RelPermalink }}
+{{/* generate image URL if not hotlink */}}
+{{ if not $featuredURL }}
+  {{ with $featured }}
+    {{ $featuredURL = .RelPermalink }}
+    {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
+      {{ $size := site.Store.Get "backgroundImageWidth" }}
+      {{ $featuredURL = (.Resize $size).RelPermalink }}
+    {{ end }}
   {{ end }}
 {{ end }}
 

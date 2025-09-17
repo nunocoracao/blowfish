@@ -32,3 +32,6 @@
   {{ end }}
 {{ end }}
 {{ site.Store.Set "defaultBackgroundImage" (dict "url" $defaultBackgroundImageURL "obj" $defaultBackgroundImage) }}
+
+{{/* backgroundImageWidth */}}
+{{ site.Store.Set "backgroundImageWidth" (print (site.Params.backgroundImageWidth | default "1200") "x") }}
