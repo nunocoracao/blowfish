@@ -84,7 +84,7 @@
   <div class="overflow-hidden rounded-md h-36 md:h-56 lg:h-72 nozoom">
     <img
       src="{{ . }}"
-      alt="{{ $.Title }}"
+      alt=""
       loading="eager"
       decoding="async"
       fetchpriority="high"
@@ -98,7 +98,10 @@
     <img
       id="background-image-main"
       src="{{ . }}"
-      alt="Background Image"
+      alt=""
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
       class="absolute inset-0 h-full w-full object-cover">
   {{ end }}
   <div

@@ -51,7 +51,13 @@
 
 {{ with $featuredURL }}
   <figure>
-    <img class="w-full rounded-lg single_hero_round nozoom" alt="{{ $alt }}" src="{{ . }}">
+    <img
+      src="{{ . }}"
+      alt="{{ $alt }}"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+      class="w-full rounded-lg single_hero_round nozoom">
     {{ if $caption }}
       <figcaption class="text-sm text-neutral-700 dark:text-neutral-400 hover:underline text-center">
         {{ $caption | markdownify }}
