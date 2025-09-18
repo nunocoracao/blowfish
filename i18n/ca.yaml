@@ -4,12 +4,12 @@ global:
 article:
   anchor_label: "Àncora"
   date: "{{ .Date }}"
-  date_updated: "Actualitzat: {{ .Date }}"
+  date_updated: "Actualització: {{ .Date }}"
   draft: "Esborrany"
-  edit_title: "Editar contingut"
+  edit_title: "Edita el contingut"
   reading_time:
     one: "{{ .Count }} min"
-    other: "{{ .Count }} mins"
+    other: "{{ .Count }} min"
   reading_time_title: "Temps de lectura"
   table_of_contents: "Taula de contingut"
   word_count:
@@ -26,13 +26,13 @@ article:
   this_article: "Aquest article"
   related_articles: "Relacionats"
   zen_mode_title:
-    enable: "Activar mode zen"
-    disable: "Desactivar mode zen"
+    enable: "Habilita el mode zen"
+    disable: "Inhabilita el mode zen"
 
 a11y:
-  title: "Configuració d'accessibilitat"
-  disable_blur: "Desactiva el desenfocament"
-  disable_images: "Desactiva les imatges"
+  title: "Paràmetres d'accessibilitat"
+  disable_blur: "Inhabilita el desenfocament"
+  disable_images: "Inhabilita les imatges"
   show_link_underline: "Mostra el subratllat dels enllaços"
   font_size: "Mida de la lletra"
 
@@ -40,43 +40,47 @@ author:
   byline_title: "Autor"
 
 code:
-  copy: "Copiar"
-  copied: "Copiat"
+  copy: "Copia"
+  copied: "S'ha copiat"
 
 error:
-  404_title: "Pàgina no trobada :confused:"
+  404_title: "No s'ha trobat la pàgina :confused:"
   404_error: "Error 404"
-  404_description: "Sembla que la pàgina sol·licitada no existeix."
+  404_description: "Sembla que la pàgina que heu sol·licitat no existeix."
 
 footer:
-  dark_appearance: "Canviar a mode fosc"
-  light_appearance: "Canviar a mode clar"
-  powered_by: "Desenvolupat amb {{ .Hugo }} &amp; {{ .Theme }}"
+  dark_appearance: "Canvia al mode fosc"
+  light_appearance: "Canvia al mode clar"
+  powered_by: "Desenvolupat amb {{ .Hugo }} i {{ .Theme }}"
 
 list:
-  externalurl_title: "Enllaç a pàgina externa"
-  no_articles: "Encara no hi ha cap article per a mostrar."
+  externalurl_title: "Enllaç a un lloc extern"
+  no_articles: "Encara no hi ha cap article per mostrar."
 
 nav:
-  scroll_to_top_title: "Tornar a l'inici"
-  skip_to_main: "Anar al contingut"
+  scroll_to_top_title: "Torna a l'inici"
+  skip_to_main: "Ves al contingut"
 
 search:
-  open_button_title: "Cercar (/)"
-  close_button_title: "Tancar (Esc)"
-  input_placeholder: "Cercar"
+  open_button_title: "Cerca (/)"
+  close_button_title: "Tanca (Esc)"
+  input_placeholder: "Cerca"
 
 sharing:
-  email: "Enviar per correu electrònic"
-  facebook: "Compartir amb Facebook"
-  line: "Compartir amb LINE"
-  linkedin: "Compartir amb LinkedIn"
-  pinterest: "Compartir amb Pinterest"
-  reddit: "Publicar a Reddit"
-  twitter: "Tuitejar a Twitter"
+  email: "Envia per correu electrònic"
+  facebook: "Comparteix a Facebook"
+  line: "Comparteix a LINE"
+  linkedin: "Comparteix a LinkedIn"
+  pinterest: "Comparteix a Pinterest"
+  reddit: "Envia a Reddit"
+  twitter: "Publica a Twitter"
+  bluesky: "Publica a Bluesky"
+  whatsapp: "Comparteix per WhatsApp"
+  telegram: "Comparteix per Telegram"
+  mastodon: "Comparteix a Mastodon"
 
 shortcode:
-  recent_articles: "Recent"
+  recent_articles: "Recents"
 
 recent:
-  show_more: "Mostrar més"
+  show_more: "Mostra'n més"
