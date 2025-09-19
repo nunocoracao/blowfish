@@ -2,20 +2,6 @@
 {{ $aspect := default "16-9" (.Get "aspectRatio") }}
 {{ $interval := default "2000" (.Get "interval") }}
 
-{{ $carouselItemCSS := printf 
-`
-  #%s [data-twe-carousel-item] {
-  transition-duration: %sms !important;
-}` $id $interval }}
-{{ $carouselInitCSS := printf
-`
-#%s [data-twe-carousel-init] {
-  --twe-carousel-interval: %s;
-}` $id $interval }}
-{{ $cssContent := printf "%s%s" $carouselItemCSS $carouselInitCSS }}
-{{ $css := resources.FromString (printf "css/carousel-%s.css" $id) $cssContent | minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
-<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
-
 {{ $page := .Page.Resources }}
 {{ $imagesTemp := .Get "images" }}
 {{ $imagesTemp = strings.TrimPrefix "{" $imagesTemp }}
@@ -59,6 +45,7 @@
       <div
         class="relative float-left -mr-[100%] {{ $hiddenClass }} w-full transition-transform ease-in-out motion-reduce:transition-none"
         data-twe-carousel-item
+        style="transition-duration: {{ $interval }}ms;"
         {{ if eq $index 0 }}data-twe-carousel-active{{ end }}>
         <div class="ratio-{{ $aspect }} single_hero_background">
           <img
