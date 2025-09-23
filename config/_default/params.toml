@@ -160,7 +160,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   # globalWidget = true
   # globalWidgetMessage = "Hello"
   # globalWidgetColor = "#FFDD00"
-  # globalWidgetPosition = "Right"
+  # globalWidgetPosition = "right"
 
 [verification]
   # google = ""

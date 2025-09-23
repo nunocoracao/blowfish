@@ -497,6 +497,9 @@ body.zen-mode-enable {
   .start-\[calc\(max\(-50vw\,-800px\)\+50\%\)\] {
     inset-inline-start: calc(max(-50vw, -800px) + 50%);
   }
+  .end-6 {
+    inset-inline-end: calc(var(--spacing) * 6);
+  }
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
@@ -506,17 +509,17 @@ body.zen-mode-enable {
   .top-20 {
     top: calc(var(--spacing) * 20);
   }
-  .top-\[110vh\] {
-    top: 110vh;
-  }
-  .top-\[calc\(100vh-5\.5rem\)\] {
-    top: calc(100vh - 5.5rem);
-  }
   .right-0 {
     right: calc(var(--spacing) * 0);
   }
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
+  }
+  .bottom-6 {
+    bottom: calc(var(--spacing) * 6);
+  }
+  .bottom-24 {
+    bottom: calc(var(--spacing) * 24);
   }
   .left-0 {
     left: calc(var(--spacing) * 0);
@@ -535,6 +538,9 @@ body.zen-mode-enable {
   }
   .z-30 {
     z-index: 30;
+  }
+  .z-50 {
+    z-index: 50;
   }
   .z-80 {
     z-index: 80;
@@ -1204,9 +1210,6 @@ body.zen-mode-enable {
   .mb-12 {
     margin-bottom: calc(var(--spacing) * 12);
   }
-  .mb-16 {
-    margin-bottom: calc(var(--spacing) * 16);
-  }
   .mb-20 {
     margin-bottom: calc(var(--spacing) * 20);
   }
@@ -1536,6 +1539,14 @@ body.zen-mode-enable {
   }
   .-translate-y-8 {
     --tw-translate-y: calc(var(--spacing) * -8);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .translate-y-0 {
+    --tw-translate-y: calc(var(--spacing) * 0);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .translate-y-4 {
+    --tw-translate-y: calc(var(--spacing) * 4);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .scale-0 {
@@ -3213,11 +3224,6 @@ body.zen-mode-enable {
       grid-template-columns: repeat(5, minmax(0, 1fr));
     }
   }
-  .ltr\:right-0 {
-    &:where(:dir(ltr), [dir="ltr"], [dir="ltr"] *) {
-      right: calc(var(--spacing) * 0);
-    }
-  }
   .ltr\:mr-4 {
     &:where(:dir(ltr), [dir="ltr"], [dir="ltr"] *) {
       margin-right: calc(var(--spacing) * 4);
@@ -3241,11 +3247,6 @@ body.zen-mode-enable {
   .ltr\:inline {
     &:where(:dir(ltr), [dir="ltr"], [dir="ltr"] *) {
       display: inline;
-    }
-  }
-  .rtl\:left-0 {
-    &:where(:dir(rtl), [dir="rtl"], [dir="rtl"] *) {
-      left: calc(var(--spacing) * 0);
     }
   }
   .rtl\:-mr-\[79px\] {
@@ -3806,6 +3807,9 @@ pre {
 }
 [id^="fn"], [id^="fnref"] {
   scroll-margin-top: 145px;
+}
+#main-content {
+  scroll-margin-top: -125px;
 }
 @media (width >= 640px) {
   .article {

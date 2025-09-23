@@ -353,8 +353,8 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `buymeacoffee.identifier` | _Not set_ | The identifier to the target buymeacoffee account. |
 | `buymeacoffee.globalWidget` | _Not set_ | Activate the global buymeacoffee widget. |
 | `buymeacoffee.globalWidgetMessage` | _Not set_ | Message what will be displayed the first time a new user lands on the site. |
-| `buymeacoffee.globalWidgetColor` | _Not set_ | Widget color in hex format. |
-| `buymeacoffee.globalWidgetPosition` | _Not set_ | Position of the widget, i.e. "Left" or "Right" |
+| `buymeacoffee.globalWidgetColor` | `#FFDD00` | Widget color in hex format. |
+| `buymeacoffee.globalWidgetPosition` | _Not set_ | Position of the widget, i.e. "left" or "right" |
 
 ### Verifications
 

@@ -353,8 +353,8 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 | `buymeacoffee.identifier`           | _未設定_   | ターゲットの buymeacoffee アカウントの識別子。                         |
 | `buymeacoffee.globalWidget`         | _未設定_   | グローバル buymeacoffee ウィジェットを有効にします。                   |
 | `buymeacoffee.globalWidgetMessage`  | _未設定_   | 新しいユーザーが初めてサイトにアクセスしたときに表示されるメッセージ。 |
-| `buymeacoffee.globalWidgetColor`    | _未設定_   | ウィジェットの色（16進数形式）。                                       |
-| `buymeacoffee.globalWidgetPosition` | _未設定_   | ウィジェットの位置。例えば "Left" または "Right"                       |
+| `buymeacoffee.globalWidgetColor`    | `#FFDD00`   | ウィジェットの色（16進数形式）。                                       |
+| `buymeacoffee.globalWidgetPosition` | _未設定_   | ウィジェットの位置。例えば "left" または "right"                       |
 
 ### verification
 
