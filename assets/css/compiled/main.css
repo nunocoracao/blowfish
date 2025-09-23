@@ -3811,6 +3811,9 @@ pre {
 [id^="fn"], [id^="fnref"] {
   scroll-margin-top: 145px;
 }
+#main-content {
+  scroll-margin-top: -125px;
+}
 @media (width >= 640px) {
   .article {
     flex-wrap: wrap;

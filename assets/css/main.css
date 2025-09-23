@@ -215,6 +215,11 @@ pre {
   scroll-margin-top: 145px;
 }
 
+/* patch for skip to main content */
+#main-content {
+  scroll-margin-top: -125px;
+}
+
 @variant sm {
   .article {
     flex-wrap: wrap;
