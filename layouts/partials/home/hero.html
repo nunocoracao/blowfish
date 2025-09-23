@@ -83,22 +83,20 @@
                         href="{{ $url }}"
                         target="_blank"
                         aria-label="{{ $name | title }}"
-                        rel="me noopener noreferrer"
-                        >{{ partial
-                          "icon.html" $name
-                        }}</a
-                      >
+                        title="{{ $name | title }}"
+                        rel="me noopener noreferrer">
+                        {{ partial "icon.html" $name }}
+                      </a>
                     {{ else }}
                       <a
                         class="px-1 hover:text-primary-400 text-primary-800 dark:text-primary-200"
                         href="{{ $url }}"
                         target="_blank"
                         aria-label="{{ $name | title }}"
-                        rel="me noopener noreferrer"
-                        >{{ partial
-                          "icon.html" $name
-                        }}</a
-                      >
+                        title="{{ $name | title }}"
+                        rel="me noopener noreferrer">
+                        {{ partial "icon.html" $name }}
+                      </a>
                     {{ end }}
                   {{ end }}
                 {{ end }}
