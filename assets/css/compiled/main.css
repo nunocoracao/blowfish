@@ -747,7 +747,7 @@ body.zen-mode-enable {
     }
     :where(hr):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
       border-color: var(--tw-prose-hr);
-      border-top-width: 1;
+      border-top-width: 1px;
       margin-top: 3em;
       margin-bottom: 3em;
     }
@@ -832,7 +832,7 @@ body.zen-mode-enable {
       font-weight: 600;
       font-family: inherit;
       color: var(--tw-prose-kbd);
-      box-shadow: 0 0 0 1px rgb(var(--tw-prose-kbd-shadows) / 10%), 0 3px 0 rgb(var(--tw-prose-kbd-shadows) / 10%);
+      box-shadow: 0 0 0 1px var(--tw-prose-kbd-shadows), 0 3px 0 var(--tw-prose-kbd-shadows);
       font-size: 0.9rem;
       border-radius: 0.25rem;
       padding-top: 0.1875em;
@@ -978,7 +978,7 @@ body.zen-mode-enable {
     --tw-prose-quote-borders: rgba(var(--color-primary-200), 1);
     --tw-prose-captions: rgba(var(--color-neutral-500), 1);
     --tw-prose-kbd: oklch(21% 0.034 264.665);
-    --tw-prose-kbd-shadows: NaN NaN NaN;
+    --tw-prose-kbd-shadows: color-mix(in oklab, oklch(21% 0.034 264.665) 10%, transparent);
     --tw-prose-code: rgba(var(--color-secondary-700), 1);
     --tw-prose-pre-code: rgba(var(--color-neutral-700), 1);
     --tw-prose-pre-bg: rgba(var(--color-neutral-50), 1);
@@ -996,7 +996,7 @@ body.zen-mode-enable {
     --tw-prose-invert-quote-borders: rgba(var(--color-primary-900), 1);
     --tw-prose-invert-captions: rgba(var(--color-neutral-400), 1);
     --tw-prose-invert-kbd: #fff;
-    --tw-prose-invert-kbd-shadows: 255 255 255;
+    --tw-prose-invert-kbd-shadows: rgb(255, 255, 255 / 10%);
     --tw-prose-invert-code: rgba(var(--color-secondary-400), 1);
     --tw-prose-invert-pre-code: rgba(var(--color-neutral-200), 1);
     --tw-prose-invert-pre-bg: rgba(var(--color-neutral-700), 1);
