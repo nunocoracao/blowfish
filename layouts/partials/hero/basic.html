@@ -4,7 +4,7 @@
 {{ $featuredURL := "" }}
 {{ with .Params.featureimage }}
   {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-    {{ if site.Params.hotlinkFeatureImages }}
+    {{ if site.Params.hotlinkFeatureImage }}
       {{ $featuredURL = . }}
     {{ else }}
       {{ $featured = resources.GetRemote . }}

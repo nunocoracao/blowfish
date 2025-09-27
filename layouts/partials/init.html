@@ -6,7 +6,7 @@
 {{ $defaultFeaturedImageURL := "" }}
 {{ with site.Params.defaultFeaturedImage }}
   {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-    {{ if site.Params.hotlinkFeatureImages }}
+    {{ if site.Params.hotlinkFeatureImage }}
       {{ $defaultFeaturedImageURL = . }}
     {{ else }}
       {{ $defaultFeaturedImage = resources.GetRemote . }}
@@ -22,7 +22,7 @@
 {{ $defaultBackgroundImageURL := "" }}
 {{ with site.Params.defaultBackgroundImage }}
   {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-    {{ if site.Params.hotlinkFeatureImages }}
+    {{ if site.Params.hotlinkFeatureImage }}
       {{ $defaultBackgroundImageURL = . }}
     {{ else }}
       {{ $defaultBackgroundImage = resources.GetRemote . }}
