@@ -124,13 +124,13 @@ Call to action
 
 ## Carousel
 
-`carousel` is used to showcase multiple images in an interactive and visually appealing way. This allows a user to slide through multiple images while only taking up the vertical space of a single one. All images are displayed using the full width of the parent component and using one of the predefined aspect ratios of `16:9`, `21:9` or `32:9`.
+`carousel` is used to showcase multiple images in an interactive and visually appealing way. This allows a user to slide through multiple images while only taking up the vertical space of a single one. All images are displayed using the full width of the parent component and the aspect ratio you set with a default of `16:9`.
 
 <!-- prettier-ignore-start -->
 | Parameter | Description |
 | --- | --- |
 | `images` | **Required.** A regex string to match image names or URLs. |
-| `aspectRatio` | **Optional.** The aspect ratio for the carousel. Either `16-9`, `21-9` or `32-9`. It is set to `16-9` by default. |
+| `aspectRatio` | **Optional.** The aspect ratio for the carousel. It is set to `16-9` by default. |
 | `interval` | **Optional.** The interval for the auto-scrooling, specified in milliseconds. Defaults to `2000` (2s) |
 <!-- prettier-ignore-end -->
 
