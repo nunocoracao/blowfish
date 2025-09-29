@@ -2964,14 +2964,14 @@ body.zen-mode-enable {
       margin-inline-end: calc(var(--spacing) * -16);
     }
   }
+  .md\:me-7 {
+    @media (width >= 853px) {
+      margin-inline-end: calc(var(--spacing) * 7);
+    }
+  }
   .md\:mt-0 {
     @media (width >= 853px) {
       margin-top: calc(var(--spacing) * 0);
-    }
-  }
-  .md\:mr-7 {
-    @media (width >= 853px) {
-      margin-right: calc(var(--spacing) * 7);
     }
   }
   .md\:ml-12 {
@@ -3237,11 +3237,6 @@ body.zen-mode-enable {
   .ltr\:inline {
     &:where(:dir(ltr), [dir="ltr"], [dir="ltr"] *) {
       display: inline;
-    }
-  }
-  .ltr\:text-right {
-    &:where(:dir(ltr), [dir="ltr"], [dir="ltr"] *) {
-      text-align: right;
     }
   }
   .rtl\:left-0 {

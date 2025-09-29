@@ -11,7 +11,7 @@
 {{ if .Site.Params.list.showCards }}
   {{ $articleImageClasses = delimit (slice $articleImageClasses "") " " }}
 {{ else }}
-  {{ $articleImageClasses = delimit (slice $articleImageClasses "thumbnailshadow md:mr-7") " " }}
+  {{ $articleImageClasses = delimit (slice $articleImageClasses "thumbnailshadow md:me-7") " " }}
 {{ end }}
 
 {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
