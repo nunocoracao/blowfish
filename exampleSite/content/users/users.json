@@ -881,5 +881,22 @@
       "Personal site",
       "Technology Blog"
     ]
+  },
+  {
+    "title": "encelo.github.io",
+    "url": "https://encelo.github.io/",
+    "source": "https://github.com/encelo/encelo.github.io",
+    "tags": [
+      "Personal site",
+      "Blog"
+    ]
+  },
+  {
+    "title": "ncine.github.io",
+    "url": "https://ncine.github.io/",
+    "source": "https://github.com/nCine/nCine-site",
+    "tags": [
+      "Project site"
+    ]
   }
 ]
