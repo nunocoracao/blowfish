@@ -881,5 +881,14 @@
       "Personal site",
       "Technology Blog"
     ]
+  },
+  {
+    "title": "metalhearf.fr",
+    "url": "https://metalhearf.fr",
+    "source": "n/a",
+    "tags": [
+      "Blog",
+      "Personal site"
+    ]
   }
 ]
