@@ -29,10 +29,11 @@ series_order: 7
 | `showAuthorBottom` | `article.showAuthorBottom` | 著者ボックスは、各ページの上部ではなく下部に表示されます。 |
 | `authors` | _未設定_ | 著者の値の配列。設定されている場合、ページまたはサイトの `showAuthor` 設定を上書きします。複数人の著者機能で使用されます。この機能の設定方法の詳細については、[このページ]({{< ref "multi-author" >}})をご覧ください。 |
 | `showAuthorsBadges` | `article.showAuthorsBadges` | 記事またはリストヘッダーに `authors` タクソノミーを表示するかどうか。これには、`複数人の著者` と `authors` タクソノミーの設定が必要です。この機能の設定方法の詳細については、[このページ]({{< ref "multi-author" >}})をご覧ください。 |
-| `featureimage` | _未設定_ | フィーチャー画像の外部 URL。 |
+| `featureimage` | _未設定_ | フィーチャー画像の外部リンク。 |
 | `featureimagecaption` | _未設定_ | フィーチャー画像のキャプション。heroStyle `big` でのみ表示されます。 |
 | `showHero` | `article.showHero` | 記事ページ内でサムネイル画像をヒーロー画像として表示するかどうか。 |
 | `heroStyle` | `article.heroStyle` | ヒーロー画像の表示スタイル。有効なオプションは、`basic`、`big`、`background`、`thumbAndBackground` です。 |
+| `imagePosition` | _未設定_ | `object-position` 属性を使用してフィーチャー画像の位置を設定します。有効な値は [MDN ドキュメント](https://developer.mozilla.org/en-US/docs/Web/CSS/object-position#try_it) に記載されています。 |
 | `showBreadcrumbs` | `article.showBreadcrumbs` <br/>または `list.showBreadcrumbs` | 記事またはリストヘッダーにパンくずリストを表示するかどうか。 |
 | `showDate` | `article.showDate` | 記事の日付を表示するかどうか。日付は `date` パラメータを使用して設定されます。 |
 | `showDateUpdated` | `article.showDateUpdated` | 記事が更新された日付を表示するかどうか。日付は `lastmod` パラメータを使用して設定されます。 |

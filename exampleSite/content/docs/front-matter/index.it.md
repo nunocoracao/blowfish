@@ -28,10 +28,11 @@ I valori predefiniti dei parametri del front metter vengono ereditati dalla [con
 | `showAuthor` | `article.showAuthor` | Se la casella dell'autore predefinito viene visualizzata o meno nel piè di pagina dell'articolo. |
 | `authors` | _Not set_ | Matrice di valori per gli autori, se impostata sovrascrive le impostazioni di "showAuthor" per la pagina o il sito. Utilizzato nella funzionalità per più autori, controlla [questa pagina]({{< ref "multi-author" >}}) per maggiori dettagli su come configurare tale funzionalità. |
 | `showAuthorsBadges` | `article.showAuthorsBadges` | Se le tassonomie degli "autori" vengono visualizzate nell'articolo o nell'intestazione dell'elenco. Ciò richiede l'impostazione di "autori multipli" e la tassonomia degli "autori". Controlla [questa pagina]({{< ref "multi-author" >}}) per maggiori dettagli su come configurare questa funzione. |
-| `featureimage`                | _Not set_                                                                                                       | URL esterno per l'immagine in primo piano
-| `featureimagecaption`         | _Not set_                                                                                                       | Didascalia per l'immagine in primo piano. Visualizzato solo in heroStyle "big".
+| `featureimage` | _Not set_ | Link per l'immagine in primo piano |
+| `featureimagecaption` | _Not set_ | Didascalia per l'immagine in primo piano. Visualizzato solo in heroStyle "big". |
 | `showHero` | `article.showHero` | Se l'immagine in miniatura verrà mostrata come immagine hero all'interno della pagina dell'articolo. |
-| `heroStyle` | `article.heroStyle` | Stile per visualizzare l'immagine hero, le opzioni valide sono: `basic`, `big`, ` background`, `thumbAndBackground`. |
+| `heroStyle` | `article.heroStyle` | Stile per visualizzare l'immagine hero, le opzioni valide sono: `basic`, `big`, `background`, `thumbAndBackground`. |
+| `imagePosition` | _Not set_ | Imposta la posizione dell'immagine in evidenza utilizzando l'attributo `object-position`. I valori validi sono specificati nella [documentazione MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/object-position#try_it). |
 | `showBreadcrumbs` | `article.showBreadcrumbs` or `list.showBreadcrumbs` | Se i breadcrumb vengono visualizzati nell'articolo o nell'intestazione dell'elenco. |
 | `showDate` | `article.showDate` | Se viene visualizzata o meno la data dell'articolo. La data viene impostata utilizzando il parametro "data". |
 | `showDateUpdated` | `article.showDateUpdated` | Se viene visualizzata o meno la data di aggiornamento dell'articolo. La data viene impostata utilizzando il parametro "lastmod". |

@@ -186,6 +186,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `defaultFeaturedImage` | _Not set_ | Default background image for all `featured` images across articles, will be overridden by a local `featured` image. |
 | `defaultSocialImage` | _Not set_ | Default image for social media sharing (Open Graph and Twitter). Will be overridden by a local `feature` image if available. |
 | `hotlinkFeatureImage` | `false` | Hotlink external images in article feature images and article cards. Those images will not be processed by Hugo. |
+| `imagePosition` | _Not set_ | Sets the position of the default image using `object-position` attribute. Valid values are as specified in the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/object-position#try_it). |
 | `highlightCurrentMenuArea` | _Not set_ | Marks menu entries in the main menu when selected |
 | `smartTOC` | _Not set_ | Activate smart Table of Contents, items in view will be highlighted. |
 | `smartTOCHideUnfocusedChildren` | _Not set_ | When smart Table of Contents is turned on, this will hide deeper levels of the table when they are not in focus. |
