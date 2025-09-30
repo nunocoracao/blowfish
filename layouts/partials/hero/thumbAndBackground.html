@@ -1,6 +1,7 @@
 {{ $disableImageOptimization := site.Store.Get "disableImageOptimization" }}
 
 {{/* === Background === */}}
+{{ $useDefault := false }}
 {{ $images := .Resources.ByType "image" }}
 {{ $background := $images.GetMatch "*background*" }}
 {{ $backgroundURL := "" }}
@@ -9,8 +10,10 @@
   {{ $default := site.Store.Get "defaultBackgroundImage" }}
   {{ if $default.url }}
     {{ $backgroundURL = $default.url }}
+    {{ $useDefault = true }}
   {{ else if $default.obj }}
     {{ $background = $default.obj }}
+    {{ $useDefault = true }}
   {{ end }}
 {{ end }}
 
@@ -88,13 +91,19 @@
       loading="eager"
       decoding="async"
       fetchpriority="high"
-      class="w-full h-full nozoom object-cover">
+      class="w-full h-full nozoom object-cover"
+      {{ with $.Params.imagePositionFeature }}style="object-position: {{ . }};"{{ end }}>
   </div>
 {{ end }}
 
 
 <div class="single_hero_background nozoom fixed inset-x-0 top-0 h-[800px]">
   {{ with $backgroundURL }}
+    {{ $style := "" }}
+    {{ $defaultPosition := cond $useDefault site.Params.imagePosition false }}
+    {{ with $.Params.imagePosition | default $defaultPosition }}
+      {{ $style = printf "object-position: %s;" . }}
+    {{ end }}
     <img
       id="background-image-main"
       src="{{ . }}"
@@ -102,7 +111,8 @@
       loading="eager"
       decoding="async"
       fetchpriority="high"
-      class="absolute inset-0 h-full w-full object-cover">
+      class="absolute inset-0 h-full w-full object-cover"
+      {{ if $style }}style="{{ $style | safeCSS }}"{{ end }}>
   {{ end }}
   <div
     class="from-neutral absolute inset-0 bg-gradient-to-t to-transparent mix-blend-normal dark:from-neutral-800"></div>

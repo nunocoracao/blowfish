@@ -1,5 +1,6 @@
 {{ $disableImageOptimization := site.Store.Get "disableImageOptimization" }}
 
+{{ $useDefault := false }}
 {{ $featured := "" }}
 {{ $featuredURL := "" }}
 {{ with .Params.featureimage }}
@@ -25,8 +26,10 @@
   {{ $default := site.Store.Get "defaultBackgroundImage" }}
   {{ if $default.url }}
     {{ $featuredURL = $default.url }}
+    {{ $useDefault = true }}
   {{ else if $default.obj }}
     {{ $featured = $default.obj }}
+    {{ $useDefault = true }}
   {{ end }}
 {{ end }}
 
@@ -42,6 +45,11 @@
 {{ end }}
 
 {{ with $featuredURL }}
+  {{ $style := "" }}
+  {{ $defaultPosition := cond $useDefault site.Params.imagePosition false }}
+  {{ with $.Params.imagePosition | default $defaultPosition }}
+    {{ $style = printf "object-position: %s;" . }}
+  {{ end }}
   <div class="overflow-hidden h-36 md:h-56 lg:h-72">
     <img
       src="{{ . }}"
@@ -49,6 +57,7 @@
       loading="eager"
       decoding="async"
       fetchpriority="high"
-      class="w-full h-full nozoom object-cover">
+      class="w-full h-full nozoom object-cover"
+      {{ if $style }}style="{{ $style | safeCSS }}"{{ end }}>
   </div>
 {{ end }}

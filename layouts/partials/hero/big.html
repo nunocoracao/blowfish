@@ -1,5 +1,6 @@
 {{ $disableImageOptimization := site.Store.Get "disableImageOptimization" }}
 
+{{ $useDefault := false }}
 {{ $featured := "" }}
 {{ $featuredURL := "" }}
 {{ with .Params.featureimage }}
@@ -25,8 +26,10 @@
   {{ $default := site.Store.Get "defaultBackgroundImage" }}
   {{ if $default.url }}
     {{ $featuredURL = $default.url }}
+    {{ $useDefault = true }}
   {{ else if $default.obj }}
     {{ $featured = $default.obj }}
+    {{ $useDefault = true }}
   {{ end }}
 {{ end }}
 
@@ -50,6 +53,11 @@
 {{- with .Page.Params.alt }}{{ $alt = . }}{{ end -}}
 
 {{ with $featuredURL }}
+  {{ $style := "" }}
+  {{ $defaultPosition := cond $useDefault site.Params.imagePosition false }}
+  {{ with $.Params.imagePosition | default $defaultPosition }}
+    {{ $style = printf "object-position: %s;" . }}
+  {{ end }}
   <figure>
     <img
       src="{{ . }}"
@@ -57,7 +65,8 @@
       loading="eager"
       decoding="async"
       fetchpriority="high"
-      class="w-full rounded-lg single_hero_round nozoom">
+      class="w-full rounded-lg single_hero_round nozoom"
+      {{ if $style }}style="{{ $style | safeCSS }}"{{ end }}>
     {{ if $caption }}
       <figcaption class="text-sm text-neutral-700 dark:text-neutral-400 hover:underline text-center">
         {{ $caption | markdownify }}
