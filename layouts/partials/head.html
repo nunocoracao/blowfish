@@ -8,21 +8,21 @@
   <meta name="theme-color">
 
   {{/* Title */}}
-  {{ if .IsHome -}}
+  {{ if .IsHome }}
     <title>{{ .Site.Title | emojify }}</title>
     <meta name="title" content="{{ .Site.Title | emojify }}">
-  {{- else -}}
+  {{ else }}
     <title>{{ .Title | emojify }} &middot; {{ .Site.Title | emojify }}</title>
     <meta name="title" content="{{ .Title | emojify }} &middot; {{ .Site.Title | emojify }}">
-  {{- end }}
+  {{ end }}
 
   {{/* Metadata */}}
-  {{ with (.Params.Summary | default .Params.Description) | default .Site.Params.description -}}
+  {{ with (.Params.Summary | default .Params.Description) | default .Site.Params.description }}
     <meta name="description" content="{{ . }}">
-  {{- end }}
-  {{ with  .Params.Tags | default .Site.Params.keywords -}}
-    <meta name="keywords" content="{{ range . }}{{ . }},{{ end -}}">
-  {{- end }}
+  {{ end }}
+  {{ with  .Params.Tags | default .Site.Params.keywords }}
+    <meta name="keywords" content="{{ range . }}{{ . }},{{ end }}">
+  {{ end }}
   {{ with .Site.Params.robots }}
     <meta name="robots" content="{{ . }}">
   {{ end }}
@@ -30,12 +30,12 @@
     <meta name="robots" content="{{ . }}">
   {{ end }}
   <link rel="canonical" href="{{ .Permalink }}">
-  {{ range .AlternativeOutputFormats -}}
+  {{ range .AlternativeOutputFormats }}
     {{ printf `
       <link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink ($.Site.Title | emojify) |
       safeHTML
     }}
-  {{ end -}}
+  {{ end }}
 
   {{ $alg := .Site.Params.fingerprintAlgorithm | default "sha512" }}
 
@@ -143,25 +143,25 @@
   {{ template "_internal/opengraph.html" . }}
   {{ template "_internal/twitter_cards.html" . }}
 
-  {{- /* Main page always uses this; fallback elsewhere if no feature image */ -}}
-  {{- /* See https://gohugo.io/templates/embedded/#open-graph */ -}}
-  {{- $images := .Resources.ByType "image" -}}
-  {{- $socialImage := $images.GetMatch "*feature*" -}}
+  {{ /* Main page always uses this; fallback elsewhere if no feature image */ }}
+  {{ /* See https://gohugo.io/templates/embedded/#open-graph */ }}
+  {{ $images := .Resources.ByType "image" }}
+  {{ $socialImage := $images.GetMatch "*feature*" }}
 
-  {{- if not $socialImage -}}
-    {{- with .Site.Params.defaultSocialImage -}}
-      {{- if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") -}}
-        {{- $socialImage = resources.GetRemote . -}}
-      {{- else -}}
-        {{- $socialImage = resources.Get . -}}
-      {{- end -}}
-    {{- end -}}
-  {{- end -}}
+  {{ if not $socialImage }}
+    {{ with .Site.Params.defaultSocialImage }}
+      {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+        {{ $socialImage = resources.GetRemote . }}
+      {{ else }}
+        {{ $socialImage = resources.Get . }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
 
-  {{- with $socialImage -}}
+  {{ with $socialImage }}
     <meta name="twitter:image" content="{{ .RelPermalink | absURL }}">
     <meta property="og:image" content="{{ .RelPermalink | absURL }}">
-  {{- end -}}
+  {{ end }}
 
   {{/* Schema */}}
   {{ partial "schema.html" . }}
@@ -202,7 +202,7 @@
       <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
       <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
       <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-  <script>
+      <script>
 
     const firebaseConfig = {
       apiKey: {{ $.Site.Params.firebase.apiKey }},
@@ -214,11 +214,11 @@
       measurementId: {{ $.Site.Params.firebase.measurementId }}
     };
 
-    var app = firebase.initializeApp(firebaseConfig);
-    var db = firebase.firestore();
-    var auth = firebase.auth();
+        var app = firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+        var auth = firebase.auth();
 
-  </script>
+      </script>
     {{ end }}
   {{ end }}
 
