@@ -37,6 +37,59 @@
     }}
   {{ end }}
 
+  {{/* Me */}}
+  {{ with .Site.Params.Author.name }}
+    <meta name="author" content="{{ . }}">
+  {{ end }}
+  {{ with .Site.Params.Author.links }}
+    {{ range $links := . }}
+      {{ range $name, $url := $links }}
+        {{ if not (strings.HasPrefix $url "mailto:") }}
+          <link href="{{ $url }}" rel="me">
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{/* Social */}}
+  {{ template "_internal/opengraph.html" . }}
+  {{ template "_internal/twitter_cards.html" . }}
+
+  {{/* Main page always uses this; fallback elsewhere if no feature image */}}
+  {{/* See https://gohugo.io/templates/embedded/#open-graph */}}
+  {{ $images := .Resources.ByType "image" }}
+  {{ $socialImage := $images.GetMatch "*feature*" }}
+  {{ if not $socialImage }}
+    {{ with .Site.Params.defaultSocialImage }}
+      {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+        {{ $socialImage = resources.GetRemote . }}
+      {{ else }}
+        {{ $socialImage = resources.Get . }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  {{ with $socialImage }}
+    <meta name="twitter:image" content="{{ .RelPermalink | absURL }}">
+    <meta property="og:image" content="{{ .RelPermalink | absURL }}">
+  {{ end }}
+
+  {{/* Site Verification */}}
+  {{ with .Site.Params.verification.google }}
+    <meta name="google-site-verification" content="{{ . }}">
+  {{ end }}
+  {{ with .Site.Params.verification.bing }}
+    <meta name="msvalidate.01" content="{{ . }}">
+  {{ end }}
+  {{ with .Site.Params.verification.pinterest }}
+    <meta name="p:domain_verify" content="{{ . }}">
+  {{ end }}
+  {{ with .Site.Params.verification.yandex }}
+    <meta name="yandex-verification" content="{{ . }}">
+  {{ end }}
+  {{ with .Site.Params.verification.fediverse }}
+    <meta name="fediverse:creator" content="{{ . }}">
+  {{ end }}
+
   {{ $alg := .Site.Params.fingerprintAlgorithm | default "sha512" }}
 
   {{/* CSS */}}
@@ -112,6 +165,9 @@
       data-copied="{{ i18n "code.copied" }}"></script>
   {{ end }}
 
+  {{/* Conditional loaded resources */}}
+  {{ partial "vendor.html" . }}
+
   {{/* Icons */}}
   {{ if templates.Exists "partials/favicons.html" }}
     {{ partialCached "favicons.html" .Site }}
@@ -122,66 +178,8 @@
     <link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
   {{ end }}
 
-  {{/* Site Verification */}}
-  {{ with .Site.Params.verification.google }}
-    <meta name="google-site-verification" content="{{ . }}">
-  {{ end }}
-  {{ with .Site.Params.verification.bing }}
-    <meta name="msvalidate.01" content="{{ . }}">
-  {{ end }}
-  {{ with .Site.Params.verification.pinterest }}
-    <meta name="p:domain_verify" content="{{ . }}">
-  {{ end }}
-  {{ with .Site.Params.verification.yandex }}
-    <meta name="yandex-verification" content="{{ . }}">
-  {{ end }}
-  {{ with .Site.Params.verification.fediverse }}
-    <meta name="fediverse:creator" content="{{ . }}">
-  {{ end }}
-
-  {{/* Social */}}
-  {{ template "_internal/opengraph.html" . }}
-  {{ template "_internal/twitter_cards.html" . }}
-
-  {{ /* Main page always uses this; fallback elsewhere if no feature image */ }}
-  {{ /* See https://gohugo.io/templates/embedded/#open-graph */ }}
-  {{ $images := .Resources.ByType "image" }}
-  {{ $socialImage := $images.GetMatch "*feature*" }}
-
-  {{ if not $socialImage }}
-    {{ with .Site.Params.defaultSocialImage }}
-      {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-        {{ $socialImage = resources.GetRemote . }}
-      {{ else }}
-        {{ $socialImage = resources.Get . }}
-      {{ end }}
-    {{ end }}
-  {{ end }}
-
-  {{ with $socialImage }}
-    <meta name="twitter:image" content="{{ .RelPermalink | absURL }}">
-    <meta property="og:image" content="{{ .RelPermalink | absURL }}">
-  {{ end }}
-
   {{/* Schema */}}
   {{ partial "schema.html" . }}
-
-  {{/* Me */}}
-  {{ with .Site.Params.Author.name }}
-    <meta name="author" content="{{ . }}">
-  {{ end }}
-  {{ with .Site.Params.Author.links }}
-    {{ range $links := . }}
-      {{ range $name, $url := $links }}
-        {{ if not (strings.HasPrefix $url "mailto:") }}
-          <link href="{{ $url }}" rel="me">
-        {{ end }}
-      {{ end }}
-    {{ end }}
-  {{ end }}
-
-  {{/* Vendor */}}
-  {{ partial "vendor.html" . }}
 
   {{/* Analytics */}}
   {{ partial "analytics/main.html" .Site }}
