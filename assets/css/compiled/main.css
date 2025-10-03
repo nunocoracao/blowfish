@@ -3746,8 +3746,8 @@ button, [role="button"] {
   overflow: auto hidden;
 }
 .katex-display {
-  padding-right: 2px;
-  width: calc(100% - 2px);
+  padding: 1em;
+  width: calc(100% - 1em);
 }
 table {
   display: block;
