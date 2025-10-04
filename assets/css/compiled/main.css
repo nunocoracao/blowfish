@@ -1974,9 +1974,6 @@ body.zen-mode-enable {
   .p-1\.5 {
     padding: calc(var(--spacing) * 1.5);
   }
-  .p-2\.5 {
-    padding: calc(var(--spacing) * 2.5);
-  }
   .p-4 {
     padding: calc(var(--spacing) * 4);
   }
@@ -2088,9 +2085,6 @@ body.zen-mode-enable {
   .pr-8 {
     padding-right: calc(var(--spacing) * 8);
   }
-  .pb-0 {
-    padding-bottom: calc(var(--spacing) * 0);
-  }
   .pb-2 {
     padding-bottom: calc(var(--spacing) * 2);
   }
@@ -2111,9 +2105,6 @@ body.zen-mode-enable {
   }
   .pl-0 {
     padding-left: calc(var(--spacing) * 0);
-  }
-  .pl-4 {
-    padding-left: calc(var(--spacing) * 4);
   }
   .text-center {
     text-align: center;
