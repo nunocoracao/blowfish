@@ -289,10 +289,13 @@
 {{ if .Site.Params.highlightCurrentMenuArea }}
   <script>
     (function () {
-      var $mainmenu = $(".main-menu");
-      var path = window.location.pathname;
-      $mainmenu.find('a[href="' + path + '"]').each(function (i, e) {
-        $(e).children("p").addClass("active");
+      const mainMenu = document.querySelector(".main-menu");
+      if (!mainMenu) return;
+
+      const path = window.location.pathname;
+      mainMenu.querySelectorAll(`a[href="${path}"]`).forEach((link) => {
+        const p = link.querySelector("p");
+        if (p) p.classList.add("active");
       });
     })();
   </script>

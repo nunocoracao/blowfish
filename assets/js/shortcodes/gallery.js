@@ -27,9 +27,9 @@ function _getPackeryOptions(nodeGallery) {
 }
 
 (function init() {
-  $(window).on("load", function () {
-    let packeries = [];
-    let nodeGalleries = document.querySelectorAll(".gallery");
+  window.addEventListener("load", function () {
+    const packeries = [];
+    const nodeGalleries = document.querySelectorAll(".gallery");
 
     nodeGalleries.forEach((nodeGallery) => {
       let packery = new Packery(nodeGallery, _getPackeryOptions(nodeGallery));

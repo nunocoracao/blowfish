@@ -1,7 +1,3 @@
-{{/* jQuery */}}
-{{ $jqueryLib := resources.Get "lib/jquery/jquery.slim.min.js" | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
-<script src="{{ $jqueryLib.RelPermalink }}" integrity="{{ $jqueryLib.Data.Integrity }}"></script>
-
 {{/* Mermaid */}}
 {{ if .Page.HasShortcode "mermaid" }}
   {{ $mermaidLib := resources.Get "lib/mermaid/mermaid.min.js" }}
