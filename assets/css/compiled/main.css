@@ -3773,6 +3773,7 @@ pre {
   object-fit: cover;
 }
 .single_hero_background {
+  width: calc(100% + 1px);
   z-index: -10;
 }
 .hero_gradient {

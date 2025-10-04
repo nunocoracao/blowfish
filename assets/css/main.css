@@ -169,6 +169,7 @@ pre {
 }
 
 .single_hero_background {
+  width: calc(100% + 1px); /* patch for very small gap at right edge on mobile devices */
   z-index: -10;
 }
 
