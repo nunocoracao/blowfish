@@ -245,6 +245,7 @@ body.zen-mode-enable {
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --spacing: 0.25rem;
+    --container-2xs: 18rem;
     --container-xs: 20rem;
     --container-xl: 36rem;
     --container-3xl: 48rem;
@@ -3120,6 +3121,11 @@ body.zen-mode-enable {
       width: auto;
     }
   }
+  .lg\:max-w-2xs {
+    @media (width >= 1024px) {
+      max-width: var(--container-2xs);
+    }
+  }
   .lg\:max-w-7xl {
     @media (width >= 1024px) {
       max-width: var(--container-7xl);
@@ -3637,11 +3643,6 @@ button, [role="button"] {
 }
 .prose div.min-w-0.max-w-prose > *:first-child {
   margin-top: calc(var(--spacing) * 3);
-}
-#TableOfContents {
-  @media (width >= 1024px) {
-    max-width: 25vw;
-  }
 }
 #TOCView {
   max-height: calc(100vh - 150px);

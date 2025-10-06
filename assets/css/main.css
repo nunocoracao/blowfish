@@ -66,10 +66,6 @@ button,
 }
 
 /* Table of Contents */
-#TableOfContents {
-  @apply lg:max-w-[25vw];
-}
-
 #TOCView {
   max-height: calc(100vh - 150px);
   min-height: 0;
