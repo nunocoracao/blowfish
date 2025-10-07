@@ -42,9 +42,12 @@
               href="{{ $link }}"
               target="_blank"
               aria-label="{{ $name | title }}"
-              rel="me noopener noreferrer"
-              ><span class="inline-block align-text-bottom">{{ partial "icon.html" $name }}</span></a
-            >
+              title="{{ $name | title }}"
+              rel="me noopener noreferrer">
+              <span class="inline-block align-text-bottom">
+                {{ partial "icon.html" $name }}
+              </span>
+            </a>
           {{ end }}
         {{ end }}
       </div>

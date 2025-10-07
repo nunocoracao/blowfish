@@ -883,6 +883,23 @@
     ]
   },
   {
+    "title": "tbsch.de | Smart Home, Technik, Kram",
+    "url": "https://tbsch.de",
+    "source": "n/a",
+    "tags": [
+      "Personal site"
+    ]
+  },
+{
+    "title": "metalhearf.fr",
+    "url": "https://metalhearf.fr",
+    "source": "n/a",
+    "tags": [
+      "Blog",
+      "Personal site"
+    ]
+  },
+  {  
     "title": "encelo.github.io",
     "url": "https://encelo.github.io/",
     "source": "https://github.com/encelo/encelo.github.io",
@@ -899,4 +916,3 @@
       "Project site"
     ]
   }
-]

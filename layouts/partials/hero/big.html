@@ -1,16 +1,23 @@
 {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
 
-{{- $images := .Resources.ByType "image" -}}
-{{- $featured := $images.GetMatch "*background*" -}}
-{{- if not $featured }}{{ $featured = $images.GetMatch "*feature*" }}{{ end -}}
-{{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
-
+{{ $featured := "" }}
 {{ if .Params.featureimage }}
-  {{- $url:= .Params.featureimage -}}
-  {{- if not $featured }}{{ $featured = resources.GetRemote $url }}{{ end -}}
+  {{ $url := .Params.featureimage }}
+  {{ if or (strings.HasPrefix $url "http:") (strings.HasPrefix $url "https:") }}
+    {{ $featured = resources.GetRemote $url }}
+  {{ else }}
+    {{ $featured = resources.Get $url }}
+  {{ end }}
 {{ end }}
 
-{{- if not $featured }}
+{{ if not $featured }}
+  {{ $images := $.Resources.ByType "image" }}
+  {{ range slice "*background*" "*feature*" "*cover*" "*thumbnail*" }}
+    {{ if not $featured }}{{ $featured = $images.GetMatch . }}{{ end }}
+  {{ end }}
+{{ end }}
+
+{{ if not $featured }}
   {{ with .Site.Params.defaultBackgroundImage }}
     {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
       {{ $featured = resources.GetRemote . }}
@@ -18,7 +25,7 @@
       {{ $featured = resources.Get . }}
     {{ end }}
   {{ end }}
-{{ end -}}
+{{ end }}
 
 {{ $caption := "" }}
 {{ if .Params.featureimagecaption }}
