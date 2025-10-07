@@ -27,7 +27,7 @@
     <div class="relative flex flex-col grow">
       <main id="main-content" class="grow">
         {{ block "main" . }}{{ end }}
-        {{ if and (site.Params.footer.showScrollToTop | default true) (gt .WordCount 1) }}
+        {{ if and (site.Params.footer.showScrollToTop | default true) }}
           {{- partial "scroll-to-top.html" . -}}
         {{ end }}
       </main>
