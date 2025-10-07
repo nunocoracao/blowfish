@@ -38,7 +38,7 @@
   "devDependencies": {
     "@awmottaz/prettier-plugin-void-html": "^1.9.0",
     "@tailwindcss/cli": "^4.1.13",
-    "@tailwindcss/typography": "^0.5.18",
+    "@tailwindcss/typography": "^0.5.19",
     "chart.js": "^4.5.0",
     "fuse.js": "^7.1.0",
     "jquery": "^3.7.1",
