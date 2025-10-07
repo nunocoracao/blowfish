@@ -882,7 +882,6 @@
       "Technology Blog"
     ]
   },
-  {
     "title": "tbsch.de | Smart Home, Technik, Kram",
     "url": "https://tbsch.de",
     "source": "n/a",
@@ -890,4 +889,13 @@
       "Personal site"
     ]
   },
+{
+    "title": "metalhearf.fr",
+    "url": "https://metalhearf.fr",
+    "source": "n/a",
+    "tags": [
+      "Blog",
+      "Personal site"
+    ]
+  }
 ]
