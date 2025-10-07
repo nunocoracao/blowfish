@@ -1,14 +1,10 @@
 <!doctype html>
 <html
-  lang="{{ with site.Params.isoCode | default (site.LanguageCode | default " en") }}{{- . -}}{{ end }}"
-  dir="{{ if site.Params.rtl | default false -}}
-    rtl
-  {{- else -}}
-    ltr
-  {{- end }}"
+  lang="{{ with site.Params.isoCode | default (site.LanguageCode | default `en`) }}{{- . -}}{{ end }}"
+  dir="{{ cond (site.Params.rtl | default false) `rtl` `ltr` }}"
   class="scroll-smooth"
-  data-default-appearance="{{ site.Params.defaultAppearance | default " light" }}"
-  data-auto-appearance="{{ site.Params.autoSwitchAppearance | default " true" }}">
+  data-default-appearance="{{ site.Params.defaultAppearance | default `light` }}"
+  data-auto-appearance="{{ site.Params.autoSwitchAppearance | default `true` }}">
   {{- partial "head.html" . -}}
 
 
@@ -48,9 +44,9 @@
       src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
       data-id="{{ site.Params.buymeacoffee.identifier }}"
       data-description="Support me on Buy me a coffee!"
-      data-message="{{ site.Params.buymeacoffee.globalWidgetMessage | default "" }}"
-      data-color="{{ site.Params.buymeacoffee.globalWidgetColor | default "#FFDD00" }}"
-      data-position="{{ site.Params.buymeacoffee.globalWidgetPosition | default "Left" }}"
+      {{ with site.Params.buymeacoffee.globalWidgetMessage }}data-message="{{ . }}"{{ end }}
+      {{ with site.Params.buymeacoffee.globalWidgetColor | default `#FFDD00` }}data-color="{{ . }}"{{ end }}
+      {{ with site.Params.buymeacoffee.globalWidgetPosition }}data-position="{{ . }}"{{ end }}
       data-x_margin="18"
       data-y_margin="18"></script>
   {{ end }}
