@@ -996,7 +996,7 @@ body.zen-mode-enable {
     --tw-prose-invert-quote-borders: rgba(var(--color-primary-900), 1);
     --tw-prose-invert-captions: rgba(var(--color-neutral-400), 1);
     --tw-prose-invert-kbd: #fff;
-    --tw-prose-invert-kbd-shadows: rgb(255, 255, 255 / 10%);
+    --tw-prose-invert-kbd-shadows: rgb(255 255 255 / 10%);
     --tw-prose-invert-code: rgba(var(--color-secondary-400), 1);
     --tw-prose-invert-pre-code: rgba(var(--color-neutral-200), 1);
     --tw-prose-invert-pre-bg: rgba(var(--color-neutral-700), 1);
