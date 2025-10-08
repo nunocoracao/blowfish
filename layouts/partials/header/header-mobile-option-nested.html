@@ -1,6 +1,7 @@
 <li class="mt-1">
   <a
     href="{{ .URL }}"
+    {{ with or .Name .Pre }}aria-label="{{ . }}"{{ end }}
     class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
     {{ if .Pre }}
       <span {{ if and .Pre .Name }}class="mr-1"{{ end }}>
@@ -24,6 +25,7 @@
       }}
         target="_blank"
       {{ end }}
+      {{ with or .Name .Pre }}aria-label="{{ . }}"{{ end }}
       class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
       {{ if .Pre }}
         <span {{ if and .Pre .Name }}class="mr-1"{{ end }}>
