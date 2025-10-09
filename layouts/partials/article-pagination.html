@@ -9,52 +9,36 @@
     <div class="pt-8">
       <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
       <div class="flex justify-between pt-3">
-        <span>
+        <span class="flex flex-col">
           {{ if $prev }}
-            <a class="flex group mr-3" href="{{ $prev.RelPermalink }}">
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span class="flex flex-col">
-                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >{{ $prev.Title | emojify }}</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  {{ if .Params.showDate | default (.Site.Params.article.showDate | default true) }}
-                    {{ partial "meta/date.html" $prev.Date }}
-                  {{ end }}
-                </span>
+            <a
+              class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+              href="{{ $prev.RelPermalink }}">
+              <span class="leading-6">
+                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;{{ $prev.Title | emojify }}
               </span>
             </a>
+            {{ if .Params.showDate | default (.Site.Params.article.showDate | default true) }}
+              <span class="ms-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                {{ partial "meta/date.html" $prev.Date }}
+              </span>
+            {{ end }}
           {{ end }}
         </span>
-        <span>
+        <span class="flex flex-col items-end">
           {{ if $next }}
-            <a class="flex text-right group ml-3" href="{{ $next.RelPermalink }}">
-              <span class="flex flex-col">
-                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >{{ $next.Title | emojify }}</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  {{ if .Params.showDate | default (.Site.Params.article.showDate | default true) }}
-                    {{ partial "meta/date.html" $next.Date }}
-                  {{ end }}
-                </span>
+            <a
+              class="flex text-right text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+              href="{{ $next.RelPermalink }}">
+              <span class="leading-6">
+                {{ $next.Title | emojify }}&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
               </span>
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
             </a>
+            {{ if .Params.showDate | default (.Site.Params.article.showDate | default true) }}
+              <span class="me-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                {{ partial "meta/date.html" $next.Date }}
+              </span>
+            {{ end }}
           {{ end }}
         </span>
       </div>

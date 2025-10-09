@@ -657,6 +657,9 @@ body.zen-mode-enable {
   .me-4 {
     margin-inline-end: calc(var(--spacing) * 4);
   }
+  .me-6 {
+    margin-inline-end: calc(var(--spacing) * 6);
+  }
   .prose {
     color: var(--tw-prose-body);
     max-width: 65ch;
@@ -1148,9 +1151,6 @@ body.zen-mode-enable {
   .mt-20 {
     margin-top: calc(var(--spacing) * 20);
   }
-  .mt-\[0\.1rem\] {
-    margin-top: 0.1rem;
-  }
   .mt-\[0\.5rem\] {
     margin-top: 0.5rem;
   }
@@ -1219,9 +1219,6 @@ body.zen-mode-enable {
   }
   .ml-2 {
     margin-left: calc(var(--spacing) * 2);
-  }
-  .ml-3 {
-    margin-left: calc(var(--spacing) * 3);
   }
   .box-border {
     box-sizing: border-box;
@@ -2510,27 +2507,6 @@ body.zen-mode-enable {
       }
     }
   }
-  .group-hover\:text-primary-600 {
-    &:is(:where(.group):hover *) {
-      @media (hover: hover) {
-        color: rgba(var(--color-primary-600), 1);
-      }
-    }
-  }
-  .group-hover\:underline {
-    &:is(:where(.group):hover *) {
-      @media (hover: hover) {
-        text-decoration-line: underline;
-      }
-    }
-  }
-  .group-hover\:decoration-primary-500 {
-    &:is(:where(.group):hover *) {
-      @media (hover: hover) {
-        text-decoration-color: rgba(var(--color-primary-500), 1);
-      }
-    }
-  }
   .group-hover\:opacity-100 {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
@@ -3231,11 +3207,6 @@ body.zen-mode-enable {
       display: none;
     }
   }
-  .ltr\:inline {
-    &:where(:dir(ltr), [dir="ltr"], [dir="ltr"] *) {
-      display: inline;
-    }
-  }
   .rtl\:-mr-\[79px\] {
     &:where(:dir(rtl), [dir="rtl"], [dir="rtl"] *) {
       margin-right: calc(79px * -1);
@@ -3256,9 +3227,9 @@ body.zen-mode-enable {
       display: none;
     }
   }
-  .rtl\:inline {
+  .rtl\:rotate-180 {
     &:where(:dir(rtl), [dir="rtl"], [dir="rtl"] *) {
-      display: inline;
+      rotate: 180deg;
     }
   }
   .dark\:flex {
@@ -3500,15 +3471,6 @@ body.zen-mode-enable {
       &:is(:where(.group):hover *) {
         @media (hover: hover) {
           color: rgba(var(--color-neutral-700), 1);
-        }
-      }
-    }
-  }
-  .dark\:group-hover\:text-primary-400 {
-    &:is(.dark *) {
-      &:is(:where(.group):hover *) {
-        @media (hover: hover) {
-          color: rgba(var(--color-primary-400), 1);
         }
       }
     }
