@@ -3187,11 +3187,6 @@ body.zen-mode-enable {
       grid-template-columns: repeat(5, minmax(0, 1fr));
     }
   }
-  .ltr\:mr-4 {
-    &:where(:dir(ltr), [dir="ltr"], [dir="ltr"] *) {
-      margin-right: calc(var(--spacing) * 4);
-    }
-  }
   .ltr\:-ml-12 {
     &:where(:dir(ltr), [dir="ltr"], [dir="ltr"] *) {
       margin-left: calc(var(--spacing) * -12);
@@ -3210,11 +3205,6 @@ body.zen-mode-enable {
   .rtl\:-mr-\[79px\] {
     &:where(:dir(rtl), [dir="rtl"], [dir="rtl"] *) {
       margin-right: calc(79px * -1);
-    }
-  }
-  .rtl\:ml-4 {
-    &:where(:dir(rtl), [dir="rtl"], [dir="rtl"] *) {
-      margin-left: calc(var(--spacing) * 4);
     }
   }
   .rtl\:block {
