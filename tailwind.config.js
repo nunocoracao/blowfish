@@ -2,9 +2,10 @@ module.exports = {
   content: [
     "./layouts/**/*.html",
     "./content/**/*.{html,md}",
+    "./node_modules/tw-elements/js/**/*.js",
     "./themes/blowfish/layouts/**/*.html",
     "./themes/blowfish/content/**/*.{html,md}",
-    "./node_modules/tw-elements/js/**/*.js",
+    "./themes/blowfish/node_modules/tw-elements/js/**/*.js",
   ],
   darkMode: "class",
   theme: {
