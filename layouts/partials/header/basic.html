@@ -68,7 +68,7 @@
 {{ end }}
 
 {{/* Mobile navigation */}}
-{{ define "HeaderMobileNavigation" }}
+{{ define "HeaderMobileToolbar" }}
   <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
     <span></span>
 
@@ -104,7 +104,7 @@
   </div>
 {{ end }}
 
-{{ define "HeaderMobileMenu" }}
+{{ define "HeaderMobileNavigation" }}
   <div class="-my-2 md:hidden">
     <div id="menu-button" class="block">
       {{ if .Site.Menus.main }}
@@ -254,9 +254,9 @@
       {{ end }}
     </nav>
     {{ template "HeaderDesktopNavigation" . }}
-    {{ template "HeaderMobileNavigation" . }}
+    {{ template "HeaderMobileToolbar" . }}
   </div>
-  {{ template "HeaderMobileMenu" . }}
+  {{ template "HeaderMobileNavigation" . }}
 </div>
 
 {{ if .Site.Menus.subnavigation }}
