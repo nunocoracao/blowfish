@@ -1,6 +1,19 @@
-{{ define "RenderImageSimple" -}}
-  <img class="my-0 rounded-md" loading="lazy" alt="{{ .alt }}" src="{{ .src }}">
-{{- end }}
+{{- define "RenderImageSimple" -}}
+  {{- $imgObj := .imgObj -}}
+  {{- $src := .src -}}
+  {{- $alt := .alt -}}
+  <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="{{ $alt }}"
+    src="{{ $src }}"
+    {{ with $imgObj -}}
+      {{ with $imgObj.Width }}width="{{ . }}"{{ end }}
+      {{ with $imgObj.Height }}height="{{ . }}"{{ end }}
+    {{- end }}>
+{{- end -}}
 
 {{- define "RenderImageResponsive" -}}
   {{/* Responsive Image
@@ -50,39 +63,47 @@
     data-zoom-src="{{ $imgObj.RelPermalink }}">
 {{- end -}}
 
-{{ define "RenderImageCaption" -}}
-  {{- with .caption }}
+{{- define "RenderImageCaption" -}}
+  {{- with .caption -}}
     <figcaption>{{ . | markdownify }}</figcaption>
-  {{- end }}
-{{- end }}
+  {{- end -}}
+{{- end -}}
 
-{{- $disableImageOptimizationMD := .Page.Site.Params.disableImageOptimizationMD | default false }}
+{{- $disableImageOptimizationMD := .Page.Site.Params.disableImageOptimizationMD | default false -}}
 {{- $urlStr := .Destination | safeURL -}}
 {{- $url := urls.Parse $urlStr -}}
-{{- $altText := .Text }}
-{{- $caption := .Title }}
-{{- $isRemote := findRE "^(https?|data)" $url.Scheme }}
-{{- $resource := "" }}
+{{- $altText := .Text -}}
+{{- $caption := .Title -}}
+{{- $isRemote := findRE "^(https?|data)" $url.Scheme -}}
+{{- $resource := "" -}}
 
-{{- if not $isRemote }}
-  {{- $resource = or ($.Page.Resources.GetMatch $urlStr) (resources.Get $urlStr) }}
-{{- end }}
+{{- if not $isRemote -}}
+  {{- $resource = or ($.Page.Resources.GetMatch $urlStr) (resources.Get $urlStr) -}}
+{{- end -}}
 
 
 <figure>
-  {{- if $isRemote }}
-    {{ template "RenderImageSimple" (dict "src" $urlStr "alt" $altText) }}
-  {{- else if $resource }}
-    {{- $isSVG := eq $resource.MediaType.SubType "svg" }}
-    {{- $shouldOptimize := and (not $disableImageOptimizationMD) (not $isSVG) }}
-    {{- if $shouldOptimize }}
+  {{- if $isRemote -}}
+    {{- template "RenderImageSimple" (dict "imgObj" "" "src" $urlStr "alt" $altText) -}}
+  {{- else if $resource -}}
+    {{- $isSVG := eq $resource.MediaType.SubType "svg" -}}
+    {{- $shouldOptimize := and (not $disableImageOptimizationMD) (not $isSVG) -}}
+    {{- if $shouldOptimize -}}
       {{- template "RenderImageResponsive" (dict "imgObj" $resource "alt" $altText) -}}
-    {{- else }}
-      {{ template "RenderImageSimple" (dict "src" $resource.RelPermalink "alt" $altText) }}
-    {{- end }}
-  {{- else }}
-    {{ template "RenderImageSimple" (dict "src" $urlStr "alt" $altText) }}
-  {{- end }}
+    {{- else -}}
+      {{/* Not optimize image
+        If it is an SVG file, pass the permalink
+        Otherwise, pass the resource to allow width and height attributes
+      */}}
+      {{- if $isSVG -}}
+        {{- template "RenderImageSimple" (dict "imgObj" "" "src" $resource.RelPermalink "alt" $altText) -}}
+      {{- else -}}
+        {{- template "RenderImageSimple" (dict "imgObj" $resource "src" $resource.RelPermalink "alt" $altText) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- else -}}
+    {{- template "RenderImageSimple" (dict "imgObj" "" "src" $urlStr "alt" $altText) -}}
+  {{- end -}}
 
-  {{ template "RenderImageCaption" (dict "caption" $caption) }}
+  {{- template "RenderImageCaption" (dict "caption" $caption) -}}
 </figure>
