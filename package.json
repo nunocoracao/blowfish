@@ -1,6 +1,6 @@
 {
   "name": "hugo-blowfish-theme",
-  "version": "2.90.0",
+  "version": "2.91.0",
   "description": "Blowfish theme for Hugo.",
   "scripts": {
     "postinstall": "vendor-copy",
@@ -37,22 +37,22 @@
   "homepage": "https://github.com/nunocoracao/blowfish#readme",
   "devDependencies": {
     "@awmottaz/prettier-plugin-void-html": "^1.9.0",
-    "@tailwindcss/cli": "^4.1.12",
-    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/cli": "^4.1.14",
+    "@tailwindcss/typography": "^0.5.19",
     "chart.js": "^4.5.0",
     "fuse.js": "^7.1.0",
     "jquery": "^3.7.1",
-    "katex": "^0.16.22",
+    "katex": "^0.16.23",
     "lite-youtube-embed": "^0.3.3",
     "medium-zoom": "^1.1.0",
-    "mermaid": "^11.11.0",
+    "mermaid": "^11.12.0",
     "packery": "^3.0.0",
     "prettier": "^3.6.2",
     "prettier-plugin-go-template": "^0.0.15",
-    "puppeteer": "^24.19.0",
+    "puppeteer": "^24.23.0",
     "rimraf": "^6.0.1",
     "tailwind-scrollbar": "^4.0.2",
-    "tailwindcss": "^4.1.11",
+    "tailwindcss": "^4.1.14",
     "tw-elements": "2.0.0",
     "typeit": "^8.8.7",
     "vendor-copy": "^3.0.1"
@@ -121,10 +121,10 @@
     }
   ],
   "dependencies": {
-    "@headlessui/react": "^2.2.7",
+    "@headlessui/react": "^2.2.9",
     "@heroicons/react": "^2.2.0",
     "@iamtraction/google-translate": "^2.0.1",
     "@tailwindcss/forms": "^0.5.10",
-    "commander": "^14.0.0"
+    "commander": "^14.0.1"
   }
 }

@@ -14,6 +14,7 @@
       </div>
       <div class="mt-6 sm:mt-16 lg:mt-0 mx-auto max-w-xl px-4 sm:px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0">
         <div class="-me-48 md:-me-16 lg:relative lg:m-0 lg:h-full lg:px-0 w-full">
+          {{ $useDefault := true }}
           {{ $homepageImage := "" }}
           {{ with .Site.Params.defaultBackgroundImage }}
             {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
@@ -25,14 +26,22 @@
           {{ with .Site.Params.homepage.homepageImage }}
             {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
               {{ $homepageImage = resources.GetRemote . }}
+              {{ $useDefault = false }}
             {{ else }}
               {{ $homepageImage = resources.Get . }}
+              {{ $useDefault = false }}
             {{ end }}
           {{ end }}
           {{ if $homepageImage }}
+            {{ $style := "" }}
+            {{ $defaultPosition := cond $useDefault site.Params.imagePosition false }}
+            {{ with $.Params.imagePosition | default $defaultPosition }}
+              {{ $style = printf "object-position: %s;" . }}
+            {{ end }}
             <img
               class="w-full rounded-xl shadow-xl lg:absolute lg:h-full lg:w-auto lg:max-w-none"
-              src="{{ $homepageImage.RelPermalink }}">
+              src="{{ $homepageImage.RelPermalink }}"
+              {{ if $style }}style="{{ $style | safeCSS }}"{{ end }}>
           {{ end }}
         </div>
       </div>

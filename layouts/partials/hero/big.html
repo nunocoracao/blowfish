@@ -1,24 +1,48 @@
-{{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
+{{ $disableImageOptimization := site.Store.Get "disableImageOptimization" }}
 
-{{- $images := .Resources.ByType "image" -}}
-{{- $featured := $images.GetMatch "*background*" -}}
-{{- if not $featured }}{{ $featured = $images.GetMatch "*feature*" }}{{ end -}}
-{{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
-
-{{ if .Params.featureimage }}
-  {{- $url:= .Params.featureimage -}}
-  {{- if not $featured }}{{ $featured = resources.GetRemote $url }}{{ end -}}
+{{ $useDefault := false }}
+{{ $featured := "" }}
+{{ $featuredURL := "" }}
+{{ with .Params.featureimage }}
+  {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+    {{ if site.Params.hotlinkFeatureImage }}
+      {{ $featuredURL = . }}
+    {{ else }}
+      {{ $featured = resources.GetRemote . }}
+    {{ end }}
+  {{ else }}
+    {{ $featured = resources.Get . }}
+  {{ end }}
 {{ end }}
 
-{{- if not $featured }}
-  {{ with .Site.Params.defaultBackgroundImage }}
-    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-      {{ $featured = resources.GetRemote . }}
-    {{ else }}
-      {{ $featured = resources.Get . }}
+{{ if not (or $featured $featuredURL) }}
+  {{ $images := .Resources.ByType "image" }}
+  {{ range slice "*background*" "*feature*" "*cover*" "*thumbnail*" }}
+    {{ if not $featured }}{{ $featured = $images.GetMatch . }}{{ end }}
+  {{ end }}
+{{ end }}
+
+{{ if not (or $featured $featuredURL) }}
+  {{ $default := site.Store.Get "defaultBackgroundImage" }}
+  {{ if $default.url }}
+    {{ $featuredURL = $default.url }}
+    {{ $useDefault = true }}
+  {{ else if $default.obj }}
+    {{ $featured = $default.obj }}
+    {{ $useDefault = true }}
+  {{ end }}
+{{ end }}
+
+{{/* generate image URL if not hotlink */}}
+{{ if not $featuredURL }}
+  {{ with $featured }}
+    {{ $featuredURL = .RelPermalink }}
+    {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
+      {{ $size := site.Store.Get "backgroundImageWidth" }}
+      {{ $featuredURL = (.Resize $size).RelPermalink }}
     {{ end }}
   {{ end }}
-{{ end -}}
+{{ end }}
 
 {{ $caption := "" }}
 {{ if .Params.featureimagecaption }}
@@ -28,49 +52,25 @@
 {{- $alt := .Page.Title -}}
 {{- with .Page.Params.alt }}{{ $alt = . }}{{ end -}}
 
-{{- with $featured -}}
-  {{ if strings.HasSuffix $featured ".svg" }}
-    {{ with . }}
-      <figure>
-        <img class="w-full rounded-lg single_hero_round nozoom" alt="{{ $alt }}" src="{{ .RelPermalink }}">
-        {{ if $caption }}
-          <figcaption class="text-sm text-neutral-700 dark:text-neutral-400 hover:underline text-center">
-            {{ $caption | markdownify }}
-          </figcaption>
-        {{ end }}
-      </figure>
-    {{ end }}
-  {{ else if $disableImageOptimization }}
-    {{ with . }}
-      <figure>
-        <img
-          class="w-full rounded-lg single_hero_round nozoom"
-          alt="{{ $alt }}"
-          width="{{ .Width }}"
-          height="{{ .Height }}"
-          src="{{ .RelPermalink }}">
-        {{ if $caption }}
-          <figcaption class="text-sm text-neutral-700 dark:text-neutral-400 hover:underline text-center">
-            {{ $caption | markdownify }}
-          </figcaption>
-        {{ end }}
-      </figure>
-    {{ end }}
-  {{ else }}
-    {{ with .Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
-      <figure>
-        <img
-          class="w-full rounded-lg single_hero_round nozoom"
-          alt="{{ $alt }}"
-          width="{{ .Width }}"
-          height="{{ .Height }}"
-          src="{{ .RelPermalink }}">
-        {{ if $caption }}
-          <figcaption class="text-sm text-neutral-700 dark:text-neutral-400 hover:underline text-center">
-            {{ $caption | markdownify }}
-          </figcaption>
-        {{ end }}
-      </figure>
-    {{ end }}
+{{ with $featuredURL }}
+  {{ $style := "" }}
+  {{ $defaultPosition := cond $useDefault site.Params.imagePosition false }}
+  {{ with $.Params.imagePosition | default $defaultPosition }}
+    {{ $style = printf "object-position: %s;" . }}
   {{ end }}
-{{- end -}}
+  <figure>
+    <img
+      src="{{ . }}"
+      alt="{{ $alt }}"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+      class="w-full rounded-lg single_hero_round nozoom"
+      {{ if $style }}style="{{ $style | safeCSS }}"{{ end }}>
+    {{ if $caption }}
+      <figcaption class="text-sm text-neutral-700 dark:text-neutral-400 hover:underline text-center">
+        {{ $caption | markdownify }}
+      </figcaption>
+    {{ end }}
+  </figure>
+{{ end }}

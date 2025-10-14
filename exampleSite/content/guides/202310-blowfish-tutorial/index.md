@@ -275,7 +275,7 @@ The only thing missing is to ship your site. I will be using [Firebase](https://
 
 Let’s install firebase’s CLI - if not on Mac check [install instructions on Firebase](https://firebase.google.com/docs/cli).
 ```bash
-brew install firebase
+brew install firebase-cli
 ```
 
 Now log in and init firebase hosting for the project.

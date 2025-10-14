@@ -55,7 +55,6 @@ _这个例子设置了一个自定义标题，并在页面正文中添加了一�
 列表页将所有页面聚合到一个目录下，并为访问者提供了一种浏览页面的方式。博客或者作品集是一个典型案例，因为这两种类型的网站会将帖子或项目整合到一个列表页中。
 
 创建一个列表页就如同创建子目录一样简单。例如，要创建一个 "Projects" 列表页，你可以创建`content/projects/`。然后为你的项目创建一个 Markdown 文件。
-Creating a list page is as simple as making a sub-directory in the content folder. For example, to create a "Projects" section, you would create `content/projects/`. Then create a Markdown file for each of your projects.
 
 列表页面默认会自动生成，如果你想在列表添加一些页自定义内容，还需要在此目录创建一个 `_index.md` 文件。
 

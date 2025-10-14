@@ -1,19 +1,17 @@
 <!doctype html>
 <html
-  lang="{{ with site.Params.isoCode | default (site.LanguageCode | default " en") }}{{- . -}}{{ end }}"
-  dir="{{ if site.Params.rtl | default false -}}
-    rtl
-  {{- else -}}
-    ltr
-  {{- end }}"
+  lang="{{ with site.Params.isoCode | default (site.LanguageCode | default `en`) }}{{- . -}}{{ end }}"
+  dir="{{ cond (site.Params.rtl | default false) `rtl` `ltr` }}"
   class="scroll-smooth"
-  data-default-appearance="{{ site.Params.defaultAppearance | default " light" }}"
-  data-auto-appearance="{{ site.Params.autoSwitchAppearance | default " true" }}">
+  data-default-appearance="{{ site.Params.defaultAppearance | default `light` }}"
+  data-auto-appearance="{{ site.Params.autoSwitchAppearance | default `true` }}">
   {{- partial "head.html" . -}}
+  {{- partialCached "init.html" . -}}
 
-
-  <body
-    class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+  {{ $bodyLayout := "flex flex-col h-screen m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32" }}
+  {{ $bodyColor := "text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral" }}
+  {{ $bodyScrollbar := "scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600" }}
+  <body class="{{ $bodyLayout }} {{ $bodyColor }} {{ $bodyScrollbar }}">
     <div id="the-top" class="absolute flex self-center">
       <a
         class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
@@ -31,7 +29,7 @@
     <div class="relative flex flex-col grow">
       <main id="main-content" class="grow">
         {{ block "main" . }}{{ end }}
-        {{ if and (site.Params.footer.showScrollToTop | default true) (gt .WordCount 1) }}
+        {{ if and (site.Params.footer.showScrollToTop | default true) }}
           {{- partial "scroll-to-top.html" . -}}
         {{ end }}
       </main>
@@ -48,9 +46,9 @@
       src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
       data-id="{{ site.Params.buymeacoffee.identifier }}"
       data-description="Support me on Buy me a coffee!"
-      data-message="{{ site.Params.buymeacoffee.globalWidgetMessage | default "" }}"
-      data-color="{{ site.Params.buymeacoffee.globalWidgetColor | default "#FFDD00" }}"
-      data-position="{{ site.Params.buymeacoffee.globalWidgetPosition | default "Left" }}"
+      {{ with site.Params.buymeacoffee.globalWidgetMessage }}data-message="{{ . }}"{{ end }}
+      {{ with site.Params.buymeacoffee.globalWidgetColor | default `#FFDD00` }}data-color="{{ . }}"{{ end }}
+      {{ with site.Params.buymeacoffee.globalWidgetPosition }}data-position="{{ . }}"{{ end }}
       data-x_margin="18"
       data-y_margin="18"></script>
   {{ end }}

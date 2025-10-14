@@ -8,26 +8,30 @@
       {{ $authorImage = resources.Get . }}
     {{ end }}
     {{ if $authorImage }}
+      {{ $final := $authorImage }}
       {{ if not $disableImageOptimization }}
-        {{ $authorImage = $authorImage.Fill "192x192" }}
+        {{ $final = $authorImage.Fill "192x192" }}
       {{ end }}
       <img
         class="!mt-0 !mb-0 h-24 w-24 rounded-full me-4"
         width="96"
         height="96"
         alt="{{ $.Site.Params.Author.name | default " Author" }}"
-        src="{{ $authorImage.RelPermalink }}">
+        src="{{ $final.RelPermalink }}"
+        data-zoom-src="{{ $authorImage.RelPermalink }}">
     {{ else }}
       {{ $authorImage := resources.GetRemote . }}
+      {{ $final := $authorImage }}
       {{ if not $disableImageOptimization }}
-        {{ $authorImage = $authorImage.Fill "192x192" }}
+        {{ $final = $authorImage.Fill "192x192" }}
       {{ end }}
       <img
         class="!mt-0 !mb-0 h-24 w-24 rounded-full me-4"
         width="96"
         height="96"
         alt="{{ $.Site.Params.Author.name | default " Author" }}"
-        src="{{ $authorImage.RelPermalink }}">
+        src="{{ $authorImage.RelPermalink }}"
+        data-zoom-src="{{ $authorImage.RelPermalink }}">
     {{ end }}
   {{ end }}
   <div class="place-self-center">

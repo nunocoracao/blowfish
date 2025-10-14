@@ -34,16 +34,12 @@
       {{ $enableToc := site.Params.article.showTableOfContents | default false }}
       {{ $enableToc = .Params.showTableOfContents | default $enableToc }}
       {{ $showToc := and $enableToc (in .TableOfContents "<ul") }}
-      {{ $showRelated := site.Params.article.showRelatedPosts | default false }}
       {{ $topClass := cond (hasPrefix site.Params.header.layout "fixed") "lg:top-[140px]" "lg:top-10" }}
-      {{ if or $showToc $showRelated }}
-        <div class="order-first lg:ml-auto px-0 lg:order-last lg:ps-8">
+      {{ if $showToc }}
+        <div class="order-first lg:ml-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
           <div class="toc ps-5 print:hidden lg:sticky {{ $topClass }}">
             {{ if $showToc }}
               {{ partial "toc.html" . }}
-            {{ end }}
-            {{ if $showRelated }}
-              sd
             {{ end }}
           </div>
         </div>

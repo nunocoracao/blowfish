@@ -1,0 +1,86 @@
+global:
+  language: "DA"
+
+article:
+  anchor_label: "Anker"
+  date: "{{ .Date }}"
+  date_updated: "Opdateret: {{ .Date }}"
+  draft: "Kladde"
+  edit_title: "Redigér indhold"
+  reading_time:
+    one: "{{ .Count }} minut"
+    other: "{{ .Count }} minutter"
+  reading_time_title: "Læsetid"
+  table_of_contents: "Indholdsfortegnelse"
+  word_count:
+    one: "{{ .Count }} ord"
+    other: "{{ .Count }} ord"
+  views:
+    one: "{{ .Count }} visning"
+    other: "{{ .Count }} visninger"
+  likes:
+    one: "{{ .Count }} like"
+    other: "{{ .Count }} likes"
+  part_of_series: "Denne artikel er en del af en serie."
+  part: "Del"
+  this_article: "Denne artikel"
+  related_articles: "Relateret"
+  zen_mode_title:
+    enable: "Aktiver zen mode"
+    disable: "Deaktiver zen mode"
+
+a11y:
+  title: "Tilgængelighedsindstillinger"
+  disable_blur: "Deaktiver uskarphed"
+  disable_images: "Deaktiver billeder"
+  show_link_underline: "Vis link-understregning"
+  font_size: "Skrift størrelse"
+
+author:
+  byline_title: "Forfatter"
+
+code:
+  copy: "Kopi"
+  copied: "Kopieret"
+
+error:
+  404_title: "Siden kunne ikke findes :confused:"
+  404_error: "Fejl 404"
+  404_description: "Det ser ud til at den side du søger ikke eksisterer."
+
+footer:
+  dark_appearance: "Skift til mørk udseende"
+  light_appearance: "Skift til lys udseende"
+  powered_by: "Genereret af {{ .Hugo }} &amp; {{ .Theme }}"
+
+list:
+  externalurl_title: "Link til ekstern hjemmeside"
+  no_articles: "Der er ikke nogle artikler her, endnu."
+
+nav:
+  scroll_to_top_title: "scrol til top"
+  skip_to_main: "Gå til hovedindhold"
+
+search:
+  open_button_title: "Søg (/)"
+  close_button_title: "Luk (Esc)"
+  input_placeholder: "Søg"
+
+sharing:
+  email: "Send via email"
+  facebook: "Del via Facebook"
+  line: "Del via LINE"
+  linkedin: "Del via LinkedIn"
+  pinterest: "Pin på Pinterest"
+  reddit: "Send til Reddit"
+  twitter: "Tweet via Twitter"
+  bluesky: "Post via Bluesky"
+  whatsapp: "Del via WhatsApp"
+  telegram: "Del via Telegram"
+  mastodon: "Del via Mastodon"
+
+shortcode:
+  recent_articles: "Seneste"
+
+recent:
+  show_more: "Vis mere"

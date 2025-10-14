@@ -1,24 +1,48 @@
-{{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
+{{ $disableImageOptimization := site.Store.Get "disableImageOptimization" }}
 
-{{- $images := .Resources.ByType "image" -}}
-{{- $featured := $images.GetMatch "*background*" -}}
-{{- if not $featured }}{{ $featured = $images.GetMatch "*feature*" }}{{ end -}}
-{{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
-
-{{ if and .Params.featureimage (not $featured) }}
-  {{- $url:= .Params.featureimage -}}
-  {{ $featured = resources.GetRemote $url }}
+{{ $useDefault := false }}
+{{ $featured := "" }}
+{{ $featuredURL := "" }}
+{{ with .Params.featureimage }}
+  {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+    {{ if site.Params.hotlinkFeatureImage }}
+      {{ $featuredURL = . }}
+    {{ else }}
+      {{ $featured = resources.GetRemote . }}
+    {{ end }}
+  {{ else }}
+    {{ $featured = resources.Get . }}
+  {{ end }}
 {{ end }}
 
-{{- if not $featured }}
-  {{ with .Site.Params.defaultBackgroundImage }}
-    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-      {{ $featured = resources.GetRemote . }}
-    {{ else }}
-      {{ $featured = resources.Get . }}
+{{ if not (or $featured $featuredURL) }}
+  {{ $images := .Resources.ByType "image" }}
+  {{ range slice "*background*" "*feature*" "*cover*" "*thumbnail*" }}
+    {{ if not $featured }}{{ $featured = $images.GetMatch . }}{{ end }}
+  {{ end }}
+{{ end }}
+
+{{ if not (or $featured $featuredURL) }}
+  {{ $default := site.Store.Get "defaultBackgroundImage" }}
+  {{ if $default.url }}
+    {{ $featuredURL = $default.url }}
+    {{ $useDefault = true }}
+  {{ else if $default.obj }}
+    {{ $featured = $default.obj }}
+    {{ $useDefault = true }}
+  {{ end }}
+{{ end }}
+
+{{/* generate image URL if not hotlink */}}
+{{ if not $featuredURL }}
+  {{ with $featured }}
+    {{ $featuredURL = .RelPermalink }}
+    {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
+      {{ $size := site.Store.Get "backgroundImageWidth" }}
+      {{ $featuredURL = (.Resize $size).RelPermalink }}
     {{ end }}
   {{ end }}
-{{ end -}}
+{{ end }}
 
 {{ $isParentList := eq (.Scratch.Get "scope") "list" }}
 {{ $shouldBlur := $.Params.layoutBackgroundBlur | default (or
@@ -32,20 +56,25 @@
   )
 }}
 
-{{- with $featured -}}
+{{- with $featuredURL -}}
   {{ if $shouldAddHeaderSpace | default true }}
     <div id="hero" class="h-[150px] md:h-[200px]"></div>
   {{ end }}
   <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom">
-    {{ $imageURL := .RelPermalink }}
-    {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
-      {{ $imageURL = (.Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x")).RelPermalink }}
+    {{ $style := "" }}
+    {{ $defaultPosition := cond $useDefault site.Params.imagePosition false }}
+    {{ with $.Params.imagePosition | default $defaultPosition }}
+      {{ $style = printf "object-position: %s;" . }}
     {{ end }}
     <img
       id="background-image"
-      src="{{ $imageURL }}"
-      alt="Background Image"
-      class="absolute inset-0 w-full h-full object-cover">
+      src="{{ . }}"
+      alt="{{ $.Title }}"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+      class="absolute inset-0 w-full h-full object-cover"
+      {{ if $style }}style="{{ $style | safeCSS }}"{{ end }}>
     <div
       class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal"></div>
     <div
@@ -64,6 +93,6 @@
       integrity="{{ $backgroundBlur.Data.Integrity }}"
       data-blur-id="background-blur"
       data-image-id="background-image"
-      data-image-url="{{ .RelPermalink }}"></script>
+      data-image-url="{{ . }}"></script>
   {{ end }}
 {{- end -}}

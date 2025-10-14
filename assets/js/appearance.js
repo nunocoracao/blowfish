@@ -22,12 +22,43 @@ if (document.documentElement.getAttribute("data-auto-appearance") === "true") {
   });
 }
 
+// Mermaid dark mode support
+var updateMermaidTheme = () => {
+  if (typeof mermaid !== 'undefined') {
+    const isDark = document.documentElement.classList.contains("dark");
+
+    const mermaids = document.querySelectorAll('pre.mermaid');
+    mermaids.forEach(e => {
+      if (e.getAttribute('data-processed')) {
+        // Already rendered, clean the processed attributes
+        e.removeAttribute('data-processed');
+        // Replace the rendered HTML with the stored text
+        e.innerHTML = e.getAttribute('data-graph');
+      } else {
+        // First time, store the text
+        e.setAttribute('data-graph', e.textContent);
+      }
+    });
+
+    if (isDark) {
+      initMermaidDark();
+      mermaid.run();
+    } else {
+      initMermaidLight();
+      mermaid.run();
+    }
+  }
+}
+
 window.addEventListener("DOMContentLoaded", (event) => {
   const switcher = document.getElementById("appearance-switcher");
   const switcherMobile = document.getElementById("appearance-switcher-mobile");
 
   updateMeta();
   this.updateLogo?.(getTargetAppearance());
+
+  // Initialize mermaid theme on page load
+  updateMermaidTheme();
 
   if (switcher) {
     switcher.addEventListener("click", () => {
@@ -38,6 +69,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         targetAppearance
       );
       updateMeta();
+      updateMermaidTheme();
       this.updateLogo?.(targetAppearance);
     });
     switcher.addEventListener("contextmenu", (event) => {
@@ -54,6 +86,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         targetAppearance
       );
       updateMeta();
+      updateMermaidTheme();
       this.updateLogo?.(targetAppearance);
     });
     switcherMobile.addEventListener("contextmenu", (event) => {

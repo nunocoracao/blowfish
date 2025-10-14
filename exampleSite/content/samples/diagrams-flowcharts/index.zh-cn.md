@@ -15,7 +15,6 @@ Blowfish 使用 `mermaid` 简码可以调用。Blowfish 会根据配置的 `colo
 
 ## 流程图
 
-<div style="background-color:white; padding: 20px">
 {{< mermaid >}}
 graph TD
 A[Christmas] -->|Get money| B(Go shopping)
@@ -32,11 +31,9 @@ F
 G
 end
 {{< /mermaid >}}
-</div>
 
 ## 时序图
 
-<div style="background-color:white; padding: 20px">
 {{< mermaid >}}
 sequenceDiagram
 autonumber
@@ -54,11 +51,9 @@ loop Every minute
 John-->Alice: Great!
 end
 {{< /mermaid >}}
-</div>
 
 ## 类图
 
-<div style="background-color:white; padding: 20px">
 {{< mermaid >}}
 classDiagram
 Animal "1" <|-- Duck
@@ -82,11 +77,9 @@ class Zebra{
 +run()
 }
 {{< /mermaid >}}
-</div>
 
 ## 实体关系图
 
-<div style="background-color:white; padding: 20px">
 {{< mermaid >}}
 erDiagram
 CUSTOMER }|..|{ DELIVERY-ADDRESS : has
@@ -98,5 +91,3 @@ ORDER ||--|{ ORDER-ITEM : includes
 PRODUCT-CATEGORY ||--|{ PRODUCT : contains
 PRODUCT ||--o{ ORDER-ITEM : "ordered in"
 {{< /mermaid >}}
-</div>
-
