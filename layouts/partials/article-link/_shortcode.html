@@ -1,7 +1,7 @@
 {{/* Used by
   1. article shortcode
 
-  The four variants of article-link are very similar. Despite appearances, as of df859f:
+  The four variants of article-link are very similar. Despite appearances, as of v2.91.0:
   - _shortcode.html uses $page := $target, while the others use $page := .Page
   - card-related.html does not have the hideFeatureImage option, while the others do
 
@@ -11,24 +11,31 @@
 {{ $shortcodeShowSummary := .showSummary }}
 {{ $shortcodeCompactSummary := .compactSummary }}
 {{ $constrainItemsWidth := site.Params.list.constrainItemsWidth | default false }}
-{{ $disableImageOptimization := site.Store.Get "disableImageOptimization" }}
+{{ $disableImageOptimization := site.Params.disableImageOptimization | default false }}
 
-{{ $cardClasses := "flex flex-col md:flex-row relative" }}
-{{ $imgWrapperClasses := "" }}
-{{ $cardContentClasses := "" }}
-
+{{ $articleClasses := "flex flex-wrap md:flex-nowrap article relative" }}
 {{ if site.Params.list.showCards }}
-  {{ $cardClasses = printf "%s overflow-hidden rounded-md border-2 border-neutral-200 dark:border-neutral-700" $cardClasses }}
-  {{ $imgWrapperClasses = "" }}
-  {{ $cardContentClasses = printf "%s p-4 pt-2" $cardContentClasses }}
+  {{ $articleClasses = delimit (slice $articleClasses "border border-neutral-200 dark:border-neutral-700 border-2 rounded-md overflow-hidden") " " }}
 {{ else }}
-  {{ $cardClasses = printf "%s" $cardClasses }}
-  {{ $imgWrapperClasses = printf "%s thumbnail-shadow md:mr-7" $imgWrapperClasses }}
-  {{ $cardContentClasses = printf "%s mt-3 md:mt-0" $cardContentClasses }}
+  {{ $articleClasses = delimit (slice $articleClasses "") " " }}
+{{ end }}
+
+{{ $articleImageClasses := "w-full md:w-auto h-full thumbnail nozoom" }}
+{{ if site.Params.list.showCards }}
+  {{ $articleImageClasses = delimit (slice $articleImageClasses "") " " }}
+{{ else }}
+  {{ $articleImageClasses = delimit (slice $articleImageClasses "thumbnailshadow md:mr-7") " " }}
+{{ end }}
+
+{{ $articleInnerClasses := "" }}
+{{ if site.Params.list.showCards }}
+  {{ $articleInnerClasses = delimit (slice $articleInnerClasses "p-4 pt-2") " " }}
+{{ else }}
+  {{ $articleInnerClasses = delimit (slice $articleInnerClasses "mt-3 md:mt-0") " " }}
 {{ end }}
 
 {{ if $constrainItemsWidth }}
-  {{ $cardClasses = printf "%s max-w-prose" $cardClasses }}
+  {{ $articleClasses = delimit (slice $articleClasses "max-w-prose") " " }}
 {{ end }}
 
 {{ $page := $target }}
@@ -80,18 +87,11 @@
 {{ end }}
 
 
-<article class="{{ $cardClasses }}">
+<article class="{{ $articleClasses }}">
   {{ with $featuredURL }}
-    <div class="flex-none relative overflow-hidden {{ $imgWrapperClasses }} thumbnail">
-      <img
-        src="{{ . }}"
-        alt="{{ with $target.Params.featuredImageAlt }}{{ . }}{{ else }}{{ $target.Title | emojify }}{{ end }}"
-        loading="lazy"
-        decoding="async"
-        class="not-prose absolute inset-0 w-full h-full object-cover">
-    </div>
+    <div class="{{ $articleImageClasses }}" style="background-image:url({{ . }});"></div>
   {{ end }}
-  <div class="{{ $cardContentClasses }}">
+  <div class="{{ $articleInnerClasses }}">
     <header class="items-center text-start text-xl font-semibold">
       <a
         {{ with .Params.externalUrl }}

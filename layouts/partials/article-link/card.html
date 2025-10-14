@@ -57,14 +57,7 @@
 <article
   class="relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
   {{ with $featuredURL }}
-    <div class="flex-none relative overflow-hidden thumbnail_card">
-      <img
-        src="{{ . }}"
-        alt="{{ $page.Title | plainify }}"
-        loading="lazy"
-        decoding="async"
-        class="not-prose absolute inset-0 w-full h-full object-cover">
-    </div>
+    <div class="thumbnail_card nozoom w-full" style="background-image:url({{ . }});"></div>
   {{ end }}
   {{ if and .Draft .Site.Params.article.showDraftLabel }}
     <span class="absolute top-0 right-0 m-2">

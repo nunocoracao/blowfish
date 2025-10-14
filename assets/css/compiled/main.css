@@ -2975,9 +2975,9 @@ body.zen-mode-enable {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
-  .md\:flex-row {
+  .md\:flex-nowrap {
     @media (width >= 853px) {
-      flex-direction: row;
+      flex-wrap: nowrap;
     }
   }
   .md\:justify-start {
@@ -3686,6 +3686,24 @@ a {
 pre {
   text-align: left;
 }
+.thumbnail, .thumbnail_card, .thumbnail_card_related, .thumbnail_card_term, .single_hero_basic, .single_hero_background {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.thumbnail {
+  min-width: 300px;
+  height: 180px;
+}
+.thumbnail_card {
+  height: 200px;
+}
+.thumbnail_card_related {
+  height: 150px;
+}
+.thumbnail_card_term {
+  height: 150px;
+}
 .single_hero_round {
   max-height: 50vh;
   object-fit: cover;
@@ -3698,23 +3716,7 @@ pre {
   width: 100%;
   height: 100%;
 }
-.thumbnail_card {
-  min-width: 300px;
-  height: 200px;
-}
-.thumbnail_card_related {
-  height: 150px;
-}
-.thumbnail {
-  width: 300px;
-  min-height: 180px;
-}
-@media (width < 853px) {
-  .thumbnail {
-    width: 100%;
-  }
-}
-.thumbnail-shadow {
+.thumbnailshadow {
   box-shadow: 5px 5px 20px 1px rgba(0, 0, 0, 0.3);
 }
 .anchor {
@@ -3731,11 +3733,20 @@ pre {
   scroll-margin-top: -125px;
 }
 @media (width >= 640px) {
+  .thumbnail {
+    min-width: 100%;
+    height: 180px;
+  }
   .article {
     flex-wrap: wrap;
   }
 }
 @media (width >= 853px) {
+  .thumbnail {
+    min-width: 300px;
+    min-height: 180px;
+    height: auto;
+  }
   .article {
     flex-wrap: nowrap;
   }
