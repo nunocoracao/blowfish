@@ -20,7 +20,7 @@
 {{ if site.Params.list.showCards }}
   {{ $cardClasses = printf "%s overflow-hidden rounded-md border-2 border-neutral-200 dark:border-neutral-700" $cardClasses }}
   {{ $figureClasses = "" }}
-  {{ $cardContentClasses = printf "%s p-2.5 pl-4 pb-0" $cardContentClasses }}
+  {{ $cardContentClasses = printf "%s p-4 pt-2" $cardContentClasses }}
 {{ else }}
   {{ $cardClasses = printf "%s" $cardClasses }}
   {{ $figureClasses = printf "%s thumbnail-shadow md:mr-7" $figureClasses }}
