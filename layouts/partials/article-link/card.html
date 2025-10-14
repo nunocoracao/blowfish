@@ -57,14 +57,14 @@
 <article
   class="relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
   {{ with $featuredURL }}
-    <figure class="not-prose flex-none relative overflow-hidden thumbnail--card">
+    <div class="flex-none relative overflow-hidden thumbnail_card">
       <img
         src="{{ . }}"
         alt="{{ $page.Title | plainify }}"
         loading="lazy"
         decoding="async"
         class="not-prose absolute inset-0 w-full h-full object-cover">
-    </figure>
+    </div>
   {{ end }}
   {{ if and .Draft .Site.Params.article.showDraftLabel }}
     <span class="absolute top-0 right-0 m-2">

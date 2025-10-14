@@ -29,10 +29,11 @@ Front matter parameter default values are inherited from the theme's [base confi
 | `showAuthorBottom` | `article.showAuthorBottom` | Author boxes are displayed at the bottom of each page instead of the top. |
 | `authors` | _Not set_ | Array of values for authors, if set it overrides `showAuthor` settings for page or site. Used on the multiple authors feature, check [this page]({{< ref "multi-author" >}}) for more details on how to configure that feature. |
 | `showAuthorsBadges` | `article.showAuthorsBadges` | Whether the `authors` taxonomies are are displayed in the article or list header. This requires the setup of `multiple authors` and the `authors` taxonomy. Check [this page]({{< ref "multi-author" >}}) for more details on how to configure that feature. |
-| `featureimage` | _Not set_ | External URL for feature image |
+| `featureimage` | _Not set_ | Link for feature image |
 | `featureimagecaption` | _Not set_ | Caption for feature image. Only displayed in heroStyle `big` |
 | `showHero` | `article.showHero` | Whether the thumbnail image will be shown as a hero image within the article page. |
 | `heroStyle` | `article.heroStyle` | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`. |
+| `imagePosition` | _Not set_ | Sets the position of the feature image using `object-position` attribute. Valid values are as specified in the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/object-position#try_it). |
 | `showBreadcrumbs` | `article.showBreadcrumbs` or `list.showBreadcrumbs` | Whether the breadcrumbs are displayed in the article or list header. |
 | `showDate` | `article.showDate` | Whether or not the article date is displayed. The date is set using the `date` parameter. |
 | `showDateUpdated` | `article.showDateUpdated` | Whether or not the date the article was updated is displayed. The date is set using the `lastmod` parameter. |

@@ -174,22 +174,22 @@ pre {
   height: 100%;
 }
 
-.thumbnail--card {
+.thumbnail_card {
   min-width: 300px;
   height: 200px;
 }
 
-.thumbnail--related {
+.thumbnail_card_related {
   height: 150px;
 }
 
-.thumbnail--simple {
+.thumbnail {
   width: 300px;
   min-height: 180px;
 }
 
 @variant max-md {
-  .thumbnail--simple {
+  .thumbnail {
     width: 100%;
   }
 }

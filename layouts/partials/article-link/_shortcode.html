@@ -14,7 +14,7 @@
 {{ $disableImageOptimization := site.Store.Get "disableImageOptimization" }}
 
 {{ $cardClasses := "flex flex-col md:flex-row relative" }}
-{{ $figureClasses := "" }}
+{{ $imgWrapperClasses := "" }}
 {{ $cardContentClasses := "" }}
 
 {{ if site.Params.list.showCards }}
@@ -23,7 +23,7 @@
   {{ $cardContentClasses = printf "%s p-4 pt-2" $cardContentClasses }}
 {{ else }}
   {{ $cardClasses = printf "%s" $cardClasses }}
-  {{ $figureClasses = printf "%s thumbnail-shadow md:mr-7" $figureClasses }}
+  {{ $imgWrapperClasses = printf "%s thumbnail-shadow md:mr-7" $imgWrapperClasses }}
   {{ $cardContentClasses = printf "%s mt-3 md:mt-0" $cardContentClasses }}
 {{ end }}
 
@@ -82,14 +82,14 @@
 
 <article class="{{ $cardClasses }}">
   {{ with $featuredURL }}
-    <figure class="not-prose flex-none relative overflow-hidden {{ $figureClasses }} thumbnail--simple">
+    <div class="flex-none relative overflow-hidden {{ $imgWrapperClasses }} thumbnail">
       <img
         src="{{ . }}"
         alt="{{ with $target.Params.featuredImageAlt }}{{ . }}{{ else }}{{ $target.Title | emojify }}{{ end }}"
         loading="lazy"
         decoding="async"
         class="not-prose absolute inset-0 w-full h-full object-cover">
-    </figure>
+    </div>
   {{ end }}
   <div class="{{ $cardContentClasses }}">
     <header class="items-center text-start text-xl font-semibold">

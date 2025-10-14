@@ -29,10 +29,11 @@ front matter 参数中的默认值是从[基础配置]({{< ref "configuration" >
 | `showAuthorBottom` | `article.showAuthorBottom` | 作者框显示在每页的底部而不是顶部。 |
 | `authors` | 无 | 用于展示多创作者的数组，如果设置了将会覆盖 `showAuthor` 设置。这里使用了多作者的特性，查看[这个页面]({{< ref "multi-author" >}})来获取更多信息。 |
 | `showAuthorsBadges` | `article.showAuthorsBadges` | 是否在文章和列表页展示`authors`作者分类。想是它生效需要开启`multiple authors`多创作者和 `authors` 作者分类。 查看[这个页面]({{< ref "multi-author" >}})来获取更多信息。 |
-| `featureimage` | 无 | 基于外部 URL 的特征图片链接。 |
+| `featureimage` | 无 | 基于连结的特征图片链接。 |
 | `featureimagecaption` | 无 | 特征图片的说明，仅在 hero 样式的 `big` 风格下展示。 |
 | `showHero` | `article.showHero` | 是否在文章页面将所裸土作为文章页面内的 hero 图片显示。 |
 | `heroStyle` | `article.heroStyle` | hero 图片的风格，合法的值有： `basic`、`big`、`background`、`thumbAndBackground`。 |
+| `imagePosition` | 无 | 使用 `object-position` 属性设置特色图片的位置。有效值如 [MDN 文档](https://developer.mozilla.org/en-US/docs/Web/CSS/object-position#try_it) 所示。 |
 | `showBreadcrumbs` | `article.showBreadcrumbs` or `list.showBreadcrumbs` | 是否在文章或列表页面显示面包屑导航。 |
 | `showDate` | `article.showDate` | 是否显示文章的日期。具体日期使用 `date` 参数设置。 |
 | `showDateUpdated` | `article.showDateUpdated` | 是否显示文章的更新日期。具体日期使用 `lastmod` 参数设置。 |
