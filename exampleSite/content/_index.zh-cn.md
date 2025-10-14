@@ -12,7 +12,7 @@ description: "此页面是使用 Hugo 的 Blowfish 主题搭建的"
     <span class="prose dark:prose-invert"> 这是 <code id="layout">background</code> 的样式示例。</span>
     <button
       id="switch-layout-button"
-      class="px-4 !text-neutral !no-underline rounded-md bg-primary-600 hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700"
+      class="px-4 mx-[3px] !text-neutral !no-underline rounded-md bg-primary-600 hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700"
     >
       切换 layout &orarr;
     </button>

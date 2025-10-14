@@ -10,7 +10,7 @@ description: "Questa pagina è stata creata utilizzando il tema Blowfish per Hug
     <span class="prose dark:prose-invert">Questa è una demo del layout <code id="layout">background</code>.</span>
     <button
       id="switch-layout-button"
-      class="px-4 !text-neutral !no-underline rounded-md bg-primary-600 hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700"
+      class="px-4 mx-[3px] !text-neutral !no-underline rounded-md bg-primary-600 hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700"
     >
       Cambia layout &orarr;
     </button>
