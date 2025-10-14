@@ -22,6 +22,10 @@ article:
 
 a11y:
   title: "Einstellungen zur Barrierefreiheit"
+  disable_blur: "Blur deaktivieren"
+  disable_images: "Bilder deaktivieren"
+  show_link_underline: "Links unterstreichen"
+  font_size: "Schriftgröße"
 
 author:
   byline_title: "Autor"
