@@ -1,5 +1,5 @@
-{{/* Logo section */}}
-{{ define "HeaderLogo" }}
+<div
+  class="main-menu flex items-center justify-between py-6 md:justify-start gap-x-3 pt-[2px] pr-2 md:pr-4 pb-[3px] pl-0">
   {{ if .Site.Params.Logo }}
     {{ $logo := resources.Get .Site.Params.Logo }}
     {{ if $logo }}
@@ -21,13 +21,7 @@
         </a>
       </div>
     {{ end }}
-  {{- end }}
-{{ end }}
-
-
-<div
-  class="main-menu flex items-center justify-between py-6 md:justify-start gap-x-3 pt-[2px] pr-2 md:pr-4 pb-[3px] pl-0">
-  {{ template "HeaderLogo" . }}
+  {{ end }}
   <div class="flex flex-1 items-center justify-between">
     <nav class="flex space-x-3">
       {{ if not .Site.Params.disableTextInHeader | default true }}

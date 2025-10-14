@@ -1,7 +1,7 @@
 <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
   {{ if .Site.Menus.main }}
     {{ range .Site.Menus.main }}
-      {{ partial "header/header-option.html" . }}
+      {{ template "HeaderDesktopMenu" . }}
     {{ end }}
   {{ end }}
 
@@ -37,3 +37,84 @@
     </div>
   {{ end }}
 </nav>
+
+{{ define "HeaderDesktopMenu" }}
+  {{ if .HasChildren }}
+    {{ template "HeaderDesktopMenuNested" . }}
+  {{ else }}
+    {{ template "HeaderDesktopMenuSimple" . }}
+  {{ end }}
+{{ end }}
+
+{{ define "HeaderDesktopMenuNested" }}
+  <div>
+    <div class="cursor-pointer flex items-center nested-menu">
+      {{ if .Pre }}
+        <span {{ if and .Pre .Name }}class="mr-1"{{ end }}>
+          {{ partial "icon.html" .Pre }}
+        </span>
+      {{ end }}
+      <a
+        {{ if .URL }}
+          href="{{ .URL }}"
+          {{ if or (strings.HasPrefix .URL "http:" ) (strings.HasPrefix .URL "https:" ) }}
+            target="_blank"
+          {{ end }}
+        {{ end }}
+        {{ with or .Name .Pre }}aria-label="{{ . }}"{{ end }}
+        class="text-base font-medium hover:text-primary-600 dark:hover:text-primary-400"
+        title="{{ .Title }}">
+        <p>
+          {{ .Name | markdownify }}
+        </p>
+      </a>
+      <span>
+        {{ partial "icon.html" "chevron-down" }}
+      </span>
+    </div>
+    <div class="absolute menuhide">
+      <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
+        <div class="flex flex-col space-y-3">
+          {{ range .Children }}
+            <a
+              href="{{ .URL }}"
+              {{ if or (strings.HasPrefix .URL "http:" ) (strings.HasPrefix .URL "https:" ) }}
+                target="_blank"
+              {{ end }}
+              {{ with or .Name .Pre }}aria-label="{{ . }}"{{ end }}
+              class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+              {{ if .Pre }}
+                <span {{ if and .Pre .Name }}class="mr-1"{{ end }}>
+                  {{ partial "icon.html" .Pre }}
+                </span>
+              {{ end }}
+              <p class="text-sm font-sm" title="{{ .Title }}">
+                {{ .Name | markdownify }}
+              </p>
+            </a>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+{{ end }}
+
+{{ define "HeaderDesktopMenuSimple" }}
+  <a
+    href="{{ .URL }}"
+    {{ if or (strings.HasPrefix .URL "http:" ) (strings.HasPrefix .URL "https:" ) }}target="_blank"{{ end }}
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    {{ with or .Name .Pre }}aria-label="{{ . }}"{{ end }}
+    title="{{ .Title }}">
+    {{ if .Pre }}
+      <span {{ if and .Pre .Name }}class="mr-1"{{ end }}>
+        {{ partial "icon.html" .Pre }}
+      </span>
+    {{ end }}
+    {{ if .Name }}
+      <p class="text-base font-medium">
+        {{ .Name | markdownify }}
+      </p>
+    {{ end }}
+  </a>
+{{ end }}

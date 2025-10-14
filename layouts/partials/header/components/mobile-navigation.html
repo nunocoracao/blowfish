@@ -17,7 +17,7 @@
           </li>
 
           {{ range .Site.Menus.main }}
-            {{ partial "header/header-mobile-option.html" . }}
+            {{ template "HeaderMobileMenu" . }}
           {{ end }}
 
         </ul>
@@ -50,3 +50,80 @@
     {{ end }}
   </div>
 </div>
+
+{{ define "HeaderMobileMenu" }}
+  {{ if .HasChildren }}
+    {{ template "HeaderMobileMenuNested" . }}
+  {{ else }}
+    {{ template "HeaderMobileMenuSimple" . }}
+  {{ end }}
+
+{{ end }}
+
+{{ define "HeaderMobileMenuNested" }}
+  <li class="mt-1">
+    <a
+      href="{{ .URL }}"
+      {{ with or .Name .Pre }}aria-label="{{ . }}"{{ end }}
+      class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+      {{ if .Pre }}
+        <span {{ if and .Pre .Name }}class="mr-1"{{ end }}>
+          {{ partial "icon.html" .Pre }}
+        </span>
+      {{ end }}
+      <p class="text-bg font-bg" title="{{ .Title }}">
+        {{ .Name | markdownify }}
+      </p>
+      <span>
+        {{ partial "icon.html" "chevron-down" }}
+      </span>
+    </a>
+  </li>
+  {{ range .Children }}
+    <li class="mt-1">
+      <a
+        href="{{ .URL }}"
+        {{ if or (strings.HasPrefix .URL "http:" ) (strings.HasPrefix .URL "https:" ) }}
+          target="_blank"
+        {{ end }}
+        {{ with or .Name .Pre }}aria-label="{{ . }}"{{ end }}
+        class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+        {{ if .Pre }}
+          <span {{ if and .Pre .Name }}class="mr-1"{{ end }}>
+            {{ partial "icon.html" .Pre }}
+          </span>
+        {{ end }}
+        <p class="text-sm font-small" title="{{ .Title }}">
+          {{ .Name | markdownify }}
+        </p>
+      </a>
+    </li>
+  {{ end }}
+  <li class="mb-2"></li>
+{{ end }}
+
+{{ define "HeaderMobileMenuSimple" }}
+  <li class="mt-1">
+    <a
+      href="{{ .URL }}"
+      {{ if or (strings.HasPrefix .URL "http:" ) (strings.HasPrefix .URL "https:"
+        )
+      }}
+        target="_blank"
+      {{ end }}
+      class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+      {{ with or .Name .Pre }}aria-label="{{ . }}"{{ end }}
+      title="{{ .Title }}">
+      {{ if .Pre }}
+        <div {{ if and .Pre .Name }}class="mr-2"{{ end }}>
+          {{ partial "icon.html" .Pre }}
+        </div>
+      {{ end }}
+      {{ if .Name }}
+        <p class="text-bg font-bg">
+          {{ .Name | markdownify }}
+        </p>
+      {{ end }}
+    </a>
+  </li>
+{{ end }}
