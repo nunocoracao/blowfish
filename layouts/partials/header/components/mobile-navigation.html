@@ -1,0 +1,52 @@
+<div class="-my-2 md:hidden">
+  <div id="menu-button" class="block">
+    {{ if .Site.Menus.main }}
+      <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+        {{ partial "icon.html" "bars" }}
+      </div>
+      <div
+        id="menu-wrapper"
+        class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]">
+        <ul
+          class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none text-end max-w-7xl">
+          <li id="menu-close-button">
+            <span
+              class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+              {{ partial "icon.html" "xmark" }}
+            </span>
+          </li>
+
+          {{ range .Site.Menus.main }}
+            {{ partial "header/header-mobile-option.html" . }}
+          {{ end }}
+
+        </ul>
+        {{ if .Site.Menus.subnavigation }}
+          <hr>
+          <ul
+            class="flex mt-4 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none text-end max-w-7xl">
+            {{ range .Site.Menus.subnavigation }}
+              <li class="mb-1">
+                <a
+                  href="{{ .URL }}"
+                  {{ if or (strings.HasPrefix .URL "http:" ) (strings.HasPrefix .URL "https:") }}
+                    target="_blank"
+                  {{ end }}
+                  class="flex items-center">
+                  {{ if .Pre }}
+                    <span {{ if and .Pre .Name }}class="mr-3"{{ end }}>
+                      {{ partial "icon.html" .Pre }}
+                    </span>
+                  {{ end }}
+                  <p class="text-sm font-sm" title="{{ .Title }}">
+                    {{ .Name | markdownify }}
+                  </p>
+                </a>
+              </li>
+            {{ end }}
+          </ul>
+        {{ end }}
+      </div>
+    {{ end }}
+  </div>
+</div>
