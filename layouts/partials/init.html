@@ -1,0 +1,37 @@
+{{/* disableImageOptimization */}}
+{{ site.Store.Set "disableImageOptimization" (site.Params.disableImageOptimization | default false) }}
+
+{{/* defaultFeaturedImage */}}
+{{ $defaultFeaturedImage := "" }}
+{{ $defaultFeaturedImageURL := "" }}
+{{ with site.Params.defaultFeaturedImage }}
+  {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+    {{ if site.Params.hotlinkFeatureImage }}
+      {{ $defaultFeaturedImageURL = . }}
+    {{ else }}
+      {{ $defaultFeaturedImage = resources.GetRemote . }}
+    {{ end }}
+  {{ else }}
+    {{ $defaultFeaturedImage = resources.Get . }}
+  {{ end }}
+{{ end }}
+{{ site.Store.Set "defaultFeaturedImage" (dict "url" $defaultFeaturedImageURL "obj" $defaultFeaturedImage) }}
+
+{{/* defaultBackgroundImage */}}
+{{ $defaultBackgroundImage := "" }}
+{{ $defaultBackgroundImageURL := "" }}
+{{ with site.Params.defaultBackgroundImage }}
+  {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+    {{ if site.Params.hotlinkFeatureImage }}
+      {{ $defaultBackgroundImageURL = . }}
+    {{ else }}
+      {{ $defaultBackgroundImage = resources.GetRemote . }}
+    {{ end }}
+  {{ else }}
+    {{ $defaultBackgroundImage = resources.Get . }}
+  {{ end }}
+{{ end }}
+{{ site.Store.Set "defaultBackgroundImage" (dict "url" $defaultBackgroundImageURL "obj" $defaultBackgroundImage) }}
+
+{{/* backgroundImageWidth */}}
+{{ site.Store.Set "backgroundImageWidth" (print (site.Params.backgroundImageWidth | default "1200") "x") }}

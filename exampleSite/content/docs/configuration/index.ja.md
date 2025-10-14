@@ -185,6 +185,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 | `defaultBackgroundImage` | _未設定_ | `background` ホームページレイアウトと `background` ヒーロースタイルの両方のデフォルトの背景画像です。 |
 | `defaultFeaturedImage` | _未設定_ | 記事全体のすべての `featured` 画像のデフォルトの背景画像です。ローカルの `featured` 画像によってオーバーライドされます。 |
 | `defaultSocialImage` | _未設定_ | ソーシャルメディア共有（Open Graph と Twitter）用のデフォルト画像。ローカルの `featured` 画像によってオーバーライドされます。 |
+| `hotlinkFeatureImage` | `false` | 記事のアイキャッチ画像や記事カードで外部画像をホットリンクします。これらの画像は Hugo によって処理されません。 |
 | `highlightCurrentMenuArea` | _未設定_ | メインメニューのメニュー項目が選択されているときにマークを付けます。 |
 | `smartTOC` | _未設定_ | スマート目次をアクティブにします。表示されている項目が強調表示されます。 |
 | `smartTOCHideUnfocusedChildren` | _未設定_ | スマート目次がオンになっている場合、フォーカスされていないときに、テーブルのより深いレベルが非表示になります。 |

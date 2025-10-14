@@ -26,6 +26,7 @@ disableTextInHeader = false
 defaultBackgroundImage = "/img/background.svg"
 defaultFeaturedImage = "/img/featured.svg"
 defaultSocialImage = "/img/blowfish_banner.png"
+hotlinkFeatureImage = false
 
 highlightCurrentMenuArea = true
 smartTOC = true
@@ -83,8 +84,8 @@ fingerprintAlgorithm = "sha512" # Valid values are "sha512" (default), "sha384",
   showTableOfContents = true
   showRelatedContent = true
   relatedContentLimit = 9
-  showTaxonomies = true 
-  showAuthorsBadges = true 
+  showTaxonomies = true
+  showAuthorsBadges = true
   showWordCount = false
   sharingLinks = [ "linkedin", "twitter", "bluesky", "reddit", "whatsapp", "telegram", "pinterest", "facebook", "email", "line"]
   showZenMode = true
@@ -129,7 +130,7 @@ fingerprintAlgorithm = "sha512" # Valid values are "sha512" (default), "sha384",
   groupByYear = false
   cardView = true
   cardViewScreenWidth = false
-  
+
 [firebase]
   #apiKey = "AIzaSyB5tqlqDky77Vb4Tc4apiHV4hRZI18KGiY"
   #authDomain = "blowfish-21fff.firebaseapp.com"

@@ -1,64 +1,75 @@
-{{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
+{{ $disableImageOptimization := site.Store.Get "disableImageOptimization" }}
 
+{{/* === Background === */}}
 {{ $images := .Resources.ByType "image" }}
 {{ $background := $images.GetMatch "*background*" }}
 {{ $backgroundURL := "" }}
 
-{{ if not $background }}
-  {{ with .Site.Params.defaultBackgroundImage }}
-    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-      {{ $background = resources.GetRemote . }}
-    {{ else }}
-      {{ $background = resources.Get . }}
+{{ if not (or $background $backgroundURL) }}
+  {{ $default := site.Store.Get "defaultBackgroundImage" }}
+  {{ if $default.url }}
+    {{ $backgroundURL = $default.url }}
+  {{ else if $default.obj }}
+    {{ $background = $default.obj }}
+  {{ end }}
+{{ end }}
+
+{{ if not (or $background $backgroundURL) }}
+  {{ range slice "*cover*" "*thumbnail*" "*feature*" }}
+    {{ if not $background }}{{ $background = $images.GetMatch . }}{{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* generate image URL if not hotlink */}}
+{{ if not $backgroundURL }}
+  {{ with $background }}
+    {{ $backgroundURL = .RelPermalink }}
+    {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
+      {{ $size := site.Store.Get "backgroundImageWidth" }}
+      {{ $backgroundURL = (.Resize $size).RelPermalink }}
     {{ end }}
   {{ end }}
 {{ end }}
 
-{{ range slice "*cover*" "*thumbnail*" "*feature*" }}
-  {{ if not $background }}{{ $background = $images.GetMatch . }}{{ end }}
-{{ end }}
-
-{{ with $background }}
-  {{ $backgroundURL = .RelPermalink }}
-  {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
-    {{ $size := (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
-    {{ $backgroundURL = (.Resize $size).RelPermalink }}
-  {{ end }}
-{{ end }}
-
+{{/* === Featured === */}}
 {{ $featured := "" }}
 {{ $featuredURL := "" }}
-{{ if .Params.featureimage }}
-  {{ $url := .Params.featureimage }}
-  {{ if or (strings.HasPrefix $url "http:") (strings.HasPrefix $url "https:") }}
-    {{ $featured = resources.GetRemote $url }}
+{{ with .Params.featureimage }}
+  {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+    {{ if site.Params.hotlinkFeatureImage }}
+      {{ $featuredURL = . }}
+    {{ else }}
+      {{ $featured = resources.GetRemote . }}
+    {{ end }}
   {{ else }}
-    {{ $featured = resources.Get $url }}
+    {{ $featured = resources.Get . }}
   {{ end }}
 {{ end }}
 
-{{ if not $featured }}
+{{ if not (or $featured $featuredURL) }}
   {{ $images := $.Resources.ByType "image" }}
   {{ range slice "*feature*" "*cover*" "*thumbnail*" "*background*" }}
     {{ if not $featured }}{{ $featured = $images.GetMatch . }}{{ end }}
   {{ end }}
 {{ end }}
 
-{{ if not $featured }}
-  {{ with .Site.Params.defaultFeaturedImage }}
-    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-      {{ $featured = resources.GetRemote . }}
-    {{ else }}
-      {{ $featured = resources.Get . }}
-    {{ end }}
+{{ if not (or $featured $featuredURL) }}
+  {{ $default := site.Store.Get "defaultFeaturedImage" }}
+  {{ if $default.url }}
+    {{ $featuredURL = $default.url }}
+  {{ else if $default.obj }}
+    {{ $featured = $default.obj }}
   {{ end }}
 {{ end }}
 
-{{ with $featured }}
-  {{ $featuredURL = .RelPermalink }}
-  {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
-    {{ $size := (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
-    {{ $featuredURL = (.Resize $size).RelPermalink }}
+{{/* generate image URL if not hotlink */}}
+{{ if not $featuredURL }}
+  {{ with $featured }}
+    {{ $featuredURL = .RelPermalink }}
+    {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
+      {{ $size := site.Store.Get "backgroundImageWidth" }}
+      {{ $featuredURL = (.Resize $size).RelPermalink }}
+    {{ end }}
   {{ end }}
 {{ end }}
 
@@ -87,7 +98,11 @@
     <img
       id="background-image-main"
       src="{{ . }}"
-      alt="Background Image"
+      alt=""
+      role="presentation"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
       class="absolute inset-0 h-full w-full object-cover">
   {{ end }}
   <div
