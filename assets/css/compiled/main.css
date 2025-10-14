@@ -3202,6 +3202,16 @@ body.zen-mode-enable {
       display: none;
     }
   }
+  .ltr\:inline {
+    &:where(:dir(ltr), [dir="ltr"], [dir="ltr"] *) {
+      display: inline;
+    }
+  }
+  .rtl\:left-0 {
+    &:where(:dir(rtl), [dir="rtl"], [dir="rtl"] *) {
+      left: calc(var(--spacing) * 0);
+    }
+  }
   .rtl\:-mr-\[79px\] {
     &:where(:dir(rtl), [dir="rtl"], [dir="rtl"] *) {
       margin-right: calc(79px * -1);
