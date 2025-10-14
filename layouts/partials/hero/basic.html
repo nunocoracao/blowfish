@@ -53,7 +53,7 @@
   <div class="overflow-hidden h-36 md:h-56 lg:h-72">
     <img
       src="{{ . }}"
-      alt=""
+      alt="{{ with $.Params.featureimagealt }}{{ . }}{{ else }}{{ with $.Title }}Featured image for {{ . }}{{ else }}Featured image{{ end }}{{ end }}"
       loading="eager"
       decoding="async"
       fetchpriority="high"

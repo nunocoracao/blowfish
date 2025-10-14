@@ -66,10 +66,6 @@ button,
 }
 
 /* Table of Contents */
-#TableOfContents {
-  @apply lg:max-w-[25vw];
-}
-
 #TOCView {
   max-height: calc(100vh - 150px);
   min-height: 0;
@@ -130,8 +126,8 @@ button,
 
 /* Fix katex overflow https://github.com/nunocoracao/blowfish/issues/2138 */
 .katex-display {
-  padding-right: 2px;
-  width: calc(100% - 2px);
+  padding: 1em;
+  width: calc(100% - 1em);
 }
 
 /* Fix long tables breaking out of article on mobile */
@@ -169,6 +165,7 @@ pre {
 }
 
 .single_hero_background {
+  width: calc(100% + 1px); /* patch for very small gap at right edge on mobile devices */
   z-index: -10;
 }
 

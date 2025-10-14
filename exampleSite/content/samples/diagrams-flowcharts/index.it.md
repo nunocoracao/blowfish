@@ -15,7 +15,6 @@ The examples below are a small selection taken from the [official Mermaid docs](
 
 ## Flowchart
 
-<div style="background-color:white; padding: 20px">
 {{< mermaid >}}
 graph TD
 A[Christmas] -->|Get money| B(Go shopping)
@@ -32,11 +31,9 @@ F
 G
 end
 {{< /mermaid >}}
-</div>
 
 ## Sequence diagram
 
-<div style="background-color:white; padding: 20px">
 {{< mermaid >}}
 sequenceDiagram
 autonumber
@@ -54,11 +51,9 @@ loop Every minute
 John-->Alice: Great!
 end
 {{< /mermaid >}}
-</div>
 
 ## Class diagram
 
-<div style="background-color:white; padding: 20px">
 {{< mermaid >}}
 classDiagram
 Animal "1" <|-- Duck
@@ -82,11 +77,9 @@ class Zebra{
 +run()
 }
 {{< /mermaid >}}
-</div>
 
 ## Entity relationship diagram
 
-<div style="background-color:white; padding: 20px">
 {{< mermaid >}}
 erDiagram
 CUSTOMER }|..|{ DELIVERY-ADDRESS : has
@@ -98,5 +91,3 @@ ORDER ||--|{ ORDER-ITEM : includes
 PRODUCT-CATEGORY ||--|{ PRODUCT : contains
 PRODUCT ||--o{ ORDER-ITEM : "ordered in"
 {{< /mermaid >}}
-</div>
-

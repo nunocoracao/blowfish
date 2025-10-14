@@ -12,7 +12,6 @@ type: 'sample'
 这是一个在你的文章使用缩略图的快速示例。
 
 如果你的文章目录看起来像这样：
-If your average directory for an article looks like this:
 
 ```shell
 content

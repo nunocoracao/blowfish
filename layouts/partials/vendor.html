@@ -149,8 +149,9 @@
     {{ end }}
   {{ end }}
 
-  {{ $repoCardCSS := resources.FromString "css/repo-cards.css" (delimit $cssRules "\n")
-    | minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512")
-  }}
+  {{ $cssContent := delimit $cssRules "\n" }}
+  {{ $outputPath := path.Join .Page.RelPermalink "repo-cards.css" }}
+  {{ $repoCardCSS := resources.FromString $outputPath $cssContent | minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
+
   <link rel="stylesheet" href="{{ $repoCardCSS.RelPermalink }}" integrity="{{ $repoCardCSS.Data.Integrity }}">
 {{ end }}

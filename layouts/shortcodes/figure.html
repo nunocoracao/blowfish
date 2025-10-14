@@ -31,14 +31,18 @@
       {{- else }}
         <img
           class="my-0 rounded-md{{ with $nozoom }} nozoom{{ end }}{{ with $class }} {{ . }}{{ end }}"
-          srcset="
-          {{ (.Resize "330x").RelPermalink }} 330w,
-          {{ (.Resize "660x").RelPermalink }} 660w,
-          {{ (.Resize "1024x").RelPermalink }} 1024w,
-          {{ (.Resize "1320x").RelPermalink }} 2x"
-          src="{{ (.Resize "660x").RelPermalink }}"
-          data-zoom-src="{{ (.Resize "1320x").RelPermalink }}"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="auto"
           alt="{{ $altText }}"
+          {{ with .Width }}width="{{ . }}"{{ end }}
+          {{ with .Height }}height="{{ . }}"{{ end }}
+          src="{{ (.Resize "800x").RelPermalink }}"
+          srcset="
+          {{- (.Resize "800x").RelPermalink }} 800w,
+          {{- (.Resize "1280x").RelPermalink }} 1280w"
+          sizes="(min-width: 768px) 50vw, 65vw"
+          data-zoom-src="{{ .RelPermalink }}"
         />
       {{- end }}
     {{- else }}

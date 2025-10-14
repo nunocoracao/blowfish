@@ -6,7 +6,7 @@ cascade:
   showEdit: false
   showSummary: false
   hideFeatureImage: true
-
+  invertPagination: true
 ---
 {{< lead >}}
 Blowfish dà vita ai tuoi contenuti. :heart_eyes:

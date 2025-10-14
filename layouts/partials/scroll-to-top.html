@@ -1,5 +1,9 @@
-{{ $coffeeIsRight := and site.Params.buymeacoffee.globalWidget (eq (lower site.Params.buymeacoffee.globalWidgetPosition) "right") }}
-{{ $toTopYOffset := cond $coffeeIsRight "bottom-24" "bottom-6" }}
+{{ $coffeeIsRight := and .Site.Params.buymeacoffee.globalWidget (eq (lower site.Params.buymeacoffee.globalWidgetPosition) "right") }}
+{{ $isRTL := .Site.Params.rtl | default false }}
+{{ $needAvoidCoffee := ne $coffeeIsRight $isRTL }}
+{{ $toTopYOffset := cond $needAvoidCoffee "bottom-24" "bottom-6" }}
+
+
 <div
   id="scroll-to-top"
   class="fixed {{ $toTopYOffset }} end-6 z-50 transform translate-y-4 opacity-0 duration-200">

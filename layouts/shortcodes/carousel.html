@@ -1,5 +1,7 @@
 {{ $id := delimit (slice "carousel" (partial "functions/uid.html" .) (now.UnixNano)) "-" }}
-{{ $aspect := default "16-9" (.Get "aspectRatio") }}
+{{ $aspect := (split (.Get "aspectRatio") "-") }}
+{{ $aspectx := default "16" (index $aspect  0) }}
+{{ $aspecty := default "9" (index $aspect  1) }}
 {{ $interval := default "2000" (.Get "interval") }}
 
 {{ $page := .Page.Resources }}
@@ -47,10 +49,12 @@
         data-twe-carousel-item
         style="transition-duration: {{ $interval }}ms;"
         {{ if eq $index 0 }}data-twe-carousel-active{{ end }}>
-        <div class="ratio-{{ $aspect }} single_hero_background">
+        <div
+          class="single_hero_background"
+          style="aspect-ratio: {{ $aspectx }} / {{ $aspecty }};">
           <img
             src="{{ $image.RelPermalink }}"
-            class="block absolute top-0 object-cover w-full h-full nozoom"
+            class="block absolute top-0 object-cover w-full h-full not-prose nozoom"
             alt="carousel image {{ add $index 1 }}">
         </div>
       </div>

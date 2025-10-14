@@ -79,7 +79,7 @@ Blowfish 提供了一个完全灵活的主页布局。你可以选择两种主�
 
 ## 缩略图
 
-Blowfish 为你的文章提供了视觉支持。如果你熟悉 Hugo 的文章结构，只需要在你的文章对应的文件夹中防止一个以`feature*`开头的图像文件即可，图像类型几乎支持所有格式，更推荐使用`.png` 或者 `.jpg`。这样一来，Blowfish 将会在你的网站内使用该图片作为缩略图，并用在社交媒体平台上的 <a target="_blank" href="https://oembed.com/">oEmbed</a> 卡片中。 
+Blowfish 为你的文章提供了视觉支持。如果你熟悉 Hugo 的文章结构，只需要在你的文章对应的文件夹中放置一个以`feature*`开头的图像文件即可，图像类型几乎支持所有格式，更推荐使用`.png` 或者 `.jpg`。这样一来，Blowfish 将会在你的网站内使用该图片作为缩略图，并用在社交媒体平台上的 <a target="_blank" href="https://oembed.com/">oEmbed</a> 卡片中。 
 
 [这是]({{< ref "thumbnails" >}})有更多详细内容，并且有一个便于理解的[示例]({{< ref "thumbnail_sample" >}})。
 
