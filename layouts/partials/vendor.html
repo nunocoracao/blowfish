@@ -131,27 +131,17 @@
   {{ $repoColors := site.Data.repoColors }}
   {{ $cssRules := slice }}
 
-  {{ $usedLanguages := $.Page.Store.Get "repoCardLanguages" }}
-  {{ if not $usedLanguages }}
-    {{ $usedLanguages = slice "default" }}
-  {{ else }}
-    {{ $usedLanguages = $usedLanguages | append "default" }}
+  {{/* default color */}}
+  {{ $cssRules = $cssRules | append ".language-dot[data-language=\"default\"] { background-color: #0077b6; }" }}
+
+  {{/* Hugging Face model color */}}
+  {{ $cssRules = $cssRules | append ".language-dot[data-language=\"model\"] { background-color: #ff6b35; }" }}
+
+  {{ range $lang, $color := $repoColors }}
+    {{ $cssRules = $cssRules | append (printf ".language-dot[data-language=\"%s\"] { background-color: %s; }" $lang $color) }}
   {{ end }}
-
-  {{ range $usedLanguages }}
-    {{ if eq . "default" }}
-      {{ $cssRules = $cssRules | append ".language-dot[data-language=\"default\"] { background-color: #0077b6; }" }}
-    {{ else if eq . "model" }}
-      {{ $cssRules = $cssRules | append ".language-dot[data-language=\"model\"] { background-color: #ff6b35; }" }}
-    {{ else if index $repoColors . }}
-      {{ $color := index $repoColors . }}
-      {{ $cssRules = $cssRules | append (printf ".language-dot[data-language=\"%s\"] { background-color: %s; }" . $color) }}
-    {{ end }}
-  {{ end }}
-
-  {{ $cssContent := delimit $cssRules "\n" }}
-  {{ $outputPath := path.Join .Page.RelPermalink "repo-cards.css" }}
-  {{ $repoCardCSS := resources.FromString $outputPath $cssContent | minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
-
+  {{ $repoCardCSS := resources.FromString "css/repo-cards.css" (delimit $cssRules "\n")
+    | minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512")
+  }}
   <link rel="stylesheet" href="{{ $repoCardCSS.RelPermalink }}" integrity="{{ $repoCardCSS.Data.Integrity }}">
 {{ end }}
