@@ -66,7 +66,7 @@ Se hai bisogno di ulteriori dettagli, ulteriori informazioni su ciascuna di ques
 
 ## Schemi di colori
 
-Blowfish viene fornito con una serie di schemi di colori già pronti. Per cambiare lo schema, è sufficiente impostare il parametro del tema `colorScheme`. Le opzioni valide sono `blowfish` (default), `avocado`, `fire`, `ocean`, `forest`, `princess`, `neon`, `bloody`, `terminal`, `marvel`, `noir`, `autumn`, `congo`, `slate` and `github`.
+Blowfish viene fornito con una serie di schemi di colori già pronti. Per cambiare lo schema, è sufficiente impostare il parametro del tema `colorScheme`. Le opzioni valide sono `blowfish` (default), `avocado`, `fire`, `ocean`, `forest`, `princess`, `neon`, `bloody`, `terminal`, `marvel`, `noir`, `autumn`, `congo`, `slate`, `github` and `one-light`.
 
 ```toml
 # config/_default/params.toml
@@ -135,6 +135,10 @@ Blowfish definisce una palette di tre colori che viene utilizzata in tutto il te
 ### Github
 
 {{< swatches "#64748b" "#0092ff" "#f54728" >}}
+
+### One-Light
+
+{{< swatches "#646464" "#0070cc" "#20a077" >}}
 
 Sebbene questi siano gli schemi predefiniti, è possibile crearne di propri. Per maggiori informazioni, consultare la sezione [Personalizzazione avanzata]({{< ref "advanced-customisation#colour-schemes" >}}).
 

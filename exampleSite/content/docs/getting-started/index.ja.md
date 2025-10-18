@@ -63,7 +63,7 @@ links = [
 
 ## カラースキーム
 
-Blowfish には、すぐに使用できる多くのカラースキームが付属しています。スキームを変更するには、`colorScheme` テーマパラメータを設定するだけです。有効なオプションは、`blowfish` (デフォルト)、`avocado`、`fire`、`ocean`、`forest`、`princess`、`neon`、`bloody`、`terminal`、`marvel`、`noir`、`autumn`、`congo`、`slate`、`github` です。
+Blowfish には、すぐに使用できる多くのカラースキームが付属しています。スキームを変更するには、`colorScheme` テーマパラメータを設定するだけです。有効なオプションは、`blowfish` (デフォルト)、`avocado`、`fire`、`ocean`、`forest`、`princess`、`neon`、`bloody`、`terminal`、`marvel`、`noir`、`autumn`、`congo`、`slate`、`github`、`one-light` です。
 
 ```toml
 # config/_default/params.toml
@@ -132,6 +132,10 @@ Blowfish は、テーマ全体で使用される3色のパレットを定義し�
 ### Github
 
 {{< swatches "#64748b" "#0092ff" "#f54728" >}}
+
+### One-Light
+
+{{< swatches "#646464" "#0070cc" "#20a077" >}}
 
 これらはデフォルトのスキームですが、独自のスキームを作成することもできます。詳細については、[高度なカスタマイズ]({{< ref "advanced-customisation#colour-schemes" >}})セクションを参照してください。
 

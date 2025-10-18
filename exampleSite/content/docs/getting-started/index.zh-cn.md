@@ -63,7 +63,7 @@ links = [
 
 ## 颜色方案
 
-Blowfish 主题中包含了数个颜色方案，这些方案可以快速使用。如果需要修改方案，只需要简单的设置 `colorScheme` 参数即可。`colorScheme` 可选的值有`blowfish` （默认）、`avocado`、`fire`、`ocean`、`forest`、`princess`、`neon`、`bloody`、`terminal`、`marvel`、`noir`、`autumn`、`congo` 、 `slate` 和 `github`。
+Blowfish 主题中包含了数个颜色方案，这些方案可以快速使用。如果需要修改方案，只需要简单的设置 `colorScheme` 参数即可。`colorScheme` 可选的值有`blowfish` （默认）、`avocado`、`fire`、`ocean`、`forest`、`princess`、`neon`、`bloody`、`terminal`、`marvel`、`noir`、`autumn`、`congo`、`slate`、`github` 和 `one-light`。
 
 ```toml
 # config/_default/params.toml
@@ -132,6 +132,10 @@ Blowfish 定义了一种由三种主色调构成的配色方案，每种主色�
 ### Github
 
 {{< swatches "#64748b" "#0092ff" "#f54728" >}}
+
+### One-Light
+
+{{< swatches "#646464" "#0070cc" "#20a077" >}}
 
 这些是内置的配色方案，你也可以去自定义这一部分，请参阅 [高级自定义]({{< ref "advanced-customisation#colour-schemes" >}}) 。
 
