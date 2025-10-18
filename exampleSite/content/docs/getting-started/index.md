@@ -63,7 +63,7 @@ If you need extra detail, further information about each of these configuration 
 
 ## Colour schemes
 
-Blowfish ships with a number of colour schemes out of the box. To change the scheme, simply set the `colorScheme` theme parameter. Valid options are `blowfish` (default), `avocado`, `fire`, `ocean`, `forest`, `princess`, `neon`, `bloody`, `terminal`, `marvel`, `noir`, `autumn`, `congo`, and`slate`.
+Blowfish ships with a number of colour schemes out of the box. To change the scheme, simply set the `colorScheme` theme parameter. Valid options are `blowfish` (default), `avocado`, `fire`, `ocean`, `forest`, `princess`, `neon`, `bloody`, `terminal`, `marvel`, `noir`, `autumn`, `congo`, `slate` and `github`.
 
 ```toml
 # config/_default/params.toml
@@ -128,6 +128,10 @@ Blowfish defines a three-colour palette that is used throughout the theme. Each 
 ### Slate
 
 {{< swatches "#6B7280" "#64748b" "#6B7280" >}}
+
+### Github
+
+{{< swatches "#64748b" "#0092ff" "#f54728" >}}
 
 Although these are the default schemes, you can also create your own. Refer to the [Advanced Customisation]({{< ref "advanced-customisation#colour-schemes" >}}) section for details.
 
