@@ -125,6 +125,57 @@ html {
 
 この1つの値を変更するだけで、ウェブサイトのすべてのフォントサイズがこの新しいサイズに合わせて調整されます。なので、使用されるフォントサイズ全体を大きくするには、値を `12pt` より大きくすれば良いです。同様に、フォントサイズを小さくするには、値を `12pt` より小さくすれば良いです。
 
+### シンタックスハイライトテーマの変更（実験的機能）
+
+Blowfish はカスタマイズされた Chroma シンタックスハイライトスタイルを使用しており、すべての Chroma 色は `assets/css/schemes` で定義されています。`custom.css` を編集し、[hugo gen chromastyles](https://gohugo.io/commands/hugo_gen_chromastyles/) を用いてカスタムシンタックスハイライトテーマを作成できます。`assets/css/custom.css` に以下を追加してください:
+
+```css
+.chroma,
+.chroma *,
+.chroma:is(.dark *),
+.chroma:is(.dark *) * {
+  color: unset;
+  font-weight: unset;
+  background-color: unset;
+}
+```
+
+これによりデフォルトの Chroma スタイルがクリアされます。次に `hugo gen chromastyles` コマンドで CSS ファイルに Chroma スタイルを組み込みます:
+
+```sh
+# これはシェルコマンドです。Windows ユーザーは `|` 以降のコマンドを削除し、
+# `html:not(.dark)` と `html.dark` を生成された CSS に手動で追加してください
+
+hugo gen chromastyles --style=github | sed 's/\./html:not(.dark) ./' >> exampleSite/assets/css/custom.css
+
+hugo gen chromastyles --style=github-dark | sed 's/\./html.dark ./' >> exampleSite/assets/css/custom.css
+```
+
+最終的な `custom.css` ファイルは以下のようになります:
+
+```css
+.chroma,
+.chroma *,
+.chroma:is(.dark *),
+.chroma:is(.dark *) * {
+  color: unset;
+  font-weight: unset;
+  background-color: unset;
+}
+
+/* Generated using: hugo gen chromastyles --style=github */
+
+/* Background */ html:not(.dark) .bg { background-color:#fff; }
+/* PreWrapper */ html:not(.dark) .chroma { background-color:#f8f8f8; }
+/* ... */
+
+/* Generated using: hugo gen chromastyles --style=github-dark */
+
+/* Background */ html.dark .bg { color:#e6edf3;background-color:#0d1117; }
+/* PreWrapper */ html.dark .chroma { color:#e6edf3;background-color:#0d1117; }
+/* ... */
+```
+
 ## ソースからテーマ CSS をビルドする
 
 大幅な変更を加えたい場合は、Tailwind CSS の JIT コンパイラを利用して、テーマ CSS 全体を最初から再構築できます。これは、Tailwind 設定を調整したり、メインスタイルシートに追加の Tailwind クラスを追加したりする場合に便利です。

@@ -123,6 +123,57 @@ html {
 
 只需更改此值，您网站上的所有字体大小都将调整为此新大小。因此，要增加使用的整体字体大小，请将该值设置为大于 `12pt` 。同样，要减小字体大小，请将值设置为小于 `12pt` 。
 
+### 更换语法高亮主题（实验性）
+
+Blowfish 使用客製化的 Chroma 语法高亮样式，所有 Chroma 颜色都以 `assets/css/schemes` 定义的颜色显示。你可以修改 `custom.css` 并且搭配 [hugo gen chromastyles](https://gohugo.io/commands/hugo_gen_chromastyles/) 自定语法高亮主题，在 `assets/css/custom.css` 中加入：
+
+```css
+.chroma,
+.chroma *,
+.chroma:is(.dark *),
+.chroma:is(.dark *) * {
+  color: unset;
+  font-weight: unset;
+  background-color: unset;
+}
+```
+
+这会清除预设的 Chroma 样式，下一步我们使用 `hugo gen chromastyles` 指令将 Chroma 样式加入到您的 css 档案中：
+
+```sh
+# 此为 Shell 指令，Windows 用户请移除 `|` 之后的指令，并且将
+# `html:not(.dark)` 和 `html.dark` 手動加入到生成的 css 中
+
+hugo gen chromastyles --style=github | sed 's/\./html:not(.dark) ./' >> exampleSite/assets/css/custom.css
+
+hugo gen chromastyles --style=github-dark | sed 's/\./html.dark ./' >> exampleSite/assets/css/custom.css
+```
+
+您的 `custom.css` 档案最后应该会像是以下：
+
+```css
+.chroma,
+.chroma *,
+.chroma:is(.dark *),
+.chroma:is(.dark *) * {
+  color: unset;
+  font-weight: unset;
+  background-color: unset;
+}
+
+/* Generated using: hugo gen chromastyles --style=github */
+
+/* Background */ html:not(.dark) .bg { background-color:#fff; }
+/* PreWrapper */ html:not(.dark) .chroma { background-color:#f8f8f8; }
+/* ... */
+
+/* Generated using: hugo gen chromastyles --style=github-dark */
+
+/* Background */ html.dark .bg { color:#e6edf3;background-color:#0d1117; }
+/* PreWrapper */ html.dark .chroma { color:#e6edf3;background-color:#0d1117; }
+/* ... */
+```
+
 ## 从源代码构建主题 CSS
 
 如果您想进行大量更改，您可以利用 Tailwind CSS 的 JIT 编译器并从头开始重建整个主题 CSS。尤其是您想要调整 Tailwind 配置或向主样式表添加额外的 Tailwind 类的时候，这种方法将非常有用。

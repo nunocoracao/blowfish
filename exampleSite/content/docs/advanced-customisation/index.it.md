@@ -124,6 +124,57 @@ html {
 
 Simply by changing this one value, all the font sizes on your website will be adjusted to match this new size. Therefore, to increase the overall font sizes used, make the value greater than `12pt`. Similarly, to decrease the font sizes, make the value less than `12pt`.
 
+### Changing Syntax Highlighting Theme (Experimental)
+
+Blowfish uses a customized Chroma syntax highlighting style, where all Chroma colors are defined in `assets/css/schemes`. You can modify `custom.css` and create a custom syntax highlighting theme using [hugo gen chromastyles](https://gohugo.io/commands/hugo_gen_chromastyles/). Add the following to `assets/css/custom.css`:
+
+```css
+.chroma,
+.chroma *,
+.chroma:is(.dark *),
+.chroma:is(.dark *) * {
+  color: unset;
+  font-weight: unset;
+  background-color: unset;
+}
+```
+
+This clears the default Chroma styles. The next step is to incorporate Chroma styles into your CSS file using the `hugo gen chromastyles` command:
+
+```sh
+# This is a shell command. Windows users should remove the part after `|` and manually add
+# `html:not(.dark)` and `html.dark` to the generated CSS.
+
+hugo gen chromastyles --style=github | sed 's/\./html:not(.dark) ./' >> exampleSite/assets/css/custom.css
+
+hugo gen chromastyles --style=github-dark | sed 's/\./html.dark ./' >> exampleSite/assets/css/custom.css
+```
+
+The final `custom.css` file should resemble the following:
+
+```css
+.chroma,
+.chroma *,
+.chroma:is(.dark *),
+.chroma:is(.dark *) * {
+  color: unset;
+  font-weight: unset;
+  background-color: unset;
+}
+
+/* Generated using: hugo gen chromastyles --style=github */
+
+/* Background */ html:not(.dark) .bg { background-color:#fff; }
+/* PreWrapper */ html:not(.dark) .chroma { background-color:#f8f8f8; }
+/* ... */
+
+/* Generated using: hugo gen chromastyles --style=github-dark */
+
+/* Background */ html.dark .bg { color:#e6edf3;background-color:#0d1117; }
+/* PreWrapper */ html.dark .chroma { color:#e6edf3;background-color:#0d1117; }
+/* ... */
+```
+
 ## Building the theme CSS from source
 
 If you'd like to make a major change, you can take advantage of Tailwind CSS's JIT compiler and rebuild the entire theme CSS from scratch. This is useful if you want to adjust the Tailwind configuration or add extra Tailwind classes to the main stylesheet.
