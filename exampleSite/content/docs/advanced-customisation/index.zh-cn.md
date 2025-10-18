@@ -123,6 +123,61 @@ html {
 
 只需更改此值，您网站上的所有字体大小都将调整为此新大小。因此，要增加使用的整体字体大小，请将该值设置为大于 `12pt` 。同样，要减小字体大小，请将值设置为小于 `12pt` 。
 
+### 更换语法高亮主题
+
+Blowfish 使用自定义的语法高亮样式，颜色定义在 `assets/css/schemes` 中。要更换语法高亮主题，请创建 `assets/css/custom.css`，然后添加以下内容：
+
+```css
+.chroma,
+.chroma *,
+.chroma:is(.dark *),
+.chroma:is(.dark *) * {
+  color: unset;
+  font-weight: unset;
+  background-color: unset;
+}
+```
+
+这会清除预设的 Chroma 样式，下一步我们使用 `hugo gen chromastyles` 指令将 Chroma 样式加入到您的 css 档案中：
+
+```sh
+# Mac/Linux
+hugo gen chromastyles --style=emacs | sed 's/\./html:not(.dark) ./' >> assets/css/custom.css
+hugo gen chromastyles --style=evergarden | sed 's/\./html.dark ./' >> assets/css/custom.css
+
+# Windows PowerShell
+# 此命令不能在 CMD 中运行，必须在 PowerShell 中运行
+hugo gen chromastyles --style=emacs | ForEach-Object { $_ -replace '\.', 'html:not(.dark) .' } | Add-Content -Path "css/custom.txt"
+hugo gen chromastyles --style=evergarden | ForEach-Object { $_ -replace '\.', 'html.dark .' } | Add-Content -Path "css/custom.txt"
+```
+
+您的 `custom.css` 档案最后应该会像是以下：
+
+```css
+.chroma,
+.chroma *,
+.chroma:is(.dark *),
+.chroma:is(.dark *) * {
+  color: unset;
+  font-weight: unset;
+  background-color: unset;
+}
+
+/* Generated using: hugo gen chromastyles --style=emacs */
+
+/* Background */ html:not(.dark) .bg { background-color:#f8f8f8; }
+/* PreWrapper */ html:not(.dark) .chroma { background-color:#f8f8f8; }
+/* ... */
+
+/* Generated using: hugo gen chromastyles --style=evergarden */
+
+/* Background */ html.dark .bg { color:#d6cbb4;background-color:#252b2e; }
+/* PreWrapper */ html.dark .chroma { color:#d6cbb4;background-color:#252b2e; }
+/* ... */
+```
+
+在 [Hugo 文档](https://gohugo.io/quick-reference/syntax-highlighting-styles/#styles)中查看所有可用的样式。
+
 ## 从源代码构建主题 CSS
 
 如果您想进行大量更改，您可以利用 Tailwind CSS 的 JIT 编译器并从头开始重建整个主题 CSS。尤其是您想要调整 Tailwind 配置或向主样式表添加额外的 Tailwind 类的时候，这种方法将非常有用。

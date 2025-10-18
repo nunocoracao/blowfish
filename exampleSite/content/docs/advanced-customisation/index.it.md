@@ -124,6 +124,61 @@ html {
 
 Simply by changing this one value, all the font sizes on your website will be adjusted to match this new size. Therefore, to increase the overall font sizes used, make the value greater than `12pt`. Similarly, to decrease the font sizes, make the value less than `12pt`.
 
+### Changing Syntax Highlighting Theme
+
+Blowfish uses a custom syntax highlighting style, with colors defined in `assets/css/schemes`. To change the syntax highlighting theme, create `assets/css/custom.css` and add the following:
+
+```css
+.chroma,
+.chroma *,
+.chroma:is(.dark *),
+.chroma:is(.dark *) * {
+  color: unset;
+  font-weight: unset;
+  background-color: unset;
+}
+```
+
+This clears the default Chroma styles. The next step is to incorporate Chroma styles into your CSS file using the `hugo gen chromastyles` command:
+
+```sh
+# Mac/Linux
+hugo gen chromastyles --style=emacs | sed 's/\./html:not(.dark) ./' >> assets/css/custom.css
+hugo gen chromastyles --style=evergarden | sed 's/\./html.dark ./' >> assets/css/custom.css
+
+# Windows PowerShell
+# This command cannot run in CMD; it must run in PowerShell
+hugo gen chromastyles --style=emacs | ForEach-Object { $_ -replace '\.', 'html:not(.dark) .' } | Add-Content -Path "css/custom.txt"
+hugo gen chromastyles --style=evergarden | ForEach-Object { $_ -replace '\.', 'html.dark .' } | Add-Content -Path "css/custom.txt"
+```
+
+The final `custom.css` file should resemble the following:
+
+```css
+.chroma,
+.chroma *,
+.chroma:is(.dark *),
+.chroma:is(.dark *) * {
+  color: unset;
+  font-weight: unset;
+  background-color: unset;
+}
+
+/* Generated using: hugo gen chromastyles --style=emacs */
+
+/* Background */ html:not(.dark) .bg { background-color:#f8f8f8; }
+/* PreWrapper */ html:not(.dark) .chroma { background-color:#f8f8f8; }
+/* ... */
+
+/* Generated using: hugo gen chromastyles --style=evergarden */
+
+/* Background */ html.dark .bg { color:#d6cbb4;background-color:#252b2e; }
+/* PreWrapper */ html.dark .chroma { color:#d6cbb4;background-color:#252b2e; }
+/* ... */
+```
+
+See all available styles in [Hugo's documentation](https://gohugo.io/quick-reference/syntax-highlighting-styles/#styles).
+
 ## Building the theme CSS from source
 
 If you'd like to make a major change, you can take advantage of Tailwind CSS's JIT compiler and rebuild the entire theme CSS from scratch. This is useful if you want to adjust the Tailwind configuration or add extra Tailwind classes to the main stylesheet.
