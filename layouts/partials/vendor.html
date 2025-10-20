@@ -85,13 +85,6 @@
 
 {{/* tw-elements */}}
 {{ if or (.Page.HasShortcode "carousel") (.Page.HasShortcode "timeline") }}
-  {{ $carouselCSS := resources.Get "css/components/carousel.css" }}
-  {{ $carouselCSS = $carouselCSS | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
-  <link
-    type="text/css"
-    rel="stylesheet"
-    href="{{ $carouselCSS.RelPermalink }}"
-    integrity="{{ $carouselCSS.Data.Integrity }}">
   {{ $twelementsLib := resources.Get "lib/tw-elements/index.min.js" }}
   {{ $twelementsLib = $twelementsLib | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
   <script

@@ -37,10 +37,7 @@ window.A11yPanel = (() => {
         if (enabled && !existing) {
           const style = document.createElement("style");
           style.id = "a11y-underline-links";
-          style.textContent = `
-            a { text-decoration: underline !important; }
-            .group-hover-card-title { text-decoration: underline !important; }
-            .group-hover-card:hover .group-hover-card-title { text-decoration: underline !important; }`;
+          style.textContent = `a { text-decoration: underline !important; }`;
           document.head.appendChild(style);
         } else if (!enabled && existing) {
           existing.remove();
