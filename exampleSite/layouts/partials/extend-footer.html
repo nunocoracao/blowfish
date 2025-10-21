@@ -6,3 +6,112 @@
   </a>
 </p>
 */}}
+
+
+<!-- Demo of replacing medium-zoom with PhotoSwipe
+
+  You can test this on your site by replacing the local files with CDN links:
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.min.css">
+
+  In the script tag:
+  import PhotoSwipeLightbox from "https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe-lightbox.esm.min.js";
+  pswpModule: () => import("https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.esm.min.js"),
+-->
+
+{{- $photoswipeCSS := resources.Get "lib/photoswipe/photoswipe.css" -}}
+{{- $photoswipeLightbox := resources.Get "lib/photoswipe/photoswipe-lightbox.esm.min.js" -}}
+{{- $photoswipeCore := resources.Get "lib/photoswipe/photoswipe.esm.min.js" -}}
+<style>
+  .pswp__custom-caption {
+    background: rgba(0, 0, 0, 0.75);
+    font-size: 16px;
+    color: #fff;
+    width: calc(100% - 32px);
+    max-width: 600px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    position: absolute;
+    left: 50%;
+    bottom: 32px;
+    transform: translateX(-50%);
+  }
+  .pswp__custom-caption a {
+    color: #fff;
+    text-decoration: underline;
+  }
+  .pswp__custom-caption:empty {
+    display: none;
+  }
+</style>
+
+<!-- replace this with CDN link -->
+<link rel="stylesheet" href="{{ $photoswipeCSS.RelPermalink }}">
+<script type="module">
+  import PhotoSwipeLightbox from "{{ $photoswipeLightbox.RelPermalink }}";  // replace this with CDN link
+
+  const container = document.querySelector(".article-content");
+  if (container) {
+    const images = container.querySelectorAll("img.bf-prose-img");
+    images.forEach(img => {
+      const srcAttr = img.getAttribute("src");
+      if (srcAttr && srcAttr.trim() !== "" && !img.closest(".bf-mdimporter")) {
+        img.classList.add("pswp-target");
+      }
+    });
+
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: container,
+      children: ".pswp-target",
+      pswpModule: () => import("{{ $photoswipeCore.RelPermalink }}"),  // replace this with CDN link
+      errorMsg: 'Image not found',
+    });
+
+    lightbox.on('uiRegister', function() {
+      lightbox.pswp.ui.registerElement({
+        name: 'custom-caption',
+        order: 9,
+        isButton: false,
+        appendTo: 'root',
+        html: 'Caption text',
+        onInit: (el, pswp) => {
+          lightbox.pswp.on('change', () => {
+            const currSlideElement = lightbox.pswp.currSlide.data.element;
+            let captionHTML = '';
+            if (currSlideElement) {
+              // figcaption
+              const figure = currSlideElement.closest('figure');
+              if (figure) {
+                const figcaption = figure.querySelector('figcaption');
+                if (figcaption && figcaption.textContent.trim()) {
+                  captionHTML = figcaption.innerHTML;
+                }
+              }
+              // fallback to alt
+              if (!captionHTML) {
+                const alt = currSlideElement.getAttribute('alt');
+                if (alt && alt.trim()) {
+                  captionHTML = alt;
+                }
+              }
+            }
+            el.innerHTML = captionHTML || '';
+          });
+        }
+      });
+    });
+
+    lightbox.addFilter("domItemData", (itemData, element, linkEl) => {
+      const zoomSrc = element.getAttribute("data-zoom-src") || element.getAttribute("src");
+      const width = element.getAttribute("width") || element.naturalWidth;
+      const height = element.getAttribute("height") || element.naturalHeight;
+      itemData.src = zoomSrc;
+      itemData.w = Number(width);
+      itemData.h = Number(height);
+      itemData.msrc = element.getAttribute("src");
+      return itemData;
+    });
+
+    lightbox.init();
+  }
+</script>

@@ -112,6 +112,14 @@
       "to": "assets/lib/lite-youtube-embed/lite-yt-embed.css"
     },
     {
+      "from": "node_modules/photoswipe/dist/photoswipe.esm.min.js",
+      "to": "assets/lib/photoswipe/photoswipe.esm.min.js"
+    },
+    {
+      "from": "node_modules/photoswipe/dist/photoswipe-lightbox.esm.min.js",
+      "to": "assets/lib/photoswipe/photoswipe-lightbox.esm.min.js"
+    },
+    {
       "from": "node_modules/medium-zoom/dist/pure/medium-zoom.min.umd.js",
       "to": "assets/lib/zoom/zoom.min.umd.js"
     },
@@ -125,6 +133,8 @@
     "@heroicons/react": "^2.2.0",
     "@iamtraction/google-translate": "^2.0.1",
     "@tailwindcss/forms": "^0.5.10",
-    "commander": "^14.0.1"
+    "commander": "^14.0.1",
+    "photoswipe": "^5.4.4",
+    "photoswipe-dynamic-caption-plugin": "^1.2.7"
   }
 }

@@ -13,7 +13,7 @@
   <figure>
   {{- with $href }}<a href="{{ . }}" {{ with $target }}target="{{ . }}"{{ end }} class="inline-block">{{ end -}}
   {{- if findRE "^https?" $url.Scheme }}
-      <img class="my-0 rounded-md{{ with $nozoom }} nozoom{{ end }}{{ with $class }} {{ . }}{{ end }}" src="{{ $url.String }}" alt="{{ $altText }}" />
+      <img class="bf-prose-img my-0 rounded-md{{ with $nozoom }} nozoom{{ end }}{{ with $class }} {{ . }}{{ end }}" src="{{ $url.String }}" alt="{{ $altText }}" />
   {{- else }}
     {{- $resource := "" }}
     {{- if $.Page.Resources.GetMatch ($url.String) }}
@@ -30,7 +30,7 @@
         />
       {{- else }}
         <img
-          class="my-0 rounded-md{{ with $nozoom }} nozoom{{ end }}{{ with $class }} {{ . }}{{ end }}"
+          class="bf-prose-img my-0 rounded-md{{ with $nozoom }} nozoom{{ end }}{{ with $class }} {{ . }}{{ end }}"
           loading="lazy"
           decoding="async"
           fetchpriority="auto"
@@ -46,7 +46,7 @@
         />
       {{- end }}
     {{- else }}
-      <img class="my-0 rounded-md{{ with $nozoom }} nozoom{{ end }}{{ with $class }} {{ . }}{{ end }}" src="{{ $url.String }}" alt="{{ $altText }}" />
+      <img class="bf-prose-img my-0 rounded-md{{ with $nozoom }} nozoom{{ end }}{{ with $class }} {{ . }}{{ end }}" src="{{ $url.String }}" alt="{{ $altText }}" />
     {{- end }}
   {{- end }}
   {{ if $href }}</a>{{ end }}
