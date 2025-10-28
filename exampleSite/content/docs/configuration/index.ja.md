@@ -277,7 +277,6 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 | `list.cardView` | `false` | リストをカードのギャラリーとして表示します。 |
 | `list.cardViewScreenWidth` | `false` | リスト内のカードギャラリーの幅を、利用可能な全幅を使用するように拡張します。 |
 | `list.constrainItemsWidth` | `false` | 読みやすくするために、アイテムの幅を `prose` に制限します。フィーチャー画像が利用できない場合に役立ちます。 |
-| `list.showTableOfContents` | `false` | 記事に目次を表示するかどうか。 |
 
 ### サイトマップ(Sitemap)
 

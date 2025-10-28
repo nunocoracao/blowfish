@@ -284,7 +284,6 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `list.cardView` | `false` | Display lists as a gallery of cards. |
 | `list.cardViewScreenWidth` | `false` | Enhance the width of card galleries in lists to take the full width available. |
 | `list.constrainItemsWidth` | `false` | Limit item width to `prose` to increase readability. Useful when no feature images are available. |
-| `list.showTableOfContents` | `false` | Whether or not the table of contents is displayed on articles. |
 
 ### Sitemap
 

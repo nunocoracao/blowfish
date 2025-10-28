@@ -281,7 +281,6 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `list.cardView` | `false` | 将列表展示为卡片容器。 |
 | `list.cardViewScreenWidth` | `false` | 增强列表中卡片的宽度，使其可以占据可用的全部宽度。 |
 | `list.constrainItemsWidth` | `false` | 将项目宽度限制为 `prose` 以提高可读性。在没有 feature 图片的时候非常有用。 |
-| `list.showTableOfContents` | `false` | 是否在文章中显示目录表。 |
 
 ### 网站地图
 
