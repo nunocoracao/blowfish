@@ -52,7 +52,7 @@
     "puppeteer": "^24.24.1",
     "rimraf": "^6.0.1",
     "tailwind-scrollbar": "^4.0.2",
-    "tailwindcss": "^4.1.14",
+    "tailwindcss": "^4.1.16",
     "tw-elements": "2.0.0",
     "typeit": "^8.8.7",
     "vendor-copy": "^3.0.1"
