@@ -15,13 +15,26 @@ article:
   word_count:
     one: "{{ .Count }} Wort"
     other: "{{ .Count }} Wörter"
+  views:
+    one: "{{ .Count }} Ansicht"
+    other: "{{ .Count }} Ansichten"
+  likes:
+    one: "{{ .Count }} Like"
+    other: "{{ .Count }} Likes"
   part_of_series: "Dieser Artikel ist Teil einer Serie."
   part: "Teil"
   this_article: "Dieser Artikel"
   related_articles: "Verwandte Artikel"
+  zen_mode_title:
+    enable: "Zen-Modus aktivieren"
+    disable: "Zen-Modus deaktivieren"
 
 a11y:
   title: "Einstellungen zur Barrierefreiheit"
+  disable_blur: 'Unschärfe deaktivieren'
+  disable_images: 'Bilder deaktivieren'
+  show_link_underline: 'Links unterstreichen'
+  font_size: 'Schriftgröße'
 
 author:
   byline_title: "Autor"
@@ -61,6 +74,10 @@ sharing:
   pinterest: "Auf Pinterest pinnen"
   reddit: "An Reddit senden"
   twitter: "Auf Twitter teilen"
+  bluesky: "Auf Bluesky posten"
+  whatsapp: "Über WhatsApp teilen"
+  telegram: "Über Telegram teilen"
+  mastodon: "Auf Mastodon teilen"
 
 shortcode:
   recent_articles: "Neue Beiträge"
