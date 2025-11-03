@@ -2,7 +2,7 @@
                 title: "mrtruongvu.com"
                 tags: [Sito personale, Blog]
                 externalUrl: "https://mrtruongvu.com"
-                weight: 84
+                weight: 80
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

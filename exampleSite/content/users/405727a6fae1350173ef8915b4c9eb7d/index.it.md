@@ -2,7 +2,7 @@
                 title: "FEEC/UNICAMP IA382 - Seminar in Computer Engineering"
                 tags: [Seminari, Classe]
                 externalUrl: "https://feec-seminar-comp-eng.github.io/"
-                weight: 98
+                weight: 94
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

@@ -28,14 +28,14 @@ npx blowfish-tools
 La configurazione predefinita del tema è documentata in ogni file in modo da poter regolare liberamente le impostazioni per soddisfare le proprie esigenze.
 
 {{< alert >}}
-As outlined in the [installation instructions]({{< ref "/docs/installation#set-up-theme-configuration-files" >}}), you should adjust your theme configuration by modifying the files in the `config/_default/` folder of your Hugo project and delete the `config.toml` file in your project root.
+As outlined in the [installation instructions]({{< ref "/docs/installation#set-up-theme-configuration-files" >}}), you should adjust your theme configuration by modifying the files in the `config/_default/` folder of your Hugo project and delete the `hugo.toml` file in your project root.
 {{< /alert >}}
 
 ## Configurazioni del sito
 
 Standard Hugo configuration variables are respected throughout the theme, however there are some specific things that should be configured for the best experience.
 
-La configurazione del sito viene gestita tramite il file `config/_default/config.toml`. La tabella seguente descrive tutte le impostazioni di cui si avvale Blowfish.
+La configurazione del sito viene gestita tramite il file `config/_default/hugo.toml`. La tabella seguente descrive tutte le impostazioni di cui si avvale Blowfish.
 
 Tieni presente che i nomi delle variabili forniti in questa tabella utilizzano il punto per semplificare la struttura dei dati TOML (ad esempio, "outputs.home" si riferisce a "[outputs] home").
 
@@ -249,7 +249,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `article.invertPagination` | `false` | Whether or not to flip the direction of the next/previous article links. |
 | `article.showReadingTime` | `true` | Whether or not article reading times are displayed. |
 | `article.showTableOfContents` | `false` | Whether or not the table of contents is displayed on articles. |
-| `article.showRelatedContent` | `false` | Display related content for each post. Might required additional configuration to your `config.toml`. Please check the theme `config.toml` if you want to enable this feature and copy all the relevant _related_ entries. Also check [Hugo's docs](https://gohugo.io/content-management/related/) on related content. |
+| `article.showRelatedContent` | `false` | Display related content for each post. Might required additional configuration to your `hugo.toml`. Please check the theme `hugo.toml` if you want to enable this feature and copy all the relevant _related_ entries. Also check [Hugo's docs](https://gohugo.io/content-management/related/) on related content. |
 | `article.relatedContentLimit` | `3` | Limit of related articles to display if `showRelatedContent` is turned on. |
 | `article.showTaxonomies` | `false` | Whether or not the taxonomies related to this article are displayed. |
 | `article.showAuthorsBadges` | `false` | Whether the `authors` taxonomies are are displayed in the article or list header. This requires the setup of `multiple authors` and the `authors` taxonomy. Check [this page]({{< ref "multi-author" >}}) for more details on how to configure that feature. |

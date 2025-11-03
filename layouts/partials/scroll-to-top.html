@@ -1,5 +1,9 @@
-{{ $coffeeIsRight := and .Site.Params.buymeacoffee.globalWidget (eq (lower site.Params.buymeacoffee.globalWidgetPosition) "right") }}
 {{ $isRTL := .Site.Params.rtl | default false }}
+{{ $coffeeIsRight := and (eq (lower site.Params.buymeacoffee.globalWidgetPosition) "right") .Site.Params.buymeacoffee.globalWidget }}
+{{ if not $coffeeIsRight }}
+  {{ $coffeeIsRight = false }}
+{{ end }}
+
 {{ $needAvoidCoffee := ne $coffeeIsRight $isRTL }}
 {{ $toTopYOffset := cond $needAvoidCoffee "bottom-24" "bottom-6" }}
 

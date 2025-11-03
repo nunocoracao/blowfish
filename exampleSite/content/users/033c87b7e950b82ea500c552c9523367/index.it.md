@@ -2,7 +2,7 @@
                 title: "lazarusoverlook.com"
                 tags: [Sito personale, Blog]
                 externalUrl: "https://lazarusoverlook.com"
-                weight: 78
+                weight: 75
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

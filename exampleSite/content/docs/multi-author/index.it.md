@@ -73,7 +73,7 @@ In the example, which matches the markdown of the current page, both the default
 
 To get lists of articles for each of your authors you can configure the `authors` taxonomy, which opens up some more configurations that might be interesting. This is an optional step in the process that is not required to display the authors in your articles.
 
-First step is to configure the `authors` taxonomy in your `config.toml` file, like in the example below. Even though `tag` and `category` are defined by default with Hugo, once you add a specific taxonomies section you need to add them again otherwise the site will not process them.
+First step is to configure the `authors` taxonomy in your `hugo.toml` file, like in the example below. Even though `tag` and `category` are defined by default with Hugo, once you add a specific taxonomies section you need to add them again otherwise the site will not process them.
 
 ```toml
 [taxonomies]

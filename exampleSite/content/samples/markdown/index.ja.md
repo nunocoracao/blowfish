@@ -144,3 +144,27 @@ X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
 <kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd>を押すことでセッションを終了出来ます。
 
 多くの<mark>サラマンダー</mark>は夜行性で、昆虫やミミズ、その他の生物を狩ります。
+
+## Images
+
+In addition to the [Figure Shortcode]({{< ref "../../docs/shortcodes#figure" >}}), you can define images using the following Markdown syntax:
+
+```md
+![Alt text](image.jpg "Image caption")
+```
+
+![Alt text](../../docs/shortcodes/abstract.jpg "Image caption")
+
+You can also leverage Hugos ['Markdown attributes'](https://gohugo.io/content-management/markdown-attributes/) feature to add custom attributes to the created HTML element.
+For example, to set the width of an image to 50%:
+
+```md
+![Alt text](image.jpg "Image caption")
+{style="width:50%;"}
+```
+
+![Alt text](../../docs/shortcodes/abstract.jpg "Half width image caption")
+{style="width:50%;"}
+
+Note that the 'Markdown attributes' feature requires configuration of the Goldmark renderer.
+See the Hugo [documentation](https://gohugo.io/content-management/markdown-attributes/) for more information.

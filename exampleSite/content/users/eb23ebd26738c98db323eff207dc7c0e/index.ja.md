@@ -1,8 +1,8 @@
 ---
                 title: "Weg um Weg"
-                tags: [ブログ, 屋外ブログ]
+                tags: [ブログ, アウトドアブログ]
                 externalUrl: "https://www.wegumweg.de"
-                weight: 93
+                weight: 89
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

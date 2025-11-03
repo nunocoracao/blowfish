@@ -63,7 +63,7 @@ links = [
 
 ## カラースキーム
 
-Blowfish には、すぐに使用できる多くのカラースキームが付属しています。スキームを変更するには、`colorScheme` テーマパラメータを設定するだけです。有効なオプションは、`blowfish` (デフォルト)、`avocado`、`fire`、`ocean`、`forest`、`princess`、`neon`、`bloody`、`terminal`、`marvel`、`noir`、`autumn`、`congo`、`slate` です。
+Blowfish には、すぐに使用できる多くのカラースキームが付属しています。スキームを変更するには、`colorScheme` テーマパラメータを設定するだけです。有効なオプションは、`blowfish` (デフォルト)、`avocado`、`fire`、`ocean`、`forest`、`princess`、`neon`、`bloody`、`terminal`、`marvel`、`noir`、`autumn`、`congo`、`slate`、`github`、`one-light` です。
 
 ```toml
 # config/_default/params.toml
@@ -73,47 +73,69 @@ colorScheme = "blowfish"
 
 Blowfish は、テーマ全体で使用される3色のパレットを定義しています。各メインカラーには、[Tailwind](https://tailwindcss.com/docs/customizing-colors#color-palette-reference) に含まれる色に基づいた10の色合いが含まれています。3つのメインカラーは、ヘッダー、フッター、およびアクセントカラーに使用されます。各スキームの色は次のとおりです。
 
-#### Blowfish (デフォルト)
+### Blowfish (デフォルト)
+
 {{< swatches "#64748b" "#3b82f6" "#06b6d4" >}}
 
-#### Avocado
+### Avocado
+
 {{< swatches "#78716c" "#84cc16" "#10b981" >}}
 
-#### Fire
+### Fire
+
 {{< swatches "#78716c" "#f97316" "#f43f5e" >}}
 
-#### Ocean
+### Ocean
+
 {{< swatches "#64748b" "#3b82f6" "#06b6d4" >}}
 
-#### Forest
+### Forest
+
 {{< swatches "#658c86" "#3bf5df" "#06d45c" >}}
 
-#### Princess
+### Princess
+
 {{< swatches "#8c658c" "#f53bf2" "#7706d4" >}}
 
-#### Neon
+### Neon
+
 {{< swatches "#8338ec" "#ff006e" "#3a86ff" >}}
 
-#### Bloody
+### Bloody
+
 {{< swatches "#d90429" "#8d99ae" "#457b9d" >}}
 
-#### Terminal
+### Terminal
+
 {{< swatches "#004b23" "#38b000" "#1a759f" >}}
 
-#### Marvel
+### Marvel
+
 {{< swatches "#2541b2" "#d81159" "#ffbc42" >}}
 
-#### Noir
+### Noir
+
 {{< swatches "#5c6b73" "#9db4c0" "#00a5cf" >}}
 
-#### Autumn
+### Autumn
+
 {{< swatches "#0a9396" "#ee9b00" "#bb3e03" >}}
 
-#### Congo
+### Congo
+
 {{< swatches "#71717a" "#8b5cf6" "#d946ef" >}}
 
-#### Slate
+### Slate
+
 {{< swatches "#6B7280" "#64748b" "#6B7280" >}}
+
+### Github
+
+{{< swatches "#64748b" "#0092ff" "#f54728" >}}
+
+### One-Light
+
+{{< swatches "#646464" "#0070cc" "#20a077" >}}
 
 これらはデフォルトのスキームですが、独自のスキームを作成することもできます。詳細については、[高度なカスタマイズ]({{< ref "advanced-customisation#colour-schemes" >}})セクションを参照してください。
 

@@ -200,11 +200,20 @@
       <div class="space-y-5">
         {{ $toggles := slice }}
         {{ $shouldDisableBlur := or site.Params.homepage.layoutBackgroundBlur site.Params.article.layoutBackgroundBlur site.Params.list.layoutBackgroundBlur }}
+        {{ $shouldDisableBackgroundImage := or 
+          (eq site.Params.homepage.layout "background")
+          (eq site.Params.article.heroStyle "background")
+          (eq site.Params.list.heroStyle "background")
+          (eq site.Params.taxonomy.heroStyle "background")
+          (eq site.Params.term.heroStyle "background")
+        }}
         {{ if $shouldDisableBlur }}
           {{ $toggles = $toggles | append (dict "id" (print $prefix "disable-blur") "label" (i18n "a11y.disable_blur")) }}
         {{ end }}
+        {{ if $shouldDisableBackgroundImage }}
+          {{ $toggles = $toggles | append (dict "id" (print $prefix "disable-images") "label" (i18n "a11y.disable_images")) }}
+        {{ end }}
         {{- $toggles = $toggles | append
-          (dict "id" (print $prefix "disable-images") "label" (i18n "a11y.disable_images"))
           (dict "id" (print $prefix "underline-links") "label" (i18n "a11y.show_link_underline"))
           (dict "id" (print $prefix "zen-mode") "label" (i18n "article.zen_mode_title.enable"))
         -}}

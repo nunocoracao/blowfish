@@ -1,8 +1,8 @@
 ---
                 title: "Dan Davidson | Where Crypto, Charts and Curiosity Collide"
-                tags: [パーソナルサイト, テクノロジーブログ]
+                tags: [個人サイト, テクノロジーブログ]
                 externalUrl: "https://danly.io"
-                weight: 108
+                weight: 103
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

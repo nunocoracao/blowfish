@@ -1,8 +1,8 @@
 ---
                 title: "Laterre Dev"
-                tags: [Sito personale, Blog tecnologico, Sviluppatore del software, Sito di portafoglio]
+                tags: [Sito personale, Blog sulla tecnologia, Sviluppatore di software, Sito portfolio]
                 externalUrl: "https://laterre.dev/"
-                weight: 86
+                weight: 82
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

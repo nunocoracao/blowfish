@@ -21,12 +21,11 @@ npx blowfish-tools
 ```
 {{< /alert >}}
 
-
 I file di configurazione forniti con Blowfish contengono tutte le possibili impostazioni riconosciute dal tema. Per impostazione predefinita, molti di questi sono commentati ma puoi semplicemente decommentarli per attivare o modificare una funzionalità specifica.
 
 ## Configurazione di base
 
-Prima di creare qualsiasi contenuto, è necessario impostare alcune cose per una nuova installazione. Iniziando dal file `config.toml`, imposta i parametri `baseURL` e `lingualCode`. Il `lingualCode` dovrebbe essere impostato sulla lingua principale che utilizzerai per creare i tuoi contenuti.
+Prima di creare qualsiasi contenuto, è necessario impostare alcune cose per una nuova installazione. Iniziando dal file `hugo.toml`, imposta i parametri `baseURL` e `lingualCode`. Il `lingualCode` dovrebbe essere impostato sulla lingua principale che utilizzerai per creare i tuoi contenuti.
 =======
 
 ```toml
@@ -42,7 +41,7 @@ Individua il file "languages.en.toml" nella cartella di configurazione. Se la tu
 
 {{< alert >}}
 
-Tieni presente che il codice della lingua nel nome del file di configurazione della lingua deve corrispondere all'impostazione "languageCode" in "config.toml".
+Tieni presente che il codice della lingua nel nome del file di configurazione della lingua deve corrispondere all'impostazione "languageCode" in "hugo.toml".
 
 {{< /alert >}}
 
@@ -60,63 +59,86 @@ links = [
   { twitter = "https://twitter.com/username" }
 ]
 ```
+
 La configurazione `[params.author]` determina il modo in cui le informazioni sull'autore vengono visualizzate sul sito web. L'immagine deve essere posizionata nella cartella `assets/`. I link verranno visualizzati nell'ordine in cui sono elencati.
 
 Se hai bisogno di ulteriori dettagli, ulteriori informazioni su ciascuna di queste opzioni di configurazione sono trattate nella sezione [Configurazione]({{< ref "configuration" >}}).
 
 ## Schemi di colori
 
-Blowfish viene fornito con una serie di schemi di colori già pronti. Per cambiare lo schema, è sufficiente impostare il parametro del tema `colorScheme`. Le opzioni valide sono `blowfish` (default), `avocado`, `fire`, `ocean`, `forest`, `princess`, `neon`, `bloody`, `terminal`, `marvel`, `noir`, `autumn`, `congo`, and`slate`.
+Blowfish viene fornito con una serie di schemi di colori già pronti. Per cambiare lo schema, è sufficiente impostare il parametro del tema `colorScheme`. Le opzioni valide sono `blowfish` (default), `avocado`, `fire`, `ocean`, `forest`, `princess`, `neon`, `bloody`, `terminal`, `marvel`, `noir`, `autumn`, `congo`, `slate`, `github` and `one-light`.
 
 ```toml
 # config/_default/params.toml
 
 colorScheme = "blowfish"
 ```
+
 Blowfish definisce una palette di tre colori che viene utilizzata in tutto il tema. Ogni colore principale contiene dieci sfumature basate sui colori inclusi in [Tailwind](https://tailwindcss.com/docs/customizing-colors#color-palette-reference). I tre colori principali sono utilizzati per l'intestazione, il piè di pagina e i colori d'accento. Ecco i colori per ogni schema:
 
-#### Blowfish (default)
+### Blowfish (default)
+
 {{< swatches "#64748b" "#3b82f6" "#06b6d4" >}}
 
-#### Avocado
+### Avocado
+
 {{< swatches "#78716c" "#84cc16" "#10b981" >}}
 
-#### Fire
+### Fire
+
 {{< swatches "#78716c" "#f97316" "#f43f5e" >}}
 
-#### Ocean
+### Ocean
+
 {{< swatches "#64748b" "#3b82f6" "#06b6d4" >}}
 
-#### Forest
+### Forest
+
 {{< swatches "#658c86" "#3bf5df" "#06d45c" >}}
 
-#### Princess
+### Princess
+
 {{< swatches "#8c658c" "#f53bf2" "#7706d4" >}}
 
-#### Neon
+### Neon
+
 {{< swatches "#8338ec" "#ff006e" "#3a86ff" >}}
 
-#### Bloody
+### Bloody
+
 {{< swatches "#d90429" "#8d99ae" "#457b9d" >}}
 
-#### Terminal
+### Terminal
+
 {{< swatches "#004b23" "#38b000" "#1a759f" >}}
 
-#### Marvel
+### Marvel
+
 {{< swatches "#2541b2" "#d81159" "#ffbc42" >}}
 
-#### Noir
+### Noir
+
 {{< swatches "#5c6b73" "#9db4c0" "#00a5cf" >}}
 
-#### Autumn
+### Autumn
+
 {{< swatches "#0a9396" "#ee9b00" "#bb3e03" >}}
 
-#### Congo
+### Congo
+
 {{< swatches "#71717a" "#8b5cf6" "#d946ef" >}}
 
-#### Slate
+### Slate
+
 {{< swatches "#6B7280" "#64748b" "#6B7280" >}}
 
+### Github
+
+{{< swatches "#64748b" "#0092ff" "#f54728" >}}
+
+### One-Light
+
+{{< swatches "#646464" "#0070cc" "#20a077" >}}
 
 Sebbene questi siano gli schemi predefiniti, è possibile crearne di propri. Per maggiori informazioni, consultare la sezione [Personalizzazione avanzata]({{< ref "advanced-customisation#colour-schemes" >}}).
 
@@ -145,8 +167,8 @@ Ecco una rapida panoramica di un progetto base di Blowfish. Tutti i contenuti so
 └── themes
     └── blowfish
 ```
-È importante avere una conoscenza approfondita di come Hugo si aspetta che il contenuto sia organizzato, poiché il tema è progettato per sfruttare appieno i pacchetti di pagine di Hugo. Si consiglia di leggere i [documentazione ufficiale di Hugo](https://gohugo.io/content-management/organization/) per maggiori informazioni.
 
+È importante avere una conoscenza approfondita di come Hugo si aspetta che il contenuto sia organizzato, poiché il tema è progettato per sfruttare appieno i pacchetti di pagine di Hugo. Si consiglia di leggere i [documentazione ufficiale di Hugo](https://gohugo.io/content-management/organization/) per maggiori informazioni.
 
 Blowfish è flessibile anche per quanto riguarda le tassonomie. Alcuni preferiscono usare _tags_ e _categories_ per raggruppare i loro contenuti, altri preferiscono usare _topics_.
 
@@ -167,7 +189,6 @@ Quando crei una nuova tassonomia, è necessario sistemare i collegamenti di navi
 Blowfish dispone di due menu che possono essere personalizzati per adattarsi al contenuto e al layout del sito. Il menu `main` appare nell'intestazione del sito e il menu `footer` appare in fondo alla pagina, appena sopra la nota di copyright.
 
 Entrambi i menu sono configurati nel file `menus.en.toml`. Simile al file di configurazione delle lingue, se desideri utilizzare un'altra lingua, rinomina questo file e sostituisci `en` con il codice della lingua che si vuole utilizzare.
-
 
 ```toml
 # config/_default/menus.toml
@@ -212,7 +233,6 @@ Entrambi i menu sono completamente opzionali e possono essere commentati se non 
 ### Nested Menu
 
 Il tema supporta anche i menu nidificati. Per usarli devi solo definire una voce genitore in `menu.toml` e i suoi sottomenu utilizzando il parametro `parent` per fare riferimento al genitore. Tutte le proprietà possono essere utilizzate per i sottomenu. `pageRef` e `url` possono essere utilizzati anche nella voce principale. I menu nidificati sono disponibili solo nel menu principale e non nel footer.
-
 
 ```toml
 # config/_default/menus.toml

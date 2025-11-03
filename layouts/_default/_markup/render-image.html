@@ -82,7 +82,12 @@
 {{- end -}}
 
 
-<figure>
+<figure
+  {{- range $k, $v := .Attributes -}}
+    {{- if $v -}}
+      {{- printf " %s=%q" $k ($v | transform.HTMLEscape) | safeHTMLAttr -}}
+    {{- end -}}
+  {{- end -}}>
   {{- if $isRemote -}}
     {{- template "RenderImageSimple" (dict "imgObj" "" "src" $urlStr "alt" $altText) -}}
   {{- else if $resource -}}

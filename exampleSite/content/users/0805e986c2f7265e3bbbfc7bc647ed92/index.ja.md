@@ -1,8 +1,8 @@
 ---
                 title: "Chill-Try"
-                tags: [テクノロジーブログ, パーソナルサイト, ブログ]
+                tags: [テクノロジーブログ, 個人サイト, ブログ]
                 externalUrl: "https://ctry.tech/"
-                weight: 91
+                weight: 87
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

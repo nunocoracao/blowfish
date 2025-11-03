@@ -1,8 +1,8 @@
 ---
                 title: "Beauty Formulation"
-                tags: [会社のサイト]
+                tags: [企業サイト]
                 externalUrl: "https://www.beautyformulation.com/"
-                weight: 69
+                weight: 67
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

@@ -1,6 +1,6 @@
 ---
                 title: "bbagwang.com"
-                tags: [パーソナルサイト]
+                tags: [個人サイト]
                 externalUrl: "https://bbagwang.com"
                 weight: 39
                 showDate: false

@@ -1,8 +1,8 @@
 ---
                 title: "zzzhome"
-                tags: [パーソナルサイト, ブログ]
+                tags: [個人サイト, ブログ]
                 externalUrl: "https://zzzhome.cc/"
-                weight: 89
+                weight: 85
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

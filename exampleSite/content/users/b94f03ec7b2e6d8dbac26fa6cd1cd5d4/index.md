@@ -2,7 +2,7 @@
                 title: "kieranlowe.io"
                 tags: [Technology Blog]
                 externalUrl: "https://kieranlowe.io"
-                weight: 106
+                weight: 101
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

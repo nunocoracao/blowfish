@@ -1,6 +1,6 @@
 ---
                 title: "ohdmire.github.io"
-                tags: [パーソナルサイト]
+                tags: [個人サイト]
                 externalUrl: "https://ohdmire.github.io"
                 weight: 45
                 showDate: false

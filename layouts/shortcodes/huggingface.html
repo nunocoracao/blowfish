@@ -53,12 +53,7 @@
 
 
           <div class="m-0 mt-2 flex items-center">
-            {{ $language := cond (eq $type "model") "model" "default" }}
-            {{ $currentLangs := $.Page.Store.Get "repoCardLanguages" | default slice }}
-            {{ $.Page.Store.Set "repoCardLanguages" ($currentLangs | append $language) }}
-            <span
-              class="mr-1 inline-block h-3 w-3 rounded-full language-dot"
-              data-language="{{ $language }}"></span>
+            <span class="mr-1 inline-block h-3 w-3 rounded-full language-dot" data-language="{{ cond (eq $type "model") "model" "default" }}"></span>
             <div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
               {{ if eq $type "model" }}
                 {{ if .pipeline_tag }}{{ .pipeline_tag }}{{ else }}model{{ end }}

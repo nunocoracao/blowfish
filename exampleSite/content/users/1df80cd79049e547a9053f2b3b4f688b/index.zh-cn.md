@@ -2,7 +2,7 @@
                 title: "Dan Davidson | Where Crypto, Charts and Curiosity Collide"
                 tags: [个人网站, 技术博客]
                 externalUrl: "https://danly.io"
-                weight: 108
+                weight: 103
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

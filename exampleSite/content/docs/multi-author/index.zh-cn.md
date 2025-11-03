@@ -71,7 +71,7 @@ showAuthorsBadges : false
 如果你想要获取每个作者的文章列表，需要配置 `authors` 分类，这会让你了解到一些更有趣的配置。这个是多创作者模式中的一个可选步骤。
 To get lists of articles for each of your authors you can configure the `authors` taxonomy, which opens up some more configurations that might be interesting. This is an optional step in the process that is not required to display the authors in your articles.
 
-第一步是在 `config.toml` 文件中配置 `authors` 分类法，如下所示。尽管 `tag` 和 `category` 默认是 Hugo 定义的，但只要你添加了一个特定的分类法，就需要显式添加 `tag` 和 `category`，否则基于 Hugo 的文件加载顺序，站点将不会处理 `tag` 和 `category`。
+第一步是在 `hugo.toml` 文件中配置 `authors` 分类法，如下所示。尽管 `tag` 和 `category` 默认是 Hugo 定义的，但只要你添加了一个特定的分类法，就需要显式添加 `tag` 和 `category`，否则基于 Hugo 的文件加载顺序，站点将不会处理 `tag` 和 `category`。
 
 ```toml
 [taxonomies]

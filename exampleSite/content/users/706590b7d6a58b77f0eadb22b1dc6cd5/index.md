@@ -2,7 +2,7 @@
                 title: "The Space 🌍"
                 tags: [Personal Website,Tech Blog]
                 externalUrl: "https://panoskorovesis.github.io/"
-                weight: 94
+                weight: 90
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

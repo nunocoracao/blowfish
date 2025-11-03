@@ -117,7 +117,7 @@ Next, create the following folder structure at the root of your code directory -
 
 ```md
 config/_default/
-├─ config.toml
+├─ hugo.toml
 ├─ languages.en.toml
 ├─ markup.toml
 ├─ menus.en.toml
@@ -126,7 +126,7 @@ config/_default/
 ```
 
 
-Open the **config.toml** and uncomment the line **theme = "blowfish”** and you are ready to go. Try the running the site again and check the result at _[https://localhost:1313](https://localhost:1313)_
+Open the **hugo.toml** and uncomment the line **theme = "blowfish”** and you are ready to go. Try the running the site again and check the result at _[https://localhost:1313](https://localhost:1313)_
 
 ```bash
 hugo server

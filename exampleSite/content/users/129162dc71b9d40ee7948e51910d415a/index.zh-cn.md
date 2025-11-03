@@ -1,6 +1,6 @@
 ---
                 title: "hyperbowl3d.com"
-                tags: [游戏网站]
+                tags: [游戏现场]
                 externalUrl: "https://hyperbowl3d.com/"
                 weight: 26
                 showDate: false

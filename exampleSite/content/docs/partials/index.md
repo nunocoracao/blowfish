@@ -27,12 +27,12 @@ To enable Fathom Analytics support, simply provide your Fathom site code in the 
 
 ### Google Analytics
 
-Google Analytics support is provided through the internal Hugo partial. Simply provide the `googleAnalytics` key in the `config/_default/config.toml` file and the script will be added automatically.
+Google Analytics support is provided through the internal Hugo partial. Simply provide the `googleAnalytics` key in the `config/_default/hugo.toml` file and the script will be added automatically.
 
 Both version 3 (analytics.js) and version 4 (gtag.js) are supported, based on the configuration value provided:
 
 ```toml
-# config/_default/config.toml
+# config/_default/hugo.toml
 
 # version 3
 googleAnalytics = "UA-PROPERTY_ID"

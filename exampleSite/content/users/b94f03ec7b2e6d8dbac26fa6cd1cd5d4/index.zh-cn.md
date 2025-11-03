@@ -2,7 +2,7 @@
                 title: "kieranlowe.io"
                 tags: [技术博客]
                 externalUrl: "https://kieranlowe.io"
-                weight: 106
+                weight: 101
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

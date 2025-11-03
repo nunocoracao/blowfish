@@ -1,8 +1,8 @@
 ---
                 title: "mitri.lol"
-                tags: [个人网站, 有趣的项目]
+                tags: [个人网站, 趣味项目]
                 externalUrl: "https://mitri.lol"
-                weight: 105
+                weight: 100
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

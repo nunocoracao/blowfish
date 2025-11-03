@@ -2,7 +2,7 @@
                 title: "abantikabhuti.github.io"
                 tags: [Personal site,Portfolio]
                 externalUrl: "https://abantikabhuti.github.io"
-                weight: 101
+                weight: 97
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
