@@ -32,7 +32,7 @@ article:
 a11y:
   title: "Accessibility settings"
   disable_blur: "Disable blur"
-  disable_images: "Disable images"
+  disable_images: "Disable background image"
   show_link_underline: "Show link underline"
   font_size: "Font size"
 
