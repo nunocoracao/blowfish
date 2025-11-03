@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - run: zip -r config-default.zip config/_default
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: config-default
           path: config-default.zip

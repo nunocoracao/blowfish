@@ -28,12 +28,12 @@ Blowfish 支持了 Fathom、Google 和 Umami。Fathom 和 Umami 都是开源、�
 
 ### Google
 
-Hugo partial 本身已经支持了 Google 站点分析。只需要在 `config/_default/config.toml` 文件添加 `googleAnalytics` 参数即可，跟踪脚本会自动添加。
+Hugo partial 本身已经支持了 Google 站点分析。只需要在 `config/_default/hugo.toml` 文件添加 `googleAnalytics` 参数即可，跟踪脚本会自动添加。
 
 版本3 (analytics.js) 和版本4 (gtag.js) 都是支持的，参考如下示例：
 
 ```toml
-# config/_default/config.toml
+# config/_default/hugo.toml
 
 # 版本 3
 googleAnalytics = "UA-PROPERTY_ID"

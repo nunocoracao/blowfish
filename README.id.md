@@ -77,7 +77,7 @@ Instruksi terperinci untuk setiap metode dapat ditemukan dalam [dokumentasi inst
 
 ### Instalasi Cepat Menggunakan Blowfish Tools  
 
-> **Catatan:** Pastikan Anda sudah menginstal **Node.js**, **Git**, **Go**, dan **Hugo**, serta telah membuat proyek Hugo sebelum melanjutkan.  
+> **Catatan:** Pastikan Anda sudah menginstal **Node.js**, **Git**, dan **Hugo**, serta telah membuat proyek Hugo sebelum melanjutkan.  
 
 Kami baru saja meluncurkan alat CLI baru untuk membantu Anda memulai dengan Blowfish. Ini akan membuat proyek Hugo baru, menginstal tema, dan mengatur file konfigurasi tema untuk Anda.  
 
@@ -98,7 +98,7 @@ blowfish-tools new mynewsite
 
 ### Instalasi Cepat Menggunakan Git Submodules  
 
-> **Catatan:** Pastikan Anda sudah menginstal **Git**, **Go**, dan **Hugo**, serta telah membuat proyek Hugo sebelum melanjutkan.  
+> **Catatan:** Pastikan Anda sudah menginstal **Git** dan **Hugo**, serta telah membuat proyek Hugo sebelum melanjutkan.  
 
 1. Dari direktori proyek Anda, inisialisasi git:  
    ```shell
@@ -110,7 +110,7 @@ blowfish-tools new mynewsite
    git submodule add -b main https://github.com/nunocoracao/blowfish.git themes/blowfish
    ```
 
-3. Hapus file `config.toml` di root proyek dan salin file `*.toml` dari tema ke dalam folder `config/_default/`.  
+3. Hapus file `hugo.toml` di root proyek dan salin file `*.toml` dari tema ke dalam folder `config/_default/`.  
 
 4. Ikuti petunjuk [Memulai](https://blowfish.page/docs/getting-started/) untuk mengonfigurasi situs web Anda.  
 

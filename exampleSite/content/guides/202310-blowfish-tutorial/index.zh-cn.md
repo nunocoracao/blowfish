@@ -117,7 +117,7 @@ git submodule add -b main https://github.com/nunocoracao/blowfish.git themes/blo
 
 ```md
 config/_default/
-├─ config.toml
+├─ hugo.toml
 ├─ languages.en.toml
 ├─ markup.toml
 ├─ menus.en.toml
@@ -125,7 +125,7 @@ config/_default/
 `
 ```
 
-打开 **config.toml** 并把 **theme = "blowfish”** 这一样的注释取消掉，目前为止你已经准备好了。再次尝试运行网站，并打开浏览器在_[https://localhost:1313](https://localhost:1313)_查看效果。
+打开 **hugo.toml** 并把 **theme = "blowfish”** 这一样的注释取消掉，目前为止你已经准备好了。再次尝试运行网站，并打开浏览器在_[https://localhost:1313](https://localhost:1313)_查看效果。
 
 ```bash
 hugo server

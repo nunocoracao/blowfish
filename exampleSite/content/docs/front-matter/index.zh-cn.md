@@ -44,7 +44,7 @@ front matter 参数中的默认值是从[基础配置]({{< ref "configuration" >
 | `showReadingTime` | `article.showReadingTime` | 是否显示文章的预估阅读时间。 |
 | `showTaxonomies` | `article.showTaxonomies` | 是否显示文章关联的分类/标签。 |
 | `showTableOfContents` | `article.showTableOfContents` | 是否显示文章目录。 |
-| `showWordCount` | `article.showWordCount` | 是否显示文章字数统计。如果你的语言属于 CJK 语言，需要在 `config.toml` 中开启 `hasCJKLanguage` 参数。 |
+| `showWordCount` | `article.showWordCount` | 是否显示文章字数统计。如果你的语言属于 CJK 语言，需要在 `hugo.toml` 中开启 `hasCJKLanguage` 参数。 |
 | `showComments` | `article.showComments` | 是否在文章页脚显示 [评论部分]({{< ref "partials#comments" >}})。 |
 | `showSummary` | `list.showSummary` | 是否在文章或列表页显示摘要。 |
 | `showViews` | `article.showViews` | 是否显示文章和列表页面的阅读量。这需要集成 firebase ，具体可以看[这个页面]({{< ref "firebase-views" >}})来了解如何在 Blowfish 中集成firebase。 |
