@@ -87,10 +87,10 @@
   <div class="{{ $cardContentClasses }}">
     <header class="items-center text-start text-xl font-semibold">
       <a
-        {{ with .Params.externalUrl }}
+        {{ with $page.Params.externalUrl }}
           href="{{ . }}" target="_blank" rel="external"
         {{ else }}
-          href="{{ .RelPermalink }}"
+          href="{{ $page.RelPermalink }}"
         {{ end }}
         class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
         <h2>

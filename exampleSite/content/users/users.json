@@ -916,7 +916,19 @@
       "Project site"
     ]
   },
-    {
+  {
+    "title": "István Merza",
+    "url": "https://www.merza.is/",
+    "source": "https://gitlab.com/istvanmerza/istvanmerza.gitlab.io",
+    "tags": [
+      "Personal site",
+      "Blog",
+      "Tech Blog",
+      "Fun Project",
+      "Learning"
+    ]
+  },
+  {
     "title": "daytaur.com",
     "url": "https://daytaur.com/",
     "source": "n/a",
@@ -924,5 +936,5 @@
       "Portfolio",
       "Environment design"
     ]
-  }
+   }
 ]

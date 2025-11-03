@@ -27,14 +27,14 @@ npx blowfish-tools
 默认情况下，在每个文件中都定义了主题中的可用参数，因此你可以自由调整设置来满足你的需求。
 
 {{< alert >}}
-正如[安装说明]({{< ref "/docs/installation#set-up-theme-configuration-files" >}})中的内容，如果你想调整主题配置，可以修改 Hugo 项目中 `config/_default/` 文件夹下的文件，并删除项目根目录中的 `config.toml` 文件。
+正如[安装说明]({{< ref "/docs/installation#set-up-theme-configuration-files" >}})中的内容，如果你想调整主题配置，可以修改 Hugo 项目中 `config/_default/` 文件夹下的文件，并删除项目根目录中的 `hugo.toml` 文件。
 {{< /alert >}}
 
 ## 网站配置
 
 Blowfish 主题支持了 Hugo 框架中定义的所有标准配置变量。但如果希望有更好的体验，需要设置一些特定的配置。
 
-网站配置是通过 `config/_default/config.toml` 文件管理的。下面的表格展示了 Blowfish 中的所有设置.
+网站配置是通过 `config/_default/hugo.toml` 文件管理的。下面的表格展示了 Blowfish 中的所有设置.
 
 值得注意的是，表格中提供的变量名可以使用点表示法来简化 TOML 数据结构，例如 `outputs.home` 指的是 `[outputs] home`。
 
@@ -251,13 +251,13 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `article.showHeadingAnchors` | `true` | 是否在文章标题旁添加锚点。 |
 | `article.showPagination` | `true` | 是否在文章末尾展示上一篇/下一篇的文章链接。 |
 | `article.invertPagination` | `false` | 是否翻转下一篇/上一篇文章链接的方向。 |
-| `article.showReadingTime` | `true` | 是否展示文章的阅读时间。如果你的语言包含 CJK 语言，需要在 `config.toml` 中开启 `hasCJKLanguage` 参数。 |
+| `article.showReadingTime` | `true` | 是否展示文章的阅读时间。如果你的语言包含 CJK 语言，需要在 `hugo.toml` 中开启 `hasCJKLanguage` 参数。 |
 | `article.showTableOfContents` | `false` | 是否展示文章的目录。 |
-| `article.showRelatedContent` | `false` | 为文章显示相关内容。如果你想要启用此功能，请检查 `config.toml` 文件并复制所有 _related_ 相关的参数，如果你想自定义，也可以对 `config.toml` 添加额外配置。更多内容请参考 [Hugo 文档](https://gohugo.io/content-management/related/) 中关于 _related_ 的内容。 |
+| `article.showRelatedContent` | `false` | 为文章显示相关内容。如果你想要启用此功能，请检查 `hugo.toml` 文件并复制所有 _related_ 相关的参数，如果你想自定义，也可以对 `hugo.toml` 添加额外配置。更多内容请参考 [Hugo 文档](https://gohugo.io/content-management/related/) 中关于 _related_ 的内容。 |
 | `article.relatedContentLimit` | `3` | 如果启用`showRelatedContent`，则限制显示相关文章的数量。 |
 | `article.showTaxonomies` | `false` | 是否显示文章的分类或标签信息。 |
 | `article.showAuthorsBadges` | `false` | 是否在文章或列表中显示 `authors` 分类。这需要开启多个作者 `multiple authors` 和 `authors` 分类法。 请阅读 [这个网页]({{< ref "multi-author" >}}) 来获取更多内容。 |
-| `article.showWordCount` | `false` | 是否显示文章的字数。 如果你的语言属于 CJK 语言，需要在 `config.toml` 中开启 `hasCJKLanguage` 参数。 |
+| `article.showWordCount` | `false` | 是否显示文章的字数。 如果你的语言属于 CJK 语言，需要在 `hugo.toml` 中开启 `hasCJKLanguage` 参数。 |
 | `article.showComments` | `false` | 是否在文章末尾添加 [评论部分]({{< ref "partials#comments" >}})。 |
 | `article.sharingLinks` | _无_ | 在文章末尾显示的分享链接。如果没有提供或设置为 `false`，则不会显示任何分享链接。可用的值包括："bluesky"、"email"、"facebook"、"line"、"linkedin"、"mastodon"、"pinterest"、"reddit"、"telegram"、"twitter"和"whatsapp" |
 | `article.showZenMode` | `false` | 指定是否激活文章阅读的禅模式，即隐藏常规的界面元素。 |

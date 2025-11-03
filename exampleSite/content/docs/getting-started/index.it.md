@@ -26,7 +26,7 @@ I file di configurazione forniti con Blowfish contengono tutte le possibili impo
 
 ## Configurazione di base
 
-Prima di creare qualsiasi contenuto, è necessario impostare alcune cose per una nuova installazione. Iniziando dal file `config.toml`, imposta i parametri `baseURL` e `lingualCode`. Il `lingualCode` dovrebbe essere impostato sulla lingua principale che utilizzerai per creare i tuoi contenuti.
+Prima di creare qualsiasi contenuto, è necessario impostare alcune cose per una nuova installazione. Iniziando dal file `hugo.toml`, imposta i parametri `baseURL` e `lingualCode`. Il `lingualCode` dovrebbe essere impostato sulla lingua principale che utilizzerai per creare i tuoi contenuti.
 =======
 
 ```toml
@@ -42,7 +42,7 @@ Individua il file "languages.en.toml" nella cartella di configurazione. Se la tu
 
 {{< alert >}}
 
-Tieni presente che il codice della lingua nel nome del file di configurazione della lingua deve corrispondere all'impostazione "languageCode" in "config.toml".
+Tieni presente che il codice della lingua nel nome del file di configurazione della lingua deve corrispondere all'impostazione "languageCode" in "hugo.toml".
 
 {{< /alert >}}
 
