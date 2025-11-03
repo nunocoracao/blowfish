@@ -50,7 +50,11 @@
     {{ end }}
     <div class="px-6 py-4">
       <a
-        {{ partial "article-link/_external-link.html" .Page | safeHTMLAttr }}
+        {{ with .Page.Params.externalUrl }}
+          href="{{ . }}" target="_blank" rel="external"
+        {{ else }}
+          href="{{ .Page.RelPermalink }}"
+        {{ end }}
         class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
         <div
           class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
