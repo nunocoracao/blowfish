@@ -1,8 +1,8 @@
 ---
                 title: "Kyo's Garden"
-                tags: [パーソナルサイト, ブログ]
+                tags: [個人サイト, ブログ]
                 externalUrl: "https://heykyo.com"
-                weight: 100
+                weight: 96
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

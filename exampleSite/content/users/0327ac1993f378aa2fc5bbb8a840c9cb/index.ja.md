@@ -1,6 +1,6 @@
 ---
                 title: "DXPetti.com"
-                tags: [パーソナルサイト, ブログ]
+                tags: [個人サイト, ブログ]
                 externalUrl: "https://www.dxpetti.com/"
                 weight: 55
                 showDate: false

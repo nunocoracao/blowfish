@@ -1,6 +1,6 @@
 ---
                 title: "michaeldorner.de"
-                tags: [Blog, Sito personale, Accademico]
+                tags: [Blog, Sito personale, Accademia]
                 externalUrl: "https://www.michaeldorner.de"
                 weight: 65
                 showDate: false

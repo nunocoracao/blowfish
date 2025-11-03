@@ -1,6 +1,6 @@
 ---
                 title: "renaud.warnotte.be"
-                tags: [パーソナルサイト]
+                tags: [個人サイト]
                 externalUrl: "https://renaud.warnotte.be"
                 weight: 50
                 showDate: false

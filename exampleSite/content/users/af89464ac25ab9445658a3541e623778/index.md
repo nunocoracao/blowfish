@@ -2,7 +2,7 @@
                 title: "glomyer.dev"
                 tags: [Personal site]
                 externalUrl: "https://luizglomyer.github.io/"
-                weight: 76
+                weight: 73
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

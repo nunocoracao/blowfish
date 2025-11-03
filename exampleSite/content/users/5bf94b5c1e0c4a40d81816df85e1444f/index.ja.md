@@ -1,6 +1,6 @@
 ---
                 title: "pmnxis.github.io"
-                tags: [パーソナルサイト]
+                tags: [個人サイト]
                 externalUrl: "https://pmnxis.github.io"
                 weight: 6
                 showDate: false

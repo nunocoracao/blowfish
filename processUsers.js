@@ -123,7 +123,7 @@ async function translateFrontMatterTags(block, targetLang, tags) {
       await fs.access(dir);
     } catch {
       await fs.mkdir(dir);
-    }
+    
 
     console.log(i, user.title, dir);
     await fs.writeFile(dir + "/index.md", userMDFile);
@@ -133,6 +133,7 @@ async function translateFrontMatterTags(block, targetLang, tags) {
     }
     await page.goto(user.url);
     await page.screenshot({ path: dir + "/feature.jpg", type: "webp", quality: 50 });
+    }
   }
 
 

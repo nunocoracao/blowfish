@@ -1,6 +1,6 @@
 ---
                 title: "alejandro-ao.com"
-                tags: [パーソナルサイト]
+                tags: [個人サイト]
                 externalUrl: "https://alejandro-ao.com/"
                 weight: 18
                 showDate: false

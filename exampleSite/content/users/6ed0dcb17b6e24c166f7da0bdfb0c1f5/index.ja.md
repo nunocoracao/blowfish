@@ -1,6 +1,6 @@
 ---
                 title: "technicat.com"
-                tags: [会社のサイト]
+                tags: [企業サイト]
                 externalUrl: "https://technicat.com/"
                 weight: 24
                 showDate: false

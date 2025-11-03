@@ -1,6 +1,6 @@
 ---
                 title: "vividscc.com"
-                tags: [Sito commerciale]
+                tags: [Sito aziendale]
                 externalUrl: "https://vividscc.com/"
                 weight: 22
                 showDate: false

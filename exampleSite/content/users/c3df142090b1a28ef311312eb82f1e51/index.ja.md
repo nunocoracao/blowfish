@@ -1,6 +1,6 @@
 ---
                 title: "eike.in"
-                tags: [パーソナルサイト, ポートフォリオ]
+                tags: [個人サイト, ポートフォリオ]
                 externalUrl: "https://eike.in"
                 weight: 102
                 showDate: false

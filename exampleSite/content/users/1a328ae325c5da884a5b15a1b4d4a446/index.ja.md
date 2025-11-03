@@ -1,6 +1,6 @@
 ---
                 title: "innerknowing"
-                tags: [パーソナルサイト, モデラー]
+                tags: [個人サイト, モデラー]
                 externalUrl: "https://innerknowing.xyz/en/"
                 weight: 60
                 showDate: false

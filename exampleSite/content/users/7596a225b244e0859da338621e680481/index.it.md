@@ -2,7 +2,7 @@
                 title: "p3rception.github.io"
                 tags: [Sito personale, Blog]
                 externalUrl: "https://p3rception.github.io/"
-                weight: 79
+                weight: 76
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
