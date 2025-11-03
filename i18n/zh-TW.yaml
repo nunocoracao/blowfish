@@ -31,8 +31,8 @@ article:
 
 a11y:
   title: "無障礙設定"
-  disable_blur: "停用模糊效果"
-  disable_images: "停用圖片"
+  disable_blur: "停用背景模糊"
+  disable_images: "移除背景圖片"
   show_link_underline: "顯示連結底線"
   font_size: "字體大小"
 
