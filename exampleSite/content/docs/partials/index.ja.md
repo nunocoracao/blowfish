@@ -27,12 +27,12 @@ Fathom Analytics のサポートを有効にするには、`config/_default/para
 
 ### Google アナリティクス
 
-Google アナリティクスのサポートは、Hugo の内部パーシャルを介して提供されます。`config/_default/config.toml` ファイルに `googleAnalytics` キーを指定するだけで、スクリプトが自動的に追加されます。
+Google アナリティクスのサポートは、Hugo の内部パーシャルを介して提供されます。`config/_default/hugo.toml` ファイルに `googleAnalytics` キーを指定するだけで、スクリプトが自動的に追加されます。
 
 指定された設定値に基づいて、バージョン 3 (analytics.js) とバージョン 4 (gtag.js) の両方がサポートされています。
 
 ```toml
-# config/_default/config.toml
+# config/_default/hugo.toml
 
 # バージョン 3
 googleAnalytics = "UA-PROPERTY_ID"

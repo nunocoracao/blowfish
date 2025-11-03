@@ -81,7 +81,7 @@ Blowfish は、git サブモジュール、Hugo モジュール、または完�
 
 ### Blowfish Tools を使ったクイックスタート
 
-> **注意:**  **Node.js**、**Git**、**Go**、**Hugo** がインストールされていること、そして先に進む前に新しい Hugo プロジェクトが作成されていることを確認してください。
+> **注意:**  **Node.js**、**Git**、**Hugo** がインストールされていること、そして先に進む前に新しい Hugo プロジェクトが作成されていることを確認してください。
 
 Blowfish を使い始めるのに役立つ新しい CLI ツールをリリースしました。このツールは、新しい Hugo プロジェクトを作成し、テーマをインストールし、テーマ設定ファイルをセットアップします。まだベータ版なので、[問題を見つけたら報告してください](https://github.com/nunocoracao/blowfish-tools)。
 
@@ -102,7 +102,7 @@ blowfish-tools new mynewsite
 
 ### git サブモジュールを使ったクイックスタート
 
-> **注意:**  **Git**、**Go**、**Hugo** がインストールされていること、そして先に進む前に新しい Hugo プロジェクトが作成されていることを確認してください。
+> **注意:**  **Git**、**Hugo** がインストールされていること、そして先に進む前に新しい Hugo プロジェクトが作成されていることを確認してください。
 
 1. プロジェクトディレクトリで、git を初期化します。
 
@@ -116,7 +116,7 @@ blowfish-tools new mynewsite
    git submodule add -b main https://github.com/nunocoracao/blowfish.git themes/blowfish
    ```
 
-3. ウェブサイトのルートフォルダで、Hugo によって生成された `config.toml` ファイルを削除します。テーマから `*.toml` 設定ファイルをコピーして、`config/_default/` フォルダに保存します。
+3. ウェブサイトのルートフォルダで、Hugo によって生成された `hugo.toml` ファイルを削除します。テーマから `*.toml` 設定ファイルをコピーして、`config/_default/` フォルダに保存します。
 
    これらのテーマ設定ファイルは、Hugo キャッシュディレクトリにあります。または、GitHub から[コピーをダウンロード](https://github.com/nunocoracao/blowfish/releases/latest/download/config-default.zip)できます。
 
@@ -141,7 +141,7 @@ blowfish-tools new mynewsite
 
 3. `hugo server` を使用してサーバーを起動すると、テーマが自動的にダウンロードされます。
 
-4. ウェブサイトのルートフォルダにある、Hugo によって生成された `config.toml` ファイルを削除します。テーマの `*.toml` 設定ファイルを `config/_default/` フォルダにコピーします。
+4. ウェブサイトのルートフォルダにある、Hugo によって生成された `hugo.toml` ファイルを削除します。テーマの `*.toml` 設定ファイルを `config/_default/` フォルダにコピーします。
 
    > **注意:** 上記で作成した `module.toml` ファイルを上書きしないでください！
 

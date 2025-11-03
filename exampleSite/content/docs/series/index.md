@@ -13,7 +13,7 @@ seriesOpened: true
 Blowfish provides a feature to group a set of articles together under a "series". Placing an article under a series will display the rest of the series articles in each single page and provide a quick way to navigate amongst them. You can see an example of this above.
 
 ## Create Taxonomy
-The first step to enable series is to create the `series` taxonomy. For doing this just add the `series` taxonomy to your taxonomy list in the `config.toml`.
+The first step to enable series is to create the `series` taxonomy. For doing this just add the `series` taxonomy to your taxonomy list in the `hugo.toml`.
 
 ```toml
 [taxonomies]
