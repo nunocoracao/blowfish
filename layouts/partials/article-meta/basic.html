@@ -13,15 +13,17 @@
 
   {{/* Gather partials for this context */}}
   {{ $shouldShowDate := false }}
-  {{ if and (eq $scope "single") (.Params.showDateOnlyInArticle | default (.Site.Params.article.showDateOnlyInArticle | default false)) }}
-    {{ $shouldShowDate = true }}
-  {{ end }}
-
-  {{/* showDate has higher priority than showDateOnlyInArticle */}}
   {{ if .Params.showDate | default (.Site.Params.article.showDate | default true) }}
     {{ $shouldShowDate = true }}
   {{ else }}
     {{ $shouldShowDate = false }}
+  {{ end }}
+
+  {{ if (.Params.showDateOnlyInArticle | default (.Site.Params.article.showDateOnlyInArticle | default false)) }}
+    {{ if (ne $scope "single") }}
+      {{/* only takes effect when not called directly in the header of single.html */}}
+      {{ $shouldShowDate = false }}
+    {{ end }}
   {{ end }}
 
   {{ if $shouldShowDate }}
