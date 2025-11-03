@@ -1,8 +1,8 @@
 ---
-                title: "n9o.xyz"
-                tags: [個人サイト, テーマ作者]
-                externalUrl: "https://n9o.xyz"
-                weight: 1
+                title: "encelo.github.io"
+                tags: [个人网站, 博客]
+                externalUrl: "https://encelo.github.io/"
+                weight: 106
                 showDate: false
                 showAuthor: false
                 showReadingTime: false

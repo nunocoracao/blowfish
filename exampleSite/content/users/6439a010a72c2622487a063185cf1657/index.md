@@ -1,8 +1,8 @@
 ---
-                title: "n9o.xyz"
-                tags: [個人サイト, テーマ作者]
-                externalUrl: "https://n9o.xyz"
-                weight: 1
+                title: "tbsch.de | Smart Home, Technik, Kram"
+                tags: [Personal site]
+                externalUrl: "https://tbsch.de"
+                weight: 104
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

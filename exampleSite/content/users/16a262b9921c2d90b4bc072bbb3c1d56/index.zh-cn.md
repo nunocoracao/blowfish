@@ -1,8 +1,8 @@
 ---
-                title: "n9o.xyz"
-                tags: [個人サイト, テーマ作者]
-                externalUrl: "https://n9o.xyz"
-                weight: 1
+                title: "metalhearf.fr"
+                tags: [博客, 个人网站]
+                externalUrl: "https://metalhearf.fr"
+                weight: 105
                 showDate: false
                 showAuthor: false
                 showReadingTime: false
