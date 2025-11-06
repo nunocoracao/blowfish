@@ -168,7 +168,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| `colorScheme` | `"blowfish"` | 主题使用的颜色方案。合法的值有： `blowfish` （默认）、`avocado`、`fire`、`ocean`、`forest`、`princess`、`neon`、`bloody`、`terminal`、`marvel`、`noir`、`autumn`、`congo` 和 `slate`。 具体参考[颜色方案]({{< ref "getting-started#colour-schemes" >}})以获取更多信息。 |
+| `colorScheme` | `"blowfish"` | 主题使用的颜色方案。合法的值有： `blowfish` （默认）、`avocado`、`fire`、`ocean`、`forest`、`princess`、`neon`、`bloody`、`terminal`、`marvel`、`noir`、`autumn`、`congo`、`slate`、`github` 和 `one-light`。 具体参考[颜色方案]({{< ref "getting-started#colour-schemes" >}})以获取更多信息。 |
 | `defaultAppearance` | `"light"` | 默认的主题外观，可以是 `light` 或者 `dark`。 |
 | `autoSwitchAppearance` | `true` | 主题外观是否根据访问者操作系统的偏好自动切换。设置为 `false` 会强制网站始终使用 `defaultAppearance`。 |
 | `enableA11y`                   | `false`      | 是否启用无障碍切换按钮。 |

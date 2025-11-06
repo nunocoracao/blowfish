@@ -170,7 +170,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 
 | Name | Default | Description |
 | --- | --- | --- |
-| `colorScheme` | `"blowfish"` | The theme colour scheme to use. Valid values are `blowfish` (default), `avocado`, `fire`, `ocean`, `forest`, `princess`, `neon`, `bloody`, `terminal`, `marvel`, `noir`, `autumn`, `congo`, and`slate`. Refer to the [Colour Schemes]({{< ref "getting-started#colour-schemes" >}}) section for more details. |
+| `colorScheme` | `"blowfish"` | The theme colour scheme to use. Valid values are `blowfish` (default), `avocado`, `fire`, `ocean`, `forest`, `princess`, `neon`, `bloody`, `terminal`, `marvel`, `noir`, `autumn`, `congo`, `slate`, `github`, and `one-light`. Refer to the [Colour Schemes]({{< ref "getting-started#colour-schemes" >}}) section for more details. |
 | `defaultAppearance` | `"light"` | The default theme appearance, either `light` or `dark`. |
 | `autoSwitchAppearance` | `true` | Whether the theme appearance automatically switches based upon the visitor's operating system preference. Set to `false` to force the site to always use the `defaultAppearance`. |
 | `enableA11y`                   | `false`      | Whether to enable the accessibility toggle button. |
