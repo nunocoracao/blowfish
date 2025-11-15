@@ -25,6 +25,7 @@ article:
   part: "パート"
   this_article: "この記事"
   related_articles: "関連記事"
+  reply_by_email: "メールで返信"
   zen_mode_title:
     enable: "Zenモードを有効にする"
     disable: "Zenモードを無効にする"

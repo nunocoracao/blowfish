@@ -19,6 +19,7 @@ article:
   part: "Part"
   this_article: "This Article"
   related_articles: "Related"
+  reply_by_email: "Rispondi via email"
 
 a11y:
   title: "Impostazioni di accessibilità"

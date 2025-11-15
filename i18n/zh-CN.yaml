@@ -25,6 +25,7 @@ article:
   part: "§"
   this_article: "本文"
   related_articles: "相关文章"
+  reply_by_email: "通过邮件回复"
   zen_mode_title:
     enable: "啟用阅读模式"
     disable: "停用阅读模式"

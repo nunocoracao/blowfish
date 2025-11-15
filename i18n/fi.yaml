@@ -19,6 +19,7 @@ article:
   part: "Part"
   this_article: "This Article"
   related_articles: "Related"
+  reply_by_email: "Vastaa sähköpostitse"
 
 a11y:
   title: "Esteettömyysasetukset"
