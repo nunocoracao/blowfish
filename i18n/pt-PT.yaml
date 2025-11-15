@@ -22,6 +22,7 @@ article:
   part: "Parte"
   this_article: "Este artigo"
   related_articles: "Relacionados"
+  reply_by_email: "Responder por email"
 
 a11y:
   title: "Definições de acessibilidade"

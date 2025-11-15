@@ -25,6 +25,7 @@ article:
   part: "Del"
   this_article: "Denne artikel"
   related_articles: "Relateret"
+  reply_by_email: "Svar via email"
   zen_mode_title:
     enable: "Aktiver zen mode"
     disable: "Deaktiver zen mode"

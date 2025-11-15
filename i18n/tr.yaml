@@ -18,6 +18,7 @@ article:
   part: "Part"
   this_article: "This Article"
   related_articles: "Related"
+  reply_by_email: "E-posta ile yanıtla"
 
 a11y:
   title: "Erişilebilirlik ayarları"

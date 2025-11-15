@@ -25,6 +25,7 @@ article:
   part: "Част"
   this_article: "Тази Статия"
   related_articles: "Подобни"
+  reply_by_email: "Отговори по имейл"
 
 a11y:
   title: "Настройки за достъпност"

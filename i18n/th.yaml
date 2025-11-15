@@ -25,6 +25,7 @@ article:
   part: "ตอนที่"
   this_article: "บทความนี้"
   related_articles: "บทความที่เกี่ยวข้อง"
+  reply_by_email: "ตอบกลับทางอีเมล"
   zen_mode_title:
     enable: "เปิดโหมดเซน"
     disable: "ปิดโหมดเซน"
