@@ -120,7 +120,6 @@ module.exports = {
               borderRadius: "0.25rem",
             },
             code: {
-              backgroundColor: theme("colors.neutral.50 / 1"),
               paddingTop: "3px",
               paddingBottom: "3px",
               paddingLeft: "5px",
@@ -162,8 +161,8 @@ module.exports = {
             mark: {
               backgroundColor: theme("colors.primary.400 / 1"),
             },
-            code: {
-              backgroundColor: theme("colors.neutral.700 / 1"),
+            "code:not(pre code)": {
+              backgroundColor: theme("colors.zinc.900 / 0.7"),
             },
             "a.active": {
               "text-decoration-color": theme("colors.primary.400 / 1"),

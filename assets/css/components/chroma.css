@@ -1,8 +1,12 @@
-
 /* -- Chroma Highlight -- */
 /* Background */
 .prose .chroma {
-  @apply static rounded-md text-neutral-700 bg-neutral-50 dark:bg-neutral-700 dark:text-neutral-200;
+  @apply static rounded-md text-neutral-700 bg-zinc-50 dark:bg-zinc-900 dark:text-neutral-200;
+}
+
+.prose .highlight:not(:has(table)) .chroma,
+.prose .highlight > .chroma {
+  @apply shadow;
 }
 
 /* LineTableTD */

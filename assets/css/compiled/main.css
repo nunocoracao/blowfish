@@ -615,7 +615,6 @@
       color: var(--tw-prose-code);
       font-weight: 600;
       font-size: 0.875em;
-      background-color: rgba(var(--color-neutral-50), 1);
       padding-top: 3px;
       padding-bottom: 3px;
       padding-left: 5px;
@@ -1610,8 +1609,8 @@
     :where(mark):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
       background-color: rgba(var(--color-primary-400), 1);
     }
-    :where(code):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-      background-color: rgba(var(--color-neutral-700), 1);
+    :where(code:not(pre code)):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+      background-color: color-mix(in oklab, oklch(21% 0.006 285.885) 70%, transparent);
     }
     :where(a.active):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
       text-decoration-color: rgba(var(--color-primary-400), 1);
@@ -3068,8 +3067,8 @@
       :where(mark):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
         background-color: rgba(var(--color-primary-400), 1);
       }
-      :where(code):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-        background-color: rgba(var(--color-neutral-700), 1);
+      :where(code:not(pre code)):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+        background-color: color-mix(in oklab, oklch(21% 0.006 285.885) 70%, transparent);
       }
       :where(a.active):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
         text-decoration-color: rgba(var(--color-primary-400), 1);
@@ -3308,14 +3307,18 @@
   .prose .chroma {
     position: static;
     border-radius: var(--radius-md);
-    background-color: rgba(var(--color-neutral-50), 1);
+    background-color: oklch(98.5% 0 0);
     color: rgba(var(--color-neutral-700), 1);
     &:is(.dark *) {
-      background-color: rgba(var(--color-neutral-700), 1);
+      background-color: oklch(21% 0.006 285.885);
     }
     &:is(.dark *) {
       color: rgba(var(--color-neutral-200), 1);
     }
+  }
+  .prose .highlight:not(:has(table)) .chroma, .prose .highlight > .chroma {
+    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .chroma .lntd, .chroma .lntd pre {
     margin: calc(var(--spacing) * 0);
