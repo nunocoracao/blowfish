@@ -2,7 +2,11 @@
 /* -- Chroma Highlight -- */
 /* Background */
 .prose .chroma {
-  @apply static rounded-md text-neutral-700 bg-neutral-50 dark:bg-neutral-700 dark:text-neutral-200;
+  @apply static rounded-md text-neutral-700 bg-neutral-50 dark:bg-neutral-900 dark:text-neutral-200;
+}
+
+.prose .chroma code {
+  @apply bg-neutral-50 dark:bg-neutral-900;
 }
 
 /* LineTableTD */

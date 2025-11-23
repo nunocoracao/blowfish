@@ -120,7 +120,6 @@ module.exports = {
               borderRadius: "0.25rem",
             },
             code: {
-              backgroundColor: theme("colors.neutral.50 / 1"),
               paddingTop: "3px",
               paddingBottom: "3px",
               paddingLeft: "5px",
