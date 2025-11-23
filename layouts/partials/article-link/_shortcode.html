@@ -18,7 +18,7 @@
 {{ $cardContentClasses := "" }}
 
 {{ if site.Params.list.showCards }}
-  {{ $cardClasses = printf "%s overflow-hidden rounded-md border-2 border-neutral-200 dark:border-neutral-700" $cardClasses }}
+  {{ $cardClasses = printf "%s overflow-hidden rounded-md border-[1.5px] border-neutral-300 bg-neutral-100 dark:border-neutral-500 dark:bg-neutral-800" $cardClasses }}
   {{ $imgWrapperClasses = "" }}
   {{ $cardContentClasses = printf "%s p-4 pt-2" $cardContentClasses }}
 {{ else }}

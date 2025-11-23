@@ -55,7 +55,7 @@
 
 
 <article
-  class="relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
+  class="relative min-h-full min-w-full overflow-hidden rounded-md border-[1.5px] border-neutral-300 bg-neutral-100 dark:border-neutral-500 dark:bg-neutral-800">
   {{ with $featuredURL }}
     <div class="flex-none relative overflow-hidden thumbnail_card">
       <img
@@ -71,7 +71,7 @@
       {{ partial "badge.html" (i18n "article.draft" | emojify) }}
     </span>
   {{ end }}
-  <div class="px-6 py-4">
+  <div class="p-4">
     <header>
       <a
         {{ with $page.Params.externalUrl }}
