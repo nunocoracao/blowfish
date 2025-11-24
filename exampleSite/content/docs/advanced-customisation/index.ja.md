@@ -127,7 +127,7 @@ html {
 
 ### シンタックスハイライトテーマの変更
 
-Blowfish はカスタム構文ハイライトスタイルを使用しており、色は `assets/css/schemes` に定義されています。構文ハイライトテーマを変更するには、`assets/css/custom.css` を作成し、次の内容を追加してください：
+構文ハイライトテーマを変更するには、`assets/css/custom.css` を作成し、次の内容を追加してください：
 
 ```css
 .chroma,

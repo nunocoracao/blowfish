@@ -125,7 +125,7 @@ html {
 
 ### 更换语法高亮主题
 
-Blowfish 使用自定义的语法高亮样式，颜色定义在 `assets/css/schemes` 中。要更换语法高亮主题，请创建 `assets/css/custom.css`，然后添加以下内容：
+要更换语法高亮主题，请创建 `assets/css/custom.css`，然后添加以下内容：
 
 ```css
 .chroma,
