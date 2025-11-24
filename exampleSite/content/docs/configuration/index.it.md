@@ -174,6 +174,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `enableA11y`                   | `false`      | Whether to enable the accessibility toggle button. |
 | `enableSearch` | `false` | Whether site search is enabled. Set to `true` to enable search functionality. Note that the search feature depends on the `outputs.home` setting in the [site configuration](#configurazioni-del-sito) being set correctly. |
 | `enableCodeCopy` | `false` | Whether copy-to-clipboard buttons are enabled for `<code>` blocks. The `highlight.noClasses` parameter must be set to `false` for code copy to function correctly. Read more about [other configuration files](#other-configuration-files) below. |
+| `enableStructuredBreadcrumbs` | `false` | Whether to add [BreadcrumbList](https://developers.google.com/search/docs/appearance/structured-data/breadcrumb) for SEO. Do NOT enable this if your content path does not match the URL, i.e., complex [URL setting](https://gohugo.io/content-management/urls/). |
 | `mainSections` | _Not set_ | The sections that should be displayed in the recent articles list. If not provided the section with the greatest number of articles is used. |
 | `showViews` | _Not set_ | Whether or not articles and list views are displayed. This requires firebase integrations to be enabled, look below. |
 | `showLikes` | _Not set_ | Whether or not articles and list likes are displayed. This requires firebase integrations to be enabled, look below. |

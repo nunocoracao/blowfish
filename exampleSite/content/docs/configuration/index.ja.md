@@ -174,6 +174,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 | `enableA11y` | `false` | アクセシビリティ切り替えボタンを有効にするかどうか。 |
 | `enableSearch` | `false` | サイト内検索が有効かどうかです。`true` に設定すると、検索機能が有効になります。検索機能は、[サイト設定](#サイト設定)の `outputs.home` 設定が正しく設定されているかどうかに依存することに注意してください。 |
 | `enableCodeCopy` | `false` | `<code>` ブロックのクリップボードへのコピーボタンを有効にするかどうかです。コードコピーが正しく機能するには、`highlight.noClasses` パラメータを `false` に設定する必要があります。以下の[その他の設定ファイル](#その他の設定ファイル)について読んでください。 |
+| `enableStructuredBreadcrumbs` | `false` | SEO のために [BreadcrumbList](https://developers.google.com/search/docs/appearance/structured-data/breadcrumb) を追加するかどうかを示す。コンテンツパスが URL と一致しない場合例えば複雑な [URL 設定](https://gohugo.io/content-management/urls/) では有効化しないことを示す。 |
 | `mainSections` | _未設定_ | 最近の記事リストに表示するセクションです。指定しない場合は、記事数が最も多いセクションが使用されます。 |
 | `showViews` | _未設定_ | 記事とリストの表示回数を表示するかどうかです。これには Firebase 統合を有効にする必要があります。以下をご覧ください。 |
 | `showLikes` | _未設定_ | 記事とリストのいいねを表示するかどうかです。これには Firebase 統合を有効にする必要があります。以下をご覧ください。 |

@@ -174,6 +174,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `enableA11y`                   | `false`      | 是否启用无障碍切换按钮。 |
 | `enableSearch` | `false` | 是否开启网站的搜索功能，设为 `true` 即为启用。注意，搜索功能依赖于[站点设置](#网站配置)中的 `outputs.home` 设置，请确保此值配置正确。 |
 | `enableCodeCopy` | `false` | 是否可以将`<code>`代码块复制到剪贴板。想要使用代码复制功能，需要将 `highlight.noClasses` 参数设置为 `false`。 阅读 [其他配置文件](#其他配置文件) 以获取更多信息。 |
+| `enableStructuredBreadcrumbs` | `false` | 是否为 SEO 添加 [BreadcrumbList](https://developers.google.com/search/docs/appearance/structured-data/breadcrumb)。如果内容路径与 URL 不一致例如复杂的 [URL 设置](https://gohugo.io/content-management/urls/) 则不要启用。 |
 | `replyByEmail` | `false` | 是否在发布后启用“通过邮件回复”的链接。如果使用，则必须设置 `config/_default/languages.en.toml` 中的 `params.author.email` 参数。 |
 | `forgejoDefaultServer` | _Not set_ | 短代码 `forgejo` 的默认 `server` 参数。 |
 | `giteaDefaultServer` | _Not set_ | 短代码 `gitea` 的默认 `server` 参数。 |
