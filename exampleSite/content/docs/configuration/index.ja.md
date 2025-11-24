@@ -168,7 +168,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 
 | 名前 | デフォルト | 説明 |
 | --- | --- | --- |
-| `colorScheme` | `"blowfish"` | 使用するテーマのカラースキームです。有効な値は、`blowfish`（デフォルト）、`avocado`、`fire`、`ocean`、`forest`、`princess`、`neon`、`bloody`、`terminal`、`marvel`、`noir`、`autumn`、`congo`、`slate` です。詳細については、[カラースキーム]({{< ref "getting-started#カラースキーム" >}})セクションを参照してください。 |
+| `colorScheme` | `"blowfish"` | 使用するテーマのカラースキームです。有効な値は、`blowfish`（デフォルト）、`avocado`、`fire`、`ocean`、`forest`、`princess`、`neon`、`bloody`、`terminal`、`marvel`、`noir`、`autumn`、`congo`、`slate`, `github`, `one-light` です。詳細については、[カラースキーム]({{< ref "getting-started#カラースキーム" >}})セクションを参照してください。 |
 | `defaultAppearance` | `"light"` | デフォルトのテーマの外観です。`light` または `dark` のいずれかです。 |
 | `autoSwitchAppearance` | `true` | 訪問者のオペレーティングシステムの設定に基づいてテーマの外観を自動的に切り替えるかどうかです。`false` に設定すると、サイトは常に `defaultAppearance` を使用します。 |
 | `enableA11y` | `false` | アクセシビリティ切り替えボタンを有効にするかどうか。 |
