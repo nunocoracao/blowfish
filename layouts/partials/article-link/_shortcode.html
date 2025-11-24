@@ -85,7 +85,7 @@
     <div class="flex-none relative overflow-hidden {{ $imgWrapperClasses }} thumbnail">
       <img
         src="{{ . }}"
-        alt="{{ with $target.Params.featuredImageAlt }}{{ . }}{{ else }}{{ $target.Title | emojify }}{{ end }}"
+        role="presentation"
         loading="lazy"
         decoding="async"
         class="not-prose absolute inset-0 w-full h-full object-cover">
