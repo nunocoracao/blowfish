@@ -63,7 +63,9 @@ links = [
 
 ## カラースキーム
 
-Blowfish には、すぐに使用できる多くのカラースキームが付属しています。スキームを変更するには、`colorScheme` テーマパラメータを設定するだけです。有効なオプションは、`blowfish` (デフォルト)、`avocado`、`fire`、`ocean`、`forest`、`princess`、`neon`、`bloody`、`terminal`、`marvel`、`noir`、`autumn`、`congo`、`slate`、`github`、`one-light` です。
+Blowfish には複数のカラースキームが用意されている。組み込みのテーマスイッチャーを使用することで、利用可能なスキームを一覧表示し、切り替えることができる。
+
+サイトのデフォルトスキームを設定するには、テーマ設定内で `colorScheme` パラメータを指定する。
 
 ```toml
 # config/_default/params.toml
@@ -71,71 +73,9 @@ Blowfish には、すぐに使用できる多くのカラースキームが付�
 colorScheme = "blowfish"
 ```
 
-Blowfish は、テーマ全体で使用される3色のパレットを定義しています。各メインカラーには、[Tailwind](https://tailwindcss.com/docs/customizing-colors#color-palette-reference) に含まれる色に基づいた10の色合いが含まれています。3つのメインカラーは、ヘッダー、フッター、およびアクセントカラーに使用されます。各スキームの色は次のとおりです。
+{{< theme-switcher >}}
 
-### Blowfish (デフォルト)
-
-{{< swatches "#64748b" "#3b82f6" "#06b6d4" >}}
-
-### Avocado
-
-{{< swatches "#78716c" "#84cc16" "#10b981" >}}
-
-### Fire
-
-{{< swatches "#78716c" "#f97316" "#f43f5e" >}}
-
-### Ocean
-
-{{< swatches "#64748b" "#3b82f6" "#06b6d4" >}}
-
-### Forest
-
-{{< swatches "#658c86" "#3bf5df" "#06d45c" >}}
-
-### Princess
-
-{{< swatches "#8c658c" "#f53bf2" "#7706d4" >}}
-
-### Neon
-
-{{< swatches "#8338ec" "#ff006e" "#3a86ff" >}}
-
-### Bloody
-
-{{< swatches "#d90429" "#8d99ae" "#457b9d" >}}
-
-### Terminal
-
-{{< swatches "#004b23" "#38b000" "#1a759f" >}}
-
-### Marvel
-
-{{< swatches "#2541b2" "#d81159" "#ffbc42" >}}
-
-### Noir
-
-{{< swatches "#5c6b73" "#9db4c0" "#00a5cf" >}}
-
-### Autumn
-
-{{< swatches "#0a9396" "#ee9b00" "#bb3e03" >}}
-
-### Congo
-
-{{< swatches "#71717a" "#8b5cf6" "#d946ef" >}}
-
-### Slate
-
-{{< swatches "#6B7280" "#64748b" "#6B7280" >}}
-
-### Github
-
-{{< swatches "#64748b" "#0092ff" "#f54728" >}}
-
-### One-Light
-
-{{< swatches "#646464" "#0070cc" "#20a077" >}}
+Blowfish の各カラースキームは三色のパレットに基づき、テーマ全体で一貫して使用される。各主色は [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors#color-palette-reference) に含まれる十段階のカラーパレットを基礎として構成される。
 
 これらはデフォルトのスキームですが、独自のスキームを作成することもできます。詳細については、[高度なカスタマイズ]({{< ref "advanced-customisation#colour-schemes" >}})セクションを参照してください。
 

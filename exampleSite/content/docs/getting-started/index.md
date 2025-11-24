@@ -61,9 +61,11 @@ The `[params.author]` configuration determines how the author information is dis
 
 If you need extra detail, further information about each of these configuration options, is covered in the [Configuration]({{< ref "configuration" >}}) section.
 
-## Colour schemes
+## Colour Schemes
 
-Blowfish ships with a number of colour schemes out of the box. To change the scheme, simply set the `colorScheme` theme parameter. Valid options are `blowfish` (default), `avocado`, `fire`, `ocean`, `forest`, `princess`, `neon`, `bloody`, `terminal`, `marvel`, `noir`, `autumn`, `congo`, `slate`, `github` and `one-light`.
+Blowfish provides a number of colour schemes out of the box. You can easily switch between them using the built-in theme switcher, which shows all available schemes.
+
+To set a default scheme for your site, simply configure the `colorScheme` parameter in your theme settings:
 
 ```toml
 # config/_default/params.toml
@@ -71,71 +73,9 @@ Blowfish ships with a number of colour schemes out of the box. To change the sch
 colorScheme = "blowfish"
 ```
 
-Blowfish defines a three-colour palette that is used throughout the theme. Each main colour contains ten shades which are based upon the colours that are included in [Tailwind](https://tailwindcss.com/docs/customizing-colors#color-palette-reference). The three main colours are used for the header, footer, and accent colours. Here are the colors for each scheme:
+{{< theme-switcher >}}
 
-### Blowfish (default)
-
-{{< swatches "#64748b" "#3b82f6" "#06b6d4" >}}
-
-### Avocado
-
-{{< swatches "#78716c" "#84cc16" "#10b981" >}}
-
-### Fire
-
-{{< swatches "#78716c" "#f97316" "#f43f5e" >}}
-
-### Ocean
-
-{{< swatches "#64748b" "#3b82f6" "#06b6d4" >}}
-
-### Forest
-
-{{< swatches "#658c86" "#3bf5df" "#06d45c" >}}
-
-### Princess
-
-{{< swatches "#8c658c" "#f53bf2" "#7706d4" >}}
-
-### Neon
-
-{{< swatches "#8338ec" "#ff006e" "#3a86ff" >}}
-
-### Bloody
-
-{{< swatches "#d90429" "#8d99ae" "#457b9d" >}}
-
-### Terminal
-
-{{< swatches "#004b23" "#38b000" "#1a759f" >}}
-
-### Marvel
-
-{{< swatches "#2541b2" "#d81159" "#ffbc42" >}}
-
-### Noir
-
-{{< swatches "#5c6b73" "#9db4c0" "#00a5cf" >}}
-
-### Autumn
-
-{{< swatches "#0a9396" "#ee9b00" "#bb3e03" >}}
-
-### Congo
-
-{{< swatches "#71717a" "#8b5cf6" "#d946ef" >}}
-
-### Slate
-
-{{< swatches "#6B7280" "#64748b" "#6B7280" >}}
-
-### Github
-
-{{< swatches "#64748b" "#0092ff" "#f54728" >}}
-
-### One-Light
-
-{{< swatches "#646464" "#0070cc" "#20a077" >}}
+Each colour scheme in Blowfish is built upon a three-colour palette that is used consistently throughout the theme. Each of these main colours is based on the ten-shade colour palettes included in [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors#color-palette-reference).
 
 Although these are the default schemes, you can also create your own. Refer to the [Advanced Customisation]({{< ref "advanced-customisation#colour-schemes" >}}) section for details.
 
