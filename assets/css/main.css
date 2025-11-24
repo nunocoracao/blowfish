@@ -1,11 +1,11 @@
 /*! Blowfish | MIT License | https://github.com/nunocoracao/blowfish */
 
-@import "./components/zen-mode.css";
-@import "./components/chroma.css";
-@import "./components/a11y.css";
+@config "../../tailwind.config.js";
 
 @import "tailwindcss";
-@config "../../tailwind.config.js";
+@import "./components/chroma.css" layer(utilities);
+@import "./components/zen-mode.css";
+@import "./components/a11y.css";
 
 body a,
 body button {
