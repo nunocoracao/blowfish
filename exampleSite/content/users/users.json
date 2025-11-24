@@ -936,5 +936,15 @@
       "Portfolio",
       "Environment design"
     ]
-   }
+   },
+  {
+    "title": "zzamboni.org",
+    "url": "https://zzamboni.org/",
+    "source": "https://gitlab.com/zzamboni/zzamboni.org",
+    "tags": [
+      "Personal site",
+      "Blog",
+      "Technology Blog"
+    ]
+  }
 ]
