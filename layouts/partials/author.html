@@ -9,8 +9,11 @@
     {{ end }}
     {{ if $authorImage }}
       {{ $final := $authorImage }}
+      {{ $squareImage := $authorImage }}
       {{ if not $disableImageOptimization }}
         {{ $final = $authorImage.Fill "192x192" }}
+        {{ $shortSide := int (math.Min $authorImage.Width $authorImage.Height) }}
+        {{ $squareImage = $authorImage.Crop (printf "%dx%d" $shortSide $shortSide ) }}
       {{ end }}
       <img
         class="!mt-0 !mb-0 h-24 w-24 rounded-full me-4"
@@ -18,20 +21,23 @@
         height="96"
         alt="{{ $.Site.Params.Author.name | default " Author" }}"
         src="{{ $final.RelPermalink }}"
-        data-zoom-src="{{ $authorImage.RelPermalink }}">
+        data-zoom-src="{{ $squareImage.RelPermalink }}">
     {{ else }}
       {{ $authorImage := resources.GetRemote . }}
       {{ $final := $authorImage }}
+      {{ $squareImage := $authorImage }}
       {{ if not $disableImageOptimization }}
         {{ $final = $authorImage.Fill "192x192" }}
+        {{ $shortSide := int (math.Min $authorImage.Width $authorImage.Height) }}
+        {{ $squareImage = $authorImage.Crop (printf "%dx%d" $shortSide $shortSide ) }}
       {{ end }}
       <img
         class="!mt-0 !mb-0 h-24 w-24 rounded-full me-4"
         width="96"
         height="96"
         alt="{{ $.Site.Params.Author.name | default " Author" }}"
-        src="{{ $authorImage.RelPermalink }}"
-        data-zoom-src="{{ $authorImage.RelPermalink }}">
+        src="{{ $final.RelPermalink }}"
+        data-zoom-src="{{ $squareImage.RelPermalink }}">
     {{ end }}
   {{ end }}
   <div class="place-self-center">

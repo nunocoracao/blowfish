@@ -168,12 +168,13 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| `colorScheme` | `"blowfish"` | 主题使用的颜色方案。合法的值有： `blowfish` （默认）、`avocado`、`fire`、`ocean`、`forest`、`princess`、`neon`、`bloody`、`terminal`、`marvel`、`noir`、`autumn`、`congo` 和 `slate`。 具体参考[颜色方案]({{< ref "getting-started#colour-schemes" >}})以获取更多信息。 |
+| `colorScheme` | `"blowfish"` | 主题使用的颜色方案。合法的值有： `blowfish` （默认）、`avocado`、`fire`、`ocean`、`forest`、`princess`、`neon`、`bloody`、`terminal`、`marvel`、`noir`、`autumn`、`congo`、`slate`、`github` 和 `one-light`。 具体参考[颜色方案]({{< ref "getting-started#colour-schemes" >}})以获取更多信息。 |
 | `defaultAppearance` | `"light"` | 默认的主题外观，可以是 `light` 或者 `dark`。 |
 | `autoSwitchAppearance` | `true` | 主题外观是否根据访问者操作系统的偏好自动切换。设置为 `false` 会强制网站始终使用 `defaultAppearance`。 |
 | `enableA11y`                   | `false`      | 是否启用无障碍切换按钮。 |
 | `enableSearch` | `false` | 是否开启网站的搜索功能，设为 `true` 即为启用。注意，搜索功能依赖于[站点设置](#网站配置)中的 `outputs.home` 设置，请确保此值配置正确。 |
 | `enableCodeCopy` | `false` | 是否可以将`<code>`代码块复制到剪贴板。想要使用代码复制功能，需要将 `highlight.noClasses` 参数设置为 `false`。 阅读 [其他配置文件](#其他配置文件) 以获取更多信息。 |
+| `enableStructuredBreadcrumbs` | `false` | 是否为 SEO 添加 [BreadcrumbList](https://developers.google.com/search/docs/appearance/structured-data/breadcrumb)。如果内容路径与 URL 不一致例如复杂的 [URL 设置](https://gohugo.io/content-management/urls/) 则不要启用。 |
 | `replyByEmail` | `false` | 是否在发布后启用“通过邮件回复”的链接。如果使用，则必须设置 `config/_default/languages.en.toml` 中的 `params.author.email` 参数。 |
 | `forgejoDefaultServer` | _Not set_ | 短代码 `forgejo` 的默认 `server` 参数。 |
 | `giteaDefaultServer` | _Not set_ | 短代码 `gitea` 的默认 `server` 参数。 |

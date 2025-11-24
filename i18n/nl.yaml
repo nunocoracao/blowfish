@@ -25,6 +25,7 @@ article:
   part: "Deel"
   this_article: "Dit artikel"
   related_articles: "Gerelateerde artikelen"
+  reply_by_email: "Reageren via email"
   zen_mode_title:
     enable: "Zen-modus inschakelen"
     disable: "Zen-modus uitschakelen"

@@ -25,6 +25,7 @@ article:
   part: "Phần"
   this_article: "Bài viết này"
   related_articles: "Bài viết liên quan"
+  reply_by_email: "Trả lời qua email"
   zen_mode_title:
     enable: "Bật zen mode"
     disable: "Tắt zen mode"

@@ -3,11 +3,11 @@
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": "{{ (site.GetPage "/").Permalink | safeURL }}",
+    "@id": {{ site.Home.Permalink | safeURL }},
     "name": "{{ .Site.Title | safeJS }}",
     {{ with .Site.Params.description }}"description": "{{ . | safeJS }}",{{ end }}
     {{ with .Site.LanguageCode }}"inLanguage": "{{ . }}",{{ end }}
-    "url": "{{ (site.GetPage "/").Permalink | safeURL }}",
+    "url": {{ site.Home.Permalink | safeURL }},
     {{ with .Site.Params.keywords }}"keywords": {{ . }},{{ end }}
     "publisher" : {
       "@type": "Person",
@@ -15,7 +15,7 @@
     }
   }
   </script>
-{{ else if .IsPage }}
+{{ else }}
   {{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
   <script type="application/ld+json">
   [{
@@ -27,7 +27,7 @@
     {{ with .Description }}"description": "{{ . | safeJS }}",{{ end }}
     {{ with .Summary }}"abstract": "{{ . | safeJS }}",{{ end }}
     {{ with .Site.LanguageCode }}"inLanguage": "{{ . }}",{{ end }}
-    "url" : "{{ .Permalink }}",
+    "url" : {{ .Permalink }},
     "author" : {
       "@type": "Person",
       "name": "{{ .Site.Params.Author.name | safeJS }}"
@@ -44,6 +44,28 @@
     {{ end }}
     "mainEntityOfPage": "true",
     "wordCount": "{{ .WordCount }}"
-  }]
+  }{{ if site.Params.enableStructuredBreadcrumbs | default false }},
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {{- $breadcrumbs := slice -}}
+      {{- range .Ancestors -}}
+        {{- if not .IsHome -}}
+          {{- $breadcrumbs = $breadcrumbs | append . -}}
+        {{- end -}}
+      {{- end -}}
+      {{- $breadcrumbs = $breadcrumbs | append . -}}
+
+      {{- range $index, $element := $breadcrumbs -}}
+        {
+          "@type": "ListItem",
+          "position": {{ add $index 1 }},
+          "name": "{{ .Title }}",
+          "item": {{ .Permalink }},
+        }{{ if ne (add $index 1) (len $breadcrumbs) }},{{ end }}
+      {{- end -}}
+    ]
+  }{{ end }}]
   </script>
 {{ end }}

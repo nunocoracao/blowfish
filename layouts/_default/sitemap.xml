@@ -1,7 +1,7 @@
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-{{ range .Data.Pages }}{{ if not (in .Site.Params.sitemap.excludedKinds .Kind) }}{{ if and (.Param "xml" | default true) (or (not .Params.externalUrl) (and (.Params.externalUrl) (and (not (hasPrefix .Params.externalUrl "http://")) (not (hasPrefix .Params.externalUrl "https://"))))) }}
+{{ range .Data.Pages }}{{ if not (in .Site.Params.sitemap.excludedKinds .Kind) }}{{ if and (.Param "xml" | default true) (or (not .Params.externalUrl) (and (.Params.externalUrl) (and (not (hasPrefix .Params.externalUrl "http://")) (not (hasPrefix .Params.externalUrl "https://"))))) (not .Params.excludeFromSearch) }}
 {{- if .Permalink -}}{{ $link := .Permalink }}{{ if .Params.externalUrl }}{{ $link = printf "%s%s" .Site.BaseURL (substr .Params.externalUrl 1) }}{{ end }}
   <url>
     <loc>{{ $link }}</loc>{{ if not .Lastmod.IsZero }}
