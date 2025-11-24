@@ -19,6 +19,7 @@ article:
   part: "Part"
   this_article: "This Article"
   related_articles: "Related"
+  reply_by_email: "השב בדוא\"ל"
 
 a11y:
   title: "הגדרות נגישות"

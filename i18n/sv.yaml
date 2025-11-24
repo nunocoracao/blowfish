@@ -19,6 +19,7 @@ article:
   part: "Del"
   this_article: "Denna artikel"
   related_articles: "Relaterade"
+  reply_by_email: "Svara via email"
 
 a11y:
   title: "Tillgänglighetsinställningar"

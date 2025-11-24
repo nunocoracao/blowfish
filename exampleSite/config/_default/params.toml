@@ -12,6 +12,7 @@ autoSwitchAppearance = true
 enableA11y = false
 enableSearch = true
 enableCodeCopy = true
+enableStructuredBreadcrumbs = true
 
 replyByEmail = false
 
