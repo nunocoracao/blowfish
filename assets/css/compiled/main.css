@@ -743,7 +743,7 @@
     --tw-prose-bullets: rgba(var(--color-neutral-500), 1);
     --tw-prose-hr: rgba(var(--color-neutral-200), 1);
     --tw-prose-quotes: rgba(var(--color-neutral-700), 1);
-    --tw-prose-quote-borders: rgba(var(--color-primary-200), 1);
+    --tw-prose-quote-borders: rgba(var(--color-primary-500), 1);
     --tw-prose-captions: rgba(var(--color-neutral-500), 1);
     --tw-prose-kbd: oklch(21% 0.034 264.665);
     --tw-prose-kbd-shadows: color-mix(in oklab, oklch(21% 0.034 264.665) 10%, transparent);
@@ -761,7 +761,7 @@
     --tw-prose-invert-bullets: rgba(var(--color-neutral-600), 1);
     --tw-prose-invert-hr: rgba(var(--color-neutral-500), 1);
     --tw-prose-invert-quotes: rgba(var(--color-neutral-200), 1);
-    --tw-prose-invert-quote-borders: rgba(var(--color-primary-900), 1);
+    --tw-prose-invert-quote-borders: rgba(var(--color-primary-600), 1);
     --tw-prose-invert-captions: rgba(var(--color-neutral-400), 1);
     --tw-prose-invert-kbd: #fff;
     --tw-prose-invert-kbd-shadows: rgb(255 255 255 / 10%);
