@@ -242,7 +242,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `article.showAuthor` | `true` | Whether or not the author box is displayed in the article footer. |
 | `article.showAuthorBottom` | `false` | Author boxes are displayed at the bottom of each page instead of the top. |
 | `article.showHero` | `false` | Whether the thumbnail image will be shown as a hero image within each article page. |
-| `article.heroStyle` | _Not set_ | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`. |
+| `article.heroStyle` | _Not set_ | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`. Effective only if `article.showHero = true`. |
 | `article.layoutBackgroundBlur` | `true` | Makes the background image in the background article heroStyle blur with the scroll |
 | `article.layoutBackgroundHeaderSpace` | `true` | Add space between the header and the body. |
 | `article.showBreadcrumbs` | `false` | Whether or not breadcrumbs are displayed in the article header. |
@@ -271,7 +271,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | Name | Default | Description |
 | --- | --- | --- |
 | `list.showHero` | `false` | Whether the thumbnail image will be shown as a hero image within each list page. |
-| `list.heroStyle` | _Not set_ | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`. |
+| `list.heroStyle` | _Not set_ | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`. Effective only if `list.showHero = true`. |
 | `list.showBreadcrumbs` | `false` | Whether or not breadcrumbs are displayed in the header on list pages. |
 | `list.layoutBackgroundBlur` | `true` | Makes the background image in the background list heroStyle blur with the scroll |
 | `list.layoutBackgroundHeaderSpace` | `true` | Add space between the header and the body. |
@@ -299,7 +299,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | --- | --- | --- |
 | `taxonomy.showTermCount` | `true` | Whether or not the number of articles within a taxonomy term is displayed on the taxonomy listing. |
 | `taxonomy.showHero` | `false` | Whether the thumbnail image will be shown as a hero image within each taxonomy page. |
-| `taxonomy.heroStyle` | _Not set_ | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`. |
+| `taxonomy.heroStyle` | _Not set_ | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`. Effective only if `taxonomy.showHero = true`. |
 | `taxonomy.showBreadcrumbs` | `false` | Whether or not breadcrumbs are displayed in the taxonomy header. |
 | `taxonomy.showViews` | `false` | Whether or not article views are displayed. This requires firebase integrations to be enabled, look below. |
 | `taxonomy.showLikes` | `false` | Whether or not article likes are displayed. This requires firebase integrations to be enabled, look below. |
@@ -311,7 +311,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | Name | Default | Description |
 | --- | --- | --- |
 | `term.showHero` | `false` | Whether the thumbnail image will be shown as a hero image within each term page. |
-| `term.heroStyle` | _Not set_ | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`. |
+| `term.heroStyle` | _Not set_ | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`. Effective only if `term.showHero = true`. |
 | `term.showBreadcrumbs` | `false` | Whether or not breadcrumbs are displayed in the term header. |
 | `term.showViews` | `false` | Whether or not article views are displayed. This requires firebase integrations to be enabled, look below. |
 | `term.showLikes` | `false` | Whether or not article likes are displayed. This requires firebase integrations to be enabled, look below. |

@@ -66,79 +66,11 @@ Se hai bisogno di ulteriori dettagli, ulteriori informazioni su ciascuna di ques
 
 ## Schemi di colori
 
-Blowfish viene fornito con una serie di schemi di colori già pronti. Per cambiare lo schema, è sufficiente impostare il parametro del tema `colorScheme`. Le opzioni valide sono `blowfish` (default), `avocado`, `fire`, `ocean`, `forest`, `princess`, `neon`, `bloody`, `terminal`, `marvel`, `noir`, `autumn`, `congo`, `slate`, `github` and `one-light`.
+Blowfish offre diversi schemi di colore predefiniti. Puoi provare gli schemi incorporati qui sotto:
 
-```toml
-# config/_default/params.toml
+{{< theme-switcher >}}
 
-colorScheme = "blowfish"
-```
-
-Blowfish definisce una palette di tre colori che viene utilizzata in tutto il tema. Ogni colore principale contiene dieci sfumature basate sui colori inclusi in [Tailwind](https://tailwindcss.com/docs/customizing-colors#color-palette-reference). I tre colori principali sono utilizzati per l'intestazione, il piè di pagina e i colori d'accento. Ecco i colori per ogni schema:
-
-### Blowfish (default)
-
-{{< swatches "#64748b" "#3b82f6" "#06b6d4" >}}
-
-### Avocado
-
-{{< swatches "#78716c" "#84cc16" "#10b981" >}}
-
-### Fire
-
-{{< swatches "#78716c" "#f97316" "#f43f5e" >}}
-
-### Ocean
-
-{{< swatches "#64748b" "#3b82f6" "#06b6d4" >}}
-
-### Forest
-
-{{< swatches "#658c86" "#3bf5df" "#06d45c" >}}
-
-### Princess
-
-{{< swatches "#8c658c" "#f53bf2" "#7706d4" >}}
-
-### Neon
-
-{{< swatches "#8338ec" "#ff006e" "#3a86ff" >}}
-
-### Bloody
-
-{{< swatches "#d90429" "#8d99ae" "#457b9d" >}}
-
-### Terminal
-
-{{< swatches "#004b23" "#38b000" "#1a759f" >}}
-
-### Marvel
-
-{{< swatches "#2541b2" "#d81159" "#ffbc42" >}}
-
-### Noir
-
-{{< swatches "#5c6b73" "#9db4c0" "#00a5cf" >}}
-
-### Autumn
-
-{{< swatches "#0a9396" "#ee9b00" "#bb3e03" >}}
-
-### Congo
-
-{{< swatches "#71717a" "#8b5cf6" "#d946ef" >}}
-
-### Slate
-
-{{< swatches "#6B7280" "#64748b" "#6B7280" >}}
-
-### Github
-
-{{< swatches "#64748b" "#0092ff" "#f54728" >}}
-
-### One-Light
-
-{{< swatches "#646464" "#0070cc" "#20a077" >}}
+Ogni schema di colore in Blowfish si basa su una palette composta da tre colori, utilizzata in modo coerente all’interno del tema. Ciascuno di questi colori principali deriva dalle palette a dieci tonalità incluse in [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors#color-palette-reference).
 
 Sebbene questi siano gli schemi predefiniti, è possibile crearne di propri. Per maggiori informazioni, consultare la sezione [Personalizzazione avanzata]({{< ref "advanced-customisation#colour-schemes" >}}).
 

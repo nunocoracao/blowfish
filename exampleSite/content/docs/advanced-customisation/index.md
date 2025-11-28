@@ -135,7 +135,7 @@ Blowfish uses a custom syntax highlighting style, with colors defined in `assets
 .chroma:is(.dark *) * {
   color: unset;
   font-weight: unset;
-  background-color: unset;
+  font-style: unset;
 }
 ```
 
@@ -143,38 +143,13 @@ This clears the default Chroma styles. The next step is to incorporate Chroma st
 
 ```sh
 # Mac/Linux
-hugo gen chromastyles --style=emacs | sed 's/\./html:not(.dark) ./' >> assets/css/custom.css
-hugo gen chromastyles --style=evergarden | sed 's/\./html.dark ./' >> assets/css/custom.css
+(echo 'html:not(.dark) {'; hugo gen chromastyles --style=emacs; echo '}') >> assets/css/custom.css
+(echo 'html.dark {'; hugo gen chromastyles --style=evergarden; echo '}') >> assets/css/custom.css
 
 # Windows PowerShell
 # This command cannot run in CMD; it must run in PowerShell
-hugo gen chromastyles --style=emacs | ForEach-Object { $_ -replace '\.', 'html:not(.dark) .' } | Add-Content -Path "css/custom.txt"
-hugo gen chromastyles --style=evergarden | ForEach-Object { $_ -replace '\.', 'html.dark .' } | Add-Content -Path "css/custom.txt"
-```
-
-The final `custom.css` file should resemble the following:
-
-```css
-.chroma,
-.chroma *,
-.chroma:is(.dark *),
-.chroma:is(.dark *) * {
-  color: unset;
-  font-weight: unset;
-  background-color: unset;
-}
-
-/* Generated using: hugo gen chromastyles --style=emacs */
-
-/* Background */ html:not(.dark) .bg { background-color:#f8f8f8; }
-/* PreWrapper */ html:not(.dark) .chroma { background-color:#f8f8f8; }
-/* ... */
-
-/* Generated using: hugo gen chromastyles --style=evergarden */
-
-/* Background */ html.dark .bg { color:#d6cbb4;background-color:#252b2e; }
-/* PreWrapper */ html.dark .chroma { color:#d6cbb4;background-color:#252b2e; }
-/* ... */
+@("html:not(.dark) {"; (hugo gen chromastyles --style=emacs); "}") | Add-Content -Path "assets/css/custom.css"
+@("html.dark {"; (hugo gen chromastyles --style=evergarden); "}") | Add-Content -Path "assets/css/custom.css"
 ```
 
 See all available styles in [Hugo's documentation](https://gohugo.io/quick-reference/syntax-highlighting-styles/#styles).
