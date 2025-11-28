@@ -64,6 +64,30 @@ Twitter で私を[フォロー](https://twitter.com/nunocoracao)するのを忘�
 
 <br/><br/><br/>
 
+## 警告
+
+Admonition は alert ショートコードと同様の目的を持ちますが、Hugo のレンダーフックを使用して実装されます。その使用方法は[GitHubのアラート](https://github.blog/changelog/2023-12-14-new-markdown-extension-alerts-provide-distinctive-styling-for-significant-content/)に似ています：
+
+```md
+> [!NOTE]
+> ノートタイプのアドモニション。
+
+> [!NOTE] カスタムタイトル
+> カスタムタイトル付きのノートタイプのアドモニション。
+```
+
+> [!NOTE]
+> ノートタイプのアドモニション。
+
+> [!NOTE] カスタムタイトル
+> カスタムタイトル付きのノートタイプのアドモニション。
+
+alert ショートコードと Admonition の主な違いは構文にあります。Admonition は Markdown 構文を使用するためより移植性が高く、ショートコードは Hugo 専用です。
+
+有効な Admonition タイプは `!NOTE`、`!TIP`、`!IMPORTANT`、`!WARNING`、`!CAUTION` です。
+
+<br/><br/><br/>
+
 ## 記事
 
 `Article` は、1つの記事を Markdown ファイルに埋め込みます。埋め込むファイルへの `link` は、埋め込むファイルの `.RelPermalink` である必要があります。ショートコードは、親を参照している場合は何も表示しないことに注意してください。*注: Blowfish (/blowfish/ など) のようなサブフォルダでウェブサイトを実行している場合は、そのパスをリンクに含めてください。*

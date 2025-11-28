@@ -1,0 +1,56 @@
+:root {
+  --adm-note: oklch(67% 0.1881 259.83);
+  --adm-tip: oklch(67% 0.1828 142.511);
+  --adm-important: oklch(67% 0.23265 303.896);
+  --adm-warning: oklch(67% 0.1266 69.13);
+  --adm-caution: oklch(67% 0.20784 25.315);
+}
+
+.adm__text :last-child {
+  margin-bottom: 0;
+}
+
+.adm {
+  border-left-width: 4px;
+  border-left-style: solid;
+}
+
+.adm--note {
+  border-left-color: var(--adm-note);
+}
+
+.adm--note > * > .adm__icon {
+  color: var(--adm-note);
+}
+
+.adm--tip {
+  border-left-color: var(--adm-tip);
+}
+
+.adm--tip > * > .adm__icon {
+  color: var(--adm-tip);
+}
+
+.adm--important {
+  border-left-color: var(--adm-important);
+}
+
+.adm--important > * > .adm__icon {
+  color: var(--adm-important);
+}
+
+.adm--warning {
+  border-left-color: var(--adm-warning);
+}
+
+.adm--warning > * > .adm__icon {
+  color: var(--adm-warning);
+}
+
+.adm--caution {
+  border-left-color: var(--adm-caution);
+}
+
+.adm--caution > * > .adm__icon {
+  color: var(--adm-caution);
+}

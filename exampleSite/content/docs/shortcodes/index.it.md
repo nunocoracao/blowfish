@@ -64,6 +64,30 @@ This is an error!
 
 <br/><br/><br/>
 
+## Admonition
+
+Admonition serves a similar purpose as the alert shortcode but is implemented via Hugo render hooks. Its usage resembles [GitHub alerts](https://github.blog/changelog/2023-12-14-new-markdown-extension-alerts-provide-distinctive-styling-for-significant-content/):
+
+```md
+> [!NOTE]
+> A Note type admonition.
+
+> [!NOTE] Custom Title
+> A Note type admonition with custom title.
+```
+
+> [!NOTE]
+> A Note type admonition.
+
+> [!NOTE] Custom Title
+> A Note type admonition with custom title.
+
+The key difference between alert shortcodes and admonitions is syntax: admonitions use Markdown syntax, making them more portable, whereas shortcodes are specific to Hugo.
+
+Valid admonition types are `!NOTE`, `!TIP`, `!IMPORTANT`, `!WARNING` and `!CAUTION`.
+
+<br/><br/><br/>
+
 ## Article
 
 `Article` will embed a single article into a markdown file. The `link` to the file should be the `.RelPermalink` of the file to be embedded. Note that the shortcode will not display anything if it's referencing it's parent. *Note: if you are running your website in a subfolder like Blowfish (i.e. /blowfish/) please include that path in the link.*

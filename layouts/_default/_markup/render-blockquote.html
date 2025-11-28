@@ -1,0 +1,34 @@
+{{- $admConfig := dict
+  "note" (dict "icon" "circle-info")
+  "tip" (dict "icon" "lightbulb")
+  "important" (dict "icon" "circle-exclamation")
+  "warning" (dict "icon" "triangle-exclamation")
+  "caution" (dict "icon" "octagon-exclamation")
+-}}
+
+{{- $admType := lower .AlertType -}}
+{{- $config := index $admConfig $admType -}}
+{{- if and (eq .Type "alert") $config -}}
+  {{- $icon := index $config "icon" -}}
+  <div class="adm adm--{{ $admType }} flex flex-col px-4 py-1 my-6">
+    <div class="adm__header flex items-center gap-3">
+      <span class="adm__icon text-xl">
+        {{ partial "icon.html" $icon }}
+      </span>
+      {{- if ne (.AlertTitle | plainify | strings.TrimSpace) "" -}}
+        <div class="font-semibold">{{ .AlertTitle }}</div>
+      {{- else -}}
+        <div class="font-semibold">
+          {{ or (i18n $admType) (title $admType) }}
+        </div>
+      {{- end -}}
+    </div>
+    <div class="adm__text">
+      {{- .Text -}}
+    </div>
+  </div>
+{{- else -}}
+  <blockquote>
+    {{ .Text }}
+  </blockquote>
+{{- end -}}

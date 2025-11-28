@@ -4,6 +4,7 @@
 
 @import "tailwindcss";
 @import "./components/chroma.css" layer(utilities);
+@import "./components/admonition.css" layer(utilities);
 @import "./components/zen-mode.css";
 @import "./components/a11y.css";
 

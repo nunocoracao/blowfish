@@ -64,6 +64,30 @@ This is an error!
 
 <br/><br/><br/>
 
+## Admonition
+
+Admonition 的功能与 alert 短代码类似，但通过 Hugo 的 render hooks 实现。其用法类似于 [GitHub alerts](https://github.blog/changelog/2023-12-14-new-markdown-extension-alerts-provide-distinctive-styling-for-significant-content/)：
+
+```md
+> [!NOTE]
+> 注意类型的提示。
+
+> [!NOTE] 自定义标题
+> 带自定义标题的注意类型提示。
+```
+
+> [!NOTE]
+> 注意类型的提示。
+
+> [!NOTE] 自定义标题
+> 带自定义标题的注意类型提示。
+
+alert 短代码与 Admonition 的主要区别在于语法：Admonition 使用 Markdown 语法，更加可移植，而短代码仅适用于 Hugo。
+
+有效的 Admonition 类型包括 `!NOTE`、`!TIP`、`!IMPORTANT`、`!WARNING` 和 `!CAUTION`。
+
+<br/><br/><br/>
+
 ## Article
 
 `Article` 将把一篇文章嵌入到一个 markdown 文件中。 参数中的 `link`应该是要嵌入的文件的 `.RelPermalink`。请注意，如果简码引用其父级文件，则它不会显示任何内容。 *注意：如果您在 Blowfish（即 /blowfish/）等子文件夹中运行网站，请在链接中包含该路径。*
