@@ -3552,6 +3552,9 @@ body.zen-mode-enable {
 .dark .ios-toggle::after {
   background: #f5f5f5;
 }
+html.dark {
+  color-scheme: dark;
+}
 body a, body button {
   transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
   transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));

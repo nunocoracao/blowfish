@@ -7,6 +7,10 @@
 @import "./components/zen-mode.css";
 @import "./components/a11y.css";
 
+html.dark {
+  color-scheme: dark;
+}
+
 body a,
 body button {
   @apply transition-colors;
