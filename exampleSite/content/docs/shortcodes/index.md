@@ -720,6 +720,86 @@ You can see some additional Mermaid examples on the [diagrams and flowcharts sam
 
 <br/><br/><br/>
 
+## Tabs
+
+The `tabs` shortcode is commonly used to present different variants of a particular step. For example, it can be used to show how to install VS Code on different platforms.
+
+**Example**
+
+`````md
+{{</* tabs labels="Windows;;macOS;;Linux" */>}}
+
+{{</* tab */>}}
+
+Install using Chocolatey:
+
+```pwsh
+choco install vscode.install
+```
+
+or install using WinGet
+
+```pwsh
+winget install -e --id Microsoft.VisualStudioCode
+```
+
+{{</* /tab */>}}
+
+{{</* tab */>}}
+
+```bash
+brew install --cask visual-studio-code
+```
+
+{{</* /tab */>}}
+
+{{</* tab */>}}
+
+See [documentation](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux).
+
+{{</* /tab */>}}
+
+{{</* /tabs */>}}
+`````
+
+**Output**
+
+{{< tabs labels="Windows;;macOS;;Linux" >}}
+
+{{< tab >}}
+
+Install using Chocolatey:
+
+```pwsh
+choco install vscode.install
+```
+
+or install using WinGet
+
+```pwsh
+winget install -e --id Microsoft.VisualStudioCode
+```
+
+{{< /tab >}}
+
+{{< tab >}}
+
+```bash
+brew install --cask visual-studio-code
+```
+
+{{< /tab >}}
+
+{{< tab >}}
+
+See [documentation](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux).
+
+{{< /tab >}}
+
+{{< /tabs >}}
+
+<br/><br/><br/>
+
 ## Timeline
 
 The `timeline` creates a visual timeline that can be used in different use-cases, e.g. professional experience, a project's achievements, etc. The `timeline` shortcode relies on the `timelineItem` sub-shortcode to define each item within the main timeline. Each item can have the following properties.

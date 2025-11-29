@@ -711,6 +711,86 @@ B-->C[利益]
 
 <br/><br/><br/>
 
+## Tabs
+
+`tabs` ショートコードは、特定の手順における異なるバリアントを提示する際によく使用される。例えば、VS Code を各種プラットフォームにインストールする方法を示す場合などに利用できる。
+
+**例**
+
+````md
+{{</* tabs labels="Windows;;macOS;;Linux" */>}}
+
+{{</* tab */>}}
+
+Chocolatey を使用してインストール:
+
+```pwsh
+choco install vscode.install
+```
+
+または WinGet を使用してインストール
+
+```pwsh
+winget install -e --id Microsoft.VisualStudioCode
+```
+
+{{</* /tab */>}}
+
+{{</* tab */>}}
+
+```bash
+brew install --cask visual-studio-code
+```
+
+{{</* /tab */>}}
+
+{{</* tab */>}}
+
+[ドキュメント](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux)を参照。
+
+{{</* /tab */>}}
+
+{{</* /tabs */>}}
+````
+
+**出力**
+
+{{< tabs labels="Windows;;macOS;;Linux" >}}
+
+{{< tab >}}
+
+Chocolatey を使用してインストール:
+
+```pwsh
+choco install vscode.install
+```
+
+または WinGet を使用してインストール
+
+```pwsh
+winget install -e --id Microsoft.VisualStudioCode
+```
+
+{{< /tab >}}
+
+{{< tab >}}
+
+```bash
+brew install --cask visual-studio-code
+```
+
+{{< /tab >}}
+
+{{< tab >}}
+
+[ドキュメント](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux)を参照。
+
+{{< /tab >}}
+
+{{< /tabs >}}
+
+<br/><br/><br/>
+
 ## タイムライン
 
 `timeline` は、さまざまなユースケース (例: 職務経歴、プロジェクトの成果など) で使用できる視覚的なタイムラインを作成します。`timeline` ショートコードは、メインタイムライン内の各アイテムを定義するために `timelineItem` サブショートコードに依存しています。各アイテムには、次のプロパティを設定できます。
