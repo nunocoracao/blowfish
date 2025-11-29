@@ -68,7 +68,6 @@ module.exports = {
             "--tw-prose-bold": theme("colors.neutral.900 / 1"),
             "--tw-prose-counters": theme("colors.neutral.800 / 1"),
             "--tw-prose-bullets": theme("colors.neutral.500 / 1"),
-            "--tw-prose-hr": theme("colors.neutral.200 / 1"),
             "--tw-prose-quotes": theme("colors.neutral.700 / 1"),
             "--tw-prose-quote-borders": theme("colors.primary.500 / 1"),
             "--tw-prose-captions": theme("colors.neutral.500 / 1"),
@@ -84,7 +83,6 @@ module.exports = {
             "--tw-prose-invert-bold": theme("colors.neutral.DEFAULT / 1"),
             "--tw-prose-invert-counters": theme("colors.neutral.400 / 1"),
             "--tw-prose-invert-bullets": theme("colors.neutral.600 / 1"),
-            "--tw-prose-invert-hr": theme("colors.neutral.500 / 1"),
             "--tw-prose-invert-quotes": theme("colors.neutral.200 / 1"),
             "--tw-prose-invert-quote-borders": theme("colors.primary.600 / 1"),
             "--tw-prose-invert-captions": theme("colors.neutral.400 / 1"),
@@ -105,6 +103,9 @@ module.exports = {
             },
             "a code": {
               color: "var(--tw-prose-code)",
+            },
+            hr: {
+              border: '0.8px solid theme("colors.neutral.300 / 1")',
             },
             kbd: {
               backgroundColor: theme("colors.neutral.200 / 1"),
@@ -169,6 +170,9 @@ module.exports = {
             },
             "p.active": {
               "text-decoration-color": theme("colors.primary.400 / 1"),
+            },
+            hr: {
+              border: '0.8px solid theme("colors.neutral.500 / 1")',
             },
           },
         },
