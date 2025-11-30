@@ -1,9 +1,17 @@
 /*! Blowfish | MIT License | https://github.com/nunocoracao/blowfish */
 
+@import "tailwindcss";
+
+/* Use JS config for complex theme configuration */
 @config "../../tailwind.config.js";
 
-@import "tailwindcss";
-@import "./components/chroma.css" layer(utilities);
+/* Custom source paths for content detection */
+@source "../../layouts/**/*.html";
+@source "../../content/**/*.{html,md}";
+@source "../../themes/blowfish/layouts/**/*.html";
+@source "../../themes/blowfish/content/**/*.{html,md}";
+
+@import "./components/chroma.css";
 @import "./components/zen-mode.css";
 @import "./components/a11y.css";
 
