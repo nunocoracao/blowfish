@@ -718,74 +718,62 @@ B-->C[利益]
 **例**
 
 ````md
-{{</* tabs labels="Windows;;macOS;;Linux" */>}}
+{{</* tabs */>}}
 
-{{</* tab */>}}
+    {{</* tab label="Windows" */>}}
+    Chocolatey を使用してインストール:
 
-Chocolatey を使用してインストール:
+    ```pwsh
+    choco install vscode.install
+    ```
 
-```pwsh
-choco install vscode.install
-```
+    または WinGet を使用してインストール
 
-または WinGet を使用してインストール
+    ```pwsh
+    winget install -e --id Microsoft.VisualStudioCode
+    ```
+    {{</* /tab */>}}
 
-```pwsh
-winget install -e --id Microsoft.VisualStudioCode
-```
+    {{</* tab label="macOS" */>}}
+    ```bash
+    brew install --cask visual-studio-code
+    ```
+    {{</* /tab */>}}
 
-{{</* /tab */>}}
-
-{{</* tab */>}}
-
-```bash
-brew install --cask visual-studio-code
-```
-
-{{</* /tab */>}}
-
-{{</* tab */>}}
-
-[ドキュメント](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux)を参照。
-
-{{</* /tab */>}}
+    {{</* tab label="Linux" */>}}
+    [ドキュメント](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux)を参照。
+    {{</* /tab */>}}
 
 {{</* /tabs */>}}
 ````
 
 **出力**
 
-{{< tabs labels="Windows;;macOS;;Linux" >}}
+{{< tabs >}}
 
-{{< tab >}}
+    {{< tab label="Windows" >}}
+    Chocolatey を使用してインストール:
 
-Chocolatey を使用してインストール:
+    ```pwsh
+    choco install vscode.install
+    ```
 
-```pwsh
-choco install vscode.install
-```
+    または WinGet を使用してインストール
 
-または WinGet を使用してインストール
+    ```pwsh
+    winget install -e --id Microsoft.VisualStudioCode
+    ```
+    {{< /tab >}}
 
-```pwsh
-winget install -e --id Microsoft.VisualStudioCode
-```
+    {{< tab label="macOS" >}}
+    ```bash
+    brew install --cask visual-studio-codeqweqwe
+    ```
+    {{< /tab >}}
 
-{{< /tab >}}
-
-{{< tab >}}
-
-```bash
-brew install --cask visual-studio-code
-```
-
-{{< /tab >}}
-
-{{< tab >}}
-
-[ドキュメント](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux)を参照。
-
-{{< /tab >}}
+    {{< tab label="Linux" >}}
+    [ドキュメント](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux)を参照。
+    {{< /tab >}}
 
 {{< /tabs >}}
 

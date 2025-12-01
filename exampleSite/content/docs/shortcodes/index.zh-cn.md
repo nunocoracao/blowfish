@@ -731,74 +731,62 @@ B-->C[Profit]
 **示例**
 
 ````md
-{{</* tabs labels="Windows;;macOS;;Linux" */>}}
+{{</* tabs */>}}
 
-{{</* tab */>}}
+    {{</* tab label="Windows" */>}}
+    使用 Chocolatey 安装:
 
-使用 Chocolatey 安装:
+    ```pwsh
+    choco install vscode.install
+    ```
 
-```pwsh
-choco install vscode.install
-```
+    或使用 WinGet 安装
 
-或使用 WinGet 安装
+    ```pwsh
+    winget install -e --id Microsoft.VisualStudioCode
+    ```
+    {{</* /tab */>}}
 
-```pwsh
-winget install -e --id Microsoft.VisualStudioCode
-```
+    {{</* tab label="macOS" */>}}
+    ```bash
+    brew install --cask visual-studio-code
+    ```
+    {{</* /tab */>}}
 
-{{</* /tab */>}}
-
-{{</* tab */>}}
-
-```bash
-brew install --cask visual-studio-code
-```
-
-{{</* /tab */>}}
-
-{{</* tab */>}}
-
-参见[文档](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux)。
-
-{{</* /tab */>}}
+    {{</* tab label="Linux" */>}}
+    参见[文档](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux)。
+    {{</* /tab */>}}
 
 {{</* /tabs */>}}
 ````
 
 **输出**
 
-{{< tabs labels="Windows;;macOS;;Linux" >}}
+{{< tabs >}}
 
-{{< tab >}}
+    {{< tab label="Windows" >}}
+    使用 Chocolatey 安装:
 
-使用 Chocolatey 安装:
+    ```pwsh
+    choco install vscode.install
+    ```
 
-```pwsh
-choco install vscode.install
-```
+    或使用 WinGet 安装
 
-或使用 WinGet 安装
+    ```pwsh
+    winget install -e --id Microsoft.VisualStudioCode
+    ```
+    {{< /tab >}}
 
-```pwsh
-winget install -e --id Microsoft.VisualStudioCode
-```
+    {{< tab label="macOS" >}}
+    ```bash
+    brew install --cask visual-studio-code
+    ```
+    {{< /tab >}}
 
-{{< /tab >}}
-
-{{< tab >}}
-
-```bash
-brew install --cask visual-studio-code
-```
-
-{{< /tab >}}
-
-{{< tab >}}
-
-参见[文档](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux)。
-
-{{< /tab >}}
+    {{< tab label="Linux" >}}
+    参见[文档](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux)。
+    {{< /tab >}}
 
 {{< /tabs >}}
 

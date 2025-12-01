@@ -34,8 +34,8 @@ function activateTab(container, activeIndex) {
   });
 }
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initTabs);
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initTabs);
 } else {
   initTabs();
 }

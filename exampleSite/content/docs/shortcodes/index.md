@@ -727,74 +727,62 @@ The `tabs` shortcode is commonly used to present different variants of a particu
 **Example**
 
 `````md
-{{</* tabs labels="Windows;;macOS;;Linux" */>}}
+{{</* tabs */>}}
 
-{{</* tab */>}}
+    {{</* tab label="Windows" */>}}
+    Install using Chocolatey:
 
-Install using Chocolatey:
+    ```pwsh
+    choco install vscode.install
+    ```
 
-```pwsh
-choco install vscode.install
-```
+    or install using WinGet
 
-or install using WinGet
+    ```pwsh
+    winget install -e --id Microsoft.VisualStudioCode
+    ```
+    {{</* /tab */>}}
 
-```pwsh
-winget install -e --id Microsoft.VisualStudioCode
-```
+    {{</* tab label="macOS" */>}}
+    ```bash
+    brew install --cask visual-studio-code
+    ```
+    {{</* /tab */>}}
 
-{{</* /tab */>}}
-
-{{</* tab */>}}
-
-```bash
-brew install --cask visual-studio-code
-```
-
-{{</* /tab */>}}
-
-{{</* tab */>}}
-
-See [documentation](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux).
-
-{{</* /tab */>}}
+    {{</* tab label="Linux" */>}}
+    See [documentation](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux).
+    {{</* /tab */>}}
 
 {{</* /tabs */>}}
 `````
 
 **Output**
 
-{{< tabs labels="Windows;;macOS;;Linux" >}}
+{{< tabs >}}
 
-{{< tab >}}
+    {{< tab label="Windows" >}}
+    Install using Chocolatey:
 
-Install using Chocolatey:
+    ```pwsh
+    choco install vscode.install
+    ```
 
-```pwsh
-choco install vscode.install
-```
+    or install using WinGet
 
-or install using WinGet
+    ```pwsh
+    winget install -e --id Microsoft.VisualStudioCode
+    ```
+    {{< /tab >}}
 
-```pwsh
-winget install -e --id Microsoft.VisualStudioCode
-```
+    {{< tab label="macOS" >}}
+    ```bash
+    brew install --cask visual-studio-code
+    ```
+    {{< /tab >}}
 
-{{< /tab >}}
-
-{{< tab >}}
-
-```bash
-brew install --cask visual-studio-code
-```
-
-{{< /tab >}}
-
-{{< tab >}}
-
-See [documentation](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux).
-
-{{< /tab >}}
+    {{< tab label="Linux" >}}
+    See [documentation](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux).
+    {{< /tab >}}
 
 {{< /tabs >}}
 
