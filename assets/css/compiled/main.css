@@ -3346,6 +3346,10 @@
     margin: calc(var(--spacing) * 0);
     padding: calc(var(--spacing) * 0);
   }
+  .chroma:not(:is(table *)) > code {
+    display: block;
+    min-width: max-content;
+  }
   html:not(.dark) {
     .bg {
       background-color: #fff;

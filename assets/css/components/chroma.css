@@ -30,6 +30,12 @@
   @apply p-0 m-0;
 }
 
+/* linenos=inline */
+.chroma:not(:is(table *)) > code {
+  display: block;
+  min-width: max-content;
+}
+
 html:not(.dark) {
 /* Generated using: hugo gen chromastyles --style=github */
 
