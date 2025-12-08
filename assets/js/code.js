@@ -32,6 +32,7 @@ async function copyCodeToClipboard(button, highlightDiv) {
     const sel = window.getSelection();
     sel.removeAllRanges();
     sel.addRange(range);
+    textArea.focus();
     textArea.setSelectionRange(0, 999999);
     document.execCommand("copy");
     highlightDiv.removeChild(textArea);
