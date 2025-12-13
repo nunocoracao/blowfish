@@ -177,6 +177,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `enableSearch` | `false` | Whether site search is enabled. Set to `true` to enable search functionality. Note that the search feature depends on the `outputs.home` setting in the [site configuration](#site-configuration) being set correctly. |
 | `enableCodeCopy` | `false` | Whether copy-to-clipboard buttons are enabled for `<code>` blocks. The `highlight.noClasses` parameter must be set to `false` for code copy to function correctly. Read more about [other configuration files](#other-configuration-files) below. |
 | `enableStructuredBreadcrumbs` | `false` | Whether to add [BreadcrumbList](https://developers.google.com/search/docs/appearance/structured-data/breadcrumb) for SEO. Do NOT enable this if your content path does not match the URL, i.e., complex [URL setting](https://gohugo.io/content-management/urls/). |
+| `enableStyledScrollbar` | `true` | Whether to enable styled scrollbar via tailwind-scrollbar. Set to `false` to use the browser's default scrollbar styling. |
 | `replyByEmail` | `false` | Whether the reply-by-email link is enabled after post. The `params.author.email` parameter in `config/_default/languages.en.toml` must be set. |
 | `forgejoDefaultServer` | _Not set_ | The default `server` parameter for the `forgejo` shortcode. |
 | `giteaDefaultServer` | _Not set_ | The default `server` parameter for the `gitea` shortcode. |
