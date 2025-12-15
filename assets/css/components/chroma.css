@@ -1,12 +1,24 @@
 /* -- Chroma Highlight -- */
-/* Background */
-.prose .chroma {
-  @apply static rounded-md;
+/* margins for codeblock title */
+.highlight-wrapper {
+  @apply block relative z-0 overflow-hidden shadow rounded-md;
+  margin-top: 1.7142857em;
+  margin-bottom: 1.7142857em;
 }
 
-.prose .highlight:not(:has(table)) .chroma,
-.prose .highlight > .chroma {
-  @apply shadow;
+.highlight-wrapper pre,
+.highlight-wrapper table, .highlight-wrapper div {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.highlight-wrapper:has(.codeblock-title) pre {
+  @apply rounded-none;
+}
+
+.codeblock-title {
+  @apply px-4 py-2 border-b border-neutral-200 dark:border-neutral-800;
+  @apply bg-white dark:bg-[#0d1117];
 }
 
 /* LineTableTD */

@@ -94,15 +94,11 @@ button,
 }
 
 /* Code Copy */
-.highlight-wrapper {
-  @apply block;
-}
-
 .highlight {
   @apply relative z-0;
 }
 
-.highlight:hover > .copy-button {
+.highlight-wrapper:hover > .copy-button {
   @apply visible;
 }
 
