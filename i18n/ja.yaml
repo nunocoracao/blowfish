@@ -84,3 +84,20 @@ shortcode:
 
 recent:
   show_more: "もっと見る"
+
+admonition:
+  note: "ノート"
+  abstract: "概要"
+  info: "情報"
+  todo: "TODO"
+  tip: "ヒント"
+  important: "重要"
+  success: "成功"
+  question: "質問"
+  warning: "警告"
+  caution: "注意"
+  failure: "失敗"
+  danger: "危険"
+  bug: "バグ"
+  example: "例"
+  quote: "引用"

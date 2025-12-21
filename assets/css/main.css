@@ -6,6 +6,7 @@
 @import "./components/chroma.css" layer(utilities);
 @import "./components/zen-mode.css";
 @import "./components/a11y.css";
+@import "./components/admonition.css" layer(components);
 
 body a,
 body button {

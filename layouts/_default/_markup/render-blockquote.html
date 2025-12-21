@@ -1,0 +1,107 @@
+{{/* Admonition Render Hook */}}
+{{- if eq .Type "alert" -}}
+  {{- $typeMap := dict
+    "summary" "abstract"
+    "tldr" "abstract"
+    "hint" "tip"
+    "check" "success"
+    "done" "success"
+    "help" "question"
+    "faq" "question"
+    "attention" "warning"
+    "fail" "failure"
+    "missing" "failure"
+    "error" "danger"
+    "cite" "quote"
+  -}}
+
+  {{- $iconMap := dict
+    "note" "circle-info"
+    "abstract" "file-lines"
+    "info" "circle-info"
+    "todo" "list-check"
+    "tip" "lightbulb"
+    "important" "star"
+    "success" "check"
+    "question" "circle-question"
+    "warning" "triangle-exclamation"
+    "caution" "triangle-exclamation"
+    "failure" "xmark"
+    "danger" "fire"
+    "bug" "bug"
+    "example" "list-ol"
+    "quote" "quote-left"
+  -}}
+
+  {{/* Resolve type aliases and validate */}}
+  {{- $rawType := .AlertType | lower -}}
+  {{- $normalizedType := index $typeMap $rawType | default $rawType -}}
+
+  {{- $iconName := index $iconMap $normalizedType | default "circle-info" -}}
+
+  {{/* Resolve title with i18n fallback */}}
+  {{- $title := .AlertTitle -}}
+  {{- if not $title -}}
+    {{- $i18nKey := printf "admonition.%s" $normalizedType -}}
+    {{- $i18nTitle := i18n $i18nKey -}}
+    {{- if and $i18nTitle (ne $i18nTitle $i18nKey) -}}
+      {{- $title = $i18nTitle -}}
+    {{- else -}}
+      {{- $title = $normalizedType | title -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{/* Handle collapsible state */}}
+  {{- $sign := .AlertSign | default "" -}}
+  {{- $isCollapsible := or (eq $sign "+") (eq $sign "-") -}}
+  {{- $isDefaultCollapsed := eq $sign "-" -}}
+
+  {{- $containerClass := "admonition relative overflow-hidden rounded-lg border-l-4 px-4 py-3 shadow-sm print:break-inside-avoid" -}}
+  {{- $headerClass := "flex items-center gap-2 font-semibold text-inherit" -}}
+  {{- $contentClass := "admonition-content mt-3 text-base leading-relaxed text-inherit" -}}
+
+  {{- if $isCollapsible -}}
+    <details
+      class="{{ $containerClass }} group print:block"
+      data-type="{{ $normalizedType }}"
+      {{ if not $isDefaultCollapsed }}open{{ end }}>
+      <summary
+        class="{{ $headerClass }} cursor-pointer pr-2 list-none marker:hidden [&::-webkit-details-marker]:hidden">
+        <div class="flex h-5 w-5 shrink-0 items-center justify-center text-current">
+          {{- partial "icon.html" $iconName -}}
+        </div>
+        <div class="flex grow items-center leading-snug">
+          {{ $title }}
+        </div>
+        <div
+          class="ml-auto flex h-6 w-6 items-center justify-center rounded-md text-current transition-transform ease-in-out -rotate-90 group-open:rotate-0 print:hidden">
+          <div class="h-4 w-4">
+            {{- partial "icon.html" "chevron-down" -}}
+          </div>
+        </div>
+      </summary>
+      <div class="{{ $contentClass }}">
+        {{- .Text | safeHTML -}}
+      </div>
+    </details>
+  {{- else -}}
+    <div class="{{ $containerClass }}" data-type="{{ $normalizedType }}">
+      <div class="{{ $headerClass }}">
+        <div class="flex h-5 w-5 shrink-0 items-center justify-center text-current">
+          {{- partial "icon.html" $iconName -}}
+        </div>
+        <div class="flex grow items-center leading-snug">
+          {{ $title }}
+        </div>
+      </div>
+      <div class="{{ $contentClass }}">
+        {{- .Text | safeHTML -}}
+      </div>
+    </div>
+  {{- end -}}
+
+{{- else -}}
+  <blockquote {{ with .Attributes }}{{ . | safeHTMLAttr }}{{ end }}>
+    {{- .Text | safeHTML -}}
+  </blockquote>
+{{- end -}}

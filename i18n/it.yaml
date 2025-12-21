@@ -72,3 +72,20 @@ shortcode:
 
 recent:
   show_more: "Mostra di Più"
+
+admonition:
+  note: "Nota"
+  abstract: "Sommario"
+  info: "Info"
+  todo: "Da fare"
+  tip: "Suggerimento"
+  important: "Importante"
+  success: "Successo"
+  question: "Domanda"
+  warning: "Avviso"
+  caution: "Attenzione"
+  failure: "Fallimento"
+  danger: "Pericolo"
+  bug: "Bug"
+  example: "Esempio"
+  quote: "Citazione"
