@@ -40,7 +40,8 @@ Blowfish dirancang sebagai tema yang kuat dan ringan untuk [Hugo](https://gohugo
 - Daftar isi yang dapat digulir  
 - Dukungan untuk konten multibahasa termasuk bahasa RTL  
 - Kemampuan untuk menautkan ke artikel di situs web pihak ketiga  
-- Dukungan untuk beberapa shortcode seperti Galeri, Timeline, Kartu GitHub, dan Carousel  
+- Dukungan untuk beberapa shortcode seperti Galeri, Timeline, Kartu GitHub, dan Carousel
+- Sintaks GitHub Alerts, 15 jenis, dukungan lipat
 - Integrasi BuyMeACoffee  
 - Pencarian situs berbasis klien dengan Fuse.js  
 - Diagram dan visualisasi menggunakan Mermaid  
