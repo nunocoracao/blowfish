@@ -1,0 +1,220 @@
+/*
+ * Derived from KKKZOZ/hugo-admonitions (https://github.com/KKKZOZ/hugo-admonitions/)
+ * Copyright (c) 2024 KKKZOZ, Licensed under MIT License
+ */
+:root {
+  /* GitHub Core Types (5) */
+  --adm-note-border: theme("colors.sky.500");
+  --adm-note-bg: theme("colors.sky.50");
+  --adm-note-text: theme("colors.sky.900");
+
+  --adm-tip-border: theme("colors.emerald.500");
+  --adm-tip-bg: theme("colors.emerald.50");
+  --adm-tip-text: theme("colors.emerald.900");
+
+  --adm-important-border: theme("colors.purple.500");
+  --adm-important-bg: theme("colors.purple.50");
+  --adm-important-text: theme("colors.purple.900");
+
+  --adm-warning-border: theme("colors.orange.500");
+  --adm-warning-bg: theme("colors.orange.50");
+  --adm-warning-text: theme("colors.orange.900");
+
+  --adm-caution-border: theme("colors.red.500");
+  --adm-caution-bg: theme("colors.red.50");
+  --adm-caution-text: theme("colors.red.900");
+
+  /* Extended Types (10) */
+  --adm-abstract-border: theme("colors.cyan.500");
+  --adm-abstract-bg: theme("colors.cyan.50");
+  --adm-abstract-text: theme("colors.cyan.900");
+
+  --adm-bug-border: theme("colors.rose.500");
+  --adm-bug-bg: theme("colors.rose.50");
+  --adm-bug-text: theme("colors.rose.900");
+
+  --adm-danger-border: theme("colors.red.500");
+  --adm-danger-bg: theme("colors.red.50");
+  --adm-danger-text: theme("colors.red.900");
+
+  --adm-example-border: theme("colors.purple.600");
+  --adm-example-bg: theme("colors.purple.50");
+  --adm-example-text: theme("colors.purple.900");
+
+  --adm-failure-border: theme("colors.pink.500");
+  --adm-failure-bg: theme("colors.pink.50");
+  --adm-failure-text: theme("colors.pink.900");
+
+  --adm-info-border: theme("colors.blue.500");
+  --adm-info-bg: theme("colors.blue.50");
+  --adm-info-text: theme("colors.blue.900");
+
+  --adm-question-border: theme("colors.amber.500");
+  --adm-question-bg: theme("colors.amber.50");
+  --adm-question-text: theme("colors.amber.900");
+
+  --adm-quote-border: theme("colors.gray.500");
+  --adm-quote-bg: theme("colors.gray.50");
+  --adm-quote-text: theme("colors.gray.800");
+
+  --adm-success-border: theme("colors.emerald.500");
+  --adm-success-bg: theme("colors.emerald.50");
+  --adm-success-text: theme("colors.emerald.900");
+
+  --adm-todo-border: theme("colors.sky.500");
+  --adm-todo-bg: theme("colors.sky.50");
+  --adm-todo-text: theme("colors.sky.800");
+}
+
+html.dark {
+  /* GitHub Core Types (5) */
+  --adm-note-bg: color-mix(in srgb, theme("colors.sky.900 / 0.4"), black 15%);
+  --adm-note-text: theme("colors.sky.100");
+
+  --adm-tip-bg: color-mix(in srgb, theme("colors.emerald.900 / 0.4"), black 15%);
+  --adm-tip-text: theme("colors.emerald.100");
+
+  --adm-important-bg: color-mix(in srgb, theme("colors.purple.900 / 0.4"), black 15%);
+  --adm-important-text: theme("colors.purple.100");
+
+  --adm-warning-bg: color-mix(in srgb, theme("colors.orange.900 / 0.4"), black 15%);
+  --adm-warning-text: theme("colors.orange.100");
+
+  --adm-caution-bg: color-mix(in srgb, theme("colors.red.900 / 0.4"), black 15%);
+  --adm-caution-text: theme("colors.red.100");
+
+  /* Extended Types (10) */
+  --adm-abstract-bg: color-mix(in srgb, theme("colors.cyan.900 / 0.4"), black 15%);
+  --adm-abstract-text: theme("colors.cyan.100");
+
+  --adm-bug-bg: color-mix(in srgb, theme("colors.rose.900 / 0.4"), black 15%);
+  --adm-bug-text: theme("colors.rose.100");
+
+  --adm-danger-bg: color-mix(in srgb, theme("colors.red.900 / 0.4"), black 15%);
+  --adm-danger-text: theme("colors.red.100");
+
+  --adm-example-bg: color-mix(in srgb, theme("colors.purple.900 / 0.4"), black 15%);
+  --adm-example-text: theme("colors.purple.100");
+
+  --adm-failure-bg: color-mix(in srgb, theme("colors.pink.900 / 0.4"), black 15%);
+  --adm-failure-text: theme("colors.pink.100");
+
+  --adm-info-bg: color-mix(in srgb, theme("colors.blue.900 / 0.4"), black 15%);
+  --adm-info-text: theme("colors.blue.100");
+
+  --adm-question-bg: color-mix(in srgb, theme("colors.amber.900 / 0.4"), black 15%);
+  --adm-question-text: theme("colors.amber.100");
+
+  --adm-quote-bg: color-mix(in srgb, theme("colors.gray.900 / 0.4"), black 15%);
+  --adm-quote-text: theme("colors.gray.100");
+
+  --adm-success-bg: color-mix(in srgb, theme("colors.emerald.900 / 0.4"), black 15%);
+  --adm-success-text: theme("colors.emerald.100");
+
+  --adm-todo-bg: color-mix(in srgb, theme("colors.sky.800 / 0.4"), black 15%);
+  --adm-todo-text: theme("colors.sky.100");
+}
+
+/* Base Styles */
+.admonition-content > :first-child {
+  margin-top: 0 !important;
+}
+
+.admonition-content > :last-child {
+  margin-bottom: 0 !important;
+}
+
+.admonition-content pre {
+  margin-block: 0 !important;
+}
+
+/* Type-Specific Palettes Using CSS Variables */
+.admonition[data-type="note"] {
+  border-color: var(--adm-note-border);
+  background-color: var(--adm-note-bg);
+  color: var(--adm-note-text);
+}
+
+.admonition[data-type="tip"] {
+  border-color: var(--adm-tip-border);
+  background-color: var(--adm-tip-bg);
+  color: var(--adm-tip-text);
+}
+
+.admonition[data-type="important"] {
+  border-color: var(--adm-important-border);
+  background-color: var(--adm-important-bg);
+  color: var(--adm-important-text);
+}
+
+.admonition[data-type="warning"] {
+  border-color: var(--adm-warning-border);
+  background-color: var(--adm-warning-bg);
+  color: var(--adm-warning-text);
+}
+
+.admonition[data-type="caution"] {
+  border-color: var(--adm-caution-border);
+  background-color: var(--adm-caution-bg);
+  color: var(--adm-caution-text);
+}
+
+.admonition[data-type="abstract"] {
+  border-color: var(--adm-abstract-border);
+  background-color: var(--adm-abstract-bg);
+  color: var(--adm-abstract-text);
+}
+
+.admonition[data-type="bug"] {
+  border-color: var(--adm-bug-border);
+  background-color: var(--adm-bug-bg);
+  color: var(--adm-bug-text);
+}
+
+.admonition[data-type="danger"] {
+  border-color: var(--adm-danger-border);
+  background-color: var(--adm-danger-bg);
+  color: var(--adm-danger-text);
+}
+
+.admonition[data-type="example"] {
+  border-color: var(--adm-example-border);
+  background-color: var(--adm-example-bg);
+  color: var(--adm-example-text);
+}
+
+.admonition[data-type="failure"] {
+  border-color: var(--adm-failure-border);
+  background-color: var(--adm-failure-bg);
+  color: var(--adm-failure-text);
+}
+
+.admonition[data-type="info"] {
+  border-color: var(--adm-info-border);
+  background-color: var(--adm-info-bg);
+  color: var(--adm-info-text);
+}
+
+.admonition[data-type="question"] {
+  border-color: var(--adm-question-border);
+  background-color: var(--adm-question-bg);
+  color: var(--adm-question-text);
+}
+
+.admonition[data-type="quote"] {
+  border-color: var(--adm-quote-border);
+  background-color: var(--adm-quote-bg);
+  color: var(--adm-quote-text);
+}
+
+.admonition[data-type="success"] {
+  border-color: var(--adm-success-border);
+  background-color: var(--adm-success-bg);
+  color: var(--adm-success-text);
+}
+
+.admonition[data-type="todo"] {
+  border-color: var(--adm-todo-border);
+  background-color: var(--adm-todo-bg);
+  color: var(--adm-todo-text);
+}

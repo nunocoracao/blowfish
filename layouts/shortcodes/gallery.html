@@ -25,7 +25,7 @@
   {{ end -}}
 {{ end -}}
 
-
+{{ if not .Parent }}<div class="width-patch"></div>{{ end }}
 <div id="{{- $id -}}" class="gallery">
   {{ $content | safeHTML -}}
 </div>

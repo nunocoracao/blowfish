@@ -1,0 +1,111 @@
+{{ $schemes := slice }}
+{{ $schemesData := newScratch }}
+{{ $ignore := slice "ocean" }}
+{{ range resources.Match "css/schemes/*.css" }}
+  {{ $name := path.BaseName .RelPermalink }}
+  {{ if in $ignore $name }}
+    {{ continue }}
+  {{ end }}
+  {{ $schemes = $schemes | append $name }}
+  {{ $schemesData.SetInMap "data" $name .Content }}
+{{ end }}
+{{ $schemesDataFinal := $schemesData.Get "data" }}
+
+
+<div class="scheme-switcher">
+  <ul id="schemeMenu" class="scheme-list" data-schemes="{{ jsonify $schemesDataFinal }}">
+    {{ range sort $schemes }}
+      <li
+        data-scheme-name="{{ . }}"
+        class="scheme-item {{ if eq . (site.Params.colorScheme | default "blowfish") }}selected{{ end }}">
+        {{ . }}
+      </li>
+    {{ end }}
+  </ul>
+</div>
+
+<div id="configPreview">
+  {{ $defaultScheme := site.Params.colorScheme | default "blowfish" }}
+  {{ $configCode := printf "# config/_default/params.toml\n\n" }}
+  {{ $configCode = printf "%scolorScheme = \"%s\"" $configCode $defaultScheme }}
+  {{ highlight $configCode "toml" }}
+</div>
+
+<style id="dynamicScheme"></style>
+
+<style>
+  .scheme-switcher {
+    display: inline-block;
+  }
+
+  .scheme-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 100%;
+  }
+
+  .scheme-item {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.375rem;
+    background-color: white;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .scheme-item:hover {
+    border-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .scheme-item.selected {
+    outline: 2px solid rgb(var(--color-primary-500));
+    outline-offset: 2px;
+  }
+
+  .dark .scheme-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .dark .scheme-item:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+</style>
+
+<script>
+  (function () {
+    const menu = document.getElementById("schemeMenu");
+    const schemes = JSON.parse(menu.dataset.schemes);
+    const styleEl = document.getElementById("dynamicScheme");
+    const preview = document.getElementById("configPreview");
+
+    let currentScheme = menu.querySelector(".scheme-item.selected").dataset.schemeName;
+    styleEl.textContent = schemes[currentScheme];
+
+    menu.querySelectorAll(".scheme-item").forEach((item) => {
+      item.addEventListener("click", function (e) {
+        menu.querySelector(".scheme-item.selected").classList.remove("selected");
+        e.target.classList.add("selected");
+        currentScheme = e.target.dataset.schemeName;
+        styleEl.textContent = schemes[currentScheme];
+
+        const spans = preview.querySelectorAll("span");
+        for (let i = 0; i < spans.length; i++) {
+          if (spans[i].textContent === "colorScheme") {
+            const stringSpan = spans[i + 2];
+            if (stringSpan) {
+              stringSpan.textContent = `"${currentScheme}"`;
+            }
+            break;
+          }
+        }
+      });
+    });
+  })();
+</script>

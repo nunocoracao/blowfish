@@ -240,7 +240,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `article.showAuthor` | `true` | 是否在文章底部显示作者框。 |
 | `article.showAuthorBottom` | `false` | 作者框显示在每页的底部而不是顶部。 |
 | `article.showHero` | `false` | 缩略图是否会在每个页面中作为 hero 图像显示。 |
-| `article.heroStyle` | 无 | hero 图像的展示样式，可选的参数值有：`basic`、`big`、`background`、`thumbAndBackground`。 |
+| `article.heroStyle` | 无 | hero 图像的展示样式，可选的参数值有：`basic`、`big`、`background`、`thumbAndBackground`。仅在 `article.showHero = true` 时生效。 |
 | `article.layoutBackgroundBlur` | `true` | 向下滚动文章页时，是否模糊背景图。 |
 | `article.layoutBackgroundHeaderSpace` | `true` | 在标题和正文之间添加空白区域间隔。 |
 | `article.showBreadcrumbs` | `false` | 是否在标题栏显示面包屑导航。 |
@@ -268,7 +268,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
 | `list.showHero` | `false` | 缩略图是否会在每个页面中作为 hero 图像显示。 |
-| `list.heroStyle` | 无 | hero 图像的展示样式，可选的参数值有：`basic`、`big`、`background`、`thumbAndBackground`。 |
+| `list.heroStyle` | 无 | hero 图像的展示样式，可选的参数值有：`basic`、`big`、`background`、`thumbAndBackground`。仅在 `list.showHero = true` 时生效。 |
 | `list.showBreadcrumbs` | `false` | 是否在标题栏显示面包屑导航。 |
 | `list.layoutBackgroundBlur` | `true` | 向下滚动列表页时，是否模糊背景图。 |
 | `list.layoutBackgroundHeaderSpace` | `true` | 在标题和正文之间添加空白区域间隔。 |
@@ -296,7 +296,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | --- | --- | --- |
 | `taxonomy.showTermCount` | `true` | 是否在分类列表总显示对应的数量。 |
 | `taxonomy.showHero` | `false` | 缩略图是否会在每个页面中作为 hero 图像显示。 |
-| `taxonomy.heroStyle` | 无 | hero 图像的展示样式，可选的参数值有：`basic`、`big`、`background`、`thumbAndBackground`。 |
+| `taxonomy.heroStyle` | 无 | hero 图像的展示样式，可选的参数值有：`basic`、`big`、`background`、`thumbAndBackground`。仅在 `taxonomy.showHero = true` 时生效。 |
 | `taxonomy.showBreadcrumbs` | `false` | 是否在标题栏显示面包屑导航。 |
 | `taxonomy.showViews` | `false` | 是否显示文章阅读量。这需要集成 firebase ，具体可以看下面。 |
 | `taxonomy.showLikes` | `false` | 是否显示文章点赞量。这需要集成 firebase ，具体可以看下面。 |
@@ -308,7 +308,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
 | `term.showHero` | `false` | 缩略图是否会在每个页面中作为 hero 图像显示。 |
-| `term.heroStyle` | 无 | hero 图像的展示样式，可选的参数值有： `basic`、`big`、`background`、`thumbAndBackground`。 |
+| `term.heroStyle` | 无 | hero 图像的展示样式，可选的参数值有： `basic`、`big`、`background`、`thumbAndBackground`。仅在 `term.showHero = true` 时生效。 |
 | `term.showBreadcrumbs` | `false` | 是否在标题栏显示面包屑导航。 |
 | `term.showViews`           | `false` | 是否显示文章阅读量。这需要集成 firebase ，具体可以看下面。                                 |
 | `term.showLikes`           | `false` | 是否显示文章点赞量。这需要集成 firebase ，具体可以看下面。                                 |

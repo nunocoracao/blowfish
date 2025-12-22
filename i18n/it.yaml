@@ -15,10 +15,10 @@ article:
   word_count:
     one: "{{ .Count }} parola"
     other: "{{ .Count }} parole"
-  part_of_series: "This article is part of a series."
-  part: "Part"
-  this_article: "This Article"
-  related_articles: "Related"
+  part_of_series: "Questo articolo fa parte di una serie."
+  part: "Parte"
+  this_article: "Questo articolo"
+  related_articles: "Articoli correlati"
   reply_by_email: "Rispondi via email"
 
 a11y:
@@ -72,3 +72,20 @@ shortcode:
 
 recent:
   show_more: "Mostra di Più"
+
+admonition:
+  abstract: Sommario
+  bug: Bug
+  caution: Attenzione
+  danger: Pericolo
+  example: Esempio
+  failure: Fallimento
+  important: Importante
+  info: Info
+  note: Nota
+  question: Domanda
+  quote: Citazione
+  success: Successo
+  tip: Suggerimento
+  todo: Da fare
+  warning: Avviso

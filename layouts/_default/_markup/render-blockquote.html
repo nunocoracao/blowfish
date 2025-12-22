@@ -1,0 +1,90 @@
+{{- if eq .Type "alert" -}}
+  {{- $typeMap := dict
+    "attention" "warning"
+    "check" "success"
+    "cite" "quote"
+    "done" "success"
+    "error" "danger"
+    "fail" "failure"
+    "faq" "question"
+    "hint" "tip"
+    "help" "question"
+    "missing" "failure"
+    "summary" "abstract"
+    "tldr" "abstract"
+  -}}
+
+  {{- $iconMap := dict
+    "abstract" "file-lines"
+    "bug" "bug"
+    "caution" "fire"
+    "danger" "fire"
+    "example" "list-ol"
+    "failure" "xmark"
+    "important" "star"
+    "info" "circle-info"
+    "note" "circle-info"
+    "success" "check"
+    "todo" "list-check"
+    "tip" "lightbulb"
+    "question" "circle-question"
+    "quote" "quote-left"
+    "warning" "triangle-exclamation"
+  -}}
+
+  {{- $rawType := .AlertType | lower -}}
+  {{- $normalizedType := index $typeMap $rawType | default $rawType -}}
+  {{- $iconName := index $iconMap $normalizedType | default "circle-info" -}}
+  {{- $admonitionTitle := .AlertTitle | default (i18n (printf "admonition.%s" $normalizedType) | default $normalizedType) -}}
+
+  {{- $containerClass := "admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" -}}
+  {{- $headerClass := "flex items-center gap-2 font-semibold text-inherit capitalize" -}}
+  {{- $contentClass := "admonition-content mt-3 text-base leading-relaxed text-inherit" -}}
+
+  {{- $isCollapsible := in (slice "+" "-") .AlertSign -}}
+  {{- if $isCollapsible -}}
+    <details
+      class="{{ $containerClass }} group"
+      data-type="{{ $normalizedType }}"
+      {{ if eq .AlertSign "+" }}open{{ end }}>
+      <summary class="{{ $headerClass }} cursor-pointer">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg">
+          {{- partial "icon.html" $iconName -}}
+        </div>
+        <div class="grow">
+          {{ $admonitionTitle }}
+        </div>
+        <div
+          class="ms-auto flex h-5 w-5 items-center justify-center transition-transform ease-in-out -rotate-90 group-open:rotate-0 print:hidden">
+          {{- partial "icon.html" "chevron-down" -}}
+        </div>
+      </summary>
+      {{- if .Text -}}
+        <div class="{{ $contentClass }}">
+          {{- .Text | safeHTML -}}
+        </div>
+      {{- end -}}
+    </details>
+  {{- else -}}
+    <div class="{{ $containerClass }}" data-type="{{ $normalizedType }}">
+      <div class="{{ $headerClass }}">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg">
+          {{- partial "icon.html" $iconName -}}
+        </div>
+        <div class="grow">
+          {{ $admonitionTitle }}
+        </div>
+      </div>
+      {{- if .Text -}}
+        <div class="{{ $contentClass }}">
+          {{- .Text | safeHTML -}}
+        </div>
+      {{- end -}}
+    </div>
+  {{- end -}}
+
+{{- else -}}
+  <blockquote {{ with .Attributes }}{{ . | safeHTMLAttr }}{{ end }}>
+    {{- .Text | safeHTML -}}
+  </blockquote>
+{{- end -}}

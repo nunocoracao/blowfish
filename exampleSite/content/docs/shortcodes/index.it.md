@@ -64,6 +64,36 @@ This is an error!
 
 <br/><br/><br/>
 
+## Admonition
+
+Admonitions allow you to insert eye-catching callout boxes in your content.
+
+Admonitions serve a similar purpose as the alert shortcode but are implemented via Hugo render hooks. The key difference is syntax: admonitions use Markdown syntax, making them more portable across different platforms, whereas shortcodes are specific to Hugo. The syntax resembles GitHub alerts:
+
+```md
+> [!NOTE]
+> A Note type admonition.
+
+> [!TIP]+ Custom Title
+> A collapsible admonition with custom title.
+```
+
+> [!NOTE]
+> A Note type admonition.
+
+> [!TIP]+ Custom Title
+> A collapsible admonition with custom title.
+
+The alert sign (`+` or `-`) is optional to control whether the admonition is folded or not. Note that alert sign is only compatible in Obsidian.
+
+> [!INFO]- Supported types
+> Valid admonition types include [GitHub alert types](https://github.blog/changelog/2023-12-14-new-markdown-extension-alerts-provide-distinctive-styling-for-significant-content/) and [Obsidian callout types](https://help.obsidian.md/callouts). The types are case-insensitive.
+>
+> **GitHub types:** `NOTE`, `TIP`, `IMPORTANT`, `WARNING`, `CAUTION`  
+> **Obsidian types:** `note`, `abstract`, `info`, `todo`, `tip`, `success`, `question`, `warning`, `failure`, `danger`, `bug`, `example`, `quote`
+
+<br/><br/><br/>
+
 ## Article
 
 `Article` will embed a single article into a markdown file. The `link` to the file should be the `.RelPermalink` of the file to be embedded. Note that the shortcode will not display anything if it's referencing it's parent. *Note: if you are running your website in a subfolder like Blowfish (i.e. /blowfish/) please include that path in the link.*
@@ -711,6 +741,74 @@ You can see some additional Mermaid examples on the [diagrams and flowcharts sam
 
 **Output**
 {{< swatches "#64748b" "#3b82f6" "#06b6d4" >}}
+
+<br/><br/><br/>
+
+## Tabs
+
+The `tabs` shortcode is commonly used to present different variants of a particular step. For example, it can be used to show how to install VS Code on different platforms.
+
+**Example**
+
+`````md
+{{</* tabs */>}}
+
+    {{</* tab label="Windows" */>}}
+    Install using Chocolatey:
+
+    ```pwsh
+    choco install vscode.install
+    ```
+
+    or install using WinGet
+
+    ```pwsh
+    winget install -e --id Microsoft.VisualStudioCode
+    ```
+    {{</* /tab */>}}
+
+    {{</* tab label="macOS" */>}}
+    ```bash
+    brew install --cask visual-studio-code
+    ```
+    {{</* /tab */>}}
+
+    {{</* tab label="Linux" */>}}
+    See [documentation](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux).
+    {{</* /tab */>}}
+
+{{</* /tabs */>}}
+`````
+
+**Output**
+
+{{< tabs >}}
+
+    {{< tab label="Windows" >}}
+    Install using Chocolatey:
+
+    ```pwsh
+    choco install vscode.install
+    ```
+
+    or install using WinGet
+
+    ```pwsh
+    winget install -e --id Microsoft.VisualStudioCode
+    ```
+    {{< /tab >}}
+
+    {{< tab label="macOS" >}}
+    ```bash
+    brew install --cask visual-studio-code
+    ```
+    {{< /tab >}}
+
+    {{< tab label="Linux" >}}
+    See [documentation](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux).
+    {{< /tab >}}
+
+{{< /tabs >}}
 
 <br/><br/><br/>
 

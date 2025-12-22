@@ -25,7 +25,6 @@
     "name": "{{ .Title | safeJS }}",
     "headline": "{{ .Title | safeJS }}",
     {{ with .Description }}"description": "{{ . | safeJS }}",{{ end }}
-    {{ with .Summary }}"abstract": "{{ . | safeJS }}",{{ end }}
     {{ with .Site.LanguageCode }}"inLanguage": "{{ . }}",{{ end }}
     "url" : {{ .Permalink }},
     "author" : {
@@ -49,22 +48,25 @@
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      {{- $breadcrumbs := slice -}}
+      {{- $position := 0 -}}
       {{- range .Ancestors -}}
         {{- if not .IsHome -}}
-          {{- $breadcrumbs = $breadcrumbs | append . -}}
+          {{- $position = add $position 1 -}}
+          {
+            "@type": "ListItem",
+            "position": {{ $position }},
+            "name": "{{ .Title }}",
+            "item": {{ .Permalink }}
+          },
         {{- end -}}
       {{- end -}}
-      {{- $breadcrumbs = $breadcrumbs | append . -}}
-
-      {{- range $index, $element := $breadcrumbs -}}
-        {
-          "@type": "ListItem",
-          "position": {{ add $index 1 }},
-          "name": "{{ .Title }}",
-          "item": {{ .Permalink }},
-        }{{ if ne (add $index 1) (len $breadcrumbs) }},{{ end }}
-      {{- end -}}
+      {{- $position = add $position 1 -}}
+      {
+        "@type": "ListItem",
+        "position": {{ $position }},
+        "name": "{{ .Title }}",
+        "item": {{ .Permalink }}
+      }
     ]
   }{{ end }}]
   </script>

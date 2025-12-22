@@ -99,7 +99,7 @@
   {{/* CSS */}}
   {{ $cssResources := slice }}
   {{ $schemeName := .Site.Params.colorScheme | default "blowfish" }}
-  {{ $cssScheme := resources.Get (printf "css/schemes/%s.css" $schemeName) | default (resources.Get "css/schemes/blowfish.css") }}
+  {{ $cssScheme := resources.Get (printf "css/schemes/%s.css" (lower $schemeName)) | default (resources.Get "css/schemes/blowfish.css") }}
   {{ $cssResources = $cssResources | append $cssScheme }}
   {{ $cssResources = $cssResources | append (resources.Get "css/compiled/main.css") }}
   {{ with resources.Get "css/custom.css" }}
@@ -157,6 +157,7 @@
   {{ $jsResources = $jsResources | append (resources.Get "js/mobilemenu.js") }}
   {{ $jsResources = $jsResources | append (resources.Get "js/button-likes.js") }}
   {{ $jsResources = $jsResources | append (resources.Get "js/katex-render.js") }}
+  {{ $jsResources = $jsResources | append (resources.Get "js/print-support.js") }}
   {{ if $jsResources }}
     {{ $bundleJS := $jsResources | resources.Concat "js/main.bundle.js" | resources.Minify | resources.Fingerprint $alg }}
     <script

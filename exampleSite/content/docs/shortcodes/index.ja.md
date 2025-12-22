@@ -64,6 +64,36 @@ Twitter で私を[フォロー](https://twitter.com/nunocoracao)するのを忘�
 
 <br/><br/><br/>
 
+## Admonition
+
+Admonitions は、文書内で読者の注意を引くための強調表示を挿入するための機能です。
+
+Admonitions は alert ショートコードと同様の目的を持ちますが、Hugo の render hooks を用いて実装されています。両者の主な違いは構文にあります。admonitions は Markdown 構文を使用するため、異なるプラットフォーム間でも扱いやすく、一方、ショートコードは Hugo 固有の仕組みです。構文は GitHub の alerts に近い形式です。
+
+```md
+> [!NOTE]
+> NOTE タイプの表示例。
+
+> [!TIP]+ カスタムタイトル
+> タイトルを指定した折りたたみ可能な表示例。
+```
+
+> [!NOTE]
+> NOTE タイプの表示例。
+
+> [!TIP]+ カスタムタイトル
+> タイトルを指定した折りたたみ可能な表示例。
+
+記号（`+` または `-`）は任意で、表示を折りたたむかどうかを制御します。なお、この記号は Obsidian のみ対応しています。
+
+> [!INFO]- 対応しているタイプ
+> 使用可能なタイプには、[GitHub alert タイプ](https://github.blog/changelog/2023-12-14-new-markdown-extension-alerts-provide-distinctive-styling-for-significant-content/) および [Obsidian callout タイプ](https://help.obsidian.md/callouts) が含まれます。タイプ名は大文字・小文字を区別しません。
+>
+> **GitHub タイプ：** `NOTE`, `TIP`, `IMPORTANT`, `WARNING`, `CAUTION`  
+> **Obsidian タイプ：** `note`, `abstract`, `info`, `todo`, `tip`, `success`, `question`, `warning`, `failure`, `danger`, `bug`, `example`, `quote`
+
+<br/><br/><br/>
+
 ## 記事
 
 `Article` は、1つの記事を Markdown ファイルに埋め込みます。埋め込むファイルへの `link` は、埋め込むファイルの `.RelPermalink` である必要があります。ショートコードは、親を参照している場合は何も表示しないことに注意してください。*注: Blowfish (/blowfish/ など) のようなサブフォルダでウェブサイトを実行している場合は、そのパスをリンクに含めてください。*
@@ -708,6 +738,74 @@ B-->C[利益]
 
 **出力**
 {{< swatches "#64748b" "#3b82f6" "#06b6d4" >}}
+
+<br/><br/><br/>
+
+## Tabs
+
+`tabs` ショートコードは、特定の手順における異なるバリアントを提示する際によく使用される。例えば、VS Code を各種プラットフォームにインストールする方法を示す場合などに利用できる。
+
+**例**
+
+````md
+{{</* tabs */>}}
+
+    {{</* tab label="Windows" */>}}
+    Chocolatey を使用してインストール:
+
+    ```pwsh
+    choco install vscode.install
+    ```
+
+    または WinGet を使用してインストール
+
+    ```pwsh
+    winget install -e --id Microsoft.VisualStudioCode
+    ```
+    {{</* /tab */>}}
+
+    {{</* tab label="macOS" */>}}
+    ```bash
+    brew install --cask visual-studio-code
+    ```
+    {{</* /tab */>}}
+
+    {{</* tab label="Linux" */>}}
+    [ドキュメント](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux)を参照。
+    {{</* /tab */>}}
+
+{{</* /tabs */>}}
+````
+
+**出力**
+
+{{< tabs >}}
+
+    {{< tab label="Windows" >}}
+    Chocolatey を使用してインストール:
+
+    ```pwsh
+    choco install vscode.install
+    ```
+
+    または WinGet を使用してインストール
+
+    ```pwsh
+    winget install -e --id Microsoft.VisualStudioCode
+    ```
+    {{< /tab >}}
+
+    {{< tab label="macOS" >}}
+    ```bash
+    brew install --cask visual-studio-codeqweqwe
+    ```
+    {{< /tab >}}
+
+    {{< tab label="Linux" >}}
+    [ドキュメント](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux)を参照。
+    {{< /tab >}}
+
+{{< /tabs >}}
 
 <br/><br/><br/>
 

@@ -19,6 +19,7 @@
 {{ end }}
 
 
+{{ if not .Parent }}<div class="width-patch"></div>{{ end }}
 <div
   id="{{ $id }}"
   class="relative"
@@ -49,9 +50,7 @@
         data-twe-carousel-item
         style="transition-duration: {{ $interval }}ms;"
         {{ if eq $index 0 }}data-twe-carousel-active{{ end }}>
-        <div
-          class="single_hero_background"
-          style="aspect-ratio: {{ $aspectx }} / {{ $aspecty }};">
+        <div class="single_hero_background" style="aspect-ratio: {{ $aspectx }} / {{ $aspecty }};">
           <img
             src="{{ $image.RelPermalink }}"
             class="block absolute top-0 object-cover w-full h-full not-prose nozoom"
