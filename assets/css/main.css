@@ -7,6 +7,10 @@
 @import "./components/zen-mode.css";
 @import "./components/a11y.css";
 
+html.dark {
+  color-scheme: dark;
+}
+
 body a,
 body button {
   @apply transition-colors;
@@ -82,7 +86,7 @@ button,
 }
 
 .toc a {
-  @apply font-normal text-neutral-700 dark:text-neutral-400;
+  @apply font-normal text-neutral-700 dark:text-neutral-300;
 }
 
 .toc ul > li {
