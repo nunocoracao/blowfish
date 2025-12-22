@@ -64,6 +64,36 @@ This is an error!
 
 <br/><br/><br/>
 
+## Admonition
+
+Admonition 用于在内容中插入醒目提示。
+
+Admonition 的用途与 alert shortcode 类似，但其实现方式是通过 Hugo 的 render hooks。两者的关键区别在于语法：admonition 使用 Markdown 语法，因此在不同平台之间具有更好的可移植性；而 shortcode 是 Hugo 专有的。其语法类似 GitHub 的 alerts：
+
+```md
+> [!NOTE]
+> 一个 NOTE 类型的提示块。
+
+> [!TIP]+ 自定义标题
+> 一个带有自定义标题的可折叠提示块。
+```
+
+> [!NOTE]
+> 一个 NOTE 类型的提示块。
+
+> [!TIP]+ 自定义标题
+> 一个带有自定义标题的可折叠提示块。
+
+提示符号（`+` 或 `-`）是可选的，用于控制提示块是否默认折叠。请注意，该提示符号仅在 Obsidian 中兼容。
+
+> [!INFO]- 支持的类型
+> 可用的 admonition 类型包括 [GitHub alert 类型](https://github.blog/changelog/2023-12-14-new-markdown-extension-alerts-provide-distinctive-styling-for-significant-content/) 和 [Obsidian callout 类型](https://help.obsidian.md/callouts)。类型名称不区分大小写。
+>
+> **GitHub 类型：** `NOTE`, `TIP`, `IMPORTANT`, `WARNING`, `CAUTION`  
+> **Obsidian 类型：** `note`, `abstract`, `info`, `todo`, `tip`, `success`, `question`, `warning`, `failure`, `danger`, `bug`, `example`, `quote`
+
+<br/><br/><br/>
+
 ## Article
 
 `Article` 将把一篇文章嵌入到一个 markdown 文件中。 参数中的 `link`应该是要嵌入的文件的 `.RelPermalink`。请注意，如果简码引用其父级文件，则它不会显示任何内容。 *注意：如果您在 Blowfish（即 /blowfish/）等子文件夹中运行网站，请在链接中包含该路径。*

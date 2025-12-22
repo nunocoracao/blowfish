@@ -7,6 +7,7 @@
 @import "./components/tabs.css" layer(utilities);
 @import "./components/zen-mode.css";
 @import "./components/a11y.css";
+@import "./components/admonition.css" layer(components);
 
 html.dark {
   color-scheme: dark;

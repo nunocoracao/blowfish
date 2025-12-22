@@ -84,3 +84,20 @@ shortcode:
 
 recent:
   show_more: "顯示更多"
+
+admonition:
+  abstract: 摘要
+  bug: 錯誤
+  caution: 注意
+  danger: 危險
+  example: 範例
+  failure: 失敗
+  important: 重要
+  info: 資訊
+  note: 註記
+  question: 問題
+  quote: 引用
+  success: 成功
+  tip: 提示
+  todo: 待辦
+  warning: 警告

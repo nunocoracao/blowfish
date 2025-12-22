@@ -72,3 +72,20 @@ shortcode:
 
 recent:
   show_more: "Mostra di Più"
+
+admonition:
+  abstract: Sommario
+  bug: Bug
+  caution: Attenzione
+  danger: Pericolo
+  example: Esempio
+  failure: Fallimento
+  important: Importante
+  info: Info
+  note: Nota
+  question: Domanda
+  quote: Citazione
+  success: Successo
+  tip: Suggerimento
+  todo: Da fare
+  warning: Avviso
