@@ -35,13 +35,32 @@
   {{- $rawType := .AlertType | lower -}}
   {{- $normalizedType := index $typeMap $rawType | default $rawType -}}
   {{- $iconName := index $iconMap $normalizedType | default "circle-info" -}}
-  {{- $title := .AlertTitle | default (i18n (printf "admonition.%s" $normalizedType) | default (title $normalizedType)) -}}
+  {{- $contentText := .Text | plainify | strings.TrimSpace -}}
+  {{- $hasContent := ne $contentText "" -}}
+  {{- $isHeaderOnly := not $hasContent -}}
+
+  {{- $title := .AlertTitle -}}
+  {{- if not $title -}}
+    {{- $i18nKey := printf "admonition.%s" $normalizedType -}}
+    {{- $i18nTitle := i18n $i18nKey -}}
+    {{- if and $i18nTitle (ne $i18nTitle $i18nKey) -}}
+      {{- $title = $i18nTitle -}}
+    {{- else -}}
+      {{- $title = title $normalizedType -}}
+    {{- end -}}
+  {{- end -}}
 
   {{- $containerClass := "admonition relative overflow-hidden rounded-lg border-l-4 px-4 py-3 shadow-sm print:break-inside-avoid" -}}
-  {{- $headerClass := "flex items-center gap-2 font-semibold text-inherit" -}}
-  {{- $contentClass := "admonition-content mt-3 text-base leading-relaxed text-inherit" -}}
+  {{- if $isHeaderOnly -}}
+    {{- $containerClass = printf "%s admonition--header-only" $containerClass -}}
+  {{- end -}}
+  {{- $headerClass := "admonition-header flex items-center gap-2 font-semibold text-inherit" -}}
+  {{- $contentClass := "admonition-content text-base leading-relaxed text-inherit" -}}
+  {{- if $hasContent -}}
+    {{- $contentClass = printf "%s mt-3" $contentClass -}}
+  {{- end -}}
 
-  {{- $isCollapsible := in (slice "+" "-") .AlertSign -}}
+  {{- $isCollapsible := and $hasContent (in (slice "+" "-") .AlertSign) -}}
   {{- if $isCollapsible -}}
     <details
       class="{{ $containerClass }} group print:block"
@@ -76,9 +95,11 @@
           {{ $title }}
         </div>
       </div>
-      <div class="{{ $contentClass }}">
-        {{- .Text | safeHTML -}}
-      </div>
+      {{- if $hasContent -}}
+        <div class="{{ $contentClass }}">
+          {{- .Text | safeHTML -}}
+        </div>
+      {{- end -}}
     </div>
   {{- end -}}
 
