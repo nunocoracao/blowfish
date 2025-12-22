@@ -86,18 +86,18 @@ recent:
   show_more: "显示更多"
 
 admonition:
-  note: "笔记"
-  abstract: "摘要"
-  info: "信息"
-  todo: "待办"
-  tip: "提示"
-  important: "重要"
-  success: "成功"
-  question: "问题"
-  warning: "警告"
-  caution: "注意"
-  failure: "失败"
-  danger: "危险"
-  bug: "错误"
-  example: "示例"
-  quote: "引用"
+  abstract: 摘要
+  bug: 错误
+  caution: 注意
+  danger: 危险
+  example: 示例
+  failure: 失败
+  important: 重要
+  info: 信息
+  note: 笔记
+  question: 问题
+  quote: 引用
+  success: 成功
+  tip: 提示
+  todo: 待办
+  warning: 警告

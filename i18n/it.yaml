@@ -74,18 +74,18 @@ recent:
   show_more: "Mostra di Più"
 
 admonition:
-  note: "Nota"
-  abstract: "Sommario"
-  info: "Info"
-  todo: "Da fare"
-  tip: "Suggerimento"
-  important: "Importante"
-  success: "Successo"
-  question: "Domanda"
-  warning: "Avviso"
-  caution: "Attenzione"
-  failure: "Fallimento"
-  danger: "Pericolo"
-  bug: "Bug"
-  example: "Esempio"
-  quote: "Citazione"
+  abstract: Sommario
+  bug: Bug
+  caution: Attenzione
+  danger: Pericolo
+  example: Esempio
+  failure: Fallimento
+  important: Importante
+  info: Info
+  note: Nota
+  question: Domanda
+  quote: Citazione
+  success: Successo
+  tip: Suggerimento
+  todo: Da fare
+  warning: Avviso
