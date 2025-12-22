@@ -9,7 +9,6 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --spacing: 0.25rem;
-    --container-2xs: 18rem;
     --container-xs: 20rem;
     --container-xl: 36rem;
     --container-3xl: 48rem;
@@ -2847,11 +2846,6 @@
       margin-top: calc(var(--spacing) * 0);
     }
   }
-  .lg\:ml-auto {
-    @media (width >= 1024px) {
-      margin-left: auto;
-    }
-  }
   .lg\:block {
     @media (width >= 1024px) {
       display: block;
@@ -2885,11 +2879,6 @@
   .lg\:w-auto {
     @media (width >= 1024px) {
       width: auto;
-    }
-  }
-  .lg\:max-w-2xs {
-    @media (width >= 1024px) {
-      max-width: var(--container-2xs);
     }
   }
   .lg\:max-w-7xl {
@@ -4171,6 +4160,16 @@ pre {
 }
 .thumbnail-shadow {
   box-shadow: 5px 5px 20px 1px rgba(0, 0, 0, 0.3);
+}
+@media (width < 853px) {
+  .width-patch {
+    width: 90vw;
+  }
+}
+@media (width >= 853px) {
+  .width-patch {
+    width: 65ch;
+  }
 }
 .anchor {
   display: block;

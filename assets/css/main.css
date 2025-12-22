@@ -203,6 +203,18 @@ pre {
   box-shadow: 5px 5px 20px 1px rgba(0, 0, 0, 0.3);
 }
 
+/* placeholder for gallery/carousel */
+@variant max-md {
+  .width-patch {
+    width: 90vw;
+  }
+}
+@variant min-md {
+  .width-patch {
+    width: 65ch;
+  }
+}
+
 .anchor {
   display: block;
   position: relative;
