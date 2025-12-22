@@ -80,34 +80,20 @@ Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sap
 </html>
 ```
 
-### 4スペースのインデントによるコードブロック
+### タイトルと行ハイライト機能付きのコードブロック
 
-    <!DOCTYPE html>
-    <html lang="ja">
-    <head>
-      <meta charset="utf-8">
-      <title>HTML5 資料の例</title>
-    </head>
-    <body>
-      <p>テスト</p>
-    </body>
-    </html>
-
-### Hugo 内のショートコード・ハイライトを利用したコードブロック
-
-{{< highlight html "linenos=table,hl_lines=4 7-9" >}}
-
+```html {title="example.html" lineNos=inline hl_lines=[4,"7-9"]}
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>HTML5 資料の例</title>
+  <title>Example HTML5 Document</title>
 </head>
 <body>
-  <p>テスト</p>
+  <p>Test</p>
 </body>
 </html>
-{{< /highlight >}}
+```
 
 ## リスト形式
 
