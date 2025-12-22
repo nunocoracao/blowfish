@@ -10,7 +10,7 @@
 {{ $imgWrapperClasses := "" }}
 {{ $cardContentClasses := "" }}
 
-{{ if site.Params.list.showCards }}
+{{ if .Params.showCards | default site.Params.list.showCards }}
   {{ $cardClasses = printf "%s overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600" $cardClasses }}
   {{ $imgWrapperClasses = "" }}
   {{ $cardContentClasses = printf "%s p-4" $cardContentClasses }}
