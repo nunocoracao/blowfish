@@ -1,0 +1,69 @@
+# -- Menu Principal --
+# Le menu principal est affiché dans l'en-tête en haut de la page.
+
+[[main]]
+  name = "Documentation"
+  pageRef = "docs"
+  weight = 10
+
+[[main]]
+  name = "Shortcodes"
+  pageRef = "docs/shortcodes"
+  weight = 15
+
+[[main]]
+  name = "Exemples"
+  weight = 20
+
+[[main]]
+  name = "Échantillons"
+  parent = "Exemples"
+  pageRef = "samples"
+  weight = 16
+
+[[main]]
+  name = "Vitrine"
+  parent = "Exemples"
+  pageRef = "examples"
+  weight = 30
+
+[[main]]
+  name = "Recettes"
+  parent = "Exemples"
+  pageRef = "guides"
+  weight = 40
+
+[[main]]
+  name = "Utilisateurs"
+  pageRef = "users"
+  weight = 90
+
+[[main]]
+  name = "Merch"
+  url = "https://www.teepublic.com/user/blowfish-store/t-shirts"
+  weight = 100
+
+[[main]]
+  identifier = "twitter"
+  pre = "x-twitter"
+  url = "https://twitter.com/burufugu"
+  weight = 200
+
+[[main]]
+  identifier = "github"
+  pre = "github"
+  url = "https://github.com/nunocoracao/blowfish"
+  weight = 400
+
+
+# -- Menu Pied de Page --
+
+ [[footer]]
+   name = "Tags"
+   pageRef = "tags"
+   weight = 10
+
+ [[footer]]
+   name = "Auteurs"
+   pageRef = "authors"
+   weight = 20

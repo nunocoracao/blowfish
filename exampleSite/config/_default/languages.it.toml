@@ -1,6 +1,6 @@
 languageCode = "it"
 languageName = "Italiano"
-weight = 2
+weight = 4
 title = "Blowfish"
 
 [params]

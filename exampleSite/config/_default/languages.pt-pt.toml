@@ -1,0 +1,22 @@
+languageCode = "pt-pt"
+languageName = "Português (Portugal)"
+weight = 5
+title = "Blowfish"
+
+[params]
+  displayName = "Português (Portugal)"
+  isoCode = "pt-pt"
+  rtl = false
+  dateFormat = "2 de January de 2006"
+  logo = "img/blowfish_logo_transparent.png"
+  description = "Um tema poderoso e leve para Hugo."
+
+[params.author]
+  name = "Blowfish"
+  image = "img/blowfish_logo.png"
+  headline = "Um tema poderoso e leve para Hugo."
+  bio = "Um tema poderoso e leve para Hugo."
+  links = [
+    { x-twitter = "https://twitter.com/burufugu" },
+    { github = "https://github.com/nunocoracao/blowfish" },
+  ]

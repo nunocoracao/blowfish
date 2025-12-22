@@ -1,14 +1,14 @@
 ---
-                title: "technicat.com"
-                tags: [企業サイト]
-                externalUrl: "https://technicat.com/"
-                weight: 24
-                showDate: false
-                showAuthor: false
-                showReadingTime: false
-                showEdit: false
-                showLikes: false
-                showViews: false
-                layoutBackgroundHeaderSpace: false
-                ---
+title: "technicat.com"
+tags: [企業サイト]
+externalUrl: "https://technicat.com/"
+weight: 24
+showDate: false
+showAuthor: false
+showReadingTime: false
+showEdit: false
+showLikes: false
+showViews: false
+layoutBackgroundHeaderSpace: false
+---
 
