@@ -4390,7 +4390,7 @@ pre {
 }
 @media (width < 853px) {
   .width-patch {
-    width: 90vw;
+    width: 80vw;
   }
 }
 @media (width >= 853px) {
