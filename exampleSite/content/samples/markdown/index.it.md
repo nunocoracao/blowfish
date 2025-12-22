@@ -65,7 +65,7 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
 
 ## Code Blocks
 
-### Code block with backticks
+### General code block
 
 ```html
 <!DOCTYPE html>
@@ -80,23 +80,9 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
 </html>
 ```
 
-### Code block indented with four spaces
+### Code block with title and line highlight
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="utf-8">
-      <title>Example HTML5 Document</title>
-    </head>
-    <body>
-      <p>Test</p>
-    </body>
-    </html>
-
-### Code block with Hugo's internal highlight shortcode
-
-{{< highlight html "linenos=table,hl_lines=4 7-9" >}}
-
+```html {title="example.html" lineNos=inline hl_lines=[4,"7-9"]}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -107,7 +93,7 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
   <p>Test</p>
 </body>
 </html>
-{{< /highlight >}}
+```
 
 ## List Types
 

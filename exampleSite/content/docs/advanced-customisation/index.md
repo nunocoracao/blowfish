@@ -126,7 +126,7 @@ Simply by changing this one value, all the font sizes on your website will be ad
 
 ### Changing Syntax Highlighting Theme
 
-Blowfish uses a custom syntax highlighting style, with colors defined in `assets/css/schemes`. To change the syntax highlighting theme, create `assets/css/custom.css` and add the following:
+To change the syntax highlighting theme, create `assets/css/custom.css` and add the following:
 
 ```css
 .chroma,

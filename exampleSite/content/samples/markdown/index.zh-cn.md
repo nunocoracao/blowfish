@@ -65,7 +65,7 @@ Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sap
 
 ## 代码块
 
-### 带反引号的代码块
+### 一般的代码块
 
 ```html
 <!DOCTYPE html>
@@ -80,23 +80,9 @@ Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sap
 </html>
 ```
 
-### 缩进四个空格的代码块
+### 带有标题和行高亮的代码块
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="utf-8">
-      <title>Example HTML5 Document</title>
-    </head>
-    <body>
-      <p>Test</p>
-    </body>
-    </html>
-
-### 带有 Hugo 内部高亮简码的代码块
-
-{{< highlight html "linenos=table,hl_lines=4 7-9" >}}
-
+```html {title="example.html" lineNos=inline hl_lines=[4,"7-9"]}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -107,7 +93,7 @@ Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sap
   <p>Test</p>
 </body>
 </html>
-{{< /highlight >}}
+```
 
 ## 列表
 

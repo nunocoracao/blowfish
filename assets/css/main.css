@@ -4,9 +4,14 @@
 
 @import "tailwindcss";
 @import "./components/chroma.css" layer(utilities);
+@import "./components/tabs.css" layer(utilities);
 @import "./components/zen-mode.css";
 @import "./components/a11y.css";
 @import "./components/admonition.css" layer(components);
+
+html.dark {
+  color-scheme: dark;
+}
 
 body a,
 body button {
@@ -83,7 +88,7 @@ button,
 }
 
 .toc a {
-  @apply font-normal text-neutral-700 dark:text-neutral-400;
+  @apply font-normal text-neutral-700 dark:text-neutral-300;
 }
 
 .toc ul > li {
@@ -91,15 +96,11 @@ button,
 }
 
 /* Code Copy */
-.highlight-wrapper {
-  @apply block;
-}
-
 .highlight {
   @apply relative z-0;
 }
 
-.highlight:hover > .copy-button {
+.highlight-wrapper:hover > .copy-button {
   @apply visible;
 }
 
@@ -197,6 +198,18 @@ pre {
 
 .thumbnail-shadow {
   box-shadow: 5px 5px 20px 1px rgba(0, 0, 0, 0.3);
+}
+
+/* placeholder for gallery/carousel */
+@variant max-md {
+  .width-patch {
+    width: 90vw;
+  }
+}
+@variant min-md {
+  .width-patch {
+    width: 65ch;
+  }
 }
 
 .anchor {

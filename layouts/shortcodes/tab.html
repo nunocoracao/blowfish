@@ -1,0 +1,7 @@
+{{- $label := .Get "label" -}}
+{{- $index := .Parent.Store.Get "tab-index" | default 0 -}}
+{{- $content := .InnerDeindent | strings.TrimSpace | .Page.RenderString -}}
+
+{{- $tabs := .Parent.Store.Get "tabs" | default slice -}}
+{{- .Parent.Store.Set "tabs" ($tabs | append (dict "label" $label "content" $content)) -}}
+{{- .Parent.Store.Set "tab-index" (add 1 $index) -}}

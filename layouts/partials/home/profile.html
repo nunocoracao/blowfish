@@ -14,7 +14,7 @@
       {{ if $authorImage }}
         {{ $final := $authorImage }}
         {{ $squareImage := $authorImage }}
-        {{ if not $disableImageOptimization }}
+        {{ if not (or $disableImageOptimization (eq $authorImage.MediaType.SubType "svg")) }}
           {{ $final = $authorImage.Fill (print "288x288 q" ( $.Site.Params.Author.imagequality | default "96" )) }}
           {{ $shortSide := int (math.Min $authorImage.Width $authorImage.Height) }}
           {{ $squareImage = $authorImage.Crop (printf "%dx%d" $shortSide $shortSide ) }}
