@@ -122,7 +122,7 @@ html.dark {
 }
 
 .admonition .admonition-content > * + * {
-  @apply mt-3;
+  margin-top: 1.25em !important;
 }
 
 .admonition {

@@ -3683,7 +3683,7 @@ body.zen-mode-enable {
     margin-block: 0 !important;
   }
   .admonition .admonition-content > * + * {
-    margin-top: calc(var(--spacing) * 3);
+    margin-top: 1.25em !important;
   }
   .admonition {
     margin-block: calc(var(--spacing) * 3);
