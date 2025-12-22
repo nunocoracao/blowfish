@@ -1,14 +1,14 @@
 ---
-                title: "mrtruongvu.com"
-                tags: [个人网站, 博客]
-                externalUrl: "https://mrtruongvu.com"
-                weight: 80
-                showDate: false
-                showAuthor: false
-                showReadingTime: false
-                showEdit: false
-                showLikes: false
-                showViews: false
-                layoutBackgroundHeaderSpace: false
-                ---
+title: "mrtruongvu.com"
+tags: [个人网站, 博客]
+externalUrl: "https://mrtruongvu.com"
+weight: 80
+showDate: false
+showAuthor: false
+showReadingTime: false
+showEdit: false
+showLikes: false
+showViews: false
+layoutBackgroundHeaderSpace: false
+---
 

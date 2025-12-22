@@ -54,6 +54,7 @@ Front matter parameter default values are inherited from the theme's [base confi
 | `series_order` | _Not set_ | Number of the article within the series. |
 | `summary` | Auto generated using `summaryLength` (see [site configuration]({{< ref "configuration#site-configuration" >}})) | When `showSummary` is enabled, this is the Markdown string to be used as the summary for this article. |
 | `xml` | `true` unless excluded by `sitemap.excludedKinds` | Whether or not this article is included in the generated `/sitemap.xml` file. |
+| `excludeFromSearch` | `false` | Whether or not this article should be excluded from the sitemap and search index. When `true`, the page will not appear in `sitemap.xml` or `index.json`. |
 | `layoutBackgroundBlur` | `true` | Makes the background image in the background heroStyle blur with the scroll |
 | `layoutBackgroundHeaderSpace` | `true` | Add space between the header and the body. |
 <!-- prettier-ignore-end -->

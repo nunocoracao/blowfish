@@ -236,7 +236,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 | `article.showAuthor` | `true` | 記事のフッターに著者ボックスを表示するかどうかです。 |
 | `article.showAuthorBottom` | `false` | 著者ボックスは、各ページの上部ではなく下部に表示されます。 |
 | `article.showHero` | `false` | サムネイル画像を各記事ページ内でヒーロー画像として表示するかどうかです。 |
-| `article.heroStyle` | _未設定_ | ヒーロー画像を表示するスタイルです。有効なオプションは、`basic`、`big`、`background`、`thumbAndBackground` です。 |
+| `article.heroStyle` | _未設定_ | ヒーロー画像を表示するスタイルです。有効なオプションは、`basic`、`big`、`background`、`thumbAndBackground` です。`article.showHero = true` の場合にのみ有効。 |
 | `article.layoutBackgroundBlur` | `true` | 背景記事 heroStyle の背景画像をスクロールに合わせてぼかします。 |
 | `article.layoutBackgroundHeaderSpace` | `true` | ヘッダーと本文の間にスペースを追加します。 |
 | `article.showBreadcrumbs` | `false` | 記事のヘッダーにパンくずリストを表示するかどうかです。 |
@@ -264,7 +264,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 | 名前 | デフォルト | 説明 |
 | --- | --- | --- |
 | `list.showHero` | `false` | 各リストページ内でサムネイル画像をヒーロー画像として表示するかどうか。 |
-| `list.heroStyle` | _未設定_ | ヒーロー画像の表示スタイル。有効なオプションは `basic`、`big`、`background`、`thumbAndBackground` です。 |
+| `list.heroStyle` | _未設定_ | ヒーロー画像の表示スタイル。有効なオプションは `basic`、`big`、`background`、`thumbAndBackground` です。`list.showHero = true` の場合にのみ有効。 |
 | `list.showBreadcrumbs` | `false` | リストページのヘッダーにパンくずリストを表示するかどうか。 |
 | `list.layoutBackgroundBlur` | `true` | `background` リストの heroStyle の背景画像をスクロールでぼかします。 |
 | `list.layoutBackgroundHeaderSpace` | `true` | ヘッダーと本文の間にスペースを追加します。 |
@@ -292,7 +292,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 | --- | --- | --- |
 | `taxonomy.showTermCount` | `true` | タクソノミーリストにタクソノミー用語内の記事数を表示するかどうか。 |
 | `taxonomy.showHero` | `false` | 各タクソノミーページ内でサムネイル画像をヒーロー画像として表示するかどうか。 |
-| `taxonomy.heroStyle` | _未設定_ | ヒーロー画像の表示スタイル。有効なオプションは `basic`、`big`、`background`、`thumbAndBackground` です。 |
+| `taxonomy.heroStyle` | _未設定_ | ヒーロー画像の表示スタイル。有効なオプションは `basic`、`big`、`background`、`thumbAndBackground` です。`taxonomy.showHero = true` の場合にのみ有効。 |
 | `taxonomy.showBreadcrumbs` | `false` | タクソノミーのヘッダーにパンくずリストを表示するかどうか。 |
 | `taxonomy.showViews` | `false` | 記事の閲覧数を表示するかどうか。これを有効にするには、Firebase の統合を有効にする必要があります。以下をご覧ください。 |
 | `taxonomy.showLikes` | `false` | 記事のいいね数を表示するかどうか。これを有効にするには、Firebase の統合を有効にする必要があります。以下をご覧ください。 |
@@ -304,7 +304,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 | 名前 | デフォルト | 説明 |
 | --- | --- | --- |
 | `term.showHero` | `false` | 各タームページ内でサムネイル画像をヒーロー画像として表示するかどうか。 |
-| `term.heroStyle` | _未設定_ | ヒーロー画像の表示スタイル。有効なオプションは `basic`、`big`、`background`、`thumbAndBackground` です。 |
+| `term.heroStyle` | _未設定_ | ヒーロー画像の表示スタイル。有効なオプションは `basic`、`big`、`background`、`thumbAndBackground` です。`term.showHero = true` の場合にのみ有効。 |
 | `term.showBreadcrumbs` | `false` | タームのヘッダーにパンくずリストを表示するかどうか。 |
 | `term.showViews`           | `false`    | 記事の閲覧数を表示するかどうか。これを有効にするには、Firebase の統合を有効にする必要があります。以下をご覧ください。   |
 | `term.showLikes`           | `false`    | 記事のいいね数を表示するかどうか。これを有効にするには、Firebase の統合を有効にする必要があります。以下をご覧ください。 |

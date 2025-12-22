@@ -1,6 +1,6 @@
 languageCode = "zh-cn"
 languageName = "简体中文"
-weight = 4
+weight = 9
 title = "Blowfish"
 
 [params]

@@ -145,3 +145,11 @@
   }}
   <link rel="stylesheet" href="{{ $repoCardCSS.RelPermalink }}" integrity="{{ $repoCardCSS.Data.Integrity }}">
 {{ end }}
+
+{{/* tabs */}}
+{{ if .Page.HasShortcode "tabs" }}
+  {{ $tabJS := resources.Get "js/shortcodes/tabs.js" }}
+  {{ with $tabJS | minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
+    <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+  {{ end }}
+{{ end }}

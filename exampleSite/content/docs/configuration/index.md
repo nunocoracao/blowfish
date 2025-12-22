@@ -54,7 +54,7 @@ Note that the variable names provided in this table use dot notation to simplify
 
 ## Thumbnails
 
-Blowfish was built so it would be easy to add visual support to your articles. If your familiar with Hugo article structure, you just need to place an image file (almost all formats are supported but we recommend `.png` or `.jpg`) that starts with `feature*` inside your article folder. And that's it, Blowfish will then able to both use the image as a thumbnail within your website as well as for <a target="_blank" href="https://oembed.com/">oEmbed</a> cards across social platforms.
+Blowfish was built so it would be easy to add visual support to your articles. If you're familiar with Hugo article structure, you just need to place an image file (almost all formats are supported but we recommend `.png` or `.jpg`) that starts with `feature*` inside your article folder. And that's it, Blowfish will then able to both use the image as a thumbnail within your website as well as for <a target="_blank" href="https://oembed.com/">oEmbed</a> cards across social platforms.
 
 [Here]({{< ref "thumbnails" >}}) is also a guide with more info and a [sample]({{< ref "thumbnail_sample" >}}) if you want to see how you can do it.
 
@@ -177,6 +177,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `enableSearch` | `false` | Whether site search is enabled. Set to `true` to enable search functionality. Note that the search feature depends on the `outputs.home` setting in the [site configuration](#site-configuration) being set correctly. |
 | `enableCodeCopy` | `false` | Whether copy-to-clipboard buttons are enabled for `<code>` blocks. The `highlight.noClasses` parameter must be set to `false` for code copy to function correctly. Read more about [other configuration files](#other-configuration-files) below. |
 | `enableStructuredBreadcrumbs` | `false` | Whether to add [BreadcrumbList](https://developers.google.com/search/docs/appearance/structured-data/breadcrumb) for SEO. Do NOT enable this if your content path does not match the URL, i.e., complex [URL setting](https://gohugo.io/content-management/urls/). |
+| `enableStyledScrollbar` | `true` | Whether to enable styled scrollbar via tailwind-scrollbar. Set to `false` to use the browser's default scrollbar styling. |
 | `replyByEmail` | `false` | Whether the reply-by-email link is enabled after post. The `params.author.email` parameter in `config/_default/languages.en.toml` must be set. |
 | `forgejoDefaultServer` | _Not set_ | The default `server` parameter for the `forgejo` shortcode. |
 | `giteaDefaultServer` | _Not set_ | The default `server` parameter for the `gitea` shortcode. |
@@ -242,7 +243,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `article.showAuthor` | `true` | Whether or not the author box is displayed in the article footer. |
 | `article.showAuthorBottom` | `false` | Author boxes are displayed at the bottom of each page instead of the top. |
 | `article.showHero` | `false` | Whether the thumbnail image will be shown as a hero image within each article page. |
-| `article.heroStyle` | _Not set_ | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`. |
+| `article.heroStyle` | _Not set_ | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`. Effective only if `article.showHero = true`. |
 | `article.layoutBackgroundBlur` | `true` | Makes the background image in the background article heroStyle blur with the scroll |
 | `article.layoutBackgroundHeaderSpace` | `true` | Add space between the header and the body. |
 | `article.showBreadcrumbs` | `false` | Whether or not breadcrumbs are displayed in the article header. |
@@ -271,7 +272,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | Name | Default | Description |
 | --- | --- | --- |
 | `list.showHero` | `false` | Whether the thumbnail image will be shown as a hero image within each list page. |
-| `list.heroStyle` | _Not set_ | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`. |
+| `list.heroStyle` | _Not set_ | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`. Effective only if `list.showHero = true`. |
 | `list.showBreadcrumbs` | `false` | Whether or not breadcrumbs are displayed in the header on list pages. |
 | `list.layoutBackgroundBlur` | `true` | Makes the background image in the background list heroStyle blur with the scroll |
 | `list.layoutBackgroundHeaderSpace` | `true` | Add space between the header and the body. |
@@ -299,7 +300,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | --- | --- | --- |
 | `taxonomy.showTermCount` | `true` | Whether or not the number of articles within a taxonomy term is displayed on the taxonomy listing. |
 | `taxonomy.showHero` | `false` | Whether the thumbnail image will be shown as a hero image within each taxonomy page. |
-| `taxonomy.heroStyle` | _Not set_ | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`. |
+| `taxonomy.heroStyle` | _Not set_ | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`. Effective only if `taxonomy.showHero = true`. |
 | `taxonomy.showBreadcrumbs` | `false` | Whether or not breadcrumbs are displayed in the taxonomy header. |
 | `taxonomy.showViews` | `false` | Whether or not article views are displayed. This requires firebase integrations to be enabled, look below. |
 | `taxonomy.showLikes` | `false` | Whether or not article likes are displayed. This requires firebase integrations to be enabled, look below. |
@@ -311,7 +312,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | Name | Default | Description |
 | --- | --- | --- |
 | `term.showHero` | `false` | Whether the thumbnail image will be shown as a hero image within each term page. |
-| `term.heroStyle` | _Not set_ | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`. |
+| `term.heroStyle` | _Not set_ | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`. Effective only if `term.showHero = true`. |
 | `term.showBreadcrumbs` | `false` | Whether or not breadcrumbs are displayed in the term header. |
 | `term.showViews` | `false` | Whether or not article views are displayed. This requires firebase integrations to be enabled, look below. |
 | `term.showLikes` | `false` | Whether or not article likes are displayed. This requires firebase integrations to be enabled, look below. |

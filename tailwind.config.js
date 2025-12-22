@@ -68,9 +68,8 @@ module.exports = {
             "--tw-prose-bold": theme("colors.neutral.900 / 1"),
             "--tw-prose-counters": theme("colors.neutral.800 / 1"),
             "--tw-prose-bullets": theme("colors.neutral.500 / 1"),
-            "--tw-prose-hr": theme("colors.neutral.200 / 1"),
             "--tw-prose-quotes": theme("colors.neutral.700 / 1"),
-            "--tw-prose-quote-borders": theme("colors.primary.200 / 1"),
+            "--tw-prose-quote-borders": theme("colors.primary.500 / 1"),
             "--tw-prose-captions": theme("colors.neutral.500 / 1"),
             "--tw-prose-code": theme("colors.secondary.700 / 1"),
             "--tw-prose-pre-code": theme("colors.neutral.700 / 1"),
@@ -84,9 +83,8 @@ module.exports = {
             "--tw-prose-invert-bold": theme("colors.neutral.DEFAULT / 1"),
             "--tw-prose-invert-counters": theme("colors.neutral.400 / 1"),
             "--tw-prose-invert-bullets": theme("colors.neutral.600 / 1"),
-            "--tw-prose-invert-hr": theme("colors.neutral.500 / 1"),
             "--tw-prose-invert-quotes": theme("colors.neutral.200 / 1"),
-            "--tw-prose-invert-quote-borders": theme("colors.primary.900 / 1"),
+            "--tw-prose-invert-quote-borders": theme("colors.primary.600 / 1"),
             "--tw-prose-invert-captions": theme("colors.neutral.400 / 1"),
             "--tw-prose-invert-code": theme("colors.secondary.400 / 1"),
             "--tw-prose-invert-pre-code": theme("colors.neutral.200 / 1"),
@@ -106,6 +104,9 @@ module.exports = {
             "a code": {
               color: "var(--tw-prose-code)",
             },
+            hr: {
+              border: '0.8px solid theme("colors.neutral.300 / 1")',
+            },
             kbd: {
               backgroundColor: theme("colors.neutral.200 / 1"),
               padding: "0.1rem 0.4rem",
@@ -120,7 +121,6 @@ module.exports = {
               borderRadius: "0.25rem",
             },
             code: {
-              backgroundColor: theme("colors.neutral.50 / 1"),
               paddingTop: "3px",
               paddingBottom: "3px",
               paddingLeft: "5px",
@@ -162,14 +162,17 @@ module.exports = {
             mark: {
               backgroundColor: theme("colors.primary.400 / 1"),
             },
-            code: {
-              backgroundColor: theme("colors.neutral.700 / 1"),
+            "code:not(pre code)": {
+              backgroundColor: theme("colors.zinc.900 / 0.7"),
             },
             "a.active": {
               "text-decoration-color": theme("colors.primary.400 / 1"),
             },
             "p.active": {
               "text-decoration-color": theme("colors.primary.400 / 1"),
+            },
+            hr: {
+              border: '0.8px solid theme("colors.neutral.500 / 1")',
             },
           },
         },

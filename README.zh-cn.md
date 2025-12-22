@@ -1,4 +1,4 @@
-[English](https://github.com/nunocoracao/blowfish/blob/main/README.md) | [Indonesian](https://github.com/nunocoracao/blowfish/blob/main/README.id.md) | 简体中文 | [日本語](https://github.com/nunocoracao/blowfish/blob/main/README.ja.md)
+[English](https://github.com/nunocoracao/blowfish/blob/main/README.md) | [Français](https://github.com/nunocoracao/blowfish/blob/main/README.fr.md) | [Deutsch](https://github.com/nunocoracao/blowfish/blob/main/README.de.md) | [Português (PT)](https://github.com/nunocoracao/blowfish/blob/main/README.pt-pt.md) | [Português (BR)](https://github.com/nunocoracao/blowfish/blob/main/README.pt-br.md) | [Español](https://github.com/nunocoracao/blowfish/blob/main/README.es.md) | [日本語](https://github.com/nunocoracao/blowfish/blob/main/README.ja.md) | 简体中文 | [Indonesian](https://github.com/nunocoracao/blowfish/blob/main/README.id.md)
 # Blowfish
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6e5256d4-3148-4d69-879c-310341020fe9/deploy-status)](https://app.netlify.com/sites/snazzy-dango-efb2ec/deploys)
 [![Minimum Hugo Version](https://img.shields.io/static/v1?label=min-HUGO-version&message=0.87.0&color=blue&logo=hugo)](https://github.com/gohugoio/hugo/releases/tag/v0.87.0)
@@ -43,6 +43,7 @@ Blowfish 是一个轻量有力的 Hugo 主题。它使用 Tailwind CSS 构建，
 - 支持多语言内容，包括 RTL 语言
 - 可链接到第三方网站上的帖子
 - 支持多种简码，如图库、时间轴、GitHub 卡片和图片灯箱
+- 支持 GitHub Alerts 语法、15 种类型和可折叠功能
 - 支持 Buymeacoffee
 - 拥有由 Fuse.js 支持的客户端一侧网站搜索功能
 - 植入了基于 Mermaid 的图表功能

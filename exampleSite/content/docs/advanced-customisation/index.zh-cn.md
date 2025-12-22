@@ -125,7 +125,7 @@ html {
 
 ### 更换语法高亮主题
 
-Blowfish 使用自定义的语法高亮样式，颜色定义在 `assets/css/schemes` 中。要更换语法高亮主题，请创建 `assets/css/custom.css`，然后添加以下内容：
+要更换语法高亮主题，请创建 `assets/css/custom.css`，然后添加以下内容：
 
 ```css
 .chroma,
@@ -134,7 +134,7 @@ Blowfish 使用自定义的语法高亮样式，颜色定义在 `assets/css/sche
 .chroma:is(.dark *) * {
   color: unset;
   font-weight: unset;
-  background-color: unset;
+  font-style: unset;
 }
 ```
 
@@ -142,38 +142,13 @@ Blowfish 使用自定义的语法高亮样式，颜色定义在 `assets/css/sche
 
 ```sh
 # Mac/Linux
-hugo gen chromastyles --style=emacs | sed 's/\./html:not(.dark) ./' >> assets/css/custom.css
-hugo gen chromastyles --style=evergarden | sed 's/\./html.dark ./' >> assets/css/custom.css
+(echo 'html:not(.dark) {'; hugo gen chromastyles --style=emacs; echo '}') >> assets/css/custom.css
+(echo 'html.dark {'; hugo gen chromastyles --style=evergarden; echo '}') >> assets/css/custom.css
 
 # Windows PowerShell
 # 此命令不能在 CMD 中运行，必须在 PowerShell 中运行
-hugo gen chromastyles --style=emacs | ForEach-Object { $_ -replace '\.', 'html:not(.dark) .' } | Add-Content -Path "css/custom.txt"
-hugo gen chromastyles --style=evergarden | ForEach-Object { $_ -replace '\.', 'html.dark .' } | Add-Content -Path "css/custom.txt"
-```
-
-您的 `custom.css` 档案最后应该会像是以下：
-
-```css
-.chroma,
-.chroma *,
-.chroma:is(.dark *),
-.chroma:is(.dark *) * {
-  color: unset;
-  font-weight: unset;
-  background-color: unset;
-}
-
-/* Generated using: hugo gen chromastyles --style=emacs */
-
-/* Background */ html:not(.dark) .bg { background-color:#f8f8f8; }
-/* PreWrapper */ html:not(.dark) .chroma { background-color:#f8f8f8; }
-/* ... */
-
-/* Generated using: hugo gen chromastyles --style=evergarden */
-
-/* Background */ html.dark .bg { color:#d6cbb4;background-color:#252b2e; }
-/* PreWrapper */ html.dark .chroma { color:#d6cbb4;background-color:#252b2e; }
-/* ... */
+@("html:not(.dark) {"; (hugo gen chromastyles --style=emacs); "}") | Add-Content -Path "assets/css/custom.css"
+@("html.dark {"; (hugo gen chromastyles --style=evergarden); "}") | Add-Content -Path "assets/css/custom.css"
 ```
 
 在 [Hugo 文档](https://gohugo.io/quick-reference/syntax-highlighting-styles/#styles)中查看所有可用的样式。

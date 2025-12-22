@@ -1,4 +1,4 @@
-English | [Indonesian](https://github.com/nunocoracao/blowfish/blob/main/README.id.md) | [简体中文](https://github.com/nunocoracao/blowfish/blob/main/README.zh-cn.md) | [日本語](https://github.com/nunocoracao/blowfish/blob/main/README.ja.md)
+English | [Français](https://github.com/nunocoracao/blowfish/blob/main/README.fr.md) | [Deutsch](https://github.com/nunocoracao/blowfish/blob/main/README.de.md) | [Português (PT)](https://github.com/nunocoracao/blowfish/blob/main/README.pt-pt.md) | [Português (BR)](https://github.com/nunocoracao/blowfish/blob/main/README.pt-br.md) | [Español](https://github.com/nunocoracao/blowfish/blob/main/README.es.md) | [日本語](https://github.com/nunocoracao/blowfish/blob/main/README.ja.md) | [简体中文](https://github.com/nunocoracao/blowfish/blob/main/README.zh-cn.md) | [Indonesian](https://github.com/nunocoracao/blowfish/blob/main/README.id.md)
 # Blowfish
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6e5256d4-3148-4d69-879c-310341020fe9/deploy-status)](https://app.netlify.com/sites/snazzy-dango-efb2ec/deploys)
 [![Minimum Hugo Version](https://img.shields.io/static/v1?label=min-HUGO-version&message=0.87.0&color=blue&logo=hugo)](https://github.com/gohugoio/hugo/releases/tag/v0.87.0)
@@ -45,6 +45,7 @@ Blowfish is designed to be a powerful, lightweight theme for [Hugo](https://gohu
 - Multilingual content support including support for RTL languages
 - Ability to link to posts on third-party websites
 - Support for several shortcodes like Gallery, Timeline, GitHub cards, and Carousels
+- GitHub Alerts syntax, 15 types, collapsible support
 - Buymeacoffee integration
 - Client-side site search powered by Fuse.js
 - Diagrams and visualisations using Mermaid

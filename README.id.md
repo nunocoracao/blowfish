@@ -1,4 +1,4 @@
-**[English](https://github.com/nunocoracao/blowfish/blob/main/README.md) | Indonesian | [简体中文](https://github.com/nunocoracao/blowfish/blob/main/README.zh-cn.md) | [日本語](https://github.com/nunocoracao/blowfish/blob/main/README.ja.md)**  
+[English](https://github.com/nunocoracao/blowfish/blob/main/README.md) | [Français](https://github.com/nunocoracao/blowfish/blob/main/README.fr.md) | [Deutsch](https://github.com/nunocoracao/blowfish/blob/main/README.de.md) | [Português (PT)](https://github.com/nunocoracao/blowfish/blob/main/README.pt-pt.md) | [Português (BR)](https://github.com/nunocoracao/blowfish/blob/main/README.pt-br.md) | [Español](https://github.com/nunocoracao/blowfish/blob/main/README.es.md) | [日本語](https://github.com/nunocoracao/blowfish/blob/main/README.ja.md) | [简体中文](https://github.com/nunocoracao/blowfish/blob/main/README.zh-cn.md) | Indonesian
 
 # Blowfish  
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6e5256d4-3148-4d69-879c-310341020fe9/deploy-status)](https://app.netlify.com/sites/snazzy-dango-efb2ec/deploys)
@@ -40,7 +40,8 @@ Blowfish dirancang sebagai tema yang kuat dan ringan untuk [Hugo](https://gohugo
 - Daftar isi yang dapat digulir  
 - Dukungan untuk konten multibahasa termasuk bahasa RTL  
 - Kemampuan untuk menautkan ke artikel di situs web pihak ketiga  
-- Dukungan untuk beberapa shortcode seperti Galeri, Timeline, Kartu GitHub, dan Carousel  
+- Dukungan untuk beberapa shortcode seperti Galeri, Timeline, Kartu GitHub, dan Carousel
+- Sintaks GitHub Alerts, 15 jenis, dukungan lipat
 - Integrasi BuyMeACoffee  
 - Pencarian situs berbasis klien dengan Fuse.js  
 - Diagram dan visualisasi menggunakan Mermaid  

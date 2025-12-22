@@ -63,79 +63,11 @@ links = [
 
 ## 颜色方案
 
-Blowfish 主题中包含了数个颜色方案，这些方案可以快速使用。如果需要修改方案，只需要简单的设置 `colorScheme` 参数即可。`colorScheme` 可选的值有`blowfish` （默认）、`avocado`、`fire`、`ocean`、`forest`、`princess`、`neon`、`bloody`、`terminal`、`marvel`、`noir`、`autumn`、`congo`、`slate`、`github` 和 `one-light`。
+Blowfish 提供多种预设配色方案。你可以在下面测试可用的配色方案：
 
-```toml
-# config/_default/params.toml
+{{< theme-switcher >}}
 
-colorScheme = "blowfish"
-```
-
-Blowfish 定义了一种由三种主色调构成的配色方案，每种主色调包含了10种子色调，10个色调是借鉴 [Tailwind](https://tailwindcss.com/docs/customizing-colors#color-palette-reference) 中的定义。Blowfish 中定义了多个预置的三色主题，以便在整个主题中使用。
-
-### Blowfish（默认）
-
-{{< swatches "#64748b" "#3b82f6" "#06b6d4" >}}
-
-### Avocado
-
-{{< swatches "#78716c" "#84cc16" "#10b981" >}}
-
-### Fire
-
-{{< swatches "#78716c" "#f97316" "#f43f5e" >}}
-
-### Ocean
-
-{{< swatches "#64748b" "#3b82f6" "#06b6d4" >}}
-
-### Forest
-
-{{< swatches "#658c86" "#3bf5df" "#06d45c" >}}
-
-### Princess
-
-{{< swatches "#8c658c" "#f53bf2" "#7706d4" >}}
-
-### Neon
-
-{{< swatches "#8338ec" "#ff006e" "#3a86ff" >}}
-
-### Bloody
-
-{{< swatches "#d90429" "#8d99ae" "#457b9d" >}}
-
-### Terminal
-
-{{< swatches "#004b23" "#38b000" "#1a759f" >}}
-
-### Marvel
-
-{{< swatches "#2541b2" "#d81159" "#ffbc42" >}}
-
-### Noir
-
-{{< swatches "#5c6b73" "#9db4c0" "#00a5cf" >}}
-
-### Autumn
-
-{{< swatches "#0a9396" "#ee9b00" "#bb3e03" >}}
-
-### Congo
-
-{{< swatches "#71717a" "#8b5cf6" "#d946ef" >}}
-
-### Slate
-
-{{< swatches "#6B7280" "#64748b" "#6B7280" >}}
-
-### Github
-
-{{< swatches "#64748b" "#0092ff" "#f54728" >}}
-
-### One-Light
-
-{{< swatches "#646464" "#0070cc" "#20a077" >}}
+Blowfish 中的每个配色方案均基于三色调色板，并在整个主题中保持一致应用。这些主色基于 [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors#color-palette-reference) 所提供的十阶色板构建。
 
 这些是内置的配色方案，你也可以去自定义这一部分，请参阅 [高级自定义]({{< ref "advanced-customisation#colour-schemes" >}}) 。
 
