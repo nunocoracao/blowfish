@@ -1,4 +1,3 @@
-{{/* Admonition Render Hook */}}
 {{- if eq .Type "alert" -}}
   {{- $typeMap := dict
     "summary" "abstract"
@@ -33,38 +32,21 @@
     "quote" "quote-left"
   -}}
 
-  {{/* Resolve type aliases and validate */}}
   {{- $rawType := .AlertType | lower -}}
   {{- $normalizedType := index $typeMap $rawType | default $rawType -}}
-
   {{- $iconName := index $iconMap $normalizedType | default "circle-info" -}}
-
-  {{/* Resolve title with i18n fallback */}}
-  {{- $title := .AlertTitle -}}
-  {{- if not $title -}}
-    {{- $i18nKey := printf "admonition.%s" $normalizedType -}}
-    {{- $i18nTitle := i18n $i18nKey -}}
-    {{- if and $i18nTitle (ne $i18nTitle $i18nKey) -}}
-      {{- $title = $i18nTitle -}}
-    {{- else -}}
-      {{- $title = $normalizedType | title -}}
-    {{- end -}}
-  {{- end -}}
-
-  {{/* Handle collapsible state */}}
-  {{- $sign := .AlertSign | default "" -}}
-  {{- $isCollapsible := or (eq $sign "+") (eq $sign "-") -}}
-  {{- $isDefaultCollapsed := eq $sign "-" -}}
+  {{- $title := .AlertTitle | default (i18n (printf "admonition.%s" $normalizedType) | default (title $normalizedType)) -}}
 
   {{- $containerClass := "admonition relative overflow-hidden rounded-lg border-l-4 px-4 py-3 shadow-sm print:break-inside-avoid" -}}
   {{- $headerClass := "flex items-center gap-2 font-semibold text-inherit" -}}
   {{- $contentClass := "admonition-content mt-3 text-base leading-relaxed text-inherit" -}}
 
+  {{- $isCollapsible := in (slice "+" "-") .AlertSign -}}
   {{- if $isCollapsible -}}
     <details
       class="{{ $containerClass }} group print:block"
       data-type="{{ $normalizedType }}"
-      {{ if not $isDefaultCollapsed }}open{{ end }}>
+      {{ if eq .AlertSign "+" }}open{{ end }}>
       <summary
         class="{{ $headerClass }} cursor-pointer pr-2 list-none marker:hidden [&::-webkit-details-marker]:hidden">
         <div class="flex h-5 w-5 shrink-0 items-center justify-center text-current">
