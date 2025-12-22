@@ -203,7 +203,7 @@ pre {
 /* placeholder for gallery/carousel */
 @variant max-md {
   .width-patch {
-    width: 90vw;
+    width: 80vw;
   }
 }
 @variant min-md {

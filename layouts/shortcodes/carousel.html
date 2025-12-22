@@ -19,7 +19,7 @@
 {{ end }}
 
 
-<div class="width-patch"></div>
+{{ if not .Parent }}<div class="width-patch"></div>{{ end }}
 <div
   id="{{ $id }}"
   class="relative"
