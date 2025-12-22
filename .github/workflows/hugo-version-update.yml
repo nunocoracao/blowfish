@@ -38,7 +38,7 @@ jobs:
 
       - name: Create Pull Request
         if: steps.git-check.outputs.modified == 'true'
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           commit-message: Update Hugo supported version
           title: ⚙️ Update Hugo supported version

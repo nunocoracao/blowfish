@@ -132,7 +132,7 @@ async function translateFrontMatterTags(block, targetLang, tags) {
       await fs.writeFile(dir + `/index.${lang}.md`, content);
     }
     await page.goto(user.url);
-    await page.screenshot({ path: dir + "/feature.jpg", type: "webp", quality: 50 });
+    await page.screenshot({ path: dir + "/feature.webp", type: "webp", quality: 50 });
     }
   }
 

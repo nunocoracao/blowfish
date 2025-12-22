@@ -956,6 +956,15 @@
       "DevOps",
       "Personal site",
       "Technology Blog"
+      ]
+  },
+  {
+    "title": "monpetitdev.fr",
+    "url": "https://monpetitdev.fr/",
+    "tags": [
+      "Personal site",
+      "Blog",
+      "Software Developer"
     ]
   }
 ]
