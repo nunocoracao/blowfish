@@ -1,0 +1,13 @@
+---
+title: "Dan Davidson | Where Crypto, Charts and Curiosity Collide"
+tags: [Site Pessoal,Blog de Tecnologia]
+externalUrl: "https://danly.io"
+weight: 103
+showDate: false
+showAuthor: false
+showReadingTime: false
+showEdit: false
+showLikes: false
+showViews: false
+layoutBackgroundHeaderSpace: false
+---

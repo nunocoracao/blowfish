@@ -1,14 +1,14 @@
 ---
-                title: "Laterre Dev"
-                tags: [Sito personale, Blog sulla tecnologia, Sviluppatore di software, Sito portfolio]
-                externalUrl: "https://laterre.dev/"
-                weight: 82
-                showDate: false
-                showAuthor: false
-                showReadingTime: false
-                showEdit: false
-                showLikes: false
-                showViews: false
-                layoutBackgroundHeaderSpace: false
-                ---
+title: "Laterre Dev"
+tags: [Sito personale, Blog sulla tecnologia, Sviluppatore di software, Sito portfolio]
+externalUrl: "https://laterre.dev/"
+weight: 82
+showDate: false
+showAuthor: false
+showReadingTime: false
+showEdit: false
+showLikes: false
+showViews: false
+layoutBackgroundHeaderSpace: false
+---
 
