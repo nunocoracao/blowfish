@@ -724,6 +724,74 @@ B-->C[Profit]
 
 <br/><br/><br/>
 
+## Tabs
+
+`tabs` 简码常用于呈现某个步骤的不同变体。例如，可用于展示在不同平台上安装 VS Code 的方式。
+
+**示例**
+
+````md
+{{</* tabs */>}}
+
+    {{</* tab label="Windows" */>}}
+    使用 Chocolatey 安装:
+
+    ```pwsh
+    choco install vscode.install
+    ```
+
+    或使用 WinGet 安装
+
+    ```pwsh
+    winget install -e --id Microsoft.VisualStudioCode
+    ```
+    {{</* /tab */>}}
+
+    {{</* tab label="macOS" */>}}
+    ```bash
+    brew install --cask visual-studio-code
+    ```
+    {{</* /tab */>}}
+
+    {{</* tab label="Linux" */>}}
+    参见[文档](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux)。
+    {{</* /tab */>}}
+
+{{</* /tabs */>}}
+````
+
+**输出**
+
+{{< tabs >}}
+
+    {{< tab label="Windows" >}}
+    使用 Chocolatey 安装:
+
+    ```pwsh
+    choco install vscode.install
+    ```
+
+    或使用 WinGet 安装
+
+    ```pwsh
+    winget install -e --id Microsoft.VisualStudioCode
+    ```
+    {{< /tab >}}
+
+    {{< tab label="macOS" >}}
+    ```bash
+    brew install --cask visual-studio-code
+    ```
+    {{< /tab >}}
+
+    {{< tab label="Linux" >}}
+    参见[文档](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux)。
+    {{< /tab >}}
+
+{{< /tabs >}}
+
+<br/><br/><br/>
+
 ## 时间线
 
 `timeline` 创建了一个可视化时间线，用于展示专业经验、项目成就等。 `timeline` 简码依赖于 `timelineItem` 子简码来定义主时间线中的每个项目。每个项目可以具有以下属性。

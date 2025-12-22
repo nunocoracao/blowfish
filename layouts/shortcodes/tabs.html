@@ -1,0 +1,28 @@
+{{- .Store.Set "tab-index" 0 -}}
+{{- $noop := .Inner -}}
+
+
+<div class="tab__container w-full">
+  <div class="tab__nav" role="tablist">
+    <div class="flex gap-1 overflow-x-auto">
+      {{- range $nTabs, $_ := .Store.Get "tabs" -}}
+        <button
+          class="tab__button px-3 py-2 text-sm font-semibold border-b-2 border-transparent rounded-t-md hover:bg-neutral-200 dark:hover:bg-neutral-700 {{ if eq $nTabs 0 }}
+            tab--active
+          {{ end }}"
+          role="tab"
+          aria-selected="{{ cond (eq $nTabs 0) "true" "false" }}"
+          data-tab-index="{{ $nTabs }}">
+          {{ index . "label" }}
+        </button>
+      {{- end -}}
+    </div>
+  </div>
+  <div class="tab__content mt-4">
+    {{- range $nTabs, $_ := .Store.Get "tabs" -}}
+      <div class="tab__panel {{ if eq $nTabs 0 }}tab--active{{ end }}" data-tab-index="{{ $nTabs }}">
+        {{ index . "content" }}
+      </div>
+    {{- end -}}
+  </div>
+</div>
