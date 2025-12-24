@@ -23,7 +23,7 @@ Se non hai mai utilizzato Hugo prima, dovrai [installarlo nella tua local machin
 Puoi verificare se hai già installato Hugo utilizzando il comando `hugo version`.
 
 {{< alert >}}
-Assicurati di usare la **versione 0.87.0 di Hugo** o successiva, poiché il tema sfrutta alcune delle ultime caratteristiche di Hugo.
+Assicurati di usare la **versione 0.141.0 di Hugo** o successiva, poiché il tema sfrutta alcune delle ultime caratteristiche di Hugo.
 {{< /alert >}}
 
 Puoi trovare le istruzioni dettagliate sull'installazione per la propria piattaforma in [Documenti Hugo](https://gohugo.io/getting-started/installing).

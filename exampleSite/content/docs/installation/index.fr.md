@@ -22,7 +22,7 @@ Ces instructions vous permettront de démarrer avec Hugo et Blowfish à partir d
 Si vous n'avez jamais utilisé Hugo auparavant, vous devrez [l'installer sur votre machine locale](https://gohugo.io/getting-started/installing). Vous pouvez vérifier s'il est déjà installé en exécutant la commande `hugo version`.
 
 {{< alert >}}
-Assurez-vous d'utiliser **Hugo version 0.87.0** ou ultérieure car le thème tire parti de certaines des dernières fonctionnalités de Hugo.
+Assurez-vous d'utiliser **Hugo version 0.141.0** ou ultérieure car le thème tire parti de certaines des dernières fonctionnalités de Hugo.
 {{< /alert >}}
 
 Vous pouvez trouver des instructions d'installation détaillées pour votre plateforme dans la [documentation Hugo](https://gohugo.io/getting-started/installing).
