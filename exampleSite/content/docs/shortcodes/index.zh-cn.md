@@ -996,6 +996,54 @@ consectetur adipiscing elit.
 
 <br/><br/><br/>
 
+## Video
+
+Blowfish 提供 `video` 简码，用于在内容中嵌入本地或外部视频。该简码会渲染一个 `<figure>` 容器，包含自适应的视频播放器和可选说明。
+
+`video` 简码支持以下参数：
+
+<!-- prettier-ignore-start -->
+| 参数 | 说明 |
+| --- | --- |
+| `src` | **必填。** 视频 URL 或本地路径。本地查找顺序：页面资源 → `assets/` → `static/`。 |
+| `poster` | 可选的封面图 URL 或本地路径。未提供时，会尝试在页面 bundle 中寻找同名图片。 |
+| `caption` | 可选的 Markdown 说明文字，显示在视频下方。 |
+| `autoplay` | `true`/`false`。为 `true` 时自动播放。默认：`false`。 |
+| `loop` | `true`/`false`。为 `true` 时循环播放。默认：`false`。 |
+| `muted` | `true`/`false`。为 `true` 时静音。默认：`false`。 |
+| `controls` | `true`/`false`。为 `true` 时显示浏览器默认播放控制条。默认：`true`。 |
+| `playsinline` | `true`/`false`。为 `true` 时在移动端内联播放。默认：`true`。 |
+| `preload` | `metadata`（仅加载信息）、`none`（节省带宽）或 `auto`（预加载更多）。默认：`metadata`。 |
+| `start` | 可选的开始时间（秒）。 |
+| `end` | 可选的结束时间（秒）。 |
+| `ratio` | 为播放器预留的宽高比。支持 `16/9`、`4/3`、`1/1` 或自定义 `W/H`。默认：`16/9`。 |
+| `fit` | 视频在比例中的适配方式：`contain`（不裁切）、`cover`（裁切填满）、`fill`（拉伸）。默认：`contain`。 |
+<!-- prettier-ignore-end -->
+
+如果浏览器无法播放视频，播放器会显示一段简短的英文提示并提供下载链接。
+
+**示例：**
+
+```md
+{{</* video
+    src="https://upload.wikimedia.org/wikipedia/commons/5/5a/CC0_-_Public_Domain_Dedication_video_bumper.webm"
+    poster="https://upload.wikimedia.org/wikipedia/commons/e/e0/CC0.jpg"
+    caption="**公有领域演示** — CC0 视频与封面。"
+    loop=true
+    muted=true
+*/>}}
+```
+
+{{< video
+  src="https://upload.wikimedia.org/wikipedia/commons/5/5a/CC0_-_Public_Domain_Dedication_video_bumper.webm"
+  poster="https://upload.wikimedia.org/wikipedia/commons/e/e0/CC0.jpg"
+  caption="**公有领域演示** — CC0 视频与封面。"
+  loop=true
+  muted=true
+>}}
+
+<br/><br/><br/>
+
 ## Youtube 嵌入播放器
 
 使用 [lite-youtube-embed](https://github.com/paulirish/lite-youtube-embed) 库嵌入 YouTube 视频的简码。该库是 YouTube 嵌入播放器的轻量级替代品，其设计速度更快、更高效。
