@@ -1697,6 +1697,12 @@
       background-color: color-mix(in oklab, rgba(var(--color-neutral-500), 1) 50%, transparent);
     }
   }
+  .bg-neutral\/25 {
+    background-color: color-mix(in srgb, rgba(rgba(var(--color-neutral), 1), 1) 25%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, rgba(var(--color-neutral), 1) 25%, transparent);
+    }
+  }
   .bg-neutral\/50 {
     background-color: color-mix(in srgb, rgba(rgba(var(--color-neutral), 1), 1) 50%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -3202,6 +3208,14 @@
   .dark\:bg-neutral-800 {
     &:is(.dark *) {
       background-color: rgba(var(--color-neutral-800), 1);
+    }
+  }
+  .dark\:bg-neutral-800\/25 {
+    &:is(.dark *) {
+      background-color: color-mix(in srgb, rgba(rgba(var(--color-neutral-800), 1), 1) 25%, transparent);
+      @supports (color: color-mix(in lab, red, red)) {
+        background-color: color-mix(in oklab, rgba(var(--color-neutral-800), 1) 25%, transparent);
+      }
     }
   }
   .dark\:bg-neutral-800\/50 {
