@@ -390,9 +390,6 @@
   .mx-auto {
     margin-inline: auto;
   }
-  .-my-2 {
-    margin-block: calc(var(--spacing) * -2);
-  }
   .my-0 {
     margin-block: calc(var(--spacing) * 0);
   }
@@ -1144,8 +1141,8 @@
   .max-h-3 {
     max-height: calc(var(--spacing) * 3);
   }
-  .max-h-\[5rem\] {
-    max-height: 5rem;
+  .max-h-20 {
+    max-height: calc(var(--spacing) * 20);
   }
   .min-h-0 {
     min-height: calc(var(--spacing) * 0);
@@ -1213,8 +1210,8 @@
   .max-w-7xl {
     max-width: var(--container-7xl);
   }
-  .max-w-\[5rem\] {
-    max-width: 5rem;
+  .max-w-20 {
+    max-width: calc(var(--spacing) * 20);
   }
   .max-w-\[200px\] {
     max-width: 200px;
@@ -1266,6 +1263,9 @@
   }
   .flex-none {
     flex: none;
+  }
+  .shrink {
+    flex-shrink: 1;
   }
   .shrink-0 {
     flex-shrink: 0;
@@ -1417,9 +1417,6 @@
       margin-block-end: calc(calc(var(--spacing) * 10) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
-  .gap-x-3 {
-    column-gap: calc(var(--spacing) * 3);
-  }
   .gap-x-5 {
     column-gap: calc(var(--spacing) * 5);
   }
@@ -1449,6 +1446,11 @@
   }
   .self-center {
     align-self: center;
+  }
+  .truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .\!overflow-hidden {
     overflow: hidden !important;
@@ -1764,6 +1766,9 @@
   .p-0 {
     padding: calc(var(--spacing) * 0);
   }
+  .p-1 {
+    padding: calc(var(--spacing) * 1);
+  }
   .p-1\.5 {
     padding: calc(var(--spacing) * 1.5);
   }
@@ -1866,14 +1871,8 @@
   .pt-16 {
     padding-top: calc(var(--spacing) * 16);
   }
-  .pt-\[2px\] {
-    padding-top: 2px;
-  }
   .pt-\[5px\] {
     padding-top: 5px;
-  }
-  .pr-2 {
-    padding-right: calc(var(--spacing) * 2);
   }
   .pr-8 {
     padding-right: calc(var(--spacing) * 8);
@@ -1892,12 +1891,6 @@
   }
   .pb-32 {
     padding-bottom: calc(var(--spacing) * 32);
-  }
-  .pb-\[3px\] {
-    padding-bottom: 3px;
-  }
-  .pl-0 {
-    padding-left: calc(var(--spacing) * 0);
   }
   .text-center {
     text-align: center;
@@ -2762,11 +2755,6 @@
       margin-right: calc(var(--spacing) * 7);
     }
   }
-  .md\:ml-12 {
-    @media (width >= 853px) {
-      margin-left: calc(var(--spacing) * 12);
-    }
-  }
   .md\:flex {
     @media (width >= 853px) {
       display: flex;
@@ -2820,11 +2808,6 @@
   .md\:px-24 {
     @media (width >= 853px) {
       padding-inline: calc(var(--spacing) * 24);
-    }
-  }
-  .md\:pr-4 {
-    @media (width >= 853px) {
-      padding-right: calc(var(--spacing) * 4);
     }
   }
   .lg\:absolute {

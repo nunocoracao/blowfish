@@ -15,7 +15,7 @@
       {{ with or .Name .Pre }}aria-label="{{ . }}"{{ end }}
       class="text-base font-medium hover:text-primary-600 dark:hover:text-primary-400"
       title="{{ .Title }}">
-      <p>
+      <p class="break-normal">
         {{ .Name | markdownify }}
       </p>
     </a>

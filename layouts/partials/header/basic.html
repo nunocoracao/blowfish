@@ -15,7 +15,7 @@
               src="{{ $logo.RelPermalink }}"
               width="{{ div $logo.Width 2 }}"
               height="{{ div $logo.Height 2 }}"
-              class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom"
+              class="logo max-h-20 max-w-20 object-scale-down object-left nozoom"
               alt="">
           {{ end }}
         </a>
@@ -26,7 +26,7 @@
 
 {{/* Desktop navigation */}}
 {{ define "HeaderDesktopNavigation" }}
-  <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+  <nav class="hidden md:flex items-center gap-x-5 h-12">
     {{ if .Site.Menus.main }}
       {{ range .Site.Menus.main }}
         {{ partial "header/header-option.html" . }}
@@ -49,7 +49,7 @@
     {{ end }}
 
     {{ if .Site.Params.footer.showAppearanceSwitcher | default false }}
-      <div class="{{ if .Site.Params.footer.showScrollToTop | default true -}}{{- end }} flex items-center">
+      <div class="flex items-center">
         <button
           id="appearance-switcher"
           aria-label="Dark mode switcher"
@@ -67,11 +67,9 @@
   </nav>
 {{ end }}
 
-{{/* Mobile navigation */}}
-{{ define "HeaderMobileToolbar" }}
-  <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
-    <span></span>
-
+{{/* Mobile navigation - now includes toolbar functions */}}
+{{ define "HeaderMobileNavigation" }}
+  <div class="flex md:hidden items-center gap-x-5 h-12">
     {{ partial "translations.html" . }}
     {{ if .Site.Params.enableA11y | default false }}
       {{ template "HeaderA11y" (dict "prefix" "mobile-" "Site" .Site) }}
@@ -92,7 +90,7 @@
         id="appearance-switcher-mobile"
         aria-label="Dark mode switcher"
         type="button"
-        class="text-base hover:text-primary-600 dark:hover:text-primary-400 me-1">
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400">
         <div class="flex items-center justify-center dark:hidden">
           {{ partial "icon.html" "moon" }}
         </div>
@@ -101,62 +99,61 @@
         </div>
       </button>
     {{ end }}
+
+    {{/* Hamburger menu button */}}
+    {{ if .Site.Menus.main }}
+      <div id="menu-button" class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+        {{ partial "icon.html" "bars" }}
+      </div>
+    {{ end }}
   </div>
-{{ end }}
 
-{{ define "HeaderMobileNavigation" }}
-  <div class="-my-2 md:hidden">
-    <div id="menu-button" class="block">
-      {{ if .Site.Menus.main }}
-        <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
-          {{ partial "icon.html" "bars" }}
-        </div>
-        <div
-          id="menu-wrapper"
-          class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]">
-          <ul
-            class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none text-end max-w-7xl">
-            <li id="menu-close-button">
-              <span
-                class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
-                {{ partial "icon.html" "xmark" }}
-              </span>
+  {{/* Mobile menu overlay */}}
+  {{ if .Site.Menus.main }}
+    <div
+      id="menu-wrapper"
+      class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]">
+      <ul
+        class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none text-end max-w-7xl">
+        <li id="menu-close-button">
+          <span
+            class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+            {{ partial "icon.html" "xmark" }}
+          </span>
+        </li>
+
+        {{ range .Site.Menus.main }}
+          {{ partial "header/header-mobile-option.html" . }}
+        {{ end }}
+
+      </ul>
+      {{ if .Site.Menus.subnavigation }}
+        <hr>
+        <ul
+          class="flex mt-4 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none text-end max-w-7xl">
+          {{ range .Site.Menus.subnavigation }}
+            <li class="mb-1">
+              <a
+                href="{{ .URL }}"
+                {{ if or (strings.HasPrefix .URL "http:" ) (strings.HasPrefix .URL "https:") }}
+                  target="_blank"
+                {{ end }}
+                class="flex items-center">
+                {{ if .Pre }}
+                  <span {{ if and .Pre .Name }}class="mr-3"{{ end }}>
+                    {{ partial "icon.html" .Pre }}
+                  </span>
+                {{ end }}
+                <p class="text-sm font-sm" title="{{ .Title }}">
+                  {{ .Name | markdownify }}
+                </p>
+              </a>
             </li>
-
-            {{ range .Site.Menus.main }}
-              {{ partial "header/header-mobile-option.html" . }}
-            {{ end }}
-
-          </ul>
-          {{ if .Site.Menus.subnavigation }}
-            <hr>
-            <ul
-              class="flex mt-4 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none text-end max-w-7xl">
-              {{ range .Site.Menus.subnavigation }}
-                <li class="mb-1">
-                  <a
-                    href="{{ .URL }}"
-                    {{ if or (strings.HasPrefix .URL "http:" ) (strings.HasPrefix .URL "https:") }}
-                      target="_blank"
-                    {{ end }}
-                    class="flex items-center">
-                    {{ if .Pre }}
-                      <span {{ if and .Pre .Name }}class="mr-3"{{ end }}>
-                        {{ partial "icon.html" .Pre }}
-                      </span>
-                    {{ end }}
-                    <p class="text-sm font-sm" title="{{ .Title }}">
-                      {{ .Name | markdownify }}
-                    </p>
-                  </a>
-                </li>
-              {{ end }}
-            </ul>
           {{ end }}
-        </div>
+        </ul>
       {{ end }}
     </div>
-  </div>
+  {{ end }}
 {{ end }}
 
 {{ define "HeaderA11y" }}
@@ -200,7 +197,7 @@
       <div class="space-y-5">
         {{ $toggles := slice }}
         {{ $shouldDisableBlur := or site.Params.homepage.layoutBackgroundBlur site.Params.article.layoutBackgroundBlur site.Params.list.layoutBackgroundBlur }}
-        {{ $shouldDisableBackgroundImage := or 
+        {{ $shouldDisableBackgroundImage := or
           (eq site.Params.homepage.layout "background")
           (eq site.Params.article.heroStyle "background")
           (eq site.Params.list.heroStyle "background")
@@ -251,21 +248,19 @@
 {{ end }}
 
 {{/* ========== Render HTML ========== */}}
-<div
-  class="main-menu flex items-center justify-between py-6 md:justify-start gap-x-3 pt-[2px] pr-2 md:pr-4 pb-[3px] pl-0">
+<div class="main-menu flex items-center w-full gap-2 p-1">
   {{ template "HeaderLogo" . }}
-  <div class="flex flex-1 items-center justify-between">
-    <nav class="flex space-x-3">
-      {{ if not .Site.Params.disableTextInHeader | default true }}
-        <a href="{{ "" | relLangURL }}" class="text-base font-medium">
-          {{ .Site.Title | markdownify }}
-        </a>
-      {{ end }}
-    </nav>
+  {{ if not .Site.Params.disableTextInHeader | default true }}
+    <a
+      href="{{ "" | relLangURL }}"
+      class="text-base font-medium truncate min-w-0 shrink">
+      {{ .Site.Title | markdownify }}
+    </a>
+  {{ end }}
+  <div class="flex items-center ms-auto">
     {{ template "HeaderDesktopNavigation" . }}
-    {{ template "HeaderMobileToolbar" . }}
+    {{ template "HeaderMobileNavigation" . }}
   </div>
-  {{ template "HeaderMobileNavigation" . }}
 </div>
 
 {{ if .Site.Menus.subnavigation }}
