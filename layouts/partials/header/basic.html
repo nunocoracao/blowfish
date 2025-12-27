@@ -1,5 +1,4 @@
-{{/* Logo section */}}
-{{ define "HeaderLogo" }}
+<div class="main-menu flex items-center w-full gap-2 p-1 pl-0">
   {{ if .Site.Params.Logo }}
     {{ $logo := resources.Get .Site.Params.Logo }}
     {{ if $logo }}
@@ -21,245 +20,19 @@
         </a>
       </div>
     {{ end }}
-  {{- end }}
-{{ end }}
-
-{{/* Desktop navigation */}}
-{{ define "HeaderDesktopNavigation" }}
-  <nav class="hidden md:flex items-center gap-x-5 h-12">
-    {{ if .Site.Menus.main }}
-      {{ range .Site.Menus.main }}
-        {{ partial "header/header-option.html" . }}
-      {{ end }}
-    {{ end }}
-
-    {{ partial "translations.html" . }}
-    {{ if .Site.Params.enableA11y | default false }}
-      {{ template "HeaderA11y" (dict "prefix" "desktop-" "Site" .Site) }}
-    {{ end }}
-
-    {{ if .Site.Params.enableSearch | default false }}
-      <button
-        id="search-button"
-        aria-label="Search"
-        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
-        title="{{ i18n "search.open_button_title" }}">
-        {{ partial "icon.html" "search" }}
-      </button>
-    {{ end }}
-
-    {{ if .Site.Params.footer.showAppearanceSwitcher | default false }}
-      <div class="flex items-center">
-        <button
-          id="appearance-switcher"
-          aria-label="Dark mode switcher"
-          type="button"
-          class="text-base hover:text-primary-600 dark:hover:text-primary-400">
-          <div class="flex items-center justify-center dark:hidden">
-            {{ partial "icon.html" "moon" }}
-          </div>
-          <div class="items-center justify-center hidden dark:flex">
-            {{ partial "icon.html" "sun" }}
-          </div>
-        </button>
-      </div>
-    {{ end }}
-  </nav>
-{{ end }}
-
-{{/* Mobile navigation - now includes toolbar functions */}}
-{{ define "HeaderMobileNavigation" }}
-  <div class="flex md:hidden items-center gap-x-5 h-12">
-    {{ partial "translations.html" . }}
-    {{ if .Site.Params.enableA11y | default false }}
-      {{ template "HeaderA11y" (dict "prefix" "mobile-" "Site" .Site) }}
-    {{ end }}
-
-    {{ if .Site.Params.enableSearch | default false }}
-      <button
-        id="search-button-mobile"
-        aria-label="Search"
-        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
-        title="{{ i18n "search.open_button_title" }}">
-        {{ partial "icon.html" "search" }}
-      </button>
-    {{ end }}
-
-    {{ if .Site.Params.footer.showAppearanceSwitcher | default false }}
-      <button
-        id="appearance-switcher-mobile"
-        aria-label="Dark mode switcher"
-        type="button"
-        class="text-base hover:text-primary-600 dark:hover:text-primary-400">
-        <div class="flex items-center justify-center dark:hidden">
-          {{ partial "icon.html" "moon" }}
-        </div>
-        <div class="items-center justify-center hidden dark:flex">
-          {{ partial "icon.html" "sun" }}
-        </div>
-      </button>
-    {{ end }}
-
-    {{/* Hamburger menu button */}}
-    {{ if .Site.Menus.main }}
-      <div id="menu-button" class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
-        {{ partial "icon.html" "bars" }}
-      </div>
-    {{ end }}
-  </div>
-
-  {{/* Mobile menu overlay */}}
-  {{ if .Site.Menus.main }}
-    <div
-      id="menu-wrapper"
-      class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]">
-      <ul
-        class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none text-end max-w-7xl">
-        <li id="menu-close-button">
-          <span
-            class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
-            {{ partial "icon.html" "xmark" }}
-          </span>
-        </li>
-
-        {{ range .Site.Menus.main }}
-          {{ partial "header/header-mobile-option.html" . }}
-        {{ end }}
-
-      </ul>
-      {{ if .Site.Menus.subnavigation }}
-        <hr>
-        <ul
-          class="flex mt-4 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none text-end max-w-7xl">
-          {{ range .Site.Menus.subnavigation }}
-            <li class="mb-1">
-              <a
-                href="{{ .URL }}"
-                {{ if or (strings.HasPrefix .URL "http:" ) (strings.HasPrefix .URL "https:") }}
-                  target="_blank"
-                {{ end }}
-                class="flex items-center">
-                {{ if .Pre }}
-                  <span {{ if and .Pre .Name }}class="mr-3"{{ end }}>
-                    {{ partial "icon.html" .Pre }}
-                  </span>
-                {{ end }}
-                <p class="text-sm font-sm" title="{{ .Title }}">
-                  {{ .Name | markdownify }}
-                </p>
-              </a>
-            </li>
-          {{ end }}
-        </ul>
-      {{ end }}
-    </div>
   {{ end }}
-{{ end }}
-
-{{ define "HeaderA11y" }}
-  {{- $prefix := .prefix | default "" -}}
-  <div class="flex items-center">
-    <button
-      id="{{ $prefix }}a11y-toggle"
-      aria-label="Open accessibility panel"
-      aria-expanded="false"
-      type="button"
-      class="text-base hover:text-primary-600 dark:hover:text-primary-400"
-      role="button"
-      aria-pressed="false">
-      {{ partial "icon.html" "a11y" }}
-    </button>
-
-    <div id="{{ $prefix }}a11y-overlay" class="fixed inset-0 z-500 hidden"></div>
-
-    <div
-      id="{{ $prefix }}a11y-panel"
-      role="dialog"
-      aria-labelledby="{{ $prefix }}a11y-panel-title"
-      class="a11y-panel-enter fixed hidden z-500 p-6 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 rounded-lg shadow-xl bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700"
-      style="min-width: 20rem;">
-      <div class="flex items-center justify-between mb-6">
-        <h3
-          id="{{ $prefix }}a11y-panel-title"
-          class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
-          {{ i18n "a11y.title" }}
-        </h3>
-        <button
-          id="{{ $prefix }}a11y-close"
-          class="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200"
-          aria-label="Close a11y panel">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-
-      <div class="space-y-5">
-        {{ $toggles := slice }}
-        {{ $shouldDisableBlur := or site.Params.homepage.layoutBackgroundBlur site.Params.article.layoutBackgroundBlur site.Params.list.layoutBackgroundBlur }}
-        {{ $shouldDisableBackgroundImage := or
-          (eq site.Params.homepage.layout "background")
-          (eq site.Params.article.heroStyle "background")
-          (eq site.Params.list.heroStyle "background")
-          (eq site.Params.taxonomy.heroStyle "background")
-          (eq site.Params.term.heroStyle "background")
-        }}
-        {{ if $shouldDisableBlur }}
-          {{ $toggles = $toggles | append (dict "id" (print $prefix "disable-blur") "label" (i18n "a11y.disable_blur")) }}
-        {{ end }}
-        {{ if $shouldDisableBackgroundImage }}
-          {{ $toggles = $toggles | append (dict "id" (print $prefix "disable-images") "label" (i18n "a11y.disable_images")) }}
-        {{ end }}
-        {{- $toggles = $toggles | append
-          (dict "id" (print $prefix "underline-links") "label" (i18n "a11y.show_link_underline"))
-          (dict "id" (print $prefix "zen-mode") "label" (i18n "article.zen_mode_title.enable"))
-        -}}
-
-        {{- range $toggles }}
-          <div class="flex items-center justify-between">
-            <label for="{{ .id }}" class="text-sm font-medium text-neutral-700 dark:text-neutral-300">
-              {{ .label }}
-            </label>
-            <div class="ios-toggle">
-              <input type="checkbox" id="{{ .id }}">
-            </div>
-          </div>
-        {{- end }}
-
-
-        <div class="flex items-center justify-between">
-          <label
-            for="{{ $prefix }}font-size-select"
-            class="text-sm font-medium text-neutral-700 dark:text-neutral-300">
-            {{ i18n "a11y.font_size" }}
-          </label>
-          <select
-            id="{{ $prefix }}font-size-select"
-            class="border rounded-lg px-3 py-1.5 pr-8 text-neutral-900 text-sm dark:bg-neutral-700 dark:text-neutral-200 focus:ring-primary-500 focus:border-primary-500">
-            {{ $fontSizes := slice "default" "12px" "14px" "16px" "18px" "20px" "22px" "24px" }}
-            {{ range $fontSizes }}
-              <option value="{{ . }}">{{ . }}</option>
-            {{ end }}
-          </select>
-        </div>
-      </div>
-    </div>
-  </div>
-{{ end }}
-
-{{/* ========== Render HTML ========== */}}
-<div class="main-menu flex items-center w-full gap-2 p-1">
-  {{ template "HeaderLogo" . }}
   {{ if not .Site.Params.disableTextInHeader | default true }}
-    <a
-      href="{{ "" | relLangURL }}"
-      class="text-base font-medium truncate min-w-0 shrink">
+    <a href="{{ "" | relLangURL }}" class="text-base font-medium truncate min-w-0 shrink">
       {{ .Site.Title | markdownify }}
     </a>
   {{ end }}
   <div class="flex items-center ms-auto">
-    {{ template "HeaderDesktopNavigation" . }}
-    {{ template "HeaderMobileNavigation" . }}
+    <div class="hidden md:flex">
+      {{ partial "header/components/desktop-menu.html" . }}
+    </div>
+    <div class="flex md:hidden">
+      {{ partial "header/components/mobile-menu.html" . }}
+    </div>
   </div>
 </div>
 
@@ -275,15 +48,15 @@
           {{ if or (strings.HasPrefix .URL "http:" ) (strings.HasPrefix .URL "https:" ) }}
             target="_blank"
           {{ end }}
-          class="flex items-center">
+          class="flex items-center bf-icon-color-hover">
           {{ if .Pre }}
             <span {{ if and .Pre .Name }}class="mr-1"{{ end }}>
               {{ partial "icon.html" .Pre }}
             </span>
           {{ end }}
-          <p class="text-xs font-light" title="{{ .Title }}">
+          <span class="text-xs font-light" title="{{ .Title }}">
             {{ .Name | markdownify }}
-          </p>
+          </span>
         </a>
       {{ end }}
     </div>
@@ -293,10 +66,17 @@
 {{ if .Site.Params.highlightCurrentMenuArea }}
   <script>
     (function () {
-      var $mainmenu = $(".main-menu");
+      var mainmenu = document.querySelector(".main-menu");
+      if (!mainmenu) return;
+
       var path = window.location.pathname;
-      $mainmenu.find('a[href="' + path + '"]').each(function (i, e) {
-        $(e).children("p").addClass("active");
+      var links = mainmenu.querySelectorAll('a[href="' + path + '"]');
+
+      links.forEach(function (link) {
+        var targets = link.querySelectorAll("span");
+        targets.forEach(function (el) {
+          el.classList.add("active");
+        });
       });
     })();
   </script>
