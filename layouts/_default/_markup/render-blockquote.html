@@ -35,11 +35,19 @@
   {{- $rawType := .AlertType | lower -}}
   {{- $normalizedType := index $typeMap $rawType | default $rawType -}}
   {{- $iconName := index $iconMap $normalizedType | default "circle-info" -}}
-  {{- $admonitionTitle := .AlertTitle | default (i18n (printf "admonition.%s" $normalizedType) | default $normalizedType) -}}
+  {{- $rawCustomTitle := .AlertTitle | default "" -}}
+  {{- $trimmedCustomTitle := strings.TrimSpace $rawCustomTitle -}}
+  {{- $hasCustomTitle := ne $trimmedCustomTitle "" -}}
+  {{- $defaultTitle := i18n (printf "admonition.%s" $normalizedType) | default $normalizedType -}}
+  {{- $admonitionTitle := cond $hasCustomTitle $rawCustomTitle $defaultTitle -}}
 
   {{- $containerClass := "admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" -}}
-  {{- $headerClass := "flex items-center gap-2 font-semibold text-inherit capitalize" -}}
+  {{- $headerClass := "flex items-center gap-2 font-semibold text-inherit" -}}
   {{- $contentClass := "admonition-content mt-3 text-base leading-relaxed text-inherit" -}}
+  {{- $titleClass := "grow" -}}
+  {{- if not $hasCustomTitle -}}
+    {{- $titleClass = printf "%s %s" $titleClass "capitalize" -}}
+  {{- end -}}
 
   {{- $isCollapsible := in (slice "+" "-") .AlertSign -}}
   {{- if $isCollapsible -}}
@@ -51,7 +59,7 @@
         <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg">
           {{- partial "icon.html" $iconName -}}
         </div>
-        <div class="grow">
+        <div class="{{ $titleClass }}">
           {{ $admonitionTitle }}
         </div>
         <div
@@ -71,7 +79,7 @@
         <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg">
           {{- partial "icon.html" $iconName -}}
         </div>
-        <div class="grow">
+        <div class="{{ $titleClass }}">
           {{ $admonitionTitle }}
         </div>
       </div>
