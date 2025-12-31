@@ -34,7 +34,8 @@
 
   {{- $rawType := .AlertType | lower -}}
   {{- $normalizedType := index $typeMap $rawType | default $rawType -}}
-  {{- $iconName := index $iconMap $normalizedType | default "circle-info" -}}
+  {{- $iconName := .Attributes.icon | default (index $iconMap $normalizedType) | default "circle-info" -}}
+
   {{- $admonitionTitle := .AlertTitle | default (i18n (printf "admonition.%s" $normalizedType) | default $normalizedType) -}}
 
   {{- $containerClass := "admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" -}}
@@ -84,7 +85,12 @@
   {{- end -}}
 
 {{- else -}}
-  <blockquote {{ with .Attributes }}{{ . | safeHTMLAttr }}{{ end }}>
+  <blockquote 
+  {{- range $k, $v := .Attributes -}}
+    {{- if $v -}}
+      {{- printf " %s=%q" $k ($v | transform.HTMLEscape) | safeHTMLAttr -}}
+    {{- end -}}
+  {{- end -}}>
     {{- .Text | safeHTML -}}
   </blockquote>
 {{- end -}}
