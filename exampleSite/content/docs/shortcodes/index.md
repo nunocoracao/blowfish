@@ -94,6 +94,9 @@ The alert sign (`+` or `-`) is optional to control whether the admonition is fol
 > **GitHub types:** `NOTE`, `TIP`, `IMPORTANT`, `WARNING`, `CAUTION`  
 > **Obsidian types:** `note`, `abstract`, `info`, `todo`, `tip`, `success`, `question`, `warning`, `failure`, `danger`, `bug`, `example`, `quote`
 
+> [!INFO]- Customize admonition
+> See the [admonition customization guide](https://github.com/nunocoracao/blowfish/blob/main/layouts/_default/_markup/render-blockquote.html).
+
 <br/><br/><br/>
 
 ## Article

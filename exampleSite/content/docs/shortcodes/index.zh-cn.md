@@ -94,6 +94,9 @@ Admonition 的用途与 alert shortcode 类似，但其实现方式是通过 Hug
 > **GitHub 类型：** `NOTE`, `TIP`, `IMPORTANT`, `WARNING`, `CAUTION`  
 > **Obsidian 类型：** `note`, `abstract`, `info`, `todo`, `tip`, `success`, `question`, `warning`, `failure`, `danger`, `bug`, `example`, `quote`
 
+> [!INFO]- 自定义提示框
+> 请参阅 [提示框自定义指南](https://github.com/nunocoracao/blowfish/blob/main/layouts/_default/_markup/render-blockquote.html)。
+
 <br/><br/><br/>
 
 ## Article
