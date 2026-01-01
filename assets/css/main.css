@@ -9,6 +9,10 @@
 @import "./components/a11y.css";
 @import "./components/admonition.css" layer(components);
 
+html:not(.dark) {
+  color-scheme: light;
+}
+
 html.dark {
   color-scheme: dark;
 }
@@ -247,29 +251,62 @@ pre {
   z-index: 100;
 }
 
-.nested-menu:hover + .menuhide {
-  visibility: visible;
-  opacity: 1;
-  transition:
-    visibility 0.3s,
-    opacity 0.3s ease-in-out;
+@layer utilities {
+  .bf-border-color {
+    @apply border-neutral-300 dark:border-neutral-700;
+  }
+
+  .bf-border-color-hover {
+    @apply hover:border-primary-600 dark:hover:border-primary-400;
+  }
+
+  .bf-icon-color-hover {
+    @apply hover:text-primary-600 dark:hover:text-primary-400;
+  }
+
+  .bf-scrollbar {
+    @apply scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600;
+  }
 }
 
-.menuhide:hover {
-  visibility: visible;
-  opacity: 1;
-  transition:
-    visibility 0.3s,
-    opacity 0.3s ease-in-out;
+/* Prevent body scroll when mobile menu is open */
+body:has(#mobile-menu-toggle:checked) {
+  overflow: hidden;
+}
+
+/* Reset body position for desktop after it was modified on mobile */
+@media (min-width: 853px) {
+  body {
+    position: static !important;
+  }
+}
+
+/* Hide buy me a coffee in mobile menu */
+#bmc-wbtn {
+  z-index: 50 !important;
+}
+
+.nested-menu {
+  position: relative;
 }
 
 .menuhide {
-  visibility: hidden;
+  position: absolute;
+  z-index: 1000;
+  white-space: nowrap;
+
   opacity: 0;
+  visibility: hidden;
+
   transition:
     visibility 0.3s,
     opacity 0.3s ease-in-out;
-  z-index: 1000;
+}
+
+.nested-menu:hover .menuhide,
+.nested-menu:focus-within .menuhide {
+  opacity: 1;
+  visibility: visible;
 }
 
 .active {
