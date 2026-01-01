@@ -1,0 +1,23 @@
+{{ if .IsTranslated }}
+  <div class="translation nested-menu">
+    <button class="cursor-pointer flex items-center">
+      <span class="me-1">
+        {{ partial "icon.html" "language" }}
+      </span>
+      <span class="text-sm font-medium bf-icon-color-hover" title="{{ .Title }}">
+        {{- i18n "global.language" | markdownify -}}
+      </span>
+    </button>
+    <ul class="menuhide">
+      <li class="rounded-xl backdrop-blur shadow-2xl p-2 flex flex-col gap-1">
+        {{ range .AllTranslations }}
+          <a href="{{ .RelPermalink }}" class="flex items-center bf-icon-color-hover px-3 py-1">
+            <span class="text-sm font-sm" title="{{ .Title }}">
+              {{ .Language.Params.displayName | emojify }}
+            </span>
+          </a>
+        {{ end }}
+      </li>
+    </ul>
+  </div>
+{{ end }}

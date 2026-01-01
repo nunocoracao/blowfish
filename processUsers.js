@@ -127,9 +127,12 @@ async function translateFrontMatterTags(block, targetLang, tags) {
 
     console.log(i, user.title, dir);
     await fs.writeFile(dir + "/index.md", userMDFile);
-    for (const lang of targetLangs) {
+    for (var lang of targetLangs) {
+      const langfilename = lang
+      if (lang == "pt-br" || lang == "pt-pt")
+        lang = "pt"
       const content = await translateFrontMatterTags(userMDFile, lang, user.tags);
-      await fs.writeFile(dir + `/index.${lang}.md`, content);
+      await fs.writeFile(dir + `/index.${langfilename}.md`, content);
     }
     await page.goto(user.url);
     await page.screenshot({ path: dir + "/feature.webp", type: "webp", quality: 50 });

@@ -153,67 +153,18 @@ html {
 
 在 [Hugo 文档](https://gohugo.io/quick-reference/syntax-highlighting-styles/#styles)中查看所有可用的样式。
 
-## 从源代码构建主题 CSS
+## 从源码构建主题 CSS
 
-如果您想进行大量更改，您可以利用 Tailwind CSS 的 JIT 编译器并从头开始重建整个主题 CSS。尤其是您想要调整 Tailwind 配置或向主样式表添加额外的 Tailwind 类的时候，这种方法将非常有用。
+如果你需要进行较大的改动，可以从零开始重新构建整个主题的 CSS。这在你希望调整 Tailwind 配置或向主样式表中添加额外的 Tailwind 类时非常有用。
 
-{{< alert >}}
-**注意：** 手动构建主题仅适用于高级用户。
-{{< /alert >}}
+> [!INFO]
+> 手动构建主题仅适用于高级用户。
 
-让我们逐步了解构建 Tailwind CSS 的工作原理。
+### 工作原理
 
-### Tailwind 配置
+Tailwind 会以纯文本方式[扫描你的项目文件](https://tailwindcss.com/docs/detecting-classes-in-source-files#which-files-are-scanned)，查找类似类名的标记，并只为它能够识别且实际出现在这些文件中的工具类生成 CSS。
 
-为了生成仅包含用于实际使用的 Tailwind 类的 CSS 文件，JIT 编译器需要扫描所有 HTML 模板和 Markdown 文档，以检查 markup 中存在哪些样式。编译器将根据主题目录根目录中的 `tailwind.config.js` 文件来完成此操作：
-
-```js
-// themes/blowfish/tailwind.config.js
-
-module.exports = {
-  content: [
-    "./layouts/**/*.html",
-    "./content/**/*.{html,md}",
-    "./themes/blowfish/layouts/**/*.html",
-    "./themes/blowfish/content/**/*.{html,md}",
-  ],
-
-  // 更多...
-};
-```
-
-此默认配置包含了这些路径，以便您可以十分方便地生成自己的 CSS 文件，而无需修改它，前提是您遵循我们的主题项目结构。也就是说，**您必须将 Blowfish 主题文件夹 `themes/blowfish/` 作为子目录包含在项目中**。这意味着您无法使用 Hugo Modules 方式来安装主题，而必须使用 git 子模块（推荐）或手动安装。 [安装文档]({{< ref "installation" >}}) 介绍了如何使用以上方法安装主题。
-
-### 项目结构
-
-为了充分利用默认配置，您的项目结构应该如下所示：
-
-```shell
-.
-├── assets
-│   └── css
-│       └── compiled
-│           └── main.css  # 这是我们生成的文件
-├── config  # 站点配置
-│   └── _default
-├── content  # site content
-│   ├── _index.md
-│   ├── projects
-│   │   └── _index.md
-│   └── blog
-│       └── _index.md
-├── layouts  # 站点的自定义布局
-│   ├── partials
-│   │   └── extend-article-link/simple.html
-│   ├── projects
-│   │   └── list.html
-│   └── shortcodes
-│       └── disclaimer.html
-└── themes
-    └── blowfish  # Git 子模块或本地复制安装
-```
-
-此示例结构添加了一个新自定义的 `projects` 内容类型，具有自定义的 layout 以及自定义的 shortcodes 和扩展的 partials 。如果项目遵循类似结构，所需要做的就是仅仅是重新编译 `main.css` 文件。
+接下来的步骤将重点介绍如何安装 Tailwind 并进行相关配置，以确保主题源码文件能够被正确纳入扫描范围。所有命令均以通过 [Git submodule]({{< ref "installation" >}}) 安装主题的用户为示例；如果你使用的是 Hugo Module，则需要先通过 `hugo mod vendor` 将主题源码 vendor 到 `_vendor` 目录中，并相应调整命令中的路径。
 
 ### 安装依赖项
 
@@ -230,15 +181,16 @@ npm install
 
 ```shell
 cd ../..
-./themes/blowfish/node_modules/@tailwindcss/cli/dist/index.mjs -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit
+node ./themes/blowfish/node_modules/@tailwindcss/cli/dist/index.mjs -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit
 ```
 
 这个命令稍微有点复杂，因为涉及到几个路径。但本质上你是在调用 Tailwind CLI 并提供下面三个参数：
+
 - Tailwind 配置文件 `tailwind.config.js`
 - 主题的 `main.css` 文件
-- 编译产出后的 CSS 文件的位置 `assets/css/compiled/`
+- 编译产出后的 CSS 文件的位置 `assets/css/compiled/main.css`
 
-配置文件将自动检查项目中以及主题中的所有内容和布局，并构建一个新的 CSS 文件，其中包含网站所需的所有 CSS。由于 Hugo 处理文件层次结构的方式，此文件现在将自动覆盖主题附带的文件。
+Tailwind 将自动检查项目中的所有内容和布局，并构建新的 `main.css`，其中包含网站所需的所有 CSS。由于 Hugo 处理文件层次结构的方式，此文件现在将自动覆盖主题附带的 `main.css`。
 
 每次更改布局并需要新的 Tailwind CSS 样式时，您只需重新运行命令并生成新的 CSS 文件即可。您还可以在命令末尾添加 `-w` 以在监视模式下运行 JIT 编译器。
 
@@ -255,8 +207,8 @@ cd ../..
   "description": "",
   "scripts": {
     "server": "hugo server -b http://localhost -p 8000",
-    "dev": "NODE_ENV=development ./themes/blowfish/node_modules/@tailwindcss/cli/dist/index.mjs -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
-    "build": "NODE_ENV=production ./themes/blowfish/node_modules/@tailwindcss/cli/dist/index.mjs -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit"
+    "dev": cross-env "NODE_ENV=development ./themes/blowfish/node_modules/@tailwindcss/cli/dist/index.mjs -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
+    "build": cross-env "NODE_ENV=production ./themes/blowfish/node_modules/@tailwindcss/cli/dist/index.mjs -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit"
   },
   // and more...
 }

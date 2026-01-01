@@ -981,6 +981,54 @@ consectetur adipiscing elit.
 
 <br/><br/><br/>
 
+## Video
+
+Blowfish incluye un shortcode `video` para incrustar vídeos locales o externos en el contenido. El shortcode renderiza un contenedor `<figure>` con un reproductor de vídeo adaptable y un pie de foto opcional.
+
+El shortcode `video` acepta los siguientes parámetros:
+
+<!-- prettier-ignore-start -->
+| Parámetro | Descripción |
+| --- | --- |
+| `src` | **Requerido.** URL del vídeo o ruta local. Orden de búsqueda local: recurso de página → `assets/` → `static/`. |
+| `poster` | Imagen de póster opcional (URL o ruta local). Si se omite, el shortcode intenta una imagen con el mismo nombre en el bundle de la página. |
+| `caption` | Pie de foto opcional en Markdown, mostrado debajo del vídeo. |
+| `autoplay` | `true`/`false`. Activa la reproducción automática cuando es `true`. Predeterminado: `false`. |
+| `loop` | `true`/`false`. Repite en bucle cuando es `true`. Predeterminado: `false`. |
+| `muted` | `true`/`false`. Silencia cuando es `true`. Predeterminado: `false`. |
+| `controls` | `true`/`false`. Muestra los controles de reproducción predeterminados del navegador cuando es `true`. Predeterminado: `true`. |
+| `playsinline` | `true`/`false`. Reproducción en línea en móvil cuando es `true`. Predeterminado: `true`. |
+| `preload` | `metadata` (carga info), `none` (ahorra ancho de banda) o `auto` (precarga más). Predeterminado: `metadata`. |
+| `start` | Tiempo de inicio opcional en segundos. |
+| `end` | Tiempo de fin opcional en segundos. |
+| `ratio` | Relación de aspecto reservada para el reproductor. Soporta `16/9`, `4/3`, `1/1` o `W/H` personalizado. Predeterminado: `16/9`. |
+| `fit` | Cómo encaja el vídeo en la relación: `contain` (sin recorte), `cover` (recorta para llenar), `fill` (estira). Predeterminado: `contain`. |
+<!-- prettier-ignore-end -->
+
+Si el navegador no puede reproducir el vídeo, el reproductor mostrará un breve mensaje en inglés con un enlace de descarga.
+
+**Ejemplo:**
+
+```md
+{{</* video
+    src="https://upload.wikimedia.org/wikipedia/commons/5/5a/CC0_-_Public_Domain_Dedication_video_bumper.webm"
+    poster="https://upload.wikimedia.org/wikipedia/commons/e/e0/CC0.jpg"
+    caption="**Demo de dominio público** — vídeo y póster CC0."
+    loop=true
+    muted=true
+*/>}}
+```
+
+{{< video
+  src="https://upload.wikimedia.org/wikipedia/commons/5/5a/CC0_-_Public_Domain_Dedication_video_bumper.webm"
+  poster="https://upload.wikimedia.org/wikipedia/commons/e/e0/CC0.jpg"
+  caption="**Demo de dominio público** — vídeo y póster CC0."
+  loop=true
+  muted=true
+>}}
+
+<br/><br/><br/>
+
 ## Youtube Lite
 
 Un atajo para incrustar videos de YouTube usando la biblioteca [lite-youtube-embed](https://github.com/paulirish/lite-youtube-embed). Esta biblioteca es una alternativa ligera a las incrustaciones estándar de YouTube, y está diseñada para ser más rápida y eficiente.

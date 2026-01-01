@@ -22,7 +22,7 @@ Estas instruções irão ajudá-lo a começar com Hugo e Blowfish a partir de um
 Se nunca utilizou Hugo antes, precisará de [instalá-lo na sua máquina local](https://gohugo.io/getting-started/installing). Pode verificar se já está instalado executando o comando `hugo version`.
 
 {{< alert >}}
-Certifique-se de que está a utilizar **Hugo versão 0.87.0** ou posterior, pois o tema aproveita algumas das funcionalidades mais recentes do Hugo.
+Certifique-se de que está a utilizar **Hugo versão 0.141.0** ou posterior, pois o tema aproveita algumas das funcionalidades mais recentes do Hugo.
 {{< /alert >}}
 
 Pode encontrar instruções de instalação detalhadas para a sua plataforma na [documentação do Hugo](https://gohugo.io/getting-started/installing).

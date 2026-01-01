@@ -981,6 +981,54 @@ consectetur adipiscing elit.
 
 <br/><br/><br/>
 
+## Video
+
+Blowfish enthält einen `video`-Shortcode, um lokale oder externe Videos in Inhalte einzubetten. Der Shortcode rendert einen `<figure>`-Wrapper mit einem responsiven Videoplayer und einer optionalen Bildunterschrift.
+
+Der `video`-Shortcode akzeptiert die folgenden Parameter:
+
+<!-- prettier-ignore-start -->
+| Parameter | Beschreibung |
+| --- | --- |
+| `src` | **Erforderlich.** Video-URL oder lokaler Pfad. Lokale Suchreihenfolge: Seitenressource → `assets/` → `static/`. |
+| `poster` | Optionales Posterbild (URL oder lokaler Pfad). Wenn nicht gesetzt, versucht der Shortcode ein gleichnamiges Bild im Page Bundle zu finden. |
+| `caption` | Optionale Markdown-Bildunterschrift unter dem Video. |
+| `autoplay` | `true`/`false`. Aktiviert Autoplay, wenn `true`. Standard: `false`. |
+| `loop` | `true`/`false`. Wiederholt bei `true`. Standard: `false`. |
+| `muted` | `true`/`false`. Stumm, wenn `true`. Standard: `false`. |
+| `controls` | `true`/`false`. Zeigt die standardmäßigen Browser-Steuerelemente, wenn `true`. Standard: `true`. |
+| `playsinline` | `true`/`false`. Inline-Wiedergabe auf Mobilgeräten bei `true`. Standard: `true`. |
+| `preload` | `metadata` (lädt Infos), `none` (spart Bandbreite) oder `auto` (lädt mehr vor). Standard: `metadata`. |
+| `start` | Optionale Startzeit in Sekunden. |
+| `end` | Optionale Endzeit in Sekunden. |
+| `ratio` | Reserviertes Seitenverhältnis für den Player. Unterstützt `16/9`, `4/3`, `1/1` oder benutzerdefiniertes `W/H`. Standard: `16/9`. |
+| `fit` | Wie das Video in das Verhältnis passt: `contain` (kein Zuschnitt), `cover` (füllend zuschneiden), `fill` (strecken). Standard: `contain`. |
+<!-- prettier-ignore-end -->
+
+Wenn der Browser das Video nicht abspielen kann, zeigt der Player einen kurzen englischen Hinweis mit einem Download-Link.
+
+**Beispiel:**
+
+```md
+{{</* video
+    src="https://upload.wikimedia.org/wikipedia/commons/5/5a/CC0_-_Public_Domain_Dedication_video_bumper.webm"
+    poster="https://upload.wikimedia.org/wikipedia/commons/e/e0/CC0.jpg"
+    caption="**Public-Domain-Demo** — CC0-Video und Poster."
+    loop=true
+    muted=true
+*/>}}
+```
+
+{{< video
+  src="https://upload.wikimedia.org/wikipedia/commons/5/5a/CC0_-_Public_Domain_Dedication_video_bumper.webm"
+  poster="https://upload.wikimedia.org/wikipedia/commons/e/e0/CC0.jpg"
+  caption="**Public-Domain-Demo** — CC0-Video und Poster."
+  loop=true
+  muted=true
+>}}
+
+<br/><br/><br/>
+
 ## Youtube Lite
 
 Eine Verknüpfung zum Einbetten von YouTube-Videos mit der [lite-youtube-embed](https://github.com/paulirish/lite-youtube-embed)-Bibliothek. Diese Bibliothek ist eine leichtgewichtige Alternative zu den Standard-YouTube-Einbettungen und wurde für Geschwindigkeit und Effizienz entwickelt.

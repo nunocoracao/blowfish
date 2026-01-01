@@ -1,40 +1,38 @@
-{{- if eq .Type "alert" -}}
-  {{- $typeMap := dict
-    "attention" "warning"
-    "check" "success"
-    "cite" "quote"
-    "done" "success"
-    "error" "danger"
-    "fail" "failure"
-    "faq" "question"
-    "hint" "tip"
-    "help" "question"
-    "missing" "failure"
-    "summary" "abstract"
-    "tldr" "abstract"
-  -}}
+{{- /* To customize your own admonitions, you can do the following:
 
-  {{- $iconMap := dict
-    "abstract" "file-lines"
-    "bug" "bug"
-    "caution" "fire"
-    "danger" "fire"
-    "example" "list-ol"
-    "failure" "xmark"
-    "important" "star"
-    "info" "circle-info"
-    "note" "circle-info"
-    "success" "check"
-    "todo" "list-check"
-    "tip" "lightbulb"
-    "question" "circle-question"
-    "quote" "quote-left"
-    "warning" "triangle-exclamation"
-  -}}
+  1. Change colors
+
+      Define your colors in `assets/css/custom.css` using the variables from:
+      https://github.com/nunocoracao/blowfish/blob/main/assets/css/components/admonition.css
+
+      Example:
+      ```
+      :root {
+          --adm-note-bg: red;
+      }
+      html.dark {
+          --adm-note-bg: green;
+      }
+      ```
+
+      This will update the background color for light and dark mode.
+
+  2. Change icons and type settings
+
+      You can override the default type and icon mappings by creating your own
+      `impls/hooks/admonition-maps.html` in your `layouts` folder.
+      This allows you to assign different icons or styles for each admonition type.
+*/ -}}
+
+{{- if eq .Type "alert" -}}
+  {{- $maps := partialCached "impls/hooks/admonition-maps.html" . -}}
+  {{- $typeMap := $maps.typeMap -}}
+  {{- $iconMap := $maps.iconMap -}}
 
   {{- $rawType := .AlertType | lower -}}
   {{- $normalizedType := index $typeMap $rawType | default $rawType -}}
-  {{- $iconName := index $iconMap $normalizedType | default "circle-info" -}}
+  {{- $iconName := .Attributes.icon | default (index $iconMap $normalizedType) | default "circle-info" -}}
+
   {{- $admonitionTitle := .AlertTitle | default (i18n (printf "admonition.%s" $normalizedType) | default $normalizedType) -}}
 
   {{- $containerClass := "admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" -}}
@@ -84,7 +82,12 @@
   {{- end -}}
 
 {{- else -}}
-  <blockquote {{ with .Attributes }}{{ . | safeHTMLAttr }}{{ end }}>
+  <blockquote 
+  {{- range $k, $v := .Attributes -}}
+    {{- if $v -}}
+      {{- printf " %s=%q" $k ($v | transform.HTMLEscape) | safeHTMLAttr -}}
+    {{- end -}}
+  {{- end -}}>
     {{- .Text | safeHTML -}}
   </blockquote>
 {{- end -}}

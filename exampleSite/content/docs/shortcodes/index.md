@@ -71,18 +71,20 @@ Admonitions allow you to insert eye-catching callout boxes in your content.
 Admonitions serve a similar purpose as the alert shortcode but are implemented via Hugo render hooks. The key difference is syntax: admonitions use Markdown syntax, making them more portable across different platforms, whereas shortcodes are specific to Hugo. The syntax resembles GitHub alerts:
 
 ```md
-> [!NOTE]
-> A Note type admonition.
+> [!TIP]
+> A Tip type admonition.
 
-> [!TIP]+ Custom Title
+> [!TIP]+ Custom Title + Custom Icon
 > A collapsible admonition with custom title.
+{icon="twitter"}
 ```
 
-> [!NOTE]
-> A Note type admonition.
+> [!TIP]
+> A Tip type admonition.
 
-> [!TIP]+ Custom Title
+> [!TIP]+ Custom Title + Custom Icon
 > A collapsible admonition with custom title.
+{icon="twitter"}
 
 The alert sign (`+` or `-`) is optional to control whether the admonition is folded or not. Note that alert sign is only compatible in Obsidian.
 
@@ -91,6 +93,9 @@ The alert sign (`+` or `-`) is optional to control whether the admonition is fol
 >
 > **GitHub types:** `NOTE`, `TIP`, `IMPORTANT`, `WARNING`, `CAUTION`  
 > **Obsidian types:** `note`, `abstract`, `info`, `todo`, `tip`, `success`, `question`, `warning`, `failure`, `danger`, `bug`, `example`, `quote`
+
+> [!INFO]- Customize admonition
+> See the [admonition customization guide](https://github.com/nunocoracao/blowfish/blob/main/layouts/_default/_markup/render-blockquote.html).
 
 <br/><br/><br/>
 
@@ -978,6 +983,54 @@ consectetur adipiscing elit.
 "I'm gonna make him an offer he can't refuse." The Godfather (1972)
 "Toto, I've a feeling we're not in Kansas anymore." The Wizard of Oz (1939)
 {{< /typeit >}}
+
+<br/><br/><br/>
+
+## Video
+
+Blowfish includes a `video` shortcode for embedding local or external videos in content. The shortcode renders a `<figure>` wrapper with a responsive video player and an optional caption.
+
+The `video` shortcode accepts the following parameters:
+
+<!-- prettier-ignore-start -->
+| Parameter | Description |
+| --- | --- |
+| `src` | **Required.** Video URL or local path. Local lookup order: page resource → `assets/` → `static/`. |
+| `poster` | Optional poster image URL or local path. If omitted, the shortcode attempts a same-name image in the page bundle. |
+| `caption` | Optional Markdown caption shown below the video. |
+| `autoplay` | `true`/`false`. Enables autoplay when `true`. Default: `false`. |
+| `loop` | `true`/`false`. Loops when `true`. Default: `false`. |
+| `muted` | `true`/`false`. Mutes when `true`. Default: `false`. |
+| `controls` | `true`/`false`. Shows the browser’s default playback controls when `true`. Default: `true`. |
+| `playsinline` | `true`/`false`. Inline playback on mobile when `true`. Default: `true`. |
+| `preload` | `metadata` (load info), `none` (save bandwidth), or `auto` (preload more). Default: `metadata`. |
+| `start` | Optional start time in seconds. |
+| `end` | Optional end time in seconds. |
+| `ratio` | Reserved aspect ratio for the player. Supports `16/9`, `4/3`, `1/1`, or custom `W/H`. Default: `16/9`. |
+| `fit` | How the video fits the ratio: `contain` (no crop), `cover` (crop to fill), `fill` (stretch). Default: `contain`. |
+<!-- prettier-ignore-end -->
+
+If the browser cannot play the video, the player will show a minimal English fallback message with a download link.
+
+**Example:**
+
+```md
+{{</* video
+    src="https://upload.wikimedia.org/wikipedia/commons/5/5a/CC0_-_Public_Domain_Dedication_video_bumper.webm"
+    poster="https://upload.wikimedia.org/wikipedia/commons/e/e0/CC0.jpg"
+    caption="**Public domain demo** — CC0 video and poster."
+    loop=true
+    muted=true
+*/>}}
+```
+
+{{< video
+  src="https://upload.wikimedia.org/wikipedia/commons/5/5a/CC0_-_Public_Domain_Dedication_video_bumper.webm"
+  poster="https://upload.wikimedia.org/wikipedia/commons/e/e0/CC0.jpg"
+  caption="**Public domain demo** — CC0 video and poster."
+  loop=true
+  muted=true
+>}}
 
 <br/><br/><br/>
 

@@ -71,18 +71,20 @@ Admonitions は、文書内で読者の注意を引くための強調表示を�
 Admonitions は alert ショートコードと同様の目的を持ちますが、Hugo の render hooks を用いて実装されています。両者の主な違いは構文にあります。admonitions は Markdown 構文を使用するため、異なるプラットフォーム間でも扱いやすく、一方、ショートコードは Hugo 固有の仕組みです。構文は GitHub の alerts に近い形式です。
 
 ```md
-> [!NOTE]
-> NOTE タイプの表示例。
+> [!TIP]
+> Tip タイプの表示例。
 
 > [!TIP]+ カスタムタイトル
 > タイトルを指定した折りたたみ可能な表示例。
+{icon="twitter"}
 ```
 
-> [!NOTE]
-> NOTE タイプの表示例。
+> [!TIP]
+> Tip タイプの表示例。
 
 > [!TIP]+ カスタムタイトル
 > タイトルを指定した折りたたみ可能な表示例。
+{icon="twitter"}
 
 記号（`+` または `-`）は任意で、表示を折りたたむかどうかを制御します。なお、この記号は Obsidian のみ対応しています。
 
@@ -974,6 +976,54 @@ consectetur adipiscing elit.
 "イヤとは言わせない。" ゴッドファーザー (1972)
 "トト、私たちもうカンザスにいないみたい。" オズの魔法使い (1939)
 {{< /typeit >}}
+
+<br/><br/><br/>
+
+## Video
+
+Blowfish には、ローカルまたは外部の動画を本文に埋め込むための `video` ショートコードがあります。ショートコードは `<figure>` で包んだレスポンシブな動画プレーヤーと、任意のキャプションを出力します。
+
+`video` ショートコードは次のパラメータを受け取ります:
+
+<!-- prettier-ignore-start -->
+| パラメータ | 説明 |
+| --- | --- |
+| `src` | **必須。** 動画のURLまたはローカルパス。ローカルの検索順: ページリソース → `assets/` → `static/`。 |
+| `poster` | 任意のポスター画像URLまたはローカルパス。省略時は、ページバンドル内で同名の画像を試します。 |
+| `caption` | 動画下に表示するMarkdownキャプション（任意）。 |
+| `autoplay` | `true`/`false`。`true` で自動再生。既定: `false`。 |
+| `loop` | `true`/`false`。`true` でループ再生。既定: `false`。 |
+| `muted` | `true`/`false`。`true` でミュート。既定: `false`。 |
+| `controls` | `true`/`false`。`true` でブラウザ標準の再生コントロールを表示。既定: `true`。 |
+| `playsinline` | `true`/`false`。`true` でモバイルのインライン再生。既定: `true`。 |
+| `preload` | `metadata`（情報のみ読み込み）、`none`（帯域節約）、`auto`（より多く事前読み込み）。既定: `metadata`。 |
+| `start` | 任意の開始秒。 |
+| `end` | 任意の終了秒。 |
+| `ratio` | プレーヤーの予約アスペクト比。`16/9`、`4/3`、`1/1`、またはカスタム `W/H` に対応。既定: `16/9`。 |
+| `fit` | 比率への収まり方: `contain`（切り抜きなし）、`cover`（切り抜いて埋める）、`fill`（引き伸ばす）。既定: `contain`。 |
+<!-- prettier-ignore-end -->
+
+ブラウザが動画を再生できない場合、プレーヤーは英語の簡潔なフォールバック文とダウンロードリンクを表示します。
+
+**例:**
+
+```md
+{{</* video
+    src="https://upload.wikimedia.org/wikipedia/commons/5/5a/CC0_-_Public_Domain_Dedication_video_bumper.webm"
+    poster="https://upload.wikimedia.org/wikipedia/commons/e/e0/CC0.jpg"
+    caption="**パブリックドメインのデモ** — CC0 の動画とポスター。"
+    loop=true
+    muted=true
+*/>}}
+```
+
+{{< video
+  src="https://upload.wikimedia.org/wikipedia/commons/5/5a/CC0_-_Public_Domain_Dedication_video_bumper.webm"
+  poster="https://upload.wikimedia.org/wikipedia/commons/e/e0/CC0.jpg"
+  caption="**パブリックドメインのデモ** — CC0 の動画とポスター。"
+  loop=true
+  muted=true
+>}}
 
 <br/><br/><br/>
 

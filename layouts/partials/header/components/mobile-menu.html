@@ -1,0 +1,152 @@
+<div class="flex items-center h-14 gap-4">
+  {{ if .Site.Params.enableSearch | default false }}
+    <button
+      id="search-button-mobile"
+      aria-label="Search"
+      class="flex items-center justify-center bf-icon-color-hover"
+      title="{{ i18n "search.open_button_title" }}">
+      {{ partial "icon.html" "search" }}
+    </button>
+  {{ end }}
+
+  {{ if .Site.Params.footer.showAppearanceSwitcher | default false }}
+    <button
+      id="appearance-switcher-mobile"
+      type="button"
+      aria-label="Dark mode switcher"
+      class="flex items-center justify-center text-neutral-900 hover:text-primary-600 dark:text-neutral-200 dark:hover:text-primary-400">
+      <div class="dark:hidden">
+        {{ partial "icon.html" "moon" }}
+      </div>
+      <div class="hidden dark:block">
+        {{ partial "icon.html" "sun" }}
+      </div>
+    </button>
+  {{ end }}
+
+  {{ if or
+    .Site.Menus.main
+    .Site.Menus.subnavigation
+    .Site.Params.enableA11y
+  }}
+    <input type="checkbox" id="mobile-menu-toggle" autocomplete="off" class="hidden peer">
+    <label for="mobile-menu-toggle" class="flex items-center justify-center cursor-pointer bf-icon-color-hover">
+      {{ partial "icon.html" "bars" }}
+    </label>
+
+    <div
+      role="dialog"
+      aria-modal="true"
+      style="scrollbar-gutter: stable;"
+      class="fixed inset-0 z-50 invisible overflow-y-auto px-6 py-20 opacity-0 transition-[opacity,visibility] duration-300 peer-checked:visible peer-checked:opacity-100 bg-neutral-50/97 dark:bg-neutral-900/99
+      {{ if site.Params.enableStyledScrollbar | default true }}bf-scrollbar{{ end }}">
+      <label
+        for="mobile-menu-toggle"
+        class="fixed end-8 top-5 flex items-center justify-center z-50 h-12 w-12 cursor-pointer select-none rounded-full bf-icon-color-hover border bf-border-color bf-border-color-hover bg-neutral-50 dark:bg-neutral-900">
+        {{ partial "icon.html" "xmark" }}
+      </label>
+      <nav class="mx-auto max-w-md space-y-6">
+        {{ template "mobile-main-menu" . }}
+        {{ template "mobile-subnavigation" . }}
+        {{ template "mobile-footer-components" . }}
+      </nav>
+    </div>
+  {{ end }}
+</div>
+
+{{ define "mobile-main-menu" }}
+  {{ range .Site.Menus.main }}
+    {{ $submenuId := printf "fullscreen-submenu-%s" (.Identifier | default .Name | anchorize) }}
+    <div class="px-2">
+      <a
+        href="{{ .URL }}"
+        {{ with or .Name .Pre }}aria-label="{{ . }}"{{ end }}
+        {{ if or (strings.HasPrefix .URL "http:" ) (strings.HasPrefix .URL "https:" ) }}
+          target="_blank"
+        {{ end }}
+        class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+        {{ if .Pre }}
+          <span class="flex items-center justify-center h-8 w-8 text-2xl">
+            {{ partial "icon.html" .Pre }}
+          </span>
+        {{ end }}
+        <span title="{{ .Title }}" class="text-2xl font-bold tracking-tight">
+          {{ .Name | markdownify }}
+        </span>
+        {{ if .HasChildren }}
+          <label
+            for="{{ $submenuId }}"
+            class="ms-auto flex items-center justify-center h-10 w-10 cursor-pointer rounded-lg bf-icon-color-hover border bf-border-color bf-border-color-hover">
+            {{ partial "icon.html" "chevron-down" }}
+          </label>
+        {{ end }}
+      </a>
+
+      {{ if .HasChildren }}
+        <input checked type="checkbox" id="{{ $submenuId }}" autocomplete="off" class="hidden peer/full">
+
+        <div
+          class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 peer-checked/full:grid-rows-[1fr]">
+          <div class="overflow-hidden">
+            <div class="ms-7 mt-4">
+              {{ range .Children }}
+                <a
+                  href="{{ .URL }}"
+                  {{ with or .Name .Pre }}aria-label="{{ . }}"{{ end }}
+                  {{ if or (strings.HasPrefix .URL "http:" ) (strings.HasPrefix .URL "https:" ) }}
+                    target="_blank"
+                  {{ end }}
+                  class="flex items-center gap-3 p-2 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+                  {{ if .Pre }}
+                    <span class="flex items-center justify-center h-5 w-5">
+                      {{ partial "icon.html" .Pre }}
+                    </span>
+                  {{ end }}
+                  <span title="{{ .Title }}" class="text-lg">
+                    {{ .Name | markdownify }}
+                  </span>
+                </a>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  {{ end }}
+{{ end }}
+
+{{ define "mobile-subnavigation" }}
+  {{ if .Site.Menus.subnavigation }}
+    <div class="flex flex-wrap gap-4 mt-8 pt-8 border-t bf-border-color">
+      {{ range .Site.Menus.subnavigation }}
+        <a
+          href="{{ .URL }}"
+          {{ with or .Name .Pre }}aria-label="{{ . }}"{{ end }}
+          class="inline-flex items-center gap-2 px-2 py-2 bf-icon-color-hover rounded-full text-sm">
+          {{ if .Pre }}
+            <span class="flex items-center justify-center h-4 w-4">
+              {{ partial "icon.html" .Pre }}
+            </span>
+          {{ end }}
+          <span title="{{ .Title }}">{{ .Name | markdownify }}</span>
+        </a>
+      {{ end }}
+    </div>
+  {{ end }}
+{{ end }}
+
+{{ define "mobile-footer-components" }}
+  {{ if or
+    hugo.IsMultilingual
+    .Site.Params.enableA11y
+  }}
+    <div
+      class="flex flex-wrap items-center [&_span]:text-2xl [&_.translation_button_.icon]:text-4xl! [&_.translation_button_span]:text-base! [&_.translation_.menuhide_span]:text-sm! gap-x-6 ps-2 mt-8 pt-8 border-t bf-border-color">
+      {{ partial "header/components/translations.html" . }}
+
+      {{ if .Site.Params.enableA11y | default false }}
+        {{ partial "header/components/a11y.html" (dict "prefix" "mobile-menu-") }}
+      {{ end }}
+    </div>
+  {{ end }}
+{{ end }}

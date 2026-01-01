@@ -1,0 +1,205 @@
+{{- $srcRaw := .Get "src" -}}
+{{- if not $srcRaw -}}
+  {{- errorf "video shortcode: src is required: %s" .Position -}}
+{{- end -}}
+
+{{- $truthy := slice "true" "1" "yes" "on" -}}
+{{- $srcURL := urls.Parse $srcRaw -}}
+{{- $srcPath := strings.TrimPrefix "/" $srcURL.Path -}}
+{{- $src := "" -}}
+{{- if $srcURL.IsAbs -}}
+  {{- $src = $srcURL.String -}}
+{{- else -}}
+  {{- $resource := "" -}}
+  {{- with $.Page.Resources.GetMatch $srcPath -}}
+    {{- $resource = . -}}
+  {{- else -}}
+    {{- with resources.Get $srcPath -}}
+      {{- $resource = . -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- if $resource -}}
+    {{- $src = $resource.RelPermalink -}}
+  {{- else if fileExists (path.Join "static" $srcPath) -}}
+    {{- $src = relURL $srcPath -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if not $src -}}
+  {{- errorf "video shortcode: unable to resolve src %q: %s" $srcRaw .Position -}}
+{{- end -}}
+
+{{- $posterRaw := .Get "poster" -}}
+{{- $poster := "" -}}
+{{- if $posterRaw -}}
+  {{- $posterURL := urls.Parse $posterRaw -}}
+  {{- $posterPath := strings.TrimPrefix "/" $posterURL.Path -}}
+  {{- if $posterURL.IsAbs -}}
+    {{- $poster = $posterURL.String -}}
+  {{- else -}}
+    {{- $posterRes := "" -}}
+    {{- with $.Page.Resources.GetMatch $posterPath -}}
+      {{- $posterRes = . -}}
+    {{- else -}}
+      {{- with resources.Get $posterPath -}}
+        {{- $posterRes = . -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{- if $posterRes -}}
+      {{- $poster = $posterRes.RelPermalink -}}
+    {{- else if fileExists (path.Join "static" $posterPath) -}}
+      {{- $poster = relURL $posterPath -}}
+    {{- else -}}
+      {{- warnf "video shortcode: unable to resolve poster %q: %s" $posterRaw .Position -}}
+    {{- end -}}
+  {{- end -}}
+{{- else -}}
+  {{- if not $srcURL.IsAbs -}}
+    {{- $base := path.Base $srcURL.Path -}}
+    {{- $ext := path.Ext $base -}}
+    {{- $name := strings.TrimSuffix $base $ext -}}
+    {{- with $.Page.Resources.GetMatch (printf "%s.*" $name) -}}
+      {{- if eq .MediaType.MainType "image" -}}
+        {{- $poster = .RelPermalink -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $ratioRaw := .Get "ratio" | default "16/9" -}}
+{{- $ratioTrim := replace (strings.TrimSpace $ratioRaw) " " "" -}}
+{{- if not (findRE "^\\d+\\/\\d+$" $ratioTrim) -}}
+  {{- errorf "video shortcode: invalid ratio %q: %s" $ratioRaw .Position -}}
+{{- end -}}
+
+{{- $ratioClass := "" -}}
+{{- $ratioStyle := "" -}}
+{{- if eq $ratioTrim "16/9" -}}
+  {{- $ratioClass = "aspect-video" -}}
+{{- else if eq $ratioTrim "4/3" -}}
+  {{- $ratioClass = "aspect-[4/3]" -}}
+{{- else if eq $ratioTrim "1/1" -}}
+  {{- $ratioClass = "aspect-square" -}}
+{{- else -}}
+  {{- $ratioClass = "aspect-auto" -}}
+  {{- $ratioStyle = printf "aspect-ratio: %s;" (replace $ratioTrim "/" " / ") -}}
+{{- end -}}
+
+{{- $preload := lower (.Get "preload" | default "metadata") -}}
+{{- if not (in (slice "metadata" "auto" "none") $preload) -}}
+  {{- errorf "video shortcode: invalid preload %q: %s" $preload .Position -}}
+{{- end -}}
+
+{{- $fit := lower (.Get "fit" | default "contain") -}}
+{{- $fitClass := "" -}}
+{{- if eq $fit "contain" -}}
+  {{- $fitClass = "object-contain" -}}
+{{- else if eq $fit "cover" -}}
+  {{- $fitClass = "object-cover" -}}
+{{- else if eq $fit "fill" -}}
+  {{- $fitClass = "object-fill" -}}
+{{- else -}}
+  {{- errorf "video shortcode: invalid fit %q: %s" $fit .Position -}}
+{{- end -}}
+
+{{- $autoplay := false -}}
+{{- with .Get "autoplay" -}}
+  {{- $autoplay = in $truthy (lower .) -}}
+{{- end -}}
+
+{{- $loop := false -}}
+{{- with .Get "loop" -}}
+  {{- $loop = in $truthy (lower .) -}}
+{{- end -}}
+
+{{- $muted := false -}}
+{{- with .Get "muted" -}}
+  {{- $muted = in $truthy (lower .) -}}
+{{- end -}}
+
+{{- $controls := true -}}
+{{- with .Get "controls" -}}
+  {{- $controls = in $truthy (lower .) -}}
+{{- end -}}
+
+{{- $playsinline := true -}}
+{{- with .Get "playsinline" -}}
+  {{- $playsinline = in $truthy (lower .) -}}
+{{- end -}}
+
+{{- $startRaw := .Get "start" -}}
+{{- $endRaw := .Get "end" -}}
+{{- $start := "" -}}
+{{- $end := "" -}}
+{{- $startOk := false -}}
+{{- $endOk := false -}}
+
+{{- if $startRaw -}}
+  {{- $startTrim := strings.TrimSpace $startRaw -}}
+  {{- if findRE "^\\d+(\\.\\d+)?$" $startTrim -}}
+    {{- $start = $startTrim -}}
+    {{- $startOk = true -}}
+  {{- else -}}
+    {{- warnf "video shortcode: invalid start %q: %s" $startRaw .Position -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if $endRaw -}}
+  {{- $endTrim := strings.TrimSpace $endRaw -}}
+  {{- if findRE "^\\d+(\\.\\d+)?$" $endTrim -}}
+    {{- $end = $endTrim -}}
+    {{- $endOk = true -}}
+  {{- else -}}
+    {{- warnf "video shortcode: invalid end %q: %s" $endRaw .Position -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if and $startOk $endOk -}}
+  {{- if ge (float $start) (float $end) -}}
+    {{- warnf "video shortcode: start must be < end (start=%s, end=%s): %s" $start $end .Position -}}
+    {{- $start = "" -}}
+    {{- $end = "" -}}
+    {{- $startOk = false -}}
+    {{- $endOk = false -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $timeValue := "" -}}
+{{- if and $startOk $endOk -}}
+  {{- $timeValue = printf "t=%s,%s" $start $end -}}
+{{- else if $startOk -}}
+  {{- $timeValue = printf "t=%s" $start -}}
+{{- else if $endOk -}}
+  {{- $timeValue = printf "t=,%s" $end -}}
+{{- end -}}
+
+{{- $srcWithTime := $src -}}
+{{- if $timeValue -}}
+  {{- if strings.Contains $src "#" -}}
+    {{- $srcWithTime = printf "%s&%s" $src $timeValue -}}
+  {{- else -}}
+    {{- $srcWithTime = printf "%s#%s" $src $timeValue -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $caption := .Get "caption" -}}
+
+<figure>
+  <video
+    class="w-full rounded-md {{ $ratioClass }} {{ $fitClass }}"
+    {{- with $ratioStyle }} style="{{ . }}"{{ end -}}
+    preload="{{ $preload }}"
+    {{- if $poster }} poster="{{ $poster }}"{{ end -}}
+    {{- if $autoplay }} autoplay{{ end -}}
+    {{- if $loop }} loop{{ end -}}
+    {{- if $muted }} muted{{ end -}}
+    {{- if $controls }} controls{{ end -}}
+    {{- if $playsinline }} playsinline{{ end -}}
+  >
+    <source src="{{ $srcWithTime }}">
+    <p>Your browser cannot play this video. <a href="{{ $src }}">Download video</a>.</p>
+  </video>
+  {{- with $caption }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+</figure>

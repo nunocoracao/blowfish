@@ -71,18 +71,20 @@ Admonitions allow you to insert eye-catching callout boxes in your content.
 Admonitions serve a similar purpose as the alert shortcode but are implemented via Hugo render hooks. The key difference is syntax: admonitions use Markdown syntax, making them more portable across different platforms, whereas shortcodes are specific to Hugo. The syntax resembles GitHub alerts:
 
 ```md
-> [!NOTE]
-> A Note type admonition.
+> [!TIP]
+> A Tip type admonition.
 
 > [!TIP]+ Custom Title
 > A collapsible admonition with custom title.
+{icon="twitter"}
 ```
 
-> [!NOTE]
-> A Note type admonition.
+> [!TIP]
+> A Tip type admonition.
 
 > [!TIP]+ Custom Title
 > A collapsible admonition with custom title.
+{icon="twitter"}
 
 The alert sign (`+` or `-`) is optional to control whether the admonition is folded or not. Note that alert sign is only compatible in Obsidian.
 
@@ -978,6 +980,54 @@ consectetur adipiscing elit.
 "I'm gonna make him an offer he can't refuse." The Godfather (1972)
 "Toto, I've a feeling we're not in Kansas anymore." The Wizard of Oz (1939)
 {{< /typeit >}}
+
+<br/><br/><br/>
+
+## Video
+
+Blowfish include uno shortcode `video` per incorporare video locali o esterni nei contenuti. Lo shortcode renderizza un contenitore `<figure>` con un lettore video responsive e una didascalia opzionale.
+
+Lo shortcode `video` accetta i seguenti parametri:
+
+<!-- prettier-ignore-start -->
+| Parametro | Descrizione |
+| --- | --- |
+| `src` | **Obbligatorio.** URL del video o percorso locale. Ordine di ricerca locale: risorsa di pagina → `assets/` → `static/`. |
+| `poster` | Immagine poster opzionale (URL o percorso locale). Se omessa, lo shortcode tenta un'immagine con lo stesso nome nel bundle della pagina. |
+| `caption` | Didascalia Markdown opzionale mostrata sotto il video. |
+| `autoplay` | `true`/`false`. Attiva la riproduzione automatica quando `true`. Predefinito: `false`. |
+| `loop` | `true`/`false`. Ripete in loop quando `true`. Predefinito: `false`. |
+| `muted` | `true`/`false`. Silenzia quando `true`. Predefinito: `false`. |
+| `controls` | `true`/`false`. Mostra i controlli di riproduzione predefiniti del browser quando `true`. Predefinito: `true`. |
+| `playsinline` | `true`/`false`. Riproduzione in linea su mobile quando `true`. Predefinito: `true`. |
+| `preload` | `metadata` (carica le info), `none` (risparmia banda) o `auto` (precarica di più). Predefinito: `metadata`. |
+| `start` | Tempo di inizio opzionale in secondi. |
+| `end` | Tempo di fine opzionale in secondi. |
+| `ratio` | Rapporto d'aspetto riservato per il lettore. Supporta `16/9`, `4/3`, `1/1` o `W/H` personalizzato. Predefinito: `16/9`. |
+| `fit` | Come il video si adatta al rapporto: `contain` (senza ritaglio), `cover` (ritaglia per riempire), `fill` (stira). Predefinito: `contain`. |
+<!-- prettier-ignore-end -->
+
+Se il browser non riesce a riprodurre il video, il lettore mostrerà un breve messaggio in inglese con un link per il download.
+
+**Esempio:**
+
+```md
+{{</* video
+    src="https://upload.wikimedia.org/wikipedia/commons/5/5a/CC0_-_Public_Domain_Dedication_video_bumper.webm"
+    poster="https://upload.wikimedia.org/wikipedia/commons/e/e0/CC0.jpg"
+    caption="**Demo di pubblico dominio** — video e poster CC0."
+    loop=true
+    muted=true
+*/>}}
+```
+
+{{< video
+  src="https://upload.wikimedia.org/wikipedia/commons/5/5a/CC0_-_Public_Domain_Dedication_video_bumper.webm"
+  poster="https://upload.wikimedia.org/wikipedia/commons/e/e0/CC0.jpg"
+  caption="**Demo di pubblico dominio** — video e poster CC0."
+  loop=true
+  muted=true
+>}}
 
 <br/><br/><br/>
 

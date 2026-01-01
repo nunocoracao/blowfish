@@ -22,7 +22,7 @@ series_order: 2
 如果你之前没有使用过 Hugo，你首先需要了解[在本地机器安装 Hugo](https://gohugo.io/getting-started/installing)。你可以通过运行命令 `hugo version` 来检查是否安装完成。
 
 {{< alert >}}
-确保你使用 **Hugo 0.87.0** 或更高的版本，Blowfish 主题中使用了最新的 Hugo 特性。
+确保你使用 **Hugo 0.141.0** 或更高的版本，Blowfish 主题中使用了最新的 Hugo 特性。
 {{< /alert >}}
 
 你可以在 [Hugo 文档](https://gohugo.io/getting-started/installing) 中找到不同平台更加详细的安装指南。
