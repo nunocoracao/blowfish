@@ -231,7 +231,7 @@ Mit den installierten Abhängigkeiten bleibt nur noch, die [Tailwind CLI](https:
 
 ```shell
 cd ../..
-./themes/blowfish/node_modules/@tailwindcss/cli/dist/index.mjs -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit
+node ./themes/blowfish/node_modules/@tailwindcss/cli/dist/index.mjs -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit
 ```
 
 Es ist ein etwas unschöner Befehl aufgrund der beteiligten Pfade, aber im Wesentlichen rufen Sie die Tailwind CLI auf und übergeben ihr den Speicherort der Tailwind-Konfigurationsdatei (die wir oben betrachtet haben), wo die `main.css`-Datei des Themes zu finden ist und wohin Sie die kompilierte CSS-Datei platzieren möchten (sie geht in den Ordner `assets/css/compiled/` Ihres Hugo-Projekts).
@@ -253,8 +253,8 @@ Um diese ganze Lösung abzurunden, können Sie diesen gesamten Prozess vereinfac
   "description": "",
   "scripts": {
     "server": "hugo server -b http://localhost -p 8000",
-    "dev": "NODE_ENV=development ./themes/blowfish/node_modules/@tailwindcss/cli/dist/index.mjs -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
-    "build": "NODE_ENV=production ./themes/blowfish/node_modules/@tailwindcss/cli/dist/index.mjs -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit"
+    "dev": cross-env "NODE_ENV=development ./themes/blowfish/node_modules/@tailwindcss/cli/dist/index.mjs -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
+    "build": cross-env "NODE_ENV=production ./themes/blowfish/node_modules/@tailwindcss/cli/dist/index.mjs -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit"
   },
   // und mehr...
 }

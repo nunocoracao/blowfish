@@ -156,65 +156,16 @@ See all available styles in [Hugo's documentation](https://gohugo.io/quick-refer
 
 ## Building the theme CSS from source
 
-If you'd like to make a major change, you can take advantage of Tailwind CSS's JIT compiler and rebuild the entire theme CSS from scratch. This is useful if you want to adjust the Tailwind configuration or add extra Tailwind classes to the main stylesheet.
+If you'd like to make a major change, you can rebuild the entire theme CSS from scratch. This is useful if you want to adjust the Tailwind configuration or add extra Tailwind classes to the main stylesheet.
 
-{{< alert >}}
-**Note:** Building the theme manually is intended for advanced users.
-{{< /alert >}}
+> [!INFO]
+> Building the theme manually is intended for advanced users.
 
-Let's step through how building the Tailwind CSS works.
+### How it works
 
-### Tailwind configuration
+Tailwind works by [scanning your project files](https://tailwindcss.com/docs/detecting-classes-in-source-files#which-files-are-scanned) as plain text to find class-like tokens and then generating CSS only for the utilities it recognizes and that actually appear in those files.
 
-In order to generate a CSS file that only contains the Tailwind classes that are actually being used the JIT compiler needs to scan through all the HTML templates and Markdown content files to check which styles are present in the markup. The compiler does this by looking at the `tailwind.config.js` file which is included in the root of the theme directory:
-
-```js
-// themes/blowfish/tailwind.config.js
-
-module.exports = {
-  content: [
-    "./layouts/**/*.html",
-    "./content/**/*.{html,md}",
-    "./themes/blowfish/layouts/**/*.html",
-    "./themes/blowfish/content/**/*.{html,md}",
-  ],
-
-  // and more...
-};
-```
-
-This default configuration has been included with these content paths so that you can easily generate your own CSS file without needing to modify it, provided you follow a particular project structure. Namely, **you have to include Blowfish in your project as a subdirectory at `themes/blowfish/`**. This means you cannot easily use Hugo Modules to install the theme and you must go down either the git submodule (recommended) or manual install routes. The [Installation docs]({{< ref "installation" >}}) explain how to install the theme using either of these methods.
-
-### Project structure
-
-In order to take advantage of the default configuration, your project should look something like this...
-
-```shell
-.
-├── assets
-│   └── css
-│       └── compiled
-│           └── main.css  # this is the file we will generate
-├── config  # site config
-│   └── _default
-├── content  # site content
-│   ├── _index.md
-│   ├── projects
-│   │   └── _index.md
-│   └── blog
-│       └── _index.md
-├── layouts  # custom layouts for your site
-│   ├── partials
-│   │   └── extend-article-link/simple.html
-│   ├── projects
-│   │   └── list.html
-│   └── shortcodes
-│       └── disclaimer.html
-└── themes
-    └── blowfish  # git submodule or manual theme install
-```
-
-This example structure adds a new `projects` content type with its own custom layout along with a custom shortcode and extended partial. Provided the project follows this structure, all that's required is to recompile the `main.css` file.
+The following steps focus on installing Tailwind and configuring it so the theme source files are correctly included in this scan. All commands are demonstrated for users who installed the theme as a [Git submodule]({{< ref "installation" >}}), while Hugo Module users must first vendor the theme source into the `_vendor` directory using `hugo mod vendor` and adjust the command paths accordingly.
 
 ### Install dependencies
 
@@ -231,12 +182,10 @@ With the dependencies installed all that's left is to use [Tailwind CLI](https:/
 
 ```shell
 cd ../..
-./themes/blowfish/node_modules/@tailwindcss/cli/dist/index.mjs -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit
+node ./themes/blowfish/node_modules/@tailwindcss/cli/dist/index.mjs -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit
 ```
 
-It's a bit of an ugly command due to the paths involved but essentially you're calling Tailwind CLI and passing it the location of the Tailwind config file (the one we looked at above), where to find the theme's `main.css` file and then where you want the compiled CSS file to be placed (it's going into the `assets/css/compiled/` folder of your Hugo project).
-
-The config file will automatically inspect all the content and layouts in your project as well as all those in the theme and build a new CSS file that contains all the CSS required for your website. Due to the way Hugo handles file hierarchy, this file in your project will now automatically override the one that comes with the theme.
+It's a bit of an ugly command due to the paths involved but essentially you're calling Tailwind CLI and passing it the location of the Tailwind config file, where to find the theme's `main.css` file and then where you want the compiled CSS file to be placed. Due to the way Hugo handles file hierarchy, the compiled CSS file in your project will now automatically override the one that comes with the theme.
 
 Each time you make a change to your layouts and need new Tailwind CSS styles, you can simply re-run the command and generate the new CSS file. You can also add `-w` to the end of the command to run the JIT compiler in watch mode.
 
@@ -253,8 +202,8 @@ To fully complete this solution, you can simplify this whole process by adding a
   "description": "",
   "scripts": {
     "server": "hugo server -b http://localhost -p 8000",
-    "dev": "NODE_ENV=development ./themes/blowfish/node_modules/@tailwindcss/cli/dist/index.mjs -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
-    "build": "NODE_ENV=production ./themes/blowfish/node_modules/@tailwindcss/cli/dist/index.mjs -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit"
+    "dev": cross-env "NODE_ENV=development ./themes/blowfish/node_modules/@tailwindcss/cli/dist/index.mjs -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
+    "build": cross-env "NODE_ENV=production ./themes/blowfish/node_modules/@tailwindcss/cli/dist/index.mjs -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit"
   },
   // and more...
 }
