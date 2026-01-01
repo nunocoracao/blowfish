@@ -71,18 +71,20 @@ Admonitions allow you to insert eye-catching callout boxes in your content.
 Admonitions serve a similar purpose as the alert shortcode but are implemented via Hugo render hooks. The key difference is syntax: admonitions use Markdown syntax, making them more portable across different platforms, whereas shortcodes are specific to Hugo. The syntax resembles GitHub alerts:
 
 ```md
-> [!NOTE]
-> A Note type admonition.
+> [!TIP]
+> A Tip type admonition.
 
-> [!TIP]+ Custom Title
+> [!TIP]+ Custom Title + Custom Icon
 > A collapsible admonition with custom title.
+{icon="twitter"}
 ```
 
-> [!NOTE]
-> A Note type admonition.
+> [!TIP]
+> A Tip type admonition.
 
-> [!TIP]+ Custom Title
+> [!TIP]+ Custom Title + Custom Icon
 > A collapsible admonition with custom title.
+{icon="twitter"}
 
 The alert sign (`+` or `-`) is optional to control whether the admonition is folded or not. Note that alert sign is only compatible in Obsidian.
 
@@ -91,6 +93,9 @@ The alert sign (`+` or `-`) is optional to control whether the admonition is fol
 >
 > **GitHub types:** `NOTE`, `TIP`, `IMPORTANT`, `WARNING`, `CAUTION`  
 > **Obsidian types:** `note`, `abstract`, `info`, `todo`, `tip`, `success`, `question`, `warning`, `failure`, `danger`, `bug`, `example`, `quote`
+
+> [!INFO]- Customize admonition
+> See the [admonition customization guide](https://github.com/nunocoracao/blowfish/blob/main/layouts/_default/_markup/render-blockquote.html).
 
 <br/><br/><br/>
 

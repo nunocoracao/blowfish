@@ -71,18 +71,20 @@ Admonitions allow you to insert eye-catching callout boxes in your content.
 Admonitions serve a similar purpose as the alert shortcode but are implemented via Hugo render hooks. The key difference is syntax: admonitions use Markdown syntax, making them more portable across different platforms, whereas shortcodes are specific to Hugo. The syntax resembles GitHub alerts:
 
 ```md
-> [!NOTE]
-> A Note type admonition.
+> [!TIP]
+> A Tip type admonition.
 
 > [!TIP]+ Custom Title
 > A collapsible admonition with custom title.
+{icon="twitter"}
 ```
 
-> [!NOTE]
-> A Note type admonition.
+> [!TIP]
+> A Tip type admonition.
 
 > [!TIP]+ Custom Title
 > A collapsible admonition with custom title.
+{icon="twitter"}
 
 The alert sign (`+` or `-`) is optional to control whether the admonition is folded or not. Note that alert sign is only compatible in Obsidian.
 

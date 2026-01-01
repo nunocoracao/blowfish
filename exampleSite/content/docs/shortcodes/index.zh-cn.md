@@ -71,18 +71,20 @@ Admonition 用于在内容中插入醒目提示。
 Admonition 的用途与 alert shortcode 类似，但其实现方式是通过 Hugo 的 render hooks。两者的关键区别在于语法：admonition 使用 Markdown 语法，因此在不同平台之间具有更好的可移植性；而 shortcode 是 Hugo 专有的。其语法类似 GitHub 的 alerts：
 
 ```md
-> [!NOTE]
-> 一个 NOTE 类型的提示块。
+> [!TIP]
+> 一个 Tip 类型的提示块。
 
 > [!TIP]+ 自定义标题
 > 一个带有自定义标题的可折叠提示块。
+{icon="twitter"}
 ```
 
-> [!NOTE]
-> 一个 NOTE 类型的提示块。
+> [!TIP]
+> 一个 Tip 类型的提示块。
 
 > [!TIP]+ 自定义标题
 > 一个带有自定义标题的可折叠提示块。
+{icon="twitter"}
 
 提示符号（`+` 或 `-`）是可选的，用于控制提示块是否默认折叠。请注意，该提示符号仅在 Obsidian 中兼容。
 
@@ -91,6 +93,9 @@ Admonition 的用途与 alert shortcode 类似，但其实现方式是通过 Hug
 >
 > **GitHub 类型：** `NOTE`, `TIP`, `IMPORTANT`, `WARNING`, `CAUTION`  
 > **Obsidian 类型：** `note`, `abstract`, `info`, `todo`, `tip`, `success`, `question`, `warning`, `failure`, `danger`, `bug`, `example`, `quote`
+
+> [!INFO]- 自定义提示框
+> 请参阅 [提示框自定义指南](https://github.com/nunocoracao/blowfish/blob/main/layouts/_default/_markup/render-blockquote.html)。
 
 <br/><br/><br/>
 
