@@ -22,7 +22,7 @@ Hugo の[クイックスタートガイド](https://gohugo.io/getting-started/qu
 Hugo を初めて使用する場合は、[公式サイトの手順](https://gohugo.io/getting-started/installing)に従って、ローカルマシンにインストールしてください。すでにインストールされているかどうかは、コマンド `hugo version` を実行して確認できます。
 
 {{< alert >}}
-テーマは最新の Hugo の機能を活用しているため、**Hugo バージョン 0.87.0 以降**を使用していることを確認してください。
+テーマは最新の Hugo の機能を活用しているため、**Hugo バージョン 0.141.0 以降**を使用していることを確認してください。
 {{< /alert >}}
 
 お使いのプラットフォームに合わせた詳細なインストール手順は、[Hugo の公式ドキュメント](https://gohugo.io/getting-started/installing)に記載されています。
