@@ -65,7 +65,7 @@ module.exports = {
             "--tw-prose-headings": theme("colors.neutral.800 / 1"),
             "--tw-prose-lead": theme("colors.neutral.500 / 1"),
             "--tw-prose-links": theme("colors.primary.600 / 1"),
-            "--tw-prose-bold": theme("colors.neutral.900 / 1"),
+            "--tw-prose-bold": "inherit",
             "--tw-prose-counters": theme("colors.neutral.800 / 1"),
             "--tw-prose-bullets": theme("colors.neutral.500 / 1"),
             "--tw-prose-quotes": theme("colors.neutral.700 / 1"),
