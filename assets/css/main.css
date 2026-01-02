@@ -276,8 +276,8 @@ body:has(#mobile-menu-toggle:checked) {
 
 /* Reset body position for desktop after it was modified on mobile */
 @media (min-width: 853px) {
-  body {
-    position: static !important;
+  body:has(#mobile-menu-toggle:checked) {
+    overflow: visible;
   }
 }
 

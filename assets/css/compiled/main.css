@@ -1063,9 +1063,6 @@
   .table-cell {
     display: table-cell;
   }
-  .aspect-\[\.\.\.\] {
-    aspect-ratio: ...;
-  }
   .aspect-\[4\/3\] {
     aspect-ratio: 4/3;
   }
@@ -4658,8 +4655,8 @@ body:has(#mobile-menu-toggle:checked) {
   overflow: hidden;
 }
 @media (min-width: 853px) {
-  body {
-    position: static !important;
+  body:has(#mobile-menu-toggle:checked) {
+    overflow: visible;
   }
 }
 #bmc-wbtn {
