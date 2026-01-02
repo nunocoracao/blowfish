@@ -1,0 +1,51 @@
+{{ with site.Data.sponsors }}
+<section class="sponsors-section mt-16 mb-8">
+  <div class="flex flex-col items-center mb-6">
+    <div class="flex items-center gap-2 mb-2">
+      <span class="text-2xl text-primary-500">
+        {{ partial "icon.html" "heart" }}
+      </span>
+      <h2 class="text-2xl font-extrabold text-neutral-800 dark:text-neutral-200">
+        {{ i18n "sponsors.title" | default "Sponsors" }}
+      </h2>
+    </div>
+    <p class="text-neutral-600 dark:text-neutral-400 text-center max-w-md">
+      {{ i18n "sponsors.description" | default "Special thanks to our sponsors who help make Blowfish possible." }}
+    </p>
+  </div>
+
+  <div class="flex flex-wrap justify-center gap-4">
+    {{ range . }}
+      <a
+        href="{{ .profile_url }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group flex flex-col items-center"
+        title="{{ .username }}"
+        aria-label="Sponsor: {{ .username }}">
+        <img
+          class="nozoom h-16 w-16 rounded-full ring-2 ring-primary-500 transition-transform group-hover:scale-110"
+          src="{{ .avatar_url }}"
+          alt="{{ .username }}"
+          width="64"
+          height="64"
+          loading="lazy">
+        <span class="mt-2 text-sm text-neutral-600 dark:text-neutral-400 group-hover:text-primary-500 transition-colors">
+          @{{ .username }}
+        </span>
+      </a>
+    {{ end }}
+  </div>
+
+  <div class="mt-8 flex justify-center">
+    <a
+      href="https://github.com/sponsors/nunocoracao"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-600 text-white hover:bg-primary-500 transition-colors">
+      <span>{{ partial "icon.html" "heart" }}</span>
+      <span>{{ i18n "sponsors.cta" | default "Become a Sponsor" }}</span>
+    </a>
+  </div>
+</section>
+{{ end }}

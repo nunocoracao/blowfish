@@ -1,0 +1,47 @@
+{{ with site.Data.contributors }}
+<section class="contributors-section mt-12 mb-16">
+  <div class="flex flex-col items-center mb-6">
+    <div class="flex items-center gap-2 mb-2">
+      <span class="text-2xl text-neutral-600 dark:text-neutral-400">
+        {{ partial "icon.html" "github" }}
+      </span>
+      <h2 class="text-2xl font-extrabold text-neutral-800 dark:text-neutral-200">
+        {{ i18n "contributors.title" | default "Contributors" }}
+      </h2>
+    </div>
+    <p class="text-neutral-600 dark:text-neutral-400 text-center">
+      {{ i18n "contributors.description" | default (printf "%d amazing people have contributed to Blowfish" (len .)) }}
+    </p>
+  </div>
+
+  <div class="flex flex-wrap justify-center gap-3">
+    {{ range . }}
+      <a
+        href="{{ .profile_url }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group"
+        title="{{ .username }} ({{ .contributions }} contributions)"
+        aria-label="Contributor: {{ .username }}">
+        <img
+          class="nozoom h-10 w-10 rounded-full opacity-80 transition-all group-hover:opacity-100 group-hover:scale-110 group-hover:ring-2 group-hover:ring-primary-500"
+          src="{{ .avatar_url }}"
+          alt="{{ .username }}"
+          width="40"
+          height="40"
+          loading="lazy">
+      </a>
+    {{ end }}
+  </div>
+
+  <div class="mt-6 flex justify-center">
+    <a
+      href="https://github.com/nunocoracao/blowfish/graphs/contributors"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-primary-500 transition-colors">
+      {{ i18n "contributors.viewAll" | default "View all contributors on GitHub" }} &rarr;
+    </a>
+  </div>
+</section>
+{{ end }}
