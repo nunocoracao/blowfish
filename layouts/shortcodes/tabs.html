@@ -1,8 +1,10 @@
 {{- .Store.Set "tab-index" 0 -}}
 {{- $noop := .Inner -}}
 
+{{- $group := .Get "group" -}}
 
-<div class="tab__container w-full">
+
+<div class="tab__container w-full" {{ with $group }}data-tab-group="{{ . }}"{{ end }}>
   <div class="tab__nav" role="tablist">
     <div class="flex gap-1 overflow-x-auto">
       {{- range $nTabs, $_ := .Store.Get "tabs" -}}
@@ -12,7 +14,8 @@
           {{ end }}"
           role="tab"
           aria-selected="{{ cond (eq $nTabs 0) "true" "false" }}"
-          data-tab-index="{{ $nTabs }}">
+          data-tab-index="{{ $nTabs }}"
+          data-tab-label="{{ index . "label" }}">
           <span class="flex items-center gap-1">
             {{ with index . "icon" }}
               {{ partial "icon.html" . }}
