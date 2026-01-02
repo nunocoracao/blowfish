@@ -10,7 +10,7 @@
   {{ with $group }}data-tab-group="{{ . }}"{{ end }}
   {{ with $default }}data-default-tab="{{ . }}"{{ end }}>
   <div class="tab__nav" role="tablist">
-    <div class="flex gap-1 overflow-x-auto">
+    <div class="flex flex-wrap gap-1">
       {{- range $nTabs, $_ := .Store.Get "tabs" -}}
         {{- $isActive := false -}}
         {{- if $default -}}
