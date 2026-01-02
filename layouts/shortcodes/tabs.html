@@ -13,7 +13,12 @@
           role="tab"
           aria-selected="{{ cond (eq $nTabs 0) "true" "false" }}"
           data-tab-index="{{ $nTabs }}">
-          {{ index . "label" }}
+          <span class="flex items-center gap-1">
+            {{ with index . "icon" }}
+              {{ partial "icon.html" . }}
+            {{ end }}
+            {{ index . "label" }}
+          </span>
         </button>
       {{- end -}}
     </div>
