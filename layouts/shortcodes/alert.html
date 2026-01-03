@@ -10,9 +10,9 @@
 
 <div
   {{ if not ($.Scratch.Get "cardColor") }}
-    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+    class="flex px-4 py-3 rounded-md shadow bg-primary-100 dark:bg-primary-900"
   {{ else }}
-    class="flex px-4 py-3 rounded-md" style="background-color: {{ $.Scratch.Get "cardColor" }}"
+    class="flex px-4 py-3 rounded-md shadow" style="background-color: {{ $.Scratch.Get "cardColor" }}"
   {{ end }}
   >
   <span
