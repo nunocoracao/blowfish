@@ -68,50 +68,50 @@
 
 html.dark {
   /* GitHub Core Types (5) */
-  --adm-note-bg: color-mix(in srgb, theme("colors.sky.900 / 0.4"), black 15%);
+  --adm-note-bg: color-mix(in srgb, theme("colors.sky.800"), #0f0f0f 50%);
   --adm-note-text: theme("colors.sky.100");
 
-  --adm-tip-bg: color-mix(in srgb, theme("colors.emerald.900 / 0.4"), black 15%);
+  --adm-tip-bg: color-mix(in srgb, theme("colors.emerald.800"), #0f0f0f 50%);
   --adm-tip-text: theme("colors.emerald.100");
 
-  --adm-important-bg: color-mix(in srgb, theme("colors.purple.900 / 0.4"), black 15%);
+  --adm-important-bg: color-mix(in srgb, theme("colors.purple.800"), #0f0f0f 50%);
   --adm-important-text: theme("colors.purple.100");
 
-  --adm-warning-bg: color-mix(in srgb, theme("colors.orange.900 / 0.4"), black 15%);
+  --adm-warning-bg: color-mix(in srgb, theme("colors.orange.800"), #0f0f0f 45%);
   --adm-warning-text: theme("colors.orange.100");
 
-  --adm-caution-bg: color-mix(in srgb, theme("colors.red.900 / 0.4"), black 15%);
+  --adm-caution-bg: color-mix(in srgb, theme("colors.red.800"), #0f0f0f 45%);
   --adm-caution-text: theme("colors.red.100");
 
   /* Extended Types (10) */
-  --adm-abstract-bg: color-mix(in srgb, theme("colors.cyan.900 / 0.4"), black 15%);
+  --adm-abstract-bg: color-mix(in srgb, theme("colors.cyan.800"), #0f0f0f 50%);
   --adm-abstract-text: theme("colors.cyan.100");
 
-  --adm-bug-bg: color-mix(in srgb, theme("colors.rose.900 / 0.4"), black 15%);
+  --adm-bug-bg: color-mix(in srgb, theme("colors.rose.800"), #0f0f0f 50%);
   --adm-bug-text: theme("colors.rose.100");
 
-  --adm-danger-bg: color-mix(in srgb, theme("colors.red.900 / 0.4"), black 15%);
+  --adm-danger-bg: color-mix(in srgb, theme("colors.red.800"), #0f0f0f 45%);
   --adm-danger-text: theme("colors.red.100");
 
-  --adm-example-bg: color-mix(in srgb, theme("colors.purple.900 / 0.4"), black 15%);
+  --adm-example-bg: color-mix(in srgb, theme("colors.purple.800"), #0f0f0f 50%);
   --adm-example-text: theme("colors.purple.100");
 
-  --adm-failure-bg: color-mix(in srgb, theme("colors.pink.900 / 0.4"), black 15%);
+  --adm-failure-bg: color-mix(in srgb, theme("colors.pink.800"), #0f0f0f 50%);
   --adm-failure-text: theme("colors.pink.100");
 
-  --adm-info-bg: color-mix(in srgb, theme("colors.blue.900 / 0.4"), black 15%);
+  --adm-info-bg: color-mix(in srgb, theme("colors.blue.800"), #0f0f0f 50%);
   --adm-info-text: theme("colors.blue.100");
 
-  --adm-question-bg: color-mix(in srgb, theme("colors.amber.900 / 0.4"), black 15%);
+  --adm-question-bg: color-mix(in srgb, theme("colors.amber.800"), #0f0f0f 50%);
   --adm-question-text: theme("colors.amber.100");
 
-  --adm-quote-bg: color-mix(in srgb, theme("colors.gray.900 / 0.4"), black 15%);
+  --adm-quote-bg: color-mix(in srgb, theme("colors.gray.800"), #0f0f0f 50%);
   --adm-quote-text: theme("colors.gray.100");
 
-  --adm-success-bg: color-mix(in srgb, theme("colors.emerald.900 / 0.4"), black 15%);
+  --adm-success-bg: color-mix(in srgb, theme("colors.emerald.800"), #0f0f0f 50%);
   --adm-success-text: theme("colors.emerald.100");
 
-  --adm-todo-bg: color-mix(in srgb, theme("colors.sky.800 / 0.4"), black 15%);
+  --adm-todo-bg: color-mix(in srgb, theme("colors.sky.800"), #0f0f0f 50%);
   --adm-todo-text: theme("colors.sky.100");
 }
 

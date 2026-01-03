@@ -4267,35 +4267,35 @@ body.zen-mode-enable {
     --adm-todo-text: oklch(44.3% 0.11 240.79);
   }
   html.dark {
-    --adm-note-bg: color-mix(in srgb, color-mix(in oklab, oklch(39.1% 0.09 240.876) 40%, transparent), black 15%);
+    --adm-note-bg: color-mix(in srgb, oklch(44.3% 0.11 240.79), #0f0f0f 50%);
     --adm-note-text: oklch(95.1% 0.026 236.824);
-    --adm-tip-bg: color-mix(in srgb, color-mix(in oklab, oklch(37.8% 0.077 168.94) 40%, transparent), black 15%);
+    --adm-tip-bg: color-mix(in srgb, oklch(43.2% 0.095 166.913), #0f0f0f 50%);
     --adm-tip-text: oklch(95% 0.052 163.051);
-    --adm-important-bg: color-mix(in srgb, color-mix(in oklab, oklch(38.1% 0.176 304.987) 40%, transparent), black 15%);
+    --adm-important-bg: color-mix(in srgb, oklch(43.8% 0.218 303.724), #0f0f0f 50%);
     --adm-important-text: oklch(94.6% 0.033 307.174);
-    --adm-warning-bg: color-mix(in srgb, color-mix(in oklab, oklch(40.8% 0.123 38.172) 40%, transparent), black 15%);
+    --adm-warning-bg: color-mix(in srgb, oklch(47% 0.157 37.304), #0f0f0f 45%);
     --adm-warning-text: oklch(95.4% 0.038 75.164);
-    --adm-caution-bg: color-mix(in srgb, color-mix(in oklab, oklch(39.6% 0.141 25.723) 40%, transparent), black 15%);
+    --adm-caution-bg: color-mix(in srgb, oklch(44.4% 0.177 26.899), #0f0f0f 45%);
     --adm-caution-text: oklch(93.6% 0.032 17.717);
-    --adm-abstract-bg: color-mix(in srgb, color-mix(in oklab, oklch(39.8% 0.07 227.392) 40%, transparent), black 15%);
+    --adm-abstract-bg: color-mix(in srgb, oklch(45% 0.085 224.283), #0f0f0f 50%);
     --adm-abstract-text: oklch(95.6% 0.045 203.388);
-    --adm-bug-bg: color-mix(in srgb, color-mix(in oklab, oklch(41% 0.159 10.272) 40%, transparent), black 15%);
+    --adm-bug-bg: color-mix(in srgb, oklch(45.5% 0.188 13.697), #0f0f0f 50%);
     --adm-bug-text: oklch(94.1% 0.03 12.58);
-    --adm-danger-bg: color-mix(in srgb, color-mix(in oklab, oklch(39.6% 0.141 25.723) 40%, transparent), black 15%);
+    --adm-danger-bg: color-mix(in srgb, oklch(44.4% 0.177 26.899), #0f0f0f 45%);
     --adm-danger-text: oklch(93.6% 0.032 17.717);
-    --adm-example-bg: color-mix(in srgb, color-mix(in oklab, oklch(38.1% 0.176 304.987) 40%, transparent), black 15%);
+    --adm-example-bg: color-mix(in srgb, oklch(43.8% 0.218 303.724), #0f0f0f 50%);
     --adm-example-text: oklch(94.6% 0.033 307.174);
-    --adm-failure-bg: color-mix(in srgb, color-mix(in oklab, oklch(40.8% 0.153 2.432) 40%, transparent), black 15%);
+    --adm-failure-bg: color-mix(in srgb, oklch(45.9% 0.187 3.815), #0f0f0f 50%);
     --adm-failure-text: oklch(94.8% 0.028 342.258);
-    --adm-info-bg: color-mix(in srgb, color-mix(in oklab, oklch(37.9% 0.146 265.522) 40%, transparent), black 15%);
+    --adm-info-bg: color-mix(in srgb, oklch(42.4% 0.199 265.638), #0f0f0f 50%);
     --adm-info-text: oklch(93.2% 0.032 255.585);
-    --adm-question-bg: color-mix(in srgb, color-mix(in oklab, oklch(41.4% 0.112 45.904) 40%, transparent), black 15%);
+    --adm-question-bg: color-mix(in srgb, oklch(47.3% 0.137 46.201), #0f0f0f 50%);
     --adm-question-text: oklch(96.2% 0.059 95.617);
-    --adm-quote-bg: color-mix(in srgb, color-mix(in oklab, oklch(21% 0.034 264.665) 40%, transparent), black 15%);
+    --adm-quote-bg: color-mix(in srgb, oklch(27.8% 0.033 256.848), #0f0f0f 50%);
     --adm-quote-text: oklch(96.7% 0.003 264.542);
-    --adm-success-bg: color-mix(in srgb, color-mix(in oklab, oklch(37.8% 0.077 168.94) 40%, transparent), black 15%);
+    --adm-success-bg: color-mix(in srgb, oklch(43.2% 0.095 166.913), #0f0f0f 50%);
     --adm-success-text: oklch(95% 0.052 163.051);
-    --adm-todo-bg: color-mix(in srgb, color-mix(in oklab, oklch(44.3% 0.11 240.79) 40%, transparent), black 15%);
+    --adm-todo-bg: color-mix(in srgb, oklch(44.3% 0.11 240.79), #0f0f0f 50%);
     --adm-todo-text: oklch(95.1% 0.026 236.824);
   }
   .admonition-content > :first-child {
