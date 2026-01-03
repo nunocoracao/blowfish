@@ -85,3 +85,20 @@ shortcode:
 
 recent:
   show_more: "Show More"
+
+admonition:
+  abstract: "Abstract"
+  bug: "Bug"
+  caution: "Caution"
+  danger: "Danger"
+  example: "Example"
+  failure: "Failure"
+  important: "Important"
+  info: "Info"
+  note: "Note"
+  question: "Question"
+  quote: "Quote"
+  success: "Success"
+  tip: "Tip"
+  todo: "Todo"
+  warning: "Warning"
