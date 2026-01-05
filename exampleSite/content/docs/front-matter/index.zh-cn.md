@@ -56,4 +56,5 @@ front matter 参数中的默认值是从[基础配置]({{< ref "configuration" >
 | `xml` | `true` unless excluded by `sitemap.excludedKinds` | 是否将这篇文章包含在生成的 `/sitemap.xml` 文件中。 |
 | `layoutBackgroundBlur` | `true` | 向下滚动主页时，是否模糊背景图。 |
 | `layoutBackgroundHeaderSpace` | `true` | 在标题和正文之间添加空白区域间隔。 |
+| `externalLinkForceNewTab` | `article.externalLinkForceNewTab` | 是否强制 Markdown 中的外部链接在新标签页中打开。 |
 <!-- prettier-ignore-end -->
