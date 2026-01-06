@@ -10,7 +10,6 @@
       "Courier New", monospace;
     --spacing: 0.25rem;
     --container-2xs: 18rem;
-    --container-xs: 20rem;
     --container-md: 28rem;
     --container-xl: 36rem;
     --container-3xl: 48rem;
@@ -970,6 +969,9 @@
   }
   .mb-3 {
     margin-bottom: calc(var(--spacing) * 3);
+  }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
   }
   .mb-5 {
     margin-bottom: calc(var(--spacing) * 5);
@@ -3006,14 +3008,14 @@
       margin-inline: auto;
     }
   }
+  .lg\:ms-auto {
+    @media (width >= 1024px) {
+      margin-inline-start: auto;
+    }
+  }
   .lg\:mt-0 {
     @media (width >= 1024px) {
       margin-top: calc(var(--spacing) * 0);
-    }
-  }
-  .lg\:ml-auto {
-    @media (width >= 1024px) {
-      margin-left: auto;
     }
   }
   .lg\:block {
@@ -3064,11 +3066,6 @@
   .lg\:max-w-none {
     @media (width >= 1024px) {
       max-width: none;
-    }
-  }
-  .lg\:max-w-xs {
-    @media (width >= 1024px) {
-      max-width: var(--container-xs);
     }
   }
   .lg\:grid-flow-col-dense {

@@ -43,10 +43,10 @@
   {{/* Description (markdown content) */}}
   {{ $tocMargin := cond $showToc "mt-12" "mt-0" }}
   {{ $topClass := cond (hasPrefix site.Params.header.layout "fixed") "lg:top-[140px]" "lg:top-10" }}
-  <section class="{{ $tocMargin }} prose flex max-w-full flex-col dark:prose-invert lg:flex-row">
+  <section class="{{ $tocMargin }} prose flex max-w-full flex-col dark:prose-invert lg:flex-row mb-10">
     {{ if $showToc }}
-      <div class="order-first px-0 lg:order-last lg:max-w-xs lg:ps-8">
-        <div class="toc ps-5 lg:sticky {{ $topClass }}">
+      <div class="order-first lg:ms-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+        <div class="toc ps-5 print:hidden lg:sticky {{ $topClass }}">
           {{ partial "toc.html" . }}
         </div>
       </div>
