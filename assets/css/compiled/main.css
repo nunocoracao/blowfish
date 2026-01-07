@@ -1030,6 +1030,12 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
   }
+  .line-clamp-5 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+  }
   .\!block {
     display: block !important;
   }

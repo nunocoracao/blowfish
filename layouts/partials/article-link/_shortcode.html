@@ -80,7 +80,7 @@
 {{ end }}
 
 
-<article class="{{ $cardClasses }}">
+<article class="article-link--shortcode {{ $cardClasses }}">
   {{ with $featuredURL }}
     <div class="flex-none relative overflow-hidden {{ $imgWrapperClasses }} thumbnail">
       <img
@@ -122,23 +122,13 @@
     <div class="text-sm text-neutral-500 dark:text-neutral-400">
       {{ partial "article-meta/basic.html" $target }}
     </div>
-    {{ $showSummary := false }}
-    {{ if ne $shortcodeShowSummary nil }}
-      {{ $showSummary = $shortcodeShowSummary }}
-    {{ else }}
-      {{ $showSummary = $target.Params.showSummary | default (site.Params.list.showSummary | default false) }}
-    {{ end }}
-    {{ if $showSummary }}
-      {{ $compactSummary := false }}
-      {{ if ne $shortcodeCompactSummary nil }}
-        {{ $compactSummary = $shortcodeCompactSummary }}
-      {{ else }}
-        {{ $compactSummary = $target.Params.compactSummary | default (site.Params.list.compactSummary | default false) }}
-      {{ end }}
-      <div class="overflow-hidden pt-1">
-        <div class="{{ if $compactSummary }}line-clamp-3{{ end }} prose dark:prose-invert max-w-fit">
-          {{ $target.Summary | plainify }}
-        </div>
+    {{ if $shortcodeShowSummary | default $target.Params.showSummary | default site.Params.list.showSummary | default false }}
+      {{ $compactSummary := $shortcodeCompactSummary | default $target.Params.compactSummary | default false }}
+      <div
+        class="article-link__summary prose dark:prose-invert max-w-fit mt-1 {{ if $compactSummary -}}
+          line-clamp-3
+        {{- end }}">
+        {{ $target.Summary | plainify }}
       </div>
     {{ end }}
   </div>
