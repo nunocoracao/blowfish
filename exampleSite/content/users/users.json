@@ -975,4 +975,14 @@
       "Blog"
     ]
   }
+  {
+    "title": "David Writes",
+    "url": "https://davidwrites.xyz/",
+    "source": "n/a",
+    "tags": [
+      "Personal site",
+      "Blog",
+      "Linux Admin"
+    ]
+  },
 ]
