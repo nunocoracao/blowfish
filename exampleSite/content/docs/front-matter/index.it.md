@@ -55,4 +55,5 @@ I valori predefiniti dei parametri del front metter vengono ereditati dalla [con
 | `xml` | `true` unless excluded by `sitemap.excludedKinds` | Se questo articolo è incluso o meno nel file `/sitemap.xml` generato. |
 | `layoutBackgroundBlur` | `true` | Rende l'immagine di sfondo sullo sfondo heroStyle sfocata con lo scorrimento. |
 | `layoutBackgroundHeaderSpace` | `true` | Aggiungi spazio tra l'intestazione e il body. |
+| `externalLinkForceNewTab` | `article.externalLinkForceNewTab` | Flag per aprire i link esterni nel markdown in una nuova scheda. |
 <!-- prettier-ignore-end -->

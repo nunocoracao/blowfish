@@ -258,6 +258,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 | `article.showComments` | `false` | 記事のフッターの後に [コメントパーシャル]({{< ref "partials#コメント" >}}) を含めるかどうかです。 |
 | `article.sharingLinks` | _未設定_ | 各記事の最後に表示する共有リンクです。指定されていないか、`false` に設定されている場合、リンクは表示されません。使用可能な値は、"bluesky"、"email"、"facebook"、"line"、"linkedin"、"mastodon"、"pinterest"、"reddit"、"telegram"、"twitter"、"whatsapp"です。 |
 | `article.showZenMode` | `false` | 記事のZenモードリーダー機能を有効にするフラグです。 |
+| `article.externalLinkForceNewTab` | `true` | マークダウン内の外部リンクを新しいタブで開くかどうかです。 |
 
 ### リスト(List)
 

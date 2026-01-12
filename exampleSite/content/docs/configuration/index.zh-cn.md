@@ -262,6 +262,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `article.showComments` | `false` | 是否在文章末尾添加 [评论部分]({{< ref "partials#comments" >}})。 |
 | `article.sharingLinks` | _无_ | 在文章末尾显示的分享链接。如果没有提供或设置为 `false`，则不会显示任何分享链接。可用的值包括："bluesky"、"email"、"facebook"、"line"、"linkedin"、"mastodon"、"pinterest"、"reddit"、"telegram"、"twitter"和"whatsapp" |
 | `article.showZenMode` | `false` | 指定是否激活文章阅读的禅模式，即隐藏常规的界面元素。 |
+| `article.externalLinkForceNewTab` | `true` | 是否强制 Markdown 中的外部链接在新标签页中打开。 |
 
 ### 列表页
 
