@@ -23,6 +23,18 @@ exampleSite/resources/
 node_modules
 .hugo_build.lock
 
+# Firebase scripts
+scripts/serviceAccountKey.json
+scripts/node_modules/
+scripts/*.csv
+
+# Firebase (sensitive - never commit!)
+firebase-service-account.json
+
+# Google Analytics export (temporary)
+ga-pageviews.csv
+*.csv
+
 # OS generated files
 .DS_Store
 .DS_Store?

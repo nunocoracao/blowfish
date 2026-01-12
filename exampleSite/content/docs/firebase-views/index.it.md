@@ -40,13 +40,38 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 ```
 
-5. Setup Firestore - Select Build and open Firestore. Create a new database and choose to start in production mode. Select server location and wait. Once that is started you need to configure the rules. Just copy and paste the file below and press publish.
+5. Setup Firestore - Select Build and open Firestore. Create a new database and choose to start in production mode. Select server location and wait. Once that is started you need to configure the rules. Just copy and paste the file below and press publish. These rules ensure that views can only be incremented by 1, and likes can only be changed by +1 or -1 (and never go below 0).
 ```txt
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
+    // Views - read anyone, only increment by 1
+    match /views/{document} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null
+                    && request.resource.data.keys().hasOnly(['views'])
+                    && request.resource.data.views == 1;
+      allow update: if request.auth != null
+                    && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['views'])
+                    && request.resource.data.views == resource.data.views + 1;
+    }
+
+    // Likes - read anyone, only +1 or -1
+    match /likes/{document} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null
+                    && request.resource.data.keys().hasOnly(['likes'])
+                    && request.resource.data.likes == 1;
+      allow update: if request.auth != null
+                    && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['likes'])
+                    && (request.resource.data.likes == resource.data.likes + 1
+                        || request.resource.data.likes == resource.data.likes - 1)
+                    && request.resource.data.likes >= 0;
+    }
+
+    // Deny everything else
     match /{document=**} {
-      allow read, write: if request.auth != null;
+      allow read, write: if false;
     }
   }
 }
