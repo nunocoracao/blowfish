@@ -57,4 +57,5 @@ Front matter parameter default values are inherited from the theme's [base confi
 | `excludeFromSearch` | `false` | Whether or not this article should be excluded from the sitemap and search index. When `true`, the page will not appear in `sitemap.xml` or `index.json`. |
 | `layoutBackgroundBlur` | `true` | Makes the background image in the background heroStyle blur with the scroll |
 | `layoutBackgroundHeaderSpace` | `true` | Add space between the header and the body. |
+| `externalLinkForceNewTab` | `article.externalLinkForceNewTab` | Should external links in markdown open in a new tab. |
 <!-- prettier-ignore-end -->

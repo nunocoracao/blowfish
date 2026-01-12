@@ -57,4 +57,5 @@ Die Standardwerte der Front-Matter-Parameter werden von der [Basiskonfiguration]
 | `excludeFromSearch` | `false` | Ob dieser Artikel von der Sitemap und dem Suchindex ausgeschlossen werden soll. Wenn `true`, erscheint die Seite nicht in `sitemap.xml` oder `index.json`. |
 | `layoutBackgroundBlur` | `true` | Lässt das Hintergrundbild im background heroStyle beim Scrollen verschwimmen |
 | `layoutBackgroundHeaderSpace` | `true` | Fügt Abstand zwischen Header und Body hinzu. |
+| `externalLinkForceNewTab` | `article.externalLinkForceNewTab` | Sollen externe Links im Markdown in einem neuen Tab geöffnet werden? |
 <!-- prettier-ignore-end -->

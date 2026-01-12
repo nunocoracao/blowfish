@@ -763,7 +763,14 @@ B-->C[Profit]
 
 `tabs` 简码常用于呈现某个步骤的不同变体。例如，可用于展示在不同平台上安装 VS Code 的方式。
 
-**示例**
+| 参数        | 描述                                      |
+| --------- | --------------------------------------- |
+| `group`   | **可选。** 用于同步切换标签页的组名。具有相同组名的所有标签页将一起切换。 |
+| `default` | **可选。** 默认激活的标签页的标签。如果未设置，默认激活第一个标签页。   |
+| `label`   | **必填。** 显示在标签按钮上的文本标签。                  |
+| `icon`    | **可选。** 在标签前显示的图标名称。                    |
+
+**示例 1：基本用法**
 
 ````md
 {{</* tabs */>}}
@@ -824,6 +831,94 @@ B-->C[Profit]
     {{< /tab >}}
 
 {{< /tabs >}}
+
+**示例 2：使用 Group、Default 和 Icon**
+
+`````md
+{{</* tabs group="lang" default="Python" */>}}
+    {{</* tab label="JavaScript" icon="code" */>}}
+    ```javascript
+    console.log("Hello");
+    ```
+    {{</* /tab */>}}
+
+    {{</* tab label="Python" icon="sun" */>}}
+    ```python
+    print("Hello")
+    ```
+    {{</* /tab */>}}
+
+    {{</* tab label="Go" icon="moon" */>}}
+    ```go
+    fmt.Println("Hello")
+    ```
+    {{</* /tab */>}}
+{{</* /tabs */>}}
+
+{{</* tabs group="lang" default="Python" */>}}
+    {{</* tab label="JavaScript" icon="code" */>}}
+    ```javascript
+    const add = (a, b) => a + b;
+    ```
+    {{</* /tab */>}}
+
+    {{</* tab label="Python" icon="sun" */>}}
+    ```python
+    def add(a, b): return a + b
+    ```
+    {{</* /tab */>}}
+
+    {{</* tab label="Go" icon="moon" */>}}
+    ```go
+    func add(a, b int) int { return a + b }
+    ```
+    {{</* /tab */>}}
+{{</* /tabs */>}}
+`````
+
+**Output**
+
+{{< tabs group="lang" default="Python" >}}
+    {{< tab label="JavaScript" icon="code" >}}
+    ```javascript
+    console.log("Hello");
+    ```
+    {{< /tab >}}
+
+    {{< tab label="Python" icon="sun" >}}
+    ```python
+    print("Hello")
+    ```
+    {{< /tab >}}
+
+    {{< tab label="Go" icon="moon" >}}
+    ```go
+    fmt.Println("Hello")
+    ```
+    {{< /tab >}}
+{{< /tabs >}}
+
+{{< tabs group="lang" default="Python" >}}
+    {{< tab label="JavaScript" icon="code" >}}
+    ```javascript
+    const add = (a, b) => a + b;
+    ```
+    {{< /tab >}}
+
+    {{< tab label="Python" icon="sun" >}}
+    ```python
+    def add(a, b): return a + b
+    ```
+    {{< /tab >}}
+
+    {{< tab label="Go" icon="moon" >}}
+    ```go
+    func add(a, b int) int { return a + b }
+    ```
+    {{< /tab >}}
+{{< /tabs >}}
+
+在这个示例中，两个标签组都使用了相同的 `group="lang"` 参数，因此点击任意一个标签时，两个标签组都会同步切换。`default="Python"` 参数用于指定 Python 为初始激活的标签，而 `icon="code"` 会在每个标签标题前添加一个图标。
 
 <br/><br/><br/>
 

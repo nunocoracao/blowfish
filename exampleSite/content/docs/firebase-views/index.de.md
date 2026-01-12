@@ -40,13 +40,38 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 ```
 
-5. Firestore einrichten - Wählen Sie Build und öffnen Sie Firestore. Erstellen Sie eine neue Datenbank und wählen Sie den Start im Produktionsmodus. Wählen Sie den Serverstandort und warten Sie. Sobald dies gestartet ist, müssen Sie die Regeln konfigurieren. Kopieren Sie einfach die Datei unten und drücken Sie Veröffentlichen.
+5. Firestore einrichten - Wählen Sie Build und öffnen Sie Firestore. Erstellen Sie eine neue Datenbank und wählen Sie den Start im Produktionsmodus. Wählen Sie den Serverstandort und warten Sie. Sobald dies gestartet ist, müssen Sie die Regeln konfigurieren. Kopieren Sie einfach die Datei unten und drücken Sie Veröffentlichen. Diese Regeln stellen sicher, dass Aufrufe nur um 1 erhöht werden können und Likes nur um +1 oder -1 geändert werden können (und nie unter 0 fallen).
 ```txt
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
+    // Views - read anyone, only increment by 1
+    match /views/{document} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null
+                    && request.resource.data.keys().hasOnly(['views'])
+                    && request.resource.data.views == 1;
+      allow update: if request.auth != null
+                    && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['views'])
+                    && request.resource.data.views == resource.data.views + 1;
+    }
+
+    // Likes - read anyone, only +1 or -1
+    match /likes/{document} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null
+                    && request.resource.data.keys().hasOnly(['likes'])
+                    && request.resource.data.likes == 1;
+      allow update: if request.auth != null
+                    && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['likes'])
+                    && (request.resource.data.likes == resource.data.likes + 1
+                        || request.resource.data.likes == resource.data.likes - 1)
+                    && request.resource.data.likes >= 0;
+    }
+
+    // Deny everything else
     match /{document=**} {
-      allow read, write: if request.auth != null;
+      allow read, write: if false;
     }
   }
 }

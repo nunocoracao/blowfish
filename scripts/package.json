@@ -1,0 +1,15 @@
+{
+  "name": "blowfish-firebase-scripts",
+  "version": "1.0.0",
+  "description": "Scripts for seeding Firebase with Google Analytics data",
+  "type": "module",
+  "scripts": {
+    "seed-views": "node seed-firebase-views.js",
+    "seed-views:dry": "node seed-firebase-views.js --dry-run",
+    "seed-views:force": "node seed-firebase-views.js --force"
+  },
+  "dependencies": {
+    "csv-parse": "^5.5.0",
+    "firebase-admin": "^12.0.0"
+  }
+}

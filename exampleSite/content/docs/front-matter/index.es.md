@@ -57,4 +57,5 @@ Los valores predeterminados de los parámetros de front matter se heredan de la 
 | `excludeFromSearch` | `false` | Si este artículo debe excluirse del sitemap y el índice de búsqueda. Cuando es `true`, la página no aparecerá en `sitemap.xml` ni `index.json`. |
 | `layoutBackgroundBlur` | `true` | Hace que la imagen de fondo en el heroStyle background se difumine con el desplazamiento |
 | `layoutBackgroundHeaderSpace` | `true` | Añade espacio entre el encabezado y el cuerpo. |
+| `externalLinkForceNewTab` | `article.externalLinkForceNewTab` | ¿Deben los enlaces externos en markdown abrirse en una nueva pestaña? |
 <!-- prettier-ignore-end -->

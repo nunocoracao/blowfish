@@ -63,7 +63,7 @@ fingerprintAlgorithm = "sha512" # Valid values are "sha512" (default), "sha384",
 
 [article]
   showDate = false
-  showViews = false
+  showViews = true
   showLikes = false
   showDateOnlyInArticle = false
   showDateUpdated = false
@@ -134,13 +134,13 @@ fingerprintAlgorithm = "sha512" # Valid values are "sha512" (default), "sha384",
   cardViewScreenWidth = false
 
 [firebase]
-  #apiKey = "AIzaSyB5tqlqDky77Vb4Tc4apiHV4hRZI18KGiY"
-  #authDomain = "blowfish-21fff.firebaseapp.com"
-  #projectId = "blowfish-21fff"
-  #storageBucket = "blowfish-21fff.appspot.com"
-  #messagingSenderId = "60108104191"
-  #appId = "1:60108104191:web:039842ebe1370698b487ca"
-  #measurementId = "G-PEDMYR1V0K"
+  apiKey = "AIzaSyB5tqlqDky77Vb4Tc4apiHV4hRZI18KGiY"
+  authDomain = "blowfish-21fff.firebaseapp.com"
+  projectId = "blowfish-21fff"
+  storageBucket = "blowfish-21fff.appspot.com"
+  messagingSenderId = "60108104191"
+  appId = "1:60108104191:web:039842ebe1370698b487ca"
+  measurementId = "G-PEDMYR1V0K"
 
 [fathomAnalytics]
   # site = "ABC12345"

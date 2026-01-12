@@ -55,7 +55,7 @@
 
 
 <article
-  class="relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  class="article-link--card relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
   {{ with $featuredURL }}
     <div class="flex-none relative overflow-hidden thumbnail_card">
       <img
@@ -95,7 +95,9 @@
       {{ partial "article-meta/basic.html" . }}
     </div>
     {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
-      <div class="prose dark:prose-invert py-1">{{ .Summary | plainify }}</div>
+      <div class="article-link__summary prose dark:prose-invert mt-1 line-clamp-5">
+        {{ .Summary | plainify }}
+      </div>
     {{ end }}
   </div>
   <div class="px-6 pt-4 pb-2"></div>

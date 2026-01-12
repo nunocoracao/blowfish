@@ -266,6 +266,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `article.showComments` | `false` | Whether or not the [comments partial]({{< ref "partials#comments" >}}) is included after the article footer. |
 | `article.sharingLinks` | _Not set_ | Which sharing links to display at the end of each article. When not provided, or set to `false` no links will be displayed.  Available values are: "bluesky", "email", "facebook", "line", "linkedin", "mastodon", "pinterest", "reddit", "telegram", "twitter", and "whatsapp" |
 | `article.showZenMode` | `false` | Flag to activate Zen Mode reading feature for articles. |
+| `article.externalLinkForceNewTab` | `true` | Should external links in markdown open in a new tab. |
 
 ### List
 

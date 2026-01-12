@@ -9,10 +9,10 @@ const usersFolderPath = "./exampleSite/content/users/";
 
 let cache = {};
 
-function generateDirName(seed) {
+function generateDirName(seed, index) {
   const hash = crypto.createHash("md5");
   hash.update(seed);
-  return hash.digest("hex");
+  return index + "-" + hash.digest("hex");
 }
 
 async function convert(text, from, to) {
@@ -72,8 +72,10 @@ async function translateFrontMatterTags(block, targetLang, tags) {
   const rawdata = await fs.readFile(usersFolderPath + "users.json", "utf8");
   const users = JSON.parse(rawdata);
   const userDict = {};
+  var index = 0;
   for (const user of users) {
-    userDict[generateDirName(user.url)] = true;
+    userDict[generateDirName(user.url, index)] = true;
+    index++;
   }
 
   const files = await fs.readdir(usersFolderPath);
@@ -117,7 +119,7 @@ async function translateFrontMatterTags(block, targetLang, tags) {
       "                layoutBackgroundHeaderSpace: false\n" +
       "                \r---\n";
 
-    const dir = usersFolderPath + generateDirName(user.url);
+    const dir = usersFolderPath + generateDirName(user.url, i);
 
     try {
       await fs.access(dir);

@@ -22,9 +22,17 @@
   {{- end -}}
 {{- end -}}
 
+{{/* Open external links in a new tab if
+  configured to do so by the page param externalLinkForceNewTab
+  or site param article.externalLinkForceNewTab
+  and the link starts with http: or https:
+*/}}
+{{- $forceNewTab := .Page.Params.externalLinkForceNewTab | default (.Page.Site.Params.article.externalLinkForceNewTab | default true) -}}
+{{- $isExternal := or (strings.HasPrefix .Destination "http:") (strings.HasPrefix .Destination "https:") -}}
+{{- $newTab := and $forceNewTab $isExternal -}}
 
 <a href="{{ $href }}" {{ with .Title }}title="{{ . }}"{{ end }}
-  {{- if or (strings.HasPrefix .Destination "http:") (strings.HasPrefix .Destination "https:") }} target="_blank"{{ end }}>
+  {{- if $newTab }} target="_blank" rel="noreferrer"{{ end }}>
   {{- .Text | safeHTML -}}
 </a>
 {{- /* Trim EOF */ -}}

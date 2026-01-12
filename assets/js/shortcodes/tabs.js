@@ -5,7 +5,25 @@ function initTabs() {
 
     const container = button.closest(".tab__container");
     const tabIndex = parseInt(button.dataset.tabIndex);
-    activateTab(container, tabIndex);
+    const tabLabel = button.dataset.tabLabel;
+    const group = container.dataset.tabGroup;
+
+    if (group) {
+      const allGroupContainers = document.querySelectorAll(`.tab__container[data-tab-group="${group}"]`);
+
+      allGroupContainers.forEach((groupContainer) => {
+        const targetButton = Array.from(groupContainer.querySelectorAll(".tab__button")).find(
+          (btn) => btn.dataset.tabLabel === tabLabel,
+        );
+
+        if (targetButton) {
+          const targetIndex = parseInt(targetButton.dataset.tabIndex);
+          activateTab(groupContainer, targetIndex);
+        }
+      });
+    } else {
+      activateTab(container, tabIndex);
+    }
   };
 
   document.addEventListener("click", tabClickHandler);

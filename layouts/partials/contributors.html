@@ -2,7 +2,7 @@
 <section class="contributors-section mt-12 mb-16">
   <div class="flex flex-col items-center mb-6">
     <div class="flex items-center gap-2 mb-2">
-      <span class="text-2xl text-neutral-600 dark:text-neutral-400">
+      <span class="text-2xl text-neutral-800 dark:text-neutral-200">
         {{ partial "icon.html" "github" }}
       </span>
       <h2 class="text-2xl font-extrabold text-neutral-800 dark:text-neutral-200">
@@ -24,7 +24,7 @@
         title="{{ .username }} ({{ .contributions }} contributions)"
         aria-label="Contributor: {{ .username }}">
         <img
-          class="nozoom h-10 w-10 rounded-full opacity-80 transition-all group-hover:opacity-100 group-hover:scale-110 group-hover:ring-2 group-hover:ring-primary-500"
+          class="nozoom h-10 w-10 rounded-full transition-all group-hover:scale-110 group-hover:ring-2 group-hover:ring-primary-500"
           src="{{ .avatar_url }}"
           alt="{{ .username }}"
           width="40"
