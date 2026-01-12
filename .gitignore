@@ -28,9 +28,6 @@ scripts/serviceAccountKey.json
 scripts/node_modules/
 scripts/*.csv
 
-# Firebase (sensitive - never commit!)
-firebase-service-account.json
-
 # Google Analytics export (temporary)
 ga-pageviews.csv
 *.csv

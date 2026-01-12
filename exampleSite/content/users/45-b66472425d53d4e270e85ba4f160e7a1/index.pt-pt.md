@@ -1,0 +1,14 @@
+---
+                title: "joush007.github.io"
+                tags: [Site pessoal]
+                externalUrl: "https://joush007.github.io"
+                weight: 46
+                showDate: false
+                showAuthor: false
+                showReadingTime: false
+                showEdit: false
+                showLikes: false
+                showViews: false
+                layoutBackgroundHeaderSpace: false
+                ---
+

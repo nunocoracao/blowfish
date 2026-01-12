@@ -97,14 +97,6 @@
     ]
   },
   {
-    "title": "cdell.io",
-    "url": "https://cdell.io",
-    "source": "n/a",
-    "tags": [
-      "Personal site"
-    ]
-  },
-  {
     "title": "jam.dsg.li",
     "url": "https://jam.dsg.li",
     "source": "n/a",
@@ -174,14 +166,6 @@
     "source": "n/a",
     "tags": [
       "Business site"
-    ]
-  },
-  {
-    "title": "mariuskimmina.com",
-    "url": "https://mariuskimmina.com/",
-    "source": "n/a",
-    "tags": [
-      "Personal site"
     ]
   },
   {
@@ -462,14 +446,6 @@
     ]
   },
   {
-    "title": "todreamr.github.io",
-    "url": "https://todreamr.github.io/",
-    "source": "n/a",
-    "tags": [
-      "Personal site"
-    ]
-  },
-  {
     "title": "aakashnand.com",
     "url": "https://aakashnand.com/",
     "source": "n/a",
@@ -684,16 +660,6 @@
       "Technology Blog",
       "Software Developer",
       "Portfolio Site"
-    ]
-  },
-  {
-    "title": "WillHack - service for reality hackers",
-    "url": "https://willhack.top/",
-    "source": "https://github.com/willhack-g/hugo.git",
-    "tags": [
-      "Technology Blog",
-      "News that matters Blog",
-      "AI"
     ]
   },
   {
@@ -984,7 +950,7 @@
       "World of Warcraft",
       "Blog"
     ]
-  }
+  },
   {
     "title": "David Writes",
     "url": "https://davidwrites.xyz/",
@@ -994,5 +960,5 @@
       "Blog",
       "Linux Admin"
     ]
-  },
+  }
 ]
