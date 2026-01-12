@@ -753,7 +753,14 @@ You can see some additional Mermaid examples on the [diagrams and flowcharts sam
 
 The `tabs` shortcode is commonly used to present different variants of a particular step. For example, it can be used to show how to install VS Code on different platforms.
 
-**Example**
+| Parameter | Description                                              |
+| --------- | -------------------------------------------------------- |
+| `group`   | **Optional.** Group name for synchronized tab switching. All tabs with the same group name will switch together. |
+| `default` | **Optional.** Label of the tab to be active by default. If not set, the first tab will be active. |
+| `label`   | **Required.** The text label displayed on the tab button. |
+| `icon`    | **Optional.** Icon name to display before the label. |
+
+**Example 1: Basic Usage**
 
 `````md
 {{</* tabs */>}}
@@ -814,6 +821,94 @@ The `tabs` shortcode is commonly used to present different variants of a particu
     {{< /tab >}}
 
 {{< /tabs >}}
+
+**Example 2: With Group, Default, and Icon**
+
+`````md
+{{</* tabs group="lang" default="Python" */>}}
+    {{</* tab label="JavaScript" icon="code" */>}}
+    ```javascript
+    console.log("Hello");
+    ```
+    {{</* /tab */>}}
+
+    {{</* tab label="Python" icon="sun" */>}}
+    ```python
+    print("Hello")
+    ```
+    {{</* /tab */>}}
+
+    {{</* tab label="Go" icon="moon" */>}}
+    ```go
+    fmt.Println("Hello")
+    ```
+    {{</* /tab */>}}
+{{</* /tabs */>}}
+
+{{</* tabs group="lang" default="Python" */>}}
+    {{</* tab label="JavaScript" icon="code" */>}}
+    ```javascript
+    const add = (a, b) => a + b;
+    ```
+    {{</* /tab */>}}
+
+    {{</* tab label="Python" icon="sun" */>}}
+    ```python
+    def add(a, b): return a + b
+    ```
+    {{</* /tab */>}}
+
+    {{</* tab label="Go" icon="moon" */>}}
+    ```go
+    func add(a, b int) int { return a + b }
+    ```
+    {{</* /tab */>}}
+{{</* /tabs */>}}
+`````
+
+**Output**
+
+{{< tabs group="lang" default="Python" >}}
+    {{< tab label="JavaScript" icon="code" >}}
+    ```javascript
+    console.log("Hello");
+    ```
+    {{< /tab >}}
+
+    {{< tab label="Python" icon="sun" >}}
+    ```python
+    print("Hello")
+    ```
+    {{< /tab >}}
+
+    {{< tab label="Go" icon="moon" >}}
+    ```go
+    fmt.Println("Hello")
+    ```
+    {{< /tab >}}
+{{< /tabs >}}
+
+{{< tabs group="lang" default="Python" >}}
+    {{< tab label="JavaScript" icon="code" >}}
+    ```javascript
+    const add = (a, b) => a + b;
+    ```
+    {{< /tab >}}
+
+    {{< tab label="Python" icon="sun" >}}
+    ```python
+    def add(a, b): return a + b
+    ```
+    {{< /tab >}}
+
+    {{< tab label="Go" icon="moon" >}}
+    ```go
+    func add(a, b int) int { return a + b }
+    ```
+    {{< /tab >}}
+{{< /tabs >}}
+
+In this example, both tab groups share the same `group="lang"` parameter, so clicking any tab will synchronize both groups. The `default="Python"` parameter makes Python the initially active tab, and `icon="code"` adds an icon before each label.
 
 <br/><br/><br/>
 

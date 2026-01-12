@@ -1,26 +1,50 @@
 {{- .Store.Set "tab-index" 0 -}}
 {{- $noop := .Inner -}}
 
+{{- $group := .Get "group" -}}
+{{- $default := .Get "default" -}}
 
-<div class="tab__container w-full">
+
+<div
+  class="tab__container w-full"
+  {{ with $group }}data-tab-group="{{ . }}"{{ end }}
+  {{ with $default }}data-default-tab="{{ . }}"{{ end }}>
   <div class="tab__nav" role="tablist">
-    <div class="flex gap-1 overflow-x-auto">
+    <div class="flex flex-wrap gap-1">
       {{- range $nTabs, $_ := .Store.Get "tabs" -}}
+        {{- $isActive := false -}}
+        {{- if $default -}}
+          {{- $isActive = eq $default (index . "label") -}}
+        {{- else -}}
+          {{- $isActive = eq $nTabs 0 -}}
+        {{- end -}}
         <button
-          class="tab__button px-3 py-2 text-sm font-semibold border-b-2 border-transparent rounded-t-md hover:bg-neutral-200 dark:hover:bg-neutral-700 {{ if eq $nTabs 0 }}
+          class="tab__button px-3 py-2 text-sm font-semibold border-b-2 border-transparent rounded-t-md hover:bg-neutral-200 dark:hover:bg-neutral-700 {{ if $isActive -}}
             tab--active
-          {{ end }}"
+          {{- end }}"
           role="tab"
-          aria-selected="{{ cond (eq $nTabs 0) "true" "false" }}"
-          data-tab-index="{{ $nTabs }}">
-          {{ index . "label" }}
+          aria-selected="{{ cond $isActive `true` `false` }}"
+          data-tab-index="{{ $nTabs }}"
+          data-tab-label="{{ index . "label" }}">
+          <span class="flex items-center gap-1">
+            {{ with index . "icon" }}
+              {{ partial "icon.html" . }}
+            {{ end }}
+            {{ index . "label" }}
+          </span>
         </button>
       {{- end -}}
     </div>
   </div>
   <div class="tab__content mt-4">
     {{- range $nTabs, $_ := .Store.Get "tabs" -}}
-      <div class="tab__panel {{ if eq $nTabs 0 }}tab--active{{ end }}" data-tab-index="{{ $nTabs }}">
+      {{- $isActive := false -}}
+      {{- if $default -}}
+        {{- $isActive = eq $default (index . "label") -}}
+      {{- else -}}
+        {{- $isActive = eq $nTabs 0 -}}
+      {{- end -}}
+      <div class="tab__panel {{ if $isActive }}tab--active{{ end }}" data-tab-index="{{ $nTabs }}">
         {{ index . "content" }}
       </div>
     {{- end -}}

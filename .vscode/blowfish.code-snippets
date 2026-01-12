@@ -178,6 +178,53 @@
     ],
     "description": "Output a set of up to three different colors. Blowfish swatches Shortcode. Documentation: https://blowfish.page/docs/shortcodes/#swatches ",
   },
+  "Tabs - Basic": {
+    "prefix": "tabs",
+    "body": [
+      "{{< tabs >}}",
+      "",
+      "    {{< tab label=\"${1:Tab 1}\" >}}",
+      "    $2",
+      "    {{< /tab >}}",
+      "",
+      "    {{< tab label=\"${3:Tab 2}\" >}}",
+      "    $4",
+      "    {{< /tab >}}",
+      "",
+      "{{< /tabs >}}"
+    ],
+    "description": "Insert Hugo tabs shortcode"
+  },
+  "Tabs - Full Options": {
+    "prefix": "tabsfull",
+    "body": [
+      "{{< tabs group=\"${1:group-name}\" default=\"${2:Default Tab}\" >}}",
+      "",
+      "    {{< tab label=\"${3:Tab 1}\" icon=\"${4:code}\" >}}",
+      "    $5",
+      "    {{< /tab >}}",
+      "",
+      "    {{< tab label=\"${2:Default Tab}\" icon=\"${6:sun}\" >}}",
+      "    $7",
+      "    {{< /tab >}}",
+      "",
+      "    {{< tab label=\"${8:Tab 3}\" icon=\"${9:moon}\" >}}",
+      "    $0",
+      "    {{< /tab >}}",
+      "",
+      "{{< /tabs >}}"
+    ],
+    "description": "Insert Hugo tabs with group, default, and icons"
+  },
+  "Tab": {
+    "prefix": "tab",
+    "body": [
+      "{{< tab label=\"${1:Tab Label}\" >}}",
+      "$2",
+      "{{< /tab >}}"
+    ],
+    "description": "Insert Hugo tab item"
+  },
   "timeline": {
     "prefix": ["BFS-timeline", "HSC-timeline", "timeline"],
     "body": [
