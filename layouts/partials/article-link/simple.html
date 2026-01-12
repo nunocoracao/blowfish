@@ -73,7 +73,7 @@
 {{ end }}
 
 
-<article class="{{ $cardClasses }}">
+<article class="article-link--simple {{ $cardClasses }}">
   {{ with $featuredURL }}
     <div class="flex-none relative overflow-hidden {{ $imgWrapperClasses }} thumbnail">
       <img
@@ -113,8 +113,10 @@
     <div class="text-sm text-neutral-500 dark:text-neutral-400">
       {{ partial "article-meta/basic.html" . }}
     </div>
-    {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
-      <div class="prose dark:prose-invert max-w-fit py-1">{{ .Summary | plainify }}</div>
+    {{ if .Params.showSummary | default (site.Params.list.showSummary | default false) }}
+      <div class="article-link__summary prose dark:prose-invert max-w-fit mt-1 line-clamp-3">
+        {{ .Summary | plainify }}
+      </div>
     {{ end }}
   </div>
   <div class="px-6 pt-4 pb-2"></div>
