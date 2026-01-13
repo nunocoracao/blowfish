@@ -32,3 +32,4 @@ jobs:
           days-before-close: 0
           remove-stale-when-updated: true
           operations-per-run: 100
+          exempt-issue-labels: 'keep,security'
