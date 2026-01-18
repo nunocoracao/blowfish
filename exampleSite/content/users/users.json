@@ -960,5 +960,15 @@
       "Blog",
       "Linux Admin"
     ]
+  },
+  {
+    "title": "The Small Internet",
+    "url": "https://the.smallinter.net",
+    "source": "https://git.smallinter.net/thegrayarea/hugo",
+    "tags": [
+      "Personal site",
+      "Blog",
+      "NixOS"
+    ]
   }
 ]
