@@ -50,6 +50,6 @@
     {{- end }}
   {{- end }}
   {{ if $href }}</a>{{ end }}
-  {{ with $caption }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+  {{ with $caption }}<figcaption>{{ $.Page.RenderString . }}</figcaption>{{ end }}
   </figure>
 {{- end -}}
