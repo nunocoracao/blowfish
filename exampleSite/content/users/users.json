@@ -960,5 +960,15 @@
       "Blog",
       "Linux Admin"
     ]
+  },
+  {
+    "title": "Artur Tyloch",
+    "url": "https://tyloch.biz/",
+    "tags": [
+      "Personal site",
+      "Blog",
+      "AI",
+      "Portfolio"
+    ]
   }
 ]
