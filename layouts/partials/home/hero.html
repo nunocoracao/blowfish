@@ -119,7 +119,11 @@
               </div>
             {{ end }}
           </div>
-          <section class="prose prose-invert w-full">{{ .Content }}</section>
+          {{ if not $disableHeroImageFilter }}
+            <section class="prose prose-invert w-full">{{ .Content }}</section>
+          {{ else }}
+            <section class="prose dark:prose-invert w-full">{{ .Content }}</section>
+          {{ end }}
         </div>
       </div>
     </div>

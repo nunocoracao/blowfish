@@ -969,6 +969,17 @@
       "Blog",
       "AI",
       "Portfolio"
+      ]
+  },
+  {
+    "title": "GOODJINC",
+    "url": "https://goodjinc.com/",
+    "source": "https://github.com/GOODJINC/goodjinc.com",
+    "tags": [
+      "Personal site",
+      "Blog",
+      "Tech",
+      "IT"
     ]
   }
 ]
