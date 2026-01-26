@@ -41,7 +41,6 @@
     "@tailwindcss/typography": "^0.5.19",
     "chart.js": "^4.5.1",
     "fuse.js": "^7.1.0",
-    "jquery": "^3.7.1",
     "katex": "^0.16.27",
     "lite-youtube-embed": "^0.3.4",
     "medium-zoom": "^1.1.0",
@@ -90,10 +89,6 @@
     {
       "from": "node_modules/typeit/dist/index.umd.js",
       "to": "assets/lib/typeit/typeit.umd.js"
-    },
-    {
-      "from": "node_modules/jquery/dist/jquery.slim.min.js",
-      "to": "assets/lib/jquery/jquery.slim.min.js"
     },
     {
       "from": "node_modules/packery/dist/packery.pkgd.min.js",

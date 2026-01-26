@@ -27,7 +27,7 @@ function _getPackeryOptions(nodeGallery) {
 }
 
 (function init() {
-  $(window).on("load", function () {
+  window.addEventListener("load", function () {
     let packeries = [];
     let nodeGalleries = document.querySelectorAll(".gallery");
 
@@ -35,6 +35,5 @@ function _getPackeryOptions(nodeGallery) {
       let packery = new Packery(nodeGallery, _getPackeryOptions(nodeGallery));
       packeries.push(packery);
     });
-    console.groupEnd();
   });
 })();
