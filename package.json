@@ -42,7 +42,7 @@
     "chart.js": "^4.5.1",
     "fuse.js": "^7.1.0",
     "jquery": "^4.0.0",
-    "katex": "^0.16.27",
+    "katex": "^0.16.28",
     "lite-youtube-embed": "^0.3.4",
     "medium-zoom": "^1.1.0",
     "mermaid": "^11.12.2",
