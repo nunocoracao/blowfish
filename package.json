@@ -49,7 +49,7 @@
     "packery": "^3.0.0",
     "prettier": "^3.8.0",
     "prettier-plugin-go-template": "^0.0.15",
-    "puppeteer": "^24.35.0",
+    "puppeteer": "^24.36.1",
     "rimraf": "^6.1.2",
     "tailwind-scrollbar": "^4.0.2",
     "tailwindcss": "^4.1.18",
