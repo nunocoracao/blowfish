@@ -56,7 +56,6 @@
     "tailwind-scrollbar": "^4.0.2",
     "tailwindcss": "^4.1.18",
     "tw-elements": "2.0.0",
-    "typeit": "^8.8.7",
     "vendor-copy": "^3.0.1"
   },
   "vendorCopy": [],
@@ -88,10 +87,6 @@
     {
       "from": "node_modules/fuse.js/dist/fuse.min.js",
       "to": "assets/lib/fuse/fuse.min.js"
-    },
-    {
-      "from": "node_modules/typeit/dist/index.umd.js",
-      "to": "assets/lib/typeit/typeit.umd.js"
     },
     {
       "from": "node_modules/jquery/dist/jquery.slim.min.js",
