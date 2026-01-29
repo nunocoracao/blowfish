@@ -54,8 +54,7 @@
 
 {{/* TypeIt */}}
 {{ if .Page.HasShortcode "typeit" }}
-  {{ $typeitLib := resources.Get "lib/typeit/typeit.umd.js" | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
-  <script defer src="{{ $typeitLib.RelPermalink }}" integrity="{{ $typeitLib.Data.Integrity }}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typeit/8.8.7/index.umd.min.js" integrity="sha512-w9+WtnRcS5TEPBd/CalFufJcL86KNh81FYMLkH9jbW46+XnKmdciHk+qhueq+thFd11nt2cV6JSX+nvfFLylgw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 {{ end }}
 
 {{/* Packery */}}

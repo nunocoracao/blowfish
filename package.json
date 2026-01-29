@@ -37,7 +37,9 @@
   "homepage": "https://github.com/nunocoracao/blowfish#readme",
   "devDependencies": {
     "@awmottaz/prettier-plugin-void-html": "^2.0.0",
+    "@iamtraction/google-translate": "^2.0.1",
     "@tailwindcss/cli": "^4.1.18",
+    "@tailwindcss/forms": "^0.5.11",
     "@tailwindcss/typography": "^0.5.19",
     "chart.js": "^4.5.1",
     "fuse.js": "^7.1.0",
@@ -47,14 +49,13 @@
     "medium-zoom": "^1.1.0",
     "mermaid": "^11.12.2",
     "packery": "^3.0.0",
-    "prettier": "^3.8.0",
+    "prettier": "~3.7.0",
     "prettier-plugin-go-template": "^0.0.15",
     "puppeteer": "^24.35.0",
     "rimraf": "^6.1.2",
     "tailwind-scrollbar": "^4.0.2",
     "tailwindcss": "^4.1.18",
     "tw-elements": "2.0.0",
-    "typeit": "^8.8.7",
     "vendor-copy": "^3.0.1"
   },
   "vendorCopy": [],
@@ -88,10 +89,6 @@
       "to": "assets/lib/fuse/fuse.min.js"
     },
     {
-      "from": "node_modules/typeit/dist/index.umd.js",
-      "to": "assets/lib/typeit/typeit.umd.js"
-    },
-    {
       "from": "node_modules/jquery/dist/jquery.slim.min.js",
       "to": "assets/lib/jquery/jquery.slim.min.js"
     },
@@ -119,12 +116,5 @@
       "from": "node_modules/medium-zoom/dist/style.css",
       "to": "assets/lib/zoom/style.css"
     }
-  ],
-  "dependencies": {
-    "@headlessui/react": "^2.2.9",
-    "@heroicons/react": "^2.2.0",
-    "@iamtraction/google-translate": "^2.0.1",
-    "@tailwindcss/forms": "^0.5.11",
-    "commander": "^14.0.2"
-  }
+  ]
 }
