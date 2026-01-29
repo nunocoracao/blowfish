@@ -971,5 +971,14 @@
       "Tech",
       "IT"
     ]
+  },
+  {
+    "title": "Tats Shibata",
+    "url": "https://blog.rewse.jp/",
+    "source": "https://github.com/rewse/rewse-blog",
+    "tags": [
+      "Personal site",
+      "Blog"
+    ]
   }
 ]
