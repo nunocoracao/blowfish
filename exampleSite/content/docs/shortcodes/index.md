@@ -103,7 +103,8 @@ The alert sign (`+` or `-`) is optional to control whether the admonition is fol
 <!-- prettier-ignore-start -->
 | Parameter | Description                                                                                       |
 | --------- | ------------------------------------------------------------------------------------------------- |
-| `mode`    | **Optional.** `collapse` (single open) or `open` (multiple open). Defaults to `collapse`.         |
+| `mode`       | **Optional.** `collapse` (single open) or `open` (multiple open). Defaults to `collapse`.      |
+| `separated`  | **Optional.** `true` to show each item as a separate card. Defaults to `false` (joined list).  |
 <!-- prettier-ignore-end -->
 
 `accordionItem` parameters:
@@ -116,10 +117,10 @@ The alert sign (`+` or `-`) is optional to control whether the admonition is fol
 | `header`  | **Optional.** Alias for `title`, kept for compatibility with other shortcodes.                      |
 <!-- prettier-ignore-end -->
 
-**Example 1: `mode="open"` (multiple items can be open)**
+**Example 1: `mode="open"` (multiple items can be open) + `separated=true`**
 
 ```md
-{{</* accordion mode="open" */>}}
+{{</* accordion mode="open" separated=true */>}}
   {{</* accordionItem title="What is Blowfish?" open=true */>}}
   Blowfish is a fast, configurable Hugo theme.
   {{</* /accordionItem */>}}
@@ -130,7 +131,7 @@ The alert sign (`+` or `-`) is optional to control whether the admonition is fol
 {{</* /accordion */>}}
 ```
 
-{{< accordion mode="open" >}}
+{{< accordion mode="open" separated=true >}}
   {{< accordionItem title="What is Blowfish?" open=true >}}
   Blowfish is a fast, configurable Hugo theme.
   {{< /accordionItem >}}

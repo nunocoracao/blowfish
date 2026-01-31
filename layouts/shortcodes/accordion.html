@@ -1,9 +1,26 @@
 {{ $id := delimit (slice "accordion" (partial "functions/uid.html" .)) "-" }}
 {{ $mode := .Get "mode" | default "collapse" }}
+{{ $separated := .Get "separated" | default false }}
+{{ $isSeparated := or (eq $separated true) (eq $separated "true") }}
 
-<div id="{{ $id }}" class="space-y-2" data-accordion="{{ $mode }}">
+<div
+  id="{{ $id }}"
+  class="{{ if $isSeparated }}space-y-2{{ else }}border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden{{ end }}"
+  data-accordion="{{ $mode }}"
+  data-accordion-separated="{{ $isSeparated }}"
+>
   {{- .Inner -}}
 </div>
+{{ if not $isSeparated }}
+<style>
+  #{{ $id }} > details + details {
+    border-top: 1px solid rgb(var(--color-neutral-200));
+  }
+  .dark #{{ $id }} > details + details {
+    border-top-color: rgb(var(--color-neutral-700));
+  }
+</style>
+{{ end }}
 {{ if eq $mode "collapse" }}
 <script>
   (() => {
