@@ -1,0 +1,46 @@
+{{ $id := delimit (slice "accordion" (partial "functions/uid.html" .)) "-" }}
+{{ $mode := .Get "mode" | default "collapse" }}
+{{ $separated := .Get "separated" | default false }}
+{{ $isSeparated := or (eq $separated true) (eq $separated "true") }}
+
+<div
+  id="{{ $id }}"
+  class="{{ if $isSeparated }}space-y-2{{ else }}border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden{{ end }}"
+  data-accordion="{{ $mode }}"
+  data-accordion-separated="{{ $isSeparated }}"
+>
+  {{- .Inner -}}
+</div>
+{{ if $isSeparated }}
+<style>
+  #{{ $id }} > details + details {
+    margin-top: 0.5rem;
+  }
+</style>
+{{ else }}
+<style>
+  #{{ $id }} > details + details {
+    border-top: 1px solid rgb(var(--color-neutral-200));
+  }
+  .dark #{{ $id }} > details + details {
+    border-top-color: rgb(var(--color-neutral-700));
+  }
+</style>
+{{ end }}
+{{ if eq $mode "collapse" }}
+<script>
+  (() => {
+    const root = document.getElementById("{{ $id }}");
+    if (!root) return;
+    const items = root.querySelectorAll("details[data-accordion-item]");
+    items.forEach((item) => {
+      item.addEventListener("toggle", () => {
+        if (!item.open) return;
+        items.forEach((other) => {
+          if (other !== item) other.removeAttribute("open");
+        });
+      });
+    });
+  })();
+</script>
+{{ end }}

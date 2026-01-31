@@ -96,6 +96,92 @@ The alert sign (`+` or `-`) is optional to control whether the admonition is fol
 
 > [!INFO]- Customize admonition
 > See the [admonition customization guide](https://github.com/nunocoracao/blowfish/blob/main/layouts/_default/_markup/render-blockquote.html).
+## Accordion
+
+`accordion` creates a collapsible set of panels. Use the `accordionItem` sub-shortcode to define each item. You can control whether multiple items can be open at the same time using the `mode` parameter.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description                                                                                       |
+| --------- | ------------------------------------------------------------------------------------------------- |
+| `mode`       | **Optional.** `collapse` (single open) or `open` (multiple open). Defaults to `collapse`.      |
+| `separated`  | **Optional.** `true` to show each item as a separate card. Defaults to `false` (joined list).  |
+<!-- prettier-ignore-end -->
+
+`accordionItem` parameters:
+
+<!-- prettier-ignore-start -->
+| Parameter | Description                                                                                         |
+| --------- | --------------------------------------------------------------------------------------------------- |
+| `title`   | **Required.** Title shown in the item header.                                                       |
+| `open`    | **Optional.** Set to `true` to have the item open by default.                                       |
+| `header`  | **Optional.** Alias for `title`, kept for compatibility with other shortcodes.                      |
+<!-- prettier-ignore-end -->
+
+**Example 1: `mode="open"` (multiple items can be open) + `separated=true`**
+
+```md
+{{</* accordion mode="open" separated=true */>}}
+  {{</* accordionItem title="Markdown example" open=true */>}}
+  This item demonstrates Markdown rendering:
+  - **Bold text**
+  - Lists
+  - `inline code`
+  {{</* /accordionItem */>}}
+
+  {{</* accordionItem title="Shortcode example" md=false */>}}
+  This item demonstrates shortcode rendering with <code>md=false</code>:
+  
+  {{</* alert */>}}This is an inline alert.{{</* /alert */>}}
+  {{</* /accordionItem */>}}
+{{</* /accordion */>}}
+```
+
+{{< accordion mode="open" separated=true >}}
+  {{< accordionItem title="Markdown example" open=true >}}
+  This item demonstrates Markdown rendering:
+  - **Bold text**
+  - Lists
+  - `inline code`
+  {{< /accordionItem >}}
+
+  {{< accordionItem title="Shortcode example" md=false >}}
+  This item demonstrates shortcode rendering with <code>md=false</code>:
+  
+  {{< alert >}}This is an inline alert.{{< /alert >}}
+  {{< /accordionItem >}}
+{{< /accordion >}}
+
+**Example 2: `mode="collapse"` (only one item open at a time)**
+
+```md
+{{</* accordion mode="collapse" */>}}
+  {{</* accordionItem title="First item" open=true */>}}
+  This item uses Markdown with a short list:
+  1. One
+  2. Two
+  3. Three
+  {{</* /accordionItem */>}}
+
+  {{</* accordionItem title="Second item" md=false */>}}
+  This item includes another shortcode:
+  {{</* badge */>}}Tip{{</* /badge */>}}
+  {{</* /accordionItem */>}}
+{{</* /accordion */>}}
+```
+
+{{< accordion mode="collapse" >}}
+  {{< accordionItem title="First item" open=true >}}
+  This item uses Markdown with a short list:
+  1. One
+  2. Two
+  3. Three
+  {{< /accordionItem >}}
+
+  {{< accordionItem title="Second item" md=false >}}
+  This item includes another shortcode:
+  {{< badge >}}Tip{{< /badge >}}
+  {{< /accordionItem >}}
+{{< /accordion >}}
 
 <br/><br/><br/>
 
