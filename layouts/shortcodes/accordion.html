@@ -4,3 +4,20 @@
 <div id="{{ $id }}" class="space-y-2" data-accordion="{{ $mode }}">
   {{- .Inner -}}
 </div>
+{{ if eq $mode "collapse" }}
+<script>
+  (() => {
+    const root = document.getElementById("{{ $id }}");
+    if (!root) return;
+    const items = root.querySelectorAll("details[data-accordion-item]");
+    items.forEach((item) => {
+      item.addEventListener("toggle", () => {
+        if (!item.open) return;
+        items.forEach((other) => {
+          if (other !== item) other.removeAttribute("open");
+        });
+      });
+    });
+  })();
+</script>
+{{ end }}
