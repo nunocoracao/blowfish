@@ -96,6 +96,49 @@ The alert sign (`+` or `-`) is optional to control whether the admonition is fol
 
 > [!INFO]- Customize admonition
 > See the [admonition customization guide](https://github.com/nunocoracao/blowfish/blob/main/layouts/_default/_markup/render-blockquote.html).
+## Accordion
+
+`accordion` creates a collapsible set of panels. Use the `accordionItem` sub-shortcode to define each item. You can control whether multiple items can be open at the same time using the `mode` parameter.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description                                                                                       |
+| --------- | ------------------------------------------------------------------------------------------------- |
+| `mode`    | **Optional.** `collapse` (single open) or `open` (multiple open). Defaults to `collapse`.         |
+<!-- prettier-ignore-end -->
+
+`accordionItem` parameters:
+
+<!-- prettier-ignore-start -->
+| Parameter | Description                                                                                         |
+| --------- | --------------------------------------------------------------------------------------------------- |
+| `title`   | **Required.** Title shown in the item header.                                                       |
+| `open`    | **Optional.** Set to `true` to have the item open by default.                                       |
+| `header`  | **Optional.** Alias for `title`, kept for compatibility with other shortcodes.                      |
+<!-- prettier-ignore-end -->
+
+**Example:**
+
+```md
+{{</* accordion mode="open" */>}}
+  {{</* accordionItem title="What is Blowfish?" open=true */>}}
+  Blowfish is a fast, configurable Hugo theme.
+  {{</* /accordionItem */>}}
+
+  {{</* accordionItem title="Can I use Markdown?" */>}}
+  Yes. Content inside items is Markdown and supports other shortcodes.
+  {{</* /accordionItem */>}}
+{{</* /accordion */>}}
+```
+
+{{< accordion mode="open" >}}
+  {{< accordionItem title="What is Blowfish?" open=true >}}
+  Blowfish is a fast, configurable Hugo theme.
+  {{< /accordionItem >}}
+
+  {{< accordionItem title="Can I use Markdown?" >}}
+  Yes. Content inside items is Markdown and supports other shortcodes.
+  {{< /accordionItem >}}
+{{< /accordion >}}
 
 <br/><br/><br/>
 
