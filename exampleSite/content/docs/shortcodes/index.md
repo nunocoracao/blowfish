@@ -116,7 +116,7 @@ The alert sign (`+` or `-`) is optional to control whether the admonition is fol
 | `header`  | **Optional.** Alias for `title`, kept for compatibility with other shortcodes.                      |
 <!-- prettier-ignore-end -->
 
-**Example:**
+**Example 1: `mode="open"` (multiple items can be open)**
 
 ```md
 {{</* accordion mode="open" */>}}
@@ -137,6 +137,30 @@ The alert sign (`+` or `-`) is optional to control whether the admonition is fol
 
   {{< accordionItem title="Can I use Markdown?" >}}
   Yes. Content inside items is Markdown and supports other shortcodes.
+  {{< /accordionItem >}}
+{{< /accordion >}}
+
+**Example 2: `mode="collapse"` (only one item open at a time)**
+
+```md
+{{</* accordion mode="collapse" */>}}
+  {{</* accordionItem title="First item" open=true */>}}
+  First item content.
+  {{</* /accordionItem */>}}
+
+  {{</* accordionItem title="Second item" */>}}
+  Second item content.
+  {{</* /accordionItem */>}}
+{{</* /accordion */>}}
+```
+
+{{< accordion mode="collapse" >}}
+  {{< accordionItem title="First item" open=true >}}
+  First item content.
+  {{< /accordionItem >}}
+
+  {{< accordionItem title="Second item" >}}
+  Second item content.
   {{< /accordionItem >}}
 {{< /accordion >}}
 
