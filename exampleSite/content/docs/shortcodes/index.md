@@ -121,17 +121,15 @@ The alert sign (`+` or `-`) is optional to control whether the admonition is fol
 
 ```md
 {{</* accordion mode="open" separated=true */>}}
-  {{</* accordionItem title="What is Blowfish?" open=true */>}}
-  Blowfish is a fast, configurable Hugo theme. Here’s a quick list:
-  - **Fast builds**
-  - Flexible layouts
-  - `config`-driven
-  
-  {{</* badge */>}}New{{</* /badge */>}}
+  {{</* accordionItem title="Markdown example" open=true */>}}
+  This item demonstrates Markdown rendering:
+  - **Bold text**
+  - Lists
+  - `inline code`
   {{</* /accordionItem */>}}
 
-  {{</* accordionItem title="Can I use shortcodes?" md=false */>}}
-  Yes. Content inside items can contain other shortcodes like alerts:
+  {{</* accordionItem title="Shortcode example" md=false */>}}
+  This item demonstrates shortcode rendering with <code>md=false</code>:
   
   {{</* alert */>}}This is an inline alert.{{</* /alert */>}}
   {{</* /accordionItem */>}}
@@ -139,17 +137,15 @@ The alert sign (`+` or `-`) is optional to control whether the admonition is fol
 ```
 
 {{< accordion mode="open" separated=true >}}
-  {{< accordionItem title="What is Blowfish?" open=true >}}
-  Blowfish is a fast, configurable Hugo theme. Here’s a quick list:
-  - **Fast builds**
-  - Flexible layouts
-  - `config`-driven
-  
-  
+  {{< accordionItem title="Markdown example" open=true >}}
+  This item demonstrates Markdown rendering:
+  - **Bold text**
+  - Lists
+  - `inline code`
   {{< /accordionItem >}}
 
-  {{< accordionItem title="Can I use Markdown?" md=false >}}
-  Yes. Content inside items is Markdown and supports other shortcodes like alerts:
+  {{< accordionItem title="Shortcode example" md=false >}}
+  This item demonstrates shortcode rendering with <code>md=false</code>:
   
   {{< alert >}}This is an inline alert.{{< /alert >}}
   {{< /accordionItem >}}
