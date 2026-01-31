@@ -122,22 +122,36 @@ The alert sign (`+` or `-`) is optional to control whether the admonition is fol
 ```md
 {{</* accordion mode="open" separated=true */>}}
   {{</* accordionItem title="What is Blowfish?" open=true */>}}
-  Blowfish is a fast, configurable Hugo theme.
+  Blowfish is a fast, configurable Hugo theme. Here’s a quick list:
+  - **Fast builds**
+  - Flexible layouts
+  - `config`-driven
+  
+  {{</* badge */>}}New{{</* /badge */>}}
   {{</* /accordionItem */>}}
 
   {{</* accordionItem title="Can I use Markdown?" */>}}
-  Yes. Content inside items is Markdown and supports other shortcodes.
+  Yes. Content inside items is Markdown and supports other shortcodes like alerts:
+  
+  {{</* alert */>}}This is an inline alert.{{</* /alert */>}}
   {{</* /accordionItem */>}}
 {{</* /accordion */>}}
 ```
 
 {{< accordion mode="open" separated=true >}}
   {{< accordionItem title="What is Blowfish?" open=true >}}
-  Blowfish is a fast, configurable Hugo theme.
+  Blowfish is a fast, configurable Hugo theme. Here’s a quick list:
+  - **Fast builds**
+  - Flexible layouts
+  - `config`-driven
+  
+  {{< badge >}}New{{< /badge >}}
   {{< /accordionItem >}}
 
   {{< accordionItem title="Can I use Markdown?" >}}
-  Yes. Content inside items is Markdown and supports other shortcodes.
+  Yes. Content inside items is Markdown and supports other shortcodes like alerts:
+  
+  {{< alert >}}This is an inline alert.{{< /alert >}}
   {{< /accordionItem >}}
 {{< /accordion >}}
 
@@ -146,22 +160,30 @@ The alert sign (`+` or `-`) is optional to control whether the admonition is fol
 ```md
 {{</* accordion mode="collapse" */>}}
   {{</* accordionItem title="First item" open=true */>}}
-  First item content.
+  This item uses Markdown with a short list:
+  1. One
+  2. Two
+  3. Three
   {{</* /accordionItem */>}}
 
   {{</* accordionItem title="Second item" */>}}
-  Second item content.
+  This item includes another shortcode:
+  {{</* badge */>}}Tip{{</* /badge */>}}
   {{</* /accordionItem */>}}
 {{</* /accordion */>}}
 ```
 
 {{< accordion mode="collapse" >}}
   {{< accordionItem title="First item" open=true >}}
-  First item content.
+  This item uses Markdown with a short list:
+  1. One
+  2. Two
+  3. Three
   {{< /accordionItem >}}
 
   {{< accordionItem title="Second item" >}}
-  Second item content.
+  This item includes another shortcode:
+  {{< badge >}}Tip{{< /badge >}}
   {{< /accordionItem >}}
 {{< /accordion >}}
 
