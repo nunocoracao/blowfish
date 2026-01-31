@@ -130,8 +130,8 @@ The alert sign (`+` or `-`) is optional to control whether the admonition is fol
   {{</* badge */>}}New{{</* /badge */>}}
   {{</* /accordionItem */>}}
 
-  {{</* accordionItem title="Can I use Markdown?" */>}}
-  Yes. Content inside items is Markdown and supports other shortcodes like alerts:
+  {{</* accordionItem title="Can I use shortcodes?" md=false */>}}
+  Yes. Content inside items can contain other shortcodes like alerts:
   
   {{</* alert */>}}This is an inline alert.{{</* /alert */>}}
   {{</* /accordionItem */>}}
@@ -145,10 +145,10 @@ The alert sign (`+` or `-`) is optional to control whether the admonition is fol
   - Flexible layouts
   - `config`-driven
   
-  {{< badge >}}New{{< /badge >}}
+  
   {{< /accordionItem >}}
 
-  {{< accordionItem title="Can I use Markdown?" >}}
+  {{< accordionItem title="Can I use Markdown?" md=false >}}
   Yes. Content inside items is Markdown and supports other shortcodes like alerts:
   
   {{< alert >}}This is an inline alert.{{< /alert >}}
@@ -166,7 +166,7 @@ The alert sign (`+` or `-`) is optional to control whether the admonition is fol
   3. Three
   {{</* /accordionItem */>}}
 
-  {{</* accordionItem title="Second item" */>}}
+  {{</* accordionItem title="Second item" md=false */>}}
   This item includes another shortcode:
   {{</* badge */>}}Tip{{</* /badge */>}}
   {{</* /accordionItem */>}}
@@ -181,7 +181,7 @@ The alert sign (`+` or `-`) is optional to control whether the admonition is fol
   3. Three
   {{< /accordionItem >}}
 
-  {{< accordionItem title="Second item" >}}
+  {{< accordionItem title="Second item" md=false >}}
   This item includes another shortcode:
   {{< badge >}}Tip{{< /badge >}}
   {{< /accordionItem >}}

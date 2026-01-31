@@ -6,6 +6,7 @@
 {{ $isSeparated := or (eq $separated true) (eq $separated "true") }}
 
 {{ $title := .Get "title" | default (.Get "header") }}
+{{ $md := .Get "md" | default true }}
 {{ $open := .Get "open" | default false }}
 {{ $isOpen := or (eq $open true) (eq $open "true") }}
 
@@ -21,6 +22,10 @@
     </span>
   </summary>
   <div class="px-4 pb-4 text-neutral-700 dark:text-neutral-300">
-    {{- .Inner | markdownify -}}
+    {{ if $md }}
+      {{- .Inner | markdownify -}}
+    {{ else }}
+      {{- .Inner -}}
+    {{ end }}
   </div>
 </details>
