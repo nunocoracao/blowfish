@@ -1,0 +1,37 @@
+{{ $parent := .Parent }}
+{{ $groupID := "" }}
+{{ $mode := "collapse" }}
+{{ if $parent }}
+  {{ $groupID = delimit (slice "accordion" (partial "functions/uid.html" $parent)) "-" }}
+  {{ $mode = $parent.Get "mode" | default "collapse" }}
+{{ else }}
+  {{ $groupID = delimit (slice "accordion" (partial "functions/uid.html" .)) "-" }}
+{{ end }}
+
+{{ $id := delimit (slice "accordion-item" (partial "functions/uid.html" .)) "-" }}
+{{ $title := .Get "title" | default (.Get "header") }}
+{{ $open := .Get "open" | default false }}
+{{ $isOpen := or (eq $open true) (eq $open "true") }}
+
+<div class="rounded-lg border border-neutral-200 dark:border-neutral-700 overflow-hidden">
+  <input
+    id="{{ $id }}"
+    {{ if eq $mode "open" }}type="checkbox"{{ else }}type="radio" name="{{ $groupID }}"{{ end }}
+    class="peer sr-only"
+    {{ if $isOpen }}checked{{ end }}
+  />
+  <label
+    for="{{ $id }}"
+    class="flex w-full cursor-pointer items-center justify-between gap-4 px-4 py-3 text-left text-lg font-semibold text-neutral-900 dark:text-neutral-100"
+  >
+    <span>{{ $title }}</span>
+    <span class="transition-transform duration-200 peer-checked:rotate-180">
+      {{ partial "icon" "chevron-down" }}
+    </span>
+  </label>
+  <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-200 peer-checked:grid-rows-[1fr]">
+    <div class="overflow-hidden px-4 pb-4 text-neutral-700 dark:text-neutral-300">
+      {{- .Inner | markdownify -}}
+    </div>
+  </div>
+</div>

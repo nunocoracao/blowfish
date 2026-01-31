@@ -1,0 +1,6 @@
+{{ $id := delimit (slice "accordion" (partial "functions/uid.html" .)) "-" }}
+{{ $mode := .Get "mode" | default "collapse" }}
+
+<div id="{{ $id }}" class="space-y-2" data-accordion="{{ $mode }}">
+  {{- .Inner -}}
+</div>
