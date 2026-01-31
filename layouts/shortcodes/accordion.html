@@ -11,7 +11,13 @@
 >
   {{- .Inner -}}
 </div>
-{{ if not $isSeparated }}
+{{ if $isSeparated }}
+<style>
+  #{{ $id }} > details + details {
+    margin-top: 0.5rem;
+  }
+</style>
+{{ else }}
 <style>
   #{{ $id }} > details + details {
     border-top: 1px solid rgb(var(--color-neutral-200));
