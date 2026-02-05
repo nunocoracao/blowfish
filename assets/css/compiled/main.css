@@ -1070,7 +1070,7 @@
     --tw-prose-pre-bg: var(--color-neutral-50);
     --tw-prose-th-borders: var(--color-neutral-500);
     --tw-prose-td-borders: var(--color-neutral-300);
-    & a {
+    & a:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
       text-decoration: none;
       text-decoration-color: var(--color-primary-300);
       font-weight: 500;
@@ -1086,23 +1086,23 @@
         text-decoration-color: var(--color-primary-600);
       }
     }
-    & hr {
+    & hr:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
       border: 0.8px solid var(--color-neutral-300);
     }
-    & kbd {
+    & kbd:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
       background-color: var(--color-neutral-200);
       padding: 0.1rem 0.4rem;
       border-radius: 0.25rem;
       font-size: 0.9rem;
       font-weight: 600;
     }
-    & mark {
+    & mark:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
       color: var(--color-neutral-800);
       background-color: var(--color-primary-600);
       padding: 0.1rem 0.2rem;
       border-radius: 0.25rem;
     }
-    & code {
+    & code:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
       padding-top: 3px;
       padding-bottom: 3px;
       padding-left: 5px;
@@ -1112,7 +1112,7 @@
         display: none;
       }
     }
-    & p {
+    & p:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
       &::before, &::after {
         display: none;
       }
@@ -1759,7 +1759,7 @@
     --tw-prose-pre-bg: var(--color-neutral-700);
     --tw-prose-th-borders: var(--color-neutral-500);
     --tw-prose-td-borders: var(--color-neutral-700);
-    & a {
+    & a:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
       text-decoration-color: var(--color-neutral-600);
       &:hover {
         color: var(--color-primary-400);
@@ -1768,20 +1768,20 @@
         text-decoration-color: var(--color-primary-400);
       }
     }
-    & kbd {
+    & kbd:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
       color: var(--color-neutral-200);
       background-color: var(--color-neutral-700);
     }
-    & mark {
+    & mark:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
       background-color: var(--color-primary-400);
     }
-    & code:not(pre code) {
-      background-color: rgb(24 24 27 / 0.7);
+    & code:not(pre code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+      background-color: color-mix(in oklab, oklch(21% 0.006 285.885) 70%, transparent);
     }
-    & hr {
+    & hr:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
       border: 0.8px solid var(--color-neutral-500);
     }
-    & p.active {
+    & p.active:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
       text-decoration-color: var(--color-primary-400);
     }
   }
@@ -3376,7 +3376,7 @@
       --tw-prose-pre-bg: var(--color-neutral-700);
       --tw-prose-th-borders: var(--color-neutral-500);
       --tw-prose-td-borders: var(--color-neutral-700);
-      & a {
+      & a:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
         text-decoration-color: var(--color-neutral-600);
         &:hover {
           color: var(--color-primary-400);
@@ -3385,20 +3385,20 @@
           text-decoration-color: var(--color-primary-400);
         }
       }
-      & kbd {
+      & kbd:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
         color: var(--color-neutral-200);
         background-color: var(--color-neutral-700);
       }
-      & mark {
+      & mark:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
         background-color: var(--color-primary-400);
       }
-      & code:not(pre code) {
-        background-color: rgb(24 24 27 / 0.7);
+      & code:not(pre code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+        background-color: color-mix(in oklab, oklch(21% 0.006 285.885) 70%, transparent);
       }
-      & hr {
+      & hr:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
         border: 0.8px solid var(--color-neutral-500);
       }
-      & p.active {
+      & p.active:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
         text-decoration-color: var(--color-primary-400);
       }
     }
@@ -4300,7 +4300,7 @@
     }
   }
   .tab__button.tab--active {
-    border-bottom: 2px solid rgb(var(--color-primary-500));
+    border-bottom: 2px solid var(--clr-primary-500);
   }
   .tab__panel {
     display: none;
@@ -4364,16 +4364,16 @@
     transform: translateX(18px);
   }
   .ios-toggle input:checked + .toggle-track {
-    background: rgba(var(--color-primary-500), 1);
+    background: var(--clr-primary-500);
   }
   .ios-toggle input:checked ~ .ios-toggle-ball {
     transform: translateX(18px);
   }
   .ios-toggle.is-checked {
-    background: rgba(var(--color-primary-500), 1);
+    background: var(--clr-primary-500);
   }
   .ios-toggle:has(input:checked) {
-    background: rgba(var(--color-primary-500), 1);
+    background: var(--clr-primary-500);
   }
   .ios-toggle:has(input:checked)::after {
     transform: translateX(18px);
