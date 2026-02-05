@@ -1,0 +1,227 @@
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+@plugin 'tailwind-scrollbar' {
+    preferredStrategy: 'pseudoelements';
+}
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Breakpoints */
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 53.3125rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 96rem;
+
+  /* Neutral colors */
+  --color-neutral: var(--clr-neutral);
+  --color-neutral-50: var(--clr-neutral-50);
+  --color-neutral-100: var(--clr-neutral-100);
+  --color-neutral-200: var(--clr-neutral-200);
+  --color-neutral-300: var(--clr-neutral-300);
+  --color-neutral-400: var(--clr-neutral-400);
+  --color-neutral-500: var(--clr-neutral-500);
+  --color-neutral-600: var(--clr-neutral-600);
+  --color-neutral-700: var(--clr-neutral-700);
+  --color-neutral-800: var(--clr-neutral-800);
+  --color-neutral-900: var(--clr-neutral-900);
+
+  /* Primary colors */
+  --color-primary-50: var(--clr-primary-50);
+  --color-primary-100: var(--clr-primary-100);
+  --color-primary-200: var(--clr-primary-200);
+  --color-primary-300: var(--clr-primary-300);
+  --color-primary-400: var(--clr-primary-400);
+  --color-primary-500: var(--clr-primary-500);
+  --color-primary-600: var(--clr-primary-600);
+  --color-primary-700: var(--clr-primary-700);
+  --color-primary-800: var(--clr-primary-800);
+  --color-primary-900: var(--clr-primary-900);
+
+  /* Secondary colors */
+  --color-secondary-50: var(--clr-secondary-50);
+  --color-secondary-100: var(--clr-secondary-100);
+  --color-secondary-200: var(--clr-secondary-200);
+  --color-secondary-300: var(--clr-secondary-300);
+  --color-secondary-400: var(--clr-secondary-400);
+  --color-secondary-500: var(--clr-secondary-500);
+  --color-secondary-600: var(--clr-secondary-600);
+  --color-secondary-700: var(--clr-secondary-700);
+  --color-secondary-800: var(--clr-secondary-800);
+  --color-secondary-900: var(--clr-secondary-900);
+}
+
+@utility prose {
+  /* Body text */
+  --tw-prose-body: var(--color-neutral-700);
+
+  /* Headings */
+  --tw-prose-headings: var(--color-neutral-800);
+
+  /* Lead */
+  --tw-prose-lead: var(--color-neutral-500);
+
+  /* Links */
+  --tw-prose-links: var(--color-primary-600);
+
+  /* Bold */
+  --tw-prose-bold: inherit;
+
+  /* Counters */
+  --tw-prose-counters: var(--color-neutral-800);
+
+  /* Bullets */
+  --tw-prose-bullets: var(--color-neutral-500);
+
+  /* Quotes */
+  --tw-prose-quotes: var(--color-neutral-700);
+  --tw-prose-quote-borders: var(--color-primary-500);
+
+  /* Captions */
+  --tw-prose-captions: var(--color-neutral-500);
+
+  /* Code */
+  --tw-prose-code: var(--color-secondary-700);
+  --tw-prose-pre-code: var(--color-neutral-700);
+  --tw-prose-pre-bg: var(--color-neutral-50);
+
+  /* Tables */
+  --tw-prose-th-borders: var(--color-neutral-500);
+  --tw-prose-td-borders: var(--color-neutral-300);
+
+  & a {
+    text-decoration: none;
+    text-decoration-color: var(--color-primary-300);
+    font-weight: 500;
+
+    &:hover {
+      color: var(--color-primary-600);
+      text-decoration: none;
+      border-radius: 0.09rem;
+    }
+
+    & code {
+      color: var(--tw-prose-code);
+    }
+
+    &.active {
+      text-decoration-color: var(--color-primary-600);
+    }
+  }
+
+  & hr {
+    border: 0.8px solid var(--color-neutral-300);
+  }
+
+  & kbd {
+    background-color: var(--color-neutral-200);
+    padding: 0.1rem 0.4rem;
+    border-radius: 0.25rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  & mark {
+    color: var(--color-neutral-800);
+    background-color: var(--color-primary-600);
+    padding: 0.1rem 0.2rem;
+    border-radius: 0.25rem;
+  }
+
+  & code {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 0.25rem;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  & p {
+
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    &.active {
+      text-decoration-color: var(--color-primary-600);
+    }
+  }
+}
+
+@utility prose-invert {
+  /* Body text */
+  --tw-prose-body: var(--color-neutral-300);
+
+  /* Headings */
+  --tw-prose-headings: var(--color-neutral-50);
+
+  /* Lead */
+  --tw-prose-lead: var(--color-neutral-500);
+
+  /* Links */
+  --tw-prose-links: var(--color-primary-400);
+
+  /* Bold */
+  --tw-prose-bold: var(--color-neutral);
+
+  /* Counters */
+  --tw-prose-counters: var(--color-neutral-400);
+
+  /* Bullets */
+  --tw-prose-bullets: var(--color-neutral-600);
+
+  /* Quotes */
+  --tw-prose-quotes: var(--color-neutral-200);
+  --tw-prose-quote-borders: var(--color-primary-600);
+
+  /* Captions */
+  --tw-prose-captions: var(--color-neutral-400);
+
+  /* Code */
+  --tw-prose-code: var(--color-secondary-400);
+  --tw-prose-pre-code: var(--color-neutral-200);
+  --tw-prose-pre-bg: var(--color-neutral-700);
+
+  /* Tables */
+  --tw-prose-th-borders: var(--color-neutral-500);
+  --tw-prose-td-borders: var(--color-neutral-700);
+
+  & a {
+    text-decoration-color: var(--color-neutral-600);
+
+    &:hover {
+      color: var(--color-primary-400);
+    }
+
+    &.active {
+      text-decoration-color: var(--color-primary-400);
+    }
+  }
+
+  & kbd {
+    color: var(--color-neutral-200);
+    background-color: var(--color-neutral-700);
+  }
+
+  & mark {
+    background-color: var(--color-primary-400);
+  }
+
+  & code:not(pre code) {
+    background-color: rgb(24 24 27 / 0.7);
+  }
+
+  & hr {
+    border: 0.8px solid var(--color-neutral-500);
+  }
+
+  & p.active {
+    text-decoration-color: var(--color-primary-400);
+  }
+}

@@ -5,8 +5,8 @@
   "scripts": {
     "postinstall": "vendor-copy",
     "assets": "rimraf assets/vendor && vendor-copy",
-    "dev": "NODE_ENV=development npx @tailwindcss/cli -c ./tailwind.config.js -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
-    "build": "NODE_ENV=production npx @tailwindcss/cli -c ./tailwind.config.js -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit",
+    "dev": "NODE_ENV=development npx @tailwindcss/cli -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
+    "build": "NODE_ENV=production npx @tailwindcss/cli -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit",
     "dev-windows": "set NODE_ENV=development&& npx @tailwindcss/cli -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
     "build-windows": "set NODE_ENV=production&& npx @tailwindcss/cli -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit",
     "build-hugo": "hugo --minify -s exampleSite --themesDir ../.. -d ../docs --baseURL https://nunocoracao.github.io/blowfish/",

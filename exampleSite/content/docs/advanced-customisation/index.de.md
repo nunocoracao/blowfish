@@ -59,14 +59,13 @@ Zusätzlich zu den Standardschemata können Sie auch eigene erstellen und die ge
 **Hinweis:** Die manuelle Generierung dieser Dateien kann schwierig sein. Ich habe ein `nodejs`-Terminal-Tool entwickelt, um dabei zu helfen: [Fugu](https://github.com/nunocoracao/fugu). Im Wesentlichen übergeben Sie die drei Haupt-`hex`-Werte Ihrer Farbpalette und das Programm gibt eine CSS-Datei aus, die direkt in Blowfish importiert werden kann.
 {{< /alert >}}
 
-
 Blowfish definiert eine Drei-Farben-Palette, die im gesamten Theme verwendet wird. Die drei Farben sind als `neutral`, `primary` und `secondary` Varianten definiert, jeweils mit zehn Farbstufen.
 
 Aufgrund der Art und Weise, wie Tailwind CSS 3.0 Farbwerte mit Deckkraft berechnet, müssen die im Schema angegebenen Farben einem [bestimmten Format entsprechen](https://github.com/adamwathan/tailwind-css-variable-text-opacity-demo), indem sie die Rot-, Grün- und Blau-Farbwerte angeben.
 
 ```css
 :root {
-  --color-primary-500: 139, 92, 246;
+  --clr-primary-500: rgb(139, 92, 246);
 }
 ```
 

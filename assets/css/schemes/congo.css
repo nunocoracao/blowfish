@@ -1,37 +1,37 @@
 /* Blowfish scheme */
 :root {
-  --color-neutral: 255, 255, 255;
+  --clr-neutral: oklch(1.00 0.00 0);
   /* Gray */
-  --color-neutral-50: 250, 250, 250;
-  --color-neutral-100: 244, 244, 245;
-  --color-neutral-200: 228, 228, 231;
-  --color-neutral-300: 212, 212, 216;
-  --color-neutral-400: 161, 161, 170;
-  --color-neutral-500: 113, 113, 122;
-  --color-neutral-600: 82, 82, 91;
-  --color-neutral-700: 63, 63, 70;
-  --color-neutral-800: 39, 39, 42;
-  --color-neutral-900: 24, 24, 27;
+  --clr-neutral-50: oklch(0.99 0.00 0);
+  --clr-neutral-100: oklch(0.97 0.00 286);
+  --clr-neutral-200: oklch(0.92 0.00 286);
+  --clr-neutral-300: oklch(0.87 0.01 286);
+  --clr-neutral-400: oklch(0.71 0.01 286);
+  --clr-neutral-500: oklch(0.55 0.01 286);
+  --clr-neutral-600: oklch(0.44 0.01 286);
+  --clr-neutral-700: oklch(0.37 0.01 286);
+  --clr-neutral-800: oklch(0.27 0.01 286);
+  --clr-neutral-900: oklch(0.21 0.01 286);
   /* Violet */
-  --color-primary-50: 245, 243, 255;
-  --color-primary-100: 237, 233, 254;
-  --color-primary-200: 221, 214, 254;
-  --color-primary-300: 196, 181, 253;
-  --color-primary-400: 167, 139, 250;
-  --color-primary-500: 139, 92, 246;
-  --color-primary-600: 124, 58, 237;
-  --color-primary-700: 109, 40, 217;
-  --color-primary-800: 91, 33, 182;
-  --color-primary-900: 76, 29, 149;
+  --clr-primary-50: oklch(0.97 0.02 294);
+  --clr-primary-100: oklch(0.94 0.03 295);
+  --clr-primary-200: oklch(0.89 0.05 293);
+  --clr-primary-300: oklch(0.81 0.10 294);
+  --clr-primary-400: oklch(0.71 0.16 294);
+  --clr-primary-500: oklch(0.61 0.22 293);
+  --clr-primary-600: oklch(0.54 0.25 293);
+  --clr-primary-700: oklch(0.49 0.24 293);
+  --clr-primary-800: oklch(0.43 0.21 293);
+  --clr-primary-900: oklch(0.38 0.18 294);
   /* Fuchsia */
-  --color-secondary-50: 253, 244, 255;
-  --color-secondary-100: 250, 232, 255;
-  --color-secondary-200: 245, 208, 254;
-  --color-secondary-300: 240, 171, 252;
-  --color-secondary-400: 232, 121, 249;
-  --color-secondary-500: 217, 70, 239;
-  --color-secondary-600: 192, 38, 211;
-  --color-secondary-700: 162, 28, 175;
-  --color-secondary-800: 134, 25, 143;
-  --color-secondary-900: 112, 26, 117;
+  --clr-secondary-50: oklch(0.98 0.02 320);
+  --clr-secondary-100: oklch(0.95 0.04 319);
+  --clr-secondary-200: oklch(0.90 0.07 320);
+  --clr-secondary-300: oklch(0.83 0.13 321);
+  --clr-secondary-400: oklch(0.75 0.21 322);
+  --clr-secondary-500: oklch(0.67 0.26 322);
+  --clr-secondary-600: oklch(0.59 0.26 323);
+  --clr-secondary-700: oklch(0.52 0.23 324);
+  --clr-secondary-800: oklch(0.45 0.19 325);
+  --clr-secondary-900: oklch(0.40 0.16 326);
 }

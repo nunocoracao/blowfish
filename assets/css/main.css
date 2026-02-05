@@ -1,13 +1,18 @@
 /*! Blowfish | MIT License | https://github.com/nunocoracao/blowfish */
 
-@config "../../tailwind.config.js";
-
 @import "tailwindcss";
-@import "./components/chroma.css" layer(utilities);
-@import "./components/tabs.css" layer(utilities);
-@import "./components/zen-mode.css";
-@import "./components/a11y.css";
-@import "./components/admonition.css" layer(components);
+@import "./config.css";
+
+@layer utilities {
+  @import "./components/chroma.css";
+  @import "./components/tabs.css";
+}
+
+@layer components {
+  @import "./components/zen-mode.css";
+  @import "./components/a11y.css";
+  @import "./components/admonition.css";
+}
 
 html:not(.dark) {
   color-scheme: light;
@@ -109,9 +114,7 @@ button,
 }
 
 .copy-button {
-  @apply absolute top-0 right-0 z-10 invisible w-20 py-1 font-mono text-sm cursor-pointer
-  opacity-90 bg-neutral-200 whitespace-nowrap rounded-bl-md rounded-tr-md text-neutral-700
-  dark:bg-neutral-600 dark:text-neutral-200 overflow-hidden truncate;
+  @apply absolute top-0 right-0 z-10 invisible w-20 py-1 font-mono text-sm cursor-pointer opacity-90 bg-neutral-200 whitespace-nowrap rounded-bl-md rounded-tr-md text-neutral-700 dark:bg-neutral-600 dark:text-neutral-200 overflow-hidden truncate;
 }
 
 .copy-button:hover,
@@ -144,8 +147,10 @@ table {
 
 /* Fix long inline code sections breaking out of article on mobile */
 code {
-  word-wrap: break-word; /* All browsers since IE 5.5+ */
-  overflow-wrap: break-word; /* Renamed property in CSS3 draft spec */
+  word-wrap: break-word;
+  /* All browsers since IE 5.5+ */
+  overflow-wrap: break-word;
+  /* Renamed property in CSS3 draft spec */
 }
 
 /* Fix long URLs breaking out of article bounds on mobile */
@@ -171,7 +176,8 @@ pre {
 }
 
 .single_hero_background {
-  width: calc(100% + 1px); /* patch for very small gap at right edge on mobile devices */
+  width: calc(100% + 1px);
+  /* patch for very small gap at right edge on mobile devices */
   z-index: -10;
 }
 
@@ -210,6 +216,7 @@ pre {
     width: 80vw;
   }
 }
+
 @variant min-md {
   .width-patch {
     width: 65ch;
