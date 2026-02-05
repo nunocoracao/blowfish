@@ -1,5 +1,5 @@
 .tab__button.tab--active {
-  border-bottom: 2px solid rgb(var(--color-primary-500));
+  border-bottom: 2px solid var(--clr-primary-500);
 }
 .tab__panel {
   display: none;

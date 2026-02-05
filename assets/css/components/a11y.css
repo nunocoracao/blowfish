@@ -49,7 +49,7 @@
 }
 
 .ios-toggle input:checked + .toggle-track {
-  background: rgba(var(--color-primary-500), 1);
+  background: var(--clr-primary-500);
 }
 
 .ios-toggle input:checked ~ .ios-toggle-ball {
@@ -57,11 +57,11 @@
 }
 
 .ios-toggle.is-checked {
-  background: rgba(var(--color-primary-500), 1);
+  background: var(--clr-primary-500);
 }
 
 .ios-toggle:has(input:checked) {
-  background: rgba(var(--color-primary-500), 1);
+  background: var(--clr-primary-500);
 }
 
 .ios-toggle:has(input:checked)::after {

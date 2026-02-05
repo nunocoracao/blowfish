@@ -93,11 +93,11 @@
   margin-top: 0.25rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: rgb(var(--color-neutral-600));
+  color: var(--clr-neutral-600);
 }
 
 .dark .gallery figcaption {
-  color: rgb(var(--color-neutral-400));
+  color: var(--clr-neutral-400);
 }
 @media (width >= 640px) {
   .sm\:grid-w10 {
