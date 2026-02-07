@@ -98,6 +98,10 @@ button,
 
 .toc a {
   @apply font-normal text-neutral-700 dark:text-neutral-300;
+  text-decoration-color: var(--clr-primary-600);
+  .dark & {
+    text-decoration-color: var(--clr-primary-400);
+  }
 }
 
 .toc ul > li {
@@ -316,7 +320,7 @@ body:has(#mobile-menu-toggle:checked) {
   visibility: visible;
 }
 
-.active {
+.active-header {
   text-decoration-line: underline;
   text-decoration-thickness: 3px;
   text-underline-offset: 4px;
