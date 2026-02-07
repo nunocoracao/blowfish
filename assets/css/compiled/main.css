@@ -4819,13 +4819,13 @@ pre {
       width: 8px;
       height: 8px;
     }
-    --scrollbar-thumb: var(--clr-neutral-400);
-    --scrollbar-track: var(--clr-neutral-200);
+    --scrollbar-thumb: oklch(70.9% 0.01 56.259);
+    --scrollbar-track: oklch(92.3% 0.003 48.717);
     &:where(.dark, .dark *) {
-      --scrollbar-thumb: var(--clr-neutral-600);
+      --scrollbar-thumb: oklch(44.4% 0.011 73.639);
     }
     &:where(.dark, .dark *) {
-      --scrollbar-track: var(--clr-neutral-800);
+      --scrollbar-track: oklch(21.6% 0.006 56.043);
     }
   }
 }
