@@ -278,7 +278,7 @@ pre {
   }
 
   .bf-scrollbar {
-    @apply scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600;
+    @apply scrollbar-thin scrollbar-track-stone-200 scrollbar-thumb-stone-400 dark:scrollbar-track-stone-900 dark:scrollbar-thumb-stone-600;
   }
 }
 
