@@ -1055,50 +1055,61 @@
     -webkit-line-clamp: 5;
   }
   .prose {
-    --tw-prose-body: var(--color-neutral-700);
-    --tw-prose-headings: var(--color-neutral-800);
-    --tw-prose-lead: var(--color-neutral-500);
-    --tw-prose-links: var(--color-primary-600);
+    --tw-prose-body: var(--clr-neutral-700);
+    --tw-prose-headings: var(--clr-neutral-800);
+    --tw-prose-lead: var(--clr-neutral-500);
+    --tw-prose-links: var(--clr-primary-600);
     --tw-prose-bold: inherit;
-    --tw-prose-counters: var(--color-neutral-800);
-    --tw-prose-bullets: var(--color-neutral-500);
-    --tw-prose-quotes: var(--color-neutral-700);
-    --tw-prose-quote-borders: var(--color-primary-500);
-    --tw-prose-captions: var(--color-neutral-500);
-    --tw-prose-code: var(--color-secondary-700);
-    --tw-prose-pre-code: var(--color-neutral-700);
-    --tw-prose-pre-bg: var(--color-neutral-50);
-    --tw-prose-th-borders: var(--color-neutral-500);
-    --tw-prose-td-borders: var(--color-neutral-300);
+    --tw-prose-counters: var(--clr-neutral-800);
+    --tw-prose-bullets: var(--clr-neutral-500);
+    --tw-prose-quotes: var(--clr-neutral-700);
+    --tw-prose-quote-borders: var(--clr-primary-500);
+    --tw-prose-captions: var(--clr-neutral-500);
+    --tw-prose-code: var(--clr-secondary-700);
+    --tw-prose-pre-code: var(--clr-neutral-700);
+    --tw-prose-pre-bg: var(--clr-neutral-50);
+    --tw-prose-th-borders: var(--clr-neutral-500);
+    --tw-prose-td-borders: var(--clr-neutral-300);
+    --tw-prose-invert-body: var(--clr-neutral-300);
+    --tw-prose-invert-headings: var(--clr-neutral-50);
+    --tw-prose-invert-lead: var(--clr-neutral-500);
+    --tw-prose-invert-links: var(--clr-primary-400);
+    --tw-prose-invert-bold: var(--clr-neutral);
+    --tw-prose-invert-counters: var(--clr-neutral-400);
+    --tw-prose-invert-bullets: var(--clr-neutral-600);
+    --tw-prose-invert-quotes: var(--clr-neutral-200);
+    --tw-prose-invert-quote-borders: var(--clr-primary-600);
+    --tw-prose-invert-captions: var(--clr-neutral-400);
+    --tw-prose-invert-code: var(--clr-secondary-400);
+    --tw-prose-invert-pre-code: var(--clr-neutral-200);
+    --tw-prose-invert-pre-bg: var(--clr-neutral-700);
+    --tw-prose-invert-th-borders: var(--clr-neutral-500);
+    --tw-prose-invert-td-borders: var(--clr-neutral-700);
     & a:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
       text-decoration: none;
-      text-decoration-color: var(--color-primary-300);
       font-weight: 500;
-      &:hover {
-        color: var(--color-primary-600);
-        text-decoration: none;
-        border-radius: 0.09rem;
+      &.active {
+        text-decoration-line: underline;
+        text-decoration-thickness: 3px;
+        text-underline-offset: 4px;
       }
       & code {
         color: var(--tw-prose-code);
       }
-      &.active {
-        text-decoration-color: var(--color-primary-600);
-      }
     }
     & hr:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-      border: 0.8px solid var(--color-neutral-300);
+      border: 0.8px solid var(--clr-neutral-300);
     }
     & kbd:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-      background-color: var(--color-neutral-200);
+      background-color: var(--clr-neutral-200);
       padding: 0.1rem 0.4rem;
       border-radius: 0.25rem;
       font-size: 0.9rem;
       font-weight: 600;
     }
     & mark:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-      color: var(--color-neutral-800);
-      background-color: var(--color-primary-600);
+      color: var(--clr-neutral-800);
+      background-color: var(--clr-primary-600);
       padding: 0.1rem 0.2rem;
       border-radius: 0.25rem;
     }
@@ -1117,7 +1128,7 @@
         display: none;
       }
       &.active {
-        text-decoration-color: var(--color-primary-600);
+        text-decoration-color: var(--clr-primary-600);
       }
     }
   }
@@ -1744,45 +1755,31 @@
     border-color: transparent;
   }
   .prose-invert {
-    --tw-prose-body: var(--color-neutral-300);
-    --tw-prose-headings: var(--color-neutral-50);
-    --tw-prose-lead: var(--color-neutral-500);
-    --tw-prose-links: var(--color-primary-400);
-    --tw-prose-bold: var(--color-neutral);
-    --tw-prose-counters: var(--color-neutral-400);
-    --tw-prose-bullets: var(--color-neutral-600);
-    --tw-prose-quotes: var(--color-neutral-200);
-    --tw-prose-quote-borders: var(--color-primary-600);
-    --tw-prose-captions: var(--color-neutral-400);
-    --tw-prose-code: var(--color-secondary-400);
-    --tw-prose-pre-code: var(--color-neutral-200);
-    --tw-prose-pre-bg: var(--color-neutral-700);
-    --tw-prose-th-borders: var(--color-neutral-500);
-    --tw-prose-td-borders: var(--color-neutral-700);
     & a:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-      text-decoration-color: var(--color-neutral-600);
-      &:hover {
-        color: var(--color-primary-400);
-      }
+      text-decoration: none;
+      color: var(--clr-primary-400);
+      font-weight: 500;
       &.active {
-        text-decoration-color: var(--color-primary-400);
+        text-decoration-line: underline;
+        text-decoration-thickness: 3px;
+        text-underline-offset: 4px;
       }
     }
     & kbd:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-      color: var(--color-neutral-200);
-      background-color: var(--color-neutral-700);
+      color: var(--clr-neutral-200);
+      background-color: var(--clr-neutral-700);
     }
     & mark:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-      background-color: var(--color-primary-400);
+      background-color: var(--clr-primary-400);
     }
     & code:not(pre code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
       background-color: color-mix(in oklab, oklch(21% 0.006 285.885) 70%, transparent);
     }
     & hr:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-      border: 0.8px solid var(--color-neutral-500);
+      border: 0.8px solid var(--clr-neutral-500);
     }
     & p.active:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-      text-decoration-color: var(--color-primary-400);
+      text-decoration-color: var(--clr-primary-400);
     }
   }
   .bg-\[\#6d6d6d\] {
@@ -3361,45 +3358,31 @@
   }
   .dark\:prose-invert {
     &:where(.dark, .dark *) {
-      --tw-prose-body: var(--color-neutral-300);
-      --tw-prose-headings: var(--color-neutral-50);
-      --tw-prose-lead: var(--color-neutral-500);
-      --tw-prose-links: var(--color-primary-400);
-      --tw-prose-bold: var(--color-neutral);
-      --tw-prose-counters: var(--color-neutral-400);
-      --tw-prose-bullets: var(--color-neutral-600);
-      --tw-prose-quotes: var(--color-neutral-200);
-      --tw-prose-quote-borders: var(--color-primary-600);
-      --tw-prose-captions: var(--color-neutral-400);
-      --tw-prose-code: var(--color-secondary-400);
-      --tw-prose-pre-code: var(--color-neutral-200);
-      --tw-prose-pre-bg: var(--color-neutral-700);
-      --tw-prose-th-borders: var(--color-neutral-500);
-      --tw-prose-td-borders: var(--color-neutral-700);
       & a:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-        text-decoration-color: var(--color-neutral-600);
-        &:hover {
-          color: var(--color-primary-400);
-        }
+        text-decoration: none;
+        color: var(--clr-primary-400);
+        font-weight: 500;
         &.active {
-          text-decoration-color: var(--color-primary-400);
+          text-decoration-line: underline;
+          text-decoration-thickness: 3px;
+          text-underline-offset: 4px;
         }
       }
       & kbd:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-        color: var(--color-neutral-200);
-        background-color: var(--color-neutral-700);
+        color: var(--clr-neutral-200);
+        background-color: var(--clr-neutral-700);
       }
       & mark:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-        background-color: var(--color-primary-400);
+        background-color: var(--clr-primary-400);
       }
       & code:not(pre code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
         background-color: color-mix(in oklab, oklch(21% 0.006 285.885) 70%, transparent);
       }
       & hr:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-        border: 0.8px solid var(--color-neutral-500);
+        border: 0.8px solid var(--clr-neutral-500);
       }
       & p.active:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-        text-decoration-color: var(--color-primary-400);
+        text-decoration-color: var(--clr-primary-400);
       }
     }
   }
