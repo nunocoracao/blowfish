@@ -972,5 +972,16 @@
       "Personal site",
       "Blog"
     ]
+  },
+  {
+    "title": "jbetzen.net",
+    "url": "https://jbetzen.net/",
+    "tags": [
+      "Personal site",
+      "Home Automation",
+      "CAD",
+      "DIY",
+      "Mechanical Engineering"
+    ]
   }
 ]
