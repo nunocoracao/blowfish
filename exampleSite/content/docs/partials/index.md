@@ -46,6 +46,8 @@ To enable Umami Analytics support, simply provide your [Umami tracking code](htt
 If you also use the custom domain feature of Umami and would like to serve their script from your domain, you can also additionally provide the `domain` configuration value. If you don't provide a `domain` value, the script will load directly from Umami DNS (analytics.umami.is).
 If you want the tracker to only run on specific domains, you can provide the `dataDomains` configuration value. If you don't provide a `dataDomains` value, the script will run on any website where the `domain` and`websiteid` match. If the environment variable `TRACKER_SCRIPT_NAME` is configured, you can specify a custom script name `scriptName`. If it is not configured, either comment it out or use the default `script.js`.
 
+If you want to honor the Do Not Track setting of the users browser, you have to set `doNotTrack` to `true`. Blowfish does not honor the Do Not Track setting per default.
+
 {{< alert >}}
 **Note:** If you enable Umami Analytics, Blowfish will support [Umami Track Event](https://umami.is/docs/track-events) automatically. If you do not want to support Track Event, the param `enableTrackEvent` must set to `false`.
 {{< /alert >}}
@@ -59,6 +61,7 @@ If you want the tracker to only run on specific domains, you can provide the `da
   dataDomains = "yoursite.com,yoursite2.com"
   scriptName = "TRACKER_SCRIPT_NAME"
   enableTrackEvent = true
+  doNotTrack = false
 ```
 
 ### Seline Analytics
