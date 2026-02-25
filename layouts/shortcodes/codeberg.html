@@ -1,4 +1,4 @@
-{{ $id := delimit (slice "codeberg" (partial "functions/uid.html" .)) "-" }}
+{{ $id := printf "codeberg-%s" (partial "functions/uid.html" .) }}
 {{- $codebergURL := print "https://codeberg.org/api/v1/repos/" (.Get "repo") -}}
 {{- $repoColors := .Site.Data.repoColors -}}
 {{- $codebergData := dict -}}

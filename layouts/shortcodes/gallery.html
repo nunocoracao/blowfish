@@ -1,4 +1,4 @@
-{{ $id := delimit (slice "gallery" (partial "functions/uid.html" .)) "-" -}}
+{{ $id := printf "gallery-%s" (partial "functions/uid.html" .) }}
 {{ $content := .Inner -}}
 
 {{/* find all img tags */}}

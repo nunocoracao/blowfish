@@ -13,7 +13,7 @@
 {{- end -}}
 {{- $tag := .Get "tag" | default "div" -}}
 
-{{ $id := delimit (slice "typeit" (partial "functions/uid.html" .)) "-" }}
+{{ $id := printf "typeit-%s" (partial "functions/uid.html" .) }}
 
 {{- $attrs := printf `id="%v"` $id -}}
 {{- with $classList -}}

@@ -1,4 +1,4 @@
-{{ $id := delimit (slice "gitea" (partial "functions/uid.html" .)) "-" }}
+{{ $id := printf "gitea-%s" (partial "functions/uid.html" .) }}
 {{- $giteaURL := print (.Get "server" | default .Site.Params.giteaDefaultServer) "/api/v1/repos/" (.Get "repo") -}}
 {{- $repoColors := .Site.Data.repoColors -}}
 {{- $giteaData := dict -}}
