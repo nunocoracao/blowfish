@@ -2,6 +2,7 @@
 
 @import "tailwindcss";
 @import "./config.css";
+@source "./assets/lib";
 
 @layer utilities {
   @import "./components/chroma.css";
