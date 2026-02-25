@@ -1,4 +1,4 @@
-{{ $id := delimit (slice "gitlab" (partial "functions/uid.html" .)) "-" }}
+{{ $id := printf "gitlab-%s" (partial "functions/uid.html" .) }}
 {{- $gitlabURL := print (default "https://gitlab.com/" (.Get "baseURL")) "api/v4/projects/" (.Get "projectID") -}}
 {{- $gitLabData := dict -}}
 {{- with try (resources.GetRemote $gitlabURL) -}}

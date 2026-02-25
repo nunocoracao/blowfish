@@ -1,4 +1,4 @@
-{{ $id := delimit (slice "carousel" (partial "functions/uid.html" .) (now.UnixNano)) "-" }}
+{{ $id := printf "carousel-%s" (partial "functions/uid.html" .) }}
 {{ $aspect := (split (.Get "aspectRatio") "-") }}
 {{ $aspectx := default "16" (index $aspect  0) }}
 {{ $aspecty := default "9" (index $aspect  1) }}

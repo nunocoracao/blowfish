@@ -1,4 +1,4 @@
-{{ $id := delimit (slice "huggingface" (partial "functions/uid.html" .)) "-" }}
+{{ $id := printf "huggingface-%s" (partial "functions/uid.html" .) }}
 {{- $model := .Get "model" -}}
 {{- $dataset := .Get "dataset" -}}
 {{- $hfAPI := "" -}}

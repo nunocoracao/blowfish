@@ -1,13 +1,4 @@
-{{ $uid := .Page.RelPermalink }}
-{{ $ctx := . }}
-
-{{ range seq 16 }}
-  {{ with $ctx }}
-    {{ $uid = printf "%s-%d" $uid .Ordinal }}
-    {{ $ctx = .Parent }}
-  {{ else }}
-    {{ break }}
-  {{ end }}
-{{ end }}
-
-{{ return md5 $uid }}
+{{- $count := .Page.Store.Get "uid_count" | default 0 -}}
+{{- .Page.Store.Set "uid_count" (add $count 1) -}}
+{{- $raw := printf "%s-%d" .Page.RelPermalink $count -}}
+{{ return hash.XxHash $raw }}

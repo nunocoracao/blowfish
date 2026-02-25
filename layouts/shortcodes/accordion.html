@@ -1,4 +1,4 @@
-{{ $id := delimit (slice "accordion" (partial "functions/uid.html" .)) "-" }}
+{{ $id := printf "accordion-%s" (partial "functions/uid.html" .) }}
 {{ $mode := .Get "mode" | default "collapse" }}
 {{ $separated := .Get "separated" | default false }}
 {{ $isSeparated := or (eq $separated true) (eq $separated "true") }}
