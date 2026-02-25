@@ -156,6 +156,7 @@
   {{ end }}
   {{ $jsResources = $jsResources | append (resources.Get "js/katex-render.js") }}
   {{ $jsResources = $jsResources | append (resources.Get "js/print-support.js") }}
+  {{ $jsResources = $jsResources | append (resources.Get "js/email.js") }}
   {{ if $jsResources }}
     {{ $bundleJS := $jsResources | resources.Concat "js/main.bundle.js" | resources.Minify | resources.Fingerprint $alg }}
     <script

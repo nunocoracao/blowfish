@@ -21,7 +21,7 @@
         height="96"
         alt="{{ $.Site.Params.Author.name | default " Author" }}"
         src="{{ $final.RelPermalink }}"
-        data-zoom-src="{{ $squareImage.RelPermalink }}">
+        data-zoom-src="{{ $squareImage.RelPermalink }}" />
     {{ end }}
   {{ end }}
   <div class="place-self-center">
@@ -43,9 +43,13 @@
       <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
         {{ range .data.social }}
           {{ range $name, $link := . }}
+            {{ $isEmail := eq $name "email" }}
             <a
-              class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
-              href="{{ $link }}"
+              class="{{ cond $isEmail "email-link" "" }} px-1 hover:text-primary-700 dark:hover:text-primary-400"
+              href="{{ cond $isEmail "#" ($link | safeURL) }}"
+              {{ if $isEmail }}
+                data-email="{{ $link | base64Encode }}" data-subject="Contact"
+              {{ end }}
               target="_blank"
               aria-label="{{ $name | title }}"
               title="{{ $name | title }}"
