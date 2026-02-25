@@ -5,7 +5,7 @@
   class="scroll-smooth"
   data-default-appearance="{{ site.Params.defaultAppearance | default `light` }}"
   data-auto-appearance="{{ site.Params.autoSwitchAppearance | default `true` }}">
-  {{- partial "head.html" . -}}
+  {{- partial "head/main.html" . -}}
   {{- partialCached "init.html" . -}}
 
   {{ $bodyLayout := "flex flex-col h-screen m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32" }}

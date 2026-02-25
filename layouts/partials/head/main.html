@@ -97,42 +97,7 @@
   {{ $alg := .Site.Params.fingerprintAlgorithm | default "sha512" }}
 
   {{/* CSS */}}
-  {{ $cssResources := slice }}
-  {{ $schemeName := .Site.Params.colorScheme | default "blowfish" }}
-  {{ $cssScheme := resources.Get (printf "css/schemes/%s.css" (lower $schemeName)) | default (resources.Get "css/schemes/blowfish.css") }}
-  {{ $cssResources = $cssResources | append $cssScheme }}
-  {{ if not site.Params.tw }}
-    {{ with resources.Get "css/main.css" }}
-      {{ $opts := dict "minify" (not hugo.IsDevelopment) }}
-      {{ with . | css.TailwindCSS $opts }}
-        {{ if hugo.IsDevelopment }}
-          <link rel="stylesheet" href="{{ .RelPermalink }}">
-        {{ else }}
-          {{ with . | fingerprint }}
-            <link
-              rel="stylesheet"
-              href="{{ .RelPermalink }}"
-              integrity="{{ .Data.Integrity }}"
-              crossorigin="anonymous">
-          {{ end }}
-        {{ end }}
-      {{ end }}
-    {{ end }}
-  {{ else }}
-    {{ $cssResources = $cssResources | append (resources.Get "css/compiled/main.css") }}
-  {{ end }}
-  {{ with resources.Get "css/custom.css" }}
-    {{ $cssResources = $cssResources | append . }}
-  {{ end }}
-  {{ if not .Site.Params.disableImageZoom | default true }}
-    {{ $cssResources = $cssResources | append (resources.Get "lib/zoom/style.css") }}
-  {{ end }}
-  {{ $bundleCSS := $cssResources | resources.Concat "css/main.bundle.css" | resources.Minify | resources.Fingerprint $alg }}
-  <link
-    type="text/css"
-    rel="stylesheet"
-    href="{{ $bundleCSS.RelPermalink }}"
-    integrity="{{ $bundleCSS.Data.Integrity }}">
+  {{ partial "head/css.html" . }}
 
   {{/* JS loaded immediately */}}
   {{ $jsAppearance := resources.Get "js/appearance.js" | resources.ExecuteAsTemplate "js/appearance.js" . | resources.Minify | resources.Fingerprint $alg }}
@@ -189,7 +154,7 @@
   {{ end }}
 
   {{/* Conditional loaded resources */}}
-  {{ partial "vendor.html" . }}
+  {{ partial "head/vendor.html" . }}
 
   {{/* Icons */}}
   {{ if templates.Exists "partials/favicons.html" }}
@@ -202,11 +167,11 @@
   {{ end }}
 
   {{/* Schema */}}
-  {{ partial "schema.html" . }}
+  {{ partial "head/schema.html" . }}
 
   {{/* Analytics */}}
   {{ if hugo.IsProduction }}
-    {{ partial "analytics/main.html" . }}
+    {{ partial "head/analytics/main.html" . }}
   {{ end }}
 
   {{/* Extend head - eg. for custom analytics scripts, etc. */}}

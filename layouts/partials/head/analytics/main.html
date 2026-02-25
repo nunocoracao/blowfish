@@ -1,12 +1,12 @@
 {{ if site.Params.fathomAnalytics.site }}
-  {{ partial "analytics/fathom.html" . }}
+  {{ partial "head/analytics/fathom.html" . }}
 {{ end }}
 {{ if site.Config.Services.GoogleAnalytics.ID }}
-  {{ partial "analytics/ga.html" . }}
+  {{ partial "head/analytics/ga.html" . }}
 {{ end }}
 {{ if site.Params.umamiAnalytics.websiteid }}
-  {{ partial "analytics/umami.html" . }}
+  {{ partial "head/analytics/umami.html" . }}
 {{ end }}
 {{ if site.Params.selineAnalytics.token }}
-  {{ partial "analytics/seline.html" . }}
+  {{ partial "head/analytics/seline.html" . }}
 {{ end }}
