@@ -1,0 +1,43 @@
+{{ $cssResources := slice }}
+{{ $schemeName := .Site.Params.colorScheme | default "blowfish" }}
+{{ $cssScheme := resources.Get (printf "css/schemes/%s.css" (lower $schemeName)) | default (resources.Get "css/schemes/blowfish.css") }}
+{{ $cssResources = $cssResources | append $cssScheme }}
+{{ if not site.Params.tw }}
+  {{ with (templates.Defer (dict "key" "global")) }}
+    {{ partial "inline/twcss" . }}
+  {{ end }}
+{{ else }}
+  {{ $cssResources = $cssResources | append (resources.Get "css/compiled/main.css") }}
+{{ end }}
+{{ with resources.Get "css/custom.css" }}
+  {{ $cssResources = $cssResources | append . }}
+{{ end }}
+{{ if not .Site.Params.disableImageZoom | default true }}
+  {{ $cssResources = $cssResources | append (resources.Get "lib/zoom/style.css") }}
+{{ end }}
+{{ $bundleCSS := $cssResources | resources.Concat "css/main.bundle.css" | resources.Minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
+<link
+  type="text/css"
+  rel="stylesheet"
+  href="{{ $bundleCSS.RelPermalink }}"
+  integrity="{{ $bundleCSS.Data.Integrity }}" />
+
+
+{{ define "_partials/inline/twcss" }}
+  {{ with resources.Get "css/main.css" }}
+    {{ $opts := dict "minify" (not hugo.IsDevelopment) }}
+    {{ with . | css.TailwindCSS $opts }}
+      {{ if hugo.IsDevelopment }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}" />
+      {{ else }}
+        {{ with . | fingerprint }}
+          <link
+            rel="stylesheet"
+            href="{{ .RelPermalink }}"
+            integrity="{{ .Data.Integrity }}"
+            crossorigin="anonymous" />
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
