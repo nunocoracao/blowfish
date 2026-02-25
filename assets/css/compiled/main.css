@@ -1,4 +1,4 @@
-/*! tailwindcss v4.1.18 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.2.1 | MIT License | https://tailwindcss.com */
 /*! Blowfish | MIT License | https://github.com/nunocoracao/blowfish */
 @layer properties;
 @layer theme, base, components, utilities;
@@ -263,8 +263,14 @@
   .-start-6 {
     inset-inline-start: calc(var(--spacing) * -6);
   }
+  .start {
+    inset-inline-start: var(--spacing);
+  }
   .start-\[calc\(max\(-50vw\,-800px\)\+50\%\)\] {
     inset-inline-start: calc(max(-50vw, -800px) + 50%);
+  }
+  .end {
+    inset-inline-end: var(--spacing);
   }
   .end-6 {
     inset-inline-end: calc(var(--spacing) * 6);
@@ -276,7 +282,7 @@
     top: calc(var(--spacing) * 0);
   }
   .top-1\/2 {
-    top: calc(1/2 * 100%);
+    top: calc(1 / 2 * 100%);
   }
   .top-5 {
     top: calc(var(--spacing) * 5);
@@ -303,7 +309,7 @@
     left: calc(var(--spacing) * 0);
   }
   .left-1\/2 {
-    left: calc(1/2 * 100%);
+    left: calc(1 / 2 * 100%);
   }
   .-z-10 {
     z-index: calc(10 * -1);
@@ -1100,7 +1106,7 @@
     height: calc(var(--spacing) * 0);
   }
   .h-1\/2 {
-    height: calc(1/2 * 100%);
+    height: calc(1 / 2 * 100%);
   }
   .h-3 {
     height: calc(var(--spacing) * 3);
@@ -1325,7 +1331,7 @@
     flex-basis: auto;
   }
   .-translate-x-1\/2 {
-    --tw-translate-x: calc(calc(1/2 * 100%) * -1);
+    --tw-translate-x: calc(calc(1 / 2 * 100%) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .-translate-x-full {
@@ -1337,7 +1343,7 @@
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .-translate-y-1\/2 {
-    --tw-translate-y: calc(calc(1/2 * 100%) * -1);
+    --tw-translate-y: calc(calc(1 / 2 * 100%) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .-translate-y-8 {
@@ -2886,7 +2892,7 @@
   }
   .sm\:w-1\/2 {
     @media (width >= 640px) {
-      width: calc(1/2 * 100%);
+      width: calc(1 / 2 * 100%);
     }
   }
   .sm\:grid-cols-2 {
@@ -2974,7 +2980,7 @@
   }
   .md\:w-1\/3 {
     @media (width >= 853px) {
-      width: calc(1/3 * 100%);
+      width: calc(1 / 3 * 100%);
     }
   }
   .md\:w-auto {
@@ -3089,7 +3095,7 @@
   }
   .lg\:w-1\/4 {
     @media (width >= 1024px) {
-      width: calc(1/4 * 100%);
+      width: calc(1 / 4 * 100%);
     }
   }
   .lg\:w-auto {
@@ -3169,7 +3175,7 @@
   }
   .xl\:w-1\/4 {
     @media (width >= 1280px) {
-      width: calc(1/4 * 100%);
+      width: calc(1 / 4 * 100%);
     }
   }
   .xl\:grid-cols-4 {
