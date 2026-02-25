@@ -40,12 +40,12 @@
       <div class="text-sm text-neutral-700 dark:text-neutral-400">{{ . }}</div>
     {{ end }}
     <div class="text-2xl sm:text-lg">
-      <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+      <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500 space-x-2">
         {{ range .data.social }}
           {{ range $name, $link := . }}
             {{ $isEmail := eq $name "email" }}
             <a
-              class="{{ cond $isEmail "email-link" "" }} px-1 hover:text-primary-700 dark:hover:text-primary-400"
+              class="{{ cond $isEmail "email-link" "" }} hover:text-primary-700 dark:hover:text-primary-400"
               href="{{ cond $isEmail "#" ($link | safeURL) }}"
               {{ if $isEmail }}
                 data-email="{{ $link | base64Encode }}" data-subject="Contact"
