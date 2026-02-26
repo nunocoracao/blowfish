@@ -326,3 +326,5 @@ body:has(#mobile-menu-toggle:checked) {
   text-decoration-thickness: 3px;
   text-underline-offset: 4px;
 }
+
+@import "../custom.css";
