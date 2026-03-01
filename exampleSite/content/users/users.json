@@ -1002,5 +1002,14 @@
       "Personal site",
       "Blog"
     ]
+  },
+  {
+    "title": "Airika",
+    "url": "https://www.airikatrading.com",
+    "source": "n/a",
+    "tags": [
+      "Business site",
+      "E-commerce"
+    ]
   }
 ]
