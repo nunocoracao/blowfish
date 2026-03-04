@@ -166,12 +166,13 @@
     border-radius: 0.25rem;
   }
 
-  & code:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  & code:not(pre code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
     padding-top: 3px;
     padding-bottom: 3px;
     padding-left: 5px;
     padding-right: 5px;
     border-radius: 0.25rem;
+    background-color: theme("colors.zinc.300 / 0.45");
 
     &::before,
     &::after {

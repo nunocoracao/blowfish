@@ -1113,12 +1113,13 @@
       padding: 0.1rem 0.2rem;
       border-radius: 0.25rem;
     }
-    & code:not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    & code:not(pre code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
       padding-top: 3px;
       padding-bottom: 3px;
       padding-left: 5px;
       padding-right: 5px;
       border-radius: 0.25rem;
+      background-color: color-mix(in oklab, oklch(87.1% 0.006 286.286) 45%, transparent);
       &::before, &::after {
         display: none;
       }
