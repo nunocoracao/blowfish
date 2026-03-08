@@ -1002,5 +1002,14 @@
       "Personal site",
       "Blog"
     ]
+  },
+  {
+    "title": "luizcarloscf.github.io",
+    "url": "https://luizcarloscf.github.io/",
+    "source": "https://github.com/luizcarloscf/luizcarloscf.github.io",
+    "tags": [
+      "Personal site",
+      "Blog"
+    ]
   }
 ]
