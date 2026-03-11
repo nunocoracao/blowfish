@@ -46,6 +46,8 @@ Um die Umami Analytics-Unterstützung zu aktivieren, geben Sie einfach Ihren [Um
 Wenn Sie auch die benutzerdefinierte Domain-Funktion von Umami verwenden und deren Skript von Ihrer Domain bereitstellen möchten, können Sie zusätzlich den Konfigurationswert `domain` angeben. Wenn Sie keinen `domain`-Wert angeben, wird das Skript direkt von Umami DNS (analytics.umami.is) geladen.
 Wenn Sie möchten, dass der Tracker nur auf bestimmten Domains ausgeführt wird, können Sie den Konfigurationswert `dataDomains` angeben. Wenn Sie keinen `dataDomains`-Wert angeben, wird das Skript auf jeder Website ausgeführt, bei der `domain` und `websiteid` übereinstimmen. Wenn die Umgebungsvariable `TRACKER_SCRIPT_NAME` konfiguriert ist, können Sie einen benutzerdefinierten Skriptnamen `scriptName` angeben. Wenn sie nicht konfiguriert ist, kommentieren Sie sie entweder aus oder verwenden Sie den Standard `script.js`.
 
+Wenn Sie die Do Not Track Einstellung im Browser berücksichtigen möchten, dann setzen Sie `doNotTrack` auf `true`, Blowfish berücksichtigt die Do Not Track Einstellung standardmäßig nicht.
+
 {{< alert >}}
 **Hinweis:** Wenn Sie Umami Analytics aktivieren, unterstützt Blowfish [Umami Track Event](https://umami.is/docs/track-events) automatisch. Wenn Sie Track Event nicht unterstützen möchten, muss der Parameter `enableTrackEvent` auf `false` gesetzt werden.
 {{< /alert >}}
@@ -58,6 +60,7 @@ Wenn Sie möchten, dass der Tracker nur auf bestimmten Domains ausgeführt wird,
   domain = "llama.yoursite.com"
   dataDomains = "yoursite.com,yoursite2.com"
   scriptName = "TRACKER_SCRIPT_NAME"
+  doNotTrack = false
   enableTrackEvent = true
 ```
 
