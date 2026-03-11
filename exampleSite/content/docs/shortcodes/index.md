@@ -879,6 +879,7 @@ The `tabs` shortcode is commonly used to present different variants of a particu
 | `default` | **Optional.** Label of the tab to be active by default. If not set, the first tab will be active. |
 | `label`   | **Required.** The text label displayed on the tab button. |
 | `icon`    | **Optional.** Icon name to display before the label. |
+| `md`      | **Optional.** Render tab content as Markdown (default `true`). Set `md=false` to allow nested shortcodes inside tab content. |
 
 **Example 1: Basic Usage**
 
@@ -905,8 +906,8 @@ The `tabs` shortcode is commonly used to present different variants of a particu
     ```
     {{</* /tab */>}}
 
-    {{</* tab label="Linux" */>}}
-    See [documentation](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux).
+    {{</* tab label="Linux" md=false */>}}
+    {{</* alert */>}}See [documentation](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux).{{</* /alert */>}}
     {{</* /tab */>}}
 
 {{</* /tabs */>}}
@@ -936,8 +937,8 @@ The `tabs` shortcode is commonly used to present different variants of a particu
     ```
     {{< /tab >}}
 
-    {{< tab label="Linux" >}}
-    See [documentation](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux).
+    {{< tab label="Linux" md=false >}}
+    {{< alert >}}See [documentation](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux).{{< /alert >}}
     {{< /tab >}}
 
 {{< /tabs >}}
