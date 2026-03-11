@@ -1,49 +1,26 @@
 <div class="main-menu flex items-center w-full gap-2 p-1 pl-0">
-  {{ $primary := resources.Get .Site.Params.Logo }}
-  {{ $secondary := resources.Get .Site.Params.SecondaryLogo }}
-
-  {{ if or $primary $secondary }}
-    <div>
-      <a href="{{ "" | relLangURL }}" class="flex">
-        <span class="sr-only">{{ .Site.Title | markdownify }}</span>
-
-        {{ if $primary }}
-          <div class="{{ cond $secondary "block dark:hidden" "" }}">
-            {{- if eq $primary.MediaType.SubType "svg" -}}
-              <span class="logo object-scale-down object-left nozoom">
-                {{ $primary.Content | safeHTML }}
-              </span>
-            {{ else }}
-              <img
-                src="{{ $primary.RelPermalink }}"
-                width="{{ div $primary.Width 2 }}"
-                height="{{ div $primary.Height 2 }}"
-                class="logo max-h-20 max-w-20 object-scale-down object-left nozoom"
-                alt="Site logo">
-            {{ end }}
-          </div>
-        {{ end }}
-
-        {{ if $secondary }}
-          <div class="hidden dark:block">
-            {{ if eq $secondary.MediaType.SubType "svg" }}
-              <span class="logo object-scale-down object-left nozoom">
-                {{ $secondary.Content | safeHTML }}
-              </span>
-            {{ else }}
-              <img
-                src="{{ $secondary.RelPermalink }}"
-                width="{{ div $secondary.Width 2 }}"
-                height="{{ div $secondary.Height 2 }}"
-                class="logo max-h-20 max-w-20 object-scale-down object-left nozoom"
-                alt="Site logo (dark mode)">
-            {{ end }}
-          </div>
-        {{ end }}
-      </a>
-    </div>
+  {{ if .Site.Params.Logo }}
+    {{ $logo := resources.Get .Site.Params.Logo }}
+    {{ if $logo }}
+      <div>
+        <a href="{{ "" | relLangURL }}" class="flex">
+          <span class="sr-only">{{ .Site.Title | markdownify }}</span>
+          {{ if eq $logo.MediaType.SubType "svg" }}
+            <span class="logo object-scale-down object-left nozoom">
+              {{ $logo.Content | safeHTML }}
+            </span>
+          {{ else }}
+            <img
+              src="{{ $logo.RelPermalink }}"
+              width="{{ div $logo.Width 2 }}"
+              height="{{ div $logo.Height 2 }}"
+              class="logo max-h-20 max-w-20 object-scale-down object-left nozoom"
+              alt="">
+          {{ end }}
+        </a>
+      </div>
+    {{ end }}
   {{ end }}
-
   {{ if not .Site.Params.disableTextInHeader | default true }}
     <a href="{{ "" | relLangURL }}" class="text-base font-medium truncate min-w-0 shrink">
       {{ .Site.Title | markdownify }}
