@@ -1011,5 +1011,20 @@
       "Business site",
       "E-commerce"
     ]
+  },
+  {
+    "title": "Cook Like A Nerd",
+    "url": "https://cooklikeanerd.com/",
+    "tags": [
+      "Recipe Blog"
+    ]
+  },
+  {
+    "title": "Cintia Ching",
+    "url": "https://cintiaching.com/",
+    "tags": [
+      "Personal site",
+      "Blog"
+    ]
   }
 ]
