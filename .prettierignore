@@ -30,3 +30,5 @@ layouts/_default/index.json
 layouts/shortcodes/screenshot.html
 layouts/shortcodes/figure.html
 layouts/partials/hugo-embedded/shortcodes/figure-default.html
+
+assets/js/appearance.js
