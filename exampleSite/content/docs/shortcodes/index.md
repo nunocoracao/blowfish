@@ -116,6 +116,7 @@ The alert sign (`+` or `-`) is optional to control whether the admonition is fol
 | `open`    | **Optional.** Set to `true` to have the item open by default.                                       |
 | `header`  | **Optional.** Alias for `title`, kept for compatibility with other shortcodes.                      |
 | `icon`    | **Optional.** Icon name to display before the title.                                                |
+| `align`   | **Optional.** Align text within the item: `left`, `center`, `right`                                 |
 <!-- prettier-ignore-end -->
 
 **Example 1: `mode="open"` (multiple items can be open) + `separated=true`**
