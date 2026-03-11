@@ -116,6 +116,7 @@ The alert sign (`+` or `-`) is optional to control whether the admonition is fol
 | `open`    | **Optional.** Set to `true` to have the item open by default.                                       |
 | `header`  | **Optional.** Alias for `title`, kept for compatibility with other shortcodes.                      |
 | `icon`    | **Optional.** Icon name to display before the title.                                                |
+| `align`   | **Optional.** Align text within the item: `left`, `center`, `right`                                 |
 <!-- prettier-ignore-end -->
 
 **Example 1: `mode="open"` (multiple items can be open) + `separated=true`**
@@ -878,6 +879,7 @@ The `tabs` shortcode is commonly used to present different variants of a particu
 | `default` | **Optional.** Label of the tab to be active by default. If not set, the first tab will be active. |
 | `label`   | **Required.** The text label displayed on the tab button. |
 | `icon`    | **Optional.** Icon name to display before the label. |
+| `md`      | **Optional.** Render tab content as Markdown (default `true`). Set `md=false` to allow nested shortcodes inside tab content. |
 
 **Example 1: Basic Usage**
 
@@ -904,8 +906,8 @@ The `tabs` shortcode is commonly used to present different variants of a particu
     ```
     {{</* /tab */>}}
 
-    {{</* tab label="Linux" */>}}
-    See [documentation](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux).
+    {{</* tab label="Linux" md=false */>}}
+    {{</* alert */>}}See [documentation](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux).{{</* /alert */>}}
     {{</* /tab */>}}
 
 {{</* /tabs */>}}
@@ -935,8 +937,8 @@ The `tabs` shortcode is commonly used to present different variants of a particu
     ```
     {{< /tab >}}
 
-    {{< tab label="Linux" >}}
-    See [documentation](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux).
+    {{< tab label="Linux" md=false >}}
+    {{< alert >}}See [documentation](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux).{{< /alert >}}
     {{< /tab >}}
 
 {{< /tabs >}}

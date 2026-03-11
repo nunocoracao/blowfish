@@ -10,9 +10,10 @@
 {{ $md := .Get "md" | default true }}
 {{ $open := .Get "open" | default false }}
 {{ $isOpen := or (eq $open true) (eq $open "true") }}
+{{ $align := .Get "align" }}
 
 <details
-  class="{{ if $isSeparated }}rounded-lg border border-neutral-200 dark:border-neutral-700 overflow-hidden{{ else }}border-none{{ end }}"
+  class="group {{ if $isSeparated }}rounded-lg border border-neutral-200 dark:border-neutral-700 overflow-hidden{{ else }}border-none{{ end }}"
   data-accordion-item
   {{ if $isOpen }}open{{ end }}
 >
@@ -23,11 +24,11 @@
       {{ end }}
       <span>{{ $title }}</span>
     </span>
-    <span>
-      {{ partial "icon" "chevron-down" }}
+    <span class="accordion-chevron ms-auto flex h-5 w-5 items-center justify-center print:hidden">
+      {{ partial "icon.html" "chevron-down" }}
     </span>
   </summary>
-  <div class="px-4 pb-4 text-neutral-700 dark:text-neutral-300">
+<div class="px-4 pb-4 text-neutral-700 dark:text-neutral-300{{ if $align }} text-{{ $align }}{{ end }}">
     {{ if $md }}
       {{- .Inner | markdownify -}}
     {{ else }}

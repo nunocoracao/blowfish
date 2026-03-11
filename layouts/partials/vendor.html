@@ -134,7 +134,9 @@
   {{ $cssRules = $cssRules | append ".language-dot[data-language=\"model\"] { background-color: #ff6b35; }" }}
 
   {{ range $lang, $color := $repoColors }}
-    {{ $cssRules = $cssRules | append (printf ".language-dot[data-language=\"%s\"] { background-color: %s; }" $lang $color) }}
+    {{ if $color }}
+      {{ $cssRules = $cssRules | append (printf ".language-dot[data-language=\"%s\"] { background-color: %s; }" $lang $color) }}
+    {{ end }}
   {{ end }}
   {{ $repoCardCSS := resources.FromString "css/repo-cards.css" (delimit $cssRules "\n")
     | minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512")

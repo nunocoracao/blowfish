@@ -972,5 +972,68 @@
       "Personal site",
       "Blog"
     ]
+  },
+  {
+    "title": "jbetzen.net",
+    "url": "https://jbetzen.net/",
+    "tags": [
+      "Personal site",
+      "Home Automation",
+      "CAD",
+      "DIY",
+      "Mechanical Engineering"
+    ]
+  },
+  {
+    "title": "alst.ovh",
+    "url": "https://alst.ovh/",
+    "tags": [
+      "Personal site",
+      "Blog",
+      "dawel",
+      "dwOS",
+      "dwKDE"
+    ]
+  },
+  {
+    "title": "Zarvelion Zynji",
+    "url": "https://blog.zynji.my.id/",
+    "tags": [
+      "Personal site",
+      "Blog"
+    ]
+  },
+  {
+    "title": "Airika",
+    "url": "https://www.airikatrading.com",
+    "source": "n/a",
+    "tags": [
+      "Business site",
+      "E-commerce"
+    ]
+  },
+  {
+    "title": "Cook Like A Nerd",
+    "url": "https://cooklikeanerd.com/",
+    "tags": [
+      "Recipe Blog"
+    ]
+  },
+  {
+    "title": "Cintia Ching",
+    "url": "https://cintiaching.com/",
+    "tags": [
+      "Personal site",
+      "Blog"
+    ]
+  },
+  {
+    "title": "luizcarloscf.github.io",
+    "url": "https://luizcarloscf.github.io/",
+    "source": "https://github.com/luizcarloscf/luizcarloscf.github.io",
+    "tags": [
+      "Personal site",
+      "Blog"
+    ]
   }
 ]

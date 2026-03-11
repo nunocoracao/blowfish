@@ -1,10 +1,14 @@
 {{ with .Site.Params.Author.links }}
-  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500 space-x-2">
     {{ range $links := . }}
       {{ range $name, $url := $links }}
+        {{ $isEmail := eq $name "email" }}
         <a
-          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
-          href="{{ $url | safeURL }}"
+          class="{{ cond $isEmail "email-link" "" }} hover:text-primary-700 dark:hover:text-primary-400"
+          href="{{ cond $isEmail "#" ($url | safeURL) }}"
+          {{ if eq $name "email" }}
+            data-email="{{ $url | base64Encode }}"
+          {{ end }}
           target="_blank"
           aria-label="{{ $name | title }}"
           title="{{ $name | title }}"

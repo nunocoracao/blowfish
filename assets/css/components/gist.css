@@ -1,0 +1,51 @@
+.gist-container .gist {
+  h1 {
+    margin-bottom: calc(var(--spacing) * 4);
+  }
+  .gist-file {
+    border: 1px solid rgb(var(--color-neutral-300));
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .gist-meta {
+    background-color: white;
+    color: rgb(var(--color-neutral-600));
+    border-radius: 0 0 8px 8px;
+  }
+  .gist-meta a {
+    color: rgb(var(--color-primary-600));
+  }
+  .highlight tr {
+    border-bottom: none;
+  }
+  .gist-file .file {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  /* Dark Mode */
+  .dark & {
+    .gist-file {
+      border-color: rgb(var(--color-neutral-800));
+    }
+    .gist-data {
+      background-color: rgb(var(--color-neutral-900));
+      border-bottom: 1px solid rgb(var(--color-neutral-800));
+    }
+    .gist-meta {
+      background-color: rgb(26, 26, 26);
+      color: rgb(var(--color-neutral-400));
+    }
+    .gist-meta a {
+      color: rgb(var(--color-primary-400));
+    }
+    .blob-wrapper {
+      filter: invert(0.9) hue-rotate(180deg);
+      background-color: #fff;
+    }
+    .gist-data {
+      background: rgb(26, 26, 26);
+      color: rgb(var(--color-neutral-100));
+    }
+  }
+}
