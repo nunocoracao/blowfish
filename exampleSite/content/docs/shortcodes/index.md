@@ -376,6 +376,18 @@ This shortcode is for importing code from external sources easily without copyin
 
 <br/><br/><br/>
 
+## Email
+
+Creates an obfuscated mailto link:
+
+```md
+{{</* email email="mailto:hello@test.com" text="text" subject="Reply to awesome article" */>}}
+```
+
+{{< email email="mailto:hello@test.com" text="text" subject="Reply to awesome article" >}}
+
+<br/><br/><br/>
+
 ## Figure
 
 Blowfish includes a `figure` shortcode for adding images to content. The shortcode replaces the base Hugo functionality in order to provide additional performance benefits.
