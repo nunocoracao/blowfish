@@ -1035,5 +1035,23 @@
       "Personal site",
       "Blog"
     ]
+  },
+  {
+    "title": "Robin Fairchild",
+    "url": "https://fairchild26.github.io/",
+    "tags": [
+      "Personal site",
+      "Blog"
+    ]
+  },
+  {
+    "title": "Paraguay4Life",
+    "url": "https://paraguay4life.com/",
+    "source": "n/a",
+    "tags": [
+      "Blog",
+      "Travel",
+      "Paraguay"
+    ]
   }
 ]
