@@ -1,0 +1,8 @@
+<a 
+  class="email-link"
+  href="#"
+  data-email="{{ .Get "email" | base64Encode }}"
+  {{ with .Get "subject" }}data-subject="{{ . }}"{{ end }}>
+  {{- .Get "text" -}}
+</a>
+{{- /**/ -}}
