@@ -44,15 +44,19 @@
   {{ end }}
 {{ end }}
 
-{{ $isParentList := eq (.Scratch.Get "scope") "list" }}
+{{ $scope := .Scratch.Get "scope" }}
 {{ $shouldBlur := $.Params.layoutBackgroundBlur | default (or
-  (and ($.Site.Params.article.layoutBackgroundBlur | default true) (not $isParentList))
-  (and ($.Site.Params.list.layoutBackgroundBlur | default true) ($isParentList))
+  (and ($.Site.Params.article.layoutBackgroundBlur | default true) (eq $scope "single"))
+  (and ($.Site.Params.list.layoutBackgroundBlur | default true) (eq $scope "list"))
+  (and ($.Site.Params.taxonomy.layoutBackgroundBlur | default true) (eq $scope "terms"))
+  (and ($.Site.Params.term.layoutBackgroundBlur | default true) (eq $scope "term"))
   )
 }}
 {{ $shouldAddHeaderSpace := $.Params.layoutBackgroundHeaderSpace | default (or
-  (and ($.Site.Params.article.layoutBackgroundHeaderSpace | default true) (not $isParentList))
-  (and ($.Site.Params.list.layoutBackgroundHeaderSpace | default true) ($isParentList))
+  (and ($.Site.Params.article.layoutBackgroundHeaderSpace | default true) (eq $scope "single"))
+  (and ($.Site.Params.list.layoutBackgroundHeaderSpace | default true) (eq $scope "list"))
+  (and ($.Site.Params.taxonomy.layoutBackgroundHeaderSpace | default true) (eq $scope "terms"))
+  (and ($.Site.Params.term.layoutBackgroundHeaderSpace | default true) (eq $scope "term"))
   )
 }}
 

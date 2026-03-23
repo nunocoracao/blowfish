@@ -303,6 +303,8 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `taxonomy.showHero` | `false` | Whether the thumbnail image will be shown as a hero image within each taxonomy page. |
 | `taxonomy.heroStyle` | _Not set_ | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`. Effective only if `taxonomy.showHero = true`. |
 | `taxonomy.showBreadcrumbs` | `false` | Whether or not breadcrumbs are displayed in the taxonomy header. |
+| `taxonomy.layoutBackgroundBlur` | `true` | Makes the background image in the background taxonomy heroStyle blur with the scroll |
+| `taxonomy.layoutBackgroundHeaderSpace` | `true` | Add space between the header and the body. |
 | `taxonomy.showViews` | `false` | Whether or not article views are displayed. This requires firebase integrations to be enabled, look below. |
 | `taxonomy.showLikes` | `false` | Whether or not article likes are displayed. This requires firebase integrations to be enabled, look below. |
 | `taxonomy.showTableOfContents` | `false` | Whether or not the table of contents is displayed on taxonomies. |
@@ -315,6 +317,8 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `term.showHero` | `false` | Whether the thumbnail image will be shown as a hero image within each term page. |
 | `term.heroStyle` | _Not set_ | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`. Effective only if `term.showHero = true`. |
 | `term.showBreadcrumbs` | `false` | Whether or not breadcrumbs are displayed in the term header. |
+| `term.layoutBackgroundBlur` | `true` | Makes the background image in the background term heroStyle blur with the scroll |
+| `term.layoutBackgroundHeaderSpace` | `true` | Add space between the header and the body. |
 | `term.showViews` | `false` | Whether or not article views are displayed. This requires firebase integrations to be enabled, look below. |
 | `term.showLikes` | `false` | Whether or not article likes are displayed. This requires firebase integrations to be enabled, look below. |
 | `term.showTableOfContents` | `false` | Whether or not the table of contents is displayed on terms. |

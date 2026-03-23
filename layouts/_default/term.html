@@ -1,5 +1,5 @@
 {{ define "main" }}
-  {{ .Scratch.Set "scope" "list" }}
+  {{ .Scratch.Set "scope" "term" }}
   {{ $showHero := .Params.showHero | default site.Params.term.showHero | default false }}
   {{ if $showHero }}
     {{ $heroStyle := print "hero/" site.Params.term.heroStyle ".html" }}
