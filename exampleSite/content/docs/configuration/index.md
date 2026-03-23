@@ -260,7 +260,9 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `article.showRelatedContent` | `false` | Display related content for each post. Might required additional configuration to your `hugo.toml`. Please check the theme `hugo.toml` if you want to enable this feature and copy all the relevant _related_ entries. Also check [Hugo's docs](https://gohugo.io/content-management/related/) on related content. |
 | `article.relatedContentLimit` | `3` | Limit of related articles to display if `showRelatedContent` is turned on. |
 | `article.showTaxonomies` | `false` | Whether or not all the taxonomies related to this article are displayed. |
-| `article.showCategoryOnly` | `false` | Whether or not the "category" taxonomy is displayed. `showTaxonomies` should be `false` when this param is used, otherwise duplicates will appear. |
+| `article.showCategories` | `true` | Whether or not the `category` taxonomies are displayed. Requires `showTaxonomies` to be `true`. |
+| `article.showTags` | `true` | Whether or not the `tag` taxonomies are displayed. Requires `showTaxonomies` to be `true`. |
+| `article.showCategoriesInSecondaryColor` | `false` | This will make the `category` taxonomy badges to show in a secondary color, so the user can better distinguish between categories and tags. Requires `showTaxonomies` to be `true`. |
 | `article.showAuthorsBadges` | `false` | Whether the `authors` taxonomies are are displayed in the article or list header. This requires the setup of `multiple authors` and the `authors` taxonomy. Check [this page]({{< ref "multi-author" >}}) for more details on how to configure that feature. |
 | `article.showWordCount` | `false` | Whether or not article word counts are displayed. |
 | `article.showComments` | `false` | Whether or not the [comments partial]({{< ref "partials#comments" >}}) is included after the article footer. |
