@@ -103,11 +103,8 @@
             {{ if .Params.showCategories | default (.Site.Params.article.showCategories | default true) }}
               {{ if (eq $taxonomy "categories") }}
                 <a class="relative mt-[0.5rem] me-2" href="{{ .RelPermalink }}">
-                  {{ if .Params.showCategoriesInSecondaryColor | default (.Site.Params.article.showCategoriesInSecondaryColor | default false) }}
-                    {{ partial "badge-secondary.html" .LinkTitle }}
-                  {{ else }}
-                    {{ partial "badge.html" .LinkTitle }}
-                  {{ end }}
+                  {{ $useSecondaryColor := .Params.showCategoriesInSecondaryColor | default (.Site.Params.article.showCategoriesInSecondaryColor | default false) }}
+                  {{ partial "badge.html" (dict "linkTitle" .LinkTitle "useSecondaryColor" $useSecondaryColor) }}
                 </a>
               {{ end }}
             {{ end }}
