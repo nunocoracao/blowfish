@@ -1,5 +1,5 @@
-languageCode = "it"
-languageName = "Italiano"
+locale = "it"
+label = "Italiano"
 weight = 4
 title = "Blowfish"
 

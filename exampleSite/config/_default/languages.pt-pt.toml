@@ -1,5 +1,5 @@
-languageCode = "pt-pt"
-languageName = "Português (Portugal)"
+locale = "pt-pt"
+label = "Português (Portugal)"
 weight = 5
 title = "Blowfish"
 

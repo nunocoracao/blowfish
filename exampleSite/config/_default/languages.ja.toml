@@ -1,5 +1,5 @@
-languageCode = "ja"
-languageName = "日本語"
+locale = "ja"
+label = "日本語"
 weight = 8
 title = "Blowfish"
 

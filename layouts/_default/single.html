@@ -123,7 +123,7 @@
       {{ end }}
 
       {{ $finalLink := $taxonomyLink }}
-      {{ $currentLang := site.Language.Lang }}
+      {{ $currentLang := site.Language.Name }}
       {{ if eq site.LanguagePrefix "" }}
         {{ $finalLink = printf "%sauthors/%s/" $baseURL $author }}
       {{ else }}
