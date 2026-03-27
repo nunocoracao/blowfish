@@ -147,3 +147,36 @@
     >
   </button>
 </div>
+
+  {{ if $captionsParam }}
+  <script>
+    (() => {
+      const root = document.getElementById("{{ $id }}");
+      if (!root) return;
+
+      const items = Array.from(root.querySelectorAll("[data-twe-carousel-item]"));
+      const captions = items
+        .map((item) => item.querySelector("figcaption"))
+        .filter((caption) => caption);
+      if (captions.length < 2) return;
+
+      const measureAndFixCaptionHeight = () => {
+        const hiddenItems = items.filter((item) => item.classList.contains("hidden"));
+        hiddenItems.forEach((item) => item.classList.remove("hidden"));
+
+        const maxHeight = Math.max(
+          ...captions.map((caption) => Math.ceil(caption.getBoundingClientRect().height)),
+        );
+
+        hiddenItems.forEach((item) => item.classList.add("hidden"));
+        captions.forEach((caption) => {
+          caption.style.minHeight = `${maxHeight}px`;
+        });
+      };
+
+      window.requestAnimationFrame(measureAndFixCaptionHeight);
+      window.addEventListener("load", measureAndFixCaptionHeight, { once: true });
+      window.addEventListener("resize", measureAndFixCaptionHeight);
+    })();
+  </script>
+  {{ end }}
