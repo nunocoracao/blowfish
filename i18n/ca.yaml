@@ -85,3 +85,9 @@ shortcode:
 
 recent:
   show_more: "Mostra'n més"
+
+cookie_notice:
+  message: "Aquest lloc web utilitza cookies i tecnologies similars. En utilitzar aquest lloc web, ho accepteu. Llegiu la nostra"
+  privacy_policy: "política de privacitat"
+  button: "Entès"
+  image_alt: "Icona de galeta"

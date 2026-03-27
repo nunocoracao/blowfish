@@ -80,3 +80,9 @@ shortcode:
 
 recent:
   show_more: "Meer tonen"
+
+cookie_notice:
+  message: "Deze website gebruikt cookies en vergelijkbare technologieën. Door deze website te gebruiken, accepteer je dat. Lees ons"
+  privacy_policy: "privacybeleid"
+  button: "Begrepen"
+  image_alt: "Cookie-pictogram"

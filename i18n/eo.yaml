@@ -82,3 +82,9 @@ shortcode:
 
 recent:
   show_more: "Montri pli"
+
+cookie_notice:
+  message: "Ĉi tiu retejo uzas kuketojn kaj similajn teknologiojn. Uzante ĉi tiun retejon, vi akceptas tion. Legu nian"
+  privacy_policy: "privatecan politikon"
+  button: "Komprenite"
+  image_alt: "Kuketa simbolo"

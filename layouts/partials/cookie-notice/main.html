@@ -1,0 +1,63 @@
+{{ with site.Params.cookieNotice }}
+  {{ if .enabled }}
+    {{ $style := .style | default "simple" }}
+    {{ $storage := .storage | default "localStorage" }}
+    {{ if ne $storage "sessionStorage" }}
+      {{ $storage = "localStorage" }}
+    {{ end }}
+
+    {{ $storageKey := .storageKey | default "blowfish_cookie_notice_ack_v1" }}
+
+    {{ $privacyPolicyUrl := "" }}
+    {{ with .privacyPolicyPageRef }}
+      {{ with site.GetPage . }}
+        {{ $privacyPolicyUrl = .RelPermalink }}
+      {{ end }}
+    {{ end }}
+
+    {{ if and (eq $privacyPolicyUrl "") .privacyPolicyUrl }}
+      {{ $privacyPolicyUrl = .privacyPolicyUrl }}
+    {{ end }}
+
+    {{ $image := .image | default "" }}
+    {{ $imageAlt := .imageAlt | default (i18n "cookie_notice.image_alt") }}
+    {{ $alg := site.Params.fingerprintAlgorithm | default "sha512" }}
+    {{ $css := resources.Get "css/cookie-notice.css" | resources.Minify | resources.Fingerprint $alg }}
+    {{ $js := resources.Get "js/cookie-notice.js" | resources.Minify | resources.Fingerprint $alg }}
+    {{ $partial := printf "cookie-notice/%s.html" $style }}
+
+    <link
+      rel="stylesheet"
+      href="{{ $css.RelPermalink }}"
+      integrity="{{ $css.Data.Integrity }}"
+      crossorigin="anonymous"
+    >
+
+    {{ if templates.Exists (printf "partials/%s" $partial) }}
+      {{ partial $partial (dict
+        "context" $
+        "storage" $storage
+        "storageKey" $storageKey
+        "privacyPolicyUrl" $privacyPolicyUrl
+        "image" $image
+        "imageAlt" $imageAlt
+      ) }}
+    {{ else }}
+      {{ partial "cookie-notice/simple.html" (dict
+        "context" $
+        "storage" $storage
+        "storageKey" $storageKey
+        "privacyPolicyUrl" $privacyPolicyUrl
+        "image" $image
+        "imageAlt" $imageAlt
+      ) }}
+    {{ end }}
+
+    <script
+      src="{{ $js.RelPermalink }}"
+      integrity="{{ $js.Data.Integrity }}"
+      crossorigin="anonymous"
+      defer
+    ></script>
+  {{ end }}
+{{ end }}

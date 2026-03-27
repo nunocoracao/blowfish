@@ -102,3 +102,9 @@ admonition:
   tip: "Tip"
   todo: "Todo"
   warning: "Warning"
+
+cookie_notice:
+  message: "This website uses cookies and similar technologies. By using this website, you accept that. Read our"
+  privacy_policy: "privacy policy"
+  button: "Got it"
+  image_alt: "Cookie icon"

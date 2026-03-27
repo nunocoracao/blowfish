@@ -72,3 +72,9 @@ shortcode:
 
 recent:
   show_more: "להראות יותר"
+
+cookie_notice:
+  message: "אתר זה משתמש בקובצי Cookie ובטכנולוגיות דומות. השימוש באתר זה מהווה הסכמה לכך. קראו את"
+  privacy_policy: "מדיניות הפרטיות שלנו"
+  button: "הבנתי"
+  image_alt: "סמל קובץ Cookie"

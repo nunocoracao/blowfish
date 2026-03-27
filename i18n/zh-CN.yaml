@@ -101,3 +101,9 @@ admonition:
   tip: 提示
   todo: 待办
   warning: 警告
+
+cookie_notice:
+  message: "本网站使用 Cookie 和类似技术。继续使用本网站即表示你接受这一点。请阅读我们的"
+  privacy_policy: "隐私政策"
+  button: "明白了"
+  image_alt: "Cookie 图标"

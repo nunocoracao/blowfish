@@ -72,3 +72,9 @@ shortcode:
 
 recent:
   show_more: "Mutass Többet"
+
+cookie_notice:
+  message: "Ez a weboldal sütiket és hasonló technológiákat használ. A weboldal használatával ezt elfogadja. Olvassa el az"
+  privacy_policy: "adatvédelmi tájékoztatónkat"
+  button: "Rendben"
+  image_alt: "Süti ikon"

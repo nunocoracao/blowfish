@@ -77,3 +77,9 @@ shortcode:
 
 recent:
   show_more: "Mostrar más"
+
+cookie_notice:
+  message: "Este sitio web utiliza cookies y tecnologías similares. Al usar este sitio web, aceptas esto. Lee nuestra"
+  privacy_policy: "política de privacidad"
+  button: "Entendido"
+  image_alt: "Icono de cookie"

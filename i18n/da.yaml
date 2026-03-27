@@ -85,3 +85,9 @@ shortcode:
 
 recent:
   show_more: "Vis mere"
+
+cookie_notice:
+  message: "Denne hjemmeside bruger cookies og lignende teknologier. Ved at bruge denne hjemmeside accepterer du det. Læs vores"
+  privacy_policy: "privatlivspolitik"
+  button: "Forstået"
+  image_alt: "Cookie-ikon"

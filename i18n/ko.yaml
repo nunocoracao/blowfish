@@ -78,3 +78,9 @@ shortcode:
 
 recent:
   show_more: "더 보기"
+
+cookie_notice:
+  message: "이 웹사이트는 쿠키 및 유사한 기술을 사용합니다. 이 웹사이트를 사용하면 이에 동의하는 것으로 간주됩니다. 다음을 읽어보세요."
+  privacy_policy: "개인정보 처리방침"
+  button: "확인했습니다"
+  image_alt: "쿠키 아이콘"

@@ -81,3 +81,9 @@ shortcode:
 
 recent:
   show_more: "Xem thêm"
+
+cookie_notice:
+  message: "Trang web này sử dụng cookie và các công nghệ tương tự. Khi sử dụng trang web này, bạn chấp nhận điều đó. Hãy đọc"
+  privacy_policy: "chính sách quyền riêng tư của chúng tôi"
+  button: "Đã hiểu"
+  image_alt: "Biểu tượng cookie"

@@ -85,3 +85,9 @@ shortcode:
 
 recent:
   show_more: "Show More"
+
+cookie_notice:
+  message: "Цей сайт використовує файли cookie та схожі технології. Користуючись цим сайтом, ви погоджуєтеся з цим. Ознайомтеся з нашою"
+  privacy_policy: "політикою конфіденційності"
+  button: "Зрозуміло"
+  image_alt: "Значок cookie"

@@ -68,3 +68,9 @@ shortcode:
 
 recent:
   show_more: "Daha Fazla Göster"
+
+cookie_notice:
+  message: "Bu site çerezler ve benzer teknolojiler kullanır. Bu siteyi kullanarak bunu kabul etmiş olursunuz. "
+  privacy_policy: "Gizlilik Politikamız"
+  button: "Anladım"
+  image_alt: "Çerez simgesi"

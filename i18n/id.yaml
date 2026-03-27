@@ -78,3 +78,9 @@ shortcode:
 
 recent:
   show_more: "Tampilkan Lainnya"
+
+cookie_notice:
+  message: "Situs web ini menggunakan cookie dan teknologi serupa. Dengan menggunakan situs web ini, Anda menyetujuinya. Baca"
+  privacy_policy: "kebijakan privasi kami"
+  button: "Mengerti"
+  image_alt: "Ikon cookie"
