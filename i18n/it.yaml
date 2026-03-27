@@ -91,7 +91,8 @@ admonition:
   warning: Avviso
 
 cookie_notice:
-  message: "Questo sito utilizza cookie e tecnologie simili. Utilizzando questo sito, accetti ciò. Leggi la nostra"
+  message_with_link: "Questo sito web utilizza cookie e tecnologie simili. Leggi la nostra informativa sulla privacy"
+  message: "Questo sito web utilizza cookie e tecnologie simili. Utilizzando questo sito web, accetti ciò."
   privacy_policy: "informativa sulla privacy"
   button: "Ho capito"
   image_alt: "Icona cookie"

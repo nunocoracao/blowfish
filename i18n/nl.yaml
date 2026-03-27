@@ -82,7 +82,8 @@ recent:
   show_more: "Meer tonen"
 
 cookie_notice:
-  message: "Deze website gebruikt cookies en vergelijkbare technologieën. Door deze website te gebruiken, accepteer je dat. Lees ons"
+  message_with_link: "Deze website gebruikt cookies en vergelijkbare technologieën. Lees ons privacybeleid"
+  message: "Deze website gebruikt cookies en vergelijkbare technologieën. Door deze website te gebruiken, ga je hiermee akkoord."
   privacy_policy: "privacybeleid"
   button: "Begrepen"
   image_alt: "Cookie-pictogram"

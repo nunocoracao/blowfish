@@ -104,7 +104,8 @@ admonition:
   warning: "Warning"
 
 cookie_notice:
-  message: "This website uses cookies and similar technologies. By using this website, you accept that. Read our"
+  message_with_link: "This website uses cookies and similar technologies. Read our privacy policy"
+  message: "This website uses cookies and similar technologies. By using this website, you accept this."
   privacy_policy: "privacy policy"
   button: "Got it"
   image_alt: "Cookie icon"

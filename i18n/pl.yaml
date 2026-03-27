@@ -81,7 +81,8 @@ recent:
   show_more: "Pokaż Więcej"
 
 cookie_notice:
-  message: "Ta strona używa plików cookie i podobnych technologii. Korzystając z tej strony, akceptujesz to. Przeczytaj naszą"
+  message_with_link: "Ta strona internetowa używa plików cookie i podobnych technologii. Przeczytaj naszą politykę prywatności"
+  message: "Ta strona internetowa używa plików cookie i podobnych technologii. Korzystając z tej strony internetowej, akceptujesz to."
   privacy_policy: "politykę prywatności"
   button: "Rozumiem"
   image_alt: "Ikona pliku cookie"

@@ -20,11 +20,13 @@
 
     <div class="cookie-notice__content">
       <p class="cookie-notice__text">
-        {{ i18n "cookie_notice.message" }}
         {{ with .privacyPolicyUrl }}
+          {{ i18n "cookie_notice.message_with_link" }}
           <a class="cookie-notice__link" href="{{ . }}">
             {{ i18n "cookie_notice.privacy_policy" }}
-          </a>
+          </a>.
+        {{ else }}
+          {{ i18n "cookie_notice.message" }}
         {{ end }}
       </p>
 

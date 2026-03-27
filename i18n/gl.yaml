@@ -86,7 +86,8 @@ recent:
   show_more: "Mostrar máis"
 
 cookie_notice:
-  message: "Ĉi tiu retejo uzas kuketojn kaj similajn teknologiojn. Uzante ĉi tiun retejon, vi akceptas tion. Legu nian"
+  message_with_link: "Este sitio web utiliza cookies e tecnoloxías similares. Lea a nosa política de privacidade"
+  message: "Este sitio web utiliza cookies e tecnoloxías similares. Ao usar este sitio web, vostede acepta isto."
   privacy_policy: "privatecan politikon"
   button: "Komprenite"
   image_alt: "Kuketa simbolo"

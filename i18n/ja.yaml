@@ -103,7 +103,8 @@ admonition:
   warning: 警告
 
 cookie_notice:
-  message: "このサイトでは Cookie および類似の技術を使用しています。このサイトを利用することで、それに同意したものとみなされます。詳しくは"
+  message_with_link: "このウェブサイトはCookieおよび類似の技術を使用しています。プライバシーポリシーをお読みください"
+  message: "このウェブサイトはCookieおよび類似の技術を使用しています。このウェブサイトを利用することで、これに同意したものとみなされます。"
   privacy_policy: "プライバシーポリシー"
   button: "了解しました"
   image_alt: "Cookie アイコン"

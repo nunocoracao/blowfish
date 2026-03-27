@@ -76,7 +76,8 @@ recent:
   show_more: "Prikaži Više"
 
 cookie_notice:
-  message: "Ova web stranica koristi kolačiće i slične tehnologije. Korištenjem ove web stranice prihvaćate to. Pročitajte naša"
+  message_with_link: "Ova web stranica koristi kolačiće i slične tehnologije. Pročitajte našu politiku privatnosti"
+  message: "Ova web stranica koristi kolačiće i slične tehnologije. Korištenjem ove web stranice prihvaćate to."
   privacy_policy: "pravila privatnosti"
   button: "Razumijem"
   image_alt: "Ikona kolačića"
