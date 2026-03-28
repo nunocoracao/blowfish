@@ -30,6 +30,14 @@
     <meta name="robots" content="{{ . }}">
   {{ end }}
   <link rel="canonical" href="{{ .Permalink }}">
+  {{ if .IsTranslated }}
+    {{ range .AllTranslations }}
+      {{ $hreflang := .Language.LanguageCode | default .Language.Lang }}
+      {{ if $hreflang }}
+        <link rel="alternate" hreflang="{{ $hreflang }}" href="{{ .Permalink }}">
+      {{ end }}
+    {{ end }}
+  {{ end }}
   {{ range .AlternativeOutputFormats }}
     {{ printf `
       <link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink ($.Site.Title | emojify) |
