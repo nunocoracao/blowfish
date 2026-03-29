@@ -1,0 +1,79 @@
+global:
+  language: "EU"
+
+article:
+  anchor_label: "Aingura"
+  date: "{{ .Date }}"
+  date_updated: "Eguneratuta: {{ .Date }}"
+  draft: " zirriborroa"
+  edit_title: "Editatu edukia"
+  reading_time:
+    one: "minutu {{ .Count }}"
+    other: "{{ .Count }} minutu"
+  reading_time_title: "Irakurtzeko denbora"
+  table_of_contents: "Aurkibidea"
+  word_count:
+    one: "hitz {{ .Count }}"
+    other: "{{ .Count }} hitz"
+  views:
+    one: "ikustaldi {{ .Count }}"
+    other: "{{ .Count }} ikustaldi"
+  likes:
+    one: "atsegin dut {{ .Count }}"
+    other: "{{ .Count }} atsegin dut"
+  part_of_series: "Artikulu hau bilduma baten parte da."
+  part: "Atala"
+  this_article: "Artikulu hau"
+  related_articles: "Lotutakoak"
+  reply_by_email: "Erantzun emailez"
+  zen_mode_title:
+    enable: "Gaitu zen modua"
+    disable: "Desgaitu zen modua"
+
+a11y:
+  title: "Irisgarritasun ezarpenak"
+
+author:
+  byline_title: "Egilea"
+
+code:
+  copy: "Kopiatu"
+  copied: "Kopiatuta"
+
+error:
+  404_title: "Ez da orria aurkitu :confused:"
+  404_error: "404 errorea"
+  404_description: "Badirudi eskatutako orria ez dela existitzen."
+
+footer:
+  dark_appearance: "Aldatu modu ilunera"
+  light_appearance: "Aldatu modu argira"
+  powered_by: "Honek bultzatua: {{ .Hugo }} &amp; {{ .Theme }}"
+
+list:
+  externalurl_title: "Kanpoko orrialderako esteka"
+  no_articles: "Oraindik ez dago artikulurik hemen zerrendatzeko."
+
+nav:
+  scroll_to_top_title: "Joan gora"
+  skip_to_main: "Joan edukira"
+
+search:
+  open_button_title: "Bilatu (/)"
+  close_button_title: "Itxi (Esc)"
+  input_placeholder: "Bilatu"
+
+sharing:
+  email: "Bidali posta elektronikoz"
+  facebook: "Partekatu Facebooken"
+  line: "Partekatu LINEn"
+  linkedin: "Partekatu LinkedInen"
+  pinterest: "Pin egin Pinteresten"
+  reddit: "Argitaratu Redditen"
+  twitter: "Tuitu Twitterren"
+
+shortcode:
+  recent_articles: "Azkenak"
+
+recent:
+  show_more: "Erakutsi gehiago"
