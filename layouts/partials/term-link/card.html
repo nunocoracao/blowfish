@@ -2,6 +2,9 @@
 
 {{ $featured := "" }}
 {{ $featuredURL := "" }}
+{{ $thumbnailAspectRatio := site.Params.thumbnailAspectRatio | default "1.5" }}
+{{ $thumbnailAspectRatio = replaceRE "[^0-9.]" "" $thumbnailAspectRatio }}
+{{ if eq $thumbnailAspectRatio "" }}{{ $thumbnailAspectRatio = "1.5" }}{{ end }}
 {{ with .Page.Params.featureimage }}
   {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
     {{ $featured = resources.GetRemote . }}
@@ -28,7 +31,7 @@
 <div class="min-w-full">
   <div class="border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
     {{ with $featuredURL }}
-      <figure class="not-prose flex-none relative overflow-hidden thumbnail_card">
+      <figure class="not-prose flex-none relative overflow-hidden thumbnail_card" style="--thumbnail-aspect-ratio: {{ $thumbnailAspectRatio }}">
         <img
           src="{{ . }}"
           alt="{{ $.Page.Title }}"
