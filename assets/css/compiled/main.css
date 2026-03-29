@@ -1150,6 +1150,9 @@
   .h-84 {
     height: calc(var(--spacing) * 84);
   }
+  .h-120 {
+    height: calc(var(--spacing) * 120);
+  }
   .h-\[3px\] {
     height: 3px;
   }
