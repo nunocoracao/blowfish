@@ -315,3 +315,44 @@ body:has(#mobile-menu-toggle:checked) {
   text-decoration-thickness: 3px;
   text-underline-offset: 4px;
 }
+
+/* -------------------------------------------------------
+   Events container — fix prose overrides for grid layouts
+   and inline images
+------------------------------------------------------- */
+
+/* Allow divs inside prose to use grid without being reset */
+.prose .events-container div {
+  display: revert;
+}
+
+/* Grid wrapper divs */
+.prose .events-container div[style*="grid"] {
+  display: grid !important;
+}
+
+/* Images inside events-container: remove prose's forced margins,
+   max-width cap, and display:block centering so they sit
+   naturally inside their grid cell */
+.prose .events-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin: 0;
+  border-radius: 8px;
+}
+
+/* Prevent prose from adding extra top margin to paragraphs
+   inside event grid cells, which can break vertical alignment */
+.prose .events-container div[style*="grid"] p {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+/* On mobile, collapse the two-column grids to single column */
+@media (max-width: 640px) {
+  .prose .events-container div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+}
