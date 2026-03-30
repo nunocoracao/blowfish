@@ -19,7 +19,7 @@ Sites reais construídos com Blowfish. Consulte a lista completa em [formato JSO
 
 {{< alert >}}
 
-**Utilizador do Blowfish?** Para adicionar o seu site a esta lista, [submeta um pull request](https://github.com/nunocoracao/blowfish/blob/dev/exampleSite/content/users/users.json).
+**Utilizador do Blowfish?** Para adicionar o seu site a esta lista, [submeta um pull request](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/content/users/users.json).
 
 {{</ alert >}}
 

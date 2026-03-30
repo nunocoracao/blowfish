@@ -13,7 +13,7 @@ jobs:
       - name: Check out code into the Go module directory
         uses: actions/checkout@v6
         with:
-          ref: dev
+          ref: main
           submodules: true # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
 
@@ -51,4 +51,4 @@ jobs:
             [2]: https://github.com/peter-evans/create-pull-request
           labels: dependencies, automated pr
           branch: hugo-new-version
-          base: dev
+          base: main

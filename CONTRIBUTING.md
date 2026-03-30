@@ -1,6 +1,6 @@
 ## How to contribute to Blowfish
 
-All development occurs on the `dev` branch and new PRs should be forked from here.
+All development occurs on the `main` branch and new PRs should be forked from here.
 
 ### Bugs & other issues
 
