@@ -117,7 +117,7 @@
   "dependencies": {
     "@headlessui/react": "^2.2.9",
     "@heroicons/react": "^2.2.0",
-    "@iamtraction/google-translate": "^1.1.2",
+    "@iamtraction/google-translate": "^2.0.1",
     "@tailwindcss/forms": "^0.5.11",
     "commander": "^14.0.3"
   }
