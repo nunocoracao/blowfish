@@ -180,3 +180,12 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
 
 [advertisement]
   # adsense = ""
+
+[cookieNotice]
+  enabled = false
+ # style = "simple"
+ # storage = "sessionStorage"   # localStorage or sessionStorage
+ # storageKey = "blowfish_cookie_notice_ack_v1"
+ # privacyPolicyPageRef = "/legal/privacy-policy"
+ # image = "img/cookie-notice/cookie.svg"
+ # imageAlt = ""

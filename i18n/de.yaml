@@ -85,3 +85,10 @@ shortcode:
 
 recent:
   show_more: "Zeige Mehr"
+
+cookie_notice:
+  message_with_link: "Diese Website verwendet Cookies und ähnliche Technologien. Lesen Sie unsere Datenschutzerklärung"
+  message: "Diese Website verwendet Cookies und ähnliche Technologien. Mit der Nutzung dieser Website akzeptierst du das."
+  privacy_policy: "Datenschutzerklärung"
+  button: "Verstanden"
+  image_alt: "Cookie-Symbol"

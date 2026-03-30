@@ -101,3 +101,9 @@ admonition:
   tip: 提示
   todo: 待辦
   warning: 警告
+
+cookie_notice:
+  message_with_link: "本網站使用 Cookie 和類似技術。請閱讀我們的隱私政策"
+  message: "本網站使用 Cookie 和類似技術。使用本網站即表示您接受此項內容。"  privacy_policy: "隱私權政策"
+  button: "了解了"
+  image_alt: "Cookie 圖示"
