@@ -79,7 +79,14 @@
       "{{< /chart >}}"
     ],
     "description": "Use the Chart.js library to embed charts into articles using simple structured data. Blowfish chart Shortcode. Documentation: https://blowfish.page/docs/shortcodes/#chart ",
-  },  
+  },
+  "email": {
+    "prefix": ["BFS-email", "HSC-email", "email"],
+    "body": [
+      "{{< email email=\"mailto:${1:hello@test.com}\" text=\"${2:text}\" subject=\"${3:Reply to awesome article}\" >}}$0",
+    ],
+    "description": "Creates an obfuscated mailto link. Documentation: https://blowfish.page/docs/shortcodes/#email ",
+  },
   "figure": {
     "prefix": ["BFS-figure", "HSC-figure", "figure"],
     "body": [
