@@ -97,7 +97,7 @@
 {{ end }}
 
 {{ define "SingleAuthor" }}
-  {{ $authorsData := site.Data.authors }}
+  {{ $authorsData := hugo.Data.authors }}
   {{ $taxonomies := site.Taxonomies.authors }}
   {{ $baseURL := site.BaseURL }}
   {{ $taxonomyLink := 0 }}
