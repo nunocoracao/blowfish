@@ -3,7 +3,7 @@
   {{ $showHero := .Params.showHero | default site.Params.taxonomy.showHero | default false }}
   {{ if $showHero }}
     {{ $heroStyle := print "hero/" site.Params.taxonomy.heroStyle ".html" }}
-    {{ if templates.Exists ( printf "partials/%s" $heroStyle ) }}
+    {{ if templates.Exists ( printf "_partials/%s" $heroStyle ) }}
       {{ partial $heroStyle . }}
     {{ else }}
       {{ partial "hero/basic.html" . }}

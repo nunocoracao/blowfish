@@ -6,7 +6,7 @@
   {{/* Hero */}}
   {{ if site.Params.list.showHero | default false }}
     {{ $heroStyle := print "hero/" site.Params.list.heroStyle ".html" }}
-    {{ if templates.Exists ( printf "partials/%s" $heroStyle ) }}
+    {{ if templates.Exists ( printf "_partials/%s" $heroStyle ) }}
       {{ partial $heroStyle . }}
     {{ else }}
       {{ partial "hero/basic.html" . }}

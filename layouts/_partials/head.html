@@ -52,8 +52,8 @@
   {{ end }}
 
   {{/* Social */}}
-  {{ template "_internal/opengraph.html" . }}
-  {{ template "_internal/twitter_cards.html" . }}
+  {{ partial "opengraph.html" . }}
+  {{ partial "twitter_cards.html" . }}
   {{/* Use defaultSocialImage if feature image does not exist */}}
   {{ $featureImage := "" }}
   {{ $pageImages := .Resources.ByType "image" }}
@@ -173,7 +173,7 @@
   {{ partial "vendor.html" . }}
 
   {{/* Icons */}}
-  {{ if templates.Exists "partials/favicons.html" }}
+  {{ if templates.Exists "_partials/favicons.html" }}
     {{ partialCached "favicons.html" .Site }}
   {{ else }}
     <link rel="apple-touch-icon" sizes="180x180" href="{{ "apple-touch-icon.png" | relURL }}">
@@ -191,12 +191,12 @@
   {{ end }}
 
   {{/* Extend head - eg. for custom analytics scripts, etc. */}}
-  {{ if templates.Exists "partials/extend-head.html" }}
+  {{ if templates.Exists "_partials/extend-head.html" }}
     {{ partialCached "extend-head.html" .Site }}
   {{ end }}
 
   {{/* Uncached extend head - Example: https://gohugo.io/methods/page/hasshortcode/ */}}
-  {{ if templates.Exists "partials/extend-head-uncached.html" }}
+  {{ if templates.Exists "_partials/extend-head-uncached.html" }}
     {{ partial "extend-head-uncached.html" . }}
   {{ end }}
 

@@ -20,7 +20,7 @@
       </a>
     </div>
     {{ $header := print "header/" site.Params.header.layout ".html" }}
-    {{ if templates.Exists ( printf "partials/%s" $header ) }}
+    {{ if templates.Exists ( printf "_partials/%s" $header ) }}
       {{ partial $header . }}
     {{ else }}
       {{ partial "header/basic.html" . }}

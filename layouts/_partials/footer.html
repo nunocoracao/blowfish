@@ -70,7 +70,7 @@
     </script>
   {{ end }}
   {{/* Extend footer - eg. for extra scripts, etc. */}}
-  {{ if templates.Exists "partials/extend-footer.html" }}
+  {{ if templates.Exists "_partials/extend-footer.html" }}
     {{ partialCached "extend-footer.html" . }}
   {{ end }}
 </footer>

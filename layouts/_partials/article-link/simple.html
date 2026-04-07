@@ -1,15 +1,8 @@
 {{/* Used by
-  1. article shortcode
-
-  The four variants of article-link are very similar. Despite appearances, as of df859f:
-  - _shortcode.html uses $page := $target, while the others use $page := .Page
-  - card-related.html does not have the hideFeatureImage option, while the others do
-
-  $page is added intentionally to prevent small differences inside
+  1. list.html and term.html (when the cardView option is not enabled)
+  2. Recent articles template (when the cardView option is not enabled)
+  3. Shortcode list.html
 */}}
-{{ $target := .target }}
-{{ $shortcodeShowSummary := .showSummary }}
-{{ $shortcodeCompactSummary := .compactSummary }}
 {{ $constrainItemsWidth := site.Params.list.constrainItemsWidth | default false }}
 {{ $disableImageOptimization := site.Store.Get "disableImageOptimization" }}
 
@@ -17,12 +10,12 @@
 {{ $imgWrapperClasses := "" }}
 {{ $cardContentClasses := "" }}
 
-{{ if site.Params.list.showCards }}
+{{ if .Params.showCards | default site.Params.list.showCards }}
   {{ $cardClasses = printf "%s overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600" $cardClasses }}
   {{ $imgWrapperClasses = "" }}
-  {{ $cardContentClasses = printf "%s p-4 pt-2" $cardContentClasses }}
+  {{ $cardContentClasses = printf "%s p-4" $cardContentClasses }}
 {{ else }}
-  {{ $cardClasses = printf "%s" $cardClasses }}
+  {{ $cardClasses = $cardClasses }}
   {{ $imgWrapperClasses = printf "%s thumbnail-shadow md:mr-7" $imgWrapperClasses }}
   {{ $cardContentClasses = printf "%s mt-3 md:mt-0" $cardContentClasses }}
 {{ end }}
@@ -31,10 +24,10 @@
   {{ $cardClasses = printf "%s max-w-prose" $cardClasses }}
 {{ end }}
 
-{{ $page := $target }}
+{{ $page := .Page }}
 {{ $featured := "" }}
 {{ $featuredURL := "" }}
-{{ if not $target.Params.hideFeatureImage }}
+{{ if not .Params.hideFeatureImage }}
   {{/* frontmatter */}}
   {{ with $page }}
     {{ with .Params.featureimage }}
@@ -80,7 +73,7 @@
 {{ end }}
 
 
-<article class="article-link--shortcode {{ $cardClasses }}">
+<article class="article-link--simple {{ $cardClasses }}">
   {{ with $featuredURL }}
     <div class="flex-none relative overflow-hidden {{ $imgWrapperClasses }} thumbnail">
       <img
@@ -101,8 +94,8 @@
         {{ end }}
         class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
         <h2>
-          {{ $target.Title | emojify }}
-          {{ if $target.Params.externalUrl }}
+          {{ .Title | emojify }}
+          {{ if .Params.externalUrl }}
             <span class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500">
               <span class="rtl:hidden">&#8599;</span>
               <span class="ltr:hidden">&#8598;</span>
@@ -110,26 +103,21 @@
           {{ end }}
         </h2>
       </a>
-      {{ if and $target.Draft site.Params.article.showDraftLabel }}
-        <div class="ms-2">
-          {{ partial "badge.html" (i18n "article.draft" | emojify) }}
-        </div>
+      {{ if and .Draft .Site.Params.article.showDraftLabel }}
+        <div class="ms-2">{{ partial "badge.html" (i18n "article.draft" | emojify) }}</div>
       {{ end }}
-      {{ if templates.Exists "partials/extend-article-link.html" }}
-        {{ partial "extend-article-link.html" $target }}
+      {{ if templates.Exists "_partials/extend-article-link.html" }}
+        {{ partial "extend-article-link.html" . }}
       {{ end }}
     </header>
     <div class="text-sm text-neutral-500 dark:text-neutral-400">
-      {{ partial "article-meta/basic.html" $target }}
+      {{ partial "article-meta/basic.html" . }}
     </div>
-    {{ if $shortcodeShowSummary | default $target.Params.showSummary | default site.Params.list.showSummary | default false }}
-      {{ $compactSummary := $shortcodeCompactSummary | default $target.Params.compactSummary | default false }}
-      <div
-        class="article-link__summary prose dark:prose-invert max-w-fit mt-1 {{ if $compactSummary -}}
-          line-clamp-3
-        {{- end }}">
-        {{ $target.Summary | plainify }}
+    {{ if .Params.showSummary | default (site.Params.list.showSummary | default false) }}
+      <div class="article-link__summary prose dark:prose-invert max-w-fit mt-1 line-clamp-3">
+        {{ .Summary | plainify }}
       </div>
     {{ end }}
   </div>
+  <div class="px-6 pt-4 pb-2"></div>
 </article>

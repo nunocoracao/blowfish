@@ -6,7 +6,7 @@
       {{ $heroStyle := .Params.heroStyle }}
       {{ if not $heroStyle }}{{ $heroStyle = site.Params.article.heroStyle }}{{ end }}
       {{ $heroStyle := print "hero/" $heroStyle ".html" }}
-      {{ if templates.Exists ( printf "partials/%s" $heroStyle ) }}
+      {{ if templates.Exists ( printf "_partials/%s" $heroStyle ) }}
         {{ partial $heroStyle . }}
       {{ else }}
         {{ partial "hero/basic.html" . }}
@@ -81,7 +81,7 @@
     <footer class="pt-8 max-w-prose print:hidden">
       {{ partial "article-pagination.html" . }}
       {{ if .Params.showComments | default (site.Params.article.showComments | default false) }}
-        {{ if templates.Exists "partials/comments.html" }}
+        {{ if templates.Exists "_partials/comments.html" }}
           <div class="pt-3">
             <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
             <div class="pt-3">
