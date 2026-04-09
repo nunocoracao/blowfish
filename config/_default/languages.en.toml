@@ -62,6 +62,7 @@ title = "Blowfish"
 #     { spotify = "https://open.spotify.com/user/userid" },
 #     { stack-overflow = "https://stackoverflow.com/users/userid/username" },
 #     { steam = "https://steamcommunity.com/profiles/userid" },
+#     { strava = "https://www.strava.com/athletes/username" },
 #     { telegram = "https://t.me/username" },
 #     { threads = "https://www.threads.net/@username" },
 #     { tiktok = "https://tiktok.com/@username" },
