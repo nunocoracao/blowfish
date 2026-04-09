@@ -120,6 +120,7 @@ Die vollständige Liste der integrierten Icons und ihre entsprechenden Namen fin
 | triangle-exclamation | {{< icon triangle-exclamation >}} |
 | tumblr               | {{< icon tumblr >}}               |
 | twitch               | {{< icon twitch >}}               |
+| untappd              | {{< icon untappd >}}              |
 | twitter              | {{< icon twitter >}}              |
 | wand-magic-sparkles  | {{< icon wand-magic-sparkles >}}  |
 | whatsapp             | {{< icon whatsapp >}}             |
