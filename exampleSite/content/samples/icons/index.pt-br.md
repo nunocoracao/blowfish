@@ -110,6 +110,7 @@ A lista completa de ícones integrados e seus nomes correspondentes pode ser con
 | stack-overflow       | {{< icon stack-overflow >}}       |
 | star                 | {{< icon star >}}                 |
 | steam                | {{< icon steam >}}                |
+| strava               | {{< icon strava >}}               |
 | stripe               | {{< icon stripe >}}               |
 | substack             | {{< icon substack >}}             |
 | sun                  | {{< icon sun >}}                  |

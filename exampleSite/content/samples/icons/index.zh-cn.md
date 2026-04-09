@@ -110,6 +110,7 @@ Blowfish 内置了许多 [FontAwesome 6](https://fontawesome.com/icons) 中的�
 | stack-overflow       | {{< icon stack-overflow >}}       |
 | star                 | {{< icon star >}}                 |
 | steam                | {{< icon steam >}}                |
+| strava               | {{< icon strava >}}               |
 | stripe               | {{< icon stripe >}}               |
 | substack             | {{< icon substack >}}             |
 | sun                  | {{< icon sun >}}                  |
