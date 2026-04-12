@@ -1,0 +1,18 @@
+{{ $icons := resources.Match "icons/*.svg" }}
+<table>
+  <thead>
+    <tr>
+      <th>Icon name</th>
+      <th>Preview</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ range resources.Match "icons/*.svg" }}
+      {{ $name := strings.TrimSuffix ".svg" (path.Base .Name) }}
+      <tr>
+        <td><code>{{ $name }}</code></td>
+        <td>{{ partial "icon.html" $name }}</td>
+      </tr>
+    {{ end }}
+  </tbody>
+</table>

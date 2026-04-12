@@ -93,33 +93,32 @@
               <div class="flex flex-wrap">
                 {{ range $links := . }}
                   {{ range $name, $url := $links }}
-                    {{ if not $disableHeroImageFilter }}
-                      <a
-                        class="px-1 hover:text-primary-400 text-primary-300"
-                        href="{{ $url }}"
-                        target="_blank"
-                        aria-label="{{ $name | title }}"
-                        title="{{ $name | title }}"
-                        rel="me noopener noreferrer">
-                        {{ partial "icon.html" $name }}
-                      </a>
-                    {{ else }}
-                      <a
-                        class="px-1 hover:text-primary-400 text-primary-800 dark:text-primary-200"
-                        href="{{ $url }}"
-                        target="_blank"
-                        aria-label="{{ $name | title }}"
-                        title="{{ $name | title }}"
-                        rel="me noopener noreferrer">
-                        {{ partial "icon.html" $name }}
-                      </a>
-                    {{ end }}
+                    {{ $isEmail := eq $name "email" }}
+                    <a
+                      class="px-1 hover:text-primary-400
+                      {{ cond $disableHeroImageFilter `text-primary-300` `text-primary-800 dark:text-primary-200` }}
+                      {{ cond $isEmail `email-link` `` }}"
+                      href="{{ cond $isEmail "#" ($url | safeURL) }}"
+                      {{ if $isEmail }}
+                        data-email="{{ $url | base64Encode }}"
+                        data-subject="Contact"
+                      {{ end }}
+                      target="_blank"
+                      aria-label="{{ $name | title }}"
+                      title="{{ $name | title }}"
+                      rel="me noopener noreferrer">
+                      {{ partial "icon.html" $name }}
+                    </a>
                   {{ end }}
                 {{ end }}
               </div>
             {{ end }}
           </div>
-          <section class="prose prose-invert w-full">{{ .Content }}</section>
+          {{ if not $disableHeroImageFilter }}
+            <section class="prose prose-invert w-full">{{ .Content }}</section>
+          {{ else }}
+            <section class="prose dark:prose-invert w-full">{{ .Content }}</section>
+          {{ end }}
         </div>
       </div>
     </div>

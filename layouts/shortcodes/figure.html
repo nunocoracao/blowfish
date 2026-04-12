@@ -7,10 +7,11 @@
   {{- $caption := .Get "caption" }}
   {{- $href := .Get "href" }}
   {{- $class := .Get "class" }}
+  {{- $figureClass := .Get "figureClass" }}
   {{- $target := .Get "target" | default "_blank" }}
   {{- $nozoom := .Get "nozoom" | default false -}}
 
-  <figure>
+  <figure{{ with $figureClass }} class="{{ . }}"{{ end }}>
   {{- with $href }}<a href="{{ . }}" {{ with $target }}target="{{ . }}"{{ end }} class="inline-block">{{ end -}}
   {{- if findRE "^https?" $url.Scheme }}
       <img class="my-0 rounded-md{{ with $nozoom }} nozoom{{ end }}{{ with $class }} {{ . }}{{ end }}" src="{{ $url.String }}" alt="{{ $altText }}" />

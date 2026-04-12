@@ -45,7 +45,7 @@
         {{- $isActive = eq $nTabs 0 -}}
       {{- end -}}
       <div class="tab__panel {{ if $isActive }}tab--active{{ end }}" data-tab-index="{{ $nTabs }}">
-        {{ index . "content" }}
+        {{ index . "content" | safeHTML }}
       </div>
     {{- end -}}
   </div>

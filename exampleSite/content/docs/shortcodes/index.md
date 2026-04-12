@@ -96,6 +96,94 @@ The alert sign (`+` or `-`) is optional to control whether the admonition is fol
 
 > [!INFO]- Customize admonition
 > See the [admonition customization guide](https://github.com/nunocoracao/blowfish/blob/main/layouts/_default/_markup/render-blockquote.html).
+## Accordion
+
+`accordion` creates a collapsible set of panels. Use the `accordionItem` sub-shortcode to define each item. You can control whether multiple items can be open at the same time using the `mode` parameter.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description                                                                                       |
+| --------- | ------------------------------------------------------------------------------------------------- |
+| `mode`       | **Optional.** `collapse` (single open) or `open` (multiple open). Defaults to `collapse`.      |
+| `separated`  | **Optional.** `true` to show each item as a separate card. Defaults to `false` (joined list).  |
+<!-- prettier-ignore-end -->
+
+`accordionItem` parameters:
+
+<!-- prettier-ignore-start -->
+| Parameter | Description                                                                                         |
+| --------- | --------------------------------------------------------------------------------------------------- |
+| `title`   | **Required.** Title shown in the item header.                                                       |
+| `open`    | **Optional.** Set to `true` to have the item open by default.                                       |
+| `header`  | **Optional.** Alias for `title`, kept for compatibility with other shortcodes.                      |
+| `icon`    | **Optional.** Icon name to display before the title.                                                |
+| `align`   | **Optional.** Align text within the item: `left`, `center`, `right`                                 |
+<!-- prettier-ignore-end -->
+
+**Example 1: `mode="open"` (multiple items can be open) + `separated=true`**
+
+```md
+{{</* accordion mode="open" separated=true */>}}
+  {{</* accordionItem title="Markdown example" icon="code" open=true */>}}
+  This item demonstrates Markdown rendering:
+  - **Bold text**
+  - Lists
+  - `inline code`
+  {{</* /accordionItem */>}}
+
+  {{</* accordionItem title="Shortcode example" md=false */>}}
+  This item demonstrates shortcode rendering with <code>md=false</code>:
+  
+  {{</* alert */>}}This is an inline alert.{{</* /alert */>}}
+  {{</* /accordionItem */>}}
+{{</* /accordion */>}}
+```
+
+{{< accordion mode="open" separated=true >}}
+  {{< accordionItem title="Markdown example" icon="code" open=true >}}
+  This item demonstrates Markdown rendering:
+  - **Bold text**
+  - Lists
+  - `inline code`
+  {{< /accordionItem >}}
+
+  {{< accordionItem title="Shortcode example" md=false >}}
+  This item demonstrates shortcode rendering with <code>md=false</code>:
+  
+  {{< alert >}}This is an inline alert.{{< /alert >}}
+  {{< /accordionItem >}}
+{{< /accordion >}}
+
+**Example 2: `mode="collapse"` (only one item open at a time)**
+
+```md
+{{</* accordion mode="collapse" */>}}
+  {{</* accordionItem title="First item" open=true */>}}
+  This item uses Markdown with a short list:
+  1. One
+  2. Two
+  3. Three
+  {{</* /accordionItem */>}}
+
+  {{</* accordionItem title="Second item" md=false */>}}
+  This item includes another shortcode:
+  {{</* badge */>}}Tip{{</* /badge */>}}
+  {{</* /accordionItem */>}}
+{{</* /accordion */>}}
+```
+
+{{< accordion mode="collapse" >}}
+  {{< accordionItem title="First item" open=true >}}
+  This item uses Markdown with a short list:
+  1. One
+  2. Two
+  3. Three
+  {{< /accordionItem >}}
+
+  {{< accordionItem title="Second item" md=false >}}
+  This item includes another shortcode:
+  {{< badge >}}Tip{{< /badge >}}
+  {{< /accordionItem >}}
+{{< /accordion >}}
 
 <br/><br/><br/>
 
@@ -165,9 +253,12 @@ Call to action
 | Parameter | Description |
 | --- | --- |
 | `images` | **Required.** A regex string to match image names or URLs. |
+| `captions` | **Optional.** A list of `key:caption` pairs. Keys can be image filenames (for local images) or full URLs (for remote images). Captions support Markdown. |
 | `aspectRatio` | **Optional.** The aspect ratio for the carousel. It is set to `16-9` by default. |
 | `interval` | **Optional.** The interval for the auto-scrooling, specified in milliseconds. Defaults to `2000` (2s) |
 <!-- prettier-ignore-end -->
+
+Captions are matched by key. For local images, use the filename (e.g. `01.jpg`). For remote images, use the full URL.
 
 **Example 1:** 16:9 aspect ratio and verbose list of images
 
@@ -184,6 +275,14 @@ Call to action
 ```
 
 {{< carousel images="gallery/*" aspectRatio="21-9" interval="2500" >}}
+
+**Example 3:** Add captions
+
+```md
+{{</* carousel images="gallery/*" captions="{01.jpg:First image with *formatting*,02.jpg:Second image with a [link](https://example.com)}" */>}}
+```
+
+{{< carousel images="gallery/*" captions="{01.jpg:First image with *formatting*,02.jpg:Second image with a [link](https://example.com)}" >}}
 
 <br/><br/><br/>
 
@@ -292,6 +391,7 @@ The `figure` shortcode accepts six parameters:
 | `alt` | [Alternative text description](https://moz.com/learn/seo/alt-text) for the image. |
 | `caption` | Markdown for the image caption, which will be displayed below the image. |
 | `class` | Additional CSS classes to apply to the image. |
+| `figureClass` | Additional CSS classes to apply to the `<figure>` wrapper. Useful for galleries. |
 | `href` | URL that the image should be linked to. |
 | `target` | The target attribute for the `href` URL. |
 | `nozoom` | `nozoom=true` disables the image "zoom" functionality. This is most useful in combination with a `href` link. |
@@ -349,6 +449,8 @@ Blowfish also supports automatic conversion of images included using standard Ma
 
 In order to add images to the gallery, use `img` tags for each image and add `class="grid-wXX"` in order for the gallery to be able to identify the column width for each image. The widths available by default start at 10% and go all the way to 100% in 5% increments. For example, to set the width to 65%, set the class to `grid-w65`. Additionally, widths for 33% and 66% are also available in order to build galleries with 3 cols. You can also leverage tailwind's responsive indicators to have a reponsive grid.
 
+If you need captions, you can use the `figure` shortcode inside the gallery. When doing so, set the grid width on the `figure` using `figureClass`, and use `caption` for the text.
+
 **Example 1: normal gallery**
 
 ```md
@@ -397,6 +499,24 @@ In order to add images to the gallery, use `img` tags for each image and add `cl
   <img src="gallery/05.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
   <img src="gallery/06.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
   <img src="gallery/07.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+{{< /gallery >}}
+
+<br/><br/><br/>
+
+**Example 3: gallery with captions (using `figure`)**
+
+```md
+{{</* gallery */>}}
+  {{</* figure src="gallery/01.jpg" alt="Gallery image 1" caption="First caption" figureClass="grid-w33" */>}}
+  {{</* figure src="gallery/02.jpg" alt="Gallery image 2" caption="Second caption" figureClass="grid-w33" */>}}
+  {{</* figure src="gallery/03.jpg" alt="Gallery image 3" caption="Third caption" figureClass="grid-w33" */>}}
+{{</* /gallery */>}}
+```
+
+{{< gallery >}}
+  {{< figure src="gallery/01.jpg" alt="Gallery image 1" caption="First caption" figureClass="grid-w33" >}}
+  {{< figure src="gallery/02.jpg" alt="Gallery image 2" caption="Second caption" figureClass="grid-w33" >}}
+  {{< figure src="gallery/03.jpg" alt="Gallery image 3" caption="Third caption" figureClass="grid-w33" >}}
 {{< /gallery >}}
 
 <br/><br/><br/>
@@ -759,6 +879,7 @@ The `tabs` shortcode is commonly used to present different variants of a particu
 | `default` | **Optional.** Label of the tab to be active by default. If not set, the first tab will be active. |
 | `label`   | **Required.** The text label displayed on the tab button. |
 | `icon`    | **Optional.** Icon name to display before the label. |
+| `md`      | **Optional.** Render tab content as Markdown (default `true`). Set `md=false` to allow nested shortcodes inside tab content. |
 
 **Example 1: Basic Usage**
 
@@ -785,8 +906,8 @@ The `tabs` shortcode is commonly used to present different variants of a particu
     ```
     {{</* /tab */>}}
 
-    {{</* tab label="Linux" */>}}
-    See [documentation](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux).
+    {{</* tab label="Linux" md=false */>}}
+    {{</* alert */>}}See [documentation](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux).{{</* /alert */>}}
     {{</* /tab */>}}
 
 {{</* /tabs */>}}
@@ -816,8 +937,8 @@ The `tabs` shortcode is commonly used to present different variants of a particu
     ```
     {{< /tab >}}
 
-    {{< tab label="Linux" >}}
-    See [documentation](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux).
+    {{< tab label="Linux" md=false >}}
+    {{< alert >}}See [documentation](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux).{{< /alert >}}
     {{< /tab >}}
 
 {{< /tabs >}}

@@ -12,12 +12,28 @@
 {{ $images := slice }}
 {{ range $imagesTemp }}
   {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-    {{ $images = $images | append (resources.GetRemote .) }}
+    {{ $images = $images | append (dict "resource" (resources.GetRemote .) "key" .) }}
   {{ else }}
-    {{ $images = $images | append ($page.Match .) }}
+    {{ range ($page.Match .) }}
+      {{ $images = $images | append (dict "resource" . "key" .Name) }}
+    {{ end }}
   {{ end }}
 {{ end }}
 
+{{ $captionsParam := .Get "captions" }}
+{{ $captions := dict }}
+{{ if $captionsParam }}
+  {{ $captionsTemp := strings.TrimPrefix "{" $captionsParam }}
+  {{ $captionsTemp = strings.TrimSuffix "}" $captionsTemp }}
+  {{ range (strings.Split $captionsTemp ",") }}
+    {{ $pair := strings.Split . ":" }}
+    {{ if ge (len $pair) 2 }}
+      {{ $key := strings.TrimSpace (index $pair 0) }}
+      {{ $value := strings.TrimSpace (delimit (after 1 $pair) ":") }}
+      {{ $captions = merge $captions (dict $key $value) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
 
 {{ if not .Parent }}<div class="width-patch"></div>{{ end }}
 <div
@@ -42,21 +58,44 @@
     {{ end }}
   </div>
 
-  <div class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
+  <div
+    class="relative w-full after:clear-both after:block after:content-['']"
+    style="overflow-x: clip; overflow-y: visible;">
     {{ range $index, $image := $images }}
-      {{ $hiddenClass := cond (eq $index 0) "" "hidden" }}
-      <div
-        class="relative float-left -mr-[100%] {{ $hiddenClass }} w-full transition-transform ease-in-out motion-reduce:transition-none"
-        data-twe-carousel-item
-        style="transition-duration: {{ $interval }}ms;"
-        {{ if eq $index 0 }}data-twe-carousel-active{{ end }}>
-        <div class="single_hero_background" style="aspect-ratio: {{ $aspectx }} / {{ $aspecty }};">
+    {{ $hiddenClass := cond (eq $index 0) "" "hidden" }}
+    {{ $resource := index $image "resource" }}
+    {{ $key := index $image "key" }}
+    {{ $caption := "" }}
+    {{ $candidates := slice }}
+    {{ if $resource }}
+    {{ $candidates = $candidates | append $resource.Name (path.Base $resource.Name) $resource.RelPermalink (path.Base $resource.RelPermalink) }}
+    {{ end }}
+    {{ if $key }}
+    {{ $candidates = $candidates | append $key (path.Base $key) }}
+    {{ end }}
+    {{ range $candidates }}
+    {{ if and (not $caption) . }}
+    {{ with (index $captions .) }}{{ $caption = . }}{{ end }}
+    {{ end }}
+    {{ end }}
+    <div
+      class="relative float-left -mr-[100%] {{ $hiddenClass }} w-full transition-transform ease-in-out motion-reduce:transition-none"
+      data-twe-carousel-item
+      style="transition-duration: {{ $interval }}ms;"
+      {{ if eq $index 0 }}data-twe-carousel-active{{ end }}>
+        <div class="single_hero_background relative overflow-hidden" style="aspect-ratio: {{ $aspectx }} / {{ $aspecty }};">
           <img
-            src="{{ $image.RelPermalink }}"
+            src="{{ $resource.RelPermalink }}"
             class="block absolute top-0 object-cover w-full h-full not-prose nozoom"
             alt="carousel image {{ add $index 1 }}">
         </div>
-      </div>
+        {{ if $caption }}
+        <figcaption
+          class="absolute left-0 right-0"
+          style="top: calc(100%);"
+        >{{ $caption | markdownify }}</figcaption>
+        {{ end }}
+    </div>
     {{ end }}
   </div>
 

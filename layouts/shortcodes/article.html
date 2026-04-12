@@ -3,7 +3,11 @@
 {{ $compactSummary := .Get "compactSummary" | default false }}
 {{ $target := .Page }}
 {{ if ne $link .Page.RelPermalink }}
-  {{ $target = index (first 1 (where .Site.AllPages "RelPermalink" $link)) 0 }}
+  {{ $pages := slice }}
+  {{ range hugo.Sites }}
+    {{ $pages = $pages | append .Pages }}
+  {{ end }}
+  {{ $target = index (first 1 (where $pages "RelPermalink" $link)) 0 }}
 {{ end }}
 {{ if $target }}
   <section class="space-y-10 w-full">

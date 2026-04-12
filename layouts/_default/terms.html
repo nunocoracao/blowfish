@@ -26,14 +26,6 @@
         {{ .Content }}
       </div>
     </section>
-    {{ $jsPage := resources.Get "js/page.js" }}
-    {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint (site.Params.fingerprintAlgorithm | default "sha512") }}
-    <script
-      type="text/javascript"
-      src="{{ $jsPage.RelPermalink }}"
-      integrity="{{ $jsPage.Data.Integrity }}"
-      data-oid="views_taxonomy_{{ .Data.Plural }}"
-      data-oid-likes="likes_taxonomy_{{ .Data.Plural }}"></script>
   {{ end }}
 
   {{ if site.Params.taxonomy.cardView }}
@@ -50,5 +42,4 @@
       {{ end }}
     </section>
   {{ end }}
-
 {{ end }}

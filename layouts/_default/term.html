@@ -26,14 +26,6 @@
       <div class="min-w-0 min-h-0 max-w-prose">
         {{ .Content }}
       </div>
-      {{ $jsPage := resources.Get "js/page.js" }}
-      {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint (site.Params.fingerprintAlgorithm | default "sha512") }}
-      <script
-        type="text/javascript"
-        src="{{ $jsPage.RelPermalink }}"
-        integrity="{{ $jsPage.Data.Integrity }}"
-        data-oid="views_term_{{ .Data.Term }}"
-        data-oid-likes="likes_term_{{ .Data.Term }}"></script>
     {{ end }}
   </section>
 

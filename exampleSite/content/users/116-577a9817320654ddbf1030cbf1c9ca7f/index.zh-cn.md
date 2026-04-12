@@ -1,0 +1,14 @@
+---
+                title: "Cintia Ching"
+                tags: [个人网站, 博客]
+                externalUrl: "https://cintiaching.com/"
+                weight: 117
+                showDate: false
+                showAuthor: false
+                showReadingTime: false
+                showEdit: false
+                showLikes: false
+                showViews: false
+                layoutBackgroundHeaderSpace: false
+                ---
+

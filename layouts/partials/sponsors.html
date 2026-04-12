@@ -1,4 +1,4 @@
-{{ with site.Data.sponsors }}
+{{ with hugo.Data.sponsors }}
 <section class="sponsors-section mt-16 mb-8">
   <div class="flex flex-col items-center mb-6">
     <div class="flex items-center gap-2 mb-2">
@@ -20,7 +20,7 @@
         href="{{ .profile_url }}"
         target="_blank"
         rel="noopener noreferrer"
-        class="group flex flex-col items-center"
+        class="group relative flex w-24 flex-col items-center"
         title="{{ .username }}"
         aria-label="Sponsor: {{ .username }}">
         <img
@@ -30,7 +30,11 @@
           width="64"
           height="64"
           loading="lazy">
-        <span class="mt-2 text-sm text-neutral-600 dark:text-neutral-400 group-hover:text-primary-500 transition-colors">
+        <span class="mt-2 block w-full truncate text-center text-sm text-neutral-600 transition-colors group-hover:text-primary-500 dark:text-neutral-400">
+          @{{ .username }}
+        </span>
+        <span
+          class="pointer-events-none absolute left-1/2 top-full z-10 mt-1 w-max max-w-48 -translate-x-1/2 rounded-md bg-neutral-900 px-2 py-1 text-xs text-white opacity-0 shadow-md transition-opacity duration-150 group-hover:opacity-100 group-focus-within:opacity-100 group-hover:visible group-focus-within:visible dark:bg-neutral-100 dark:text-neutral-900 invisible">
           @{{ .username }}
         </span>
       </a>
