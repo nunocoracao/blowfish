@@ -5,13 +5,15 @@
     async
     src="https://{{ site.Params.umamiAnalytics.domain }}/{{ with site.Params.umamiAnalytics.scriptName }}{{ . }}{{ else }}script.js{{ end }}"
     data-website-id="{{ site.Params.umamiAnalytics.websiteid }}"
-    {{ with site.Params.umamiAnalytics.dataDomains }}data-domains="{{ . }}"{{ end }}></script>
+    {{ with site.Params.umamiAnalytics.dataDomains }}data-domains="{{ . }}"{{ end }}
+    data-do-not-track="{{ site.Params.umamiAnalytics.doNotTrack | default false }}"></script>
 {{ else }}
   <script
     data-id="umami-script"
     async
     src="https://analytics.umami.is/script.js"
-    data-website-id="{{ site.Params.umamiAnalytics.websiteid }}"></script>
+    data-website-id="{{ site.Params.umamiAnalytics.websiteid }}"
+    data-do-not-track="{{ site.Params.umamiAnalytics.doNotTrack | default false }}"></script>
 {{ end }}
 {{/* prettier-ignore-end */}}
 

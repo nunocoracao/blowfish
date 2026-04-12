@@ -454,15 +454,6 @@
     ]
   },
   {
-    "title": "innerknowing",
-    "url": "https://innerknowing.xyz/en/",
-    "source": "n/a",
-    "tags": [
-      "Personal site",
-      "Modeller"
-    ]
-  },
-  {
     "title": "karlukle.site",
     "url": "https://karlukle.site",
     "source": "n/a",
@@ -516,23 +507,6 @@
       "Portfolio Site",
       "Software Developer",
       "Videogame Developer"
-    ]
-  },
-  {
-    "title": "Beauty Formulation",
-    "url": "https://www.beautyformulation.com/",
-    "source": "n/a",
-    "tags": [
-      "Company site"
-    ]
-  },
-  {
-    "title": "Middle of Nowhere",
-    "url": "https://blog.wtcx.dev/",
-    "source": "n/a",
-    "tags": [
-      "Personal Site",
-      "Blog"
     ]
   },
   {
@@ -840,15 +814,6 @@
     ]
   },
   {
-    "title": "Dan Davidson | Where Crypto, Charts and Curiosity Collide",
-    "url": "https://danly.io",
-    "source": "n/a",
-    "tags": [
-      "Personal site",
-      "Technology Blog"
-    ]
-  },
-  {
     "title": "tbsch.de | Smart Home, Technik, Kram",
     "url": "https://tbsch.de",
     "source": "n/a",
@@ -922,7 +887,7 @@
       "DevOps",
       "Personal site",
       "Technology Blog"
-      ]
+    ]
   },
   {
     "title": "monpetitdev.fr",
@@ -959,6 +924,133 @@
       "Personal site",
       "Blog",
       "Linux Admin"
+    ]
+  },
+  {
+    "title": "GOODJINC",
+    "url": "https://goodjinc.com/",
+    "source": "https://github.com/GOODJINC/goodjinc.com",
+    "tags": [
+      "Personal site",
+      "Blog",
+      "Tech",
+      "IT"
+    ]
+  },
+  {
+    "title": "Artur Tyloch",
+    "url": "https://tyloch.biz/",
+    "tags": [
+      "Personal site",
+      "Blog",
+      "AI",
+      "Portfolio"
+    ]
+  },
+  {
+    "title": "Tats Shibata",
+    "url": "https://blog.rewse.jp/",
+    "source": "https://github.com/rewse/rewse-blog",
+    "tags": [
+      "Personal site",
+      "Blog"
+    ]
+  },
+  {
+    "title": "Radek Průša",
+    "url": "https://prusa.net/",
+    "tags": [
+      "Personal site",
+      "Blog"
+    ]
+  },
+  {
+    "title": "jbetzen.net",
+    "url": "https://jbetzen.net/",
+    "tags": [
+      "Personal site",
+      "Home Automation",
+      "CAD",
+      "DIY",
+      "Mechanical Engineering"
+    ]
+  },
+  {
+    "title": "alst.ovh",
+    "url": "https://alst.ovh/",
+    "tags": [
+      "Personal site",
+      "Blog",
+      "dawel",
+      "dwOS",
+      "dwKDE"
+    ]
+  },
+  {
+    "title": "Zarvelion Zynji",
+    "url": "https://blog.zynji.my.id/",
+    "tags": [
+      "Personal site",
+      "Blog"
+    ]
+  },
+  {
+    "title": "Airika",
+    "url": "https://www.airikatrading.com",
+    "source": "n/a",
+    "tags": [
+      "Business site",
+      "E-commerce"
+    ]
+  },
+  {
+    "title": "Cook Like A Nerd",
+    "url": "https://cooklikeanerd.com/",
+    "tags": [
+      "Recipe Blog"
+    ]
+  },
+  {
+    "title": "Cintia Ching",
+    "url": "https://cintiaching.com/",
+    "tags": [
+      "Personal site",
+      "Blog"
+    ]
+  },
+  {
+    "title": "luizcarloscf.github.io",
+    "url": "https://luizcarloscf.github.io/",
+    "source": "https://github.com/luizcarloscf/luizcarloscf.github.io",
+    "tags": [
+      "Personal site",
+      "Blog"
+    ]
+  },
+  {
+    "title": "Robin Fairchild",
+    "url": "https://fairchild26.github.io/",
+    "tags": [
+      "Personal site",
+      "Blog"
+    ]
+  },
+  {
+    "title": "Paraguay4Life",
+    "url": "https://paraguay4life.com/",
+    "source": "n/a",
+    "tags": [
+      "Blog",
+      "Travel",
+      "Paraguay"
+    ]
+  },
+  {
+    "title": "www.gsking.co.uk",
+    "url": "https://www.gsking.co.uk",
+    "source": "n/a",
+    "tags": [
+      "Personal site"
     ]
   }
 ]

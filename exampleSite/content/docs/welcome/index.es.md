@@ -26,7 +26,7 @@ Una característica muy solicitada: ¡Blowfish ahora es multilingüe! Si publica
 
 <div class="text-2xl text-center" style="font-size: 2.8rem">🇬🇧 🇩🇪 🇫🇷 🇪🇸 🇨🇳 🇧🇷 🇹🇷 🇧🇩</div>
 
-Gracias a las contribuciones de la comunidad, Blowfish ya ha sido traducido a [treinta idiomas](https://github.com/nunocoracao/blowfish/tree/main/i18n), y se añadirán más con el tiempo. Por cierto, ¡los [pull requests](https://github.com/nunocoracao/blowfish/pulls) para nuevos idiomas siempre son bienvenidos!
+Gracias a las contribuciones de la comunidad, Blowfish ya ha sido traducido a [treinta y dos idiomas](https://github.com/nunocoracao/blowfish/tree/main/i18n), y se añadirán más con el tiempo. Por cierto, ¡los [pull requests](https://github.com/nunocoracao/blowfish/pulls) para nuevos idiomas siempre son bienvenidos!
 
 ## Soporte para idiomas RTL
 

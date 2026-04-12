@@ -1,7 +1,3 @@
-{{/* jQuery */}}
-{{ $jqueryLib := resources.Get "lib/jquery/jquery.slim.min.js" | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
-<script src="{{ $jqueryLib.RelPermalink }}" integrity="{{ $jqueryLib.Data.Integrity }}"></script>
-
 {{/* Mermaid */}}
 {{ if .Page.HasShortcode "mermaid" }}
   {{ $mermaidLib := resources.Get "lib/mermaid/mermaid.min.js" }}
@@ -128,7 +124,7 @@
 {{ end }}
 
 {{ if $hasRepoCards }}
-  {{ $repoColors := site.Data.repoColors }}
+  {{ $repoColors := hugo.Data.repoColors }}
   {{ $cssRules := slice }}
 
   {{/* default color */}}
@@ -138,7 +134,9 @@
   {{ $cssRules = $cssRules | append ".language-dot[data-language=\"model\"] { background-color: #ff6b35; }" }}
 
   {{ range $lang, $color := $repoColors }}
-    {{ $cssRules = $cssRules | append (printf ".language-dot[data-language=\"%s\"] { background-color: %s; }" $lang $color) }}
+    {{ if $color }}
+      {{ $cssRules = $cssRules | append (printf ".language-dot[data-language=\"%s\"] { background-color: %s; }" $lang $color) }}
+    {{ end }}
   {{ end }}
   {{ $repoCardCSS := resources.FromString "css/repo-cards.css" (delimit $cssRules "\n")
     | minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512")
@@ -152,4 +150,48 @@
   {{ with $tabJS | minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
     <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
   {{ end }}
+{{ end }}
+
+{{/* Firebase */}}
+{{ if site.Params.firebase.apiKey }}
+  {{ $firebase := resources.Get "js/firebase.js" }}
+  {{ $firebase = $firebase | resources.Minify | resources.Fingerprint (site.Params.fingerprintAlgorithm | default "sha512") }}
+  <script type="module" src="{{ $firebase.RelPermalink }}" integrity="{{ $firebase.Data.Integrity }}"></script>
+
+  {{ if in (slice "page" "section") .Kind }}
+    {{ $translations := .AllTranslations }}
+    {{ with .File }}
+      {{ $path := .Path }}
+      {{ range $translations }}
+        {{ $path = replace $path (print "." .Lang ".md") ".md" }}
+      {{ end }}
+      {{ partial "inline/firebase-config.html" (dict "views" (printf "views_%s" $path) "likes" (printf "likes_%s" $path)) }}
+    {{ end }}
+  {{ else if eq .Kind "term" }}
+    {{ partial "inline/firebase-config.html" (dict "views" (printf "views_term_%s" .Data.Term) "likes" (printf "likes_term_%s" .Data.Term)) }}
+  {{ else if eq .Kind "taxonomy" }}
+    {{ partial "inline/firebase-config.html" (dict "views" (printf "views_taxonomy_%s" .Data.Plural) "likes" (printf "likes_taxonomy_%s" .Data.Plural)) }}
+  {{ else if eq .Kind "home" }}
+    {{ partial "inline/firebase-config.html" (dict "views" "views_home" "likes" "likes_home") }}
+  {{ end }}
+
+{{ end }}
+
+{{ define "_partials/inline/firebase-config.html" }}
+<script id="firebase-config" 
+        type="application/json"
+        data-views="{{ .views }}"
+        data-likes="{{ .likes }}">
+  {
+    "config": {
+      "apiKey": "{{ site.Params.firebase.apiKey }}",
+      "authDomain": "{{ site.Params.firebase.authDomain }}",
+      "projectId": "{{ site.Params.firebase.projectId }}",
+      "storageBucket": "{{ site.Params.firebase.storageBucket }}",
+      "messagingSenderId": "{{ site.Params.firebase.messagingSenderId }}",
+      "appId": "{{ site.Params.firebase.appId }}",
+      "measurementId": "{{ site.Params.firebase.measurementId }}"
+    }
+  }
+</script>
 {{ end }}

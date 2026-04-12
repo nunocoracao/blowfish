@@ -1,7 +1,12 @@
 {{- $label := .Get "label" -}}
 {{- $icon := .Get "icon" -}}
 {{- $index := .Parent.Store.Get "tab-index" | default 0 -}}
-{{- $content := .InnerDeindent | strings.TrimSpace | .Page.RenderString -}}
+{{- $md := .Get "md" | default true -}}
+{{- $isMarkdown := or (eq $md true) (eq $md "true") -}}
+{{- $content := .Inner -}}
+{{- if $isMarkdown -}}
+  {{- $content = .InnerDeindent | strings.TrimSpace | .Page.RenderString -}}
+{{- end -}}
 
 {{- $tabs := .Parent.Store.Get "tabs" | default slice -}}
 {{- .Parent.Store.Set "tabs" ($tabs | append (dict "label" $label "icon" $icon "content" $content)) -}}
