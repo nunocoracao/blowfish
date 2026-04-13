@@ -121,6 +121,8 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   showTermCount = true
   showHero = false
   # heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
+  layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
   showBreadcrumbs = false
   showViews = false
   showLikes = false
@@ -130,6 +132,8 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
 [term]
   showHero = false
   # heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
+  layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
   showBreadcrumbs = false
   showViews = false
   showLikes = false
