@@ -1,6 +1,6 @@
 ---
                 title: "alxhslm.github.io"
-                tags: [個人サイト]
+                tags: [Personal Site]
                 externalUrl: "https://alxhslm.github.io/"
                 weight: 51
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

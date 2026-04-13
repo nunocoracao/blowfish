@@ -1,6 +1,6 @@
 ---
                 title: "Learn-Software.com"
-                tags: [个人网站, 技术博客, 学习, 软件工程, 编程, 人工智能]
+                tags: [Personal Website,Tech Blog,Learning,Software Engineering,Programming,Artificial intelligence]
                 externalUrl: "https://learn-software.com"
                 weight: 92
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

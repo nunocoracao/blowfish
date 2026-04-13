@@ -1,6 +1,6 @@
 ---
                 title: "nveshaan"
-                tags: [个人网站]
+                tags: [Personal Site]
                 externalUrl: "https://nveshaan.github.io/"
                 weight: 64
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

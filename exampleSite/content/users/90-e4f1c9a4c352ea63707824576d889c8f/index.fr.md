@@ -1,6 +1,6 @@
 ---
                 title: "yag0x1.github.io"
-                tags: [Site personnel, Portefeuille]
+                tags: [Personal site,Portfolio]
                 externalUrl: "https://yag0x1.github.io"
                 weight: 91
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

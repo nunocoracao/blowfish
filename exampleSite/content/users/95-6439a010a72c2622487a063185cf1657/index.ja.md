@@ -1,6 +1,6 @@
 ---
                 title: "tbsch.de | Smart Home, Technik, Kram"
-                tags: [個人サイト]
+                tags: [Personal site]
                 externalUrl: "https://tbsch.de"
                 weight: 96
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

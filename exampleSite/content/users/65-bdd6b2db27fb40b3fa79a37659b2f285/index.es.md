@@ -1,6 +1,6 @@
 ---
                 title: "andrealucchini.com"
-                tags: [sitio personal, Blog]
+                tags: [Personal site,Blog]
                 externalUrl: "https://andrealucchini.com"
                 weight: 66
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

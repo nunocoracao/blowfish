@@ -1,6 +1,6 @@
 ---
                 title: "code-chimp.com"
-                tags: [sitio personal]
+                tags: [Personal site]
                 externalUrl: "https://code-chimp.com"
                 weight: 3
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

@@ -1,6 +1,6 @@
 ---
                 title: "mayer.life"
-                tags: [個人サイト]
+                tags: [Personal site]
                 externalUrl: "https://mayer.life"
                 weight: 41
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

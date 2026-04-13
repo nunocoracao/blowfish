@@ -1,6 +1,6 @@
 ---
                 title: "karlukle.site"
-                tags: [个人博客]
+                tags: [Personal blog]
                 externalUrl: "https://karlukle.site"
                 weight: 57
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

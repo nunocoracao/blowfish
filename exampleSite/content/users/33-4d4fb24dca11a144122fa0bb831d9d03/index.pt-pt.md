@@ -1,6 +1,6 @@
 ---
                 title: "m3upt.com"
-                tags: [Local do projeto]
+                tags: [Project site]
                 externalUrl: "https://m3upt.com"
                 weight: 34
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

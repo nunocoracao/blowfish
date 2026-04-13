@@ -1,6 +1,6 @@
 ---
                 title: "Reyneese on WoW"
-                tags: [sitio personal, Guau, mundo de warcraft, Blog]
+                tags: [Personal site,WoW,World of Warcraft,Blog]
                 externalUrl: "https://reyneese.com/"
                 weight: 106
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

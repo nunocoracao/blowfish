@@ -1,6 +1,6 @@
 ---
                 title: "the-maze.net"
-                tags: [Site pessoal, Blogue]
+                tags: [Personal site,Blog]
                 externalUrl: "https://www.the-maze.net/"
                 weight: 52
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

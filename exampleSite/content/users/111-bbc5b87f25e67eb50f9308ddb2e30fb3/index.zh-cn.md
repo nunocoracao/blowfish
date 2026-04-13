@@ -1,6 +1,6 @@
 ---
                 title: "jbetzen.net"
-                tags: [个人网站, 家庭自动化, 计算机辅助设计, DIY, 机械工业]
+                tags: [Personal site,Home Automation,CAD,DIY,Mechanical Engineering]
                 externalUrl: "https://jbetzen.net/"
                 weight: 112
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

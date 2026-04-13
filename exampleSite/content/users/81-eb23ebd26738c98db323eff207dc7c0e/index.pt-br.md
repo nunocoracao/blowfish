@@ -1,6 +1,6 @@
 ---
                 title: "Weg um Weg"
-                tags: [Blogue, Blog ao ar livre]
+                tags: [Blog,Outdoor Blog]
                 externalUrl: "https://www.wegumweg.de"
                 weight: 82
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

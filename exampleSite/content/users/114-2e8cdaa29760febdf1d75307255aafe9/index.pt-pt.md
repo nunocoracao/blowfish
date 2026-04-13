@@ -1,6 +1,6 @@
 ---
                 title: "Airika"
-                tags: [Site comercial, Comércio eletrônico]
+                tags: [Business site,E-commerce]
                 externalUrl: "https://www.airikatrading.com"
                 weight: 115
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

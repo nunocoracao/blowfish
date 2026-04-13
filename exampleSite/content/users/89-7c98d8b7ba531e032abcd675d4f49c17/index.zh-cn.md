@@ -1,6 +1,6 @@
 ---
                 title: "abantikabhuti.github.io"
-                tags: [个人网站, 文件夹]
+                tags: [Personal site,Portfolio]
                 externalUrl: "https://abantikabhuti.github.io"
                 weight: 90
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

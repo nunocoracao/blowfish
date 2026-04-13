@@ -1,6 +1,6 @@
 ---
                 title: "Cook Like A Nerd"
-                tags: [レシピブログ]
+                tags: [Recipe Blog]
                 externalUrl: "https://cooklikeanerd.com/"
                 weight: 116
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

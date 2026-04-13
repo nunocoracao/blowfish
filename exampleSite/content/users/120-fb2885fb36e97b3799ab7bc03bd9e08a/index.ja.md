@@ -1,6 +1,6 @@
 ---
                 title: "www.gsking.co.uk"
-                tags: [個人サイト]
+                tags: [Personal site]
                 externalUrl: "https://www.gsking.co.uk"
                 weight: 121
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

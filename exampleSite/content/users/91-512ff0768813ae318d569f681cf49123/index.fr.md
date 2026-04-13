@@ -1,6 +1,6 @@
 ---
                 title: "Learn-Software.com"
-                tags: [Site Web personnel, Blogue technique, Apprentissage, Génie logiciel, Programmation, Intelligence artificielle]
+                tags: [Personal Website,Tech Blog,Learning,Software Engineering,Programming,Artificial intelligence]
                 externalUrl: "https://learn-software.com"
                 weight: 92
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

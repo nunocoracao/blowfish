@@ -1,6 +1,6 @@
 ---
                 title: "DXPetti.com"
-                tags: [个人网站, 博客]
+                tags: [Personal site,Blog]
                 externalUrl: "https://www.dxpetti.com/"
                 weight: 53
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

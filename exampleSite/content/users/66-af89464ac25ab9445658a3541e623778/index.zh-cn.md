@@ -1,6 +1,6 @@
 ---
                 title: "glomyer.dev"
-                tags: [个人网站]
+                tags: [Personal site]
                 externalUrl: "https://luizglomyer.github.io/"
                 weight: 67
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

@@ -1,6 +1,6 @@
 ---
                 title: "Robin Fairchild"
-                tags: [Sito personale, Blog]
+                tags: [Personal site,Blog]
                 externalUrl: "https://fairchild26.github.io/"
                 weight: 119
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

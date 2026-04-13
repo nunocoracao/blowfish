@@ -1,6 +1,6 @@
 ---
                 title: "n9o.xyz"
-                tags: [Site personnel, Auteur du thème]
+                tags: [Personal site,Theme author]
                 externalUrl: "https://n9o.xyz"
                 weight: 1
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

@@ -1,6 +1,6 @@
 ---
                 title: "jbetzen.net"
-                tags: [Site pessoal, Automação residencial, CAD, faça você mesmo, Engenharia Mecânica]
+                tags: [Personal site,Home Automation,CAD,DIY,Mechanical Engineering]
                 externalUrl: "https://jbetzen.net/"
                 weight: 112
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

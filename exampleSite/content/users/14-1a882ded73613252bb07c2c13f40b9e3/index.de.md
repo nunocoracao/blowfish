@@ -1,6 +1,6 @@
 ---
                 title: "sdehm.dev"
-                tags: [Persönliche Seite]
+                tags: [Personal site]
                 externalUrl: "https://sdehm.dev"
                 weight: 15
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

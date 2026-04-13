@@ -1,6 +1,6 @@
 ---
                 title: "technicat.com"
-                tags: [Site da empresa]
+                tags: [Company site]
                 externalUrl: "https://technicat.com/"
                 weight: 22
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

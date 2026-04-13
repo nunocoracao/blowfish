@@ -1,6 +1,6 @@
 ---
                 title: "code-chimp.com"
-                tags: [個人サイト]
+                tags: [Personal site]
                 externalUrl: "https://code-chimp.com"
                 weight: 3
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

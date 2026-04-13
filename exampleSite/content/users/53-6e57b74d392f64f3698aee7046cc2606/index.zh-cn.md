@@ -1,6 +1,6 @@
 ---
                 title: "asterisk.lol"
-                tags: [博客, 个人网站]
+                tags: [Blog,Personal Site]
                 externalUrl: "https://asterisk.lol"
                 weight: 54
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

@@ -1,6 +1,6 @@
 ---
                 title: "Ignacio Conde"
-                tags: [个人网站, 作品集网站, 软件开发人员, 视频游戏开发商]
+                tags: [Personal Site,Portfolio Site,Software Developer,Videogame Developer]
                 externalUrl: "http://www.ignaciomconde.com/"
                 weight: 62
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

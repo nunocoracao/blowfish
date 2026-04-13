@@ -1,6 +1,6 @@
 ---
                 title: "István Merza"
-                tags: [个人网站, 博客, 技术博客, 趣味项目, 学习]
+                tags: [Personal site,Blog,Tech Blog,Fun Project,Learning]
                 externalUrl: "https://www.merza.is/"
                 weight: 100
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

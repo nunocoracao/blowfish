@@ -1,6 +1,6 @@
 ---
                 title: "scottmckendry.tech"
-                tags: [sitio personal]
+                tags: [Personal site]
                 externalUrl: "https://scottmckendry.tech"
                 weight: 42
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

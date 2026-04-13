@@ -1,6 +1,6 @@
 ---
                 title: "dizzytech.de"
-                tags: [Persönliche Seite]
+                tags: [Personal site]
                 externalUrl: "https://dizzytech.de"
                 weight: 16
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

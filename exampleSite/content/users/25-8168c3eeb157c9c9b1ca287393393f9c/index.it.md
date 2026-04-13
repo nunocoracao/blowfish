@@ -1,6 +1,6 @@
 ---
                 title: "alanctanner.com"
-                tags: [Sito personale]
+                tags: [Personal site]
                 externalUrl: "https://alanctanner.com/"
                 weight: 26
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

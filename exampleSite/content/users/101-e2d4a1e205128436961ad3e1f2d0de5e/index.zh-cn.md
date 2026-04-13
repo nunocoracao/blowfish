@@ -1,6 +1,6 @@
 ---
                 title: "zzamboni.org"
-                tags: [个人网站, 博客, 技术博客]
+                tags: [Personal site,Blog,Technology Blog]
                 externalUrl: "https://zzamboni.org/"
                 weight: 102
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

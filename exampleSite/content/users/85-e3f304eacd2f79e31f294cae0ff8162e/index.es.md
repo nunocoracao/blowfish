@@ -1,6 +1,6 @@
 ---
                 title: "irusukan"
-                tags: [Sitio personal, Blog]
+                tags: [Personal Site,Blog]
                 externalUrl: "https://irusukan.com"
                 weight: 86
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

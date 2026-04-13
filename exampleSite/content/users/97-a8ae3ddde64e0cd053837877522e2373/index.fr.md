@@ -1,6 +1,6 @@
 ---
                 title: "encelo.github.io"
-                tags: [Site personnel, Blogue]
+                tags: [Personal site,Blog]
                 externalUrl: "https://encelo.github.io/"
                 weight: 98
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

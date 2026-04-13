@@ -1,6 +1,6 @@
 ---
                 title: "BoringTech.net"
-                tags: [Persönliche Seite, Blog]
+                tags: [Personal Site,Blog]
                 externalUrl: "https://boringtech.net/"
                 weight: 49
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

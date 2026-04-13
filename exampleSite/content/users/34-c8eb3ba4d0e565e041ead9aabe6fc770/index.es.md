@@ -1,6 +1,6 @@
 ---
                 title: "pacochan.net"
-                tags: [sitio personal]
+                tags: [Personal site]
                 externalUrl: "https://pacochan.net"
                 weight: 35
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

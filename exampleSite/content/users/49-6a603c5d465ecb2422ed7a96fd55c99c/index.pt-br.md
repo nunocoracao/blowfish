@@ -1,6 +1,6 @@
 ---
                 title: "technicaldc.github.io"
-                tags: [Site pessoal, Blogue]
+                tags: [Personal Site,Blog]
                 externalUrl: "https://technicaldc.github.io/"
                 weight: 50
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

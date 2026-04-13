@@ -1,6 +1,6 @@
 ---
                 title: "Zarvelion Zynji"
-                tags: [Persönliche Seite, Blog]
+                tags: [Personal site,Blog]
                 externalUrl: "https://blog.zynji.my.id/"
                 weight: 114
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

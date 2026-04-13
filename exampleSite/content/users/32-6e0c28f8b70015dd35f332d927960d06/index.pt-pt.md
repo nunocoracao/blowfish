@@ -1,6 +1,6 @@
 ---
                 title: "marupanda.art/marucomics"
-                tags: [Site de quadrinhos]
+                tags: [Comics site]
                 externalUrl: "https://marupanda.art/marucomics/"
                 weight: 33
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

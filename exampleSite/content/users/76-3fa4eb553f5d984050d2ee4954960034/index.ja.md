@@ -1,6 +1,6 @@
 ---
                 title: "Lazy Product Reviews"
-                tags: [個人サイト, ブログ]
+                tags: [Personal site,Blog]
                 externalUrl: "https://lazyproductreviews.com/"
                 weight: 77
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

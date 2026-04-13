@@ -1,6 +1,6 @@
 ---
                 title: "50-nuances-octets.fr"
-                tags: [Site de l'organisation]
+                tags: [Organization site]
                 externalUrl: "https://www.50-nuances-octets.fr/"
                 weight: 32
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

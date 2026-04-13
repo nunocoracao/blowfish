@@ -1,6 +1,6 @@
 ---
                 title: "p3rception.github.io"
-                tags: [Site personnel, Blogue]
+                tags: [Personal site,Blog]
                 externalUrl: "https://p3rception.github.io/"
                 weight: 70
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

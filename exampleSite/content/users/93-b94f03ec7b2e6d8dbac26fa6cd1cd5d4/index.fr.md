@@ -1,6 +1,6 @@
 ---
                 title: "kieranlowe.io"
-                tags: [Blogue technologique]
+                tags: [Technology Blog]
                 externalUrl: "https://kieranlowe.io"
                 weight: 94
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

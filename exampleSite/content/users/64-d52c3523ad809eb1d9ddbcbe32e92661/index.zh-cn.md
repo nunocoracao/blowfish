@@ -1,6 +1,6 @@
 ---
                 title: "kumacat.pages.dev"
-                tags: [个人网站, 博客]
+                tags: [Personal Site,Blog]
                 externalUrl: "https://kumacat.pages.dev"
                 weight: 65
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

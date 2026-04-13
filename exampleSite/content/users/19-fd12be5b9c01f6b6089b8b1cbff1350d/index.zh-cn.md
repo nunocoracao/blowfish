@@ -1,6 +1,6 @@
 ---
                 title: "nick.bouwhuis.net"
-                tags: [个人网站]
+                tags: [Personal site]
                 externalUrl: "https://nick.bouwhuis.net"
                 weight: 20
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

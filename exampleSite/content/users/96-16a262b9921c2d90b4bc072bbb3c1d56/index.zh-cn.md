@@ -1,6 +1,6 @@
 ---
                 title: "metalhearf.fr"
-                tags: [博客, 个人网站]
+                tags: [Blog,Personal site]
                 externalUrl: "https://metalhearf.fr"
                 weight: 97
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

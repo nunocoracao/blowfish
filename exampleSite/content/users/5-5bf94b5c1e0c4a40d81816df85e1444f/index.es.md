@@ -1,6 +1,6 @@
 ---
                 title: "pmnxis.github.io"
-                tags: [sitio personal]
+                tags: [Personal site]
                 externalUrl: "https://pmnxis.github.io"
                 weight: 6
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

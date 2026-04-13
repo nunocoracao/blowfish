@@ -1,6 +1,6 @@
 ---
                 title: "gma.name"
-                tags: [Persönliche Seite]
+                tags: [Personal site]
                 externalUrl: "https://gma.name"
                 weight: 40
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

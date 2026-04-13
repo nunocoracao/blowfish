@@ -1,6 +1,6 @@
 ---
                 title: "dizzytech.de"
-                tags: [个人网站]
+                tags: [Personal site]
                 externalUrl: "https://dizzytech.de"
                 weight: 16
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

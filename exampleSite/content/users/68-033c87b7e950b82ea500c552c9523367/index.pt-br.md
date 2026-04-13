@@ -1,6 +1,6 @@
 ---
                 title: "lazarusoverlook.com"
-                tags: [Site pessoal, Blogue]
+                tags: [Personal site,Blog]
                 externalUrl: "https://lazarusoverlook.com"
                 weight: 69
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

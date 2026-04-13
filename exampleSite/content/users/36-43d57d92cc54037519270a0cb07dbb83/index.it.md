@@ -1,6 +1,6 @@
 ---
                 title: "bbagwang.com"
-                tags: [Sito personale]
+                tags: [Personal site]
                 externalUrl: "https://bbagwang.com"
                 weight: 37
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

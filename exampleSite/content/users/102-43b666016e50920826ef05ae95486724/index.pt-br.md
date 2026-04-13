@@ -1,6 +1,6 @@
 ---
                 title: "Tower of Kubes"
-                tags: [Blogue, DevOps, Site pessoal, Blog de tecnologia]
+                tags: [Blog,DevOps,Personal site,Technology Blog]
                 externalUrl: "https://www.towerofkubes.com/"
                 weight: 103
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

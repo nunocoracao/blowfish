@@ -1,6 +1,6 @@
 ---
                 title: "StepaniaH"
-                tags: [Site personnel, Blogue]
+                tags: [Personal site,Blog]
                 externalUrl: "https://stepaniah.me"
                 weight: 75
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

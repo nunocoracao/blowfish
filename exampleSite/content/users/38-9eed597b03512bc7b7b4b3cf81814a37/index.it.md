@@ -1,6 +1,6 @@
 ---
                 title: "theindiecoder.cloud"
-                tags: [Sito personale]
+                tags: [Personal site]
                 externalUrl: "https://theindiecoder.cloud"
                 weight: 39
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

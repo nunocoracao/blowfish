@@ -1,6 +1,6 @@
 ---
                 title: "Cintia Ching"
-                tags: [Sito personale, Blog]
+                tags: [Personal site,Blog]
                 externalUrl: "https://cintiaching.com/"
                 weight: 117
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

@@ -1,6 +1,6 @@
 ---
                 title: "Synaptic Sugar"
-                tags: [Desarrollador de videojuegos]
+                tags: [Videogame Developer]
                 externalUrl: "https://synapticsugar.games"
                 weight: 60
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

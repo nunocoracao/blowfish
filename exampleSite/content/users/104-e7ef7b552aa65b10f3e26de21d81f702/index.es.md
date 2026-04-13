@@ -1,6 +1,6 @@
 ---
                 title: "Noor Khafidzin"
-                tags: [sitio personal, Blog]
+                tags: [Personal site,Blog]
                 externalUrl: "https://noorkhafidzin.com/"
                 weight: 105
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

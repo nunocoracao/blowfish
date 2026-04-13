@@ -1,6 +1,6 @@
 ---
                 title: "zzamboni.org"
-                tags: [Sito personale, Blog, Blog sulla tecnologia]
+                tags: [Personal site,Blog,Technology Blog]
                 externalUrl: "https://zzamboni.org/"
                 weight: 102
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

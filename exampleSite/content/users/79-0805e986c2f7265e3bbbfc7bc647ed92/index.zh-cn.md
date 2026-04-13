@@ -1,6 +1,6 @@
 ---
                 title: "Chill-Try"
-                tags: [技术博客, 个人网站, 博客]
+                tags: [Technology Blog,Personal site,Blog]
                 externalUrl: "https://ctry.tech/"
                 weight: 80
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

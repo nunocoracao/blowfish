@@ -1,6 +1,6 @@
 ---
                 title: "eallion.com"
-                tags: [Blogue, Site personnel]
+                tags: [Blog,Personal Site]
                 externalUrl: "http://www.eallion.com/"
                 weight: 59
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

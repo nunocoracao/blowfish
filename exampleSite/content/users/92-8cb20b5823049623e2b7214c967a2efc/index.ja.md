@@ -1,6 +1,6 @@
 ---
                 title: "mitri.lol"
-                tags: [個人サイト, 楽しいプロジェクト]
+                tags: [Personal site,Fun Project]
                 externalUrl: "https://mitri.lol"
                 weight: 93
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

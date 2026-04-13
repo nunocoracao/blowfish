@@ -1,6 +1,6 @@
 ---
                 title: "blog.lofibean.cc"
-                tags: [个人网站, 软件开发人员, 博客]
+                tags: [Personal site,Software Developer,Blog]
                 externalUrl: "https://blog.lofibean.cc"
                 weight: 72
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

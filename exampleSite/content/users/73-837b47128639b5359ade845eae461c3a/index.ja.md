@@ -1,6 +1,6 @@
 ---
                 title: "mrtruongvu.com"
-                tags: [個人サイト, ブログ]
+                tags: [Personal site,Blog]
                 externalUrl: "https://mrtruongvu.com"
                 weight: 74
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

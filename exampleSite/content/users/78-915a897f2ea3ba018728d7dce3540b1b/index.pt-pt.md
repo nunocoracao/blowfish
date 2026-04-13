@@ -1,6 +1,6 @@
 ---
                 title: "Bootleg Coal Rebellion"
-                tags: [Site do autor, Blogue]
+                tags: [Author Site,Blog]
                 externalUrl: "https://bootlegcoal.com"
                 weight: 79
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

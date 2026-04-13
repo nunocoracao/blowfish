@@ -1,6 +1,6 @@
 ---
                 title: "Laterre Dev"
-                tags: [个人网站, 技术博客, 软件开发人员, 作品集网站]
+                tags: [Personal site,Technology Blog,Software Developer,Portfolio Site]
                 externalUrl: "https://laterre.dev/"
                 weight: 76
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

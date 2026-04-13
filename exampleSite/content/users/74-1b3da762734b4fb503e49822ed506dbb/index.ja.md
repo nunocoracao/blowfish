@@ -1,6 +1,6 @@
 ---
                 title: "StepaniaH"
-                tags: [個人サイト, ブログ]
+                tags: [Personal site,Blog]
                 externalUrl: "https://stepaniah.me"
                 weight: 75
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

@@ -1,6 +1,6 @@
 ---
                 title: "jamiemoxon.tech"
-                tags: [Sito personale]
+                tags: [Personal site]
                 externalUrl: "https://jamiemoxon.tech"
                 weight: 38
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

@@ -1,6 +1,6 @@
 ---
                 title: "David Writes"
-                tags: [个人网站, 博客, Linux管理员]
+                tags: [Personal site,Blog,Linux Admin]
                 externalUrl: "https://davidwrites.xyz/"
                 weight: 107
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

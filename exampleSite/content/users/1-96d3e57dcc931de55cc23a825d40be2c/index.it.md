@@ -1,6 +1,6 @@
 ---
                 title: "madoke.org"
-                tags: [Sito personale]
+                tags: [Personal site]
                 externalUrl: "https://madoke.org/"
                 weight: 2
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

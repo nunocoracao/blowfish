@@ -1,6 +1,6 @@
 ---
                 title: "Zarvelion Zynji"
-                tags: [个人网站, 博客]
+                tags: [Personal site,Blog]
                 externalUrl: "https://blog.zynji.my.id/"
                 weight: 114
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

@@ -1,6 +1,6 @@
 ---
                 title: "luizcarloscf.github.io"
-                tags: [个人网站, 博客]
+                tags: [Personal site,Blog]
                 externalUrl: "https://luizcarloscf.github.io/"
                 weight: 118
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

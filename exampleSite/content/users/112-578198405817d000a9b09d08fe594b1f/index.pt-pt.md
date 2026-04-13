@@ -1,6 +1,6 @@
 ---
                 title: "alst.ovh"
-                tags: [Site pessoal, Blogue, dawel, dwOS, dwKDE]
+                tags: [Personal site,Blog,dawel,dwOS,dwKDE]
                 externalUrl: "https://alst.ovh/"
                 weight: 113
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

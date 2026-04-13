@@ -1,6 +1,6 @@
 ---
                 title: "blog.muffn.io"
-                tags: [sitio personal]
+                tags: [Personal site]
                 externalUrl: "https://blog.muffn.io/"
                 weight: 19
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

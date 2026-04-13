@@ -1,6 +1,6 @@
 ---
                 title: "aakashnand.com"
-                tags: [Site personnel]
+                tags: [Personal site]
                 externalUrl: "https://aakashnand.com/"
                 weight: 56
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

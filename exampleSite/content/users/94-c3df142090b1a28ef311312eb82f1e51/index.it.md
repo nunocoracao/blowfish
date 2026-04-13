@@ -1,6 +1,6 @@
 ---
                 title: "eike.in"
-                tags: [Sito personale, Portfolio]
+                tags: [Personal site,Portfolio]
                 externalUrl: "https://eike.in"
                 weight: 95
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

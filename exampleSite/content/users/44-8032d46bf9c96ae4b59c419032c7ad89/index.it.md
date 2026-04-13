@@ -1,6 +1,6 @@
 ---
                 title: "deepumohan.com/tech"
-                tags: [Blog sulla tecnologia]
+                tags: [Technology Blog]
                 externalUrl: "https://deepumohan.com/tech/"
                 weight: 45
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

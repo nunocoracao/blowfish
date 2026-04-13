@@ -1,6 +1,6 @@
 ---
                 title: "talkdimsum.com"
-                tags: [应用网站]
+                tags: [App site]
                 externalUrl: "https://talkdimsum.com/"
                 weight: 25
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

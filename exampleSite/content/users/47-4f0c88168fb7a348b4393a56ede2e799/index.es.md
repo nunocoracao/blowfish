@@ -1,6 +1,6 @@
 ---
                 title: "renaud.warnotte.be"
-                tags: [sitio personal]
+                tags: [Personal site]
                 externalUrl: "https://renaud.warnotte.be"
                 weight: 48
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

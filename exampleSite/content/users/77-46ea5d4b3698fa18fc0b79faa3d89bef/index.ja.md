@@ -1,6 +1,6 @@
 ---
                 title: "zzzhome"
-                tags: [個人サイト, ブログ]
+                tags: [Personal site,Blog]
                 externalUrl: "https://zzzhome.cc/"
                 weight: 78
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

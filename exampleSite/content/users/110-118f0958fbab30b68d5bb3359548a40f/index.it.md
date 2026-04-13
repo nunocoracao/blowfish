@@ -1,6 +1,6 @@
 ---
                 title: "Radek Průša"
-                tags: [Sito personale, Blog]
+                tags: [Personal site,Blog]
                 externalUrl: "https://prusa.net/"
                 weight: 111
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

@@ -1,6 +1,6 @@
 ---
                 title: "Paraguay4Life"
-                tags: [Blog, Reisen, Paraguay]
+                tags: [Blog,Travel,Paraguay]
                 externalUrl: "https://paraguay4life.com/"
                 weight: 120
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

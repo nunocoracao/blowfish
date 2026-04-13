@@ -1,6 +1,6 @@
 ---
                 title: "blog.stonegarden.dev"
-                tags: [Persönliche Seite]
+                tags: [Personal Site]
                 externalUrl: "https://blog.stonegarden.dev/"
                 weight: 47
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

@@ -1,6 +1,6 @@
 ---
                 title: "Hudson McNamara"
-                tags: [Persönliche Seite, Blog]
+                tags: [Personal Site,Blog]
                 externalUrl: "https://hudsonmcnamara.com"
                 weight: 81
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

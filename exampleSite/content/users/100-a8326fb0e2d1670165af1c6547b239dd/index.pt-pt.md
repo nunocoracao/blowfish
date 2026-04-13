@@ -1,6 +1,6 @@
 ---
                 title: "daytaur.com"
-                tags: [Portfólio, Projeto de ambiente]
+                tags: [Portfolio,Environment design]
                 externalUrl: "https://daytaur.com/"
                 weight: 101
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

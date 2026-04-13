@@ -1,6 +1,6 @@
 ---
                 title: "Artur Tyloch"
-                tags: [个人网站, 博客, 人工智能, 文件夹]
+                tags: [Personal site,Blog,AI,Portfolio]
                 externalUrl: "https://tyloch.biz/"
                 weight: 109
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

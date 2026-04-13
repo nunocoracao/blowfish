@@ -1,6 +1,6 @@
 ---
                 title: "UmmIt - Blog"
-                tags: [Sitio personal, Blog, Blog de tecnología]
+                tags: [Personal Site,Blog,Technology Blog]
                 externalUrl: "https://blog.ummit.dev/"
                 weight: 63
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

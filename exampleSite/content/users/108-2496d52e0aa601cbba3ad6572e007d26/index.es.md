@@ -1,6 +1,6 @@
 ---
                 title: "Artur Tyloch"
-                tags: [sitio personal, Blog, AI, Cartera]
+                tags: [Personal site,Blog,AI,Portfolio]
                 externalUrl: "https://tyloch.biz/"
                 weight: 109
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

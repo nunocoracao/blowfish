@@ -1,6 +1,6 @@
 ---
                 title: "halcyonstraits.com"
-                tags: [Puppenfotografie]
+                tags: [Doll photography]
                 externalUrl: "https://www.halcyonstraits.com/"
                 weight: 31
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

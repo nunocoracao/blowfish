@@ -1,6 +1,6 @@
 ---
                 title: "vkmki001.github.io"
-                tags: [個人サイト]
+                tags: [Personal site]
                 externalUrl: "https://vkmki001.github.io/"
                 weight: 36
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

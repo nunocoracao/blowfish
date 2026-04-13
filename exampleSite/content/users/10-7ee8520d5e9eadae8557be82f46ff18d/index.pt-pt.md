@@ -1,6 +1,6 @@
 ---
                 title: "insidemordecai.com"
-                tags: [Site pessoal]
+                tags: [Personal site]
                 externalUrl: "https://insidemordecai.com"
                 weight: 11
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

@@ -1,6 +1,6 @@
 ---
                 title: "adir1.com"
-                tags: [sitio personal]
+                tags: [Personal site]
                 externalUrl: "https://adir1.com/"
                 weight: 18
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

@@ -1,6 +1,6 @@
 ---
                 title: "clemsau.com"
-                tags: [Site pessoal]
+                tags: [Personal site]
                 externalUrl: "https://clemsau.com/"
                 weight: 28
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

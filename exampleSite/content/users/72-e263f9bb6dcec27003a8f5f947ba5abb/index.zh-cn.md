@@ -1,6 +1,6 @@
 ---
                 title: "Academy Customize"
-                tags: [企业网站]
+                tags: [Business site]
                 externalUrl: "https://acamize.com/"
                 weight: 73
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

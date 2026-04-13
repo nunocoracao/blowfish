@@ -1,6 +1,6 @@
 ---
                 title: "Synaptic Sugar"
-                tags: [视频游戏开发商]
+                tags: [Videogame Developer]
                 externalUrl: "https://synapticsugar.games"
                 weight: 60
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

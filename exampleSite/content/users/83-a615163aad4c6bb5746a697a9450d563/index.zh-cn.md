@@ -1,6 +1,6 @@
 ---
                 title: "blog.francescopapini.com"
-                tags: [个人网站, 博客]
+                tags: [Personal site,blog]
                 externalUrl: "https://blog.francescopapini.com"
                 weight: 84
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

@@ -1,6 +1,6 @@
 ---
                 title: "rdgo.dev"
-                tags: [sitio personal]
+                tags: [Personal site]
                 externalUrl: "https://rdgo.dev/"
                 weight: 27
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

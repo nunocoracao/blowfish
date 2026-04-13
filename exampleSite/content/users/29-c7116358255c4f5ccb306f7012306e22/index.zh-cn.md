@@ -1,6 +1,6 @@
 ---
                 title: "nikarashihatsu.github.io"
-                tags: [个人网站]
+                tags: [Personal site]
                 externalUrl: "https://nikarashihatsu.github.io/"
                 weight: 30
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

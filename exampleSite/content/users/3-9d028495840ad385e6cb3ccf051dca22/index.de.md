@@ -1,6 +1,6 @@
 ---
                 title: "mucahitkurtlar.github.io"
-                tags: [Persönliche Seite]
+                tags: [Personal site]
                 externalUrl: "https://mucahitkurtlar.github.io"
                 weight: 4
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

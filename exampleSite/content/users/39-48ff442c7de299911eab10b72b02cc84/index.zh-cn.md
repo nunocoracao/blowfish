@@ -1,6 +1,6 @@
 ---
                 title: "gma.name"
-                tags: [个人网站]
+                tags: [Personal site]
                 externalUrl: "https://gma.name"
                 weight: 40
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

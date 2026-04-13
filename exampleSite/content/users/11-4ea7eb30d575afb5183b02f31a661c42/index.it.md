@@ -1,6 +1,6 @@
 ---
                 title: "blastomussa.dev"
-                tags: [Sito personale]
+                tags: [Personal site]
                 externalUrl: "https://blastomussa.dev"
                 weight: 12
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

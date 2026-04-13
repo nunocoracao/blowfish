@@ -1,6 +1,6 @@
 ---
                 title: "ncine.github.io"
-                tags: [Site du projet]
+                tags: [Project site]
                 externalUrl: "https://ncine.github.io/"
                 weight: 99
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

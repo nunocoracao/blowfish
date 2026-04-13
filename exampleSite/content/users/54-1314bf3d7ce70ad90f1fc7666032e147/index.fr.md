@@ -1,6 +1,6 @@
 ---
                 title: "ekwska.com"
-                tags: [Blog personnel]
+                tags: [Personal blog]
                 externalUrl: "https://ekwska.com"
                 weight: 55
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

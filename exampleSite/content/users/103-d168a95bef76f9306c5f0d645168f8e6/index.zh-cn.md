@@ -1,6 +1,6 @@
 ---
                 title: "monpetitdev.fr"
-                tags: [个人网站, 博客, 软件开发人员]
+                tags: [Personal site,Blog,Software Developer]
                 externalUrl: "https://monpetitdev.fr/"
                 weight: 104
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

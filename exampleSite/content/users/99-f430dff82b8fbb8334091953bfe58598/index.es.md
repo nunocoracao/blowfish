@@ -1,6 +1,6 @@
 ---
                 title: "István Merza"
-                tags: [sitio personal, Blog, Blog de tecnología, Proyecto divertido, Aprendiendo]
+                tags: [Personal site,Blog,Tech Blog,Fun Project,Learning]
                 externalUrl: "https://www.merza.is/"
                 weight: 100
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

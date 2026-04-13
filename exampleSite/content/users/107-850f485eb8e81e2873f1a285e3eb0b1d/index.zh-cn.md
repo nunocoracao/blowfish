@@ -1,6 +1,6 @@
 ---
                 title: "GOODJINC"
-                tags: [个人网站, 博客, 科技, 它]
+                tags: [Personal site,Blog,Tech,IT]
                 externalUrl: "https://goodjinc.com/"
                 weight: 108
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

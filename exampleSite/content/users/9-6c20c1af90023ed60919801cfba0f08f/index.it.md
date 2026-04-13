@@ -1,6 +1,6 @@
 ---
                 title: "loisvelasco.is-a.dev"
-                tags: [Sito personale]
+                tags: [Personal site]
                 externalUrl: "https://loisvelasco.is-a.dev"
                 weight: 10
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

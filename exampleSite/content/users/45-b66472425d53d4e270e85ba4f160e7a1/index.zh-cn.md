@@ -1,6 +1,6 @@
 ---
                 title: "joush007.github.io"
-                tags: [个人网站]
+                tags: [Personal Site]
                 externalUrl: "https://joush007.github.io"
                 weight: 46
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

@@ -1,6 +1,6 @@
 ---
                 title: "Tats Shibata"
-                tags: [个人网站, 博客]
+                tags: [Personal site,Blog]
                 externalUrl: "https://blog.rewse.jp/"
                 weight: 110
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

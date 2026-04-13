@@ -1,6 +1,6 @@
 ---
                 title: "jbetzen.net"
-                tags: [sitio personal, Domótica, CANALLA, bricolaje, Ingeniería Mecánica]
+                tags: [Personal site,Home Automation,CAD,DIY,Mechanical Engineering]
                 externalUrl: "https://jbetzen.net/"
                 weight: 112
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

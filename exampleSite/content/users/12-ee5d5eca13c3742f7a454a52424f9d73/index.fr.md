@@ -1,6 +1,6 @@
 ---
                 title: "jam.dsg.li"
-                tags: [Site de l'organisation]
+                tags: [Organization site]
                 externalUrl: "https://jam.dsg.li"
                 weight: 13
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

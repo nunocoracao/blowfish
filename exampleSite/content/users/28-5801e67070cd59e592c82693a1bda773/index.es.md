@@ -1,6 +1,6 @@
 ---
                 title: "weaxsey.org"
-                tags: [sitio personal]
+                tags: [Personal site]
                 externalUrl: "https://weaxsey.org/"
                 weight: 29
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

@@ -1,6 +1,6 @@
 ---
                 title: "hyperbowl3d.com"
-                tags: [ゲームサイト]
+                tags: [Game site]
                 externalUrl: "https://hyperbowl3d.com/"
                 weight: 24
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

@@ -1,6 +1,6 @@
 ---
                 title: "utrodus.com"
-                tags: [作品集网站, 博客]
+                tags: [Portfolio Site,Blog]
                 externalUrl: "https://utrodus.com"
                 weight: 68
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-

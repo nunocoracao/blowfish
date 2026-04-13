@@ -1,6 +1,6 @@
 ---
                 title: "Ignacio Conde"
-                tags: [Site personnel, Site de portefeuille, Développeur de logiciels, Développeur de jeux vidéo]
+                tags: [Personal Site,Portfolio Site,Software Developer,Videogame Developer]
                 externalUrl: "http://www.ignaciomconde.com/"
                 weight: 62
                 showDate: false
@@ -11,4 +11,3 @@
                 showViews: false
                 layoutBackgroundHeaderSpace: false
                 ---
-
