@@ -39,11 +39,13 @@
 <div
   id="{{ $id }}"
   class="relative"
+  style="container-type: inline-size;"
   data-twe-carousel-init
   data-twe-ride="carousel"
   data-twe-interval="{{ $interval }}">
   <div
-    class="absolute right-0 bottom-0 left-0 z-2 mx-[15%] mb-10 flex list-none justify-center p-0"
+    class="absolute right-0 left-0 z-2 mx-[15%] mb-10 flex list-none justify-center p-0"
+    style="top: calc(100cqi * {{ $aspecty }} / {{ $aspectx }} - 2.5rem);"
     data-twe-carousel-indicators>
     {{ $num := 0 }}
     {{ range $images }}
@@ -89,18 +91,19 @@
             class="block absolute top-0 object-cover w-full h-full not-prose nozoom"
             alt="carousel image {{ add $index 1 }}">
         </div>
-        {{ if $caption }}
+        {{ if or $caption $captionsParam }}
         <figcaption
-          class="absolute left-0 right-0"
-          style="top: calc(100%);"
-        >{{ $caption | markdownify }}</figcaption>
+          class="mt-1 {{ if not $caption }}invisible{{ end }}"
+          {{ if not $caption }}aria-hidden="true"{{ end }}
+        >{{ if $caption }}{{ $caption | markdownify }}{{ else }}&nbsp;{{ end }}</figcaption>
         {{ end }}
     </div>
     {{ end }}
   </div>
 
   <button
-    class="absolute top-0 bottom-0 left-0 z-2 flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:no-underline hover:opacity-90 hover:outline-none focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+    class="absolute top-0 left-0 z-2 flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:no-underline hover:opacity-90 hover:outline-none focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+    style="height: calc(100cqi * {{ $aspecty }} / {{ $aspectx }});"
     type="button"
     data-twe-target="#{{ $id }}"
     data-twe-slide="prev">
@@ -122,7 +125,8 @@
   </button>
 
   <button
-    class="absolute top-0 bottom-0 right-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:no-underline hover:opacity-90 hover:outline-none focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+    class="absolute top-0 right-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:no-underline hover:opacity-90 hover:outline-none focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+    style="height: calc(100cqi * {{ $aspecty }} / {{ $aspectx }});"
     type="button"
     data-twe-target="#{{ $id }}"
     data-twe-slide="next">
@@ -143,3 +147,36 @@
     >
   </button>
 </div>
+
+  {{ if $captionsParam }}
+  <script>
+    (() => {
+      const root = document.getElementById("{{ $id }}");
+      if (!root) return;
+
+      const items = Array.from(root.querySelectorAll("[data-twe-carousel-item]"));
+      const captions = items
+        .map((item) => item.querySelector("figcaption"))
+        .filter((caption) => caption);
+      if (captions.length < 2) return;
+
+      const measureAndFixCaptionHeight = () => {
+        const hiddenItems = items.filter((item) => item.classList.contains("hidden"));
+        hiddenItems.forEach((item) => item.classList.remove("hidden"));
+
+        const maxHeight = Math.max(
+          ...captions.map((caption) => Math.ceil(caption.getBoundingClientRect().height)),
+        );
+
+        hiddenItems.forEach((item) => item.classList.add("hidden"));
+        captions.forEach((caption) => {
+          caption.style.minHeight = `${maxHeight}px`;
+        });
+      };
+
+      window.requestAnimationFrame(measureAndFixCaptionHeight);
+      window.addEventListener("load", measureAndFixCaptionHeight, { once: true });
+      window.addEventListener("resize", measureAndFixCaptionHeight);
+    })();
+  </script>
+  {{ end }}
