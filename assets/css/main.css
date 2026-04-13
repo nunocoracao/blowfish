@@ -183,11 +183,13 @@ pre {
 
 .thumbnail_card {
   min-width: 300px;
-  height: 200px;
+  aspect-ratio: var(--thumbnail-aspect-ratio, 1.5);
+  height: auto;
 }
 
 .thumbnail_card_related {
-  height: 150px;
+  aspect-ratio: var(--thumbnail-aspect-ratio, 1.5);
+  height: auto;
 }
 
 .thumbnail {
