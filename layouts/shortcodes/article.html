@@ -1,4 +1,4 @@
-{{ $link := .Get "link" }}
+{{ $link := printf "%s%s" site.LanguagePrefix (.Get "link") }}
 {{ $showSummary := .Get "showSummary" }}
 {{ $compactSummary := .Get "compactSummary" | default false }}
 {{ $target := .Page }}
