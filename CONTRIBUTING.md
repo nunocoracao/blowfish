@@ -31,6 +31,17 @@ All development occurs on the `main` branch and new PRs should be forked from he
 - If you have a general question, these should be asked using [GitHub Discussions](https://github.com/nunocoracao/blowfish/discussions). Feel free to open a [new discussion](https://github.com/nunocoracao/blowfish/discussions/new) to ask your question using the "Q&A" category.
 - Be sure to check if your question has already been answered by searching [existing Q&A discussions](https://github.com/nunocoracao/blowfish/discussions/categories/q-a).
 
+### Breaking changes
+
+- We do not accept breaking changes unless they are strictly required to keep supporting the project (e.g. a dependency deprecating a feature we rely on).
+- Changes that would cause existing user customizations to silently stop working (such as renaming partial paths, removing config options, or changing template signatures) will be rejected.
+- If you're unsure whether your change is breaking, open a discussion first.
+
+### Pull request guidelines
+
+- Keep PRs focused on a single change. Do not bundle unrelated modifications (e.g. bug fix + version bump + new user entry) into the same PR.
+- PRs that mix multiple unrelated changes will be closed and the author will be asked to split them.
+
 ### Coding conventions
 
 - Indent using 2 spaces (soft tabs).
