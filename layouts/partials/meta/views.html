@@ -9,7 +9,7 @@
     {{ with .File }}
       {{ $path := .Path }}
       {{ range $translations }}
-        {{ $lang := print "." .Lang ".md" }}
+        {{ $lang := print "." .Language.Name ".md" }}
         {{ $path = replace $path $lang ".md" }}
       {{ end }}
       {{ $id = delimit (slice "views_" $path) "" }}
