@@ -98,28 +98,26 @@
   {{ if .Params.showTaxonomies | default (.Site.Params.article.showTaxonomies | default false) }}
     <div class="flex flex-row flex-wrap items-center">
       {{ range $taxonomy, $terms := .Site.Taxonomies }}
-        {{ if and (not (eq $taxonomy "authors")) (not (eq $taxonomy "series")) }}
-          {{ if (gt (len ($context.GetTerms $taxonomy)) 0) }}
-            {{ range $context.GetTerms $taxonomy }}
-              <a class="relative mt-[0.5rem] me-2" href="{{ .RelPermalink }}">
-                {{ partial "badge.html" .LinkTitle }}
-              </a>
+        {{ if (gt (len ($context.GetTerms $taxonomy)) 0) }}
+          {{ range $context.GetTerms $taxonomy }}
+            {{ if .Params.showCategories | default (.Site.Params.article.showCategories | default true) }}
+              {{ if (eq $taxonomy "categories") }}
+                <a class="relative mt-[0.5rem] me-2" href="{{ .RelPermalink }}">
+                  {{ $useSecondaryColor := .Params.showCategoriesInSecondaryColor | default (.Site.Params.article.showCategoriesInSecondaryColor | default false) }}
+                  {{ partial "badge.html" (dict "linkTitle" .LinkTitle "useSecondaryColor" $useSecondaryColor) }}
+                </a>
+              {{ end }}
+            {{ end }}
+            {{ if .Params.showTags | default (.Site.Params.article.showTags | default true) }}
+              {{ if (eq $taxonomy "tags") }}
+                <a class="relative mt-[0.5rem] me-2" href="{{ .RelPermalink }}">
+                  {{ partial "badge.html" .LinkTitle }}
+                </a>
+              {{ end }}
             {{ end }}
           {{ end }}
         {{ end }}
       {{ end }}
     </div>
   {{ end }}
-
-  {{/* Output only category */}}
-  {{ if .Params.showCategoryOnly | default (.Site.Params.article.showCategoryOnly | default false) }}
-    <div class="flex flex-row flex-wrap items-center">
-      {{ range (.GetTerms "categories") }}
-        <a class="relative mt-[0.5rem] me-2" href="{{ .RelPermalink }}">
-          {{ partial "badge.html" .LinkTitle }}
-        </a>
-      {{ end }}
-    </div>
-  {{ end }}
-
 {{ end }}
