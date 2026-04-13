@@ -9,7 +9,7 @@
     "seed-views:force": "node seed-firebase-views.js --force"
   },
   "dependencies": {
-    "csv-parse": "^5.5.0",
-    "firebase-admin": "^12.0.0"
+    "csv-parse": "~5.5.0",
+    "firebase-admin": "^13.8.0"
   }
 }
