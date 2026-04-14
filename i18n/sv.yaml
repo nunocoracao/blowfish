@@ -72,3 +72,10 @@ shortcode:
 
 recent:
   show_more: "Visa mer"
+
+cookie_notice:
+  message_with_link: "Denna webbplats använder cookies och liknande tekniker. Läs vår integritetspolicy"
+  message: "Denna webbplats använder cookies och liknande tekniker. Genom att använda denna webbplats godkänner du detta."
+  privacy_policy: "integritetspolicy"
+  button: "Förstått"
+  image_alt: "Cookie-ikon"

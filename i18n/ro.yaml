@@ -72,3 +72,10 @@ shortcode:
 
 recent:
   show_more: "Afișați mai multe"
+
+cookie_notice:
+  message_with_link: "Acest site folosește cookie-uri și tehnologii similare. Citiți politica noastră de confidențialitate"
+  message: "Acest site folosește cookie-uri și tehnologii similare. Prin utilizarea acestui site, acceptați acest lucru."
+  privacy_policy: "politica noastră de confidențialitate"
+  button: "Am înțeles"
+  image_alt: "Pictogramă cookie"

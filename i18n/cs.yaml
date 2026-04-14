@@ -78,3 +78,10 @@ shortcode:
 
 recent:
   show_more: "Zobrazit další"
+
+cookie_notice:
+  message_with_link: "Tato webová stránka používá cookies a podobné technologie. Přečtěte si naše zásady ochrany osobních údajů"
+  message: "Tato webová stránka používá cookies a podobné technologie. Používáním této webové stránky s tím souhlasíte."
+  privacy_policy: "zásady ochrany osobních údajů"
+  button: "Rozumím"
+  image_alt: "Ikona cookie"
