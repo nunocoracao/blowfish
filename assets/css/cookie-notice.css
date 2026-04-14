@@ -1,0 +1,124 @@
+.cookie-notice {
+  position: fixed;
+  inset-inline: 1rem;
+  bottom: 1rem;
+  z-index: 100;
+  display: block;
+}
+
+.cookie-notice[hidden] {
+  display: none;
+}
+
+.cookie-notice__inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: min(100%, 42rem);
+  margin-inline: auto;
+  padding: 1rem 1.125rem;
+  border: 1px solid rgba(115, 115, 115, 0.2);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(8px);
+}
+
+.dark .cookie-notice__inner {
+  border-color: rgba(163, 163, 163, 0.18);
+  background: rgba(23, 23, 23, 0.94);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.cookie-notice__media {
+  flex: 0 0 auto;
+}
+
+.cookie-notice__image {
+  width: 2.25rem;
+  height: 2.25rem;
+  object-fit: contain;
+}
+
+.cookie-notice__content {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cookie-notice__text {
+  margin: 0;
+  color: rgb(64, 64, 64);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.dark .cookie-notice__text {
+  color: rgb(212, 212, 212);
+}
+
+.cookie-notice__link {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.cookie-notice__button {
+  flex: 0 0 auto;
+  cursor: pointer;
+  border: 1px solid rgba(147, 51, 234, 0.45);
+  border-radius: 0.75rem;
+  background: transparent;
+  padding: 0.625rem 1rem;
+  color: rgb(88, 28, 135);
+  font: inherit;
+  font-weight: 600;
+  line-height: 1;
+  transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease;
+}
+
+.cookie-notice__button:hover,
+.cookie-notice__button:focus-visible {
+  background: rgba(147, 51, 234, 0.08);
+  box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.1);
+  outline: none;
+}
+
+.cookie-notice__button:active {
+  transform: translateY(1px);
+}
+
+.dark .cookie-notice__button {
+  border-color: rgba(192, 132, 252, 0.5);
+  color: rgb(216, 180, 254);
+}
+
+.dark .cookie-notice__button:hover,
+.dark .cookie-notice__button:focus-visible {
+  background: rgba(192, 132, 252, 0.1);
+  box-shadow: 0 0 0 3px rgba(192, 132, 252, 0.12);
+}
+
+@media (max-width: 640px) {
+  .cookie-notice {
+    inset-inline: 0.75rem;
+    bottom: 0.75rem;
+  }
+
+  .cookie-notice__inner {
+    padding: 0.9rem 1rem;
+  }
+
+  .cookie-notice__content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cookie-notice__button {
+    width: 100%;
+    justify-content: center;
+  }
+}
