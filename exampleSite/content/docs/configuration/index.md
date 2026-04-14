@@ -217,6 +217,33 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `footer.showAppearanceSwitcher` | `false` | Whether or not to show the appearance switcher in the site footer. The browser's local storage is used to persist the visitor's preference. |
 | `footer.showScrollToTop` | `true` | When set to `true` the scroll to top arrow is displayed. |
 
+### Cookie notice
+
+Blowfish provides an optional minimal cookie notice banner.
+
+This is an MVP-style notice banner, not a full consent manager. It is intended as a lightweight built-in option for sites that want to show a simple notice banner with a dismiss action. The dismissed state can be stored in browser storage and the privacy policy link can be resolved from an internal page reference, which works well for multilingual sites.
+
+| Name | Default | Description |
+| --- | --- | --- |
+| `cookieNotice.enabled` | `false` | Whether to enable the built-in cookie notice banner. |
+| `cookieNotice.style` | `"simple"` | Controls which cookie notice partial is rendered. Currently supported: `simple`. |
+| `cookieNotice.storage` | `"localStorage"` | Controls where the dismissed state is stored. Valid values are `localStorage` and `sessionStorage`. |
+| `cookieNotice.storageKey` | `"blowfish_cookie_notice_ack_v1"` | Storage key used to persist the dismissed state. Change this value to force the banner to reappear for returning visitors. |
+| `cookieNotice.privacyPolicyPageRef` | _Not set_ | Internal page reference to the privacy policy page. This is resolved via Hugo page lookup and allows the correct language-specific URL to be generated automatically. |
+| `cookieNotice.image` | _Not set_ | Optional image path for the cookie notice banner. |
+| `cookieNotice.imageAlt` | _Not set_ | Optional alt text override for the cookie notice image. If omitted, the translated default alt text will be used. |
+
+```toml
+[cookieNotice]
+  enabled = true
+  style = "simple"
+  storage = "localStorage"   # valid options: localStorage, sessionStorage
+  storageKey = "blowfish_cookie_notice_ack_v1"
+  privacyPolicyPageRef = "/privacy-policy"
+  image = "img/cookie-notice/cookie.svg"
+  imageAlt = ""
+```
+
 ### Homepage
 
 | Name | Default | Description |
