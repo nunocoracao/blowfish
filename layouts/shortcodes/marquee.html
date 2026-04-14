@@ -1,0 +1,22 @@
+{{ $id := delimit (slice "marquee" (partial "functions/uid.html" .) (now.UnixNano)) "-" }}
+{{ $speed := default "40" (.Get "speed") }}
+{{ $direction := default "left" (.Get "direction") }}
+{{ $pauseOnHover := default true (.Get "pauseOnHover") }}
+
+<div
+  id="{{ $id }}"
+  class="marquee-wrapper"
+  role="marquee"
+  aria-label="{{ .Get "label" | default "Scrolling content" }}">
+  <div
+    class="marquee-track"
+    style="--marquee-speed: {{ $speed }}s; --marquee-direction: {{ if eq $direction "right" }}reverse{{ else }}normal{{ end }};"
+    {{ if $pauseOnHover }}data-pause-on-hover{{ end }}>
+    <div class="marquee-content" aria-hidden="false">
+      {{- .Inner -}}
+    </div>
+    <div class="marquee-content" aria-hidden="true">
+      {{- .Inner -}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+/* Marquee — infinite scrolling banner */
+
+.marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 1rem 0;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll var(--marquee-speed, 40s) linear infinite;
+  animation-direction: var(--marquee-direction, normal);
+  will-change: transform;
+}
+
+.marquee-track[data-pause-on-hover]:hover {
+  animation-play-state: paused;
+}
+
+.marquee-content {
+  display: flex;
+  gap: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: default;
+  transition: all 0.2s ease;
+
+  @apply bg-neutral-100 dark:bg-neutral-800
+         border border-neutral-200 dark:border-neutral-700
+         text-neutral-700 dark:text-neutral-300;
+}
+
+a.marquee-item {
+  cursor: pointer;
+}
+
+.marquee-item:hover {
+  @apply border-primary-500 dark:border-primary-400
+         bg-neutral-50 dark:bg-neutral-700;
+  transform: translateY(-1px);
+}
+
+.marquee-item-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.marquee-item-label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+  .marquee-content[aria-hidden="true"] {
+    display: none;
+  }
+  .marquee-content {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
