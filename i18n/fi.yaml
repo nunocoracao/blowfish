@@ -72,3 +72,10 @@ shortcode:
 
 recent:
   show_more: "Näytä Lisää"
+
+cookie_notice:
+  message_with_link: "Tämä verkkosivusto käyttää evästeitä ja vastaavia tekniikoita. Lue tietosuojakäytäntömme"
+  message: "Tämä verkkosivusto käyttää evästeitä ja vastaavia tekniikoita. Käyttämällä tätä verkkosivustoa hyväksyt tämän."
+  privacy_policy: "tietosuojaselosteemme"
+  button: "Ymmärretty"
+  image_alt: "Evästeen kuvake"
