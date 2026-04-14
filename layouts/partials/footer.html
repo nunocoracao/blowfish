@@ -69,6 +69,10 @@
       });
     </script>
   {{ end }}
+
+  {{/* Cookie notice */}}
+  {{ partial "cookie-notice/main.html" . }}
+
   {{/* Extend footer - eg. for extra scripts, etc. */}}
   {{ if templates.Exists "partials/extend-footer.html" }}
     {{ partialCached "extend-footer.html" . }}

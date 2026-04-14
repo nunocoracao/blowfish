@@ -1,0 +1,38 @@
+<div
+  class="cookie-notice cookie-notice--simple"
+  data-cookie-notice
+  data-cookie-notice-storage="{{ .storage }}"
+  data-cookie-notice-key="{{ .storageKey }}"
+  hidden
+>
+  <div class="cookie-notice__inner">
+    {{ with .image }}
+      <div class="cookie-notice__media">
+        <img
+          class="cookie-notice__image"
+          src="{{ . | relURL }}"
+          alt="{{ $.imageAlt }}"
+          loading="lazy"
+          decoding="async"
+        >
+      </div>
+    {{ end }}
+
+    <div class="cookie-notice__content">
+      <p class="cookie-notice__text">
+        {{ with .privacyPolicyUrl }}
+          {{ i18n "cookie_notice.message_with_link" }}
+          <a class="cookie-notice__link" href="{{ . }}">
+            {{ i18n "cookie_notice.privacy_policy" }}
+          </a>.
+        {{ else }}
+          {{ i18n "cookie_notice.message" }}
+        {{ end }}
+      </p>
+
+      <button type="button" class="cookie-notice__button" data-cookie-notice-accept>
+        {{ i18n "cookie_notice.button" }}
+      </button>
+    </div>
+  </div>
+</div>
