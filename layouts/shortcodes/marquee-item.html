@@ -1,0 +1,18 @@
+{{ $icon := .Get "icon" }}
+{{ $href := .Get "href" }}
+
+{{ if $href }}
+<a class="marquee-item" href="{{ $href }}" target="_blank" rel="noopener noreferrer">
+  {{- with $icon -}}
+    <img class="marquee-item-icon nozoom" src="{{ . }}" alt="" loading="lazy">
+  {{- end -}}
+  <span class="marquee-item-label">{{- .Inner | markdownify -}}</span>
+</a>
+{{ else }}
+<span class="marquee-item">
+  {{- with $icon -}}
+    <img class="marquee-item-icon nozoom" src="{{ . }}" alt="" loading="lazy">
+  {{- end -}}
+  <span class="marquee-item-label">{{- .Inner | markdownify -}}</span>
+</span>
+{{ end }}

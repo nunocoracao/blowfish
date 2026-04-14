@@ -97,6 +97,17 @@
     integrity="{{ $twelementsLib.Data.Integrity }}"></script>
 {{ end }}
 
+{{/* marquee */}}
+{{ if .Page.HasShortcode "marquee" }}
+  {{ $marqueeCSS := resources.Get "css/components/marquee.css" }}
+  {{ $marqueeCSS = $marqueeCSS | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="{{ $marqueeCSS.RelPermalink }}"
+    integrity="{{ $marqueeCSS.Data.Integrity }}">
+{{ end }}
+
 {{/* youtubeLite */}}
 {{ if .Page.HasShortcode "youtubeLite" }}
   {{ $youtubeLiteCSS := resources.Get "lib/lite-youtube-embed/lite-yt-embed.css" }}
