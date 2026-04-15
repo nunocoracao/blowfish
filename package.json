@@ -39,7 +39,7 @@
     "@tailwindcss/cli": "^4.2.2",
     "@tailwindcss/typography": "^0.5.19",
     "chart.js": "^4.5.1",
-    "fuse.js": "~7.2.0",
+    "fuse.js": "~7.3.0",
     "katex": "^0.16.45",
     "lite-youtube-embed": "^0.3.4",
     "medium-zoom": "^1.1.0",
