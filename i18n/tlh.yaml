@@ -1,0 +1,105 @@
+global:
+  language: "tlh"
+
+article:
+  anchor_label: "wIHIch"
+  date: "{{ .Date }}"
+  date_updated: "choHlu'pu': {{ .Date }}"
+  draft: "andID"
+  edit_title: "ghItlh choH"
+  reading_time:
+    one: "{{ .Count }} tup"
+    other: "{{ .Count }} tupmey"
+  reading_time_title: "lOgH lIgh"
+  table_of_contents: "loS"
+  word_count:
+    one: "{{ .Count }} mu'"
+    other: "{{ .Count }} mu'mey"
+  views:
+    one: "{{ .Count }} legh"
+    other: "{{ .Count }} leghlu'pu'"
+  likes:
+    one: "{{ .Count }} parHa'"
+    other: "{{ .Count }} parHa'lu'"
+  part_of_series: "lut tlhIn 'oH lutvam."
+  part: "Chang'eng"
+  this_article: "lutvam"
+  related_articles: "Sway'"
+  reply_by_email: "E-mail jatlh"
+  reply_to: "jatlh {{ .Title }}"
+  zen_mode_title:
+    enable: "zen yIghoS"
+    disable: "zen yImev"
+
+a11y:
+  title: "pat tlhIn"
+  disable_blur: "DoQ yImev"
+  disable_images: "nIn yImev"
+  show_link_underline: "ghaw' yIcha'"
+  font_size: "mu' tIn"
+
+author:
+  byline_title: "Ghom'a'"
+
+code:
+  copy: "ngoQ"
+  copied: "ngoQlu'pu'"
+
+error:
+  404_title: "wIvbe'lu' :confused:"
+  404_error: "Qagh 404"
+  404_description: "pagh ghoS nInvam."
+
+footer:
+  dark_appearance: "Hurgh yIwIv"
+  light_appearance: "Wov yIwIv"
+  powered_by: "{{ .Hugo }} &amp; {{ .Theme }} lIgh"
+
+list:
+  externalurl_title: "Huch ghaw'"
+  no_articles: "pagh lut."
+
+nav:
+  scroll_to_top_title: "yor yIghoS"
+  skip_to_main: "yor yImev"
+
+search:
+  open_button_title: "nej (/)"
+  close_button_title: "Qoch (Esc)"
+  input_placeholder: "nej"
+
+sharing:
+  email: "E-mail"
+  facebook: "Facebook"
+  line: "LINE"
+  linkedin: "LinkedIn"
+  pinterest: "Pinterest"
+  reddit: "Reddit"
+  twitter: "Twitter"
+  bluesky: "Bluesky"
+  whatsapp: "WhatsApp"
+  telegram: "Telegram"
+  mastodon: "Mastodon"
+
+shortcode:
+  recent_articles: "chu'"
+
+recent:
+  show_more: "tIn yIcha'"
+
+admonition:
+  abstract: "potlh"
+  bug: "Gagh"
+  caution: "YIyoH"
+  danger: "Qob"
+  example: "PIn"
+  failure: "Luj"
+  important: "Potlh'a'"
+  info: "De'"
+  note: "De' vIttlhegh"
+  question: "Ghel"
+  quote: "Mu'tlhegh"
+  success: "Qapla'"
+  tip: "Lij"
+  todo: "Ta'"
+  warning: "YIpegh"

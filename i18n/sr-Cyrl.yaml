@@ -1,0 +1,105 @@
+global:
+  language: "sr-Cyrl"
+
+article:
+  anchor_label: "Сидро"
+  date: "{{ .Date }}"
+  date_updated: "Ажурирано: {{ .Date }}"
+  draft: "Скица"
+  edit_title: "Уреди садржај"
+  reading_time:
+    one: "{{ .Count }} мин"
+    other: "{{ .Count }} мин"
+  reading_time_title: "Време читања"
+  table_of_contents: "Садржај"
+  word_count:
+    one: "{{ .Count }} реч"
+    other: "{{ .Count }} речи"
+  views:
+    one: "{{ .Count }} преглед"
+    other: "{{ .Count }} прегледа"
+  likes:
+    one: "{{ .Count }} свиђање"
+    other: "{{ .Count }} свиђања"
+  part_of_series: "Овај чланак је део серијала."
+  part: "Део"
+  this_article: "Овај чланак"
+  related_articles: "Повезано"
+  reply_by_email: "Одговори е-поштом"
+  reply_to: "Одговори на {{ .Title }}"
+  zen_mode_title:
+    enable: "Омогући зен режим рада"
+    disable: "Онемогући зен режим рада"
+
+a11y:
+  title: "Поставке приступачности"
+  disable_blur: "Онемогући замућивање"
+  disable_images: "Онемогући позадинску слику"
+  show_link_underline: "Прикажи подвлачење линкова"
+  font_size: "Величина фонта"
+
+author:
+  byline_title: "Аутор"
+
+code:
+  copy: "Копирај"
+  copied: "Копирано"
+
+error:
+  404_title: "Страница није пронађена :confused:"
+  404_error: "Грешка 404"
+  404_description: "Изгледа да страница коју тражите не постоји."
+
+footer:
+  dark_appearance: "Пребаци на тамни изглед"
+  light_appearance: "Пребаци на светли изглед"
+  powered_by: "Покрећу {{ .Hugo }} &amp; {{ .Theme }}"
+
+list:
+  externalurl_title: "Линк ка спољном сајту"
+  no_articles: "Тренутно нема чланака за приказ."
+
+nav:
+  scroll_to_top_title: "Скочи на врх"
+  skip_to_main: "Прескочи на главни садржај"
+
+search:
+  open_button_title: "Претражи (/)"
+  close_button_title: "Затвори (Esc)"
+  input_placeholder: "Претражи"
+
+sharing:
+  email: "Пошаљи е-поштом"
+  facebook: "Подели на Facebook-у"
+  line: "Подели на LINE-у"
+  linkedin: "Подели na LinkedIn-u"
+  pinterest: "Прикачи на Pinterest"
+  reddit: "Објави на Reddit-у"
+  twitter: "Објави на Twitter-у"
+  bluesky: "Објави на Bluesky-ју"
+  whatsapp: "Подели путем WhatsApp-а"
+  telegram: "Подели путем Телеграма"
+  mastodon: "Подели путем Мастодона"
+
+shortcode:
+  recent_articles: "Недавно"
+
+recent:
+  show_more: "Прикажи више"
+
+admonition:
+  abstract: "Сажетак"
+  bug: "Грешка"
+  caution: "Опрез"
+  danger: "Опасност"
+  example: "Пример"
+  failure: "Неуспех"
+  important: "Важно"
+  info: "Информација"
+  note: "Напомена"
+  question: "Питање"
+  quote: "Цитат"
+  success: "Успех"
+  tip: "Савет"
+  todo: "За урадити"
+  warning: "Упозорење"

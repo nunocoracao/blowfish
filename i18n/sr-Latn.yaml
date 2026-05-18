@@ -1,5 +1,5 @@
 global:
-  language: "HR"
+  language: "sr-Latn"
 
 article:
   anchor_label: "Sidro"
@@ -10,32 +10,32 @@ article:
   reading_time:
     one: "{{ .Count }} min"
     other: "{{ .Count }} min"
-  reading_time_title: "Vrijeme čitanja"
+  reading_time_title: "Vreme čitanja"
   table_of_contents: "Sadržaj"
   word_count:
-    one: "{{ .Count }} riječ"
-    other: "{{ .Count }} riječi"
+    one: "{{ .Count }} reč"
+    other: "{{ .Count }} reči"
   views:
     one: "{{ .Count }} pregled"
     other: "{{ .Count }} pregleda"
   likes:
     one: "{{ .Count }} sviđanje"
     other: "{{ .Count }} sviđanja"
-  part_of_series: "Ovaj članak je dio serijala."
-  part: "Dio"
+  part_of_series: "Ovaj članak je deo serijala."
+  part: "Deo"
   this_article: "Ovaj članak"
   related_articles: "Povezano"
   reply_by_email: "Odgovori e-poštom"
   reply_to: "Odgovori na {{ .Title }}"
   zen_mode_title:
-    enable: "Omogući zen način rada"
-    disable: "Onemogući zen način rada"
+    enable: "Omogući zen režim rada"
+    disable: "Onemogući zen režim rada"
 
 a11y:
   title: "Postavke pristupačnosti"
   disable_blur: "Onemogući zamućivanje"
   disable_images: "Onemogući pozadinsku sliku"
-  show_link_underline: "Prikaži podcrtavanje poveznica"
+  show_link_underline: "Prikaži podvlačenje linkova"
   font_size: "Veličina fonta"
 
 author:
@@ -51,12 +51,12 @@ error:
   404_description: "Izgleda da stranica koju tražite ne postoji."
 
 footer:
-  dark_appearance: "Prebaci na tamnu temu"
-  light_appearance: "Prebaci na svijetlu temu"
+  dark_appearance: "Prebaci na tamni izgled"
+  light_appearance: "Prebaci na svetli izgled"
   powered_by: "Pokreću {{ .Hugo }} &amp; {{ .Theme }}"
 
 list:
-  externalurl_title: "Poveznica na vanjsku stranicu"
+  externalurl_title: "Link ka spoljnom sajtu"
   no_articles: "Trenutno nema članaka za prikaz."
 
 nav:
@@ -70,16 +70,16 @@ search:
 
 sharing:
   email: "Pošalji e-poštom"
-  facebook: "Podijeli na Facebooku"
-  line: "Podijeli na LINE-u"
-  linkedin: "Podijeli na LinkedInu"
-  pinterest: "Prikvači na Pinterest"
-  reddit: "Objavi na Redditu"
-  twitter: "Objavi na Twitteru"
-  bluesky: "Objavi na Blueskyju"
-  whatsapp: "Podijeli putem WhatsAppa"
-  telegram: "Podijeli putem Telegrama"
-  mastodon: "Podijeli putem Mastodona"
+  facebook: "Podeli na Facebook-u"
+  line: "Podeli na LINE-u"
+  linkedin: "Podeli na LinkedIn-u"
+  pinterest: "Prikači na Pinterest"
+  reddit: "Objavi na Reddit-u"
+  twitter: "Objavi na Twitter-u"
+  bluesky: "Objavi na Bluesky-ju"
+  whatsapp: "Podeli putem WhatsApp-a"
+  telegram: "Podeli putem Telegrama"
+  mastodon: "Podeli putem Mastodona"
 
 shortcode:
   recent_articles: "Nedavno"
@@ -92,14 +92,14 @@ admonition:
   bug: "Greška"
   caution: "Oprez"
   danger: "Opasnost"
-  example: "Primjer"
-  failure: "Neuspjeh"
+  example: "Primer"
+  failure: "Neuspeh"
   important: "Važno"
   info: "Informacija"
   note: "Napomena"
   question: "Pitanje"
   quote: "Citat"
-  success: "Uspjeh"
-  tip: "Savjet"
-  todo: "Za napraviti"
+  success: "Uspeh"
+  tip: "Savet"
+  todo: "Za uraditi"
   warning: "Upozorenje"

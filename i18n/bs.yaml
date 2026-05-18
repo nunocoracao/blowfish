@@ -1,5 +1,5 @@
 global:
-  language: "HR"
+  language: "BS"
 
 article:
   anchor_label: "Sidro"
@@ -35,7 +35,7 @@ a11y:
   title: "Postavke pristupačnosti"
   disable_blur: "Onemogući zamućivanje"
   disable_images: "Onemogući pozadinsku sliku"
-  show_link_underline: "Prikaži podcrtavanje poveznica"
+  show_link_underline: "Prikaži podcrtavanje linkova"
   font_size: "Veličina fonta"
 
 author:
@@ -51,12 +51,12 @@ error:
   404_description: "Izgleda da stranica koju tražite ne postoji."
 
 footer:
-  dark_appearance: "Prebaci na tamnu temu"
-  light_appearance: "Prebaci na svijetlu temu"
+  dark_appearance: "Prebaci na tamni izgled"
+  light_appearance: "Prebaci na svijetli izgled"
   powered_by: "Pokreću {{ .Hugo }} &amp; {{ .Theme }}"
 
 list:
-  externalurl_title: "Poveznica na vanjsku stranicu"
+  externalurl_title: "Link na vanjsku stranicu"
   no_articles: "Trenutno nema članaka za prikaz."
 
 nav:
@@ -73,7 +73,7 @@ sharing:
   facebook: "Podijeli na Facebooku"
   line: "Podijeli na LINE-u"
   linkedin: "Podijeli na LinkedInu"
-  pinterest: "Prikvači na Pinterest"
+  pinterest: "Prikači na Pinterest"
   reddit: "Objavi na Redditu"
   twitter: "Objavi na Twitteru"
   bluesky: "Objavi na Blueskyju"
@@ -101,5 +101,5 @@ admonition:
   quote: "Citat"
   success: "Uspjeh"
   tip: "Savjet"
-  todo: "Za napraviti"
+  todo: "Za uraditi"
   warning: "Upozorenje"
