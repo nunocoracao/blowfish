@@ -1,6 +1,18 @@
 {{ define "main" }}
   {{ .Scratch.Set "scope" "single" }}
-  <article>
+  {{ $mf2 := site.Params.enableMicroformats2 | default false }}
+  <article{{ if $mf2 }} class="h-entry"{{ end }}>
+    {{ if $mf2 }}
+      {{/* microformats2: hidden h-entry metadata for IndieWeb / webmention discovery. */}}
+      <a class="u-url u-uid" href="{{ .Permalink }}" hidden>{{ .Title }}</a>
+      <time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" hidden></time>
+      {{ if .Lastmod.After .Date }}
+        <time class="dt-updated" datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}" hidden></time>
+      {{ end }}
+      <div class="p-author h-card" hidden>
+        <a class="u-url p-name" href="{{ site.Home.Permalink }}">{{ site.Params.Author.name }}</a>
+      </div>
+    {{ end }}
     {{/* Hero */}}
     {{ if .Params.showHero | default (site.Params.article.showHero | default false) }}
       {{ $heroStyle := .Params.heroStyle }}
@@ -18,7 +30,7 @@
       {{ if .Params.showBreadcrumbs | default (site.Params.article.showBreadcrumbs | default false) }}
         {{ partial "breadcrumbs.html" . }}
       {{ end }}
-      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+      <h1 class="{{ if $mf2 }}p-name {{ end }}mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
         {{ .Title | emojify }}
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
@@ -47,7 +59,9 @@
       <div class="min-w-0 min-h-0 max-w-fit">
         {{ partial "series/series.html" . }}
         <div class="article-content max-w-prose mb-20">
+          {{ if $mf2 }}<div class="e-content">{{ end }}
           {{ .Content }}
+          {{ if $mf2 }}</div>{{ end }}
           {{ $defaultReplyByEmail := site.Params.replyByEmail }}
           {{ $replyByEmail := default $defaultReplyByEmail .Params.replyByEmail }}
           {{ if $replyByEmail }}

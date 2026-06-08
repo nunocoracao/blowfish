@@ -5,6 +5,7 @@
 */}}
 {{ $constrainItemsWidth := site.Params.list.constrainItemsWidth | default false }}
 {{ $disableImageOptimization := site.Store.Get "disableImageOptimization" }}
+{{ $mf2 := site.Params.enableMicroformats2 | default false }}
 
 {{ $cardClasses := "flex flex-col md:flex-row relative" }}
 {{ $imgWrapperClasses := "" }}
@@ -73,7 +74,11 @@
 {{ end }}
 
 
-<article class="article-link--simple {{ $cardClasses }}">
+<article class="{{ if $mf2 }}h-entry {{ end }}article-link--simple {{ $cardClasses }}">
+  {{ if $mf2 }}
+    <a class="u-url" href="{{ $page.Permalink }}" hidden>{{ $page.Title }}</a>
+    <time class="dt-published" datetime="{{ $page.Date.Format "2006-01-02T15:04:05Z07:00" }}" hidden></time>
+  {{ end }}
   {{ with $featuredURL }}
     <div class="flex-none relative overflow-hidden {{ $imgWrapperClasses }} thumbnail">
       <img
@@ -93,7 +98,7 @@
           href="{{ $page.RelPermalink }}"
         {{ end }}
         class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
-        <h2>
+        <h2{{ if $mf2 }} class="p-name"{{ end }}>
           {{ .Title | emojify }}
           {{ if .Params.externalUrl }}
             <span class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500">
@@ -114,7 +119,7 @@
       {{ partial "article-meta/basic.html" . }}
     </div>
     {{ if .Params.showSummary | default (site.Params.list.showSummary | default false) }}
-      <div class="article-link__summary prose dark:prose-invert max-w-fit mt-1 line-clamp-3">
+      <div class="{{ if $mf2 }}p-summary {{ end }}article-link__summary prose dark:prose-invert max-w-fit mt-1 line-clamp-3">
         {{ .Summary | plainify }}
       </div>
     {{ end }}

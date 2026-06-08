@@ -179,6 +179,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `enableCodeCopy` | `false` | Whether copy-to-clipboard buttons are enabled for `<code>` blocks. The `highlight.noClasses` parameter must be set to `false` for code copy to function correctly. Read more about [other configuration files](#other-configuration-files) below. |
 | `enableStructuredBreadcrumbs` | `false` | Whether to add [BreadcrumbList](https://developers.google.com/search/docs/appearance/structured-data/breadcrumb) for SEO. Do NOT enable this if your content path does not match the URL, i.e., complex [URL setting](https://gohugo.io/content-management/urls/). |
 | `enableStyledScrollbar` | `true` | Whether to enable styled scrollbar via tailwind-scrollbar. Set to `false` to use the browser's default scrollbar styling. |
+| `enableMicroformats2` | `false` | Whether to add [microformats2](https://microformats.org/wiki/microformats2) markup: `h-entry` on posts, `h-feed` on list pages, and a representative `h-card` in the footer. Lets IndieWeb tooling (webmentions, feed readers, IndieAuth) parse author and post metadata from the rendered HTML. See also `verification.fediverse` to attribute links shared on the Fediverse (e.g. Mastodon) to your account. |
 | `replyByEmail` | `false` | Whether the reply-by-email link is enabled after post. The `params.author.email` parameter in `config/_default/languages.en.toml` must be set. |
 | `forgejoDefaultServer` | _Not set_ | The default `server` parameter for the `forgejo` shortcode. |
 | `giteaDefaultServer` | _Not set_ | The default `server` parameter for the `gitea` shortcode. |
@@ -384,7 +385,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `verification.bing` | _Not set_ | The site verification string provided by Bing to be included in the site metadata. |
 | `verification.pinterest` | _Not set_ | The site verification string provided by Pinterest to be included in the site metadata. |
 | `verification.yandex` | _Not set_ | The site verification string provided by Yandex to be included in the site metadata. |
-| `verification.fediverse` | _Not set_ | The fediverse handle to include in the site metadata. Include the server domain in the username, e.g. `@you@instanceaddress.tld`. |
+| `verification.fediverse` | _Not set_ | The fediverse handle to include in the site metadata. Include the server domain in the username, e.g. `@you@instanceaddress.tld`. See also `enableMicroformats2` for IndieWeb author and post discovery. |
 <!-- prettier-ignore-end -->
 
 ### RSSNext

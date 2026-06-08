@@ -69,6 +69,37 @@
       });
     </script>
   {{ end }}
+  {{/* microformats2: representative h-card for IndieWeb identity / webmention author
+       discovery. Hidden from view; parsers read it from the DOM. Email is intentionally
+       omitted to keep the theme's anti-scraping stance (see rel=me handling in head.html). */}}
+  {{ if site.Params.enableMicroformats2 | default false }}
+    {{ with site.Params.Author }}
+      {{ $authorName := .name | default site.Title }}
+      <div class="h-card" hidden>
+        <a class="u-url u-uid p-name" href="{{ site.Home.Permalink }}">{{ $authorName }}</a>
+        {{ $photo := "" }}
+        {{ with .image }}
+          {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+            {{ $photo = resources.GetRemote . }}
+          {{ else }}
+            {{ $photo = resources.Get . }}
+          {{ end }}
+        {{ end }}
+        {{ with $photo }}
+          <img class="u-photo" src="{{ .RelPermalink }}" alt="{{ $authorName }}">
+        {{ end }}
+        {{ with .headline }}<p class="p-note">{{ . }}</p>{{ end }}
+        {{ range .links }}
+          {{ range $name, $url := . }}
+            {{ if not (strings.HasPrefix $url "mailto:") }}
+              <a class="u-url" rel="me" href="{{ $url }}">{{ $name }}</a>
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      </div>
+    {{ end }}
+  {{ end }}
+
   {{/* Extend footer - eg. for extra scripts, etc. */}}
   {{ if templates.Exists "partials/extend-footer.html" }}
     {{ partialCached "extend-footer.html" . }}

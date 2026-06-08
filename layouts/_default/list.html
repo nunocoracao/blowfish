@@ -1,5 +1,6 @@
 {{ define "main" }}
   {{ .Scratch.Set "scope" "list" }}
+  {{ $mf2 := site.Params.enableMicroformats2 | default false }}
   {{ $enableToc := .Params.showTableOfContents | default (site.Params.list.showTableOfContents | default false) }}
   {{ $showToc := and $enableToc (in .TableOfContents "<ul") }}
 
@@ -49,7 +50,7 @@
     {{ $groupByYear := and (not $orderByWeight) $groupByYear }}
 
     {{ if not $cardView }}
-      <section class="space-y-10 w-full">
+      <section class="{{ if $mf2 }}h-feed {{ end }}space-y-10 w-full">
         {{ if not $orderByWeight }}
           {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
             {{ if $groupByYear }}
@@ -76,7 +77,7 @@
               <h2 class="mt-12 mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
                 {{ .Key }}
               </h2>
-              <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+              <section class="{{ if $mf2 }}h-feed {{ end }}w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
                 {{ range .Pages }}
                   {{ partial "article-link/card.html" . }}
                 {{ end }}
@@ -86,7 +87,7 @@
             <h2 class="mt-12 mb-3 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
               {{ .Key }}
             </h2>
-            <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+            <section class="{{ if $mf2 }}h-feed {{ end }}w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
               {{ range .Pages }}
                 {{ partial "article-link/card.html" . }}
               {{ end }}
@@ -98,7 +99,7 @@
       {{ else }}
         {{ if $cardViewScreenWidth }}
           <div class="relative w-screen max-w-[1600px] px-[30px] start-[calc(max(-50vw,-800px)+50%)]">
-            <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+            <section class="{{ if $mf2 }}h-feed {{ end }}w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
               {{ if not $orderByWeight }}
                 {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
                   {{ range .Pages }}
@@ -113,7 +114,7 @@
             </section>
           </div>
         {{ else }}
-          <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+          <section class="{{ if $mf2 }}h-feed {{ end }}w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
             {{ if not $orderByWeight }}
               {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
                 {{ range .Pages }}

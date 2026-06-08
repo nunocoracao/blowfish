@@ -13,6 +13,7 @@ enableA11y = false
 enableSearch = true
 enableCodeCopy = true
 enableStructuredBreadcrumbs = true
+enableMicroformats2 = false
 
 replyByEmail = false
 

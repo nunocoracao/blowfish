@@ -4,6 +4,7 @@
   3. Shortcode list.html
 */}}
 {{ $disableImageOptimization := site.Store.Get "disableImageOptimization" }}
+{{ $mf2 := site.Params.enableMicroformats2 | default false }}
 
 {{ $page := .Page }}
 {{ $featured := "" }}
@@ -58,7 +59,11 @@
 
 
 <article
-  class="article-link--card relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  class="{{ if $mf2 }}h-entry {{ end }}article-link--card relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  {{ if $mf2 }}
+    <a class="u-url" href="{{ $page.Permalink }}" hidden>{{ $page.Title }}</a>
+    <time class="dt-published" datetime="{{ $page.Date.Format "2006-01-02T15:04:05Z07:00" }}" hidden></time>
+  {{ end }}
   {{ with $featuredURL }}
     <div class="flex-none relative overflow-hidden thumbnail_card" style="--thumbnail-aspect-ratio: {{ $thumbnailAspectRatio }}">
       <img
@@ -83,7 +88,7 @@
           href="{{ $page.RelPermalink }}"
         {{ end }}
         class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
-        <h2>
+        <h2{{ if $mf2 }} class="p-name"{{ end }}>
           {{ .Title | emojify }}
           {{ if .Params.externalUrl }}
             <span class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500">
@@ -98,7 +103,7 @@
       {{ partial "article-meta/basic.html" . }}
     </div>
     {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
-      <div class="article-link__summary prose dark:prose-invert mt-1 line-clamp-5">
+      <div class="{{ if $mf2 }}p-summary {{ end }}article-link__summary prose dark:prose-invert mt-1 line-clamp-5">
         {{ .Summary | plainify }}
       </div>
     {{ end }}
