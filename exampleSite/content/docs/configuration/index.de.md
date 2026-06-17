@@ -118,6 +118,19 @@ Blowfish bietet eine große Anzahl von Konfigurationsparametern, die steuern, wi
 
 Viele der Artikel-Standardeinstellungen können auf Artikelebene überschrieben werden, indem sie im Front Matter angegeben werden. Weitere Details finden Sie im Abschnitt [Front Matter]({{< ref "front-matter" >}}).
 
+## Theme-Parameter
+
+Blowfish bietet eine große Anzahl von Konfigurationsparametern, die steuern, wie das Theme funktioniert. Die vollständige Liste aller verfügbaren Parameter finden Sie in der Datei `config/_default/params.toml`.
+
+Viele der Artikel-Standardeinstellungen können auf Artikelebene überschrieben werden, indem sie im Front Matter angegeben werden. Weitere Details finden Sie im Abschnitt [Front Matter]({{< ref "front-matter" >}}).
+
+### Header
+
+| Name | Standard | Beschreibung |
+| --- | --- | --- |
+| `header.layout` | `"basic"` | Definiert den Header für die gesamte Website. Unterstützte Werte sind `basic`, `fixed`, `fixed-fill` und `fixed-fill-blur`. |
+| `header.mobileSubmenuChecked` | `true` | Legt fest, ob verschachtelte Einträge im mobilen Menü standardmäßig aufgeklappt sind. Setze `false`, um sie standardmäßig einzuklappen. |
+
 ## Weitere Konfigurationsdateien
 
 Das Theme enthält auch eine `markup.toml`-Konfigurationsdatei. Diese Datei enthält einige wichtige Parameter, die sicherstellen, dass Hugo korrekt konfiguriert ist, um mit Blowfish erstellte Websites zu generieren.

@@ -198,6 +198,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 | 名前 | デフォルト | 説明 |
 | --- | --- | --- |
 | `header.layout` | `"basic"` | サイト全体のヘッダーを定義します。サポートされている値は、`basic`、`fixed`、`fixed-fill`、`fixed-fill-blur` です。 |
+| `header.mobileSubmenuChecked` | `true` | モバイルメニューのネストされた項目を既定で展開するかどうかを指定します。既定で折りたたむには `false` に設定します。 |
 
 ### フッター(Footer)
 

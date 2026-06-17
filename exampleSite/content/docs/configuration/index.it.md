@@ -198,6 +198,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | Name | Default | Description |
 | --- | --- | --- |
 | `header.layout` | `"basic"` | Defines the header for the entire site, supported values are `basic`, `fixed`, `fixed-fill`, and `fixed-fill-blur`. |
+| `header.mobileSubmenuChecked` | `true` | Indica se le voci annidate del menu mobile sono espanse per impostazione predefinita. Imposta `false` per comprimerle di default. |
 
 ### Footer
 
