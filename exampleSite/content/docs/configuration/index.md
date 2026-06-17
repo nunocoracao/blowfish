@@ -227,6 +227,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | Name | Default | Description |
 | --- | --- | --- |
 | `header.layout` | `"basic"` | Defines the header for the entire site, supported values are `basic`, `fixed`, `fixed-fill`, and `fixed-fill-blur`. |
+| `header.mobileSubmenuChecked` | `true` | Whether nested items in the mobile menu are expanded by default. Set to `false` to collapse them by default. |
 
 ### Footer
 

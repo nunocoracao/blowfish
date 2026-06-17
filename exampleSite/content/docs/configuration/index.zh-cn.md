@@ -202,6 +202,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
 | `header.layout` | `"basic"` | 定义整个站点的页头的布局，支持的参数有 `basic`、`fixed`、`fixed-fill`、and `fixed-fill-blur`. |
+| `header.mobileSubmenuChecked` | `true` | 定义移动端菜单中的嵌套项目是否默认展开。设置为 `false` 可让它们默认折叠。 |
 
 ### 页脚
 

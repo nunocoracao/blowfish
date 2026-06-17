@@ -58,6 +58,7 @@
 {{ define "mobile-main-menu" }}
   {{ range .Site.Menus.main }}
     {{ $submenuId := printf "fullscreen-submenu-%s" (.Identifier | default .Name | anchorize) }}
+    {{ $submenuChecked := site.Params.header.mobileSubmenuChecked | default true }}
     <div class="px-2">
       <a
         href="{{ .URL }}"
@@ -84,7 +85,7 @@
       </a>
 
       {{ if .HasChildren }}
-        <input checked type="checkbox" id="{{ $submenuId }}" autocomplete="off" class="hidden peer/full">
+        <input {{ if $submenuChecked }}checked{{ end }} type="checkbox" id="{{ $submenuId }}" autocomplete="off" class="hidden peer/full">
 
         <div
           class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 peer-checked/full:grid-rows-[1fr]">

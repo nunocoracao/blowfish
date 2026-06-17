@@ -54,6 +54,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
 
 [header]
   layout = "basic" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
+  # mobileSubmenuChecked = true # set to false to collapse nested mobile menu items by default
 
 [footer]
   showMenu = true

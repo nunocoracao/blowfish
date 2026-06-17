@@ -118,6 +118,19 @@ Blowfish fournit un grand nombre de paramètres de configuration qui contrôlent
 
 De nombreuses valeurs par défaut des articles peuvent être remplacées article par article en les spécifiant dans le front matter. Consultez la section [Front Matter]({{< ref "front-matter" >}}) pour plus de détails.
 
+## Paramètres du thème
+
+Blowfish fournit un grand nombre de paramètres de configuration qui contrôlent le fonctionnement du thème. La liste complète de tous les paramètres disponibles se trouve dans le fichier `config/_default/params.toml`.
+
+De nombreuses valeurs par défaut des articles peuvent être remplacées article par article en les spécifiant dans le front matter. Consultez la section [Front Matter]({{< ref "front-matter" >}}) pour plus de détails.
+
+### Header
+
+| Nom | Par défaut | Description |
+| --- | --- | --- |
+| `header.layout` | `"basic"` | Définit l'en-tête du site entier. Les valeurs prises en charge sont `basic`, `fixed`, `fixed-fill` et `fixed-fill-blur`. |
+| `header.mobileSubmenuChecked` | `true` | Indique si les sous-éléments du menu mobile sont ouverts par défaut. Définissez `false` pour les replier par défaut. |
+
 ## Autres fichiers de configuration
 
 Le thème inclut également un fichier de configuration `markup.toml`. Ce fichier contient des paramètres importants qui garantissent que Hugo est correctement configuré pour générer des sites construits avec Blowfish.
