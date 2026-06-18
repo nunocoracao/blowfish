@@ -341,6 +341,12 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `umamiAnalytics.domain` | _Not set_ | If using a custom domain with Umami Analytics, provide it here to serve `script.js` from the custom domain. |
 | `umamiAnalytics.dataDomains` | _Not set_ | If you want the tracker to only run on specific domains, provide it for your tracker script. This is a comma delimited list of domain names. Such as "yoursite.com,yoursite2.com". |
 | `umamiAnalytics.scriptName` | script.js | The name of the `script.js` used for anti-ad-blocking is configured by the environment variable `TRACKER_SCRIPT_NAME` |
+| `umamiAnalytics.doNotTrack` | `false` | Se impostato su `true`, aggiunge `data-do-not-track="true"` al tag script di Umami. |
+| `umamiAnalytics.enableReplay` | `false` | Abilita lo script di session replay di Umami oltre al normale script di tracking. |
+| `umamiAnalytics.sampleRate` | `0.15` | Frequenza di campionamento per la session replay. I valori supportati vanno da `0.05` a `1` con incrementi di `0.05`. |
+| `umamiAnalytics.maskLevel` | `"moderate"` | Livello di mascheramento per la session replay. I valori supportati sono `strict` e `moderate`. |
+| `umamiAnalytics.maxDuration` | `300000` | Durata massima di una sessione registrata in millisecondi. I valori supportati sono `300000` (5 minuti), `600000` (10 minuti), `900000` (15 minuti) e `1200000` (20 minuti). |
+| `umamiAnalytics.blockSelector` | _Not set_ | Selettore CSS usato per bloccare elementi specifici nella session replay. |
 | `umamiAnalytics.enableTrackEvent` | true | When set to `true` track event will add automatically. If you do not want to add track event, set it to `false`. |
 
 ### Seline Analytics

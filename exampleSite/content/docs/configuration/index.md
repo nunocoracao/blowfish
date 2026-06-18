@@ -377,6 +377,12 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `umamiAnalytics.domain` | _Not set_ | If using a custom domain with Umami Analytics, provide it here to serve `script.js` from the custom domain. |
 | `umamiAnalytics.dataDomains` | _Not set_ | If you want the tracker to only run on specific domains, provide it for your tracker script. This is a comma delimited list of domain names. Such as "yoursite.com,yoursite2.com". |
 | `umamiAnalytics.scriptName` | script.js | The name of the `script.js` used for anti-ad-blocking is configured by the environment variable `TRACKER_SCRIPT_NAME` |
+| `umamiAnalytics.doNotTrack` | false | Script tag attribute. When set to `true`, Blowfish adds `data-do-not-track="true"` to the Umami script tag. If you do not set it, Umami tracks normally. |
+| `umamiAnalytics.enableReplay` | false | When set to `true`, Blowfish loads `recorder.js` and enables Umami session replay. |
+| `umamiAnalytics.sampleRate` | _Not set_ | Session replay sample rate. Valid values are `0.05` through `1`, in `0.05` steps. |
+| `umamiAnalytics.maskLevel` | _Not set_ | Session replay masking level. Valid values are `strict` and `moderate`. |
+| `umamiAnalytics.maxDuration` | _Not set_ | Maximum session replay duration in milliseconds. Valid values are `300000`, `600000`, `900000`, and `1200000`. |
+| `umamiAnalytics.blockSelector` | _Not set_ | CSS selector used to block elements during session replay. |
 | `umamiAnalytics.enableTrackEvent` | true | When set to `true` track event will add automatically. If you do not want to add track event, set it to `false`. |
 
 ### Seline Analytics

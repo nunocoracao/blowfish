@@ -118,6 +118,23 @@ Blowfish bietet eine große Anzahl von Konfigurationsparametern, die steuern, wi
 
 Viele der Artikel-Standardeinstellungen können auf Artikelebene überschrieben werden, indem sie im Front Matter angegeben werden. Weitere Details finden Sie im Abschnitt [Front Matter]({{< ref "front-matter" >}}).
 
+
+### Umami Analytics
+
+| Name | Standard | Beschreibung |
+| --- | --- | --- |
+| `umamiAnalytics.websiteid` | _Nicht gesetzt_ | Der von Umami Analytics für die Website erzeugte Seiten-Code. Weitere Details findest du in den [Analytics-Dokumenten]({{< ref "partials#analytics" >}}). |
+| `umamiAnalytics.domain` | _Nicht gesetzt_ | Wenn du eine benutzerdefinierte Domain mit Umami Analytics verwendest, gib sie hier an, um `script.js` von der benutzerdefinierten Domain zu laden. |
+| `umamiAnalytics.dataDomains` | _Nicht gesetzt_ | Wenn der Tracker nur auf bestimmten Domains laufen soll, gib diese für dein Tracker-Skript an. Es handelt sich um eine kommagetrennte Liste von Domainnamen, zum Beispiel `"yoursite.com,yoursite2.com"`. |
+| `umamiAnalytics.scriptName` | `script.js` | Der Name von `script.js`, der zur Anti-Ad-Blocking-Verwendung dient, wird über die Umgebungsvariable `TRACKER_SCRIPT_NAME` konfiguriert. |
+| `umamiAnalytics.doNotTrack` | `false` | Wenn auf `true` gesetzt, wird `data-do-not-track="true"` zum Umami-Skript-Tag hinzugefügt. |
+| `umamiAnalytics.enableReplay` | `false` | Aktiviert das Umami Session Replay-Skript zusätzlich zum normalen Tracking-Skript. |
+| `umamiAnalytics.sampleRate` | `0.15` | Die Stichprobenerfassungsrate für Session Replay. Unterstützte Werte sind `0.05` bis `1` in Schritten von `0.05`. |
+| `umamiAnalytics.maskLevel` | `"moderate"` | Der Maskierungsgrad für Session Replay. Unterstützte Werte sind `strict` und `moderate`. |
+| `umamiAnalytics.maxDuration` | `300000` | Maximale Dauer einer aufgezeichneten Session in Millisekunden. Unterstützte Werte sind `300000` (5 Minuten), `600000` (10 Minuten), `900000` (15 Minuten) und `1200000` (20 Minuten). |
+| `umamiAnalytics.blockSelector` | _Nicht gesetzt_ | CSS-Selektor zum Blockieren bestimmter Elemente im Session Replay. |
+| `umamiAnalytics.enableTrackEvent` | `true` | Wenn auf `true` gesetzt, werden Track-Events automatisch hinzugefügt. Wenn du keine Track-Events hinzufügen möchtest, setze es auf `false`. |
+
 ## Weitere Konfigurationsdateien
 
 Das Theme enthält auch eine `markup.toml`-Konfigurationsdatei. Diese Datei enthält einige wichtige Parameter, die sicherstellen, dass Hugo korrekt konfiguriert ist, um mit Blowfish erstellte Websites zu generieren.

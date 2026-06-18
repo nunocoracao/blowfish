@@ -46,6 +46,8 @@ Para habilitar o suporte ao Umami Analytics, simplesmente forneça seu [código 
 Se você também usa o recurso de domínio personalizado do Umami e gostaria de servir o script deles do seu domínio, você também pode fornecer adicionalmente o valor de configuração `domain`. Se você não fornecer um valor `domain`, o script será carregado diretamente do DNS do Umami (analytics.umami.is).
 Se você quiser que o rastreador execute apenas em domínios específicos, você pode fornecer o valor de configuração `dataDomains`. Se você não fornecer um valor `dataDomains`, o script será executado em qualquer site onde `domain` e `websiteid` correspondam. Se a variável de ambiente `TRACKER_SCRIPT_NAME` estiver configurada, você pode especificar um nome de script personalizado `scriptName`. Se não estiver configurada, comente-a ou use o padrão `script.js`.
 
+Se você quiser habilitar o Umami Session Replay junto com o script de rastreamento normal, defina `enableReplay` como `true`. Quando ativado, o Blowfish carregará o script de replay além do script normal do Umami, junto com as configurações específicas de replay como `sampleRate`, `maskLevel`, `maxDuration` e `blockSelector`.
+
 {{< alert >}}
 **Nota:** Se você habilitar o Umami Analytics, o Blowfish suportará [Umami Track Event](https://umami.is/docs/track-events) automaticamente. Se você não quiser suportar Track Event, o parâmetro `enableTrackEvent` deve ser definido como `false`.
 {{< /alert >}}
@@ -58,6 +60,11 @@ Se você quiser que o rastreador execute apenas em domínios específicos, você
   domain = "llama.yoursite.com"
   dataDomains = "yoursite.com,yoursite2.com"
   scriptName = "TRACKER_SCRIPT_NAME"
+  enableReplay = true
+  sampleRate = 0.15
+  maskLevel = "moderate"
+  maxDuration = 300000
+  blockSelector = ".my-secret-element"
   enableTrackEvent = true
 ```
 

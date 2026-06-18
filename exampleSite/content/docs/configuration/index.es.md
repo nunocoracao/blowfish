@@ -118,6 +118,23 @@ Blowfish proporciona un gran número de parámetros de configuración que contro
 
 Muchos de los valores predeterminados de artículos pueden sobrescribirse por artículo especificándolos en el front matter. Consulta la sección [Front Matter]({{< ref "front-matter" >}}) para más detalles.
 
+
+### Umami Analytics
+
+| Nombre | Predeterminado | Descripción |
+| --- | --- | --- |
+| `umamiAnalytics.websiteid` | _No establecido_ | El código del sitio generado por Umami Analytics para el sitio web. Consulta los [documentos de Analytics]({{< ref "partials#analytics" >}}) para más detalles. |
+| `umamiAnalytics.domain` | _No establecido_ | Si usas un dominio personalizado con Umami Analytics, indícalo aquí para servir `script.js` desde el dominio personalizado. |
+| `umamiAnalytics.dataDomains` | _No establecido_ | Si quieres que el tracker solo se ejecute en dominios específicos, indícalo para tu script de seguimiento. Es una lista de nombres de dominio separada por comas, como `"yoursite.com,yoursite2.com"`. |
+| `umamiAnalytics.scriptName` | `script.js` | El nombre de `script.js` usado para evitar bloqueadores de anuncios se configura mediante la variable de entorno `TRACKER_SCRIPT_NAME`. |
+| `umamiAnalytics.doNotTrack` | `false` | Si se establece en `true`, se añadirá `data-do-not-track="true"` a la etiqueta del script de Umami. |
+| `umamiAnalytics.enableReplay` | `false` | Activa el script de reproducción de sesiones de Umami además del script de seguimiento normal. |
+| `umamiAnalytics.sampleRate` | `0.15` | La tasa de muestreo para la reproducción de sesiones. Los valores admitidos van de `0.05` a `1` en incrementos de `0.05`. |
+| `umamiAnalytics.maskLevel` | `"moderate"` | El nivel de enmascaramiento para la reproducción de sesiones. Los valores admitidos son `strict` y `moderate`. |
+| `umamiAnalytics.maxDuration` | `300000` | Duración máxima de una sesión grabada en milisegundos. Los valores admitidos son `300000` (5 minutos), `600000` (10 minutos), `900000` (15 minutos) y `1200000` (20 minutos). |
+| `umamiAnalytics.blockSelector` | _No establecido_ | Selector CSS para bloquear elementos específicos en la reproducción de sesiones. |
+| `umamiAnalytics.enableTrackEvent` | `true` | Cuando se establece en `true`, track event se añadirá automáticamente. Si no quieres añadir track events, establécelo en `false`. |
+
 ## Otros archivos de configuración
 
 El tema también incluye un archivo de configuración `markup.toml`. Este archivo contiene algunos parámetros importantes que aseguran que Hugo esté correctamente configurado para generar sitios construidos con Blowfish.

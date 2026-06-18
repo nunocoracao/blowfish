@@ -1,19 +1,44 @@
 {{/* prettier-ignore-start */}}
+{{ $enableReplay := site.Params.umamiAnalytics.enableReplay | default false }}
+{{ $scriptName := site.Params.umamiAnalytics.scriptName | default "script.js" }}
 {{ if isset site.Params.umamiAnalytics "domain" }}
   <script
     data-id="umami-script"
-    async
-    src="https://{{ site.Params.umamiAnalytics.domain }}/{{ with site.Params.umamiAnalytics.scriptName }}{{ . }}{{ else }}script.js{{ end }}"
+    defer
+    src="https://{{ site.Params.umamiAnalytics.domain }}/{{ $scriptName }}"
     data-website-id="{{ site.Params.umamiAnalytics.websiteid }}"
     {{ with site.Params.umamiAnalytics.dataDomains }}data-domains="{{ . }}"{{ end }}
     data-do-not-track="{{ site.Params.umamiAnalytics.doNotTrack | default false }}"></script>
+  {{ if $enableReplay }}
+    <script
+      data-id="umami-replay-script"
+      defer
+      src="https://{{ site.Params.umamiAnalytics.domain }}/recorder.js"
+      data-website-id="{{ site.Params.umamiAnalytics.websiteid }}"
+      {{ with site.Params.umamiAnalytics.dataDomains }}data-domains="{{ . }}"{{ end }}
+      {{ with site.Params.umamiAnalytics.sampleRate }}data-sample-rate="{{ . }}"{{ end }}
+      {{ with site.Params.umamiAnalytics.maskLevel }}data-mask-level="{{ . }}"{{ end }}
+      {{ with site.Params.umamiAnalytics.maxDuration }}data-max-duration="{{ . }}"{{ end }}
+      {{ with site.Params.umamiAnalytics.blockSelector }}data-block-selector="{{ . }}"{{ end }}></script>
+  {{ end }}
 {{ else }}
   <script
     data-id="umami-script"
-    async
+    defer
     src="https://analytics.umami.is/script.js"
     data-website-id="{{ site.Params.umamiAnalytics.websiteid }}"
     data-do-not-track="{{ site.Params.umamiAnalytics.doNotTrack | default false }}"></script>
+  {{ if $enableReplay }}
+    <script
+      data-id="umami-replay-script"
+      defer
+      src="https://analytics.umami.is/recorder.js"
+      data-website-id="{{ site.Params.umamiAnalytics.websiteid }}"
+      {{ with site.Params.umamiAnalytics.sampleRate }}data-sample-rate="{{ . }}"{{ end }}
+      {{ with site.Params.umamiAnalytics.maskLevel }}data-mask-level="{{ . }}"{{ end }}
+      {{ with site.Params.umamiAnalytics.maxDuration }}data-max-duration="{{ . }}"{{ end }}
+      {{ with site.Params.umamiAnalytics.blockSelector }}data-block-selector="{{ . }}"{{ end }}></script>
+  {{ end }}
 {{ end }}
 {{/* prettier-ignore-end */}}
 

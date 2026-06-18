@@ -388,6 +388,22 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | ------------------------ | --------- |-------------|
 | `advertisement.adsense` | _无_ | 您的 Google AdSense 发布商 ID (例如 `ca-pub-1234567890abcdef`)。设置此参数可在您的网站上启用 AdSense 广告。 |
 
+### Umami
+
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| `umamiAnalytics.websiteid` | _未设置_ | Umami Analytics 为网站生成的网站代码。更多信息请参考 [Analytics docs]({{< ref "partials#analytics" >}})。 |
+| `umamiAnalytics.domain` | _未设置_ | 如果你使用 Umami Analytics 的自定义域名，可以在这里填写，以便从自定义域名提供 `script.js`。 |
+| `umamiAnalytics.dataDomains` | _未设置_ | 如果你只想让 tracker 在特定域名上运行，可以为 tracker 脚本提供该配置。这是一个逗号分隔的域名列表，例如 `"yoursite.com,yoursite2.com"`。 |
+| `umamiAnalytics.scriptName` | `script.js` | 反广告拦截所用的 `script.js` 名称通过环境变量 `TRACKER_SCRIPT_NAME` 配置。 |
+| `umamiAnalytics.doNotTrack` | `false` | 设置为 `true` 时，会在 Umami script 标签上添加 `data-do-not-track="true"`。 |
+| `umamiAnalytics.enableReplay` | `false` | 在普通跟踪脚本之外启用 Umami Session Replay。 |
+| `umamiAnalytics.sampleRate` | `0.15` | Session Replay 的采样率。支持的值为 `0.05` 到 `1`，步进为 `0.05`。 |
+| `umamiAnalytics.maskLevel` | `"moderate"` | Session Replay 的遮罩级别。支持的值为 `strict` 和 `moderate`。 |
+| `umamiAnalytics.maxDuration` | `300000` | 录制会话的最大时长，单位毫秒。支持的值为 `300000`（5 分钟）、`600000`（10 分钟）、`900000`（15 分钟）和 `1200000`（20 分钟）。 |
+| `umamiAnalytics.blockSelector` | _未设置_ | 用于在 Session Replay 中阻止元素的 CSS 选择器。 |
+| `umamiAnalytics.enableTrackEvent` | `true` | 当设置为 `true` 时，会自动添加 track event。如果你不想添加 track event，请设为 `false`。 |
+
 ## 其他配置文件
 
 Blowfish 主题还包括 `markup.toml` 配置文件。这个文件包含了一些重要参数，来确保 Hugo 正确配置以生成使用 Blowfish 创建的网站。
