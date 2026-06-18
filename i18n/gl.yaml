@@ -79,6 +79,7 @@ sharing:
   bluesky: "Publicar en Bluesky"
   whatsapp: "Compartir vía WhatsApp"
   telegram: "Compartir vía Telegram"
+  mastodon: "Share via Mastodon"
 
 shortcode:
   recent_articles: "Recente"

@@ -72,6 +72,7 @@ sharing:
   pinterest: "Pin egin Pinteresten"
   reddit: "Argitaratu Redditen"
   twitter: "Tuitu Twitterren"
+  mastodon: "Share via Mastodon"
 
 shortcode:
   recent_articles: "Azkenak"

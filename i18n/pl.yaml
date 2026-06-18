@@ -74,6 +74,7 @@ sharing:
   pinterest: "Przypnij na Pinterest"
   reddit: "Prześlij na Reddita"
   twitter: "Tweetuj na Twitterze"
+  mastodon: "Share via Mastodon"
 
 shortcode:
   recent_articles: "Ostatnie artykuły"

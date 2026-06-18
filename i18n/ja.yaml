@@ -79,6 +79,7 @@ sharing:
   bluesky: "Blueskyに投稿する"
   whatsapp: "WhatsAppでシェアする"
   telegram: "Telegramでシェアする"
+  mastodon: "Share via Mastodon"
 
 shortcode:
   recent_articles: "最近の記事"

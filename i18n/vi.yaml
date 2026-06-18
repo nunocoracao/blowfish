@@ -76,6 +76,7 @@ sharing:
   pinterest: "Ghim lên Pinterest"
   reddit: "Gửi lên Reddit"
   twitter: "Tweet lên Twitter"
+  mastodon: "Share via Mastodon"
 
 shortcode:
   recent_articles: "Gần đây"

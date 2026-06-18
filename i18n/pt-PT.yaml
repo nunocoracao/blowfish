@@ -70,6 +70,7 @@ sharing:
   pinterest: "Partilhar no Pinterest"
   reddit: "Partilhar no Reddit"
   twitter: "Partilhar no Twitter"
+  mastodon: "Share via Mastodon"
 
 shortcode:
   recent_articles: "Recentes"

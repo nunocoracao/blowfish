@@ -67,6 +67,7 @@ sharing:
   pinterest: "Megosztás a Pinteresten"
   reddit: "Megosztás a Redditen"
   twitter: "Megosztás a Twitteren"
+  mastodon: "Share via Mastodon"
 
 shortcode:
   recent_articles: "Friss"

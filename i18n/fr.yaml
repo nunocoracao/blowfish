@@ -70,6 +70,7 @@ sharing:
   pinterest: "Poster sur Pinterest"
   reddit: "Poster sur Reddit"
   twitter: "Tweeter"
+  mastodon: "Share via Mastodon"
 
 shortcode:
   recent_articles: "Articles récents"

@@ -79,6 +79,7 @@ sharing:
   bluesky: "هم‌رسانی در بلواسکای"
   whatsapp: "هم‌رسانی در واتس‌اپ"
   telegram: "هم‌رسانی در تلگرام"
+  mastodon: "Share via Mastodon"
 
 shortcode:
   recent_articles: "مقاله‌های اخیر"

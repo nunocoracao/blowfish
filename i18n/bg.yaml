@@ -73,6 +73,7 @@ sharing:
   pinterest: "Закачи в Pinterest"
   reddit: "Добави на Reddit"
   twitter: "Сподели на Twitter"
+  mastodon: "Share via Mastodon"
 
 shortcode:
   recent_articles: "Последни"

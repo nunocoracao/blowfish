@@ -80,6 +80,7 @@ sharing:
   pinterest: "Зберегти на Pinterest"
   reddit: "Опублікувати на Reddit"
   twitter: "Поширити на Twitter"
+  mastodon: "Share via Mastodon"
 
 shortcode:
   recent_articles: "Недавні дописи"

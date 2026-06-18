@@ -73,6 +73,7 @@ sharing:
   pinterest: "Pin di Pinterest"
   reddit: "Kirim ke Reddit"
   twitter: "Tweet di Twitter"
+  mastodon: "Share via Mastodon"
 
 shortcode:
   recent_articles: "Terbaru"
