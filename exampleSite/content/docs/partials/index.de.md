@@ -48,6 +48,8 @@ Wenn Sie möchten, dass der Tracker nur auf bestimmten Domains ausgeführt wird,
 
 Wenn Sie die Do Not Track Einstellung im Browser berücksichtigen möchten, dann setzen Sie `doNotTrack` auf `true`, Blowfish berücksichtigt die Do Not Track Einstellung standardmäßig nicht.
 
+Wenn Sie Umami Session Replay zusätzlich zum normalen Tracking-Skript aktivieren möchten, setzen Sie `enableReplay` auf `true`. Wenn es aktiviert ist, lädt Blowfish das Replay-Skript zusätzlich zum regulären Umami-Skript, zusammen mit den replay-spezifischen Einstellungen wie `sampleRate`, `maskLevel`, `maxDuration` und `blockSelector`.
+
 {{< alert >}}
 **Hinweis:** Wenn Sie Umami Analytics aktivieren, unterstützt Blowfish [Umami Track Event](https://umami.is/docs/track-events) automatisch. Wenn Sie Track Event nicht unterstützen möchten, muss der Parameter `enableTrackEvent` auf `false` gesetzt werden.
 {{< /alert >}}
@@ -62,6 +64,11 @@ Wenn Sie die Do Not Track Einstellung im Browser berücksichtigen möchten, dann
   scriptName = "TRACKER_SCRIPT_NAME"
   doNotTrack = false
   enableTrackEvent = true
+  enableReplay = true
+  sampleRate = 0.15
+  maskLevel = "moderate"
+  maxDuration = 300000
+  blockSelector = ".my-secret-element"
 ```
 
 ### Seline Analytics

@@ -131,6 +131,22 @@ De nombreuses valeurs par défaut des articles peuvent être remplacées article
 | `header.layout` | `"basic"` | Définit l'en-tête du site entier. Les valeurs prises en charge sont `basic`, `fixed`, `fixed-fill` et `fixed-fill-blur`. |
 | `header.mobileSubmenuChecked` | `true` | Indique si les sous-éléments du menu mobile sont ouverts par défaut. Définissez `false` pour les replier par défaut. |
 
+### Umami Analytics
+
+| Nom | Par défaut | Description |
+| --- | --- | --- |
+| `umamiAnalytics.websiteid` | _Non défini_ | Le code du site généré par Umami Analytics pour le site web. Consultez la [documentation Analytics]({{< ref "partials#analytics" >}}) pour plus de détails. |
+| `umamiAnalytics.domain` | _Non défini_ | Si vous utilisez un domaine personnalisé avec Umami Analytics, indiquez-le ici pour servir `script.js` depuis ce domaine personnalisé. |
+| `umamiAnalytics.dataDomains` | _Non défini_ | Si vous souhaitez que le tracker ne s'exécute que sur des domaines spécifiques, indiquez-le pour votre script de suivi. Il s'agit d'une liste de noms de domaine séparés par des virgules, par exemple `"yoursite.com,yoursite2.com"`. |
+| `umamiAnalytics.scriptName` | `script.js` | Le nom de `script.js` utilisé pour l'anti-blocage est configuré via la variable d'environnement `TRACKER_SCRIPT_NAME`. |
+| `umamiAnalytics.doNotTrack` | `false` | Si défini sur `true`, `data-do-not-track="true"` sera ajouté à la balise du script Umami. |
+| `umamiAnalytics.enableReplay` | `false` | Active le script de replay de session Umami en plus du script de suivi normal. |
+| `umamiAnalytics.sampleRate` | `0.15` | Le taux d'échantillonnage pour le replay de session. Les valeurs prises en charge vont de `0.05` à `1` par incréments de `0.05`. |
+| `umamiAnalytics.maskLevel` | `"moderate"` | Le niveau de masquage pour le replay de session. Les valeurs prises en charge sont `strict` et `moderate`. |
+| `umamiAnalytics.maxDuration` | `300000` | Durée maximale d'une session enregistrée en millisecondes. Les valeurs prises en charge sont `300000` (5 minutes), `600000` (10 minutes), `900000` (15 minutes) et `1200000` (20 minutes). |
+| `umamiAnalytics.blockSelector` | _Non défini_ | Sélecteur CSS permettant de bloquer des éléments spécifiques dans le replay de session. |
+| `umamiAnalytics.enableTrackEvent` | `true` | Lorsqu'il est défini sur `true`, track event sera ajouté automatiquement. Si vous ne souhaitez pas ajouter track event, définissez-le sur `false`. |
+
 ## Autres fichiers de configuration
 
 Le thème inclut également un fichier de configuration `markup.toml`. Ce fichier contient des paramètres importants qui garantissent que Hugo est correctement configuré pour générer des sites construits avec Blowfish.
