@@ -67,6 +67,7 @@ sharing:
   pinterest: "Pune pe Pinterest"
   reddit: "Postează pe Reddit"
   twitter: "Scrie pe Twitter"
+  mastodon: "Share via Mastodon"
 
 shortcode:
   recent_articles: "Cele mai noi"

@@ -69,6 +69,7 @@ sharing:
   pinterest: "পিন্টারেস্টে পিন করুন"
   reddit: "রেড্ডিটে জমা দিন"
   twitter: "ট্যুইট করুন"
+  mastodon: "Share via Mastodon"
 
 shortcode:
   recent_articles: "সাম্প্রতিক"

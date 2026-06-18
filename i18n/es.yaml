@@ -72,6 +72,7 @@ sharing:
   pinterest: "Pinear en Pinterest"
   reddit: "Publicar en Reddit"
   twitter: "Tuitear en Twitter"
+  mastodon: "Share via Mastodon"
 
 shortcode:
   recent_articles: "Reciente"

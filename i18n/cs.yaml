@@ -73,6 +73,7 @@ sharing:
   pinterest: "Připnout na Pinterest"
   reddit: "Přidat na Reddit"
   twitter: "Tweet na Twitter"
+  mastodon: "Share via Mastodon"
 
 shortcode:
   recent_articles: "Nedávné"

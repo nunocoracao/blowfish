@@ -67,6 +67,7 @@ sharing:
   pinterest: "Pinna su Pinterest"
   reddit: "Invia a Reddit"
   twitter: "Tweetta su Twitter"
+  mastodon: "Share via Mastodon"
 
 shortcode:
   recent_articles: "Recenti"

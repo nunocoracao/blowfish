@@ -67,6 +67,7 @@ sharing:
   pinterest: "שיתוף בפינטרסט"
   reddit: "שליחה לרדיט"
   twitter: "ציוץ בטוויטר"
+  mastodon: "Share via Mastodon"
 
 shortcode:
   recent_articles: "חדשים"

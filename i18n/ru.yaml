@@ -73,6 +73,7 @@ sharing:
   pinterest: "Добавить в Pinterest"
   reddit: "Отправить в Reddit"
   twitter: "Твитнуть в Twitter"
+  mastodon: "Share via Mastodon"
 
 shortcode:
   recent_articles: "Недавние"

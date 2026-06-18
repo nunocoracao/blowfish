@@ -62,6 +62,7 @@ sharing:
   pinterest: "Pinterest'te pinle"
   reddit: "Reddit'te gönder"
   twitter: "Twitter'da Tweetle"
+  mastodon: "Share via Mastodon"
 
 shortcode:
   recent_articles: "Güncel"

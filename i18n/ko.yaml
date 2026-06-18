@@ -73,6 +73,7 @@ sharing:
   pinterest: "Pinterest에 고정"
   reddit: "Reddit에 게시"
   twitter: "Twitter에 트윗"
+  mastodon: "Mastodon에 공유"
 
 shortcode:
   recent_articles: "최근 글"

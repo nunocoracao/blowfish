@@ -67,6 +67,7 @@ sharing:
   pinterest: "Fäst på Pinterest"
   reddit: "Skicka till Reddit"
   twitter: "Twittra på Twitter"
+  mastodon: "Share via Mastodon"
 
 shortcode:
   recent_articles: "Senaste"

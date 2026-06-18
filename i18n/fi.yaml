@@ -67,6 +67,7 @@ sharing:
   pinterest: "Kiinnitä Pinterestiin"
   reddit: "Lähetä Reddittiin"
   twitter: "Twiittaa Twitterissä"
+  mastodon: "Share via Mastodon"
 
 shortcode:
   recent_articles: "Viimeaikaiset"

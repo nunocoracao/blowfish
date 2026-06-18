@@ -78,6 +78,7 @@ sharing:
   bluesky: "โพสต์บน Bluesky"
   whatsapp: "แชร์ทาง WhatsApp"
   telegram: "แชร์ทาง Telegram"
+  mastodon: "Share via Mastodon"
 
 shortcode:
   recent_articles: "บทความล่าสุด"

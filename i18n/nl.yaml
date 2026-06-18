@@ -75,6 +75,7 @@ sharing:
   bluesky: "Delen op Bluesky"
   whatsapp: "Delen op WhatsApp"
   telegram: "Delen op Telegram"
+  mastodon: "Share via Mastodon"
 
 shortcode:
   recent_articles: "Recente"

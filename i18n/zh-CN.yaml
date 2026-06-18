@@ -79,6 +79,7 @@ sharing:
   bluesky: "发布到 Bluesky"
   whatsapp: "通过 WhatsApp 分享"
   telegram: "通过 Telegram 分享"
+  mastodon: "分享到 Mastodon"
 
 shortcode:
   recent_articles: "最近的文章"
