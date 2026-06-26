@@ -2,7 +2,7 @@
 {{- $githubURL := print "https://api.github.com/repos/" (.Get "repo") -}}
 {{- $githubThumbnailURL := print "https://opengraph.githubassets.com/0/" (.Get "repo") -}}
 {{- $showThumbnail := .Get "showThumbnail" | default true -}}
-{{- $repoColors := .Site.Data.repoColors -}}
+{{- $repoColors := hugo.Data.repoColors -}}
 {{- $githubData := dict -}}
 {{- with try (resources.GetRemote $githubURL) -}}
   {{- with .Err -}}
