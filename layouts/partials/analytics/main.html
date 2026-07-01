@@ -10,3 +10,6 @@
 {{ if site.Params.selineAnalytics.token }}
   {{ partial "analytics/seline.html" . }}
 {{ end }}
+{{ if site.Params.knocketChat.identifier }}
+  {{ partial "analytics/knocket.html" . }}
+{{ end }}

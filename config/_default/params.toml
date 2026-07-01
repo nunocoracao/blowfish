@@ -191,3 +191,6 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
 
 [advertisement]
   # adsense = ""
+
+[knocketChat]
+  identifier = ""  # Get from https://trtc.io/solutions/knocket
