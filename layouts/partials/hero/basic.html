@@ -12,6 +12,9 @@
     {{ end }}
   {{ else }}
     {{ $featured = page.Resources.Get . }}
+    {{ if not $featured }}
+      {{ $featured = resources.Get . }}
+    {{ end }}
   {{ end }}
 {{ end }}
 
@@ -58,6 +61,6 @@
       decoding="async"
       fetchpriority="high"
       class="w-full h-full nozoom object-cover"
-      {{ if $style }}style="{{ $style | safeCSS }}"{{ end }}>
+      {{ if $style }}style="{{ $style | safeCSS }}"{{ end }} />
   </div>
 {{ end }}

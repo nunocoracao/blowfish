@@ -12,6 +12,9 @@
     {{ end }}
   {{ else }}
     {{ $featured = page.Resources.Get . }}
+    {{ if not $featured }}
+      {{ $featured = resources.Get . }}
+    {{ end }}
   {{ end }}
 {{ end }}
 
@@ -66,7 +69,7 @@
       decoding="async"
       fetchpriority="high"
       class="w-full rounded-lg single_hero_round nozoom"
-      {{ if $style }}style="{{ $style | safeCSS }}"{{ end }}>
+      {{ if $style }}style="{{ $style | safeCSS }}"{{ end }} />
     {{ if $caption }}
       <figcaption class="text-sm text-neutral-700 dark:text-neutral-400 hover:underline text-center">
         {{ $caption | markdownify }}
