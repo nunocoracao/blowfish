@@ -926,6 +926,64 @@ You can see some additional Mermaid examples on the [diagrams and flowcharts sam
 
 <br/><br/><br/>
 
+## Stats
+
+`stats` creates a responsive grid of statistic cards, each displaying a prominent number alongside a short label. It relies on the `stat` shortcode to define each individual statistic.
+
+The `stats` shortcode accepts the following parameters.
+
+<!-- prettier-ignore-start -->
+| Parameter  | Description                                                       |
+| ---------- | ----------------------------------------------------------------- |
+| `colors`   | **Optional** Comma-separated list of theme colors to cycle through. |
+| `max-cols` | **Optional** [Integer] Maximum number of columns to display. Defaults to `3`.            |
+
+<!-- prettier-ignore-end -->
+
+Each `stat` item accepts the following parameters.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description                              |
+| --------- | ---------------------------------------- |
+| `number`  | **Required** [String] The main statistic or value to display.  |
+| `label`   | **Required** [String] A short description for the statistic.   |
+
+<!-- prettier-ignore-end -->
+
+**Examples:**
+
+```md
+{{</* stats */>}}
+{{</* stat number="40" label="Shortcodes" */>}}
+{{</* stat number="50" label="Users" */>}}
+{{</* stat number="99" label="Amazing Options" */>}}
+{{</* /stats */>}}
+```
+
+{{< stats >}}
+{{< stat number="40" label="Shortcodes" >}}
+{{< stat number="50" label="Users" >}}
+{{< stat number="99" label="Amazing Options" >}}
+{{< /stats >}}
+
+```md
+{{</* stats colors="primary-500,secondary-500" max-cols="4" */>}}
+{{</* stat number="4" label="Columns" */>}}
+{{</* stat number="2" label="Colors" */>}}
+{{</* stat number="99" label="Amazing Options" */>}}
+{{</* stat number="50" label="Users" */>}}
+{{</* /stats */>}}
+```
+
+{{< stats colors="primary-500,secondary-500" max-cols="4" >}}
+{{< stat number="4" label="Columns" >}}
+{{< stat number="2" label="Colors" >}}
+{{< stat number="99" label="Amazing Options" >}}
+{{< stat number="50" label="Users" >}}
+{{< /stats >}}
+
+<br/><br/><br/>
+
 ## Tabs
 
 The `tabs` shortcode is commonly used to present different variants of a particular step. For example, it can be used to show how to install VS Code on different platforms.

@@ -1,0 +1,73 @@
+{{ $noop := .Inner }}
+
+{{ $colorsParam := .Get "colors" | default "neutral-500,primary-500,secondary-500" }}
+{{ $colors := split $colorsParam "," }}
+{{ $items := .Page.Store.Get "stats" | default (slice) }}
+{{ $maxCols := .Get "max-cols" | default 3}}
+
+{{ if gt (len $items) 0 }}
+<div class="stats-wrapper">
+  <div class="stats-container">
+    {{ range $i, $item := $items }}
+    <div class="colorful-box"
+        style="--max-cols: {{ $maxCols }}; background-color: rgb(var(--color-{{ index $colors (mod $i (len $colors)) }}));">
+        <div class="text-container">
+          <span class="big-text">{{ $item.number }}</span>
+          <span class="small-text">{{ $item.label }}</span>
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
+
+<style>
+  .stats-wrapper {
+    padding: 1.5rem 0;
+    width: 100%;
+  }
+
+  .stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .colorful-box {
+    flex: 1 1 calc(90% / var(--max-cols));
+    padding: 0.75rem 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.375rem;
+    color: white;
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: row;
+    align-items: last baseline;
+    justify-content: center;
+    gap: 0.25rem;
+  }
+
+  .big-text {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 0.8;
+  }
+
+  .small-text {
+    margin: 0;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: left;
+    text-transform: uppercase;
+    max-width: 45%;
+  }
+
+</style>
+
+{{ .Page.Store.Delete "stats" }}

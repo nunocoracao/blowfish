@@ -1,0 +1,5 @@
+{{ $number := .Get "number" }}
+{{ $label := .Get "label" }}
+
+{{ $items := .Page.Store.Get "stats" | default (slice) }}
+{{ .Page.Store.Set "stats" ($items | append (dict "number" $number "label" $label)) }}
