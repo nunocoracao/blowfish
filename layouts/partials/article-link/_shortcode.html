@@ -9,7 +9,9 @@
 */}}
 {{ $target := .target }}
 {{ $shortcodeShowSummary := .showSummary }}
+{{ $shortcodeShowSummarySet := .showSummarySet }}
 {{ $shortcodeCompactSummary := .compactSummary }}
+{{ $cyclic := .cyclic | default false }}
 {{ $constrainItemsWidth := site.Params.list.constrainItemsWidth | default false }}
 {{ $disableImageOptimization := site.Store.Get "disableImageOptimization" }}
 
@@ -120,10 +122,19 @@
         {{ partial "extend-article-link.html" $target }}
       {{ end }}
     </header>
+    {{ if not $cyclic }}
     <div class="text-sm text-neutral-500 dark:text-neutral-400">
       {{ partial "article-meta/basic.html" $target }}
     </div>
-    {{ if $shortcodeShowSummary | default $target.Params.showSummary | default site.Params.list.showSummary | default false }}
+    {{ end }}
+    {{/* Respect an explicit showSummary=false from the shortcode; only fall
+         back to target/site defaults when the shortcode did not set it. The
+         plain `default` chain treats false as zero and would override it. */}}
+    {{ $summaryEnabled := $shortcodeShowSummary }}
+    {{ if not $shortcodeShowSummarySet }}
+      {{ $summaryEnabled = $target.Params.showSummary | default site.Params.list.showSummary | default false }}
+    {{ end }}
+    {{ if $summaryEnabled }}
       {{ $compactSummary := $shortcodeCompactSummary | default $target.Params.compactSummary | default false }}
       <div
         class="article-link__summary prose dark:prose-invert max-w-fit mt-1 {{ if $compactSummary -}}

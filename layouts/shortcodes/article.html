@@ -1,5 +1,6 @@
 {{ $link := printf "%s%s" site.LanguagePrefix (.Get "link") }}
 {{ $showSummary := .Get "showSummary" }}
+{{ $showSummarySet := isset .Params "showSummary" }}
 {{ $compactSummary := .Get "compactSummary" | default false }}
 {{ $target := .Page }}
 {{ if ne $link .Page.RelPermalink }}
@@ -10,8 +11,21 @@
   {{ $target = index (first 1 (where $pages "RelPermalink" $link)) 0 }}
 {{ end }}
 {{ if $target }}
+  {{/* Guard against render deadlocks: requesting $target.Summary renders
+       $target.Content. When articles reference each other, this re-enters a
+       page whose Content is already being rendered, and Hugo deadlocks instead
+       of re-executing shortcodes. Mark the current page as rendering; if the
+       target is already marked it is on the render stack, so skip its summary
+       to break the cycle. Page-local Scratch keeps this free of global state. */}}
+  {{ .Page.Scratch.Set "article rendering" true }}
+  {{ $cyclic := false }}
+  {{ if $target.Scratch.Get "article rendering" }}
+    {{ $cyclic = true }}
+    {{ $showSummary = false }}
+  {{ end }}
   <section class="space-y-10 w-full">
-    {{ $context := dict "target" $target "showSummary" $showSummary "compactSummary" $compactSummary }}
+    {{ $context := dict "target" $target "showSummary" $showSummary "showSummarySet" $showSummarySet "compactSummary" $compactSummary "cyclic" $cyclic }}
     {{ partial "article-link/_shortcode.html" $context }}
   </section>
+  {{ .Page.Scratch.Set "article rendering" false }}
 {{ end }}
