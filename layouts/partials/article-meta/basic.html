@@ -100,20 +100,26 @@
       {{ range $taxonomy, $terms := .Site.Taxonomies }}
         {{ if (gt (len ($context.GetTerms $taxonomy)) 0) }}
           {{ range $context.GetTerms $taxonomy }}
-            {{ if .Params.showCategories | default (.Site.Params.article.showCategories | default true) }}
-              {{ if (eq $taxonomy "categories") }}
+            {{ if (or (eq $taxonomy "authors") (eq $taxonomy "series"))}}
+              {{/* Ignore authors and series, since they are handled in other places */}}
+              {{ continue }}
+            {{ else if (eq $taxonomy "categories") }}
+              {{ if .Params.showCategories | default (.Site.Params.article.showCategories | default true) }}
                 <a class="relative mt-[0.5rem] me-2" href="{{ .RelPermalink }}">
                   {{ $useSecondaryColor := .Params.showCategoriesInSecondaryColor | default (.Site.Params.article.showCategoriesInSecondaryColor | default false) }}
                   {{ partial "badge.html" (dict "linkTitle" .LinkTitle "useSecondaryColor" $useSecondaryColor) }}
                 </a>
               {{ end }}
-            {{ end }}
-            {{ if .Params.showTags | default (.Site.Params.article.showTags | default true) }}
-              {{ if (eq $taxonomy "tags") }}
+            {{ else if (eq $taxonomy "tags") }}
+              {{ if .Params.showTags | default (.Site.Params.article.showTags | default true) }}
                 <a class="relative mt-[0.5rem] me-2" href="{{ .RelPermalink }}">
                   {{ partial "badge.html" .LinkTitle }}
                 </a>
               {{ end }}
+            {{ else }}
+              <a class="relative mt-[0.5rem] me-2" href="{{ .RelPermalink }}">
+                {{ partial "badge.html" .LinkTitle }}
+              </a>
             {{ end }}
           {{ end }}
         {{ end }}
