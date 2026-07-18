@@ -96,6 +96,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   showPagination = true
   invertPagination = false
   showReadingTime = true
+  showReadingProgress = false
   showTableOfContents = false
   # showRelatedContent = false
   # relatedContentLimit = 3

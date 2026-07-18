@@ -1079,6 +1079,9 @@
   .h-0 {
     height: 0;
   }
+  .h-1 {
+    height: var(--spacing);
+  }
   .h-1\/2 {
     height: calc(1 / 2 * 100%);
   }

@@ -1,5 +1,8 @@
 {{ define "main" }}
   {{ .Scratch.Set "scope" "single" }}
+  {{ if .Params.showReadingProgress | default (site.Params.article.showReadingProgress | default false) }}
+    {{ partial "reading-progress.html" . }}
+  {{ end }}
   <article>
     {{/* Hero */}}
     {{ if .Params.showHero | default (site.Params.article.showHero | default false) }}
