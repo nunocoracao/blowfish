@@ -17,4 +17,4 @@ Emoji-Ersetzungen erfolgen in Blowfish automatisch, sodass Sie Kurzcode in Ihren
 
 **Beispiel:** `see_no_evil` :see_no_evil:, `hear_no_evil` :hear_no_evil:, `speak_no_evil` :speak_no_evil:.
 
-Der [Emoji-Spickzettel](http://www.emoji-cheat-sheet.com/) ist eine nützliche Referenz für Emoji-Kurzcodes.
+Hugos [Emoji-Referenz](https://gohugo.io/quick-reference/emojis/) enthält unterstützte Emoji-Kurzcodes.

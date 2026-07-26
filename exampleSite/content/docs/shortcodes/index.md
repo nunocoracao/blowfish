@@ -936,7 +936,7 @@ The `tabs` shortcode is commonly used to present different variants of a particu
 | `default` | **Optional.** Label of the tab to be active by default. If not set, the first tab will be active. |
 | `label`   | **Required.** The text label displayed on the tab button. |
 | `icon`    | **Optional.** Icon name to display before the label. |
-| `md`      | **Optional.** Render tab content as Markdown (default `true`). Set `md=false` to allow nested shortcodes inside tab content. |
+| `md`      | **Optional.** Render tab content as Markdown (default `true`). Use `md=false` when the content is already HTML. |
 
 **Example 1: Basic Usage**
 
@@ -963,7 +963,7 @@ The `tabs` shortcode is commonly used to present different variants of a particu
     ```
     {{</* /tab */>}}
 
-    {{</* tab label="Linux" md=false */>}}
+    {{</* tab label="Linux" */>}}
     {{</* alert */>}}See [documentation](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux).{{</* /alert */>}}
     {{</* /tab */>}}
 
@@ -994,10 +994,36 @@ The `tabs` shortcode is commonly used to present different variants of a particu
     ```
     {{< /tab >}}
 
-    {{< tab label="Linux" md=false >}}
+    {{< tab label="Linux" >}}
     {{< alert >}}See [documentation](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux).{{< /alert >}}
     {{< /tab >}}
 
+{{< /tabs >}}
+
+Nested shortcodes are supported with the default Markdown behaviour. For example, an accordion can live inside a tab without its generated HTML being rendered as Markdown a second time:
+
+`````md
+{{</* tabs */>}}
+{{</* tab label="Details" */>}}
+{{</* accordion mode="open" */>}}
+{{</* accordionItem title="What is included?" */>}}
+- Responsive behaviour
+- Accessible markup
+{{</* /accordionItem */>}}
+{{</* /accordion */>}}
+{{</* /tab */>}}
+{{</* /tabs */>}}
+`````
+
+{{< tabs >}}
+{{< tab label="Details" >}}
+{{< accordion mode="open" >}}
+{{< accordionItem title="What is included?" >}}
+- Responsive behaviour
+- Accessible markup
+{{< /accordionItem >}}
+{{< /accordion >}}
+{{< /tab >}}
 {{< /tabs >}}
 
 **Example 2: With Group, Default, and Icon**

@@ -1,29 +1,29 @@
 ---
-title: "Welcome to Blowfish! :tada:"
-description: "This page was built using the Blowfish theme for Hugo."
+title: "Build a site that feels unmistakably yours."
+description: "A modern, flexible Hugo theme for blogs, documentation, portfolios, and more."
 ---
 
+{{< lead >}}
+Blowfish gives you expressive layouts, thoughtful defaults, and practical content building blocks, so you can focus on the thing you want to say.
+{{< /lead >}}
 
-<div class="flex px-4 py-2 mb-8 text-base rounded-md bg-primary-100 dark:bg-primary-900">
-  <span class="flex items-center pe-3 text-primary-400">
-    {{< icon "triangle-exclamation" >}}
-  </span>
-  <span class="flex items-center justify-between grow dark:text-neutral-300">
-    <span class="prose dark:prose-invert">This is a demo of the <code id="layout">background</code> layout.</span>
-    <button
-      id="switch-layout-button"
-      class="px-4 mx-[3px] !text-neutral !no-underline rounded-md bg-primary-600 hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700"
-    >
-      Switch layout &orarr;
-    </button>
-  </span>
-</div>
+{{< cta url="/docs/installation/" label="Get started" >}}
+&nbsp;
+{{< cta url="/docs/" label="Explore the docs" style="outline" >}}
 
+{{< feature-grid >}}
+{{< feature icon="list-check" title="Make it yours" url="/docs/configuration/" >}}
+A coherent system of layouts, colours, typography, and content controls.
+{{< /feature >}}
+{{< feature icon="code" title="Compose faster" url="/docs/shortcodes/" label="Browse shortcodes" >}}
+Useful components for richer stories, clearer documentation, and less custom glue.
+{{< /feature >}}
+{{< feature icon="heart" title="Made in the open" url="/users/" >}}
+Explore real sites, community contributions, and patterns that hold up in production.
+{{< /feature >}}
+{{< /feature-grid >}}
 
-```shell
-npx blowfish-tools
-```  
-
-{{< youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" >}}
-
+{{< alert "circle-info" >}}
+This homepage uses Blowfish's built-in `landing` layout and standard shortcodes. No custom homepage template is required.
+{{< /alert >}}
 

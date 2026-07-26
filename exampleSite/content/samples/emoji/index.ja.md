@@ -17,4 +17,4 @@ type: 'sample'
 
 **例:** `see_no_evil` :see_no_evil:, `hear_no_evil` :hear_no_evil:, `speak_no_evil` :speak_no_evil:
 
-[絵文字チートシート](http://www.emoji-cheat-sheet.com/)は絵文字ショートハンドコードのための便利な参照ページです。
+対応する絵文字ショートハンドコードは、Hugo の[絵文字リファレンス](https://gohugo.io/quick-reference/emojis/)を参照してください。
