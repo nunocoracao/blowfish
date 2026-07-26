@@ -1,0 +1,10 @@
+{{/* Return the page's feature image, falling back to a translated sibling.
+   This keeps a translated article visually aligned with its source page without
+   forcing every locale to duplicate presentation-only front matter. */}}
+{{ $featureImage := .Params.featureimage }}
+{{ if not $featureImage }}
+  {{ range .Translations }}
+    {{ with .Params.featureimage }}{{ $featureImage = . }}{{ end }}
+  {{ end }}
+{{ end }}
+{{ return $featureImage }}

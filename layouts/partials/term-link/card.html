@@ -9,7 +9,7 @@
 {{ if isset .Page.Params "featureImageHover" }}{{ $featureImageHover = .Page.Params.featureImageHover }}{{ end }}
 {{ $featureImagePosition := .Page.Params.imagePositionFeature | default site.Params.imagePositionFeature | default site.Params.imagePosition }}
 {{ $p := .Page }}
-{{ with .Page.Params.featureimage }}
+{{ with partial "functions/feature-image.html" .Page }}
   {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
     {{ $featured = resources.GetRemote . }}
   {{ else }}
