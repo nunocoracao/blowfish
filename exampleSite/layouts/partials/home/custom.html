@@ -1,32 +1,70 @@
 {{ $jsHome := resources.Get "js/home.js" | resources.Minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
-<div id="background">
-  {{ partial "home/background.html" . }}
-</div>
-<div id="hero" style="display:none">
-  {{ partial "home/hero.html" . }}
-</div>
-<div id="profile" style="display:none">
-  {{ partial "home/profile.html" . }}
-</div>
-<div id="card" style="display:none">
-  {{ partial "home/card.html" . }}
-</div>
-<div id="page" style="display:none">
-  {{ partial "home/page.html" . }}
-</div>
-<section class="max-w-7xl mx-auto px-4">
-  {{ partial "sponsors.html" . }}
-</section>
 
-<section class="max-w-7xl mx-auto px-4">
-  {{ partial "contributors.html" . }}
-</section>
+<div class="relative isolate overflow-hidden">
+  <div aria-hidden="true" class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+    <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-primary-400 to-secondary-500 opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72rem]"></div>
+  </div>
 
-<section>
-  {{ partial "recent-articles-demo.html" . }}
-</section>
-<script
-  defer
-  type="text/javascript"
-  src="{{ $jsHome.RelPermalink }}"
-  integrity="{{ $jsHome.Data.Integrity }}"></script>
+  <section class="mx-auto max-w-7xl px-4 pb-14 pt-12 sm:px-6 sm:pb-20 sm:pt-20 lg:px-8">
+    <div class="mx-auto max-w-4xl text-center">
+      <p class="mb-5 inline-flex items-center gap-2 rounded-full border border-primary-200 bg-primary-50 px-4 py-1.5 text-sm font-semibold text-primary-700 dark:border-primary-900 dark:bg-primary-950/50 dark:text-primary-300">
+        {{ partial "icon.html" "wand-magic-sparkles" }}
+        The modern Hugo theme toolkit
+      </p>
+      <h1 class="text-balance text-5xl font-black tracking-tight text-neutral-950 dark:text-white sm:text-7xl">
+        Build a site that feels unmistakably yours.
+      </h1>
+      <p class="mx-auto mt-6 max-w-2xl text-pretty text-lg leading-8 text-neutral-600 dark:text-neutral-300 sm:text-xl">
+        Blowfish combines expressive layouts, thoughtful defaults, and practical building blocks for blogs, docs, portfolios, and everything in between.
+      </p>
+      <div class="mt-9 flex flex-wrap items-center justify-center gap-3">
+        <a class="inline-flex items-center gap-2 rounded-xl bg-primary-600 px-5 py-3 font-semibold text-white shadow-lg shadow-primary-500/20 transition hover:-translate-y-0.5 hover:bg-primary-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600" href="{{ "docs/installation" | relLangURL }}">
+          Get started
+          {{ partial "icon.html" "link" }}
+        </a>
+        <a class="inline-flex items-center gap-2 rounded-xl border border-neutral-300 bg-white/70 px-5 py-3 font-semibold text-neutral-800 transition hover:border-primary-400 hover:text-primary-600 dark:border-neutral-700 dark:bg-neutral-900/70 dark:text-neutral-100 dark:hover:text-primary-400" href="{{ "docs" | relLangURL }}">
+          Explore the docs
+          {{ partial "icon.html" "file-lines" }}
+        </a>
+      </div>
+    </div>
+
+    <div class="mx-auto mt-14 grid max-w-5xl gap-4 sm:grid-cols-3">
+      <a class="group rounded-2xl border border-neutral-200 bg-white/70 p-6 shadow-sm transition hover:-translate-y-1 hover:border-primary-300 hover:shadow-xl hover:shadow-primary-500/10 dark:border-neutral-800 dark:bg-neutral-900/70 dark:hover:border-primary-700" href="{{ "docs/configuration" | relLangURL }}">
+        <span class="mb-5 inline-flex rounded-xl bg-primary-100 p-3 text-primary-600 dark:bg-primary-950 dark:text-primary-400">{{ partial "icon.html" "list-check" }}</span>
+        <h2 class="text-lg font-bold text-neutral-950 dark:text-white">Make it yours</h2>
+        <p class="mt-2 text-sm leading-6 text-neutral-600 dark:text-neutral-400">A coherent system of layouts, colours, typography, and content controls.</p>
+      </a>
+      <a class="group rounded-2xl border border-neutral-200 bg-white/70 p-6 shadow-sm transition hover:-translate-y-1 hover:border-secondary-300 hover:shadow-xl hover:shadow-secondary-500/10 dark:border-neutral-800 dark:bg-neutral-900/70 dark:hover:border-secondary-700" href="{{ "docs/shortcodes" | relLangURL }}">
+        <span class="mb-5 inline-flex rounded-xl bg-secondary-100 p-3 text-secondary-600 dark:bg-secondary-950 dark:text-secondary-400">{{ partial "icon.html" "code" }}</span>
+        <h2 class="text-lg font-bold text-neutral-950 dark:text-white">Compose faster</h2>
+        <p class="mt-2 text-sm leading-6 text-neutral-600 dark:text-neutral-400">Useful shortcodes for richer stories, clearer documentation, and less custom glue.</p>
+      </a>
+      <a class="group rounded-2xl border border-neutral-200 bg-white/70 p-6 shadow-sm transition hover:-translate-y-1 hover:border-primary-300 hover:shadow-xl hover:shadow-primary-500/10 dark:border-neutral-800 dark:bg-neutral-900/70 dark:hover:border-primary-700" href="{{ "users" | relLangURL }}">
+        <span class="mb-5 inline-flex rounded-xl bg-primary-100 p-3 text-primary-600 dark:bg-primary-950 dark:text-primary-400">{{ partial "icon.html" "heart" }}</span>
+        <h2 class="text-lg font-bold text-neutral-950 dark:text-white">Made in the open</h2>
+        <p class="mt-2 text-sm leading-6 text-neutral-600 dark:text-neutral-400">A growing collection of real sites, community contributions, and useful patterns.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="border-y border-neutral-200 bg-neutral-50/70 py-12 dark:border-neutral-800 dark:bg-neutral-900/40">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-[0.18em] text-primary-600 dark:text-primary-400">Fresh from the reef</p>
+          <h2 class="mt-2 text-3xl font-black tracking-tight text-neutral-950 dark:text-white">See the theme in motion.</h2>
+        </div>
+        <a class="inline-flex items-center gap-2 font-semibold text-primary-600 hover:text-primary-500 dark:text-primary-400" href="{{ "docs" | relLangURL }}">Browse all documentation {{ partial "icon.html" "link" }}</a>
+      </div>
+      {{ partial "recent-articles-demo.html" . }}
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    {{ partial "sponsors.html" . }}
+    {{ partial "contributors.html" . }}
+  </section>
+</div>
+
+<script defer type="text/javascript" src="{{ $jsHome.RelPermalink }}" integrity="{{ $jsHome.Data.Integrity }}"></script>

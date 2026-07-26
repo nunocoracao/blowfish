@@ -1348,3 +1348,70 @@ To concatenate multiple options as shown below, you need to add the `&` characte
 {{< youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" params="start=130&end=10&controls=0" >}}
 
 More informations can be found on the [youtubeLite GitHub repo](https://github.com/paulirish/lite-youtube-embed/blob/master/readme.md#custom-player-parameters) and Youtube's [player parameters](https://developers.google.com/youtube/player_parameters#Parameters) page.
+
+<br/><br/><br/>
+
+## Feature grid
+
+Build polished, responsive feature sections without repeating presentation markup. Use `feature-grid` as the container, then add one `feature` shortcode for each item. The grid defaults to three columns on large screens and can be set to four.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description |
+| --- | --- |
+| `columns` | Optional number of large-screen columns: `3` (default) or `4`. |
+| `icon` | Icon name for a feature. Defaults to `wand-magic-sparkles`. |
+| `title` | Feature title. Markdown is supported. |
+| `url` | Optional destination for the feature link. |
+| `label` | Link label. Defaults to `Learn more`. |
+<!-- prettier-ignore-end -->
+
+**Example:**
+
+```md
+{{</* feature-grid columns="3" */>}}
+{{</* feature icon="wand-magic-sparkles" title="Make it yours" url="/docs/configuration/" */>}}
+Start from a thoughtful default, then adjust every meaningful detail.
+{{</* /feature */>}}
+{{</* feature icon="file-lines" title="Publish faster" url="/docs/shortcodes/" label="Browse shortcodes" */>}}
+Compose rich content with small, reusable building blocks.
+{{</* /feature */>}}
+{{</* feature icon="heart" title="Built for people" */>}}
+Accessible defaults, responsive layouts, and dark mode included.
+{{</* /feature */>}}
+{{</* /feature-grid */>}}
+```
+
+{{< feature-grid >}}
+{{< feature icon="wand-magic-sparkles" title="Make it yours" url="/docs/configuration/" >}}
+Start from a thoughtful default, then adjust every meaningful detail.
+{{< /feature >}}
+{{< feature icon="file-lines" title="Publish faster" url="/docs/shortcodes/" label="Browse shortcodes" >}}
+Compose rich content with small, reusable building blocks.
+{{< /feature >}}
+{{< feature icon="heart" title="Built for people" >}}
+Accessible defaults, responsive layouts, and dark mode included.
+{{< /feature >}}
+{{< /feature-grid >}}
+
+<br/><br/><br/>
+
+## CTA button
+
+Use `cta` for a clear, accessible call to action inside documentation, landing pages, or long-form content.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description |
+| --- | --- |
+| `url` | Destination URL. Defaults to `#`. |
+| `label` | Button text. Defaults to `Learn more`. |
+| `style` | `primary` (default) or `outline`. |
+<!-- prettier-ignore-end -->
+
+```md
+{{</* cta url="/docs/installation/" label="Start building" */>}}
+{{</* cta url="/docs/configuration/" label="Explore configuration" style="outline" */>}}
+```
+
+{{< cta url="/docs/installation/" label="Start building" >}}
+&nbsp;
+{{< cta url="/docs/configuration/" label="Explore configuration" style="outline" >}}
