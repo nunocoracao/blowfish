@@ -1096,11 +1096,24 @@
     ]
   },
   {
-    "title": "techtrailpulse.com",
+    "title": "Tech Trail Pulse",
     "url": "https://techtrailpulse.com",
     "source": "https://github.com/gregpuzzles1/blog",
     "tags": [
-      "Personal site"
+      "Personal site",
+      "Blog",
+      "Technology blog",
+      "Learning"
+    ]
+  },
+  {
+    "title": "Christian Living Ministries Books",
+    "url": "https://clmbooks.org",
+    "source": "https://github.com/gregpuzzles1/clmbooks",
+    "tags": [
+      "Books",
+      "PDF's",
+      "Christian devotionals"
     ]
   },
   {
@@ -1137,6 +1150,25 @@
     "tags": [
       "Personal site",
       "Blog"
+    ]
+  },
+  {
+    "title": "scottkuperus.com",
+    "url": "https://scottkuperus.com",
+    "source": "n/a",
+    "tags": [
+      "Personal site",
+      "Blog"
+    ]
+  },
+  {
+    "title": "LibreLeo",
+    "url": "https://libreleo.com",
+    "source": "n/a",
+    "tags": [
+      "Blog",
+      "Personal Finance",
+      "Calculators"
     ]
   },
   {
