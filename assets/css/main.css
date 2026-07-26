@@ -23,37 +23,6 @@ body button {
   @apply transition-colors;
 }
 
-/* Opt-in landing-page atmosphere. The motion is deliberately slow and is
-   removed entirely when a visitor requests reduced motion. */
-@keyframes homepage-ambient-drift {
-  0%,
-  100% {
-    transform: scale(1.08) translate3d(-1.5%, -1%, 0);
-  }
-  50% {
-    transform: scale(1.16) translate3d(1.5%, 1%, 0);
-  }
-}
-
-.homepage-ambient-background {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  filter: saturate(1.08);
-  animation: homepage-ambient-drift 24s ease-in-out infinite;
-  will-change: transform;
-}
-
-.homepage-ambient-wash {
-  background: linear-gradient(180deg, rgba(var(--color-neutral-950), 0.08), rgba(var(--color-neutral-950), 0.42));
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .homepage-ambient-background {
-    animation: none;
-  }
-}
-
 button,
 [role="button"] {
   cursor: pointer;

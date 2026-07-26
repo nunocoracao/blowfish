@@ -1,6 +1,6 @@
 ---
 title: "Homepage Layout"
-featureimage: "images/v3/layouts.png"
+featureimage: "images/v3/homepage-layout.png"
 weight: 5
 draft: false
 description: "Configuring the homepage layout in the Blowfish theme."
