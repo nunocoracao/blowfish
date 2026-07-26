@@ -27,26 +27,27 @@ window.addEventListener("DOMContentLoaded", (event) => {
 });
 
 function initLayoutLab() {
-  const lab = document.querySelector("[data-layout-lab]");
-  if (!lab) return;
+  document.querySelectorAll("[data-layout-switcher]").forEach((lab) => {
+    const buttons = lab.querySelectorAll("[data-layout-switcher-button]");
+    const panels = lab.querySelectorAll("[data-layout-switcher-panel]");
+    const activate = (layout) => {
+      buttons.forEach((button) => {
+        const active = button.dataset.layoutSwitcherButton === layout;
+        button.setAttribute("aria-selected", String(active));
+        button.classList.toggle("border-primary-600", active);
+        button.classList.toggle("bg-primary-600", active);
+        button.classList.toggle("text-white", active);
+        button.classList.toggle("dark:border-primary-500", active);
+        button.classList.toggle("dark:bg-primary-500", active);
+      });
+      panels.forEach((panel) => {
+        panel.hidden = panel.dataset.layoutSwitcherPanel !== layout;
+      });
+    };
 
-  const buttons = lab.querySelectorAll("[data-layout-preview-button]");
-  const panels = lab.querySelectorAll("[data-layout-preview-panel]");
-  const activate = (layout) => {
     buttons.forEach((button) => {
-      const active = button.dataset.layoutPreviewButton === layout;
-      button.setAttribute("aria-selected", String(active));
-      button.classList.toggle("bg-primary-600", active);
-      button.classList.toggle("text-white", active);
-      button.classList.toggle("dark:border-primary-600", active);
+      button.addEventListener("click", () => activate(button.dataset.layoutSwitcherButton));
     });
-    panels.forEach((panel) => {
-      panel.hidden = panel.dataset.layoutPreviewPanel !== layout;
-    });
-  };
-
-  buttons.forEach((button) => {
-    button.addEventListener("click", () => activate(button.dataset.layoutPreviewButton));
   });
 }
 

@@ -3,6 +3,7 @@ title: "Configuration"
 weight: 4
 draft: false
 description: "All the configuration variables available in Blowfish."
+featureimage: "images/v3/layouts.png"
 slug: "configuration"
 tags: ["config", "docs"]
 series: ["Documentation"]
@@ -243,7 +244,8 @@ Many of the article defaults here can be overridden on a per article basis by sp
 
 | Name | Default | Description |
 | --- | --- | --- |
-| `homepage.layout` | `"profile"` | The layout of the homepage. Valid values are `page`, `profile`, `hero`, `card`, `background`, or `custom`. When set to `custom`, you must provide your own layout by creating a `/layouts/partials/home/custom.html` file. Refer to the [Homepage Layout]({{< ref "homepage-layout" >}}) section for more details. |
+| `homepage.layout` | `"profile"` | The layout of the homepage. Valid values are `page`, `profile`, `hero`, `card`, `background`, `landing`, or `custom`. When set to `custom`, you must provide your own layout by creating a `/layouts/partials/home/custom.html` file. Refer to the [Homepage Layout]({{< ref "homepage-layout" >}}) section for more details. |
+| `homepage.layoutSwitcher` | `false` | Renders an interactive, in-place preview switcher for the built-in homepage layouts. Intended for demos and design review because it renders every preview layout. |
 | `homepage.homepageImage` | _Not set_ | Image to be used in `hero` and `card` layouts. Can be set as local image from asset directory or external image url. Refer to the [Homepage Layout]({{< ref "homepage-layout" >}}) section for more details. |
 | `homepage.showRecent` | `false` | Whether or not to display the recent articles list on the homepage. |
 | `homepage.showRecentItems` | 5 | How many articles to display if showRecent is true. If variable is set to 0 or if it isn't defined the system will default to 5 articles. |
