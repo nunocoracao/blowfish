@@ -51,6 +51,7 @@
     --radius-lg: 0.5rem;
     --radius-xl: 0.75rem;
     --radius-2xl: 1rem;
+    --radius-3xl: 1.5rem;
     --ease-in: cubic-bezier(0.4, 0, 1, 1);
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1219,6 +1220,9 @@
   .mb-12 {
     margin-bottom: calc(var(--spacing) * 12);
   }
+  .mb-14 {
+    margin-bottom: calc(var(--spacing) * 14);
+  }
   .mb-16 {
     margin-bottom: calc(var(--spacing) * 16);
   }
@@ -1759,6 +1763,9 @@
   .rounded-2xl {
     border-radius: var(--radius-2xl);
   }
+  .rounded-3xl {
+    border-radius: var(--radius-3xl);
+  }
   .rounded-\[50\%\] {
     border-radius: 50%;
   }
@@ -1989,6 +1996,12 @@
     background-color: color-mix(in srgb, rgba(rgba(var(--color-neutral), 1), 1) 25%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, rgba(var(--color-neutral), 1) 25%, transparent);
+    }
+  }
+  .bg-neutral\/40 {
+    background-color: color-mix(in srgb, rgba(rgba(var(--color-neutral), 1), 1) 40%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, rgba(var(--color-neutral), 1) 40%, transparent);
     }
   }
   .bg-neutral\/50 {
@@ -2945,6 +2958,9 @@
     .hover\:text-primary-700:hover {
       color: rgba(var(--color-primary-700), 1);
     }
+    .hover\:text-white:hover {
+      color: #fff;
+    }
     .hover\:no-underline:hover {
       text-decoration-line: none;
     }
@@ -3087,6 +3103,9 @@
     }
     .sm\:p-6 {
       padding: calc(var(--spacing) * 6);
+    }
+    .sm\:p-8 {
+      padding: calc(var(--spacing) * 8);
     }
     .sm\:px-6 {
       padding-inline: calc(var(--spacing) * 6);
@@ -3428,6 +3447,12 @@
   }
   .dark\:bg-neutral-900:is(.dark *) {
     background-color: rgba(var(--color-neutral-900), 1);
+  }
+  .dark\:bg-neutral-900\/30:is(.dark *) {
+    background-color: color-mix(in srgb, rgba(rgba(var(--color-neutral-900), 1), 1) 30%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, rgba(var(--color-neutral-900), 1) 30%, transparent);
+    }
   }
   .dark\:bg-neutral-900\/40:is(.dark *) {
     background-color: color-mix(in srgb, rgba(rgba(var(--color-neutral-900), 1), 1) 40%, transparent);
