@@ -37,7 +37,7 @@
 {{/* === Featured === */}}
 {{ $featured := "" }}
 {{ $featuredURL := "" }}
-{{ with .Params.featureimage }}
+{{ with partial "functions/feature-image.html" . }}
   {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
     {{ if site.Params.hotlinkFeatureImage }}
       {{ $featuredURL = . }}
