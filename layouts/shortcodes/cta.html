@@ -1,0 +1,9 @@
+{{ $url := .Get "url" | default "#" }}
+{{ $label := .Get "label" | default "Learn more" }}
+{{ $style := .Get "style" | default "primary" }}
+<a
+  class="not-prose inline-flex items-center gap-2 rounded-xl px-5 py-3 font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 {{ if eq $style "outline" }}border border-neutral-300 bg-white text-neutral-800 hover:border-primary-400 hover:text-primary-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100 dark:hover:text-primary-400{{ else }}bg-primary-600 text-white shadow-lg shadow-primary-500/20 hover:-translate-y-0.5 hover:bg-primary-500 focus-visible:outline-primary-600{{ end }}"
+  href="{{ $url | safeURL }}">
+  {{ $label | markdownify }}
+  {{ partial "icon.html" "link" }}
+</a>
