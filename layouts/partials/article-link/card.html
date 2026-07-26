@@ -24,6 +24,9 @@
         {{ end }}
       {{ else }}
         {{ $featured = $p.Resources.Get . }}
+        {{ if not $featured }}
+          {{ $featured = resources.Get . }}
+        {{ end }}
       {{ end }}
     {{ end }}
 
@@ -61,13 +64,15 @@
 <article
   class="article-link--card relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
   {{ with $featuredURL }}
-    <div class="flex-none relative overflow-hidden thumbnail_card" style="--thumbnail-aspect-ratio: {{ $thumbnailAspectRatio }}">
+    <div
+      class="flex-none relative overflow-hidden thumbnail_card"
+      style="--thumbnail-aspect-ratio: {{ $thumbnailAspectRatio }}">
       <img
         src="{{ . }}"
         role="presentation"
         loading="lazy"
         decoding="async"
-        class="not-prose absolute inset-0 w-full h-full object-cover">
+        class="not-prose absolute inset-0 w-full h-full object-cover" />
     </div>
   {{ end }}
   {{ if and .Draft .Site.Params.article.showDraftLabel }}

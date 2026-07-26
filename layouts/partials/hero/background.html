@@ -12,6 +12,9 @@
     {{ end }}
   {{ else }}
     {{ $featured = page.Resources.Get . }}
+    {{ if not $featured }}
+      {{ $featured = resources.Get . }}
+    {{ end }}
   {{ end }}
 {{ end }}
 
@@ -78,7 +81,7 @@
       decoding="async"
       fetchpriority="high"
       class="absolute inset-0 w-full h-full object-cover"
-      {{ if $style }}style="{{ $style | safeCSS }}"{{ end }}>
+      {{ if $style }}style="{{ $style | safeCSS }}"{{ end }} />
     <div
       class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal"></div>
     <div
