@@ -50,7 +50,9 @@
     {{ with $featured }}
       {{ $featuredURL = .RelPermalink }}
       {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
-        {{ $featuredURL = (.Resize "600x").RelPermalink }}
+        {{ with try (.Resize "600x") }}
+          {{ with .Value }}{{ $featuredURL = .RelPermalink }}{{ end }}
+        {{ end }}
       {{ end }}
     {{ end }}
   {{ end }}

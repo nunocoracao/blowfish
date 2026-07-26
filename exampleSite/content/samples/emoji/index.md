@@ -17,4 +17,4 @@ Emoji replacements are automatic throughout Blowfish, so you can use shorthand c
 
 **Example:** `see_no_evil` :see_no_evil:, `hear_no_evil` :hear_no_evil:, `speak_no_evil` :speak_no_evil:.
 
-The [Emoji cheat sheet](http://www.emoji-cheat-sheet.com/) is a useful reference for emoji shorthand codes.
+Use Hugo's [emoji reference](https://gohugo.io/quick-reference/emojis/) for supported shorthand codes.

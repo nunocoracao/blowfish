@@ -5,7 +5,12 @@
 {{- $isMarkdown := or (eq $md true) (eq $md "true") -}}
 {{- $content := .Inner -}}
 {{- if $isMarkdown -}}
-  {{- $content = .InnerDeindent | strings.TrimSpace | .Page.RenderString -}}
+  {{- $content = .InnerDeindent | strings.TrimSpace -}}
+  {{- if not (strings.HasPrefix $content "<") -}}
+    {{- $content = $content | .Page.RenderString -}}
+  {{- else -}}
+    {{- $content = $content | safeHTML -}}
+  {{- end -}}
 {{- end -}}
 
 {{- $tabs := .Parent.Store.Get "tabs" | default slice -}}

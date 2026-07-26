@@ -17,4 +17,4 @@ Blowfish 会自动的进行表情符号渲染，因此您可以在内容和 fron
 
 **例如：** `see_no_evil` :see_no_evil:, `hear_no_evil` :hear_no_evil:, `speak_no_evil` :speak_no_evil:.
 
-[Emoji 清单](http://www.emoji-cheat-sheet.com/) 可以很方便的查找 Emoji 对应的表情代码。
+请使用 Hugo 的 [Emoji 参考](https://gohugo.io/quick-reference/emojis/) 查阅受支持的简写代码。
