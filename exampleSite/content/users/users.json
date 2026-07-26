@@ -1170,5 +1170,14 @@
       "Personal Finance",
       "Calculators"
     ]
+  },
+  {
+    "title": "chius.cc",
+    "url": "https://chius.cc/",
+    "source": "https://github.com/chius-me/chius.cc",
+    "tags": [
+      "Personal site",
+      "Blog"
+    ]
   }
 ]
