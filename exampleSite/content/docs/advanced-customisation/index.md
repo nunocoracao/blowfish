@@ -1,6 +1,6 @@
 ---
 title: "Advanced Customisation"
-featureimage: "images/v3/configuration-system.png"
+featureimage: "images/v3/advanced-customisation.png"
 weight: 13
 draft: false
 description: "Learn how to build Blowfish manually."
