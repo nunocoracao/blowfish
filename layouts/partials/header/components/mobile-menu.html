@@ -1,4 +1,5 @@
-<div class="flex items-center h-14 gap-4">
+{{ $mobileMenuStyle := .Site.Params.header.mobileMenuStyle | default "fullscreen" }}
+<div class="relative flex items-center h-14 gap-4">
   {{ if .Site.Params.enableSearch | default false }}
     <button
       id="search-button-mobile"
@@ -39,14 +40,19 @@
       role="dialog"
       aria-modal="true"
       style="scrollbar-gutter: stable;"
-      class="fixed inset-0 z-50 invisible overflow-y-auto px-6 py-20 opacity-0 transition-[opacity,visibility] duration-300 peer-checked:visible peer-checked:opacity-100 bg-neutral-50/97 dark:bg-neutral-900/99
+      class="z-50 invisible overflow-y-auto opacity-0 transition-[opacity,visibility] duration-300 peer-checked:visible peer-checked:opacity-100
+      {{ if eq $mobileMenuStyle "dropdown" }}
+        absolute end-0 top-[calc(100%+0.75rem)] w-[min(22rem,calc(100vw-1.5rem))] rounded-2xl border border-neutral-200/80 bg-neutral/95 p-5 shadow-2xl shadow-neutral-950/20 backdrop-blur-xl dark:border-neutral-700/80 dark:bg-neutral-800/95
+      {{ else }}
+        fixed inset-0 px-6 py-20 bg-neutral-50/97 dark:bg-neutral-900/99
+      {{ end }}
       {{ if site.Params.enableStyledScrollbar | default true }}bf-scrollbar{{ end }}">
       <label
         for="mobile-menu-toggle"
-        class="fixed end-8 top-5 flex items-center justify-center z-50 h-12 w-12 cursor-pointer select-none rounded-full bf-icon-color-hover border bf-border-color bf-border-color-hover bg-neutral-50 dark:bg-neutral-900">
+        class="{{ if eq $mobileMenuStyle "dropdown" }}absolute end-3 top-3 h-10 w-10 rounded-xl{{ else }}fixed end-8 top-5 z-50 h-12 w-12 rounded-full{{ end }} flex items-center justify-center cursor-pointer select-none bf-icon-color-hover border bf-border-color bf-border-color-hover bg-neutral-50 dark:bg-neutral-900">
         {{ partial "icon.html" "xmark" }}
       </label>
-      <nav class="mx-auto max-w-md space-y-6">
+      <nav class="{{ if eq $mobileMenuStyle "dropdown" }}mt-10 space-y-3{{ else }}mx-auto max-w-md space-y-6{{ end }}">
         {{ template "mobile-main-menu" . }}
         {{ template "mobile-subnavigation" . }}
         {{ template "mobile-footer-components" . }}
