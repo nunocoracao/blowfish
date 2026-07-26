@@ -109,6 +109,7 @@ fingerprintAlgorithm = "sha512" # Valid values are "sha512" (default), "sha384",
   cardView = true
   cardViewScreenWidth = false
   constrainItemsWidth = false
+  featureImageHover = true
 
 [sitemap]
   excludedKinds = []
