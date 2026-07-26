@@ -3,7 +3,7 @@ title: "Shortcodes"
 weight: 6
 draft: false
 description: "All the shortcodes available in Blowfish."
-featureimage: "images/v3/documentation.png"
+featureimage: "images/v3/shortcodes.png"
 slug: "shortcodes"
 tags: ["shortcodes", "mermaid", "icon", "lead", "docs"]
 series: ["Documentation"]

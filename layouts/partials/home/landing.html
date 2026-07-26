@@ -1,15 +1,7 @@
 <article class="relative isolate overflow-hidden">
-  {{ if .Site.Params.homepage.animatedBackground | default false }}
-    {{ $background := resources.Get (.Site.Params.homepage.animatedBackgroundImage | default "images/v3/animated-background.png") }}
-    {{ with $background }}
-      <div aria-hidden="true" class="homepage-ambient-background absolute inset-0 -z-10 overflow-hidden" style="background-image: url('{{ .RelPermalink }}');"></div>
-      <div aria-hidden="true" class="homepage-ambient-wash absolute inset-0 -z-10"></div>
-    {{ end }}
-  {{ else }}
-    <div aria-hidden="true" class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
-      <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-primary-400 to-secondary-500 opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72rem]"></div>
-    </div>
-  {{ end }}
+  <div aria-hidden="true" class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+    <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-primary-400 to-secondary-500 opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72rem]"></div>
+  </div>
 
   <section class="mx-auto max-w-7xl px-4 pb-16 pt-12 sm:px-6 sm:pb-24 sm:pt-20 lg:px-8">
     <div class="mx-auto max-w-4xl text-center">
