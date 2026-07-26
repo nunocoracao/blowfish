@@ -1,0 +1,7 @@
+{{ $value := .Get "value" | default "0" }}
+{{ $label := .Get "label" | default "Metric" }}
+<div class="rounded-2xl border border-neutral-200 bg-white/80 p-6 text-center shadow-sm dark:border-neutral-800 dark:bg-neutral-900/80">
+  <p class="text-4xl font-black tracking-tight text-primary-600 dark:text-primary-400">{{ $value | markdownify }}</p>
+  <p class="mt-2 font-bold text-neutral-950 dark:text-white">{{ $label | markdownify }}</p>
+  {{ with .Inner }}<div class="mt-2 text-sm leading-6 text-neutral-600 dark:text-neutral-400">{{ . | markdownify }}</div>{{ end }}
+</div>
