@@ -227,6 +227,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | Name | Default | Description |
 | --- | --- | --- |
 | `header.layout` | `"basic"` | Defines the header for the entire site, supported values are `basic`, `fixed`, `fixed-fill`, `fixed-fill-blur`, `fixed-gradient`, and `floating`. |
+| `list.featureImageHover` | `false` | Adds a subtle zoom transition when a visitor hovers a post or related-content card. Individual pages can override this with `featureImageHover` in front matter. |
 
 ### Footer
 

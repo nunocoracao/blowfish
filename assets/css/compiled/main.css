@@ -2722,6 +2722,10 @@
     --tw-duration: 300ms;
     transition-duration: 300ms;
   }
+  .duration-500 {
+    --tw-duration: 500ms;
+    transition-duration: 500ms;
+  }
   .duration-\[350ms\] {
     --tw-duration: 350ms;
     transition-duration: 350ms;
@@ -2773,6 +2777,12 @@
   @media (hover: hover) {
     .group-hover\:visible:is(:where(.group):hover *) {
       visibility: visible;
+    }
+    .group-hover\:scale-105:is(:where(.group):hover *) {
+      --tw-scale-x: 105%;
+      --tw-scale-y: 105%;
+      --tw-scale-z: 105%;
+      scale: var(--tw-scale-x) var(--tw-scale-y);
     }
     .group-hover\:scale-110:is(:where(.group):hover *) {
       --tw-scale-x: 110%;
