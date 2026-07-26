@@ -3,6 +3,7 @@ title: "Getting Started"
 weight: 3
 draft: false
 description: "All the front matter variables available in Blowfish."
+featureimage: "images/v3/publishing.png"
 slug: "getting-started"
 tags: ["installation", "docs"]
 series: ["Documentation"]

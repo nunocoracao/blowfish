@@ -6,28 +6,7 @@
     <div class="prose mx-auto mt-5 dark:prose-invert">{{ .Content }}</div>
   </section>
 
-  <section data-layout-lab class="mb-14">
-    <div class="not-prose mb-8 flex flex-wrap justify-center gap-2" role="tablist" aria-label="Homepage layouts">
-      {{ range $index, $layout := slice "landing" "background" "hero" "profile" "page" "card" }}
-        <button
-          type="button"
-          class="rounded-full border border-neutral-300 px-4 py-2 text-sm font-bold text-neutral-700 transition hover:border-primary-400 hover:text-primary-600 dark:border-neutral-700 dark:text-neutral-200 dark:hover:text-primary-400 {{ if eq $index 0 }}bg-primary-600 text-white hover:bg-primary-500 hover:text-white dark:border-primary-600{{ end }}"
-          data-layout-preview-button="{{ $layout }}"
-          role="tab"
-          aria-selected="{{ cond (eq $index 0) `true` `false` }}">
-          {{ $layout | title }}
-        </button>
-      {{ end }}
-    </div>
-
-    <div class="rounded-3xl border border-neutral-200 bg-neutral/40 p-4 shadow-sm dark:border-neutral-800 dark:bg-neutral-900/30 sm:p-8">
-      {{ range $index, $layout := slice "landing" "background" "hero" "profile" "page" "card" }}
-        <div data-layout-preview-panel="{{ $layout }}" role="tabpanel"{{ if ne $index 0 }} hidden{{ end }}>
-          {{ partial (printf "home/%s.html" $layout) $ }}
-        </div>
-      {{ end }}
-    </div>
-  </section>
+  <section class="mb-14">{{ partial "home/layout-switcher.html" . }}</section>
 
   <script defer type="text/javascript" src="{{ $jsHome.RelPermalink }}" integrity="{{ $jsHome.Data.Integrity }}"></script>
 {{ end }}
