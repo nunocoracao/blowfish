@@ -45,7 +45,7 @@
     "medium-zoom": "^1.1.0",
     "mermaid": "^11.16.0",
     "packery": "^3.0.0",
-    "prettier": "^3.9.4",
+    "prettier": "^3.9.6",
     "prettier-plugin-go-template": "^0.0.15",
     "puppeteer": "^25.3.0",
     "rimraf": "^6.1.3",
