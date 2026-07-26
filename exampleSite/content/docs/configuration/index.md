@@ -3,7 +3,7 @@ title: "Configuration"
 weight: 4
 draft: false
 description: "All the configuration variables available in Blowfish."
-featureimage: "images/v3/layouts.png"
+featureimage: "images/v3/configuration-system.png"
 slug: "configuration"
 tags: ["config", "docs"]
 series: ["Documentation"]

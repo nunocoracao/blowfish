@@ -1,6 +1,6 @@
 ---
 title: "Installation"
-featureimage: "images/v3/publishing-system.png"
+featureimage: "images/v3/installation.png"
 weight: 2
 draft: false
 description: "How to install the Blowfish theme."

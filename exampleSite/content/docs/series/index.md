@@ -1,6 +1,6 @@
 ---
 title: "Series"
-featureimage: "images/v3/content-network.png"
+featureimage: "images/v3/series.png"
 weight: 12
 draft: false
 description: "Learn how to group articles under a series."
