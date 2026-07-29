@@ -23,9 +23,18 @@ function setBackgroundBlur(targetId, scrollDivisor = 300, disableBlur = false, i
       blurElement.style.opacity = scroll / scrollDivisor;
     }
   };
+  let framePending = false;
+  const requestBlurUpdate = () => {
+    if (framePending) return;
+    framePending = true;
+    window.requestAnimationFrame(() => {
+      framePending = false;
+      updateBlur();
+    });
+  };
   blurElement.setAttribute("role", "presentation");
   blurElement.setAttribute("tabindex", "-1");
-  window.addEventListener("scroll", updateBlur);
+  window.addEventListener("scroll", requestBlurUpdate, { passive: true });
   updateBlur();
 }
 
@@ -33,7 +42,12 @@ document.querySelectorAll("script[data-blur-id]").forEach((script) => {
   const targetId = script.getAttribute("data-blur-id");
   const scrollDivisor = Number(script.getAttribute("data-scroll-divisor") || 300);
   const isMenuBlur = targetId === "menu-blur";
-  const settings = JSON.parse(localStorage.getItem("a11ySettings") || "{}");
+  let settings = {};
+  try {
+    settings = JSON.parse(localStorage.getItem("a11ySettings") || "{}");
+  } catch (_) {
+    settings = {};
+  }
   const disableBlur = settings.disableBlur || false;
   setBackgroundBlur(targetId, scrollDivisor, disableBlur, isMenuBlur);
 });

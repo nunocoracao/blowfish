@@ -60,7 +60,7 @@
     {{ with .Params.tags }}"keywords": {{ . }},{{ end }}
     {{ end }}
     "mainEntityOfPage": {{ .Permalink }},
-    "wordCount": "{{ .WordCount }}"
+    "wordCount": {{ .WordCount | int }}
   }{{ if site.Params.enableStructuredBreadcrumbs | default false }},
   {
     "@context": "https://schema.org",

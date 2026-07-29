@@ -1,8 +1,21 @@
 {{ define "main" }}
-  {{ $partial := print "home/" .Site.Params.homepage.layout ".html" }}
-  {{ if templates.Exists ( printf "partials/%s" $partial ) }}
-    {{ partial $partial . }}
+  {{ if .Site.Params.homepage.layoutSwitcher | default false }}
+    {{ partial "home/layout-switcher.html" . }}
+    {{ $jsHome := resources.Get "js/home.js" | resources.Minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
+    <script defer type="text/javascript" src="{{ $jsHome.RelPermalink }}" integrity="{{ $jsHome.Data.Integrity }}"></script>
   {{ else }}
-    {{ partial "home/profile.html" . }}
+    {{ $partial := print "home/" .Site.Params.homepage.layout ".html" }}
+    {{ if templates.Exists ( printf "partials/%s" $partial ) }}
+      {{ partial $partial . }}
+    {{ else }}
+      {{ partial "home/profile.html" . }}
+    {{ end }}
   {{ end }}
+  <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    {{ partial "sponsors.html" . }}
+    {{ partial "contributors.html" . }}
+  </section>
+  <section>
+    {{ partial "recent-articles/main.html" . }}
+  </section>
 {{ end }}

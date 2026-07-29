@@ -3,6 +3,7 @@ title: "Configuration"
 weight: 4
 draft: false
 description: "All the configuration variables available in Blowfish."
+featureimage: "images/v3/configuration-system.png"
 slug: "configuration"
 tags: ["config", "docs"]
 series: ["Documentation"]
@@ -226,7 +227,9 @@ Many of the article defaults here can be overridden on a per article basis by sp
 
 | Name | Default | Description |
 | --- | --- | --- |
-| `header.layout` | `"basic"` | Defines the header for the entire site, supported values are `basic`, `fixed`, `fixed-fill`, and `fixed-fill-blur`. |
+| `header.layout` | `"basic"` | Defines the header for the entire site, supported values are `basic`, `fixed`, `fixed-fill`, `fixed-fill-blur`, `fixed-gradient`, and `floating`. |
+| `header.mobileMenuStyle` | `"fullscreen"` | Defines the mobile menu presentation. Set to `"dropdown"` for a compact menu anchored below the header. |
+| `list.featureImageHover` | `false` | Adds a subtle zoom transition when a visitor hovers a post or related-content card. Individual pages can override this with `featureImageHover` in front matter. |
 
 ### Footer
 
@@ -242,7 +245,8 @@ Many of the article defaults here can be overridden on a per article basis by sp
 
 | Name | Default | Description |
 | --- | --- | --- |
-| `homepage.layout` | `"profile"` | The layout of the homepage. Valid values are `page`, `profile`, `hero`, `card`, `background`, or `custom`. When set to `custom`, you must provide your own layout by creating a `/layouts/partials/home/custom.html` file. Refer to the [Homepage Layout]({{< ref "homepage-layout" >}}) section for more details. |
+| `homepage.layout` | `"profile"` | The layout of the homepage. Valid values are `page`, `profile`, `hero`, `card`, `background`, `landing`, or `custom`. When set to `custom`, you must provide your own layout by creating a `/layouts/partials/home/custom.html` file. Refer to the [Homepage Layout]({{< ref "homepage-layout" >}}) section for more details. |
+| `homepage.layoutSwitcher` | `false` | Renders an interactive, in-place preview switcher for the built-in homepage layouts. Intended for demos and design review because it renders every preview layout. |
 | `homepage.homepageImage` | _Not set_ | Image to be used in `hero` and `card` layouts. Can be set as local image from asset directory or external image url. Refer to the [Homepage Layout]({{< ref "homepage-layout" >}}) section for more details. |
 | `homepage.showRecent` | `false` | Whether or not to display the recent articles list on the homepage. |
 | `homepage.showRecentItems` | 5 | How many articles to display if showRecent is true. If variable is set to 0 or if it isn't defined the system will default to 5 articles. |

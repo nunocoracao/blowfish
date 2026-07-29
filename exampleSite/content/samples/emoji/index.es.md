@@ -17,4 +17,4 @@ Los reemplazos de emoji son automáticos en Blowfish, por lo que puedes usar có
 
 **Ejemplo:** `see_no_evil` :see_no_evil:, `hear_no_evil` :hear_no_evil:, `speak_no_evil` :speak_no_evil:.
 
-La [hoja de trucos de Emoji](http://www.emoji-cheat-sheet.com/) es una referencia útil para los códigos abreviados de emoji.
+La [referencia de emoji de Hugo](https://gohugo.io/quick-reference/emojis/) contiene los códigos abreviados compatibles.

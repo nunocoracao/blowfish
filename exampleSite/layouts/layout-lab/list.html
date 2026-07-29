@@ -1,0 +1,12 @@
+{{ define "main" }}
+  {{ $jsHome := resources.Get "js/home.js" | resources.Minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
+  <section class="mx-auto max-w-4xl py-10 text-center">
+    <p class="text-sm font-bold uppercase tracking-[0.18em] text-primary-600 dark:text-primary-400">Interactive preview</p>
+    <h1 class="mt-2 text-4xl font-black tracking-tight text-neutral-950 dark:text-white">{{ .Title }}</h1>
+    <div class="prose mx-auto mt-5 dark:prose-invert">{{ .Content }}</div>
+  </section>
+
+  <section class="mb-14">{{ partial "home/layout-switcher.html" . }}</section>
+
+  <script defer type="text/javascript" src="{{ $jsHome.RelPermalink }}" integrity="{{ $jsHome.Data.Integrity }}"></script>
+{{ end }}

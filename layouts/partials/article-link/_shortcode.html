@@ -34,11 +34,14 @@
 {{ $page := $target }}
 {{ $featured := "" }}
 {{ $featuredURL := "" }}
+{{ $featureImageHover := site.Params.list.featureImageHover | default false }}
+{{ if isset $target.Params "featureImageHover" }}{{ $featureImageHover = $target.Params.featureImageHover }}{{ end }}
+{{ $featureImagePosition := $target.Params.imagePositionFeature | default site.Params.imagePositionFeature | default site.Params.imagePosition }}
 {{ if not $target.Params.hideFeatureImage }}
   {{/* frontmatter */}}
   {{ with $page }}
     {{ $p := . }}
-    {{ with .Params.featureimage }}
+    {{ with partial "functions/feature-image.html" . }}
       {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
         {{ if site.Params.hotlinkFeatureImage }}
           {{ $featuredURL = . }}
@@ -76,7 +79,9 @@
       {{ with $featured }}
         {{ $featuredURL = .RelPermalink }}
         {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
-          {{ $featuredURL = (.Resize "600x").RelPermalink }}
+          {{ with try (.Resize "600x") }}
+            {{ with .Value }}{{ $featuredURL = .RelPermalink }}{{ end }}
+          {{ end }}
         {{ end }}
       {{ end }}
     {{ end }}
@@ -84,15 +89,17 @@
 {{ end }}
 
 
-<article class="article-link--shortcode {{ $cardClasses }}">
+<article class="article-link--shortcode group {{ $cardClasses }}">
   {{ with $featuredURL }}
     <div class="flex-none relative overflow-hidden {{ $imgWrapperClasses }} thumbnail">
       <img
         src="{{ . }}"
-        role="presentation"
+        alt="{{ $target.Title }}"
         loading="lazy"
         decoding="async"
-        class="not-prose absolute inset-0 w-full h-full object-cover" />
+        fetchpriority="low"
+        class="not-prose absolute inset-0 h-full w-full object-cover transition duration-500 {{ if $featureImageHover }}group-hover:scale-105{{ end }}"
+        {{ with $featureImagePosition }}style="object-position: {{ . }};"{{ end }} />
     </div>
   {{ end }}
   <div class="{{ $cardContentClasses }}">

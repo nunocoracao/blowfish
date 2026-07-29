@@ -11,11 +11,14 @@
 {{ $thumbnailAspectRatio := site.Params.thumbnailAspectRatio | default "1.5" }}
 {{ $thumbnailAspectRatio = replaceRE "[^0-9.]" "" $thumbnailAspectRatio }}
 {{ if eq $thumbnailAspectRatio "" }}{{ $thumbnailAspectRatio = "1.5" }}{{ end }}
+{{ $featureImageHover := site.Params.list.featureImageHover | default false }}
+{{ if isset .Params "featureImageHover" }}{{ $featureImageHover = .Params.featureImageHover }}{{ end }}
+{{ $featureImagePosition := .Params.imagePositionFeature | default site.Params.imagePositionFeature | default site.Params.imagePosition }}
 {{ if not .Params.hideFeatureImage }}
   {{/* frontmatter */}}
   {{ with $page }}
     {{ $p := . }}
-    {{ with .Params.featureimage }}
+    {{ with partial "functions/feature-image.html" . }}
       {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
         {{ if site.Params.hotlinkFeatureImage }}
           {{ $featuredURL = . }}
@@ -53,7 +56,9 @@
       {{ with $featured }}
         {{ $featuredURL = .RelPermalink }}
         {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
-          {{ $featuredURL = (.Resize "600x").RelPermalink }}
+          {{ with try (.Resize "600x") }}
+            {{ with .Value }}{{ $featuredURL = .RelPermalink }}{{ end }}
+          {{ end }}
         {{ end }}
       {{ end }}
     {{ end }}
@@ -62,17 +67,19 @@
 
 
 <article
-  class="article-link--card relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  class="article-link--card group relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
   {{ with $featuredURL }}
     <div
       class="flex-none relative overflow-hidden thumbnail_card"
       style="--thumbnail-aspect-ratio: {{ $thumbnailAspectRatio }}">
       <img
         src="{{ . }}"
-        role="presentation"
+        alt="{{ $page.Title }}"
         loading="lazy"
         decoding="async"
-        class="not-prose absolute inset-0 w-full h-full object-cover" />
+        fetchpriority="low"
+        class="not-prose absolute inset-0 h-full w-full object-cover transition duration-500 {{ if $featureImageHover }}group-hover:scale-105{{ end }}"
+        {{ with $featureImagePosition }}style="object-position: {{ . }};"{{ end }} />
     </div>
   {{ end }}
   {{ if and .Draft .Site.Params.article.showDraftLabel }}

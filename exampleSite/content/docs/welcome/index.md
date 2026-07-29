@@ -1,5 +1,6 @@
 ---
 title: "Welcome to Blowfish"
+featureimage: "images/v3/welcome.png"
 weight: 1
 draft: false
 description: "Discover what's new in Blowfish version 2.0."

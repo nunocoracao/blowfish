@@ -5,8 +5,11 @@
 {{ $thumbnailAspectRatio := site.Params.thumbnailAspectRatio | default "1.5" }}
 {{ $thumbnailAspectRatio = replaceRE "[^0-9.]" "" $thumbnailAspectRatio }}
 {{ if eq $thumbnailAspectRatio "" }}{{ $thumbnailAspectRatio = "1.5" }}{{ end }}
+{{ $featureImageHover := site.Params.list.featureImageHover | default false }}
+{{ if isset .Page.Params "featureImageHover" }}{{ $featureImageHover = .Page.Params.featureImageHover }}{{ end }}
+{{ $featureImagePosition := .Page.Params.imagePositionFeature | default site.Params.imagePositionFeature | default site.Params.imagePosition }}
 {{ $p := .Page }}
-{{ with .Page.Params.featureimage }}
+{{ with partial "functions/feature-image.html" .Page }}
   {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
     {{ $featured = resources.GetRemote . }}
   {{ else }}
@@ -27,13 +30,15 @@
 {{ with $featured }}
   {{ $featuredURL = .RelPermalink }}
   {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
-    {{ $featuredURL = (.Resize "600x").RelPermalink }}
+    {{ with try (.Resize "600x") }}
+      {{ with .Value }}{{ $featuredURL = .RelPermalink }}{{ end }}
+    {{ end }}
   {{ end }}
 {{ end }}
 
 
 <div class="min-w-full">
-  <div class="border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+  <div class="group relative overflow-hidden rounded border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
     {{ with $featuredURL }}
       <figure
         class="not-prose flex-none relative overflow-hidden thumbnail_card"
@@ -44,7 +49,8 @@
           loading="lazy"
           decoding="async"
           fetchpriority="low"
-          class="not-prose absolute inset-0 w-full h-full object-cover" />
+          class="not-prose absolute inset-0 h-full w-full object-cover transition duration-500 {{ if $featureImageHover }}group-hover:scale-105{{ end }}"
+          {{ with $featureImagePosition }}style="object-position: {{ . }};"{{ end }} />
       </figure>
     {{ end }}
     {{ if site.Params.taxonomy.showTermCount | default true }}
