@@ -19,4 +19,5 @@ title = "Blowfish"
   links = [
     { x-twitter = "https://twitter.com/burufugu" },
     { github = "https://github.com/nunocoracao/blowfish" },
+    { github_gist = "https://gist.github.com/nunocoracao" },
   ]
