@@ -37,30 +37,32 @@
 </div>
 
 {{ if .Site.Menus.subnavigation }}
-  <div
-    class="main-menu flex pb-3 flex-col items-end justify-between md:justify-start space-x-3 {{ if .Site.Params.Logo }}
-      -mt-[15px]
-    {{ end }}">
-    <div class="hidden md:flex items-center space-x-5">
-      {{ range .Site.Menus.subnavigation }}
-        <a
-          href="{{ .URL }}"
-          {{ if or (strings.HasPrefix .URL "http:" ) (strings.HasPrefix .URL "https:" ) }}
-            target="_blank"
-          {{ end }}
-          class="flex items-center bf-icon-color-hover">
-          {{ if .Pre }}
-            <span {{ if and .Pre .Name }}class="mr-1"{{ end }}>
-              {{ partial "icon.html" .Pre }}
+  <nav id="main-menu" aria-label="{{ i18n "nav.main_menu" }}">
+    <div
+      class="main-menu flex pb-3 flex-col items-end justify-between md:justify-start space-x-3 {{ if .Site.Params.Logo }}
+        -mt-[15px]
+      {{ end }}">
+      <div class="hidden md:flex items-center space-x-5">
+        {{ range .Site.Menus.subnavigation }}
+          <a
+            href="{{ .URL }}"
+            {{ if or (strings.HasPrefix .URL "http:" ) (strings.HasPrefix .URL "https:" ) }}
+              target="_blank"
+            {{ end }}
+            class="flex items-center bf-icon-color-hover">
+            {{ if .Pre }}
+              <span {{ if and .Pre .Name }}class="mr-1"{{ end }}>
+                {{ partial "icon.html" .Pre }}
+              </span>
+            {{ end }}
+            <span class="text-xs font-light" title="{{ .Title }}">
+              {{ .Name | markdownify }}
             </span>
-          {{ end }}
-          <span class="text-xs font-light" title="{{ .Title }}">
-            {{ .Name | markdownify }}
-          </span>
-        </a>
-      {{ end }}
+          </a>
+        {{ end }}
+      </div>
     </div>
-  </div>
+  </nav>
 {{ end }}
 
 {{ if .Site.Params.highlightCurrentMenuArea }}
