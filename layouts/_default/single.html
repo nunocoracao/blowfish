@@ -1,5 +1,12 @@
 {{ define "main" }}
   {{ .Scratch.Set "scope" "single" }}
+  {{ $showReadingProgress := site.Params.article.showReadingProgress | default false }}
+  {{ if isset .Params "showreadingprogress" }}
+    {{ $showReadingProgress = .Params.showReadingProgress }}
+  {{ end }}
+  {{ if $showReadingProgress }}
+    {{ partial "reading-progress.html" . }}
+  {{ end }}
   <article>
     {{/* Hero */}}
     {{ if .Params.showHero | default (site.Params.article.showHero | default false) }}
@@ -109,29 +116,31 @@
     {{ $baseURL = delimit (slice $baseURL "/") "" }}
   {{ end }}
 
-  {{ if .Params.showAuthor | default (site.Params.article.showAuthor | default true) }}
-    {{ $showAuthor = 1 }}
-    {{ partial "author.html" . }}
-  {{ end }}
-
-  {{ range $author := .Page.Params.authors }}
-    {{ $authorData := index $authorsData $author }}
-    {{- if $authorData -}}
-      {{ range $taxonomyname, $taxonomy := $taxonomies }}
-        {{ if (eq $taxonomyname $author) }}
-          {{ $taxonomyLink = delimit (slice $baseURL "authors/" $author "/") "" }}
+  {{ if .Page.Params.authors }}
+    {{ range $author := .Page.Params.authors }}
+      {{ $authorData := index $authorsData $author }}
+      {{- if $authorData -}}
+        {{ range $taxonomyname, $taxonomy := $taxonomies }}
+          {{ if (eq $taxonomyname $author) }}
+            {{ $taxonomyLink = delimit (slice $baseURL "authors/" $author "/") "" }}
+          {{ end }}
         {{ end }}
-      {{ end }}
 
-      {{ $finalLink := $taxonomyLink }}
-      {{ $currentLang := site.Language.Name }}
-      {{ if eq site.LanguagePrefix "" }}
-        {{ $finalLink = printf "%sauthors/%s/" $baseURL $author }}
-      {{ else }}
-        {{ $finalLink = printf "%s%s/authors/%s/" $baseURL $currentLang $author }}
-      {{ end }}
-      {{ partial "author-extra.html" (dict "context" . "data" $authorData "link" $finalLink) }}
-    {{- end -}}
+        {{ $finalLink := $taxonomyLink }}
+        {{ $currentLang := site.Language.Name }}
+        {{ if eq site.LanguagePrefix "" }}
+          {{ $finalLink = printf "%sauthors/%s/" $baseURL $author }}
+        {{ else }}
+          {{ $finalLink = printf "%s%s/authors/%s/" $baseURL $currentLang $author }}
+        {{ end }}
+        {{ partial "author-extra.html" (dict "context" . "data" $authorData "link" $finalLink) }}
+      {{- end -}}
+    {{ end }}
+  {{ else }}
+    {{ if .Params.showAuthor | default (site.Params.article.showAuthor | default true) }}
+      {{ $showAuthor = 1 }}
+      {{ partial "author.html" . }}
+    {{ end }}
   {{ end }}
 
   {{ if or $taxonomyLink $showAuthor }}

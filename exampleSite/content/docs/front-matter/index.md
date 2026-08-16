@@ -43,6 +43,7 @@ Front matter parameter default values are inherited from the theme's [base confi
 | `showPagination` | `article.showPagination` | Whether or not the next/previous article links are displayed in the article footer. |
 | `invertPagination` | `article.invertPagination` | Whether or not to flip the direction of the next/previous article links. |
 | `showReadingTime` | `article.showReadingTime` | Whether or not the article reading time is displayed. |
+| `showReadingProgress` | `article.showReadingProgress` | Whether or not the reading progress bar is displayed on this article. |
 | `showTaxonomies` | `article.showTaxonomies` | Whether or not the taxonomies that relate to this article are displayed. |
 | `showTableOfContents` | `article.showTableOfContents` | Whether or not the table of contents is displayed on this article. |
 | `showWordCount` | `article.showWordCount` | Whether or not the article word count is displayed. |

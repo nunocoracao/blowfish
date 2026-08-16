@@ -60,6 +60,7 @@ list:
   no_articles: "There are no articles to list here yet."
 
 nav:
+  main_menu: "Main menu"
   scroll_to_top_title: "Scroll to top"
   skip_to_main: "Skip to main content"
 

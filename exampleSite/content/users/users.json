@@ -65,14 +65,6 @@
     ]
   },
   {
-    "title": "fahru.my.id",
-    "url": "https://www.fahru.my.id",
-    "source": "n/a",
-    "tags": [
-      "Personal site"
-    ]
-  },
-  {
     "title": "loisvelasco.is-a.dev",
     "url": "https://loisvelasco.is-a.dev",
     "source": "n/a",
@@ -147,14 +139,6 @@
   {
     "title": "blog.muffn.io",
     "url": "https://blog.muffn.io/",
-    "source": "n/a",
-    "tags": [
-      "Personal site"
-    ]
-  },
-  {
-    "title": "nick.bouwhuis.net",
-    "url": "https://nick.bouwhuis.net",
     "source": "n/a",
     "tags": [
       "Personal site"
@@ -329,14 +313,6 @@
     ]
   },
   {
-    "title": "scottmckendry.tech",
-    "url": "https://scottmckendry.tech",
-    "source": "n/a",
-    "tags": [
-      "Personal site"
-    ]
-  },
-  {
     "title": "ohdmire.github.io",
     "url": "https://ohdmire.github.io",
     "source": "n/a",
@@ -387,15 +363,6 @@
   {
     "title": "BoringTech.net",
     "url": "https://boringtech.net/",
-    "source": "n/a",
-    "tags": [
-      "Personal Site",
-      "Blog"
-    ]
-  },
-  {
-    "title": "technicaldc.github.io",
-    "url": "https://technicaldc.github.io/",
     "source": "n/a",
     "tags": [
       "Personal Site",
@@ -551,15 +518,6 @@
     "source": "https://github.com/LuizGlomyer/luizglomyer.github.io",
     "tags": [
       "Personal site"
-    ]
-  },
-  {
-    "title": "utrodus.com",
-    "url": "https://utrodus.com",
-    "source": "https://github.com/utrodus/utrodus.com",
-    "tags": [
-      "Portfolio Site",
-      "Blog"
     ]
   },
   {
@@ -775,19 +733,6 @@
     ]
   },
   {
-    "title": "Learn-Software.com",
-    "url": "https://learn-software.com",
-    "source": "https://github.com/learn-software-engineering/website",
-    "tags": [
-      "Personal Website",
-      "Tech Blog",
-      "Learning",
-      "Software Engineering",
-      "Programming",
-      "Artificial intelligence"
-    ]
-  },
-  {
     "title": "mitri.lol",
     "url": "https://mitri.lol",
     "source": "n/a",
@@ -811,14 +756,6 @@
     "tags": [
       "Personal site",
       "Portfolio"
-    ]
-  },
-  {
-    "title": "tbsch.de | Smart Home, Technik, Kram",
-    "url": "https://tbsch.de",
-    "source": "n/a",
-    "tags": [
-      "Personal site"
     ]
   },
   {
@@ -914,16 +851,6 @@
       "WoW",
       "World of Warcraft",
       "Blog"
-    ]
-  },
-  {
-    "title": "David Writes",
-    "url": "https://davidwrites.xyz/",
-    "source": "n/a",
-    "tags": [
-      "Personal site",
-      "Blog",
-      "Linux Admin"
     ]
   },
   {
@@ -1178,6 +1105,22 @@
     "tags": [
       "Personal site",
       "Blog"
+    ]
+  },
+  {
+    "title": "RussellChubb.com",
+    "url": "https://russellchubb.com",
+    "source": "n/a",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
+    "title": "or1k.net",
+    "url": "https://or1k.net",
+    "source": "n/a",
+    "tags": [
+      "Personal site"
     ]
   }
 ]

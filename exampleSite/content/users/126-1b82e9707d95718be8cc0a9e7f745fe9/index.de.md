@@ -1,0 +1,13 @@
+---
+                title: "RussellChubb.com"
+                tags: [Personal site]
+                externalUrl: "https://russellchubb.com"
+                weight: 127
+                showDate: false
+                showAuthor: false
+                showReadingTime: false
+                showEdit: false
+                showLikes: false
+                showViews: false
+                layoutBackgroundHeaderSpace: false
+                ---

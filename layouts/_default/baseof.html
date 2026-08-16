@@ -19,12 +19,14 @@
         {{ i18n "nav.skip_to_main" }}
       </a>
     </div>
-    {{ $header := print "header/" site.Params.header.layout ".html" }}
-    {{ if templates.Exists ( printf "partials/%s" $header ) }}
-      {{ partial $header . }}
-    {{ else }}
-      {{ partial "header/basic.html" . }}
-    {{ end }}
+    <header>
+      {{ $header := print "header/" site.Params.header.layout ".html" }}
+      {{ if templates.Exists ( printf "partials/%s" $header ) }}
+        {{ partial $header . }}
+      {{ else }}
+        {{ partial "header/basic.html" . }}
+      {{ end }}
+    </header>
     <div class="relative flex flex-col grow">
       <main id="main-content" class="grow">
         {{ block "main" . }}{{ end }}

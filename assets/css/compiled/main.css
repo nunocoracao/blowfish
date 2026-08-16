@@ -1327,6 +1327,9 @@
   .h-0 {
     height: 0px;
   }
+  .h-1 {
+    height: var(--spacing);
+  }
   .h-1\/2 {
     height: calc(1 / 2 * 100%);
   }
@@ -4686,7 +4689,6 @@ pre {
   height: 100%;
 }
 .thumbnail_card {
-  min-width: 300px;
   aspect-ratio: var(--thumbnail-aspect-ratio, 1.5);
   height: auto;
 }
