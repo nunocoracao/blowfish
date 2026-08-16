@@ -4164,7 +4164,6 @@ pre {
   height: 100%;
 }
 .thumbnail_card {
-  min-width: 300px;
   aspect-ratio: var(--thumbnail-aspect-ratio, 1.5);
   height: auto;
 }
