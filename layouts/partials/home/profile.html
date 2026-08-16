@@ -24,6 +24,8 @@
           width="144"
           height="144"
           alt="{{ $.Site.Params.Author.name | default `Author` }}"
+          loading="eager"
+          fetchpriority="high"
           src="{{ $final.RelPermalink }}"
           data-zoom-src="{{ $squareImage.RelPermalink }}">
       {{ end }}
