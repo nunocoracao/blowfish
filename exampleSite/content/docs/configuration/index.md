@@ -278,6 +278,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `article.showPagination` | `true` | Whether or not the next/previous article links are displayed in the article footer. |
 | `article.invertPagination` | `false` | Whether or not to flip the direction of the next/previous article links. |
 | `article.showReadingTime` | `true` | Whether or not article reading times are displayed. |
+| `article.showReadingProgress` | `false` | When set to `true` a reading progress bar is displayed at the top of articles. |
 | `article.showTableOfContents` | `false` | Whether or not the table of contents is displayed on articles. |
 | `article.showRelatedContent` | `false` | Display related content for each post. Might required additional configuration to your `hugo.toml`. Please check the theme `hugo.toml` if you want to enable this feature and copy all the relevant _related_ entries. Also check [Hugo's docs](https://gohugo.io/content-management/related/) on related content. |
 | `article.relatedContentLimit` | `3` | Limit of related articles to display if `showRelatedContent` is turned on. |
