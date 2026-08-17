@@ -46,7 +46,19 @@
     "author" : {
       "@type": "Person",
       "name": "{{ $author.name | safeJS }}"{{ with $author.image }},
-      "image": {{ . | absURL }}{{ end }}{{ if $sameAs }},
+      {{- $authorImageURL := "" }}
+      {{- if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+        {{- $authorImageURL = . }}
+      {{- else }}
+        {{- with resources.Get . }}
+          {{- /* Publish the original so the schema URL resolves even when
+            every other reference uses optimised variants. */}}
+          {{- $authorImageURL = .Permalink }}
+        {{- else }}
+          {{- $authorImageURL = . | absURL }}
+        {{- end }}
+      {{- end }}
+      "image": {{ $authorImageURL }}{{ end }}{{ if $sameAs }},
       "sameAs": [{{ range $i, $u := $sameAs }}{{ if $i }}, {{ end }}{{ $u }}{{ end }}]{{ end }}
     },
     {{ with .PublishDate }}"copyrightYear": "{{ .Format "2006" }}",{{ end }}
