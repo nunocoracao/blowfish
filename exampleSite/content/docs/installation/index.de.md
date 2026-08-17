@@ -37,7 +37,7 @@ Diese Anweisungen bringen Sie von einem komplett leeren Zustand mit Hugo und Blo
 Wenn Sie Hugo noch nicht verwendet haben, müssen Sie es [auf Ihrem lokalen Computer installieren](https://gohugo.io/getting-started/installing). Sie können überprüfen, ob es bereits installiert ist, indem Sie den Befehl `hugo version` ausführen.
 
 {{< alert >}}
-Stellen Sie sicher, dass Sie **Hugo Version 0.158.0** oder höher verwenden, da das Theme einige der neuesten Hugo-Funktionen nutzt.
+Stellen Sie sicher, dass Sie **Hugo Version 0.162.0** oder höher verwenden, da das Theme einige der neuesten Hugo-Funktionen nutzt.
 {{< /alert >}}
 
 Sie finden detaillierte Installationsanweisungen für Ihre Plattform in der [Hugo-Dokumentation](https://gohugo.io/getting-started/installing).
