@@ -37,7 +37,7 @@ Estas instrucciones te ayudarán a empezar con Hugo y Blowfish desde un estado c
 Si nunca has usado Hugo antes, necesitarás [instalarlo en tu máquina local](https://gohugo.io/getting-started/installing). Puedes verificar si ya está instalado ejecutando el comando `hugo version`.
 
 {{< alert >}}
-Asegúrate de estar usando **Hugo versión 0.158.0** o posterior, ya que el tema aprovecha algunas de las últimas características de Hugo.
+Asegúrate de estar usando **Hugo versión 0.162.0** o posterior, ya que el tema aprovecha algunas de las últimas características de Hugo.
 {{< /alert >}}
 
 Puedes encontrar instrucciones de instalación detalladas para tu plataforma en la [documentación de Hugo](https://gohugo.io/getting-started/installing).
