@@ -1,7 +1,7 @@
 English | [Français](https://github.com/nunocoracao/blowfish/blob/main/README.fr.md) | [Deutsch](https://github.com/nunocoracao/blowfish/blob/main/README.de.md) | [Português (PT)](https://github.com/nunocoracao/blowfish/blob/main/README.pt-pt.md) | [Português (BR)](https://github.com/nunocoracao/blowfish/blob/main/README.pt-br.md) | [Español](https://github.com/nunocoracao/blowfish/blob/main/README.es.md) | [日本語](https://github.com/nunocoracao/blowfish/blob/main/README.ja.md) | [简体中文](https://github.com/nunocoracao/blowfish/blob/main/README.zh-cn.md) | [Indonesian](https://github.com/nunocoracao/blowfish/blob/main/README.id.md)
 # Blowfish
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6e5256d4-3148-4d69-879c-310341020fe9/deploy-status)](https://app.netlify.com/sites/snazzy-dango-efb2ec/deploys)
-[![Minimum Hugo Version](https://img.shields.io/static/v1?label=min-HUGO-version&message=0.158.0&color=blue&logo=hugo)](https://github.com/gohugoio/hugo/releases/tag/v0.158.0)
+[![Minimum Hugo Version](https://img.shields.io/static/v1?label=min-HUGO-version&message=0.162.0&color=blue&logo=hugo)](https://github.com/gohugoio/hugo/releases/tag/v0.162.0)
 [![GitHub](https://img.shields.io/github/license/nunocoracao/blowfish)](https://github.com/nunocoracao/blowfish/blob/main/LICENSE)
 [![Blowfish](https://img.shields.io/badge/Hugo--Themes-@Blowfish-blue)](https://themes.gohugo.io/themes/blowfish/)
 ![code-size](https://img.shields.io/github/languages/code-size/nunocoracao/blowfish)
@@ -26,14 +26,20 @@ Blowfish is designed to be a powerful, lightweight theme for [Hugo](https://gohu
 
 ## Features
 
-- Fully responsive layout built with Tailwind CSS 3.0
+- Fully responsive layout built with Tailwind CSS 4
 - Multiple colour schemes (or fully customise your own)
 - Dark mode (forced on/off or auto-switching with user toggle)
+- Multiple homepage layouts including a product-style landing page with hero image, stats, and feature grids
+- Floating glass header with ⌘K / Ctrl+K search shortcut
+- Global background canvas with heroes that dissolve into it on scroll
+- Reading progress bar for articles
+- Interactive homepage layout switcher for live previews
+- Agent skill so AI coding agents (like Claude Code) can install and configure the theme for you
+- Print-friendly pages with dedicated print styles
 - Highly customisable configuration
 - Firebase integration to support dynamic data
 - Views count & like mechanism
 - Related articles
-- Multiple homepage layouts
 - Multiple authors
 - Series of articles
 - Date and weight based article sorting
@@ -44,7 +50,7 @@ Blowfish is designed to be a powerful, lightweight theme for [Hugo](https://gohu
 - Scrollable table of contents
 - Multilingual content support including support for RTL languages
 - Ability to link to posts on third-party websites
-- Support for several shortcodes like Gallery, Timeline, GitHub cards, and Carousels
+- 40+ shortcodes including Gallery, Timeline, GitHub cards, Carousels, Stats, Feature grids, Steps, and CTA buttons
 - GitHub Alerts syntax, 15 types, collapsible support
 - Buymeacoffee integration
 - Client-side site search powered by Fuse.js
@@ -80,11 +86,22 @@ Blowfish supports several installation methods - as a git submodule, a Hugo Modu
 
 Detailed instructions for each method can be found in the [Installation](https://blowfish.page/docs/installation) docs. You should consult the documentation for the simplest setup experience. Below is a quick start guide using submodules if you are using git, or Hugo modules if you're already confident installing Hugo themes.
 
+### Quick start with an AI agent
+
+Blowfish ships an [agent skill](https://github.com/nunocoracao/blowfish/tree/main/.claude/skills/blowfish) that teaches AI coding agents — like Claude Code — how to install, configure, and build sites with the theme. Install it from the Blowfish plugin marketplace in Claude Code:
+
+```shell
+/plugin marketplace add nunocoracao/blowfish
+/plugin install blowfish@blowfish
+```
+
+Or simply copy the skill folder into your site repository at `.claude/skills/blowfish/` — agents pick up project skills automatically. Then ask your agent to set up Blowfish for you.
+
 ### Quick start using Blowfish Tools
 
 > **Note:** Ensure you have **Node.js**, **Git** and **Hugo** installed, and that you have created a new Hugo project before proceeding.
 
-We just launched a new CLI tool to help you get started with Blowfish. It will create a new Hugo project, install the theme and set up the theme configuration files for you. It's still in beta so please [report any issues you find](https://github.com/nunocoracao/blowfish-tools).
+Blowfish Tools is a CLI that helps you get started with Blowfish. It will create a new Hugo project, install the theme and set up the theme configuration files for you. Please [report any issues you find](https://github.com/nunocoracao/blowfish-tools).
 
 Install the CLI tool globally using npm (or other package manager):
 ```shell
@@ -137,7 +154,7 @@ blowfish-tools new mynewsite
 
    ```toml
    [[imports]]
-   path = "github.com/nunocoracao/blowfish/v2"
+   path = "github.com/nunocoracao/blowfish/v3"
    ```
 
 3. Start your server using `hugo server` and the theme will be downloaded automatically.
@@ -155,6 +172,10 @@ blowfish-tools new mynewsite
 As new releases are posted, you can update the theme using Hugo. Simply run `hugo mod get -u` from your project directory and the theme will automatically update to the latest release.
 
 Detailed [update instructions](https://blowfish.page/docs/installation/#installing-updates) are available in the docs.
+
+### Upgrading from v2 to v3
+
+Blowfish v3 is fully backwards compatible: every new feature is opt-in and no configuration options or templates were removed. Git submodule and manual installs upgrade as usual with no changes; Hugo module users just change the import path in `config/_default/module.toml` from `github.com/nunocoracao/blowfish/v2` to `github.com/nunocoracao/blowfish/v3` and run `hugo mod get -u`. See the [upgrade instructions](https://blowfish.page/docs/installation/#upgrading-from-v2-to-v3) for details.
 
 ---
 
