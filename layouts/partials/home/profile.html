@@ -15,9 +15,9 @@
         {{ $final := $authorImage }}
         {{ $squareImage := $authorImage }}
         {{ if not (or $disableImageOptimization (eq $authorImage.MediaType.SubType "svg")) }}
-          {{ $final = $authorImage.Fill (print "288x288 q" ( $.Site.Params.Author.imagequality | default "96" )) }}
+          {{ $final = $authorImage.Fill (print "288x288 Center q" ( $.Site.Params.Author.imagequality | default "96" )) }}
           {{ $shortSide := int (math.Min $authorImage.Width $authorImage.Height) }}
-          {{ $squareImage = $authorImage.Crop (printf "%dx%d" $shortSide $shortSide ) }}
+          {{ $squareImage = $authorImage.Crop (printf "%dx%d Center" $shortSide $shortSide ) }}
         {{ end }}
         <img
           class="mb-2 h-36 w-36 rounded-full"

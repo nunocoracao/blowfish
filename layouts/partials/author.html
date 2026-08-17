@@ -11,9 +11,9 @@
       {{ $final := $authorImage }}
       {{ $squareImage := $authorImage }}
       {{ if not (or $disableImageOptimization (eq $authorImage.MediaType.SubType "svg")) }}
-        {{ $final = $authorImage.Fill "192x192" }}
+        {{ $final = $authorImage.Fill "192x192 Center" }}
         {{ $shortSide := int (math.Min $authorImage.Width $authorImage.Height) }}
-        {{ $squareImage = $authorImage.Crop (printf "%dx%d" $shortSide $shortSide ) }}
+        {{ $squareImage = $authorImage.Crop (printf "%dx%d Center" $shortSide $shortSide ) }}
       {{ end }}
       <img
         class="!mt-0 !mb-0 h-24 w-24 rounded-full me-4"
@@ -27,9 +27,9 @@
       {{ $final := $authorImage }}
       {{ $squareImage := $authorImage }}
       {{ if not $disableImageOptimization }}
-        {{ $final = $authorImage.Fill "192x192" }}
+        {{ $final = $authorImage.Fill "192x192 Center" }}
         {{ $shortSide := int (math.Min $authorImage.Width $authorImage.Height) }}
-        {{ $squareImage = $authorImage.Crop (printf "%dx%d" $shortSide $shortSide ) }}
+        {{ $squareImage = $authorImage.Crop (printf "%dx%d Center" $shortSide $shortSide ) }}
       {{ end }}
       <img
         class="!mt-0 !mb-0 h-24 w-24 rounded-full me-4"

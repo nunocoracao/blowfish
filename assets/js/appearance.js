@@ -55,8 +55,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
   const switcherMobile = document.getElementById("appearance-switcher-mobile");
 
   // Load the i18n translations for the tooltips
-  const darkLabel = '{{ i18n "footer.dark_appearance" }}';
-  const lightLabel = '{{ i18n "footer.light_appearance" }}';
+  const darkLabel = {{ i18n "footer.dark_appearance" | jsonify }};
+  const lightLabel = {{ i18n "footer.light_appearance" | jsonify }};
 
   updateMeta();
   this.updateLogo?.(getTargetAppearance());
