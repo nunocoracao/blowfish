@@ -26,14 +26,20 @@ Blowfishは[Hugo](https://gohugo.io)のために設計された強力で軽量�
 
 ## 機能
 
-- Tailwind CSS 3.0 で構築された、完璧なレスポンシブデザイン
+- Tailwind CSS 4 で構築された、完璧なレスポンシブデザイン
 - 複数の配色 (または、自分で完全にカスタマイズ可能)
 - ダークモード (強制オン/オフ か 自動選択・ユーザー切り替え)
+- ヒーロー画像・統計・機能グリッドを備えたプロダクト風ランディングページを含む、複数のホームページレイアウト
+- ⌘K / Ctrl+K 検索ショートカット付きのフローティング グラスヘッダー
+- スクロールに合わせてヒーローが溶け込むグローバル背景キャンバス
+- 記事の読了プログレスバー
+- ライブプレビューできるインタラクティブなホームページレイアウト切り替え機能
+- AI コーディングエージェント (Claude Code など) がテーマのインストールと設定を代行できるエージェントスキル
+- 専用の印刷スタイルによる印刷に適したページ
 - 高度なカスタマイズが可能な設定
 - Firebase 連携で動的データをサポート
 - 閲覧数といいね機能
 - 関連記事
-- 複数のホームページレイアウト
 - 複数人の著者
 - シリーズ記事
 - 日付と価値付けによる記事の並べ替え
@@ -44,7 +50,7 @@ Blowfishは[Hugo](https://gohugo.io)のために設計された強力で軽量�
 - スクロール可能な目次
 - RTL 言語を含む多言語コンテンツのサポート
 - サードパーティー ウェブサイトの投稿へのリンク
-- ギャラリー、タイムライン、GitHub カード、カルーセルなど、複数のショートコードに対応
+- ギャラリー、タイムライン、GitHub カード、カルーセル、統計、機能グリッド、ステップ、CTA ボタンなど、40 種類以上のショートコード
 - GitHub Alerts 構文、15 種類、折りたたみ対応
 - Buy Me a Coffee 連携
 - Fuse.js を利用したクライアントサイドのサイト内検索
@@ -80,11 +86,22 @@ Blowfish は、git サブモジュール、Hugo モジュール、または完�
 
 各方法の詳細な手順は、[インストール](https://blowfish.page/docs/installation)ドキュメントに記載されています。最も簡単なセットアップ方法については、ドキュメントを参照してください。以下にクイックスタートガイドを示します。git を使用している場合はサブモジュール、Hugo テーマのインストールに慣れている場合は Hugo モジュールを使用するのがおすすめです。
 
+### AI エージェントを使ったクイックスタート
+
+Blowfish には、AI コーディングエージェント (Claude Code など) にテーマのインストール、設定、サイト構築の方法を教える[エージェントスキル](https://github.com/nunocoracao/blowfish/tree/main/.claude/skills/blowfish)が同梱されています。Claude Code で Blowfish プラグインマーケットプレイスからインストールしてください:
+
+```shell
+/plugin marketplace add nunocoracao/blowfish
+/plugin install blowfish@blowfish
+```
+
+または、スキルフォルダをサイトのリポジトリの `.claude/skills/blowfish/` にコピーするだけでも構いません。エージェントはプロジェクトスキルを自動的に認識します。あとはエージェントに Blowfish のセットアップを依頼してください。
+
 ### Blowfish Tools を使ったクイックスタート
 
 > **注意:**  **Node.js**、**Git**、**Hugo** がインストールされていること、そして先に進む前に新しい Hugo プロジェクトが作成されていることを確認してください。
 
-Blowfish を使い始めるのに役立つ新しい CLI ツールをリリースしました。このツールは、新しい Hugo プロジェクトを作成し、テーマをインストールし、テーマ設定ファイルをセットアップします。まだベータ版なので、[問題を見つけたら報告してください](https://github.com/nunocoracao/blowfish-tools)。
+Blowfish Tools は、Blowfish を使い始めるのに役立つ CLI ツールです。このツールは、新しい Hugo プロジェクトを作成し、テーマをインストールし、テーマ設定ファイルをセットアップします。[問題を見つけたら報告してください](https://github.com/nunocoracao/blowfish-tools)。
 
 npm（または他のパッケージマネージャー）を使って CLI ツールをグローバルにインストールします:
 ```shell
@@ -155,6 +172,10 @@ blowfish-tools new mynewsite
 新しいリリースが公開されたら、Hugo を使ってテーマをアップデートできます。プロジェクトディレクトリから `hugo mod get -u` を実行するだけで、テーマは自動的に最新リリースにアップデートされます。
 
 詳細な[アップデート手順](https://blowfish.page/docs/installation/#installing-updates)はドキュメントに記載されています。
+
+### v2 から v3 へのアップグレード
+
+Blowfish v3 は完全な後方互換性を備えています。新機能はすべてオプトインで、設定オプションやテンプレートの削除は一切ありません。git サブモジュールや手動インストールの場合は、変更なしで通常どおりアップグレードできます。Hugo モジュールを使用している場合は、`config/_default/module.toml` のインポートパスを `github.com/nunocoracao/blowfish/v2` から `github.com/nunocoracao/blowfish/v3` に変更して `hugo mod get -u` を実行するだけです。詳細は[アップグレード手順](https://blowfish.page/docs/installation/#upgrading-from-v2-to-v3)を参照してください。
 
 ---
 
