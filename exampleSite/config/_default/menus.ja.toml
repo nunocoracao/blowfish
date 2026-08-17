@@ -48,7 +48,8 @@
   weight = 90
 
 [[main]]
-  name = "グッズ"
+  identifier = "merch"
+  pre = "shirt"
   url = "https://www.teepublic.com/user/blowfish-store/t-shirts"
   weight = 100
 
@@ -62,6 +63,12 @@
   pre = "x-twitter"
   url = "https://twitter.com/burufugu"
   weight = 200
+
+[[main]]
+  identifier = "bluesky"
+  pre = "bluesky"
+  url = "https://bsky.app/profile/burufugu.bsky.social"
+  weight = 250
 
 #[[main]]
 #  identifier = "mastodon"
