@@ -1,5 +1,9 @@
 {{ $mobileMenuStyle := .Site.Params.header.mobileMenuStyle | default "fullscreen" }}
-<div class="relative flex items-center h-14 gap-4">
+<div class="mobile-header-row relative flex items-center h-14 gap-4">
+  {{ if hugo.IsMultilingual }}
+    {{ partial "header/components/translations.html" . }}
+  {{ end }}
+
   {{ if .Site.Params.footer.showAppearanceSwitcher | default false }}
     <button
       id="appearance-switcher-mobile"
@@ -165,17 +169,10 @@
 {{ end }}
 
 {{ define "mobile-footer-components" }}
-  {{ if or
-    hugo.IsMultilingual
-    .Site.Params.enableA11y
-  }}
+  {{ if .Site.Params.enableA11y | default false }}
     <div
-      class="flex flex-wrap items-center [&_span]:text-2xl [&_.translation_button_.icon]:text-4xl! [&_.translation_button_span]:text-base! [&_.translation_.menuhide_span]:text-sm! gap-x-6 ps-2 mt-8 pt-8 border-t bf-border-color">
-      {{ partial "header/components/translations.html" . }}
-
-      {{ if .Site.Params.enableA11y | default false }}
-        {{ partial "header/components/a11y.html" (dict "prefix" "mobile-menu-") }}
-      {{ end }}
+      class="flex flex-wrap items-center [&_span]:text-2xl gap-x-6 ps-2 mt-8 pt-8 border-t bf-border-color">
+      {{ partial "header/components/a11y.html" (dict "prefix" "mobile-menu-") }}
     </div>
   {{ end }}
 {{ end }}

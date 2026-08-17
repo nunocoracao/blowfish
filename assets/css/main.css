@@ -486,7 +486,8 @@ body:has(#mobile-menu-toggle:checked) {
 }
 
 /* Dropdowns near the end of the bar open leftward so they stay on screen */
-.nested-menu:nth-last-child(-n + 3) .menuhide {
+.nested-menu:nth-last-child(-n + 3) .menuhide,
+.mobile-header-row .menuhide {
   inset-inline-end: 0;
 }
 
