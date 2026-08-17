@@ -1,5 +1,6 @@
 ---
 title: "シリーズ"
+featureimage: "images/v3/series.png"
 weight: 12
 draft: false
 description: "記事をシリーズの下にグループ化する方法を学びます。"

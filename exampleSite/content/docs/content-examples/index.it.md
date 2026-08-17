@@ -1,5 +1,6 @@
 ---
 title: "Content Examples"
+featureimage: "images/v3/content-examples.png"
 weight: 11
 draft: false
 description: "All the partials available in Blowfish."

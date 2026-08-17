@@ -1,5 +1,6 @@
 ---
 title: "ホスティングとデプロイ"
+featureimage: "images/v3/publishing-system.png"
 weight: 14
 draft: false
 description: "Blowfish サイトのデプロイ方法について説明します。"

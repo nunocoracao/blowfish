@@ -1,5 +1,6 @@
 ---
 title: "ホームページレイアウト"
+featureimage: "images/v3/homepage-layout.png"
 weight: 5
 draft: false
 description: "Blowfish テーマのホームページレイアウト設定"
@@ -9,7 +10,7 @@ series: ["Documentation"]
 series_order: 5
 ---
 
-Blowfish は完全に柔軟なホームページレイアウトを提供します。2つのメインテンプレートから選択でき、追加設定でデザインを調整できます。または、独自のテンプレートを提供して、ホームページのコンテンツを完全に制御することもできます。
+Blowfish は柔軟なホームページレイアウトを提供しており、各デザインを調整するための設定が用意されています。または、独自のテンプレートを提供して、ホームページのコンテンツを完全に制御することもできます。
 
 ホームページのレイアウトは、`params.toml` 設定ファイルの `homepage.layout` 設定によって制御されます。さらに、すべてのレイアウトには、[最新記事](#最新記事)のリストを含めるオプションがあります。
 
@@ -57,6 +58,39 @@ Blowfish は完全に柔軟なホームページレイアウトを提供しま�
 
 カードレイアウトを有効にするには、`params.toml` 設定ファイルで `homepage.layout = "card"` と `homepage.homepageImage` を設定します。
 
+## ランディングレイアウト (landing)
+
+ランディングレイアウトは、プロダクトサイト、ドキュメントハブ、そしてより強い第一印象を必要とする個人サイトのために設計されています。ページの冒頭には、ゆったりとしたエディトリアルなヒーロー（アイブロウ、ステートメントとなる見出し、リード文、コールトゥアクションボタン）が表示され、オプションでサイト全体の背景に溶け込む全幅のヒーロー画像を背面に配置でき、要素が順に現れるエントランスアニメーションが付いています。このアニメーションは、動きを減らす設定（reduced motion）を有効にしている訪問者に対しては自動的に無効になります。ヒーローより下はすべて標準の Markdown と Blowfish のショートコードなので、ページ全体の移植性と保守性が保たれます。
+
+{{< figure src="img/home-landing.png" class="thumbnailshadow" >}}
+
+ランディングレイアウトを有効にするには、`params.toml` 設定ファイルで `homepage.layout = "landing"` を設定します。
+
+ヒーローは `content/_index.md` のフロントマターによって制御されます。すべてのフィールドはオプションで、省略したものは単に表示されません:
+
+```yaml
+---
+title: "Build a site that feels unmistakably yours."
+heroCaption: "Blowfish" # eyebrow above the title; defaults to the author name
+heroLead: "A short statement that expands on the title."
+heroButtons:
+  - label: "Get started"
+    url: "/docs/installation/"
+  - label: "Explore the docs"
+    url: "/docs/"
+    style: "outline" # "primary" (default) or "outline"
+---
+```
+
+| フロントマター | 説明 |
+| ------------ | ----------- |
+| `heroCaption` | タイトルの上に表示される小さな大文字のアイブロウです。デフォルトは `params.Author.name` です。 |
+| `heroLead` | タイトルの下に表示されるリード文です。Markdown をサポートします。 |
+| `heroButtons` | コールトゥアクションボタンのリストです（`label`、`url`、およびオプションの `style`）。[`cta` ショートコード]({{< ref "shortcodes#cta-button" >}})と同じスタイルを使用します。 |
+
+`_index.md` の Markdown 本文はヒーローの下に表示されるため、統計、フィーチャーグリッド、ステップなどのショートコードでページの残りの部分を構築できます。ランディングレイアウトは、[設定ドキュメント]({{< ref "configuration" >}})で説明されているサイト全体の `backgroundCanvas` オプションと相性が良いです。
+
+
 ## カスタムレイアウト
 
 組み込みのホームページレイアウトがニーズに合わない場合は、独自のカスタムレイアウトを提供するオプションがあります。これにより、ページコンテンツを完全に制御でき、基本的に作業するための白紙の状態が得られます。
@@ -67,7 +101,7 @@ Blowfish は完全に柔軟なホームページレイアウトを提供しま�
 
 カスタムレイアウトに[最新記事](#最新記事)を含めるには、`recent-articles/main.html` パーシャルを使用します。
 
-例として、このサイトの[ホームページ]({{< ref "/" >}})では、カスタムレイアウトを使用して、プロフィールレイアウトとページレイアウトを切り替えています。動作を確認するには、[GitHub リポジトリ](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/layouts/partials/home/custom.html)にアクセスしてください。
+付属のサンプルサイトは、組み込みのランディングレイアウトと標準のコンテンツショートコードを使用しています。設定方法を確認するには、[GitHub リポジトリ](https://github.com/nunocoracao/blowfish/tree/main/exampleSite)にアクセスしてください。
 
 ## 最新記事
 

@@ -1,5 +1,6 @@
 ---
 title: "Múltiples autores"
+featureimage: "images/v3/multiple-authors.png"
 weight: 8
 draft: false
 description: "Configura múltiples autores para tus artículos."

@@ -1,5 +1,6 @@
 ---
 title: "Firebase: Vistas & Likes"
+featureimage: "images/v3/content-network.png"
 weight: 15
 draft: false
 description: "Aprende cómo integrar Firebase y obtener datos dinámicos para vistas y likes."

@@ -1,5 +1,6 @@
 ---
 title: "Layout da Página Inicial"
+featureimage: "images/v3/homepage-layout.png"
 weight: 5
 draft: false
 description: "Configuração do layout da página inicial no tema Blowfish."
@@ -9,7 +10,7 @@ series: ["Documentação"]
 series_order: 5
 ---
 
-O Blowfish fornece um layout de página inicial totalmente flexível. Existem dois modelos principais para escolher com definições adicionais para ajustar o design. Alternativamente, também pode fornecer o seu próprio modelo e ter controlo total sobre o conteúdo da página inicial.
+O Blowfish fornece layouts de página inicial flexíveis, com definições para ajustar cada design. Alternativamente, também pode fornecer o seu próprio modelo e ter controlo total sobre o conteúdo da página inicial.
 
 O layout da página inicial é controlado pela definição `homepage.layout` no ficheiro de configuração `params.toml`. Além disso, todos os layouts têm a opção de incluir uma lista de [artigos recentes](#artigos-recentes).
 
@@ -57,6 +58,38 @@ O layout de cartão é uma extensão do layout de página. Fornece o mesmo níve
 
 Para ativar o layout Cartão, defina `homepage.layout = "card"` e `homepage.homepageImage` no ficheiro de configuração `params.toml`.
 
+## Layout Landing
+
+O layout Landing foi pensado para sites de produto, hubs de documentação e sites pessoais que precisam de uma abertura mais marcante. Abre com um hero espaçoso e editorial — legenda (eyebrow), título de destaque, parágrafo introdutório e botões de call-to-action — opcionalmente apoiado por uma imagem hero de largura total que se dissolve no fundo global, com uma animação de entrada faseada que é automaticamente desativada para os visitantes que preferem movimento reduzido. Tudo o que está abaixo do hero é Markdown padrão e shortcodes do Blowfish, pelo que a página completa se mantém portátil e fácil de manter.
+
+{{< figure src="img/home-landing.png" class="thumbnailshadow" >}}
+
+Para ativar o layout Landing, defina `homepage.layout = "landing"` no ficheiro de configuração `params.toml`.
+
+O hero é controlado pelo front matter de `content/_index.md`. Todos os campos são opcionais — tudo o que omitir simplesmente não é apresentado:
+
+```yaml
+---
+title: "Build a site that feels unmistakably yours."
+heroCaption: "Blowfish" # eyebrow above the title; defaults to the author name
+heroLead: "A short statement that expands on the title."
+heroButtons:
+  - label: "Get started"
+    url: "/docs/installation/"
+  - label: "Explore the docs"
+    url: "/docs/"
+    style: "outline" # "primary" (default) or "outline"
+---
+```
+
+| Front matter | Descrição |
+| ------------ | ----------- |
+| `heroCaption` | Pequena legenda (eyebrow) em maiúsculas acima do título. A predefinição é `params.Author.name`. |
+| `heroLead` | Parágrafo introdutório apresentado sob o título. Suporta Markdown. |
+| `heroButtons` | Lista de botões de call-to-action (`label`, `url` e `style` opcional). Utiliza o mesmo estilo do [shortcode `cta`]({{< ref "shortcodes#cta-button" >}}). |
+
+O corpo Markdown de `_index.md` é apresentado abaixo do hero, pelo que estatísticas, grelhas de funcionalidades, passos e quaisquer outros shortcodes podem construir o resto da página. O layout Landing combina bem com a opção `backgroundCanvas` aplicada a todo o site, descrita na [documentação de configuração]({{< ref "configuration" >}}).
+
 
 ## Layout personalizado
 
@@ -68,7 +101,7 @@ Com o valor de configuração definido, crie um novo ficheiro `custom.html` e co
 
 Para incluir [artigos recentes](#artigos-recentes) no layout personalizado, utilize o partial `recent-articles/main.html`.
 
-Como exemplo, a [página inicial]({{< ref "/" >}}) deste site utiliza o layout personalizado para permitir alternar entre os layouts de perfil e página. Visite o [repositório GitHub](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/layouts/partials/home/custom.html) para ver como funciona.
+O site de exemplo incluído utiliza o layout Landing integrado e shortcodes de conteúdo padrão. Visite o [repositório GitHub](https://github.com/nunocoracao/blowfish/tree/main/exampleSite) para ver como está configurado.
 
 ## Artigos recentes
 

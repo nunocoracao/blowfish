@@ -1,5 +1,6 @@
 ---
 title: "Blowfish へようこそ"
+featureimage: "images/v3/welcome.png"
 weight: 1
 draft: false
 description: "Blowfish バージョン 2.0 の新機能をご紹介。"

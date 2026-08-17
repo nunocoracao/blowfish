@@ -1,5 +1,6 @@
 ---
 title: "Partials"
+featureimage: "images/v3/partials.png"
 weight: 9
 draft: false
 description: "Todos los partials disponibles en Blowfish."

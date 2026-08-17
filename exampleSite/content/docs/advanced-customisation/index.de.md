@@ -1,5 +1,6 @@
 ---
 title: "Erweiterte Anpassung"
+featureimage: "images/v3/advanced-customisation.png"
 weight: 13
 draft: false
 description: "Erfahren Sie, wie Sie Blowfish manuell erstellen."

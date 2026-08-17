@@ -11,6 +11,128 @@ series_order: 8
 
 Zusätzlich zu allen [Standard-Hugo-Shortcodes](https://gohugo.io/content-management/shortcodes/) fügt Blowfish einige zusätzliche für erweiterte Funktionalität hinzu.
 
+## Accordion
+
+`accordion` erstellt eine Reihe von auf- und zuklappbaren Panels. Verwenden Sie den Sub-Shortcode `accordionItem`, um jedes Element zu definieren. Mit dem Parameter `mode` können Sie steuern, ob mehrere Elemente gleichzeitig geöffnet sein können.
+
+<!-- prettier-ignore-start -->
+| Parameter | Beschreibung |
+| --------- | --------------------------------------------------------------------------------------------------- |
+| `mode`       | **Optional.** `collapse` (nur eines geöffnet) oder `open` (mehrere geöffnet). Standard: `collapse`. |
+| `separated`  | **Optional.** `true`, um jedes Element als separate Karte anzuzeigen. Standard: `false` (verbundene Liste). |
+<!-- prettier-ignore-end -->
+
+`accordionItem`-Parameter:
+
+<!-- prettier-ignore-start -->
+| Parameter | Beschreibung |
+| --------- | --------------------------------------------------------------------------------------------------- |
+| `title`   | **Erforderlich.** Titel, der in der Kopfzeile des Elements angezeigt wird. |
+| `open`    | **Optional.** Auf `true` setzen, damit das Element standardmäßig geöffnet ist. |
+| `header`  | **Optional.** Alias für `title`, aus Kompatibilität mit anderen Shortcodes beibehalten. |
+| `icon`    | **Optional.** Name des Symbols, das vor dem Titel angezeigt wird. |
+| `align`   | **Optional.** Textausrichtung innerhalb des Elements: `left`, `center`, `right` |
+<!-- prettier-ignore-end -->
+
+**Beispiel 1: `mode="open"` (mehrere Elemente können gleichzeitig geöffnet sein) + `separated=true`**
+
+```md
+{{</* accordion mode="open" separated=true */>}}
+  {{</* accordionItem title="Markdown example" icon="code" open=true */>}}
+  This item demonstrates Markdown rendering:
+  - **Bold text**
+  - Lists
+  - `inline code`
+  {{</* /accordionItem */>}}
+
+  {{</* accordionItem title="Shortcode example" md=false */>}}
+  This item demonstrates shortcode rendering with <code>md=false</code>:
+  
+  {{</* alert */>}}This is an inline alert.{{</* /alert */>}}
+  {{</* /accordionItem */>}}
+{{</* /accordion */>}}
+```
+
+{{< accordion mode="open" separated=true >}}
+  {{< accordionItem title="Markdown example" icon="code" open=true >}}
+  This item demonstrates Markdown rendering:
+  - **Bold text**
+  - Lists
+  - `inline code`
+  {{< /accordionItem >}}
+
+  {{< accordionItem title="Shortcode example" md=false >}}
+  This item demonstrates shortcode rendering with <code>md=false</code>:
+  
+  {{< alert >}}This is an inline alert.{{< /alert >}}
+  {{< /accordionItem >}}
+{{< /accordion >}}
+
+**Beispiel 2: `mode="collapse"` (nur ein Element gleichzeitig geöffnet)**
+
+```md
+{{</* accordion mode="collapse" */>}}
+  {{</* accordionItem title="First item" open=true */>}}
+  This item uses Markdown with a short list:
+  1. One
+  2. Two
+  3. Three
+  {{</* /accordionItem */>}}
+
+  {{</* accordionItem title="Second item" md=false */>}}
+  This item includes another shortcode:
+  {{</* badge */>}}Tip{{</* /badge */>}}
+  {{</* /accordionItem */>}}
+{{</* /accordion */>}}
+```
+
+{{< accordion mode="collapse" >}}
+  {{< accordionItem title="First item" open=true >}}
+  This item uses Markdown with a short list:
+  1. One
+  2. Two
+  3. Three
+  {{< /accordionItem >}}
+
+  {{< accordionItem title="Second item" md=false >}}
+  This item includes another shortcode:
+  {{< badge >}}Tip{{< /badge >}}
+  {{< /accordionItem >}}
+{{< /accordion >}}
+
+<br/><br/><br/>
+
+## Admonition
+
+Admonitions ermöglichen es Ihnen, auffällige Hinweisboxen in Ihren Inhalt einzufügen.
+
+Admonitions dienen einem ähnlichen Zweck wie der Alert-Shortcode, werden jedoch über Hugo-Render-Hooks implementiert. Der Hauptunterschied liegt in der Syntax: Admonitions verwenden Markdown-Syntax, was sie portabler über verschiedene Plattformen macht, während Shortcodes Hugo-spezifisch sind. Die Syntax ähnelt GitHub-Alerts:
+
+```md
+> [!NOTE]
+> Eine Admonition vom Typ Note.
+
+> [!TIP]+ Benutzerdefinierter Titel
+> Eine einklappbare Admonition mit benutzerdefiniertem Titel.
+```
+
+> [!NOTE]
+> Eine Admonition vom Typ Note.
+
+> [!TIP]+ Benutzerdefinierter Titel
+> Eine einklappbare Admonition mit benutzerdefiniertem Titel.
+
+Das Alert-Zeichen (`+` oder `-`) ist optional, um zu steuern, ob die Admonition eingeklappt ist oder nicht. Beachten Sie, dass das Alert-Zeichen nur mit Obsidian kompatibel ist.
+
+> [!INFO]- Unterstützte Typen
+> Gültige Admonition-Typen umfassen [GitHub-Alert-Typen](https://github.blog/changelog/2023-12-14-new-markdown-extension-alerts-provide-distinctive-styling-for-significant-content/) und [Obsidian-Callout-Typen](https://help.obsidian.md/callouts). Die Typen sind nicht case-sensitiv.
+>
+> **GitHub-Typen:** `NOTE`, `TIP`, `IMPORTANT`, `WARNING`, `CAUTION`
+> **Obsidian-Typen:** `note`, `abstract`, `info`, `todo`, `tip`, `success`, `question`, `warning`, `failure`, `danger`, `bug`, `example`, `quote`
+
+> [!INFO]- Admonition anpassen
+> Siehe die [Anleitung zur Anpassung von Admonition](https://github.com/nunocoracao/blowfish/blob/main/layouts/_default/_markup/render-blockquote.html).
+
 ## Alert
 
 `alert` gibt seinen Inhalt als stilisierte Nachrichtenbox innerhalb Ihres Artikels aus. Es ist nützlich, um auf wichtige Informationen aufmerksam zu machen, die der Leser nicht übersehen sollte.
@@ -64,36 +186,38 @@ Dies ist ein Fehler!
 
 <br/><br/><br/>
 
-## Admonition
+## Ansible Galaxy Card
 
-Admonitions ermöglichen es Ihnen, auffällige Hinweisboxen in Ihren Inhalt einzufügen.
+`ansible` rendert eine Karte für einen [Ansible Galaxy](https://galaxy.ansible.com/)-Eintrag, der zur Build-Zeit abgerufen wird. Es akzeptiert entweder einen `role`- oder einen `collection`-Parameter, beide im Format `namespace.name`.
 
-Admonitions dienen einem ähnlichen Zweck wie der Alert-Shortcode, werden jedoch über Hugo-Render-Hooks implementiert. Der Hauptunterschied liegt in der Syntax: Admonitions verwenden Markdown-Syntax, was sie portabler über verschiedene Plattformen macht, während Shortcodes Hugo-spezifisch sind. Die Syntax ähnelt GitHub-Alerts:
+<!-- prettier-ignore-start -->
+| Parameter | Beschreibung |
+| ------------ | ------------------------------------------------------------------------------------ |
+| `role`       | [String] Galaxy-Rolle im Format `namespace.name`, z.B. `geerlingguy.docker` |
+| `collection` | [String] Galaxy-Collection im Format `namespace.name`, z.B. `community.general` |
+<!-- prettier-ignore-end -->
+
+Setzen Sie pro Aufruf genau einen der Parameter `role` oder `collection`.
+
+Alle Kartenwerte werden zur Build-Zeit über Hugos `resources.GetRemote` abgerufen. Galaxy erlaubt keine Cross-Origin-Anfragen, daher wird die Karte im Browser nicht aktualisiert — bauen Sie die Website neu, um die Werte zu aktualisieren.
+
+**Beispiel 1: Rolle**
 
 ```md
-> [!NOTE]
-> Eine Admonition vom Typ Note.
-
-> [!TIP]+ Benutzerdefinierter Titel
-> Eine einklappbare Admonition mit benutzerdefiniertem Titel.
+{{</* ansible role="geerlingguy.docker" */>}}
 ```
 
-> [!NOTE]
-> Eine Admonition vom Typ Note.
+{{< ansible role="geerlingguy.docker" >}}
 
-> [!TIP]+ Benutzerdefinierter Titel
-> Eine einklappbare Admonition mit benutzerdefiniertem Titel.
+**Beispiel 2: Collection**
 
-Das Alert-Zeichen (`+` oder `-`) ist optional, um zu steuern, ob die Admonition eingeklappt ist oder nicht. Beachten Sie, dass das Alert-Zeichen nur mit Obsidian kompatibel ist.
+```md
+{{</* ansible collection="community.general" */>}}
+```
 
-> [!INFO]- Unterstützte Typen
-> Gültige Admonition-Typen umfassen [GitHub-Alert-Typen](https://github.blog/changelog/2023-12-14-new-markdown-extension-alerts-provide-distinctive-styling-for-significant-content/) und [Obsidian-Callout-Typen](https://help.obsidian.md/callouts). Die Typen sind nicht case-sensitiv.
->
-> **GitHub-Typen:** `NOTE`, `TIP`, `IMPORTANT`, `WARNING`, `CAUTION`
-> **Obsidian-Typen:** `note`, `abstract`, `info`, `todo`, `tip`, `success`, `question`, `warning`, `failure`, `danger`, `bug`, `example`, `quote`
+{{< ansible collection="community.general" >}}
 
-> [!INFO]- Admonition anpassen
-> Siehe die [Anleitung zur Anpassung von Admonition](https://github.com/nunocoracao/blowfish/blob/main/layouts/_default/_markup/render-blockquote.html).
+<br/><br/><br/>
 
 ## Article
 
@@ -273,6 +397,85 @@ Dieser Shortcode ermöglicht das einfache Importieren von Code aus externen Quel
 
 <br/><br/><br/>
 
+## CTA button
+
+Verwenden Sie `cta` für einen klaren, barrierefreien Call-to-Action in Dokumentationen, Landingpages oder längeren Inhalten.
+
+<!-- prettier-ignore-start -->
+| Parameter | Beschreibung |
+| --- | --- |
+| `url` | Ziel-URL. Standard: `#`. |
+| `label` | Beschriftung des Buttons. Standard: `Learn more`. |
+| `style` | `primary` (Standard) oder `outline`. |
+<!-- prettier-ignore-end -->
+
+```md
+{{</* cta url="/docs/installation/" label="Start building" */>}}
+{{</* cta url="/docs/configuration/" label="Explore configuration" style="outline" */>}}
+```
+
+{{< cta url="/docs/installation/" label="Start building" >}}
+&nbsp;
+{{< cta url="/docs/configuration/" label="Explore configuration" style="outline" >}}
+
+<br/><br/><br/>
+
+## Email
+
+Erstellt einen verschleierten Mailto-Link:
+
+```md
+{{</* email email="mailto:hello@test.com" text="text" subject="Reply to awesome article" */>}}
+```
+
+{{< email email="mailto:hello@test.com" text="text" subject="Reply to awesome article" >}}
+
+<br/><br/><br/>
+
+## Feature grid
+
+Erstellen Sie ansprechende, responsive Feature-Bereiche, ohne Präsentations-Markup zu wiederholen. Verwenden Sie `feature-grid` als Container und fügen Sie für jedes Element einen `feature`-Shortcode hinzu. Das Raster verwendet auf großen Bildschirmen standardmäßig drei Spalten und kann auf vier eingestellt werden.
+
+<!-- prettier-ignore-start -->
+| Parameter | Beschreibung |
+| --- | --- |
+| `columns` | Optionale Anzahl der Spalten auf großen Bildschirmen: `3` (Standard) oder `4`. |
+| `icon` | Symbolname für ein Feature. Standard: `wand-magic-sparkles`. |
+| `title` | Titel des Features. Markdown wird unterstützt. |
+| `url` | Optionales Ziel für den Feature-Link. |
+| `label` | Beschriftung des Links. Standard: `Learn more`. |
+<!-- prettier-ignore-end -->
+
+**Beispiel:**
+
+```md
+{{</* feature-grid columns="3" */>}}
+{{</* feature icon="wand-magic-sparkles" title="Make it yours" url="/docs/configuration/" */>}}
+Start from a thoughtful default, then adjust every meaningful detail.
+{{</* /feature */>}}
+{{</* feature icon="file-lines" title="Publish faster" url="/docs/shortcodes/" label="Browse shortcodes" */>}}
+Compose rich content with small, reusable building blocks.
+{{</* /feature */>}}
+{{</* feature icon="heart" title="Built for people" */>}}
+Accessible defaults, responsive layouts, and dark mode included.
+{{</* /feature */>}}
+{{</* /feature-grid */>}}
+```
+
+{{< feature-grid >}}
+{{< feature icon="wand-magic-sparkles" title="Make it yours" url="/docs/configuration/" >}}
+Start from a thoughtful default, then adjust every meaningful detail.
+{{< /feature >}}
+{{< feature icon="file-lines" title="Publish faster" url="/docs/shortcodes/" label="Browse shortcodes" >}}
+Compose rich content with small, reusable building blocks.
+{{< /feature >}}
+{{< feature icon="heart" title="Built for people" >}}
+Accessible defaults, responsive layouts, and dark mode included.
+{{< /feature >}}
+{{< /feature-grid >}}
+
+<br/><br/><br/>
+
 ## Figure
 
 Blowfish enthält einen `figure`-Shortcode zum Hinzufügen von Bildern zu Inhalten. Der Shortcode ersetzt die grundlegende Hugo-Funktionalität, um zusätzliche Leistungsvorteile zu bieten.
@@ -360,13 +563,13 @@ Um Bilder zur Galerie hinzuzufügen, verwenden Sie `img`-Tags für jedes Bild un
 ```
 
 {{< gallery >}}
-  <img src="gallery/01.jpg" class="grid-w33" />
-  <img src="gallery/02.jpg" class="grid-w33" />
-  <img src="gallery/03.jpg" class="grid-w33" />
-  <img src="gallery/04.jpg" class="grid-w33" />
-  <img src="gallery/05.jpg" class="grid-w33" />
-  <img src="gallery/06.jpg" class="grid-w33" />
-  <img src="gallery/07.jpg" class="grid-w33" />
+  <img alt="" src="gallery/01.jpg" class="grid-w33" />
+  <img alt="" src="gallery/02.jpg" class="grid-w33" />
+  <img alt="" src="gallery/03.jpg" class="grid-w33" />
+  <img alt="" src="gallery/04.jpg" class="grid-w33" />
+  <img alt="" src="gallery/05.jpg" class="grid-w33" />
+  <img alt="" src="gallery/06.jpg" class="grid-w33" />
+  <img alt="" src="gallery/07.jpg" class="grid-w33" />
 {{< /gallery >}}
 
 <br/><br/><br/>
@@ -386,13 +589,13 @@ Um Bilder zur Galerie hinzuzufügen, verwenden Sie `img`-Tags für jedes Bild un
 ```
 
 {{< gallery >}}
-  <img src="gallery/01.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
-  <img src="gallery/02.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
-  <img src="gallery/03.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
-  <img src="gallery/04.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
-  <img src="gallery/05.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
-  <img src="gallery/06.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
-  <img src="gallery/07.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img alt="" src="gallery/01.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img alt="" src="gallery/02.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img alt="" src="gallery/03.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img alt="" src="gallery/04.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img alt="" src="gallery/05.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img alt="" src="gallery/06.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img alt="" src="gallery/07.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
 {{< /gallery >}}
 
 <br/><br/><br/>
@@ -730,6 +933,44 @@ Weitere Mermaid-Beispiele finden Sie auf der Seite [Diagramme und Flussdiagramme
 
 <br/><br/><br/>
 
+## Stats
+
+Verwenden Sie `stats` und `stat`, um prägnante, aussagekräftige Kennzahlen in einem responsiven Raster darzustellen. Das Raster verwendet auf großen Bildschirmen standardmäßig drei Spalten, mit `columns="4"` vier.
+
+```md
+{{</* stats */>}}
+{{</* stat value="40+" label="Shortcodes" */>}}Compose pages without bespoke templates.{{</* /stat */>}}
+{{</* stat value="100%" label="Portable" */>}}Keep your content in Markdown.{{</* /stat */>}}
+{{</* stat value="0" label="Required plugins" */>}}Start with Hugo and Blowfish.{{</* /stat */>}}
+{{</* /stats */>}}
+```
+
+{{< stats >}}
+{{< stat value="40+" label="Shortcodes" >}}Compose pages without bespoke templates.{{< /stat >}}
+{{< stat value="100%" label="Portable" >}}Keep your content in Markdown.{{< /stat >}}
+{{< stat value="0" label="Required plugins" >}}Start with Hugo and Blowfish.{{< /stat >}}
+{{< /stats >}}
+
+<br/><br/><br/>
+
+## Steps
+
+Verwenden Sie `steps` und `step` für Onboarding, Prozesse, Roadmaps und Tutorials.
+
+```md
+{{</* steps */>}}
+{{</* step number="1" title="Configure the theme" */>}}Choose a colour scheme and homepage layout.{{</* /step */>}}
+{{</* step number="2" title="Write your content" */>}}Use standard Markdown and shortcodes.{{</* /step */>}}
+{{</* /steps */>}}
+```
+
+{{< steps >}}
+{{< step number="1" title="Configure the theme" >}}Choose a colour scheme and homepage layout.{{< /step >}}
+{{< step number="2" title="Write your content" >}}Use standard Markdown and shortcodes.{{< /step >}}
+{{< /steps >}}
+
+<br/><br/><br/>
+
 ## Swatches
 
 `swatches` gibt eine Reihe von bis zu drei verschiedenen Farben aus, um Farbelelemente wie eine Farbpalette zu präsentieren. Dieser Shortcode nimmt die `HEX`-Codes jeder Farbe und erstellt die visuellen Elemente für jede.
@@ -885,13 +1126,13 @@ Mit HTML-Code
 {{< timelineItem icon="star" header="Shortcodes" badge="AWESOME" >}}
 Mit anderen Shortcodes
 {{< gallery >}}
-  <img src="gallery/01.jpg" class="grid-w33" />
-  <img src="gallery/02.jpg" class="grid-w33" />
-  <img src="gallery/03.jpg" class="grid-w33" />
-  <img src="gallery/04.jpg" class="grid-w33" />
-  <img src="gallery/05.jpg" class="grid-w33" />
-  <img src="gallery/06.jpg" class="grid-w33" />
-  <img src="gallery/07.jpg" class="grid-w33" />
+  <img alt="" src="gallery/01.jpg" class="grid-w33" />
+  <img alt="" src="gallery/02.jpg" class="grid-w33" />
+  <img alt="" src="gallery/03.jpg" class="grid-w33" />
+  <img alt="" src="gallery/04.jpg" class="grid-w33" />
+  <img alt="" src="gallery/05.jpg" class="grid-w33" />
+  <img alt="" src="gallery/06.jpg" class="grid-w33" />
+  <img alt="" src="gallery/07.jpg" class="grid-w33" />
 {{< /gallery >}}
 {{</ timelineItem >}}
 {{< timelineItem icon="code" header="Another Awesome Header">}}

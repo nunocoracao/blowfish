@@ -1,5 +1,6 @@
 ---
 title: "局部模板(Partials)"
+featureimage: "images/v3/partials.png"
 weight: 9
 draft: false
 description: "所有 Blowfish 可以配置的 Partials"

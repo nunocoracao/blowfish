@@ -1,5 +1,6 @@
 ---
 title: "サムネイル"
+featureimage: "images/v3/thumbnails.png"
 weight: 10
 draft: false
 description: "記事にサムネイル画像を設定する。"

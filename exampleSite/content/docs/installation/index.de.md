@@ -13,6 +13,21 @@ Folgen Sie einfach dem standardmäßigen Hugo [Schnellstart](https://gohugo.io/g
 
 Detaillierte Installationsanweisungen finden Sie unten. Anweisungen zum [Aktualisieren des Themes](#updates-installieren) sind ebenfalls verfügbar.
 
+## Agent-Skill
+
+Blowfish enthält einen [Agent-Skill](https://github.com/nunocoracao/blowfish/tree/main/.claude/skills/blowfish), der KI-Coding-Agents — wie Claude Code — beibringt, wie man das Theme installiert, konfiguriert und damit Websites erstellt. Wenn du mit einem Agent an deiner Website arbeitest, installiere den Skill, damit er sich mit den Konfigurationsdateien, Layouts, Front Matter und Shortcodes von Blowfish auskennt.
+
+Installation über den Blowfish-Plugin-Marketplace in Claude Code:
+
+```shell
+/plugin marketplace add nunocoracao/blowfish
+/plugin install blowfish@blowfish
+```
+
+Alternativ kannst du den Skill-Ordner unter `.claude/skills/blowfish/` in dein Website-Repository kopieren — Agents laden Skills aus dem `.claude/skills/`-Verzeichnis eines Projekts automatisch.
+
+---
+
 ## Installation
 
 Diese Anweisungen bringen Sie von einem komplett leeren Zustand mit Hugo und Blowfish zum Laufen. Die meisten der in diesem Leitfaden erwähnten Abhängigkeiten können mit dem Paketmanager Ihrer Wahl für Ihre Plattform installiert werden.
@@ -27,7 +42,7 @@ Stellen Sie sicher, dass Sie **Hugo Version 0.158.0** oder höher verwenden, da 
 
 Sie finden detaillierte Installationsanweisungen für Ihre Plattform in der [Hugo-Dokumentation](https://gohugo.io/getting-started/installing).
 
-### Blowfish Tools (empfohlen)
+### Blowfish Tools
 
 Wir haben gerade ein neues CLI-Tool veröffentlicht, das Ihnen beim Einstieg mit Blowfish hilft. Es erstellt ein neues Hugo-Projekt, installiert das Theme und richtet die Theme-Konfigurationsdateien für Sie ein. Es befindet sich noch in der Beta-Phase, also [melden Sie bitte alle Probleme, die Sie finden](https://github.com/nunocoracao/blowfish-tools).
 
@@ -112,7 +127,7 @@ Für diese Methode verwenden Sie Hugo zur Verwaltung Ihrer Themes. Hugo verwende
    ```toml
    [[imports]]
    disable = false
-   path = "github.com/nunocoracao/blowfish/v2"
+   path = "github.com/nunocoracao/blowfish/v3"
    ```
 
 4. Starten Sie Ihren Server mit `hugo server` und das Theme wird automatisch heruntergeladen.
@@ -209,3 +224,14 @@ Beachten Sie, dass alle lokalen Anpassungen, die Sie an den Theme-Dateien vorgen
 2. Entpacken Sie das Archiv, benennen Sie den Ordner in `blowfish` um und verschieben Sie ihn in das Verzeichnis `themes/` im Stammordner Ihres Hugo-Projekts. Sie müssen das vorhandene Verzeichnis überschreiben, um alle Theme-Dateien zu ersetzen.
 
 3. Erstellen Sie Ihre Website neu und überprüfen Sie, ob alles wie erwartet funktioniert.
+---
+
+## Upgrade von v2 auf v3
+
+Blowfish v3 ist vollständig abwärtskompatibel zu v2-Websites: Alle neuen Features sind opt-in, es wurden keine Konfigurationsoptionen entfernt und keine Templates oder Partials umbenannt. Deine Website sieht nach dem Upgrade genauso aus und verhält sich gleich, bis du die neuen Features aktivierst.
+
+- **Git-Submodul:** Wie üblich aktualisieren — `git submodule update --remote --merge`. Mehr ist nicht nötig.
+- **Hugo-Modul:** Bearbeite `config/_default/module.toml` und ändere den Importpfad von `github.com/nunocoracao/blowfish/v2` zu `github.com/nunocoracao/blowfish/v3`, dann führe `hugo mod get -u` aus.
+- **Manuelle Installation:** Lade das neueste Release herunter und ersetze den Theme-Ordner wie oben beschrieben.
+
+Nach dem Upgrade findest du in der [Konfigurationsdokumentation]({{< ref "configuration" >}}) die neuen Opt-in-Optionen — den Floating-Header, das Landing-Homepage-Layout, den Hintergrund-Canvas, den Lesefortschrittsbalken und mehr.

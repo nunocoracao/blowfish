@@ -1,5 +1,6 @@
 ---
 title: "Personalización avanzada"
+featureimage: "images/v3/advanced-customisation.png"
 weight: 13
 draft: false
 description: "Aprende cómo construir Blowfish manualmente."

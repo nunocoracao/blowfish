@@ -1,5 +1,6 @@
 ---
 title: 进阶自定义
+featureimage: "images/v3/advanced-customisation.png"
 weight: 13
 draft: false
 description: "了解如何手动构建 Blowfish。"

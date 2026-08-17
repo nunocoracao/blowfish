@@ -265,10 +265,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nibh nisl, vulput
 主页显示最近的文章，每篇文章通过相关部分自动关联其他文章，有标签聚合和全文搜索。
 
 {{< gallery >}}
-  <img src="img/blowfishrecent.png" class="grid-w50" />
-  <img src="img/article.png" class="grid-w50" />
-  <img src="img/search.png" class="grid-w50" />
-  <img src="img/tag.png" class="grid-w50" />
+  <img alt="" src="img/blowfishrecent.png" class="grid-w50" />
+  <img alt="" src="img/article.png" class="grid-w50" />
+  <img alt="" src="img/search.png" class="grid-w50" />
+  <img alt="" src="img/tag.png" class="grid-w50" />
 {{< /gallery >}}
 
 

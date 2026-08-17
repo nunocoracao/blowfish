@@ -1,5 +1,6 @@
 ---
 title: "フロントマター"
+featureimage: "images/v3/front-matter.png"
 weight: 7
 draft: false
 description: "Blowfish で利用可能なすべてのフロントマター変数。"

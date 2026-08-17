@@ -5,7 +5,6 @@ description: "Ve lo que es posible con Blowfish."
 cascade:
   showEdit: false
   showSummary: false
-  hideFeatureImage: true
   invertPagination: true
 ---
 

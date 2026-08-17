@@ -1,5 +1,6 @@
 ---
 title: "複数の著者"
+featureimage: "images/v3/multiple-authors.png"
 weight: 8
 draft: false
 description: "記事に複数の著者を設定する。"

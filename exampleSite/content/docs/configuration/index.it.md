@@ -4,6 +4,7 @@ title: "Configurazione"
 weight: 4
 draft: false
 description: "Tutte le configurazioni disponibili in Blowfish."
+featureimage: "images/v3/configuration-system.png"
 slug: "configurazioni"
 tags: ["config", "docs"]
 series: ["Documentazione"]
@@ -14,13 +15,8 @@ Blowfish è un tema altamente personalizzabile e utilizza alcune delle più rece
 
 Il tema viene fornito con una configurazione predefinita che ti consente di essere operativo con un blog di base o un sito Web statico.
 
-{{< alert "fire" >}}
-We just launched a CLI tool to help you get started with Blowfish. It will help you with installation and configuration. Install the CLI tool globally using:
-
-```bash
-npx blowfish-tools
-```
-
+{{< alert "wand-magic-sparkles" >}}
+Lavori con un agente di programmazione IA? Blowfish include una **skill per agenti** che insegna ad agenti come Claude Code a installare, configurare e usare il tema — consulta la [pagina di installazione]({{< ref "docs/installation" >}}) per configurarla.
 {{< /alert >}}
 
 > I file di configurazione forniti con il tema sono forniti in formato TOML dato che questa è la sintassi predefinita di Hugo. Sentiti libero di convertire la tua configurazione in YAML o JSON se lo desideri.
@@ -168,7 +164,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 
 | Name | Default | Description |
 | --- | --- | --- |
-| `colorScheme` | `"blowfish"` | The theme colour scheme to use. Valid values are `blowfish` (default), `avocado`, `fire`, `ocean`, `forest`, `princess`, `neon`, `bloody`, `terminal`, `marvel`, `noir`, `autumn`, `congo`, `slate`, `github`, and `one-light`. Refer to the [Colour Schemes]({{< ref "getting-started#colour-schemes" >}}) section for more details. |
+| `colorScheme` | `"blowfish"` | The theme colour scheme to use. Valid values are `blowfish` (default), `avocado`, `burufugu`, `fire`, `ocean`, `forest`, `princess`, `neon`, `bloody`, `terminal`, `marvel`, `noir`, `autumn`, `congo`, `slate`, `github`, and `one-light`. Refer to the [Colour Schemes]({{< ref "getting-started#colour-schemes" >}}) section for more details. |
 | `defaultAppearance` | `"light"` | The default theme appearance, either `light` or `dark`. |
 | `autoSwitchAppearance` | `true` | Whether the theme appearance automatically switches based upon the visitor's operating system preference. Set to `false` to force the site to always use the `defaultAppearance`. |
 | `enableA11y`                   | `false`      | Whether to enable the accessibility toggle button. |
@@ -184,6 +180,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `disableImageOptimizationMD` | `false` | Disables image resize and optimization features only for images using markdown syntax (`![](image.jpg)`). |
 | `disableTextInHeader` | `false` | Disables text in header, useful for logo based headers. |
 | `defaultBackgroundImage` | _Not set_ | Default background image for both `background` homepage layout and `background` hero style |
+| `backgroundCanvas` | `false` | Quando è `true`, mostra `defaultBackgroundImage` come sfondo fisso a tutto schermo dietro ogni pagina. Le pagine il cui hero disegna già un proprio sfondo fisso (ad esempio lo stile hero `background` con un'immagine in evidenza) sopprimono automaticamente il canvas, e gli hero non ricorrono più a `defaultBackgroundImage` come ripiego, dato che il canvas la mostra già. |
 | `defaultFeaturedImage` | _Not set_ | Default background image for all `featured` images across articles, will be overridden by a local `featured` image. |
 | `defaultSocialImage` | _Not set_ | Default image for social media sharing (Open Graph and Twitter). Will be overridden by a local `feature` image if available. |
 | `hotlinkFeatureImage` | `false` | Hotlink external images in article feature images and article cards. Those images will not be processed by Hugo. |
@@ -197,7 +194,9 @@ Many of the article defaults here can be overridden on a per article basis by sp
 
 | Name | Default | Description |
 | --- | --- | --- |
-| `header.layout` | `"basic"` | Defines the header for the entire site, supported values are `basic`, `fixed`, `fixed-fill`, and `fixed-fill-blur`. |
+| `header.layout` | `"basic"` | Defines the header for the entire site, supported values are `basic`, `fixed`, `fixed-fill`, `fixed-fill-blur`, `fixed-gradient`, and `floating`. |
+| `header.mobileMenuStyle` | `"fullscreen"` | Definisce la presentazione del menu mobile. Impostare `"dropdown"` per un menu compatto ancorato sotto l'header. |
+| `list.featureImageHover` | `false` | Aggiunge una leggera transizione di zoom quando il visitatore passa il mouse su una scheda di articolo o di contenuti correlati. Le singole pagine possono sovrascriverla con `featureImageHover` nel front matter. |
 
 ### Footer
 
@@ -213,7 +212,8 @@ Many of the article defaults here can be overridden on a per article basis by sp
 
 | Name | Default | Description |
 | --- | --- | --- |
-| `homepage.layout` | `"profile"` | The layout of the homepage. Valid values are `page`, `profile`, `hero`, `card`, `background`, or `custom`. When set to `custom`, you must provide your own layout by creating a `/layouts/partials/home/custom.html` file. Refer to the [Homepage Layout]({{< ref "homepage-layout" >}}) section for more details. |
+| `homepage.layout` | `"profile"` | The layout of the homepage. Valid values are `page`, `profile`, `hero`, `card`, `background`, `landing`, or `custom`. When set to `custom`, you must provide your own layout by creating a `/layouts/partials/home/custom.html` file. Refer to the [Homepage Layout]({{< ref "homepage-layout" >}}) section for more details. |
+| `homepage.layoutSwitcher` | `false` | Mostra un selettore interattivo che consente di visualizzare in anteprima, direttamente nella pagina, i layout integrati della homepage. Pensato per demo e revisioni di design, poiché renderizza tutti i layout in anteprima. |
 | `homepage.homepageImage` | _Not set_ | Image to be used in `hero` and `card` layouts. Can be set as local image from asset directory or external image url. Refer to the [Homepage Layout]({{< ref "homepage-layout" >}}) section for more details. |
 | `homepage.showRecent` | `false` | Whether or not to display the recent articles list on the homepage. |
 | `homepage.showRecentItems` | 5 | How many articles to display if showRecent is true. If variable is set to 0 or if it isn't defined the system will default to 5 articles. |

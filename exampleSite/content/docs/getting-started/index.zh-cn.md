@@ -13,12 +13,8 @@ series_order: 3
 本节内容需要已经阅读了 [安装 Blowfish 主题]({{< ref "docs/installation" >}})。
 {{< /alert >}}
 
-</br>
-{{< alert "fire" >}}
-我们刚刚推出了一个 CLI 工具，用来帮助你快速开始 Blowfish。 它将帮助你安装和配置 Blowfish 主题。 可以使用以下命令全局安装 CLI 工具：
-```bash
-npx blowfish-tools
-```
+{{< alert "wand-magic-sparkles" >}}
+在使用 AI 编程智能体？Blowfish 附带一个**智能体技能**，可以教 Claude Code 等智能体如何安装、配置和使用本主题 — 请参阅[安装页面]({{< ref "docs/installation" >}})进行设置。
 {{< /alert >}}
 
 Blowfish 中的配置文件中包含了主题需要的所有可能的设置选项。但默认情况下大多数设置都是被注释的，你只需要取消注释就可以激活或者修改设定选项。

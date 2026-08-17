@@ -1,5 +1,6 @@
 ---
 title: "Vorschaubilder"
+featureimage: "images/v3/thumbnails.png"
 weight: 10
 draft: false
 description: "Aktivieren Sie Vorschaubilder für Ihre Artikel."

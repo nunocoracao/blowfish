@@ -1,5 +1,6 @@
 ---
 title: "Miniaturas"
+featureimage: "images/v3/thumbnails.png"
 weight: 10
 draft: false
 description: "Activa las miniaturas para tus artículos."

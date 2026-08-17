@@ -1,5 +1,6 @@
 ---
 title: "Serien"
+featureimage: "images/v3/series.png"
 weight: 12
 draft: false
 description: "Erfahren Sie, wie Sie Artikel zu einer Serie gruppieren."

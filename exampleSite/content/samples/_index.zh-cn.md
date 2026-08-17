@@ -5,7 +5,6 @@ description: "来看看通过 Blowfish 能做到什么"
 cascade:
   showEdit: false
   showSummary: false
-  hideFeatureImage: true
   invertPagination: true
 ---
 

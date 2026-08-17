@@ -1,5 +1,6 @@
 ---
 title: "主页布局"
+featureimage: "images/v3/homepage-layout.png"
 weight: 5
 draft: false
 description: "在 Blowfish 主题中设置主页布局。"
@@ -9,7 +10,7 @@ series: ["部署教程"]
 series_order: 5
 ---
 
-Blowfish 提供了一个完全灵活的主页布局。你可以选择两种主要模板，并提供了额外的参数来帮助调整设计。当然，你也可以提供自己的模板，完全控制主页的内容。
+Blowfish 提供了灵活的主页布局，每种设计都有相应的参数可以调整。当然，你也可以提供自己的模板，完全控制主页的内容。
 
 主页布局由 `params.toml` 配置文件中的 `homepage.layout` 参数来控制的。此外所有布局都默认包括 [最近文章](#最近文章)。
 
@@ -57,6 +58,39 @@ Blowfish 提供了一个完全灵活的主页布局。你可以选择两种主�
 
 如果想要启用 card 布局，请在 `params.toml` 配置文件中设置 `homepage.layout = "card"` 和 `homepage.homepageImage` 。
 
+## 着陆页布局（landing）
+
+着陆页布局（landing）专为产品网站、文档中心以及需要更强开场表达的个人网站而设计。它以一个宽敞、富有编辑感的 hero 区域开场 —— 包含眉标（eyebrow）、主标题、导语段落和号召性按钮 —— 并可选择以一张融入全局背景的全宽 hero 图片作为背景，同时带有错落的入场动画（对于偏好减少动效的访问者会自动禁用）。hero 下方的所有内容都是标准的 Markdown 和 Blowfish 短代码，因此整个页面依然便于迁移和维护。
+
+{{< figure src="img/home-landing.png" class="thumbnailshadow" >}}
+
+如果想要启用 landing 布局，请在 `params.toml` 配置文件中设置 `homepage.layout = "landing"`。
+
+hero 区域由 `content/_index.md` 的扉页参数驱动。所有字段都是可选的 —— 未填写的内容不会被渲染：
+
+```yaml
+---
+title: "Build a site that feels unmistakably yours."
+heroCaption: "Blowfish" # eyebrow above the title; defaults to the author name
+heroLead: "A short statement that expands on the title."
+heroButtons:
+  - label: "Get started"
+    url: "/docs/installation/"
+  - label: "Explore the docs"
+    url: "/docs/"
+    style: "outline" # "primary" (default) or "outline"
+---
+```
+
+| 扉页参数 | 描述 |
+| ------------ | ----------- |
+| `heroCaption` | 显示在标题上方的小号大写眉标。默认为 `params.Author.name`。 |
+| `heroLead` | 渲染在标题下方的导语段落。支持 Markdown。 |
+| `heroButtons` | 号召性按钮列表（`label`、`url` 以及可选的 `style`）。样式与 [`cta` 短代码]({{< ref "shortcodes#cta-button" >}})相同。 |
+
+`_index.md` 的 Markdown 正文会渲染在 hero 下方，因此可以使用统计数据、特性网格、步骤以及其他任意短代码来构建页面的其余部分。landing 布局与[配置文档]({{< ref "configuration" >}})中介绍的站点级 `backgroundCanvas` 选项搭配使用效果很好。
+
+
 ## 自定义布局（custom）
 
 如果以上几个布局还没有满足你的需求，你还可以自己创建自定义布局。这样你可以基于一个空白的画布，来完全控制页面上的内容。
@@ -67,7 +101,7 @@ Blowfish 提供了一个完全灵活的主页布局。你可以选择两种主�
 
 如果你想在自定义布局上添加 [最近文章](#最近文章)，请使用 `recent-articles/main.html` 中的内容。
 
-如果你想在网站[主页]({{< ref "/" >}})使用自定义布局来实现在个人资料和页面布局之间的切换。这里的[GitHub 仓库](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/layouts/partials/home/custom.html)有一个例子可以参考。
+主题附带的示例站点使用了内置的着陆页布局（landing）和标准内容短代码。可以访问 [GitHub 仓库](https://github.com/nunocoracao/blowfish/tree/main/exampleSite)查看它的具体配置方式。
 
 ## 最近文章
 

@@ -13,6 +13,21 @@ Simplemente sigue el procedimiento estándar de Hugo [Inicio Rápido](https://go
 
 Las instrucciones de instalación detalladas se encuentran a continuación. También están disponibles instrucciones para [actualizar el tema](#instalación-de-actualizaciones).
 
+## Skill para agentes
+
+Blowfish incluye un [skill para agentes](https://github.com/nunocoracao/blowfish/tree/main/.claude/skills/blowfish) que enseña a los agentes de programación con IA — como Claude Code — a instalar, configurar y crear sitios con el tema. Si usas un agente para trabajar en tu sitio, instala el skill para que conozca los archivos de configuración, los layouts, el front matter y los shortcodes de Blowfish.
+
+Instálalo desde el marketplace de plugins de Blowfish en Claude Code:
+
+```shell
+/plugin marketplace add nunocoracao/blowfish
+/plugin install blowfish@blowfish
+```
+
+Como alternativa, copia la carpeta del skill en el repositorio de tu sitio, en `.claude/skills/blowfish/` — los agentes cargan automáticamente los skills almacenados en el directorio `.claude/skills/` de un proyecto.
+
+---
+
 ## Instalación
 
 Estas instrucciones te ayudarán a empezar con Hugo y Blowfish desde un estado completamente vacío. La mayoría de las dependencias mencionadas en esta guía se pueden instalar utilizando el gestor de paquetes de tu elección para tu plataforma.
@@ -27,7 +42,7 @@ Asegúrate de estar usando **Hugo versión 0.158.0** o posterior, ya que el tema
 
 Puedes encontrar instrucciones de instalación detalladas para tu plataforma en la [documentación de Hugo](https://gohugo.io/getting-started/installing).
 
-### Blowfish Tools (recomendado)
+### Blowfish Tools
 
 Acabamos de lanzar una nueva herramienta CLI para ayudarte a empezar con Blowfish. Creará un nuevo proyecto Hugo, instalará el tema y configurará los archivos de configuración del tema por ti. Todavía está en beta, así que por favor [reporta cualquier problema que encuentres](https://github.com/nunocoracao/blowfish-tools).
 
@@ -112,7 +127,7 @@ Para este método usarás Hugo para gestionar tus temas. Hugo usa **Go** para in
    ```toml
    [[imports]]
    disable = false
-   path = "github.com/nunocoracao/blowfish/v2"
+   path = "github.com/nunocoracao/blowfish/v3"
    ```
 
 4. Inicia tu servidor usando `hugo server` y el tema se descargará automáticamente.
@@ -209,3 +224,14 @@ Ten en cuenta que cualquier personalización local que hayas hecho a los archivo
 2. Extrae el archivo, renombra la carpeta a `blowfish` y muévela al directorio `themes/` dentro de la carpeta raíz de tu proyecto Hugo. Necesitarás sobrescribir el directorio existente para reemplazar todos los archivos del tema.
 
 3. Reconstruye tu sitio y verifica que todo funcione como se esperaba.
+---
+
+## Actualizar de v2 a v3
+
+Blowfish v3 es totalmente compatible con los sitios de v2: todas las novedades son opcionales, no se ha eliminado ninguna opción de configuración y no se ha renombrado ningún template ni partial. Tu sitio se verá y funcionará igual tras actualizar, hasta que actives las nuevas funciones.
+
+- **Submódulo Git:** actualiza como siempre — `git submodule update --remote --merge`. No hace falta nada más.
+- **Módulo de Hugo:** edita `config/_default/module.toml` y cambia la ruta de importación de `github.com/nunocoracao/blowfish/v2` a `github.com/nunocoracao/blowfish/v3`; después ejecuta `hugo mod get -u`.
+- **Instalación manual:** descarga la última versión y sustituye la carpeta del tema, como se describe arriba.
+
+Tras actualizar, consulta la [documentación de configuración]({{< ref "configuration" >}}) para conocer las nuevas opciones — el header flotante, el layout de portada landing, el fondo global, la barra de progreso de lectura y más.

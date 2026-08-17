@@ -1,5 +1,6 @@
 ---
 title: "Firebase: 閲覧数といいね"
+featureimage: "images/v3/content-network.png"
 weight: 15
 draft: false
 description: "Firebase を統合して、閲覧数といいねの動的データを取得する方法を学びます。"

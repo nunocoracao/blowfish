@@ -3,6 +3,7 @@ title: "設定"
 weight: 4
 draft: false
 description: "Blowfish で使えるすべての設定変数"
+featureimage: "images/v3/configuration-system.png"
 slug: "configuration"
 tags: ["config", "docs"]
 series: ["Documentation"]
@@ -13,13 +14,8 @@ Blowfish は高度にカスタマイズ可能なテーマであり、最新の H
 
 このテーマには、基本的なブログまたは静的サイトをすぐに立ち上げて実行できるデフォルト設定が付属しています。
 
-{{< alert "fire" >}}
-Blowfish を簡単に使い始められるように、新しい CLI ツールをリリースしました。インストールと設定に役立ちます。 グローバルに CLI ツールをインストールするには、以下を使用します。
-
-```bash
-npx blowfish-tools
-```
-
+{{< alert "wand-magic-sparkles" >}}
+AI コーディングエージェントを使っていますか？Blowfish には、Claude Code などのエージェントにテーマのインストール・設定・活用方法を教える**エージェントスキル**が付属しています。セットアップ方法は[インストールページ]({{< ref "docs/installation" >}})をご覧ください。
 {{< /alert >}}
 
 > テーマにバンドルされている設定ファイルは、デフォルトの Hugo 構文である TOML 形式で提供されています。必要に応じて、設定を YAML または JSON に変換できます。
@@ -168,7 +164,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 
 | 名前 | デフォルト | 説明 |
 | --- | --- | --- |
-| `colorScheme` | `"blowfish"` | 使用するテーマのカラースキームです。有効な値は、`blowfish`（デフォルト）、`avocado`、`fire`、`ocean`、`forest`、`princess`、`neon`、`bloody`、`terminal`、`marvel`、`noir`、`autumn`、`congo`、`slate`, `github`, `one-light` です。詳細については、[カラースキーム]({{< ref "getting-started#カラースキーム" >}})セクションを参照してください。 |
+| `colorScheme` | `"blowfish"` | 使用するテーマのカラースキームです。有効な値は、`blowfish`（デフォルト）、`avocado`、`burufugu`、`fire`、`ocean`、`forest`、`princess`、`neon`、`bloody`、`terminal`、`marvel`、`noir`、`autumn`、`congo`、`slate`, `github`, `one-light` です。詳細については、[カラースキーム]({{< ref "getting-started#カラースキーム" >}})セクションを参照してください。 |
 | `defaultAppearance` | `"light"` | デフォルトのテーマの外観です。`light` または `dark` のいずれかです。 |
 | `autoSwitchAppearance` | `true` | 訪問者のオペレーティングシステムの設定に基づいてテーマの外観を自動的に切り替えるかどうかです。`false` に設定すると、サイトは常に `defaultAppearance` を使用します。 |
 | `enableA11y` | `false` | アクセシビリティ切り替えボタンを有効にするかどうか。 |
@@ -184,6 +180,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 | `disableImageOptimizationMD` | `false` | Markdown 記法（例：`![](image.jpg)`）の画像の画像サイズ変更と最適化機能のみを無効にします。他の画像には適用されます。 |
 | `disableTextInHeader` | `false` | ヘッダーのテキストを無効にします。ロゴベースのヘッダーに役立ちます。 |
 | `defaultBackgroundImage` | _未設定_ | `background` ホームページレイアウトと `background` ヒーロースタイルの両方のデフォルトの背景画像です。 |
+| `backgroundCanvas` | `false` | `true` に設定すると、`defaultBackgroundImage` をすべてのページの背後に固定のフルビューポート背景として表示します。ヒーローが独自の固定背景を描画するページ（たとえば、アイキャッチ画像を使用した `background` ヒーロースタイル）では、キャンバスは自動的に抑制されます。また、キャンバスがすでに `defaultBackgroundImage` を表示しているため、ヒーローが `defaultBackgroundImage` にフォールバックすることはなくなります。 |
 | `defaultFeaturedImage` | _未設定_ | 記事全体のすべての `featured` 画像のデフォルトの背景画像です。ローカルの `featured` 画像によってオーバーライドされます。 |
 | `defaultSocialImage` | _未設定_ | ソーシャルメディア共有（Open Graph と Twitter）用のデフォルト画像。ローカルの `featured` 画像によってオーバーライドされます。 |
 | `hotlinkFeatureImage` | `false` | 記事のアイキャッチ画像や記事カードで外部画像をホットリンクします。これらの画像は Hugo によって処理されません。 |
@@ -197,7 +194,9 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 
 | 名前 | デフォルト | 説明 |
 | --- | --- | --- |
-| `header.layout` | `"basic"` | サイト全体のヘッダーを定義します。サポートされている値は、`basic`、`fixed`、`fixed-fill`、`fixed-fill-blur` です。 |
+| `header.layout` | `"basic"` | サイト全体のヘッダーを定義します。サポートされている値は、`basic`、`fixed`、`fixed-fill`、`fixed-fill-blur`、`fixed-gradient`、`floating` です。 |
+| `header.mobileMenuStyle` | `"fullscreen"` | モバイルメニューの表示方法を定義します。ヘッダーの下に固定されたコンパクトなメニューを表示するには `"dropdown"` に設定します。 |
+| `list.featureImageHover` | `false` | 訪問者が記事カードや関連コンテンツカードにホバーしたときに、控えめなズームのトランジションを追加します。個々のページでは、フロントマターの `featureImageHover` でこれをオーバーライドできます。 |
 
 ### フッター(Footer)
 
@@ -213,7 +212,8 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 
 | 名前 | デフォルト | 説明 |
 | --- | --- | --- |
-| `homepage.layout` | `"profile"` | ホームページのレイアウトです。有効な値は、`page`、`profile`、`hero`、`card`、`background`、`custom` です。`custom` に設定した場合、`/layouts/partials/home/custom.html` ファイルを作成して独自のレイアウトを提供する必要があります。詳細については、[ホームページレイアウト]({{< ref "homepage-layout" >}}) セクションを参照してください。 |
+| `homepage.layout` | `"profile"` | ホームページのレイアウトです。有効な値は、`page`、`profile`、`hero`、`card`、`background`、`landing`、`custom` です。`custom` に設定した場合、`/layouts/partials/home/custom.html` ファイルを作成して独自のレイアウトを提供する必要があります。詳細については、[ホームページレイアウト]({{< ref "homepage-layout" >}}) セクションを参照してください。 |
+| `homepage.layoutSwitcher` | `false` | 組み込みのホームページレイアウトをその場でプレビューできるインタラクティブなスイッチャーを表示します。すべてのプレビューレイアウトをレンダリングするため、デモやデザインレビューでの利用を想定しています。 |
 | `homepage.homepageImage` | _未設定_ | `hero` レイアウトと `card` レイアウトで使用される画像です。アセットディレクトリからのローカル画像または外部画像 URL として設定できます。詳細については、[ホームページレイアウト]({{< ref "homepage-layout" >}}) セクションを参照してください。 |
 | `homepage.showRecent` | `false` | ホームページに最近の記事リストを表示するかどうかです。 |
 | `homepage.showRecentItems` | 5 | showRecent が true の場合に表示する記事の数です。変数が0に設定されている場合、または定義されていない場合は、システムはデフォルトで5つの記事に設定されます。 |

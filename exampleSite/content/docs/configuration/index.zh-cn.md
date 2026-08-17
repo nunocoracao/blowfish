@@ -1,5 +1,6 @@
 ---
 title: "配置"
+featureimage: "images/v3/configuration-system.png"
 weight: 4
 draft: false
 description: "介绍 Blowfish 中所有可用的的配置变量。"
@@ -13,13 +14,8 @@ Blowfish 是一个高度定制化的主题，使用到了一些 Hugo 中最新�
 
 主题附带了默认配置，可以让你快速启动一个基本的博客或静态网站。
 
-{{< alert "fire" >}}
-我们刚刚推出了 CLI 工具，来帮助你快速上手 Blowfish。它将帮助你进行安装和配置。使用以下命令可以全局范围安装 CLI 工具：
-
-```bash
-npx blowfish-tools
-```
-
+{{< alert "wand-magic-sparkles" >}}
+在使用 AI 编程智能体？Blowfish 附带一个**智能体技能**，可以教 Claude Code 等智能体如何安装、配置和使用本主题 — 请参阅[安装页面]({{< ref "docs/installation" >}})进行设置。
 {{< /alert >}}
 
 > 配置文件是基于 TOML 格式的，这也是 Hugo 默认支持的语法。当然如果你愿意，也可以将配置转换成 YAML 或 JSON 格式。
@@ -168,7 +164,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| `colorScheme` | `"blowfish"` | 主题使用的颜色方案。合法的值有： `blowfish` （默认）、`avocado`、`fire`、`ocean`、`forest`、`princess`、`neon`、`bloody`、`terminal`、`marvel`、`noir`、`autumn`、`congo`、`slate`、`github` 和 `one-light`。 具体参考[颜色方案]({{< ref "getting-started#colour-schemes" >}})以获取更多信息。 |
+| `colorScheme` | `"blowfish"` | 主题使用的颜色方案。合法的值有： `blowfish` （默认）、`avocado`、`burufugu`、`fire`、`ocean`、`forest`、`princess`、`neon`、`bloody`、`terminal`、`marvel`、`noir`、`autumn`、`congo`、`slate`、`github` 和 `one-light`。 具体参考[颜色方案]({{< ref "getting-started#colour-schemes" >}})以获取更多信息。 |
 | `defaultAppearance` | `"light"` | 默认的主题外观，可以是 `light` 或者 `dark`。 |
 | `autoSwitchAppearance` | `true` | 主题外观是否根据访问者操作系统的偏好自动切换。设置为 `false` 会强制网站始终使用 `defaultAppearance`。 |
 | `enableA11y`                   | `false`      | 是否启用无障碍切换按钮。 |
@@ -188,6 +184,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `backgroundImageWidth` | `1200` | 宽度（以像素为单位）用于缩放背景图像。 |
 | `disableTextInHeader` | `false` | 禁用文本类型的标题，对基于 logo 的标题很有用。 |
 | `defaultBackgroundImage` | 无 | 设置默认背景图，用于 `background` 和 `hero` 布局下的主页。 |
+| `backgroundCanvas` | `false` | 当设置为 `true` 时，将 `defaultBackgroundImage` 渲染为固定的全视口背景，显示在每个页面之后。如果页面的 hero 自身绘制了固定背景（例如使用特色图片的 `background` hero 样式），则会自动隐藏该背景画布；同时 hero 也不再回退使用 `defaultBackgroundImage`，因为背景画布已经显示了它。 |
 | `defaultFeaturedImage` | 无 | 设置默认背景图片，用于所有文章的`featured`图片，可以通过文章目录中的 `featured` 图片替换。 |
 | `defaultSocialImage` | 无 | 社交媒体分享（Open Graph 和 Twitter）使用的默认图片，可以通过文章目录中的 `featured` 图片替换。 |
 | `hotlinkFeatureImage` | `false` | 在文章特色图片和文章卡片中外链图片。这些图片不会被 Hugo 处理。 |
@@ -201,7 +198,9 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| `header.layout` | `"basic"` | 定义整个站点的页头的布局，支持的参数有 `basic`、`fixed`、`fixed-fill`、and `fixed-fill-blur`. |
+| `header.layout` | `"basic"` | 定义整个站点的页头的布局，支持的参数有 `basic`、`fixed`、`fixed-fill`、`fixed-fill-blur`、`fixed-gradient` 和 `floating`。 |
+| `header.mobileMenuStyle` | `"fullscreen"` | 定义移动端菜单的展示方式。设置为 `"dropdown"` 可使用锚定在页头下方的紧凑菜单。 |
+| `list.featureImageHover` | `false` | 当访问者将鼠标悬停在文章卡片或相关内容卡片上时，添加轻微的缩放过渡效果。各个页面可以通过扉页参数中的 `featureImageHover` 覆盖此设置。 |
 
 ### 页脚
 
@@ -217,7 +216,8 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| `homepage.layout` | `"profile"` | 首页布局参数。合法的参数值有： `page`、`profile`、`hero`、`card`、`background` 或 `custom`。当你设置为 `custom` 时，你必须创建 `/layouts/partials/home/custom.html` 文件以定制自己的布局。参考[主页布局]({{< ref "homepage-layout" >}})来获取更多信息。 |
+| `homepage.layout` | `"profile"` | 首页布局参数。合法的参数值有： `page`、`profile`、`hero`、`card`、`background`、`landing` 或 `custom`。当你设置为 `custom` 时，你必须创建 `/layouts/partials/home/custom.html` 文件以定制自己的布局。参考[主页布局]({{< ref "homepage-layout" >}})来获取更多信息。 |
+| `homepage.layoutSwitcher` | `false` | 为内置的主页布局渲染一个可交互的原位预览切换器。由于它会渲染所有预览布局，主要用于演示和设计评审场景。 |
 | `homepage.homepageImage` | 无 | 在 `hero` 和 `card` 布局中使用的图像。图片可以来自于本地的资源目录，也可以是外部图像 URL。参考 [主页布局]({{< ref "homepage-layout" >}}) 来获取更多信息。 |
 | `homepage.showRecent` | `false` | 是否在主页展示最新文章列表。 |
 | `homepage.showRecentItems` | 5 | 如果将 `showRecent` 设置为 `true`，此参数用于显示多少篇文章。如果没有设置或者为0，则默认显示5篇文章。 |
