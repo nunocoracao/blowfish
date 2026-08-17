@@ -6,7 +6,9 @@
 {{ $background := $images.GetMatch "*background*" }}
 {{ $backgroundURL := "" }}
 
-{{ if not (or $background $backgroundURL) }}
+{{/* When the site-wide background canvas is active it already renders the
+  default background image, so only fall back to it here when disabled. */}}
+{{ if and (not (or $background $backgroundURL)) (not (site.Params.backgroundCanvas | default false)) }}
   {{ $default := site.Store.Get "defaultBackgroundImage" }}
   {{ if $default.url }}
     {{ $backgroundURL = $default.url }}
@@ -102,6 +104,11 @@
 {{ end }}
 
 
+{{/* When the site-wide background canvas is active and this hero has no
+  background image of its own, skip the fixed backdrop so the canvas shows
+  through instead of the fade-to-neutral gradients. */}}
+{{ if or $backgroundURL (not (site.Params.backgroundCanvas | default false)) }}
+{{ $.Store.Set "suppressBackgroundCanvas" true }}
 <div class="single_hero_background nozoom fixed inset-x-0 top-0 h-[800px]">
   {{ with $backgroundURL }}
     {{ $style := "" }}
@@ -124,6 +131,7 @@
   <div
     class="from-neutral to-neutral absolute inset-0 bg-gradient-to-t opacity-30 mix-blend-normal dark:from-neutral-800 dark:to-neutral-800 dark:opacity-60"></div>
 </div>
+{{ end }}
 
 {{ if $shouldBlur | default false }}
   <div

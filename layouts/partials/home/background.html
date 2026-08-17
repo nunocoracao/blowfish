@@ -4,7 +4,7 @@
     <div class="absolute inset-x-0 bottom-0 h-1/2"></div>
     <div class="mx-auto max-w-7xl p-0">
       <div class="relative sm:overflow-hidden">
-        <div class="pointer-events-none fixed inset-x-0 top-0 z-0">
+        <div class="pointer-events-none fixed inset-x-0 top-0 -z-10">
           {{ $useDefault := true }}
           {{ $homepageImage := "" }}
           {{ with .Site.Params.defaultBackgroundImage }}
@@ -23,7 +23,14 @@
               {{ $useDefault = false }}
             {{ end }}
           {{ end }}
+          {{/* The site-wide background canvas already renders the default image. */}}
+          {{ if and $useDefault (site.Params.backgroundCanvas | default false) }}
+            {{ $homepageImage = "" }}
+          {{ end }}
           {{ if $homepageImage }}
+            {{/* This layout paints its own fixed page background, so the
+              site-wide background canvas must not render behind it. */}}
+            {{ $.Store.Set "suppressBackgroundCanvas" true }}
             {{ $style := "" }}
             {{ $defaultPosition := cond $useDefault site.Params.imagePosition false }}
             {{ with $.Params.imagePosition | default $defaultPosition }}

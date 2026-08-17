@@ -156,7 +156,23 @@
 {{ if site.Params.firebase.apiKey }}
   {{ $firebase := resources.Get "js/firebase.js" }}
   {{ $firebase = $firebase | resources.Minify | resources.Fingerprint (site.Params.fingerprintAlgorithm | default "sha512") }}
-  <script type="module" src="{{ $firebase.RelPermalink }}" integrity="{{ $firebase.Data.Integrity }}"></script>
+  <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
+  {{/* Load the Firebase module (and its ~300KB of gstatic imports) after the
+    page is idle so it never competes with rendering-critical resources. */}}
+  <script>
+    (function () {
+      var load = function () {
+        import("{{ $firebase.RelPermalink }}");
+      };
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(load, { timeout: 4000 });
+      } else {
+        window.addEventListener("load", function () {
+          setTimeout(load, 1500);
+        });
+      }
+    })();
+  </script>
 
   {{ if in (slice "page" "section") .Kind }}
     {{ $translations := .AllTranslations }}

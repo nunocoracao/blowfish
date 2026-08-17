@@ -1,15 +1,8 @@
-<article class="w-full px-2 my-3 overflow-hidden sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/4">
-  <h2 class="flex items-center">
-    <a
-      class="text-xl font-medium decoration-primary-500 hover:underline hover:underline-offset-2"
-      href="{{ .Page.RelPermalink }}"
-      >{{ .Page.Title }}</a
-    >
-    {{ if site.Params.taxonomy.showTermCount | default true }}
-      <span class="px-2 text-base text-primary-500">&middot;</span>
-      <span class="text-base text-neutral-400">
-        {{ .Count }}
-      </span>
-    {{ end }}
-  </h2>
-</article>
+<a
+  class="not-prose inline-flex items-center gap-1.5 rounded-full border border-neutral-200/80 bg-white/60 px-3 py-1.5 text-sm font-medium text-neutral-700 backdrop-blur-xl transition-colors hover:border-primary-400 hover:text-primary-600 dark:border-neutral-700/80 dark:bg-neutral-900/50 dark:text-neutral-200 dark:hover:text-primary-400"
+  href="{{ .Page.RelPermalink }}">
+  {{ .Page.Title }}
+  {{ if site.Params.taxonomy.showTermCount | default true }}
+    <span class="text-xs text-neutral-500 dark:text-neutral-400">{{ .Count }}</span>
+  {{ end }}
+</a>

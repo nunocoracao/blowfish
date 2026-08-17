@@ -1,0 +1,37 @@
+/* Burufugu scheme — the mascot's own palette: sky-blue fish, coral glow, indigo night */
+:root {
+  --color-neutral: 255, 255, 255;
+  /* Indigo night */
+  --color-neutral-50: 246, 247, 252;
+  --color-neutral-100: 238, 240, 249;
+  --color-neutral-200: 221, 224, 240;
+  --color-neutral-300: 195, 200, 226;
+  --color-neutral-400: 141, 148, 189;
+  --color-neutral-500: 98, 106, 150;
+  --color-neutral-600: 70, 78, 122;
+  --color-neutral-700: 48, 55, 97;
+  --color-neutral-800: 26, 33, 74;
+  --color-neutral-900: 13, 18, 51;
+  /* Sky blue (logo) */
+  --color-primary-50: 240, 247, 254;
+  --color-primary-100: 224, 239, 254;
+  --color-primary-200: 186, 222, 253;
+  --color-primary-300: 138, 197, 250;
+  --color-primary-400: 96, 172, 246;
+  --color-primary-500: 74, 158, 240;
+  --color-primary-600: 52, 126, 219;
+  --color-primary-700: 42, 98, 189;
+  --color-primary-800: 38, 76, 152;
+  --color-primary-900: 30, 58, 110;
+  /* Coral */
+  --color-secondary-50: 255, 246, 240;
+  --color-secondary-100: 255, 234, 222;
+  --color-secondary-200: 255, 211, 187;
+  --color-secondary-300: 255, 180, 142;
+  --color-secondary-400: 255, 138, 92;
+  --color-secondary-500: 240, 112, 90;
+  --color-secondary-600: 217, 87, 74;
+  --color-secondary-700: 184, 64, 58;
+  --color-secondary-800: 148, 50, 50;
+  --color-secondary-900: 118, 40, 44;
+}
