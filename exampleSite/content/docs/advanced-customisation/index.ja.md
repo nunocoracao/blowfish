@@ -1,5 +1,6 @@
 ---
 title: "高度なカスタマイズ"
+featureimage: "images/v3/advanced-customisation.png"
 weight: 13
 draft: false
 description: "Blowfishを手動でビルドする方法を学びましょう。"

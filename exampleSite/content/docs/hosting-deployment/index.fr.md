@@ -1,5 +1,6 @@
 ---
 title: "Hébergement & Déploiement"
+featureimage: "images/v3/publishing-system.png"
 weight: 14
 draft: false
 description: "Apprenez à déployer un site Blowfish."

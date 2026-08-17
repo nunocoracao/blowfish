@@ -1,5 +1,6 @@
 ---
 title: "Thumbnails"
+featureimage: "images/v3/thumbnails.png"
 weight: 10
 draft: false
 description: "Turn on thumbnails for your articles."

@@ -1,5 +1,6 @@
 ---
 title: "Séries"
+featureimage: "images/v3/series.png"
 weight: 12
 draft: false
 description: "Apprenez à regrouper des articles dans une série."

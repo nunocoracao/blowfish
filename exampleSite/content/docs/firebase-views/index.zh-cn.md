@@ -1,5 +1,6 @@
 ---
 title: "Firebase: 阅读量 & 点赞量"
+featureimage: "images/v3/content-network.png"
 weight: 15
 draft: false
 description: "了解 Blowfish 如何集成 Firebase，并动态显示阅读量和点赞量。"

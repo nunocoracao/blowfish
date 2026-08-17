@@ -60,9 +60,35 @@ To enable the Card layout, set `homepage.layout = "card"` and `homepage.homepage
 
 ## Landing layout
 
-The Landing layout is designed for product sites, documentation hubs, and personal sites that need a stronger opening statement. It gives homepage content a spacious, editorial hero treatment while still rendering standard Markdown and Blowfish shortcodes, so the full page stays portable and easy to maintain.
+The Landing layout is designed for product sites, documentation hubs, and personal sites that need a stronger opening statement. It opens with a spacious, editorial hero — eyebrow, statement headline, lead paragraph, and call-to-action buttons — optionally backed by a full-width hero image that dissolves into the global background, with a staggered entrance animation that is disabled automatically for visitors who prefer reduced motion. Everything below the hero is standard Markdown and Blowfish shortcodes, so the full page stays portable and easy to maintain.
 
-To enable the Landing layout, set `homepage.layout = "landing"` in the `params.toml` configuration file. Use `content/_index.md` for the title, lead, calls to action, feature grids, and other content.
+{{< figure src="img/home-landing.png" class="thumbnailshadow" >}}
+
+To enable the Landing layout, set `homepage.layout = "landing"` in the `params.toml` configuration file.
+
+The hero is driven by the front matter of `content/_index.md`. All fields are optional — anything you leave out is simply not rendered:
+
+```yaml
+---
+title: "Build a site that feels unmistakably yours."
+heroCaption: "Blowfish" # eyebrow above the title; defaults to the author name
+heroLead: "A short statement that expands on the title."
+heroButtons:
+  - label: "Get started"
+    url: "/docs/installation/"
+  - label: "Explore the docs"
+    url: "/docs/"
+    style: "outline" # "primary" (default) or "outline"
+---
+```
+
+| Front matter | Description |
+| ------------ | ----------- |
+| `heroCaption` | Small uppercase eyebrow above the title. Defaults to `params.Author.name`. |
+| `heroLead` | Lead paragraph rendered under the title. Supports Markdown. |
+| `heroButtons` | List of call-to-action buttons (`label`, `url`, and optional `style`). Uses the same styling as the [`cta` shortcode]({{< ref "shortcodes#cta-button" >}}). |
+
+The Markdown body of `_index.md` renders below the hero, so stats, feature grids, steps, and any other shortcodes can build out the rest of the page. The Landing layout pairs well with the site-wide `backgroundCanvas` option described in the [Configuration docs]({{< ref "configuration" >}}).
 
 
 ## Custom layout

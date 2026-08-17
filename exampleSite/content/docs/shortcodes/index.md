@@ -12,91 +12,6 @@ series_order: 8
 
 In addition to all the [default Hugo shortcodes](https://gohugo.io/content-management/shortcodes/), Blowfish adds a few extras for additional functionality.
 
-## Alert
-
-`alert` outputs its contents as a stylised message box within your article. It's useful for drawing attention to important information that you don't want the reader to miss.
-
-<!-- prettier-ignore-start -->
-| Parameter | Description |
-| --- | --- |
-| `icon` | **Optional.** the icon to display on the left side.<br>**Default:** `triangle-exclamation` (Check out the [icon shortcode](#icon) for more details on using icons.) |
-| `iconColor` | **Optional.** the color for the icon in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme . |
-| `cardColor` | **Optional.** the color for the card background in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme . |
-| `textColor` | **Optional.** the color for the text in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme . |
-<!-- prettier-ignore-end -->
-
-The input is written in Markdown so you can format it however you please.
-
-**Example 1:** No params
-
-```md
-{{</* alert */>}}
-**Warning!** This action is destructive!
-{{</* /alert */>}}
-```
-
-{{< alert >}}
-**Warning!** This action is destructive!
-{{< /alert >}}
-
-**Example 2:** Unnamed param
-
-```md
-{{</* alert "twitter" */>}}
-Don't forget to [follow me](https://twitter.com/nunocoracao) on Twitter.
-{{</* /alert */>}}
-```
-
-{{< alert "twitter" >}}
-Don't forget to [follow me](https://twitter.com/nunocoracao) on Twitter.
-{{< /alert >}}
-
-**Example 3:** Named params
-
-```md
-{{</* alert icon="fire" cardColor="#e63946" iconColor="#1d3557" textColor="#f1faee" */>}}
-This is an error!
-{{</* /alert */>}}
-```
-
-{{< alert icon="fire" cardColor="#e63946" iconColor="#1d3557" textColor="#f1faee" >}}
-This is an error!
-{{< /alert >}}
-
-<br/><br/><br/>
-
-## Admonition
-
-Admonitions allow you to insert eye-catching callout boxes in your content.
-
-Admonitions serve a similar purpose as the alert shortcode but are implemented via Hugo render hooks. The key difference is syntax: admonitions use Markdown syntax, making them more portable across different platforms, whereas shortcodes are specific to Hugo. The syntax resembles GitHub alerts:
-
-```md
-> [!TIP]
-> A Tip type admonition.
-
-> [!TIP]+ Custom Title + Custom Icon
-> A collapsible admonition with custom title.
-{icon="twitter"}
-```
-
-> [!TIP]
-> A Tip type admonition.
-
-> [!TIP]+ Custom Title + Custom Icon
-> A collapsible admonition with custom title.
-{icon="twitter"}
-
-The alert sign (`+` or `-`) is optional to control whether the admonition is folded or not. Note that alert sign is only compatible in Obsidian.
-
-> [!INFO]- Supported types
-> Valid admonition types include [GitHub alert types](https://github.blog/changelog/2023-12-14-new-markdown-extension-alerts-provide-distinctive-styling-for-significant-content/) and [Obsidian callout types](https://help.obsidian.md/callouts). The types are case-insensitive.
->
-> **GitHub types:** `NOTE`, `TIP`, `IMPORTANT`, `WARNING`, `CAUTION`  
-> **Obsidian types:** `note`, `abstract`, `info`, `todo`, `tip`, `success`, `question`, `warning`, `failure`, `danger`, `bug`, `example`, `quote`
-
-> [!INFO]- Customize admonition
-> See the [admonition customization guide](https://github.com/nunocoracao/blowfish/blob/main/layouts/_default/_markup/render-blockquote.html).
 ## Accordion
 
 `accordion` creates a collapsible set of panels. Use the `accordionItem` sub-shortcode to define each item. You can control whether multiple items can be open at the same time using the `mode` parameter.
@@ -185,6 +100,91 @@ The alert sign (`+` or `-`) is optional to control whether the admonition is fol
   {{< badge >}}Tip{{< /badge >}}
   {{< /accordionItem >}}
 {{< /accordion >}}
+
+<br/><br/><br/>
+
+## Admonition
+
+Admonitions allow you to insert eye-catching callout boxes in your content.
+
+Admonitions serve a similar purpose as the alert shortcode but are implemented via Hugo render hooks. The key difference is syntax: admonitions use Markdown syntax, making them more portable across different platforms, whereas shortcodes are specific to Hugo. The syntax resembles GitHub alerts:
+
+```md
+> [!TIP]
+> A Tip type admonition.
+
+> [!TIP]+ Custom Title + Custom Icon
+> A collapsible admonition with custom title.
+{icon="twitter"}
+```
+
+> [!TIP]
+> A Tip type admonition.
+
+> [!TIP]+ Custom Title + Custom Icon
+> A collapsible admonition with custom title.
+{icon="twitter"}
+
+The alert sign (`+` or `-`) is optional to control whether the admonition is folded or not. Note that alert sign is only compatible in Obsidian.
+
+> [!INFO]- Supported types
+> Valid admonition types include [GitHub alert types](https://github.blog/changelog/2023-12-14-new-markdown-extension-alerts-provide-distinctive-styling-for-significant-content/) and [Obsidian callout types](https://help.obsidian.md/callouts). The types are case-insensitive.
+>
+> **GitHub types:** `NOTE`, `TIP`, `IMPORTANT`, `WARNING`, `CAUTION`  
+> **Obsidian types:** `note`, `abstract`, `info`, `todo`, `tip`, `success`, `question`, `warning`, `failure`, `danger`, `bug`, `example`, `quote`
+
+> [!INFO]- Customize admonition
+> See the [admonition customization guide](https://github.com/nunocoracao/blowfish/blob/main/layouts/_default/_markup/render-blockquote.html).
+## Alert
+
+`alert` outputs its contents as a stylised message box within your article. It's useful for drawing attention to important information that you don't want the reader to miss.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description |
+| --- | --- |
+| `icon` | **Optional.** the icon to display on the left side.<br>**Default:** `triangle-exclamation` (Check out the [icon shortcode](#icon) for more details on using icons.) |
+| `iconColor` | **Optional.** the color for the icon in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme . |
+| `cardColor` | **Optional.** the color for the card background in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme . |
+| `textColor` | **Optional.** the color for the text in basic CSS style.<br>Can be either hex values (`#FFFFFF`) or color names (`white`)<br>By default chosen based on the current color theme . |
+<!-- prettier-ignore-end -->
+
+The input is written in Markdown so you can format it however you please.
+
+**Example 1:** No params
+
+```md
+{{</* alert */>}}
+**Warning!** This action is destructive!
+{{</* /alert */>}}
+```
+
+{{< alert >}}
+**Warning!** This action is destructive!
+{{< /alert >}}
+
+**Example 2:** Unnamed param
+
+```md
+{{</* alert "twitter" */>}}
+Don't forget to [follow me](https://twitter.com/nunocoracao) on Twitter.
+{{</* /alert */>}}
+```
+
+{{< alert "twitter" >}}
+Don't forget to [follow me](https://twitter.com/nunocoracao) on Twitter.
+{{< /alert >}}
+
+**Example 3:** Named params
+
+```md
+{{</* alert icon="fire" cardColor="#e63946" iconColor="#1d3557" textColor="#f1faee" */>}}
+This is an error!
+{{</* /alert */>}}
+```
+
+{{< alert icon="fire" cardColor="#e63946" iconColor="#1d3557" textColor="#f1faee" >}}
+This is an error!
+{{< /alert >}}
 
 <br/><br/><br/>
 
@@ -422,6 +422,29 @@ This shortcode is for importing code from external sources easily without copyin
 
 <br/><br/><br/>
 
+## CTA button
+
+Use `cta` for a clear, accessible call to action inside documentation, landing pages, or long-form content.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description |
+| --- | --- |
+| `url` | Destination URL. Defaults to `#`. |
+| `label` | Button text. Defaults to `Learn more`. |
+| `style` | `primary` (default) or `outline`. |
+<!-- prettier-ignore-end -->
+
+```md
+{{</* cta url="/docs/installation/" label="Start building" */>}}
+{{</* cta url="/docs/configuration/" label="Explore configuration" style="outline" */>}}
+```
+
+{{< cta url="/docs/installation/" label="Start building" >}}
+&nbsp;
+{{< cta url="/docs/configuration/" label="Explore configuration" style="outline" >}}
+
+<br/><br/><br/>
+
 ## Email
 
 Creates an obfuscated mailto link:
@@ -431,6 +454,50 @@ Creates an obfuscated mailto link:
 ```
 
 {{< email email="mailto:hello@test.com" text="text" subject="Reply to awesome article" >}}
+
+<br/><br/><br/>
+
+## Feature grid
+
+Build polished, responsive feature sections without repeating presentation markup. Use `feature-grid` as the container, then add one `feature` shortcode for each item. The grid defaults to three columns on large screens and can be set to four.
+
+<!-- prettier-ignore-start -->
+| Parameter | Description |
+| --- | --- |
+| `columns` | Optional number of large-screen columns: `3` (default) or `4`. |
+| `icon` | Icon name for a feature. Defaults to `wand-magic-sparkles`. |
+| `title` | Feature title. Markdown is supported. |
+| `url` | Optional destination for the feature link. |
+| `label` | Link label. Defaults to `Learn more`. |
+<!-- prettier-ignore-end -->
+
+**Example:**
+
+```md
+{{</* feature-grid columns="3" */>}}
+{{</* feature icon="wand-magic-sparkles" title="Make it yours" url="/docs/configuration/" */>}}
+Start from a thoughtful default, then adjust every meaningful detail.
+{{</* /feature */>}}
+{{</* feature icon="file-lines" title="Publish faster" url="/docs/shortcodes/" label="Browse shortcodes" */>}}
+Compose rich content with small, reusable building blocks.
+{{</* /feature */>}}
+{{</* feature icon="heart" title="Built for people" */>}}
+Accessible defaults, responsive layouts, and dark mode included.
+{{</* /feature */>}}
+{{</* /feature-grid */>}}
+```
+
+{{< feature-grid >}}
+{{< feature icon="wand-magic-sparkles" title="Make it yours" url="/docs/configuration/" >}}
+Start from a thoughtful default, then adjust every meaningful detail.
+{{< /feature >}}
+{{< feature icon="file-lines" title="Publish faster" url="/docs/shortcodes/" label="Browse shortcodes" >}}
+Compose rich content with small, reusable building blocks.
+{{< /feature >}}
+{{< feature icon="heart" title="Built for people" >}}
+Accessible defaults, responsive layouts, and dark mode included.
+{{< /feature >}}
+{{< /feature-grid >}}
 
 <br/><br/><br/>
 
@@ -524,13 +591,13 @@ If you need captions, you can use the `figure` shortcode inside the gallery. Whe
 ```
 
 {{< gallery >}}
-  <img src="gallery/01.jpg" class="grid-w33" />
-  <img src="gallery/02.jpg" class="grid-w33" />
-  <img src="gallery/03.jpg" class="grid-w33" />
-  <img src="gallery/04.jpg" class="grid-w33" />
-  <img src="gallery/05.jpg" class="grid-w33" />
-  <img src="gallery/06.jpg" class="grid-w33" />
-  <img src="gallery/07.jpg" class="grid-w33" />
+  <img alt="" src="gallery/01.jpg" class="grid-w33" />
+  <img alt="" src="gallery/02.jpg" class="grid-w33" />
+  <img alt="" src="gallery/03.jpg" class="grid-w33" />
+  <img alt="" src="gallery/04.jpg" class="grid-w33" />
+  <img alt="" src="gallery/05.jpg" class="grid-w33" />
+  <img alt="" src="gallery/06.jpg" class="grid-w33" />
+  <img alt="" src="gallery/07.jpg" class="grid-w33" />
 {{< /gallery >}}
 
 <br/><br/><br/>
@@ -550,13 +617,13 @@ If you need captions, you can use the `figure` shortcode inside the gallery. Whe
 ```
 
 {{< gallery >}}
-  <img src="gallery/01.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
-  <img src="gallery/02.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
-  <img src="gallery/03.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
-  <img src="gallery/04.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
-  <img src="gallery/05.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
-  <img src="gallery/06.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
-  <img src="gallery/07.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img alt="" src="gallery/01.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img alt="" src="gallery/02.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img alt="" src="gallery/03.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img alt="" src="gallery/04.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img alt="" src="gallery/05.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img alt="" src="gallery/06.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img alt="" src="gallery/07.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
 {{< /gallery >}}
 
 <br/><br/><br/>
@@ -912,6 +979,44 @@ You can see some additional Mermaid examples on the [diagrams and flowcharts sam
 
 <br/><br/><br/>
 
+## Stats
+
+Use `stats` and `stat` to present concise, high-signal metrics in a responsive grid. The grid uses three columns on large screens by default, or four with `columns="4"`.
+
+```md
+{{</* stats */>}}
+{{</* stat value="40+" label="Shortcodes" */>}}Compose pages without bespoke templates.{{</* /stat */>}}
+{{</* stat value="100%" label="Portable" */>}}Keep your content in Markdown.{{</* /stat */>}}
+{{</* stat value="0" label="Required plugins" */>}}Start with Hugo and Blowfish.{{</* /stat */>}}
+{{</* /stats */>}}
+```
+
+{{< stats >}}
+{{< stat value="40+" label="Shortcodes" >}}Compose pages without bespoke templates.{{< /stat >}}
+{{< stat value="100%" label="Portable" >}}Keep your content in Markdown.{{< /stat >}}
+{{< stat value="0" label="Required plugins" >}}Start with Hugo and Blowfish.{{< /stat >}}
+{{< /stats >}}
+
+<br/><br/><br/>
+
+## Steps
+
+Use `steps` and `step` for onboarding, processes, roadmaps, and tutorials.
+
+```md
+{{</* steps */>}}
+{{</* step number="1" title="Configure the theme" */>}}Choose a colour scheme and homepage layout.{{</* /step */>}}
+{{</* step number="2" title="Write your content" */>}}Use standard Markdown and shortcodes.{{</* /step */>}}
+{{</* /steps */>}}
+```
+
+{{< steps >}}
+{{< step number="1" title="Configure the theme" >}}Choose a colour scheme and homepage layout.{{< /step >}}
+{{< step number="2" title="Write your content" >}}Use standard Markdown and shortcodes.{{< /step >}}
+{{< /steps >}}
+
+<br/><br/><br/>
+
 ## Swatches
 
 `swatches` outputs a set of up to three different colors to showcase color elements like a color palette. This shortcode takes the `HEX` codes of each color and creates the visual elements for each.
@@ -1189,13 +1294,13 @@ With html code
 {{< timelineItem icon="star" header="Shortcodes" badge="AWESOME" >}}
 With other shortcodes
 {{< gallery >}}
-  <img src="gallery/01.jpg" class="grid-w33" />
-  <img src="gallery/02.jpg" class="grid-w33" />
-  <img src="gallery/03.jpg" class="grid-w33" />
-  <img src="gallery/04.jpg" class="grid-w33" />
-  <img src="gallery/05.jpg" class="grid-w33" />
-  <img src="gallery/06.jpg" class="grid-w33" />
-  <img src="gallery/07.jpg" class="grid-w33" />
+  <img alt="" src="gallery/01.jpg" class="grid-w33" />
+  <img alt="" src="gallery/02.jpg" class="grid-w33" />
+  <img alt="" src="gallery/03.jpg" class="grid-w33" />
+  <img alt="" src="gallery/04.jpg" class="grid-w33" />
+  <img alt="" src="gallery/05.jpg" class="grid-w33" />
+  <img alt="" src="gallery/06.jpg" class="grid-w33" />
+  <img alt="" src="gallery/07.jpg" class="grid-w33" />
 {{< /gallery >}}
 {{</ timelineItem >}}
 {{< timelineItem icon="code" header="Another Awesome Header">}}
@@ -1378,105 +1483,3 @@ More informations can be found on the [youtubeLite GitHub repo](https://github.c
 
 <br/><br/><br/>
 
-## Feature grid
-
-Build polished, responsive feature sections without repeating presentation markup. Use `feature-grid` as the container, then add one `feature` shortcode for each item. The grid defaults to three columns on large screens and can be set to four.
-
-<!-- prettier-ignore-start -->
-| Parameter | Description |
-| --- | --- |
-| `columns` | Optional number of large-screen columns: `3` (default) or `4`. |
-| `icon` | Icon name for a feature. Defaults to `wand-magic-sparkles`. |
-| `title` | Feature title. Markdown is supported. |
-| `url` | Optional destination for the feature link. |
-| `label` | Link label. Defaults to `Learn more`. |
-<!-- prettier-ignore-end -->
-
-**Example:**
-
-```md
-{{</* feature-grid columns="3" */>}}
-{{</* feature icon="wand-magic-sparkles" title="Make it yours" url="/docs/configuration/" */>}}
-Start from a thoughtful default, then adjust every meaningful detail.
-{{</* /feature */>}}
-{{</* feature icon="file-lines" title="Publish faster" url="/docs/shortcodes/" label="Browse shortcodes" */>}}
-Compose rich content with small, reusable building blocks.
-{{</* /feature */>}}
-{{</* feature icon="heart" title="Built for people" */>}}
-Accessible defaults, responsive layouts, and dark mode included.
-{{</* /feature */>}}
-{{</* /feature-grid */>}}
-```
-
-{{< feature-grid >}}
-{{< feature icon="wand-magic-sparkles" title="Make it yours" url="/docs/configuration/" >}}
-Start from a thoughtful default, then adjust every meaningful detail.
-{{< /feature >}}
-{{< feature icon="file-lines" title="Publish faster" url="/docs/shortcodes/" label="Browse shortcodes" >}}
-Compose rich content with small, reusable building blocks.
-{{< /feature >}}
-{{< feature icon="heart" title="Built for people" >}}
-Accessible defaults, responsive layouts, and dark mode included.
-{{< /feature >}}
-{{< /feature-grid >}}
-
-<br/><br/><br/>
-
-## CTA button
-
-Use `cta` for a clear, accessible call to action inside documentation, landing pages, or long-form content.
-
-<!-- prettier-ignore-start -->
-| Parameter | Description |
-| --- | --- |
-| `url` | Destination URL. Defaults to `#`. |
-| `label` | Button text. Defaults to `Learn more`. |
-| `style` | `primary` (default) or `outline`. |
-<!-- prettier-ignore-end -->
-
-```md
-{{</* cta url="/docs/installation/" label="Start building" */>}}
-{{</* cta url="/docs/configuration/" label="Explore configuration" style="outline" */>}}
-```
-
-{{< cta url="/docs/installation/" label="Start building" >}}
-&nbsp;
-{{< cta url="/docs/configuration/" label="Explore configuration" style="outline" >}}
-
-<br/><br/><br/>
-
-## Stats
-
-Use `stats` and `stat` to present concise, high-signal metrics in a responsive grid. The grid uses three columns on large screens by default, or four with `columns="4"`.
-
-```md
-{{</* stats */>}}
-{{</* stat value="40+" label="Shortcodes" */>}}Compose pages without bespoke templates.{{</* /stat */>}}
-{{</* stat value="100%" label="Portable" */>}}Keep your content in Markdown.{{</* /stat */>}}
-{{</* stat value="0" label="Required plugins" */>}}Start with Hugo and Blowfish.{{</* /stat */>}}
-{{</* /stats */>}}
-```
-
-{{< stats >}}
-{{< stat value="40+" label="Shortcodes" >}}Compose pages without bespoke templates.{{< /stat >}}
-{{< stat value="100%" label="Portable" >}}Keep your content in Markdown.{{< /stat >}}
-{{< stat value="0" label="Required plugins" >}}Start with Hugo and Blowfish.{{< /stat >}}
-{{< /stats >}}
-
-<br/><br/><br/>
-
-## Steps
-
-Use `steps` and `step` for onboarding, processes, roadmaps, and tutorials.
-
-```md
-{{</* steps */>}}
-{{</* step number="1" title="Configure the theme" */>}}Choose a colour scheme and homepage layout.{{</* /step */>}}
-{{</* step number="2" title="Write your content" */>}}Use standard Markdown and shortcodes.{{</* /step */>}}
-{{</* /steps */>}}
-```
-
-{{< steps >}}
-{{< step number="1" title="Configure the theme" >}}Choose a colour scheme and homepage layout.{{< /step >}}
-{{< step number="2" title="Write your content" >}}Use standard Markdown and shortcodes.{{< /step >}}
-{{< /steps >}}

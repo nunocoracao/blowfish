@@ -1,5 +1,6 @@
 ---
 title: "托管和部署"
+featureimage: "images/v3/publishing-system.png"
 weight: 14
 draft: false
 description: "了解如何部署 Blowfish 网页。"

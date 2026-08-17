@@ -3,6 +3,7 @@ title: "Configuración"
 weight: 4
 draft: false
 description: "Todas las variables de configuración disponibles en Blowfish."
+featureimage: "images/v3/configuration-system.png"
 slug: "configuration"
 tags: ["configuración", "documentación"]
 series: ["Documentación"]
@@ -13,13 +14,8 @@ Blowfish es un tema altamente personalizable y utiliza algunas de las últimas c
 
 El tema viene con una configuración predeterminada que te permite empezar con un blog básico o sitio web estático.
 
-{{< alert "fire" >}}
-Acabamos de lanzar una herramienta CLI para ayudarte a empezar con Blowfish. Te ayudará con la instalación y configuración. Instala la herramienta CLI globalmente usando:
-
-```bash
-npx blowfish-tools
-```
-
+{{< alert "wand-magic-sparkles" >}}
+¿Trabajas con un agente de programación con IA? Blowfish incluye un **skill para agentes** que enseña a agentes como Claude Code a instalar, configurar y trabajar con el tema — consulta la [página de instalación]({{< ref "docs/installation" >}}) para configurarlo.
 {{< /alert >}}
 
 > Los archivos de configuración incluidos con el tema se proporcionan en formato TOML ya que es la sintaxis predeterminada de Hugo. Siéntete libre de convertir tu configuración a YAML o JSON si lo deseas.

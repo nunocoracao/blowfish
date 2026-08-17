@@ -13,6 +13,21 @@ Hugo の[クイックスタートガイド](https://gohugo.io/getting-started/qu
 
 詳細なインストール手順は以下に記載されています。[テーマのアップデート方法](#テーマのアップデート方法)についても説明しています。
 
+## エージェントスキル
+
+Blowfish には、Claude Code などの AI コーディングエージェントにテーマのインストール・設定・サイト構築の方法を教える[エージェントスキル](https://github.com/nunocoracao/blowfish/tree/main/.claude/skills/blowfish)が付属しています。エージェントを使ってサイトを開発する場合は、このスキルをインストールすると、Blowfish の設定ファイル、レイアウト、フロントマター、ショートコードをエージェントが理解できるようになります。
+
+Claude Code で Blowfish のプラグインマーケットプレイスからインストールできます:
+
+```shell
+/plugin marketplace add nunocoracao/blowfish
+/plugin install blowfish@blowfish
+```
+
+または、スキルのフォルダをサイトのリポジトリの `.claude/skills/blowfish/` にコピーしてください。エージェントはプロジェクトの `.claude/skills/` ディレクトリにあるスキルを自動的に読み込みます。
+
+---
+
 ## インストール
 
 以下の手順では、全くの新規状態から Hugo と Blowfish を使用してウェブサイトを立ち上げる方法を説明します。このガイドで紹介するツールのほとんどは、お使いのプラットフォームに対応したパッケージマネージャーからインストール可能です。
@@ -27,7 +42,7 @@ Hugo を初めて使用する場合は、[公式サイトの手順](https://gohu
 
 お使いのプラットフォームに合わせた詳細なインストール手順は、[Hugo の公式ドキュメント](https://gohugo.io/getting-started/installing)に記載されています。
 
-### Blowfish Tools (推奨)
+### Blowfish Tools
 
 Blowfish を簡単に使い始められるよう、新しく CLI ツールをリリースしました。このツールは、新しい Hugo プロジェクトの作成、テーマのインストール、そしてテーマ設定ファイルのセットアップを自動的に行います。まだベータ版ですので、[問題を発見した場合は報告にご協力ください](https://github.com/nunocoracao/blowfish-tools)。
 
@@ -112,7 +127,7 @@ git submodule add -b main https://github.com/nunocoracao/blowfish.git themes/blo
    ```toml
    [[imports]]
    disable = false
-   path = "github.com/nunocoracao/blowfish/v2"
+   path = "github.com/nunocoracao/blowfish/v3"
    ```
 
 4. `hugo server` を実行してサーバーを起動すると、テーマが自動的にダウンロードされます。
@@ -209,3 +224,14 @@ Blowfish を手動でアップデートするには、テーマの最新コピ�
 2. アーカイブを解凍し、フォルダ名を `blowfish` に変更して、Hugo プロジェクトのルートフォルダ内の `themes/` ディレクトリに移動します。すべてのテーマファイルを置き換えるには、既存のディレクトリを上書きする必要があります。
 
 3. サイトを再びビルドし、すべてが期待通りに動作することを確認してください。
+---
+
+## v2 から v3 へのアップグレード
+
+Blowfish v3 は v2 のサイトと完全な後方互換性があります。新機能はすべてオプトインで、設定オプションの削除やテンプレート・パーシャルの名称変更はありません。アップグレード後も、新機能を有効にするまでサイトの見た目や動作は変わりません。
+
+- **Git サブモジュール:** いつも通り更新してください — `git submodule update --remote --merge`。それ以外の作業は不要です。
+- **Hugo モジュール:** `config/_default/module.toml` のインポートパスを `github.com/nunocoracao/blowfish/v2` から `github.com/nunocoracao/blowfish/v3` に変更し、`hugo mod get -u` を実行してください。
+- **手動インストール:** 上記の手順の通り、最新リリースをダウンロードしてテーマフォルダを置き換えてください。
+
+アップグレード後は、[設定ドキュメント]({{< ref "configuration" >}})で新しいオプトイン機能（フローティングヘッダー、ランディングレイアウト、背景キャンバス、読書プログレスバーなど）を確認してください。

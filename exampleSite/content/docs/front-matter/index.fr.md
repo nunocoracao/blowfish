@@ -1,5 +1,6 @@
 ---
 title: "Front Matter"
+featureimage: "images/v3/front-matter.png"
 weight: 7
 draft: false
 description: "Toutes les variables front matter disponibles dans Blowfish."

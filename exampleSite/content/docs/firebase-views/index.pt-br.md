@@ -1,5 +1,6 @@
 ---
 title: "Firebase: Visualizações & Curtidas"
+featureimage: "images/v3/content-network.png"
 weight: 15
 draft: false
 description: "Aprenda como integrar o Firebase e obter dados dinâmicos para visualizações e curtidas."

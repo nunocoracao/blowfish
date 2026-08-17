@@ -1,5 +1,6 @@
 ---
 title: "Séries"
+featureimage: "images/v3/series.png"
 weight: 12
 draft: false
 description: "Aprenda como agrupar artigos em uma série."

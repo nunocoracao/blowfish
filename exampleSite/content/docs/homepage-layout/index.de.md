@@ -1,5 +1,6 @@
 ---
 title: "Homepage-Layout"
+featureimage: "images/v3/homepage-layout.png"
 weight: 5
 draft: false
 description: "Konfiguration des Homepage-Layouts im Blowfish-Theme."
@@ -9,7 +10,7 @@ series: ["Dokumentation"]
 series_order: 5
 ---
 
-Blowfish bietet ein vollständig flexibles Homepage-Layout. Es gibt zwei Hauptvorlagen zur Auswahl mit zusätzlichen Einstellungen zur Anpassung des Designs. Alternativ können Sie auch Ihre eigene Vorlage bereitstellen und die vollständige Kontrolle über den Homepage-Inhalt haben.
+Blowfish bietet flexible Homepage-Layouts mit Einstellungen zur Anpassung jedes Designs. Alternativ können Sie auch Ihre eigene Vorlage bereitstellen und die vollständige Kontrolle über den Homepage-Inhalt haben.
 
 Das Layout der Homepage wird durch die Einstellung `homepage.layout` in der Konfigurationsdatei `params.toml` gesteuert. Zusätzlich haben alle Layouts die Option, eine Liste der [neuesten Artikel](#neueste-artikel) einzuschließen.
 
@@ -57,6 +58,38 @@ Das Card-Layout ist eine Erweiterung des Seiten-Layouts. Es bietet das gleiche M
 
 Um das Card-Layout zu aktivieren, setzen Sie `homepage.layout = "card"` und `homepage.homepageImage` in der Konfigurationsdatei `params.toml`.
 
+## Landing-Layout
+
+Das Landing-Layout ist für Produkt-Websites, Dokumentations-Hubs und persönliche Websites gedacht, die ein stärkeres Eröffnungsstatement benötigen. Es beginnt mit einem großzügigen, redaktionellen Hero — Eyebrow, prägnante Headline, Lead-Absatz und Call-to-Action-Buttons — optional hinterlegt mit einem Hero-Bild in voller Breite, das in den globalen Hintergrund übergeht, mit einer gestaffelten Eingangsanimation, die für Besucher mit reduzierter Bewegungspräferenz automatisch deaktiviert wird. Alles unterhalb des Heros ist Standard-Markdown mit Blowfish-Shortcodes, sodass die gesamte Seite portabel und einfach zu pflegen bleibt.
+
+{{< figure src="img/home-landing.png" class="thumbnailshadow" >}}
+
+Um das Landing-Layout zu aktivieren, setzen Sie `homepage.layout = "landing"` in der Konfigurationsdatei `params.toml`.
+
+Der Hero wird über das Front Matter von `content/_index.md` gesteuert. Alle Felder sind optional — alles, was Sie weglassen, wird einfach nicht gerendert:
+
+```yaml
+---
+title: "Build a site that feels unmistakably yours."
+heroCaption: "Blowfish" # eyebrow above the title; defaults to the author name
+heroLead: "A short statement that expands on the title."
+heroButtons:
+  - label: "Get started"
+    url: "/docs/installation/"
+  - label: "Explore the docs"
+    url: "/docs/"
+    style: "outline" # "primary" (default) or "outline"
+---
+```
+
+| Front Matter | Beschreibung |
+| ------------ | ----------- |
+| `heroCaption` | Kleiner Eyebrow-Text in Großbuchstaben über dem Titel. Standardmäßig `params.Author.name`. |
+| `heroLead` | Lead-Absatz, der unter dem Titel gerendert wird. Unterstützt Markdown. |
+| `heroButtons` | Liste von Call-to-Action-Buttons (`label`, `url` und optional `style`). Verwendet dasselbe Styling wie der [`cta`-Shortcode]({{< ref "shortcodes#cta-button" >}}). |
+
+Der Markdown-Inhalt von `_index.md` wird unterhalb des Heros gerendert, sodass Statistiken, Feature-Grids, Schritte und beliebige andere Shortcodes den Rest der Seite gestalten können. Das Landing-Layout passt gut zur websiteweiten Option `backgroundCanvas`, die in der [Konfigurations-Dokumentation]({{< ref "configuration" >}}) beschrieben wird.
+
 
 ## Benutzerdefiniertes Layout
 
@@ -68,7 +101,7 @@ Nachdem der Konfigurationswert gesetzt ist, erstellen Sie eine neue Datei `custo
 
 Um [neueste Artikel](#neueste-artikel) im benutzerdefinierten Layout einzuschließen, verwenden Sie das Partial `recent-articles/main.html`.
 
-Als Beispiel verwendet die [Homepage]({{< ref "/" >}}) auf dieser Website das benutzerdefinierte Layout, um zwischen dem Profil- und Seiten-Layout zu wechseln. Besuchen Sie das [GitHub-Repository](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/layouts/partials/home/custom.html), um zu sehen, wie es funktioniert.
+Die mitgelieferte Beispiel-Website verwendet das integrierte Landing-Layout und Standard-Inhalts-Shortcodes. Besuchen Sie das [GitHub-Repository](https://github.com/nunocoracao/blowfish/tree/main/exampleSite), um zu sehen, wie sie konfiguriert ist.
 
 ## Neueste Artikel
 

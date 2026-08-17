@@ -1,5 +1,6 @@
 ---
 title: "Vignettes"
+featureimage: "images/v3/thumbnails.png"
 weight: 10
 draft: false
 description: "Activez les vignettes pour vos articles."

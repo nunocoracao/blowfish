@@ -14,13 +14,8 @@ Blowfish is a highly customisable theme and uses some of the latest Hugo feature
 
 The theme ships with a default configuration that gets you up and running with a basic blog or static website.
 
-{{< alert "fire" >}}
-We just launched a CLI tool to help you get started with Blowfish. It will help you with installation and configuration. Install the CLI tool globally using:
-
-```bash
-npx blowfish-tools
-```
-
+{{< alert "wand-magic-sparkles" >}}
+Working with an AI coding agent? Blowfish ships an **agent skill** that teaches agents like Claude Code how to install, configure, and build with the theme — see the [installation page]({{< ref "docs/installation" >}}) to set it up.
 {{< /alert >}}
 
 > Configuration files bundled with the theme are provided in TOML format as this is the default Hugo syntax. Feel free to convert your config to YAML or JSON if you wish.
@@ -187,7 +182,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 
 | Name | Default | Description |
 | --- | --- | --- |
-| `colorScheme` | `"blowfish"` | The theme colour scheme to use. Valid values are `blowfish` (default), `avocado`, `fire`, `ocean`, `forest`, `princess`, `neon`, `bloody`, `terminal`, `marvel`, `noir`, `autumn`, `congo`, `slate`, `github`, and `one-light`. Refer to the [Colour Schemes]({{< ref "getting-started#colour-schemes" >}}) section for more details. |
+| `colorScheme` | `"blowfish"` | The theme colour scheme to use. Valid values are `blowfish` (default), `avocado`, `burufugu`, `fire`, `ocean`, `forest`, `princess`, `neon`, `bloody`, `terminal`, `marvel`, `noir`, `autumn`, `congo`, `slate`, `github`, and `one-light`. Refer to the [Colour Schemes]({{< ref "getting-started#colour-schemes" >}}) section for more details. |
 | `defaultAppearance` | `"light"` | The default theme appearance, either `light` or `dark`. |
 | `autoSwitchAppearance` | `true` | Whether the theme appearance automatically switches based upon the visitor's operating system preference. Set to `false` to force the site to always use the `defaultAppearance`. |
 | `enableA11y`                   | `false`      | Whether to enable the accessibility toggle button. |
@@ -209,6 +204,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `backgroundImageWidth` | `1200` | Width (in pixels) to scale background images to. |
 | `disableTextInHeader` | `false` | Disables text in header, useful for logo based headers. |
 | `defaultBackgroundImage` | _Not set_ | Default background image for both `background` homepage layout and `background` hero style |
+| `backgroundCanvas` | `false` | When `true`, renders `defaultBackgroundImage` as a fixed full-viewport backdrop behind every page. Pages whose hero paints its own fixed background (for example the `background` hero style with a feature image) automatically suppress the canvas, and heroes no longer fall back to `defaultBackgroundImage` since the canvas already displays it. |
 | `defaultFeaturedImage` | _Not set_ | Default background image for all `featured` images across articles, will be overridden by a local `featured` image. |
 | `defaultSocialImage` | _Not set_ | Default image for social media sharing (Open Graph and Twitter). Will be overridden by a local `feature` image. |
 | `hotlinkFeatureImage` | `false` | Hotlink external images in article feature images and article cards. Those images will not be processed by Hugo. |

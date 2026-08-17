@@ -11,6 +11,129 @@ series_order: 8
 
 [デフォルトの Hugo ショートコード](https://gohugo.io/content-management/shortcodes/)に加えて、Blowfish は機能拡張のためにいくつか独自のものを追加しています。
 
+## アコーディオン
+
+`accordion` は折りたたみ可能なパネルのセットを作成します。各項目は `accordionItem` サブショートコードで定義します。`mode` パラメータで、複数の項目を同時に開けるかどうかを制御できます。
+
+<!-- prettier-ignore-start -->
+| パラメータ | 説明 |
+| --------- | --------------------------------------------------------------------------------------------------- |
+| `mode`       | **オプション** `collapse`(1つのみ開く)または `open`(複数開く)。デフォルトは `collapse` です。 |
+| `separated`  | **オプション** `true` にすると各項目が個別のカードとして表示されます。デフォルトは `false`(連結リスト)です。 |
+<!-- prettier-ignore-end -->
+
+`accordionItem` のパラメータ:
+
+<!-- prettier-ignore-start -->
+| パラメータ | 説明 |
+| --------- | --------------------------------------------------------------------------------------------------- |
+| `title`   | **必須** 項目のヘッダーに表示されるタイトル。 |
+| `open`    | **オプション** `true` に設定すると、その項目がデフォルトで開いた状態になります。 |
+| `header`  | **オプション** `title` のエイリアス。他のショートコードとの互換性のために残されています。 |
+| `icon`    | **オプション** タイトルの前に表示するアイコン名。 |
+| `align`   | **オプション** 項目内のテキストの配置: `left`、`center`、`right` |
+<!-- prettier-ignore-end -->
+
+**例1:** `mode="open"`(複数の項目を同時に開ける)+ `separated=true`
+
+```md
+{{</* accordion mode="open" separated=true */>}}
+  {{</* accordionItem title="Markdown example" icon="code" open=true */>}}
+  This item demonstrates Markdown rendering:
+  - **Bold text**
+  - Lists
+  - `inline code`
+  {{</* /accordionItem */>}}
+
+  {{</* accordionItem title="Shortcode example" md=false */>}}
+  This item demonstrates shortcode rendering with <code>md=false</code>:
+  
+  {{</* alert */>}}This is an inline alert.{{</* /alert */>}}
+  {{</* /accordionItem */>}}
+{{</* /accordion */>}}
+```
+
+{{< accordion mode="open" separated=true >}}
+  {{< accordionItem title="Markdown example" icon="code" open=true >}}
+  This item demonstrates Markdown rendering:
+  - **Bold text**
+  - Lists
+  - `inline code`
+  {{< /accordionItem >}}
+
+  {{< accordionItem title="Shortcode example" md=false >}}
+  This item demonstrates shortcode rendering with <code>md=false</code>:
+  
+  {{< alert >}}This is an inline alert.{{< /alert >}}
+  {{< /accordionItem >}}
+{{< /accordion >}}
+
+**例2:** `mode="collapse"`(同時に開けるのは1項目のみ)
+
+```md
+{{</* accordion mode="collapse" */>}}
+  {{</* accordionItem title="First item" open=true */>}}
+  This item uses Markdown with a short list:
+  1. One
+  2. Two
+  3. Three
+  {{</* /accordionItem */>}}
+
+  {{</* accordionItem title="Second item" md=false */>}}
+  This item includes another shortcode:
+  {{</* badge */>}}Tip{{</* /badge */>}}
+  {{</* /accordionItem */>}}
+{{</* /accordion */>}}
+```
+
+{{< accordion mode="collapse" >}}
+  {{< accordionItem title="First item" open=true >}}
+  This item uses Markdown with a short list:
+  1. One
+  2. Two
+  3. Three
+  {{< /accordionItem >}}
+
+  {{< accordionItem title="Second item" md=false >}}
+  This item includes another shortcode:
+  {{< badge >}}Tip{{< /badge >}}
+  {{< /accordionItem >}}
+{{< /accordion >}}
+
+<br/><br/><br/>
+
+## Admonition
+
+Admonitions は、文書内で読者の注意を引くための強調表示を挿入するための機能です。
+
+Admonitions は alert ショートコードと同様の目的を持ちますが、Hugo の render hooks を用いて実装されています。両者の主な違いは構文にあります。admonitions は Markdown 構文を使用するため、異なるプラットフォーム間でも扱いやすく、一方、ショートコードは Hugo 固有の仕組みです。構文は GitHub の alerts に近い形式です。
+
+```md
+> [!TIP]
+> Tip タイプの表示例。
+
+> [!TIP]+ カスタムタイトル
+> タイトルを指定した折りたたみ可能な表示例。
+{icon="twitter"}
+```
+
+> [!TIP]
+> Tip タイプの表示例。
+
+> [!TIP]+ カスタムタイトル
+> タイトルを指定した折りたたみ可能な表示例。
+{icon="twitter"}
+
+記号（`+` または `-`）は任意で、表示を折りたたむかどうかを制御します。なお、この記号は Obsidian のみ対応しています。
+
+> [!INFO]- 対応しているタイプ
+> 使用可能なタイプには、[GitHub alert タイプ](https://github.blog/changelog/2023-12-14-new-markdown-extension-alerts-provide-distinctive-styling-for-significant-content/) および [Obsidian callout タイプ](https://help.obsidian.md/callouts) が含まれます。タイプ名は大文字・小文字を区別しません。
+>
+> **GitHub タイプ：** `NOTE`, `TIP`, `IMPORTANT`, `WARNING`, `CAUTION`  
+> **Obsidian タイプ：** `note`, `abstract`, `info`, `todo`, `tip`, `success`, `question`, `warning`, `failure`, `danger`, `bug`, `example`, `quote`
+
+<br/><br/><br/>
+
 ## アラート
 
 `alert` ショートコードを使うと、記事の中にスタイリッシュなメッセージボックスを表示できます。読者に見逃してほしくない重要な情報を目立たせるのに便利です。
@@ -64,35 +187,36 @@ Twitter で私を[フォロー](https://twitter.com/nunocoracao)するのを忘�
 
 <br/><br/><br/>
 
-## Admonition
+## Ansible Galaxy カード
 
-Admonitions は、文書内で読者の注意を引くための強調表示を挿入するための機能です。
+`ansible` は、[Ansible Galaxy](https://galaxy.ansible.com/) のエントリのカードをレンダリングします。データはビルド時に取得されます。`role` または `collection` パラメータのいずれかを受け付け、どちらも `namespace.name` 形式で指定します。
 
-Admonitions は alert ショートコードと同様の目的を持ちますが、Hugo の render hooks を用いて実装されています。両者の主な違いは構文にあります。admonitions は Markdown 構文を使用するため、異なるプラットフォーム間でも扱いやすく、一方、ショートコードは Hugo 固有の仕組みです。構文は GitHub の alerts に近い形式です。
+<!-- prettier-ignore-start -->
+| パラメータ | 説明 |
+| ------------ | ------------------------------------------------------------------------------------ |
+| `role`       | [文字列] `namespace.name` 形式の Galaxy ロール。例: `geerlingguy.docker` |
+| `collection` | [文字列] `namespace.name` 形式の Galaxy コレクション。例: `community.general` |
+<!-- prettier-ignore-end -->
+
+1回の呼び出しで `role` または `collection` のどちらか一方だけを指定してください。
+
+カードのすべての値は、Hugo の `resources.GetRemote` によってビルド時に取得されます。Galaxy はクロスオリジンリクエストを許可していないため、カードはブラウザ上では更新されません。値を更新するにはサイトを再ビルドしてください。
+
+**例1:** ロール
 
 ```md
-> [!TIP]
-> Tip タイプの表示例。
-
-> [!TIP]+ カスタムタイトル
-> タイトルを指定した折りたたみ可能な表示例。
-{icon="twitter"}
+{{</* ansible role="geerlingguy.docker" */>}}
 ```
 
-> [!TIP]
-> Tip タイプの表示例。
+{{< ansible role="geerlingguy.docker" >}}
 
-> [!TIP]+ カスタムタイトル
-> タイトルを指定した折りたたみ可能な表示例。
-{icon="twitter"}
+**例2:** コレクション
 
-記号（`+` または `-`）は任意で、表示を折りたたむかどうかを制御します。なお、この記号は Obsidian のみ対応しています。
+```md
+{{</* ansible collection="community.general" */>}}
+```
 
-> [!INFO]- 対応しているタイプ
-> 使用可能なタイプには、[GitHub alert タイプ](https://github.blog/changelog/2023-12-14-new-markdown-extension-alerts-provide-distinctive-styling-for-significant-content/) および [Obsidian callout タイプ](https://help.obsidian.md/callouts) が含まれます。タイプ名は大文字・小文字を区別しません。
->
-> **GitHub タイプ：** `NOTE`, `TIP`, `IMPORTANT`, `WARNING`, `CAUTION`  
-> **Obsidian タイプ：** `note`, `abstract`, `info`, `todo`, `tip`, `success`, `question`, `warning`, `failure`, `danger`, `bug`, `example`, `quote`
+{{< ansible collection="community.general" >}}
 
 <br/><br/><br/>
 
@@ -273,6 +397,85 @@ data: {
 
 <br/><br/><br/>
 
+## CTA ボタン
+
+`cta` は、ドキュメント、ランディングページ、長文コンテンツ内で明確でアクセシブルなコールトゥアクションを表示するために使用します。
+
+<!-- prettier-ignore-start -->
+| パラメータ | 説明 |
+| --- | --- |
+| `url` | リンク先の URL。デフォルトは `#` です。 |
+| `label` | ボタンのテキスト。デフォルトは `Learn more` です。 |
+| `style` | `primary`(デフォルト)または `outline`。 |
+<!-- prettier-ignore-end -->
+
+```md
+{{</* cta url="/docs/installation/" label="Start building" */>}}
+{{</* cta url="/docs/configuration/" label="Explore configuration" style="outline" */>}}
+```
+
+{{< cta url="/docs/installation/" label="Start building" >}}
+&nbsp;
+{{< cta url="/docs/configuration/" label="Explore configuration" style="outline" >}}
+
+<br/><br/><br/>
+
+## メール
+
+難読化された mailto リンクを作成します:
+
+```md
+{{</* email email="mailto:hello@test.com" text="text" subject="Reply to awesome article" */>}}
+```
+
+{{< email email="mailto:hello@test.com" text="text" subject="Reply to awesome article" >}}
+
+<br/><br/><br/>
+
+## 機能グリッド
+
+表示用のマークアップを繰り返すことなく、洗練されたレスポンシブな機能紹介セクションを作成できます。`feature-grid` をコンテナとして使用し、各項目ごとに `feature` ショートコードを追加します。グリッドは大画面ではデフォルトで3列になり、4列に設定することもできます。
+
+<!-- prettier-ignore-start -->
+| パラメータ | 説明 |
+| --- | --- |
+| `columns` | 大画面での列数(オプション): `3`(デフォルト)または `4`。 |
+| `icon` | 機能のアイコン名。デフォルトは `wand-magic-sparkles` です。 |
+| `title` | 機能のタイトル。Markdown がサポートされています。 |
+| `url` | 機能リンクのリンク先(オプション)。 |
+| `label` | リンクのラベル。デフォルトは `Learn more` です。 |
+<!-- prettier-ignore-end -->
+
+**例:**
+
+```md
+{{</* feature-grid columns="3" */>}}
+{{</* feature icon="wand-magic-sparkles" title="Make it yours" url="/docs/configuration/" */>}}
+Start from a thoughtful default, then adjust every meaningful detail.
+{{</* /feature */>}}
+{{</* feature icon="file-lines" title="Publish faster" url="/docs/shortcodes/" label="Browse shortcodes" */>}}
+Compose rich content with small, reusable building blocks.
+{{</* /feature */>}}
+{{</* feature icon="heart" title="Built for people" */>}}
+Accessible defaults, responsive layouts, and dark mode included.
+{{</* /feature */>}}
+{{</* /feature-grid */>}}
+```
+
+{{< feature-grid >}}
+{{< feature icon="wand-magic-sparkles" title="Make it yours" url="/docs/configuration/" >}}
+Start from a thoughtful default, then adjust every meaningful detail.
+{{< /feature >}}
+{{< feature icon="file-lines" title="Publish faster" url="/docs/shortcodes/" label="Browse shortcodes" >}}
+Compose rich content with small, reusable building blocks.
+{{< /feature >}}
+{{< feature icon="heart" title="Built for people" >}}
+Accessible defaults, responsive layouts, and dark mode included.
+{{< /feature >}}
+{{< /feature-grid >}}
+
+<br/><br/><br/>
+
 ## Figure
 
 Blowfish には、コンテンツに画像を追加するための `figure` ショートコードが含まれています。このショートコードは、追加のパフォーマンス上の利点を提供するために、基本の Hugo 機能を置き換えます。
@@ -359,13 +562,13 @@ Blowfish も、標準の Markdown 構文を使用して含まれる画像の自�
 ```
 
 {{< gallery >}}
-  <img src="gallery/01.jpg" class="grid-w33" />
-  <img src="gallery/02.jpg" class="grid-w33" />
-  <img src="gallery/03.jpg" class="grid-w33" />
-  <img src="gallery/04.jpg" class="grid-w33" />
-  <img src="gallery/05.jpg" class="grid-w33" />
-  <img src="gallery/06.jpg" class="grid-w33" />
-  <img src="gallery/07.jpg" class="grid-w33" />
+  <img alt="" src="gallery/01.jpg" class="grid-w33" />
+  <img alt="" src="gallery/02.jpg" class="grid-w33" />
+  <img alt="" src="gallery/03.jpg" class="grid-w33" />
+  <img alt="" src="gallery/04.jpg" class="grid-w33" />
+  <img alt="" src="gallery/05.jpg" class="grid-w33" />
+  <img alt="" src="gallery/06.jpg" class="grid-w33" />
+  <img alt="" src="gallery/07.jpg" class="grid-w33" />
 {{< /gallery >}}
 
 <br/><br/><br/>
@@ -385,13 +588,13 @@ Blowfish も、標準の Markdown 構文を使用して含まれる画像の自�
 ```
 
 {{< gallery >}}
-  <img src="gallery/01.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
-  <img src="gallery/02.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
-  <img src="gallery/03.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
-  <img src="gallery/04.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
-  <img src="gallery/05.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
-  <img src="gallery/06.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
-  <img src="gallery/07.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img alt="" src="gallery/01.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img alt="" src="gallery/02.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img alt="" src="gallery/03.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img alt="" src="gallery/04.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img alt="" src="gallery/05.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img alt="" src="gallery/06.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
+  <img alt="" src="gallery/07.jpg" class="grid-w50 md:grid-w33 xl:grid-w25" />
 {{< /gallery >}}
 
 <br/><br/><br/>
@@ -728,6 +931,44 @@ B-->C[利益]
 
 <br/><br/><br/>
 
+## 統計
+
+`stats` と `stat` を使用すると、簡潔で分かりやすい指標をレスポンシブなグリッドで表示できます。グリッドは大画面ではデフォルトで3列、`columns="4"` を指定すると4列になります。
+
+```md
+{{</* stats */>}}
+{{</* stat value="40+" label="Shortcodes" */>}}Compose pages without bespoke templates.{{</* /stat */>}}
+{{</* stat value="100%" label="Portable" */>}}Keep your content in Markdown.{{</* /stat */>}}
+{{</* stat value="0" label="Required plugins" */>}}Start with Hugo and Blowfish.{{</* /stat */>}}
+{{</* /stats */>}}
+```
+
+{{< stats >}}
+{{< stat value="40+" label="Shortcodes" >}}Compose pages without bespoke templates.{{< /stat >}}
+{{< stat value="100%" label="Portable" >}}Keep your content in Markdown.{{< /stat >}}
+{{< stat value="0" label="Required plugins" >}}Start with Hugo and Blowfish.{{< /stat >}}
+{{< /stats >}}
+
+<br/><br/><br/>
+
+## ステップ
+
+`steps` と `step` は、オンボーディング、プロセス、ロードマップ、チュートリアルに使用できます。
+
+```md
+{{</* steps */>}}
+{{</* step number="1" title="Configure the theme" */>}}Choose a colour scheme and homepage layout.{{</* /step */>}}
+{{</* step number="2" title="Write your content" */>}}Use standard Markdown and shortcodes.{{</* /step */>}}
+{{</* /steps */>}}
+```
+
+{{< steps >}}
+{{< step number="1" title="Configure the theme" >}}Choose a colour scheme and homepage layout.{{< /step >}}
+{{< step number="2" title="Write your content" >}}Use standard Markdown and shortcodes.{{< /step >}}
+{{< /steps >}}
+
+<br/><br/><br/>
+
 ## 色の見本
 
 `swatches` は、カラーパレットなどのカラー要素を紹介するために、最大3つの異なる色のセットを出力します。このショートコードは、各色の `HEX` コードを受け取り、それぞれの視覚要素を作成します。
@@ -882,13 +1123,13 @@ HTML コード付き
 {{< timelineItem icon="star" header="ショートコード" badge="素晴らしい" >}}
 他のショートコード付き
 {{< gallery >}}
-  <img src="gallery/01.jpg" class="grid-w33" />
-  <img src="gallery/02.jpg" class="grid-w33" />
-  <img src="gallery/03.jpg" class="grid-w33" />
-  <img src="gallery/04.jpg" class="grid-w33" />
-  <img src="gallery/05.jpg" class="grid-w33" />
-  <img src="gallery/06.jpg" class="grid-w33" />
-  <img src="gallery/07.jpg" class="grid-w33" />
+  <img alt="" src="gallery/01.jpg" class="grid-w33" />
+  <img alt="" src="gallery/02.jpg" class="grid-w33" />
+  <img alt="" src="gallery/03.jpg" class="grid-w33" />
+  <img alt="" src="gallery/04.jpg" class="grid-w33" />
+  <img alt="" src="gallery/05.jpg" class="grid-w33" />
+  <img alt="" src="gallery/06.jpg" class="grid-w33" />
+  <img alt="" src="gallery/07.jpg" class="grid-w33" />
 {{< /gallery >}}
 {{< /timelineItem >}}
 {{< timelineItem icon="code" header="もう1つの素晴らしいヘッダー">}}

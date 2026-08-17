@@ -1,5 +1,6 @@
 ---
 title: "パーシャル"
+featureimage: "images/v3/partials.png"
 weight: 9
 draft: false
 description: "Blowfish で利用可能なすべてのパーシャル。"

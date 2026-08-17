@@ -1,5 +1,6 @@
 ---
 title: "系列"
+featureimage: "images/v3/series.png"
 weight: 12
 draft: false
 description: "了解如何将文章分组到系列中。"

@@ -1,5 +1,6 @@
 ---
 title: "Alojamento e implementação"
+featureimage: "images/v3/publishing-system.png"
 weight: 14
 draft: false
 description: "Aprenda como implementar um site Blowfish."

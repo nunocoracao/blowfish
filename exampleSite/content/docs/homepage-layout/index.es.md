@@ -1,5 +1,6 @@
 ---
 title: "Diseño de página de inicio"
+featureimage: "images/v3/homepage-layout.png"
 weight: 5
 draft: false
 description: "Configuración del diseño de la página de inicio en el tema Blowfish."
@@ -9,7 +10,7 @@ series: ["Documentación"]
 series_order: 5
 ---
 
-Blowfish proporciona un diseño de página de inicio totalmente flexible. Hay dos plantillas principales para elegir con configuraciones adicionales para ajustar el diseño. Alternativamente, también puedes proporcionar tu propia plantilla y tener control total sobre el contenido de la página de inicio.
+Blowfish proporciona diseños de página de inicio flexibles con configuraciones para ajustar cada diseño. Alternativamente, también puedes proporcionar tu propia plantilla y tener control total sobre el contenido de la página de inicio.
 
 El diseño de la página de inicio está controlado por la configuración `homepage.layout` en el archivo de configuración `params.toml`. Además, todos los diseños tienen la opción de incluir una lista de [artículos recientes](#artículos-recientes).
 
@@ -57,6 +58,38 @@ El diseño de tarjeta es una extensión del diseño de página. Proporciona el m
 
 Para habilitar el diseño Tarjeta, establece `homepage.layout = "card"` y `homepage.homepageImage` en el archivo de configuración `params.toml`.
 
+## Diseño Landing
+
+El diseño Landing está pensado para sitios de producto, centros de documentación y sitios personales que necesitan una declaración de apertura más contundente. Se abre con un hero espacioso y editorial — eyebrow, titular destacado, párrafo introductorio y botones de llamada a la acción — opcionalmente respaldado por una imagen hero de ancho completo que se funde con el fondo global, con una animación de entrada escalonada que se desactiva automáticamente para los visitantes que prefieren el movimiento reducido. Todo lo que está debajo del hero es Markdown estándar y shortcodes de Blowfish, de modo que la página completa sigue siendo portátil y fácil de mantener.
+
+{{< figure src="img/home-landing.png" class="thumbnailshadow" >}}
+
+Para habilitar el diseño Landing, establece `homepage.layout = "landing"` en el archivo de configuración `params.toml`.
+
+El hero se controla mediante el front matter de `content/_index.md`. Todos los campos son opcionales — todo lo que omitas simplemente no se renderiza:
+
+```yaml
+---
+title: "Build a site that feels unmistakably yours."
+heroCaption: "Blowfish" # eyebrow above the title; defaults to the author name
+heroLead: "A short statement that expands on the title."
+heroButtons:
+  - label: "Get started"
+    url: "/docs/installation/"
+  - label: "Explore the docs"
+    url: "/docs/"
+    style: "outline" # "primary" (default) or "outline"
+---
+```
+
+| Front matter | Descripción |
+| ------------ | ----------- |
+| `heroCaption` | Pequeño eyebrow en mayúsculas encima del título. Por defecto usa `params.Author.name`. |
+| `heroLead` | Párrafo introductorio renderizado bajo el título. Admite Markdown. |
+| `heroButtons` | Lista de botones de llamada a la acción (`label`, `url` y `style` opcional). Usa el mismo estilo que el [shortcode `cta`]({{< ref "shortcodes#cta-button" >}}). |
+
+El cuerpo Markdown de `_index.md` se renderiza debajo del hero, de modo que estadísticas, cuadrículas de características, pasos y cualquier otro shortcode pueden construir el resto de la página. El diseño Landing combina bien con la opción `backgroundCanvas` de todo el sitio descrita en la [documentación de configuración]({{< ref "configuration" >}}).
+
 
 ## Diseño personalizado
 
@@ -68,7 +101,7 @@ Con el valor de configuración establecido, crea un nuevo archivo `custom.html` 
 
 Para incluir [artículos recientes](#artículos-recientes) en el diseño personalizado, usa el partial `recent-articles/main.html`.
 
-Como ejemplo, la [página de inicio]({{< ref "/" >}}) de este sitio usa el diseño personalizado para permitir alternar entre los diseños de perfil y página. Visita el [repositorio de GitHub](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/layouts/partials/home/custom.html) para ver cómo funciona.
+El sitio de ejemplo incluido usa el diseño Landing integrado y shortcodes de contenido estándar. Visita el [repositorio de GitHub](https://github.com/nunocoracao/blowfish/tree/main/exampleSite) para ver cómo está configurado.
 
 ## Artículos recientes
 

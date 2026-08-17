@@ -1,5 +1,6 @@
 ---
 title: "Homepage Layout"
+featureimage: "images/v3/homepage-layout.png"
 weight: 5
 draft: false
 description: "Configurazione del layout della home page nel tema Blowfish."
@@ -9,7 +10,7 @@ series: ["Documentazione"]
 series_order: 5
 ---
 
-Blowfish fornisce un layout della home page completamente flessibile. Sono disponibili due modelli principali tra cui scegliere con impostazioni aggiuntive per adattare il design. In alternativa, puoi anche fornire il tuo modello e avere il controllo completo sul contenuto della home page.
+Blowfish fornisce layout flessibili per la home page, con impostazioni per adattare ciascun design. In alternativa, puoi anche fornire il tuo modello e avere il controllo completo sul contenuto della home page.
 
 Il layout della home page è controllato dall'impostazione `homepage.layout` nel file di configurazione `params.toml`. Inoltre, tutti i layout hanno la possibilità di includere un elenco di [articoli recenti](#articoli-recenti).
 
@@ -56,6 +57,38 @@ Il layout delle schede è un'estensione del layout di pagina. Offre lo stesso li
 
 Per abilitare il layout a scheda, impostare `homepage.layout = “card”` e `homepage.homepageImage` nel file di configurazione `params.toml`. 
 
+## Landing layout
+
+Il layout Landing è pensato per siti di prodotto, hub di documentazione e siti personali che hanno bisogno di un'apertura di maggiore impatto. Si apre con un hero ampio e dal taglio editoriale — occhiello, titolo d'effetto, paragrafo introduttivo e pulsanti di call-to-action — facoltativamente accompagnato da un'immagine hero a tutta larghezza che si dissolve nello sfondo globale, con un'animazione di ingresso scaglionata che viene disattivata automaticamente per i visitatori che preferiscono ridurre il movimento. Tutto ciò che sta sotto l'hero è Markdown standard e shortcode di Blowfish, quindi l'intera pagina rimane portabile e facile da mantenere.
+
+{{< figure src="img/home-landing.png" class="thumbnailshadow" >}}
+
+Per abilitare il layout Landing, impostare `homepage.layout = "landing"` nel file di configurazione `params.toml`.
+
+L'hero è controllato dal front matter di `content/_index.md`. Tutti i campi sono facoltativi — ciò che viene omesso semplicemente non viene renderizzato:
+
+```yaml
+---
+title: "Build a site that feels unmistakably yours."
+heroCaption: "Blowfish" # eyebrow above the title; defaults to the author name
+heroLead: "A short statement that expands on the title."
+heroButtons:
+  - label: "Get started"
+    url: "/docs/installation/"
+  - label: "Explore the docs"
+    url: "/docs/"
+    style: "outline" # "primary" (default) or "outline"
+---
+```
+
+| Front matter | Descrizione |
+| ------------ | ----------- |
+| `heroCaption` | Piccolo occhiello in maiuscolo sopra il titolo. Il valore predefinito è `params.Author.name`. |
+| `heroLead` | Paragrafo introduttivo renderizzato sotto il titolo. Supporta Markdown. |
+| `heroButtons` | Elenco di pulsanti di call-to-action (`label`, `url` e `style` facoltativo). Utilizza lo stesso stile dello [shortcode `cta`]({{< ref "shortcodes#cta-button" >}}). |
+
+Il corpo Markdown di `_index.md` viene renderizzato sotto l'hero, quindi statistiche, griglie di funzionalità, passaggi e qualsiasi altro shortcode possono comporre il resto della pagina. Il layout Landing si abbina bene all'opzione `backgroundCanvas` a livello di sito descritta nei [docs di configurazione]({{< ref "configuration" >}}).
+
 
 ## Custom layout
 
@@ -67,7 +100,7 @@ Con il valore di configurazione impostato, creare un nuovo file `custom.html` e 
 
 Per includere [articoli recenti](#articoli-recenti) nel layout personalizzato, utilizzare il partial `recent-articles/main.html`.
 
-Ad esempio, la [homepage]({{< ref "/" >}}) di questo sito utilizza il layout personalizzato per consentire di passare dal layout del profilo a quello della pagina. Visitare il [repo GitHub](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/layouts/partials/home/custom.html) per vedere come funziona.
+Il sito di esempio incluso utilizza il layout Landing integrato e gli shortcode di contenuto standard. Visitare il [repo GitHub](https://github.com/nunocoracao/blowfish/tree/main/exampleSite) per vedere come è configurato.
 
 ## Articoli recenti
 

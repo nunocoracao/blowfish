@@ -1,5 +1,6 @@
 ---
 title: "Firebase : Vues & Likes"
+featureimage: "images/v3/content-network.png"
 weight: 15
 draft: false
 description: "Apprenez à intégrer Firebase et obtenir des données dynamiques pour les vues et les likes."

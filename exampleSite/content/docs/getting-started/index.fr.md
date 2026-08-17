@@ -13,12 +13,8 @@ series_order: 3
 Cette section suppose que vous avez déjà [installé le thème Blowfish]({{< ref "docs/installation" >}}).
 {{< /alert >}}
 
-</br>
-{{< alert "fire" >}}
-Nous venons de lancer un outil CLI pour vous aider à démarrer avec Blowfish. Il vous aidera avec l'installation et la configuration. Installez l'outil CLI globalement en utilisant :
-```bash
-npx blowfish-tools
-```
+{{< alert "wand-magic-sparkles" >}}
+Vous travaillez avec un agent de codage IA ? Blowfish inclut un **skill pour agents** qui apprend aux agents comme Claude Code à installer, configurer et utiliser le thème — consultez la [page d'installation]({{< ref "docs/installation" >}}) pour le mettre en place.
 {{< /alert >}}
 
 Les fichiers de configuration livrés avec Blowfish contiennent tous les paramètres possibles que le thème reconnaît. Par défaut, beaucoup d'entre eux sont commentés, mais vous pouvez simplement les décommenter pour activer ou modifier une fonctionnalité spécifique.

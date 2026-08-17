@@ -1,5 +1,6 @@
 ---
 title: "Alojamiento y despliegue"
+featureimage: "images/v3/publishing-system.png"
 weight: 14
 draft: false
 description: "Aprende cómo desplegar un sitio Blowfish."

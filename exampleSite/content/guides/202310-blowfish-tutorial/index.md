@@ -262,10 +262,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nibh nisl, vulput
 You can create additional articles to see what your site will look like once there is content in it. Your site should look like the images below. The main page shows the recent articles, each article is connected through others automatically via related section, you have tag aggregation, and full-text search. 
 
 {{< gallery >}}
-  <img src="img/blowfishrecent.png" class="grid-w50" />
-  <img src="img/article.png" class="grid-w50" />
-  <img src="img/search.png" class="grid-w50" />
-  <img src="img/tag.png" class="grid-w50" />
+  <img alt="" src="img/blowfishrecent.png" class="grid-w50" />
+  <img alt="" src="img/article.png" class="grid-w50" />
+  <img alt="" src="img/search.png" class="grid-w50" />
+  <img alt="" src="img/tag.png" class="grid-w50" />
 {{< /gallery >}}
 
 

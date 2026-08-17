@@ -1,5 +1,6 @@
 ---
 title: "Hospedagem e implantação"
+featureimage: "images/v3/publishing-system.png"
 weight: 14
 draft: false
 description: "Aprenda como implantar um site Blowfish."

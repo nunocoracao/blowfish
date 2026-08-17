@@ -1,5 +1,6 @@
 ---
 title: "内容示例"
+featureimage: "images/v3/content-examples.png"
 weight: 11
 draft: false
 description: "包含 Blowfish 中所有可用部分的示例、"

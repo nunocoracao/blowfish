@@ -1,29 +1,37 @@
 ---
-title: "Bienvenue sur Blowfish ! :tada:"
-description: "Cette page a été créée avec le thème Blowfish pour Hugo."
+title: "Créez un site qui vous ressemble vraiment."
+description: "Un thème Hugo moderne et flexible pour les blogs, la documentation, les portfolios et plus encore."
+heroLead: "Blowfish vous offre des layouts expressifs, des réglages par défaut bien pensés et des blocs de contenu pratiques, pour vous concentrer sur ce que vous voulez dire."
+heroButtons:
+  - label: "Commencer"
+    url: "/fr/docs/installation/"
+  - label: "Explorer la documentation"
+    url: "/fr/docs/"
+    style: "outline"
+  - label: "Star sur GitHub"
+    url: "https://github.com/nunocoracao/blowfish"
+    style: "outline"
+    github: "nunocoracao/blowfish"
+heroImage: "images/v3/welcome.png"
 ---
 
+{{< stats >}}
+{{< stat value="5" label="Layouts d'accueil" >}}Choisissez la structure qui convient au site que vous créez.{{< /stat >}}
+{{< stat value="40+" label="Shortcodes" >}}Composez un contenu expressif sans maintenir de templates sur mesure.{{< /stat >}}
+{{< stat value="100%" label="Votre contenu" >}}Markdown portable, configuration Hugo familière et aucune dépendance.{{< /stat >}}
+{{< /stats >}}
 
-<div class="flex px-4 py-2 mb-8 text-base rounded-md bg-primary-100 dark:bg-primary-900">
-  <span class="flex items-center pe-3 text-primary-400">
-    {{< icon "triangle-exclamation" >}}
-  </span>
-  <span class="flex items-center justify-between grow dark:text-neutral-300">
-    <span class="prose dark:prose-invert">Ceci est une démo du layout <code id="layout">background</code>.</span>
-    <button
-      id="switch-layout-button"
-      class="px-4 mx-[3px] !text-neutral !no-underline rounded-md bg-primary-600 hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700"
-    >
-      Changer de layout &orarr;
-    </button>
-  </span>
-</div>
-
-
-```shell
-npx blowfish-tools
-```
-
-{{< youtubeLite id="SgXhGb-7QbU" label="Démo de Blowfish-tools" >}}
-
-
+{{< feature-grid >}}
+{{< feature icon="list-check" title="Faites-le vôtre" url="/fr/docs/configuration/" >}}
+Un système cohérent de layouts, couleurs, typographie et contrôles de contenu.
+{{< /feature >}}
+{{< feature icon="code" title="Composez plus vite" url="/fr/docs/shortcodes/" label="Parcourir les shortcodes" >}}
+Des composants utiles pour des histoires plus riches, une documentation plus claire et moins de code sur mesure.
+{{< /feature >}}
+{{< feature icon="heart" title="Développé au grand jour" url="/fr/users/" >}}
+Découvrez des sites réels, des contributions de la communauté et des patterns éprouvés en production.
+{{< /feature >}}
+{{< feature icon="wand-magic-sparkles" title="Conçu pour les agents IA" url="/fr/docs/installation/#skill-pour-agents" label="Installer le skill" >}}
+Blowfish inclut un skill qui apprend à Claude Code et à d'autres agents de codage à installer, configurer et utiliser le thème.
+{{< /feature >}}
+{{< /feature-grid >}}

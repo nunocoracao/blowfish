@@ -1,5 +1,6 @@
 ---
 title: "Firebase: Aufrufe & Likes"
+featureimage: "images/v3/content-network.png"
 weight: 15
 draft: false
 description: "Erfahren Sie, wie Sie Firebase integrieren und dynamische Daten für Aufrufe und Likes erhalten."

@@ -5,7 +5,6 @@ description: "Blowfish で何ができるのか閲覧する。"
 cascade:
   showEdit: false
   showSummary: false
-  hideFeatureImage: true
   invertPagination: true
 ---
 

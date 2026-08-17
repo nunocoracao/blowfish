@@ -13,6 +13,21 @@ series_order: 2
 
 更详细的安装如下，[更新主题](#更新主题)的教程也可以看此文档。
 
+## 智能体技能
+
+Blowfish 附带一个[智能体技能](https://github.com/nunocoracao/blowfish/tree/main/.claude/skills/blowfish)，用于教 AI 编程智能体（如 Claude Code）如何安装、配置该主题并用它构建网站。如果你使用智能体来开发你的网站，安装此技能后，智能体就能熟悉 Blowfish 的配置文件、布局、front matter 和短代码。
+
+在 Claude Code 中通过 Blowfish 插件市场安装：
+
+```shell
+/plugin marketplace add nunocoracao/blowfish
+/plugin install blowfish@blowfish
+```
+
+或者，将技能文件夹复制到你网站仓库的 `.claude/skills/blowfish/` 目录 — 智能体会自动加载项目 `.claude/skills/` 目录中的技能。
+
+---
+
 ## 前言
 
 本文将一步一步指导你学会使用 Hugo 和 Blowfish。本文中提到的大多数依赖项都可以在任意你想使用的平台中使用和安装。
@@ -27,7 +42,7 @@ series_order: 2
 
 你可以在 [Hugo 文档](https://gohugo.io/getting-started/installing) 中找到不同平台更加详细的安装指南。
 
-### 使用 Blowfish-Tools 工具安装 (推荐)
+### 使用 Blowfish-Tools 工具安装
 
 我们刚刚推出了一个 CLI 工具，帮助你首次使用 Blowfish。该工具将会为你创建一个新的 Hugo 项目、安装 Blowfish 主题并设置配置文件。但目前该工具仍处于测试阶段，如果遇到任何问题，请随时[提交 issues](https://github.com/nunocoracao/blowfish-tools)。
 
@@ -111,7 +126,7 @@ git submodule add -b main https://github.com/nunocoracao/blowfish.git themes/blo
    ```toml
    [[imports]]
    disable = false
-   path = "github.com/nunocoracao/blowfish/v2"
+   path = "github.com/nunocoracao/blowfish/v3"
    ```
 
 4. 使用`hugo server` 命令后，主题将会自动下载。
@@ -208,3 +223,14 @@ Hugo 将自动更新项目中所需的任何模块。它通过检查 `module.tom
 2. 解压缩, 将文件夹重命名为 `blowfish`，并移动到根目录 `themes/` 目录下。你需要覆盖旧版以替换所有的主题文件。
 
 3. 重建站点，并检查网站是否一切正常。
+---
+
+## 从 v2 升级到 v3
+
+Blowfish v3 与 v2 站点完全向后兼容：所有新功能均为可选启用，没有删除任何配置选项，也没有重命名任何模板或部件。升级后，在你启用新功能之前，站点的外观和行为保持不变。
+
+- **Git 子模块：** 照常更新 — `git submodule update --remote --merge`，无需其他操作。
+- **Hugo 模块：** 编辑 `config/_default/module.toml`，将导入路径从 `github.com/nunocoracao/blowfish/v2` 改为 `github.com/nunocoracao/blowfish/v3`，然后运行 `hugo mod get -u`。
+- **手动安装：** 按上文所述，下载最新版本并替换主题文件夹。
+
+升级后，请查看[配置文档]({{< ref "configuration" >}})了解新的可选功能 — 悬浮菜单、着陆页布局、全局背景、阅读进度条等。

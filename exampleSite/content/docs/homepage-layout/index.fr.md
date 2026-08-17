@@ -1,5 +1,6 @@
 ---
 title: "Mise en page de la page d'accueil"
+featureimage: "images/v3/homepage-layout.png"
 weight: 5
 draft: false
 description: "Configuration de la mise en page de la page d'accueil dans le thème Blowfish."
@@ -9,7 +10,7 @@ series: ["Documentation"]
 series_order: 5
 ---
 
-Blowfish offre une mise en page de page d'accueil entièrement flexible. Il y a deux modèles principaux à choisir avec des paramètres supplémentaires pour ajuster le design. Alternativement, vous pouvez également fournir votre propre modèle et avoir un contrôle total sur le contenu de la page d'accueil.
+Blowfish offre des mises en page de page d'accueil flexibles avec des paramètres pour ajuster chaque design. Alternativement, vous pouvez également fournir votre propre modèle et avoir un contrôle total sur le contenu de la page d'accueil.
 
 La mise en page de la page d'accueil est contrôlée par le paramètre `homepage.layout` dans le fichier de configuration `params.toml`. De plus, toutes les mises en page ont l'option d'inclure une liste des [articles récents](#articles-récents).
 
@@ -57,6 +58,38 @@ La mise en page carte est une extension de la mise en page page. Elle offre le m
 
 Pour activer la mise en page Carte, définissez `homepage.layout = "card"` et `homepage.homepageImage` dans le fichier de configuration `params.toml`.
 
+## Mise en page Landing
+
+La mise en page Landing est conçue pour les sites de produits, les hubs de documentation et les sites personnels qui ont besoin d'une entrée en matière plus affirmée. Elle s'ouvre sur un hero spacieux et éditorial — accroche, titre fort, paragraphe d'introduction et boutons d'appel à l'action — éventuellement adossé à une image hero pleine largeur qui se fond dans l'arrière-plan global, avec une animation d'entrée échelonnée qui est automatiquement désactivée pour les visiteurs préférant réduire les animations. Tout ce qui se trouve sous le hero est du Markdown standard et des shortcodes Blowfish, de sorte que la page complète reste portable et facile à maintenir.
+
+{{< figure src="img/home-landing.png" class="thumbnailshadow" >}}
+
+Pour activer la mise en page Landing, définissez `homepage.layout = "landing"` dans le fichier de configuration `params.toml`.
+
+Le hero est piloté par le front matter de `content/_index.md`. Tous les champs sont optionnels — tout ce que vous omettez n'est simplement pas affiché :
+
+```yaml
+---
+title: "Build a site that feels unmistakably yours."
+heroCaption: "Blowfish" # eyebrow above the title; defaults to the author name
+heroLead: "A short statement that expands on the title."
+heroButtons:
+  - label: "Get started"
+    url: "/docs/installation/"
+  - label: "Explore the docs"
+    url: "/docs/"
+    style: "outline" # "primary" (default) or "outline"
+---
+```
+
+| Front matter | Description |
+| ------------ | ----------- |
+| `heroCaption` | Petite accroche en majuscules au-dessus du titre. Par défaut, `params.Author.name`. |
+| `heroLead` | Paragraphe d'introduction affiché sous le titre. Prend en charge le Markdown. |
+| `heroButtons` | Liste de boutons d'appel à l'action (`label`, `url` et `style` optionnel). Utilise le même style que le [shortcode `cta`]({{< ref "shortcodes#cta-button" >}}). |
+
+Le corps Markdown de `_index.md` est rendu sous le hero, de sorte que les statistiques, les grilles de fonctionnalités, les étapes et tous les autres shortcodes peuvent construire le reste de la page. La mise en page Landing se marie bien avec l'option `backgroundCanvas` à l'échelle du site décrite dans la [documentation de configuration]({{< ref "configuration" >}}).
+
 
 ## Mise en page personnalisée
 
@@ -68,7 +101,7 @@ Avec la valeur de configuration définie, créez un nouveau fichier `custom.html
 
 Pour inclure les [articles récents](#articles-récents) dans la mise en page personnalisée, utilisez le partial `recent-articles/main.html`.
 
-Par exemple, la [page d'accueil]({{< ref "/" >}}) de ce site utilise la mise en page personnalisée pour permettre de basculer entre les mises en page profil et page. Visitez le [dépôt GitHub](https://github.com/nunocoracao/blowfish/blob/main/exampleSite/layouts/partials/home/custom.html) pour voir comment cela fonctionne.
+Le site d'exemple inclus utilise la mise en page Landing intégrée et des shortcodes de contenu standard. Visitez le [dépôt GitHub](https://github.com/nunocoracao/blowfish/tree/main/exampleSite) pour voir comment il est configuré.
 
 ## Articles récents
 

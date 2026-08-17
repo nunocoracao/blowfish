@@ -1,5 +1,6 @@
 ---
 title: "コンテンツの例"
+featureimage: "images/v3/content-examples.png"
 weight: 11
 draft: false
 description: "Blowfish で利用可能なすべてのパーシャル。"
