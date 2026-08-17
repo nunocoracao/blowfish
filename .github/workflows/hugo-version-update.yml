@@ -34,7 +34,13 @@ jobs:
         if: steps.git-check.outputs.modified == 'true'
         run: |
           cat release-versions/hugo-latest.txt | \
-          while read version; do sed -i'' -E "s/(max = \")[0-9]+\.[0-9]+\.[0-9]+(\")/\1${version#v}\2/g" config.toml; done
+          while read version; do \
+            v="${version#v}"; \
+            minor="$(echo "$v" | cut -d. -f2)"; \
+            min_minor="$((minor - 3))"; \
+            sed -i'' -E "s/(max = \")[0-9]+\.[0-9]+\.[0-9]+(\")/\1${v}\2/g" config.toml; \
+            sed -i'' -E "s/(min = \")[0-9]+\.[0-9]+\.[0-9]+(\")/\10.${min_minor}.0\2/g" config.toml; \
+          done
 
       - name: Create Pull Request
         if: steps.git-check.outputs.modified == 'true'
