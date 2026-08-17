@@ -13,15 +13,11 @@ Blowfishは[Hugo](https://gohugo.io)のために設計された強力で軽量�
 
 🌏 [デモサイト](https://blowfish.page/)  
 📑 [ドキュメント](https://blowfish.page/docs/)  
-💎 [グッズストア](http://tee.pub/lic/qwSlWVBL5zc)  
 🐛 [バグ報告と問題点](https://github.com/nunocoracao/blowfish/issues)  
 💡 [質問と機能リクエスト](https://github.com/nunocoracao/blowfish/discussions)
 
 
-
 <a href="https://www.buymeacoffee.com/nunocoracao" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
-<a target="_blank" href="http://tee.pub/lic/qwSlWVBL5zc"><img class="nozoom" src="https://img.buymeacoffee.com/button-api/?text=Merch Store &emoji=💎&slug=nunocoracao&button_colour=5F7FFF&font_colour=ffffff&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00" /></a>
-
 
 
 ## 機能
@@ -192,9 +188,5 @@ Blowfish は時間とともに進化していく予定です。必要に応じ�
 バグ修正や新機能の実装ができる方は、Pull Request を歓迎します。詳しくは[貢献ガイドライン](https://github.com/nunocoracao/blowfish/blob/main/CONTRIBUTING.md)をご覧ください。
 
 ---
-
-## スター数の推移
-
-[![Stargazers over time](https://starchart.cc/nunocoracao/blowfish.svg)](https://starchart.cc/nunocoracao/blowfish)
 
 <a rel="me" href="https://masto.ai/@blowfish">Mastodon</a>

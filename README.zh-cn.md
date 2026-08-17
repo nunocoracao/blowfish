@@ -13,15 +13,11 @@ Blowfish 是一个轻量有力的 Hugo 主题。它使用 Tailwind CSS 构建，
 
 🌏 [示例站点](https://blowfish.page/zh-cn/)  
 📑 [主题文档](https://blowfish.page/zh-cn/docs/)  
-💎 [周边商店](http://tee.pub/lic/qwSlWVBL5zc)  
 🐛 [Bug 问题报告](https://github.com/nunocoracao/blowfish/issues)  
 💡 [问答和功能需求](https://github.com/nunocoracao/blowfish/discussions)
 
 
-
 <a href="https://www.buymeacoffee.com/nunocoracao" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
-<a target="_blank" href="http://tee.pub/lic/qwSlWVBL5zc"><img class="nozoom" src="https://img.buymeacoffee.com/button-api/?text=Merch Store &emoji=💎&slug=nunocoracao&button_colour=5F7FFF&font_colour=ffffff&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00" /></a>
-
 
 
 ## 特性
@@ -189,9 +185,5 @@ Blowfish 将会持续进化。我打算不断增加功能，并按需进行修�
 如果你有能力修补 Bug 或者实现新功能，欢迎提交 PR。[了解更多](https://github.com/nunocoracao/blowfish/blob/main/CONTRIBUTING.md).
 
 ---
-
-## Star 数量统计
-
-[![Stargazers over time](https://starchart.cc/nunocoracao/blowfish.svg)](https://starchart.cc/nunocoracao/blowfish)
 
 <a rel="me" href="https://masto.ai/@blowfish">Mastodon</a>

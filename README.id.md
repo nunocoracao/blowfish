@@ -13,12 +13,10 @@ Blowfish dirancang sebagai tema yang kuat dan ringan untuk [Hugo](https://gohugo
 
 🌏 [Situs demo](https://blowfish.page/)  
 📑 [Dokumentasi tema](https://blowfish.page/docs/)  
-💎 [Toko Merch](http://tee.pub/lic/qwSlWVBL5zc)  
 🐛 [Laporan bug & masalah](https://github.com/nunocoracao/blowfish/issues)  
 💡 [Pertanyaan & permintaan fitur](https://github.com/nunocoracao/blowfish/discussions)  
 
 <a href="https://www.buymeacoffee.com/nunocoracao" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Belikan Saya Kopi" style="height: 60px !important;width: 217px !important;" ></a>  
-<a target="_blank" href="http://tee.pub/lic/qwSlWVBL5zc"><img class="nozoom" src="https://img.buymeacoffee.com/button-api/?text=Toko Merch &emoji=💎&slug=nunocoracao&button_colour=5F7FFF&font_colour=ffffff&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00" /></a>  
 
 ## Fitur  
 
@@ -183,8 +181,6 @@ Jika Anda bisa memperbaiki bug atau menambahkan fitur baru, kontribusi dalam ben
 
 ---
 
-## Grafik Stargazers  
-
-[![Stargazers over time](https://starchart.cc/nunocoracao/blowfish.svg)](https://starchart.cc/nunocoracao/blowfish)  
+  
 
 <a rel="me" href="https://masto.ai/@blowfish">Mastodon</a>

@@ -13,15 +13,11 @@ Blowfish foi desenhado para ser um tema poderoso e leve para [Hugo](https://gohu
 
 🌏 [Site de demonstração](https://blowfish.page/)
 📑 [Documentação do tema](https://blowfish.page/docs/)
-💎 [Loja de merchandising](http://tee.pub/lic/qwSlWVBL5zc)
 🐛 [Relatórios de erros & problemas](https://github.com/nunocoracao/blowfish/issues)
 💡 [Questões & pedidos de funcionalidades](https://github.com/nunocoracao/blowfish/discussions)
 
 
-
 <a href="https://www.buymeacoffee.com/nunocoracao" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
-<a target="_blank" href="http://tee.pub/lic/qwSlWVBL5zc"><img class="nozoom" src="https://img.buymeacoffee.com/button-api/?text=Merch Store &emoji=💎&slug=nunocoracao&button_colour=5F7FFF&font_colour=ffffff&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00" /></a>
-
 
 
 ## Funcionalidades
@@ -192,9 +188,5 @@ Sinta-se à vontade para entrar em contacto com quaisquer problemas ou sugestõe
 Se conseguir corrigir um erro ou implementar uma nova funcionalidade, aceito PRs para este propósito. Saiba mais nas [diretrizes de contribuição](https://github.com/nunocoracao/blowfish/blob/main/CONTRIBUTING.md).
 
 ---
-
-## Stargazers ao longo do tempo
-
-[![Stargazers over time](https://starchart.cc/nunocoracao/blowfish.svg)](https://starchart.cc/nunocoracao/blowfish)
 
 <a rel="me" href="https://masto.ai/@blowfish">Mastodon</a>
