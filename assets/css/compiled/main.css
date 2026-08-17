@@ -3629,18 +3629,6 @@
   .\[\&_\.p-4\]\:p-3 .p-4 {
     padding: calc(var(--spacing) * 3);
   }
-  .\[\&_\.translation_\.menuhide_span\]\:text-sm\! .translation .menuhide span {
-    font-size: var(--text-sm) !important;
-    line-height: var(--tw-leading, var(--text-sm--line-height)) !important;
-  }
-  .\[\&_\.translation_button_\.icon\]\:text-4xl\! .translation button .icon {
-    font-size: var(--text-4xl) !important;
-    line-height: var(--tw-leading, var(--text-4xl--line-height)) !important;
-  }
-  .\[\&_\.translation_button_span\]\:text-base\! .translation button span {
-    font-size: var(--text-base) !important;
-    line-height: var(--tw-leading, var(--text-base--line-height)) !important;
-  }
   .\[\&_h2\]\:text-base h2 {
     font-size: var(--text-base);
     line-height: var(--tw-leading, var(--text-base--line-height));
@@ -4912,7 +4900,7 @@ body:has(#mobile-menu-toggle:checked) {
   visibility: hidden;
   transition: visibility 0.3s, opacity 0.3s ease-in-out;
 }
-.nested-menu:nth-last-child(-n + 3) .menuhide {
+.nested-menu:nth-last-child(-n + 3) .menuhide, .mobile-header-row .menuhide {
   inset-inline-end: 0;
 }
 .nested-menu:hover .menuhide, .nested-menu:focus-within .menuhide {
