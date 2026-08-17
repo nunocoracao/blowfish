@@ -1,17 +1,62 @@
 <article class="relative isolate overflow-hidden">
-  <div aria-hidden="true" class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
-    <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-primary-400 to-secondary-500 opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72rem]"></div>
-  </div>
-
+  {{ $heroImage := .Params.heroImage | default site.Params.homepage.homepageImage }}
+  {{ $heroImg := "" }}
+  {{ with $heroImage }}
+    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+      {{ $heroImg = resources.GetRemote . }}
+    {{ else }}
+      {{ $heroImg = resources.Get . }}
+    {{ end }}
+  {{ end }}
+  {{ with $heroImg }}
+    <div
+      id="landing-hero-background"
+      class="hero-canvas-fade nozoom fixed inset-x-0 top-0 -z-10 h-[640px]">
+      <img
+        class="absolute inset-0 h-full w-full object-cover"
+        src="{{ .RelPermalink }}"
+        role="presentation"
+        loading="eager"
+        decoding="async"
+        fetchpriority="high" />
+      <div class="absolute inset-0 bg-neutral/60 dark:bg-neutral-800/50"></div>
+    </div>
+    {{ $heroFade := resources.Get "js/hero-scroll-fade.js" }}
+    {{ $heroFade = $heroFade | resources.Minify | resources.Fingerprint (site.Params.fingerprintAlgorithm | default "sha512") }}
+    <script
+      type="text/javascript"
+      src="{{ $heroFade.RelPermalink }}"
+      integrity="{{ $heroFade.Data.Integrity }}"
+      data-hero-id="landing-hero-background"
+      data-fade-distance="500"></script>
+  {{ end }}
   <section class="mx-auto max-w-7xl px-4 pb-16 pt-12 sm:px-6 sm:pb-24 sm:pt-20 lg:px-8">
     <div class="mx-auto max-w-4xl text-center">
-      {{ with .Site.Params.Author.name }}
-        <p class="mb-5 text-sm font-bold uppercase tracking-[0.18em] text-primary-600 dark:text-primary-400">{{ . }}</p>
+      {{ with .Params.heroCaption | default .Site.Params.Author.name }}
+        <p class="landing-rise mb-5 text-sm font-semibold uppercase tracking-[0.25em] text-primary-600 dark:text-primary-400">
+          {{ . | markdownify }}
+        </p>
       {{ end }}
       {{ with .Title }}
-        <h1 class="text-balance text-5xl font-black tracking-tight text-neutral-950 dark:text-white sm:text-7xl">{{ . | emojify }}</h1>
+        <h1 class="landing-rise landing-rise-1 text-balance text-5xl font-black leading-[1.05] tracking-tighter text-neutral-900 dark:text-white sm:text-7xl">
+          {{ . | emojify }}
+        </h1>
       {{ end }}
-      <section class="prose prose-lg mx-auto mt-6 max-w-3xl text-left dark:prose-invert sm:text-center">{{ .Content }}</section>
+      {{ with .Params.heroLead }}
+        <p class="landing-rise landing-rise-2 mx-auto mt-6 max-w-3xl text-balance text-xl leading-8 text-neutral-600 dark:text-neutral-300 sm:text-2xl sm:leading-9">
+          {{ . | markdownify }}
+        </p>
+      {{ end }}
+      {{ with .Params.heroButtons }}
+        <div class="landing-rise landing-rise-3 mt-9 flex flex-wrap items-center justify-center gap-4">
+          {{ range . }}
+            {{ partial "cta-button.html" (dict "url" .url "label" .label "style" .style "github" .github) }}
+          {{ end }}
+        </div>
+      {{ end }}
+      <section class="landing-rise landing-rise-4 prose prose-lg mx-auto mt-10 max-w-3xl text-left dark:prose-invert sm:text-center">
+        {{ .Content }}
+      </section>
     </div>
   </section>
 </article>

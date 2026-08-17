@@ -49,6 +49,7 @@ error:
   404_title: "Page Not Found :confused:"
   404_error: "Error 404"
   404_description: "It seems that the page you've requested does not exist."
+  404_home: "Take me home"
 
 footer:
   dark_appearance: "Switch to dark appearance"
@@ -60,12 +61,16 @@ list:
   no_articles: "There are no articles to list here yet."
 
 nav:
+  close_menu: "Close menu"
+  footer_menu: "Footer menu"
   main_menu: "Main menu"
+  mobile_menu: "Mobile menu"
   scroll_to_top_title: "Scroll to top"
   skip_to_main: "Skip to main content"
+  toggle_submenu: "Toggle submenu"
 
 search:
-  open_button_title: "Search (/)"
+  open_button_title: "Search (/ or ⌘K)"
   close_button_title: "Close (Esc)"
   input_placeholder: "Search"
 

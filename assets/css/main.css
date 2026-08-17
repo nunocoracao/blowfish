@@ -23,6 +23,53 @@ body button {
   @apply transition-colors;
 }
 
+/* Staggered entrance for the landing homepage hero. Removed entirely when a
+   visitor requests reduced motion. */
+@keyframes landing-rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.9rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.landing-rise {
+  animation: landing-rise 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.landing-rise-1 {
+  animation-delay: 90ms;
+}
+
+.landing-rise-2 {
+  animation-delay: 180ms;
+}
+
+.landing-rise-3 {
+  animation-delay: 270ms;
+}
+
+.landing-rise-4 {
+  animation-delay: 360ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  .landing-rise,
+  .landing-rise-1,
+  .landing-rise-2,
+  .landing-rise-3,
+  .landing-rise-4 {
+    animation: none;
+  }
+}
+
 button,
 [role="button"] {
   cursor: pointer;
@@ -181,6 +228,101 @@ pre {
   height: 100%;
 }
 
+/* ---- Print ---- */
+@page {
+  margin: 2cm;
+}
+
+@media print {
+  html {
+    color-scheme: light only;
+  }
+  body {
+    background: #fff !important;
+    color: #111 !important;
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  /* Site chrome that makes no sense on paper */
+  body > header,
+  #background-canvas,
+  .single_hero_background,
+  #scroll-to-top,
+  #bmc-wbtn {
+    display: none !important;
+  }
+
+  /* Flatten decoration; dark mode prints light */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  main,
+  article,
+  .prose,
+  .prose *:not(pre):not(pre *) {
+    color: #111 !important;
+    background: transparent !important;
+  }
+  pre,
+  pre * {
+    background: #f4f4f5 !important;
+    color: #111 !important;
+    white-space: pre-wrap !important;
+  }
+
+  /* Links stay useful on paper */
+  a {
+    text-decoration: underline;
+  }
+  .prose a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    color: #555;
+    word-break: break-all;
+  }
+
+  /* Sensible page flow */
+  pre,
+  blockquote,
+  table,
+  figure,
+  img {
+    break-inside: avoid;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    break-after: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+}
+
+/* Background hero: feature image dissolves into the global background */
+.hero-canvas-fade {
+  -webkit-mask-image: linear-gradient(to bottom, black 20%, transparent 92%);
+  mask-image: linear-gradient(to bottom, black 20%, transparent 92%);
+}
+
+/* Shortcode grids: a lone trailing card stretches across the full row */
+@media (min-width: 640px) and (max-width: 1023.98px) {
+  .grid-balance > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+@media (min-width: 1024px) {
+  .grid-balance-3 > :last-child:nth-child(3n + 1) {
+    grid-column: 1 / -1;
+  }
+  .grid-balance-4 > :last-child:nth-child(4n + 1) {
+    grid-column: 1 / -1;
+  }
+}
+
 .thumbnail_card {
   aspect-ratio: var(--thumbnail-aspect-ratio, 1.5);
   height: auto;
@@ -332,7 +474,8 @@ body:has(#mobile-menu-toggle:checked) {
 .menuhide {
   position: absolute;
   z-index: 1000;
-  white-space: nowrap;
+  width: max-content;
+  max-width: min(20rem, calc(100vw - 2rem));
 
   opacity: 0;
   visibility: hidden;
@@ -340,6 +483,11 @@ body:has(#mobile-menu-toggle:checked) {
   transition:
     visibility 0.3s,
     opacity 0.3s ease-in-out;
+}
+
+/* Dropdowns near the end of the bar open leftward so they stay on screen */
+.nested-menu:nth-last-child(-n + 3) .menuhide {
+  inset-inline-end: 0;
 }
 
 .nested-menu:hover .menuhide,

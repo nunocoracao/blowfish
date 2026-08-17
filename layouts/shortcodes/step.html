@@ -1,7 +1,7 @@
 {{ $title := .Get "title" | default "Step" }}
 {{ $number := .Get "number" }}
 <li class="relative">
-  <span class="absolute -start-[2.1rem] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-primary-600 text-sm font-black text-white ring-4 ring-neutral dark:ring-neutral-800">{{ $number | default "•" }}</span>
-  <h3 class="text-lg font-bold text-neutral-950 dark:text-white">{{ $title | markdownify }}</h3>
+  <span class="absolute -start-10 top-0 flex h-8 w-8 items-center justify-center rounded-full bg-primary-600 text-sm font-black text-white ring-4 ring-neutral dark:ring-neutral-800">{{ $number | default "•" }}</span>
+  <h3 class="text-lg font-bold text-neutral-900 dark:text-white">{{ $title | markdownify }}</h3>
   <div class="mt-1 text-neutral-600 dark:text-neutral-400">{{ .Inner | markdownify }}</div>
 </li>

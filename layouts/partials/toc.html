@@ -8,7 +8,7 @@
   </summary>
   <div
     class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
-    {{ .TableOfContents | emojify }}
+    {{ replace (.TableOfContents | emojify) `id="TableOfContents"` (printf `id="TableOfContents" aria-label="%s"` (i18n "article.table_of_contents")) | safeHTML }}
   </div>
 </details>
 <details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
@@ -18,7 +18,7 @@
   </summary>
   <div
     class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
-    {{ .TableOfContents | emojify }}
+    {{ replace (.TableOfContents | emojify) `id="TableOfContents"` (printf `id="TableOfContentsMobile" aria-label="%s"` (i18n "article.table_of_contents")) | safeHTML }}
   </div>
 </details>
 

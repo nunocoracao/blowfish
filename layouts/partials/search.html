@@ -1,5 +1,8 @@
 <div
   id="search-wrapper"
+  role="dialog"
+  aria-modal="true"
+  aria-label="{{ i18n "search.input_placeholder" }}"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
   data-url="{{ "" | relLangURL }}">
   <div
@@ -13,6 +16,7 @@
         <input
           type="search"
           id="search-query"
+          aria-label="{{ i18n "search.input_placeholder" }}"
           class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
           placeholder="{{ i18n "search.input_placeholder" }}"
           tabindex="0">

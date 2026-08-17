@@ -11,6 +11,7 @@ var last = output.lastChild;
 var searchVisible = false;
 var indexed = false;
 var hasResults = false;
+var previouslyFocused = null;
 
 // Listen for events
 showButton ? showButton.addEventListener("click", displaySearch) : null;
@@ -22,6 +23,11 @@ modal.addEventListener("click", function (event) {
   event.stopImmediatePropagation();
   return false;
 });
+const shortcutHint = document.getElementById("search-shortcut-hint");
+if (shortcutHint && !/Mac|iPhone|iPad/.test(navigator.platform)) {
+  shortcutHint.textContent = "Ctrl K";
+}
+
 document.addEventListener("keydown", function (event) {
   // Forward slash to open search wrapper
   if (event.key == "/") {
@@ -35,9 +41,38 @@ document.addEventListener("keydown", function (event) {
     }
   }
 
+  // Cmd+K (macOS) / Ctrl+K to toggle search wrapper
+  if (event.key.toLowerCase() == "k" && (event.metaKey || event.ctrlKey)) {
+    event.preventDefault();
+    if (searchVisible) {
+      hideSearch();
+    } else {
+      displaySearch();
+    }
+  }
+
   // Esc to close search wrapper
   if (event.key == "Escape") {
     hideSearch();
+  }
+
+  // Trap Tab / Shift+Tab focus inside the modal while it is open
+  if (event.key == "Tab" && searchVisible) {
+    var focusable = modal.querySelectorAll('a[href], button, input, [tabindex="0"]');
+    if (focusable.length > 0) {
+      var firstFocusable = focusable[0];
+      var lastFocusable = focusable[focusable.length - 1];
+      if (!modal.contains(document.activeElement)) {
+        event.preventDefault();
+        firstFocusable.focus();
+      } else if (event.shiftKey && document.activeElement == firstFocusable) {
+        event.preventDefault();
+        lastFocusable.focus();
+      } else if (!event.shiftKey && document.activeElement == lastFocusable) {
+        event.preventDefault();
+        firstFocusable.focus();
+      }
+    }
   }
 
   // Down arrow to move down results list
@@ -91,6 +126,7 @@ function displaySearch() {
     buildIndex();
   }
   if (!searchVisible) {
+    previouslyFocused = document.activeElement;
     document.body.style.overflow = "hidden";
     wrapper.style.visibility = "visible";
     input.focus();
@@ -104,7 +140,12 @@ function hideSearch() {
     wrapper.style.visibility = "hidden";
     input.value = "";
     output.innerHTML = "";
-    document.activeElement.blur();
+    if (previouslyFocused && typeof previouslyFocused.focus === "function" && document.contains(previouslyFocused)) {
+      previouslyFocused.focus();
+    } else if (document.activeElement) {
+      document.activeElement.blur();
+    }
+    previouslyFocused = null;
     searchVisible = false;
   }
 }

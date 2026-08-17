@@ -1,9 +1,47 @@
 {{ define "main" }}
-  <h1 class="mb-3 text-4xl font-extrabold">{{ i18n "error.404_title" | emojify }}</h1>
-  <p class="mt-8 mb-12 text-neutral-400 dark:text-neutral-500">
-    {{ i18n "error.404_error" | emojify }}
-  </p>
-  <div class="prose dark:prose-invert">
-    <p>{{ i18n "error.404_description" | emojify }}</p>
-  </div>
+  <section class="relative isolate flex grow flex-col items-center justify-center overflow-hidden py-24 text-center">
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute inset-0 -z-10 flex select-none items-center justify-center">
+      <span class="text-[16rem] font-black leading-none tracking-tighter text-neutral-900/5 dark:text-white/5 sm:text-[26rem]">404</span>
+    </div>
+
+    <p class="landing-rise mb-5 text-sm font-semibold uppercase tracking-[0.25em] text-primary-600 dark:text-primary-400">
+      {{ i18n "error.404_error" | emojify }}
+    </p>
+    <h1 class="landing-rise landing-rise-1 text-balance text-5xl font-black leading-[1.05] tracking-tighter text-neutral-900 dark:text-white sm:text-7xl">
+      {{ i18n "error.404_title" | emojify }}
+    </h1>
+
+    <figure class="landing-rise landing-rise-2 mx-auto mt-8 max-w-2xl px-6">
+      <blockquote>
+        <p id="quote-404-line" class="text-balance text-xl italic leading-8 text-neutral-600 dark:text-neutral-300 sm:text-2xl sm:leading-9">
+          {{ i18n "error.404_description" | emojify }}
+        </p>
+      </blockquote>
+      <figcaption
+        id="quote-404-source"
+        class="mt-3 hidden text-sm font-semibold uppercase tracking-[0.15em] text-neutral-400 dark:text-neutral-500"></figcaption>
+    </figure>
+
+    <div class="landing-rise landing-rise-3 mt-10">
+      {{ partial "cta-button.html" (dict "url" site.Home.RelPermalink "label" (i18n "error.404_home")) }}
+    </div>
+
+    {{ with hugo.Data.quotes404 }}
+      {{ $json := . | jsonify }}
+      <script>
+        (function () {
+          var quotes = JSON.parse({{ $json }});
+          if (!quotes.length) return;
+          var pick = quotes[Math.floor(Math.random() * quotes.length)];
+          var line = document.getElementById("quote-404-line");
+          var source = document.getElementById("quote-404-source");
+          line.textContent = "“" + pick.line + "”";
+          source.textContent = "— " + pick.source;
+          source.classList.remove("hidden");
+        })();
+      </script>
+    {{ end }}
+  </section>
 {{ end }}

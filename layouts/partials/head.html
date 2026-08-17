@@ -156,7 +156,7 @@
   {{ end }}
   {{ if not .Site.Params.disableImageZoom | default true }}
     {{ $zoomJS := resources.Get "lib/zoom/zoom.min.umd.js" | resources.Fingerprint $alg }}
-    <script src="{{ $zoomJS.RelPermalink }}" integrity="{{ $zoomJS.Data.Integrity }}"></script>
+    <script defer src="{{ $zoomJS.RelPermalink }}" integrity="{{ $zoomJS.Data.Integrity }}"></script>
   {{ end }}
   {{ $showReadingProgress := site.Params.article.showReadingProgress | default false }}
   {{ if isset .Params "showreadingprogress" }}
@@ -189,6 +189,7 @@
   {{ if .Page.HasShortcode "katex" }}
     {{ $jsResources = $jsResources | append (resources.Get "js/katex-render.js") }}
   {{ end }}
+  {{ $jsResources = $jsResources | append (resources.Get "js/menu-a11y.js") }}
   {{ $jsResources = $jsResources | append (resources.Get "js/print-support.js") }}
   {{ $jsResources = $jsResources | append (resources.Get "js/email.js") }}
   {{ if $jsResources }}

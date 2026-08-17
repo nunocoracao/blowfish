@@ -1,50 +1,46 @@
-<div class="relative pt-16 pb-32">
-  <div aria-hidden="true" class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b"></div>
-  <div class="relative">
-    <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
-      <div class="mx-auto max-w-xl px-4 sm:px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0">
-        <article class="max-w-full prose dark:prose-invert">
-          {{ with .Title }}
-            <header>
-              <h1>{{ . | emojify }}</h1>
-            </header>
-          {{ end }}
-          <section class="w-full">{{ .Content }}</section>
-        </article>
-      </div>
-      <div class="mt-6 sm:mt-16 lg:mt-0 mx-auto max-w-xl px-4 sm:px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0">
-        <div class="-me-48 md:-me-16 lg:relative lg:m-0 lg:h-full lg:px-0 w-full">
-          {{ $useDefault := true }}
-          {{ $homepageImage := "" }}
-          {{ with .Site.Params.defaultBackgroundImage }}
-            {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-              {{ $homepageImage = resources.GetRemote . }}
-            {{ else }}
-              {{ $homepageImage = resources.Get . }}
-            {{ end }}
-          {{ end }}
-          {{ with .Site.Params.homepage.homepageImage }}
-            {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-              {{ $homepageImage = resources.GetRemote . }}
-              {{ $useDefault = false }}
-            {{ else }}
-              {{ $homepageImage = resources.Get . }}
-              {{ $useDefault = false }}
-            {{ end }}
-          {{ end }}
-          {{ if $homepageImage }}
-            {{ $style := "" }}
-            {{ $defaultPosition := cond $useDefault site.Params.imagePosition false }}
-            {{ with $.Params.imagePosition | default $defaultPosition }}
-              {{ $style = printf "object-position: %s;" . }}
-            {{ end }}
-            <img
-              class="w-full rounded-xl shadow-xl lg:absolute lg:h-full lg:w-auto lg:max-w-none"
-              src="{{ $homepageImage.RelPermalink }}"
-              {{ if $style }}style="{{ $style | safeCSS }}"{{ end }}>
-          {{ end }}
-        </div>
-      </div>
+<div class="py-12 sm:py-16">
+  <div class="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
+    <div class="mx-auto w-full max-w-xl lg:mx-0 lg:max-w-none">
+      <article class="max-w-full prose dark:prose-invert">
+        {{ with .Title }}
+          <header>
+            <h1>{{ . | emojify }}</h1>
+          </header>
+        {{ end }}
+        <section class="w-full">{{ .Content }}</section>
+      </article>
+    </div>
+    <div class="mx-auto w-full max-w-xl lg:mx-0 lg:max-w-none">
+      {{ $useDefault := true }}
+      {{ $homepageImage := "" }}
+      {{ with .Site.Params.defaultBackgroundImage }}
+        {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+          {{ $homepageImage = resources.GetRemote . }}
+        {{ else }}
+          {{ $homepageImage = resources.Get . }}
+        {{ end }}
+      {{ end }}
+      {{ with .Site.Params.homepage.homepageImage }}
+        {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+          {{ $homepageImage = resources.GetRemote . }}
+          {{ $useDefault = false }}
+        {{ else }}
+          {{ $homepageImage = resources.Get . }}
+          {{ $useDefault = false }}
+        {{ end }}
+      {{ end }}
+      {{ if $homepageImage }}
+        {{ $style := "" }}
+        {{ $defaultPosition := cond $useDefault site.Params.imagePosition false }}
+        {{ with $.Params.imagePosition | default $defaultPosition }}
+          {{ $style = printf "object-position: %s;" . }}
+        {{ end }}
+        <img
+          class="nozoom aspect-[4/3] w-full rounded-2xl border border-neutral-200/80 object-cover shadow-lg shadow-neutral-900/5 dark:border-neutral-700/80"
+          src="{{ $homepageImage.RelPermalink }}"
+          role="presentation"
+          {{ if $style }}style="{{ $style | safeCSS }}"{{ end }}>
+      {{ end }}
     </div>
   </div>
 </div>

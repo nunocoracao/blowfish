@@ -25,6 +25,16 @@
   {{ end -}}
 {{ end -}}
 
+{{/* images without alternative text get an explicit empty alt so screen
+  readers skip them instead of announcing the file name */}}
+{{ range findRE `<img\s+[^>]*>` $content -}}
+  {{ $imgTag := . -}}
+  {{ if not (findRE `\salt=` $imgTag) -}}
+    {{ $newTag := replaceRE `^<img\s` `<img alt="" ` $imgTag -}}
+    {{ $content = replace $content $imgTag $newTag -}}
+  {{ end -}}
+{{ end -}}
+
 {{ if not .Parent }}<div class="width-patch"></div>{{ end }}
 <div id="{{- $id -}}" class="gallery">
   {{ $content | safeHTML -}}

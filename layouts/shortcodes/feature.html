@@ -2,12 +2,16 @@
 {{ $title := .Get "title" | default "Feature" }}
 {{ $url := .Get "url" }}
 {{ $label := .Get "label" | default "Learn more" }}
+{{ $headingLevel := .Get "headingLevel" | default "h2" }}
+{{ if not (in (slice "h1" "h2" "h3" "h4" "h5" "h6") $headingLevel) }}
+  {{ $headingLevel = "h2" }}
+{{ end }}
 
-<article class="group rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-primary-300 hover:shadow-xl hover:shadow-primary-500/10 dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-primary-700">
+<article class="group rounded-2xl border border-neutral-200/80 bg-white/60 p-6 shadow-sm backdrop-blur-xl transition duration-200 hover:-translate-y-1 hover:border-primary-300 hover:shadow-xl hover:shadow-primary-500/10 dark:border-neutral-800 dark:bg-neutral-900/50 dark:hover:border-primary-700">
   <span class="mb-5 inline-flex rounded-xl bg-primary-100 p-3 text-primary-600 dark:bg-primary-950 dark:text-primary-400">
     {{ partial "icon.html" $icon }}
   </span>
-  <h3 class="text-lg font-bold text-neutral-950 dark:text-white">{{ $title | markdownify }}</h3>
+  {{ printf `<%s class="text-lg font-bold text-neutral-900 dark:text-white">` $headingLevel | safeHTML }}{{ $title | markdownify }}{{ printf `</%s>` $headingLevel | safeHTML }}
   <div class="mt-2 text-sm leading-6 text-neutral-600 dark:text-neutral-400">{{ .Inner | markdownify }}</div>
   {{ with $url }}
     <a class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-primary-600 hover:text-primary-500 dark:text-primary-400" href="{{ . | safeURL }}">

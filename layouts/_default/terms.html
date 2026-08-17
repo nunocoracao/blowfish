@@ -36,7 +36,7 @@
     </section>
   {{ else }}
 
-    <section class="flex flex-wrap max-w-prose -mx-2 overflow-hidden">
+    <section class="mt-6 flex max-w-prose flex-wrap gap-2">
       {{ range .Data.Terms }}
         {{ partial "term-link/text.html" . }}
       {{ end }}
