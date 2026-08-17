@@ -26,14 +26,20 @@ Blowfish foi desenhado para ser um tema poderoso e leve para [Hugo](https://gohu
 
 ## Funcionalidades
 
-- Layout totalmente responsivo construído com Tailwind CSS 3.0
+- Layout totalmente responsivo construído com Tailwind CSS 4
 - Múltiplos esquemas de cores (ou personalize completamente o seu próprio)
 - Modo escuro (forçado ligado/desligado ou alternância automática com seletor do utilizador)
+- Múltiplos layouts de página inicial, incluindo uma landing page de estilo produto com imagem hero, estatísticas e grelhas de funcionalidades
+- Cabeçalho flutuante com efeito de vidro e atalho de pesquisa ⌘K / Ctrl+K
+- Tela de fundo global com secções hero que se dissolvem nela ao fazer scroll
+- Barra de progresso de leitura para artigos
+- Seletor interativo de layouts da página inicial para pré-visualizações em direto
+- Skill de agente para que agentes de programação com IA (como o Claude Code) instalem e configurem o tema por si
+- Páginas adequadas para impressão com estilos de impressão dedicados
 - Configuração altamente personalizável
 - Integração com Firebase para suportar dados dinâmicos
 - Contagem de visualizações & mecanismo de gostos
 - Artigos relacionados
-- Múltiplos layouts de página inicial
 - Múltiplos autores
 - Séries de artigos
 - Ordenação de artigos baseada em data e peso
@@ -44,7 +50,7 @@ Blowfish foi desenhado para ser um tema poderoso e leve para [Hugo](https://gohu
 - Índice de conteúdos com scroll
 - Suporte para conteúdo multilingue incluindo suporte para línguas RTL
 - Capacidade de criar links para publicações em sites de terceiros
-- Suporte para vários shortcodes como Gallery, Timeline, GitHub cards e Carousels
+- Mais de 40 shortcodes incluindo Gallery, Timeline, GitHub cards, Carousels, Stats, grelhas de funcionalidades, Steps e botões CTA
 - Sintaxe GitHub Alerts, 15 tipos, suporte para elementos expansíveis
 - Integração Buymeacoffee
 - Pesquisa no site do lado do cliente alimentada por Fuse.js
@@ -80,11 +86,22 @@ Blowfish suporta vários métodos de instalação - como um submódulo git, um M
 
 Instruções detalhadas para cada método podem ser encontradas na documentação de [Instalação](https://blowfish.page/docs/installation). Deve consultar a documentação para a experiência de configuração mais simples. Abaixo está um guia de início rápido usando submódulos se estiver a usar git, ou módulos Hugo se já está confiante na instalação de temas Hugo.
 
+### Início rápido com um agente de IA
+
+Blowfish inclui um [agent skill](https://github.com/nunocoracao/blowfish/tree/main/.claude/skills/blowfish) que ensina agentes de programação com IA — como o Claude Code — a instalar, configurar e construir sites com o tema. Instale-o a partir do marketplace de plugins do Blowfish no Claude Code:
+
+```shell
+/plugin marketplace add nunocoracao/blowfish
+/plugin install blowfish@blowfish
+```
+
+Ou simplesmente copie a pasta do skill para o repositório do seu site em `.claude/skills/blowfish/` — os agentes detetam skills de projeto automaticamente. Depois peça ao seu agente para configurar o Blowfish por si.
+
 ### Início rápido usando Blowfish Tools
 
 > **Nota:** Certifique-se de que tem **Node.js**, **Git** e **Hugo** instalados, e que criou um novo projeto Hugo antes de continuar.
 
-Acabámos de lançar uma nova ferramenta CLI para ajudá-lo a começar com Blowfish. Ela irá criar um novo projeto Hugo, instalar o tema e configurar os ficheiros de configuração do tema para si. Ainda está em beta por isso [reporte quaisquer problemas que encontrar](https://github.com/nunocoracao/blowfish-tools).
+Blowfish Tools é uma ferramenta CLI que o ajuda a começar com Blowfish. Ela irá criar um novo projeto Hugo, instalar o tema e configurar os ficheiros de configuração do tema para si. Por favor [reporte quaisquer problemas que encontrar](https://github.com/nunocoracao/blowfish-tools).
 
 Instale a ferramenta CLI globalmente usando npm (ou outro gestor de pacotes):
 ```shell
@@ -155,6 +172,10 @@ blowfish-tools new mynewsite
 À medida que novas versões são publicadas, pode atualizar o tema usando Hugo. Simplesmente execute `hugo mod get -u` a partir do diretório do seu projeto e o tema será automaticamente atualizado para a versão mais recente.
 
 [Instruções detalhadas de atualização](https://blowfish.page/docs/installation/#installing-updates) estão disponíveis na documentação.
+
+### Atualização da v2 para a v3
+
+Blowfish v3 é totalmente retrocompatível: todas as novas funcionalidades são opcionais e nenhuma opção de configuração ou template foi removida. As instalações por submódulo git e manuais atualizam-se como habitualmente, sem alterações; os utilizadores de módulos Hugo apenas precisam de alterar o caminho de importação em `config/_default/module.toml` de `github.com/nunocoracao/blowfish/v2` para `github.com/nunocoracao/blowfish/v3` e executar `hugo mod get -u`. Consulte as [instruções de atualização](https://blowfish.page/docs/installation/#upgrading-from-v2-to-v3) para mais detalhes.
 
 ---
 

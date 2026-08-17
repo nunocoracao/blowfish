@@ -22,14 +22,20 @@ Blowfish dirancang sebagai tema yang kuat dan ringan untuk [Hugo](https://gohugo
 
 ## Fitur  
 
-- Tata letak responsif sepenuhnya dengan Tailwind CSS 3.0  
+- Tata letak responsif sepenuhnya dengan Tailwind CSS 4  
 - Beragam skema warna (atau sesuaikan sendiri)  
 - Mode gelap (paksa aktif/nonaktif atau otomatis dengan pengaturan pengguna)  
+- Beragam tata letak halaman utama, termasuk landing page bergaya produk dengan gambar hero, statistik, dan grid fitur  
+- Header kaca mengambang dengan pintasan pencarian ⌘K / Ctrl+K  
+- Kanvas latar belakang global dengan bagian hero yang melebur ke dalamnya saat digulir  
+- Bilah kemajuan membaca untuk artikel  
+- Pengalih tata letak halaman utama interaktif untuk pratinjau langsung  
+- Agent skill agar agen pemrograman AI (seperti Claude Code) dapat menginstal dan mengonfigurasi tema untuk Anda  
+- Halaman ramah cetak dengan gaya cetak khusus  
 - Konfigurasi yang sangat dapat disesuaikan  
 - Integrasi Firebase untuk mendukung data dinamis  
 - Penghitung tampilan & mekanisme suka  
 - Artikel terkait  
-- Beragam tata letak halaman utama  
 - Dukungan untuk banyak penulis  
 - Seri artikel  
 - Penyortiran artikel berdasarkan tanggal dan bobot  
@@ -40,7 +46,7 @@ Blowfish dirancang sebagai tema yang kuat dan ringan untuk [Hugo](https://gohugo
 - Daftar isi yang dapat digulir  
 - Dukungan untuk konten multibahasa termasuk bahasa RTL  
 - Kemampuan untuk menautkan ke artikel di situs web pihak ketiga  
-- Dukungan untuk beberapa shortcode seperti Galeri, Timeline, Kartu GitHub, dan Carousel
+- Lebih dari 40 shortcode termasuk Galeri, Timeline, Kartu GitHub, Carousel, Statistik, Grid fitur, Langkah, dan tombol CTA
 - Sintaks GitHub Alerts, 15 jenis, dukungan lipat
 - Integrasi BuyMeACoffee  
 - Pencarian situs berbasis klien dengan Fuse.js  
@@ -74,13 +80,24 @@ Blowfish memiliki [dokumentasi lengkap](https://blowfish.page/docs/) yang mencak
 
 Blowfish mendukung beberapa metode instalasi - sebagai submodul git, Modul Hugo, atau instalasi manual sepenuhnya.  
 
-Instruksi terperinci untuk setiap metode dapat ditemukan dalam [dokumentasi instalasi](https://blowfish.page/docs/installation).  
+Instruksi terperinci untuk setiap metode dapat ditemukan dalam [dokumentasi instalasi](https://blowfish.page/docs/installation). Anda sebaiknya membaca dokumentasi untuk pengalaman penyiapan yang paling sederhana. Berikut ini adalah panduan memulai cepat menggunakan submodul jika Anda menggunakan git, atau modul Hugo jika Anda sudah terbiasa menginstal tema Hugo.  
+
+### Instalasi Cepat Menggunakan Agen AI  
+
+Blowfish menyertakan sebuah [agent skill](https://github.com/nunocoracao/blowfish/tree/main/.claude/skills/blowfish) yang mengajarkan agen pemrograman AI — seperti Claude Code — cara menginstal, mengonfigurasi, dan membangun situs dengan tema ini. Instal dari marketplace plugin Blowfish di Claude Code:  
+
+```shell
+/plugin marketplace add nunocoracao/blowfish
+/plugin install blowfish@blowfish
+```
+
+Atau cukup salin folder skill ke repositori situs Anda di `.claude/skills/blowfish/` — agen akan mengenali skill proyek secara otomatis. Kemudian minta agen Anda untuk menyiapkan Blowfish untuk Anda.  
 
 ### Instalasi Cepat Menggunakan Blowfish Tools  
 
 > **Catatan:** Pastikan Anda sudah menginstal **Node.js**, **Git**, dan **Hugo**, serta telah membuat proyek Hugo sebelum melanjutkan.  
 
-Kami baru saja meluncurkan alat CLI baru untuk membantu Anda memulai dengan Blowfish. Ini akan membuat proyek Hugo baru, menginstal tema, dan mengatur file konfigurasi tema untuk Anda.  
+Blowfish Tools adalah alat CLI yang membantu Anda memulai dengan Blowfish. Alat ini akan membuat proyek Hugo baru, menginstal tema, dan mengatur file konfigurasi tema untuk Anda. Silakan [laporkan masalah apa pun yang Anda temukan](https://github.com/nunocoracao/blowfish-tools).  
 
 Instal alat CLI secara global menggunakan npm (atau manajer paket lainnya):  
 ```shell
@@ -113,16 +130,44 @@ blowfish-tools new mynewsite
 
 3. Hapus file `hugo.toml` di root proyek dan salin file `*.toml` dari tema ke dalam folder `config/_default/`.  
 
+   Anda akan menemukan file konfigurasi tema ini di direktori cache Hugo, atau [unduh salinannya](https://github.com/nunocoracao/blowfish/releases/latest/download/config-default.zip) dari GitHub.  
+
 4. Ikuti petunjuk [Memulai](https://blowfish.page/docs/getting-started/) untuk mengonfigurasi situs web Anda.  
 
-### Memperbarui Tema  
+### Instalasi Cepat Menggunakan Hugo  
 
-Untuk memperbarui tema ke rilis terbaru, cukup jalankan perintah berikut di direktori proyek Anda:  
-```shell
-hugo mod get -u
-```
+> **Catatan:** Pastikan Anda sudah menginstal **Go** dan **Hugo**, serta telah membuat proyek Hugo baru sebelum melanjutkan.  
+
+1. Dari direktori proyek Anda, inisialisasi Hugo Modules:  
+   ```shell
+   hugo mod init github.com/<username>/<repo-name>
+   ```
+
+2. Buat `config/_default/module.toml` dan tambahkan berikut ini:  
+   ```toml
+   [[imports]]
+   path = "github.com/nunocoracao/blowfish/v3"
+   ```
+
+3. Jalankan server Anda menggunakan `hugo server` dan tema akan diunduh secara otomatis.  
+
+4. Di folder root situs web Anda, hapus file `hugo.toml` yang dibuat oleh Hugo. Salin file konfigurasi `*.toml` dari tema ke folder `config/_default/` Anda.  
+
+   > **Catatan:** Jangan menimpa file `module.toml` yang Anda buat di atas!  
+
+   Anda akan menemukan file konfigurasi tema ini di direktori cache Hugo, atau [unduh salinannya](https://github.com/nunocoracao/blowfish/releases/latest/download/config-default.zip) dari GitHub.  
+
+5. Ikuti petunjuk [Memulai](https://blowfish.page/docs/getting-started/) untuk mengonfigurasi situs web Anda.  
+
+### Menginstal Pembaruan Tema  
+
+Saat rilis baru diterbitkan, Anda dapat memperbarui tema menggunakan Hugo. Cukup jalankan `hugo mod get -u` dari direktori proyek Anda dan tema akan diperbarui secara otomatis ke rilis terbaru.  
 
 Instruksi pembaruan selengkapnya tersedia dalam [dokumentasi instalasi](https://blowfish.page/docs/installation/#installing-updates).  
+
+### Peningkatan dari v2 ke v3  
+
+Blowfish v3 sepenuhnya kompatibel dengan versi sebelumnya: setiap fitur baru bersifat opsional dan tidak ada opsi konfigurasi atau templat yang dihapus. Instalasi submodul git dan manual diperbarui seperti biasa tanpa perubahan apa pun; pengguna modul Hugo cukup mengubah jalur impor di `config/_default/module.toml` dari `github.com/nunocoracao/blowfish/v2` menjadi `github.com/nunocoracao/blowfish/v3` lalu menjalankan `hugo mod get -u`. Lihat [instruksi peningkatan](https://blowfish.page/docs/installation/#upgrading-from-v2-to-v3) untuk detailnya.  
 
 ---
 
