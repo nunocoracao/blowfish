@@ -1,11 +1,1622 @@
 [
-  { "line": "You shall not pass!", "source": "The Fellowship of the Ring (2001)" },
-  { "line": "These aren't the droids you're looking for.", "source": "Star Wars (1977)" },
-  { "line": "Toto, I've a feeling we're not in Kansas anymore.", "source": "The Wizard of Oz (1939)" },
-  { "line": "Houston, we have a problem.", "source": "Apollo 13 (1995)" },
-  { "line": "Roads? Where we're going, we don't need roads.", "source": "Back to the Future (1985)" },
-  { "line": "It's just a flesh wound.", "source": "Monty Python and the Holy Grail (1975)" },
-  { "line": "I'll be back.", "source": "The Terminator (1984)" },
-  { "line": "You're gonna need a bigger boat.", "source": "Jaws (1975)" },
-  { "line": "E.T. phone home.", "source": "E.T. the Extra-Terrestrial (1982)" }
+  {
+    "lang": "ar",
+    "line": "لا يحق لك المرور!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "ar",
+    "line": "هذه ليست الروبوتات التي تبحث عنها.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "ar",
+    "line": "توتو، لدي شعور أننا لم نعد في كانساس بعد الآن.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "ar",
+    "line": "هيوستن، لدينا مشكلة.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "ar",
+    "line": "الطرق؟ إلى أين نحن ذاهبون، لا نحتاج إلى الطرق.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "ar",
+    "line": "إنه مجرد جرح في اللحم",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "ar",
+    "line": "سأعود.",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "ar",
+    "line": "سوف تحتاج إلى قارب أكبر.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "ar",
+    "line": "ت. هاتف المنزل.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "bg",
+    "line": "Няма да минеш!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "bg",
+    "line": "Това не са дроидите, които търсите.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "bg",
+    "line": "Тото, имам чувството, че вече не сме в Канзас.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "bg",
+    "line": "Хюстън, имаме проблем.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "bg",
+    "line": "Пътища? Където отиваме, не ни трябват пътища.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "bg",
+    "line": "Това е просто телесна рана.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "bg",
+    "line": "ще се върна",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "bg",
+    "line": "Ще ти трябва по-голяма лодка.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "bg",
+    "line": "E.T. телефон вкъщи.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "bn",
+    "line": "আপনি পাস করবেন না!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "bn",
+    "line": "এগুলি আপনি যে ড্রয়েডগুলি খুঁজছেন তা নয়৷",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "bn",
+    "line": "টোটো, আমার মনে হচ্ছে আমরা আর কানসাসে নেই।",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "bn",
+    "line": "হিউস্টন, আমাদের একটি সমস্যা আছে।",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "bn",
+    "line": "রাস্তা? আমরা যেখানে যাচ্ছি, আমাদের রাস্তার দরকার নেই।",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "bn",
+    "line": "এটা একটা মাংসের ক্ষত মাত্র।",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "bn",
+    "line": "আমি ফিরে আসব।",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "bn",
+    "line": "তোমার একটা বড় নৌকা লাগবে।",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "bn",
+    "line": "ই.টি. বাড়িতে ফোন।",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "ca",
+    "line": "No passaràs!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "ca",
+    "line": "Aquests no són els droides que estàs buscant.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "ca",
+    "line": "Toto, tinc la sensació que ja no som a Kansas.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "ca",
+    "line": "Houston, tenim un problema.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "ca",
+    "line": "Carreteres? On anem, no necessitem carreteres.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "ca",
+    "line": "És només una ferida a la carn.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "ca",
+    "line": "Tornaré.",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "ca",
+    "line": "Necessitaràs un vaixell més gran.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "ca",
+    "line": "E.T. telèfon a casa.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "cs",
+    "line": "Neprojdeš!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "cs",
+    "line": "Tohle nejsou droidi, které hledáte.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "cs",
+    "line": "Toto, mám pocit, že už nejsme v Kansasu.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "cs",
+    "line": "Houstone, máme problém.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "cs",
+    "line": "silnice? Kam jedeme, nepotřebujeme silnice.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "cs",
+    "line": "Je to jen zranění.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "cs",
+    "line": "Vrátím se.",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "cs",
+    "line": "Budete potřebovat větší loď.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "cs",
+    "line": "E.T. telefon domů.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "da",
+    "line": "Du skal ikke bestå!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "da",
+    "line": "Det er ikke de droider, du leder efter.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "da",
+    "line": "Toto, jeg har en fornemmelse af, at vi ikke er i Kansas længere.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "da",
+    "line": "Houston, vi har et problem.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "da",
+    "line": "Veje? Hvor vi skal hen, har vi ikke brug for veje.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "da",
+    "line": "Det er bare et kødsår.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "da",
+    "line": "Jeg vender tilbage.",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "da",
+    "line": "Du skal bruge en større båd.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "da",
+    "line": "E.T. telefon hjem.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "de",
+    "line": "Sie werden nicht durchkommen!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "de",
+    "line": "Das sind nicht die Droiden, nach denen Sie suchen.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "de",
+    "line": "Toto, ich habe das Gefühl, wir sind nicht mehr in Kansas.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "de",
+    "line": "Houston, wir haben ein Problem.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "de",
+    "line": "Straßen? Wo wir hingehen, brauchen wir keine Straßen.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "de",
+    "line": "Es ist nur eine Fleischwunde.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "de",
+    "line": "Ich komme wieder.",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "de",
+    "line": "Du wirst ein größeres Boot brauchen.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "de",
+    "line": "E.T. nach Hause telefonieren.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "en",
+    "line": "You shall not pass!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "en",
+    "line": "These aren't the droids you're looking for.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "en",
+    "line": "Toto, I've a feeling we're not in Kansas anymore.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "en",
+    "line": "Houston, we have a problem.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "en",
+    "line": "Roads? Where we're going, we don't need roads.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "en",
+    "line": "It's just a flesh wound.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "en",
+    "line": "I'll be back.",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "en",
+    "line": "You're gonna need a bigger boat.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "en",
+    "line": "E.T. phone home.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "eo",
+    "line": "Vi ne preterpasos!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "eo",
+    "line": "Ĉi tiuj ne estas la droidoj, kiujn vi serĉas.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "eo",
+    "line": "Toto, mi sentas, ke ni ne plu estas en Kansas.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "eo",
+    "line": "Houston, ni havas problemon.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "eo",
+    "line": "Vojoj? Kien ni iras, ni ne bezonas vojojn.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "eo",
+    "line": "Ĝi estas nur karna vundo.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "eo",
+    "line": "Mi revenos.",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "eo",
+    "line": "Vi bezonos pli grandan boaton.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "eo",
+    "line": "E.T. telefonu hejmen.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "es",
+    "line": "¡No debe pasar!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "es",
+    "line": "Estos no son los droides que estás buscando.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "es",
+    "line": "Toto, tengo el presentimiento de que ya no estamos en Kansas.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "es",
+    "line": "Houston, tenemos un problema.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "es",
+    "line": "¿Carreteras? A donde vamos, no necesitamos carreteras.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "es",
+    "line": "Es sólo una herida superficial.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "es",
+    "line": "Vuelvo enseguida.",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "es",
+    "line": "Necesitarás un barco más grande.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "es",
+    "line": "E.T. teléfono de casa.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "eu",
+    "line": "Ez zara pasatuko!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "eu",
+    "line": "Hauek ez dira bilatzen ari zaren droideak.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "eu",
+    "line": "Toto, sentitzen dut jada ez gaudela Kansasen.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "eu",
+    "line": "Houston, arazo bat dugu.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "eu",
+    "line": "Errepideak? Goazen tokira, ez dugu errepiderik behar.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "eu",
+    "line": "Haragizko zauri bat besterik ez da.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "eu",
+    "line": "Itzuliko naiz.",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "eu",
+    "line": "Itsasontzi handiago bat beharko duzu.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "eu",
+    "line": "E.T. telefonoa etxera.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "fa",
+    "line": "نمی گذری!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "fa",
+    "line": "اینها درویدهایی نیستند که شما به دنبال آن هستید.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "fa",
+    "line": "توتو، من احساس می کنم که ما دیگر در کانزاس نیستیم.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "fa",
+    "line": "هیوستون، ما یک مشکل داریم.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "fa",
+    "line": "جاده ها؟ جایی که می رویم، نیازی به جاده نداریم.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "fa",
+    "line": "این فقط یک زخم گوشتی است.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "fa",
+    "line": "من برمی گردم.",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "fa",
+    "line": "شما به یک قایق بزرگتر نیاز دارید.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "fa",
+    "line": "E.T. تلفن خانه",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "fi",
+    "line": "Et pääse ohi!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "fi",
+    "line": "Nämä eivät ole etsimiäsi droideja.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "fi",
+    "line": "Toto, minusta tuntuu, ettemme ole enää Kansasissa.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "fi",
+    "line": "Houston, meillä on ongelma.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "fi",
+    "line": "Tiet? Minne olemme menossa, emme tarvitse teitä.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "fi",
+    "line": "Se on vain lihavamma.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "fi",
+    "line": "Tulen takaisin.",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "fi",
+    "line": "Tarvitset isomman veneen.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "fi",
+    "line": "E.T. puhelin kotiin.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "fr",
+    "line": "Vous ne pouvez pas passer!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "fr",
+    "line": "Ce ne sont pas les droïdes que vous recherchez.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "fr",
+    "line": "Toto, j'ai l'impression qu'on n'est plus au Kansas.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "fr",
+    "line": "Houston, nous avons un problème.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "fr",
+    "line": "Des routes ? Là où nous allons, nous n’avons pas besoin de routes.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "fr",
+    "line": "C'est juste une blessure corporelle.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "fr",
+    "line": "Je reviendrai.",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "fr",
+    "line": "Vous aurez besoin d'un plus gros bateau.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "fr",
+    "line": "E.T. téléphoner à la maison.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "gl",
+    "line": "Non pasarás!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "gl",
+    "line": "Estes non son os droides que buscas.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "gl",
+    "line": "Toto, teño a sensación de que xa non estamos en Kansas.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "gl",
+    "line": "Houston, temos un problema.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "gl",
+    "line": "Estradas? A onde imos, non necesitamos estradas.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "gl",
+    "line": "É só unha ferida da carne.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "gl",
+    "line": "Volverei.",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "gl",
+    "line": "Necesitarás un barco máis grande.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "gl",
+    "line": "E.T. teléfono a casa.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "he",
+    "line": "אתה לא תעבור!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "he",
+    "line": "אלה לא הדרואידים שאתה מחפש.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "he",
+    "line": "טוטו, יש לי הרגשה שאנחנו לא בקנזס יותר.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "he",
+    "line": "יוסטון, יש לנו בעיה.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "he",
+    "line": "כבישים? לאן שאנחנו הולכים, אנחנו לא צריכים כבישים.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "he",
+    "line": "זה רק פצע בשר.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "he",
+    "line": "אני אחזור.",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "he",
+    "line": "אתה תצטרך סירה גדולה יותר.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "he",
+    "line": "א.ת. טלפון הביתה.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "hr",
+    "line": "Nećeš proći!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "hr",
+    "line": "Ovo nisu droidi koje tražite.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "hr",
+    "line": "Toto, imam osjećaj da više nismo u Kansasu.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "hr",
+    "line": "Houston, imamo problem.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "hr",
+    "line": "Ceste? Gdje idemo, ne trebaju nam ceste.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "hr",
+    "line": "To je samo rana na tijelu.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "hr",
+    "line": "vratit ću se",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "hr",
+    "line": "Trebat će ti veći čamac.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "hr",
+    "line": "E.T. telefonirati kući.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "hu",
+    "line": "Nem mész át!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "hu",
+    "line": "Nem ezeket a droidokat keresed.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "hu",
+    "line": "Toto, az az érzésem, hogy már nem Kansasben vagyunk.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "hu",
+    "line": "Houston, van egy problémánk.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "hu",
+    "line": "Utak? Ahová megyünk, nincs szükségünk utakra.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "hu",
+    "line": "Ez csak egy hússeb.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "hu",
+    "line": "visszajövök.",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "hu",
+    "line": "Szükséged lesz egy nagyobb hajóra.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "hu",
+    "line": "E.T. telefon haza.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "id",
+    "line": "Anda tidak boleh lulus!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "id",
+    "line": "Ini bukan droid yang Anda cari.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "id",
+    "line": "Toto, aku merasa kita tidak berada di Kansas lagi.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "id",
+    "line": "Houston, kita punya masalah.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "id",
+    "line": "Jalan? Ke mana pun kita pergi, kita tidak memerlukan jalan raya.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "id",
+    "line": "Itu hanya luka daging.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "id",
+    "line": "Saya akan kembali.",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "id",
+    "line": "Anda akan membutuhkan perahu yang lebih besar.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "id",
+    "line": "ET. telepon ke rumah.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "it",
+    "line": "Tu non puoi passere!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "it",
+    "line": "Questi non sono i droidi che stai cercando.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "it",
+    "line": "Toto, ho la sensazione che non siamo più in Kansas.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "it",
+    "line": "Houston, abbiamo un problema.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "it",
+    "line": "Strade? Dove stiamo andando, non abbiamo bisogno di strade.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "it",
+    "line": "E' solo una ferita superficiale.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "it",
+    "line": "Tornerò.",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "it",
+    "line": "Ti servirà una barca più grande.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "it",
+    "line": "E.T. telefono a casa.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "ja",
+    "line": "通ることならず！",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "ja",
+    "line": "あなたが探しているのはこれらのドロイドではありません。",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "ja",
+    "line": "トト、私たちはもうカンザスにはいないような気がする。",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "ja",
+    "line": "ヒューストン、問題があります。",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "ja",
+    "line": "道路？私たちが行くところには道路は必要ありません。",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "ja",
+    "line": "それはただの肉傷です。",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "ja",
+    "line": "私は戻ってきます。",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "ja",
+    "line": "もっと大きな船が必要になるよ。",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "ja",
+    "line": "E.T.家に電話する。",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "ko",
+    "line": "너는 통과하지 못할 것이다!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "ko",
+    "line": "이들은 당신이 찾고 있는 드로이드가 아닙니다.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "ko",
+    "line": "토토, 이제 우리는 캔자스에 있는 게 아닌 것 같아.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "ko",
+    "line": "휴스턴, 문제가 생겼습니다.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "ko",
+    "line": "도로? 우리가 가는 곳에는 도로가 필요하지 않습니다.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "ko",
+    "line": "그냥 육체의 상처일 뿐이에요.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "ko",
+    "line": "나는 돌아올 것이다.",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "ko",
+    "line": "더 큰 보트가 필요할 거예요.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "ko",
+    "line": "E.T. 집에 전화하세요.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "nb",
+    "line": "Du skal ikke bestå!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "nb",
+    "line": "Dette er ikke droidene du leter etter.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "nb",
+    "line": "Toto, jeg har en følelse av at vi ikke er i Kansas lenger.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "nb",
+    "line": "Houston, vi har et problem.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "nb",
+    "line": "Veier? Dit vi skal, trenger vi ikke veier.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "nb",
+    "line": "Det er bare et kjøttsår.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "nb",
+    "line": "Jeg kommer tilbake.",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "nb",
+    "line": "Du trenger en større båt.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "nb",
+    "line": "E.T. telefon hjem.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "nl",
+    "line": "Je komt niet voorbij!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "nl",
+    "line": "Dit zijn niet de droids die je zoekt.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "nl",
+    "line": "Toto, ik heb het gevoel dat we niet meer in Kansas zijn.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "nl",
+    "line": "Houston, we hebben een probleem.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "nl",
+    "line": "Wegen? Waar we naartoe gaan, hebben we geen wegen nodig.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "nl",
+    "line": "Het is maar een vleeswond.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "nl",
+    "line": "Ik kom terug.",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "nl",
+    "line": "Je hebt een grotere boot nodig.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "nl",
+    "line": "E.T. telefoon naar huis.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "pl",
+    "line": "Nie przejdziesz!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "pl",
+    "line": "To nie są droidy, których szukasz.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "pl",
+    "line": "Toto, mam wrażenie, że nie jesteśmy już w Kansas.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "pl",
+    "line": "Houston, mamy problem.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "pl",
+    "line": "Drogi? Tam, dokąd zmierzamy, nie potrzebujemy dróg.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "pl",
+    "line": "To tylko rana powierzchowna.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "pl",
+    "line": "Wrócę.",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "pl",
+    "line": "Będziesz potrzebować większej łodzi.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "pl",
+    "line": "ET telefon do domu.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "pt-BR",
+    "line": "Você não deve passar!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "pt-BR",
+    "line": "Estes não são os andróides que você está procurando.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "pt-BR",
+    "line": "Toto, tenho a sensação de que não estamos mais no Kansas.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "pt-BR",
+    "line": "Houston, temos um problema.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "pt-BR",
+    "line": "Estradas? Para onde vamos, não precisamos de estradas.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "pt-BR",
+    "line": "É apenas uma ferida superficial.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "pt-BR",
+    "line": "Eu voltarei.",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "pt-BR",
+    "line": "Você vai precisar de um barco maior.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "pt-BR",
+    "line": "E.T. telefone para casa.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "pt-PT",
+    "line": "Não deve passar!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "pt-PT",
+    "line": "Estes não são os andróides que procura.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "pt-PT",
+    "line": "Toto, tenho a sensação de que já não estamos no Kansas.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "pt-PT",
+    "line": "Houston, temos um problema.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "pt-PT",
+    "line": "Estradas? Para onde vamos, não precisamos de estradas.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "pt-PT",
+    "line": "É apenas uma ferida superficial.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "pt-PT",
+    "line": "Eu voltarei.",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "pt-PT",
+    "line": "Vai precisar de um barco maior.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "pt-PT",
+    "line": "E.T. telefone para casa.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "ro",
+    "line": "Tu nu vei trece!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "ro",
+    "line": "Aceștia nu sunt droizii pe care îi cauți.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "ro",
+    "line": "Toto, am senzația că nu mai suntem în Kansas.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "ro",
+    "line": "Houston, avem o problemă.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "ro",
+    "line": "Drumuri? Unde mergem, nu avem nevoie de drumuri.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "ro",
+    "line": "Este doar o rană a cărnii.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "ro",
+    "line": "Mă întorc.",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "ro",
+    "line": "O să ai nevoie de o barcă mai mare.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "ro",
+    "line": "E.T. telefon acasă.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "ru",
+    "line": "Ты не должен пройти!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "ru",
+    "line": "Это не те дроиды, которых вы ищете.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "ru",
+    "line": "Тото, у меня такое ощущение, что мы больше не в Канзасе.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "ru",
+    "line": "Хьюстон, у нас проблема.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "ru",
+    "line": "Дороги? Там, куда мы идем, нам не нужны дороги.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "ru",
+    "line": "Это просто рана на теле.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "ru",
+    "line": "Я вернусь.",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "ru",
+    "line": "Тебе понадобится лодка побольше.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "ru",
+    "line": "Э.Т. телефон домой.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "sv",
+    "line": "Du ska inte passera!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "sv",
+    "line": "Det här är inte de droider du letar efter.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "sv",
+    "line": "Toto, jag har en känsla av att vi inte är i Kansas längre.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "sv",
+    "line": "Houston, vi har ett problem.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "sv",
+    "line": "Vägar? Dit vi är på väg behöver vi inga vägar.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "sv",
+    "line": "Det är bara ett köttsår.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "sv",
+    "line": "Jag kommer tillbaka.",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "sv",
+    "line": "Du kommer att behöva en större båt.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "sv",
+    "line": "E.T. telefon hem.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "th",
+    "line": "คุณจะไม่ผ่าน!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "th",
+    "line": "เหล่านี้ไม่ใช่หุ่นที่คุณกำลังมองหา",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "th",
+    "line": "โตโต้ ฉันรู้สึกว่าเราไม่ได้อยู่ในแคนซัสอีกต่อไป",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "th",
+    "line": "ฮูสตัน เรามีปัญหาแล้ว",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "th",
+    "line": "ถนน? เราจะไปที่ไหนเราไม่จำเป็นต้องมีถนน",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "th",
+    "line": "มันเป็นเพียงบาดแผลเนื้อ..",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "th",
+    "line": "ฉันจะกลับมา.",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "th",
+    "line": "คุณจะต้องมีเรือที่ใหญ่กว่านี้",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "th",
+    "line": "อี.ที. โทรศัพท์บ้าน",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "tr",
+    "line": "Geçemezsiniz!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "tr",
+    "line": "Bunlar aradığınız droidler değil.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "tr",
+    "line": "Toto, artık Kansas'ta olmadığımızı hissediyorum.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "tr",
+    "line": "Houston, bir sorunumuz var.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "tr",
+    "line": "Yollar mı? Gideceğimiz yerde yola ihtiyacımız yok.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "tr",
+    "line": "Bu sadece bir sıyrık.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "tr",
+    "line": "Geri döneceğim.",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "tr",
+    "line": "Daha büyük bir tekneye ihtiyacın olacak.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "tr",
+    "line": "E.T. eve telefon et.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "uk",
+    "line": "Ти не пройдеш!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "uk",
+    "line": "Це не ті дроїди, яких ви шукаєте.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "uk",
+    "line": "Тото, у мене таке відчуття, що ми вже не в Канзасі.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "uk",
+    "line": "Х'юстон, у нас проблема.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "uk",
+    "line": "Дороги? Куди ми йдемо, нам дороги не потрібні.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "uk",
+    "line": "Це просто рана на тілі.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "uk",
+    "line": "Я повернусь",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "uk",
+    "line": "Тобі знадобиться більший човен.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "uk",
+    "line": "E.T. телефон додому.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "vi",
+    "line": "Bạn sẽ không vượt qua!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "vi",
+    "line": "Đây không phải là droids bạn đang tìm kiếm.",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "vi",
+    "line": "Toto, tôi có cảm giác chúng ta không còn ở Kansas nữa.",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "vi",
+    "line": "Houston, chúng ta có vấn đề.",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "vi",
+    "line": "Đường? Nơi chúng ta đang đi, chúng ta không cần đường.",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "vi",
+    "line": "Đó chỉ là một vết thương ở thịt thôi.",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "vi",
+    "line": "Tôi sẽ quay lại.",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "vi",
+    "line": "Bạn sẽ cần một chiếc thuyền lớn hơn.",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "vi",
+    "line": "E.T. điện thoại về nhà.",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "zh-CN",
+    "line": "你不可以过去！",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "zh-CN",
+    "line": "这些不是您要寻找的机器人。",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "zh-CN",
+    "line": "托托，我有一种感觉，我们已经不在堪萨斯了。",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "zh-CN",
+    "line": "休斯顿，我们遇到了问题。",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "zh-CN",
+    "line": "道路？我们要去的地方不需要道路。",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "zh-CN",
+    "line": "这只是皮外伤而已。",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "zh-CN",
+    "line": "我会回来的。",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "zh-CN",
+    "line": "你需要一艘更大的船。",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "zh-CN",
+    "line": "外星人打电话回家。",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  },
+  {
+    "lang": "zh-TW",
+    "line": "你不可以過去！",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "zh-TW",
+    "line": "這些不是您要尋找的機器人。",
+    "source": "Star Wars (1977)"
+  },
+  {
+    "lang": "zh-TW",
+    "line": "托托，我有種感覺，我們已經不在堪薩斯了。",
+    "source": "The Wizard of Oz (1939)"
+  },
+  {
+    "lang": "zh-TW",
+    "line": "休斯頓，我們遇到了問題。",
+    "source": "Apollo 13 (1995)"
+  },
+  {
+    "lang": "zh-TW",
+    "line": "道路？我們要去的地方不需要道路。",
+    "source": "Back to the Future (1985)"
+  },
+  {
+    "lang": "zh-TW",
+    "line": "這只是皮外傷而已。",
+    "source": "Monty Python and the Holy Grail (1975)"
+  },
+  {
+    "lang": "zh-TW",
+    "line": "我會回來的。",
+    "source": "The Terminator (1984)"
+  },
+  {
+    "lang": "zh-TW",
+    "line": "你需要一艘更大的船。",
+    "source": "Jaws (1975)"
+  },
+  {
+    "lang": "zh-TW",
+    "line": "外星人打電話回家。",
+    "source": "E.T. the Extra-Terrestrial (1982)"
+  }
 ]

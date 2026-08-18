@@ -34,7 +34,18 @@
         (function () {
           var quotes = JSON.parse({{ $json }});
           if (!quotes.length) return;
-          var pick = quotes[Math.floor(Math.random() * quotes.length)];
+          var language = {{ site.Language.Lang | jsonify }};
+          var baseLanguage = language.split("-")[0];
+          var localizedQuotes = quotes.filter(function (quote) {
+            return quote.lang === language || quote.lang === baseLanguage;
+          });
+          // Quotes without a language are treated as English to preserve existing overrides.
+          var englishQuotes = quotes.filter(function (quote) {
+            return quote.lang === "en" || !quote.lang;
+          });
+          var availableQuotes = localizedQuotes.length ? localizedQuotes : englishQuotes;
+          if (!availableQuotes.length) availableQuotes = quotes;
+          var pick = availableQuotes[Math.floor(Math.random() * availableQuotes.length)];
           var line = document.getElementById("quote-404-line");
           var source = document.getElementById("quote-404-source");
           line.textContent = "“" + pick.line + "”";

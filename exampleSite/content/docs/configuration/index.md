@@ -58,6 +58,27 @@ Blowfish was built so it would be easy to add visual support to your articles. I
 
 Blowfish is optimised for full multilingual websites and theme assets are translated into several languages out of the box. The language configuration allows you to generate multiple versions of your content to provide a customised experience to your visitors in their native language.
 
+### 404 page quotes
+
+The 404 page displays a random movie quote in the active site language. You can replace the bundled quotes by adding a `data/quotes404.json` file to your site. Each item needs a `line` and `source`; use `lang` to target a language. Language codes may be full codes such as `pt-PT` or base codes such as `pt`. Quotes without `lang` are treated as English for backwards compatibility.
+
+```json
+[
+  {
+    "lang": "en",
+    "line": "You shall not pass!",
+    "source": "The Fellowship of the Ring (2001)"
+  },
+  {
+    "lang": "pt-PT",
+    "line": "Não passarás!",
+    "source": "The Fellowship of the Ring (2001)"
+  }
+]
+```
+
+Blowfish tries an exact language match, then the base language, then English. If none are available, it selects from any configured quote.
+
 The theme currently supports the following languages by default:
 
 | Language                     | Code    |
