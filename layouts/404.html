@@ -29,7 +29,26 @@
     </div>
 
     {{ with hugo.Data.quotes404 }}
-      {{ $json := . | jsonify }}
+      {{/* Pick the current language's quotes at build time: exact locale
+        first, then base language, then English. Quotes without a lang are
+        treated as English to preserve existing custom overrides. */}}
+      {{ $lang := lower site.Language.Lang }}
+      {{ $base := index (split $lang "-") 0 }}
+      {{ $localized := slice }}
+      {{ $english := slice }}
+      {{ range . }}
+        {{ $qlang := lower (.lang | default "en") }}
+        {{ if or (eq $qlang $lang) (eq $qlang $base) }}
+          {{ $localized = $localized | append . }}
+        {{ end }}
+        {{ if eq $qlang "en" }}
+          {{ $english = $english | append . }}
+        {{ end }}
+      {{ end }}
+      {{ $quotes := $localized }}
+      {{ if not $quotes }}{{ $quotes = $english }}{{ end }}
+      {{ if not $quotes }}{{ $quotes = . }}{{ end }}
+      {{ $json := $quotes | jsonify }}
       <script>
         (function () {
           var quotes = JSON.parse({{ $json }});
