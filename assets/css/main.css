@@ -485,6 +485,15 @@ body:has(#mobile-menu-toggle:checked) {
     opacity 0.3s ease-in-out;
 }
 
+/* A backdrop-filter turns the header pill into a containing block for
+   position:fixed descendants, which would trap the fullscreen mobile menu
+   inside it. Lift the filter while that menu is open — the fullscreen
+   overlay covers the header anyway, so the change is invisible. */
+header > div:has(.mobile-menu-fullscreen #mobile-menu-toggle:checked) {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
 /* Dropdowns near the end of the bar open leftward so they stay on screen */
 .nested-menu:nth-last-child(-n + 3) .menuhide,
 .mobile-header-row .menuhide {

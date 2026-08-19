@@ -1,5 +1,5 @@
 {{ $mobileMenuStyle := .Site.Params.header.mobileMenuStyle | default "fullscreen" }}
-<div class="mobile-header-row relative flex items-center h-14 gap-4">
+<div class="mobile-header-row{{ if eq $mobileMenuStyle "fullscreen" }} mobile-menu-fullscreen{{ end }} relative flex items-center h-14 gap-4">
   {{ if hugo.IsMultilingual }}
     {{ partial "header/components/translations.html" . }}
   {{ end }}

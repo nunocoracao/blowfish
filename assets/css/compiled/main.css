@@ -4900,6 +4900,10 @@ body:has(#mobile-menu-toggle:checked) {
   visibility: hidden;
   transition: visibility 0.3s, opacity 0.3s ease-in-out;
 }
+header > div:has(.mobile-menu-fullscreen #mobile-menu-toggle:checked) {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
 .nested-menu:nth-last-child(-n + 3) .menuhide, .mobile-header-row .menuhide {
   inset-inline-end: 0;
 }
