@@ -45,6 +45,19 @@
     });
   }
 
+  function setupMobileMenuOutsideClick() {
+    var toggle = document.getElementById("mobile-menu-toggle");
+    var dialog = document.getElementById("mobile-menu-dialog");
+    if (!toggle || !dialog) return;
+    document.addEventListener("click", function (event) {
+      if (!toggle.checked || event.target === toggle) return;
+      if (dialog.contains(event.target)) return;
+      if (event.target.closest('label[for="mobile-menu-toggle"]')) return;
+      toggle.checked = false;
+      syncCheckboxLabels(toggle);
+    });
+  }
+
   function setupDesktopDropdowns() {
     document.querySelectorAll(".nested-menu").forEach(function (menu) {
       var trigger = menu.querySelector("[aria-haspopup]");
@@ -78,6 +91,7 @@
   function init() {
     setupCheckboxLabels();
     setupMobileMenuEscape();
+    setupMobileMenuOutsideClick();
     setupDesktopDropdowns();
   }
 
