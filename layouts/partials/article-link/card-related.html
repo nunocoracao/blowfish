@@ -74,7 +74,7 @@
         loading="lazy"
         decoding="async"
         fetchpriority="low"
-        class="not-prose absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] {{ if $featureImageHover }}group-hover:scale-[1.03]{{ end }}"
+        class="nozoom not-prose absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] {{ if $featureImageHover }}group-hover:scale-[1.03]{{ end }}"
         {{ with $featureImagePosition }}style="object-position: {{ . }};"{{ end }} />
     </div>
   {{ end }}
