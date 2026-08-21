@@ -62,32 +62,16 @@
     {{ end }}
   </body>
   {{ if site.Params.buymeacoffee.globalWidget | default false }}
-    {{/* Inject the third-party widget after the page is idle so it never
-      competes with rendering-critical resources. */}}
-    <script>
-      (function () {
-        var load = function () {
-          var s = document.createElement("script");
-          s.src = "https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js";
-          s.setAttribute("data-name", "BMC-Widget");
-          s.setAttribute("data-cfasync", "false");
-          s.setAttribute("data-id", {{ site.Params.buymeacoffee.identifier }});
-          s.setAttribute("data-description", "Support me on Buy me a coffee!");
-          {{ with site.Params.buymeacoffee.globalWidgetMessage }}s.setAttribute("data-message", {{ . }});{{ end }}
-          s.setAttribute("data-color", {{ site.Params.buymeacoffee.globalWidgetColor | default `#FFDD00` }});
-          {{ with site.Params.buymeacoffee.globalWidgetPosition }}s.setAttribute("data-position", {{ . }});{{ end }}
-          s.setAttribute("data-x_margin", "18");
-          s.setAttribute("data-y_margin", "18");
-          document.body.appendChild(s);
-        };
-        if ("requestIdleCallback" in window) {
-          requestIdleCallback(load, { timeout: 4000 });
-        } else {
-          window.addEventListener("load", function () {
-            setTimeout(load, 1500);
-          });
-        }
-      })();
-    </script>
+    <script
+      data-name="BMC-Widget"
+      data-cfasync="false"
+      src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+      data-id="{{ site.Params.buymeacoffee.identifier }}"
+      data-description="Support me on Buy me a coffee!"
+      {{ with site.Params.buymeacoffee.globalWidgetMessage }}data-message="{{ . }}"{{ end }}
+      {{ with site.Params.buymeacoffee.globalWidgetColor | default `#FFDD00` }}data-color="{{ . }}"{{ end }}
+      {{ with site.Params.buymeacoffee.globalWidgetPosition }}data-position="{{ . }}"{{ end }}
+      data-x_margin="18"
+      data-y_margin="18"></script>
   {{ end }}
 </html>
