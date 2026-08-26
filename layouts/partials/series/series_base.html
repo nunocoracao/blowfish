@@ -17,7 +17,7 @@
         class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
         <a href="{{ $post.RelPermalink }}">
           {{ i18n "article.part" }} {{ $post.Params.series_order }}:
-          {{ $post.Params.title }}
+          {{ $post.Title | emojify }}
         </a>
       </div>
     {{ end }}
