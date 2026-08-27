@@ -1,5 +1,5 @@
 {{ $mobileMenuStyle := .Site.Params.header.mobileMenuStyle | default "fullscreen" }}
-<div class="mobile-header-row{{ if eq $mobileMenuStyle "fullscreen" }} mobile-menu-fullscreen{{ end }} relative flex items-center h-14 gap-4">
+<div class="mobile-header-row relative flex items-center h-14 gap-4">
   {{ if hugo.IsMultilingual }}
     {{ partial "header/components/translations.html" . }}
   {{ end }}
@@ -55,7 +55,7 @@
       style="scrollbar-gutter: stable;"
       class="z-50 invisible overflow-y-auto opacity-0 transition-[opacity,visibility] duration-300 peer-checked:visible peer-checked:opacity-100
       {{ if eq $mobileMenuStyle "dropdown" }}
-        absolute end-0 top-[calc(100%+0.75rem)] z-10 w-[min(22rem,calc(100vw-1.5rem))] rounded-2xl border border-neutral-200/80 bg-neutral/95 p-5 shadow-2xl shadow-neutral-900/20 dark:border-neutral-700/80 dark:bg-neutral-800/95
+        mobile-menu-style-dropdown absolute end-0 top-[calc(100%+0.75rem)] z-10 w-[min(22rem,calc(100vw-1.5rem))] rounded-2xl border border-neutral-200/80 bg-neutral/95 p-5 shadow-2xl shadow-neutral-900/20 dark:border-neutral-700/80 dark:bg-neutral-800/95
       {{ else }}
         fixed inset-0 px-6 py-20 bg-neutral-50/97 dark:bg-neutral-900/99
       {{ end }}

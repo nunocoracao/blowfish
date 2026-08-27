@@ -1,6 +1,10 @@
 <div class="min-h-32"></div>
 <div class="fixed inset-x-0 top-3 z-100 px-3 sm:top-5 sm:px-6">
-  <div class="mx-auto max-w-7xl rounded-2xl border border-neutral-200/80 bg-neutral/60 px-3 shadow-lg shadow-neutral-900/5 backdrop-blur-xl dark:border-neutral-700/80 dark:bg-neutral-800/60 [&_img.logo]:max-h-10 [&_img.logo]:max-w-10">
-    {{ partial "header/basic.html" . }}
+  <div
+    class="relative mx-auto max-w-7xl rounded-2xl border border-neutral-200/80 shadow-lg shadow-neutral-900/5 dark:border-neutral-700/80 [&_img.logo]:max-h-10 [&_img.logo]:max-w-10">
+    <div class="absolute inset-0 -z-10 rounded-2xl bg-neutral/60 backdrop-blur-xl dark:bg-neutral-800/60"></div>
+    <div class="px-3">
+      {{ partial "header/basic.html" . }}
+    </div>
   </div>
 </div>
