@@ -4877,7 +4877,7 @@ pre {
     }
   }
 }
-body:has(#mobile-menu-toggle:checked) {
+body:has(#mobile-menu-toggle:checked):not(:has(#mobile-menu-dialog.mobile-menu-style-dropdown)) {
   overflow: hidden;
 }
 @media (min-width: 853px) {
@@ -4899,10 +4899,6 @@ body:has(#mobile-menu-toggle:checked) {
   opacity: 0;
   visibility: hidden;
   transition: visibility 0.3s, opacity 0.3s ease-in-out;
-}
-header > div:has(.mobile-menu-fullscreen #mobile-menu-toggle:checked) {
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
 }
 .nested-menu:nth-last-child(-n + 3) .menuhide, .mobile-header-row .menuhide {
   inset-inline-end: 0;
