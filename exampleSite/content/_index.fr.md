@@ -39,4 +39,6 @@ Blowfish inclut un skill qui apprend à Claude Code et à d'autres agents de cod
 
 {{< alert >}}
 **Blowfish v3.5 est disponible.** Créez un nouveau site avec `npx blowfish-tools new <site>` ou [mettez à niveau un site existant]({{< ref "guides/202608-upgrade-to-blowfish-v3" >}}).
+
+**Vous travaillez avec un agent de codage ?** Dans Claude Code, exécutez `/plugin marketplace add nunocoracao/blowfish`, puis `/plugin install blowfish@blowfish`. Pour un autre agent qui lit les skills du projet, copiez le [dossier du skill `blowfish`](https://github.com/nunocoracao/blowfish/tree/main/.claude/skills/blowfish) dans `.claude/skills/blowfish/` de votre site.
 {{< /alert >}}
