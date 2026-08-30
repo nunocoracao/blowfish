@@ -1,6 +1,7 @@
 ---
 title: "Mettre à niveau un site Hugo existant vers Blowfish 3"
 description: "Faites passer un site Blowfish existant à la version 3 sans modification incompatible de la configuration."
+featureimage: "featured.png"
 date: 2026-08-30
 lastmod: 2026-08-30
 tags: ["blowfish", "hugo", "migration", "v3"]

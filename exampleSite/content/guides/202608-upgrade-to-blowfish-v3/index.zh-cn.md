@@ -1,6 +1,7 @@
 ---
 title: "将现有 Hugo 网站升级到 Blowfish 3"
 description: "无需进行破坏性配置更改，即可将现有 Blowfish 网站迁移到版本 3。"
+featureimage: "featured.png"
 date: 2026-08-30
 lastmod: 2026-08-30
 tags: ["blowfish", "hugo", "migration", "v3"]
