@@ -16,31 +16,14 @@
   weight = 10
 
 [[main]]
-  name = "简码"
-  pageRef = "docs/shortcodes"
-  weight = 15
-
-[[main]]
-  name = "示例"
+  name = "指南"
+  pageRef = "guides"
   weight = 20
 
 [[main]]
-  name = "功能示例"
-  parent = "示例"
-  pageRef = "samples"
-  weight = 16
-
-[[main]]
   name = "模板示例"
-  parent = "示例"
   pageRef = "examples"
   weight = 30
-
-[[main]]
-  name = "部署指南"
-  parent = "示例"
-  pageRef = "guides"
-  weight = 40
 
 [[main]]
   name = "用户列表"
