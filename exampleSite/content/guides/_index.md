@@ -1,6 +1,7 @@
 ---
-title: "Recipes"
-description: "Recipes, guides, and tutorials for Blowfish"
+title: "Guides"
+description: "Practical guides for building, migrating, and publishing Hugo sites with Blowfish"
+lastmod: 2026-08-30
 
 cascade:
   showDate: false
@@ -9,11 +10,11 @@ cascade:
 ---
 
 {{< lead >}}
-Recipes, guides, and tutorials for Blowfish
+Practical guides for building, migrating, and publishing Hugo sites with Blowfish.
 {{< /lead >}}
 
 **Blowfish user?** To add your guide to this list, [check the template](/guides/template/).
 
-This section contains guides for a variety of scenarios on how to configure your theme. If you're new, check out the [Installation]({{< ref "docs/installation" >}}) guide to begin or visit the [Samples]({{< ref "samples" >}}) section to see what Blowfish can do.
+Start with [installation]({{< ref "docs/installation" >}}), upgrade an existing site to [Blowfish 3]({{< ref "guides/202608-upgrade-to-blowfish-v3" >}}), or browse the [Showcase]({{< ref "examples" >}}) for inspiration.
 
 ---
