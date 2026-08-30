@@ -3,7 +3,7 @@ title: "欢迎来到 Blowfish"
 featureimage: "images/v3/welcome.png"
 weight: 1
 draft: false
-description: "使用 Blowfish 当前版本开始构建网站，它是一款适用于博客、文档、作品集等的现代 Hugo 主题。"
+description: "借助灵活的布局、丰富的内容工具和面向智能体的工作流，构建快速且富有表现力的 Hugo 网站。"
 lastmod: 2026-08-30
 tags: ["新手", "文档"]
 series: ["部署教程"]
@@ -11,86 +11,47 @@ series_order: 1
 ---
 
 {{< lead >}}
-Blowfish 3 是一款适用于博客、文档、作品集等的现代 Hugo 主题。
+Blowfish 3 是一款现代 Hugo 主题，适用于博客、文档、作品集，以及不适合套用固定模板的网站。
 {{< /lead >}}
 
 {{< alert >}}
-想最快创建新网站？运行 `npx blowfish-tools new <site>`，然后按照[安装指南]({{< ref "docs/installation" >}})操作。以下章节介绍 Blowfish 2 新增的主要功能，这些功能在当前版本中仍然可用。
+使用 `npx blowfish-tools new <site>` 创建新网站，然后按照[安装指南]({{< ref "docs/installation" >}})操作。现有 Blowfish 网站可以在不进行破坏性配置更改的情况下迁移到 v3。
 {{< /alert >}}
 
-Blowfish 的目标是开发一个简单且轻量级的主题。 该主题是 <a target="_blank" href="https://github.com/nunocoracao/congo">Congo</a> 的一个分支，并进行了大量扩展。
+## 构建你心中的网站
 
-## Tailwind CSS 3.0
+Blowfish 提供了坚实的起点，但不会替你决定最终效果。你可以选择个人资料、落地页、Hero、卡片、背景等首页布局，并从站点配置中设置配色、排版、导航、深色模式和文章呈现方式。单个页面需要不同效果时，可以使用 front matter。
 
-Tailwind CSS 是 Blowfish 的核心，当前版本包含了最新的[Tailwind CSS version 3](https://tailwindcss.com/blog/tailwindcss-v3)。
-Tailwind CSS 带来了性能优化，并提供了一些出色的新的 CSS 特性。
+你的内容仍然是可移植的 Hugo 内容：Markdown、页面包、分类法、菜单和配置文件都保存在你的仓库中。没有专有编辑器，也没有平台锁定。
 
+## 用更少自定义代码发布更丰富的内容
 
-{{< youtube "TmWIrBPE6Bc" >}}
+用 Markdown 写作，需要时使用[40 多个短代码]({{< ref "docs/shortcodes" >}})。无需维护一次性模板，就能添加按钮、提示、图标、标签页、画廊、图表、流程图、GitHub 卡片、视频和代码示例。
 
-## 多语言支持
+Blowfish 也处理内容周边的工作：响应式特色图片和缩略图、搜索、阅读工具、目录、社交与 SEO 元数据、结构化数据、无障碍控制，以及可选的分析、评论或 Firebase 驱动的浏览量和点赞。
 
-这是一个高频需求，Blowfish 现在支持多语言！
-如果你使用多语言发布你的内容，网站将会构建包含所有可用翻译的版本。
+## 为每位读者而建
 
-<div class="text-2xl text-center" style="font-size: 2.8rem">🇬🇧 🇩🇪 🇫🇷 🇪🇸 🇨🇳 🇧🇷 🇹🇷 🇧🇩</div>
+你可以构建包含翻译内容、语言专属菜单和内置界面翻译的多语言网站。Blowfish 支持在同一项目中混合 RTL 和 LTR 语言，同时提供外观切换、响应式导航和键盘友好的搜索。
 
-感谢社区的贡献，目前 Blowfish 已经翻译成三十种语言，并且随着时间的推移还会支持更多。 顺便一提，欢迎你为支持新语言提交 [PR](https://github.com/nunocoracao/blowfish/pulls)。
+在底层，Blowfish 使用当前 Hugo 功能和 Tailwind CSS 4，同时保持清晰、可检查且完全由你掌控的配置与内容模型。
 
-## 支持 RTL 语言
+## 给编程智能体所需的上下文
 
-新版本的Tailwind和多语言特性可以支持 RTL 语言。
+Blowfish 附带一个面向 Claude Code 等 AI 编程智能体的[智能体技能](https://github.com/nunocoracao/blowfish/tree/main/.claude/skills/blowfish)。它会告诉智能体配置应放在哪里、布局和 front matter 如何工作、有哪些短代码，以及如何无需猜测地构建和定制 Blowfish 网站。
 
-启用 RTL 后，整个网站将会从右到左重新生成内容。主题中的所有元素都会重新风格化，以适应这种模式，有助于 RTL 语言者。
+在 Claude Code 中安装：
 
-RTL 是基于单独语言控制的，所以你可以在项目中通过支持多语言来混合使用 RTL 和 LTR，主题会相应做出适配。
-
-## 自动调整图片大小
-
-Blowfish 2.0版本的重大变化是增加了自动调整图片大小的功能。基于 Hugo Pipes 提供的能力，实现了 Markdown 中的图片自动缩放到不同尺寸的功能。同时 Blowfish 2.0 还支持了 HTML `srcset` 以实现响应式图像，这能够为访问者优化图片大小。
-
-![Image with alternate text](image-resizing.png)
-
-```html
-<!-- Markdown: ![My image](image.jpg) -->
-<img
-  srcset="
-    /image_320x0_resize_q75_box.jpg 320w,
-    /image_635x0_resize_q75_box.jpg 635w,
-    /image_1024x0_resize_q75_box.jpg 1024w"
-  src="/image_635x0_resize_q75_box.jpg"
-  alt="My image"
-/>
+```shell
+/plugin marketplace add nunocoracao/blowfish
+/plugin install blowfish@blowfish
 ```
 
-当然这一切都不需要你做任何改动！只需要在 Markdown 中插入标准的图片元素，Blowfish 主题会自动帮你完成这些。
+你也可以将该技能复制到项目的 `.claude/skills/blowfish/`。之后，智能体可以协助完成设置、配置、内容结构、页面设计和理解主题的实现，而你的网站始终保留在仓库中。
 
-如果你想要图片变得更可控一些，你可以使用短代码 `figure` 。 `figure` 已经被完全重写，用于提供类似调整大小的功能优势。
+## 选择下一步
 
-## 站点搜索
-
-基于 [Fuse.js](https://fusejs.io) 提供的模糊搜索，访问者可以快速轻松地找到想要的内容。所有的模糊搜索都在客户端完成，不需要服务端做任何配置，同时保证了搜索的执行速度。只需要你在网站配置中启用这个功能就可以运行！哦，它甚至还支持全键盘导航！
-
-## 目录
-
-这也是一个高频的需求，Blowfish 现在支持在文章内容页面中使用目录。你可以在本页面看到它的实际效果。目录完全是响应式的，并且会在不同屏幕分辨率下进行自动调整。
-
-目录可以给予全局或者每篇文章，也可以使用标准的 Hugo 配置来完全定制化，允许你根据自己的项目调整。
-
-## 可访问性改进
-
-这个版本是至今为止最易访问的！Blowfish 不仅为更多项目提供了 ARIA 描述，还简单地调整了某些文本元素的对比度。
-
-不仅如此，Blowfish 2.0 引入了 “跳转到内容” 和 “滚动到顶部” 的功能，使得导航更加便捷。你甚至可以仅用键盘快捷键来使用像搜索这样的功能，不需要使用鼠标哦~
-
-新功能图片大小调节还提供了对 `alt` 和 `title` 元素的完全控制，为所有访问者提供一个无障碍的体验。
-
-## 更多更多
-
-当然还有无数其他的功能等待你的探索。例如在文章和列表页面显示分类、使用 `headline` 作者参数来定制你的主页，还有使用改进 JSON-LD 结构化数据，从而进一步优化了 SEO 性能等等。
-
-## 结语
-
-欢迎来尝试和探索强大而轻量的 Blowfish 2.0，打造优雅、个性化的创作之旅！
-
-如果你对 Blowfish 有更加创意的想法，欢迎随时[提交](https://github.com/nunocoracao/blowfish/discussions)，期待与你共同营造 Blowfish 的开源文化！
+- 初次使用 Blowfish？从[安装]({{< ref "docs/installation" >}})开始。
+- 准备塑造网站？阅读[快速开始]({{< ref "docs/getting-started" >}})和[配置]({{< ref "docs/configuration" >}})。
+- 想了解各种可能性？浏览[短代码]({{< ref "docs/shortcodes" >}})、[示例]({{< ref "samples" >}})和[展示案例]({{< ref "examples" >}})。
+- 要迁移现有网站？请按照 [Blowfish 3 升级指南]({{< ref "guides/202608-upgrade-to-blowfish-v3" >}})操作。

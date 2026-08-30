@@ -3,7 +3,7 @@ title: "Bienvenido a Blowfish"
 featureimage: "images/v3/welcome.png"
 weight: 1
 draft: false
-description: "Empieza a crear con la versión actual de Blowfish, un tema Hugo moderno para blogs, documentación, portafolios y más."
+description: "Crea un sitio Hugo rápido y expresivo con layouts flexibles, herramientas de contenido enriquecido y un flujo preparado para agentes."
 lastmod: 2026-08-30
 tags: ["nuevo", "documentación"]
 series: ["Documentación"]
@@ -11,74 +11,47 @@ series_order: 1
 ---
 
 {{< lead >}}
-Blowfish 3 es un tema Hugo moderno para blogs, documentación, portafolios y más.
+Blowfish 3 es un tema Hugo moderno para blogs, documentación, portafolios y sitios que no encajan en una plantilla rígida.
 {{< /lead >}}
 
 {{< alert >}}
-¿Buscas la forma más rápida de crear un sitio? Ejecuta `npx blowfish-tools new <site>` y luego sigue la [guía de instalación]({{< ref "docs/installation" >}}). Las secciones siguientes documentan las principales funciones introducidas en Blowfish 2, que siguen disponibles en la versión actual.
+Crea un sitio nuevo con `npx blowfish-tools new <site>` y sigue la [guía de instalación]({{< ref "docs/installation" >}}). Los sitios Blowfish existentes pueden pasar a v3 sin cambios incompatibles de configuración.
 {{< /alert >}}
 
-El objetivo original de Blowfish era desarrollar un tema simple y ligero. El tema es un fork de <a target="_blank" href="https://github.com/nunocoracao/congo">Congo</a> y expande su visión inicial.
+## Crea el sitio que tienes en mente
 
-## Tailwind CSS 3.0
+Blowfish ofrece un punto de partida sólido sin fijar el resultado. Elige layouts de portada de perfil, landing, hero, tarjetas o fondo. Configura colores, tipografía, navegación, modo oscuro y presentación de artículos desde el sitio. Usa front matter cuando una página necesite ser diferente.
 
-Tailwind CSS es el corazón de Blowfish y esta versión contiene la última [Tailwind CSS versión 3](https://tailwindcss.com/blog/tailwindcss-v3). Trae optimizaciones de rendimiento y soporte para algunas nuevas y geniales características CSS.
+Tu contenido sigue siendo Hugo portátil: Markdown, page bundles, taxonomías, menús y archivos de configuración en tu repositorio. No hay editor propietario ni dependencia de plataforma.
 
-{{< youtube "TmWIrBPE6Bc" >}}
+## Publica contenido más rico con menos código
 
-## Soporte multilingüe
+Escribe en Markdown y usa los [más de 40 shortcodes]({{< ref "docs/shortcodes" >}}) cuando lo necesites. Añade botones, avisos, iconos, pestañas, galerías, gráficos, diagramas, tarjetas de GitHub, vídeos y ejemplos de código sin mantener plantillas puntuales.
 
-Una característica muy solicitada: ¡Blowfish ahora es multilingüe! Si publicas tu contenido en varios idiomas, el sitio se construirá con todas las traducciones disponibles.
+Blowfish también resuelve lo que rodea al contenido: imágenes destacadas y miniaturas responsivas, búsqueda, herramientas de lectura, tablas de contenido, metadatos sociales y SEO, datos estructurados, controles de accesibilidad y análisis, comentarios o vistas y reacciones con Firebase opcionales.
 
-<div class="text-2xl text-center" style="font-size: 2.8rem">🇬🇧 🇩🇪 🇫🇷 🇪🇸 🇨🇳 🇧🇷 🇹🇷 🇧🇩</div>
+## Para cada lector
 
-Gracias a las contribuciones de la comunidad, Blowfish ya ha sido traducido a [treinta y dos idiomas](https://github.com/nunocoracao/blowfish/tree/main/i18n), y se añadirán más con el tiempo. Por cierto, ¡los [pull requests](https://github.com/nunocoracao/blowfish/pulls) para nuevos idiomas siempre son bienvenidos!
+Crea sitios multilingües con contenido traducido, menús específicos por idioma y traducciones de interfaz incluidas. Blowfish admite idiomas RTL y LTR en el mismo proyecto, además de selector de apariencia, navegación responsiva y búsqueda accesible por teclado.
 
-## Soporte para idiomas RTL
+Bajo el capó, Blowfish usa capacidades actuales de Hugo y Tailwind CSS 4, manteniendo un modelo de contenido y configuración claro y bajo tu control.
 
-Uno de los beneficios de las nuevas características de Tailwind y multilingüe es la capacidad de añadir soporte para idiomas RTL. Cuando está habilitado, todo el contenido del sitio se reorganizará de derecha a izquierda. Cada elemento en el tema ha sido rediseñado para asegurar que se vea genial en este modo, lo que ayuda a los autores que desean generar contenido en idiomas RTL.
+## Da a tu agente el contexto que necesita
 
-RTL se controla por idioma, por lo que puedes mezclar contenido RTL y LTR en tus proyectos y el tema responderá en consecuencia.
+Blowfish incluye un [skill para agentes](https://github.com/nunocoracao/blowfish/tree/main/.claude/skills/blowfish) para agentes de programación con IA como Claude Code. Le enseña dónde va la configuración, cómo funcionan los layouts y el front matter, qué shortcodes existen y cómo crear un sitio Blowfish sin adivinar.
 
-## Redimensionamiento automático de imágenes
+Instálalo en Claude Code:
 
-Un gran cambio en Blowfish 2.0 es la adición del redimensionamiento automático de imágenes. Usando el poder de Hugo Pipes, las imágenes en el contenido Markdown ahora se escalan automáticamente a diferentes tamaños de salida. Estos se presentan usando atributos HTML `srcset`, permitiendo servir tamaños de archivo optimizados a los visitantes de tu sitio.
-
-![Imagen con texto alternativo](image-resizing.png)
-
-```html
-<!-- Markdown: ![Mi imagen](image.jpg) -->
-<img
-  srcset="
-    /image_320x0_resize_q75_box.jpg 320w,
-    /image_635x0_resize_q75_box.jpg 635w,
-    /image_1024x0_resize_q75_box.jpg 1024w"
-  src="/image_635x0_resize_q75_box.jpg"
-  alt="Mi imagen"
-/>
+```shell
+/plugin marketplace add nunocoracao/blowfish
+/plugin install blowfish@blowfish
 ```
 
-¡Lo mejor de todo es que no necesitas cambiar nada! Simplemente inserta la sintaxis estándar de imagen Markdown y deja que el tema haga el resto. Si quieres un poco más de control, el shortcode `figure` ha sido completamente reescrito para proporcionar los mismos beneficios de redimensionamiento.
+También puedes copiar el skill a `.claude/skills/blowfish/` en tu proyecto. Así, el agente puede ayudarte con la configuración, estructura de contenido, diseño de páginas e implementación consciente del tema, mientras el sitio sigue en tu repositorio.
 
+## Elige tu siguiente paso
 
-## Búsqueda en el sitio
-
-Impulsada por [Fuse.js](https://fusejs.io), la búsqueda del sitio permite a los visitantes encontrar tu contenido rápida y fácilmente. Todas las búsquedas se realizan del lado del cliente, lo que significa que no hay nada que configurar en el servidor y las consultas se realizan súper rápido. Simplemente habilita la función en la configuración de tu sitio y listo. ¡Ah, y también soporta navegación completa por teclado!
-
-## Tablas de contenido
-
-Una característica muy solicitada: Blowfish ahora soporta tablas de contenido en las páginas de artículos. Puedes verla en acción en esta página. Los contenidos son completamente responsivos y se ajustarán para aprovechar el espacio disponible en diferentes resoluciones de pantalla.
-
-Disponible de forma global o por artículo, la tabla de contenidos puede personalizarse completamente usando los valores de configuración estándar de Hugo, permitiéndote ajustar el comportamiento a tu proyecto.
-
-## Mejoras de accesibilidad
-
-Desde añadir descripciones ARIA a más elementos hasta simplemente ajustar el contraste de ciertos elementos de texto, esta versión es la más accesible hasta ahora.
-
-La versión 2 también introduce enlaces de "saltar al contenido" y "volver arriba" que permiten una navegación rápida. También hay atajos de teclado para activar elementos como la búsqueda sin necesidad de usar el ratón.
-
-Las nuevas funciones de redimensionamiento de imágenes también proporcionan control total sobre los elementos `alt` y `title`, permitiendo una experiencia accesible para todos los visitantes.
-
-## Y mucho más
-
-Hay innumerables otras funciones para explorar. Desde poder mostrar taxonomías en artículos y páginas de lista, hasta usar el nuevo parámetro de autor `headline` para personalizar tu página de inicio. También hay datos estructurados JSON-LD mejorados que optimizan aún más el rendimiento SEO.
+- ¿Eres nuevo en Blowfish? Empieza con [Instalación]({{< ref "docs/installation" >}}).
+- ¿Quieres dar forma al sitio? Lee [Primeros pasos]({{< ref "docs/getting-started" >}}) y [Configuración]({{< ref "docs/configuration" >}}).
+- ¿Quieres ver las posibilidades? Explora [Shortcodes]({{< ref "docs/shortcodes" >}}), [Muestras]({{< ref "samples" >}}) y la [Galería]({{< ref "examples" >}}).
+- ¿Vas a migrar un sitio existente? Sigue la [guía de actualización a Blowfish 3]({{< ref "guides/202608-upgrade-to-blowfish-v3" >}}).
