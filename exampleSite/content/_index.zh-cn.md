@@ -39,4 +39,6 @@ Blowfish 附带一个智能体技能，教 Claude Code 等编程智能体安装�
 
 {{< alert >}}
 **Blowfish v3.5 已发布。** 使用 `npx blowfish-tools new <site>` 创建新网站，或[升级现有网站]({{< ref "guides/202608-upgrade-to-blowfish-v3" >}})。
+
+**正在使用编程智能体？** 在 Claude Code 中运行 `/plugin marketplace add nunocoracao/blowfish`，然后运行 `/plugin install blowfish@blowfish`。对于会读取项目技能的其他智能体，将 [`blowfish` 技能文件夹](https://github.com/nunocoracao/blowfish/tree/main/.claude/skills/blowfish)复制到网站中的 `.claude/skills/blowfish/`。
 {{< /alert >}}

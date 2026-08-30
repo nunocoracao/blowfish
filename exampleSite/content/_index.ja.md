@@ -39,4 +39,6 @@ Blowfish には、Claude Code などのコーディングエージェントに�
 
 {{< alert >}}
 **Blowfish v3.5 が利用可能になりました。** `npx blowfish-tools new <site>` で新しいサイトを始めるか、[既存サイトをアップグレード]({{< ref "guides/202608-upgrade-to-blowfish-v3" >}})してください。
+
+**コーディングエージェントを使っていますか？** Claude Code では `/plugin marketplace add nunocoracao/blowfish` を実行し、次に `/plugin install blowfish@blowfish` を実行します。プロジェクトスキルを読み取る別のエージェントでは、[`blowfish` スキルフォルダ](https://github.com/nunocoracao/blowfish/tree/main/.claude/skills/blowfish)をサイトの `.claude/skills/blowfish/` にコピーしてください。
 {{< /alert >}}
