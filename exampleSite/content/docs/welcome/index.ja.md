@@ -3,15 +3,20 @@ title: "Blowfish へようこそ"
 featureimage: "images/v3/welcome.png"
 weight: 1
 draft: false
-description: "Blowfish バージョン 2.0 の新機能をご紹介。"
+description: "ブログ、ドキュメント、ポートフォリオなどに使えるモダンな Hugo テーマ、Blowfish の現行バージョンでサイトを作り始めましょう。"
+lastmod: 2026-08-30
 tags: ["new", "docs"]
 series: ["Documentation"]
 series_order: 1
 ---
 
 {{< lead >}}
-Blowfish にはたくさんの機能が詰まっています。
+Blowfish 3 は、ブログ、ドキュメント、ポートフォリオなどに使えるモダンな Hugo テーマです。
 {{< /lead >}}
+
+{{< alert >}}
+新しいサイトを最短で始めるには、`npx blowfish-tools new <site>` を実行してから[インストールガイド]({{< ref "docs/installation" >}})に従ってください。以下のセクションでは、現行リリースでも利用できる Blowfish 2 で導入された主な機能を紹介します。
+{{< /alert >}}
 
 元々、Blowfish の目標は、シンプルで軽量なテーマを開発することでした。このテーマは <a target="_blank" href="https://github.com/nunocoracao/congo">Congo</a> をフォークし、その当初のビジョンを発展させたものです。
 

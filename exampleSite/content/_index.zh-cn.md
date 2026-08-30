@@ -1,6 +1,7 @@
 ---
 title: "打造一个独一无二、真正属于你的网站。"
 description: "一款现代、灵活的 Hugo 主题，适用于博客、文档、作品集等。"
+lastmod: 2026-08-30
 heroLead: "Blowfish 提供富有表现力的布局、贴心的默认配置和实用的内容组件，让你专注于想要表达的内容。"
 heroButtons:
   - label: "快速开始"
@@ -35,3 +36,7 @@ heroImage: "images/v3/welcome.png"
 Blowfish 附带一个智能体技能，教 Claude Code 等编程智能体安装、配置和使用本主题。
 {{< /feature >}}
 {{< /feature-grid >}}
+
+{{< alert >}}
+**Blowfish v3.5 已发布。** 使用 `npx blowfish-tools new <site>` 创建新网站，或[升级现有网站]({{< ref "guides/202608-upgrade-to-blowfish-v3" >}})。
+{{< /alert >}}

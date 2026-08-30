@@ -1,6 +1,7 @@
 ---
-title: "使用指南"
-description: "Blowfish 的使用指南和教程"
+title: "指南"
+description: "使用 Blowfish 构建、迁移和发布 Hugo 网站的实用指南"
+lastmod: 2026-08-30
 
 cascade:
   showDate: false
@@ -9,11 +10,11 @@ cascade:
 ---
 
 {{< lead >}}
-Blowfish 的使用指南和教程
+使用 Blowfish 构建、迁移和发布 Hugo 网站的实用指南。
 {{< /lead >}}
 
 **您是 Blowfish 的用户吗?** 要将您自己编写的指南添加到此列表，请查看[参考模板](/guides/template/)。
 
-本部分包含有关如何配置主题的各种指南。如果您是新用户，请查看 [安装]({{< ref "docs/installation" >}}) 指南或查看 [示例]({{< ref "samples" >}}) 部分来了解 Blowfish 能做出什么效果的网页。
+从[安装]({{< ref "docs/installation" >}})开始，将现有网站升级到 [Blowfish 3]({{< ref "guides/202608-upgrade-to-blowfish-v3" >}})，或浏览[展示案例]({{< ref "examples" >}})获取灵感。
 
 ---

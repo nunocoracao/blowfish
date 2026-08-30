@@ -1,6 +1,7 @@
 ---
 title: "Crie um site que seja inconfundivelmente seu."
 description: "Um tema Hugo moderno e flexível para blogs, documentação, portfólios e muito mais."
+lastmod: 2026-08-30
 heroLead: "O Blowfish oferece layouts expressivos, padrões bem pensados e blocos de conteúdo práticos, para que você se concentre no que quer dizer."
 heroButtons:
   - label: "Começar"
@@ -35,3 +36,7 @@ Explore sites reais, contribuições da comunidade e padrões que funcionam em p
 O Blowfish inclui uma skill que ensina o Claude Code e outros agentes de programação a instalar, configurar e trabalhar com o tema.
 {{< /feature >}}
 {{< /feature-grid >}}
+
+{{< alert >}}
+**O Blowfish v3.5 está disponível.** Crie um novo site com `npx blowfish-tools new <site>` ou [atualize um site existente]({{< ref "guides/202608-upgrade-to-blowfish-v3" >}}).
+{{< /alert >}}
