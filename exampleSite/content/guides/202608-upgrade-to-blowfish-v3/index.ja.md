@@ -1,6 +1,7 @@
 ---
 title: "既存の Hugo サイトを Blowfish 3 にアップグレードする"
 description: "互換性を損なう設定変更なしに、既存の Blowfish サイトをバージョン 3 に移行します。"
+featureimage: "featured.png"
 date: 2026-08-30
 lastmod: 2026-08-30
 tags: ["blowfish", "hugo", "migration", "v3"]

@@ -1,6 +1,7 @@
 ---
 title: "Aggiorna un sito Hugo esistente a Blowfish 3"
 description: "Porta un sito Blowfish esistente alla versione 3 senza modifiche incompatibili alla configurazione."
+featureimage: "featured.png"
 date: 2026-08-30
 lastmod: 2026-08-30
 tags: ["blowfish", "hugo", "migration", "v3"]
