@@ -7,14 +7,31 @@
   weight = 10
 
 [[main]]
-  name = "Guias"
-  pageRef = "guides"
+  name = "Shortcodes"
+  pageRef = "docs/shortcodes"
+  weight = 15
+
+[[main]]
+  name = "Exemplos"
   weight = 20
 
 [[main]]
+  name = "Amostras"
+  parent = "Exemplos"
+  pageRef = "samples"
+  weight = 16
+
+[[main]]
   name = "Galeria"
+  parent = "Exemplos"
   pageRef = "examples"
   weight = 30
+
+[[main]]
+  name = "Receitas"
+  parent = "Exemplos"
+  pageRef = "guides"
+  weight = 40
 
 [[main]]
   name = "Utilizadores"

@@ -16,19 +16,36 @@
   weight = 10
 
 [[main]]
-  name = "Guides"
-  pageRef = "guides"
+  name = "Shortcodes"
+  pageRef = "docs/shortcodes"
+  weight = 15
+
+[[main]]
+  name = "Examples"
   weight = 20
 
 [[main]]
+  name = "Samples"
+  parent = "Examples"
+  pageRef = "samples"
+  weight = 16
+
+[[main]]
   name = "Showcase"
+  parent = "Examples"
   pageRef = "examples"
   weight = 30
 
 [[main]]
+  name = "Recipes"
+  parent = "Examples"
+  pageRef = "guides"
+  weight = 40
+
+[[main]]
   name = "Users"
   pageRef = "users"
-  weight = 40
+  weight = 90
 
 [[main]]
   identifier = "merch"

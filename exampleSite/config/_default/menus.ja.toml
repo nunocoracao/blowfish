@@ -16,14 +16,31 @@
   weight = 10
 
 [[main]]
-  name = "ガイド"
-  pageRef = "guides"
+  name = "ショートコード"
+  pageRef = "docs/shortcodes"
+  weight = 15
+
+[[main]]
+  name = "例"
   weight = 20
 
 [[main]]
+  name = "サンプル"
+  parent = "例"
+  pageRef = "samples"
+  weight = 16
+
+[[main]]
   name = "ショーケース"
+  parent = "例"
   pageRef = "examples"
   weight = 30
+
+[[main]]
+  name = "レシピ"
+  parent = "例"
+  pageRef = "guides"
+  weight = 40
 
 [[main]]
   name = "ユーザー"
