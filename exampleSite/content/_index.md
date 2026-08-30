@@ -1,6 +1,7 @@
 ---
 title: "Build a site that feels unmistakably yours."
 description: "A modern, flexible Hugo theme for blogs, documentation, portfolios, and more."
+lastmod: 2026-08-30
 heroLead: "Blowfish gives you expressive layouts, thoughtful defaults, and practical content building blocks, so you can focus on the thing you want to say."
 heroButtons:
   - label: "Get started"
@@ -35,3 +36,7 @@ Explore real sites, community contributions, and patterns that hold up in produc
 Blowfish ships an agent skill that teaches Claude Code and other coding agents how to install, configure, and build with the theme.
 {{< /feature >}}
 {{< /feature-grid >}}
+
+{{< alert >}}
+**Blowfish v3.5 is available.** Start a new site with `npx blowfish-tools new <site>` or [upgrade an existing site]({{< ref "guides/202608-upgrade-to-blowfish-v3" >}}).
+{{< /alert >}}

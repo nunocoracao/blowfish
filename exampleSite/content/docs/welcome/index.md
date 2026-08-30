@@ -3,15 +3,20 @@ title: "Welcome to Blowfish"
 featureimage: "images/v3/welcome.png"
 weight: 1
 draft: false
-description: "Discover what's new in Blowfish version 2.0."
+description: "Start building with the current version of Blowfish, a modern Hugo theme for blogs, documentation, portfolios, and more."
+lastmod: 2026-08-30
 tags: ["new", "docs"]
 series: ["Documentation"]
 series_order: 1
 ---
 
 {{< lead >}}
-Blowfish is packed with tons of features.
+Blowfish 3 is a modern Hugo theme for blogs, documentation, portfolios, and more.
 {{< /lead >}}
+
+{{< alert >}}
+Looking for the fastest path to a new site? Run `npx blowfish-tools new <site>`, then follow the [installation guide]({{< ref "docs/installation" >}}). The sections below document the major features introduced with Blowfish 2, which remain available in the current release.
+{{< /alert >}}
 
 The original aim of Blowfish was to develop a theme that was simple and lightweight. The theme is a fork of <a target="_blank" href="https://github.com/nunocoracao/congo">Congo</a> and expands its initial vision.
 
