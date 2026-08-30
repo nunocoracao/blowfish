@@ -1,6 +1,7 @@
 ---
-title: "レシピ"
-description: "Blowfish のためのレシピ、ガイド、チュートリアル"
+title: "ガイド"
+description: "Blowfish で Hugo サイトを構築、移行、公開するための実践ガイド"
+lastmod: 2026-08-30
 
 cascade:
   showDate: false
@@ -9,11 +10,11 @@ cascade:
 ---
 
 {{< lead >}}
-Blowfish のためのレシピ、ガイド、チュートリアル
+Blowfish で Hugo サイトを構築、移行、公開するための実践ガイド。
 {{< /lead >}}
 
 **Blowfish ユーザーですか?** この一覧にあなたのガイドを加える際は、[テンプレートを確認](/guides/template/)してください。
 
-このセクションではあなたのテーマの設定方法する様々なシナリオを含んでいます。新しく作成する場合は、開始するために[インストール]({{< ref "docs/installation" >}})ガイド、または Blowfish が何が出来るか[サンプル]({{< ref "samples" >}})セクションに訪れてください。
+[インストール]({{< ref "docs/installation" >}})から始めるか、既存サイトを [Blowfish 3]({{< ref "guides/202608-upgrade-to-blowfish-v3" >}}) にアップグレードするか、[ショーケース]({{< ref "examples" >}})でアイデアを探してください。
 
 ---

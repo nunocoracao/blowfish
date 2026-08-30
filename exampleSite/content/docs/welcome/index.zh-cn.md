@@ -3,15 +3,20 @@ title: "欢迎来到 Blowfish"
 featureimage: "images/v3/welcome.png"
 weight: 1
 draft: false
-description: "探索 Blowfish 2.0版本的新功能。"
+description: "使用 Blowfish 当前版本开始构建网站，它是一款适用于博客、文档、作品集等的现代 Hugo 主题。"
+lastmod: 2026-08-30
 tags: ["新手", "文档"]
 series: ["部署教程"]
 series_order: 1
 ---
 
 {{< lead >}}
-Blowfish 包含了大量的特性功能。
+Blowfish 3 是一款适用于博客、文档、作品集等的现代 Hugo 主题。
 {{< /lead >}}
+
+{{< alert >}}
+想最快创建新网站？运行 `npx blowfish-tools new <site>`，然后按照[安装指南]({{< ref "docs/installation" >}})操作。以下章节介绍 Blowfish 2 新增的主要功能，这些功能在当前版本中仍然可用。
+{{< /alert >}}
 
 Blowfish 的目标是开发一个简单且轻量级的主题。 该主题是 <a target="_blank" href="https://github.com/nunocoracao/congo">Congo</a> 的一个分支，并进行了大量扩展。
 

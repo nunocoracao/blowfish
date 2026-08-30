@@ -1,6 +1,7 @@
 ---
 title: "まぎれもなく自分らしいサイトを。"
 description: "ブログ、ドキュメント、ポートフォリオなどに使える、モダンで柔軟な Hugo テーマ。"
+lastmod: 2026-08-30
 heroLead: "Blowfish は表現力豊かなレイアウト、行き届いたデフォルト設定、実用的なコンテンツ部品を提供します。あなたは伝えたいことに集中するだけです。"
 heroButtons:
   - label: "はじめる"
@@ -35,3 +36,7 @@ heroImage: "images/v3/welcome.png"
 Blowfish には、Claude Code などのコーディングエージェントにテーマのインストール・設定・活用方法を教えるエージェントスキルが付属しています。
 {{< /feature >}}
 {{< /feature-grid >}}
+
+{{< alert >}}
+**Blowfish v3.5 が利用可能になりました。** `npx blowfish-tools new <site>` で新しいサイトを始めるか、[既存サイトをアップグレード]({{< ref "guides/202608-upgrade-to-blowfish-v3" >}})してください。
+{{< /alert >}}
