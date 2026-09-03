@@ -1131,6 +1131,7 @@
       "Business site"
     ]
   },
+  {
     "title": "Bruno Wollmann on Networking",
     "url": "https://brunowollmann.com",
     "source": "https://github.com/wollmannbruno/blog",
@@ -1139,6 +1140,6 @@
       "Personal Site",
       "Networking",
       "Network Architecture"
-  ]
-}
+    ]
+  }
 ]
