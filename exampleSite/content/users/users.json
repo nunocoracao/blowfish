@@ -1124,6 +1124,13 @@
     ]
   },
   {
+    "title": "yannick.services",
+    "url": "https://yannick.services",
+    "source": "n/a",
+    "tags": [
+      "Business site"
+    ]
+  },
     "title": "Bruno Wollmann on Networking",
     "url": "https://brunowollmann.com",
     "source": "https://github.com/wollmannbruno/blog",
@@ -1132,6 +1139,6 @@
       "Personal Site",
       "Networking",
       "Network Architecture"
-    ]
-  }
+  ]
+}
 ]
