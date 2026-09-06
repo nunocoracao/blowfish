@@ -2071,6 +2071,9 @@
   .bg-white\/60 {
     background-color: color-mix(in oklab, #fff 60%, transparent);
   }
+  .bg-white\/85 {
+    background-color: color-mix(in oklab, #fff 85%, transparent);
+  }
   .bg-linear-60 {
     --tw-gradient-position: 60deg;
     @supports (background-image: linear-gradient(in lab, red, red)) {
@@ -3489,6 +3492,12 @@
     background-color: color-mix(in srgb, rgba(rgba(var(--color-neutral-900), 1), 1) 50%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, rgba(var(--color-neutral-900), 1) 50%, transparent);
+    }
+  }
+  .dark\:bg-neutral-900\/80:is(.dark *) {
+    background-color: color-mix(in srgb, rgba(rgba(var(--color-neutral-900), 1), 1) 80%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, rgba(var(--color-neutral-900), 1) 80%, transparent);
     }
   }
   .dark\:bg-neutral-900\/99:is(.dark *) {
