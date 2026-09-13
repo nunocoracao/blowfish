@@ -54,6 +54,9 @@
       safeHTML
     }}
   {{ end }}
+  {{ with site.Home.OutputFormats.Get "LLMS" }}
+    <link rel="describedby" href="{{ .RelPermalink }}">
+  {{ end }}
 
   {{/* Me */}}
   {{ with .Site.Params.Author.name }}

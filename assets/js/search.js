@@ -42,7 +42,7 @@ document.addEventListener("keydown", function (event) {
   }
 
   // Cmd+K (macOS) / Ctrl+K to toggle search wrapper
-  if (event.key.toLowerCase() == "k" && (event.metaKey || event.ctrlKey)) {
+  if (event.key && event.key.toLowerCase() == "k" && (event.metaKey || event.ctrlKey)) {
     event.preventDefault();
     if (searchVisible) {
       hideSearch();
