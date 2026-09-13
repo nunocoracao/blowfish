@@ -36,6 +36,21 @@
     let isJumpingToAnchor = false
 
     function getActiveAnchorId(anchors, offsetRatio) {
+      // On a page short enough that it never scrolls, scroll position can
+      // never change, so the loop below can never pick a different entry.
+      // Clicking a TOC entry still changes the hash, so fall back to that
+      // when scrolling can't answer the question at all - honoured only if
+      // it names an entry the TOC actually lists, so an unrelated hash
+      // doesn't fake a match. Pages that do scroll are unaffected.
+      const canScroll =
+        document.documentElement.scrollHeight > window.innerHeight + 1
+      if (!canScroll) {
+        const fromHash = decodeURIComponent(window.location.hash.substring(1))
+        const known = [...document.querySelectorAll('#TableOfContents a[href^="#"]')]
+          .map(link => decodeURIComponent(link.getAttribute('href').substring(1)))
+        if (fromHash && known.includes(fromHash)) return fromHash
+      }
+
       const threshold = window.scrollY + window.innerHeight * offsetRatio
       const tocLinks = [...document.querySelectorAll('#TableOfContents a[href^="#"]')]
       const tocIds = new Set(tocLinks.map(link => link.getAttribute('href').substring(1)))

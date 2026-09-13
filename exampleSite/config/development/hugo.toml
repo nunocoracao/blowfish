@@ -2,4 +2,4 @@
 # https://gohugo.io/quick-reference/glossary/#environment
 
 # Exclude folders containing large numbers of images
-ignoreFiles = ['content/guides', 'content/users']
+ignoreFiles = ['content/users']
