@@ -1131,7 +1131,7 @@
       "Business site"
     ]
   },
-    {
+  {
     "title": "Bruno Wollmann on Networking",
     "url": "https://brunowollmann.com",
     "source": "https://github.com/wollmannbruno/blog",
@@ -1147,12 +1147,12 @@
     "url": "https://usttaraf.com",
     "source": "n/a",
     "tags": [
-      "Personal site"
-      "Blog"
+      "Personal site",
+      "Blog",
       "Astronomy"
     ]
   },
-{
+  {
     "title": "Siya's Blog",
     "url": "https://blog.siyalight.com",
     "source": "n/a",
