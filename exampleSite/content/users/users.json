@@ -1160,5 +1160,15 @@
       "Technology Blog",
       "Full Stack Developer"
     ]
+  },
+  {
+    "title": "Wiebe Vandendriessche",
+    "url": "https://www.wiebevandendriessche.tech/",
+    "source": "https://github.com/wiebe-vandendriessche/wiebe-vandendriessche",
+    "tags": [
+      "Personal site",
+      "Academia",
+      "Blog"
+    ]
   }
 ]
