@@ -64,6 +64,18 @@
   (and ($.Site.Params.term.layoutBackgroundHeaderSpace | default true) (eq $scope "term"))
   )
 }}
+{{ $siteBlurStyle := "fade" }}
+{{ if eq $scope "single" }}
+  {{ $siteBlurStyle = $.Site.Params.article.layoutBackgroundBlurStyle | default "fade" }}
+{{ else if eq $scope "list" }}
+  {{ $siteBlurStyle = $.Site.Params.list.layoutBackgroundBlurStyle | default "fade" }}
+{{ else if eq $scope "terms" }}
+  {{ $siteBlurStyle = $.Site.Params.taxonomy.layoutBackgroundBlurStyle | default "fade" }}
+{{ else if eq $scope "term" }}
+  {{ $siteBlurStyle = $.Site.Params.term.layoutBackgroundBlurStyle | default "fade" }}
+{{ end }}
+{{ $blurStyle := $.Params.layoutBackgroundBlurStyle | default $siteBlurStyle }}
+{{ $isClassic := eq $blurStyle "classic" }}
 
 {{- with $featuredURL -}}
   {{ if $shouldAddHeaderSpace | default true }}
@@ -71,7 +83,7 @@
   {{ end }}
   <div
     id="hero-background"
-    class="hero-canvas-fade fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom">
+    class="{{ if not $isClassic }}hero-canvas-fade {{ end }}fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom">
     {{ $style := "" }}
     {{ $defaultPosition := cond $useDefault site.Params.imagePosition false }}
     {{ with $.Params.imagePosition | default $defaultPosition }}
@@ -90,13 +102,26 @@
   </div>
 
   {{ if $shouldBlur | default false }}
-    {{ $heroFade := resources.Get "js/hero-scroll-fade.js" }}
-    {{ $heroFade = $heroFade | resources.Minify | resources.Fingerprint ($.Site.Params.fingerprintAlgorithm | default "sha512") }}
-    <script
-      type="text/javascript"
-      src="{{ $heroFade.RelPermalink }}"
-      integrity="{{ $heroFade.Data.Integrity }}"
-      data-hero-id="hero-background"
-      data-fade-distance="500"></script>
+    {{ if $isClassic }}
+      <div
+        id="background-blur"
+        class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-xl bg-neutral-100/75 dark:bg-neutral-800/60"></div>
+      {{ $backgroundBlur := resources.Get "js/background-blur.js" }}
+      {{ $backgroundBlur = $backgroundBlur | resources.Minify | resources.Fingerprint ($.Site.Params.fingerprintAlgorithm | default "sha512") }}
+      <script
+        type="text/javascript"
+        src="{{ $backgroundBlur.RelPermalink }}"
+        integrity="{{ $backgroundBlur.Data.Integrity }}"
+        data-blur-id="background-blur"></script>
+    {{ else }}
+      {{ $heroFade := resources.Get "js/hero-scroll-fade.js" }}
+      {{ $heroFade = $heroFade | resources.Minify | resources.Fingerprint ($.Site.Params.fingerprintAlgorithm | default "sha512") }}
+      <script
+        type="text/javascript"
+        src="{{ $heroFade.RelPermalink }}"
+        integrity="{{ $heroFade.Data.Integrity }}"
+        data-hero-id="hero-background"
+        data-fade-distance="500"></script>
+    {{ end }}
   {{ end }}
 {{- end -}}
