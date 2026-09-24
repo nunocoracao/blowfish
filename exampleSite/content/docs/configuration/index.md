@@ -288,6 +288,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `article.showHero` | `false` | Whether the thumbnail image will be shown as a hero image within each article page. |
 | `article.heroStyle` | _Not set_ | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`. Effective only if `article.showHero = true`. |
 | `article.layoutBackgroundBlur` | `true` | Makes the background image in the background article heroStyle blur with the scroll. Only used when `heroStyle` equals `background` or `thumbAndBackground`. |
+| `article.layoutBackgroundBlurStyle` | `fade` | Valid options are `fade` (the hero image fades out as you scroll) or `classic` (a blurred panel stays fixed behind the whole page). Only used when `heroStyle` equals `background` and `layoutBackgroundBlur` is enabled. |
 | `article.layoutBackgroundHeaderSpace` | `true` | Add space between the header and the body. Only used when `heroStyle` equals `background`. |
 | `article.showBreadcrumbs` | `false` | Whether or not breadcrumbs are displayed in the article header. |
 | `article.showDraftLabel` | `true` | Whether or not the draft indicator is shown next to articles when site is built with `--buildDrafts`. |
@@ -321,6 +322,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `list.showHero` | `false` | Whether the thumbnail image will be shown as a hero image within each list page. |
 | `list.heroStyle` | _Not set_ | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`. Effective only if `list.showHero = true`. |
 | `list.layoutBackgroundBlur` | `true` | Makes the background image in the background list heroStyle blur with the scroll. Only used when `heroStyle` equals `background` or `thumbAndBackground`. |
+| `list.layoutBackgroundBlurStyle` | `fade` | Valid options are `fade` (the hero image fades out as you scroll) or `classic` (a blurred panel stays fixed behind the whole page). Only used when `heroStyle` equals `background` and `layoutBackgroundBlur` is enabled. |
 | `list.layoutBackgroundHeaderSpace` | `true` | Add space between the header and the body. Only used when `heroStyle` equals `background`. |
 | `list.showBreadcrumbs` | `false` | Whether or not breadcrumbs are displayed in the header on list pages. |
 | `list.showTableOfContents` | `false` | Whether or not the table of contents is displayed on list pages. |
@@ -349,6 +351,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `taxonomy.showHero` | `false` | Whether the thumbnail image will be shown as a hero image within each taxonomy page. |
 | `taxonomy.heroStyle` | _Not set_ | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`. Effective only if `taxonomy.showHero = true`. |
 | `taxonomy.layoutBackgroundBlur` | `true` | Makes the background image in the background taxonomy heroStyle blur with the scroll. Only used when `heroStyle` equals `background` or `thumbAndBackground`. |
+| `taxonomy.layoutBackgroundBlurStyle` | `fade` | Valid options are `fade` (the hero image fades out as you scroll) or `classic` (a blurred panel stays fixed behind the whole page). Only used when `heroStyle` equals `background` and `layoutBackgroundBlur` is enabled. |
 | `taxonomy.layoutBackgroundHeaderSpace` | `true` | Add space between the header and the body. Only used when `heroStyle` equals `background`. |
 | `taxonomy.showBreadcrumbs` | `false` | Whether or not breadcrumbs are displayed in the taxonomy header. |
 | `taxonomy.showViews` | `false` | Whether or not article views are displayed. This requires firebase integrations to be enabled, look below. |
@@ -363,6 +366,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `term.showHero` | `false` | Whether the thumbnail image will be shown as a hero image within each term page. |
 | `term.heroStyle` | _Not set_ | Style to display the hero image, valid options are: `basic`, `big`, `background`, `thumbAndBackground`. Effective only if `term.showHero = true`. |
 | `term.layoutBackgroundBlur` | `true` | Makes the background image in the background term heroStyle blur with the scroll. Only used when `heroStyle` equals `background` or `thumbAndBackground`. |
+| `term.layoutBackgroundBlurStyle` | `fade` | Valid options are `fade` (the hero image fades out as you scroll) or `classic` (a blurred panel stays fixed behind the whole page). Only used when `heroStyle` equals `background` and `layoutBackgroundBlur` is enabled. |
 | `term.layoutBackgroundHeaderSpace` | `true` | Add space between the header and the body. Only used when `heroStyle` equals `background`. |
 | `term.showBreadcrumbs` | `false` | Whether or not breadcrumbs are displayed in the term header. |
 | `term.showViews` | `false` | Whether or not article views are displayed. This requires firebase integrations to be enabled, look below. |
