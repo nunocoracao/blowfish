@@ -1170,5 +1170,15 @@
       "Academia",
       "Blog"
     ]
+  },
+  {
+    "title": "merox.dev",
+    "url": "https://merox.dev",
+    "source": "n/a",
+    "tags": [
+      "Personal site",
+      "Blog",
+      "DevOps"
+    ]
   }
 ]
