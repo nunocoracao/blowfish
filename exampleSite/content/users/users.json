@@ -1189,5 +1189,14 @@
       "Blog",
       "DevOps"
     ]
+  },
+    {
+    "title": "prohomelab.com",
+    "url": "https://prohomelab.com",
+    "source": "n/a",
+    "tags": [
+      "Blog",
+      "Homelab / Self-hosting"
+    ]
   }
 ]
