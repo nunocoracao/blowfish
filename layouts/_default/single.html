@@ -13,8 +13,18 @@
       {{ end }}
     {{ end }}
 
+    {{/* Determine whether the sidebar (TOC/related posts) is shown.
+         When it isn't, widen the article column so the reading width
+         reclaims the space the sidebar would otherwise occupy, instead
+         of leaving a narrow column with a large blank area on the right. */}}
+    {{ $enableToc := site.Params.article.showTableOfContents | default (site.Params.list.showTableOfContents | default false) }}
+    {{ $showToc := and $enableToc (in .TableOfContents "<ul") }}
+    {{ $showRelated := site.Params.article.showRelatedPosts | default false }}
+    {{ $noSidebar := not (or $showToc $showRelated) }}
+    {{ $contentWidth := site.Params.article.maxContentWidth | default "80ch" }}
+
     {{/* Header */}}
-    <header id="single_header" class="mt-5 max-w-prose">
+    <header id="single_header" class="mt-5 max-w-prose" {{ if $noSidebar }}style="max-width: {{ $contentWidth }}"{{ end }}>
       {{ if .Params.showBreadcrumbs | default (site.Params.article.showBreadcrumbs | default false) }}
         {{ partial "breadcrumbs.html" . }}
       {{ end }}
@@ -31,9 +41,6 @@
 
     {{/* Body */}}
     <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
-      {{ $enableToc := site.Params.article.showTableOfContents | default (site.Params.list.showTableOfContents | default false) }}
-      {{ $showToc := and $enableToc (in .TableOfContents "<ul") }}
-      {{ $showRelated := site.Params.article.showRelatedPosts | default false }}
       {{ $topClass := cond (hasPrefix site.Params.header.layout "fixed") "lg:top-[140px]" "lg:top-10" }}
       {{ if or $showToc $showRelated }}
         <div class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
@@ -51,7 +58,7 @@
 
       <div class="min-w-0 min-h-0 max-w-fit">
         {{ partial "series/series.html" . }}
-        <div class="article-content max-w-prose mb-20">
+        <div class="article-content max-w-prose mb-20" {{ if $noSidebar }}style="max-width: {{ $contentWidth }}"{{ end }}>
           {{ .Content }}
           {{ $defaultReplyByEmail := site.Params.replyByEmail }}
           {{ $replyByEmail := default $defaultReplyByEmail .Params.replyByEmail }}
