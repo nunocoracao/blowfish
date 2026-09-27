@@ -100,7 +100,7 @@
     </section>
 
     {{/* Footer */}}
-    <footer class="pt-8 max-w-prose print:hidden">
+    <footer class="pt-8 max-w-prose print:hidden" {{ if $noSidebar }}style="max-width: {{ $contentWidth }}"{{ end }}>
       {{ partial "article-pagination.html" . }}
       {{ if .Params.showComments | default (site.Params.article.showComments | default false) }}
         {{ if templates.Exists "partials/comments.html" }}
