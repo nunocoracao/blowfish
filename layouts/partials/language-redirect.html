@@ -2,7 +2,7 @@
 {{ if and ($params.enabled | default false) hugo.IsMultilingual }}
   {{ $translations := slice }}
   {{ range .AllTranslations }}
-    {{ $translations = $translations | append (dict "lang" .Language.Lang "languageCode" (.Language.LanguageCode | default "") "url" .RelPermalink) }}
+    {{ $translations = $translations | append (dict "lang" .Language.Lang "languageCode" (.Language.Locale | default "") "url" .RelPermalink) }}
   {{ end }}
 
   {{ $browserRedirectHomeOnly := true }}
@@ -20,7 +20,7 @@
     {{ $fallbackLanguage = . }}
   {{ end }}
 
-  {{ $config := dict "enabled" true "storageKey" ($params.storageKey | default "blowfish_preferred_language") "fallbackLanguage" $fallbackLanguage "browserRedirectHomeOnly" $browserRedirectHomeOnly "storedLanguageRedirect" $storedLanguageRedirect "currentLanguage" .Language.Lang "currentLanguageCode" (.Language.LanguageCode | default "") "isHome" .IsHome "translations" $translations }}
+  {{ $config := dict "enabled" true "storageKey" ($params.storageKey | default "blowfish_preferred_language") "fallbackLanguage" $fallbackLanguage "browserRedirectHomeOnly" $browserRedirectHomeOnly "storedLanguageRedirect" $storedLanguageRedirect "currentLanguage" .Language.Lang "currentLanguageCode" (.Language.Locale | default "") "isHome" .IsHome "translations" $translations }}
   <script>
     window.BlowfishLanguageRedirectConfig = {{ $config | jsonify | safeJS }};
   </script>
