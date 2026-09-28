@@ -22,9 +22,12 @@
     {{ $showRelated := site.Params.article.showRelatedPosts | default false }}
     {{ $noSidebar := not (or $showToc $showRelated) }}
     {{ $contentWidth := site.Params.article.maxContentWidth | default "80ch" }}
+    {{/* 带 TOC/相关文章侧栏时的正文宽度，默认在 65ch 基础上向右拓展，
+         同时通过缩小与侧栏的间距让正文更宽。 */}}
+    {{ $contentWidthWithToc := site.Params.article.maxContentWidthWithToc | default "75ch" }}
 
     {{/* Header */}}
-    <header id="single_header" class="mt-5 max-w-prose" {{ if $noSidebar }}style="max-width: {{ $contentWidth }}"{{ end }}>
+    <header id="single_header" class="mt-5 max-w-prose" {{ if $noSidebar }}style="max-width: {{ $contentWidth }}"{{ else if or $showToc $showRelated }}style="max-width: {{ $contentWidthWithToc }}"{{ end }}>
       {{ if .Params.showBreadcrumbs | default (site.Params.article.showBreadcrumbs | default false) }}
         {{ partial "breadcrumbs.html" . }}
       {{ end }}
@@ -43,7 +46,7 @@
     <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
       {{ $topClass := cond (hasPrefix site.Params.header.layout "fixed") "lg:top-[140px]" "lg:top-10" }}
       {{ if or $showToc $showRelated }}
-        <div class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
+        <div class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-4 rtl:lg:pr-4">
           <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky {{ $topClass }}">
             {{ if $showToc }}
               {{ partial "toc.html" . }}
@@ -56,9 +59,9 @@
       {{ end }}
 
 
-      <div class="min-w-0 min-h-0 max-w-fit" {{ if $noSidebar }}style="width: 100%; max-width: {{ $contentWidth }}"{{ end }}>
+      <div class="min-w-0 min-h-0 max-w-fit" {{ if $noSidebar }}style="width: 100%; max-width: {{ $contentWidth }}"{{ else if or $showToc $showRelated }}style="width: 100%; max-width: {{ $contentWidthWithToc }}"{{ end }}>
         {{ partial "series/series.html" . }}
-        <div class="article-content max-w-prose mb-20" {{ if $noSidebar }}style="max-width: {{ $contentWidth }}"{{ end }}>
+        <div class="article-content max-w-prose mb-20" {{ if $noSidebar }}style="max-width: {{ $contentWidth }}"{{ else if or $showToc $showRelated }}style="max-width: {{ $contentWidthWithToc }}"{{ end }}>
           {{ partial "pangu-content.html" . }}
           {{ $defaultReplyByEmail := site.Params.replyByEmail }}
           {{ $replyByEmail := default $defaultReplyByEmail .Params.replyByEmail }}
@@ -100,7 +103,7 @@
     </section>
 
     {{/* Footer */}}
-    <footer class="pt-8 max-w-prose print:hidden" {{ if $noSidebar }}style="max-width: {{ $contentWidth }}"{{ end }}>
+    <footer class="pt-8 max-w-prose print:hidden" {{ if $noSidebar }}style="max-width: {{ $contentWidth }}"{{ else if or $showToc $showRelated }}style="max-width: {{ $contentWidthWithToc }}"{{ end }}>
       {{ partial "article-pagination.html" . }}
       {{ if .Params.showComments | default (site.Params.article.showComments | default false) }}
         {{ if templates.Exists "partials/comments.html" }}
