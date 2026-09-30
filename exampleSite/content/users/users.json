@@ -1198,5 +1198,14 @@
       "Blog",
       "Homelab / Self-hosting"
     ]
+  },
+  {
+    "title": "Nour Agha",
+    "url": "https://agha.dev",
+    "source": "https://github.com/nourkagha/agha.dev",
+    "tags": [
+      "Personal site",
+      "Blog"
+    ]
   }
 ]
