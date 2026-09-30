@@ -249,7 +249,8 @@ pre {
   #background-canvas,
   .single_hero_background,
   #scroll-to-top,
-  #bmc-wbtn {
+  #bmc-wbtn,
+  body > div[id^="kofi-widget-overlay-"] {
     display: none !important;
   }
 
@@ -462,8 +463,9 @@ body:has(#mobile-menu-toggle:checked):not(:has(#mobile-menu-dialog.mobile-menu-s
   }
 }
 
-/* Hide buy me a coffee in mobile menu */
-#bmc-wbtn {
+/* Keep support widgets below mobile menu */
+#bmc-wbtn,
+body > div[id^="kofi-widget-overlay-"] {
   z-index: 50 !important;
 }
 

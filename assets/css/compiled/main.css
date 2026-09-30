@@ -4236,7 +4236,7 @@
 .zen-mode {
   position: relative;
 }
-body.zen-mode-enable #bmc-wbtn, body.zen-mode-enable  .author {
+body.zen-mode-enable #bmc-wbtn, body.zen-mode-enable  div[id^="kofi-widget-overlay-"], body.zen-mode-enable  .author {
   display: none !important;
 }
 .gist-container .gist h1 {
@@ -4717,7 +4717,7 @@ pre {
     max-width: none !important;
     padding: 0 !important;
   }
-  body > header, #background-canvas, .single_hero_background, #scroll-to-top, #bmc-wbtn {
+  body > header, #background-canvas, .single_hero_background, #scroll-to-top, #bmc-wbtn, body > div[id^="kofi-widget-overlay-"] {
     display: none !important;
   }
   * {
@@ -4894,7 +4894,7 @@ body:has(#mobile-menu-toggle:checked):not(:has(#mobile-menu-dialog.mobile-menu-s
     overflow: visible;
   }
 }
-#bmc-wbtn {
+#bmc-wbtn, body > div[id^="kofi-widget-overlay-"] {
   z-index: 50 !important;
 }
 .nested-menu {

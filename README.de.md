@@ -48,7 +48,7 @@ Blowfish ist ein leistungsstarkes, schlankes Theme für [Hugo](https://gohugo.io
 - Möglichkeit, auf Beiträge auf Websites von Drittanbietern zu verlinken
 - Über 40 Shortcodes einschließlich Gallery, Timeline, GitHub-Karten, Carousels, Stats, Feature-Rastern, Steps und CTA-Buttons
 - GitHub Alerts-Syntax, 15 Typen, zusammenklappbar
-- Buymeacoffee-Integration
+- Buy Me a Coffee- und Ko-fi-Integration
 - Clientseitige Website-Suche mit Fuse.js
 - Diagramme und Visualisierungen mit Mermaid
 - Charts mit Chart.js

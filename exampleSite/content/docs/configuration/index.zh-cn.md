@@ -354,7 +354,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `selineAnalytics.token` | 无 | Seline 站点分析平台的 token。更多详细内容请参考 [分析文档]({{< ref "partials#analytics" >}})。 |
 | `selineAnalytics.enableTrackEvent` | true | 默认会自动添加 Umami Track Event。如果你不想添加 Event，那学需要设置为 `false`。 |
 
-### BuyMeACoffee(赞助平台)
+### Buy Me a Coffee(赞助平台)
 
 | 名称                                | 默认值    | 描述                               |
 | ----------------------------------- | --------- | ---------------------------------- |
@@ -363,6 +363,16 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `buymeacoffee.globalWidgetMessage`  | 无        | 新用户首次访问网站时显示的消息。   |
 | `buymeacoffee.globalWidgetColor`    | `#FFDD00` | 组件颜色，使用 HEX 格式。          |
 | `buymeacoffee.globalWidgetPosition` | 无        | 组件位置，例如 "left" 或 "right"。 |
+
+### Ko-fi(赞助平台)
+
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| `kofi.identifier` | 无 | kofi 账户的用户名。 |
+| `kofi.globalWidget` | 无 | 激活全局的 kofi 组件。 |
+| `kofi.globalWidgetText` | 无 | 新用户首次访问网站时显示的消息。 |
+| `kofi.globalWidgetBackgroundColor` | `#00B9FE` | 组件颜色，使用 HEX 格式。 |
+| `kofi.globalWidgetTextColor` | `#FFFFFF` | 组件文字颜色，使用 HEX 格式。 |
 
 ### 验证
 
