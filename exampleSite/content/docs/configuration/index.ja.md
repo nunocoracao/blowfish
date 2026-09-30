@@ -350,7 +350,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 | `selineAnalytics.token` | _未設定_ | ウェブサイト用に Seline Analytics によって生成されたトークン。詳細については、[Analytics のドキュメント]({{< ref "partials#アナリティクス" >}})を参照してください。 |
 | `selineAnalytics.enableTrackEvent` | `true` | `true` に設定すると、トラックイベントが自動的に追加されます。トラックイベントを追加したくない場合は、`false` に設定してください。 |
 
-### BuyMeACoffee
+### Buy Me a Coffee
 
 | 名前 | デフォルト | 説明 |
 | --- | --- | --- |
@@ -359,6 +359,16 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 | `buymeacoffee.globalWidgetMessage`  | _未設定_   | 新しいユーザーが初めてサイトにアクセスしたときに表示されるメッセージ。 |
 | `buymeacoffee.globalWidgetColor`    | `#FFDD00`   | ウィジェットの色（16進数形式）。                                       |
 | `buymeacoffee.globalWidgetPosition` | _未設定_   | ウィジェットの位置。例えば "left" または "right"                       |
+
+### Ko-fi
+
+| Name | Default | Description |
+| --- | --- | --- |
+| `kofi.identifier` | _未設定_ | ターゲットの Ko-fi アカウントの識別子。 |
+| `kofi.globalWidget` | _未設定_ | グローバル Ko-fi ウィジェットを有効にします。 |
+| `kofi.globalWidgetText` | _未設定_ | 新しいユーザーが初めてサイトにアクセスしたときに表示されるテキスト。 |
+| `kofi.globalWidgetBackgroundColor` | `#00B9FE` | ウィジェットの背景色（16進数形式）。 |
+| `kofi.globalWidgetTextColor` | `#FFFFFF` | ウィジェットの文字色（16進数形式）。 |
 
 ### verification
 

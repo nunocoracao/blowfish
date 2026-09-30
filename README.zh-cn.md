@@ -46,7 +46,7 @@ Blowfish 是一个轻量有力的 Hugo 主题。它使用 Tailwind CSS 构建，
 - 可链接到第三方网站上的帖子
 - 内置 40 多种简码，包括图库、时间轴、GitHub 卡片、轮播、数据统计、功能网格、步骤和 CTA 按钮
 - 支持 GitHub Alerts 语法、15 种类型和可折叠功能
-- 支持 Buymeacoffee
+- 支持 Buy Me a Coffee 和 Ko-fi
 - 拥有由 Fuse.js 支持的客户端一侧网站搜索功能
 - 植入了基于 Mermaid 的图表功能
 - 植入了基于 Chart.js 的图表功能

@@ -8,6 +8,7 @@
 
 body.zen-mode-enable {
   #bmc-wbtn,
+  div[id^="kofi-widget-overlay-"],
   .author {
     display: none !important;
   }

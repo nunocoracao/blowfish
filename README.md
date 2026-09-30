@@ -48,7 +48,7 @@ Blowfish is designed to be a powerful, lightweight theme for [Hugo](https://gohu
 - Ability to link to posts on third-party websites
 - 40+ shortcodes including Gallery, Timeline, GitHub cards, Carousels, Stats, Feature grids, Steps, and CTA buttons
 - GitHub Alerts syntax, 15 types, collapsible support
-- Buymeacoffee integration
+- Buy Me a Coffee & Ko-fi integration
 - Client-side site search powered by Fuse.js
 - Diagrams and visualisations using Mermaid
 - Charts using Chart.js

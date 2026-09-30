@@ -194,6 +194,13 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   # globalWidgetColor = "#FFDD00"
   # globalWidgetPosition = "right"
 
+[kofi]
+  # identifier = ""
+  # globalWidget = true
+  # globalWidgetText = "Support me"
+  # globalWidgetBackgroundColor = "#00B9FE"
+  # globalWidgetTextColor = "#FFFFFF"
+
 [verification]
   # google = ""
   # bing = ""
