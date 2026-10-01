@@ -83,7 +83,7 @@
   {{ end }}
   <div
     id="hero-background"
-    class="{{ if not $isClassic }}hero-canvas-fade {{ end }}fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom">
+    class="{{ if not $isClassic }}hero-canvas-fade pointer-events-none {{ end }}fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom">
     {{ $style := "" }}
     {{ $defaultPosition := cond $useDefault site.Params.imagePosition false }}
     {{ with $.Params.imagePosition | default $defaultPosition }}

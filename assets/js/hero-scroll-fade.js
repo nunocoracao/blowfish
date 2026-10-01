@@ -4,11 +4,13 @@
   if (!target) return;
   var distance = parseInt(script.getAttribute("data-fade-distance"), 10) || 500;
   var ticking = false;
+  var last = -1;
   function update() {
     ticking = false;
     var opacity = Math.max(0, 1 - window.scrollY / distance);
+    if (opacity === last) return;
+    last = opacity;
     target.style.opacity = opacity;
-    target.style.visibility = opacity === 0 ? "hidden" : "visible";
   }
   window.addEventListener(
     "scroll",
