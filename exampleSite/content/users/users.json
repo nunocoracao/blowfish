@@ -1198,5 +1198,15 @@
       "Blog",
       "Homelab / Self-hosting"
     ]
+  },
+    {
+    "title": "gwils28.github.io",
+    "url": "https://gwils28.github.io",
+    "source": "https://github.com/gwils28/gwils28.github.io",
+    "tags": [
+      "Personal site",
+      "Blog",
+      "Portfolio"
+    ]
   }
 ]
