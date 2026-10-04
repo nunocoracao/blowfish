@@ -156,20 +156,17 @@
 {{ if site.Params.firebase.apiKey }}
   {{ $firebase := resources.Get "js/firebase.js" }}
   {{ $firebase = $firebase | resources.Minify | resources.Fingerprint (site.Params.fingerprintAlgorithm | default "sha512") }}
-  <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
-  {{/* Load the Firebase module (and its ~300KB of gstatic imports) after the
-    page is idle so it never competes with rendering-critical resources. */}}
+  {{/* Load Firebase only after all page resources have finished loading,
+    so its ~300KB of gstatic imports never compete for bandwidth. */}}
   <script>
     (function () {
       var load = function () {
         import("{{ $firebase.RelPermalink }}");
       };
-      if ("requestIdleCallback" in window) {
-        requestIdleCallback(load, { timeout: 4000 });
+      if (document.readyState === "complete") {
+        load();
       } else {
-        window.addEventListener("load", function () {
-          setTimeout(load, 1500);
-        });
+        window.addEventListener("load", load, { once: true });
       }
     })();
   </script>
