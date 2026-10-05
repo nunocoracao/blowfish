@@ -15,37 +15,17 @@ window.A11yPanel = (() => {
 
     disableImages: {
       default: false,
-      apply: (enabled) => {
-        const image = document.getElementById("background-image");
-        if (image) {
-          image.style.display = enabled ? "none" : "";
-        }
-      },
+      apply: (enabled) => window.A11yCritical.disableImages(enabled),
     },
 
     fontSize: {
       default: "default",
-      apply: (size) => {
-        document.documentElement.style.fontSize = size === "default" ? "" : size;
-      },
+      apply: (size) => window.A11yCritical.fontSize(size),
     },
 
     underlineLinks: {
       default: false,
-      apply: (enabled) => {
-        const existing = document.getElementById("a11y-underline-links");
-        if (enabled && !existing) {
-          const style = document.createElement("style");
-          style.id = "a11y-underline-links";
-          style.textContent = `
-            a { text-decoration: underline !important; }
-            .group-hover-card-title { text-decoration: underline !important; }
-            .group-hover-card:hover .group-hover-card-title { text-decoration: underline !important; }`;
-          document.head.appendChild(style);
-        } else if (!enabled && existing) {
-          existing.remove();
-        }
-      },
+      apply: (enabled) => window.A11yCritical.underlineLinks(enabled),
     },
 
     zenMode: {
@@ -145,13 +125,6 @@ window.A11yPanel = (() => {
       initPanel(panel.id);
     });
   };
-
-  if (getSettings().disableImages) {
-    new MutationObserver(() => {
-      const img = document.getElementById("background-image");
-      if (img) img.style.display = "none";
-    }).observe(document, { childList: true, subtree: true });
-  }
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);

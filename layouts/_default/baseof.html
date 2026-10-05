@@ -66,6 +66,7 @@
       data-name="BMC-Widget"
       data-cfasync="false"
       src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+      fetchpriority="low"
       data-id="{{ site.Params.buymeacoffee.identifier }}"
       data-description="Support me on Buy me a coffee!"
       {{ with site.Params.buymeacoffee.globalWidgetMessage }}data-message="{{ . }}"{{ end }}

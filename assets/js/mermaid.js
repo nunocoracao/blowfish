@@ -31,3 +31,38 @@ function initMermaidDark() {
     },
   });
 }
+
+// Mermaid dark mode support
+var updateMermaidTheme = () => {
+  if (typeof mermaid !== "undefined") {
+    const isDark = document.documentElement.classList.contains("dark");
+
+    const mermaids = document.querySelectorAll("pre.mermaid");
+    mermaids.forEach((e) => {
+      if (e.getAttribute("data-processed")) {
+        // Already rendered, clean the processed attributes
+        e.removeAttribute("data-processed");
+        // Replace the rendered HTML with the stored text
+        e.innerHTML = e.getAttribute("data-graph");
+      } else {
+        // First time, store the text
+        e.setAttribute("data-graph", e.textContent);
+      }
+    });
+
+    if (isDark) {
+      initMermaidDark();
+      mermaid.run();
+    } else {
+      initMermaidLight();
+      mermaid.run();
+    }
+  }
+};
+
+// Initialize mermaid theme on page load
+if (document.readyState === "loading") {
+  window.addEventListener("DOMContentLoaded", updateMermaidTheme);
+} else {
+  updateMermaidTheme();
+}

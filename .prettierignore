@@ -31,4 +31,5 @@ layouts/shortcodes/screenshot.html
 layouts/shortcodes/figure.html
 layouts/partials/hugo-embedded/shortcodes/figure-default.html
 
-assets/js/appearance.js
+assets/js/critical.js
+assets/js/appearance-switcher.js
