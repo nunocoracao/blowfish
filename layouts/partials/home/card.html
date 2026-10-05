@@ -1,3 +1,4 @@
+{{ $disableImageOptimization := .Site.Params.disableImageOptimization | default false }}
 <div class="py-12 sm:py-16">
   <div class="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
     <div class="mx-auto w-full max-w-xl lg:mx-0 lg:max-w-none">
@@ -35,11 +36,29 @@
         {{ with $.Params.imagePosition | default $defaultPosition }}
           {{ $style = printf "object-position: %s;" . }}
         {{ end }}
-        <img
-          class="nozoom aspect-[4/3] w-full rounded-2xl border border-neutral-200/80 object-cover shadow-lg shadow-neutral-900/5 dark:border-neutral-700/80"
-          src="{{ $homepageImage.RelPermalink }}"
-          role="presentation"
-          {{ if $style }}style="{{ $style | safeCSS }}"{{ end }}>
+        {{ $mobileURL := "" }}
+        {{ $desktopURL := "" }}
+        {{ with $homepageImage }}
+          {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
+            {{ $mobile := .Resize (printf "%dx webp" (int (math.Min 1320 .Width))) }}
+            {{ $desktop := .Resize (printf "%dx webp" (int (math.Min 1920 .Width))) }}
+            {{ $mobileURL = $mobile.RelPermalink }}
+            {{ $desktopURL = $desktop.RelPermalink }}
+          {{ end }}
+        {{ end }}
+        <picture>
+          {{ if $desktopURL }}
+            <source media="(width >= 853px)" srcset="{{ $desktopURL }}" type="image/webp">
+          {{ end }}
+          {{ if $mobileURL }}
+            <source media="(width < 852px)"  srcset="{{ $mobileURL }}" type="image/webp">
+          {{ end }}
+          <img
+            class="nozoom aspect-[4/3] w-full rounded-2xl border border-neutral-200/80 object-cover shadow-lg shadow-neutral-900/5 dark:border-neutral-700/80"
+            src="{{ $homepageImage.RelPermalink }}"
+            role="presentation"
+            {{ if $style }}style="{{ $style | safeCSS }}"{{ end }}>
+        </picture>
       {{ end }}
     </div>
   </div>

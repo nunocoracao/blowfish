@@ -10,12 +10,16 @@
               {{ $logo.Content | safeHTML }}
             </span>
           {{ else }}
+            {{ $src := $logo }}
+            {{ if not (site.Store.Get "disableImageOptimization") }}
+              {{ $src = $logo.Resize (printf "%dx webp q90" (int (math.Min 320 $logo.Width))) }}
+            {{ end }}
             <img
-              src="{{ $logo.RelPermalink }}"
-              width="{{ div $logo.Width 2 }}"
-              height="{{ div $logo.Height 2 }}"
+              src="{{ $src.RelPermalink }}"
+              width="{{ $src.Width }}"
+              height="{{ $src.Height }}"
               class="logo max-h-20 max-w-20 object-scale-down object-left nozoom"
-              alt="">
+              alt="" />
           {{ end }}
         </a>
       </div>

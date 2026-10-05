@@ -30,10 +30,28 @@
             {{ with $.Params.imagePosition | default $defaultPosition }}
               {{ $style = printf "object-position: %s;" . }}
             {{ end }}
-            <img
-              class="h-full w-full object-cover nozoom mt-0 mr-0 mb-0 ml-0"
-              src="{{ $homepageImage.RelPermalink }}"
-              {{ if $style }}style="{{ $style | safeCSS }}"{{ end }}>
+            {{ $mobileURL := "" }}
+            {{ $desktopURL := "" }}
+            {{ with $homepageImage }}
+              {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
+                {{ $mobile := .Resize (printf "%dx webp" (int (math.Min 1320 .Width))) }}
+                {{ $desktop := .Resize (printf "%dx webp" (int (math.Min 1920 .Width))) }}
+                {{ $mobileURL = $mobile.RelPermalink }}
+                {{ $desktopURL = $desktop.RelPermalink }}
+              {{ end }}
+            {{ end }}
+            <picture class="contents">
+              {{ if $desktopURL }}
+                <source media="(width >= 853px)" srcset="{{ $desktopURL }}" type="image/webp">
+              {{ end }}
+              {{ if $mobileURL }}
+                <source media="(width < 852px)"  srcset="{{ $mobileURL }}" type="image/webp">
+              {{ end }}
+              <img
+                class="h-full w-full object-cover nozoom mt-0 mr-0 mb-0 ml-0"
+                src="{{ $homepageImage.RelPermalink }}"
+                {{ if $style }}style="{{ $style | safeCSS }}"{{ end }}>
+            </picture>
             {{ if not $disableHeroImageFilter }}
               <div
                 class="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-600 dark:from-primary-600 dark:to-secondary-800 mix-blend-multiply"></div>

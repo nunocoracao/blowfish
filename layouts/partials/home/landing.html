@@ -1,3 +1,4 @@
+{{ $disableImageOptimization := .Site.Params.disableImageOptimization | default false }}
 <article class="relative isolate overflow-hidden">
   {{ $heroImage := .Params.heroImage | default site.Params.homepage.homepageImage }}
   {{ $heroImg := "" }}
@@ -9,16 +10,32 @@
     {{ end }}
   {{ end }}
   {{ with $heroImg }}
+    {{ $mobileURL := "" }}
+    {{ $desktopURL := "" }}
+    {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
+      {{ $mobile := .Resize (printf "%dx webp" (int (math.Min 1320 .Width))) }}
+      {{ $desktop := .Resize (printf "%dx webp" (int (math.Min 1920 .Width))) }}
+      {{ $mobileURL = $mobile.RelPermalink }}
+      {{ $desktopURL = $desktop.RelPermalink }}
+    {{ end }}
     <div
       id="landing-hero-background"
       class="hero-canvas-fade pointer-events-none nozoom fixed inset-x-0 top-0 -z-10 h-[640px]">
-      <img
-        class="absolute inset-0 h-full w-full object-cover"
-        src="{{ .RelPermalink }}"
-        role="presentation"
-        loading="eager"
-        decoding="async"
-        fetchpriority="high" />
+      <picture>
+        {{ if $desktopURL }}
+          <source media="(width >= 853px)" srcset="{{ $desktopURL }}" type="image/webp" />
+        {{ end }}
+        {{ if $mobileURL }}
+          <source media="(width < 852px)"  srcset="{{ $mobileURL }}" type="image/webp" />
+        {{ end }}
+        <img
+          class="absolute inset-0 h-full w-full object-cover"
+          src="{{ .RelPermalink }}"
+          role="presentation"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high" />
+      </picture>
       <div class="absolute inset-0 bg-neutral/60 dark:bg-neutral-800/50"></div>
     </div>
     {{ $heroFade := resources.Get "js/hero-scroll-fade.js" }}

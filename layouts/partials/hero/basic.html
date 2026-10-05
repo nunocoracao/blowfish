@@ -37,12 +37,16 @@
 {{ end }}
 
 {{/* generate image URL if not hotlink */}}
+{{ $mobileURL := "" }}
+{{ $desktopURL := "" }}
 {{ if not $featuredURL }}
   {{ with $featured }}
     {{ $featuredURL = .RelPermalink }}
     {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
-      {{ $size := site.Store.Get "backgroundImageWidth" }}
-      {{ $featuredURL = (partial "functions/resize.html" (dict "resource" . "spec" $size)).RelPermalink }}
+      {{ $mobile := .Resize (printf "%dx webp" (int (math.Min 1320 .Width))) }}
+      {{ $desktop := .Resize (printf "%dx webp" (int (math.Min 1920 .Width))) }}
+      {{ $mobileURL = $mobile.RelPermalink }}
+      {{ $desktopURL = $desktop.RelPermalink }}
     {{ end }}
   {{ end }}
 {{ end }}
@@ -54,13 +58,21 @@
     {{ $style = printf "object-position: %s;" . }}
   {{ end }}
   <div class="overflow-hidden h-36 md:h-56 lg:h-72">
-    <img
-      src="{{ . }}"
-      role="presentation"
-      loading="eager"
-      decoding="async"
-      fetchpriority="high"
-      class="w-full h-full nozoom object-cover"
-      {{ if $style }}style="{{ $style | safeCSS }}"{{ end }} />
+    <picture>
+      {{ if $desktopURL }}
+        <source media="(width >= 853px)" srcset="{{ $desktopURL }}" type="image/webp" />
+      {{ end }}
+      {{ if $mobileURL }}
+        <source media="(width < 852px)" srcset="{{ $mobileURL }}" type="image/webp" />
+      {{ end }}
+      <img
+        src="{{ . }}"
+        role="presentation"
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+        class="w-full h-full nozoom object-cover"
+        {{ if $style }}style="{{ $style | safeCSS }}"{{ end }} />
+    </picture>
   </div>
 {{ end }}
