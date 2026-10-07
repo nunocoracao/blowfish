@@ -370,7 +370,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | --- | --- | --- |
 | `kofi.identifier` | 无 | kofi 账户的用户名。 |
 | `kofi.globalWidget` | 无 | 激活全局的 kofi 组件。 |
-| `kofi.globalWidgetText` | 无 | 新用户首次访问网站时显示的消息。 |
+| `kofi.globalWidgetText` | `"支持我"` | 悬浮组件按钮上显示的文本。 |
 | `kofi.globalWidgetBackgroundColor` | `#00B9FE` | 组件颜色，使用 HEX 格式。 |
 | `kofi.globalWidgetTextColor` | `#FFFFFF` | 组件文字颜色，使用 HEX 格式。 |
 

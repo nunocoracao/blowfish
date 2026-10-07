@@ -88,3 +88,6 @@ cookie_notice:
   privacy_policy: "privacybeleid"
   button: "Begrepen"
   image_alt: "Cookie-pictogram"
+
+kofi:
+  support_me: "Steun mij"
