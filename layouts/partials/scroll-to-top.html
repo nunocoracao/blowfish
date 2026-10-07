@@ -5,8 +5,12 @@
 {{ end }}
 
 {{ $needAvoidCoffee := ne $coffeeIsRight $isRTL }}
-{{ $toTopYOffset := cond $needAvoidCoffee "bottom-24" "bottom-6" }}
 
+{{ $kofiEnabled := .Site.Params.kofi.globalWidget | default false }}
+{{ $needAvoidKofi := and $kofiEnabled $isRTL }}
+{{ $needExtraOffset := or $needAvoidCoffee $needAvoidKofi }}
+
+{{ $toTopYOffset := cond $needExtraOffset "bottom-24" "bottom-6" }}
 
 <div
   id="scroll-to-top"

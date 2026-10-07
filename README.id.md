@@ -46,7 +46,7 @@ Blowfish dirancang sebagai tema yang kuat dan ringan untuk [Hugo](https://gohugo
 - Kemampuan untuk menautkan ke artikel di situs web pihak ketiga  
 - Lebih dari 40 shortcode termasuk Galeri, Timeline, Kartu GitHub, Carousel, Statistik, Grid fitur, Langkah, dan tombol CTA
 - Sintaks GitHub Alerts, 15 jenis, dukungan lipat
-- Integrasi BuyMeACoffee  
+- Integrasi Buy Me a Coffee dan Ko-fi
 - Pencarian situs berbasis klien dengan Fuse.js  
 - Diagram dan visualisasi menggunakan Mermaid  
 - Grafik menggunakan Chart.js  

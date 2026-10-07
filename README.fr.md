@@ -48,7 +48,7 @@ Blowfish est conçu pour être un thème puissant et léger pour [Hugo](https://
 - Possibilité de lier des articles sur des sites web tiers
 - Plus de 40 shortcodes incluant Gallery, Timeline, GitHub cards, Carousels, Stats, grilles de fonctionnalités, Steps et boutons CTA
 - Syntaxe GitHub Alerts, 15 types, support pliable
-- Intégration Buymeacoffee
+- Intégration Buy Me a Coffee et Ko-fi
 - Recherche côté client alimentée par Fuse.js
 - Diagrammes et visualisations utilisant Mermaid
 - Graphiques utilisant Chart.js

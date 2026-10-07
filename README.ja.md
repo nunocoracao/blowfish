@@ -48,7 +48,7 @@ Blowfishは[Hugo](https://gohugo.io)のために設計された強力で軽量�
 - サードパーティー ウェブサイトの投稿へのリンク
 - ギャラリー、タイムライン、GitHub カード、カルーセル、統計、機能グリッド、ステップ、CTA ボタンなど、40 種類以上のショートコード
 - GitHub Alerts 構文、15 種類、折りたたみ対応
-- Buy Me a Coffee 連携
+- Buy Me a Coffee と Ko-fi 連携
 - Fuse.js を利用したクライアントサイドのサイト内検索
 - Mermaid を使用したダイアグラムや視覚化
 - Chart.js を使用したグラフ表示
