@@ -82,3 +82,6 @@ cookie_notice:
   privacy_policy: "pravila privatnosti"
   button: "Razumijem"
   image_alt: "Ikona kolačića"
+
+kofi:
+  support_me: "Podržite me"

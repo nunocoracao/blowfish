@@ -86,3 +86,6 @@ cookie_notice:
   privacy_policy: "политика за поверителност"
   button: "Разбрах"
   image_alt: "Икона на бисквитка"
+
+kofi:
+  support_me: "Подкрепете ме"

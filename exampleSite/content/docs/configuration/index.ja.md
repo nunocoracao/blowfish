@@ -366,7 +366,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 | --- | --- | --- |
 | `kofi.identifier` | _未設定_ | ターゲットの Ko-fi アカウントの識別子。 |
 | `kofi.globalWidget` | _未設定_ | グローバル Ko-fi ウィジェットを有効にします。 |
-| `kofi.globalWidgetText` | _未設定_ | 新しいユーザーが初めてサイトにアクセスしたときに表示されるテキスト。 |
+| `kofi.globalWidgetText` | `"支援する"` | フローティングウィジェットのボタンに表示されるテキスト。 |
 | `kofi.globalWidgetBackgroundColor` | `#00B9FE` | ウィジェットの背景色（16進数形式）。 |
 | `kofi.globalWidgetTextColor` | `#FFFFFF` | ウィジェットの文字色（16進数形式）。 |
 

@@ -74,12 +74,12 @@
       data-x_margin="18"
       data-y_margin="18"></script>
   {{ end }}
-  {{ if site.Params.kofi.globalWidget | default false }}
+  {{ if and (site.Params.kofi.globalWidget | default false) site.Params.kofi.identifier }}
     <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
     <script>
       kofiWidgetOverlay.draw('{{ site.Params.kofi.identifier }}', {
         'type': 'floating-chat',
-        'floating-chat.donateButton.text': '{{ site.Params.kofi.globalWidgetText | default "" }}',
+        'floating-chat.donateButton.text': '{{ site.Params.kofi.globalWidgetText | default (i18n "kofi.support_me") }}',
         'floating-chat.donateButton.background-color': '{{ site.Params.kofi.globalWidgetBackgroundColor | default "#00B9FE" }}',
         'floating-chat.donateButton.text-color': '{{ site.Params.kofi.globalWidgetTextColor | default "#FFFFFF" }}',
       });

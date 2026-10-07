@@ -80,3 +80,6 @@ cookie_notice:
   privacy_policy: "tietosuojaselosteemme"
   button: "Ymmärretty"
   image_alt: "Evästeen kuvake"
+
+kofi:
+  support_me: "Tue minua"
