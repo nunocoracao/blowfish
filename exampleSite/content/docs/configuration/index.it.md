@@ -366,7 +366,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | --- | --- | --- |
 | `kofi.identifier` | _Not set_ | The identifier to the target kofi account. |
 | `kofi.globalWidget` | _Not set_ | Activate the global kofi widget. |
-| `kofi.globalWidgetText` | _Not set_ | Message that will be displayed the first time a new user lands on the site. |
+| `kofi.globalWidgetText` | `"Sostienimi"` | The text displayed on the floating widget button. |
 | `kofi.globalWidgetBackgroundColor` | `#00B9FE` | Widget background color in hex format. |
 | `kofi.globalWidgetTextColor` | `#FFFFFF` | Widget text color in hex format. |
 
