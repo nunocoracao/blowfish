@@ -119,5 +119,13 @@
     "@heroicons/react": "^2.2.0",
     "@tailwindcss/forms": "^0.5.11",
     "commander": "^15.0.0"
+  },
+  "overrides": {
+    "mermaid": {
+      "katex": "$katex"
+    },
+    "@tailwindcss/typography": {
+      "postcss-selector-parser": "^7.1.6"
+    }
   }
 }
