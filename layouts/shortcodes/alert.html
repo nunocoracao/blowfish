@@ -27,9 +27,9 @@
 
   <span
     {{ if not ($.Scratch.Get "textColor") }}
-      class="dark:text-neutral-300"
+      class="min-w-0 dark:text-neutral-300"
     {{ else }}
-      style="color: {{ $.Scratch.Get "textColor" }}"
+      class="min-w-0" style="color: {{ $.Scratch.Get "textColor" }}"
     {{ end }}
     >
     {{- .Inner | markdownify -}}
