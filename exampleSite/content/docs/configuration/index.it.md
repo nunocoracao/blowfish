@@ -342,6 +342,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `umamiAnalytics.dataDomains` | _Not set_ | If you want the tracker to only run on specific domains, provide it for your tracker script. This is a comma delimited list of domain names. Such as "yoursite.com,yoursite2.com". |
 | `umamiAnalytics.scriptName` | script.js | The name of the `script.js` used for anti-ad-blocking is configured by the environment variable `TRACKER_SCRIPT_NAME` |
 | `umamiAnalytics.enableTrackEvent` | true | When set to `true` track event will add automatically. If you do not want to add track event, set it to `false`. |
+| `umamiAnalytics.integrity` | _Not set_ | Optional SRI hash for the Umami tracking script. When configured, the script uses `crossorigin="anonymous"`. The script host must support CORS, and the hash must be updated whenever the script changes. |
 
 ### Seline Analytics
 
