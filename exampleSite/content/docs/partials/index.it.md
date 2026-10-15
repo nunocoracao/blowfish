@@ -47,8 +47,12 @@ To enable Umami Analytics support, simply provide your [Umami tracking code](htt
 If you also use the custom domain feature of Umami and would like to serve their script from your domain, you can also additionally provide the `domain` configuration value. If you don't provide a `domain` value, the script will load directly from Umami DNS (analytics.umami.is).
 If you want the tracker to only run on specific domains, you can provide the `dataDomains` configuration value. If you don't provide a `dataDomains` value, the script will run on any website where the `domain` and`websiteid` match. If the environment variable `TRACKER_SCRIPT_NAME` is configured, you can specify a custom script name `scriptName`. If it is not configured, either comment it out or use the default `script.js`.
 
+To enable optional Subresource Integrity (SRI), set the `integrity` parameter to a valid SHA-256, SHA-384, or SHA-512 hash. Blowfish automatically adds `crossorigin="anonymous"` when an integrity hash is provided.
+
 {{< alert >}}
 **Note:** If you enable Umami Analytics, Blowfish will support [Umami Track Event](https://umami.is/docs/track-events) automatically. If you do not want to support Track Event, the param `enableTrackEvent` must set to `false`.
+
+**SRI:** The script host must support CORS. If the upstream script changes, the integrity hash must be updated; otherwise, browsers will block the script and analytics tracking will stop.
 {{< /alert >}}
 
 ```toml
@@ -60,6 +64,7 @@ If you want the tracker to only run on specific domains, you can provide the `da
   dataDomains = "yoursite.com,yoursite2.com"
   scriptName = "TRACKER_SCRIPT_NAME"
   enableTrackEvent = true
+  # integrity = "sha384-YOUR_HASH"
 ```
 
 ### Seline Analytics

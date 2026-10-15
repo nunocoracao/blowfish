@@ -49,8 +49,12 @@ If you want the tracker to only run on specific domains, you can provide the `da
 
 If you want to honor the Do Not Track setting of the users browser, you have to set `doNotTrack` to `true`. Blowfish does not honor the Do Not Track setting per default.
 
+To enable Subresource Integrity (SRI) for the Umami tracking script, set the optional `integrity` parameter to a valid SHA-256, SHA-384, or SHA-512 hash. Blowfish will automatically add `crossorigin="anonymous"` when this parameter is configured.
+
 {{< alert >}}
 **Note:** If you enable Umami Analytics, Blowfish will support [Umami Track Event](https://umami.is/docs/track-events) automatically. If you do not want to support Track Event, the param `enableTrackEvent` must set to `false`.
+
+**SRI:** The script host must support CORS. If the upstream script changes, the integrity hash must be updated; otherwise, browsers will block the script and analytics tracking will stop.
 {{< /alert >}}
 
 ```toml
@@ -63,6 +67,7 @@ If you want to honor the Do Not Track setting of the users browser, you have to 
   scriptName = "TRACKER_SCRIPT_NAME"
   enableTrackEvent = true
   doNotTrack = false
+  # integrity = "sha384-YOUR_HASH"
 ```
 
 ### Seline Analytics
