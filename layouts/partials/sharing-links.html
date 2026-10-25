@@ -1,12 +1,14 @@
 {{ with .Params.sharingLinks | default (.Site.Params.article.sharingLinks | default false) }}
   {{ $links := hugo.Data.sharing }}
+  {{ $pageURL := urlquery $.Permalink }}
+  {{ $pageTitle := urlquery $.Title }}
   <section class="flex flex-row flex-wrap justify-center pt-4 text-xl">
     {{ range . }}
       {{ with index $links . }}
         <a
           class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
           target="_blank"
-          href="{{ printf .url $.Permalink $.Title | safeURL }}"
+          href="{{ printf .url (cond (eq .icon "mastodon") (replace $pageURL "+" "%20") $pageURL) (cond (eq .icon "mastodon") (replace $pageTitle "+" "%20") $pageTitle) | safeURL }}"
           title="{{ i18n .title }}"
           aria-label="{{ i18n .title }}">
           {{ partial "icon.html" .icon }}
