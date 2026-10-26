@@ -109,3 +109,6 @@ admonition:
   tip: "Tip"
   todo: "Todo"
   warning: "Warning"
+
+kofi:
+  support_me: "Support me"

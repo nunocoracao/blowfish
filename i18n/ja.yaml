@@ -109,3 +109,6 @@ cookie_notice:
   privacy_policy: "プライバシーポリシー"
   button: "了解しました"
   image_alt: "Cookie アイコン"
+
+kofi:
+  support_me: "支援する"
