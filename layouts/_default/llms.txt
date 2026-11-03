@@ -10,7 +10,11 @@
 {{- /* Pages in this section */ -}}
 {{- range $p := $section.RegularPages }}
   {{- if and (not $p.Params.searchHidden) (ne $p.Layout `archives`) (ne $p.Layout `search`) }}
-- [{{ $p.Title }}]({{ $p.Params.externalUrl | default $p.Permalink }})
+  {{- $url := $p.Permalink -}}
+  {{- with first 1 (where $p.OutputFormats "MediaType.Type" "text/markdown") -}}
+    {{- $url = (index . 0).Permalink -}}
+  {{- end }}
+- [{{ $p.Title }}]({{ $p.Params.externalUrl | default $url }})
   {{- end -}}
 {{- end -}}
 
@@ -35,7 +39,11 @@
 
 {{- range $p := $orphans -}}
   {{ if and (not $p.Params.searchHidden) (ne $p.Layout `archives`) (ne $p.Layout `search`) (not $p.IsHome) }}
-- [{{ $p.Title }}]({{ $p.Params.externalUrl | default $p.Permalink }})
+  {{- $url := $p.Permalink -}}
+  {{- with first 1 (where $p.OutputFormats "MediaType.Type" "text/markdown") -}}
+    {{- $url = (index . 0).Permalink -}}
+  {{- end }}
+- [{{ $p.Title }}]({{ $p.Params.externalUrl | default $url }})
   {{- end -}}
 {{- end -}}
 
