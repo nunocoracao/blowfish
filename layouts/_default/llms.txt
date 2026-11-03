@@ -10,7 +10,7 @@
 {{- /* Pages in this section */ -}}
 {{- range $p := $section.RegularPages }}
   {{- if and (not $p.Params.searchHidden) (ne $p.Layout `archives`) (ne $p.Layout `search`) }}
-- [{{ $p.Title }}]({{ $p.Permalink }})
+- [{{ $p.Title }}]({{ $p.Params.externalUrl | default $p.Permalink }})
   {{- end -}}
 {{- end -}}
 
@@ -30,7 +30,7 @@
 
 {{- range $p := $orphans -}}
   {{ if and (not $p.Params.searchHidden) (ne $p.Layout `archives`) (ne $p.Layout `search`) (not $p.IsHome) }}
-- [{{ $p.Title }}]({{ $p.Permalink }})
+- [{{ $p.Title }}]({{ $p.Params.externalUrl | default $p.Permalink }})
   {{- end -}}
 {{- end -}}
 
