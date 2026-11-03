@@ -33,6 +33,10 @@ article:
 
 a11y:
   title: "Configuración de accesibilidad"
+  disable_blur: "Desactivar difuminado"
+  disable_images: "Desactivar imagen de fondo"
+  show_link_underline: "Mostrar enlaces subrayados"
+  font_size: "Tamaño de fuente"
 
 author:
   byline_title: "Autor"
