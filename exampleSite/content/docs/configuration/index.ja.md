@@ -342,6 +342,7 @@ Blowfish は、テーマの機能を制御する多数の設定パラメータ�
 | `umamiAnalytics.dataDomains` | _未設定_ | トラッカーを特定のドメインでのみ実行したい場合は、トラッカースクリプトに指定します。これは、ドメイン名のカンマ区切りリストです。例えば "yoursite.com,yoursite2.com" のようになります。 |
 | `umamiAnalytics.scriptName` | script.js | アンチ広告ブロックに使用される `script.js` の名前は、環境変数 `TRACKER_SCRIPT_NAME` で設定されます。 |
 | `umamiAnalytics.enableTrackEvent` | `true` | `true` に設定すると、トラックイベントが自動的に追加されます。トラックイベントを追加したくない場合は、`false` に設定してください。 |
+| `umamiAnalytics.integrity` | _未設定_ | Umami トラッキングスクリプトのオプションの SRI ハッシュ。設定すると `crossorigin="anonymous"` が追加されます。スクリプトの配信元は CORS に対応している必要があり、スクリプトが変更された場合はハッシュの更新が必要です。 |
 
 ### Seline Analytics
 

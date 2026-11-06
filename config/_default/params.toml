@@ -182,6 +182,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   # dataDomains = "yoursite.com,yoursite2.com"
   # scriptName = ""
   # enableTrackEvent = true
+  # integrity = "sha384-YOUR_HASH"
 
 [selineAnalytics]
   # token = "XXXXXX"
