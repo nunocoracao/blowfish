@@ -20,7 +20,7 @@
   margin: 0px !important;
 }
 .grid-w33 {
-  width: calc(33% - 5px);
+  width: calc(33.33% - 5px);
   margin: 0px !important;
 }
 .grid-w35 {
@@ -52,7 +52,7 @@
   margin: 0px !important;
 }
 .grid-w66 {
-  width: calc(66% - 5px);
+  width: calc(66.66% - 5px);
   margin: 0px !important;
 }
 .grid-w70 {
@@ -121,7 +121,7 @@
     margin: 0px !important;
   }
   .sm\:grid-w33 {
-    width: calc(33% - 5px);
+    width: calc(33.33% - 5px);
     margin: 0px !important;
   }
   .sm\:grid-w35 {
@@ -153,7 +153,7 @@
     margin: 0px !important;
   }
   .sm\:grid-w66 {
-    width: calc(66% - 5px);
+    width: calc(66.66% - 5px);
     margin: 0px !important;
   }
   .sm\:grid-w70 {
@@ -207,7 +207,7 @@
     margin: 0px !important;
   }
   .md\:grid-w33 {
-    width: calc(33% - 5px);
+    width: calc(33.33% - 5px);
     margin: 0px !important;
   }
   .md\:grid-w35 {
@@ -239,7 +239,7 @@
     margin: 0px !important;
   }
   .md\:grid-w66 {
-    width: calc(66% - 5px);
+    width: calc(66.66% - 5px);
     margin: 0px !important;
   }
   .md\:grid-w70 {
@@ -293,7 +293,7 @@
     margin: 0px !important;
   }
   .lg\:grid-w33 {
-    width: calc(33% - 5px);
+    width: calc(33.33% - 5px);
     margin: 0px !important;
   }
   .lg\:grid-w35 {
@@ -325,7 +325,7 @@
     margin: 0px !important;
   }
   .lg\:grid-w66 {
-    width: calc(66% - 5px);
+    width: calc(66.66% - 5px);
     margin: 0px !important;
   }
   .lg\:grid-w70 {
@@ -379,7 +379,7 @@
     margin: 0px !important;
   }
   .xl\:grid-w33 {
-    width: calc(33% - 5px);
+    width: calc(33.33% - 5px);
     margin: 0px !important;
   }
   .xl\:grid-w35 {
@@ -411,7 +411,7 @@
     margin: 0px !important;
   }
   .xl\:grid-w66 {
-    width: calc(66% - 5px);
+    width: calc(66.66% - 5px);
     margin: 0px !important;
   }
   .xl\:grid-w70 {
@@ -465,7 +465,7 @@
     margin: 0px !important;
   }
   .\32xl\:grid-w33 {
-    width: calc(33% - 5px);
+    width: calc(33.33% - 5px);
     margin: 0px !important;
   }
   .\32xl\:grid-w35 {
@@ -497,7 +497,7 @@
     margin: 0px !important;
   }
   .\32xl\:grid-w66 {
-    width: calc(66% - 5px);
+    width: calc(66.66% - 5px);
     margin: 0px !important;
   }
   .\32xl\:grid-w70 {
