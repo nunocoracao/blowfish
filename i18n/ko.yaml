@@ -86,3 +86,6 @@ cookie_notice:
   privacy_policy: "개인정보 처리방침"
   button: "확인했습니다"
   image_alt: "쿠키 아이콘"
+
+kofi:
+  support_me: "후원하기"

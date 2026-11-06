@@ -109,3 +109,6 @@ cookie_notice:
   privacy_policy: "隱私權政策"
   button: "了解了"
   image_alt: "Cookie 圖示"
+
+kofi:
+  support_me: "支持我"
