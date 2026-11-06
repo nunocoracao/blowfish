@@ -1,4 +1,8 @@
 {{ $columns := .Get "columns" | default "3" }}
-<div class="not-prose my-8 grid gap-4 sm:grid-cols-2 grid-balance {{ if eq $columns "4" }}lg:grid-cols-4 grid-balance-4{{ else }}lg:grid-cols-3 grid-balance-3{{ end }}">
+{{ $columnClasses := "" }}
+{{ if ne $columns "1" }}
+  {{ $columnClasses = printf "lg:grid-cols-%s grid-balance-%s" $columns $columns }}
+{{ end }}
+<div class="not-prose my-8 grid gap-4 {{ if ne $columns "1" }}sm:grid-cols-2{{ end }} grid-balance {{ $columnClasses }}">
   {{ .Inner }}
 </div>
