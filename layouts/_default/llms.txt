@@ -11,6 +11,7 @@
 {{- range $p := $section.RegularPages }}
   {{- if and (not $p.Params.searchHidden) (ne $p.Layout `archives`) (ne $p.Layout `search`) }}
 - [{{ $p.Title }}]({{ $p.Permalink }})
+  {{- with $p.Params.description | default $p.Summary | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace }}: {{ . }}{{ end }}
   {{- end -}}
 {{- end -}}
 
@@ -31,6 +32,7 @@
 {{- range $p := $orphans -}}
   {{ if and (not $p.Params.searchHidden) (ne $p.Layout `archives`) (ne $p.Layout `search`) (not $p.IsHome) }}
 - [{{ $p.Title }}]({{ $p.Permalink }})
+  {{- with $p.Params.description | default $p.Summary | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace }}: {{ . }}{{ end }}
   {{- end -}}
 {{- end -}}
 
