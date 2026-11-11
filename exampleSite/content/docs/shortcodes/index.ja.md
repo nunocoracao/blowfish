@@ -529,15 +529,15 @@ Blowfish も、標準の Markdown 構文を使用して含まれる画像の自�
 | パラメータ | 説明                                           |
 | --------- | ----------------------------------------------------- |
 | `repo`    | [文字列] `username/repo` 形式の forgejo リポジトリ|
-| `server`  | [文字列] `https://v11.next.forgejo.org` のようなサーバー URL|
+| `server`  | [文字列] `https://codeberg.org` のようなサーバー URL|
 <!-- prettier-ignore-end -->
 
 **例1:**
 
 ```md
-{{</* forgejo server="https://v11.next.forgejo.org" repo="a/mastodon" */>}}
+{{</* forgejo server="https://codeberg.org" repo="forgejo/forgejo" */>}}
 ```
-{{< forgejo server="https://v11.next.forgejo.org" repo="a/mastodon" >}}
+{{< forgejo server="https://codeberg.org" repo="forgejo/forgejo" >}}
 
 <br/><br/><br/>
 

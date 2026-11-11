@@ -528,16 +528,16 @@ Blowfish también soporta la conversión automática de imágenes incluidas usan
 | Parámetro | Descripción                                           |
 | --------- | ----------------------------------------------------- |
 | `repo`    | [String] repositorio de Forgejo en formato `usuario/repo`|
-| `server`  | [String] URL del servidor como `https://v11.next.forgejo.org`|
+| `server`  | [String] URL del servidor como `https://codeberg.org`|
 <!-- prettier-ignore-end -->
 
 **Ejemplo 1:**
 
 ```md
-{{</* forgejo server="https://v11.next.forgejo.org" repo="a/mastodon" */>}}
+{{</* forgejo server="https://codeberg.org" repo="forgejo/forgejo" */>}}
 ```
 
-{{< forgejo server="https://v11.next.forgejo.org" repo="a/mastodon" >}}
+{{< forgejo server="https://codeberg.org" repo="forgejo/forgejo" >}}
 
 <br/><br/><br/>
 

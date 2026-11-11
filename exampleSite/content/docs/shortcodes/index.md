@@ -555,16 +555,16 @@ Blowfish also supports automatic conversion of images included using standard Ma
 | Parameter | Description                                           |
 | --------- | ----------------------------------------------------- |
 | `repo`    | [String] forgejo repo in the format of `username/repo`|
-| `server`  | [String] server URL like `https://v11.next.forgejo.org`|
+| `server`  | [String] server URL like `https://codeberg.org`|
 <!-- prettier-ignore-end -->
 
 **Example 1:**
 
 ```md
-{{</* forgejo server="https://v11.next.forgejo.org" repo="a/mastodon" */>}}
+{{</* forgejo server="https://codeberg.org" repo="forgejo/forgejo" */>}}
 ```
 
-{{< forgejo server="https://v11.next.forgejo.org" repo="a/mastodon" >}}
+{{< forgejo server="https://codeberg.org" repo="forgejo/forgejo" >}}
 
 <br/><br/><br/>
 
