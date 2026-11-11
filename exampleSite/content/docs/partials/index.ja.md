@@ -47,8 +47,12 @@ Umami Analytics のサポートを有効にするには、`config/_default/param
 Umami のカスタムドメイン機能を使用していて、ドメインからスクリプトを配信したい場合は、追加で `domain` 設定値を指定することもできます。`domain` 値を指定しない場合、スクリプトは Umami DNS (analytics.umami.is) から直接ロードされます。
 トラッカーを特定のドメインでのみ実行したい場合は、`dataDomains` 設定値を指定できます。`dataDomains` 値を指定しない場合、スクリプトは `domain` と `websiteid` が一致する任意のウェブサイトで実行されます。環境変数 `TRACKER_SCRIPT_NAME` が設定されている場合は、カスタムスクリプト名 `scriptName` を指定できます。設定されていない場合は、コメントアウトするか、デフォルトの `script.js` を使用してください。
 
+Subresource Integrity (SRI) を有効にするには、オプションの `integrity` パラメータに SHA-256、SHA-384、または SHA-512 ハッシュを指定します。Blowfish は自動的に `crossorigin="anonymous"` を追加します。
+
 {{< alert >}}
 **注:** Umami Analytics を有効にすると、Blowfish は [Umami トラックイベント](https://umami.is/docs/track-events)を自動的にサポートします。トラックイベントをサポートしたくない場合は、パラメータ `enableTrackEvent` を `false` に設定する必要があります。
+
+**SRI:** スクリプトの配信元は CORS に対応している必要があります。スクリプトが更新された場合は、整合性ハッシュも更新する必要があります。更新しないと、ブラウザがスクリプトをブロックし、アクセス解析が停止します。
 {{< /alert >}}
 
 ```toml
@@ -60,6 +64,7 @@ Umami のカスタムドメイン機能を使用していて、ドメインか�
   dataDomains = "yoursite.com,yoursite2.com"
   scriptName = "TRACKER_SCRIPT_NAME"
   enableTrackEvent = true
+  # integrity = "sha384-YOUR_HASH"
 ```
 
 ### Seline Analytics

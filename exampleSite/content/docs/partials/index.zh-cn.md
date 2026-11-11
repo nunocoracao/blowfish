@@ -48,9 +48,12 @@ googleAnalytics = "G-MEASUREMENT_ID"
 如果你想使用自定义域名来获取跟踪脚本， 那么需要提供 `domain` 参数，否则会从 Umami 云服务版的地址 (analytics.umami.is) 获取脚本。
 如果你只想在特别的数个域名中使用 tracker 功能，那么需要提供 `dataDomains` 参数。否则任何一个匹配了 `websiteid` 和 `domain` 参数值的网站，Umami 脚本都会执行。如果环境变量配置了 `TRACKER_SCRIPT_NAME` 可以填写自定义的脚本名称 `scriptName`，如果没有配置就注释掉或者填写默认的 `script.js` 。
 
+要启用子资源完整性（SRI），可以通过可选的 `integrity` 参数设置 SHA-256、SHA-384 或 SHA-512 哈希值。Blowfish 会自动添加 `crossorigin="anonymous"` 属性。
+
 {{< alert >}}
 **Note:** 开启 Umami 网站分析后, Blowfish 会自动支持 [Umami 事件追踪](https://umami.is/docs/track-events)。如果你不想支持此功能，需要把参数 `enableTrackEvent` 设置为 `false`。
 
+**SRI：** 脚本服务器必须支持 CORS。如果上游脚本发生变化，必须更新完整性哈希值，否则浏览器将阻止加载该脚本，导致网站分析功能停止工作。
 {{< /alert >}}
 
 ```toml
@@ -62,6 +65,7 @@ googleAnalytics = "G-MEASUREMENT_ID"
   dataDomains = "yoursite.com,yoursite2.com"
   scriptName = "TRACKER_SCRIPT_NAME"
   enableTrackEvent = true
+  # integrity = "sha384-YOUR_HASH"
 ```
 
 ### Seline
