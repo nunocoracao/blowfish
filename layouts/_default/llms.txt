@@ -24,6 +24,11 @@
 {{- /* Main template starts here */ -}}
 # {{ site.Title }}
 
+{{- with site.Home.Description | default site.Params.description | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace }}
+
+> {{ . }}
+{{ end }}
+
 {{- /* Pages not in any section */ -}}
 {{- $orphans := where site.RegularPages "Section" "" -}}
 {{ if gt (len $orphans) 0 }}
