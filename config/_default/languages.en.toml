@@ -30,6 +30,7 @@ title = "Blowfish"
 #     { bluesky = "https://bsky.app/profile/username" },
 #     { chess-com = "https://www.chess.com/member/username" },
 #     { codepen = "https://codepen.io/username" },
+#     { credly = "https://www.credly.com/users/username/badges/credly" },
 #     { dev = "https://dev.to/username" },
 #     { discord = "https://discord.gg/invitecode" },
 #     { dribbble = "https://dribbble.com/username" },
