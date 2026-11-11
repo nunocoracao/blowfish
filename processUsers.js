@@ -98,7 +98,11 @@ function generateDirName(seed, index) {
     for (const lang of targetLangs) {
       await fs.writeFile(dir + `/index.${lang}.md`, userMDFile);
     }
-    await page.goto(user.url, { waitUntil: "networkidle2", timeout: 30000 });
+    try {
+      await page.goto(user.url, { waitUntil: "load", timeout: 30000 });
+    } catch (err) {
+      console.warn(`  warning: ${user.url} did not finish loading (${err.message}); taking screenshot anyway`);
+    }
     await new Promise(resolve => setTimeout(resolve, 2000));
     await page.screenshot({ path: dir + "/feature.webp", type: "webp", quality: 50 });
     }
