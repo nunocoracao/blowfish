@@ -3,6 +3,7 @@
 @config "../../tailwind.config.js";
 
 @import "tailwindcss";
+@source inline("lg:grid-cols-{2,3,4,5}");
 @import "./components/chroma.css" layer(utilities);
 @import "./components/tabs.css" layer(utilities);
 @import "./components/zen-mode.css";
@@ -316,10 +317,16 @@ pre {
   }
 }
 @media (min-width: 1024px) {
+  .grid-balance-2 > :last-child:nth-child(2n + 1) {
+    grid-column: 1 / -1;
+  }
   .grid-balance-3 > :last-child:nth-child(3n + 1) {
     grid-column: 1 / -1;
   }
   .grid-balance-4 > :last-child:nth-child(4n + 1) {
+    grid-column: 1 / -1;
+  }
+  .grid-balance-5 > :last-child:nth-child(5n + 1) {
     grid-column: 1 / -1;
   }
 }

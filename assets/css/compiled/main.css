@@ -3288,6 +3288,9 @@
     .lg\:grid-cols-4 {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
+    .lg\:grid-cols-5 {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
     .lg\:flex-row {
       flex-direction: row;
     }
@@ -4762,10 +4765,16 @@ pre {
   }
 }
 @media (min-width: 1024px) {
+  .grid-balance-2 > :last-child:nth-child(2n + 1) {
+    grid-column: 1 / -1;
+  }
   .grid-balance-3 > :last-child:nth-child(3n + 1) {
     grid-column: 1 / -1;
   }
   .grid-balance-4 > :last-child:nth-child(4n + 1) {
+    grid-column: 1 / -1;
+  }
+  .grid-balance-5 > :last-child:nth-child(5n + 1) {
     grid-column: 1 / -1;
   }
 }
