@@ -11,7 +11,7 @@
     {{ replace (.TableOfContents | emojify) `id="TableOfContents"` (printf `id="TableOfContents" aria-label="%s"` (i18n "article.table_of_contents")) | safeHTML }}
   </div>
 </details>
-<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+<details{{ if site.Params.mobileTocOpen }} open{{ end }} class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
   <summary
     class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
     {{ i18n "article.table_of_contents" }}

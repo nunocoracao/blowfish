@@ -34,6 +34,7 @@ hotlinkFeatureImage = false
 highlightCurrentMenuArea = true
 smartTOC = true
 smartTOCHideUnfocusedChildren = false
+# mobileTocOpen = false # expand the mobile table of contents by default
 
 #giteaDefaultServer = "https://git.fsfe.org"
 #forgejoDefaultServer = "https://codeberg.org"
