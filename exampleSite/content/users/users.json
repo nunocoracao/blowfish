@@ -1,5 +1,13 @@
 [
   {
+    "title": "ebenhofer.dev",
+    "url": "https://ebenhofer.dev",
+    "source": "https://forgejo.ebenhofer.dev/mario/ebenhofer.dev",
+    "tags": [
+      "Personal site"
+    ]
+  },
+  {
     "title": "n9o.xyz",
     "url": "https://n9o.xyz",
     "source": "https://github.com/nunocoracao/n9o.xyz",
