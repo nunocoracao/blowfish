@@ -18,6 +18,7 @@ Front matter parameter default values are inherited from the theme's [base confi
 | Name | Default | Description |
 | --- | --- | --- |
 | `title` | _Not set_ | The name of the article. |
+| `seoTitle` | `title` | Optionally overrides the HTML page title (`<title>`) and corresponding `<meta name="title">` tag on non-home pages. Defaults to the regular page title when not set or empty. |
 | `description` | _Not set_ | The text description for the article. It is used in the HTML metadata. |
 | `externalUrl` | _Not set_ | If this article is published on a third-party website, the URL to this article. Providing a URL will prevent a content page being generated and any references to this article will link directly to the third-party website. |
 | `editURL` | `article.editURL` | When `showEdit` is active, the URL for the edit link. |
