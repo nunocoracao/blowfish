@@ -1227,5 +1227,13 @@
       "Blog",
       "Technology Blog"
     ]
+  },
+    {
+    "title": "ebenhofer.dev",
+    "url": "https://ebenhofer.dev",
+    "source": "https://forgejo.ebenhofer.dev/mario/ebenhofer.dev",
+    "tags": [
+      "Personal site"
+    ]
   }
 ]
