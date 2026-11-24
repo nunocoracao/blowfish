@@ -1217,5 +1217,15 @@
       "Blog",
       "Portfolio"
     ]
+  },
+  {
+    "title": "talhatabak.com",
+    "url": "https://talhatabak.com",
+    "source": "https://github.com/atalhatabak/talhatabak.com",
+    "tags": [
+      "Personal site",
+      "Blog",
+      "Technology Blog"
+    ]
   }
 ]
