@@ -459,12 +459,12 @@ Creates an obfuscated mailto link:
 
 ## Feature grid
 
-Build polished, responsive feature sections without repeating presentation markup. Use `feature-grid` as the container, then add one `feature` shortcode for each item. The grid defaults to three columns on large screens and can be set to four.
+Build polished, responsive feature sections without repeating presentation markup. Use `feature-grid` as the container, then add one `feature` shortcode for each item. The grid defaults to three columns on large screens and supports one to five columns.
 
 <!-- prettier-ignore-start -->
 | Parameter | Description |
 | --- | --- |
-| `columns` | Optional number of large-screen columns: `3` (default) or `4`. |
+| `columns` | Optional number of large-screen columns: `1`, `2`, `3` (default), `4`, or `5`. Other values use the default of `3`. |
 | `icon` | Icon name for a feature. Defaults to `wand-magic-sparkles`. |
 | `title` | Feature title. Markdown is supported. |
 | `url` | Optional destination for the feature link. |

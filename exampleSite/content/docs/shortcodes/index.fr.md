@@ -433,12 +433,12 @@ Crée un lien mailto obfusqué :
 
 ## Feature grid
 
-Créez des sections de fonctionnalités soignées et adaptatives sans répéter le balisage de présentation. Utilisez `feature-grid` comme conteneur, puis ajoutez un shortcode `feature` pour chaque élément. La grille utilise par défaut trois colonnes sur les grands écrans et peut être configurée sur quatre.
+Créez des sections de fonctionnalités soignées et adaptatives sans répéter le balisage de présentation. Utilisez `feature-grid` comme conteneur, puis ajoutez un shortcode `feature` pour chaque élément. La grille utilise par défaut trois colonnes sur les grands écrans et accepte de une à cinq colonnes.
 
 <!-- prettier-ignore-start -->
 | Paramètre | Description |
 | --- | --- |
-| `columns` | Nombre facultatif de colonnes sur grand écran : `3` (par défaut) ou `4`. |
+| `columns` | Nombre facultatif de colonnes sur grand écran : `1`, `2`, `3` (par défaut), `4` ou `5`. Toute autre valeur utilise `3`. |
 | `icon` | Nom de l'icône d'une fonctionnalité. Par défaut `wand-magic-sparkles`. |
 | `title` | Titre de la fonctionnalité. Markdown est pris en charge. |
 | `url` | Destination facultative du lien de la fonctionnalité. |
