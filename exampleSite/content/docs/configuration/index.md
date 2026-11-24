@@ -233,6 +233,7 @@ Many of the article defaults here can be overridden on a per article basis by sp
 | `highlightCurrentMenuArea` | _Not set_ | Marks menu entries in the main menu when selected |
 | `smartTOC` | _Not set_ | Activate smart Table of Contents, items in view will be highlighted. |
 | `smartTOCHideUnfocusedChildren` | _Not set_ | When smart Table of Contents is turned on, this will hide deeper levels of the table when they are not in focus. |
+| `mobileTocOpen` | `false` | Expand the mobile table of contents by default. On larger screens the table of contents is always shown regardless of this setting. |
 | `fingerprintAlgorithm` | `"sha512"` | Hash algorithm for CSS/JS file fingerprinting to prevent browser caching issues. Valid values are `sha512` (default), `sha384`, `sha256`. |
 | `languageRedirect.enabled` | `false` | Enables client-side language redirects for multilingual sites. Disabled by default for backwards compatibility. |
 | `languageRedirect.storageKey` | `"blowfish_preferred_language"` | The `localStorage` key used to persist manual language dropdown selections. |
